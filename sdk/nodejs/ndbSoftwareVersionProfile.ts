@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -27,6 +28,7 @@ import * as utilities from "./utilities";
  *     status: "published",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class NdbSoftwareVersionProfile extends pulumi.CustomResource {
     /**
@@ -193,71 +195,71 @@ export interface NdbSoftwareVersionProfileState {
     /**
      * available cluster ids
      */
-    availableClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    availableClusterIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Db version of software profile
      */
-    dbVersion?: pulumi.Input<string>;
+    dbVersion?: pulumi.Input<string | undefined>;
     /**
      * deprecated or not
      */
-    deprecated?: pulumi.Input<boolean>;
+    deprecated?: pulumi.Input<boolean | undefined>;
     /**
      * description of profile
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * engine type of profile
      */
-    engineType?: pulumi.Input<string>;
+    engineType?: pulumi.Input<string | undefined>;
     /**
      * Name of profile
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * owner  of profile
      */
-    owner?: pulumi.Input<string>;
+    owner?: pulumi.Input<string | undefined>;
     /**
      * postgres database info
      */
-    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfilePostgresDatabase>[]>;
+    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfilePostgresDatabase>[] | undefined>;
     /**
      * profile id
      */
-    profileId?: pulumi.Input<string>;
+    profileId?: pulumi.Input<string | undefined>;
     /**
      * properties of software profile
      */
-    properties?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfileProperty>[]>;
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfileProperty>[] | undefined>;
     /**
      * properties map of profile
      */
-    propertiesMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    propertiesMap?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Published or not
      */
-    published?: pulumi.Input<boolean>;
+    published?: pulumi.Input<boolean | undefined>;
     /**
      * status of profile. Allowed Values are "deprecated", "published", "unpublished"
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * system profile or not.
      */
-    systemProfile?: pulumi.Input<boolean>;
+    systemProfile?: pulumi.Input<boolean | undefined>;
     /**
      * topology of software profile
      */
-    topology?: pulumi.Input<string>;
+    topology?: pulumi.Input<string | undefined>;
     /**
      * Version of software profile
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
     /**
      * version cluster association
      */
-    versionClusterAssociations?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfileVersionClusterAssociation>[]>;
+    versionClusterAssociations?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfileVersionClusterAssociation>[] | undefined>;
 }
 
 /**
@@ -267,11 +269,11 @@ export interface NdbSoftwareVersionProfileArgs {
     /**
      * available cluster ids
      */
-    availableClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    availableClusterIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * description of profile
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * engine type of profile
      */
@@ -279,11 +281,11 @@ export interface NdbSoftwareVersionProfileArgs {
     /**
      * Name of profile
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * postgres database info
      */
-    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfilePostgresDatabase>[]>;
+    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfilePostgresDatabase>[] | undefined>;
     /**
      * profile id
      */
@@ -291,5 +293,5 @@ export interface NdbSoftwareVersionProfileArgs {
     /**
      * status of profile. Allowed Values are "deprecated", "published", "unpublished"
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

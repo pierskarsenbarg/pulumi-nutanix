@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetFloatingIpsEntityResult
     {
         /// <summary>
-        /// - The FloatingIp kind metadata.
+        /// - The&lt;span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "&gt; floatingIp &lt;/span&gt;kind metadata.
         /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>

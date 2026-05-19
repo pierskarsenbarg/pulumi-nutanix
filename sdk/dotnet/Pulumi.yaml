@@ -1,3 +1,0 @@
-name: nutanix
-description: A Pulumi resource provider for nutanix.
-language: dotnet

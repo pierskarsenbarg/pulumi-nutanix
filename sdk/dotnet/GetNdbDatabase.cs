@@ -17,6 +17,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const db1 = nutanix.getNdbDatabase({
+        ///     databaseId: "&lt;sample-id&gt;",
+        /// });
+        /// export const db1Output = db1;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// db1 = nutanix.get_ndb_database(database_id="&lt;sample-id&gt;")
+        /// pulumi.export("db1Output", db1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +42,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var db1 = Nutanix.Index.GetNdbDatabase.Invoke(new()
+        ///     var db1 = Nutanix.GetNdbDatabase.Invoke(new()
         ///     {
         ///         DatabaseId = "&lt;sample-id&gt;",
         ///     });
@@ -36,6 +53,67 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		db1, err := nutanix.GetNdbDatabase(ctx, &amp;nutanix.LookupNdbDatabaseArgs{
+        /// 			DatabaseId: "&lt;sample-id&gt;",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("db1Output", db1)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbDatabaseArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var db1 = NutanixFunctions.getNdbDatabase(GetNdbDatabaseArgs.builder()
+        ///             .databaseId("&lt;sample-id&gt;")
+        ///             .build());
+        /// 
+        ///         ctx.export("db1Output", db1);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   db1:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbDatabase
+        ///       arguments:
+        ///         databaseId: &lt;sample-id&gt;
+        /// outputs:
+        ///   db1Output: ${db1}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNdbDatabaseResult> InvokeAsync(GetNdbDatabaseArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNdbDatabaseResult>("nutanix:index/getNdbDatabase:getNdbDatabase", args ?? new GetNdbDatabaseArgs(), options.WithDefaults());
@@ -45,6 +123,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const db1 = nutanix.getNdbDatabase({
+        ///     databaseId: "&lt;sample-id&gt;",
+        /// });
+        /// export const db1Output = db1;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// db1 = nutanix.get_ndb_database(database_id="&lt;sample-id&gt;")
+        /// pulumi.export("db1Output", db1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -53,7 +148,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var db1 = Nutanix.Index.GetNdbDatabase.Invoke(new()
+        ///     var db1 = Nutanix.GetNdbDatabase.Invoke(new()
         ///     {
         ///         DatabaseId = "&lt;sample-id&gt;",
         ///     });
@@ -64,6 +159,67 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		db1, err := nutanix.GetNdbDatabase(ctx, &amp;nutanix.LookupNdbDatabaseArgs{
+        /// 			DatabaseId: "&lt;sample-id&gt;",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("db1Output", db1)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbDatabaseArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var db1 = NutanixFunctions.getNdbDatabase(GetNdbDatabaseArgs.builder()
+        ///             .databaseId("&lt;sample-id&gt;")
+        ///             .build());
+        /// 
+        ///         ctx.export("db1Output", db1);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   db1:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbDatabase
+        ///       arguments:
+        ///         databaseId: &lt;sample-id&gt;
+        /// outputs:
+        ///   db1Output: ${db1}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNdbDatabaseResult> Invoke(GetNdbDatabaseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbDatabaseResult>("nutanix:index/getNdbDatabase:getNdbDatabase", args ?? new GetNdbDatabaseInvokeArgs(), options.WithDefaults());
@@ -73,6 +229,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const db1 = nutanix.getNdbDatabase({
+        ///     databaseId: "&lt;sample-id&gt;",
+        /// });
+        /// export const db1Output = db1;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// db1 = nutanix.get_ndb_database(database_id="&lt;sample-id&gt;")
+        /// pulumi.export("db1Output", db1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -81,7 +254,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var db1 = Nutanix.Index.GetNdbDatabase.Invoke(new()
+        ///     var db1 = Nutanix.GetNdbDatabase.Invoke(new()
         ///     {
         ///         DatabaseId = "&lt;sample-id&gt;",
         ///     });
@@ -92,6 +265,67 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		db1, err := nutanix.GetNdbDatabase(ctx, &amp;nutanix.LookupNdbDatabaseArgs{
+        /// 			DatabaseId: "&lt;sample-id&gt;",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("db1Output", db1)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbDatabaseArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var db1 = NutanixFunctions.getNdbDatabase(GetNdbDatabaseArgs.builder()
+        ///             .databaseId("&lt;sample-id&gt;")
+        ///             .build());
+        /// 
+        ///         ctx.export("db1Output", db1);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   db1:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbDatabase
+        ///       arguments:
+        ///         databaseId: &lt;sample-id&gt;
+        /// outputs:
+        ///   db1Output: ${db1}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNdbDatabaseResult> Invoke(GetNdbDatabaseInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbDatabaseResult>("nutanix:index/getNdbDatabase:getNdbDatabase", args ?? new GetNdbDatabaseInvokeArgs(), options.WithDefaults());

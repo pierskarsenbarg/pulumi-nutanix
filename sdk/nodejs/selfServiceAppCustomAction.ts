@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ### 
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -25,6 +26,7 @@ import * as utilities from "./utilities";
  *     actionName: "NAME OF ACTION",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class SelfServiceAppCustomAction extends pulumi.CustomResource {
     /**
@@ -57,7 +59,7 @@ export class SelfServiceAppCustomAction extends pulumi.CustomResource {
     /**
      * - (Required) The name of the action to run.
      *
-     * Both (`appName` and `appUuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
+     * Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
      */
     declare public readonly actionName: pulumi.Output<string>;
     /**
@@ -112,21 +114,21 @@ export interface SelfServiceAppCustomActionState {
     /**
      * - (Required) The name of the action to run.
      *
-     * Both (`appName` and `appUuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
+     * Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
      */
-    actionName?: pulumi.Input<string>;
+    actionName?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The name of the application.
      */
-    appName?: pulumi.Input<string>;
+    appName?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The UUID of the application.
      */
-    appUuid?: pulumi.Input<string>;
+    appUuid?: pulumi.Input<string | undefined>;
     /**
      * - (Computed) The UUID of the runlog associated with the execution of the custom action. This can be used to track the progress or status of the action execution.
      */
-    runlogUuid?: pulumi.Input<string>;
+    runlogUuid?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -136,19 +138,19 @@ export interface SelfServiceAppCustomActionArgs {
     /**
      * - (Required) The name of the action to run.
      *
-     * Both (`appName` and `appUuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
+     * Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
      */
     actionName: pulumi.Input<string>;
     /**
      * - (Optional) The name of the application.
      */
-    appName?: pulumi.Input<string>;
+    appName?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The UUID of the application.
      */
-    appUuid?: pulumi.Input<string>;
+    appUuid?: pulumi.Input<string | undefined>;
     /**
      * - (Computed) The UUID of the runlog associated with the execution of the custom action. This can be used to track the progress or status of the action execution.
      */
-    runlogUuid?: pulumi.Input<string>;
+    runlogUuid?: pulumi.Input<string | undefined>;
 }

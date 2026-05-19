@@ -17,6 +17,33 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as local from "@pulumi/local";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const example = nutanix.getBlueprintRuntimeEditables({
+        ///     bpName: "NAME OF BLUEPRINT",
+        /// });
+        /// // dumps read value into a readable json file
+        /// const dumpRuntimeValue = new local.File("dump_runtime_value", {
+        ///     content: JSON.stringify(example.then(example =&gt; example.runtimeEditables)),
+        ///     filename: "runtime_value.json",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import json
+        /// import pulumi_local as local
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// example = nutanix.get_blueprint_runtime_editables(bp_name="NAME OF BLUEPRINT")
+        /// # dumps read value into a readable json file
+        /// dump_runtime_value = local.File("dump_runtime_value",
+        ///     content=json.dumps(example.runtime_editables),
+        ///     filename="runtime_value.json")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -27,13 +54,13 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.Index.GetBlueprintRuntimeEditables.Invoke(new()
+        ///     var example = Nutanix.GetBlueprintRuntimeEditables.Invoke(new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT",
         ///     });
         /// 
         ///     // dumps read value into a readable json file
-        ///     var dumpRuntimeValue = new Local.Index.File("dump_runtime_value", new()
+        ///     var dumpRuntimeValue = new Local.File("dump_runtime_value", new()
         ///     {
         ///         Content = JsonSerializer.Serialize(example.Apply(getBlueprintRuntimeEditablesResult =&gt; getBlueprintRuntimeEditablesResult.RuntimeEditables)),
         ///         Filename = "runtime_value.json",
@@ -41,6 +68,98 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"encoding/json"
+        /// 
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi-local/sdk/go/local"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		example, err := nutanix.GetBlueprintRuntimeEditables(ctx, &amp;nutanix.GetBlueprintRuntimeEditablesArgs{
+        /// 			BpName: pulumi.StringRef("NAME OF BLUEPRINT"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		tmpJSON0, err := json.Marshal(example.RuntimeEditables)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		json0 := string(tmpJSON0)
+        /// 		// dumps read value into a readable json file
+        /// 		_, err = local.NewFile(ctx, "dump_runtime_value", &amp;local.FileArgs{
+        /// 			Content:  json0,
+        /// 			Filename: pulumi.String("runtime_value.json"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetBlueprintRuntimeEditablesArgs;
+        /// import com.pulumi.local.File;
+        /// import com.pulumi.local.FileArgs;
+        /// import static com.pulumi.codegen.internal.Serialization.*;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var example = NutanixFunctions.getBlueprintRuntimeEditables(GetBlueprintRuntimeEditablesArgs.builder()
+        ///             .bpName("NAME OF BLUEPRINT")
+        ///             .build());
+        /// 
+        ///         // dumps read value into a readable json file
+        ///         var dumpRuntimeValue = new File("dumpRuntimeValue", FileArgs.builder()
+        ///             .content(serializeJson(
+        ///                 example.runtimeEditables()))
+        ///             .filename("runtime_value.json")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   # dumps read value into a readable json file
+        ///   dumpRuntimeValue:
+        ///     type: local:File
+        ///     name: dump_runtime_value
+        ///     properties:
+        ///       content:
+        ///         fn::toJSON: ${example.runtimeEditables}
+        ///       filename: runtime_value.json
+        /// variables:
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getBlueprintRuntimeEditables
+        ///       arguments:
+        ///         bpName: NAME OF BLUEPRINT
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBlueprintRuntimeEditablesResult> InvokeAsync(GetBlueprintRuntimeEditablesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBlueprintRuntimeEditablesResult>("nutanix:index/getBlueprintRuntimeEditables:getBlueprintRuntimeEditables", args ?? new GetBlueprintRuntimeEditablesArgs(), options.WithDefaults());
@@ -50,6 +169,33 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as local from "@pulumi/local";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const example = nutanix.getBlueprintRuntimeEditables({
+        ///     bpName: "NAME OF BLUEPRINT",
+        /// });
+        /// // dumps read value into a readable json file
+        /// const dumpRuntimeValue = new local.File("dump_runtime_value", {
+        ///     content: JSON.stringify(example.then(example =&gt; example.runtimeEditables)),
+        ///     filename: "runtime_value.json",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import json
+        /// import pulumi_local as local
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// example = nutanix.get_blueprint_runtime_editables(bp_name="NAME OF BLUEPRINT")
+        /// # dumps read value into a readable json file
+        /// dump_runtime_value = local.File("dump_runtime_value",
+        ///     content=json.dumps(example.runtime_editables),
+        ///     filename="runtime_value.json")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -60,13 +206,13 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.Index.GetBlueprintRuntimeEditables.Invoke(new()
+        ///     var example = Nutanix.GetBlueprintRuntimeEditables.Invoke(new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT",
         ///     });
         /// 
         ///     // dumps read value into a readable json file
-        ///     var dumpRuntimeValue = new Local.Index.File("dump_runtime_value", new()
+        ///     var dumpRuntimeValue = new Local.File("dump_runtime_value", new()
         ///     {
         ///         Content = JsonSerializer.Serialize(example.Apply(getBlueprintRuntimeEditablesResult =&gt; getBlueprintRuntimeEditablesResult.RuntimeEditables)),
         ///         Filename = "runtime_value.json",
@@ -74,6 +220,98 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"encoding/json"
+        /// 
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi-local/sdk/go/local"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		example, err := nutanix.GetBlueprintRuntimeEditables(ctx, &amp;nutanix.GetBlueprintRuntimeEditablesArgs{
+        /// 			BpName: pulumi.StringRef("NAME OF BLUEPRINT"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		tmpJSON0, err := json.Marshal(example.RuntimeEditables)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		json0 := string(tmpJSON0)
+        /// 		// dumps read value into a readable json file
+        /// 		_, err = local.NewFile(ctx, "dump_runtime_value", &amp;local.FileArgs{
+        /// 			Content:  json0,
+        /// 			Filename: pulumi.String("runtime_value.json"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetBlueprintRuntimeEditablesArgs;
+        /// import com.pulumi.local.File;
+        /// import com.pulumi.local.FileArgs;
+        /// import static com.pulumi.codegen.internal.Serialization.*;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var example = NutanixFunctions.getBlueprintRuntimeEditables(GetBlueprintRuntimeEditablesArgs.builder()
+        ///             .bpName("NAME OF BLUEPRINT")
+        ///             .build());
+        /// 
+        ///         // dumps read value into a readable json file
+        ///         var dumpRuntimeValue = new File("dumpRuntimeValue", FileArgs.builder()
+        ///             .content(serializeJson(
+        ///                 example.runtimeEditables()))
+        ///             .filename("runtime_value.json")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   # dumps read value into a readable json file
+        ///   dumpRuntimeValue:
+        ///     type: local:File
+        ///     name: dump_runtime_value
+        ///     properties:
+        ///       content:
+        ///         fn::toJSON: ${example.runtimeEditables}
+        ///       filename: runtime_value.json
+        /// variables:
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getBlueprintRuntimeEditables
+        ///       arguments:
+        ///         bpName: NAME OF BLUEPRINT
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBlueprintRuntimeEditablesResult> Invoke(GetBlueprintRuntimeEditablesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBlueprintRuntimeEditablesResult>("nutanix:index/getBlueprintRuntimeEditables:getBlueprintRuntimeEditables", args ?? new GetBlueprintRuntimeEditablesInvokeArgs(), options.WithDefaults());
@@ -83,6 +321,33 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as local from "@pulumi/local";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const example = nutanix.getBlueprintRuntimeEditables({
+        ///     bpName: "NAME OF BLUEPRINT",
+        /// });
+        /// // dumps read value into a readable json file
+        /// const dumpRuntimeValue = new local.File("dump_runtime_value", {
+        ///     content: JSON.stringify(example.then(example =&gt; example.runtimeEditables)),
+        ///     filename: "runtime_value.json",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import json
+        /// import pulumi_local as local
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// example = nutanix.get_blueprint_runtime_editables(bp_name="NAME OF BLUEPRINT")
+        /// # dumps read value into a readable json file
+        /// dump_runtime_value = local.File("dump_runtime_value",
+        ///     content=json.dumps(example.runtime_editables),
+        ///     filename="runtime_value.json")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -93,13 +358,13 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.Index.GetBlueprintRuntimeEditables.Invoke(new()
+        ///     var example = Nutanix.GetBlueprintRuntimeEditables.Invoke(new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT",
         ///     });
         /// 
         ///     // dumps read value into a readable json file
-        ///     var dumpRuntimeValue = new Local.Index.File("dump_runtime_value", new()
+        ///     var dumpRuntimeValue = new Local.File("dump_runtime_value", new()
         ///     {
         ///         Content = JsonSerializer.Serialize(example.Apply(getBlueprintRuntimeEditablesResult =&gt; getBlueprintRuntimeEditablesResult.RuntimeEditables)),
         ///         Filename = "runtime_value.json",
@@ -107,6 +372,98 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"encoding/json"
+        /// 
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi-local/sdk/go/local"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		example, err := nutanix.GetBlueprintRuntimeEditables(ctx, &amp;nutanix.GetBlueprintRuntimeEditablesArgs{
+        /// 			BpName: pulumi.StringRef("NAME OF BLUEPRINT"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		tmpJSON0, err := json.Marshal(example.RuntimeEditables)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		json0 := string(tmpJSON0)
+        /// 		// dumps read value into a readable json file
+        /// 		_, err = local.NewFile(ctx, "dump_runtime_value", &amp;local.FileArgs{
+        /// 			Content:  json0,
+        /// 			Filename: pulumi.String("runtime_value.json"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetBlueprintRuntimeEditablesArgs;
+        /// import com.pulumi.local.File;
+        /// import com.pulumi.local.FileArgs;
+        /// import static com.pulumi.codegen.internal.Serialization.*;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var example = NutanixFunctions.getBlueprintRuntimeEditables(GetBlueprintRuntimeEditablesArgs.builder()
+        ///             .bpName("NAME OF BLUEPRINT")
+        ///             .build());
+        /// 
+        ///         // dumps read value into a readable json file
+        ///         var dumpRuntimeValue = new File("dumpRuntimeValue", FileArgs.builder()
+        ///             .content(serializeJson(
+        ///                 example.runtimeEditables()))
+        ///             .filename("runtime_value.json")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   # dumps read value into a readable json file
+        ///   dumpRuntimeValue:
+        ///     type: local:File
+        ///     name: dump_runtime_value
+        ///     properties:
+        ///       content:
+        ///         fn::toJSON: ${example.runtimeEditables}
+        ///       filename: runtime_value.json
+        /// variables:
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getBlueprintRuntimeEditables
+        ///       arguments:
+        ///         bpName: NAME OF BLUEPRINT
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBlueprintRuntimeEditablesResult> Invoke(GetBlueprintRuntimeEditablesInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetBlueprintRuntimeEditablesResult>("nutanix:index/getBlueprintRuntimeEditables:getBlueprintRuntimeEditables", args ?? new GetBlueprintRuntimeEditablesInvokeArgs(), options.WithDefaults());
@@ -118,7 +475,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The name of the blueprint for which runtime editables will be listed. If this is provided, it will return runtime editables for the specified blueprint.
         /// 
-        /// Both (`BpUuid` and `BpName`) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`"&gt;`bpUuid`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`"&gt;`bpName`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("bpName")]
         public string? BpName { get; set; }
@@ -140,7 +497,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The name of the blueprint for which runtime editables will be listed. If this is provided, it will return runtime editables for the specified blueprint.
         /// 
-        /// Both (`BpUuid` and `BpName`) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`"&gt;`bpUuid`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`"&gt;`bpName`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("bpName")]
         public Input<string>? BpName { get; set; }

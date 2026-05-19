@@ -17,6 +17,37 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testKeyValueCategoryKey = new nutanix.CategoryKey("test_key_value", {
+        ///     name: "data_source_category_key_test_values",
+        ///     description: "Data Source CategoryKey Test with Values",
+        /// });
+        /// const testValue = new nutanix.CategoryValue("test_value", {
+        ///     name: testKeyValueCategoryKey.name,
+        ///     value: "test_category_value_data_source",
+        ///     description: "Data Source CategoryValue Test with Values",
+        /// });
+        /// const testKeyValue = nutanix.getCategoryKeyOutput({
+        ///     name: testKeyValueCategoryKey.name,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_key_value_category_key = nutanix.CategoryKey("test_key_value",
+        ///     name="data_source_category_key_test_values",
+        ///     description="Data Source CategoryKey Test with Values")
+        /// test_value = nutanix.CategoryValue("test_value",
+        ///     name=test_key_value_category_key.name,
+        ///     value="test_category_value_data_source",
+        ///     description="Data Source CategoryValue Test with Values")
+        /// test_key_value = nutanix.get_category_key_output(name=test_key_value_category_key.name)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,26 +56,124 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testKeyValueCategoryKey = new Nutanix.Index.CategoryKey("test_key_value", new()
+        ///     var testKeyValueCategoryKey = new Nutanix.CategoryKey("test_key_value", new()
         ///     {
         ///         Name = "data_source_category_key_test_values",
         ///         Description = "Data Source CategoryKey Test with Values",
         ///     });
         /// 
-        ///     var testValue = new Nutanix.Index.CategoryValue("test_value", new()
+        ///     var testValue = new Nutanix.CategoryValue("test_value", new()
         ///     {
         ///         Name = testKeyValueCategoryKey.Name,
         ///         Value = "test_category_value_data_source",
         ///         Description = "Data Source CategoryValue Test with Values",
         ///     });
         /// 
-        ///     var testKeyValue = Nutanix.Index.GetCategoryKey.Invoke(new()
+        ///     var testKeyValue = Nutanix.GetCategoryKey.Invoke(new()
         ///     {
         ///         Name = testKeyValueCategoryKey.Name,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testKeyValueCategoryKey, err := nutanix.NewCategoryKey(ctx, "test_key_value", &amp;nutanix.CategoryKeyArgs{
+        /// 			Name:        pulumi.String("data_source_category_key_test_values"),
+        /// 			Description: pulumi.String("Data Source CategoryKey Test with Values"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.NewCategoryValue(ctx, "test_value", &amp;nutanix.CategoryValueArgs{
+        /// 			Name:        testKeyValueCategoryKey.Name,
+        /// 			Value:       pulumi.String("test_category_value_data_source"),
+        /// 			Description: pulumi.String("Data Source CategoryValue Test with Values"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetCategoryKeyOutput(ctx, nutanix.GetCategoryKeyOutputArgs{
+        /// 			Name: testKeyValueCategoryKey.Name,
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.CategoryKey;
+        /// import com.pulumi.nutanix.CategoryKeyArgs;
+        /// import com.pulumi.nutanix.CategoryValue;
+        /// import com.pulumi.nutanix.CategoryValueArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetCategoryKeyArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testKeyValueCategoryKey = new CategoryKey("testKeyValueCategoryKey", CategoryKeyArgs.builder()
+        ///             .name("data_source_category_key_test_values")
+        ///             .description("Data Source CategoryKey Test with Values")
+        ///             .build());
+        /// 
+        ///         var testValue = new CategoryValue("testValue", CategoryValueArgs.builder()
+        ///             .name(testKeyValueCategoryKey.name())
+        ///             .value("test_category_value_data_source")
+        ///             .description("Data Source CategoryValue Test with Values")
+        ///             .build());
+        /// 
+        ///         final var testKeyValue = NutanixFunctions.getCategoryKey(GetCategoryKeyArgs.builder()
+        ///             .name(testKeyValueCategoryKey.name())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testKeyValueCategoryKey:
+        ///     type: nutanix:CategoryKey
+        ///     name: test_key_value
+        ///     properties:
+        ///       name: data_source_category_key_test_values
+        ///       description: Data Source CategoryKey Test with Values
+        ///   testValue:
+        ///     type: nutanix:CategoryValue
+        ///     name: test_value
+        ///     properties:
+        ///       name: ${testKeyValueCategoryKey.name}
+        ///       value: test_category_value_data_source
+        ///       description: Data Source CategoryValue Test with Values
+        /// variables:
+        ///   testKeyValue:
+        ///     fn::invoke:
+        ///       function: nutanix:getCategoryKey
+        ///       arguments:
+        ///         name: ${testKeyValueCategoryKey.name}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetCategoryKeyResult> InvokeAsync(GetCategoryKeyArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCategoryKeyResult>("nutanix:index/getCategoryKey:getCategoryKey", args ?? new GetCategoryKeyArgs(), options.WithDefaults());
@@ -54,6 +183,37 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testKeyValueCategoryKey = new nutanix.CategoryKey("test_key_value", {
+        ///     name: "data_source_category_key_test_values",
+        ///     description: "Data Source CategoryKey Test with Values",
+        /// });
+        /// const testValue = new nutanix.CategoryValue("test_value", {
+        ///     name: testKeyValueCategoryKey.name,
+        ///     value: "test_category_value_data_source",
+        ///     description: "Data Source CategoryValue Test with Values",
+        /// });
+        /// const testKeyValue = nutanix.getCategoryKeyOutput({
+        ///     name: testKeyValueCategoryKey.name,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_key_value_category_key = nutanix.CategoryKey("test_key_value",
+        ///     name="data_source_category_key_test_values",
+        ///     description="Data Source CategoryKey Test with Values")
+        /// test_value = nutanix.CategoryValue("test_value",
+        ///     name=test_key_value_category_key.name,
+        ///     value="test_category_value_data_source",
+        ///     description="Data Source CategoryValue Test with Values")
+        /// test_key_value = nutanix.get_category_key_output(name=test_key_value_category_key.name)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,26 +222,124 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testKeyValueCategoryKey = new Nutanix.Index.CategoryKey("test_key_value", new()
+        ///     var testKeyValueCategoryKey = new Nutanix.CategoryKey("test_key_value", new()
         ///     {
         ///         Name = "data_source_category_key_test_values",
         ///         Description = "Data Source CategoryKey Test with Values",
         ///     });
         /// 
-        ///     var testValue = new Nutanix.Index.CategoryValue("test_value", new()
+        ///     var testValue = new Nutanix.CategoryValue("test_value", new()
         ///     {
         ///         Name = testKeyValueCategoryKey.Name,
         ///         Value = "test_category_value_data_source",
         ///         Description = "Data Source CategoryValue Test with Values",
         ///     });
         /// 
-        ///     var testKeyValue = Nutanix.Index.GetCategoryKey.Invoke(new()
+        ///     var testKeyValue = Nutanix.GetCategoryKey.Invoke(new()
         ///     {
         ///         Name = testKeyValueCategoryKey.Name,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testKeyValueCategoryKey, err := nutanix.NewCategoryKey(ctx, "test_key_value", &amp;nutanix.CategoryKeyArgs{
+        /// 			Name:        pulumi.String("data_source_category_key_test_values"),
+        /// 			Description: pulumi.String("Data Source CategoryKey Test with Values"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.NewCategoryValue(ctx, "test_value", &amp;nutanix.CategoryValueArgs{
+        /// 			Name:        testKeyValueCategoryKey.Name,
+        /// 			Value:       pulumi.String("test_category_value_data_source"),
+        /// 			Description: pulumi.String("Data Source CategoryValue Test with Values"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetCategoryKeyOutput(ctx, nutanix.GetCategoryKeyOutputArgs{
+        /// 			Name: testKeyValueCategoryKey.Name,
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.CategoryKey;
+        /// import com.pulumi.nutanix.CategoryKeyArgs;
+        /// import com.pulumi.nutanix.CategoryValue;
+        /// import com.pulumi.nutanix.CategoryValueArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetCategoryKeyArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testKeyValueCategoryKey = new CategoryKey("testKeyValueCategoryKey", CategoryKeyArgs.builder()
+        ///             .name("data_source_category_key_test_values")
+        ///             .description("Data Source CategoryKey Test with Values")
+        ///             .build());
+        /// 
+        ///         var testValue = new CategoryValue("testValue", CategoryValueArgs.builder()
+        ///             .name(testKeyValueCategoryKey.name())
+        ///             .value("test_category_value_data_source")
+        ///             .description("Data Source CategoryValue Test with Values")
+        ///             .build());
+        /// 
+        ///         final var testKeyValue = NutanixFunctions.getCategoryKey(GetCategoryKeyArgs.builder()
+        ///             .name(testKeyValueCategoryKey.name())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testKeyValueCategoryKey:
+        ///     type: nutanix:CategoryKey
+        ///     name: test_key_value
+        ///     properties:
+        ///       name: data_source_category_key_test_values
+        ///       description: Data Source CategoryKey Test with Values
+        ///   testValue:
+        ///     type: nutanix:CategoryValue
+        ///     name: test_value
+        ///     properties:
+        ///       name: ${testKeyValueCategoryKey.name}
+        ///       value: test_category_value_data_source
+        ///       description: Data Source CategoryValue Test with Values
+        /// variables:
+        ///   testKeyValue:
+        ///     fn::invoke:
+        ///       function: nutanix:getCategoryKey
+        ///       arguments:
+        ///         name: ${testKeyValueCategoryKey.name}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetCategoryKeyResult> Invoke(GetCategoryKeyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCategoryKeyResult>("nutanix:index/getCategoryKey:getCategoryKey", args ?? new GetCategoryKeyInvokeArgs(), options.WithDefaults());
@@ -91,6 +349,37 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testKeyValueCategoryKey = new nutanix.CategoryKey("test_key_value", {
+        ///     name: "data_source_category_key_test_values",
+        ///     description: "Data Source CategoryKey Test with Values",
+        /// });
+        /// const testValue = new nutanix.CategoryValue("test_value", {
+        ///     name: testKeyValueCategoryKey.name,
+        ///     value: "test_category_value_data_source",
+        ///     description: "Data Source CategoryValue Test with Values",
+        /// });
+        /// const testKeyValue = nutanix.getCategoryKeyOutput({
+        ///     name: testKeyValueCategoryKey.name,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_key_value_category_key = nutanix.CategoryKey("test_key_value",
+        ///     name="data_source_category_key_test_values",
+        ///     description="Data Source CategoryKey Test with Values")
+        /// test_value = nutanix.CategoryValue("test_value",
+        ///     name=test_key_value_category_key.name,
+        ///     value="test_category_value_data_source",
+        ///     description="Data Source CategoryValue Test with Values")
+        /// test_key_value = nutanix.get_category_key_output(name=test_key_value_category_key.name)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -99,26 +388,124 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testKeyValueCategoryKey = new Nutanix.Index.CategoryKey("test_key_value", new()
+        ///     var testKeyValueCategoryKey = new Nutanix.CategoryKey("test_key_value", new()
         ///     {
         ///         Name = "data_source_category_key_test_values",
         ///         Description = "Data Source CategoryKey Test with Values",
         ///     });
         /// 
-        ///     var testValue = new Nutanix.Index.CategoryValue("test_value", new()
+        ///     var testValue = new Nutanix.CategoryValue("test_value", new()
         ///     {
         ///         Name = testKeyValueCategoryKey.Name,
         ///         Value = "test_category_value_data_source",
         ///         Description = "Data Source CategoryValue Test with Values",
         ///     });
         /// 
-        ///     var testKeyValue = Nutanix.Index.GetCategoryKey.Invoke(new()
+        ///     var testKeyValue = Nutanix.GetCategoryKey.Invoke(new()
         ///     {
         ///         Name = testKeyValueCategoryKey.Name,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testKeyValueCategoryKey, err := nutanix.NewCategoryKey(ctx, "test_key_value", &amp;nutanix.CategoryKeyArgs{
+        /// 			Name:        pulumi.String("data_source_category_key_test_values"),
+        /// 			Description: pulumi.String("Data Source CategoryKey Test with Values"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.NewCategoryValue(ctx, "test_value", &amp;nutanix.CategoryValueArgs{
+        /// 			Name:        testKeyValueCategoryKey.Name,
+        /// 			Value:       pulumi.String("test_category_value_data_source"),
+        /// 			Description: pulumi.String("Data Source CategoryValue Test with Values"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetCategoryKeyOutput(ctx, nutanix.GetCategoryKeyOutputArgs{
+        /// 			Name: testKeyValueCategoryKey.Name,
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.CategoryKey;
+        /// import com.pulumi.nutanix.CategoryKeyArgs;
+        /// import com.pulumi.nutanix.CategoryValue;
+        /// import com.pulumi.nutanix.CategoryValueArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetCategoryKeyArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testKeyValueCategoryKey = new CategoryKey("testKeyValueCategoryKey", CategoryKeyArgs.builder()
+        ///             .name("data_source_category_key_test_values")
+        ///             .description("Data Source CategoryKey Test with Values")
+        ///             .build());
+        /// 
+        ///         var testValue = new CategoryValue("testValue", CategoryValueArgs.builder()
+        ///             .name(testKeyValueCategoryKey.name())
+        ///             .value("test_category_value_data_source")
+        ///             .description("Data Source CategoryValue Test with Values")
+        ///             .build());
+        /// 
+        ///         final var testKeyValue = NutanixFunctions.getCategoryKey(GetCategoryKeyArgs.builder()
+        ///             .name(testKeyValueCategoryKey.name())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testKeyValueCategoryKey:
+        ///     type: nutanix:CategoryKey
+        ///     name: test_key_value
+        ///     properties:
+        ///       name: data_source_category_key_test_values
+        ///       description: Data Source CategoryKey Test with Values
+        ///   testValue:
+        ///     type: nutanix:CategoryValue
+        ///     name: test_value
+        ///     properties:
+        ///       name: ${testKeyValueCategoryKey.name}
+        ///       value: test_category_value_data_source
+        ///       description: Data Source CategoryValue Test with Values
+        /// variables:
+        ///   testKeyValue:
+        ///     fn::invoke:
+        ///       function: nutanix:getCategoryKey
+        ///       arguments:
+        ///         name: ${testKeyValueCategoryKey.name}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetCategoryKeyResult> Invoke(GetCategoryKeyInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetCategoryKeyResult>("nutanix:index/getCategoryKey:getCategoryKey", args ?? new GetCategoryKeyInvokeArgs(), options.WithDefaults());

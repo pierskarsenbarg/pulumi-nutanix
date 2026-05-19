@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -20,6 +21,7 @@ import * as utilities from "./utilities";
  *     extId: "75dde184-3a0e-4f59-a185-03ca1efead17",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPcV2(args: GetPcV2Args, opts?: pulumi.InvokeOptions): Promise<GetPcV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -93,6 +95,7 @@ export interface GetPcV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -102,6 +105,7 @@ export interface GetPcV2Result {
  *     extId: "75dde184-3a0e-4f59-a185-03ca1efead17",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPcV2Output(args: GetPcV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPcV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -122,5 +126,5 @@ export interface GetPcV2OutputArgs {
     /**
      * - This configuration enables Prism Central to be deployed in scale-out mode.
      */
-    shouldEnableHighAvailability?: pulumi.Input<boolean>;
+    shouldEnableHighAvailability?: pulumi.Input<boolean | undefined>;
 }

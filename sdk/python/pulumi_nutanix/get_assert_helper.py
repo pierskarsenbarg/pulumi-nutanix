@@ -73,7 +73,7 @@ def get_assert_helper(checks: Optional[Sequence[Union['GetAssertHelperCheckArgs'
     return AwaitableGetAssertHelperResult(
         checks=pulumi.get(__ret__, 'checks'),
         id=pulumi.get(__ret__, 'id'))
-def get_assert_helper_output(checks: Optional[pulumi.Input[Optional[Sequence[Union['GetAssertHelperCheckArgs', 'GetAssertHelperCheckArgsDict']]]]] = None,
+def get_assert_helper_output(checks: pulumi.Input[Optional[Optional[Sequence[Union['GetAssertHelperCheckArgs', 'GetAssertHelperCheckArgsDict']]]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssertHelperResult]:
     """
     Use this data source to access information about an existing resource.

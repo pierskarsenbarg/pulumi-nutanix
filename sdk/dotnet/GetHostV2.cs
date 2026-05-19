@@ -17,6 +17,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const host = nutanix.getHostV2({
+        ///     clusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        ///     extId: "919c9488-0b50-4fc8-9159-923e56a3abca",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// host = nutanix.get_host_v2(cluster_ext_id="021151dc-3ed1-4fec-a81d-39606451750c",
+        ///     ext_id="919c9488-0b50-4fc8-9159-923e56a3abca")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +42,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var host = Nutanix.Index.GetHostV2.Invoke(new()
+        ///     var host = Nutanix.GetHostV2.Invoke(new()
         ///     {
         ///         ClusterExtId = "021151dc-3ed1-4fec-a81d-39606451750c",
         ///         ExtId = "919c9488-0b50-4fc8-9159-923e56a3abca",
@@ -33,6 +50,66 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetHostV2(ctx, &amp;nutanix.GetHostV2Args{
+        /// 			ClusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        /// 			ExtId:        "919c9488-0b50-4fc8-9159-923e56a3abca",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetHostV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var host = NutanixFunctions.getHostV2(GetHostV2Args.builder()
+        ///             .clusterExtId("021151dc-3ed1-4fec-a81d-39606451750c")
+        ///             .extId("919c9488-0b50-4fc8-9159-923e56a3abca")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   host:
+        ///     fn::invoke:
+        ///       function: nutanix:getHostV2
+        ///       arguments:
+        ///         clusterExtId: 021151dc-3ed1-4fec-a81d-39606451750c
+        ///         extId: 919c9488-0b50-4fc8-9159-923e56a3abca
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetHostV2Result> InvokeAsync(GetHostV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetHostV2Result>("nutanix:index/getHostV2:getHostV2", args ?? new GetHostV2Args(), options.WithDefaults());
@@ -42,6 +119,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const host = nutanix.getHostV2({
+        ///     clusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        ///     extId: "919c9488-0b50-4fc8-9159-923e56a3abca",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// host = nutanix.get_host_v2(cluster_ext_id="021151dc-3ed1-4fec-a81d-39606451750c",
+        ///     ext_id="919c9488-0b50-4fc8-9159-923e56a3abca")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -50,7 +144,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var host = Nutanix.Index.GetHostV2.Invoke(new()
+        ///     var host = Nutanix.GetHostV2.Invoke(new()
         ///     {
         ///         ClusterExtId = "021151dc-3ed1-4fec-a81d-39606451750c",
         ///         ExtId = "919c9488-0b50-4fc8-9159-923e56a3abca",
@@ -58,6 +152,66 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetHostV2(ctx, &amp;nutanix.GetHostV2Args{
+        /// 			ClusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        /// 			ExtId:        "919c9488-0b50-4fc8-9159-923e56a3abca",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetHostV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var host = NutanixFunctions.getHostV2(GetHostV2Args.builder()
+        ///             .clusterExtId("021151dc-3ed1-4fec-a81d-39606451750c")
+        ///             .extId("919c9488-0b50-4fc8-9159-923e56a3abca")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   host:
+        ///     fn::invoke:
+        ///       function: nutanix:getHostV2
+        ///       arguments:
+        ///         clusterExtId: 021151dc-3ed1-4fec-a81d-39606451750c
+        ///         extId: 919c9488-0b50-4fc8-9159-923e56a3abca
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetHostV2Result> Invoke(GetHostV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHostV2Result>("nutanix:index/getHostV2:getHostV2", args ?? new GetHostV2InvokeArgs(), options.WithDefaults());
@@ -67,6 +221,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const host = nutanix.getHostV2({
+        ///     clusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        ///     extId: "919c9488-0b50-4fc8-9159-923e56a3abca",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// host = nutanix.get_host_v2(cluster_ext_id="021151dc-3ed1-4fec-a81d-39606451750c",
+        ///     ext_id="919c9488-0b50-4fc8-9159-923e56a3abca")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,7 +246,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var host = Nutanix.Index.GetHostV2.Invoke(new()
+        ///     var host = Nutanix.GetHostV2.Invoke(new()
         ///     {
         ///         ClusterExtId = "021151dc-3ed1-4fec-a81d-39606451750c",
         ///         ExtId = "919c9488-0b50-4fc8-9159-923e56a3abca",
@@ -83,6 +254,66 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetHostV2(ctx, &amp;nutanix.GetHostV2Args{
+        /// 			ClusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        /// 			ExtId:        "919c9488-0b50-4fc8-9159-923e56a3abca",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetHostV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var host = NutanixFunctions.getHostV2(GetHostV2Args.builder()
+        ///             .clusterExtId("021151dc-3ed1-4fec-a81d-39606451750c")
+        ///             .extId("919c9488-0b50-4fc8-9159-923e56a3abca")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   host:
+        ///     fn::invoke:
+        ///       function: nutanix:getHostV2
+        ///       arguments:
+        ///         clusterExtId: 021151dc-3ed1-4fec-a81d-39606451750c
+        ///         extId: 919c9488-0b50-4fc8-9159-923e56a3abca
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetHostV2Result> Invoke(GetHostV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetHostV2Result>("nutanix:index/getHostV2:getHostV2", args ?? new GetHostV2InvokeArgs(), options.WithDefaults());

@@ -14,6 +14,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as command from "@pulumi/command";
@@ -96,7 +97,7 @@ import * as utilities from "./utilities";
  *             }],
  *         }],
  *         configs: [{
- *             shouldEnableLockdownMode: restorePoint.domainManager[0].config[0].shouldEnableLockdownMode,
+ *             shouldEnableLockdownMode: restorePoint.domainManager[0].config[0].shouldEnableLockdownMode === "true",
  *             buildInfo: {
  *                 version: restorePoint.domainManager[0].config[0].buildInfo[0].version,
  *             },
@@ -104,9 +105,9 @@ import * as utilities from "./utilities";
  *             size: restorePoint.domainManager[0].config[0].size,
  *             resourceConfigs: [{
  *                 containerExtIds: restorePoint.domainManager[0].config[0].resourceConfig[0].containerExtIds,
- *                 dataDiskSizeBytes: restorePoint.domainManager[0].config[0].resourceConfig[0].dataDiskSizeBytes,
- *                 memorySizeBytes: restorePoint.domainManager[0].config[0].resourceConfig[0].memorySizeBytes,
- *                 numVcpus: restorePoint.domainManager[0].config[0].resourceConfig[0].numVcpus,
+ *                 dataDiskSizeBytes: Number(restorePoint.domainManager[0].config[0].resourceConfig[0].dataDiskSizeBytes),
+ *                 memorySizeBytes: Number(restorePoint.domainManager[0].config[0].resourceConfig[0].memorySizeBytes),
+ *                 numVcpus: Number(restorePoint.domainManager[0].config[0].resourceConfig[0].numVcpus),
  *             }],
  *         }],
  *     },
@@ -115,6 +116,7 @@ import * as utilities from "./utilities";
  *     dependsOn: [test],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class PcRestoreV2 extends pulumi.CustomResource {
     /**
@@ -209,19 +211,19 @@ export interface PcRestoreV2State {
     /**
      * -(Required) Domain manager (Prism Central) details.
      */
-    domainManager?: pulumi.Input<inputs.PcRestoreV2DomainManager>;
+    domainManager?: pulumi.Input<inputs.PcRestoreV2DomainManager | undefined>;
     /**
      * -(Required) Restore point ID for the backup created in cluster/object store.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) A unique identifier for the domain manager.
      */
-    restorableDomainManagerExtId?: pulumi.Input<string>;
+    restorableDomainManagerExtId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) A unique identifier obtained from the restore source API that corresponds to the details provided for the restore source.
      */
-    restoreSourceExtId?: pulumi.Input<string>;
+    restoreSourceExtId?: pulumi.Input<string | undefined>;
 }
 
 /**

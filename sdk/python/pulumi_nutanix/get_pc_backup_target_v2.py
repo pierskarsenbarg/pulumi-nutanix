@@ -151,6 +151,7 @@ def get_pc_backup_target_v2(domain_manager_ext_id: Optional[_builtins.str] = Non
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -158,6 +159,7 @@ def get_pc_backup_target_v2(domain_manager_ext_id: Optional[_builtins.str] = Non
     example = nutanix.get_pc_backup_target_v2(domain_manager_ext_id="75dde184-3a0e-4f59-a185-03ca1efead17",
         ext_id="00062d3d-5d07-0da6-0000-000000028f57")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str domain_manager_ext_id: -(Required) A unique identifier for the domain manager.
@@ -179,14 +181,15 @@ def get_pc_backup_target_v2(domain_manager_ext_id: Optional[_builtins.str] = Non
         links=pulumi.get(__ret__, 'links'),
         locations=pulumi.get(__ret__, 'locations'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_pc_backup_target_v2_output(domain_manager_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pc_backup_target_v2_output(domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPcBackupTargetV2Result]:
     """
     Retrieves the backup targets (cluster or object store) from a domain manager and returns the backup configuration and lastSyncTimestamp parameter to the user.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -194,6 +197,7 @@ def get_pc_backup_target_v2_output(domain_manager_ext_id: Optional[pulumi.Input[
     example = nutanix.get_pc_backup_target_v2(domain_manager_ext_id="75dde184-3a0e-4f59-a185-03ca1efead17",
         ext_id="00062d3d-5d07-0da6-0000-000000028f57")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str domain_manager_ext_id: -(Required) A unique identifier for the domain manager.

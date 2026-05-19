@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -24,6 +25,7 @@ import * as utilities from "./utilities";
  *     appUuid: testSelfServiceAppProvision.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSelfServiceApp(args: GetSelfServiceAppArgs, opts?: pulumi.InvokeOptions): Promise<GetSelfServiceAppResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -84,6 +86,7 @@ export interface GetSelfServiceAppResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -97,6 +100,7 @@ export interface GetSelfServiceAppResult {
  *     appUuid: testSelfServiceAppProvision.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSelfServiceAppOutput(args: GetSelfServiceAppOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSelfServiceAppResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

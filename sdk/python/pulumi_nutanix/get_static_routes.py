@@ -70,7 +70,7 @@ class GetStaticRoutesResult:
     @pulumi.getter
     def metadata(self) -> Mapping[str, _builtins.str]:
         """
-        The vpc_route_table kind metadata
+        The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata
         """
         return pulumi.get(self, "metadata")
 
@@ -78,7 +78,7 @@ class GetStaticRoutesResult:
     @pulumi.getter
     def specs(self) -> Sequence['outputs.GetStaticRoutesSpecResult']:
         """
-        An intentful representation of a vpc_route_table spec
+        An intentful representation of a<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>spec
         """
         return pulumi.get(self, "specs")
 
@@ -86,7 +86,7 @@ class GetStaticRoutesResult:
     @pulumi.getter
     def statuses(self) -> Sequence['outputs.GetStaticRoutesStatusResult']:
         """
-        An intentful representation of a vpc_route_table status
+        An intentful representation of a<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>status
         """
         return pulumi.get(self, "statuses")
 
@@ -139,8 +139,8 @@ def get_static_routes(vpc_name: Optional[_builtins.str] = None,
         statuses=pulumi.get(__ret__, 'statuses'),
         vpc_name=pulumi.get(__ret__, 'vpc_name'),
         vpc_reference_uuid=pulumi.get(__ret__, 'vpc_reference_uuid'))
-def get_static_routes_output(vpc_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             vpc_reference_uuid: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_static_routes_output(vpc_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             vpc_reference_uuid: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStaticRoutesResult]:
     """
     Provides a datasource to retrieve static routes within VPCs given vpc_uuid.

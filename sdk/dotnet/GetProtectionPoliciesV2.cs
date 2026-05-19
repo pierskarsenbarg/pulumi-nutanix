@@ -19,6 +19,37 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // with filter
+        /// const pps_filter = nutanix.getProtectionPoliciesV2({
+        ///     filter: "name eq 'example_protection_policy'",
+        /// });
+        /// // with limit
+        /// const pp_limit = nutanix.getProtectionPoliciesV2({
+        ///     limit: 4,
+        /// });
+        /// // with filter and limit
+        /// const example = nutanix.getProtectionPoliciesV2({
+        ///     filter: "startswith(name, 'C')",
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # with filter
+        /// pps_filter = nutanix.get_protection_policies_v2(filter="name eq 'example_protection_policy'")
+        /// # with limit
+        /// pp_limit = nutanix.get_protection_policies_v2(limit=4)
+        /// # with filter and limit
+        /// example = nutanix.get_protection_policies_v2(filter="startswith(name, 'C')",
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -28,19 +59,19 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // with filter
-        ///     var pps_filter = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
+        ///     var pps_filter = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'example_protection_policy'",
         ///     });
         /// 
         ///     // with limit
-        ///     var pp_limit = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
+        ///     var pp_limit = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Limit = 4,
         ///     });
         /// 
         ///     // with filter and limit
-        ///     var example = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
+        ///     var example = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name, 'C')",
         ///         Limit = 10,
@@ -48,97 +79,196 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// with filter
+        /// 		_, err := nutanix.GetProtectionPoliciesV2(ctx, &amp;nutanix.GetProtectionPoliciesV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'example_protection_policy'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// with limit
+        /// 		_, err = nutanix.GetProtectionPoliciesV2(ctx, &amp;nutanix.GetProtectionPoliciesV2Args{
+        /// 			Limit: pulumi.IntRef(4),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// with filter and limit
+        /// 		_, err = nutanix.GetProtectionPoliciesV2(ctx, &amp;nutanix.GetProtectionPoliciesV2Args{
+        /// 			Filter: pulumi.StringRef("startswith(name, 'C')"),
+        /// 			Limit:  pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetProtectionPoliciesV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // with filter
+        ///         final var pps-filter = NutanixFunctions.getProtectionPoliciesV2(GetProtectionPoliciesV2Args.builder()
+        ///             .filter("name eq 'example_protection_policy'")
+        ///             .build());
+        /// 
+        ///         // with limit
+        ///         final var pp-limit = NutanixFunctions.getProtectionPoliciesV2(GetProtectionPoliciesV2Args.builder()
+        ///             .limit(4)
+        ///             .build());
+        /// 
+        ///         // with filter and limit
+        ///         final var example = NutanixFunctions.getProtectionPoliciesV2(GetProtectionPoliciesV2Args.builder()
+        ///             .filter("startswith(name, 'C')")
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # with filter
+        ///   pps-filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectionPoliciesV2
+        ///       arguments:
+        ///         filter: name eq 'example_protection_policy'
+        ///   # with limit
+        ///   pp-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectionPoliciesV2
+        ///       arguments:
+        ///         limit: 4
+        ///   # with filter and limit
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectionPoliciesV2
+        ///       arguments:
+        ///         filter: startswith(name, 'C')
+        ///         limit: '10'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ## Protection Policies
         /// 
-        /// The `ProtectionPolicies` is a list of protection policies. Each protection policy supports the following attributes:
+        /// The &lt;span pulumi-lang-nodejs="`protectionPolicies`" pulumi-lang-dotnet="`ProtectionPolicies`" pulumi-lang-go="`protectionPolicies`" pulumi-lang-python="`protection_policies`" pulumi-lang-yaml="`protectionPolicies`" pulumi-lang-java="`protectionPolicies`"&gt;`protectionPolicies`&lt;/span&gt; is a list of protection policies. Each protection policy supports the following attributes:
         /// 
-        /// * `TenantId`: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-        /// * `ExtId`: - A globally unique identifier of an instance that is suitable for external consumption.
-        /// * `Links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// * `Name`: - Name of the protection policy.
-        /// * `Description`: - Description of the protection policy.
-        /// * `ReplicationLocations`: - Hypervisor details.
-        /// * `ReplicationConfigurations`: - Cluster reference for an entity.
-        /// * `CategoryIds`: - Host entity with its attributes.
-        /// * `IsApprovalPolicyNeeded`: - Disks attached to host.
-        /// * `OwnerExtId`: - Node degraded status.
+        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - A globally unique identifier of an instance that is suitable for external consumption.
+        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - Name of the protection policy.
+        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: - Description of the protection policy.
+        /// * &lt;span pulumi-lang-nodejs="`replicationLocations`" pulumi-lang-dotnet="`ReplicationLocations`" pulumi-lang-go="`replicationLocations`" pulumi-lang-python="`replication_locations`" pulumi-lang-yaml="`replicationLocations`" pulumi-lang-java="`replicationLocations`"&gt;`replicationLocations`&lt;/span&gt;: - Hypervisor details.
+        /// * &lt;span pulumi-lang-nodejs="`replicationConfigurations`" pulumi-lang-dotnet="`ReplicationConfigurations`" pulumi-lang-go="`replicationConfigurations`" pulumi-lang-python="`replication_configurations`" pulumi-lang-yaml="`replicationConfigurations`" pulumi-lang-java="`replicationConfigurations`"&gt;`replicationConfigurations`&lt;/span&gt;: - Cluster reference for an entity.
+        /// * &lt;span pulumi-lang-nodejs="`categoryIds`" pulumi-lang-dotnet="`CategoryIds`" pulumi-lang-go="`categoryIds`" pulumi-lang-python="`category_ids`" pulumi-lang-yaml="`categoryIds`" pulumi-lang-java="`categoryIds`"&gt;`categoryIds`&lt;/span&gt;: - Host entity with its attributes.
+        /// * &lt;span pulumi-lang-nodejs="`isApprovalPolicyNeeded`" pulumi-lang-dotnet="`IsApprovalPolicyNeeded`" pulumi-lang-go="`isApprovalPolicyNeeded`" pulumi-lang-python="`is_approval_policy_needed`" pulumi-lang-yaml="`isApprovalPolicyNeeded`" pulumi-lang-java="`isApprovalPolicyNeeded`"&gt;`isApprovalPolicyNeeded`&lt;/span&gt;: - Disks attached to host.
+        /// * &lt;span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`"&gt;`ownerExtId`&lt;/span&gt;: - Node degraded status.
         /// 
         /// 
         /// ### Links
         /// The links attribute supports the following:
         /// 
-        /// * `Href`: - The URL at which the entity described by the link can be accessed.
-        /// * `Rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        /// * &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
+        /// * &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
         /// 
         /// ### Replication Locations
-        /// The ReplicationLocations attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" replicationLocations " pulumi-lang-dotnet=" ReplicationLocations " pulumi-lang-go=" replicationLocations " pulumi-lang-python=" replication_locations " pulumi-lang-yaml=" replicationLocations " pulumi-lang-java=" replicationLocations "&gt; replicationLocations &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `Label`: - This is a unique user defined label of the replication location. It is used to identify the location in the replication configurations.
-        /// * `DomainManagerExtId`: - External identifier of the domain manager.
-        /// * `ReplicationSubLocation`: - Specifies the replication sub-locations where recovery points can be created or replicated.
-        /// * `IsPrimary`: - One of the locations must be specified as the primary location. All the other locations must be connected to the primary location.
+        /// * &lt;span pulumi-lang-nodejs="`label`" pulumi-lang-dotnet="`Label`" pulumi-lang-go="`label`" pulumi-lang-python="`label`" pulumi-lang-yaml="`label`" pulumi-lang-java="`label`"&gt;`label`&lt;/span&gt;: - This is a unique user defined label of the replication location. It is used to identify the location in the replication configurations.
+        /// * &lt;span pulumi-lang-nodejs="`domainManagerExtId`" pulumi-lang-dotnet="`DomainManagerExtId`" pulumi-lang-go="`domainManagerExtId`" pulumi-lang-python="`domain_manager_ext_id`" pulumi-lang-yaml="`domainManagerExtId`" pulumi-lang-java="`domainManagerExtId`"&gt;`domainManagerExtId`&lt;/span&gt;: - External identifier of the domain manager.
+        /// * &lt;span pulumi-lang-nodejs="`replicationSubLocation`" pulumi-lang-dotnet="`ReplicationSubLocation`" pulumi-lang-go="`replicationSubLocation`" pulumi-lang-python="`replication_sub_location`" pulumi-lang-yaml="`replicationSubLocation`" pulumi-lang-java="`replicationSubLocation`"&gt;`replicationSubLocation`&lt;/span&gt;: - Specifies the replication sub-locations where recovery points can be created or replicated.
+        /// * &lt;span pulumi-lang-nodejs="`isPrimary`" pulumi-lang-dotnet="`IsPrimary`" pulumi-lang-go="`isPrimary`" pulumi-lang-python="`is_primary`" pulumi-lang-yaml="`isPrimary`" pulumi-lang-java="`isPrimary`"&gt;`isPrimary`&lt;/span&gt;: - One of the locations must be specified as the primary location. All the other locations must be connected to the primary location.
         /// 
         /// #### Replication Sub Location
-        /// The ReplicationSubLocation attribute supports the following:
-        /// &gt; One of `ClusterExtIds` :
-        /// * `ClusterExtIds` :  - External identifier of the clusters.
+        /// The&lt;span pulumi-lang-nodejs=" replicationSubLocation " pulumi-lang-dotnet=" ReplicationSubLocation " pulumi-lang-go=" replicationSubLocation " pulumi-lang-python=" replication_sub_location " pulumi-lang-yaml=" replicationSubLocation " pulumi-lang-java=" replicationSubLocation "&gt; replicationSubLocation &lt;/span&gt;attribute supports the following:
+        /// &gt; One of &lt;span pulumi-lang-nodejs="`clusterExtIds`" pulumi-lang-dotnet="`ClusterExtIds`" pulumi-lang-go="`clusterExtIds`" pulumi-lang-python="`cluster_ext_ids`" pulumi-lang-yaml="`clusterExtIds`" pulumi-lang-java="`clusterExtIds`"&gt;`clusterExtIds`&lt;/span&gt; :
+        /// * &lt;span pulumi-lang-nodejs="`clusterExtIds`" pulumi-lang-dotnet="`ClusterExtIds`" pulumi-lang-go="`clusterExtIds`" pulumi-lang-python="`cluster_ext_ids`" pulumi-lang-yaml="`clusterExtIds`" pulumi-lang-java="`clusterExtIds`"&gt;`clusterExtIds`&lt;/span&gt; :  - External identifier of the clusters.
         /// 
         /// ##### Cluster Ext Ids
-        /// The ClusterExtIds attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" clusterExtIds " pulumi-lang-dotnet=" ClusterExtIds " pulumi-lang-go=" clusterExtIds " pulumi-lang-python=" cluster_ext_ids " pulumi-lang-yaml=" clusterExtIds " pulumi-lang-java=" clusterExtIds "&gt; clusterExtIds &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `ClusterExtId`: - List of Prism Element cluster external identifiers whose associated VMs and volume groups are protected. Only the primary location can have multiple clusters configured, while the other locations can specify only one cluster. Clusters must be specified for replication within the same Prism Central and cannot be specified for an MST type location. All clusters are considered if the cluster external identifier list is empty.
+        /// * &lt;span pulumi-lang-nodejs="`clusterExtId`" pulumi-lang-dotnet="`ClusterExtId`" pulumi-lang-go="`clusterExtId`" pulumi-lang-python="`cluster_ext_id`" pulumi-lang-yaml="`clusterExtId`" pulumi-lang-java="`clusterExtId`"&gt;`clusterExtId`&lt;/span&gt;: - List of Prism Element cluster external identifiers whose associated VMs and volume groups are protected. Only the primary location can have multiple clusters configured, while the other locations can specify only one cluster. Clusters must be specified for replication within the same Prism Central and cannot be specified for an MST type location. All clusters are considered if the cluster external identifier list is empty.
         /// 
         /// ### Replication Configurations
-        /// The ReplicationConfigurations attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" replicationConfigurations " pulumi-lang-dotnet=" ReplicationConfigurations " pulumi-lang-go=" replicationConfigurations " pulumi-lang-python=" replication_configurations " pulumi-lang-yaml=" replicationConfigurations " pulumi-lang-java=" replicationConfigurations "&gt; replicationConfigurations &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `SourceLocationLabel`: - Label of the source location from the replication locations list, where the entity is running. The location of type MST can not be specified as the replication source.
-        /// * `RemoteLocationLabel`: - Label of the source location from the replication locations list, where the entity will be replicated.
-        /// * `Schedule`: - Schedule for protection. The schedule specifies the recovery point objective and the retention policy for the participating locations.
+        /// * &lt;span pulumi-lang-nodejs="`sourceLocationLabel`" pulumi-lang-dotnet="`SourceLocationLabel`" pulumi-lang-go="`sourceLocationLabel`" pulumi-lang-python="`source_location_label`" pulumi-lang-yaml="`sourceLocationLabel`" pulumi-lang-java="`sourceLocationLabel`"&gt;`sourceLocationLabel`&lt;/span&gt;: - Label of the source location from the replication locations list, where the entity is running. The location of type MST can not be specified as the replication source.
+        /// * &lt;span pulumi-lang-nodejs="`remoteLocationLabel`" pulumi-lang-dotnet="`RemoteLocationLabel`" pulumi-lang-go="`remoteLocationLabel`" pulumi-lang-python="`remote_location_label`" pulumi-lang-yaml="`remoteLocationLabel`" pulumi-lang-java="`remoteLocationLabel`"&gt;`remoteLocationLabel`&lt;/span&gt;: - Label of the source location from the replication locations list, where the entity will be replicated.
+        /// * &lt;span pulumi-lang-nodejs="`schedule`" pulumi-lang-dotnet="`Schedule`" pulumi-lang-go="`schedule`" pulumi-lang-python="`schedule`" pulumi-lang-yaml="`schedule`" pulumi-lang-java="`schedule`"&gt;`schedule`&lt;/span&gt;: - Schedule for protection. The schedule specifies the recovery point objective and the retention policy for the participating locations.
         /// 
         /// #### Schedule
         /// The schedule attribute supports the following:
         /// 
-        /// * `RecoveryPointType`: - Type of recovery point.
+        /// * &lt;span pulumi-lang-nodejs="`recoveryPointType`" pulumi-lang-dotnet="`RecoveryPointType`" pulumi-lang-go="`recoveryPointType`" pulumi-lang-python="`recovery_point_type`" pulumi-lang-yaml="`recoveryPointType`" pulumi-lang-java="`recoveryPointType`"&gt;`recoveryPointType`&lt;/span&gt;: - Type of recovery point.
         ///    * `CRASH_CONSISTENT`: Crash-consistent Recovery points capture all the VM and application level details.
         ///    * `APP_CONSISTENT`: Application-consistent Recovery points can capture all the data stored in the memory and also the in-progress transaction details.
-        /// * `RecoveryPointObjectiveTimeSeconds`: - The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
+        /// * &lt;span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds`" pulumi-lang-go="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-python="`recovery_point_objective_time_seconds`" pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-java="`recoveryPointObjectiveTimeSeconds`"&gt;`recoveryPointObjectiveTimeSeconds`&lt;/span&gt;: - The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
         ///   - Minute(s): 1, 2, 3, 4, 5, 6, 10, 12, 15
         ///   - Hour(s): 1, 2, 3, 4, 6, 8, 12
         ///   - Day(s): 1
         ///   - Week(s): 1, 2
-        /// * `Retention`: - Specifies the retention policy for the recovery point schedule.
-        /// * `StartTime`: - Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.
-        /// * `SyncReplicationAutoSuspendTimeoutSeconds`: - Auto suspend timeout if there is a connection failure between locations for synchronous replication. If this value is not set, then the policy will not be suspended.
+        /// * &lt;span pulumi-lang-nodejs="`retention`" pulumi-lang-dotnet="`Retention`" pulumi-lang-go="`retention`" pulumi-lang-python="`retention`" pulumi-lang-yaml="`retention`" pulumi-lang-java="`retention`"&gt;`retention`&lt;/span&gt;: - Specifies the retention policy for the recovery point schedule.
+        /// * &lt;span pulumi-lang-nodejs="`startTime`" pulumi-lang-dotnet="`StartTime`" pulumi-lang-go="`startTime`" pulumi-lang-python="`start_time`" pulumi-lang-yaml="`startTime`" pulumi-lang-java="`startTime`"&gt;`startTime`&lt;/span&gt;: - Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.
+        /// * &lt;span pulumi-lang-nodejs="`syncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-dotnet="`SyncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-go="`syncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-python="`sync_replication_auto_suspend_timeout_seconds`" pulumi-lang-yaml="`syncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-java="`syncReplicationAutoSuspendTimeoutSeconds`"&gt;`syncReplicationAutoSuspendTimeoutSeconds`&lt;/span&gt;: - Auto suspend timeout if there is a connection failure between locations for synchronous replication. If this value is not set, then the policy will not be suspended.
         /// 
         /// #### Retention
-        /// &gt; One of `LinearRetention` or `AutoRollupRetention` :
+        /// &gt; One of &lt;span pulumi-lang-nodejs="`linearRetention`" pulumi-lang-dotnet="`LinearRetention`" pulumi-lang-go="`linearRetention`" pulumi-lang-python="`linear_retention`" pulumi-lang-yaml="`linearRetention`" pulumi-lang-java="`linearRetention`"&gt;`linearRetention`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`autoRollupRetention`" pulumi-lang-dotnet="`AutoRollupRetention`" pulumi-lang-go="`autoRollupRetention`" pulumi-lang-python="`auto_rollup_retention`" pulumi-lang-yaml="`autoRollupRetention`" pulumi-lang-java="`autoRollupRetention`"&gt;`autoRollupRetention`&lt;/span&gt; :
         /// 
-        /// * `LinearRetention`: - Linear retention policy.
-        /// * `AutoRollupRetention`: - Auto rollup retention policy.
+        /// * &lt;span pulumi-lang-nodejs="`linearRetention`" pulumi-lang-dotnet="`LinearRetention`" pulumi-lang-go="`linearRetention`" pulumi-lang-python="`linear_retention`" pulumi-lang-yaml="`linearRetention`" pulumi-lang-java="`linearRetention`"&gt;`linearRetention`&lt;/span&gt;: - Linear retention policy.
+        /// * &lt;span pulumi-lang-nodejs="`autoRollupRetention`" pulumi-lang-dotnet="`AutoRollupRetention`" pulumi-lang-go="`autoRollupRetention`" pulumi-lang-python="`auto_rollup_retention`" pulumi-lang-yaml="`autoRollupRetention`" pulumi-lang-java="`autoRollupRetention`"&gt;`autoRollupRetention`&lt;/span&gt;: - Auto rollup retention policy.
         /// 
         /// ##### Linear Retention
-        /// The LinearRetention attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" linearRetention " pulumi-lang-dotnet=" LinearRetention " pulumi-lang-go=" linearRetention " pulumi-lang-python=" linear_retention " pulumi-lang-yaml=" linearRetention " pulumi-lang-java=" linearRetention "&gt; linearRetention &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `Local`: - Specifies the number of recovery points to retain on the local location.
-        /// * `Remote`: - Specifies the number of recovery points to retain on the remote location.
+        /// * &lt;span pulumi-lang-nodejs="`local`" pulumi-lang-dotnet="`Local`" pulumi-lang-go="`local`" pulumi-lang-python="`local`" pulumi-lang-yaml="`local`" pulumi-lang-java="`local`"&gt;`local`&lt;/span&gt;: - Specifies the number of recovery points to retain on the local location.
+        /// * &lt;span pulumi-lang-nodejs="`remote`" pulumi-lang-dotnet="`Remote`" pulumi-lang-go="`remote`" pulumi-lang-python="`remote`" pulumi-lang-yaml="`remote`" pulumi-lang-java="`remote`"&gt;`remote`&lt;/span&gt;: - Specifies the number of recovery points to retain on the remote location.
         /// 
         /// ##### Auto Rollup Retention
-        /// The AutoRollupRetention attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" autoRollupRetention " pulumi-lang-dotnet=" AutoRollupRetention " pulumi-lang-go=" autoRollupRetention " pulumi-lang-python=" auto_rollup_retention " pulumi-lang-yaml=" autoRollupRetention " pulumi-lang-java=" autoRollupRetention "&gt; autoRollupRetention &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `Local`: - Specifies the auto rollup retention details.
-        /// * `Remote`: - Specifies the auto rollup retention details.
+        /// * &lt;span pulumi-lang-nodejs="`local`" pulumi-lang-dotnet="`Local`" pulumi-lang-go="`local`" pulumi-lang-python="`local`" pulumi-lang-yaml="`local`" pulumi-lang-java="`local`"&gt;`local`&lt;/span&gt;: - Specifies the auto rollup retention details.
+        /// * &lt;span pulumi-lang-nodejs="`remote`" pulumi-lang-dotnet="`Remote`" pulumi-lang-go="`remote`" pulumi-lang-python="`remote`" pulumi-lang-yaml="`remote`" pulumi-lang-java="`remote`"&gt;`remote`&lt;/span&gt;: - Specifies the auto rollup retention details.
         /// 
         /// ###### Local, Remote
-        /// The local, remote attribute in the AutoRollupRetention supports the following:
+        /// The local, remote attribute in the&lt;span pulumi-lang-nodejs=" autoRollupRetention " pulumi-lang-dotnet=" AutoRollupRetention " pulumi-lang-go=" autoRollupRetention " pulumi-lang-python=" auto_rollup_retention " pulumi-lang-yaml=" autoRollupRetention " pulumi-lang-java=" autoRollupRetention "&gt; autoRollupRetention &lt;/span&gt;supports the following:
         /// 
-        /// * `SnapshotIntervalType`: - Snapshot interval period.
+        /// * &lt;span pulumi-lang-nodejs="`snapshotIntervalType`" pulumi-lang-dotnet="`SnapshotIntervalType`" pulumi-lang-go="`snapshotIntervalType`" pulumi-lang-python="`snapshot_interval_type`" pulumi-lang-yaml="`snapshotIntervalType`" pulumi-lang-java="`snapshotIntervalType`"&gt;`snapshotIntervalType`&lt;/span&gt;: - Snapshot interval period.
         ///    * `YEARLY`: Specifies the number of latest yearly recovery points to retain.
         ///    * `WEEKLY`: Specifies the number of latest weekly recovery points to retain.
         ///    * `DAILY`: Specifies the number of latest daily recovery points to retain.
         ///    * `MONTHLY`: Specifies the number of latest monthly recovery points to retain.
         ///    * `HOURLY`: Specifies the number of latest hourly recovery points to retain.
-        /// * `Frequency`: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
+        /// * &lt;span pulumi-lang-nodejs="`frequency`" pulumi-lang-dotnet="`Frequency`" pulumi-lang-go="`frequency`" pulumi-lang-python="`frequency`" pulumi-lang-yaml="`frequency`" pulumi-lang-java="`frequency`"&gt;`frequency`&lt;/span&gt;: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
         /// 
         /// 
         /// 
@@ -155,6 +285,37 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // with filter
+        /// const pps_filter = nutanix.getProtectionPoliciesV2({
+        ///     filter: "name eq 'example_protection_policy'",
+        /// });
+        /// // with limit
+        /// const pp_limit = nutanix.getProtectionPoliciesV2({
+        ///     limit: 4,
+        /// });
+        /// // with filter and limit
+        /// const example = nutanix.getProtectionPoliciesV2({
+        ///     filter: "startswith(name, 'C')",
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # with filter
+        /// pps_filter = nutanix.get_protection_policies_v2(filter="name eq 'example_protection_policy'")
+        /// # with limit
+        /// pp_limit = nutanix.get_protection_policies_v2(limit=4)
+        /// # with filter and limit
+        /// example = nutanix.get_protection_policies_v2(filter="startswith(name, 'C')",
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -164,19 +325,19 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // with filter
-        ///     var pps_filter = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
+        ///     var pps_filter = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'example_protection_policy'",
         ///     });
         /// 
         ///     // with limit
-        ///     var pp_limit = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
+        ///     var pp_limit = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Limit = 4,
         ///     });
         /// 
         ///     // with filter and limit
-        ///     var example = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
+        ///     var example = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name, 'C')",
         ///         Limit = 10,
@@ -184,97 +345,196 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// with filter
+        /// 		_, err := nutanix.GetProtectionPoliciesV2(ctx, &amp;nutanix.GetProtectionPoliciesV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'example_protection_policy'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// with limit
+        /// 		_, err = nutanix.GetProtectionPoliciesV2(ctx, &amp;nutanix.GetProtectionPoliciesV2Args{
+        /// 			Limit: pulumi.IntRef(4),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// with filter and limit
+        /// 		_, err = nutanix.GetProtectionPoliciesV2(ctx, &amp;nutanix.GetProtectionPoliciesV2Args{
+        /// 			Filter: pulumi.StringRef("startswith(name, 'C')"),
+        /// 			Limit:  pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetProtectionPoliciesV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // with filter
+        ///         final var pps-filter = NutanixFunctions.getProtectionPoliciesV2(GetProtectionPoliciesV2Args.builder()
+        ///             .filter("name eq 'example_protection_policy'")
+        ///             .build());
+        /// 
+        ///         // with limit
+        ///         final var pp-limit = NutanixFunctions.getProtectionPoliciesV2(GetProtectionPoliciesV2Args.builder()
+        ///             .limit(4)
+        ///             .build());
+        /// 
+        ///         // with filter and limit
+        ///         final var example = NutanixFunctions.getProtectionPoliciesV2(GetProtectionPoliciesV2Args.builder()
+        ///             .filter("startswith(name, 'C')")
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # with filter
+        ///   pps-filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectionPoliciesV2
+        ///       arguments:
+        ///         filter: name eq 'example_protection_policy'
+        ///   # with limit
+        ///   pp-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectionPoliciesV2
+        ///       arguments:
+        ///         limit: 4
+        ///   # with filter and limit
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectionPoliciesV2
+        ///       arguments:
+        ///         filter: startswith(name, 'C')
+        ///         limit: '10'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ## Protection Policies
         /// 
-        /// The `ProtectionPolicies` is a list of protection policies. Each protection policy supports the following attributes:
+        /// The &lt;span pulumi-lang-nodejs="`protectionPolicies`" pulumi-lang-dotnet="`ProtectionPolicies`" pulumi-lang-go="`protectionPolicies`" pulumi-lang-python="`protection_policies`" pulumi-lang-yaml="`protectionPolicies`" pulumi-lang-java="`protectionPolicies`"&gt;`protectionPolicies`&lt;/span&gt; is a list of protection policies. Each protection policy supports the following attributes:
         /// 
-        /// * `TenantId`: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-        /// * `ExtId`: - A globally unique identifier of an instance that is suitable for external consumption.
-        /// * `Links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// * `Name`: - Name of the protection policy.
-        /// * `Description`: - Description of the protection policy.
-        /// * `ReplicationLocations`: - Hypervisor details.
-        /// * `ReplicationConfigurations`: - Cluster reference for an entity.
-        /// * `CategoryIds`: - Host entity with its attributes.
-        /// * `IsApprovalPolicyNeeded`: - Disks attached to host.
-        /// * `OwnerExtId`: - Node degraded status.
+        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - A globally unique identifier of an instance that is suitable for external consumption.
+        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - Name of the protection policy.
+        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: - Description of the protection policy.
+        /// * &lt;span pulumi-lang-nodejs="`replicationLocations`" pulumi-lang-dotnet="`ReplicationLocations`" pulumi-lang-go="`replicationLocations`" pulumi-lang-python="`replication_locations`" pulumi-lang-yaml="`replicationLocations`" pulumi-lang-java="`replicationLocations`"&gt;`replicationLocations`&lt;/span&gt;: - Hypervisor details.
+        /// * &lt;span pulumi-lang-nodejs="`replicationConfigurations`" pulumi-lang-dotnet="`ReplicationConfigurations`" pulumi-lang-go="`replicationConfigurations`" pulumi-lang-python="`replication_configurations`" pulumi-lang-yaml="`replicationConfigurations`" pulumi-lang-java="`replicationConfigurations`"&gt;`replicationConfigurations`&lt;/span&gt;: - Cluster reference for an entity.
+        /// * &lt;span pulumi-lang-nodejs="`categoryIds`" pulumi-lang-dotnet="`CategoryIds`" pulumi-lang-go="`categoryIds`" pulumi-lang-python="`category_ids`" pulumi-lang-yaml="`categoryIds`" pulumi-lang-java="`categoryIds`"&gt;`categoryIds`&lt;/span&gt;: - Host entity with its attributes.
+        /// * &lt;span pulumi-lang-nodejs="`isApprovalPolicyNeeded`" pulumi-lang-dotnet="`IsApprovalPolicyNeeded`" pulumi-lang-go="`isApprovalPolicyNeeded`" pulumi-lang-python="`is_approval_policy_needed`" pulumi-lang-yaml="`isApprovalPolicyNeeded`" pulumi-lang-java="`isApprovalPolicyNeeded`"&gt;`isApprovalPolicyNeeded`&lt;/span&gt;: - Disks attached to host.
+        /// * &lt;span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`"&gt;`ownerExtId`&lt;/span&gt;: - Node degraded status.
         /// 
         /// 
         /// ### Links
         /// The links attribute supports the following:
         /// 
-        /// * `Href`: - The URL at which the entity described by the link can be accessed.
-        /// * `Rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        /// * &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
+        /// * &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
         /// 
         /// ### Replication Locations
-        /// The ReplicationLocations attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" replicationLocations " pulumi-lang-dotnet=" ReplicationLocations " pulumi-lang-go=" replicationLocations " pulumi-lang-python=" replication_locations " pulumi-lang-yaml=" replicationLocations " pulumi-lang-java=" replicationLocations "&gt; replicationLocations &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `Label`: - This is a unique user defined label of the replication location. It is used to identify the location in the replication configurations.
-        /// * `DomainManagerExtId`: - External identifier of the domain manager.
-        /// * `ReplicationSubLocation`: - Specifies the replication sub-locations where recovery points can be created or replicated.
-        /// * `IsPrimary`: - One of the locations must be specified as the primary location. All the other locations must be connected to the primary location.
+        /// * &lt;span pulumi-lang-nodejs="`label`" pulumi-lang-dotnet="`Label`" pulumi-lang-go="`label`" pulumi-lang-python="`label`" pulumi-lang-yaml="`label`" pulumi-lang-java="`label`"&gt;`label`&lt;/span&gt;: - This is a unique user defined label of the replication location. It is used to identify the location in the replication configurations.
+        /// * &lt;span pulumi-lang-nodejs="`domainManagerExtId`" pulumi-lang-dotnet="`DomainManagerExtId`" pulumi-lang-go="`domainManagerExtId`" pulumi-lang-python="`domain_manager_ext_id`" pulumi-lang-yaml="`domainManagerExtId`" pulumi-lang-java="`domainManagerExtId`"&gt;`domainManagerExtId`&lt;/span&gt;: - External identifier of the domain manager.
+        /// * &lt;span pulumi-lang-nodejs="`replicationSubLocation`" pulumi-lang-dotnet="`ReplicationSubLocation`" pulumi-lang-go="`replicationSubLocation`" pulumi-lang-python="`replication_sub_location`" pulumi-lang-yaml="`replicationSubLocation`" pulumi-lang-java="`replicationSubLocation`"&gt;`replicationSubLocation`&lt;/span&gt;: - Specifies the replication sub-locations where recovery points can be created or replicated.
+        /// * &lt;span pulumi-lang-nodejs="`isPrimary`" pulumi-lang-dotnet="`IsPrimary`" pulumi-lang-go="`isPrimary`" pulumi-lang-python="`is_primary`" pulumi-lang-yaml="`isPrimary`" pulumi-lang-java="`isPrimary`"&gt;`isPrimary`&lt;/span&gt;: - One of the locations must be specified as the primary location. All the other locations must be connected to the primary location.
         /// 
         /// #### Replication Sub Location
-        /// The ReplicationSubLocation attribute supports the following:
-        /// &gt; One of `ClusterExtIds` :
-        /// * `ClusterExtIds` :  - External identifier of the clusters.
+        /// The&lt;span pulumi-lang-nodejs=" replicationSubLocation " pulumi-lang-dotnet=" ReplicationSubLocation " pulumi-lang-go=" replicationSubLocation " pulumi-lang-python=" replication_sub_location " pulumi-lang-yaml=" replicationSubLocation " pulumi-lang-java=" replicationSubLocation "&gt; replicationSubLocation &lt;/span&gt;attribute supports the following:
+        /// &gt; One of &lt;span pulumi-lang-nodejs="`clusterExtIds`" pulumi-lang-dotnet="`ClusterExtIds`" pulumi-lang-go="`clusterExtIds`" pulumi-lang-python="`cluster_ext_ids`" pulumi-lang-yaml="`clusterExtIds`" pulumi-lang-java="`clusterExtIds`"&gt;`clusterExtIds`&lt;/span&gt; :
+        /// * &lt;span pulumi-lang-nodejs="`clusterExtIds`" pulumi-lang-dotnet="`ClusterExtIds`" pulumi-lang-go="`clusterExtIds`" pulumi-lang-python="`cluster_ext_ids`" pulumi-lang-yaml="`clusterExtIds`" pulumi-lang-java="`clusterExtIds`"&gt;`clusterExtIds`&lt;/span&gt; :  - External identifier of the clusters.
         /// 
         /// ##### Cluster Ext Ids
-        /// The ClusterExtIds attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" clusterExtIds " pulumi-lang-dotnet=" ClusterExtIds " pulumi-lang-go=" clusterExtIds " pulumi-lang-python=" cluster_ext_ids " pulumi-lang-yaml=" clusterExtIds " pulumi-lang-java=" clusterExtIds "&gt; clusterExtIds &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `ClusterExtId`: - List of Prism Element cluster external identifiers whose associated VMs and volume groups are protected. Only the primary location can have multiple clusters configured, while the other locations can specify only one cluster. Clusters must be specified for replication within the same Prism Central and cannot be specified for an MST type location. All clusters are considered if the cluster external identifier list is empty.
+        /// * &lt;span pulumi-lang-nodejs="`clusterExtId`" pulumi-lang-dotnet="`ClusterExtId`" pulumi-lang-go="`clusterExtId`" pulumi-lang-python="`cluster_ext_id`" pulumi-lang-yaml="`clusterExtId`" pulumi-lang-java="`clusterExtId`"&gt;`clusterExtId`&lt;/span&gt;: - List of Prism Element cluster external identifiers whose associated VMs and volume groups are protected. Only the primary location can have multiple clusters configured, while the other locations can specify only one cluster. Clusters must be specified for replication within the same Prism Central and cannot be specified for an MST type location. All clusters are considered if the cluster external identifier list is empty.
         /// 
         /// ### Replication Configurations
-        /// The ReplicationConfigurations attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" replicationConfigurations " pulumi-lang-dotnet=" ReplicationConfigurations " pulumi-lang-go=" replicationConfigurations " pulumi-lang-python=" replication_configurations " pulumi-lang-yaml=" replicationConfigurations " pulumi-lang-java=" replicationConfigurations "&gt; replicationConfigurations &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `SourceLocationLabel`: - Label of the source location from the replication locations list, where the entity is running. The location of type MST can not be specified as the replication source.
-        /// * `RemoteLocationLabel`: - Label of the source location from the replication locations list, where the entity will be replicated.
-        /// * `Schedule`: - Schedule for protection. The schedule specifies the recovery point objective and the retention policy for the participating locations.
+        /// * &lt;span pulumi-lang-nodejs="`sourceLocationLabel`" pulumi-lang-dotnet="`SourceLocationLabel`" pulumi-lang-go="`sourceLocationLabel`" pulumi-lang-python="`source_location_label`" pulumi-lang-yaml="`sourceLocationLabel`" pulumi-lang-java="`sourceLocationLabel`"&gt;`sourceLocationLabel`&lt;/span&gt;: - Label of the source location from the replication locations list, where the entity is running. The location of type MST can not be specified as the replication source.
+        /// * &lt;span pulumi-lang-nodejs="`remoteLocationLabel`" pulumi-lang-dotnet="`RemoteLocationLabel`" pulumi-lang-go="`remoteLocationLabel`" pulumi-lang-python="`remote_location_label`" pulumi-lang-yaml="`remoteLocationLabel`" pulumi-lang-java="`remoteLocationLabel`"&gt;`remoteLocationLabel`&lt;/span&gt;: - Label of the source location from the replication locations list, where the entity will be replicated.
+        /// * &lt;span pulumi-lang-nodejs="`schedule`" pulumi-lang-dotnet="`Schedule`" pulumi-lang-go="`schedule`" pulumi-lang-python="`schedule`" pulumi-lang-yaml="`schedule`" pulumi-lang-java="`schedule`"&gt;`schedule`&lt;/span&gt;: - Schedule for protection. The schedule specifies the recovery point objective and the retention policy for the participating locations.
         /// 
         /// #### Schedule
         /// The schedule attribute supports the following:
         /// 
-        /// * `RecoveryPointType`: - Type of recovery point.
+        /// * &lt;span pulumi-lang-nodejs="`recoveryPointType`" pulumi-lang-dotnet="`RecoveryPointType`" pulumi-lang-go="`recoveryPointType`" pulumi-lang-python="`recovery_point_type`" pulumi-lang-yaml="`recoveryPointType`" pulumi-lang-java="`recoveryPointType`"&gt;`recoveryPointType`&lt;/span&gt;: - Type of recovery point.
         ///    * `CRASH_CONSISTENT`: Crash-consistent Recovery points capture all the VM and application level details.
         ///    * `APP_CONSISTENT`: Application-consistent Recovery points can capture all the data stored in the memory and also the in-progress transaction details.
-        /// * `RecoveryPointObjectiveTimeSeconds`: - The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
+        /// * &lt;span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds`" pulumi-lang-go="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-python="`recovery_point_objective_time_seconds`" pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-java="`recoveryPointObjectiveTimeSeconds`"&gt;`recoveryPointObjectiveTimeSeconds`&lt;/span&gt;: - The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
         ///   - Minute(s): 1, 2, 3, 4, 5, 6, 10, 12, 15
         ///   - Hour(s): 1, 2, 3, 4, 6, 8, 12
         ///   - Day(s): 1
         ///   - Week(s): 1, 2
-        /// * `Retention`: - Specifies the retention policy for the recovery point schedule.
-        /// * `StartTime`: - Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.
-        /// * `SyncReplicationAutoSuspendTimeoutSeconds`: - Auto suspend timeout if there is a connection failure between locations for synchronous replication. If this value is not set, then the policy will not be suspended.
+        /// * &lt;span pulumi-lang-nodejs="`retention`" pulumi-lang-dotnet="`Retention`" pulumi-lang-go="`retention`" pulumi-lang-python="`retention`" pulumi-lang-yaml="`retention`" pulumi-lang-java="`retention`"&gt;`retention`&lt;/span&gt;: - Specifies the retention policy for the recovery point schedule.
+        /// * &lt;span pulumi-lang-nodejs="`startTime`" pulumi-lang-dotnet="`StartTime`" pulumi-lang-go="`startTime`" pulumi-lang-python="`start_time`" pulumi-lang-yaml="`startTime`" pulumi-lang-java="`startTime`"&gt;`startTime`&lt;/span&gt;: - Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.
+        /// * &lt;span pulumi-lang-nodejs="`syncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-dotnet="`SyncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-go="`syncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-python="`sync_replication_auto_suspend_timeout_seconds`" pulumi-lang-yaml="`syncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-java="`syncReplicationAutoSuspendTimeoutSeconds`"&gt;`syncReplicationAutoSuspendTimeoutSeconds`&lt;/span&gt;: - Auto suspend timeout if there is a connection failure between locations for synchronous replication. If this value is not set, then the policy will not be suspended.
         /// 
         /// #### Retention
-        /// &gt; One of `LinearRetention` or `AutoRollupRetention` :
+        /// &gt; One of &lt;span pulumi-lang-nodejs="`linearRetention`" pulumi-lang-dotnet="`LinearRetention`" pulumi-lang-go="`linearRetention`" pulumi-lang-python="`linear_retention`" pulumi-lang-yaml="`linearRetention`" pulumi-lang-java="`linearRetention`"&gt;`linearRetention`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`autoRollupRetention`" pulumi-lang-dotnet="`AutoRollupRetention`" pulumi-lang-go="`autoRollupRetention`" pulumi-lang-python="`auto_rollup_retention`" pulumi-lang-yaml="`autoRollupRetention`" pulumi-lang-java="`autoRollupRetention`"&gt;`autoRollupRetention`&lt;/span&gt; :
         /// 
-        /// * `LinearRetention`: - Linear retention policy.
-        /// * `AutoRollupRetention`: - Auto rollup retention policy.
+        /// * &lt;span pulumi-lang-nodejs="`linearRetention`" pulumi-lang-dotnet="`LinearRetention`" pulumi-lang-go="`linearRetention`" pulumi-lang-python="`linear_retention`" pulumi-lang-yaml="`linearRetention`" pulumi-lang-java="`linearRetention`"&gt;`linearRetention`&lt;/span&gt;: - Linear retention policy.
+        /// * &lt;span pulumi-lang-nodejs="`autoRollupRetention`" pulumi-lang-dotnet="`AutoRollupRetention`" pulumi-lang-go="`autoRollupRetention`" pulumi-lang-python="`auto_rollup_retention`" pulumi-lang-yaml="`autoRollupRetention`" pulumi-lang-java="`autoRollupRetention`"&gt;`autoRollupRetention`&lt;/span&gt;: - Auto rollup retention policy.
         /// 
         /// ##### Linear Retention
-        /// The LinearRetention attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" linearRetention " pulumi-lang-dotnet=" LinearRetention " pulumi-lang-go=" linearRetention " pulumi-lang-python=" linear_retention " pulumi-lang-yaml=" linearRetention " pulumi-lang-java=" linearRetention "&gt; linearRetention &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `Local`: - Specifies the number of recovery points to retain on the local location.
-        /// * `Remote`: - Specifies the number of recovery points to retain on the remote location.
+        /// * &lt;span pulumi-lang-nodejs="`local`" pulumi-lang-dotnet="`Local`" pulumi-lang-go="`local`" pulumi-lang-python="`local`" pulumi-lang-yaml="`local`" pulumi-lang-java="`local`"&gt;`local`&lt;/span&gt;: - Specifies the number of recovery points to retain on the local location.
+        /// * &lt;span pulumi-lang-nodejs="`remote`" pulumi-lang-dotnet="`Remote`" pulumi-lang-go="`remote`" pulumi-lang-python="`remote`" pulumi-lang-yaml="`remote`" pulumi-lang-java="`remote`"&gt;`remote`&lt;/span&gt;: - Specifies the number of recovery points to retain on the remote location.
         /// 
         /// ##### Auto Rollup Retention
-        /// The AutoRollupRetention attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" autoRollupRetention " pulumi-lang-dotnet=" AutoRollupRetention " pulumi-lang-go=" autoRollupRetention " pulumi-lang-python=" auto_rollup_retention " pulumi-lang-yaml=" autoRollupRetention " pulumi-lang-java=" autoRollupRetention "&gt; autoRollupRetention &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `Local`: - Specifies the auto rollup retention details.
-        /// * `Remote`: - Specifies the auto rollup retention details.
+        /// * &lt;span pulumi-lang-nodejs="`local`" pulumi-lang-dotnet="`Local`" pulumi-lang-go="`local`" pulumi-lang-python="`local`" pulumi-lang-yaml="`local`" pulumi-lang-java="`local`"&gt;`local`&lt;/span&gt;: - Specifies the auto rollup retention details.
+        /// * &lt;span pulumi-lang-nodejs="`remote`" pulumi-lang-dotnet="`Remote`" pulumi-lang-go="`remote`" pulumi-lang-python="`remote`" pulumi-lang-yaml="`remote`" pulumi-lang-java="`remote`"&gt;`remote`&lt;/span&gt;: - Specifies the auto rollup retention details.
         /// 
         /// ###### Local, Remote
-        /// The local, remote attribute in the AutoRollupRetention supports the following:
+        /// The local, remote attribute in the&lt;span pulumi-lang-nodejs=" autoRollupRetention " pulumi-lang-dotnet=" AutoRollupRetention " pulumi-lang-go=" autoRollupRetention " pulumi-lang-python=" auto_rollup_retention " pulumi-lang-yaml=" autoRollupRetention " pulumi-lang-java=" autoRollupRetention "&gt; autoRollupRetention &lt;/span&gt;supports the following:
         /// 
-        /// * `SnapshotIntervalType`: - Snapshot interval period.
+        /// * &lt;span pulumi-lang-nodejs="`snapshotIntervalType`" pulumi-lang-dotnet="`SnapshotIntervalType`" pulumi-lang-go="`snapshotIntervalType`" pulumi-lang-python="`snapshot_interval_type`" pulumi-lang-yaml="`snapshotIntervalType`" pulumi-lang-java="`snapshotIntervalType`"&gt;`snapshotIntervalType`&lt;/span&gt;: - Snapshot interval period.
         ///    * `YEARLY`: Specifies the number of latest yearly recovery points to retain.
         ///    * `WEEKLY`: Specifies the number of latest weekly recovery points to retain.
         ///    * `DAILY`: Specifies the number of latest daily recovery points to retain.
         ///    * `MONTHLY`: Specifies the number of latest monthly recovery points to retain.
         ///    * `HOURLY`: Specifies the number of latest hourly recovery points to retain.
-        /// * `Frequency`: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
+        /// * &lt;span pulumi-lang-nodejs="`frequency`" pulumi-lang-dotnet="`Frequency`" pulumi-lang-go="`frequency`" pulumi-lang-python="`frequency`" pulumi-lang-yaml="`frequency`" pulumi-lang-java="`frequency`"&gt;`frequency`&lt;/span&gt;: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
         /// 
         /// 
         /// 
@@ -291,6 +551,37 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // with filter
+        /// const pps_filter = nutanix.getProtectionPoliciesV2({
+        ///     filter: "name eq 'example_protection_policy'",
+        /// });
+        /// // with limit
+        /// const pp_limit = nutanix.getProtectionPoliciesV2({
+        ///     limit: 4,
+        /// });
+        /// // with filter and limit
+        /// const example = nutanix.getProtectionPoliciesV2({
+        ///     filter: "startswith(name, 'C')",
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # with filter
+        /// pps_filter = nutanix.get_protection_policies_v2(filter="name eq 'example_protection_policy'")
+        /// # with limit
+        /// pp_limit = nutanix.get_protection_policies_v2(limit=4)
+        /// # with filter and limit
+        /// example = nutanix.get_protection_policies_v2(filter="startswith(name, 'C')",
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -300,19 +591,19 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // with filter
-        ///     var pps_filter = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
+        ///     var pps_filter = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'example_protection_policy'",
         ///     });
         /// 
         ///     // with limit
-        ///     var pp_limit = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
+        ///     var pp_limit = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Limit = 4,
         ///     });
         /// 
         ///     // with filter and limit
-        ///     var example = Nutanix.Index.GetProtectionPoliciesV2.Invoke(new()
+        ///     var example = Nutanix.GetProtectionPoliciesV2.Invoke(new()
         ///     {
         ///         Filter = "startswith(name, 'C')",
         ///         Limit = 10,
@@ -320,97 +611,196 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// with filter
+        /// 		_, err := nutanix.GetProtectionPoliciesV2(ctx, &amp;nutanix.GetProtectionPoliciesV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'example_protection_policy'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// with limit
+        /// 		_, err = nutanix.GetProtectionPoliciesV2(ctx, &amp;nutanix.GetProtectionPoliciesV2Args{
+        /// 			Limit: pulumi.IntRef(4),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// with filter and limit
+        /// 		_, err = nutanix.GetProtectionPoliciesV2(ctx, &amp;nutanix.GetProtectionPoliciesV2Args{
+        /// 			Filter: pulumi.StringRef("startswith(name, 'C')"),
+        /// 			Limit:  pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetProtectionPoliciesV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // with filter
+        ///         final var pps-filter = NutanixFunctions.getProtectionPoliciesV2(GetProtectionPoliciesV2Args.builder()
+        ///             .filter("name eq 'example_protection_policy'")
+        ///             .build());
+        /// 
+        ///         // with limit
+        ///         final var pp-limit = NutanixFunctions.getProtectionPoliciesV2(GetProtectionPoliciesV2Args.builder()
+        ///             .limit(4)
+        ///             .build());
+        /// 
+        ///         // with filter and limit
+        ///         final var example = NutanixFunctions.getProtectionPoliciesV2(GetProtectionPoliciesV2Args.builder()
+        ///             .filter("startswith(name, 'C')")
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # with filter
+        ///   pps-filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectionPoliciesV2
+        ///       arguments:
+        ///         filter: name eq 'example_protection_policy'
+        ///   # with limit
+        ///   pp-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectionPoliciesV2
+        ///       arguments:
+        ///         limit: 4
+        ///   # with filter and limit
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectionPoliciesV2
+        ///       arguments:
+        ///         filter: startswith(name, 'C')
+        ///         limit: '10'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ## Protection Policies
         /// 
-        /// The `ProtectionPolicies` is a list of protection policies. Each protection policy supports the following attributes:
+        /// The &lt;span pulumi-lang-nodejs="`protectionPolicies`" pulumi-lang-dotnet="`ProtectionPolicies`" pulumi-lang-go="`protectionPolicies`" pulumi-lang-python="`protection_policies`" pulumi-lang-yaml="`protectionPolicies`" pulumi-lang-java="`protectionPolicies`"&gt;`protectionPolicies`&lt;/span&gt; is a list of protection policies. Each protection policy supports the following attributes:
         /// 
-        /// * `TenantId`: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-        /// * `ExtId`: - A globally unique identifier of an instance that is suitable for external consumption.
-        /// * `Links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// * `Name`: - Name of the protection policy.
-        /// * `Description`: - Description of the protection policy.
-        /// * `ReplicationLocations`: - Hypervisor details.
-        /// * `ReplicationConfigurations`: - Cluster reference for an entity.
-        /// * `CategoryIds`: - Host entity with its attributes.
-        /// * `IsApprovalPolicyNeeded`: - Disks attached to host.
-        /// * `OwnerExtId`: - Node degraded status.
+        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - A globally unique identifier of an instance that is suitable for external consumption.
+        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - Name of the protection policy.
+        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: - Description of the protection policy.
+        /// * &lt;span pulumi-lang-nodejs="`replicationLocations`" pulumi-lang-dotnet="`ReplicationLocations`" pulumi-lang-go="`replicationLocations`" pulumi-lang-python="`replication_locations`" pulumi-lang-yaml="`replicationLocations`" pulumi-lang-java="`replicationLocations`"&gt;`replicationLocations`&lt;/span&gt;: - Hypervisor details.
+        /// * &lt;span pulumi-lang-nodejs="`replicationConfigurations`" pulumi-lang-dotnet="`ReplicationConfigurations`" pulumi-lang-go="`replicationConfigurations`" pulumi-lang-python="`replication_configurations`" pulumi-lang-yaml="`replicationConfigurations`" pulumi-lang-java="`replicationConfigurations`"&gt;`replicationConfigurations`&lt;/span&gt;: - Cluster reference for an entity.
+        /// * &lt;span pulumi-lang-nodejs="`categoryIds`" pulumi-lang-dotnet="`CategoryIds`" pulumi-lang-go="`categoryIds`" pulumi-lang-python="`category_ids`" pulumi-lang-yaml="`categoryIds`" pulumi-lang-java="`categoryIds`"&gt;`categoryIds`&lt;/span&gt;: - Host entity with its attributes.
+        /// * &lt;span pulumi-lang-nodejs="`isApprovalPolicyNeeded`" pulumi-lang-dotnet="`IsApprovalPolicyNeeded`" pulumi-lang-go="`isApprovalPolicyNeeded`" pulumi-lang-python="`is_approval_policy_needed`" pulumi-lang-yaml="`isApprovalPolicyNeeded`" pulumi-lang-java="`isApprovalPolicyNeeded`"&gt;`isApprovalPolicyNeeded`&lt;/span&gt;: - Disks attached to host.
+        /// * &lt;span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`"&gt;`ownerExtId`&lt;/span&gt;: - Node degraded status.
         /// 
         /// 
         /// ### Links
         /// The links attribute supports the following:
         /// 
-        /// * `Href`: - The URL at which the entity described by the link can be accessed.
-        /// * `Rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        /// * &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
+        /// * &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
         /// 
         /// ### Replication Locations
-        /// The ReplicationLocations attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" replicationLocations " pulumi-lang-dotnet=" ReplicationLocations " pulumi-lang-go=" replicationLocations " pulumi-lang-python=" replication_locations " pulumi-lang-yaml=" replicationLocations " pulumi-lang-java=" replicationLocations "&gt; replicationLocations &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `Label`: - This is a unique user defined label of the replication location. It is used to identify the location in the replication configurations.
-        /// * `DomainManagerExtId`: - External identifier of the domain manager.
-        /// * `ReplicationSubLocation`: - Specifies the replication sub-locations where recovery points can be created or replicated.
-        /// * `IsPrimary`: - One of the locations must be specified as the primary location. All the other locations must be connected to the primary location.
+        /// * &lt;span pulumi-lang-nodejs="`label`" pulumi-lang-dotnet="`Label`" pulumi-lang-go="`label`" pulumi-lang-python="`label`" pulumi-lang-yaml="`label`" pulumi-lang-java="`label`"&gt;`label`&lt;/span&gt;: - This is a unique user defined label of the replication location. It is used to identify the location in the replication configurations.
+        /// * &lt;span pulumi-lang-nodejs="`domainManagerExtId`" pulumi-lang-dotnet="`DomainManagerExtId`" pulumi-lang-go="`domainManagerExtId`" pulumi-lang-python="`domain_manager_ext_id`" pulumi-lang-yaml="`domainManagerExtId`" pulumi-lang-java="`domainManagerExtId`"&gt;`domainManagerExtId`&lt;/span&gt;: - External identifier of the domain manager.
+        /// * &lt;span pulumi-lang-nodejs="`replicationSubLocation`" pulumi-lang-dotnet="`ReplicationSubLocation`" pulumi-lang-go="`replicationSubLocation`" pulumi-lang-python="`replication_sub_location`" pulumi-lang-yaml="`replicationSubLocation`" pulumi-lang-java="`replicationSubLocation`"&gt;`replicationSubLocation`&lt;/span&gt;: - Specifies the replication sub-locations where recovery points can be created or replicated.
+        /// * &lt;span pulumi-lang-nodejs="`isPrimary`" pulumi-lang-dotnet="`IsPrimary`" pulumi-lang-go="`isPrimary`" pulumi-lang-python="`is_primary`" pulumi-lang-yaml="`isPrimary`" pulumi-lang-java="`isPrimary`"&gt;`isPrimary`&lt;/span&gt;: - One of the locations must be specified as the primary location. All the other locations must be connected to the primary location.
         /// 
         /// #### Replication Sub Location
-        /// The ReplicationSubLocation attribute supports the following:
-        /// &gt; One of `ClusterExtIds` :
-        /// * `ClusterExtIds` :  - External identifier of the clusters.
+        /// The&lt;span pulumi-lang-nodejs=" replicationSubLocation " pulumi-lang-dotnet=" ReplicationSubLocation " pulumi-lang-go=" replicationSubLocation " pulumi-lang-python=" replication_sub_location " pulumi-lang-yaml=" replicationSubLocation " pulumi-lang-java=" replicationSubLocation "&gt; replicationSubLocation &lt;/span&gt;attribute supports the following:
+        /// &gt; One of &lt;span pulumi-lang-nodejs="`clusterExtIds`" pulumi-lang-dotnet="`ClusterExtIds`" pulumi-lang-go="`clusterExtIds`" pulumi-lang-python="`cluster_ext_ids`" pulumi-lang-yaml="`clusterExtIds`" pulumi-lang-java="`clusterExtIds`"&gt;`clusterExtIds`&lt;/span&gt; :
+        /// * &lt;span pulumi-lang-nodejs="`clusterExtIds`" pulumi-lang-dotnet="`ClusterExtIds`" pulumi-lang-go="`clusterExtIds`" pulumi-lang-python="`cluster_ext_ids`" pulumi-lang-yaml="`clusterExtIds`" pulumi-lang-java="`clusterExtIds`"&gt;`clusterExtIds`&lt;/span&gt; :  - External identifier of the clusters.
         /// 
         /// ##### Cluster Ext Ids
-        /// The ClusterExtIds attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" clusterExtIds " pulumi-lang-dotnet=" ClusterExtIds " pulumi-lang-go=" clusterExtIds " pulumi-lang-python=" cluster_ext_ids " pulumi-lang-yaml=" clusterExtIds " pulumi-lang-java=" clusterExtIds "&gt; clusterExtIds &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `ClusterExtId`: - List of Prism Element cluster external identifiers whose associated VMs and volume groups are protected. Only the primary location can have multiple clusters configured, while the other locations can specify only one cluster. Clusters must be specified for replication within the same Prism Central and cannot be specified for an MST type location. All clusters are considered if the cluster external identifier list is empty.
+        /// * &lt;span pulumi-lang-nodejs="`clusterExtId`" pulumi-lang-dotnet="`ClusterExtId`" pulumi-lang-go="`clusterExtId`" pulumi-lang-python="`cluster_ext_id`" pulumi-lang-yaml="`clusterExtId`" pulumi-lang-java="`clusterExtId`"&gt;`clusterExtId`&lt;/span&gt;: - List of Prism Element cluster external identifiers whose associated VMs and volume groups are protected. Only the primary location can have multiple clusters configured, while the other locations can specify only one cluster. Clusters must be specified for replication within the same Prism Central and cannot be specified for an MST type location. All clusters are considered if the cluster external identifier list is empty.
         /// 
         /// ### Replication Configurations
-        /// The ReplicationConfigurations attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" replicationConfigurations " pulumi-lang-dotnet=" ReplicationConfigurations " pulumi-lang-go=" replicationConfigurations " pulumi-lang-python=" replication_configurations " pulumi-lang-yaml=" replicationConfigurations " pulumi-lang-java=" replicationConfigurations "&gt; replicationConfigurations &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `SourceLocationLabel`: - Label of the source location from the replication locations list, where the entity is running. The location of type MST can not be specified as the replication source.
-        /// * `RemoteLocationLabel`: - Label of the source location from the replication locations list, where the entity will be replicated.
-        /// * `Schedule`: - Schedule for protection. The schedule specifies the recovery point objective and the retention policy for the participating locations.
+        /// * &lt;span pulumi-lang-nodejs="`sourceLocationLabel`" pulumi-lang-dotnet="`SourceLocationLabel`" pulumi-lang-go="`sourceLocationLabel`" pulumi-lang-python="`source_location_label`" pulumi-lang-yaml="`sourceLocationLabel`" pulumi-lang-java="`sourceLocationLabel`"&gt;`sourceLocationLabel`&lt;/span&gt;: - Label of the source location from the replication locations list, where the entity is running. The location of type MST can not be specified as the replication source.
+        /// * &lt;span pulumi-lang-nodejs="`remoteLocationLabel`" pulumi-lang-dotnet="`RemoteLocationLabel`" pulumi-lang-go="`remoteLocationLabel`" pulumi-lang-python="`remote_location_label`" pulumi-lang-yaml="`remoteLocationLabel`" pulumi-lang-java="`remoteLocationLabel`"&gt;`remoteLocationLabel`&lt;/span&gt;: - Label of the source location from the replication locations list, where the entity will be replicated.
+        /// * &lt;span pulumi-lang-nodejs="`schedule`" pulumi-lang-dotnet="`Schedule`" pulumi-lang-go="`schedule`" pulumi-lang-python="`schedule`" pulumi-lang-yaml="`schedule`" pulumi-lang-java="`schedule`"&gt;`schedule`&lt;/span&gt;: - Schedule for protection. The schedule specifies the recovery point objective and the retention policy for the participating locations.
         /// 
         /// #### Schedule
         /// The schedule attribute supports the following:
         /// 
-        /// * `RecoveryPointType`: - Type of recovery point.
+        /// * &lt;span pulumi-lang-nodejs="`recoveryPointType`" pulumi-lang-dotnet="`RecoveryPointType`" pulumi-lang-go="`recoveryPointType`" pulumi-lang-python="`recovery_point_type`" pulumi-lang-yaml="`recoveryPointType`" pulumi-lang-java="`recoveryPointType`"&gt;`recoveryPointType`&lt;/span&gt;: - Type of recovery point.
         ///    * `CRASH_CONSISTENT`: Crash-consistent Recovery points capture all the VM and application level details.
         ///    * `APP_CONSISTENT`: Application-consistent Recovery points can capture all the data stored in the memory and also the in-progress transaction details.
-        /// * `RecoveryPointObjectiveTimeSeconds`: - The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
+        /// * &lt;span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds`" pulumi-lang-go="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-python="`recovery_point_objective_time_seconds`" pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-java="`recoveryPointObjectiveTimeSeconds`"&gt;`recoveryPointObjectiveTimeSeconds`&lt;/span&gt;: - The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
         ///   - Minute(s): 1, 2, 3, 4, 5, 6, 10, 12, 15
         ///   - Hour(s): 1, 2, 3, 4, 6, 8, 12
         ///   - Day(s): 1
         ///   - Week(s): 1, 2
-        /// * `Retention`: - Specifies the retention policy for the recovery point schedule.
-        /// * `StartTime`: - Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.
-        /// * `SyncReplicationAutoSuspendTimeoutSeconds`: - Auto suspend timeout if there is a connection failure between locations for synchronous replication. If this value is not set, then the policy will not be suspended.
+        /// * &lt;span pulumi-lang-nodejs="`retention`" pulumi-lang-dotnet="`Retention`" pulumi-lang-go="`retention`" pulumi-lang-python="`retention`" pulumi-lang-yaml="`retention`" pulumi-lang-java="`retention`"&gt;`retention`&lt;/span&gt;: - Specifies the retention policy for the recovery point schedule.
+        /// * &lt;span pulumi-lang-nodejs="`startTime`" pulumi-lang-dotnet="`StartTime`" pulumi-lang-go="`startTime`" pulumi-lang-python="`start_time`" pulumi-lang-yaml="`startTime`" pulumi-lang-java="`startTime`"&gt;`startTime`&lt;/span&gt;: - Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.
+        /// * &lt;span pulumi-lang-nodejs="`syncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-dotnet="`SyncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-go="`syncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-python="`sync_replication_auto_suspend_timeout_seconds`" pulumi-lang-yaml="`syncReplicationAutoSuspendTimeoutSeconds`" pulumi-lang-java="`syncReplicationAutoSuspendTimeoutSeconds`"&gt;`syncReplicationAutoSuspendTimeoutSeconds`&lt;/span&gt;: - Auto suspend timeout if there is a connection failure between locations for synchronous replication. If this value is not set, then the policy will not be suspended.
         /// 
         /// #### Retention
-        /// &gt; One of `LinearRetention` or `AutoRollupRetention` :
+        /// &gt; One of &lt;span pulumi-lang-nodejs="`linearRetention`" pulumi-lang-dotnet="`LinearRetention`" pulumi-lang-go="`linearRetention`" pulumi-lang-python="`linear_retention`" pulumi-lang-yaml="`linearRetention`" pulumi-lang-java="`linearRetention`"&gt;`linearRetention`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`autoRollupRetention`" pulumi-lang-dotnet="`AutoRollupRetention`" pulumi-lang-go="`autoRollupRetention`" pulumi-lang-python="`auto_rollup_retention`" pulumi-lang-yaml="`autoRollupRetention`" pulumi-lang-java="`autoRollupRetention`"&gt;`autoRollupRetention`&lt;/span&gt; :
         /// 
-        /// * `LinearRetention`: - Linear retention policy.
-        /// * `AutoRollupRetention`: - Auto rollup retention policy.
+        /// * &lt;span pulumi-lang-nodejs="`linearRetention`" pulumi-lang-dotnet="`LinearRetention`" pulumi-lang-go="`linearRetention`" pulumi-lang-python="`linear_retention`" pulumi-lang-yaml="`linearRetention`" pulumi-lang-java="`linearRetention`"&gt;`linearRetention`&lt;/span&gt;: - Linear retention policy.
+        /// * &lt;span pulumi-lang-nodejs="`autoRollupRetention`" pulumi-lang-dotnet="`AutoRollupRetention`" pulumi-lang-go="`autoRollupRetention`" pulumi-lang-python="`auto_rollup_retention`" pulumi-lang-yaml="`autoRollupRetention`" pulumi-lang-java="`autoRollupRetention`"&gt;`autoRollupRetention`&lt;/span&gt;: - Auto rollup retention policy.
         /// 
         /// ##### Linear Retention
-        /// The LinearRetention attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" linearRetention " pulumi-lang-dotnet=" LinearRetention " pulumi-lang-go=" linearRetention " pulumi-lang-python=" linear_retention " pulumi-lang-yaml=" linearRetention " pulumi-lang-java=" linearRetention "&gt; linearRetention &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `Local`: - Specifies the number of recovery points to retain on the local location.
-        /// * `Remote`: - Specifies the number of recovery points to retain on the remote location.
+        /// * &lt;span pulumi-lang-nodejs="`local`" pulumi-lang-dotnet="`Local`" pulumi-lang-go="`local`" pulumi-lang-python="`local`" pulumi-lang-yaml="`local`" pulumi-lang-java="`local`"&gt;`local`&lt;/span&gt;: - Specifies the number of recovery points to retain on the local location.
+        /// * &lt;span pulumi-lang-nodejs="`remote`" pulumi-lang-dotnet="`Remote`" pulumi-lang-go="`remote`" pulumi-lang-python="`remote`" pulumi-lang-yaml="`remote`" pulumi-lang-java="`remote`"&gt;`remote`&lt;/span&gt;: - Specifies the number of recovery points to retain on the remote location.
         /// 
         /// ##### Auto Rollup Retention
-        /// The AutoRollupRetention attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" autoRollupRetention " pulumi-lang-dotnet=" AutoRollupRetention " pulumi-lang-go=" autoRollupRetention " pulumi-lang-python=" auto_rollup_retention " pulumi-lang-yaml=" autoRollupRetention " pulumi-lang-java=" autoRollupRetention "&gt; autoRollupRetention &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `Local`: - Specifies the auto rollup retention details.
-        /// * `Remote`: - Specifies the auto rollup retention details.
+        /// * &lt;span pulumi-lang-nodejs="`local`" pulumi-lang-dotnet="`Local`" pulumi-lang-go="`local`" pulumi-lang-python="`local`" pulumi-lang-yaml="`local`" pulumi-lang-java="`local`"&gt;`local`&lt;/span&gt;: - Specifies the auto rollup retention details.
+        /// * &lt;span pulumi-lang-nodejs="`remote`" pulumi-lang-dotnet="`Remote`" pulumi-lang-go="`remote`" pulumi-lang-python="`remote`" pulumi-lang-yaml="`remote`" pulumi-lang-java="`remote`"&gt;`remote`&lt;/span&gt;: - Specifies the auto rollup retention details.
         /// 
         /// ###### Local, Remote
-        /// The local, remote attribute in the AutoRollupRetention supports the following:
+        /// The local, remote attribute in the&lt;span pulumi-lang-nodejs=" autoRollupRetention " pulumi-lang-dotnet=" AutoRollupRetention " pulumi-lang-go=" autoRollupRetention " pulumi-lang-python=" auto_rollup_retention " pulumi-lang-yaml=" autoRollupRetention " pulumi-lang-java=" autoRollupRetention "&gt; autoRollupRetention &lt;/span&gt;supports the following:
         /// 
-        /// * `SnapshotIntervalType`: - Snapshot interval period.
+        /// * &lt;span pulumi-lang-nodejs="`snapshotIntervalType`" pulumi-lang-dotnet="`SnapshotIntervalType`" pulumi-lang-go="`snapshotIntervalType`" pulumi-lang-python="`snapshot_interval_type`" pulumi-lang-yaml="`snapshotIntervalType`" pulumi-lang-java="`snapshotIntervalType`"&gt;`snapshotIntervalType`&lt;/span&gt;: - Snapshot interval period.
         ///    * `YEARLY`: Specifies the number of latest yearly recovery points to retain.
         ///    * `WEEKLY`: Specifies the number of latest weekly recovery points to retain.
         ///    * `DAILY`: Specifies the number of latest daily recovery points to retain.
         ///    * `MONTHLY`: Specifies the number of latest monthly recovery points to retain.
         ///    * `HOURLY`: Specifies the number of latest hourly recovery points to retain.
-        /// * `Frequency`: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
+        /// * &lt;span pulumi-lang-nodejs="`frequency`" pulumi-lang-dotnet="`Frequency`" pulumi-lang-go="`frequency`" pulumi-lang-python="`frequency`" pulumi-lang-yaml="`frequency`" pulumi-lang-java="`frequency`"&gt;`frequency`&lt;/span&gt;: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
         /// 
         /// 
         /// 

@@ -64,10 +64,10 @@ export function getAuthorizationPoliciesV2Output(args?: GetAuthorizationPolicies
  * A collection of arguments for invoking getAuthorizationPoliciesV2.
  */
 export interface GetAuthorizationPoliciesV2OutputArgs {
-    expand?: pulumi.Input<string>;
-    filter?: pulumi.Input<string>;
-    limit?: pulumi.Input<number>;
-    orderBy?: pulumi.Input<string>;
-    page?: pulumi.Input<number>;
-    select?: pulumi.Input<string>;
+    expand?: pulumi.Input<string | undefined>;
+    filter?: pulumi.Input<string | undefined>;
+    limit?: pulumi.Input<number | undefined>;
+    orderBy?: pulumi.Input<string | undefined>;
+    page?: pulumi.Input<number | undefined>;
+    select?: pulumi.Input<string | undefined>;
 }

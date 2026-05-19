@@ -23,17 +23,17 @@ class UserKeyV2Args:
     def __init__(__self__, *,
                  key_type: pulumi.Input[_builtins.str],
                  user_ext_id: pulumi.Input[_builtins.str],
-                 assigned_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 creation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiry_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_updated_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_updated_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_used_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 assigned_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 creation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiry_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_used_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a UserKeyV2 resource.
 
@@ -98,157 +98,157 @@ class UserKeyV2Args:
 
     @_builtins.property
     @pulumi.getter(name="assignedTo")
-    def assigned_to(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def assigned_to(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - External client to whom the given key is allocated.
         """
         return pulumi.get(self, "assigned_to")
 
     @assigned_to.setter
-    def assigned_to(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def assigned_to(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "assigned_to", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - User or service who created the key.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="createdTime")
-    def created_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The creation time of the key.
         """
         return pulumi.get(self, "created_time")
 
     @created_time.setter
-    def created_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_time", value)
 
     @_builtins.property
     @pulumi.getter(name="creationType")
-    def creation_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def creation_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The creation mechanism of this entity.
         """
         return pulumi.get(self, "creation_type")
 
     @creation_type.setter
-    def creation_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def creation_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "creation_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Brief description of the key.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="expiryTime")
-    def expiry_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expiry_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The time when the key will expire.
         """
         return pulumi.get(self, "expiry_time")
 
     @expiry_time.setter
-    def expiry_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expiry_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expiry_time", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedBy")
-    def last_updated_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_updated_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - User who updated the key.
         """
         return pulumi.get(self, "last_updated_by")
 
     @last_updated_by.setter
-    def last_updated_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_updated_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_updated_by", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedTime")
-    def last_updated_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_updated_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The time when the key was updated.
         """
         return pulumi.get(self, "last_updated_time")
 
     @last_updated_time.setter
-    def last_updated_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_updated_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_updated_time", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUsedTime")
-    def last_used_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_used_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The time when the key was last used.
         """
         return pulumi.get(self, "last_used_time")
 
     @last_used_time.setter
-    def last_used_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_used_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_used_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Identifier for the key in the form of a name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The status of the key.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
 @pulumi.input_type
 class _UserKeyV2State:
     def __init__(__self__, *,
-                 assigned_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 creation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiry_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_details: Optional[pulumi.Input[Sequence[pulumi.Input['UserKeyV2KeyDetailArgs']]]] = None,
-                 key_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_updated_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_updated_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_used_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 links: Optional[pulumi.Input[Sequence[pulumi.Input['UserKeyV2LinkArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 assigned_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 creation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiry_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_details: pulumi.Input[Optional[Sequence[pulumi.Input['UserKeyV2KeyDetailArgs']]]] = None,
+                 key_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_used_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['UserKeyV2LinkArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UserKeyV2 resources.
 
@@ -306,203 +306,203 @@ class _UserKeyV2State:
 
     @_builtins.property
     @pulumi.getter(name="assignedTo")
-    def assigned_to(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def assigned_to(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - External client to whom the given key is allocated.
         """
         return pulumi.get(self, "assigned_to")
 
     @assigned_to.setter
-    def assigned_to(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def assigned_to(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "assigned_to", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - User or service who created the key.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="createdTime")
-    def created_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The creation time of the key.
         """
         return pulumi.get(self, "created_time")
 
     @created_time.setter
-    def created_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_time", value)
 
     @_builtins.property
     @pulumi.getter(name="creationType")
-    def creation_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def creation_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The creation mechanism of this entity.
         """
         return pulumi.get(self, "creation_type")
 
     @creation_type.setter
-    def creation_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def creation_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "creation_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Brief description of the key.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="expiryTime")
-    def expiry_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expiry_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The time when the key will expire.
         """
         return pulumi.get(self, "expiry_time")
 
     @expiry_time.setter
-    def expiry_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expiry_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expiry_time", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The External Identifier of the User Group.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyDetails")
-    def key_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UserKeyV2KeyDetailArgs']]]]:
+    def key_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UserKeyV2KeyDetailArgs']]]]:
         """
         - Details specific to type of the key.
         """
         return pulumi.get(self, "key_details")
 
     @key_details.setter
-    def key_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UserKeyV2KeyDetailArgs']]]]):
+    def key_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UserKeyV2KeyDetailArgs']]]]):
         pulumi.set(self, "key_details", value)
 
     @_builtins.property
     @pulumi.getter(name="keyType")
-    def key_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The type of key.
         """
         return pulumi.get(self, "key_type")
 
     @key_type.setter
-    def key_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_type", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedBy")
-    def last_updated_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_updated_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - User who updated the key.
         """
         return pulumi.get(self, "last_updated_by")
 
     @last_updated_by.setter
-    def last_updated_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_updated_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_updated_by", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedTime")
-    def last_updated_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_updated_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The time when the key was updated.
         """
         return pulumi.get(self, "last_updated_time")
 
     @last_updated_time.setter
-    def last_updated_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_updated_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_updated_time", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUsedTime")
-    def last_used_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_used_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The time when the key was last used.
         """
         return pulumi.get(self, "last_used_time")
 
     @last_used_time.setter
-    def last_used_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_used_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_used_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UserKeyV2LinkArgs']]]]:
+    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UserKeyV2LinkArgs']]]]:
         """
         - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         """
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UserKeyV2LinkArgs']]]]):
+    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UserKeyV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Identifier for the key in the form of a name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The status of the key.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userExtId")
-    def user_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "user_ext_id")
 
     @user_ext_id.setter
-    def user_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_ext_id", value)
 
 
@@ -512,25 +512,26 @@ class UserKeyV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 assigned_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 creation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiry_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_updated_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_updated_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_used_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 assigned_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 creation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiry_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_used_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides Nutanix resource to Create key of a requested type for a user.
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -543,26 +544,27 @@ class UserKeyV2(pulumi.CustomResource):
             expiry_time="2125-01-01T00:00:00Z",
             assigned_to="developer_user_1")
         ```
+        <!--End PulumiCodeChooser -->
         ## Argument Reference
 
         The following arguments are supported:
 
-        * `user_ext_id`: - ( Required ) External Identifier of the User.
-        * `name`: - ( Required ) Identifier for the key in the form of a name.
-        * `description`: - ( Optional ) Brief description of the key.
-        * `key_type`: - ( Required ) The type of key. Enum Values:
+        * <span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`">`userExtId`</span>: - ( Required ) External Identifier of the User.
+        * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: - ( Required ) Identifier for the key in the form of a name.
+        * <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>: - ( Optional ) Brief description of the key.
+        * <span pulumi-lang-nodejs="`keyType`" pulumi-lang-dotnet="`KeyType`" pulumi-lang-go="`keyType`" pulumi-lang-python="`key_type`" pulumi-lang-yaml="`keyType`" pulumi-lang-java="`keyType`">`keyType`</span>: - ( Required ) The type of key. Enum Values:
               * "API_KEY":	A key type that is used to identify a service.
               * "OBJECT_KEY":	A combination of access key and secret key to sign an API request.
-        * `creation_type`: - ( Optional ) The creation mechanism of this entity. Enum Values:
+        * <span pulumi-lang-nodejs="`creationType`" pulumi-lang-dotnet="`CreationType`" pulumi-lang-go="`creationType`" pulumi-lang-python="`creation_type`" pulumi-lang-yaml="`creationType`" pulumi-lang-java="`creationType`">`creationType`</span>: - ( Optional ) The creation mechanism of this entity. Enum Values:
               * "PREDEFINED":	Predefined creator workflow type is for entity created by the system.
               * "SERVICEDEFINED":	Servicedefined creator workflow type is for entity created by the service.
               * "USERDEFINED":	Userdefined creator workflow type is for entity created by the users.
-        * `expiry_time`: - ( Optional ) The time when the key will expire.
-        * `status`: - ( Optional ) The status of the key. Enum Values:
+        * <span pulumi-lang-nodejs="`expiryTime`" pulumi-lang-dotnet="`ExpiryTime`" pulumi-lang-go="`expiryTime`" pulumi-lang-python="`expiry_time`" pulumi-lang-yaml="`expiryTime`" pulumi-lang-java="`expiryTime`">`expiryTime`</span>: - ( Optional ) The time when the key will expire.
+        * <span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`">`status`</span>: - ( Optional ) The status of the key. Enum Values:
               * "REVOKED":	Key is revoked.
               * "VALID":	Key is valid.
               * "EXPIRED":	Key is expired.
-        * `assigned_to`: - ( Optional ) External client to whom the given key is allocated.
+        * <span pulumi-lang-nodejs="`assignedTo`" pulumi-lang-dotnet="`AssignedTo`" pulumi-lang-go="`assignedTo`" pulumi-lang-python="`assigned_to`" pulumi-lang-yaml="`assignedTo`" pulumi-lang-java="`assignedTo`">`assignedTo`</span>: - ( Optional ) External client to whom the given key is allocated.
 
 
         :param str resource_name: The name of the resource.
@@ -591,6 +593,7 @@ class UserKeyV2(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -603,26 +606,27 @@ class UserKeyV2(pulumi.CustomResource):
             expiry_time="2125-01-01T00:00:00Z",
             assigned_to="developer_user_1")
         ```
+        <!--End PulumiCodeChooser -->
         ## Argument Reference
 
         The following arguments are supported:
 
-        * `user_ext_id`: - ( Required ) External Identifier of the User.
-        * `name`: - ( Required ) Identifier for the key in the form of a name.
-        * `description`: - ( Optional ) Brief description of the key.
-        * `key_type`: - ( Required ) The type of key. Enum Values:
+        * <span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`">`userExtId`</span>: - ( Required ) External Identifier of the User.
+        * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: - ( Required ) Identifier for the key in the form of a name.
+        * <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>: - ( Optional ) Brief description of the key.
+        * <span pulumi-lang-nodejs="`keyType`" pulumi-lang-dotnet="`KeyType`" pulumi-lang-go="`keyType`" pulumi-lang-python="`key_type`" pulumi-lang-yaml="`keyType`" pulumi-lang-java="`keyType`">`keyType`</span>: - ( Required ) The type of key. Enum Values:
               * "API_KEY":	A key type that is used to identify a service.
               * "OBJECT_KEY":	A combination of access key and secret key to sign an API request.
-        * `creation_type`: - ( Optional ) The creation mechanism of this entity. Enum Values:
+        * <span pulumi-lang-nodejs="`creationType`" pulumi-lang-dotnet="`CreationType`" pulumi-lang-go="`creationType`" pulumi-lang-python="`creation_type`" pulumi-lang-yaml="`creationType`" pulumi-lang-java="`creationType`">`creationType`</span>: - ( Optional ) The creation mechanism of this entity. Enum Values:
               * "PREDEFINED":	Predefined creator workflow type is for entity created by the system.
               * "SERVICEDEFINED":	Servicedefined creator workflow type is for entity created by the service.
               * "USERDEFINED":	Userdefined creator workflow type is for entity created by the users.
-        * `expiry_time`: - ( Optional ) The time when the key will expire.
-        * `status`: - ( Optional ) The status of the key. Enum Values:
+        * <span pulumi-lang-nodejs="`expiryTime`" pulumi-lang-dotnet="`ExpiryTime`" pulumi-lang-go="`expiryTime`" pulumi-lang-python="`expiry_time`" pulumi-lang-yaml="`expiryTime`" pulumi-lang-java="`expiryTime`">`expiryTime`</span>: - ( Optional ) The time when the key will expire.
+        * <span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`">`status`</span>: - ( Optional ) The status of the key. Enum Values:
               * "REVOKED":	Key is revoked.
               * "VALID":	Key is valid.
               * "EXPIRED":	Key is expired.
-        * `assigned_to`: - ( Optional ) External client to whom the given key is allocated.
+        * <span pulumi-lang-nodejs="`assignedTo`" pulumi-lang-dotnet="`AssignedTo`" pulumi-lang-go="`assignedTo`" pulumi-lang-python="`assigned_to`" pulumi-lang-yaml="`assignedTo`" pulumi-lang-java="`assignedTo`">`assignedTo`</span>: - ( Optional ) External client to whom the given key is allocated.
 
 
         :param str resource_name: The name of the resource.
@@ -640,19 +644,19 @@ class UserKeyV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 assigned_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 creation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiry_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_updated_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_updated_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_used_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 assigned_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 creation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiry_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_used_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -693,23 +697,23 @@ class UserKeyV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            assigned_to: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            created_time: Optional[pulumi.Input[_builtins.str]] = None,
-            creation_type: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            expiry_time: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            key_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserKeyV2KeyDetailArgs', 'UserKeyV2KeyDetailArgsDict']]]]] = None,
-            key_type: Optional[pulumi.Input[_builtins.str]] = None,
-            last_updated_by: Optional[pulumi.Input[_builtins.str]] = None,
-            last_updated_time: Optional[pulumi.Input[_builtins.str]] = None,
-            last_used_time: Optional[pulumi.Input[_builtins.str]] = None,
-            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserKeyV2LinkArgs', 'UserKeyV2LinkArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            user_ext_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'UserKeyV2':
+            assigned_to: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_time: pulumi.Input[Optional[_builtins.str]] = None,
+            creation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            expiry_time: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserKeyV2KeyDetailArgs', 'UserKeyV2KeyDetailArgsDict']]]]] = None,
+            key_type: pulumi.Input[Optional[_builtins.str]] = None,
+            last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
+            last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+            last_used_time: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserKeyV2LinkArgs', 'UserKeyV2LinkArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            user_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'UserKeyV2':
         """
         Get an existing UserKeyV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -22,8 +22,8 @@ __all__ = ['AddressGroupArgs', 'AddressGroup']
 class AddressGroupArgs:
     def __init__(__self__, *,
                  ip_address_block_lists: pulumi.Input[Sequence[pulumi.Input['AddressGroupIpAddressBlockListArgs']]],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AddressGroup resource.
 
@@ -51,36 +51,36 @@ class AddressGroupArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Description of the service group
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) Name of the service group
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _AddressGroupState:
     def __init__(__self__, *,
-                 address_group_string: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address_block_lists: Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupIpAddressBlockListArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 address_group_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address_block_lists: pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupIpAddressBlockListArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AddressGroup resources.
 
@@ -100,50 +100,50 @@ class _AddressGroupState:
 
     @_builtins.property
     @pulumi.getter(name="addressGroupString")
-    def address_group_string(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address_group_string(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (ReadOnly) Address Group string
         """
         return pulumi.get(self, "address_group_string")
 
     @address_group_string.setter
-    def address_group_string(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address_group_string(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address_group_string", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Description of the service group
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddressBlockLists")
-    def ip_address_block_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupIpAddressBlockListArgs']]]]:
+    def ip_address_block_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupIpAddressBlockListArgs']]]]:
         """
         - (Required) list of IP address blocks with their prefix length
         """
         return pulumi.get(self, "ip_address_block_lists")
 
     @ip_address_block_lists.setter
-    def ip_address_block_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupIpAddressBlockListArgs']]]]):
+    def ip_address_block_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupIpAddressBlockListArgs']]]]):
         pulumi.set(self, "ip_address_block_lists", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) Name of the service group
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
@@ -153,15 +153,16 @@ class AddressGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address_block_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupIpAddressBlockListArgs', 'AddressGroupIpAddressBlockListArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address_block_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupIpAddressBlockListArgs', 'AddressGroupIpAddressBlockListArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to create a address group based on the input parameters.
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -174,6 +175,7 @@ class AddressGroup(pulumi.CustomResource):
                 "prefix_length": 24,
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -193,6 +195,7 @@ class AddressGroup(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -205,6 +208,7 @@ class AddressGroup(pulumi.CustomResource):
                 "prefix_length": 24,
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -222,9 +226,9 @@ class AddressGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address_block_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupIpAddressBlockListArgs', 'AddressGroupIpAddressBlockListArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address_block_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupIpAddressBlockListArgs', 'AddressGroupIpAddressBlockListArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -250,10 +254,10 @@ class AddressGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            address_group_string: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            ip_address_block_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupIpAddressBlockListArgs', 'AddressGroupIpAddressBlockListArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None) -> 'AddressGroup':
+            address_group_string: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_address_block_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupIpAddressBlockListArgs', 'AddressGroupIpAddressBlockListArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> 'AddressGroup':
         """
         Get an existing AddressGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

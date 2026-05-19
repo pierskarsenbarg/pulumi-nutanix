@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -26,6 +27,7 @@ import * as utilities from "./utilities";
  *     name: "adfs19admingroup",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class UserGroupsV2 extends pulumi.CustomResource {
     /**
@@ -138,35 +140,35 @@ export interface UserGroupsV2State {
     /**
      * - User or Service who created the User Group.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * - Creation time of the User Group.
      */
-    createdTime?: pulumi.Input<string>;
+    createdTime?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Identifier for the User Group in the form of a distinguished name.
      */
-    distinguishedName?: pulumi.Input<string>;
+    distinguishedName?: pulumi.Input<string | undefined>;
     /**
      * The External Identifier of the User Group.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
      */
-    groupType?: pulumi.Input<string>;
+    groupType?: pulumi.Input<string | undefined>;
     /**
      * -(Required) Identifier of the IDP for the User Group.
      */
-    idpId?: pulumi.Input<string>;
+    idpId?: pulumi.Input<string | undefined>;
     /**
      * - Last updated time of the User Group.
      */
-    lastUpdatedTime?: pulumi.Input<string>;
+    lastUpdatedTime?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Common Name of the User Group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -176,11 +178,11 @@ export interface UserGroupsV2Args {
     /**
      * -(Optional) Identifier for the User Group in the form of a distinguished name.
      */
-    distinguishedName?: pulumi.Input<string>;
+    distinguishedName?: pulumi.Input<string | undefined>;
     /**
      * The External Identifier of the User Group.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
      */
@@ -192,5 +194,5 @@ export interface UserGroupsV2Args {
     /**
      * -(Optional) Common Name of the User Group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

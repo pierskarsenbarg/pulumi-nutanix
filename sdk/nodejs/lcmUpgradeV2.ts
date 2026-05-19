@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -21,6 +22,7 @@ import * as utilities from "./utilities";
  *     toVersion: "4.0.0",
  * }]});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class LcmUpgradeV2 extends pulumi.CustomResource {
     /**
@@ -115,27 +117,27 @@ export interface LcmUpgradeV2State {
     /**
      * List of automated system operations to perform, to avoid precheck failure and let the system restore state after an update is complete. The allowed flag is: - 'powerOffUvms': This allows the system to automatically power off user VMs which cannot be migrated to other hosts and power them on when the update is done. This option can avoid pinned VM precheck failure on the host which needs to enter maintenance mode during the update and allow the update to go through. Items Enum: `POWER_OFF_UVMS`
      */
-    autoHandleFlags?: pulumi.Input<pulumi.Input<string>[]>;
+    autoHandleFlags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of entity update objects for getting recommendations.
      */
-    entityUpdateSpecs?: pulumi.Input<pulumi.Input<inputs.LcmUpgradeV2EntityUpdateSpec>[]>;
+    entityUpdateSpecs?: pulumi.Input<pulumi.Input<inputs.LcmUpgradeV2EntityUpdateSpec>[] | undefined>;
     /**
      * Cluster management server configuration used while updating clusters with ESX or Hyper-V.
      */
-    managementServer?: pulumi.Input<inputs.LcmUpgradeV2ManagementServer>;
+    managementServer?: pulumi.Input<inputs.LcmUpgradeV2ManagementServer | undefined>;
     /**
      * Number of seconds LCM waits for the VMs to come up after exiting host maintenance mode. Value in Range [ 60 .. 86400]
      */
-    maxWaitTimeInSecs?: pulumi.Input<number>;
+    maxWaitTimeInSecs?: pulumi.Input<number | undefined>;
     /**
      * List of prechecks to skip. The allowed value is 'powerOffUvms' that skips the pinned VM prechecks. Items Enum: `POWER_OFF_UVMS`
      */
-    skippedPrecheckFlags?: pulumi.Input<pulumi.Input<string>[]>;
+    skippedPrecheckFlags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Cluster uuid on which the resource is present or operation is being performed.
      */
-    xClusterId?: pulumi.Input<string>;
+    xClusterId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -145,25 +147,25 @@ export interface LcmUpgradeV2Args {
     /**
      * List of automated system operations to perform, to avoid precheck failure and let the system restore state after an update is complete. The allowed flag is: - 'powerOffUvms': This allows the system to automatically power off user VMs which cannot be migrated to other hosts and power them on when the update is done. This option can avoid pinned VM precheck failure on the host which needs to enter maintenance mode during the update and allow the update to go through. Items Enum: `POWER_OFF_UVMS`
      */
-    autoHandleFlags?: pulumi.Input<pulumi.Input<string>[]>;
+    autoHandleFlags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of entity update objects for getting recommendations.
      */
-    entityUpdateSpecs?: pulumi.Input<pulumi.Input<inputs.LcmUpgradeV2EntityUpdateSpec>[]>;
+    entityUpdateSpecs?: pulumi.Input<pulumi.Input<inputs.LcmUpgradeV2EntityUpdateSpec>[] | undefined>;
     /**
      * Cluster management server configuration used while updating clusters with ESX or Hyper-V.
      */
-    managementServer?: pulumi.Input<inputs.LcmUpgradeV2ManagementServer>;
+    managementServer?: pulumi.Input<inputs.LcmUpgradeV2ManagementServer | undefined>;
     /**
      * Number of seconds LCM waits for the VMs to come up after exiting host maintenance mode. Value in Range [ 60 .. 86400]
      */
-    maxWaitTimeInSecs?: pulumi.Input<number>;
+    maxWaitTimeInSecs?: pulumi.Input<number | undefined>;
     /**
      * List of prechecks to skip. The allowed value is 'powerOffUvms' that skips the pinned VM prechecks. Items Enum: `POWER_OFF_UVMS`
      */
-    skippedPrecheckFlags?: pulumi.Input<pulumi.Input<string>[]>;
+    skippedPrecheckFlags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Cluster uuid on which the resource is present or operation is being performed.
      */
-    xClusterId?: pulumi.Input<string>;
+    xClusterId?: pulumi.Input<string | undefined>;
 }

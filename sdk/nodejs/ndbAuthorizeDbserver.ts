@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -18,6 +19,7 @@ import * as utilities from "./utilities";
  *     dbserversIds: ["{{ dbServer_IDs}}"],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class NdbAuthorizeDbserver extends pulumi.CustomResource {
     /**
@@ -50,7 +52,7 @@ export class NdbAuthorizeDbserver extends pulumi.CustomResource {
     declare public readonly dbserversIds: pulumi.Output<string[] | undefined>;
     declare public readonly timeMachineId: pulumi.Output<string | undefined>;
     /**
-     * * `dbserversId `: (Required)
+     * * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId ">`dbserversId </span>`: (Required)
      */
     declare public readonly timeMachineName: pulumi.Output<string | undefined>;
 
@@ -85,22 +87,22 @@ export class NdbAuthorizeDbserver extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NdbAuthorizeDbserver resources.
  */
 export interface NdbAuthorizeDbserverState {
-    dbserversIds?: pulumi.Input<pulumi.Input<string>[]>;
-    timeMachineId?: pulumi.Input<string>;
+    dbserversIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    timeMachineId?: pulumi.Input<string | undefined>;
     /**
-     * * `dbserversId `: (Required)
+     * * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId ">`dbserversId </span>`: (Required)
      */
-    timeMachineName?: pulumi.Input<string>;
+    timeMachineName?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a NdbAuthorizeDbserver resource.
  */
 export interface NdbAuthorizeDbserverArgs {
-    dbserversIds?: pulumi.Input<pulumi.Input<string>[]>;
-    timeMachineId?: pulumi.Input<string>;
+    dbserversIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    timeMachineId?: pulumi.Input<string | undefined>;
     /**
-     * * `dbserversId `: (Required)
+     * * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId ">`dbserversId </span>`: (Required)
      */
-    timeMachineName?: pulumi.Input<string>;
+    timeMachineName?: pulumi.Input<string | undefined>;
 }

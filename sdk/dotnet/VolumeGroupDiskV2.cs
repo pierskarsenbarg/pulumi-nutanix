@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // create new volume group disk  and attached it to the previous volume group
-    ///     var example = new Nutanix.Index.VolumeGroupDiskV2("example", new()
+    ///     var example = new Nutanix.VolumeGroupDiskV2("example", new()
     ///     {
     ///         VolumeGroupExtId = "cf7de8b9-88ed-477d-a602-c34ab7174c01",
     ///         Index = 1,
@@ -61,6 +62,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/volumeGroupDiskV2:VolumeGroupDiskV2")]
     public partial class VolumeGroupDiskV2 : global::Pulumi.CustomResource

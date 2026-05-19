@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2NicNetworkInfoIpv4Config> Ipv4Configs;
         /// <summary>
-        /// - (Optional)The network function chain associates with the NIC. Only valid if NicType is NORMAL_NIC.
+        /// - (Optional)The network function chain associates with the NIC. Only valid if&lt;span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "&gt; nicType &lt;/span&gt;is NORMAL_NIC.
         /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2NicNetworkInfoNetworkFunctionChain> NetworkFunctionChains;
         /// <summary>
@@ -46,7 +46,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly bool? ShouldAllowUnknownMacs;
         /// <summary>
-        /// - (Optional) Network identifier for this adapter. Only valid if NicType is NORMAL_NIC or DIRECT_NIC.
+        /// - (Optional) Network identifier for this adapter. Only valid if&lt;span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "&gt; nicType &lt;/span&gt;is NORMAL_NIC or DIRECT_NIC.
         /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2NicNetworkInfoSubnet> Subnets;
         /// <summary>

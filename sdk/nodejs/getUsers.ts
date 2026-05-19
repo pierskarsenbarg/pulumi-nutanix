@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -23,6 +24,7 @@ import * as utilities from "./utilities";
  * }});
  * const users = nutanix.getUser({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getUsers(args?: GetUsersArgs, opts?: pulumi.InvokeOptions): Promise<GetUsersResult> {
     args = args || {};
@@ -68,6 +70,7 @@ export interface GetUsersResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -80,6 +83,7 @@ export interface GetUsersResult {
  * }});
  * const users = nutanix.getUser({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getUsersOutput(args?: GetUsersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUsersResult> {
     args = args || {};
@@ -96,5 +100,5 @@ export interface GetUsersOutputArgs {
     /**
      * - The user kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetUsersMetadataArgs>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetUsersMetadataArgs>[] | undefined>;
 }

@@ -169,12 +169,14 @@ def get_image_placement_policy_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     ipp = nutanix.get_image_placement_policy_v2(ext_id="cf96e27a-4e52-4cec-b563-d0b25413cc4a")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: The external identifier of an image placement policy.
@@ -196,19 +198,21 @@ def get_image_placement_policy_v2(ext_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         owner_ext_id=pulumi.get(__ret__, 'owner_ext_id'),
         placement_type=pulumi.get(__ret__, 'placement_type'))
-def get_image_placement_policy_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_image_placement_policy_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImagePlacementPolicyV2Result]:
     """
     Retrieve the image placement policy details for the provided external identifier.
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     ipp = nutanix.get_image_placement_policy_v2(ext_id="cf96e27a-4e52-4cec-b563-d0b25413cc4a")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: The external identifier of an image placement policy.

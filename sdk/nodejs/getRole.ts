@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -27,6 +28,7 @@ import * as utilities from "./utilities";
  *     roleId: testRole.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRole(args?: GetRoleArgs, opts?: pulumi.InvokeOptions): Promise<GetRoleResult> {
     args = args || {};
@@ -108,6 +110,7 @@ export interface GetRoleResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -124,6 +127,7 @@ export interface GetRoleResult {
  *     roleId: testRole.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRoleOutput(args?: GetRoleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRoleResult> {
     args = args || {};
@@ -142,13 +146,13 @@ export interface GetRoleOutputArgs {
     /**
      * - Categories for the Role.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetRoleCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetRoleCategoryArgs>[] | undefined>;
     /**
      * - (Optional) The UUID of a Role.
      */
-    roleId?: pulumi.Input<string>;
+    roleId?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The name of a Role.
      */
-    roleName?: pulumi.Input<string>;
+    roleName?: pulumi.Input<string | undefined>;
 }

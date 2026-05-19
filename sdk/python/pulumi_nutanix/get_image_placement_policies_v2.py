@@ -118,6 +118,7 @@ def get_image_placement_policies_v2(filter: Optional[_builtins.str] = None,
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -129,6 +130,7 @@ def get_image_placement_policies_v2(filter: Optional[_builtins.str] = None,
         page=0,
         limit=10)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The expression specified with $filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the $filter must conform to the OData V4.01 URL conventions. For example, filter '$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
@@ -170,17 +172,18 @@ def get_image_placement_policies_v2(filter: Optional[_builtins.str] = None,
         page=pulumi.get(__ret__, 'page'),
         placement_policies=pulumi.get(__ret__, 'placement_policies'),
         select=pulumi.get(__ret__, 'select'))
-def get_image_placement_policies_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                           order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                           select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_image_placement_policies_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                           order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                           select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImagePlacementPoliciesV2Result]:
     """
     List image placement policies details.
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -192,6 +195,7 @@ def get_image_placement_policies_v2_output(filter: Optional[pulumi.Input[Optiona
         page=0,
         limit=10)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The expression specified with $filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the $filter must conform to the OData V4.01 URL conventions. For example, filter '$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:

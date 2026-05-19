@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -24,6 +25,7 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class VmNetworkDeviceAssignIpV2 extends pulumi.CustomResource {
     /**
@@ -106,15 +108,15 @@ export interface VmNetworkDeviceAssignIpV2State {
     /**
      * - (Required) The globally unique identifier of a Nic. It should be of type UUID.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Ip config settings.
      */
-    ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceAssignIpV2IpAddress>[]>;
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceAssignIpV2IpAddress>[] | undefined>;
     /**
      * - (Required) The globally unique identifier of a VM. It should be of type UUID.
      */
-    vmExtId?: pulumi.Input<string>;
+    vmExtId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -128,7 +130,7 @@ export interface VmNetworkDeviceAssignIpV2Args {
     /**
      * - (Optional) Ip config settings.
      */
-    ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceAssignIpV2IpAddress>[]>;
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceAssignIpV2IpAddress>[] | undefined>;
     /**
      * - (Required) The globally unique identifier of a VM. It should be of type UUID.
      */

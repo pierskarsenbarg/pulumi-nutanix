@@ -17,6 +17,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Get the details of a Volume Disk attached to the Volume Group.
+        /// const example = nutanix.getVolumeGroupDiskV2({
+        ///     volumeGroupExtId: "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+        ///     extId: "1d92110d-26b5-46c0-8c93-20b8171373e0",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Get the details of a Volume Disk attached to the Volume Group.
+        /// example = nutanix.get_volume_group_disk_v2(volume_group_ext_id="3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+        ///     ext_id="1d92110d-26b5-46c0-8c93-20b8171373e0")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,7 +45,7 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get the details of a Volume Disk attached to the Volume Group.
-        ///     var example = Nutanix.Index.GetVolumeGroupDiskV2.Invoke(new()
+        ///     var example = Nutanix.GetVolumeGroupDiskV2.Invoke(new()
         ///     {
         ///         VolumeGroupExtId = "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
         ///         ExtId = "1d92110d-26b5-46c0-8c93-20b8171373e0",
@@ -34,6 +53,69 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get the details of a Volume Disk attached to the Volume Group.
+        /// 		_, err := nutanix.GetVolumeGroupDiskV2(ctx, &amp;nutanix.LookupVolumeGroupDiskV2Args{
+        /// 			VolumeGroupExtId: "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+        /// 			ExtId:            "1d92110d-26b5-46c0-8c93-20b8171373e0",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVolumeGroupDiskV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Get the details of a Volume Disk attached to the Volume Group.
+        ///         final var example = NutanixFunctions.getVolumeGroupDiskV2(GetVolumeGroupDiskV2Args.builder()
+        ///             .volumeGroupExtId("3770be9d-06be-4e25-b85d-3457d9b0ceb1")
+        ///             .extId("1d92110d-26b5-46c0-8c93-20b8171373e0")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Get the details of a Volume Disk attached to the Volume Group.
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeGroupDiskV2
+        ///       arguments:
+        ///         volumeGroupExtId: 3770be9d-06be-4e25-b85d-3457d9b0ceb1
+        ///         extId: 1d92110d-26b5-46c0-8c93-20b8171373e0
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVolumeGroupDiskV2Result> InvokeAsync(GetVolumeGroupDiskV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVolumeGroupDiskV2Result>("nutanix:index/getVolumeGroupDiskV2:getVolumeGroupDiskV2", args ?? new GetVolumeGroupDiskV2Args(), options.WithDefaults());
@@ -43,6 +125,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Get the details of a Volume Disk attached to the Volume Group.
+        /// const example = nutanix.getVolumeGroupDiskV2({
+        ///     volumeGroupExtId: "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+        ///     extId: "1d92110d-26b5-46c0-8c93-20b8171373e0",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Get the details of a Volume Disk attached to the Volume Group.
+        /// example = nutanix.get_volume_group_disk_v2(volume_group_ext_id="3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+        ///     ext_id="1d92110d-26b5-46c0-8c93-20b8171373e0")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -52,7 +153,7 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get the details of a Volume Disk attached to the Volume Group.
-        ///     var example = Nutanix.Index.GetVolumeGroupDiskV2.Invoke(new()
+        ///     var example = Nutanix.GetVolumeGroupDiskV2.Invoke(new()
         ///     {
         ///         VolumeGroupExtId = "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
         ///         ExtId = "1d92110d-26b5-46c0-8c93-20b8171373e0",
@@ -60,6 +161,69 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get the details of a Volume Disk attached to the Volume Group.
+        /// 		_, err := nutanix.GetVolumeGroupDiskV2(ctx, &amp;nutanix.LookupVolumeGroupDiskV2Args{
+        /// 			VolumeGroupExtId: "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+        /// 			ExtId:            "1d92110d-26b5-46c0-8c93-20b8171373e0",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVolumeGroupDiskV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Get the details of a Volume Disk attached to the Volume Group.
+        ///         final var example = NutanixFunctions.getVolumeGroupDiskV2(GetVolumeGroupDiskV2Args.builder()
+        ///             .volumeGroupExtId("3770be9d-06be-4e25-b85d-3457d9b0ceb1")
+        ///             .extId("1d92110d-26b5-46c0-8c93-20b8171373e0")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Get the details of a Volume Disk attached to the Volume Group.
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeGroupDiskV2
+        ///       arguments:
+        ///         volumeGroupExtId: 3770be9d-06be-4e25-b85d-3457d9b0ceb1
+        ///         extId: 1d92110d-26b5-46c0-8c93-20b8171373e0
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVolumeGroupDiskV2Result> Invoke(GetVolumeGroupDiskV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupDiskV2Result>("nutanix:index/getVolumeGroupDiskV2:getVolumeGroupDiskV2", args ?? new GetVolumeGroupDiskV2InvokeArgs(), options.WithDefaults());
@@ -69,6 +233,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Get the details of a Volume Disk attached to the Volume Group.
+        /// const example = nutanix.getVolumeGroupDiskV2({
+        ///     volumeGroupExtId: "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+        ///     extId: "1d92110d-26b5-46c0-8c93-20b8171373e0",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Get the details of a Volume Disk attached to the Volume Group.
+        /// example = nutanix.get_volume_group_disk_v2(volume_group_ext_id="3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+        ///     ext_id="1d92110d-26b5-46c0-8c93-20b8171373e0")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -78,7 +261,7 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get the details of a Volume Disk attached to the Volume Group.
-        ///     var example = Nutanix.Index.GetVolumeGroupDiskV2.Invoke(new()
+        ///     var example = Nutanix.GetVolumeGroupDiskV2.Invoke(new()
         ///     {
         ///         VolumeGroupExtId = "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
         ///         ExtId = "1d92110d-26b5-46c0-8c93-20b8171373e0",
@@ -86,6 +269,69 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get the details of a Volume Disk attached to the Volume Group.
+        /// 		_, err := nutanix.GetVolumeGroupDiskV2(ctx, &amp;nutanix.LookupVolumeGroupDiskV2Args{
+        /// 			VolumeGroupExtId: "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+        /// 			ExtId:            "1d92110d-26b5-46c0-8c93-20b8171373e0",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVolumeGroupDiskV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Get the details of a Volume Disk attached to the Volume Group.
+        ///         final var example = NutanixFunctions.getVolumeGroupDiskV2(GetVolumeGroupDiskV2Args.builder()
+        ///             .volumeGroupExtId("3770be9d-06be-4e25-b85d-3457d9b0ceb1")
+        ///             .extId("1d92110d-26b5-46c0-8c93-20b8171373e0")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Get the details of a Volume Disk attached to the Volume Group.
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeGroupDiskV2
+        ///       arguments:
+        ///         volumeGroupExtId: 3770be9d-06be-4e25-b85d-3457d9b0ceb1
+        ///         extId: 1d92110d-26b5-46c0-8c93-20b8171373e0
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVolumeGroupDiskV2Result> Invoke(GetVolumeGroupDiskV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupDiskV2Result>("nutanix:index/getVolumeGroupDiskV2:getVolumeGroupDiskV2", args ?? new GetVolumeGroupDiskV2InvokeArgs(), options.WithDefaults());

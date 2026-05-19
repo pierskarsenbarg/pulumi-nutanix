@@ -110,47 +110,47 @@ export interface ProviderArgs {
      * individual CVM address, as this would cause calls to fail during
      * cluster lifecycle management operations, such as AOS upgrades.
      */
-    endpoint?: pulumi.Input<string>;
+    endpoint?: pulumi.Input<string | undefined>;
     /**
      * endpoint for foundation VM (eg. Foundation VM IP)
      */
-    foundationEndpoint?: pulumi.Input<string>;
+    foundationEndpoint?: pulumi.Input<string | undefined>;
     /**
      * Port for foundation VM
      */
-    foundationPort?: pulumi.Input<string>;
+    foundationPort?: pulumi.Input<string | undefined>;
     /**
-     * Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is `false`
+     * Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>
      */
-    insecure?: pulumi.Input<boolean>;
+    insecure?: pulumi.Input<boolean | undefined>;
     /**
      * endpoint for Era VM (era ip)
      */
-    ndbEndpoint?: pulumi.Input<string>;
-    ndbPassword?: pulumi.Input<string>;
-    ndbUsername?: pulumi.Input<string>;
+    ndbEndpoint?: pulumi.Input<string | undefined>;
+    ndbPassword?: pulumi.Input<string | undefined>;
+    ndbUsername?: pulumi.Input<string | undefined>;
     /**
      * Password for provided user name.
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * Port for Nutanix Prism.
      */
-    port?: pulumi.Input<string>;
-    proxyUrl?: pulumi.Input<string>;
+    port?: pulumi.Input<string | undefined>;
+    proxyUrl?: pulumi.Input<string | undefined>;
     /**
      * Use session authentification instead of basic auth for each request
      */
-    sessionAuth?: pulumi.Input<boolean>;
+    sessionAuth?: pulumi.Input<boolean | undefined>;
     /**
      * User name for Nutanix Prism. Could be
      * local cluster auth (e.g. 'admin') or directory auth.
      */
-    username?: pulumi.Input<string>;
+    username?: pulumi.Input<string | undefined>;
     /**
      * Set if you know that the creation o update of a resource may take long time (minutes)
      */
-    waitTimeout?: pulumi.Input<number>;
+    waitTimeout?: pulumi.Input<number | undefined>;
 }
 
 export namespace Provider {

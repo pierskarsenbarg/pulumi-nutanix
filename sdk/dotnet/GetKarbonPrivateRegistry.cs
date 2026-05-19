@@ -16,6 +16,17 @@ namespace PiersKarsenbarg.Nutanix
         /// Describes Karbon private registry entry
         /// 
         /// ## Example Usage
+        /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```yaml
+        /// variables:
+        ///   registry:
+        ///     fn::invoke:
+        ///       function: nutanix:getKarbonPrivateRegistry
+        ///       arguments:
+        ///         clusterId: &lt;YOUR-CLUSTER-ID&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetKarbonPrivateRegistryResult> InvokeAsync(GetKarbonPrivateRegistryArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetKarbonPrivateRegistryResult>("nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry", args ?? new GetKarbonPrivateRegistryArgs(), options.WithDefaults());
@@ -24,6 +35,17 @@ namespace PiersKarsenbarg.Nutanix
         /// Describes Karbon private registry entry
         /// 
         /// ## Example Usage
+        /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```yaml
+        /// variables:
+        ///   registry:
+        ///     fn::invoke:
+        ///       function: nutanix:getKarbonPrivateRegistry
+        ///       arguments:
+        ///         clusterId: &lt;YOUR-CLUSTER-ID&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetKarbonPrivateRegistryResult> Invoke(GetKarbonPrivateRegistryInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetKarbonPrivateRegistryResult>("nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry", args ?? new GetKarbonPrivateRegistryInvokeArgs(), options.WithDefaults());
@@ -32,6 +54,17 @@ namespace PiersKarsenbarg.Nutanix
         /// Describes Karbon private registry entry
         /// 
         /// ## Example Usage
+        /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```yaml
+        /// variables:
+        ///   registry:
+        ///     fn::invoke:
+        ///       function: nutanix:getKarbonPrivateRegistry
+        ///       arguments:
+        ///         clusterId: &lt;YOUR-CLUSTER-ID&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetKarbonPrivateRegistryResult> Invoke(GetKarbonPrivateRegistryInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetKarbonPrivateRegistryResult>("nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry", args ?? new GetKarbonPrivateRegistryInvokeArgs(), options.WithDefaults());

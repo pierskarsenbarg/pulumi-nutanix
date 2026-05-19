@@ -17,6 +17,36 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testRole = new nutanix.Role("test", {
+        ///     name: "NAME",
+        ///     description: "DESCRIPTION",
+        ///     permissionReferenceLists: [{
+        ///         kind: "permission",
+        ///         uuid: "ID OF PERMISSION",
+        ///     }],
+        /// });
+        /// const test = nutanix.getRoleOutput({
+        ///     roleId: testRole.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_role = nutanix.Role("test",
+        ///     name="NAME",
+        ///     description="DESCRIPTION",
+        ///     permission_reference_lists=[{
+        ///         "kind": "permission",
+        ///         "uuid": "ID OF PERMISSION",
+        ///     }])
+        /// test = nutanix.get_role_output(role_id=test_role.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +55,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testRole = new Nutanix.Index.Role("test", new()
+        ///     var testRole = new Nutanix.Role("test", new()
         ///     {
         ///         Name = "NAME",
         ///         Description = "DESCRIPTION",
@@ -39,13 +69,102 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetRole.Invoke(new()
+        ///     var test = Nutanix.GetRole.Invoke(new()
         ///     {
         ///         RoleId = testRole.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testRole, err := nutanix.NewRole(ctx, "test", &amp;nutanix.RoleArgs{
+        /// 			Name:        pulumi.String("NAME"),
+        /// 			Description: pulumi.String("DESCRIPTION"),
+        /// 			PermissionReferenceLists: nutanix.RolePermissionReferenceListArray{
+        /// 				&amp;nutanix.RolePermissionReferenceListArgs{
+        /// 					Kind: pulumi.String("permission"),
+        /// 					Uuid: pulumi.String("ID OF PERMISSION"),
+        /// 				},
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetRoleOutput(ctx, nutanix.GetRoleOutputArgs{
+        /// 			RoleId: testRole.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.Role;
+        /// import com.pulumi.nutanix.RoleArgs;
+        /// import com.pulumi.nutanix.inputs.RolePermissionReferenceListArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetRoleArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testRole = new Role("testRole", RoleArgs.builder()
+        ///             .name("NAME")
+        ///             .description("DESCRIPTION")
+        ///             .permissionReferenceLists(RolePermissionReferenceListArgs.builder()
+        ///                 .kind("permission")
+        ///                 .uuid("ID OF PERMISSION")
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getRole(GetRoleArgs.builder()
+        ///             .roleId(testRole.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testRole:
+        ///     type: nutanix:Role
+        ///     name: test
+        ///     properties:
+        ///       name: NAME
+        ///       description: DESCRIPTION
+        ///       permissionReferenceLists:
+        ///         - kind: permission
+        ///           uuid: ID OF PERMISSION
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getRole
+        ///       arguments:
+        ///         roleId: ${testRole.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetRoleResult> InvokeAsync(GetRoleArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRoleResult>("nutanix:index/getRole:getRole", args ?? new GetRoleArgs(), options.WithDefaults());
@@ -55,6 +174,36 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testRole = new nutanix.Role("test", {
+        ///     name: "NAME",
+        ///     description: "DESCRIPTION",
+        ///     permissionReferenceLists: [{
+        ///         kind: "permission",
+        ///         uuid: "ID OF PERMISSION",
+        ///     }],
+        /// });
+        /// const test = nutanix.getRoleOutput({
+        ///     roleId: testRole.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_role = nutanix.Role("test",
+        ///     name="NAME",
+        ///     description="DESCRIPTION",
+        ///     permission_reference_lists=[{
+        ///         "kind": "permission",
+        ///         "uuid": "ID OF PERMISSION",
+        ///     }])
+        /// test = nutanix.get_role_output(role_id=test_role.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -63,7 +212,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testRole = new Nutanix.Index.Role("test", new()
+        ///     var testRole = new Nutanix.Role("test", new()
         ///     {
         ///         Name = "NAME",
         ///         Description = "DESCRIPTION",
@@ -77,13 +226,102 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetRole.Invoke(new()
+        ///     var test = Nutanix.GetRole.Invoke(new()
         ///     {
         ///         RoleId = testRole.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testRole, err := nutanix.NewRole(ctx, "test", &amp;nutanix.RoleArgs{
+        /// 			Name:        pulumi.String("NAME"),
+        /// 			Description: pulumi.String("DESCRIPTION"),
+        /// 			PermissionReferenceLists: nutanix.RolePermissionReferenceListArray{
+        /// 				&amp;nutanix.RolePermissionReferenceListArgs{
+        /// 					Kind: pulumi.String("permission"),
+        /// 					Uuid: pulumi.String("ID OF PERMISSION"),
+        /// 				},
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetRoleOutput(ctx, nutanix.GetRoleOutputArgs{
+        /// 			RoleId: testRole.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.Role;
+        /// import com.pulumi.nutanix.RoleArgs;
+        /// import com.pulumi.nutanix.inputs.RolePermissionReferenceListArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetRoleArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testRole = new Role("testRole", RoleArgs.builder()
+        ///             .name("NAME")
+        ///             .description("DESCRIPTION")
+        ///             .permissionReferenceLists(RolePermissionReferenceListArgs.builder()
+        ///                 .kind("permission")
+        ///                 .uuid("ID OF PERMISSION")
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getRole(GetRoleArgs.builder()
+        ///             .roleId(testRole.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testRole:
+        ///     type: nutanix:Role
+        ///     name: test
+        ///     properties:
+        ///       name: NAME
+        ///       description: DESCRIPTION
+        ///       permissionReferenceLists:
+        ///         - kind: permission
+        ///           uuid: ID OF PERMISSION
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getRole
+        ///       arguments:
+        ///         roleId: ${testRole.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRoleResult> Invoke(GetRoleInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRoleResult>("nutanix:index/getRole:getRole", args ?? new GetRoleInvokeArgs(), options.WithDefaults());
@@ -93,6 +331,36 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testRole = new nutanix.Role("test", {
+        ///     name: "NAME",
+        ///     description: "DESCRIPTION",
+        ///     permissionReferenceLists: [{
+        ///         kind: "permission",
+        ///         uuid: "ID OF PERMISSION",
+        ///     }],
+        /// });
+        /// const test = nutanix.getRoleOutput({
+        ///     roleId: testRole.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_role = nutanix.Role("test",
+        ///     name="NAME",
+        ///     description="DESCRIPTION",
+        ///     permission_reference_lists=[{
+        ///         "kind": "permission",
+        ///         "uuid": "ID OF PERMISSION",
+        ///     }])
+        /// test = nutanix.get_role_output(role_id=test_role.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -101,7 +369,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testRole = new Nutanix.Index.Role("test", new()
+        ///     var testRole = new Nutanix.Role("test", new()
         ///     {
         ///         Name = "NAME",
         ///         Description = "DESCRIPTION",
@@ -115,13 +383,102 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetRole.Invoke(new()
+        ///     var test = Nutanix.GetRole.Invoke(new()
         ///     {
         ///         RoleId = testRole.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testRole, err := nutanix.NewRole(ctx, "test", &amp;nutanix.RoleArgs{
+        /// 			Name:        pulumi.String("NAME"),
+        /// 			Description: pulumi.String("DESCRIPTION"),
+        /// 			PermissionReferenceLists: nutanix.RolePermissionReferenceListArray{
+        /// 				&amp;nutanix.RolePermissionReferenceListArgs{
+        /// 					Kind: pulumi.String("permission"),
+        /// 					Uuid: pulumi.String("ID OF PERMISSION"),
+        /// 				},
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetRoleOutput(ctx, nutanix.GetRoleOutputArgs{
+        /// 			RoleId: testRole.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.Role;
+        /// import com.pulumi.nutanix.RoleArgs;
+        /// import com.pulumi.nutanix.inputs.RolePermissionReferenceListArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetRoleArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testRole = new Role("testRole", RoleArgs.builder()
+        ///             .name("NAME")
+        ///             .description("DESCRIPTION")
+        ///             .permissionReferenceLists(RolePermissionReferenceListArgs.builder()
+        ///                 .kind("permission")
+        ///                 .uuid("ID OF PERMISSION")
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getRole(GetRoleArgs.builder()
+        ///             .roleId(testRole.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testRole:
+        ///     type: nutanix:Role
+        ///     name: test
+        ///     properties:
+        ///       name: NAME
+        ///       description: DESCRIPTION
+        ///       permissionReferenceLists:
+        ///         - kind: permission
+        ///           uuid: ID OF PERMISSION
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getRole
+        ///       arguments:
+        ///         roleId: ${testRole.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRoleResult> Invoke(GetRoleInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetRoleResult>("nutanix:index/getRole:getRole", args ?? new GetRoleInvokeArgs(), options.WithDefaults());

@@ -81,7 +81,7 @@ class GetLcmConfigV2Result:
     @pulumi.getter(name="autoInventorySchedule")
     def auto_inventory_schedule(self) -> _builtins.str:
         """
-        The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when auto_inventory_enabled is set to True. The default schedule time is 03:00(AM).
+        The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
         """
         return pulumi.get(self, "auto_inventory_schedule")
 
@@ -237,6 +237,7 @@ def get_lcm_config_v2(x_cluster_id: Optional[_builtins.str] = None,
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -245,6 +246,7 @@ def get_lcm_config_v2(x_cluster_id: Optional[_builtins.str] = None,
     # Get LCM configuration for a specific cluster
     lcm_configuration_cluster = nutanix.get_lcm_config_v2(x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
@@ -271,13 +273,14 @@ def get_lcm_config_v2(x_cluster_id: Optional[_builtins.str] = None,
         url=pulumi.get(__ret__, 'url'),
         version=pulumi.get(__ret__, 'version'),
         x_cluster_id=pulumi.get(__ret__, 'x_cluster_id'))
-def get_lcm_config_v2_output(x_cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_lcm_config_v2_output(x_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLcmConfigV2Result]:
     """
     Get LCM configuration.
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -286,6 +289,7 @@ def get_lcm_config_v2_output(x_cluster_id: Optional[pulumi.Input[Optional[_built
     # Get LCM configuration for a specific cluster
     lcm_configuration_cluster = nutanix.get_lcm_config_v2(x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.

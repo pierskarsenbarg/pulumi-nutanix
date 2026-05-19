@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var volumeGroupExample = new Nutanix.Index.VolumeGroupV2("volume_group_example", new()
+    ///     var volumeGroupExample = new Nutanix.VolumeGroupV2("volume_group_example", new()
     ///     {
     ///         Name = "volume_group_test",
     ///         Description = "Test Create Volume group with spec",
@@ -59,6 +60,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/volumeGroupV2:VolumeGroupV2")]
     public partial class VolumeGroupV2 : global::Pulumi.CustomResource

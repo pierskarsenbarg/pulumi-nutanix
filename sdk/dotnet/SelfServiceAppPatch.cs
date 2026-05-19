@@ -17,6 +17,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// This will run set patch config action in application.
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -26,7 +27,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var test = new Nutanix.Index.SelfServiceAppProvision("test", new()
+    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -34,7 +35,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.Index.SelfServiceAppPatch("test", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
     ///     {
     ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",
@@ -43,9 +44,11 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Example 2: Update VM Configuration with runtime editable
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -55,7 +58,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var test = new Nutanix.Index.SelfServiceAppProvision("test", new()
+    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -63,7 +66,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.Index.SelfServiceAppPatch("test", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
     ///     {
     ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",
@@ -81,9 +84,11 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Example 3: Add Category
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -93,7 +98,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var test = new Nutanix.Index.SelfServiceAppProvision("test", new()
+    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -101,7 +106,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.Index.SelfServiceAppPatch("test", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
     ///     {
     ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",
@@ -118,9 +123,11 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Example 4: Delete Category
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -130,7 +137,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var test = new Nutanix.Index.SelfServiceAppProvision("test", new()
+    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -138,7 +145,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.Index.SelfServiceAppPatch("test", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
     ///     {
     ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",
@@ -155,9 +162,11 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Example 5: Add Disk
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -167,7 +176,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var test = new Nutanix.Index.SelfServiceAppProvision("test", new()
+    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -175,7 +184,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.Index.SelfServiceAppPatch("test", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
     ///     {
     ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",
@@ -192,9 +201,11 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Example 6: Add Nic
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -204,7 +215,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Provision Application
-    ///     var test = new Nutanix.Index.SelfServiceAppProvision("test", new()
+    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
@@ -212,7 +223,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Run patch config (update config)
-    ///     var testSelfServiceAppPatch = new Nutanix.Index.SelfServiceAppPatch("test", new()
+    ///     var testSelfServiceAppPatch = new Nutanix.SelfServiceAppPatch("test", new()
     ///     {
     ///         AppUuid = test.Id,
     ///         PatchName = "NAME OF PATCH ACTION",
@@ -230,6 +241,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/selfServiceAppPatch:SelfServiceAppPatch")]
     public partial class SelfServiceAppPatch : global::Pulumi.CustomResource
@@ -244,7 +256,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.SelfServiceAppPatchCategory>> Categories { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as PatchName for SINGLE VM)&lt;/b&gt;
+        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as&lt;span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "&gt; patchName &lt;/span&gt;for SINGLE VM)&lt;/b&gt;
         /// </summary>
         [Output("configName")]
         public Output<string> ConfigName { get; private set; } = null!;
@@ -332,7 +344,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as PatchName for SINGLE VM)&lt;/b&gt;
+        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as&lt;span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "&gt; patchName &lt;/span&gt;for SINGLE VM)&lt;/b&gt;
         /// </summary>
         [Input("configName", required: true)]
         public Input<string> ConfigName { get; set; } = null!;
@@ -396,7 +408,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as PatchName for SINGLE VM)&lt;/b&gt;
+        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as&lt;span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "&gt; patchName &lt;/span&gt;for SINGLE VM)&lt;/b&gt;
         /// </summary>
         [Input("configName")]
         public Input<string>? ConfigName { get; set; }

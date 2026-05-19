@@ -21,11 +21,11 @@ __all__ = ['UserArgs', 'User']
 @pulumi.input_type
 class UserArgs:
     def __init__(__self__, *,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['UserCategoryArgs']]]] = None,
-                 directory_service_user: Optional[pulumi.Input['UserDirectoryServiceUserArgs']] = None,
-                 identity_provider_user: Optional[pulumi.Input['UserIdentityProviderUserArgs']] = None,
-                 owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['UserCategoryArgs']]]] = None,
+                 directory_service_user: pulumi.Input[Optional['UserDirectoryServiceUserArgs']] = None,
+                 identity_provider_user: pulumi.Input[Optional['UserIdentityProviderUserArgs']] = None,
+                 owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a User resource.
 
@@ -48,81 +48,81 @@ class UserArgs:
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UserCategoryArgs']]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UserCategoryArgs']]]]:
         """
         - (Optional) Categories for the Access Control Policy.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UserCategoryArgs']]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UserCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter(name="directoryServiceUser")
-    def directory_service_user(self) -> Optional[pulumi.Input['UserDirectoryServiceUserArgs']]:
+    def directory_service_user(self) -> pulumi.Input[Optional['UserDirectoryServiceUserArgs']]:
         """
         - (Optional) The directory service user configuration. See below for more information.
         """
         return pulumi.get(self, "directory_service_user")
 
     @directory_service_user.setter
-    def directory_service_user(self, value: Optional[pulumi.Input['UserDirectoryServiceUserArgs']]):
+    def directory_service_user(self, value: pulumi.Input[Optional['UserDirectoryServiceUserArgs']]):
         pulumi.set(self, "directory_service_user", value)
 
     @_builtins.property
     @pulumi.getter(name="identityProviderUser")
-    def identity_provider_user(self) -> Optional[pulumi.Input['UserIdentityProviderUserArgs']]:
+    def identity_provider_user(self) -> pulumi.Input[Optional['UserIdentityProviderUserArgs']]:
         """
         - (Optional) (Optional) The identity provider user configuration. See below for more information.
         """
         return pulumi.get(self, "identity_provider_user")
 
     @identity_provider_user.setter
-    def identity_provider_user(self, value: Optional[pulumi.Input['UserIdentityProviderUserArgs']]):
+    def identity_provider_user(self, value: pulumi.Input[Optional['UserIdentityProviderUserArgs']]):
         pulumi.set(self, "identity_provider_user", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerReference")
-    def owner_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def owner_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a user.
         """
         return pulumi.get(self, "owner_reference")
 
     @owner_reference.setter
-    def owner_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def owner_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "owner_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="projectReference")
-    def project_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def project_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a project.
         """
         return pulumi.get(self, "project_reference")
 
     @project_reference.setter
-    def project_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def project_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "project_reference", value)
 
 
 @pulumi.input_type
 class _UserState:
     def __init__(__self__, *,
-                 access_control_policy_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['UserAccessControlPolicyReferenceListArgs']]]] = None,
-                 api_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['UserCategoryArgs']]]] = None,
-                 directory_service_user: Optional[pulumi.Input['UserDirectoryServiceUserArgs']] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_provider_user: Optional[pulumi.Input['UserIdentityProviderUserArgs']] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 project_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['UserProjectReferenceListArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_control_policy_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input['UserAccessControlPolicyReferenceListArgs']]]] = None,
+                 api_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['UserCategoryArgs']]]] = None,
+                 directory_service_user: pulumi.Input[Optional['UserDirectoryServiceUserArgs']] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_provider_user: pulumi.Input[Optional['UserIdentityProviderUserArgs']] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 project_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input['UserProjectReferenceListArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering User resources.
 
@@ -169,158 +169,158 @@ class _UserState:
 
     @_builtins.property
     @pulumi.getter(name="accessControlPolicyReferenceLists")
-    def access_control_policy_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UserAccessControlPolicyReferenceListArgs']]]]:
+    def access_control_policy_reference_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UserAccessControlPolicyReferenceListArgs']]]]:
         """
         - List of ACP references. See #reference for more details.
         """
         return pulumi.get(self, "access_control_policy_reference_lists")
 
     @access_control_policy_reference_lists.setter
-    def access_control_policy_reference_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UserAccessControlPolicyReferenceListArgs']]]]):
+    def access_control_policy_reference_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UserAccessControlPolicyReferenceListArgs']]]]):
         pulumi.set(self, "access_control_policy_reference_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="apiVersion")
-    def api_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def api_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the API.
         """
         return pulumi.get(self, "api_version")
 
     @api_version.setter
-    def api_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def api_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "api_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UserCategoryArgs']]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UserCategoryArgs']]]]:
         """
         - (Optional) Categories for the Access Control Policy.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UserCategoryArgs']]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UserCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter(name="directoryServiceUser")
-    def directory_service_user(self) -> Optional[pulumi.Input['UserDirectoryServiceUserArgs']]:
+    def directory_service_user(self) -> pulumi.Input[Optional['UserDirectoryServiceUserArgs']]:
         """
         - (Optional) The directory service user configuration. See below for more information.
         """
         return pulumi.get(self, "directory_service_user")
 
     @directory_service_user.setter
-    def directory_service_user(self, value: Optional[pulumi.Input['UserDirectoryServiceUserArgs']]):
+    def directory_service_user(self, value: pulumi.Input[Optional['UserDirectoryServiceUserArgs']]):
         pulumi.set(self, "directory_service_user", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The display name of the user (common name) provided by the directory service.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="identityProviderUser")
-    def identity_provider_user(self) -> Optional[pulumi.Input['UserIdentityProviderUserArgs']]:
+    def identity_provider_user(self) -> pulumi.Input[Optional['UserIdentityProviderUserArgs']]:
         """
         - (Optional) (Optional) The identity provider user configuration. See below for more information.
         """
         return pulumi.get(self, "identity_provider_user")
 
     @identity_provider_user.setter
-    def identity_provider_user(self, value: Optional[pulumi.Input['UserIdentityProviderUserArgs']]):
+    def identity_provider_user(self, value: pulumi.Input[Optional['UserIdentityProviderUserArgs']]):
         pulumi.set(self, "identity_provider_user", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - The vm kind metadata.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - the name(Optional).
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerReference")
-    def owner_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def owner_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a user.
         """
         return pulumi.get(self, "owner_reference")
 
     @owner_reference.setter
-    def owner_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def owner_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "owner_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="projectReference")
-    def project_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def project_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a project.
         """
         return pulumi.get(self, "project_reference")
 
     @project_reference.setter
-    def project_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def project_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "project_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="projectReferenceLists")
-    def project_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UserProjectReferenceListArgs']]]]:
+    def project_reference_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UserProjectReferenceListArgs']]]]:
         """
         - A list of projects the user is part of. See #reference for more details.
         """
         return pulumi.get(self, "project_reference_lists")
 
     @project_reference_lists.setter
-    def project_reference_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UserProjectReferenceListArgs']]]]):
+    def project_reference_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UserProjectReferenceListArgs']]]]):
         pulumi.set(self, "project_reference_lists", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The state of the entity.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="userType")
-    def user_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The name of the user.
         """
         return pulumi.get(self, "user_type")
 
     @user_type.setter
-    def user_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_type", value)
 
 
@@ -330,17 +330,18 @@ class User(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserCategoryArgs', 'UserCategoryArgsDict']]]]] = None,
-                 directory_service_user: Optional[pulumi.Input[Union['UserDirectoryServiceUserArgs', 'UserDirectoryServiceUserArgsDict']]] = None,
-                 identity_provider_user: Optional[pulumi.Input[Union['UserIdentityProviderUserArgs', 'UserIdentityProviderUserArgsDict']]] = None,
-                 owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserCategoryArgs', 'UserCategoryArgsDict']]]]] = None,
+                 directory_service_user: pulumi.Input[Optional[Union['UserDirectoryServiceUserArgs', 'UserDirectoryServiceUserArgsDict']]] = None,
+                 identity_provider_user: pulumi.Input[Optional[Union['UserIdentityProviderUserArgs', 'UserIdentityProviderUserArgsDict']]] = None,
+                 owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Provides a resource to create a user based on the input parameters.
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -352,7 +353,9 @@ class User(pulumi.CustomResource):
             },
         })
         ```
+        <!--End PulumiCodeChooser -->
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -364,6 +367,7 @@ class User(pulumi.CustomResource):
             },
         })
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -385,6 +389,7 @@ class User(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -396,7 +401,9 @@ class User(pulumi.CustomResource):
             },
         })
         ```
+        <!--End PulumiCodeChooser -->
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -408,6 +415,7 @@ class User(pulumi.CustomResource):
             },
         })
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -425,11 +433,11 @@ class User(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserCategoryArgs', 'UserCategoryArgsDict']]]]] = None,
-                 directory_service_user: Optional[pulumi.Input[Union['UserDirectoryServiceUserArgs', 'UserDirectoryServiceUserArgsDict']]] = None,
-                 identity_provider_user: Optional[pulumi.Input[Union['UserIdentityProviderUserArgs', 'UserIdentityProviderUserArgsDict']]] = None,
-                 owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserCategoryArgs', 'UserCategoryArgsDict']]]]] = None,
+                 directory_service_user: pulumi.Input[Optional[Union['UserDirectoryServiceUserArgs', 'UserDirectoryServiceUserArgsDict']]] = None,
+                 identity_provider_user: pulumi.Input[Optional[Union['UserIdentityProviderUserArgs', 'UserIdentityProviderUserArgsDict']]] = None,
+                 owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -462,19 +470,19 @@ class User(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_control_policy_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserAccessControlPolicyReferenceListArgs', 'UserAccessControlPolicyReferenceListArgsDict']]]]] = None,
-            api_version: Optional[pulumi.Input[_builtins.str]] = None,
-            categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserCategoryArgs', 'UserCategoryArgsDict']]]]] = None,
-            directory_service_user: Optional[pulumi.Input[Union['UserDirectoryServiceUserArgs', 'UserDirectoryServiceUserArgsDict']]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            identity_provider_user: Optional[pulumi.Input[Union['UserIdentityProviderUserArgs', 'UserIdentityProviderUserArgsDict']]] = None,
-            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            project_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserProjectReferenceListArgs', 'UserProjectReferenceListArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            user_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'User':
+            access_control_policy_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserAccessControlPolicyReferenceListArgs', 'UserAccessControlPolicyReferenceListArgsDict']]]]] = None,
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserCategoryArgs', 'UserCategoryArgsDict']]]]] = None,
+            directory_service_user: pulumi.Input[Optional[Union['UserDirectoryServiceUserArgs', 'UserDirectoryServiceUserArgsDict']]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            identity_provider_user: pulumi.Input[Optional[Union['UserIdentityProviderUserArgs', 'UserIdentityProviderUserArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            project_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserProjectReferenceListArgs', 'UserProjectReferenceListArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            user_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'User':
         """
         Get an existing User resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

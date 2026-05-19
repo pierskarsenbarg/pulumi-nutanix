@@ -10,6 +10,9 @@ import * as utilities from "./utilities";
  * Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
  *
  * ## Example Usage
+ *
+ * <!--Start PulumiCodeChooser -->
+ * <!--End PulumiCodeChooser -->
  */
 export class Subnet extends pulumi.CustomResource {
     /**
@@ -230,108 +233,108 @@ export interface SubnetState {
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The reference to a availability_zone.
      */
-    availabilityZoneReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    availabilityZoneReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - (Optional) The categories of the resource.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.SubnetCategory>[]>;
-    clusterName?: pulumi.Input<string>;
+    categories?: pulumi.Input<pulumi.Input<inputs.SubnetCategory>[] | undefined>;
+    clusterName?: pulumi.Input<string | undefined>;
     /**
      * - (Required) The UUID of the cluster.
      */
-    clusterUuid?: pulumi.Input<string>;
+    clusterUuid?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Default gateway IP address.
      */
-    defaultGatewayIp?: pulumi.Input<string>;
+    defaultGatewayIp?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) A description for subnet.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - (Optional). List of Domain Name Server addresses .
      */
-    dhcpDomainNameServerLists?: pulumi.Input<pulumi.Input<string>[]>;
+    dhcpDomainNameServerLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * - (Optional).The DNS domain search list .
      */
-    dhcpDomainSearchLists?: pulumi.Input<pulumi.Input<string>[]>;
+    dhcpDomainSearchLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * - (Optional) Spec for defining DHCP options.
      */
-    dhcpOptions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    dhcpOptions?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - (Optional) Host address.
      */
-    dhcpServerAddress?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    dhcpServerAddress?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - (Optional) Port Number.
      */
-    dhcpServerAddressPort?: pulumi.Input<number>;
+    dhcpServerAddressPort?: pulumi.Input<number | undefined>;
     /**
      * - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
      */
-    enableNat?: pulumi.Input<boolean>;
+    enableNat?: pulumi.Input<boolean | undefined>;
     /**
      * -(Optional) Range of IPs.
      */
-    ipConfigPoolListRanges?: pulumi.Input<pulumi.Input<string>[]>;
+    ipConfigPoolListRanges?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * - (Optional) Whether the subnet is external subnet or not.
      */
-    isExternal?: pulumi.Input<boolean>;
+    isExternal?: pulumi.Input<boolean | undefined>;
     /**
      * - (Required) The subnet kind metadata.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - (Optional) Subnet name (Readonly).
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The reference to a network_function_chain.
      */
-    networkFunctionChainReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    networkFunctionChainReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - (Optional) The reference to a user.
      */
-    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - (Optional).
      */
-    prefixLength?: pulumi.Input<number>;
+    prefixLength?: pulumi.Input<number | undefined>;
     /**
      * - (Optional) The reference to a project.
      */
-    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - The state of the subnet.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Subnet IP address.
      */
-    subnetIp?: pulumi.Input<string>;
+    subnetIp?: pulumi.Input<string | undefined>;
     /**
      * - (Optional). Valid Types are ["VLAN", "OVERLAY"]
      */
-    subnetType?: pulumi.Input<string>;
+    subnetType?: pulumi.Input<string | undefined>;
     /**
      * - (Optional). For VLAN subnet.
      */
-    vlanId?: pulumi.Input<number>;
+    vlanId?: pulumi.Input<number | undefined>;
     /**
      * VPC reference uuid
      */
-    vpcReferenceUuid?: pulumi.Input<string>;
+    vpcReferenceUuid?: pulumi.Input<string | undefined>;
     /**
      * - (Optional).
      */
-    vswitchName?: pulumi.Input<string>;
+    vswitchName?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -341,79 +344,79 @@ export interface SubnetArgs {
     /**
      * - (Optional) The reference to a availability_zone.
      */
-    availabilityZoneReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    availabilityZoneReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - (Optional) The categories of the resource.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.SubnetCategory>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.SubnetCategory>[] | undefined>;
     /**
      * - (Required) The UUID of the cluster.
      */
-    clusterUuid?: pulumi.Input<string>;
+    clusterUuid?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Default gateway IP address.
      */
-    defaultGatewayIp?: pulumi.Input<string>;
+    defaultGatewayIp?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) A description for subnet.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - (Optional). List of Domain Name Server addresses .
      */
-    dhcpDomainNameServerLists?: pulumi.Input<pulumi.Input<string>[]>;
+    dhcpDomainNameServerLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * - (Optional).The DNS domain search list .
      */
-    dhcpDomainSearchLists?: pulumi.Input<pulumi.Input<string>[]>;
+    dhcpDomainSearchLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * - (Optional) Spec for defining DHCP options.
      */
-    dhcpOptions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    dhcpOptions?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - (Optional) Host address.
      */
-    dhcpServerAddress?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    dhcpServerAddress?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - (Optional) Port Number.
      */
-    dhcpServerAddressPort?: pulumi.Input<number>;
+    dhcpServerAddressPort?: pulumi.Input<number | undefined>;
     /**
      * - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
      */
-    enableNat?: pulumi.Input<boolean>;
+    enableNat?: pulumi.Input<boolean | undefined>;
     /**
      * -(Optional) Range of IPs.
      */
-    ipConfigPoolListRanges?: pulumi.Input<pulumi.Input<string>[]>;
+    ipConfigPoolListRanges?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * - (Optional) Whether the subnet is external subnet or not.
      */
-    isExternal?: pulumi.Input<boolean>;
+    isExternal?: pulumi.Input<boolean | undefined>;
     /**
      * - (Optional) Subnet name (Readonly).
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The reference to a network_function_chain.
      */
-    networkFunctionChainReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    networkFunctionChainReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - (Optional) The reference to a user.
      */
-    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - (Optional).
      */
-    prefixLength?: pulumi.Input<number>;
+    prefixLength?: pulumi.Input<number | undefined>;
     /**
      * - (Optional) The reference to a project.
      */
-    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - (Optional) Subnet IP address.
      */
-    subnetIp?: pulumi.Input<string>;
+    subnetIp?: pulumi.Input<string | undefined>;
     /**
      * - (Optional). Valid Types are ["VLAN", "OVERLAY"]
      */
@@ -421,13 +424,13 @@ export interface SubnetArgs {
     /**
      * - (Optional). For VLAN subnet.
      */
-    vlanId?: pulumi.Input<number>;
+    vlanId?: pulumi.Input<number | undefined>;
     /**
      * VPC reference uuid
      */
-    vpcReferenceUuid?: pulumi.Input<string>;
+    vpcReferenceUuid?: pulumi.Input<string | undefined>;
     /**
      * - (Optional).
      */
-    vswitchName?: pulumi.Input<string>;
+    vswitchName?: pulumi.Input<string | undefined>;
 }

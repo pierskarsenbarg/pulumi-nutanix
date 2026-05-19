@@ -21,15 +21,15 @@ class SelfServiceAppRestoreArgs:
     def __init__(__self__, *,
                  restore_action_name: pulumi.Input[_builtins.str],
                  snapshot_uuid: pulumi.Input[_builtins.str],
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None):
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a SelfServiceAppRestore resource.
 
         :param pulumi.Input[_builtins.str] restore_action_name: - (Required) The name of the restore action to be performed.
         :param pulumi.Input[_builtins.str] snapshot_uuid: - (Required) The UUID of the snapshot to which the application will be restored.
                
-               Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+               Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
         :param pulumi.Input[_builtins.str] app_name: - (Optional) The name of the application
         :param pulumi.Input[_builtins.str] app_uuid: - (Optional) The UUID of the application.
         """
@@ -58,7 +58,7 @@ class SelfServiceAppRestoreArgs:
         """
         - (Required) The UUID of the snapshot to which the application will be restored.
 
-        Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+        Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
         """
         return pulumi.get(self, "snapshot_uuid")
 
@@ -68,37 +68,37 @@ class SelfServiceAppRestoreArgs:
 
     @_builtins.property
     @pulumi.getter(name="appName")
-    def app_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The name of the application
         """
         return pulumi.get(self, "app_name")
 
     @app_name.setter
-    def app_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_name", value)
 
     @_builtins.property
     @pulumi.getter(name="appUuid")
-    def app_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The UUID of the application.
         """
         return pulumi.get(self, "app_uuid")
 
     @app_uuid.setter
-    def app_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_uuid", value)
 
 
 @pulumi.input_type
 class _SelfServiceAppRestoreState:
     def __init__(__self__, *,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 restore_action_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshot_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 restore_action_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshot_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SelfServiceAppRestore resources.
 
@@ -107,7 +107,7 @@ class _SelfServiceAppRestoreState:
         :param pulumi.Input[_builtins.str] restore_action_name: - (Required) The name of the restore action to be performed.
         :param pulumi.Input[_builtins.str] snapshot_uuid: - (Required) The UUID of the snapshot to which the application will be restored.
                
-               Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+               Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
         :param pulumi.Input[_builtins.str] state: - (Computed) This will be set after the restore action has been processed.
         """
         if app_name is not None:
@@ -123,64 +123,64 @@ class _SelfServiceAppRestoreState:
 
     @_builtins.property
     @pulumi.getter(name="appName")
-    def app_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The name of the application
         """
         return pulumi.get(self, "app_name")
 
     @app_name.setter
-    def app_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_name", value)
 
     @_builtins.property
     @pulumi.getter(name="appUuid")
-    def app_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The UUID of the application.
         """
         return pulumi.get(self, "app_uuid")
 
     @app_uuid.setter
-    def app_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="restoreActionName")
-    def restore_action_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restore_action_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name of the restore action to be performed.
         """
         return pulumi.get(self, "restore_action_name")
 
     @restore_action_name.setter
-    def restore_action_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restore_action_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restore_action_name", value)
 
     @_builtins.property
     @pulumi.getter(name="snapshotUuid")
-    def snapshot_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def snapshot_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The UUID of the snapshot to which the application will be restored.
 
-        Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+        Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
         """
         return pulumi.get(self, "snapshot_uuid")
 
     @snapshot_uuid.setter
-    def snapshot_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def snapshot_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "snapshot_uuid", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Computed) This will be set after the restore action has been processed.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -190,16 +190,17 @@ class SelfServiceAppRestore(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 restore_action_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshot_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 restore_action_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshot_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Run restore action in application to restore from recovery point.
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -219,6 +220,7 @@ class SelfServiceAppRestore(pulumi.CustomResource):
             app_name="NAME OF APPLICATION",
             snapshot_uuid=snapshot_uuid)
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -228,7 +230,7 @@ class SelfServiceAppRestore(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] restore_action_name: - (Required) The name of the restore action to be performed.
         :param pulumi.Input[_builtins.str] snapshot_uuid: - (Required) The UUID of the snapshot to which the application will be restored.
                
-               Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+               Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
         """
         ...
     @overload
@@ -241,6 +243,7 @@ class SelfServiceAppRestore(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -260,6 +263,7 @@ class SelfServiceAppRestore(pulumi.CustomResource):
             app_name="NAME OF APPLICATION",
             snapshot_uuid=snapshot_uuid)
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -277,10 +281,10 @@ class SelfServiceAppRestore(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 restore_action_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshot_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 restore_action_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshot_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -309,11 +313,11 @@ class SelfServiceAppRestore(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            app_name: Optional[pulumi.Input[_builtins.str]] = None,
-            app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            restore_action_name: Optional[pulumi.Input[_builtins.str]] = None,
-            snapshot_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'SelfServiceAppRestore':
+            app_name: pulumi.Input[Optional[_builtins.str]] = None,
+            app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            restore_action_name: pulumi.Input[Optional[_builtins.str]] = None,
+            snapshot_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'SelfServiceAppRestore':
         """
         Get an existing SelfServiceAppRestore resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -326,7 +330,7 @@ class SelfServiceAppRestore(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] restore_action_name: - (Required) The name of the restore action to be performed.
         :param pulumi.Input[_builtins.str] snapshot_uuid: - (Required) The UUID of the snapshot to which the application will be restored.
                
-               Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+               Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
         :param pulumi.Input[_builtins.str] state: - (Computed) This will be set after the restore action has been processed.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -370,7 +374,7 @@ class SelfServiceAppRestore(pulumi.CustomResource):
         """
         - (Required) The UUID of the snapshot to which the application will be restored.
 
-        Both (`app_name` and `app_uuid`) are optional but atleast one of them should be provided for resource to work.
+        Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
         """
         return pulumi.get(self, "snapshot_uuid")
 

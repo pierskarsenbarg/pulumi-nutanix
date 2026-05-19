@@ -17,6 +17,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Get ssh credentials by cluster UUID
+        /// const sshbyid = nutanix.getKarbonClusterSsh({
+        ///     karbonClusterId: "&lt;YOUR-CLUSTER-ID&gt;",
+        /// });
+        /// // Get ssh credentials by cluster name
+        /// const sshbyname = nutanix.getKarbonClusterSsh({
+        ///     karbonClusterName: "&lt;YOUR-CLUSTER-NAME&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Get ssh credentials by cluster UUID
+        /// sshbyid = nutanix.get_karbon_cluster_ssh(karbon_cluster_id="&lt;YOUR-CLUSTER-ID&gt;")
+        /// # Get ssh credentials by cluster name
+        /// sshbyname = nutanix.get_karbon_cluster_ssh(karbon_cluster_name="&lt;YOUR-CLUSTER-NAME&gt;")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,19 +49,97 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get ssh credentials by cluster UUID
-        ///     var sshbyid = Nutanix.Index.GetKarbonClusterSsh.Invoke(new()
+        ///     var sshbyid = Nutanix.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
         ///     // Get ssh credentials by cluster name
-        ///     var sshbyname = Nutanix.Index.GetKarbonClusterSsh.Invoke(new()
+        ///     var sshbyname = Nutanix.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get ssh credentials by cluster UUID
+        /// 		_, err := nutanix.GetKarbonClusterSsh(ctx, &amp;nutanix.GetKarbonClusterSshArgs{
+        /// 			KarbonClusterId: pulumi.StringRef("&lt;YOUR-CLUSTER-ID&gt;"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// Get ssh credentials by cluster name
+        /// 		_, err = nutanix.GetKarbonClusterSsh(ctx, &amp;nutanix.GetKarbonClusterSshArgs{
+        /// 			KarbonClusterName: pulumi.StringRef("&lt;YOUR-CLUSTER-NAME&gt;"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetKarbonClusterSshArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Get ssh credentials by cluster UUID
+        ///         final var sshbyid = NutanixFunctions.getKarbonClusterSsh(GetKarbonClusterSshArgs.builder()
+        ///             .karbonClusterId("&lt;YOUR-CLUSTER-ID&gt;")
+        ///             .build());
+        /// 
+        ///         // Get ssh credentials by cluster name
+        ///         final var sshbyname = NutanixFunctions.getKarbonClusterSsh(GetKarbonClusterSshArgs.builder()
+        ///             .karbonClusterName("&lt;YOUR-CLUSTER-NAME&gt;")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Get ssh credentials by cluster UUID
+        ///   sshbyid:
+        ///     fn::invoke:
+        ///       function: nutanix:getKarbonClusterSsh
+        ///       arguments:
+        ///         karbonClusterId: &lt;YOUR-CLUSTER-ID&gt;
+        ///   # Get ssh credentials by cluster name
+        ///   sshbyname:
+        ///     fn::invoke:
+        ///       function: nutanix:getKarbonClusterSsh
+        ///       arguments:
+        ///         karbonClusterName: &lt;YOUR-CLUSTER-NAME&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetKarbonClusterSshResult> InvokeAsync(GetKarbonClusterSshArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetKarbonClusterSshResult>("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", args ?? new GetKarbonClusterSshArgs(), options.WithDefaults());
@@ -48,6 +149,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Get ssh credentials by cluster UUID
+        /// const sshbyid = nutanix.getKarbonClusterSsh({
+        ///     karbonClusterId: "&lt;YOUR-CLUSTER-ID&gt;",
+        /// });
+        /// // Get ssh credentials by cluster name
+        /// const sshbyname = nutanix.getKarbonClusterSsh({
+        ///     karbonClusterName: "&lt;YOUR-CLUSTER-NAME&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Get ssh credentials by cluster UUID
+        /// sshbyid = nutanix.get_karbon_cluster_ssh(karbon_cluster_id="&lt;YOUR-CLUSTER-ID&gt;")
+        /// # Get ssh credentials by cluster name
+        /// sshbyname = nutanix.get_karbon_cluster_ssh(karbon_cluster_name="&lt;YOUR-CLUSTER-NAME&gt;")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -57,19 +181,97 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get ssh credentials by cluster UUID
-        ///     var sshbyid = Nutanix.Index.GetKarbonClusterSsh.Invoke(new()
+        ///     var sshbyid = Nutanix.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
         ///     // Get ssh credentials by cluster name
-        ///     var sshbyname = Nutanix.Index.GetKarbonClusterSsh.Invoke(new()
+        ///     var sshbyname = Nutanix.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get ssh credentials by cluster UUID
+        /// 		_, err := nutanix.GetKarbonClusterSsh(ctx, &amp;nutanix.GetKarbonClusterSshArgs{
+        /// 			KarbonClusterId: pulumi.StringRef("&lt;YOUR-CLUSTER-ID&gt;"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// Get ssh credentials by cluster name
+        /// 		_, err = nutanix.GetKarbonClusterSsh(ctx, &amp;nutanix.GetKarbonClusterSshArgs{
+        /// 			KarbonClusterName: pulumi.StringRef("&lt;YOUR-CLUSTER-NAME&gt;"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetKarbonClusterSshArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Get ssh credentials by cluster UUID
+        ///         final var sshbyid = NutanixFunctions.getKarbonClusterSsh(GetKarbonClusterSshArgs.builder()
+        ///             .karbonClusterId("&lt;YOUR-CLUSTER-ID&gt;")
+        ///             .build());
+        /// 
+        ///         // Get ssh credentials by cluster name
+        ///         final var sshbyname = NutanixFunctions.getKarbonClusterSsh(GetKarbonClusterSshArgs.builder()
+        ///             .karbonClusterName("&lt;YOUR-CLUSTER-NAME&gt;")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Get ssh credentials by cluster UUID
+        ///   sshbyid:
+        ///     fn::invoke:
+        ///       function: nutanix:getKarbonClusterSsh
+        ///       arguments:
+        ///         karbonClusterId: &lt;YOUR-CLUSTER-ID&gt;
+        ///   # Get ssh credentials by cluster name
+        ///   sshbyname:
+        ///     fn::invoke:
+        ///       function: nutanix:getKarbonClusterSsh
+        ///       arguments:
+        ///         karbonClusterName: &lt;YOUR-CLUSTER-NAME&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetKarbonClusterSshResult> Invoke(GetKarbonClusterSshInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetKarbonClusterSshResult>("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", args ?? new GetKarbonClusterSshInvokeArgs(), options.WithDefaults());
@@ -79,6 +281,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Get ssh credentials by cluster UUID
+        /// const sshbyid = nutanix.getKarbonClusterSsh({
+        ///     karbonClusterId: "&lt;YOUR-CLUSTER-ID&gt;",
+        /// });
+        /// // Get ssh credentials by cluster name
+        /// const sshbyname = nutanix.getKarbonClusterSsh({
+        ///     karbonClusterName: "&lt;YOUR-CLUSTER-NAME&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Get ssh credentials by cluster UUID
+        /// sshbyid = nutanix.get_karbon_cluster_ssh(karbon_cluster_id="&lt;YOUR-CLUSTER-ID&gt;")
+        /// # Get ssh credentials by cluster name
+        /// sshbyname = nutanix.get_karbon_cluster_ssh(karbon_cluster_name="&lt;YOUR-CLUSTER-NAME&gt;")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -88,19 +313,97 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get ssh credentials by cluster UUID
-        ///     var sshbyid = Nutanix.Index.GetKarbonClusterSsh.Invoke(new()
+        ///     var sshbyid = Nutanix.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
         ///     });
         /// 
         ///     // Get ssh credentials by cluster name
-        ///     var sshbyname = Nutanix.Index.GetKarbonClusterSsh.Invoke(new()
+        ///     var sshbyname = Nutanix.GetKarbonClusterSsh.Invoke(new()
         ///     {
         ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get ssh credentials by cluster UUID
+        /// 		_, err := nutanix.GetKarbonClusterSsh(ctx, &amp;nutanix.GetKarbonClusterSshArgs{
+        /// 			KarbonClusterId: pulumi.StringRef("&lt;YOUR-CLUSTER-ID&gt;"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// Get ssh credentials by cluster name
+        /// 		_, err = nutanix.GetKarbonClusterSsh(ctx, &amp;nutanix.GetKarbonClusterSshArgs{
+        /// 			KarbonClusterName: pulumi.StringRef("&lt;YOUR-CLUSTER-NAME&gt;"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetKarbonClusterSshArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Get ssh credentials by cluster UUID
+        ///         final var sshbyid = NutanixFunctions.getKarbonClusterSsh(GetKarbonClusterSshArgs.builder()
+        ///             .karbonClusterId("&lt;YOUR-CLUSTER-ID&gt;")
+        ///             .build());
+        /// 
+        ///         // Get ssh credentials by cluster name
+        ///         final var sshbyname = NutanixFunctions.getKarbonClusterSsh(GetKarbonClusterSshArgs.builder()
+        ///             .karbonClusterName("&lt;YOUR-CLUSTER-NAME&gt;")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Get ssh credentials by cluster UUID
+        ///   sshbyid:
+        ///     fn::invoke:
+        ///       function: nutanix:getKarbonClusterSsh
+        ///       arguments:
+        ///         karbonClusterId: &lt;YOUR-CLUSTER-ID&gt;
+        ///   # Get ssh credentials by cluster name
+        ///   sshbyname:
+        ///     fn::invoke:
+        ///       function: nutanix:getKarbonClusterSsh
+        ///       arguments:
+        ///         karbonClusterName: &lt;YOUR-CLUSTER-NAME&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetKarbonClusterSshResult> Invoke(GetKarbonClusterSshInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetKarbonClusterSshResult>("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", args ?? new GetKarbonClusterSshInvokeArgs(), options.WithDefaults());

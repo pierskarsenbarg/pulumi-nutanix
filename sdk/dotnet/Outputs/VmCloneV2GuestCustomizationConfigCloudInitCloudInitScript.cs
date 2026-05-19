@@ -16,7 +16,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly ImmutableArray<Outputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKey> CustomKeys;
         /// <summary>
-        /// - (Optional) The contents of the UserData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+        /// - (Optional) The contents of the&lt;span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "&gt; userData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         /// </summary>
         public readonly ImmutableArray<Outputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserData> UserDatas;
 

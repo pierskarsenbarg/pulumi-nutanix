@@ -16,6 +16,54 @@ namespace PiersKarsenbarg.Nutanix
         /// Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
         /// 
         /// ## Example Usage
+        /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```yaml
+        /// resources:
+        ///   testSubnet:
+        ///     type: nutanix:Subnet
+        ///     name: test
+        ///     properties:
+        ///       name: example-subnet
+        ///       clusterReference:
+        ///         kind: cluster
+        ///         UUID: ${clusters.entities[0].metadata.uuid}
+        ///       vlanId: 201
+        ///       subnetType: VLAN
+        ///       prefixLength: 24
+        ///       defaultGatewayIp: 192.168.0.1
+        ///       subnetIp: 192.168.0.0
+        ///       dhcpOptions:
+        ///         - bootFileName: bootfile
+        ///           tftpServerName: 192.168.0.252
+        ///           domainName: nutanix
+        ///       dhcpDomainNameServerLists:
+        ///         - 8.8.8.8
+        ///         - 4.2.2.2
+        ///       dhcpDomainSearchLists:
+        ///         - nutanix.com
+        ///         - calm.io
+        /// variables:
+        ///   clusters:
+        ///     fn::invoke:
+        ///       function: nutanix:getClusters
+        ///       arguments:
+        ///         metadata:
+        ///           length: 2
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getSubnet
+        ///       arguments:
+        ///         subnetId: ${testSubnet.id}
+        ///   test-name:
+        ///     fn::invoke:
+        ///       function: nutanix:getSubnet
+        ///       arguments:
+        ///         subnetName: ${testSubnet.name}
+        /// outputs:
+        ///   cluster: ${clusters.entities[0].metadata.uuid}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSubnetResult> InvokeAsync(GetSubnetArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubnetResult>("nutanix:index/getSubnet:getSubnet", args ?? new GetSubnetArgs(), options.WithDefaults());
@@ -24,6 +72,54 @@ namespace PiersKarsenbarg.Nutanix
         /// Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
         /// 
         /// ## Example Usage
+        /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```yaml
+        /// resources:
+        ///   testSubnet:
+        ///     type: nutanix:Subnet
+        ///     name: test
+        ///     properties:
+        ///       name: example-subnet
+        ///       clusterReference:
+        ///         kind: cluster
+        ///         UUID: ${clusters.entities[0].metadata.uuid}
+        ///       vlanId: 201
+        ///       subnetType: VLAN
+        ///       prefixLength: 24
+        ///       defaultGatewayIp: 192.168.0.1
+        ///       subnetIp: 192.168.0.0
+        ///       dhcpOptions:
+        ///         - bootFileName: bootfile
+        ///           tftpServerName: 192.168.0.252
+        ///           domainName: nutanix
+        ///       dhcpDomainNameServerLists:
+        ///         - 8.8.8.8
+        ///         - 4.2.2.2
+        ///       dhcpDomainSearchLists:
+        ///         - nutanix.com
+        ///         - calm.io
+        /// variables:
+        ///   clusters:
+        ///     fn::invoke:
+        ///       function: nutanix:getClusters
+        ///       arguments:
+        ///         metadata:
+        ///           length: 2
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getSubnet
+        ///       arguments:
+        ///         subnetId: ${testSubnet.id}
+        ///   test-name:
+        ///     fn::invoke:
+        ///       function: nutanix:getSubnet
+        ///       arguments:
+        ///         subnetName: ${testSubnet.name}
+        /// outputs:
+        ///   cluster: ${clusters.entities[0].metadata.uuid}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSubnetResult> Invoke(GetSubnetInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubnetResult>("nutanix:index/getSubnet:getSubnet", args ?? new GetSubnetInvokeArgs(), options.WithDefaults());
@@ -32,6 +128,54 @@ namespace PiersKarsenbarg.Nutanix
         /// Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
         /// 
         /// ## Example Usage
+        /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```yaml
+        /// resources:
+        ///   testSubnet:
+        ///     type: nutanix:Subnet
+        ///     name: test
+        ///     properties:
+        ///       name: example-subnet
+        ///       clusterReference:
+        ///         kind: cluster
+        ///         UUID: ${clusters.entities[0].metadata.uuid}
+        ///       vlanId: 201
+        ///       subnetType: VLAN
+        ///       prefixLength: 24
+        ///       defaultGatewayIp: 192.168.0.1
+        ///       subnetIp: 192.168.0.0
+        ///       dhcpOptions:
+        ///         - bootFileName: bootfile
+        ///           tftpServerName: 192.168.0.252
+        ///           domainName: nutanix
+        ///       dhcpDomainNameServerLists:
+        ///         - 8.8.8.8
+        ///         - 4.2.2.2
+        ///       dhcpDomainSearchLists:
+        ///         - nutanix.com
+        ///         - calm.io
+        /// variables:
+        ///   clusters:
+        ///     fn::invoke:
+        ///       function: nutanix:getClusters
+        ///       arguments:
+        ///         metadata:
+        ///           length: 2
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getSubnet
+        ///       arguments:
+        ///         subnetId: ${testSubnet.id}
+        ///   test-name:
+        ///     fn::invoke:
+        ///       function: nutanix:getSubnet
+        ///       arguments:
+        ///         subnetName: ${testSubnet.name}
+        /// outputs:
+        ///   cluster: ${clusters.entities[0].metadata.uuid}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSubnetResult> Invoke(GetSubnetInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubnetResult>("nutanix:index/getSubnet:getSubnet", args ?? new GetSubnetInvokeArgs(), options.WithDefaults());

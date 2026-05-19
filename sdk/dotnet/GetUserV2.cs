@@ -17,6 +17,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_user = nutanix.getUserV2({
+        ///     extId: "d3a3232a-9055-4740-b54f-b21a33524565",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_user = nutanix.get_user_v2(ext_id="d3a3232a-9055-4740-b54f-b21a33524565")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,19 +40,76 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_user = Nutanix.Index.GetUserV2.Invoke(new()
+        ///     var get_user = Nutanix.GetUserV2.Invoke(new()
         ///     {
         ///         ExtId = "d3a3232a-9055-4740-b54f-b21a33524565",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetUserV2(ctx, &amp;nutanix.GetUserV2Args{
+        /// 			ExtId: "d3a3232a-9055-4740-b54f-b21a33524565",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetUserV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-user = NutanixFunctions.getUserV2(GetUserV2Args.builder()
+        ///             .extId("d3a3232a-9055-4740-b54f-b21a33524565")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-user:
+        ///     fn::invoke:
+        ///       function: nutanix:getUserV2
+        ///       arguments:
+        ///         extId: d3a3232a-9055-4740-b54f-b21a33524565
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `ExtId`: -(Required) External Identifier of the User.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: -(Required) External Identifier of the User.
         /// </summary>
         public static Task<GetUserV2Result> InvokeAsync(GetUserV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserV2Result>("nutanix:index/getUserV2:getUserV2", args ?? new GetUserV2Args(), options.WithDefaults());
@@ -47,6 +119,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_user = nutanix.getUserV2({
+        ///     extId: "d3a3232a-9055-4740-b54f-b21a33524565",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_user = nutanix.get_user_v2(ext_id="d3a3232a-9055-4740-b54f-b21a33524565")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -55,19 +142,76 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_user = Nutanix.Index.GetUserV2.Invoke(new()
+        ///     var get_user = Nutanix.GetUserV2.Invoke(new()
         ///     {
         ///         ExtId = "d3a3232a-9055-4740-b54f-b21a33524565",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetUserV2(ctx, &amp;nutanix.GetUserV2Args{
+        /// 			ExtId: "d3a3232a-9055-4740-b54f-b21a33524565",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetUserV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-user = NutanixFunctions.getUserV2(GetUserV2Args.builder()
+        ///             .extId("d3a3232a-9055-4740-b54f-b21a33524565")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-user:
+        ///     fn::invoke:
+        ///       function: nutanix:getUserV2
+        ///       arguments:
+        ///         extId: d3a3232a-9055-4740-b54f-b21a33524565
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `ExtId`: -(Required) External Identifier of the User.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: -(Required) External Identifier of the User.
         /// </summary>
         public static Output<GetUserV2Result> Invoke(GetUserV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserV2Result>("nutanix:index/getUserV2:getUserV2", args ?? new GetUserV2InvokeArgs(), options.WithDefaults());
@@ -77,6 +221,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_user = nutanix.getUserV2({
+        ///     extId: "d3a3232a-9055-4740-b54f-b21a33524565",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_user = nutanix.get_user_v2(ext_id="d3a3232a-9055-4740-b54f-b21a33524565")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -85,19 +244,76 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_user = Nutanix.Index.GetUserV2.Invoke(new()
+        ///     var get_user = Nutanix.GetUserV2.Invoke(new()
         ///     {
         ///         ExtId = "d3a3232a-9055-4740-b54f-b21a33524565",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetUserV2(ctx, &amp;nutanix.GetUserV2Args{
+        /// 			ExtId: "d3a3232a-9055-4740-b54f-b21a33524565",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetUserV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-user = NutanixFunctions.getUserV2(GetUserV2Args.builder()
+        ///             .extId("d3a3232a-9055-4740-b54f-b21a33524565")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-user:
+        ///     fn::invoke:
+        ///       function: nutanix:getUserV2
+        ///       arguments:
+        ///         extId: d3a3232a-9055-4740-b54f-b21a33524565
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `ExtId`: -(Required) External Identifier of the User.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: -(Required) External Identifier of the User.
         /// </summary>
         public static Output<GetUserV2Result> Invoke(GetUserV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserV2Result>("nutanix:index/getUserV2:getUserV2", args ?? new GetUserV2InvokeArgs(), options.WithDefaults());

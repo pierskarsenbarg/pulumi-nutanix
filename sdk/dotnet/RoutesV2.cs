@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // create a route
-    ///     var route = new Nutanix.Index.RoutesV2("route", new()
+    ///     var route = new Nutanix.RoutesV2("route", new()
     ///     {
     ///         Name = "terraform_example_route",
     ///         Description = "terraform example route to example create route",
@@ -56,6 +57,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/routesV2:RoutesV2")]
     public partial class RoutesV2 : global::Pulumi.CustomResource

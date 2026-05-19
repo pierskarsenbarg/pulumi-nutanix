@@ -105,6 +105,7 @@ def get_pc_restore_source_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -112,6 +113,7 @@ def get_pc_restore_source_v2(ext_id: Optional[_builtins.str] = None,
     # get the restore source
     restore_source = nutanix.get_pc_restore_source_v2(ext_id="323860ca-bd10-411e-9fe0-1430b62eaf45")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: -(Required) A globally unique identifier of an instance that is suitable for external consumption.
@@ -127,13 +129,14 @@ def get_pc_restore_source_v2(ext_id: Optional[_builtins.str] = None,
         links=pulumi.get(__ret__, 'links'),
         locations=pulumi.get(__ret__, 'locations'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_pc_restore_source_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pc_restore_source_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPcRestoreSourceV2Result]:
     """
     Retrieves the restore source from the PE cache store and returns the restore source configuration and external identifier to the user.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -141,6 +144,7 @@ def get_pc_restore_source_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]
     # get the restore source
     restore_source = nutanix.get_pc_restore_source_v2(ext_id="323860ca-bd10-411e-9fe0-1430b62eaf45")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: -(Required) A globally unique identifier of an instance that is suitable for external consumption.

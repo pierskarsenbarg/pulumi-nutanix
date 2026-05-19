@@ -319,18 +319,20 @@ def get_user_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     get_user = nutanix.get_user_v2(ext_id="d3a3232a-9055-4740-b54f-b21a33524565")
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Argument Reference
 
     The following arguments are supported:
 
-    * `ext_id`: -(Required) External Identifier of the User.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: -(Required) External Identifier of the User.
 
 
     :param _builtins.str ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
@@ -364,25 +366,27 @@ def get_user_v2(ext_id: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'),
         user_type=pulumi.get(__ret__, 'user_type'),
         username=pulumi.get(__ret__, 'username'))
-def get_user_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_user_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserV2Result]:
     """
     Provides a datasource to View a User.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     get_user = nutanix.get_user_v2(ext_id="d3a3232a-9055-4740-b54f-b21a33524565")
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Argument Reference
 
     The following arguments are supported:
 
-    * `ext_id`: -(Required) External Identifier of the User.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: -(Required) External Identifier of the User.
 
 
     :param _builtins.str ext_id: - A globally unique identifier of an instance that is suitable for external consumption.

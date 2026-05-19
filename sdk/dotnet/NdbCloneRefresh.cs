@@ -17,6 +17,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ### resource to refresh clone with snapshot id
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -25,7 +26,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var acctest_managed = new Nutanix.Index.NdbCloneRefresh("acctest-managed", new()
+    ///     var acctest_managed = new Nutanix.NdbCloneRefresh("acctest-managed", new()
     ///     {
     ///         CloneId = "{{ clone_id }}",
     ///         SnapshotId = "{{ snapshot_id }}",
@@ -34,9 +35,11 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ### resource to refresh clone with user pitr timestamp
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -45,7 +48,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var acctest_managed = new Nutanix.Index.NdbCloneRefresh("acctest-managed", new()
+    ///     var acctest_managed = new Nutanix.NdbCloneRefresh("acctest-managed", new()
     ///     {
     ///         CloneId = "{{ clone_id }}",
     ///         UserPitrStamp = "{{ timestamp }}",
@@ -54,6 +57,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbCloneRefresh:NdbCloneRefresh")]
     public partial class NdbCloneRefresh : global::Pulumi.CustomResource

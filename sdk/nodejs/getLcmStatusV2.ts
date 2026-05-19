@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,6 +20,7 @@ import * as utilities from "./utilities";
  *     xClusterId: "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLcmStatusV2(args?: GetLcmStatusV2Args, opts?: pulumi.InvokeOptions): Promise<GetLcmStatusV2Result> {
     args = args || {};
@@ -81,6 +83,7 @@ export interface GetLcmStatusV2Result {
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -89,6 +92,7 @@ export interface GetLcmStatusV2Result {
  *     xClusterId: "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLcmStatusV2Output(args?: GetLcmStatusV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLcmStatusV2Result> {
     args = args || {};
@@ -105,5 +109,5 @@ export interface GetLcmStatusV2OutputArgs {
     /**
      * Cluster uuid on which the resource is present or operation is being performed.
      */
-    xClusterId?: pulumi.Input<string>;
+    xClusterId?: pulumi.Input<string | undefined>;
 }

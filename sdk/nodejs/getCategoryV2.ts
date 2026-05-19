@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,6 +20,7 @@ import * as utilities from "./utilities";
  *     extId: "85e68112-5b2b-4220-bc8d-e529e4bf420e",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCategoryV2(args: GetCategoryV2Args, opts?: pulumi.InvokeOptions): Promise<GetCategoryV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -97,6 +99,7 @@ export interface GetCategoryV2Result {
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -105,6 +108,7 @@ export interface GetCategoryV2Result {
  *     extId: "85e68112-5b2b-4220-bc8d-e529e4bf420e",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCategoryV2Output(args: GetCategoryV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCategoryV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -123,7 +127,7 @@ export interface GetCategoryV2OutputArgs {
      * - associations
      * - detailedAssociations
      */
-    expand?: pulumi.Input<string>;
+    expand?: pulumi.Input<string | undefined>;
     /**
      * The extID for the category.
      */

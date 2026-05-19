@@ -13,10 +13,25 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetVpcV2
     {
         /// <summary>
-        /// Provides a datasource to retrieve VPC with VpcUuid .
+        /// Provides a datasource to retrieve VPC with&lt;span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "&gt; vpcUuid &lt;/span&gt;.
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_vpc = nutanix.getVpcV2({
+        ///     extId: "8a938cc5-282b-48c4-81be-de22de145d07",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_vpc = nutanix.get_vpc_v2(ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,22 +40,94 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_vpc = Nutanix.Index.GetVpcV2.Invoke(new()
+        ///     var get_vpc = Nutanix.GetVpcV2.Invoke(new()
         ///     {
         ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetVpcV2(ctx, &amp;nutanix.LookupVpcV2Args{
+        /// 			ExtId: "8a938cc5-282b-48c4-81be-de22de145d07",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVpcV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-vpc = NutanixFunctions.getVpcV2(GetVpcV2Args.builder()
+        ///             .extId("8a938cc5-282b-48c4-81be-de22de145d07")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-vpc:
+        ///     fn::invoke:
+        ///       function: nutanix:getVpcV2
+        ///       arguments:
+        ///         extId: 8a938cc5-282b-48c4-81be-de22de145d07
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVpcV2Result> InvokeAsync(GetVpcV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVpcV2Result>("nutanix:index/getVpcV2:getVpcV2", args ?? new GetVpcV2Args(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve VPC with VpcUuid .
+        /// Provides a datasource to retrieve VPC with&lt;span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "&gt; vpcUuid &lt;/span&gt;.
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_vpc = nutanix.getVpcV2({
+        ///     extId: "8a938cc5-282b-48c4-81be-de22de145d07",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_vpc = nutanix.get_vpc_v2(ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -49,22 +136,94 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_vpc = Nutanix.Index.GetVpcV2.Invoke(new()
+        ///     var get_vpc = Nutanix.GetVpcV2.Invoke(new()
         ///     {
         ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetVpcV2(ctx, &amp;nutanix.LookupVpcV2Args{
+        /// 			ExtId: "8a938cc5-282b-48c4-81be-de22de145d07",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVpcV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-vpc = NutanixFunctions.getVpcV2(GetVpcV2Args.builder()
+        ///             .extId("8a938cc5-282b-48c4-81be-de22de145d07")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-vpc:
+        ///     fn::invoke:
+        ///       function: nutanix:getVpcV2
+        ///       arguments:
+        ///         extId: 8a938cc5-282b-48c4-81be-de22de145d07
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVpcV2Result> Invoke(GetVpcV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVpcV2Result>("nutanix:index/getVpcV2:getVpcV2", args ?? new GetVpcV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve VPC with VpcUuid .
+        /// Provides a datasource to retrieve VPC with&lt;span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "&gt; vpcUuid &lt;/span&gt;.
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_vpc = nutanix.getVpcV2({
+        ///     extId: "8a938cc5-282b-48c4-81be-de22de145d07",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_vpc = nutanix.get_vpc_v2(ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,13 +232,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_vpc = Nutanix.Index.GetVpcV2.Invoke(new()
+        ///     var get_vpc = Nutanix.GetVpcV2.Invoke(new()
         ///     {
         ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetVpcV2(ctx, &amp;nutanix.LookupVpcV2Args{
+        /// 			ExtId: "8a938cc5-282b-48c4-81be-de22de145d07",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVpcV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-vpc = NutanixFunctions.getVpcV2(GetVpcV2Args.builder()
+        ///             .extId("8a938cc5-282b-48c4-81be-de22de145d07")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-vpc:
+        ///     fn::invoke:
+        ///       function: nutanix:getVpcV2
+        ///       arguments:
+        ///         extId: 8a938cc5-282b-48c4-81be-de22de145d07
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVpcV2Result> Invoke(GetVpcV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVpcV2Result>("nutanix:index/getVpcV2:getVpcV2", args ?? new GetVpcV2InvokeArgs(), options.WithDefaults());

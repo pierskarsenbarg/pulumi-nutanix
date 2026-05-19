@@ -147,6 +147,7 @@ def get_self_service_app_snapshots(app_name: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -155,12 +156,13 @@ def get_self_service_app_snapshots(app_name: Optional[_builtins.str] = None,
         length=250,
         offset=0)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str app_name: - (Optional) The name of the application.
     :param _builtins.str app_uuid: - (Optional) The UUID of the application.
            
-           Both (`app_name` and `app_uuid`) are optional but atleast one of them to be provided for this data source to work.
+           Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them to be provided for this data source to work.
     :param _builtins.int length: - (Required) The number of snapshots to retrieve.
     :param _builtins.int offset: - (Required) The index of the first snapshot to return (for pagination). Default value: 0
     """
@@ -182,16 +184,17 @@ def get_self_service_app_snapshots(app_name: Optional[_builtins.str] = None,
         length=pulumi.get(__ret__, 'length'),
         offset=pulumi.get(__ret__, 'offset'),
         total_matches=pulumi.get(__ret__, 'total_matches'))
-def get_self_service_app_snapshots_output(app_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          app_uuid: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          length: Optional[pulumi.Input[_builtins.int]] = None,
-                                          offset: Optional[pulumi.Input[_builtins.int]] = None,
+def get_self_service_app_snapshots_output(app_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          app_uuid: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          length: pulumi.Input[Optional[_builtins.int]] = None,
+                                          offset: pulumi.Input[Optional[_builtins.int]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSelfServiceAppSnapshotsResult]:
     """
     Describes recovery points (snapshots taken) present in an NCM Self Service Application.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -200,12 +203,13 @@ def get_self_service_app_snapshots_output(app_name: Optional[pulumi.Input[Option
         length=250,
         offset=0)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str app_name: - (Optional) The name of the application.
     :param _builtins.str app_uuid: - (Optional) The UUID of the application.
            
-           Both (`app_name` and `app_uuid`) are optional but atleast one of them to be provided for this data source to work.
+           Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them to be provided for this data source to work.
     :param _builtins.int length: - (Required) The number of snapshots to retrieve.
     :param _builtins.int offset: - (Required) The index of the first snapshot to return (for pagination). Default value: 0
     """

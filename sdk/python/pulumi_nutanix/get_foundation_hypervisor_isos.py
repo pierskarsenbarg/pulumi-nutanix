@@ -116,12 +116,14 @@ def get_foundation_hypervisor_isos(opts: Optional[pulumi.InvokeOptions] = None) 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     hypervisor_isos = nutanix.get_foundation_hypervisor_isos()
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Note
 
@@ -146,12 +148,14 @@ def get_foundation_hypervisor_isos_output(opts: Optional[Union[pulumi.InvokeOpti
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     hypervisor_isos = nutanix.get_foundation_hypervisor_isos()
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Note
 

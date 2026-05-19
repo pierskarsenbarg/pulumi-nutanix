@@ -162,9 +162,9 @@ import (
 //										Name: node_network_info.NodesNetworkingDetails.ApplyT(func(nodesNetworkingDetails []nutanix.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail) (*string, error) {
 //											return &nodesNetworkingDetails[0].NetworkInfos[0].Hcis[0].Name, nil
 //										}).(pulumi.StringPtrOutput),
-//										Networks: node_network_info.NodesNetworkingDetails.ApplyT(func(nodesNetworkingDetails []nutanix.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail) (interface{}, error) {
+//										Networks: node_network_info.NodesNetworkingDetails.ApplyT(func(nodesNetworkingDetails []nutanix.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail) ([]string, error) {
 //											return nodesNetworkingDetails[0].NetworkInfos[0].Hcis[0].Networks, nil
-//										}).(pulumi.AnyOutput),
+//										}).(pulumi.StringArrayOutput),
 //										Uplinks: nutanix.ClusterAddNodeV2NodeParamNodeListNetworkUplinkArray{
 //											&nutanix.ClusterAddNodeV2NodeParamNodeListNetworkUplinkArgs{
 //												Actives: nutanix.ClusterAddNodeV2NodeParamNodeListNetworkUplinkActiveArray{

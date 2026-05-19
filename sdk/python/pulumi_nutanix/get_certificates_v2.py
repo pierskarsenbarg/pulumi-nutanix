@@ -118,12 +118,14 @@ def get_certificates_v2(filter: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     example = nutanix.get_certificates_v2(object_store_ext_id="ac91151a-28b4-4ffe-b150-6bcb2ec80cd4")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str filter: -(Optional) A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. The filter can be applied to the following fields:
@@ -155,23 +157,25 @@ def get_certificates_v2(filter: Optional[_builtins.str] = None,
         object_store_ext_id=pulumi.get(__ret__, 'object_store_ext_id'),
         page=pulumi.get(__ret__, 'page'),
         select=pulumi.get(__ret__, 'select'))
-def get_certificates_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                               object_store_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                               select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_certificates_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                               object_store_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                               select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificatesV2Result]:
     """
     Get a list of the SSL certificates which can be used to access an Object store.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     example = nutanix.get_certificates_v2(object_store_ext_id="ac91151a-28b4-4ffe-b150-6bcb2ec80cd4")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str filter: -(Optional) A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. The filter can be applied to the following fields:

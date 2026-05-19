@@ -175,6 +175,7 @@ def get_volume_group_disk_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -183,6 +184,7 @@ def get_volume_group_disk_v2(ext_id: Optional[_builtins.str] = None,
     example = nutanix.get_volume_group_disk_v2(volume_group_ext_id="3770be9d-06be-4e25-b85d-3457d9b0ceb1",
         ext_id="1d92110d-26b5-46c0-8c93-20b8171373e0")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: - The external identifier of the Data Source Reference.
@@ -205,14 +207,15 @@ def get_volume_group_disk_v2(ext_id: Optional[_builtins.str] = None,
         storage_container_id=pulumi.get(__ret__, 'storage_container_id'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         volume_group_ext_id=pulumi.get(__ret__, 'volume_group_ext_id'))
-def get_volume_group_disk_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    volume_group_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_volume_group_disk_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    volume_group_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeGroupDiskV2Result]:
     """
     Describes a Query the Volume Disk identified by {extId} in the Volume Group identified by {volumeGroupExtId}.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -221,6 +224,7 @@ def get_volume_group_disk_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]
     example = nutanix.get_volume_group_disk_v2(volume_group_ext_id="3770be9d-06be-4e25-b85d-3457d9b0ceb1",
         ext_id="1d92110d-26b5-46c0-8c93-20b8171373e0")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: - The external identifier of the Data Source Reference.

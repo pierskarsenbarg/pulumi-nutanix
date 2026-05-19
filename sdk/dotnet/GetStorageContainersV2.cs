@@ -17,6 +17,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const storage_containers = nutanix.getStorageContainersV2({});
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// storage_containers = nutanix.get_storage_containers_v2()
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,62 +38,121 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var storage_containers = Nutanix.Index.GetStorageContainersV2.Invoke();
+        ///     var storage_containers = Nutanix.GetStorageContainersV2.Invoke();
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetStorageContainersV2(ctx, &amp;nutanix.LookupStorageContainersV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetStorageContainersV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var storage-containers = NutanixFunctions.getStorageContainersV2(GetStorageContainersV2Args.builder()
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   storage-containers:
+        ///     fn::invoke:
+        ///       function: nutanix:getStorageContainersV2
+        ///       arguments: {}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ## Storage Container
         /// 
-        /// The `StorageContainers` contains list of Storage Container objects. Each Storage Container object contains the following attributes:
+        /// The &lt;span pulumi-lang-nodejs="`storageContainers`" pulumi-lang-dotnet="`StorageContainers`" pulumi-lang-go="`storageContainers`" pulumi-lang-python="`storage_containers`" pulumi-lang-yaml="`storageContainers`" pulumi-lang-java="`storageContainers`"&gt;`storageContainers`&lt;/span&gt; contains list of Storage Container objects. Each Storage Container object contains the following attributes:
         /// 
-        /// * `ExtId`: - the storage container uuid
-        /// * `TenantId`: - A globally unique identifier that represents the tenant that owns this entity.
-        /// * `Links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - the storage container uuid
+        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: - A globally unique identifier that represents the tenant that owns this entity.
+        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// 
-        /// * `ContainerExtId`: - the storage container ext id
-        /// * `OwnerExtId`: - owner ext id
-        /// * `Name`: Name of the storage container.  Note that the name of Storage Container should be unique per cluster.
-        /// * `ClusterExtId`: - ext id for the cluster owning the storage container.
-        /// * `StoragePoolExtId`: - extId of the Storage Pool owning the Storage Container instance.
-        /// * `IsMarkedForRemoval`: - Indicates if the Storage Container is marked for removal. This field is set when the Storage Container is about to be destroyed.
-        /// * `MaxCapacityBytes`: - Maximum physical capacity of the Storage Container in bytes.
-        /// * `LogicalExplicitReservedCapacityBytes`: - Total reserved size (in bytes) of the container (set by Admin). This also accounts for the container's replication factor. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity.
-        /// * `LogicalImplicitReservedCapacityBytes`: - This is the summation of reservations provisioned on all VDisks in the container. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity
-        /// * `LogicalAdvertisedCapacityBytes`: - Max capacity of the Container as defined by the user.
-        /// * `ReplicationFactor`: - Replication factor of the Storage Container.
-        /// * `NfsWhitelistAddresses`: - List of NFS addresses which need to be whitelisted.
-        /// * `IsNfsWhitelistInherited`: - Indicates whether the NFS whitelist is inherited from global config.
-        /// * `ErasureCode`: - Indicates the current status value for Erasure Coding for the Container. available values:  `NONE`,    `OFF`,    `ON`
+        /// * &lt;span pulumi-lang-nodejs="`containerExtId`" pulumi-lang-dotnet="`ContainerExtId`" pulumi-lang-go="`containerExtId`" pulumi-lang-python="`container_ext_id`" pulumi-lang-yaml="`containerExtId`" pulumi-lang-java="`containerExtId`"&gt;`containerExtId`&lt;/span&gt;: - the storage container ext id
+        /// * &lt;span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`"&gt;`ownerExtId`&lt;/span&gt;: - owner ext id
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: Name of the storage container.  Note that the name of Storage Container should be unique per cluster.
+        /// * &lt;span pulumi-lang-nodejs="`clusterExtId`" pulumi-lang-dotnet="`ClusterExtId`" pulumi-lang-go="`clusterExtId`" pulumi-lang-python="`cluster_ext_id`" pulumi-lang-yaml="`clusterExtId`" pulumi-lang-java="`clusterExtId`"&gt;`clusterExtId`&lt;/span&gt;: - ext id for the cluster owning the storage container.
+        /// * &lt;span pulumi-lang-nodejs="`storagePoolExtId`" pulumi-lang-dotnet="`StoragePoolExtId`" pulumi-lang-go="`storagePoolExtId`" pulumi-lang-python="`storage_pool_ext_id`" pulumi-lang-yaml="`storagePoolExtId`" pulumi-lang-java="`storagePoolExtId`"&gt;`storagePoolExtId`&lt;/span&gt;: - extId of the Storage Pool owning the Storage Container instance.
+        /// * &lt;span pulumi-lang-nodejs="`isMarkedForRemoval`" pulumi-lang-dotnet="`IsMarkedForRemoval`" pulumi-lang-go="`isMarkedForRemoval`" pulumi-lang-python="`is_marked_for_removal`" pulumi-lang-yaml="`isMarkedForRemoval`" pulumi-lang-java="`isMarkedForRemoval`"&gt;`isMarkedForRemoval`&lt;/span&gt;: - Indicates if the Storage Container is marked for removal. This field is set when the Storage Container is about to be destroyed.
+        /// * &lt;span pulumi-lang-nodejs="`maxCapacityBytes`" pulumi-lang-dotnet="`MaxCapacityBytes`" pulumi-lang-go="`maxCapacityBytes`" pulumi-lang-python="`max_capacity_bytes`" pulumi-lang-yaml="`maxCapacityBytes`" pulumi-lang-java="`maxCapacityBytes`"&gt;`maxCapacityBytes`&lt;/span&gt;: - Maximum physical capacity of the Storage Container in bytes.
+        /// * &lt;span pulumi-lang-nodejs="`logicalExplicitReservedCapacityBytes`" pulumi-lang-dotnet="`LogicalExplicitReservedCapacityBytes`" pulumi-lang-go="`logicalExplicitReservedCapacityBytes`" pulumi-lang-python="`logical_explicit_reserved_capacity_bytes`" pulumi-lang-yaml="`logicalExplicitReservedCapacityBytes`" pulumi-lang-java="`logicalExplicitReservedCapacityBytes`"&gt;`logicalExplicitReservedCapacityBytes`&lt;/span&gt;: - Total reserved size (in bytes) of the container (set by Admin). This also accounts for the container's replication factor. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity.
+        /// * &lt;span pulumi-lang-nodejs="`logicalImplicitReservedCapacityBytes`" pulumi-lang-dotnet="`LogicalImplicitReservedCapacityBytes`" pulumi-lang-go="`logicalImplicitReservedCapacityBytes`" pulumi-lang-python="`logical_implicit_reserved_capacity_bytes`" pulumi-lang-yaml="`logicalImplicitReservedCapacityBytes`" pulumi-lang-java="`logicalImplicitReservedCapacityBytes`"&gt;`logicalImplicitReservedCapacityBytes`&lt;/span&gt;: - This is the summation of reservations provisioned on all VDisks in the container. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity
+        /// * &lt;span pulumi-lang-nodejs="`logicalAdvertisedCapacityBytes`" pulumi-lang-dotnet="`LogicalAdvertisedCapacityBytes`" pulumi-lang-go="`logicalAdvertisedCapacityBytes`" pulumi-lang-python="`logical_advertised_capacity_bytes`" pulumi-lang-yaml="`logicalAdvertisedCapacityBytes`" pulumi-lang-java="`logicalAdvertisedCapacityBytes`"&gt;`logicalAdvertisedCapacityBytes`&lt;/span&gt;: - Max capacity of the Container as defined by the user.
+        /// * &lt;span pulumi-lang-nodejs="`replicationFactor`" pulumi-lang-dotnet="`ReplicationFactor`" pulumi-lang-go="`replicationFactor`" pulumi-lang-python="`replication_factor`" pulumi-lang-yaml="`replicationFactor`" pulumi-lang-java="`replicationFactor`"&gt;`replicationFactor`&lt;/span&gt;: - Replication factor of the Storage Container.
+        /// * &lt;span pulumi-lang-nodejs="`nfsWhitelistAddresses`" pulumi-lang-dotnet="`NfsWhitelistAddresses`" pulumi-lang-go="`nfsWhitelistAddresses`" pulumi-lang-python="`nfs_whitelist_addresses`" pulumi-lang-yaml="`nfsWhitelistAddresses`" pulumi-lang-java="`nfsWhitelistAddresses`"&gt;`nfsWhitelistAddresses`&lt;/span&gt;: - List of NFS addresses which need to be whitelisted.
+        /// * &lt;span pulumi-lang-nodejs="`isNfsWhitelistInherited`" pulumi-lang-dotnet="`IsNfsWhitelistInherited`" pulumi-lang-go="`isNfsWhitelistInherited`" pulumi-lang-python="`is_nfs_whitelist_inherited`" pulumi-lang-yaml="`isNfsWhitelistInherited`" pulumi-lang-java="`isNfsWhitelistInherited`"&gt;`isNfsWhitelistInherited`&lt;/span&gt;: - Indicates whether the NFS whitelist is inherited from global config.
+        /// * &lt;span pulumi-lang-nodejs="`erasureCode`" pulumi-lang-dotnet="`ErasureCode`" pulumi-lang-go="`erasureCode`" pulumi-lang-python="`erasure_code`" pulumi-lang-yaml="`erasureCode`" pulumi-lang-java="`erasureCode`"&gt;`erasureCode`&lt;/span&gt;: - Indicates the current status value for Erasure Coding for the Container. available values:  `NONE`,    `OFF`,    `ON`
         /// 
-        /// * `IsInlineEcEnabled`: - Indicates whether data written to this container should be inline erasure coded or not. This field is only considered when ErasureCoding is enabled.
-        /// * `HasHigherEcFaultDomainPreference`: - Indicates whether to prefer a higher Erasure Code fault domain.
-        /// * `ErasureCodeDelaySecs`: - Delay in performing ErasureCode for the current Container instance.
-        /// * `CacheDeduplication`: - Indicates the current status of Cache Deduplication for the Container. available values:  `NONE`,    `OFF`,    `ON`
-        /// * `OnDiskDedup`: - Indicates the current status of Disk Deduplication for the Container. available values:  `NONE`,    `OFF`,    `POST_PROCESS`
-        /// * `IsCompressionEnabled`: - Indicates whether the compression is enabled for the Container.
-        /// * `CompressionDelaySecs`: - The compression delay in seconds.
-        /// * `IsInternal`: - Indicates whether the Container is internal and is managed by Nutanix.
-        /// * `IsSoftwareEncryptionEnabled`: - Indicates whether the Container instance has software encryption enabled.
-        /// * `IsEncrypted`: - Indicates whether the Container is encrypted or not.
-        /// * `AffinityHostExtId`: - Affinity host extId for RF 1 Storage Container.
-        /// * `ClusterName`: - Corresponding name of the Cluster owning the Storage Container instance.
+        /// * &lt;span pulumi-lang-nodejs="`isInlineEcEnabled`" pulumi-lang-dotnet="`IsInlineEcEnabled`" pulumi-lang-go="`isInlineEcEnabled`" pulumi-lang-python="`is_inline_ec_enabled`" pulumi-lang-yaml="`isInlineEcEnabled`" pulumi-lang-java="`isInlineEcEnabled`"&gt;`isInlineEcEnabled`&lt;/span&gt;: - Indicates whether data written to this container should be inline erasure coded or not. This field is only considered when ErasureCoding is enabled.
+        /// * &lt;span pulumi-lang-nodejs="`hasHigherEcFaultDomainPreference`" pulumi-lang-dotnet="`HasHigherEcFaultDomainPreference`" pulumi-lang-go="`hasHigherEcFaultDomainPreference`" pulumi-lang-python="`has_higher_ec_fault_domain_preference`" pulumi-lang-yaml="`hasHigherEcFaultDomainPreference`" pulumi-lang-java="`hasHigherEcFaultDomainPreference`"&gt;`hasHigherEcFaultDomainPreference`&lt;/span&gt;: - Indicates whether to prefer a higher Erasure Code fault domain.
+        /// * &lt;span pulumi-lang-nodejs="`erasureCodeDelaySecs`" pulumi-lang-dotnet="`ErasureCodeDelaySecs`" pulumi-lang-go="`erasureCodeDelaySecs`" pulumi-lang-python="`erasure_code_delay_secs`" pulumi-lang-yaml="`erasureCodeDelaySecs`" pulumi-lang-java="`erasureCodeDelaySecs`"&gt;`erasureCodeDelaySecs`&lt;/span&gt;: - Delay in performing ErasureCode for the current Container instance.
+        /// * &lt;span pulumi-lang-nodejs="`cacheDeduplication`" pulumi-lang-dotnet="`CacheDeduplication`" pulumi-lang-go="`cacheDeduplication`" pulumi-lang-python="`cache_deduplication`" pulumi-lang-yaml="`cacheDeduplication`" pulumi-lang-java="`cacheDeduplication`"&gt;`cacheDeduplication`&lt;/span&gt;: - Indicates the current status of Cache Deduplication for the Container. available values:  `NONE`,    `OFF`,    `ON`
+        /// * &lt;span pulumi-lang-nodejs="`onDiskDedup`" pulumi-lang-dotnet="`OnDiskDedup`" pulumi-lang-go="`onDiskDedup`" pulumi-lang-python="`on_disk_dedup`" pulumi-lang-yaml="`onDiskDedup`" pulumi-lang-java="`onDiskDedup`"&gt;`onDiskDedup`&lt;/span&gt;: - Indicates the current status of Disk Deduplication for the Container. available values:  `NONE`,    `OFF`,    `POST_PROCESS`
+        /// * &lt;span pulumi-lang-nodejs="`isCompressionEnabled`" pulumi-lang-dotnet="`IsCompressionEnabled`" pulumi-lang-go="`isCompressionEnabled`" pulumi-lang-python="`is_compression_enabled`" pulumi-lang-yaml="`isCompressionEnabled`" pulumi-lang-java="`isCompressionEnabled`"&gt;`isCompressionEnabled`&lt;/span&gt;: - Indicates whether the compression is enabled for the Container.
+        /// * &lt;span pulumi-lang-nodejs="`compressionDelaySecs`" pulumi-lang-dotnet="`CompressionDelaySecs`" pulumi-lang-go="`compressionDelaySecs`" pulumi-lang-python="`compression_delay_secs`" pulumi-lang-yaml="`compressionDelaySecs`" pulumi-lang-java="`compressionDelaySecs`"&gt;`compressionDelaySecs`&lt;/span&gt;: - The compression delay in seconds.
+        /// * &lt;span pulumi-lang-nodejs="`isInternal`" pulumi-lang-dotnet="`IsInternal`" pulumi-lang-go="`isInternal`" pulumi-lang-python="`is_internal`" pulumi-lang-yaml="`isInternal`" pulumi-lang-java="`isInternal`"&gt;`isInternal`&lt;/span&gt;: - Indicates whether the Container is internal and is managed by Nutanix.
+        /// * &lt;span pulumi-lang-nodejs="`isSoftwareEncryptionEnabled`" pulumi-lang-dotnet="`IsSoftwareEncryptionEnabled`" pulumi-lang-go="`isSoftwareEncryptionEnabled`" pulumi-lang-python="`is_software_encryption_enabled`" pulumi-lang-yaml="`isSoftwareEncryptionEnabled`" pulumi-lang-java="`isSoftwareEncryptionEnabled`"&gt;`isSoftwareEncryptionEnabled`&lt;/span&gt;: - Indicates whether the Container instance has software encryption enabled.
+        /// * &lt;span pulumi-lang-nodejs="`isEncrypted`" pulumi-lang-dotnet="`IsEncrypted`" pulumi-lang-go="`isEncrypted`" pulumi-lang-python="`is_encrypted`" pulumi-lang-yaml="`isEncrypted`" pulumi-lang-java="`isEncrypted`"&gt;`isEncrypted`&lt;/span&gt;: - Indicates whether the Container is encrypted or not.
+        /// * &lt;span pulumi-lang-nodejs="`affinityHostExtId`" pulumi-lang-dotnet="`AffinityHostExtId`" pulumi-lang-go="`affinityHostExtId`" pulumi-lang-python="`affinity_host_ext_id`" pulumi-lang-yaml="`affinityHostExtId`" pulumi-lang-java="`affinityHostExtId`"&gt;`affinityHostExtId`&lt;/span&gt;: - Affinity host extId for RF 1 Storage Container.
+        /// * &lt;span pulumi-lang-nodejs="`clusterName`" pulumi-lang-dotnet="`ClusterName`" pulumi-lang-go="`clusterName`" pulumi-lang-python="`cluster_name`" pulumi-lang-yaml="`clusterName`" pulumi-lang-java="`clusterName`"&gt;`clusterName`&lt;/span&gt;: - Corresponding name of the Cluster owning the Storage Container instance.
         /// 
         /// 
-        /// ### NfsWhitelistAddresses
-        /// 
-        /// * `Ipv4`: Reference to address configuration
-        /// * `Ipv6`: Reference to address configuration
-        /// * `Fqdn`: Reference to address configuration
+        /// ###&lt;span pulumi-lang-nodejs=" nfsWhitelistAddresses
+        /// " pulumi-lang-dotnet=" NfsWhitelistAddresses
+        /// " pulumi-lang-go=" nfsWhitelistAddresses
+        /// " pulumi-lang-python=" nfs_whitelist_addresses
+        /// " pulumi-lang-yaml=" nfsWhitelistAddresses
+        /// " pulumi-lang-java=" nfsWhitelistAddresses
+        /// "&gt; nfsWhitelistAddresses
+        /// &lt;/span&gt;
+        /// * &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: Reference to address configuration
+        /// * &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: Reference to address configuration
+        /// * &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt;: Reference to address configuration
         /// 
         /// ### ipv4, ipv6 (Reference to address configuration)
         /// 
-        /// * `Value`: value of address
-        /// * `PrefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: value of address
+        /// * &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`"&gt;`prefixLength`&lt;/span&gt;: The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
         /// ### fqdn (Reference to address configuration)
         /// 
-        /// * `Value`: value of fqdn address
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: value of fqdn address
         /// 
         /// 
         /// 
@@ -94,6 +166,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const storage_containers = nutanix.getStorageContainersV2({});
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// storage_containers = nutanix.get_storage_containers_v2()
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -102,62 +187,121 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var storage_containers = Nutanix.Index.GetStorageContainersV2.Invoke();
+        ///     var storage_containers = Nutanix.GetStorageContainersV2.Invoke();
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetStorageContainersV2(ctx, &amp;nutanix.LookupStorageContainersV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetStorageContainersV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var storage-containers = NutanixFunctions.getStorageContainersV2(GetStorageContainersV2Args.builder()
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   storage-containers:
+        ///     fn::invoke:
+        ///       function: nutanix:getStorageContainersV2
+        ///       arguments: {}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ## Storage Container
         /// 
-        /// The `StorageContainers` contains list of Storage Container objects. Each Storage Container object contains the following attributes:
+        /// The &lt;span pulumi-lang-nodejs="`storageContainers`" pulumi-lang-dotnet="`StorageContainers`" pulumi-lang-go="`storageContainers`" pulumi-lang-python="`storage_containers`" pulumi-lang-yaml="`storageContainers`" pulumi-lang-java="`storageContainers`"&gt;`storageContainers`&lt;/span&gt; contains list of Storage Container objects. Each Storage Container object contains the following attributes:
         /// 
-        /// * `ExtId`: - the storage container uuid
-        /// * `TenantId`: - A globally unique identifier that represents the tenant that owns this entity.
-        /// * `Links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - the storage container uuid
+        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: - A globally unique identifier that represents the tenant that owns this entity.
+        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// 
-        /// * `ContainerExtId`: - the storage container ext id
-        /// * `OwnerExtId`: - owner ext id
-        /// * `Name`: Name of the storage container.  Note that the name of Storage Container should be unique per cluster.
-        /// * `ClusterExtId`: - ext id for the cluster owning the storage container.
-        /// * `StoragePoolExtId`: - extId of the Storage Pool owning the Storage Container instance.
-        /// * `IsMarkedForRemoval`: - Indicates if the Storage Container is marked for removal. This field is set when the Storage Container is about to be destroyed.
-        /// * `MaxCapacityBytes`: - Maximum physical capacity of the Storage Container in bytes.
-        /// * `LogicalExplicitReservedCapacityBytes`: - Total reserved size (in bytes) of the container (set by Admin). This also accounts for the container's replication factor. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity.
-        /// * `LogicalImplicitReservedCapacityBytes`: - This is the summation of reservations provisioned on all VDisks in the container. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity
-        /// * `LogicalAdvertisedCapacityBytes`: - Max capacity of the Container as defined by the user.
-        /// * `ReplicationFactor`: - Replication factor of the Storage Container.
-        /// * `NfsWhitelistAddresses`: - List of NFS addresses which need to be whitelisted.
-        /// * `IsNfsWhitelistInherited`: - Indicates whether the NFS whitelist is inherited from global config.
-        /// * `ErasureCode`: - Indicates the current status value for Erasure Coding for the Container. available values:  `NONE`,    `OFF`,    `ON`
+        /// * &lt;span pulumi-lang-nodejs="`containerExtId`" pulumi-lang-dotnet="`ContainerExtId`" pulumi-lang-go="`containerExtId`" pulumi-lang-python="`container_ext_id`" pulumi-lang-yaml="`containerExtId`" pulumi-lang-java="`containerExtId`"&gt;`containerExtId`&lt;/span&gt;: - the storage container ext id
+        /// * &lt;span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`"&gt;`ownerExtId`&lt;/span&gt;: - owner ext id
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: Name of the storage container.  Note that the name of Storage Container should be unique per cluster.
+        /// * &lt;span pulumi-lang-nodejs="`clusterExtId`" pulumi-lang-dotnet="`ClusterExtId`" pulumi-lang-go="`clusterExtId`" pulumi-lang-python="`cluster_ext_id`" pulumi-lang-yaml="`clusterExtId`" pulumi-lang-java="`clusterExtId`"&gt;`clusterExtId`&lt;/span&gt;: - ext id for the cluster owning the storage container.
+        /// * &lt;span pulumi-lang-nodejs="`storagePoolExtId`" pulumi-lang-dotnet="`StoragePoolExtId`" pulumi-lang-go="`storagePoolExtId`" pulumi-lang-python="`storage_pool_ext_id`" pulumi-lang-yaml="`storagePoolExtId`" pulumi-lang-java="`storagePoolExtId`"&gt;`storagePoolExtId`&lt;/span&gt;: - extId of the Storage Pool owning the Storage Container instance.
+        /// * &lt;span pulumi-lang-nodejs="`isMarkedForRemoval`" pulumi-lang-dotnet="`IsMarkedForRemoval`" pulumi-lang-go="`isMarkedForRemoval`" pulumi-lang-python="`is_marked_for_removal`" pulumi-lang-yaml="`isMarkedForRemoval`" pulumi-lang-java="`isMarkedForRemoval`"&gt;`isMarkedForRemoval`&lt;/span&gt;: - Indicates if the Storage Container is marked for removal. This field is set when the Storage Container is about to be destroyed.
+        /// * &lt;span pulumi-lang-nodejs="`maxCapacityBytes`" pulumi-lang-dotnet="`MaxCapacityBytes`" pulumi-lang-go="`maxCapacityBytes`" pulumi-lang-python="`max_capacity_bytes`" pulumi-lang-yaml="`maxCapacityBytes`" pulumi-lang-java="`maxCapacityBytes`"&gt;`maxCapacityBytes`&lt;/span&gt;: - Maximum physical capacity of the Storage Container in bytes.
+        /// * &lt;span pulumi-lang-nodejs="`logicalExplicitReservedCapacityBytes`" pulumi-lang-dotnet="`LogicalExplicitReservedCapacityBytes`" pulumi-lang-go="`logicalExplicitReservedCapacityBytes`" pulumi-lang-python="`logical_explicit_reserved_capacity_bytes`" pulumi-lang-yaml="`logicalExplicitReservedCapacityBytes`" pulumi-lang-java="`logicalExplicitReservedCapacityBytes`"&gt;`logicalExplicitReservedCapacityBytes`&lt;/span&gt;: - Total reserved size (in bytes) of the container (set by Admin). This also accounts for the container's replication factor. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity.
+        /// * &lt;span pulumi-lang-nodejs="`logicalImplicitReservedCapacityBytes`" pulumi-lang-dotnet="`LogicalImplicitReservedCapacityBytes`" pulumi-lang-go="`logicalImplicitReservedCapacityBytes`" pulumi-lang-python="`logical_implicit_reserved_capacity_bytes`" pulumi-lang-yaml="`logicalImplicitReservedCapacityBytes`" pulumi-lang-java="`logicalImplicitReservedCapacityBytes`"&gt;`logicalImplicitReservedCapacityBytes`&lt;/span&gt;: - This is the summation of reservations provisioned on all VDisks in the container. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity
+        /// * &lt;span pulumi-lang-nodejs="`logicalAdvertisedCapacityBytes`" pulumi-lang-dotnet="`LogicalAdvertisedCapacityBytes`" pulumi-lang-go="`logicalAdvertisedCapacityBytes`" pulumi-lang-python="`logical_advertised_capacity_bytes`" pulumi-lang-yaml="`logicalAdvertisedCapacityBytes`" pulumi-lang-java="`logicalAdvertisedCapacityBytes`"&gt;`logicalAdvertisedCapacityBytes`&lt;/span&gt;: - Max capacity of the Container as defined by the user.
+        /// * &lt;span pulumi-lang-nodejs="`replicationFactor`" pulumi-lang-dotnet="`ReplicationFactor`" pulumi-lang-go="`replicationFactor`" pulumi-lang-python="`replication_factor`" pulumi-lang-yaml="`replicationFactor`" pulumi-lang-java="`replicationFactor`"&gt;`replicationFactor`&lt;/span&gt;: - Replication factor of the Storage Container.
+        /// * &lt;span pulumi-lang-nodejs="`nfsWhitelistAddresses`" pulumi-lang-dotnet="`NfsWhitelistAddresses`" pulumi-lang-go="`nfsWhitelistAddresses`" pulumi-lang-python="`nfs_whitelist_addresses`" pulumi-lang-yaml="`nfsWhitelistAddresses`" pulumi-lang-java="`nfsWhitelistAddresses`"&gt;`nfsWhitelistAddresses`&lt;/span&gt;: - List of NFS addresses which need to be whitelisted.
+        /// * &lt;span pulumi-lang-nodejs="`isNfsWhitelistInherited`" pulumi-lang-dotnet="`IsNfsWhitelistInherited`" pulumi-lang-go="`isNfsWhitelistInherited`" pulumi-lang-python="`is_nfs_whitelist_inherited`" pulumi-lang-yaml="`isNfsWhitelistInherited`" pulumi-lang-java="`isNfsWhitelistInherited`"&gt;`isNfsWhitelistInherited`&lt;/span&gt;: - Indicates whether the NFS whitelist is inherited from global config.
+        /// * &lt;span pulumi-lang-nodejs="`erasureCode`" pulumi-lang-dotnet="`ErasureCode`" pulumi-lang-go="`erasureCode`" pulumi-lang-python="`erasure_code`" pulumi-lang-yaml="`erasureCode`" pulumi-lang-java="`erasureCode`"&gt;`erasureCode`&lt;/span&gt;: - Indicates the current status value for Erasure Coding for the Container. available values:  `NONE`,    `OFF`,    `ON`
         /// 
-        /// * `IsInlineEcEnabled`: - Indicates whether data written to this container should be inline erasure coded or not. This field is only considered when ErasureCoding is enabled.
-        /// * `HasHigherEcFaultDomainPreference`: - Indicates whether to prefer a higher Erasure Code fault domain.
-        /// * `ErasureCodeDelaySecs`: - Delay in performing ErasureCode for the current Container instance.
-        /// * `CacheDeduplication`: - Indicates the current status of Cache Deduplication for the Container. available values:  `NONE`,    `OFF`,    `ON`
-        /// * `OnDiskDedup`: - Indicates the current status of Disk Deduplication for the Container. available values:  `NONE`,    `OFF`,    `POST_PROCESS`
-        /// * `IsCompressionEnabled`: - Indicates whether the compression is enabled for the Container.
-        /// * `CompressionDelaySecs`: - The compression delay in seconds.
-        /// * `IsInternal`: - Indicates whether the Container is internal and is managed by Nutanix.
-        /// * `IsSoftwareEncryptionEnabled`: - Indicates whether the Container instance has software encryption enabled.
-        /// * `IsEncrypted`: - Indicates whether the Container is encrypted or not.
-        /// * `AffinityHostExtId`: - Affinity host extId for RF 1 Storage Container.
-        /// * `ClusterName`: - Corresponding name of the Cluster owning the Storage Container instance.
+        /// * &lt;span pulumi-lang-nodejs="`isInlineEcEnabled`" pulumi-lang-dotnet="`IsInlineEcEnabled`" pulumi-lang-go="`isInlineEcEnabled`" pulumi-lang-python="`is_inline_ec_enabled`" pulumi-lang-yaml="`isInlineEcEnabled`" pulumi-lang-java="`isInlineEcEnabled`"&gt;`isInlineEcEnabled`&lt;/span&gt;: - Indicates whether data written to this container should be inline erasure coded or not. This field is only considered when ErasureCoding is enabled.
+        /// * &lt;span pulumi-lang-nodejs="`hasHigherEcFaultDomainPreference`" pulumi-lang-dotnet="`HasHigherEcFaultDomainPreference`" pulumi-lang-go="`hasHigherEcFaultDomainPreference`" pulumi-lang-python="`has_higher_ec_fault_domain_preference`" pulumi-lang-yaml="`hasHigherEcFaultDomainPreference`" pulumi-lang-java="`hasHigherEcFaultDomainPreference`"&gt;`hasHigherEcFaultDomainPreference`&lt;/span&gt;: - Indicates whether to prefer a higher Erasure Code fault domain.
+        /// * &lt;span pulumi-lang-nodejs="`erasureCodeDelaySecs`" pulumi-lang-dotnet="`ErasureCodeDelaySecs`" pulumi-lang-go="`erasureCodeDelaySecs`" pulumi-lang-python="`erasure_code_delay_secs`" pulumi-lang-yaml="`erasureCodeDelaySecs`" pulumi-lang-java="`erasureCodeDelaySecs`"&gt;`erasureCodeDelaySecs`&lt;/span&gt;: - Delay in performing ErasureCode for the current Container instance.
+        /// * &lt;span pulumi-lang-nodejs="`cacheDeduplication`" pulumi-lang-dotnet="`CacheDeduplication`" pulumi-lang-go="`cacheDeduplication`" pulumi-lang-python="`cache_deduplication`" pulumi-lang-yaml="`cacheDeduplication`" pulumi-lang-java="`cacheDeduplication`"&gt;`cacheDeduplication`&lt;/span&gt;: - Indicates the current status of Cache Deduplication for the Container. available values:  `NONE`,    `OFF`,    `ON`
+        /// * &lt;span pulumi-lang-nodejs="`onDiskDedup`" pulumi-lang-dotnet="`OnDiskDedup`" pulumi-lang-go="`onDiskDedup`" pulumi-lang-python="`on_disk_dedup`" pulumi-lang-yaml="`onDiskDedup`" pulumi-lang-java="`onDiskDedup`"&gt;`onDiskDedup`&lt;/span&gt;: - Indicates the current status of Disk Deduplication for the Container. available values:  `NONE`,    `OFF`,    `POST_PROCESS`
+        /// * &lt;span pulumi-lang-nodejs="`isCompressionEnabled`" pulumi-lang-dotnet="`IsCompressionEnabled`" pulumi-lang-go="`isCompressionEnabled`" pulumi-lang-python="`is_compression_enabled`" pulumi-lang-yaml="`isCompressionEnabled`" pulumi-lang-java="`isCompressionEnabled`"&gt;`isCompressionEnabled`&lt;/span&gt;: - Indicates whether the compression is enabled for the Container.
+        /// * &lt;span pulumi-lang-nodejs="`compressionDelaySecs`" pulumi-lang-dotnet="`CompressionDelaySecs`" pulumi-lang-go="`compressionDelaySecs`" pulumi-lang-python="`compression_delay_secs`" pulumi-lang-yaml="`compressionDelaySecs`" pulumi-lang-java="`compressionDelaySecs`"&gt;`compressionDelaySecs`&lt;/span&gt;: - The compression delay in seconds.
+        /// * &lt;span pulumi-lang-nodejs="`isInternal`" pulumi-lang-dotnet="`IsInternal`" pulumi-lang-go="`isInternal`" pulumi-lang-python="`is_internal`" pulumi-lang-yaml="`isInternal`" pulumi-lang-java="`isInternal`"&gt;`isInternal`&lt;/span&gt;: - Indicates whether the Container is internal and is managed by Nutanix.
+        /// * &lt;span pulumi-lang-nodejs="`isSoftwareEncryptionEnabled`" pulumi-lang-dotnet="`IsSoftwareEncryptionEnabled`" pulumi-lang-go="`isSoftwareEncryptionEnabled`" pulumi-lang-python="`is_software_encryption_enabled`" pulumi-lang-yaml="`isSoftwareEncryptionEnabled`" pulumi-lang-java="`isSoftwareEncryptionEnabled`"&gt;`isSoftwareEncryptionEnabled`&lt;/span&gt;: - Indicates whether the Container instance has software encryption enabled.
+        /// * &lt;span pulumi-lang-nodejs="`isEncrypted`" pulumi-lang-dotnet="`IsEncrypted`" pulumi-lang-go="`isEncrypted`" pulumi-lang-python="`is_encrypted`" pulumi-lang-yaml="`isEncrypted`" pulumi-lang-java="`isEncrypted`"&gt;`isEncrypted`&lt;/span&gt;: - Indicates whether the Container is encrypted or not.
+        /// * &lt;span pulumi-lang-nodejs="`affinityHostExtId`" pulumi-lang-dotnet="`AffinityHostExtId`" pulumi-lang-go="`affinityHostExtId`" pulumi-lang-python="`affinity_host_ext_id`" pulumi-lang-yaml="`affinityHostExtId`" pulumi-lang-java="`affinityHostExtId`"&gt;`affinityHostExtId`&lt;/span&gt;: - Affinity host extId for RF 1 Storage Container.
+        /// * &lt;span pulumi-lang-nodejs="`clusterName`" pulumi-lang-dotnet="`ClusterName`" pulumi-lang-go="`clusterName`" pulumi-lang-python="`cluster_name`" pulumi-lang-yaml="`clusterName`" pulumi-lang-java="`clusterName`"&gt;`clusterName`&lt;/span&gt;: - Corresponding name of the Cluster owning the Storage Container instance.
         /// 
         /// 
-        /// ### NfsWhitelistAddresses
-        /// 
-        /// * `Ipv4`: Reference to address configuration
-        /// * `Ipv6`: Reference to address configuration
-        /// * `Fqdn`: Reference to address configuration
+        /// ###&lt;span pulumi-lang-nodejs=" nfsWhitelistAddresses
+        /// " pulumi-lang-dotnet=" NfsWhitelistAddresses
+        /// " pulumi-lang-go=" nfsWhitelistAddresses
+        /// " pulumi-lang-python=" nfs_whitelist_addresses
+        /// " pulumi-lang-yaml=" nfsWhitelistAddresses
+        /// " pulumi-lang-java=" nfsWhitelistAddresses
+        /// "&gt; nfsWhitelistAddresses
+        /// &lt;/span&gt;
+        /// * &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: Reference to address configuration
+        /// * &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: Reference to address configuration
+        /// * &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt;: Reference to address configuration
         /// 
         /// ### ipv4, ipv6 (Reference to address configuration)
         /// 
-        /// * `Value`: value of address
-        /// * `PrefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: value of address
+        /// * &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`"&gt;`prefixLength`&lt;/span&gt;: The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
         /// ### fqdn (Reference to address configuration)
         /// 
-        /// * `Value`: value of fqdn address
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: value of fqdn address
         /// 
         /// 
         /// 
@@ -171,6 +315,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const storage_containers = nutanix.getStorageContainersV2({});
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// storage_containers = nutanix.get_storage_containers_v2()
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -179,62 +336,121 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var storage_containers = Nutanix.Index.GetStorageContainersV2.Invoke();
+        ///     var storage_containers = Nutanix.GetStorageContainersV2.Invoke();
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetStorageContainersV2(ctx, &amp;nutanix.LookupStorageContainersV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetStorageContainersV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var storage-containers = NutanixFunctions.getStorageContainersV2(GetStorageContainersV2Args.builder()
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   storage-containers:
+        ///     fn::invoke:
+        ///       function: nutanix:getStorageContainersV2
+        ///       arguments: {}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ## Storage Container
         /// 
-        /// The `StorageContainers` contains list of Storage Container objects. Each Storage Container object contains the following attributes:
+        /// The &lt;span pulumi-lang-nodejs="`storageContainers`" pulumi-lang-dotnet="`StorageContainers`" pulumi-lang-go="`storageContainers`" pulumi-lang-python="`storage_containers`" pulumi-lang-yaml="`storageContainers`" pulumi-lang-java="`storageContainers`"&gt;`storageContainers`&lt;/span&gt; contains list of Storage Container objects. Each Storage Container object contains the following attributes:
         /// 
-        /// * `ExtId`: - the storage container uuid
-        /// * `TenantId`: - A globally unique identifier that represents the tenant that owns this entity.
-        /// * `Links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - the storage container uuid
+        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: - A globally unique identifier that represents the tenant that owns this entity.
+        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// 
-        /// * `ContainerExtId`: - the storage container ext id
-        /// * `OwnerExtId`: - owner ext id
-        /// * `Name`: Name of the storage container.  Note that the name of Storage Container should be unique per cluster.
-        /// * `ClusterExtId`: - ext id for the cluster owning the storage container.
-        /// * `StoragePoolExtId`: - extId of the Storage Pool owning the Storage Container instance.
-        /// * `IsMarkedForRemoval`: - Indicates if the Storage Container is marked for removal. This field is set when the Storage Container is about to be destroyed.
-        /// * `MaxCapacityBytes`: - Maximum physical capacity of the Storage Container in bytes.
-        /// * `LogicalExplicitReservedCapacityBytes`: - Total reserved size (in bytes) of the container (set by Admin). This also accounts for the container's replication factor. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity.
-        /// * `LogicalImplicitReservedCapacityBytes`: - This is the summation of reservations provisioned on all VDisks in the container. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity
-        /// * `LogicalAdvertisedCapacityBytes`: - Max capacity of the Container as defined by the user.
-        /// * `ReplicationFactor`: - Replication factor of the Storage Container.
-        /// * `NfsWhitelistAddresses`: - List of NFS addresses which need to be whitelisted.
-        /// * `IsNfsWhitelistInherited`: - Indicates whether the NFS whitelist is inherited from global config.
-        /// * `ErasureCode`: - Indicates the current status value for Erasure Coding for the Container. available values:  `NONE`,    `OFF`,    `ON`
+        /// * &lt;span pulumi-lang-nodejs="`containerExtId`" pulumi-lang-dotnet="`ContainerExtId`" pulumi-lang-go="`containerExtId`" pulumi-lang-python="`container_ext_id`" pulumi-lang-yaml="`containerExtId`" pulumi-lang-java="`containerExtId`"&gt;`containerExtId`&lt;/span&gt;: - the storage container ext id
+        /// * &lt;span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`"&gt;`ownerExtId`&lt;/span&gt;: - owner ext id
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: Name of the storage container.  Note that the name of Storage Container should be unique per cluster.
+        /// * &lt;span pulumi-lang-nodejs="`clusterExtId`" pulumi-lang-dotnet="`ClusterExtId`" pulumi-lang-go="`clusterExtId`" pulumi-lang-python="`cluster_ext_id`" pulumi-lang-yaml="`clusterExtId`" pulumi-lang-java="`clusterExtId`"&gt;`clusterExtId`&lt;/span&gt;: - ext id for the cluster owning the storage container.
+        /// * &lt;span pulumi-lang-nodejs="`storagePoolExtId`" pulumi-lang-dotnet="`StoragePoolExtId`" pulumi-lang-go="`storagePoolExtId`" pulumi-lang-python="`storage_pool_ext_id`" pulumi-lang-yaml="`storagePoolExtId`" pulumi-lang-java="`storagePoolExtId`"&gt;`storagePoolExtId`&lt;/span&gt;: - extId of the Storage Pool owning the Storage Container instance.
+        /// * &lt;span pulumi-lang-nodejs="`isMarkedForRemoval`" pulumi-lang-dotnet="`IsMarkedForRemoval`" pulumi-lang-go="`isMarkedForRemoval`" pulumi-lang-python="`is_marked_for_removal`" pulumi-lang-yaml="`isMarkedForRemoval`" pulumi-lang-java="`isMarkedForRemoval`"&gt;`isMarkedForRemoval`&lt;/span&gt;: - Indicates if the Storage Container is marked for removal. This field is set when the Storage Container is about to be destroyed.
+        /// * &lt;span pulumi-lang-nodejs="`maxCapacityBytes`" pulumi-lang-dotnet="`MaxCapacityBytes`" pulumi-lang-go="`maxCapacityBytes`" pulumi-lang-python="`max_capacity_bytes`" pulumi-lang-yaml="`maxCapacityBytes`" pulumi-lang-java="`maxCapacityBytes`"&gt;`maxCapacityBytes`&lt;/span&gt;: - Maximum physical capacity of the Storage Container in bytes.
+        /// * &lt;span pulumi-lang-nodejs="`logicalExplicitReservedCapacityBytes`" pulumi-lang-dotnet="`LogicalExplicitReservedCapacityBytes`" pulumi-lang-go="`logicalExplicitReservedCapacityBytes`" pulumi-lang-python="`logical_explicit_reserved_capacity_bytes`" pulumi-lang-yaml="`logicalExplicitReservedCapacityBytes`" pulumi-lang-java="`logicalExplicitReservedCapacityBytes`"&gt;`logicalExplicitReservedCapacityBytes`&lt;/span&gt;: - Total reserved size (in bytes) of the container (set by Admin). This also accounts for the container's replication factor. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity.
+        /// * &lt;span pulumi-lang-nodejs="`logicalImplicitReservedCapacityBytes`" pulumi-lang-dotnet="`LogicalImplicitReservedCapacityBytes`" pulumi-lang-go="`logicalImplicitReservedCapacityBytes`" pulumi-lang-python="`logical_implicit_reserved_capacity_bytes`" pulumi-lang-yaml="`logicalImplicitReservedCapacityBytes`" pulumi-lang-java="`logicalImplicitReservedCapacityBytes`"&gt;`logicalImplicitReservedCapacityBytes`&lt;/span&gt;: - This is the summation of reservations provisioned on all VDisks in the container. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity
+        /// * &lt;span pulumi-lang-nodejs="`logicalAdvertisedCapacityBytes`" pulumi-lang-dotnet="`LogicalAdvertisedCapacityBytes`" pulumi-lang-go="`logicalAdvertisedCapacityBytes`" pulumi-lang-python="`logical_advertised_capacity_bytes`" pulumi-lang-yaml="`logicalAdvertisedCapacityBytes`" pulumi-lang-java="`logicalAdvertisedCapacityBytes`"&gt;`logicalAdvertisedCapacityBytes`&lt;/span&gt;: - Max capacity of the Container as defined by the user.
+        /// * &lt;span pulumi-lang-nodejs="`replicationFactor`" pulumi-lang-dotnet="`ReplicationFactor`" pulumi-lang-go="`replicationFactor`" pulumi-lang-python="`replication_factor`" pulumi-lang-yaml="`replicationFactor`" pulumi-lang-java="`replicationFactor`"&gt;`replicationFactor`&lt;/span&gt;: - Replication factor of the Storage Container.
+        /// * &lt;span pulumi-lang-nodejs="`nfsWhitelistAddresses`" pulumi-lang-dotnet="`NfsWhitelistAddresses`" pulumi-lang-go="`nfsWhitelistAddresses`" pulumi-lang-python="`nfs_whitelist_addresses`" pulumi-lang-yaml="`nfsWhitelistAddresses`" pulumi-lang-java="`nfsWhitelistAddresses`"&gt;`nfsWhitelistAddresses`&lt;/span&gt;: - List of NFS addresses which need to be whitelisted.
+        /// * &lt;span pulumi-lang-nodejs="`isNfsWhitelistInherited`" pulumi-lang-dotnet="`IsNfsWhitelistInherited`" pulumi-lang-go="`isNfsWhitelistInherited`" pulumi-lang-python="`is_nfs_whitelist_inherited`" pulumi-lang-yaml="`isNfsWhitelistInherited`" pulumi-lang-java="`isNfsWhitelistInherited`"&gt;`isNfsWhitelistInherited`&lt;/span&gt;: - Indicates whether the NFS whitelist is inherited from global config.
+        /// * &lt;span pulumi-lang-nodejs="`erasureCode`" pulumi-lang-dotnet="`ErasureCode`" pulumi-lang-go="`erasureCode`" pulumi-lang-python="`erasure_code`" pulumi-lang-yaml="`erasureCode`" pulumi-lang-java="`erasureCode`"&gt;`erasureCode`&lt;/span&gt;: - Indicates the current status value for Erasure Coding for the Container. available values:  `NONE`,    `OFF`,    `ON`
         /// 
-        /// * `IsInlineEcEnabled`: - Indicates whether data written to this container should be inline erasure coded or not. This field is only considered when ErasureCoding is enabled.
-        /// * `HasHigherEcFaultDomainPreference`: - Indicates whether to prefer a higher Erasure Code fault domain.
-        /// * `ErasureCodeDelaySecs`: - Delay in performing ErasureCode for the current Container instance.
-        /// * `CacheDeduplication`: - Indicates the current status of Cache Deduplication for the Container. available values:  `NONE`,    `OFF`,    `ON`
-        /// * `OnDiskDedup`: - Indicates the current status of Disk Deduplication for the Container. available values:  `NONE`,    `OFF`,    `POST_PROCESS`
-        /// * `IsCompressionEnabled`: - Indicates whether the compression is enabled for the Container.
-        /// * `CompressionDelaySecs`: - The compression delay in seconds.
-        /// * `IsInternal`: - Indicates whether the Container is internal and is managed by Nutanix.
-        /// * `IsSoftwareEncryptionEnabled`: - Indicates whether the Container instance has software encryption enabled.
-        /// * `IsEncrypted`: - Indicates whether the Container is encrypted or not.
-        /// * `AffinityHostExtId`: - Affinity host extId for RF 1 Storage Container.
-        /// * `ClusterName`: - Corresponding name of the Cluster owning the Storage Container instance.
+        /// * &lt;span pulumi-lang-nodejs="`isInlineEcEnabled`" pulumi-lang-dotnet="`IsInlineEcEnabled`" pulumi-lang-go="`isInlineEcEnabled`" pulumi-lang-python="`is_inline_ec_enabled`" pulumi-lang-yaml="`isInlineEcEnabled`" pulumi-lang-java="`isInlineEcEnabled`"&gt;`isInlineEcEnabled`&lt;/span&gt;: - Indicates whether data written to this container should be inline erasure coded or not. This field is only considered when ErasureCoding is enabled.
+        /// * &lt;span pulumi-lang-nodejs="`hasHigherEcFaultDomainPreference`" pulumi-lang-dotnet="`HasHigherEcFaultDomainPreference`" pulumi-lang-go="`hasHigherEcFaultDomainPreference`" pulumi-lang-python="`has_higher_ec_fault_domain_preference`" pulumi-lang-yaml="`hasHigherEcFaultDomainPreference`" pulumi-lang-java="`hasHigherEcFaultDomainPreference`"&gt;`hasHigherEcFaultDomainPreference`&lt;/span&gt;: - Indicates whether to prefer a higher Erasure Code fault domain.
+        /// * &lt;span pulumi-lang-nodejs="`erasureCodeDelaySecs`" pulumi-lang-dotnet="`ErasureCodeDelaySecs`" pulumi-lang-go="`erasureCodeDelaySecs`" pulumi-lang-python="`erasure_code_delay_secs`" pulumi-lang-yaml="`erasureCodeDelaySecs`" pulumi-lang-java="`erasureCodeDelaySecs`"&gt;`erasureCodeDelaySecs`&lt;/span&gt;: - Delay in performing ErasureCode for the current Container instance.
+        /// * &lt;span pulumi-lang-nodejs="`cacheDeduplication`" pulumi-lang-dotnet="`CacheDeduplication`" pulumi-lang-go="`cacheDeduplication`" pulumi-lang-python="`cache_deduplication`" pulumi-lang-yaml="`cacheDeduplication`" pulumi-lang-java="`cacheDeduplication`"&gt;`cacheDeduplication`&lt;/span&gt;: - Indicates the current status of Cache Deduplication for the Container. available values:  `NONE`,    `OFF`,    `ON`
+        /// * &lt;span pulumi-lang-nodejs="`onDiskDedup`" pulumi-lang-dotnet="`OnDiskDedup`" pulumi-lang-go="`onDiskDedup`" pulumi-lang-python="`on_disk_dedup`" pulumi-lang-yaml="`onDiskDedup`" pulumi-lang-java="`onDiskDedup`"&gt;`onDiskDedup`&lt;/span&gt;: - Indicates the current status of Disk Deduplication for the Container. available values:  `NONE`,    `OFF`,    `POST_PROCESS`
+        /// * &lt;span pulumi-lang-nodejs="`isCompressionEnabled`" pulumi-lang-dotnet="`IsCompressionEnabled`" pulumi-lang-go="`isCompressionEnabled`" pulumi-lang-python="`is_compression_enabled`" pulumi-lang-yaml="`isCompressionEnabled`" pulumi-lang-java="`isCompressionEnabled`"&gt;`isCompressionEnabled`&lt;/span&gt;: - Indicates whether the compression is enabled for the Container.
+        /// * &lt;span pulumi-lang-nodejs="`compressionDelaySecs`" pulumi-lang-dotnet="`CompressionDelaySecs`" pulumi-lang-go="`compressionDelaySecs`" pulumi-lang-python="`compression_delay_secs`" pulumi-lang-yaml="`compressionDelaySecs`" pulumi-lang-java="`compressionDelaySecs`"&gt;`compressionDelaySecs`&lt;/span&gt;: - The compression delay in seconds.
+        /// * &lt;span pulumi-lang-nodejs="`isInternal`" pulumi-lang-dotnet="`IsInternal`" pulumi-lang-go="`isInternal`" pulumi-lang-python="`is_internal`" pulumi-lang-yaml="`isInternal`" pulumi-lang-java="`isInternal`"&gt;`isInternal`&lt;/span&gt;: - Indicates whether the Container is internal and is managed by Nutanix.
+        /// * &lt;span pulumi-lang-nodejs="`isSoftwareEncryptionEnabled`" pulumi-lang-dotnet="`IsSoftwareEncryptionEnabled`" pulumi-lang-go="`isSoftwareEncryptionEnabled`" pulumi-lang-python="`is_software_encryption_enabled`" pulumi-lang-yaml="`isSoftwareEncryptionEnabled`" pulumi-lang-java="`isSoftwareEncryptionEnabled`"&gt;`isSoftwareEncryptionEnabled`&lt;/span&gt;: - Indicates whether the Container instance has software encryption enabled.
+        /// * &lt;span pulumi-lang-nodejs="`isEncrypted`" pulumi-lang-dotnet="`IsEncrypted`" pulumi-lang-go="`isEncrypted`" pulumi-lang-python="`is_encrypted`" pulumi-lang-yaml="`isEncrypted`" pulumi-lang-java="`isEncrypted`"&gt;`isEncrypted`&lt;/span&gt;: - Indicates whether the Container is encrypted or not.
+        /// * &lt;span pulumi-lang-nodejs="`affinityHostExtId`" pulumi-lang-dotnet="`AffinityHostExtId`" pulumi-lang-go="`affinityHostExtId`" pulumi-lang-python="`affinity_host_ext_id`" pulumi-lang-yaml="`affinityHostExtId`" pulumi-lang-java="`affinityHostExtId`"&gt;`affinityHostExtId`&lt;/span&gt;: - Affinity host extId for RF 1 Storage Container.
+        /// * &lt;span pulumi-lang-nodejs="`clusterName`" pulumi-lang-dotnet="`ClusterName`" pulumi-lang-go="`clusterName`" pulumi-lang-python="`cluster_name`" pulumi-lang-yaml="`clusterName`" pulumi-lang-java="`clusterName`"&gt;`clusterName`&lt;/span&gt;: - Corresponding name of the Cluster owning the Storage Container instance.
         /// 
         /// 
-        /// ### NfsWhitelistAddresses
-        /// 
-        /// * `Ipv4`: Reference to address configuration
-        /// * `Ipv6`: Reference to address configuration
-        /// * `Fqdn`: Reference to address configuration
+        /// ###&lt;span pulumi-lang-nodejs=" nfsWhitelistAddresses
+        /// " pulumi-lang-dotnet=" NfsWhitelistAddresses
+        /// " pulumi-lang-go=" nfsWhitelistAddresses
+        /// " pulumi-lang-python=" nfs_whitelist_addresses
+        /// " pulumi-lang-yaml=" nfsWhitelistAddresses
+        /// " pulumi-lang-java=" nfsWhitelistAddresses
+        /// "&gt; nfsWhitelistAddresses
+        /// &lt;/span&gt;
+        /// * &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: Reference to address configuration
+        /// * &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: Reference to address configuration
+        /// * &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt;: Reference to address configuration
         /// 
         /// ### ipv4, ipv6 (Reference to address configuration)
         /// 
-        /// * `Value`: value of address
-        /// * `PrefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: value of address
+        /// * &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`"&gt;`prefixLength`&lt;/span&gt;: The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
         /// ### fqdn (Reference to address configuration)
         /// 
-        /// * `Value`: value of fqdn address
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: value of fqdn address
         /// 
         /// 
         /// 

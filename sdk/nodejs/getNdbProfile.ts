@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -21,6 +22,7 @@ import * as utilities from "./utilities";
  * });
  * export const profile = profile1;
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbProfile(args?: GetNdbProfileArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbProfileResult> {
     args = args || {};
@@ -134,6 +136,7 @@ export interface GetNdbProfileResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -144,6 +147,7 @@ export interface GetNdbProfileResult {
  * });
  * export const profile = profile1;
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbProfileOutput(args?: GetNdbProfileOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbProfileResult> {
     args = args || {};
@@ -163,17 +167,17 @@ export interface GetNdbProfileOutputArgs {
     /**
      * Database engine. For eg. postgres_database
      */
-    engine?: pulumi.Input<string>;
+    engine?: pulumi.Input<string | undefined>;
     /**
      * Profile ID for query
      */
-    profileId?: pulumi.Input<string>;
+    profileId?: pulumi.Input<string | undefined>;
     /**
      * Profile Name for query
      */
-    profileName?: pulumi.Input<string>;
+    profileName?: pulumi.Input<string | undefined>;
     /**
      * Profile type. Types: Software, Compute, Network and Database_Parameter
      */
-    profileType?: pulumi.Input<string>;
+    profileType?: pulumi.Input<string | undefined>;
 }

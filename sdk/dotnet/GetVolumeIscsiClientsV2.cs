@@ -18,6 +18,35 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // List all the iSCSI clients.
+        /// const list_iscsi_clients = nutanix.getVolumeIscsiClientsV2({});
+        /// // list iSCSI clients with a filter.
+        /// const list_iscsi_clients_filter = nutanix.getVolumeIscsiClientsV2({
+        ///     filter: "clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'",
+        /// });
+        /// // list iSCSI clients with a limit and pagination.
+        /// const list_iscsi_clients_limit = nutanix.getVolumeIscsiClientsV2({
+        ///     page: 2,
+        ///     limit: 1,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # List all the iSCSI clients.
+        /// list_iscsi_clients = nutanix.get_volume_iscsi_clients_v2()
+        /// # list iSCSI clients with a filter.
+        /// list_iscsi_clients_filter = nutanix.get_volume_iscsi_clients_v2(filter="clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'")
+        /// # list iSCSI clients with a limit and pagination.
+        /// list_iscsi_clients_limit = nutanix.get_volume_iscsi_clients_v2(page=2,
+        ///     limit=1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -27,16 +56,16 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all the iSCSI clients.
-        ///     var list_iscsi_clients = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke();
+        ///     var list_iscsi_clients = Nutanix.GetVolumeIscsiClientsV2.Invoke();
         /// 
         ///     // list iSCSI clients with a filter.
-        ///     var list_iscsi_clients_filter = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke(new()
+        ///     var list_iscsi_clients_filter = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
         ///         Filter = "clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'",
         ///     });
         /// 
         ///     // list iSCSI clients with a limit and pagination.
-        ///     var list_iscsi_clients_limit = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke(new()
+        ///     var list_iscsi_clients_limit = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
         ///         Page = 2,
         ///         Limit = 1,
@@ -44,82 +73,177 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// List all the iSCSI clients.
+        /// 		_, err := nutanix.GetVolumeIscsiClientsV2(ctx, &amp;nutanix.GetVolumeIscsiClientsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list iSCSI clients with a filter.
+        /// 		_, err = nutanix.GetVolumeIscsiClientsV2(ctx, &amp;nutanix.GetVolumeIscsiClientsV2Args{
+        /// 			Filter: pulumi.StringRef("clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list iSCSI clients with a limit and pagination.
+        /// 		_, err = nutanix.GetVolumeIscsiClientsV2(ctx, &amp;nutanix.GetVolumeIscsiClientsV2Args{
+        /// 			Page:  pulumi.IntRef(2),
+        /// 			Limit: pulumi.IntRef(1),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVolumeIscsiClientsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // List all the iSCSI clients.
+        ///         final var list-iscsi-clients = NutanixFunctions.getVolumeIscsiClientsV2(GetVolumeIscsiClientsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         // list iSCSI clients with a filter.
+        ///         final var list-iscsi-clients-filter = NutanixFunctions.getVolumeIscsiClientsV2(GetVolumeIscsiClientsV2Args.builder()
+        ///             .filter("clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'")
+        ///             .build());
+        /// 
+        ///         // list iSCSI clients with a limit and pagination.
+        ///         final var list-iscsi-clients-limit = NutanixFunctions.getVolumeIscsiClientsV2(GetVolumeIscsiClientsV2Args.builder()
+        ///             .page(2)
+        ///             .limit(1)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # List all the iSCSI clients.
+        ///   list-iscsi-clients:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeIscsiClientsV2
+        ///       arguments: {}
+        ///   # list iSCSI clients with a filter.
+        ///   list-iscsi-clients-filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeIscsiClientsV2
+        ///       arguments:
+        ///         filter: clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'
+        ///   # list iSCSI clients with a limit and pagination.
+        ///   list-iscsi-clients-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeIscsiClientsV2
+        ///       arguments:
+        ///         page: 2
+        ///         limit: 1
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `Page`: - A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
-        /// * `Limit` : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-        /// * `Filter` : A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
+        /// * &lt;span pulumi-lang-nodejs="`page`" pulumi-lang-dotnet="`Page`" pulumi-lang-go="`page`" pulumi-lang-python="`page`" pulumi-lang-yaml="`page`" pulumi-lang-java="`page`"&gt;`page`&lt;/span&gt;: - A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+        /// * &lt;span pulumi-lang-nodejs="`limit`" pulumi-lang-dotnet="`Limit`" pulumi-lang-go="`limit`" pulumi-lang-python="`limit`" pulumi-lang-yaml="`limit`" pulumi-lang-java="`limit`"&gt;`limit`&lt;/span&gt; : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
+        /// * &lt;span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`"&gt;`filter`&lt;/span&gt; : A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
         ///   - clusterReference
         ///   - extId
-        /// * `Orderby` : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
+        /// * &lt;span pulumi-lang-nodejs="`orderby`" pulumi-lang-dotnet="`Orderby`" pulumi-lang-go="`orderby`" pulumi-lang-python="`orderby`" pulumi-lang-yaml="`orderby`" pulumi-lang-java="`orderby`"&gt;`orderby`&lt;/span&gt; : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
         ///   - clusterReference
         ///   - extId
-        /// * `Expand` : A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported. The expand can be applied to the following fields:
+        /// * &lt;span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`"&gt;`expand`&lt;/span&gt; : A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported. The expand can be applied to the following fields:
         ///   - cluster
-        /// * `Select` : A query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., \*), then all properties on the matching resource will be returned. The select can be applied to the following fields:
+        /// * &lt;span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`"&gt;`select`&lt;/span&gt; : A query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., \*), then all properties on the matching resource will be returned. The select can be applied to the following fields:
         ///   - clusterReference
         ///   - extId
         /// 
         /// ## Iscsi Clients
         /// 
-        /// The `IscsiClients` contains list of iSCSI clients. Each iSCSI client contains the following attributes:
+        /// The &lt;span pulumi-lang-nodejs="`iscsiClients`" pulumi-lang-dotnet="`IscsiClients`" pulumi-lang-go="`iscsiClients`" pulumi-lang-python="`iscsi_clients`" pulumi-lang-yaml="`iscsiClients`" pulumi-lang-java="`iscsiClients`"&gt;`iscsiClients`&lt;/span&gt; contains list of iSCSI clients. Each iSCSI client contains the following attributes:
         /// 
-        /// * `TenantId`: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-        /// * `ExtId`: - A globally unique identifier of an instance that is suitable for external consumption.
-        /// * `Links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// * `IscsiInitiatorName`: -iSCSI initiator name. During the attach operation, exactly one of iscsiInitiatorName and iscsiInitiatorNetworkId must be specified. This field is immutable.
-        /// * `IscsiInitiatorNetworkId`: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
-        /// * `ClientSecret`: -(Optional) iSCSI initiator client secret in case of CHAP authentication. This field should not be provided in case the authentication type is not set to CHAP.
-        /// * `EnabledAuthentications`: -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
-        /// * `NumVirtualTargets`: -(Optional) Number of virtual targets generated for the iSCSI target. This field is immutable.
-        /// * `AttachmentSite`: -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
+        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - A globally unique identifier of an instance that is suitable for external consumption.
+        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * &lt;span pulumi-lang-nodejs="`iscsiInitiatorName`" pulumi-lang-dotnet="`IscsiInitiatorName`" pulumi-lang-go="`iscsiInitiatorName`" pulumi-lang-python="`iscsi_initiator_name`" pulumi-lang-yaml="`iscsiInitiatorName`" pulumi-lang-java="`iscsiInitiatorName`"&gt;`iscsiInitiatorName`&lt;/span&gt;: -iSCSI initiator name. During the attach operation, exactly one of iscsiInitiatorName and iscsiInitiatorNetworkId must be specified. This field is immutable.
+        /// * &lt;span pulumi-lang-nodejs="`iscsiInitiatorNetworkId`" pulumi-lang-dotnet="`IscsiInitiatorNetworkId`" pulumi-lang-go="`iscsiInitiatorNetworkId`" pulumi-lang-python="`iscsi_initiator_network_id`" pulumi-lang-yaml="`iscsiInitiatorNetworkId`" pulumi-lang-java="`iscsiInitiatorNetworkId`"&gt;`iscsiInitiatorNetworkId`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+        /// * &lt;span pulumi-lang-nodejs="`clientSecret`" pulumi-lang-dotnet="`ClientSecret`" pulumi-lang-go="`clientSecret`" pulumi-lang-python="`client_secret`" pulumi-lang-yaml="`clientSecret`" pulumi-lang-java="`clientSecret`"&gt;`clientSecret`&lt;/span&gt;: -(Optional) iSCSI initiator client secret in case of CHAP authentication. This field should not be provided in case the authentication type is not set to CHAP.
+        /// * &lt;span pulumi-lang-nodejs="`enabledAuthentications`" pulumi-lang-dotnet="`EnabledAuthentications`" pulumi-lang-go="`enabledAuthentications`" pulumi-lang-python="`enabled_authentications`" pulumi-lang-yaml="`enabledAuthentications`" pulumi-lang-java="`enabledAuthentications`"&gt;`enabledAuthentications`&lt;/span&gt;: -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
+        /// * &lt;span pulumi-lang-nodejs="`numVirtualTargets`" pulumi-lang-dotnet="`NumVirtualTargets`" pulumi-lang-go="`numVirtualTargets`" pulumi-lang-python="`num_virtual_targets`" pulumi-lang-yaml="`numVirtualTargets`" pulumi-lang-java="`numVirtualTargets`"&gt;`numVirtualTargets`&lt;/span&gt;: -(Optional) Number of virtual targets generated for the iSCSI target. This field is immutable.
+        /// * &lt;span pulumi-lang-nodejs="`attachmentSite`" pulumi-lang-dotnet="`AttachmentSite`" pulumi-lang-go="`attachmentSite`" pulumi-lang-python="`attachment_site`" pulumi-lang-yaml="`attachmentSite`" pulumi-lang-java="`attachmentSite`"&gt;`attachmentSite`&lt;/span&gt;: -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
         /// 
         /// 
         /// #### Links
         /// 
         /// The links attribute supports the following:
         /// 
-        /// * `Href`: - The URL at which the entity described by the link can be accessed.
-        /// * `Rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        /// * &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
+        /// * &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
         /// 
         /// #### iscsi initiator network id
         /// 
-        /// The IscsiInitiatorNetworkId attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" iscsiInitiatorNetworkId " pulumi-lang-dotnet=" IscsiInitiatorNetworkId " pulumi-lang-go=" iscsiInitiatorNetworkId " pulumi-lang-python=" iscsi_initiator_network_id " pulumi-lang-yaml=" iscsiInitiatorNetworkId " pulumi-lang-java=" iscsiInitiatorNetworkId "&gt; iscsiInitiatorNetworkId &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
-        /// * `Fqdn`: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+        /// * &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// * &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt;: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
         /// 
         /// ##### IPV4
         /// 
         /// The ipv4 attribute supports the following:
         /// 
-        /// * `Value`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// * `PrefixLength`: - The prefix length of the network to which this host IPv4 address belongs.
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`"&gt;`prefixLength`&lt;/span&gt;: - The prefix length of the network to which this host IPv4 address belongs.
         /// 
         /// ##### IPV6
         /// 
         /// The ipv6 attribute supports the following:
         /// 
-        /// * `Value`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
-        /// * `PrefixLength`: - The prefix length of the network to which this host IPv6 address belongs.
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// * &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`"&gt;`prefixLength`&lt;/span&gt;: - The prefix length of the network to which this host IPv6 address belongs.
         /// 
         /// ##### FQDN
         /// 
         /// The fqdn attribute supports the following:
         /// 
-        /// * `Value`: - The fully qualified domain name.
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - The fully qualified domain name.
         /// 
         /// 
         /// #### Attached Targets
         /// 
-        /// The AttachedTargets attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" attachedTargets " pulumi-lang-dotnet=" AttachedTargets " pulumi-lang-go=" attachedTargets " pulumi-lang-python=" attached_targets " pulumi-lang-yaml=" attachedTargets " pulumi-lang-java=" attachedTargets "&gt; attachedTargets &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `NumVirtualTargets`: - Number of virtual targets generated for the iSCSI target. This field is immutable.
-        /// * `IscsiTargetName`: - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
+        /// * &lt;span pulumi-lang-nodejs="`numVirtualTargets`" pulumi-lang-dotnet="`NumVirtualTargets`" pulumi-lang-go="`numVirtualTargets`" pulumi-lang-python="`num_virtual_targets`" pulumi-lang-yaml="`numVirtualTargets`" pulumi-lang-java="`numVirtualTargets`"&gt;`numVirtualTargets`&lt;/span&gt;: - Number of virtual targets generated for the iSCSI target. This field is immutable.
+        /// * &lt;span pulumi-lang-nodejs="`iscsiTargetName`" pulumi-lang-dotnet="`IscsiTargetName`" pulumi-lang-go="`iscsiTargetName`" pulumi-lang-python="`iscsi_target_name`" pulumi-lang-yaml="`iscsiTargetName`" pulumi-lang-java="`iscsiTargetName`"&gt;`iscsiTargetName`&lt;/span&gt;: - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
         /// 
         /// 
         /// 
@@ -134,6 +258,35 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // List all the iSCSI clients.
+        /// const list_iscsi_clients = nutanix.getVolumeIscsiClientsV2({});
+        /// // list iSCSI clients with a filter.
+        /// const list_iscsi_clients_filter = nutanix.getVolumeIscsiClientsV2({
+        ///     filter: "clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'",
+        /// });
+        /// // list iSCSI clients with a limit and pagination.
+        /// const list_iscsi_clients_limit = nutanix.getVolumeIscsiClientsV2({
+        ///     page: 2,
+        ///     limit: 1,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # List all the iSCSI clients.
+        /// list_iscsi_clients = nutanix.get_volume_iscsi_clients_v2()
+        /// # list iSCSI clients with a filter.
+        /// list_iscsi_clients_filter = nutanix.get_volume_iscsi_clients_v2(filter="clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'")
+        /// # list iSCSI clients with a limit and pagination.
+        /// list_iscsi_clients_limit = nutanix.get_volume_iscsi_clients_v2(page=2,
+        ///     limit=1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -143,16 +296,16 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all the iSCSI clients.
-        ///     var list_iscsi_clients = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke();
+        ///     var list_iscsi_clients = Nutanix.GetVolumeIscsiClientsV2.Invoke();
         /// 
         ///     // list iSCSI clients with a filter.
-        ///     var list_iscsi_clients_filter = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke(new()
+        ///     var list_iscsi_clients_filter = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
         ///         Filter = "clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'",
         ///     });
         /// 
         ///     // list iSCSI clients with a limit and pagination.
-        ///     var list_iscsi_clients_limit = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke(new()
+        ///     var list_iscsi_clients_limit = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
         ///         Page = 2,
         ///         Limit = 1,
@@ -160,82 +313,177 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// List all the iSCSI clients.
+        /// 		_, err := nutanix.GetVolumeIscsiClientsV2(ctx, &amp;nutanix.GetVolumeIscsiClientsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list iSCSI clients with a filter.
+        /// 		_, err = nutanix.GetVolumeIscsiClientsV2(ctx, &amp;nutanix.GetVolumeIscsiClientsV2Args{
+        /// 			Filter: pulumi.StringRef("clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list iSCSI clients with a limit and pagination.
+        /// 		_, err = nutanix.GetVolumeIscsiClientsV2(ctx, &amp;nutanix.GetVolumeIscsiClientsV2Args{
+        /// 			Page:  pulumi.IntRef(2),
+        /// 			Limit: pulumi.IntRef(1),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVolumeIscsiClientsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // List all the iSCSI clients.
+        ///         final var list-iscsi-clients = NutanixFunctions.getVolumeIscsiClientsV2(GetVolumeIscsiClientsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         // list iSCSI clients with a filter.
+        ///         final var list-iscsi-clients-filter = NutanixFunctions.getVolumeIscsiClientsV2(GetVolumeIscsiClientsV2Args.builder()
+        ///             .filter("clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'")
+        ///             .build());
+        /// 
+        ///         // list iSCSI clients with a limit and pagination.
+        ///         final var list-iscsi-clients-limit = NutanixFunctions.getVolumeIscsiClientsV2(GetVolumeIscsiClientsV2Args.builder()
+        ///             .page(2)
+        ///             .limit(1)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # List all the iSCSI clients.
+        ///   list-iscsi-clients:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeIscsiClientsV2
+        ///       arguments: {}
+        ///   # list iSCSI clients with a filter.
+        ///   list-iscsi-clients-filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeIscsiClientsV2
+        ///       arguments:
+        ///         filter: clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'
+        ///   # list iSCSI clients with a limit and pagination.
+        ///   list-iscsi-clients-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeIscsiClientsV2
+        ///       arguments:
+        ///         page: 2
+        ///         limit: 1
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `Page`: - A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
-        /// * `Limit` : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-        /// * `Filter` : A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
+        /// * &lt;span pulumi-lang-nodejs="`page`" pulumi-lang-dotnet="`Page`" pulumi-lang-go="`page`" pulumi-lang-python="`page`" pulumi-lang-yaml="`page`" pulumi-lang-java="`page`"&gt;`page`&lt;/span&gt;: - A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+        /// * &lt;span pulumi-lang-nodejs="`limit`" pulumi-lang-dotnet="`Limit`" pulumi-lang-go="`limit`" pulumi-lang-python="`limit`" pulumi-lang-yaml="`limit`" pulumi-lang-java="`limit`"&gt;`limit`&lt;/span&gt; : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
+        /// * &lt;span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`"&gt;`filter`&lt;/span&gt; : A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
         ///   - clusterReference
         ///   - extId
-        /// * `Orderby` : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
+        /// * &lt;span pulumi-lang-nodejs="`orderby`" pulumi-lang-dotnet="`Orderby`" pulumi-lang-go="`orderby`" pulumi-lang-python="`orderby`" pulumi-lang-yaml="`orderby`" pulumi-lang-java="`orderby`"&gt;`orderby`&lt;/span&gt; : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
         ///   - clusterReference
         ///   - extId
-        /// * `Expand` : A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported. The expand can be applied to the following fields:
+        /// * &lt;span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`"&gt;`expand`&lt;/span&gt; : A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported. The expand can be applied to the following fields:
         ///   - cluster
-        /// * `Select` : A query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., \*), then all properties on the matching resource will be returned. The select can be applied to the following fields:
+        /// * &lt;span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`"&gt;`select`&lt;/span&gt; : A query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., \*), then all properties on the matching resource will be returned. The select can be applied to the following fields:
         ///   - clusterReference
         ///   - extId
         /// 
         /// ## Iscsi Clients
         /// 
-        /// The `IscsiClients` contains list of iSCSI clients. Each iSCSI client contains the following attributes:
+        /// The &lt;span pulumi-lang-nodejs="`iscsiClients`" pulumi-lang-dotnet="`IscsiClients`" pulumi-lang-go="`iscsiClients`" pulumi-lang-python="`iscsi_clients`" pulumi-lang-yaml="`iscsiClients`" pulumi-lang-java="`iscsiClients`"&gt;`iscsiClients`&lt;/span&gt; contains list of iSCSI clients. Each iSCSI client contains the following attributes:
         /// 
-        /// * `TenantId`: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-        /// * `ExtId`: - A globally unique identifier of an instance that is suitable for external consumption.
-        /// * `Links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// * `IscsiInitiatorName`: -iSCSI initiator name. During the attach operation, exactly one of iscsiInitiatorName and iscsiInitiatorNetworkId must be specified. This field is immutable.
-        /// * `IscsiInitiatorNetworkId`: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
-        /// * `ClientSecret`: -(Optional) iSCSI initiator client secret in case of CHAP authentication. This field should not be provided in case the authentication type is not set to CHAP.
-        /// * `EnabledAuthentications`: -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
-        /// * `NumVirtualTargets`: -(Optional) Number of virtual targets generated for the iSCSI target. This field is immutable.
-        /// * `AttachmentSite`: -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
+        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - A globally unique identifier of an instance that is suitable for external consumption.
+        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * &lt;span pulumi-lang-nodejs="`iscsiInitiatorName`" pulumi-lang-dotnet="`IscsiInitiatorName`" pulumi-lang-go="`iscsiInitiatorName`" pulumi-lang-python="`iscsi_initiator_name`" pulumi-lang-yaml="`iscsiInitiatorName`" pulumi-lang-java="`iscsiInitiatorName`"&gt;`iscsiInitiatorName`&lt;/span&gt;: -iSCSI initiator name. During the attach operation, exactly one of iscsiInitiatorName and iscsiInitiatorNetworkId must be specified. This field is immutable.
+        /// * &lt;span pulumi-lang-nodejs="`iscsiInitiatorNetworkId`" pulumi-lang-dotnet="`IscsiInitiatorNetworkId`" pulumi-lang-go="`iscsiInitiatorNetworkId`" pulumi-lang-python="`iscsi_initiator_network_id`" pulumi-lang-yaml="`iscsiInitiatorNetworkId`" pulumi-lang-java="`iscsiInitiatorNetworkId`"&gt;`iscsiInitiatorNetworkId`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+        /// * &lt;span pulumi-lang-nodejs="`clientSecret`" pulumi-lang-dotnet="`ClientSecret`" pulumi-lang-go="`clientSecret`" pulumi-lang-python="`client_secret`" pulumi-lang-yaml="`clientSecret`" pulumi-lang-java="`clientSecret`"&gt;`clientSecret`&lt;/span&gt;: -(Optional) iSCSI initiator client secret in case of CHAP authentication. This field should not be provided in case the authentication type is not set to CHAP.
+        /// * &lt;span pulumi-lang-nodejs="`enabledAuthentications`" pulumi-lang-dotnet="`EnabledAuthentications`" pulumi-lang-go="`enabledAuthentications`" pulumi-lang-python="`enabled_authentications`" pulumi-lang-yaml="`enabledAuthentications`" pulumi-lang-java="`enabledAuthentications`"&gt;`enabledAuthentications`&lt;/span&gt;: -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
+        /// * &lt;span pulumi-lang-nodejs="`numVirtualTargets`" pulumi-lang-dotnet="`NumVirtualTargets`" pulumi-lang-go="`numVirtualTargets`" pulumi-lang-python="`num_virtual_targets`" pulumi-lang-yaml="`numVirtualTargets`" pulumi-lang-java="`numVirtualTargets`"&gt;`numVirtualTargets`&lt;/span&gt;: -(Optional) Number of virtual targets generated for the iSCSI target. This field is immutable.
+        /// * &lt;span pulumi-lang-nodejs="`attachmentSite`" pulumi-lang-dotnet="`AttachmentSite`" pulumi-lang-go="`attachmentSite`" pulumi-lang-python="`attachment_site`" pulumi-lang-yaml="`attachmentSite`" pulumi-lang-java="`attachmentSite`"&gt;`attachmentSite`&lt;/span&gt;: -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
         /// 
         /// 
         /// #### Links
         /// 
         /// The links attribute supports the following:
         /// 
-        /// * `Href`: - The URL at which the entity described by the link can be accessed.
-        /// * `Rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        /// * &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
+        /// * &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
         /// 
         /// #### iscsi initiator network id
         /// 
-        /// The IscsiInitiatorNetworkId attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" iscsiInitiatorNetworkId " pulumi-lang-dotnet=" IscsiInitiatorNetworkId " pulumi-lang-go=" iscsiInitiatorNetworkId " pulumi-lang-python=" iscsi_initiator_network_id " pulumi-lang-yaml=" iscsiInitiatorNetworkId " pulumi-lang-java=" iscsiInitiatorNetworkId "&gt; iscsiInitiatorNetworkId &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
-        /// * `Fqdn`: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+        /// * &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// * &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt;: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
         /// 
         /// ##### IPV4
         /// 
         /// The ipv4 attribute supports the following:
         /// 
-        /// * `Value`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// * `PrefixLength`: - The prefix length of the network to which this host IPv4 address belongs.
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`"&gt;`prefixLength`&lt;/span&gt;: - The prefix length of the network to which this host IPv4 address belongs.
         /// 
         /// ##### IPV6
         /// 
         /// The ipv6 attribute supports the following:
         /// 
-        /// * `Value`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
-        /// * `PrefixLength`: - The prefix length of the network to which this host IPv6 address belongs.
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// * &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`"&gt;`prefixLength`&lt;/span&gt;: - The prefix length of the network to which this host IPv6 address belongs.
         /// 
         /// ##### FQDN
         /// 
         /// The fqdn attribute supports the following:
         /// 
-        /// * `Value`: - The fully qualified domain name.
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - The fully qualified domain name.
         /// 
         /// 
         /// #### Attached Targets
         /// 
-        /// The AttachedTargets attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" attachedTargets " pulumi-lang-dotnet=" AttachedTargets " pulumi-lang-go=" attachedTargets " pulumi-lang-python=" attached_targets " pulumi-lang-yaml=" attachedTargets " pulumi-lang-java=" attachedTargets "&gt; attachedTargets &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `NumVirtualTargets`: - Number of virtual targets generated for the iSCSI target. This field is immutable.
-        /// * `IscsiTargetName`: - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
+        /// * &lt;span pulumi-lang-nodejs="`numVirtualTargets`" pulumi-lang-dotnet="`NumVirtualTargets`" pulumi-lang-go="`numVirtualTargets`" pulumi-lang-python="`num_virtual_targets`" pulumi-lang-yaml="`numVirtualTargets`" pulumi-lang-java="`numVirtualTargets`"&gt;`numVirtualTargets`&lt;/span&gt;: - Number of virtual targets generated for the iSCSI target. This field is immutable.
+        /// * &lt;span pulumi-lang-nodejs="`iscsiTargetName`" pulumi-lang-dotnet="`IscsiTargetName`" pulumi-lang-go="`iscsiTargetName`" pulumi-lang-python="`iscsi_target_name`" pulumi-lang-yaml="`iscsiTargetName`" pulumi-lang-java="`iscsiTargetName`"&gt;`iscsiTargetName`&lt;/span&gt;: - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
         /// 
         /// 
         /// 
@@ -250,6 +498,35 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // List all the iSCSI clients.
+        /// const list_iscsi_clients = nutanix.getVolumeIscsiClientsV2({});
+        /// // list iSCSI clients with a filter.
+        /// const list_iscsi_clients_filter = nutanix.getVolumeIscsiClientsV2({
+        ///     filter: "clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'",
+        /// });
+        /// // list iSCSI clients with a limit and pagination.
+        /// const list_iscsi_clients_limit = nutanix.getVolumeIscsiClientsV2({
+        ///     page: 2,
+        ///     limit: 1,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # List all the iSCSI clients.
+        /// list_iscsi_clients = nutanix.get_volume_iscsi_clients_v2()
+        /// # list iSCSI clients with a filter.
+        /// list_iscsi_clients_filter = nutanix.get_volume_iscsi_clients_v2(filter="clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'")
+        /// # list iSCSI clients with a limit and pagination.
+        /// list_iscsi_clients_limit = nutanix.get_volume_iscsi_clients_v2(page=2,
+        ///     limit=1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -259,16 +536,16 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // List all the iSCSI clients.
-        ///     var list_iscsi_clients = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke();
+        ///     var list_iscsi_clients = Nutanix.GetVolumeIscsiClientsV2.Invoke();
         /// 
         ///     // list iSCSI clients with a filter.
-        ///     var list_iscsi_clients_filter = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke(new()
+        ///     var list_iscsi_clients_filter = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
         ///         Filter = "clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'",
         ///     });
         /// 
         ///     // list iSCSI clients with a limit and pagination.
-        ///     var list_iscsi_clients_limit = Nutanix.Index.GetVolumeIscsiClientsV2.Invoke(new()
+        ///     var list_iscsi_clients_limit = Nutanix.GetVolumeIscsiClientsV2.Invoke(new()
         ///     {
         ///         Page = 2,
         ///         Limit = 1,
@@ -276,82 +553,177 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// List all the iSCSI clients.
+        /// 		_, err := nutanix.GetVolumeIscsiClientsV2(ctx, &amp;nutanix.GetVolumeIscsiClientsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list iSCSI clients with a filter.
+        /// 		_, err = nutanix.GetVolumeIscsiClientsV2(ctx, &amp;nutanix.GetVolumeIscsiClientsV2Args{
+        /// 			Filter: pulumi.StringRef("clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list iSCSI clients with a limit and pagination.
+        /// 		_, err = nutanix.GetVolumeIscsiClientsV2(ctx, &amp;nutanix.GetVolumeIscsiClientsV2Args{
+        /// 			Page:  pulumi.IntRef(2),
+        /// 			Limit: pulumi.IntRef(1),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVolumeIscsiClientsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // List all the iSCSI clients.
+        ///         final var list-iscsi-clients = NutanixFunctions.getVolumeIscsiClientsV2(GetVolumeIscsiClientsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         // list iSCSI clients with a filter.
+        ///         final var list-iscsi-clients-filter = NutanixFunctions.getVolumeIscsiClientsV2(GetVolumeIscsiClientsV2Args.builder()
+        ///             .filter("clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'")
+        ///             .build());
+        /// 
+        ///         // list iSCSI clients with a limit and pagination.
+        ///         final var list-iscsi-clients-limit = NutanixFunctions.getVolumeIscsiClientsV2(GetVolumeIscsiClientsV2Args.builder()
+        ///             .page(2)
+        ///             .limit(1)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # List all the iSCSI clients.
+        ///   list-iscsi-clients:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeIscsiClientsV2
+        ///       arguments: {}
+        ///   # list iSCSI clients with a filter.
+        ///   list-iscsi-clients-filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeIscsiClientsV2
+        ///       arguments:
+        ///         filter: clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'
+        ///   # list iSCSI clients with a limit and pagination.
+        ///   list-iscsi-clients-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getVolumeIscsiClientsV2
+        ///       arguments:
+        ///         page: 2
+        ///         limit: 1
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `Page`: - A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
-        /// * `Limit` : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-        /// * `Filter` : A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
+        /// * &lt;span pulumi-lang-nodejs="`page`" pulumi-lang-dotnet="`Page`" pulumi-lang-go="`page`" pulumi-lang-python="`page`" pulumi-lang-yaml="`page`" pulumi-lang-java="`page`"&gt;`page`&lt;/span&gt;: - A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+        /// * &lt;span pulumi-lang-nodejs="`limit`" pulumi-lang-dotnet="`Limit`" pulumi-lang-go="`limit`" pulumi-lang-python="`limit`" pulumi-lang-yaml="`limit`" pulumi-lang-java="`limit`"&gt;`limit`&lt;/span&gt; : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
+        /// * &lt;span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`"&gt;`filter`&lt;/span&gt; : A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
         ///   - clusterReference
         ///   - extId
-        /// * `Orderby` : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
+        /// * &lt;span pulumi-lang-nodejs="`orderby`" pulumi-lang-dotnet="`Orderby`" pulumi-lang-go="`orderby`" pulumi-lang-python="`orderby`" pulumi-lang-yaml="`orderby`" pulumi-lang-java="`orderby`"&gt;`orderby`&lt;/span&gt; : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
         ///   - clusterReference
         ///   - extId
-        /// * `Expand` : A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported. The expand can be applied to the following fields:
+        /// * &lt;span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`"&gt;`expand`&lt;/span&gt; : A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported. The expand can be applied to the following fields:
         ///   - cluster
-        /// * `Select` : A query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., \*), then all properties on the matching resource will be returned. The select can be applied to the following fields:
+        /// * &lt;span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`"&gt;`select`&lt;/span&gt; : A query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., \*), then all properties on the matching resource will be returned. The select can be applied to the following fields:
         ///   - clusterReference
         ///   - extId
         /// 
         /// ## Iscsi Clients
         /// 
-        /// The `IscsiClients` contains list of iSCSI clients. Each iSCSI client contains the following attributes:
+        /// The &lt;span pulumi-lang-nodejs="`iscsiClients`" pulumi-lang-dotnet="`IscsiClients`" pulumi-lang-go="`iscsiClients`" pulumi-lang-python="`iscsi_clients`" pulumi-lang-yaml="`iscsiClients`" pulumi-lang-java="`iscsiClients`"&gt;`iscsiClients`&lt;/span&gt; contains list of iSCSI clients. Each iSCSI client contains the following attributes:
         /// 
-        /// * `TenantId`: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-        /// * `ExtId`: - A globally unique identifier of an instance that is suitable for external consumption.
-        /// * `Links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// * `IscsiInitiatorName`: -iSCSI initiator name. During the attach operation, exactly one of iscsiInitiatorName and iscsiInitiatorNetworkId must be specified. This field is immutable.
-        /// * `IscsiInitiatorNetworkId`: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
-        /// * `ClientSecret`: -(Optional) iSCSI initiator client secret in case of CHAP authentication. This field should not be provided in case the authentication type is not set to CHAP.
-        /// * `EnabledAuthentications`: -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
-        /// * `NumVirtualTargets`: -(Optional) Number of virtual targets generated for the iSCSI target. This field is immutable.
-        /// * `AttachmentSite`: -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
+        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - A globally unique identifier of an instance that is suitable for external consumption.
+        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * &lt;span pulumi-lang-nodejs="`iscsiInitiatorName`" pulumi-lang-dotnet="`IscsiInitiatorName`" pulumi-lang-go="`iscsiInitiatorName`" pulumi-lang-python="`iscsi_initiator_name`" pulumi-lang-yaml="`iscsiInitiatorName`" pulumi-lang-java="`iscsiInitiatorName`"&gt;`iscsiInitiatorName`&lt;/span&gt;: -iSCSI initiator name. During the attach operation, exactly one of iscsiInitiatorName and iscsiInitiatorNetworkId must be specified. This field is immutable.
+        /// * &lt;span pulumi-lang-nodejs="`iscsiInitiatorNetworkId`" pulumi-lang-dotnet="`IscsiInitiatorNetworkId`" pulumi-lang-go="`iscsiInitiatorNetworkId`" pulumi-lang-python="`iscsi_initiator_network_id`" pulumi-lang-yaml="`iscsiInitiatorNetworkId`" pulumi-lang-java="`iscsiInitiatorNetworkId`"&gt;`iscsiInitiatorNetworkId`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+        /// * &lt;span pulumi-lang-nodejs="`clientSecret`" pulumi-lang-dotnet="`ClientSecret`" pulumi-lang-go="`clientSecret`" pulumi-lang-python="`client_secret`" pulumi-lang-yaml="`clientSecret`" pulumi-lang-java="`clientSecret`"&gt;`clientSecret`&lt;/span&gt;: -(Optional) iSCSI initiator client secret in case of CHAP authentication. This field should not be provided in case the authentication type is not set to CHAP.
+        /// * &lt;span pulumi-lang-nodejs="`enabledAuthentications`" pulumi-lang-dotnet="`EnabledAuthentications`" pulumi-lang-go="`enabledAuthentications`" pulumi-lang-python="`enabled_authentications`" pulumi-lang-yaml="`enabledAuthentications`" pulumi-lang-java="`enabledAuthentications`"&gt;`enabledAuthentications`&lt;/span&gt;: -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
+        /// * &lt;span pulumi-lang-nodejs="`numVirtualTargets`" pulumi-lang-dotnet="`NumVirtualTargets`" pulumi-lang-go="`numVirtualTargets`" pulumi-lang-python="`num_virtual_targets`" pulumi-lang-yaml="`numVirtualTargets`" pulumi-lang-java="`numVirtualTargets`"&gt;`numVirtualTargets`&lt;/span&gt;: -(Optional) Number of virtual targets generated for the iSCSI target. This field is immutable.
+        /// * &lt;span pulumi-lang-nodejs="`attachmentSite`" pulumi-lang-dotnet="`AttachmentSite`" pulumi-lang-go="`attachmentSite`" pulumi-lang-python="`attachment_site`" pulumi-lang-yaml="`attachmentSite`" pulumi-lang-java="`attachmentSite`"&gt;`attachmentSite`&lt;/span&gt;: -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
         /// 
         /// 
         /// #### Links
         /// 
         /// The links attribute supports the following:
         /// 
-        /// * `Href`: - The URL at which the entity described by the link can be accessed.
-        /// * `Rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        /// * &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
+        /// * &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
         /// 
         /// #### iscsi initiator network id
         /// 
-        /// The IscsiInitiatorNetworkId attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" iscsiInitiatorNetworkId " pulumi-lang-dotnet=" IscsiInitiatorNetworkId " pulumi-lang-go=" iscsiInitiatorNetworkId " pulumi-lang-python=" iscsi_initiator_network_id " pulumi-lang-yaml=" iscsiInitiatorNetworkId " pulumi-lang-java=" iscsiInitiatorNetworkId "&gt; iscsiInitiatorNetworkId &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `Ipv4`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// * `Ipv6`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
-        /// * `Fqdn`: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+        /// * &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// * &lt;span pulumi-lang-nodejs="`fqdn`" pulumi-lang-dotnet="`Fqdn`" pulumi-lang-go="`fqdn`" pulumi-lang-python="`fqdn`" pulumi-lang-yaml="`fqdn`" pulumi-lang-java="`fqdn`"&gt;`fqdn`&lt;/span&gt;: - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
         /// 
         /// ##### IPV4
         /// 
         /// The ipv4 attribute supports the following:
         /// 
-        /// * `Value`: - An unique address that identifies a device on the internet or a local network in IPv4 format.
-        /// * `PrefixLength`: - The prefix length of the network to which this host IPv4 address belongs.
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// * &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`"&gt;`prefixLength`&lt;/span&gt;: - The prefix length of the network to which this host IPv4 address belongs.
         /// 
         /// ##### IPV6
         /// 
         /// The ipv6 attribute supports the following:
         /// 
-        /// * `Value`: - An unique address that identifies a device on the internet or a local network in IPv6 format.
-        /// * `PrefixLength`: - The prefix length of the network to which this host IPv6 address belongs.
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// * &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`"&gt;`prefixLength`&lt;/span&gt;: - The prefix length of the network to which this host IPv6 address belongs.
         /// 
         /// ##### FQDN
         /// 
         /// The fqdn attribute supports the following:
         /// 
-        /// * `Value`: - The fully qualified domain name.
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: - The fully qualified domain name.
         /// 
         /// 
         /// #### Attached Targets
         /// 
-        /// The AttachedTargets attribute supports the following:
+        /// The&lt;span pulumi-lang-nodejs=" attachedTargets " pulumi-lang-dotnet=" AttachedTargets " pulumi-lang-go=" attachedTargets " pulumi-lang-python=" attached_targets " pulumi-lang-yaml=" attachedTargets " pulumi-lang-java=" attachedTargets "&gt; attachedTargets &lt;/span&gt;attribute supports the following:
         /// 
-        /// * `NumVirtualTargets`: - Number of virtual targets generated for the iSCSI target. This field is immutable.
-        /// * `IscsiTargetName`: - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
+        /// * &lt;span pulumi-lang-nodejs="`numVirtualTargets`" pulumi-lang-dotnet="`NumVirtualTargets`" pulumi-lang-go="`numVirtualTargets`" pulumi-lang-python="`num_virtual_targets`" pulumi-lang-yaml="`numVirtualTargets`" pulumi-lang-java="`numVirtualTargets`"&gt;`numVirtualTargets`&lt;/span&gt;: - Number of virtual targets generated for the iSCSI target. This field is immutable.
+        /// * &lt;span pulumi-lang-nodejs="`iscsiTargetName`" pulumi-lang-dotnet="`IscsiTargetName`" pulumi-lang-go="`iscsiTargetName`" pulumi-lang-python="`iscsi_target_name`" pulumi-lang-yaml="`iscsiTargetName`" pulumi-lang-java="`iscsiTargetName`"&gt;`iscsiTargetName`&lt;/span&gt;: - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
         /// 
         /// 
         /// 

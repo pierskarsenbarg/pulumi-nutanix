@@ -215,12 +215,14 @@ def get_recovery_point_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     get_recovery_point = nutanix.get_recovery_point_v2(ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: recovery point UUID
@@ -245,19 +247,21 @@ def get_recovery_point_v2(ext_id: Optional[_builtins.str] = None,
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         vm_recovery_points=pulumi.get(__ret__, 'vm_recovery_points'),
         volume_group_recovery_points=pulumi.get(__ret__, 'volume_group_recovery_points'))
-def get_recovery_point_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_recovery_point_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecoveryPointV2Result]:
     """
     Get a single recovery point  corresponding to the extId.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     get_recovery_point = nutanix.get_recovery_point_v2(ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: recovery point UUID

@@ -285,6 +285,7 @@ def get_ndb_profile(engine: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -293,6 +294,7 @@ def get_ndb_profile(engine: Optional[_builtins.str] = None,
         profile_name="TEST_NETWORK_PROFILE")
     pulumi.export("profile", profile1)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str engine: Database engine. For eg. postgres_database
@@ -330,16 +332,17 @@ def get_ndb_profile(engine: Optional[_builtins.str] = None,
         topology=pulumi.get(__ret__, 'topology'),
         type=pulumi.get(__ret__, 'type'),
         versions=pulumi.get(__ret__, 'versions'))
-def get_ndb_profile_output(engine: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           profile_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           profile_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           profile_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_ndb_profile_output(engine: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           profile_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           profile_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           profile_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbProfileResult]:
     """
     Describes a profile in Nutanix Database Service
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -348,6 +351,7 @@ def get_ndb_profile_output(engine: Optional[pulumi.Input[Optional[_builtins.str]
         profile_name="TEST_NETWORK_PROFILE")
     pulumi.export("profile", profile1)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str engine: Database engine. For eg. postgres_database

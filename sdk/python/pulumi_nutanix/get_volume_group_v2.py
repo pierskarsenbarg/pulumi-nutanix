@@ -237,12 +237,14 @@ def get_volume_group_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     volume_group = nutanix.get_volume_group_v2(ext_id="d09aeec9-5bb7-4bfd-9717-a051178f6e7c")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
@@ -269,19 +271,21 @@ def get_volume_group_v2(ext_id: Optional[_builtins.str] = None,
         target_name=pulumi.get(__ret__, 'target_name'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         usage_type=pulumi.get(__ret__, 'usage_type'))
-def get_volume_group_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_volume_group_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeGroupV2Result]:
     """
     Query the Volume Group identified by {extId}.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     volume_group = nutanix.get_volume_group_v2(ext_id="d09aeec9-5bb7-4bfd-9717-a051178f6e7c")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: - A globally unique identifier of an instance that is suitable for external consumption.

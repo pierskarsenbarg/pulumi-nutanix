@@ -17,6 +17,30 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testSelfServiceAppProvision = new nutanix.SelfServiceAppProvision("test", {
+        ///     bpName: "NAME OF BLUEPRINT IN SERVER",
+        ///     appName: "NAME OF APP YOU WANT TO SET",
+        ///     appDescription: "DESCRIPTION OF APP",
+        /// });
+        /// const test = nutanix.getSelfServiceAppOutput({
+        ///     appUuid: testSelfServiceAppProvision.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_self_service_app_provision = nutanix.SelfServiceAppProvision("test",
+        ///     bp_name="NAME OF BLUEPRINT IN SERVER",
+        ///     app_name="NAME OF APP YOU WANT TO SET",
+        ///     app_description="DESCRIPTION OF APP")
+        /// test = nutanix.get_self_service_app_output(app_uuid=test_self_service_app_provision.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,20 +49,98 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testSelfServiceAppProvision = new Nutanix.Index.SelfServiceAppProvision("test", new()
+        ///     var testSelfServiceAppProvision = new Nutanix.SelfServiceAppProvision("test", new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT IN SERVER",
         ///         AppName = "NAME OF APP YOU WANT TO SET",
         ///         AppDescription = "DESCRIPTION OF APP",
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetSelfServiceApp.Invoke(new()
+        ///     var test = Nutanix.GetSelfServiceApp.Invoke(new()
         ///     {
         ///         AppUuid = testSelfServiceAppProvision.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testSelfServiceAppProvision, err := nutanix.NewSelfServiceAppProvision(ctx, "test", &amp;nutanix.SelfServiceAppProvisionArgs{
+        /// 			BpName:         pulumi.String("NAME OF BLUEPRINT IN SERVER"),
+        /// 			AppName:        pulumi.String("NAME OF APP YOU WANT TO SET"),
+        /// 			AppDescription: pulumi.String("DESCRIPTION OF APP"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetSelfServiceAppOutput(ctx, nutanix.GetSelfServiceAppOutputArgs{
+        /// 			AppUuid: testSelfServiceAppProvision.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.SelfServiceAppProvision;
+        /// import com.pulumi.nutanix.SelfServiceAppProvisionArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetSelfServiceAppArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testSelfServiceAppProvision = new SelfServiceAppProvision("testSelfServiceAppProvision", SelfServiceAppProvisionArgs.builder()
+        ///             .bpName("NAME OF BLUEPRINT IN SERVER")
+        ///             .appName("NAME OF APP YOU WANT TO SET")
+        ///             .appDescription("DESCRIPTION OF APP")
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getSelfServiceApp(GetSelfServiceAppArgs.builder()
+        ///             .appUuid(testSelfServiceAppProvision.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testSelfServiceAppProvision:
+        ///     type: nutanix:SelfServiceAppProvision
+        ///     name: test
+        ///     properties:
+        ///       bpName: NAME OF BLUEPRINT IN SERVER
+        ///       appName: NAME OF APP YOU WANT TO SET
+        ///       appDescription: DESCRIPTION OF APP
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getSelfServiceApp
+        ///       arguments:
+        ///         appUuid: ${testSelfServiceAppProvision.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSelfServiceAppResult> InvokeAsync(GetSelfServiceAppArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSelfServiceAppResult>("nutanix:index/getSelfServiceApp:getSelfServiceApp", args ?? new GetSelfServiceAppArgs(), options.WithDefaults());
@@ -48,6 +150,30 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testSelfServiceAppProvision = new nutanix.SelfServiceAppProvision("test", {
+        ///     bpName: "NAME OF BLUEPRINT IN SERVER",
+        ///     appName: "NAME OF APP YOU WANT TO SET",
+        ///     appDescription: "DESCRIPTION OF APP",
+        /// });
+        /// const test = nutanix.getSelfServiceAppOutput({
+        ///     appUuid: testSelfServiceAppProvision.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_self_service_app_provision = nutanix.SelfServiceAppProvision("test",
+        ///     bp_name="NAME OF BLUEPRINT IN SERVER",
+        ///     app_name="NAME OF APP YOU WANT TO SET",
+        ///     app_description="DESCRIPTION OF APP")
+        /// test = nutanix.get_self_service_app_output(app_uuid=test_self_service_app_provision.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -56,20 +182,98 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testSelfServiceAppProvision = new Nutanix.Index.SelfServiceAppProvision("test", new()
+        ///     var testSelfServiceAppProvision = new Nutanix.SelfServiceAppProvision("test", new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT IN SERVER",
         ///         AppName = "NAME OF APP YOU WANT TO SET",
         ///         AppDescription = "DESCRIPTION OF APP",
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetSelfServiceApp.Invoke(new()
+        ///     var test = Nutanix.GetSelfServiceApp.Invoke(new()
         ///     {
         ///         AppUuid = testSelfServiceAppProvision.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testSelfServiceAppProvision, err := nutanix.NewSelfServiceAppProvision(ctx, "test", &amp;nutanix.SelfServiceAppProvisionArgs{
+        /// 			BpName:         pulumi.String("NAME OF BLUEPRINT IN SERVER"),
+        /// 			AppName:        pulumi.String("NAME OF APP YOU WANT TO SET"),
+        /// 			AppDescription: pulumi.String("DESCRIPTION OF APP"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetSelfServiceAppOutput(ctx, nutanix.GetSelfServiceAppOutputArgs{
+        /// 			AppUuid: testSelfServiceAppProvision.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.SelfServiceAppProvision;
+        /// import com.pulumi.nutanix.SelfServiceAppProvisionArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetSelfServiceAppArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testSelfServiceAppProvision = new SelfServiceAppProvision("testSelfServiceAppProvision", SelfServiceAppProvisionArgs.builder()
+        ///             .bpName("NAME OF BLUEPRINT IN SERVER")
+        ///             .appName("NAME OF APP YOU WANT TO SET")
+        ///             .appDescription("DESCRIPTION OF APP")
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getSelfServiceApp(GetSelfServiceAppArgs.builder()
+        ///             .appUuid(testSelfServiceAppProvision.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testSelfServiceAppProvision:
+        ///     type: nutanix:SelfServiceAppProvision
+        ///     name: test
+        ///     properties:
+        ///       bpName: NAME OF BLUEPRINT IN SERVER
+        ///       appName: NAME OF APP YOU WANT TO SET
+        ///       appDescription: DESCRIPTION OF APP
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getSelfServiceApp
+        ///       arguments:
+        ///         appUuid: ${testSelfServiceAppProvision.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSelfServiceAppResult> Invoke(GetSelfServiceAppInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSelfServiceAppResult>("nutanix:index/getSelfServiceApp:getSelfServiceApp", args ?? new GetSelfServiceAppInvokeArgs(), options.WithDefaults());
@@ -79,6 +283,30 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const testSelfServiceAppProvision = new nutanix.SelfServiceAppProvision("test", {
+        ///     bpName: "NAME OF BLUEPRINT IN SERVER",
+        ///     appName: "NAME OF APP YOU WANT TO SET",
+        ///     appDescription: "DESCRIPTION OF APP",
+        /// });
+        /// const test = nutanix.getSelfServiceAppOutput({
+        ///     appUuid: testSelfServiceAppProvision.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// test_self_service_app_provision = nutanix.SelfServiceAppProvision("test",
+        ///     bp_name="NAME OF BLUEPRINT IN SERVER",
+        ///     app_name="NAME OF APP YOU WANT TO SET",
+        ///     app_description="DESCRIPTION OF APP")
+        /// test = nutanix.get_self_service_app_output(app_uuid=test_self_service_app_provision.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -87,20 +315,98 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testSelfServiceAppProvision = new Nutanix.Index.SelfServiceAppProvision("test", new()
+        ///     var testSelfServiceAppProvision = new Nutanix.SelfServiceAppProvision("test", new()
         ///     {
         ///         BpName = "NAME OF BLUEPRINT IN SERVER",
         ///         AppName = "NAME OF APP YOU WANT TO SET",
         ///         AppDescription = "DESCRIPTION OF APP",
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetSelfServiceApp.Invoke(new()
+        ///     var test = Nutanix.GetSelfServiceApp.Invoke(new()
         ///     {
         ///         AppUuid = testSelfServiceAppProvision.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		testSelfServiceAppProvision, err := nutanix.NewSelfServiceAppProvision(ctx, "test", &amp;nutanix.SelfServiceAppProvisionArgs{
+        /// 			BpName:         pulumi.String("NAME OF BLUEPRINT IN SERVER"),
+        /// 			AppName:        pulumi.String("NAME OF APP YOU WANT TO SET"),
+        /// 			AppDescription: pulumi.String("DESCRIPTION OF APP"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetSelfServiceAppOutput(ctx, nutanix.GetSelfServiceAppOutputArgs{
+        /// 			AppUuid: testSelfServiceAppProvision.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.SelfServiceAppProvision;
+        /// import com.pulumi.nutanix.SelfServiceAppProvisionArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetSelfServiceAppArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var testSelfServiceAppProvision = new SelfServiceAppProvision("testSelfServiceAppProvision", SelfServiceAppProvisionArgs.builder()
+        ///             .bpName("NAME OF BLUEPRINT IN SERVER")
+        ///             .appName("NAME OF APP YOU WANT TO SET")
+        ///             .appDescription("DESCRIPTION OF APP")
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getSelfServiceApp(GetSelfServiceAppArgs.builder()
+        ///             .appUuid(testSelfServiceAppProvision.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   testSelfServiceAppProvision:
+        ///     type: nutanix:SelfServiceAppProvision
+        ///     name: test
+        ///     properties:
+        ///       bpName: NAME OF BLUEPRINT IN SERVER
+        ///       appName: NAME OF APP YOU WANT TO SET
+        ///       appDescription: DESCRIPTION OF APP
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getSelfServiceApp
+        ///       arguments:
+        ///         appUuid: ${testSelfServiceAppProvision.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSelfServiceAppResult> Invoke(GetSelfServiceAppInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetSelfServiceAppResult>("nutanix:index/getSelfServiceApp:getSelfServiceApp", args ?? new GetSelfServiceAppInvokeArgs(), options.WithDefaults());

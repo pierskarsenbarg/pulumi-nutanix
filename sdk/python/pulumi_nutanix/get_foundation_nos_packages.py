@@ -67,12 +67,14 @@ def get_foundation_nos_packages(opts: Optional[pulumi.InvokeOptions] = None) -> 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     nos_packages = nutanix.get_foundation_nos_packages()
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Note
 
@@ -93,12 +95,14 @@ def get_foundation_nos_packages_output(opts: Optional[Union[pulumi.InvokeOptions
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     nos_packages = nutanix.get_foundation_nos_packages()
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Note
 

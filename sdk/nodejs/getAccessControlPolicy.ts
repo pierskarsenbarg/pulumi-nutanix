@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -27,6 +28,7 @@ import * as utilities from "./utilities";
  *     accessControlPolicyId: testAccessControlPolicy.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAccessControlPolicy(args?: GetAccessControlPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessControlPolicyResult> {
     args = args || {};
@@ -114,6 +116,7 @@ export interface GetAccessControlPolicyResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -130,6 +133,7 @@ export interface GetAccessControlPolicyResult {
  *     accessControlPolicyId: testAccessControlPolicy.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAccessControlPolicyOutput(args?: GetAccessControlPolicyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAccessControlPolicyResult> {
     args = args || {};
@@ -148,10 +152,10 @@ export interface GetAccessControlPolicyOutputArgs {
     /**
      * - (Required) The UUID of an access control policy.
      */
-    accessControlPolicyId?: pulumi.Input<string>;
-    accessControlPolicyName?: pulumi.Input<string>;
+    accessControlPolicyId?: pulumi.Input<string | undefined>;
+    accessControlPolicyName?: pulumi.Input<string | undefined>;
     /**
      * - The category values represented as a dictionary of key > list of values.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetAccessControlPolicyCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetAccessControlPolicyCategoryArgs>[] | undefined>;
 }

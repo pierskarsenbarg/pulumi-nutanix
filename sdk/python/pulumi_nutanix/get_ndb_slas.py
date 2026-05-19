@@ -68,6 +68,7 @@ def get_ndb_slas(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNdb
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -75,6 +76,7 @@ def get_ndb_slas(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNdb
     slas = nutanix.get_ndb_slas()
     pulumi.export("sla", slas)
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -89,6 +91,7 @@ def get_ndb_slas_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.Invoke
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -96,6 +99,7 @@ def get_ndb_slas_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.Invoke
     slas = nutanix.get_ndb_slas()
     pulumi.export("sla", slas)
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

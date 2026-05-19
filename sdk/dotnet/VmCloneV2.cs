@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,9 +24,9 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var vm_list = Nutanix.Index.GetVirtualMachinesV2.Invoke();
+    ///     var vm_list = Nutanix.GetVirtualMachinesV2.Invoke();
     /// 
-    ///     var vm1 = new Nutanix.Index.VmCloneV2("vm1", new()
+    ///     var vm1 = new Nutanix.VmCloneV2("vm1", new()
     ///     {
     ///         VmExtId = vm_list.Apply(vm_list =&gt; vm_list.Apply(getVirtualMachinesV2Result =&gt; getVirtualMachinesV2Result.Vms[0]?.Data?.ExtId)),
     ///         Name = "test-dou",
@@ -36,6 +37,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/vmCloneV2:VmCloneV2")]
     public partial class VmCloneV2 : global::Pulumi.CustomResource

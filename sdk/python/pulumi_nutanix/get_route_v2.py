@@ -235,6 +235,7 @@ def get_route_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -242,6 +243,7 @@ def get_route_v2(ext_id: Optional[_builtins.str] = None,
     route_by_id = nutanix.get_route_v2(route_table_ext_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
         ext_id="7f66e20f-67f4-473f-96bb-c4fcfd487f16")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: Route UUID.
@@ -270,14 +272,15 @@ def get_route_v2(ext_id: Optional[_builtins.str] = None,
         route_type=pulumi.get(__ret__, 'route_type'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         vpc_reference=pulumi.get(__ret__, 'vpc_reference'))
-def get_route_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        route_table_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_route_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        route_table_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRouteV2Result]:
     """
     Provides Nutanix datasource Get Route for the specified {extId}.
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -285,6 +288,7 @@ def get_route_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
     route_by_id = nutanix.get_route_v2(route_table_ext_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
         ext_id="7f66e20f-67f4-473f-96bb-c4fcfd487f16")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: Route UUID.

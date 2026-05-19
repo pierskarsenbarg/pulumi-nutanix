@@ -12,6 +12,7 @@ import * as utilities from "./utilities";
  * ## Example Usage
  *
  * ### resource to create network for NDB
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -30,6 +31,7 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class NdbNetwork extends pulumi.CustomResource {
     /**
@@ -172,55 +174,55 @@ export interface NdbNetworkState {
     /**
      * Select the Nutanix cluster on which you want to add the VLAN.
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
     /**
      * dns domain for vlan. (Static IP address assignment only)
      */
-    dnsDomain?: pulumi.Input<string>;
+    dnsDomain?: pulumi.Input<string | undefined>;
     /**
      * Gateway for vlan. Supports in Static IP address assignment only
      */
-    gateway?: pulumi.Input<string>;
+    gateway?: pulumi.Input<string | undefined>;
     /**
      * Manage IP Address Pool in NDB option if you want to assign static IP addresses to your database server VMs
      */
-    ipPools?: pulumi.Input<pulumi.Input<inputs.NdbNetworkIpPool>[]>;
+    ipPools?: pulumi.Input<pulumi.Input<inputs.NdbNetworkIpPool>[] | undefined>;
     /**
      * Managed by NDB or not
      */
-    managed?: pulumi.Input<boolean>;
+    managed?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the vlan to be attached in NDB
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * primary dns for vlan. (Static IP address assignment only)
      */
-    primaryDns?: pulumi.Input<string>;
+    primaryDns?: pulumi.Input<string | undefined>;
     /**
      * properties of network
      */
-    properties?: pulumi.Input<pulumi.Input<inputs.NdbNetworkProperty>[]>;
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbNetworkProperty>[] | undefined>;
     /**
      * properties map of network
      */
-    propertiesMaps?: pulumi.Input<pulumi.Input<inputs.NdbNetworkPropertiesMap>[]>;
+    propertiesMaps?: pulumi.Input<pulumi.Input<inputs.NdbNetworkPropertiesMap>[] | undefined>;
     /**
      * secondary dns for vlan. (Static IP address assignment only)
      */
-    secondaryDns?: pulumi.Input<string>;
+    secondaryDns?: pulumi.Input<string | undefined>;
     /**
      * stretched vlan id
      */
-    stretchedVlanId?: pulumi.Input<string>;
+    stretchedVlanId?: pulumi.Input<string | undefined>;
     /**
      * Subnet mask for vlan. (Static IP address assignment only)
      */
-    subnetMask?: pulumi.Input<string>;
+    subnetMask?: pulumi.Input<string | undefined>;
     /**
      * Vlan type. Supports [DHCP, Static]
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -234,31 +236,31 @@ export interface NdbNetworkArgs {
     /**
      * dns domain for vlan. (Static IP address assignment only)
      */
-    dnsDomain?: pulumi.Input<string>;
+    dnsDomain?: pulumi.Input<string | undefined>;
     /**
      * Gateway for vlan. Supports in Static IP address assignment only
      */
-    gateway?: pulumi.Input<string>;
+    gateway?: pulumi.Input<string | undefined>;
     /**
      * Manage IP Address Pool in NDB option if you want to assign static IP addresses to your database server VMs
      */
-    ipPools?: pulumi.Input<pulumi.Input<inputs.NdbNetworkIpPool>[]>;
+    ipPools?: pulumi.Input<pulumi.Input<inputs.NdbNetworkIpPool>[] | undefined>;
     /**
      * Name of the vlan to be attached in NDB
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * primary dns for vlan. (Static IP address assignment only)
      */
-    primaryDns?: pulumi.Input<string>;
+    primaryDns?: pulumi.Input<string | undefined>;
     /**
      * secondary dns for vlan. (Static IP address assignment only)
      */
-    secondaryDns?: pulumi.Input<string>;
+    secondaryDns?: pulumi.Input<string | undefined>;
     /**
      * Subnet mask for vlan. (Static IP address assignment only)
      */
-    subnetMask?: pulumi.Input<string>;
+    subnetMask?: pulumi.Input<string | undefined>;
     /**
      * Vlan type. Supports [DHCP, Static]
      */

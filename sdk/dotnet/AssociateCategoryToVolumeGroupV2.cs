@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Associate categories to volume group
-    ///     var example = new Nutanix.Index.AssociateCategoryToVolumeGroupV2("example", new()
+    ///     var example = new Nutanix.AssociateCategoryToVolumeGroupV2("example", new()
     ///     {
     ///         ExtId = "f0c0a4ac-c734-4770-b5d7-eca6793eeeb7",
     ///         Categories = new[]
@@ -46,6 +47,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/associateCategoryToVolumeGroupV2:AssociateCategoryToVolumeGroupV2")]
     public partial class AssociateCategoryToVolumeGroupV2 : global::Pulumi.CustomResource

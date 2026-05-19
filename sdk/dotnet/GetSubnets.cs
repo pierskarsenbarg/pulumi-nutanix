@@ -17,6 +17,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const subnets = nutanix.getSubnets({});
+        /// const test = nutanix.getSubnets({
+        ///     metadatas: [{
+        ///         filter: "name==vlan0_test_2",
+        ///     }],
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// subnets = nutanix.get_subnets()
+        /// test = nutanix.get_subnets(metadatas=[{
+        ///     "filter": "name==vlan0_test_2",
+        /// }])
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,9 +46,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var subnets = Nutanix.Index.GetSubnets.Invoke();
+        ///     var subnets = Nutanix.GetSubnets.Invoke();
         /// 
-        ///     var test = Nutanix.Index.GetSubnets.Invoke(new()
+        ///     var test = Nutanix.GetSubnets.Invoke(new()
         ///     {
         ///         Metadatas = new[]
         ///         {
@@ -40,6 +61,81 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetSubnets(ctx, &amp;nutanix.GetSubnetsArgs{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetSubnets(ctx, &amp;nutanix.GetSubnetsArgs{
+        /// 			Metadatas: []nutanix.GetSubnetsMetadata{
+        /// 				{
+        /// 					Filter: "name==vlan0_test_2",
+        /// 				},
+        /// 			},
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetSubnetsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var subnets = NutanixFunctions.getSubnets(GetSubnetsArgs.builder()
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getSubnets(GetSubnetsArgs.builder()
+        ///             .metadatas(GetSubnetsMetadataArgs.builder()
+        ///                 .filter("name==vlan0_test_2")
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   subnets:
+        ///     fn::invoke:
+        ///       function: nutanix:getSubnets
+        ///       arguments: {}
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getSubnets
+        ///       arguments:
+        ///         metadatas:
+        ///           - filter: name==vlan0_test_2
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetSubnetsResult> InvokeAsync(GetSubnetsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubnetsResult>("nutanix:index/getSubnets:getSubnets", args ?? new GetSubnetsArgs(), options.WithDefaults());
@@ -49,6 +145,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const subnets = nutanix.getSubnets({});
+        /// const test = nutanix.getSubnets({
+        ///     metadatas: [{
+        ///         filter: "name==vlan0_test_2",
+        ///     }],
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// subnets = nutanix.get_subnets()
+        /// test = nutanix.get_subnets(metadatas=[{
+        ///     "filter": "name==vlan0_test_2",
+        /// }])
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -57,9 +174,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var subnets = Nutanix.Index.GetSubnets.Invoke();
+        ///     var subnets = Nutanix.GetSubnets.Invoke();
         /// 
-        ///     var test = Nutanix.Index.GetSubnets.Invoke(new()
+        ///     var test = Nutanix.GetSubnets.Invoke(new()
         ///     {
         ///         Metadatas = new[]
         ///         {
@@ -72,6 +189,81 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetSubnets(ctx, &amp;nutanix.GetSubnetsArgs{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetSubnets(ctx, &amp;nutanix.GetSubnetsArgs{
+        /// 			Metadatas: []nutanix.GetSubnetsMetadata{
+        /// 				{
+        /// 					Filter: "name==vlan0_test_2",
+        /// 				},
+        /// 			},
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetSubnetsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var subnets = NutanixFunctions.getSubnets(GetSubnetsArgs.builder()
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getSubnets(GetSubnetsArgs.builder()
+        ///             .metadatas(GetSubnetsMetadataArgs.builder()
+        ///                 .filter("name==vlan0_test_2")
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   subnets:
+        ///     fn::invoke:
+        ///       function: nutanix:getSubnets
+        ///       arguments: {}
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getSubnets
+        ///       arguments:
+        ///         metadatas:
+        ///           - filter: name==vlan0_test_2
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSubnetsResult> Invoke(GetSubnetsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubnetsResult>("nutanix:index/getSubnets:getSubnets", args ?? new GetSubnetsInvokeArgs(), options.WithDefaults());
@@ -81,6 +273,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const subnets = nutanix.getSubnets({});
+        /// const test = nutanix.getSubnets({
+        ///     metadatas: [{
+        ///         filter: "name==vlan0_test_2",
+        ///     }],
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// subnets = nutanix.get_subnets()
+        /// test = nutanix.get_subnets(metadatas=[{
+        ///     "filter": "name==vlan0_test_2",
+        /// }])
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -89,9 +302,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var subnets = Nutanix.Index.GetSubnets.Invoke();
+        ///     var subnets = Nutanix.GetSubnets.Invoke();
         /// 
-        ///     var test = Nutanix.Index.GetSubnets.Invoke(new()
+        ///     var test = Nutanix.GetSubnets.Invoke(new()
         ///     {
         ///         Metadatas = new[]
         ///         {
@@ -104,6 +317,81 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetSubnets(ctx, &amp;nutanix.GetSubnetsArgs{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetSubnets(ctx, &amp;nutanix.GetSubnetsArgs{
+        /// 			Metadatas: []nutanix.GetSubnetsMetadata{
+        /// 				{
+        /// 					Filter: "name==vlan0_test_2",
+        /// 				},
+        /// 			},
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetSubnetsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var subnets = NutanixFunctions.getSubnets(GetSubnetsArgs.builder()
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getSubnets(GetSubnetsArgs.builder()
+        ///             .metadatas(GetSubnetsMetadataArgs.builder()
+        ///                 .filter("name==vlan0_test_2")
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   subnets:
+        ///     fn::invoke:
+        ///       function: nutanix:getSubnets
+        ///       arguments: {}
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getSubnets
+        ///       arguments:
+        ///         metadatas:
+        ///           - filter: name==vlan0_test_2
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetSubnetsResult> Invoke(GetSubnetsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetSubnetsResult>("nutanix:index/getSubnets:getSubnets", args ?? new GetSubnetsInvokeArgs(), options.WithDefaults());

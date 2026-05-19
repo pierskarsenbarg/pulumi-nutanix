@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as local from "@pulumi/local";
@@ -25,6 +26,7 @@ import * as utilities from "./utilities";
  *     filename: "runtime_value.json",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBlueprintRuntimeEditables(args?: GetBlueprintRuntimeEditablesArgs, opts?: pulumi.InvokeOptions): Promise<GetBlueprintRuntimeEditablesResult> {
     args = args || {};
@@ -42,7 +44,7 @@ export interface GetBlueprintRuntimeEditablesArgs {
     /**
      * - (Optional) The name of the blueprint for which runtime editables will be listed. If this is provided, it will return runtime editables for the specified blueprint.
      *
-     * Both (`bpUuid` and `bpName`) are optional but atleast one of them to be provided for this data source to work.
+     * Both (<span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> and <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span>) are optional but atleast one of them to be provided for this data source to work.
      */
     bpName?: string;
     /**
@@ -68,6 +70,7 @@ export interface GetBlueprintRuntimeEditablesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as local from "@pulumi/local";
@@ -82,6 +85,7 @@ export interface GetBlueprintRuntimeEditablesResult {
  *     filename: "runtime_value.json",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getBlueprintRuntimeEditablesOutput(args?: GetBlueprintRuntimeEditablesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBlueprintRuntimeEditablesResult> {
     args = args || {};
@@ -99,11 +103,11 @@ export interface GetBlueprintRuntimeEditablesOutputArgs {
     /**
      * - (Optional) The name of the blueprint for which runtime editables will be listed. If this is provided, it will return runtime editables for the specified blueprint.
      *
-     * Both (`bpUuid` and `bpName`) are optional but atleast one of them to be provided for this data source to work.
+     * Both (<span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> and <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span>) are optional but atleast one of them to be provided for this data source to work.
      */
-    bpName?: pulumi.Input<string>;
+    bpName?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The UUID of the blueprint for which runtime editables will be listed. If this is provided, it will return runtime editables for the specified blueprint.
      */
-    bpUuid?: pulumi.Input<string>;
+    bpUuid?: pulumi.Input<string | undefined>;
 }

@@ -170,13 +170,13 @@ export interface GetNdbTimeMachineOutputArgs {
     /**
      * tags
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbTimeMachineTagArgs>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbTimeMachineTagArgs>[] | undefined>;
     /**
      * time machine id
      */
-    timeMachineId?: pulumi.Input<string>;
+    timeMachineId?: pulumi.Input<string | undefined>;
     /**
      * time machine name
      */
-    timeMachineName?: pulumi.Input<string>;
+    timeMachineName?: pulumi.Input<string | undefined>;
 }

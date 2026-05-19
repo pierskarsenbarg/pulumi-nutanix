@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -24,26 +25,27 @@ import * as utilities from "./utilities";
  *     assignedTo: "developer_user_1",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  * ## Argument Reference
  *
  * The following arguments are supported:
  *
- * * `userExtId`: - ( Required ) External Identifier of the User.
- * * `name`: - ( Required ) Identifier for the key in the form of a name.
- * * `description`: - ( Optional ) Brief description of the key.
- * * `keyType`: - ( Required ) The type of key. Enum Values:
+ * * <span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`">`userExtId`</span>: - ( Required ) External Identifier of the User.
+ * * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: - ( Required ) Identifier for the key in the form of a name.
+ * * <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>: - ( Optional ) Brief description of the key.
+ * * <span pulumi-lang-nodejs="`keyType`" pulumi-lang-dotnet="`KeyType`" pulumi-lang-go="`keyType`" pulumi-lang-python="`key_type`" pulumi-lang-yaml="`keyType`" pulumi-lang-java="`keyType`">`keyType`</span>: - ( Required ) The type of key. Enum Values:
  *       * "API_KEY":	A key type that is used to identify a service.
  *       * "OBJECT_KEY":	A combination of access key and secret key to sign an API request.
- * * `creationType`: - ( Optional ) The creation mechanism of this entity. Enum Values:
+ * * <span pulumi-lang-nodejs="`creationType`" pulumi-lang-dotnet="`CreationType`" pulumi-lang-go="`creationType`" pulumi-lang-python="`creation_type`" pulumi-lang-yaml="`creationType`" pulumi-lang-java="`creationType`">`creationType`</span>: - ( Optional ) The creation mechanism of this entity. Enum Values:
  *       * "PREDEFINED":	Predefined creator workflow type is for entity created by the system.
  *       * "SERVICEDEFINED":	Servicedefined creator workflow type is for entity created by the service.
  *       * "USERDEFINED":	Userdefined creator workflow type is for entity created by the users.
- * * `expiryTime`: - ( Optional ) The time when the key will expire.
- * * `status`: - ( Optional ) The status of the key. Enum Values:
+ * * <span pulumi-lang-nodejs="`expiryTime`" pulumi-lang-dotnet="`ExpiryTime`" pulumi-lang-go="`expiryTime`" pulumi-lang-python="`expiry_time`" pulumi-lang-yaml="`expiryTime`" pulumi-lang-java="`expiryTime`">`expiryTime`</span>: - ( Optional ) The time when the key will expire.
+ * * <span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`">`status`</span>: - ( Optional ) The status of the key. Enum Values:
  *       * "REVOKED":	Key is revoked.
  *       * "VALID":	Key is valid.
  *       * "EXPIRED":	Key is expired.
- * * `assignedTo`: - ( Optional ) External client to whom the given key is allocated.
+ * * <span pulumi-lang-nodejs="`assignedTo`" pulumi-lang-dotnet="`AssignedTo`" pulumi-lang-go="`assignedTo`" pulumi-lang-python="`assigned_to`" pulumi-lang-yaml="`assignedTo`" pulumi-lang-java="`assignedTo`">`assignedTo`</span>: - ( Optional ) External client to whom the given key is allocated.
  */
 export class UserKeyV2 extends pulumi.CustomResource {
     /**
@@ -207,68 +209,68 @@ export interface UserKeyV2State {
     /**
      * - External client to whom the given key is allocated.
      */
-    assignedTo?: pulumi.Input<string>;
+    assignedTo?: pulumi.Input<string | undefined>;
     /**
      * - User or service who created the key.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * - The creation time of the key.
      */
-    createdTime?: pulumi.Input<string>;
+    createdTime?: pulumi.Input<string | undefined>;
     /**
      * - The creation mechanism of this entity.
      */
-    creationType?: pulumi.Input<string>;
+    creationType?: pulumi.Input<string | undefined>;
     /**
      * - Brief description of the key.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - The time when the key will expire.
      */
-    expiryTime?: pulumi.Input<string>;
+    expiryTime?: pulumi.Input<string | undefined>;
     /**
      * - The External Identifier of the User Group.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * - Details specific to type of the key.
      */
-    keyDetails?: pulumi.Input<pulumi.Input<inputs.UserKeyV2KeyDetail>[]>;
+    keyDetails?: pulumi.Input<pulumi.Input<inputs.UserKeyV2KeyDetail>[] | undefined>;
     /**
      * - The type of key.
      */
-    keyType?: pulumi.Input<string>;
+    keyType?: pulumi.Input<string | undefined>;
     /**
      * - User who updated the key.
      */
-    lastUpdatedBy?: pulumi.Input<string>;
+    lastUpdatedBy?: pulumi.Input<string | undefined>;
     /**
      * - The time when the key was updated.
      */
-    lastUpdatedTime?: pulumi.Input<string>;
+    lastUpdatedTime?: pulumi.Input<string | undefined>;
     /**
      * - The time when the key was last used.
      */
-    lastUsedTime?: pulumi.Input<string>;
+    lastUsedTime?: pulumi.Input<string | undefined>;
     /**
      * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.UserKeyV2Link>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.UserKeyV2Link>[] | undefined>;
     /**
      * - Identifier for the key in the form of a name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * - The status of the key.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
      */
-    tenantId?: pulumi.Input<string>;
-    userExtId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
+    userExtId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -278,27 +280,27 @@ export interface UserKeyV2Args {
     /**
      * - External client to whom the given key is allocated.
      */
-    assignedTo?: pulumi.Input<string>;
+    assignedTo?: pulumi.Input<string | undefined>;
     /**
      * - User or service who created the key.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * - The creation time of the key.
      */
-    createdTime?: pulumi.Input<string>;
+    createdTime?: pulumi.Input<string | undefined>;
     /**
      * - The creation mechanism of this entity.
      */
-    creationType?: pulumi.Input<string>;
+    creationType?: pulumi.Input<string | undefined>;
     /**
      * - Brief description of the key.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - The time when the key will expire.
      */
-    expiryTime?: pulumi.Input<string>;
+    expiryTime?: pulumi.Input<string | undefined>;
     /**
      * - The type of key.
      */
@@ -306,22 +308,22 @@ export interface UserKeyV2Args {
     /**
      * - User who updated the key.
      */
-    lastUpdatedBy?: pulumi.Input<string>;
+    lastUpdatedBy?: pulumi.Input<string | undefined>;
     /**
      * - The time when the key was updated.
      */
-    lastUpdatedTime?: pulumi.Input<string>;
+    lastUpdatedTime?: pulumi.Input<string | undefined>;
     /**
      * - The time when the key was last used.
      */
-    lastUsedTime?: pulumi.Input<string>;
+    lastUsedTime?: pulumi.Input<string | undefined>;
     /**
      * - Identifier for the key in the form of a name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * - The status of the key.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     userExtId: pulumi.Input<string>;
 }

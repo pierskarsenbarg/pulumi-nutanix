@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var cls = new Nutanix.Index.NdbTmsCluster("cls", new()
+    ///     var cls = new Nutanix.NdbTmsCluster("cls", new()
     ///     {
     ///         TimeMachineId = "{{ tms_id }}",
     ///         NxClusterId = "{{ cluster_id }}",
@@ -32,6 +33,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbTmsCluster:NdbTmsCluster")]
     public partial class NdbTmsCluster : global::Pulumi.CustomResource

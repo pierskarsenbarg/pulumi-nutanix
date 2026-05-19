@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,6 +20,7 @@ import * as utilities from "./utilities";
  *     extId: "{{ ext_id of vm }}",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVirtualMachineV2(args: GetVirtualMachineV2Args, opts?: pulumi.InvokeOptions): Promise<GetVirtualMachineV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -221,6 +223,7 @@ export interface GetVirtualMachineV2Result {
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -229,6 +232,7 @@ export interface GetVirtualMachineV2Result {
  *     extId: "{{ ext_id of vm }}",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getVirtualMachineV2Output(args: GetVirtualMachineV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVirtualMachineV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

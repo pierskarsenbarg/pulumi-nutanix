@@ -118,6 +118,7 @@ def get_virtual_machines_v2(filter: Optional[_builtins.str] = None,
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -130,141 +131,142 @@ def get_virtual_machines_v2(filter: Optional[_builtins.str] = None,
     # List virtual machines with filter
     filtered_vms = nutanix.get_virtual_machines_v2(filter="name eq 'example-vm-filter'")
     ```
+    <!--End PulumiCodeChooser -->
 
     ## VMs
 
-    The `vms` is a list of all virtual machines. Each virtual machine has the following attributes:
+    The <span pulumi-lang-nodejs="`vms`" pulumi-lang-dotnet="`Vms`" pulumi-lang-go="`vms`" pulumi-lang-python="`vms`" pulumi-lang-yaml="`vms`" pulumi-lang-java="`vms`">`vms`</span> is a list of all virtual machines. Each virtual machine has the following attributes:
 
-    * `tenant_id` - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-    * `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-    - `ext_id`: A globally unique identifier of an instance that is suitable for external consumption.
-    - `name`: VM name.
-    - `description`: VM description
-    - `create_time`: VM creation time
-    - `update_time`: VM last updated time.
-    - `source`: Reference to an entity that the VM should be cloned or created from
-    - `num_sockets`: Number of vCPU sockets.
-    - `num_cores_per_socket`: Number of cores per socket.
-    - `num_threads_per_core`: Number of threads per core
-    - `num_numa_nodes`: Number of NUMA nodes. 0 means NUMA is disabled.
-    - `memory_size_bytes`: Memory size in bytes.
-    - `is_vcpu_hard_pinning_enabled`: Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
-    - `is_cpu_passthrough_enabled`: Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
-    - `enabled_cpu_features`: The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor
-    - `is_memory_overcommit_enabled`: Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
-    - `is_gpu_console_enabled`: Indicates whether the vGPU console is enabled or not.
-    - `is_cpu_hotplug_enabled`: Indicates whether the VM CPU hotplug is enabled.
-    - `is_scsi_controller_enabled`: Indicates whether the VM SCSI controller is enabled.
-    - `generation_uuid`: Generation UUID of the VM. It should be of type UUID.
-    - `bios_uuid`: BIOS UUID of the VM. It should be of type UUID.
-    - `categories`: Categories for the VM.
-    - `ownership_info`: Ownership information for the VM.
-    - `host`: Reference to the host, the VM is running on.
-    - `cluster`: Reference to a cluster.
-    - `guest_customization`: Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
-    - `guest_tools`: The details about Nutanix Guest Tools for a VM.
-    - `hardware_clock_timezone`: VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
-    - `is_branding_enabled`: Indicates whether to remove AHV branding from VM firmware tables or not.
-    - `boot_config`: Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-    - `is_vga_console_enabled`: Indicates whether the VGA console should be disabled or not.
-    - `machine_type`: Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-    - `vtpm_config`: Indicates how the vTPM for the VM should be configured.
-    - `is_agent_vm`: Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
-    - `apc_config`: Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
-    - `storage_config`: Storage configuration for VM.
-    - `disks`: Disks attached to the VM.
-    - `cd_roms`: CD-ROMs attached to the VM.
-    - `nics`: NICs attached to the VM.
-    - `gpus`: GPUs attached to the VM.
-    - `serial_ports`: Serial ports configured on the VM.
-    - `protection_type`: The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
-    - `protection_policy_state`: Status of protection policy applied to this VM.
+    * <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`">`tenantId`</span> - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+    * <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+    - <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption.
+    - <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: VM name.
+    - <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>: VM description
+    - <span pulumi-lang-nodejs="`createTime`" pulumi-lang-dotnet="`CreateTime`" pulumi-lang-go="`createTime`" pulumi-lang-python="`create_time`" pulumi-lang-yaml="`createTime`" pulumi-lang-java="`createTime`">`createTime`</span>: VM creation time
+    - <span pulumi-lang-nodejs="`updateTime`" pulumi-lang-dotnet="`UpdateTime`" pulumi-lang-go="`updateTime`" pulumi-lang-python="`update_time`" pulumi-lang-yaml="`updateTime`" pulumi-lang-java="`updateTime`">`updateTime`</span>: VM last updated time.
+    - <span pulumi-lang-nodejs="`source`" pulumi-lang-dotnet="`Source`" pulumi-lang-go="`source`" pulumi-lang-python="`source`" pulumi-lang-yaml="`source`" pulumi-lang-java="`source`">`source`</span>: Reference to an entity that the VM should be cloned or created from
+    - <span pulumi-lang-nodejs="`numSockets`" pulumi-lang-dotnet="`NumSockets`" pulumi-lang-go="`numSockets`" pulumi-lang-python="`num_sockets`" pulumi-lang-yaml="`numSockets`" pulumi-lang-java="`numSockets`">`numSockets`</span>: Number of vCPU sockets.
+    - <span pulumi-lang-nodejs="`numCoresPerSocket`" pulumi-lang-dotnet="`NumCoresPerSocket`" pulumi-lang-go="`numCoresPerSocket`" pulumi-lang-python="`num_cores_per_socket`" pulumi-lang-yaml="`numCoresPerSocket`" pulumi-lang-java="`numCoresPerSocket`">`numCoresPerSocket`</span>: Number of cores per socket.
+    - <span pulumi-lang-nodejs="`numThreadsPerCore`" pulumi-lang-dotnet="`NumThreadsPerCore`" pulumi-lang-go="`numThreadsPerCore`" pulumi-lang-python="`num_threads_per_core`" pulumi-lang-yaml="`numThreadsPerCore`" pulumi-lang-java="`numThreadsPerCore`">`numThreadsPerCore`</span>: Number of threads per core
+    - <span pulumi-lang-nodejs="`numNumaNodes`" pulumi-lang-dotnet="`NumNumaNodes`" pulumi-lang-go="`numNumaNodes`" pulumi-lang-python="`num_numa_nodes`" pulumi-lang-yaml="`numNumaNodes`" pulumi-lang-java="`numNumaNodes`">`numNumaNodes`</span>: Number of NUMA nodes. 0 means NUMA is disabled.
+    - <span pulumi-lang-nodejs="`memorySizeBytes`" pulumi-lang-dotnet="`MemorySizeBytes`" pulumi-lang-go="`memorySizeBytes`" pulumi-lang-python="`memory_size_bytes`" pulumi-lang-yaml="`memorySizeBytes`" pulumi-lang-java="`memorySizeBytes`">`memorySizeBytes`</span>: Memory size in bytes.
+    - <span pulumi-lang-nodejs="`isVcpuHardPinningEnabled`" pulumi-lang-dotnet="`IsVcpuHardPinningEnabled`" pulumi-lang-go="`isVcpuHardPinningEnabled`" pulumi-lang-python="`is_vcpu_hard_pinning_enabled`" pulumi-lang-yaml="`isVcpuHardPinningEnabled`" pulumi-lang-java="`isVcpuHardPinningEnabled`">`isVcpuHardPinningEnabled`</span>: Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
+    - <span pulumi-lang-nodejs="`isCpuPassthroughEnabled`" pulumi-lang-dotnet="`IsCpuPassthroughEnabled`" pulumi-lang-go="`isCpuPassthroughEnabled`" pulumi-lang-python="`is_cpu_passthrough_enabled`" pulumi-lang-yaml="`isCpuPassthroughEnabled`" pulumi-lang-java="`isCpuPassthroughEnabled`">`isCpuPassthroughEnabled`</span>: Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
+    - <span pulumi-lang-nodejs="`enabledCpuFeatures`" pulumi-lang-dotnet="`EnabledCpuFeatures`" pulumi-lang-go="`enabledCpuFeatures`" pulumi-lang-python="`enabled_cpu_features`" pulumi-lang-yaml="`enabledCpuFeatures`" pulumi-lang-java="`enabledCpuFeatures`">`enabledCpuFeatures`</span>: The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor
+    - <span pulumi-lang-nodejs="`isMemoryOvercommitEnabled`" pulumi-lang-dotnet="`IsMemoryOvercommitEnabled`" pulumi-lang-go="`isMemoryOvercommitEnabled`" pulumi-lang-python="`is_memory_overcommit_enabled`" pulumi-lang-yaml="`isMemoryOvercommitEnabled`" pulumi-lang-java="`isMemoryOvercommitEnabled`">`isMemoryOvercommitEnabled`</span>: Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
+    - <span pulumi-lang-nodejs="`isGpuConsoleEnabled`" pulumi-lang-dotnet="`IsGpuConsoleEnabled`" pulumi-lang-go="`isGpuConsoleEnabled`" pulumi-lang-python="`is_gpu_console_enabled`" pulumi-lang-yaml="`isGpuConsoleEnabled`" pulumi-lang-java="`isGpuConsoleEnabled`">`isGpuConsoleEnabled`</span>: Indicates whether the vGPU console is enabled or not.
+    - <span pulumi-lang-nodejs="`isCpuHotplugEnabled`" pulumi-lang-dotnet="`IsCpuHotplugEnabled`" pulumi-lang-go="`isCpuHotplugEnabled`" pulumi-lang-python="`is_cpu_hotplug_enabled`" pulumi-lang-yaml="`isCpuHotplugEnabled`" pulumi-lang-java="`isCpuHotplugEnabled`">`isCpuHotplugEnabled`</span>: Indicates whether the VM CPU hotplug is enabled.
+    - <span pulumi-lang-nodejs="`isScsiControllerEnabled`" pulumi-lang-dotnet="`IsScsiControllerEnabled`" pulumi-lang-go="`isScsiControllerEnabled`" pulumi-lang-python="`is_scsi_controller_enabled`" pulumi-lang-yaml="`isScsiControllerEnabled`" pulumi-lang-java="`isScsiControllerEnabled`">`isScsiControllerEnabled`</span>: Indicates whether the VM SCSI controller is enabled.
+    - <span pulumi-lang-nodejs="`generationUuid`" pulumi-lang-dotnet="`GenerationUuid`" pulumi-lang-go="`generationUuid`" pulumi-lang-python="`generation_uuid`" pulumi-lang-yaml="`generationUuid`" pulumi-lang-java="`generationUuid`">`generationUuid`</span>: Generation UUID of the VM. It should be of type UUID.
+    - <span pulumi-lang-nodejs="`biosUuid`" pulumi-lang-dotnet="`BiosUuid`" pulumi-lang-go="`biosUuid`" pulumi-lang-python="`bios_uuid`" pulumi-lang-yaml="`biosUuid`" pulumi-lang-java="`biosUuid`">`biosUuid`</span>: BIOS UUID of the VM. It should be of type UUID.
+    - <span pulumi-lang-nodejs="`categories`" pulumi-lang-dotnet="`Categories`" pulumi-lang-go="`categories`" pulumi-lang-python="`categories`" pulumi-lang-yaml="`categories`" pulumi-lang-java="`categories`">`categories`</span>: Categories for the VM.
+    - <span pulumi-lang-nodejs="`ownershipInfo`" pulumi-lang-dotnet="`OwnershipInfo`" pulumi-lang-go="`ownershipInfo`" pulumi-lang-python="`ownership_info`" pulumi-lang-yaml="`ownershipInfo`" pulumi-lang-java="`ownershipInfo`">`ownershipInfo`</span>: Ownership information for the VM.
+    - <span pulumi-lang-nodejs="`host`" pulumi-lang-dotnet="`Host`" pulumi-lang-go="`host`" pulumi-lang-python="`host`" pulumi-lang-yaml="`host`" pulumi-lang-java="`host`">`host`</span>: Reference to the host, the VM is running on.
+    - <span pulumi-lang-nodejs="`cluster`" pulumi-lang-dotnet="`Cluster`" pulumi-lang-go="`cluster`" pulumi-lang-python="`cluster`" pulumi-lang-yaml="`cluster`" pulumi-lang-java="`cluster`">`cluster`</span>: Reference to a cluster.
+    - <span pulumi-lang-nodejs="`guestCustomization`" pulumi-lang-dotnet="`GuestCustomization`" pulumi-lang-go="`guestCustomization`" pulumi-lang-python="`guest_customization`" pulumi-lang-yaml="`guestCustomization`" pulumi-lang-java="`guestCustomization`">`guestCustomization`</span>: Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+    - <span pulumi-lang-nodejs="`guestTools`" pulumi-lang-dotnet="`GuestTools`" pulumi-lang-go="`guestTools`" pulumi-lang-python="`guest_tools`" pulumi-lang-yaml="`guestTools`" pulumi-lang-java="`guestTools`">`guestTools`</span>: The details about Nutanix Guest Tools for a VM.
+    - <span pulumi-lang-nodejs="`hardwareClockTimezone`" pulumi-lang-dotnet="`HardwareClockTimezone`" pulumi-lang-go="`hardwareClockTimezone`" pulumi-lang-python="`hardware_clock_timezone`" pulumi-lang-yaml="`hardwareClockTimezone`" pulumi-lang-java="`hardwareClockTimezone`">`hardwareClockTimezone`</span>: VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+    - <span pulumi-lang-nodejs="`isBrandingEnabled`" pulumi-lang-dotnet="`IsBrandingEnabled`" pulumi-lang-go="`isBrandingEnabled`" pulumi-lang-python="`is_branding_enabled`" pulumi-lang-yaml="`isBrandingEnabled`" pulumi-lang-java="`isBrandingEnabled`">`isBrandingEnabled`</span>: Indicates whether to remove AHV branding from VM firmware tables or not.
+    - <span pulumi-lang-nodejs="`bootConfig`" pulumi-lang-dotnet="`BootConfig`" pulumi-lang-go="`bootConfig`" pulumi-lang-python="`boot_config`" pulumi-lang-yaml="`bootConfig`" pulumi-lang-java="`bootConfig`">`bootConfig`</span>: Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+    - <span pulumi-lang-nodejs="`isVgaConsoleEnabled`" pulumi-lang-dotnet="`IsVgaConsoleEnabled`" pulumi-lang-go="`isVgaConsoleEnabled`" pulumi-lang-python="`is_vga_console_enabled`" pulumi-lang-yaml="`isVgaConsoleEnabled`" pulumi-lang-java="`isVgaConsoleEnabled`">`isVgaConsoleEnabled`</span>: Indicates whether the VGA console should be disabled or not.
+    - <span pulumi-lang-nodejs="`machineType`" pulumi-lang-dotnet="`MachineType`" pulumi-lang-go="`machineType`" pulumi-lang-python="`machine_type`" pulumi-lang-yaml="`machineType`" pulumi-lang-java="`machineType`">`machineType`</span>: Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+    - <span pulumi-lang-nodejs="`vtpmConfig`" pulumi-lang-dotnet="`VtpmConfig`" pulumi-lang-go="`vtpmConfig`" pulumi-lang-python="`vtpm_config`" pulumi-lang-yaml="`vtpmConfig`" pulumi-lang-java="`vtpmConfig`">`vtpmConfig`</span>: Indicates how the vTPM for the VM should be configured.
+    - <span pulumi-lang-nodejs="`isAgentVm`" pulumi-lang-dotnet="`IsAgentVm`" pulumi-lang-go="`isAgentVm`" pulumi-lang-python="`is_agent_vm`" pulumi-lang-yaml="`isAgentVm`" pulumi-lang-java="`isAgentVm`">`isAgentVm`</span>: Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
+    - <span pulumi-lang-nodejs="`apcConfig`" pulumi-lang-dotnet="`ApcConfig`" pulumi-lang-go="`apcConfig`" pulumi-lang-python="`apc_config`" pulumi-lang-yaml="`apcConfig`" pulumi-lang-java="`apcConfig`">`apcConfig`</span>: Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
+    - <span pulumi-lang-nodejs="`storageConfig`" pulumi-lang-dotnet="`StorageConfig`" pulumi-lang-go="`storageConfig`" pulumi-lang-python="`storage_config`" pulumi-lang-yaml="`storageConfig`" pulumi-lang-java="`storageConfig`">`storageConfig`</span>: Storage configuration for VM.
+    - <span pulumi-lang-nodejs="`disks`" pulumi-lang-dotnet="`Disks`" pulumi-lang-go="`disks`" pulumi-lang-python="`disks`" pulumi-lang-yaml="`disks`" pulumi-lang-java="`disks`">`disks`</span>: Disks attached to the VM.
+    - <span pulumi-lang-nodejs="`cdRoms`" pulumi-lang-dotnet="`CdRoms`" pulumi-lang-go="`cdRoms`" pulumi-lang-python="`cd_roms`" pulumi-lang-yaml="`cdRoms`" pulumi-lang-java="`cdRoms`">`cdRoms`</span>: CD-ROMs attached to the VM.
+    - <span pulumi-lang-nodejs="`nics`" pulumi-lang-dotnet="`Nics`" pulumi-lang-go="`nics`" pulumi-lang-python="`nics`" pulumi-lang-yaml="`nics`" pulumi-lang-java="`nics`">`nics`</span>: NICs attached to the VM.
+    - <span pulumi-lang-nodejs="`gpus`" pulumi-lang-dotnet="`Gpus`" pulumi-lang-go="`gpus`" pulumi-lang-python="`gpus`" pulumi-lang-yaml="`gpus`" pulumi-lang-java="`gpus`">`gpus`</span>: GPUs attached to the VM.
+    - <span pulumi-lang-nodejs="`serialPorts`" pulumi-lang-dotnet="`SerialPorts`" pulumi-lang-go="`serialPorts`" pulumi-lang-python="`serial_ports`" pulumi-lang-yaml="`serialPorts`" pulumi-lang-java="`serialPorts`">`serialPorts`</span>: Serial ports configured on the VM.
+    - <span pulumi-lang-nodejs="`protectionType`" pulumi-lang-dotnet="`ProtectionType`" pulumi-lang-go="`protectionType`" pulumi-lang-python="`protection_type`" pulumi-lang-yaml="`protectionType`" pulumi-lang-java="`protectionType`">`protectionType`</span>: The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
+    - <span pulumi-lang-nodejs="`protectionPolicyState`" pulumi-lang-dotnet="`ProtectionPolicyState`" pulumi-lang-go="`protectionPolicyState`" pulumi-lang-python="`protection_policy_state`" pulumi-lang-yaml="`protectionPolicyState`" pulumi-lang-java="`protectionPolicyState`">`protectionPolicyState`</span>: Status of protection policy applied to this VM.
 
     ### Links
 
     The links attribute supports the following:
 
-    * `href`: - The URL at which the entity described by the link can be accessed.
-    * `rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+    * <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span>: - The URL at which the entity described by the link can be accessed.
+    * <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
 
     ### Source
 
-    The `source` attribute supports the following:
+    The <span pulumi-lang-nodejs="`source`" pulumi-lang-dotnet="`Source`" pulumi-lang-go="`source`" pulumi-lang-python="`source`" pulumi-lang-yaml="`source`" pulumi-lang-java="`source`">`source`</span> attribute supports the following:
 
-    * `entity_type`: Reference to an entity from which the VM should be cloned or created. Values are:
+    * <span pulumi-lang-nodejs="`entityType`" pulumi-lang-dotnet="`EntityType`" pulumi-lang-go="`entityType`" pulumi-lang-python="`entity_type`" pulumi-lang-yaml="`entityType`" pulumi-lang-java="`entityType`">`entityType`</span>: Reference to an entity from which the VM should be cloned or created. Values are:
       - VM_RECOVERY_POINT: Reference to the recovery point entity from which the VM should be cloned or created.
       - VM: Reference to an entity from which the VM should be cloned or created.
-    * `ext_id`: A globally unique identifier of a VM of type UUID.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of a VM of type UUID.
 
     ### Categories
-    The `categories` attribute supports the following:
+    The <span pulumi-lang-nodejs="`categories`" pulumi-lang-dotnet="`Categories`" pulumi-lang-go="`categories`" pulumi-lang-python="`categories`" pulumi-lang-yaml="`categories`" pulumi-lang-java="`categories`">`categories`</span> attribute supports the following:
 
-    * `ext_id`: A globally unique identifier of a VM category of type UUID.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of a VM category of type UUID.
 
     ### Ownership Info
-    The `ownership_info` attribute supports the following:
+    The <span pulumi-lang-nodejs="`ownershipInfo`" pulumi-lang-dotnet="`OwnershipInfo`" pulumi-lang-go="`ownershipInfo`" pulumi-lang-python="`ownership_info`" pulumi-lang-yaml="`ownershipInfo`" pulumi-lang-java="`ownershipInfo`">`ownershipInfo`</span> attribute supports the following:
 
-    * `owner`: Reference to the owner.
+    * <span pulumi-lang-nodejs="`owner`" pulumi-lang-dotnet="`Owner`" pulumi-lang-go="`owner`" pulumi-lang-python="`owner`" pulumi-lang-yaml="`owner`" pulumi-lang-java="`owner`">`owner`</span>: Reference to the owner.
     * `owner.ext_id`: A globally unique identifier of a VM owner type UUID.
 
     ### Host
-    The `host` attribute supports the following:
+    The <span pulumi-lang-nodejs="`host`" pulumi-lang-dotnet="`Host`" pulumi-lang-go="`host`" pulumi-lang-python="`host`" pulumi-lang-yaml="`host`" pulumi-lang-java="`host`">`host`</span> attribute supports the following:
 
-    * `ext_id`: A globally unique identifier of a host of type UUID.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of a host of type UUID.
 
     ### Cluster
-    The `cluster` attribute supports the following:
+    The <span pulumi-lang-nodejs="`cluster`" pulumi-lang-dotnet="`Cluster`" pulumi-lang-go="`cluster`" pulumi-lang-python="`cluster`" pulumi-lang-yaml="`cluster`" pulumi-lang-java="`cluster`">`cluster`</span> attribute supports the following:
 
-    * `ext_id`: The globally unique identifier of a cluster type UUID.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: The globally unique identifier of a cluster type UUID.
 
     ### Availability Zone
-    The `availability_zone` attribute supports the following:
+    The <span pulumi-lang-nodejs="`availabilityZone`" pulumi-lang-dotnet="`AvailabilityZone`" pulumi-lang-go="`availabilityZone`" pulumi-lang-python="`availability_zone`" pulumi-lang-yaml="`availabilityZone`" pulumi-lang-java="`availabilityZone`">`availabilityZone`</span> attribute supports the following:
 
-    * `ext_id`: The globally unique identifier of an availability zone type UUID.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: The globally unique identifier of an availability zone type UUID.
 
     ### Guest Customization
-    The `guest_customization` attribute supports the following:
+    The <span pulumi-lang-nodejs="`guestCustomization`" pulumi-lang-dotnet="`GuestCustomization`" pulumi-lang-go="`guestCustomization`" pulumi-lang-python="`guest_customization`" pulumi-lang-yaml="`guestCustomization`" pulumi-lang-java="`guestCustomization`">`guestCustomization`</span> attribute supports the following:
 
-    * `config`: The Nutanix Guest Tools customization settings.
+    * <span pulumi-lang-nodejs="`config`" pulumi-lang-dotnet="`Config`" pulumi-lang-go="`config`" pulumi-lang-python="`config`" pulumi-lang-yaml="`config`" pulumi-lang-java="`config`">`config`</span>: The Nutanix Guest Tools customization settings.
 
     * `config.sysprep`: Sysprep config
     * `config.cloud_init`: CloudInit Config
 
     #### config.sysprep
-    * `install_type`: Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Default is 'PREPARED'.
-    * `sysprep_script`: Object either UnattendXml or CustomKeyValues
+    * <span pulumi-lang-nodejs="`installType`" pulumi-lang-dotnet="`InstallType`" pulumi-lang-go="`installType`" pulumi-lang-python="`install_type`" pulumi-lang-yaml="`installType`" pulumi-lang-java="`installType`">`installType`</span>: Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Default is 'PREPARED'.
+    * <span pulumi-lang-nodejs="`sysprepScript`" pulumi-lang-dotnet="`SysprepScript`" pulumi-lang-go="`sysprepScript`" pulumi-lang-python="`sysprep_script`" pulumi-lang-yaml="`sysprepScript`" pulumi-lang-java="`sysprepScript`">`sysprepScript`</span>: Object either UnattendXml or CustomKeyValues
     * `sysprep_script.unattend_xml`: xml object
     * `sysprep_script.custom_key_values`: The list of the individual KeyValuePair elements.
 
     #### config.cloud_init
-    * `datasource_type`: Type of datasource. Default: CONFIG_DRIVE_V2
-    * `metadata`: The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
-    * `cloud_init_script`: The script to use for cloud-init.
+    * <span pulumi-lang-nodejs="`datasourceType`" pulumi-lang-dotnet="`DatasourceType`" pulumi-lang-go="`datasourceType`" pulumi-lang-python="`datasource_type`" pulumi-lang-yaml="`datasourceType`" pulumi-lang-java="`datasourceType`">`datasourceType`</span>: Type of datasource. Default: CONFIG_DRIVE_V2
+    * <span pulumi-lang-nodejs="`metadata`" pulumi-lang-dotnet="`Metadata`" pulumi-lang-go="`metadata`" pulumi-lang-python="`metadata`" pulumi-lang-yaml="`metadata`" pulumi-lang-java="`metadata`">`metadata`</span>: The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+    * <span pulumi-lang-nodejs="`cloudInitScript`" pulumi-lang-dotnet="`CloudInitScript`" pulumi-lang-go="`cloudInitScript`" pulumi-lang-python="`cloud_init_script`" pulumi-lang-yaml="`cloudInitScript`" pulumi-lang-java="`cloudInitScript`">`cloudInitScript`</span>: The script to use for cloud-init.
     * `cloud_init_script.user_data`: user data object
     * `cloud_init_script.custom_keys`: The list of the individual KeyValuePair elements.
 
     ### Guest Tools
-    The `guest_tools` attribute supports the following:
+    The <span pulumi-lang-nodejs="`guestTools`" pulumi-lang-dotnet="`GuestTools`" pulumi-lang-go="`guestTools`" pulumi-lang-python="`guest_tools`" pulumi-lang-yaml="`guestTools`" pulumi-lang-java="`guestTools`">`guestTools`</span> attribute supports the following:
 
-    * `version`: Version of Nutanix Guest Tools installed on the VM.
-    * `is_installed`: Indicates whether Nutanix Guest Tools is installed on the VM or not.
-    * `is_iso_inserted`: Indicates whether Nutanix Guest Tools ISO is inserted or not.
-    * `available_version`: Version of Nutanix Guest Tools available on the cluster.
-    * `guest_os_version`: Version of the operating system on the VM
-    * `is_reachable`: Indicates whether the communication from VM to CVM is active or not.
-    * `is_vss_snapshot_capable`: Indicates whether the VM is configured to take VSS snapshots through NGT or not.
-    * `is_vm_mobility_drivers_installed`: Indicates whether the VM mobility drivers are installed on the VM or not.
-    * `is_enabled`: Indicates whether Nutanix Guest Tools is enabled or not.
-    * `capabilities`: The list of the application names that are enabled on the guest VM.
+    * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`">`version`</span>: Version of Nutanix Guest Tools installed on the VM.
+    * <span pulumi-lang-nodejs="`isInstalled`" pulumi-lang-dotnet="`IsInstalled`" pulumi-lang-go="`isInstalled`" pulumi-lang-python="`is_installed`" pulumi-lang-yaml="`isInstalled`" pulumi-lang-java="`isInstalled`">`isInstalled`</span>: Indicates whether Nutanix Guest Tools is installed on the VM or not.
+    * <span pulumi-lang-nodejs="`isIsoInserted`" pulumi-lang-dotnet="`IsIsoInserted`" pulumi-lang-go="`isIsoInserted`" pulumi-lang-python="`is_iso_inserted`" pulumi-lang-yaml="`isIsoInserted`" pulumi-lang-java="`isIsoInserted`">`isIsoInserted`</span>: Indicates whether Nutanix Guest Tools ISO is inserted or not.
+    * <span pulumi-lang-nodejs="`availableVersion`" pulumi-lang-dotnet="`AvailableVersion`" pulumi-lang-go="`availableVersion`" pulumi-lang-python="`available_version`" pulumi-lang-yaml="`availableVersion`" pulumi-lang-java="`availableVersion`">`availableVersion`</span>: Version of Nutanix Guest Tools available on the cluster.
+    * <span pulumi-lang-nodejs="`guestOsVersion`" pulumi-lang-dotnet="`GuestOsVersion`" pulumi-lang-go="`guestOsVersion`" pulumi-lang-python="`guest_os_version`" pulumi-lang-yaml="`guestOsVersion`" pulumi-lang-java="`guestOsVersion`">`guestOsVersion`</span>: Version of the operating system on the VM
+    * <span pulumi-lang-nodejs="`isReachable`" pulumi-lang-dotnet="`IsReachable`" pulumi-lang-go="`isReachable`" pulumi-lang-python="`is_reachable`" pulumi-lang-yaml="`isReachable`" pulumi-lang-java="`isReachable`">`isReachable`</span>: Indicates whether the communication from VM to CVM is active or not.
+    * <span pulumi-lang-nodejs="`isVssSnapshotCapable`" pulumi-lang-dotnet="`IsVssSnapshotCapable`" pulumi-lang-go="`isVssSnapshotCapable`" pulumi-lang-python="`is_vss_snapshot_capable`" pulumi-lang-yaml="`isVssSnapshotCapable`" pulumi-lang-java="`isVssSnapshotCapable`">`isVssSnapshotCapable`</span>: Indicates whether the VM is configured to take VSS snapshots through NGT or not.
+    * <span pulumi-lang-nodejs="`isVmMobilityDriversInstalled`" pulumi-lang-dotnet="`IsVmMobilityDriversInstalled`" pulumi-lang-go="`isVmMobilityDriversInstalled`" pulumi-lang-python="`is_vm_mobility_drivers_installed`" pulumi-lang-yaml="`isVmMobilityDriversInstalled`" pulumi-lang-java="`isVmMobilityDriversInstalled`">`isVmMobilityDriversInstalled`</span>: Indicates whether the VM mobility drivers are installed on the VM or not.
+    * <span pulumi-lang-nodejs="`isEnabled`" pulumi-lang-dotnet="`IsEnabled`" pulumi-lang-go="`isEnabled`" pulumi-lang-python="`is_enabled`" pulumi-lang-yaml="`isEnabled`" pulumi-lang-java="`isEnabled`">`isEnabled`</span>: Indicates whether Nutanix Guest Tools is enabled or not.
+    * <span pulumi-lang-nodejs="`capabilities`" pulumi-lang-dotnet="`Capabilities`" pulumi-lang-go="`capabilities`" pulumi-lang-python="`capabilities`" pulumi-lang-yaml="`capabilities`" pulumi-lang-java="`capabilities`">`capabilities`</span>: The list of the application names that are enabled on the guest VM.
 
     ### Boot Config
-    The `boot_config` attribute supports the following:
+    The <span pulumi-lang-nodejs="`bootConfig`" pulumi-lang-dotnet="`BootConfig`" pulumi-lang-go="`bootConfig`" pulumi-lang-python="`boot_config`" pulumi-lang-yaml="`bootConfig`" pulumi-lang-java="`bootConfig`">`bootConfig`</span> attribute supports the following:
 
-    * `legacy_boot`: LegacyBoot config Object
-    * `uefi_boot`: UefiBoot config Object
+    * <span pulumi-lang-nodejs="`legacyBoot`" pulumi-lang-dotnet="`LegacyBoot`" pulumi-lang-go="`legacyBoot`" pulumi-lang-python="`legacy_boot`" pulumi-lang-yaml="`legacyBoot`" pulumi-lang-java="`legacyBoot`">`legacyBoot`</span>: LegacyBoot config Object
+    * <span pulumi-lang-nodejs="`uefiBoot`" pulumi-lang-dotnet="`UefiBoot`" pulumi-lang-go="`uefiBoot`" pulumi-lang-python="`uefi_boot`" pulumi-lang-yaml="`uefiBoot`" pulumi-lang-java="`uefiBoot`">`uefiBoot`</span>: UefiBoot config Object
 
     #### boot_config.legacy_boot
-    * `boot_device`: Boot Device object
+    * <span pulumi-lang-nodejs="`bootDevice`" pulumi-lang-dotnet="`BootDevice`" pulumi-lang-go="`bootDevice`" pulumi-lang-python="`boot_device`" pulumi-lang-yaml="`bootDevice`" pulumi-lang-java="`bootDevice`">`bootDevice`</span>: Boot Device object
     * `boot_device.boot_device_disk`: Disk address.
     * `boot_device.boot_device_disk.disk_address.bus_type`: Bus type for the device
     * `boot_device.boot_device_disk.disk_address.index`: Device index on the bus. This field is ignored unless the bus details are specified.
@@ -272,67 +274,67 @@ def get_virtual_machines_v2(filter: Optional[_builtins.str] = None,
     * `boot_device.boot_device_nic`: Disk Nic address.
     * `boot_device.boot_device_nic.mac_address`: mac address
 
-    * `boot_order`: Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+    * <span pulumi-lang-nodejs="`bootOrder`" pulumi-lang-dotnet="`BootOrder`" pulumi-lang-go="`bootOrder`" pulumi-lang-python="`boot_order`" pulumi-lang-yaml="`bootOrder`" pulumi-lang-java="`bootOrder`">`bootOrder`</span>: Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
 
     #### boot_config.uefi_boot
-    * `is_secure_boot_enabled`: Indicate whether to enable secure boot or not
-    * `nvram_device`: Configuration for NVRAM to be presented to the VM.
+    * <span pulumi-lang-nodejs="`isSecureBootEnabled`" pulumi-lang-dotnet="`IsSecureBootEnabled`" pulumi-lang-go="`isSecureBootEnabled`" pulumi-lang-python="`is_secure_boot_enabled`" pulumi-lang-yaml="`isSecureBootEnabled`" pulumi-lang-java="`isSecureBootEnabled`">`isSecureBootEnabled`</span>: Indicate whether to enable secure boot or not
+    * <span pulumi-lang-nodejs="`nvramDevice`" pulumi-lang-dotnet="`NvramDevice`" pulumi-lang-go="`nvramDevice`" pulumi-lang-python="`nvram_device`" pulumi-lang-yaml="`nvramDevice`" pulumi-lang-java="`nvramDevice`">`nvramDevice`</span>: Configuration for NVRAM to be presented to the VM.
     * `nvram_device.backing_storage_info`: Storage provided by Nutanix ADSF
 
     ##### nvram_device.backing_storage_info
-    * `disk_ext_id`: The globally unique identifier of a VM disk. It should be of type UUID.
-    * `disk_size_bytes`: Size of the disk in Bytes
-    * `storage_container`: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
-    * `storage_config`: Storage configuration for VM disks
+    * <span pulumi-lang-nodejs="`diskExtId`" pulumi-lang-dotnet="`DiskExtId`" pulumi-lang-go="`diskExtId`" pulumi-lang-python="`disk_ext_id`" pulumi-lang-yaml="`diskExtId`" pulumi-lang-java="`diskExtId`">`diskExtId`</span>: The globally unique identifier of a VM disk. It should be of type UUID.
+    * <span pulumi-lang-nodejs="`diskSizeBytes`" pulumi-lang-dotnet="`DiskSizeBytes`" pulumi-lang-go="`diskSizeBytes`" pulumi-lang-python="`disk_size_bytes`" pulumi-lang-yaml="`diskSizeBytes`" pulumi-lang-java="`diskSizeBytes`">`diskSizeBytes`</span>: Size of the disk in Bytes
+    * <span pulumi-lang-nodejs="`storageContainer`" pulumi-lang-dotnet="`StorageContainer`" pulumi-lang-go="`storageContainer`" pulumi-lang-python="`storage_container`" pulumi-lang-yaml="`storageContainer`" pulumi-lang-java="`storageContainer`">`storageContainer`</span>: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+    * <span pulumi-lang-nodejs="`storageConfig`" pulumi-lang-dotnet="`StorageConfig`" pulumi-lang-go="`storageConfig`" pulumi-lang-python="`storage_config`" pulumi-lang-yaml="`storageConfig`" pulumi-lang-java="`storageConfig`">`storageConfig`</span>: Storage configuration for VM disks
     * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
-    * `data_source`: A reference to a disk or image that contains the contents of a disk.
-    * `is_migration_in_progress`: Indicates if the disk is undergoing migration to another container.
+    * <span pulumi-lang-nodejs="`dataSource`" pulumi-lang-dotnet="`DataSource`" pulumi-lang-go="`dataSource`" pulumi-lang-python="`data_source`" pulumi-lang-yaml="`dataSource`" pulumi-lang-java="`dataSource`">`dataSource`</span>: A reference to a disk or image that contains the contents of a disk.
+    * <span pulumi-lang-nodejs="`isMigrationInProgress`" pulumi-lang-dotnet="`IsMigrationInProgress`" pulumi-lang-go="`isMigrationInProgress`" pulumi-lang-python="`is_migration_in_progress`" pulumi-lang-yaml="`isMigrationInProgress`" pulumi-lang-java="`isMigrationInProgress`">`isMigrationInProgress`</span>: Indicates if the disk is undergoing migration to another container.
 
     ### VTPM Config
-    The `vtpm_config` attribute supports the following:
+    The <span pulumi-lang-nodejs="`vtpmConfig`" pulumi-lang-dotnet="`VtpmConfig`" pulumi-lang-go="`vtpmConfig`" pulumi-lang-python="`vtpm_config`" pulumi-lang-yaml="`vtpmConfig`" pulumi-lang-java="`vtpmConfig`">`vtpmConfig`</span> attribute supports the following:
 
-    * `is_vtpm_enabled`: Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
-    * `version`: Virtual trusted platform module version.
+    * <span pulumi-lang-nodejs="`isVtpmEnabled`" pulumi-lang-dotnet="`IsVtpmEnabled`" pulumi-lang-go="`isVtpmEnabled`" pulumi-lang-python="`is_vtpm_enabled`" pulumi-lang-yaml="`isVtpmEnabled`" pulumi-lang-java="`isVtpmEnabled`">`isVtpmEnabled`</span>: Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
+    * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`">`version`</span>: Virtual trusted platform module version.
 
     ### APC Config
-    The `apc_config` attribute supports the following:
+    The <span pulumi-lang-nodejs="`apcConfig`" pulumi-lang-dotnet="`ApcConfig`" pulumi-lang-go="`apcConfig`" pulumi-lang-python="`apc_config`" pulumi-lang-yaml="`apcConfig`" pulumi-lang-java="`apcConfig`">`apcConfig`</span> attribute supports the following:
 
-    * `is_apc_enabled`: If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
-    * `cpu_model`: CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
+    * <span pulumi-lang-nodejs="`isApcEnabled`" pulumi-lang-dotnet="`IsApcEnabled`" pulumi-lang-go="`isApcEnabled`" pulumi-lang-python="`is_apc_enabled`" pulumi-lang-yaml="`isApcEnabled`" pulumi-lang-java="`isApcEnabled`">`isApcEnabled`</span>: If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
+    * <span pulumi-lang-nodejs="`cpuModel`" pulumi-lang-dotnet="`CpuModel`" pulumi-lang-go="`cpuModel`" pulumi-lang-python="`cpu_model`" pulumi-lang-yaml="`cpuModel`" pulumi-lang-java="`cpuModel`">`cpuModel`</span>: CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
     * `cpu_model.ext_id`: The globally unique identifier of the CPU model associated with the VM.
     * `cpu_model.name`: Name of the CPU model associated with the VM.
 
     ### Storage Config
-    The `storage_config` attribute supports the following:
+    The <span pulumi-lang-nodejs="`storageConfig`" pulumi-lang-dotnet="`StorageConfig`" pulumi-lang-go="`storageConfig`" pulumi-lang-python="`storage_config`" pulumi-lang-yaml="`storageConfig`" pulumi-lang-java="`storageConfig`">`storageConfig`</span> attribute supports the following:
 
-    * `is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
-    * `qos_config`: QoS parameters to be enforced.
+    * <span pulumi-lang-nodejs="`isFlashModeEnabled`" pulumi-lang-dotnet="`IsFlashModeEnabled`" pulumi-lang-go="`isFlashModeEnabled`" pulumi-lang-python="`is_flash_mode_enabled`" pulumi-lang-yaml="`isFlashModeEnabled`" pulumi-lang-java="`isFlashModeEnabled`">`isFlashModeEnabled`</span>: Indicates whether the virtual disk is pinned to the hot tier or not.
+    * <span pulumi-lang-nodejs="`qosConfig`" pulumi-lang-dotnet="`QosConfig`" pulumi-lang-go="`qosConfig`" pulumi-lang-python="`qos_config`" pulumi-lang-yaml="`qosConfig`" pulumi-lang-java="`qosConfig`">`qosConfig`</span>: QoS parameters to be enforced.
     * `qos_config.throttled_iops`: Throttled IOPS for the governed entities. The block size for the I/O is 32 kB.
 
     ### Disks
-    The `disks` attribute supports the following:
+    The <span pulumi-lang-nodejs="`disks`" pulumi-lang-dotnet="`Disks`" pulumi-lang-go="`disks`" pulumi-lang-python="`disks`" pulumi-lang-yaml="`disks`" pulumi-lang-java="`disks`">`disks`</span> attribute supports the following:
 
-    * `ext_id`: A globally unique identifier of an instance that is suitable for external consumption.
-    * `disk_address`: Disk address.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption.
+    * <span pulumi-lang-nodejs="`diskAddress`" pulumi-lang-dotnet="`DiskAddress`" pulumi-lang-go="`diskAddress`" pulumi-lang-python="`disk_address`" pulumi-lang-yaml="`diskAddress`" pulumi-lang-java="`diskAddress`">`diskAddress`</span>: Disk address.
     * `disk_address.bus_type`: Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
     * `disk_address.index`: Device index on the bus. This field is ignored unless the bus details are specified.
-    * `backing_info`: Supporting storage to create virtual disk on.
+    * <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span>: Supporting storage to create virtual disk on.
     * `backing_info.vm_disk`: backing Info for vmDisk
     * `backing_info.adfs_volume_group_reference`: Volume Group Reference
     * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: The globally unique identifier of an ADSF volume group. It should be of type UUID.
 
     #### backing_info.vm_disk
-    * `disk_ext_id`: The globally unique identifier of a VM disk. It should be of type UUID.
-    * `disk_size_bytes`: Size of the disk in Bytes
-    * `storage_container`: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+    * <span pulumi-lang-nodejs="`diskExtId`" pulumi-lang-dotnet="`DiskExtId`" pulumi-lang-go="`diskExtId`" pulumi-lang-python="`disk_ext_id`" pulumi-lang-yaml="`diskExtId`" pulumi-lang-java="`diskExtId`">`diskExtId`</span>: The globally unique identifier of a VM disk. It should be of type UUID.
+    * <span pulumi-lang-nodejs="`diskSizeBytes`" pulumi-lang-dotnet="`DiskSizeBytes`" pulumi-lang-go="`diskSizeBytes`" pulumi-lang-python="`disk_size_bytes`" pulumi-lang-yaml="`diskSizeBytes`" pulumi-lang-java="`diskSizeBytes`">`diskSizeBytes`</span>: Size of the disk in Bytes
+    * <span pulumi-lang-nodejs="`storageContainer`" pulumi-lang-dotnet="`StorageContainer`" pulumi-lang-go="`storageContainer`" pulumi-lang-python="`storage_container`" pulumi-lang-yaml="`storageContainer`" pulumi-lang-java="`storageContainer`">`storageContainer`</span>: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
     * `storage_container.ext_id`: A globally unique identifier of a VM disk container. It should be of type UUID.
-    * `storage_config`: Storage configuration for VM disks
+    * <span pulumi-lang-nodejs="`storageConfig`" pulumi-lang-dotnet="`StorageConfig`" pulumi-lang-go="`storageConfig`" pulumi-lang-python="`storage_config`" pulumi-lang-yaml="`storageConfig`" pulumi-lang-java="`storageConfig`">`storageConfig`</span>: Storage configuration for VM disks
     * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
-    * `data_source`: A reference to a disk or image that contains the contents of a disk.
-    * `is_migration_in_progress`: Indicates if the disk is undergoing migration to another container.
+    * <span pulumi-lang-nodejs="`dataSource`" pulumi-lang-dotnet="`DataSource`" pulumi-lang-go="`dataSource`" pulumi-lang-python="`data_source`" pulumi-lang-yaml="`dataSource`" pulumi-lang-java="`dataSource`">`dataSource`</span>: A reference to a disk or image that contains the contents of a disk.
+    * <span pulumi-lang-nodejs="`isMigrationInProgress`" pulumi-lang-dotnet="`IsMigrationInProgress`" pulumi-lang-go="`isMigrationInProgress`" pulumi-lang-python="`is_migration_in_progress`" pulumi-lang-yaml="`isMigrationInProgress`" pulumi-lang-java="`isMigrationInProgress`">`isMigrationInProgress`</span>: Indicates if the disk is undergoing migration to another container.
 
     #### backing_info.vm_disk.data_source
-    * `reference`: Reference to image or vm disk
+    * <span pulumi-lang-nodejs="`reference`" pulumi-lang-dotnet="`Reference`" pulumi-lang-go="`reference`" pulumi-lang-python="`reference`" pulumi-lang-yaml="`reference`" pulumi-lang-java="`reference`">`reference`</span>: Reference to image or vm disk
     * `reference.image_reference`: Image Reference
     * `reference.image_reference.image_ext_id`: The globally unique identifier of an image. It should be of type UUID.
     * `reference.vm_disk_reference`: Vm Disk Reference
@@ -344,80 +346,104 @@ def get_virtual_machines_v2(filter: Optional[_builtins.str] = None,
     * `reference.vm_disk_reference.vm_reference.ext_id`: A globally unique identifier of a VM of type UUID.
 
     ### CD-ROMs
-    The `cd_roms` attribute supports the following:
+    The <span pulumi-lang-nodejs="`cdRoms`" pulumi-lang-dotnet="`CdRoms`" pulumi-lang-go="`cdRoms`" pulumi-lang-python="`cd_roms`" pulumi-lang-yaml="`cdRoms`" pulumi-lang-java="`cdRoms`">`cdRoms`</span> attribute supports the following:
 
-    * `ext_id`: A globally unique identifier of an instance that is suitable for external consumption.
-    * `disk_address`: Virtual Machine disk (VM disk).
-    * `backing_info`: Storage provided by Nutanix ADSF
-    * `iso_type`: Type of ISO image inserted in CD-ROM
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption.
+    * <span pulumi-lang-nodejs="`diskAddress`" pulumi-lang-dotnet="`DiskAddress`" pulumi-lang-go="`diskAddress`" pulumi-lang-python="`disk_address`" pulumi-lang-yaml="`diskAddress`" pulumi-lang-java="`diskAddress`">`diskAddress`</span>: Virtual Machine disk (VM disk).
+    * <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span>: Storage provided by Nutanix ADSF
+    * <span pulumi-lang-nodejs="`isoType`" pulumi-lang-dotnet="`IsoType`" pulumi-lang-go="`isoType`" pulumi-lang-python="`iso_type`" pulumi-lang-yaml="`isoType`" pulumi-lang-java="`isoType`">`isoType`</span>: Type of ISO image inserted in CD-ROM
 
     ### NICs
-    The `nics` attribute supports the following:
+    The <span pulumi-lang-nodejs="`nics`" pulumi-lang-dotnet="`Nics`" pulumi-lang-go="`nics`" pulumi-lang-python="`nics`" pulumi-lang-yaml="`nics`" pulumi-lang-java="`nics`">`nics`</span> attribute supports the following:
 
-    * `ext_id`: A globally unique identifier of an instance that is suitable for external consumption
-    * `backing_info`: Defines a NIC emulated by the hypervisor
-    * `network_info`: Network information for a NIC.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption
+    * <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span>: Defines a NIC emulated by the hypervisor
+    * <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span>: Network information for a NIC.
 
     ### nics.backing_info
-    * `model`: Options for the NIC emulation.
-    * `mac_address`: MAC address of the emulated NIC.
-    * `is_connected`: Indicates whether the NIC is connected or not. Default is True.
-    * `num_queues`: The number of Tx/Rx queue pairs for this NIC
+    * <span pulumi-lang-nodejs="`model`" pulumi-lang-dotnet="`Model`" pulumi-lang-go="`model`" pulumi-lang-python="`model`" pulumi-lang-yaml="`model`" pulumi-lang-java="`model`">`model`</span>: Options for the NIC emulation.
+    * <span pulumi-lang-nodejs="`macAddress`" pulumi-lang-dotnet="`MacAddress`" pulumi-lang-go="`macAddress`" pulumi-lang-python="`mac_address`" pulumi-lang-yaml="`macAddress`" pulumi-lang-java="`macAddress`">`macAddress`</span>: MAC address of the emulated NIC.
+    * <span pulumi-lang-nodejs="`isConnected`" pulumi-lang-dotnet="`IsConnected`" pulumi-lang-go="`isConnected`" pulumi-lang-python="`is_connected`" pulumi-lang-yaml="`isConnected`" pulumi-lang-java="`isConnected`">`isConnected`</span>: Indicates whether the NIC is connected or not. Default is True.
+    * <span pulumi-lang-nodejs="`numQueues`" pulumi-lang-dotnet="`NumQueues`" pulumi-lang-go="`numQueues`" pulumi-lang-python="`num_queues`" pulumi-lang-yaml="`numQueues`" pulumi-lang-java="`numQueues`">`numQueues`</span>: The number of Tx/Rx queue pairs for this NIC
 
     ### nics.network_info
-    * `nic_type`: NIC type. Defaults to NORMAL_NIC. The acceptable values are: SPAN_DESTINATION_NIC, NORMAL_NIC, DIRECT_NIC, NETWORK_FUNCTION_NIC.
-    * `network_function_chain`: The network function chain associates with the NIC. Only valid if nic_type is NORMAL_NIC.
+    * <span pulumi-lang-nodejs="`nicType`" pulumi-lang-dotnet="`NicType`" pulumi-lang-go="`nicType`" pulumi-lang-python="`nic_type`" pulumi-lang-yaml="`nicType`" pulumi-lang-java="`nicType`">`nicType`</span>: NIC type. Defaults to NORMAL_NIC. The acceptable values are: SPAN_DESTINATION_NIC, NORMAL_NIC, DIRECT_NIC, NETWORK_FUNCTION_NIC.
+    * <span pulumi-lang-nodejs="`networkFunctionChain`" pulumi-lang-dotnet="`NetworkFunctionChain`" pulumi-lang-go="`networkFunctionChain`" pulumi-lang-python="`network_function_chain`" pulumi-lang-yaml="`networkFunctionChain`" pulumi-lang-java="`networkFunctionChain`">`networkFunctionChain`</span>: The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
     * `network_function_chain.ext_id`: The globally unique identifier of a network function chain. It should be of type UUID.
-    * `network_function_nic_type`: The type of this Network function NIC. Defaults to INGRESS.  values are: TAP, EGRESS, INGRESS.
-    * `subnet`: Network identifier for this adapter. Only valid if nic_type is NORMAL_NIC or DIRECT_NIC.
+    * <span pulumi-lang-nodejs="`networkFunctionNicType`" pulumi-lang-dotnet="`NetworkFunctionNicType`" pulumi-lang-go="`networkFunctionNicType`" pulumi-lang-python="`network_function_nic_type`" pulumi-lang-yaml="`networkFunctionNicType`" pulumi-lang-java="`networkFunctionNicType`">`networkFunctionNicType`</span>: The type of this Network function NIC. Defaults to INGRESS.  values are: TAP, EGRESS, INGRESS.
+    * <span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`">`subnet`</span>: Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
     * `subnet.ext_id`: The globally unique identifier of a subnet of type UUID.
-    * `vlan_mode`: all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs. values are: ACCESS, TRUNKED.
-    * `trunked_vlans`: List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
-    * `should_allow_unknown_macs`: Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
-    * `ipv4_config`: The IP address configurations.
-    * `ipv4_info`: The runtime IP address information of the NIC.
+    * <span pulumi-lang-nodejs="`vlanMode`" pulumi-lang-dotnet="`VlanMode`" pulumi-lang-go="`vlanMode`" pulumi-lang-python="`vlan_mode`" pulumi-lang-yaml="`vlanMode`" pulumi-lang-java="`vlanMode`">`vlanMode`</span>: all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs. values are: ACCESS, TRUNKED.
+    * <span pulumi-lang-nodejs="`trunkedVlans`" pulumi-lang-dotnet="`TrunkedVlans`" pulumi-lang-go="`trunkedVlans`" pulumi-lang-python="`trunked_vlans`" pulumi-lang-yaml="`trunkedVlans`" pulumi-lang-java="`trunkedVlans`">`trunkedVlans`</span>: List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+    * <span pulumi-lang-nodejs="`shouldAllowUnknownMacs`" pulumi-lang-dotnet="`ShouldAllowUnknownMacs`" pulumi-lang-go="`shouldAllowUnknownMacs`" pulumi-lang-python="`should_allow_unknown_macs`" pulumi-lang-yaml="`shouldAllowUnknownMacs`" pulumi-lang-java="`shouldAllowUnknownMacs`">`shouldAllowUnknownMacs`</span>: Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+    * <span pulumi-lang-nodejs="`ipv4Config`" pulumi-lang-dotnet="`Ipv4Config`" pulumi-lang-go="`ipv4Config`" pulumi-lang-python="`ipv4_config`" pulumi-lang-yaml="`ipv4Config`" pulumi-lang-java="`ipv4Config`">`ipv4Config`</span>: The IP address configurations.
+    * <span pulumi-lang-nodejs="`ipv4Info`" pulumi-lang-dotnet="`Ipv4Info`" pulumi-lang-go="`ipv4Info`" pulumi-lang-python="`ipv4_info`" pulumi-lang-yaml="`ipv4Info`" pulumi-lang-java="`ipv4Info`">`ipv4Info`</span>: The runtime IP address information of the NIC.
 
     #### nics.ipv4_config
-    * `should_assign_ip`: If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-    * `ip_address`: The IP address of the NIC.
-    * `secondary_ip_address_list`: Secondary IP addresses for the NIC.
+    * <span pulumi-lang-nodejs="`shouldAssignIp`" pulumi-lang-dotnet="`ShouldAssignIp`" pulumi-lang-go="`shouldAssignIp`" pulumi-lang-python="`should_assign_ip`" pulumi-lang-yaml="`shouldAssignIp`" pulumi-lang-java="`shouldAssignIp`">`shouldAssignIp`</span>: If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+    * <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`">`ipAddress`</span>: The IP address of the NIC.
+    * <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`">`secondaryIpAddressList`</span>: Secondary IP addresses for the NIC.
 
-    ##### ip_address, secondary_ip_address_list
-    * `value`: The IPv4 address of the host.
-    * `prefix_length`: The prefix length of the IP address.
+    ##### ip_address,<span pulumi-lang-nodejs=" secondaryIpAddressList
+    " pulumi-lang-dotnet=" SecondaryIpAddressList
+    " pulumi-lang-go=" secondaryIpAddressList
+    " pulumi-lang-python=" secondary_ip_address_list
+    " pulumi-lang-yaml=" secondaryIpAddressList
+    " pulumi-lang-java=" secondaryIpAddressList
+    "> secondaryIpAddressList
+    </span>* <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: The IPv4 address of the host.
+    * <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`">`prefixLength`</span>: The prefix length of the IP address.
 
     #### nics.ipv4_info
-    * `learned_ip_addresses`: The list of IP addresses learned by the NIC.
+    * <span pulumi-lang-nodejs="`learnedIpAddresses`" pulumi-lang-dotnet="`LearnedIpAddresses`" pulumi-lang-go="`learnedIpAddresses`" pulumi-lang-python="`learned_ip_addresses`" pulumi-lang-yaml="`learnedIpAddresses`" pulumi-lang-java="`learnedIpAddresses`">`learnedIpAddresses`</span>: The list of IP addresses learned by the NIC.
 
-    ##### learned_ip_addresses
-    * `value`: The IPv4 address of the host.
-    * `prefix_length`: The prefix length of the IP address.
+    #####<span pulumi-lang-nodejs=" learnedIpAddresses
+    " pulumi-lang-dotnet=" LearnedIpAddresses
+    " pulumi-lang-go=" learnedIpAddresses
+    " pulumi-lang-python=" learned_ip_addresses
+    " pulumi-lang-yaml=" learnedIpAddresses
+    " pulumi-lang-java=" learnedIpAddresses
+    "> learnedIpAddresses
+    </span>* <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: The IPv4 address of the host.
+    * <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`">`prefixLength`</span>: The prefix length of the IP address.
 
     ### gpus
-    * `ext_id`: A globally unique identifier of an instance that is suitable for external consumption.
-    * `mode`: The mode of this GPU.
-    * `device_id`: The device Id of the GPU.
-    * `vendor`: The vendor of the GPU.
-    * `pci_address`: The (S)egment:(B)us:(D)evice.(F)unction hardware address. See
-    * `guest_driver_version`: Last determined guest driver version.
-    * `name`: Name of the GPU resource.
-    * `frame_buffer_size_bytes`: GPU frame buffer size in bytes.
-    * `num_virtual_display_heads`: Number of supported virtual display heads.
-    * `fraction`: Fraction of the physical GPU assigned.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption.
+    * <span pulumi-lang-nodejs="`mode`" pulumi-lang-dotnet="`Mode`" pulumi-lang-go="`mode`" pulumi-lang-python="`mode`" pulumi-lang-yaml="`mode`" pulumi-lang-java="`mode`">`mode`</span>: The mode of this GPU.
+    * <span pulumi-lang-nodejs="`deviceId`" pulumi-lang-dotnet="`DeviceId`" pulumi-lang-go="`deviceId`" pulumi-lang-python="`device_id`" pulumi-lang-yaml="`deviceId`" pulumi-lang-java="`deviceId`">`deviceId`</span>: The device Id of the GPU.
+    * <span pulumi-lang-nodejs="`vendor`" pulumi-lang-dotnet="`Vendor`" pulumi-lang-go="`vendor`" pulumi-lang-python="`vendor`" pulumi-lang-yaml="`vendor`" pulumi-lang-java="`vendor`">`vendor`</span>: The vendor of the GPU.
+    * <span pulumi-lang-nodejs="`pciAddress`" pulumi-lang-dotnet="`PciAddress`" pulumi-lang-go="`pciAddress`" pulumi-lang-python="`pci_address`" pulumi-lang-yaml="`pciAddress`" pulumi-lang-java="`pciAddress`">`pciAddress`</span>: The (S)egment:(B)us:(D)evice.(F)unction hardware address. See
+    * <span pulumi-lang-nodejs="`guestDriverVersion`" pulumi-lang-dotnet="`GuestDriverVersion`" pulumi-lang-go="`guestDriverVersion`" pulumi-lang-python="`guest_driver_version`" pulumi-lang-yaml="`guestDriverVersion`" pulumi-lang-java="`guestDriverVersion`">`guestDriverVersion`</span>: Last determined guest driver version.
+    * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: Name of the GPU resource.
+    * <span pulumi-lang-nodejs="`frameBufferSizeBytes`" pulumi-lang-dotnet="`FrameBufferSizeBytes`" pulumi-lang-go="`frameBufferSizeBytes`" pulumi-lang-python="`frame_buffer_size_bytes`" pulumi-lang-yaml="`frameBufferSizeBytes`" pulumi-lang-java="`frameBufferSizeBytes`">`frameBufferSizeBytes`</span>: GPU frame buffer size in bytes.
+    * <span pulumi-lang-nodejs="`numVirtualDisplayHeads`" pulumi-lang-dotnet="`NumVirtualDisplayHeads`" pulumi-lang-go="`numVirtualDisplayHeads`" pulumi-lang-python="`num_virtual_display_heads`" pulumi-lang-yaml="`numVirtualDisplayHeads`" pulumi-lang-java="`numVirtualDisplayHeads`">`numVirtualDisplayHeads`</span>: Number of supported virtual display heads.
+    * <span pulumi-lang-nodejs="`fraction`" pulumi-lang-dotnet="`Fraction`" pulumi-lang-go="`fraction`" pulumi-lang-python="`fraction`" pulumi-lang-yaml="`fraction`" pulumi-lang-java="`fraction`">`fraction`</span>: Fraction of the physical GPU assigned.
 
     ### gpus.pci_address
-    * `segment`
-    * `bus`
-    * `device`
-    * `func`
+    * <span pulumi-lang-nodejs="`segment`" pulumi-lang-dotnet="`Segment`" pulumi-lang-go="`segment`" pulumi-lang-python="`segment`" pulumi-lang-yaml="`segment`" pulumi-lang-java="`segment`">`segment`</span>
+    * <span pulumi-lang-nodejs="`bus`" pulumi-lang-dotnet="`Bus`" pulumi-lang-go="`bus`" pulumi-lang-python="`bus`" pulumi-lang-yaml="`bus`" pulumi-lang-java="`bus`">`bus`</span>
+    * <span pulumi-lang-nodejs="`device`" pulumi-lang-dotnet="`Device`" pulumi-lang-go="`device`" pulumi-lang-python="`device`" pulumi-lang-yaml="`device`" pulumi-lang-java="`device`">`device`</span>
+    * <span pulumi-lang-nodejs="`func`" pulumi-lang-dotnet="`Func`" pulumi-lang-go="`func`" pulumi-lang-python="`func`" pulumi-lang-yaml="`func`" pulumi-lang-java="`func`">`func`</span>
 
-    ### serial_ports
-    * `ext_id`: A globally unique identifier of an instance that is suitable for external consumption.
-    * `is_connected`: Indicates whether the serial port is connected or not.
-    * `index`: Index of the serial port.
+    ###<span pulumi-lang-nodejs=" serialPorts
+    " pulumi-lang-dotnet=" SerialPorts
+    " pulumi-lang-go=" serialPorts
+    " pulumi-lang-python=" serial_ports
+    " pulumi-lang-yaml=" serialPorts
+    " pulumi-lang-java=" serialPorts
+    "> serialPorts
+    </span>* <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption.
+    * <span pulumi-lang-nodejs="`isConnected`" pulumi-lang-dotnet="`IsConnected`" pulumi-lang-go="`isConnected`" pulumi-lang-python="`is_connected`" pulumi-lang-yaml="`isConnected`" pulumi-lang-java="`isConnected`">`isConnected`</span>: Indicates whether the serial port is connected or not.
+    * <span pulumi-lang-nodejs="`index`" pulumi-lang-dotnet="`Index`" pulumi-lang-go="`index`" pulumi-lang-python="`index`" pulumi-lang-yaml="`index`" pulumi-lang-java="`index`">`index`</span>: Index of the serial port.
 
-    ### protection_policy_state
-    * `policy`: Reference to the policy object in use.
+    ###<span pulumi-lang-nodejs=" protectionPolicyState
+    " pulumi-lang-dotnet=" ProtectionPolicyState
+    " pulumi-lang-go=" protectionPolicyState
+    " pulumi-lang-python=" protection_policy_state
+    " pulumi-lang-yaml=" protectionPolicyState
+    " pulumi-lang-java=" protectionPolicyState
+    "> protectionPolicyState
+    </span>* <span pulumi-lang-nodejs="`policy`" pulumi-lang-dotnet="`Policy`" pulumi-lang-go="`policy`" pulumi-lang-python="`policy`" pulumi-lang-yaml="`policy`" pulumi-lang-java="`policy`">`policy`</span>: Reference to the policy object in use.
 
     See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/listVms).
 
@@ -528,17 +554,18 @@ def get_virtual_machines_v2(filter: Optional[_builtins.str] = None,
         page=pulumi.get(__ret__, 'page'),
         select=pulumi.get(__ret__, 'select'),
         vms=pulumi.get(__ret__, 'vms'))
-def get_virtual_machines_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                   order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                   select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_virtual_machines_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                   order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                   select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualMachinesV2Result]:
     """
     Lists the Virtual Machines defined on the system. List of Virtual Machines can be further filtered out using various filtering options.
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -551,141 +578,142 @@ def get_virtual_machines_v2_output(filter: Optional[pulumi.Input[Optional[_built
     # List virtual machines with filter
     filtered_vms = nutanix.get_virtual_machines_v2(filter="name eq 'example-vm-filter'")
     ```
+    <!--End PulumiCodeChooser -->
 
     ## VMs
 
-    The `vms` is a list of all virtual machines. Each virtual machine has the following attributes:
+    The <span pulumi-lang-nodejs="`vms`" pulumi-lang-dotnet="`Vms`" pulumi-lang-go="`vms`" pulumi-lang-python="`vms`" pulumi-lang-yaml="`vms`" pulumi-lang-java="`vms`">`vms`</span> is a list of all virtual machines. Each virtual machine has the following attributes:
 
-    * `tenant_id` - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-    * `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-    - `ext_id`: A globally unique identifier of an instance that is suitable for external consumption.
-    - `name`: VM name.
-    - `description`: VM description
-    - `create_time`: VM creation time
-    - `update_time`: VM last updated time.
-    - `source`: Reference to an entity that the VM should be cloned or created from
-    - `num_sockets`: Number of vCPU sockets.
-    - `num_cores_per_socket`: Number of cores per socket.
-    - `num_threads_per_core`: Number of threads per core
-    - `num_numa_nodes`: Number of NUMA nodes. 0 means NUMA is disabled.
-    - `memory_size_bytes`: Memory size in bytes.
-    - `is_vcpu_hard_pinning_enabled`: Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
-    - `is_cpu_passthrough_enabled`: Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
-    - `enabled_cpu_features`: The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor
-    - `is_memory_overcommit_enabled`: Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
-    - `is_gpu_console_enabled`: Indicates whether the vGPU console is enabled or not.
-    - `is_cpu_hotplug_enabled`: Indicates whether the VM CPU hotplug is enabled.
-    - `is_scsi_controller_enabled`: Indicates whether the VM SCSI controller is enabled.
-    - `generation_uuid`: Generation UUID of the VM. It should be of type UUID.
-    - `bios_uuid`: BIOS UUID of the VM. It should be of type UUID.
-    - `categories`: Categories for the VM.
-    - `ownership_info`: Ownership information for the VM.
-    - `host`: Reference to the host, the VM is running on.
-    - `cluster`: Reference to a cluster.
-    - `guest_customization`: Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
-    - `guest_tools`: The details about Nutanix Guest Tools for a VM.
-    - `hardware_clock_timezone`: VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
-    - `is_branding_enabled`: Indicates whether to remove AHV branding from VM firmware tables or not.
-    - `boot_config`: Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-    - `is_vga_console_enabled`: Indicates whether the VGA console should be disabled or not.
-    - `machine_type`: Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-    - `vtpm_config`: Indicates how the vTPM for the VM should be configured.
-    - `is_agent_vm`: Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
-    - `apc_config`: Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
-    - `storage_config`: Storage configuration for VM.
-    - `disks`: Disks attached to the VM.
-    - `cd_roms`: CD-ROMs attached to the VM.
-    - `nics`: NICs attached to the VM.
-    - `gpus`: GPUs attached to the VM.
-    - `serial_ports`: Serial ports configured on the VM.
-    - `protection_type`: The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
-    - `protection_policy_state`: Status of protection policy applied to this VM.
+    * <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`">`tenantId`</span> - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+    * <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+    - <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption.
+    - <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: VM name.
+    - <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>: VM description
+    - <span pulumi-lang-nodejs="`createTime`" pulumi-lang-dotnet="`CreateTime`" pulumi-lang-go="`createTime`" pulumi-lang-python="`create_time`" pulumi-lang-yaml="`createTime`" pulumi-lang-java="`createTime`">`createTime`</span>: VM creation time
+    - <span pulumi-lang-nodejs="`updateTime`" pulumi-lang-dotnet="`UpdateTime`" pulumi-lang-go="`updateTime`" pulumi-lang-python="`update_time`" pulumi-lang-yaml="`updateTime`" pulumi-lang-java="`updateTime`">`updateTime`</span>: VM last updated time.
+    - <span pulumi-lang-nodejs="`source`" pulumi-lang-dotnet="`Source`" pulumi-lang-go="`source`" pulumi-lang-python="`source`" pulumi-lang-yaml="`source`" pulumi-lang-java="`source`">`source`</span>: Reference to an entity that the VM should be cloned or created from
+    - <span pulumi-lang-nodejs="`numSockets`" pulumi-lang-dotnet="`NumSockets`" pulumi-lang-go="`numSockets`" pulumi-lang-python="`num_sockets`" pulumi-lang-yaml="`numSockets`" pulumi-lang-java="`numSockets`">`numSockets`</span>: Number of vCPU sockets.
+    - <span pulumi-lang-nodejs="`numCoresPerSocket`" pulumi-lang-dotnet="`NumCoresPerSocket`" pulumi-lang-go="`numCoresPerSocket`" pulumi-lang-python="`num_cores_per_socket`" pulumi-lang-yaml="`numCoresPerSocket`" pulumi-lang-java="`numCoresPerSocket`">`numCoresPerSocket`</span>: Number of cores per socket.
+    - <span pulumi-lang-nodejs="`numThreadsPerCore`" pulumi-lang-dotnet="`NumThreadsPerCore`" pulumi-lang-go="`numThreadsPerCore`" pulumi-lang-python="`num_threads_per_core`" pulumi-lang-yaml="`numThreadsPerCore`" pulumi-lang-java="`numThreadsPerCore`">`numThreadsPerCore`</span>: Number of threads per core
+    - <span pulumi-lang-nodejs="`numNumaNodes`" pulumi-lang-dotnet="`NumNumaNodes`" pulumi-lang-go="`numNumaNodes`" pulumi-lang-python="`num_numa_nodes`" pulumi-lang-yaml="`numNumaNodes`" pulumi-lang-java="`numNumaNodes`">`numNumaNodes`</span>: Number of NUMA nodes. 0 means NUMA is disabled.
+    - <span pulumi-lang-nodejs="`memorySizeBytes`" pulumi-lang-dotnet="`MemorySizeBytes`" pulumi-lang-go="`memorySizeBytes`" pulumi-lang-python="`memory_size_bytes`" pulumi-lang-yaml="`memorySizeBytes`" pulumi-lang-java="`memorySizeBytes`">`memorySizeBytes`</span>: Memory size in bytes.
+    - <span pulumi-lang-nodejs="`isVcpuHardPinningEnabled`" pulumi-lang-dotnet="`IsVcpuHardPinningEnabled`" pulumi-lang-go="`isVcpuHardPinningEnabled`" pulumi-lang-python="`is_vcpu_hard_pinning_enabled`" pulumi-lang-yaml="`isVcpuHardPinningEnabled`" pulumi-lang-java="`isVcpuHardPinningEnabled`">`isVcpuHardPinningEnabled`</span>: Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
+    - <span pulumi-lang-nodejs="`isCpuPassthroughEnabled`" pulumi-lang-dotnet="`IsCpuPassthroughEnabled`" pulumi-lang-go="`isCpuPassthroughEnabled`" pulumi-lang-python="`is_cpu_passthrough_enabled`" pulumi-lang-yaml="`isCpuPassthroughEnabled`" pulumi-lang-java="`isCpuPassthroughEnabled`">`isCpuPassthroughEnabled`</span>: Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
+    - <span pulumi-lang-nodejs="`enabledCpuFeatures`" pulumi-lang-dotnet="`EnabledCpuFeatures`" pulumi-lang-go="`enabledCpuFeatures`" pulumi-lang-python="`enabled_cpu_features`" pulumi-lang-yaml="`enabledCpuFeatures`" pulumi-lang-java="`enabledCpuFeatures`">`enabledCpuFeatures`</span>: The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor
+    - <span pulumi-lang-nodejs="`isMemoryOvercommitEnabled`" pulumi-lang-dotnet="`IsMemoryOvercommitEnabled`" pulumi-lang-go="`isMemoryOvercommitEnabled`" pulumi-lang-python="`is_memory_overcommit_enabled`" pulumi-lang-yaml="`isMemoryOvercommitEnabled`" pulumi-lang-java="`isMemoryOvercommitEnabled`">`isMemoryOvercommitEnabled`</span>: Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
+    - <span pulumi-lang-nodejs="`isGpuConsoleEnabled`" pulumi-lang-dotnet="`IsGpuConsoleEnabled`" pulumi-lang-go="`isGpuConsoleEnabled`" pulumi-lang-python="`is_gpu_console_enabled`" pulumi-lang-yaml="`isGpuConsoleEnabled`" pulumi-lang-java="`isGpuConsoleEnabled`">`isGpuConsoleEnabled`</span>: Indicates whether the vGPU console is enabled or not.
+    - <span pulumi-lang-nodejs="`isCpuHotplugEnabled`" pulumi-lang-dotnet="`IsCpuHotplugEnabled`" pulumi-lang-go="`isCpuHotplugEnabled`" pulumi-lang-python="`is_cpu_hotplug_enabled`" pulumi-lang-yaml="`isCpuHotplugEnabled`" pulumi-lang-java="`isCpuHotplugEnabled`">`isCpuHotplugEnabled`</span>: Indicates whether the VM CPU hotplug is enabled.
+    - <span pulumi-lang-nodejs="`isScsiControllerEnabled`" pulumi-lang-dotnet="`IsScsiControllerEnabled`" pulumi-lang-go="`isScsiControllerEnabled`" pulumi-lang-python="`is_scsi_controller_enabled`" pulumi-lang-yaml="`isScsiControllerEnabled`" pulumi-lang-java="`isScsiControllerEnabled`">`isScsiControllerEnabled`</span>: Indicates whether the VM SCSI controller is enabled.
+    - <span pulumi-lang-nodejs="`generationUuid`" pulumi-lang-dotnet="`GenerationUuid`" pulumi-lang-go="`generationUuid`" pulumi-lang-python="`generation_uuid`" pulumi-lang-yaml="`generationUuid`" pulumi-lang-java="`generationUuid`">`generationUuid`</span>: Generation UUID of the VM. It should be of type UUID.
+    - <span pulumi-lang-nodejs="`biosUuid`" pulumi-lang-dotnet="`BiosUuid`" pulumi-lang-go="`biosUuid`" pulumi-lang-python="`bios_uuid`" pulumi-lang-yaml="`biosUuid`" pulumi-lang-java="`biosUuid`">`biosUuid`</span>: BIOS UUID of the VM. It should be of type UUID.
+    - <span pulumi-lang-nodejs="`categories`" pulumi-lang-dotnet="`Categories`" pulumi-lang-go="`categories`" pulumi-lang-python="`categories`" pulumi-lang-yaml="`categories`" pulumi-lang-java="`categories`">`categories`</span>: Categories for the VM.
+    - <span pulumi-lang-nodejs="`ownershipInfo`" pulumi-lang-dotnet="`OwnershipInfo`" pulumi-lang-go="`ownershipInfo`" pulumi-lang-python="`ownership_info`" pulumi-lang-yaml="`ownershipInfo`" pulumi-lang-java="`ownershipInfo`">`ownershipInfo`</span>: Ownership information for the VM.
+    - <span pulumi-lang-nodejs="`host`" pulumi-lang-dotnet="`Host`" pulumi-lang-go="`host`" pulumi-lang-python="`host`" pulumi-lang-yaml="`host`" pulumi-lang-java="`host`">`host`</span>: Reference to the host, the VM is running on.
+    - <span pulumi-lang-nodejs="`cluster`" pulumi-lang-dotnet="`Cluster`" pulumi-lang-go="`cluster`" pulumi-lang-python="`cluster`" pulumi-lang-yaml="`cluster`" pulumi-lang-java="`cluster`">`cluster`</span>: Reference to a cluster.
+    - <span pulumi-lang-nodejs="`guestCustomization`" pulumi-lang-dotnet="`GuestCustomization`" pulumi-lang-go="`guestCustomization`" pulumi-lang-python="`guest_customization`" pulumi-lang-yaml="`guestCustomization`" pulumi-lang-java="`guestCustomization`">`guestCustomization`</span>: Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+    - <span pulumi-lang-nodejs="`guestTools`" pulumi-lang-dotnet="`GuestTools`" pulumi-lang-go="`guestTools`" pulumi-lang-python="`guest_tools`" pulumi-lang-yaml="`guestTools`" pulumi-lang-java="`guestTools`">`guestTools`</span>: The details about Nutanix Guest Tools for a VM.
+    - <span pulumi-lang-nodejs="`hardwareClockTimezone`" pulumi-lang-dotnet="`HardwareClockTimezone`" pulumi-lang-go="`hardwareClockTimezone`" pulumi-lang-python="`hardware_clock_timezone`" pulumi-lang-yaml="`hardwareClockTimezone`" pulumi-lang-java="`hardwareClockTimezone`">`hardwareClockTimezone`</span>: VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+    - <span pulumi-lang-nodejs="`isBrandingEnabled`" pulumi-lang-dotnet="`IsBrandingEnabled`" pulumi-lang-go="`isBrandingEnabled`" pulumi-lang-python="`is_branding_enabled`" pulumi-lang-yaml="`isBrandingEnabled`" pulumi-lang-java="`isBrandingEnabled`">`isBrandingEnabled`</span>: Indicates whether to remove AHV branding from VM firmware tables or not.
+    - <span pulumi-lang-nodejs="`bootConfig`" pulumi-lang-dotnet="`BootConfig`" pulumi-lang-go="`bootConfig`" pulumi-lang-python="`boot_config`" pulumi-lang-yaml="`bootConfig`" pulumi-lang-java="`bootConfig`">`bootConfig`</span>: Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+    - <span pulumi-lang-nodejs="`isVgaConsoleEnabled`" pulumi-lang-dotnet="`IsVgaConsoleEnabled`" pulumi-lang-go="`isVgaConsoleEnabled`" pulumi-lang-python="`is_vga_console_enabled`" pulumi-lang-yaml="`isVgaConsoleEnabled`" pulumi-lang-java="`isVgaConsoleEnabled`">`isVgaConsoleEnabled`</span>: Indicates whether the VGA console should be disabled or not.
+    - <span pulumi-lang-nodejs="`machineType`" pulumi-lang-dotnet="`MachineType`" pulumi-lang-go="`machineType`" pulumi-lang-python="`machine_type`" pulumi-lang-yaml="`machineType`" pulumi-lang-java="`machineType`">`machineType`</span>: Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+    - <span pulumi-lang-nodejs="`vtpmConfig`" pulumi-lang-dotnet="`VtpmConfig`" pulumi-lang-go="`vtpmConfig`" pulumi-lang-python="`vtpm_config`" pulumi-lang-yaml="`vtpmConfig`" pulumi-lang-java="`vtpmConfig`">`vtpmConfig`</span>: Indicates how the vTPM for the VM should be configured.
+    - <span pulumi-lang-nodejs="`isAgentVm`" pulumi-lang-dotnet="`IsAgentVm`" pulumi-lang-go="`isAgentVm`" pulumi-lang-python="`is_agent_vm`" pulumi-lang-yaml="`isAgentVm`" pulumi-lang-java="`isAgentVm`">`isAgentVm`</span>: Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
+    - <span pulumi-lang-nodejs="`apcConfig`" pulumi-lang-dotnet="`ApcConfig`" pulumi-lang-go="`apcConfig`" pulumi-lang-python="`apc_config`" pulumi-lang-yaml="`apcConfig`" pulumi-lang-java="`apcConfig`">`apcConfig`</span>: Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
+    - <span pulumi-lang-nodejs="`storageConfig`" pulumi-lang-dotnet="`StorageConfig`" pulumi-lang-go="`storageConfig`" pulumi-lang-python="`storage_config`" pulumi-lang-yaml="`storageConfig`" pulumi-lang-java="`storageConfig`">`storageConfig`</span>: Storage configuration for VM.
+    - <span pulumi-lang-nodejs="`disks`" pulumi-lang-dotnet="`Disks`" pulumi-lang-go="`disks`" pulumi-lang-python="`disks`" pulumi-lang-yaml="`disks`" pulumi-lang-java="`disks`">`disks`</span>: Disks attached to the VM.
+    - <span pulumi-lang-nodejs="`cdRoms`" pulumi-lang-dotnet="`CdRoms`" pulumi-lang-go="`cdRoms`" pulumi-lang-python="`cd_roms`" pulumi-lang-yaml="`cdRoms`" pulumi-lang-java="`cdRoms`">`cdRoms`</span>: CD-ROMs attached to the VM.
+    - <span pulumi-lang-nodejs="`nics`" pulumi-lang-dotnet="`Nics`" pulumi-lang-go="`nics`" pulumi-lang-python="`nics`" pulumi-lang-yaml="`nics`" pulumi-lang-java="`nics`">`nics`</span>: NICs attached to the VM.
+    - <span pulumi-lang-nodejs="`gpus`" pulumi-lang-dotnet="`Gpus`" pulumi-lang-go="`gpus`" pulumi-lang-python="`gpus`" pulumi-lang-yaml="`gpus`" pulumi-lang-java="`gpus`">`gpus`</span>: GPUs attached to the VM.
+    - <span pulumi-lang-nodejs="`serialPorts`" pulumi-lang-dotnet="`SerialPorts`" pulumi-lang-go="`serialPorts`" pulumi-lang-python="`serial_ports`" pulumi-lang-yaml="`serialPorts`" pulumi-lang-java="`serialPorts`">`serialPorts`</span>: Serial ports configured on the VM.
+    - <span pulumi-lang-nodejs="`protectionType`" pulumi-lang-dotnet="`ProtectionType`" pulumi-lang-go="`protectionType`" pulumi-lang-python="`protection_type`" pulumi-lang-yaml="`protectionType`" pulumi-lang-java="`protectionType`">`protectionType`</span>: The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
+    - <span pulumi-lang-nodejs="`protectionPolicyState`" pulumi-lang-dotnet="`ProtectionPolicyState`" pulumi-lang-go="`protectionPolicyState`" pulumi-lang-python="`protection_policy_state`" pulumi-lang-yaml="`protectionPolicyState`" pulumi-lang-java="`protectionPolicyState`">`protectionPolicyState`</span>: Status of protection policy applied to this VM.
 
     ### Links
 
     The links attribute supports the following:
 
-    * `href`: - The URL at which the entity described by the link can be accessed.
-    * `rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+    * <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span>: - The URL at which the entity described by the link can be accessed.
+    * <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
 
     ### Source
 
-    The `source` attribute supports the following:
+    The <span pulumi-lang-nodejs="`source`" pulumi-lang-dotnet="`Source`" pulumi-lang-go="`source`" pulumi-lang-python="`source`" pulumi-lang-yaml="`source`" pulumi-lang-java="`source`">`source`</span> attribute supports the following:
 
-    * `entity_type`: Reference to an entity from which the VM should be cloned or created. Values are:
+    * <span pulumi-lang-nodejs="`entityType`" pulumi-lang-dotnet="`EntityType`" pulumi-lang-go="`entityType`" pulumi-lang-python="`entity_type`" pulumi-lang-yaml="`entityType`" pulumi-lang-java="`entityType`">`entityType`</span>: Reference to an entity from which the VM should be cloned or created. Values are:
       - VM_RECOVERY_POINT: Reference to the recovery point entity from which the VM should be cloned or created.
       - VM: Reference to an entity from which the VM should be cloned or created.
-    * `ext_id`: A globally unique identifier of a VM of type UUID.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of a VM of type UUID.
 
     ### Categories
-    The `categories` attribute supports the following:
+    The <span pulumi-lang-nodejs="`categories`" pulumi-lang-dotnet="`Categories`" pulumi-lang-go="`categories`" pulumi-lang-python="`categories`" pulumi-lang-yaml="`categories`" pulumi-lang-java="`categories`">`categories`</span> attribute supports the following:
 
-    * `ext_id`: A globally unique identifier of a VM category of type UUID.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of a VM category of type UUID.
 
     ### Ownership Info
-    The `ownership_info` attribute supports the following:
+    The <span pulumi-lang-nodejs="`ownershipInfo`" pulumi-lang-dotnet="`OwnershipInfo`" pulumi-lang-go="`ownershipInfo`" pulumi-lang-python="`ownership_info`" pulumi-lang-yaml="`ownershipInfo`" pulumi-lang-java="`ownershipInfo`">`ownershipInfo`</span> attribute supports the following:
 
-    * `owner`: Reference to the owner.
+    * <span pulumi-lang-nodejs="`owner`" pulumi-lang-dotnet="`Owner`" pulumi-lang-go="`owner`" pulumi-lang-python="`owner`" pulumi-lang-yaml="`owner`" pulumi-lang-java="`owner`">`owner`</span>: Reference to the owner.
     * `owner.ext_id`: A globally unique identifier of a VM owner type UUID.
 
     ### Host
-    The `host` attribute supports the following:
+    The <span pulumi-lang-nodejs="`host`" pulumi-lang-dotnet="`Host`" pulumi-lang-go="`host`" pulumi-lang-python="`host`" pulumi-lang-yaml="`host`" pulumi-lang-java="`host`">`host`</span> attribute supports the following:
 
-    * `ext_id`: A globally unique identifier of a host of type UUID.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of a host of type UUID.
 
     ### Cluster
-    The `cluster` attribute supports the following:
+    The <span pulumi-lang-nodejs="`cluster`" pulumi-lang-dotnet="`Cluster`" pulumi-lang-go="`cluster`" pulumi-lang-python="`cluster`" pulumi-lang-yaml="`cluster`" pulumi-lang-java="`cluster`">`cluster`</span> attribute supports the following:
 
-    * `ext_id`: The globally unique identifier of a cluster type UUID.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: The globally unique identifier of a cluster type UUID.
 
     ### Availability Zone
-    The `availability_zone` attribute supports the following:
+    The <span pulumi-lang-nodejs="`availabilityZone`" pulumi-lang-dotnet="`AvailabilityZone`" pulumi-lang-go="`availabilityZone`" pulumi-lang-python="`availability_zone`" pulumi-lang-yaml="`availabilityZone`" pulumi-lang-java="`availabilityZone`">`availabilityZone`</span> attribute supports the following:
 
-    * `ext_id`: The globally unique identifier of an availability zone type UUID.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: The globally unique identifier of an availability zone type UUID.
 
     ### Guest Customization
-    The `guest_customization` attribute supports the following:
+    The <span pulumi-lang-nodejs="`guestCustomization`" pulumi-lang-dotnet="`GuestCustomization`" pulumi-lang-go="`guestCustomization`" pulumi-lang-python="`guest_customization`" pulumi-lang-yaml="`guestCustomization`" pulumi-lang-java="`guestCustomization`">`guestCustomization`</span> attribute supports the following:
 
-    * `config`: The Nutanix Guest Tools customization settings.
+    * <span pulumi-lang-nodejs="`config`" pulumi-lang-dotnet="`Config`" pulumi-lang-go="`config`" pulumi-lang-python="`config`" pulumi-lang-yaml="`config`" pulumi-lang-java="`config`">`config`</span>: The Nutanix Guest Tools customization settings.
 
     * `config.sysprep`: Sysprep config
     * `config.cloud_init`: CloudInit Config
 
     #### config.sysprep
-    * `install_type`: Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Default is 'PREPARED'.
-    * `sysprep_script`: Object either UnattendXml or CustomKeyValues
+    * <span pulumi-lang-nodejs="`installType`" pulumi-lang-dotnet="`InstallType`" pulumi-lang-go="`installType`" pulumi-lang-python="`install_type`" pulumi-lang-yaml="`installType`" pulumi-lang-java="`installType`">`installType`</span>: Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Default is 'PREPARED'.
+    * <span pulumi-lang-nodejs="`sysprepScript`" pulumi-lang-dotnet="`SysprepScript`" pulumi-lang-go="`sysprepScript`" pulumi-lang-python="`sysprep_script`" pulumi-lang-yaml="`sysprepScript`" pulumi-lang-java="`sysprepScript`">`sysprepScript`</span>: Object either UnattendXml or CustomKeyValues
     * `sysprep_script.unattend_xml`: xml object
     * `sysprep_script.custom_key_values`: The list of the individual KeyValuePair elements.
 
     #### config.cloud_init
-    * `datasource_type`: Type of datasource. Default: CONFIG_DRIVE_V2
-    * `metadata`: The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
-    * `cloud_init_script`: The script to use for cloud-init.
+    * <span pulumi-lang-nodejs="`datasourceType`" pulumi-lang-dotnet="`DatasourceType`" pulumi-lang-go="`datasourceType`" pulumi-lang-python="`datasource_type`" pulumi-lang-yaml="`datasourceType`" pulumi-lang-java="`datasourceType`">`datasourceType`</span>: Type of datasource. Default: CONFIG_DRIVE_V2
+    * <span pulumi-lang-nodejs="`metadata`" pulumi-lang-dotnet="`Metadata`" pulumi-lang-go="`metadata`" pulumi-lang-python="`metadata`" pulumi-lang-yaml="`metadata`" pulumi-lang-java="`metadata`">`metadata`</span>: The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+    * <span pulumi-lang-nodejs="`cloudInitScript`" pulumi-lang-dotnet="`CloudInitScript`" pulumi-lang-go="`cloudInitScript`" pulumi-lang-python="`cloud_init_script`" pulumi-lang-yaml="`cloudInitScript`" pulumi-lang-java="`cloudInitScript`">`cloudInitScript`</span>: The script to use for cloud-init.
     * `cloud_init_script.user_data`: user data object
     * `cloud_init_script.custom_keys`: The list of the individual KeyValuePair elements.
 
     ### Guest Tools
-    The `guest_tools` attribute supports the following:
+    The <span pulumi-lang-nodejs="`guestTools`" pulumi-lang-dotnet="`GuestTools`" pulumi-lang-go="`guestTools`" pulumi-lang-python="`guest_tools`" pulumi-lang-yaml="`guestTools`" pulumi-lang-java="`guestTools`">`guestTools`</span> attribute supports the following:
 
-    * `version`: Version of Nutanix Guest Tools installed on the VM.
-    * `is_installed`: Indicates whether Nutanix Guest Tools is installed on the VM or not.
-    * `is_iso_inserted`: Indicates whether Nutanix Guest Tools ISO is inserted or not.
-    * `available_version`: Version of Nutanix Guest Tools available on the cluster.
-    * `guest_os_version`: Version of the operating system on the VM
-    * `is_reachable`: Indicates whether the communication from VM to CVM is active or not.
-    * `is_vss_snapshot_capable`: Indicates whether the VM is configured to take VSS snapshots through NGT or not.
-    * `is_vm_mobility_drivers_installed`: Indicates whether the VM mobility drivers are installed on the VM or not.
-    * `is_enabled`: Indicates whether Nutanix Guest Tools is enabled or not.
-    * `capabilities`: The list of the application names that are enabled on the guest VM.
+    * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`">`version`</span>: Version of Nutanix Guest Tools installed on the VM.
+    * <span pulumi-lang-nodejs="`isInstalled`" pulumi-lang-dotnet="`IsInstalled`" pulumi-lang-go="`isInstalled`" pulumi-lang-python="`is_installed`" pulumi-lang-yaml="`isInstalled`" pulumi-lang-java="`isInstalled`">`isInstalled`</span>: Indicates whether Nutanix Guest Tools is installed on the VM or not.
+    * <span pulumi-lang-nodejs="`isIsoInserted`" pulumi-lang-dotnet="`IsIsoInserted`" pulumi-lang-go="`isIsoInserted`" pulumi-lang-python="`is_iso_inserted`" pulumi-lang-yaml="`isIsoInserted`" pulumi-lang-java="`isIsoInserted`">`isIsoInserted`</span>: Indicates whether Nutanix Guest Tools ISO is inserted or not.
+    * <span pulumi-lang-nodejs="`availableVersion`" pulumi-lang-dotnet="`AvailableVersion`" pulumi-lang-go="`availableVersion`" pulumi-lang-python="`available_version`" pulumi-lang-yaml="`availableVersion`" pulumi-lang-java="`availableVersion`">`availableVersion`</span>: Version of Nutanix Guest Tools available on the cluster.
+    * <span pulumi-lang-nodejs="`guestOsVersion`" pulumi-lang-dotnet="`GuestOsVersion`" pulumi-lang-go="`guestOsVersion`" pulumi-lang-python="`guest_os_version`" pulumi-lang-yaml="`guestOsVersion`" pulumi-lang-java="`guestOsVersion`">`guestOsVersion`</span>: Version of the operating system on the VM
+    * <span pulumi-lang-nodejs="`isReachable`" pulumi-lang-dotnet="`IsReachable`" pulumi-lang-go="`isReachable`" pulumi-lang-python="`is_reachable`" pulumi-lang-yaml="`isReachable`" pulumi-lang-java="`isReachable`">`isReachable`</span>: Indicates whether the communication from VM to CVM is active or not.
+    * <span pulumi-lang-nodejs="`isVssSnapshotCapable`" pulumi-lang-dotnet="`IsVssSnapshotCapable`" pulumi-lang-go="`isVssSnapshotCapable`" pulumi-lang-python="`is_vss_snapshot_capable`" pulumi-lang-yaml="`isVssSnapshotCapable`" pulumi-lang-java="`isVssSnapshotCapable`">`isVssSnapshotCapable`</span>: Indicates whether the VM is configured to take VSS snapshots through NGT or not.
+    * <span pulumi-lang-nodejs="`isVmMobilityDriversInstalled`" pulumi-lang-dotnet="`IsVmMobilityDriversInstalled`" pulumi-lang-go="`isVmMobilityDriversInstalled`" pulumi-lang-python="`is_vm_mobility_drivers_installed`" pulumi-lang-yaml="`isVmMobilityDriversInstalled`" pulumi-lang-java="`isVmMobilityDriversInstalled`">`isVmMobilityDriversInstalled`</span>: Indicates whether the VM mobility drivers are installed on the VM or not.
+    * <span pulumi-lang-nodejs="`isEnabled`" pulumi-lang-dotnet="`IsEnabled`" pulumi-lang-go="`isEnabled`" pulumi-lang-python="`is_enabled`" pulumi-lang-yaml="`isEnabled`" pulumi-lang-java="`isEnabled`">`isEnabled`</span>: Indicates whether Nutanix Guest Tools is enabled or not.
+    * <span pulumi-lang-nodejs="`capabilities`" pulumi-lang-dotnet="`Capabilities`" pulumi-lang-go="`capabilities`" pulumi-lang-python="`capabilities`" pulumi-lang-yaml="`capabilities`" pulumi-lang-java="`capabilities`">`capabilities`</span>: The list of the application names that are enabled on the guest VM.
 
     ### Boot Config
-    The `boot_config` attribute supports the following:
+    The <span pulumi-lang-nodejs="`bootConfig`" pulumi-lang-dotnet="`BootConfig`" pulumi-lang-go="`bootConfig`" pulumi-lang-python="`boot_config`" pulumi-lang-yaml="`bootConfig`" pulumi-lang-java="`bootConfig`">`bootConfig`</span> attribute supports the following:
 
-    * `legacy_boot`: LegacyBoot config Object
-    * `uefi_boot`: UefiBoot config Object
+    * <span pulumi-lang-nodejs="`legacyBoot`" pulumi-lang-dotnet="`LegacyBoot`" pulumi-lang-go="`legacyBoot`" pulumi-lang-python="`legacy_boot`" pulumi-lang-yaml="`legacyBoot`" pulumi-lang-java="`legacyBoot`">`legacyBoot`</span>: LegacyBoot config Object
+    * <span pulumi-lang-nodejs="`uefiBoot`" pulumi-lang-dotnet="`UefiBoot`" pulumi-lang-go="`uefiBoot`" pulumi-lang-python="`uefi_boot`" pulumi-lang-yaml="`uefiBoot`" pulumi-lang-java="`uefiBoot`">`uefiBoot`</span>: UefiBoot config Object
 
     #### boot_config.legacy_boot
-    * `boot_device`: Boot Device object
+    * <span pulumi-lang-nodejs="`bootDevice`" pulumi-lang-dotnet="`BootDevice`" pulumi-lang-go="`bootDevice`" pulumi-lang-python="`boot_device`" pulumi-lang-yaml="`bootDevice`" pulumi-lang-java="`bootDevice`">`bootDevice`</span>: Boot Device object
     * `boot_device.boot_device_disk`: Disk address.
     * `boot_device.boot_device_disk.disk_address.bus_type`: Bus type for the device
     * `boot_device.boot_device_disk.disk_address.index`: Device index on the bus. This field is ignored unless the bus details are specified.
@@ -693,67 +721,67 @@ def get_virtual_machines_v2_output(filter: Optional[pulumi.Input[Optional[_built
     * `boot_device.boot_device_nic`: Disk Nic address.
     * `boot_device.boot_device_nic.mac_address`: mac address
 
-    * `boot_order`: Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+    * <span pulumi-lang-nodejs="`bootOrder`" pulumi-lang-dotnet="`BootOrder`" pulumi-lang-go="`bootOrder`" pulumi-lang-python="`boot_order`" pulumi-lang-yaml="`bootOrder`" pulumi-lang-java="`bootOrder`">`bootOrder`</span>: Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
 
     #### boot_config.uefi_boot
-    * `is_secure_boot_enabled`: Indicate whether to enable secure boot or not
-    * `nvram_device`: Configuration for NVRAM to be presented to the VM.
+    * <span pulumi-lang-nodejs="`isSecureBootEnabled`" pulumi-lang-dotnet="`IsSecureBootEnabled`" pulumi-lang-go="`isSecureBootEnabled`" pulumi-lang-python="`is_secure_boot_enabled`" pulumi-lang-yaml="`isSecureBootEnabled`" pulumi-lang-java="`isSecureBootEnabled`">`isSecureBootEnabled`</span>: Indicate whether to enable secure boot or not
+    * <span pulumi-lang-nodejs="`nvramDevice`" pulumi-lang-dotnet="`NvramDevice`" pulumi-lang-go="`nvramDevice`" pulumi-lang-python="`nvram_device`" pulumi-lang-yaml="`nvramDevice`" pulumi-lang-java="`nvramDevice`">`nvramDevice`</span>: Configuration for NVRAM to be presented to the VM.
     * `nvram_device.backing_storage_info`: Storage provided by Nutanix ADSF
 
     ##### nvram_device.backing_storage_info
-    * `disk_ext_id`: The globally unique identifier of a VM disk. It should be of type UUID.
-    * `disk_size_bytes`: Size of the disk in Bytes
-    * `storage_container`: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
-    * `storage_config`: Storage configuration for VM disks
+    * <span pulumi-lang-nodejs="`diskExtId`" pulumi-lang-dotnet="`DiskExtId`" pulumi-lang-go="`diskExtId`" pulumi-lang-python="`disk_ext_id`" pulumi-lang-yaml="`diskExtId`" pulumi-lang-java="`diskExtId`">`diskExtId`</span>: The globally unique identifier of a VM disk. It should be of type UUID.
+    * <span pulumi-lang-nodejs="`diskSizeBytes`" pulumi-lang-dotnet="`DiskSizeBytes`" pulumi-lang-go="`diskSizeBytes`" pulumi-lang-python="`disk_size_bytes`" pulumi-lang-yaml="`diskSizeBytes`" pulumi-lang-java="`diskSizeBytes`">`diskSizeBytes`</span>: Size of the disk in Bytes
+    * <span pulumi-lang-nodejs="`storageContainer`" pulumi-lang-dotnet="`StorageContainer`" pulumi-lang-go="`storageContainer`" pulumi-lang-python="`storage_container`" pulumi-lang-yaml="`storageContainer`" pulumi-lang-java="`storageContainer`">`storageContainer`</span>: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+    * <span pulumi-lang-nodejs="`storageConfig`" pulumi-lang-dotnet="`StorageConfig`" pulumi-lang-go="`storageConfig`" pulumi-lang-python="`storage_config`" pulumi-lang-yaml="`storageConfig`" pulumi-lang-java="`storageConfig`">`storageConfig`</span>: Storage configuration for VM disks
     * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
-    * `data_source`: A reference to a disk or image that contains the contents of a disk.
-    * `is_migration_in_progress`: Indicates if the disk is undergoing migration to another container.
+    * <span pulumi-lang-nodejs="`dataSource`" pulumi-lang-dotnet="`DataSource`" pulumi-lang-go="`dataSource`" pulumi-lang-python="`data_source`" pulumi-lang-yaml="`dataSource`" pulumi-lang-java="`dataSource`">`dataSource`</span>: A reference to a disk or image that contains the contents of a disk.
+    * <span pulumi-lang-nodejs="`isMigrationInProgress`" pulumi-lang-dotnet="`IsMigrationInProgress`" pulumi-lang-go="`isMigrationInProgress`" pulumi-lang-python="`is_migration_in_progress`" pulumi-lang-yaml="`isMigrationInProgress`" pulumi-lang-java="`isMigrationInProgress`">`isMigrationInProgress`</span>: Indicates if the disk is undergoing migration to another container.
 
     ### VTPM Config
-    The `vtpm_config` attribute supports the following:
+    The <span pulumi-lang-nodejs="`vtpmConfig`" pulumi-lang-dotnet="`VtpmConfig`" pulumi-lang-go="`vtpmConfig`" pulumi-lang-python="`vtpm_config`" pulumi-lang-yaml="`vtpmConfig`" pulumi-lang-java="`vtpmConfig`">`vtpmConfig`</span> attribute supports the following:
 
-    * `is_vtpm_enabled`: Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
-    * `version`: Virtual trusted platform module version.
+    * <span pulumi-lang-nodejs="`isVtpmEnabled`" pulumi-lang-dotnet="`IsVtpmEnabled`" pulumi-lang-go="`isVtpmEnabled`" pulumi-lang-python="`is_vtpm_enabled`" pulumi-lang-yaml="`isVtpmEnabled`" pulumi-lang-java="`isVtpmEnabled`">`isVtpmEnabled`</span>: Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
+    * <span pulumi-lang-nodejs="`version`" pulumi-lang-dotnet="`Version`" pulumi-lang-go="`version`" pulumi-lang-python="`version`" pulumi-lang-yaml="`version`" pulumi-lang-java="`version`">`version`</span>: Virtual trusted platform module version.
 
     ### APC Config
-    The `apc_config` attribute supports the following:
+    The <span pulumi-lang-nodejs="`apcConfig`" pulumi-lang-dotnet="`ApcConfig`" pulumi-lang-go="`apcConfig`" pulumi-lang-python="`apc_config`" pulumi-lang-yaml="`apcConfig`" pulumi-lang-java="`apcConfig`">`apcConfig`</span> attribute supports the following:
 
-    * `is_apc_enabled`: If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
-    * `cpu_model`: CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
+    * <span pulumi-lang-nodejs="`isApcEnabled`" pulumi-lang-dotnet="`IsApcEnabled`" pulumi-lang-go="`isApcEnabled`" pulumi-lang-python="`is_apc_enabled`" pulumi-lang-yaml="`isApcEnabled`" pulumi-lang-java="`isApcEnabled`">`isApcEnabled`</span>: If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
+    * <span pulumi-lang-nodejs="`cpuModel`" pulumi-lang-dotnet="`CpuModel`" pulumi-lang-go="`cpuModel`" pulumi-lang-python="`cpu_model`" pulumi-lang-yaml="`cpuModel`" pulumi-lang-java="`cpuModel`">`cpuModel`</span>: CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
     * `cpu_model.ext_id`: The globally unique identifier of the CPU model associated with the VM.
     * `cpu_model.name`: Name of the CPU model associated with the VM.
 
     ### Storage Config
-    The `storage_config` attribute supports the following:
+    The <span pulumi-lang-nodejs="`storageConfig`" pulumi-lang-dotnet="`StorageConfig`" pulumi-lang-go="`storageConfig`" pulumi-lang-python="`storage_config`" pulumi-lang-yaml="`storageConfig`" pulumi-lang-java="`storageConfig`">`storageConfig`</span> attribute supports the following:
 
-    * `is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
-    * `qos_config`: QoS parameters to be enforced.
+    * <span pulumi-lang-nodejs="`isFlashModeEnabled`" pulumi-lang-dotnet="`IsFlashModeEnabled`" pulumi-lang-go="`isFlashModeEnabled`" pulumi-lang-python="`is_flash_mode_enabled`" pulumi-lang-yaml="`isFlashModeEnabled`" pulumi-lang-java="`isFlashModeEnabled`">`isFlashModeEnabled`</span>: Indicates whether the virtual disk is pinned to the hot tier or not.
+    * <span pulumi-lang-nodejs="`qosConfig`" pulumi-lang-dotnet="`QosConfig`" pulumi-lang-go="`qosConfig`" pulumi-lang-python="`qos_config`" pulumi-lang-yaml="`qosConfig`" pulumi-lang-java="`qosConfig`">`qosConfig`</span>: QoS parameters to be enforced.
     * `qos_config.throttled_iops`: Throttled IOPS for the governed entities. The block size for the I/O is 32 kB.
 
     ### Disks
-    The `disks` attribute supports the following:
+    The <span pulumi-lang-nodejs="`disks`" pulumi-lang-dotnet="`Disks`" pulumi-lang-go="`disks`" pulumi-lang-python="`disks`" pulumi-lang-yaml="`disks`" pulumi-lang-java="`disks`">`disks`</span> attribute supports the following:
 
-    * `ext_id`: A globally unique identifier of an instance that is suitable for external consumption.
-    * `disk_address`: Disk address.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption.
+    * <span pulumi-lang-nodejs="`diskAddress`" pulumi-lang-dotnet="`DiskAddress`" pulumi-lang-go="`diskAddress`" pulumi-lang-python="`disk_address`" pulumi-lang-yaml="`diskAddress`" pulumi-lang-java="`diskAddress`">`diskAddress`</span>: Disk address.
     * `disk_address.bus_type`: Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
     * `disk_address.index`: Device index on the bus. This field is ignored unless the bus details are specified.
-    * `backing_info`: Supporting storage to create virtual disk on.
+    * <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span>: Supporting storage to create virtual disk on.
     * `backing_info.vm_disk`: backing Info for vmDisk
     * `backing_info.adfs_volume_group_reference`: Volume Group Reference
     * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: The globally unique identifier of an ADSF volume group. It should be of type UUID.
 
     #### backing_info.vm_disk
-    * `disk_ext_id`: The globally unique identifier of a VM disk. It should be of type UUID.
-    * `disk_size_bytes`: Size of the disk in Bytes
-    * `storage_container`: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+    * <span pulumi-lang-nodejs="`diskExtId`" pulumi-lang-dotnet="`DiskExtId`" pulumi-lang-go="`diskExtId`" pulumi-lang-python="`disk_ext_id`" pulumi-lang-yaml="`diskExtId`" pulumi-lang-java="`diskExtId`">`diskExtId`</span>: The globally unique identifier of a VM disk. It should be of type UUID.
+    * <span pulumi-lang-nodejs="`diskSizeBytes`" pulumi-lang-dotnet="`DiskSizeBytes`" pulumi-lang-go="`diskSizeBytes`" pulumi-lang-python="`disk_size_bytes`" pulumi-lang-yaml="`diskSizeBytes`" pulumi-lang-java="`diskSizeBytes`">`diskSizeBytes`</span>: Size of the disk in Bytes
+    * <span pulumi-lang-nodejs="`storageContainer`" pulumi-lang-dotnet="`StorageContainer`" pulumi-lang-go="`storageContainer`" pulumi-lang-python="`storage_container`" pulumi-lang-yaml="`storageContainer`" pulumi-lang-java="`storageContainer`">`storageContainer`</span>: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
     * `storage_container.ext_id`: A globally unique identifier of a VM disk container. It should be of type UUID.
-    * `storage_config`: Storage configuration for VM disks
+    * <span pulumi-lang-nodejs="`storageConfig`" pulumi-lang-dotnet="`StorageConfig`" pulumi-lang-go="`storageConfig`" pulumi-lang-python="`storage_config`" pulumi-lang-yaml="`storageConfig`" pulumi-lang-java="`storageConfig`">`storageConfig`</span>: Storage configuration for VM disks
     * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
-    * `data_source`: A reference to a disk or image that contains the contents of a disk.
-    * `is_migration_in_progress`: Indicates if the disk is undergoing migration to another container.
+    * <span pulumi-lang-nodejs="`dataSource`" pulumi-lang-dotnet="`DataSource`" pulumi-lang-go="`dataSource`" pulumi-lang-python="`data_source`" pulumi-lang-yaml="`dataSource`" pulumi-lang-java="`dataSource`">`dataSource`</span>: A reference to a disk or image that contains the contents of a disk.
+    * <span pulumi-lang-nodejs="`isMigrationInProgress`" pulumi-lang-dotnet="`IsMigrationInProgress`" pulumi-lang-go="`isMigrationInProgress`" pulumi-lang-python="`is_migration_in_progress`" pulumi-lang-yaml="`isMigrationInProgress`" pulumi-lang-java="`isMigrationInProgress`">`isMigrationInProgress`</span>: Indicates if the disk is undergoing migration to another container.
 
     #### backing_info.vm_disk.data_source
-    * `reference`: Reference to image or vm disk
+    * <span pulumi-lang-nodejs="`reference`" pulumi-lang-dotnet="`Reference`" pulumi-lang-go="`reference`" pulumi-lang-python="`reference`" pulumi-lang-yaml="`reference`" pulumi-lang-java="`reference`">`reference`</span>: Reference to image or vm disk
     * `reference.image_reference`: Image Reference
     * `reference.image_reference.image_ext_id`: The globally unique identifier of an image. It should be of type UUID.
     * `reference.vm_disk_reference`: Vm Disk Reference
@@ -765,80 +793,104 @@ def get_virtual_machines_v2_output(filter: Optional[pulumi.Input[Optional[_built
     * `reference.vm_disk_reference.vm_reference.ext_id`: A globally unique identifier of a VM of type UUID.
 
     ### CD-ROMs
-    The `cd_roms` attribute supports the following:
+    The <span pulumi-lang-nodejs="`cdRoms`" pulumi-lang-dotnet="`CdRoms`" pulumi-lang-go="`cdRoms`" pulumi-lang-python="`cd_roms`" pulumi-lang-yaml="`cdRoms`" pulumi-lang-java="`cdRoms`">`cdRoms`</span> attribute supports the following:
 
-    * `ext_id`: A globally unique identifier of an instance that is suitable for external consumption.
-    * `disk_address`: Virtual Machine disk (VM disk).
-    * `backing_info`: Storage provided by Nutanix ADSF
-    * `iso_type`: Type of ISO image inserted in CD-ROM
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption.
+    * <span pulumi-lang-nodejs="`diskAddress`" pulumi-lang-dotnet="`DiskAddress`" pulumi-lang-go="`diskAddress`" pulumi-lang-python="`disk_address`" pulumi-lang-yaml="`diskAddress`" pulumi-lang-java="`diskAddress`">`diskAddress`</span>: Virtual Machine disk (VM disk).
+    * <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span>: Storage provided by Nutanix ADSF
+    * <span pulumi-lang-nodejs="`isoType`" pulumi-lang-dotnet="`IsoType`" pulumi-lang-go="`isoType`" pulumi-lang-python="`iso_type`" pulumi-lang-yaml="`isoType`" pulumi-lang-java="`isoType`">`isoType`</span>: Type of ISO image inserted in CD-ROM
 
     ### NICs
-    The `nics` attribute supports the following:
+    The <span pulumi-lang-nodejs="`nics`" pulumi-lang-dotnet="`Nics`" pulumi-lang-go="`nics`" pulumi-lang-python="`nics`" pulumi-lang-yaml="`nics`" pulumi-lang-java="`nics`">`nics`</span> attribute supports the following:
 
-    * `ext_id`: A globally unique identifier of an instance that is suitable for external consumption
-    * `backing_info`: Defines a NIC emulated by the hypervisor
-    * `network_info`: Network information for a NIC.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption
+    * <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span>: Defines a NIC emulated by the hypervisor
+    * <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span>: Network information for a NIC.
 
     ### nics.backing_info
-    * `model`: Options for the NIC emulation.
-    * `mac_address`: MAC address of the emulated NIC.
-    * `is_connected`: Indicates whether the NIC is connected or not. Default is True.
-    * `num_queues`: The number of Tx/Rx queue pairs for this NIC
+    * <span pulumi-lang-nodejs="`model`" pulumi-lang-dotnet="`Model`" pulumi-lang-go="`model`" pulumi-lang-python="`model`" pulumi-lang-yaml="`model`" pulumi-lang-java="`model`">`model`</span>: Options for the NIC emulation.
+    * <span pulumi-lang-nodejs="`macAddress`" pulumi-lang-dotnet="`MacAddress`" pulumi-lang-go="`macAddress`" pulumi-lang-python="`mac_address`" pulumi-lang-yaml="`macAddress`" pulumi-lang-java="`macAddress`">`macAddress`</span>: MAC address of the emulated NIC.
+    * <span pulumi-lang-nodejs="`isConnected`" pulumi-lang-dotnet="`IsConnected`" pulumi-lang-go="`isConnected`" pulumi-lang-python="`is_connected`" pulumi-lang-yaml="`isConnected`" pulumi-lang-java="`isConnected`">`isConnected`</span>: Indicates whether the NIC is connected or not. Default is True.
+    * <span pulumi-lang-nodejs="`numQueues`" pulumi-lang-dotnet="`NumQueues`" pulumi-lang-go="`numQueues`" pulumi-lang-python="`num_queues`" pulumi-lang-yaml="`numQueues`" pulumi-lang-java="`numQueues`">`numQueues`</span>: The number of Tx/Rx queue pairs for this NIC
 
     ### nics.network_info
-    * `nic_type`: NIC type. Defaults to NORMAL_NIC. The acceptable values are: SPAN_DESTINATION_NIC, NORMAL_NIC, DIRECT_NIC, NETWORK_FUNCTION_NIC.
-    * `network_function_chain`: The network function chain associates with the NIC. Only valid if nic_type is NORMAL_NIC.
+    * <span pulumi-lang-nodejs="`nicType`" pulumi-lang-dotnet="`NicType`" pulumi-lang-go="`nicType`" pulumi-lang-python="`nic_type`" pulumi-lang-yaml="`nicType`" pulumi-lang-java="`nicType`">`nicType`</span>: NIC type. Defaults to NORMAL_NIC. The acceptable values are: SPAN_DESTINATION_NIC, NORMAL_NIC, DIRECT_NIC, NETWORK_FUNCTION_NIC.
+    * <span pulumi-lang-nodejs="`networkFunctionChain`" pulumi-lang-dotnet="`NetworkFunctionChain`" pulumi-lang-go="`networkFunctionChain`" pulumi-lang-python="`network_function_chain`" pulumi-lang-yaml="`networkFunctionChain`" pulumi-lang-java="`networkFunctionChain`">`networkFunctionChain`</span>: The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
     * `network_function_chain.ext_id`: The globally unique identifier of a network function chain. It should be of type UUID.
-    * `network_function_nic_type`: The type of this Network function NIC. Defaults to INGRESS.  values are: TAP, EGRESS, INGRESS.
-    * `subnet`: Network identifier for this adapter. Only valid if nic_type is NORMAL_NIC or DIRECT_NIC.
+    * <span pulumi-lang-nodejs="`networkFunctionNicType`" pulumi-lang-dotnet="`NetworkFunctionNicType`" pulumi-lang-go="`networkFunctionNicType`" pulumi-lang-python="`network_function_nic_type`" pulumi-lang-yaml="`networkFunctionNicType`" pulumi-lang-java="`networkFunctionNicType`">`networkFunctionNicType`</span>: The type of this Network function NIC. Defaults to INGRESS.  values are: TAP, EGRESS, INGRESS.
+    * <span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`">`subnet`</span>: Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
     * `subnet.ext_id`: The globally unique identifier of a subnet of type UUID.
-    * `vlan_mode`: all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs. values are: ACCESS, TRUNKED.
-    * `trunked_vlans`: List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
-    * `should_allow_unknown_macs`: Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
-    * `ipv4_config`: The IP address configurations.
-    * `ipv4_info`: The runtime IP address information of the NIC.
+    * <span pulumi-lang-nodejs="`vlanMode`" pulumi-lang-dotnet="`VlanMode`" pulumi-lang-go="`vlanMode`" pulumi-lang-python="`vlan_mode`" pulumi-lang-yaml="`vlanMode`" pulumi-lang-java="`vlanMode`">`vlanMode`</span>: all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs. values are: ACCESS, TRUNKED.
+    * <span pulumi-lang-nodejs="`trunkedVlans`" pulumi-lang-dotnet="`TrunkedVlans`" pulumi-lang-go="`trunkedVlans`" pulumi-lang-python="`trunked_vlans`" pulumi-lang-yaml="`trunkedVlans`" pulumi-lang-java="`trunkedVlans`">`trunkedVlans`</span>: List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+    * <span pulumi-lang-nodejs="`shouldAllowUnknownMacs`" pulumi-lang-dotnet="`ShouldAllowUnknownMacs`" pulumi-lang-go="`shouldAllowUnknownMacs`" pulumi-lang-python="`should_allow_unknown_macs`" pulumi-lang-yaml="`shouldAllowUnknownMacs`" pulumi-lang-java="`shouldAllowUnknownMacs`">`shouldAllowUnknownMacs`</span>: Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+    * <span pulumi-lang-nodejs="`ipv4Config`" pulumi-lang-dotnet="`Ipv4Config`" pulumi-lang-go="`ipv4Config`" pulumi-lang-python="`ipv4_config`" pulumi-lang-yaml="`ipv4Config`" pulumi-lang-java="`ipv4Config`">`ipv4Config`</span>: The IP address configurations.
+    * <span pulumi-lang-nodejs="`ipv4Info`" pulumi-lang-dotnet="`Ipv4Info`" pulumi-lang-go="`ipv4Info`" pulumi-lang-python="`ipv4_info`" pulumi-lang-yaml="`ipv4Info`" pulumi-lang-java="`ipv4Info`">`ipv4Info`</span>: The runtime IP address information of the NIC.
 
     #### nics.ipv4_config
-    * `should_assign_ip`: If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-    * `ip_address`: The IP address of the NIC.
-    * `secondary_ip_address_list`: Secondary IP addresses for the NIC.
+    * <span pulumi-lang-nodejs="`shouldAssignIp`" pulumi-lang-dotnet="`ShouldAssignIp`" pulumi-lang-go="`shouldAssignIp`" pulumi-lang-python="`should_assign_ip`" pulumi-lang-yaml="`shouldAssignIp`" pulumi-lang-java="`shouldAssignIp`">`shouldAssignIp`</span>: If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+    * <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`">`ipAddress`</span>: The IP address of the NIC.
+    * <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`">`secondaryIpAddressList`</span>: Secondary IP addresses for the NIC.
 
-    ##### ip_address, secondary_ip_address_list
-    * `value`: The IPv4 address of the host.
-    * `prefix_length`: The prefix length of the IP address.
+    ##### ip_address,<span pulumi-lang-nodejs=" secondaryIpAddressList
+    " pulumi-lang-dotnet=" SecondaryIpAddressList
+    " pulumi-lang-go=" secondaryIpAddressList
+    " pulumi-lang-python=" secondary_ip_address_list
+    " pulumi-lang-yaml=" secondaryIpAddressList
+    " pulumi-lang-java=" secondaryIpAddressList
+    "> secondaryIpAddressList
+    </span>* <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: The IPv4 address of the host.
+    * <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`">`prefixLength`</span>: The prefix length of the IP address.
 
     #### nics.ipv4_info
-    * `learned_ip_addresses`: The list of IP addresses learned by the NIC.
+    * <span pulumi-lang-nodejs="`learnedIpAddresses`" pulumi-lang-dotnet="`LearnedIpAddresses`" pulumi-lang-go="`learnedIpAddresses`" pulumi-lang-python="`learned_ip_addresses`" pulumi-lang-yaml="`learnedIpAddresses`" pulumi-lang-java="`learnedIpAddresses`">`learnedIpAddresses`</span>: The list of IP addresses learned by the NIC.
 
-    ##### learned_ip_addresses
-    * `value`: The IPv4 address of the host.
-    * `prefix_length`: The prefix length of the IP address.
+    #####<span pulumi-lang-nodejs=" learnedIpAddresses
+    " pulumi-lang-dotnet=" LearnedIpAddresses
+    " pulumi-lang-go=" learnedIpAddresses
+    " pulumi-lang-python=" learned_ip_addresses
+    " pulumi-lang-yaml=" learnedIpAddresses
+    " pulumi-lang-java=" learnedIpAddresses
+    "> learnedIpAddresses
+    </span>* <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: The IPv4 address of the host.
+    * <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`">`prefixLength`</span>: The prefix length of the IP address.
 
     ### gpus
-    * `ext_id`: A globally unique identifier of an instance that is suitable for external consumption.
-    * `mode`: The mode of this GPU.
-    * `device_id`: The device Id of the GPU.
-    * `vendor`: The vendor of the GPU.
-    * `pci_address`: The (S)egment:(B)us:(D)evice.(F)unction hardware address. See
-    * `guest_driver_version`: Last determined guest driver version.
-    * `name`: Name of the GPU resource.
-    * `frame_buffer_size_bytes`: GPU frame buffer size in bytes.
-    * `num_virtual_display_heads`: Number of supported virtual display heads.
-    * `fraction`: Fraction of the physical GPU assigned.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption.
+    * <span pulumi-lang-nodejs="`mode`" pulumi-lang-dotnet="`Mode`" pulumi-lang-go="`mode`" pulumi-lang-python="`mode`" pulumi-lang-yaml="`mode`" pulumi-lang-java="`mode`">`mode`</span>: The mode of this GPU.
+    * <span pulumi-lang-nodejs="`deviceId`" pulumi-lang-dotnet="`DeviceId`" pulumi-lang-go="`deviceId`" pulumi-lang-python="`device_id`" pulumi-lang-yaml="`deviceId`" pulumi-lang-java="`deviceId`">`deviceId`</span>: The device Id of the GPU.
+    * <span pulumi-lang-nodejs="`vendor`" pulumi-lang-dotnet="`Vendor`" pulumi-lang-go="`vendor`" pulumi-lang-python="`vendor`" pulumi-lang-yaml="`vendor`" pulumi-lang-java="`vendor`">`vendor`</span>: The vendor of the GPU.
+    * <span pulumi-lang-nodejs="`pciAddress`" pulumi-lang-dotnet="`PciAddress`" pulumi-lang-go="`pciAddress`" pulumi-lang-python="`pci_address`" pulumi-lang-yaml="`pciAddress`" pulumi-lang-java="`pciAddress`">`pciAddress`</span>: The (S)egment:(B)us:(D)evice.(F)unction hardware address. See
+    * <span pulumi-lang-nodejs="`guestDriverVersion`" pulumi-lang-dotnet="`GuestDriverVersion`" pulumi-lang-go="`guestDriverVersion`" pulumi-lang-python="`guest_driver_version`" pulumi-lang-yaml="`guestDriverVersion`" pulumi-lang-java="`guestDriverVersion`">`guestDriverVersion`</span>: Last determined guest driver version.
+    * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: Name of the GPU resource.
+    * <span pulumi-lang-nodejs="`frameBufferSizeBytes`" pulumi-lang-dotnet="`FrameBufferSizeBytes`" pulumi-lang-go="`frameBufferSizeBytes`" pulumi-lang-python="`frame_buffer_size_bytes`" pulumi-lang-yaml="`frameBufferSizeBytes`" pulumi-lang-java="`frameBufferSizeBytes`">`frameBufferSizeBytes`</span>: GPU frame buffer size in bytes.
+    * <span pulumi-lang-nodejs="`numVirtualDisplayHeads`" pulumi-lang-dotnet="`NumVirtualDisplayHeads`" pulumi-lang-go="`numVirtualDisplayHeads`" pulumi-lang-python="`num_virtual_display_heads`" pulumi-lang-yaml="`numVirtualDisplayHeads`" pulumi-lang-java="`numVirtualDisplayHeads`">`numVirtualDisplayHeads`</span>: Number of supported virtual display heads.
+    * <span pulumi-lang-nodejs="`fraction`" pulumi-lang-dotnet="`Fraction`" pulumi-lang-go="`fraction`" pulumi-lang-python="`fraction`" pulumi-lang-yaml="`fraction`" pulumi-lang-java="`fraction`">`fraction`</span>: Fraction of the physical GPU assigned.
 
     ### gpus.pci_address
-    * `segment`
-    * `bus`
-    * `device`
-    * `func`
+    * <span pulumi-lang-nodejs="`segment`" pulumi-lang-dotnet="`Segment`" pulumi-lang-go="`segment`" pulumi-lang-python="`segment`" pulumi-lang-yaml="`segment`" pulumi-lang-java="`segment`">`segment`</span>
+    * <span pulumi-lang-nodejs="`bus`" pulumi-lang-dotnet="`Bus`" pulumi-lang-go="`bus`" pulumi-lang-python="`bus`" pulumi-lang-yaml="`bus`" pulumi-lang-java="`bus`">`bus`</span>
+    * <span pulumi-lang-nodejs="`device`" pulumi-lang-dotnet="`Device`" pulumi-lang-go="`device`" pulumi-lang-python="`device`" pulumi-lang-yaml="`device`" pulumi-lang-java="`device`">`device`</span>
+    * <span pulumi-lang-nodejs="`func`" pulumi-lang-dotnet="`Func`" pulumi-lang-go="`func`" pulumi-lang-python="`func`" pulumi-lang-yaml="`func`" pulumi-lang-java="`func`">`func`</span>
 
-    ### serial_ports
-    * `ext_id`: A globally unique identifier of an instance that is suitable for external consumption.
-    * `is_connected`: Indicates whether the serial port is connected or not.
-    * `index`: Index of the serial port.
+    ###<span pulumi-lang-nodejs=" serialPorts
+    " pulumi-lang-dotnet=" SerialPorts
+    " pulumi-lang-go=" serialPorts
+    " pulumi-lang-python=" serial_ports
+    " pulumi-lang-yaml=" serialPorts
+    " pulumi-lang-java=" serialPorts
+    "> serialPorts
+    </span>* <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption.
+    * <span pulumi-lang-nodejs="`isConnected`" pulumi-lang-dotnet="`IsConnected`" pulumi-lang-go="`isConnected`" pulumi-lang-python="`is_connected`" pulumi-lang-yaml="`isConnected`" pulumi-lang-java="`isConnected`">`isConnected`</span>: Indicates whether the serial port is connected or not.
+    * <span pulumi-lang-nodejs="`index`" pulumi-lang-dotnet="`Index`" pulumi-lang-go="`index`" pulumi-lang-python="`index`" pulumi-lang-yaml="`index`" pulumi-lang-java="`index`">`index`</span>: Index of the serial port.
 
-    ### protection_policy_state
-    * `policy`: Reference to the policy object in use.
+    ###<span pulumi-lang-nodejs=" protectionPolicyState
+    " pulumi-lang-dotnet=" ProtectionPolicyState
+    " pulumi-lang-go=" protectionPolicyState
+    " pulumi-lang-python=" protection_policy_state
+    " pulumi-lang-yaml=" protectionPolicyState
+    " pulumi-lang-java=" protectionPolicyState
+    "> protectionPolicyState
+    </span>* <span pulumi-lang-nodejs="`policy`" pulumi-lang-dotnet="`Policy`" pulumi-lang-go="`policy`" pulumi-lang-python="`policy`" pulumi-lang-yaml="`policy`" pulumi-lang-java="`policy`">`policy`</span>: Reference to the policy object in use.
 
     See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/listVms).
 

@@ -12,6 +12,7 @@ import * as utilities from "./utilities";
  * ## Example Usage
  *
  * ### resource to associated maintenance window with OS_PATCHING
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -24,8 +25,10 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ### resource to associated maintenance window with DB_PATCHING
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -38,8 +41,10 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ### resource to associated maintenance window with pre and post command on each task
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -61,6 +66,7 @@ import * as utilities from "./utilities";
  *     ],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class NdbMaintenanceTask extends pulumi.CustomResource {
     /**
@@ -91,11 +97,11 @@ export class NdbMaintenanceTask extends pulumi.CustomResource {
     }
 
     /**
-     * dbserver cluster ids. Conflicts with "dbserverId"
+     * dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"">"dbserverId"</span>
      */
     declare public readonly dbserverClusters: pulumi.Output<string[] | undefined>;
     /**
-     * dbserver vm id. Conflicts with "dbserverCluster"
+     * dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"">"dbserverCluster"</span>
      */
     declare public readonly dbserverIds: pulumi.Output<string[] | undefined>;
     /**
@@ -150,25 +156,25 @@ export class NdbMaintenanceTask extends pulumi.CustomResource {
  */
 export interface NdbMaintenanceTaskState {
     /**
-     * dbserver cluster ids. Conflicts with "dbserverId"
+     * dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"">"dbserverId"</span>
      */
-    dbserverClusters?: pulumi.Input<pulumi.Input<string>[]>;
+    dbserverClusters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * dbserver vm id. Conflicts with "dbserverCluster"
+     * dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"">"dbserverCluster"</span>
      */
-    dbserverIds?: pulumi.Input<pulumi.Input<string>[]>;
+    dbserverIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Entity Task Association  List.
      */
-    entityTaskAssociations?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceTaskEntityTaskAssociation>[]>;
+    entityTaskAssociations?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceTaskEntityTaskAssociation>[] | undefined>;
     /**
      * maintenance window id which has to be associated
      */
-    maintenanceWindowId?: pulumi.Input<string>;
+    maintenanceWindowId?: pulumi.Input<string | undefined>;
     /**
      * task input for Operating System Patching or Database Patching or both
      */
-    tasks?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceTaskTask>[]>;
+    tasks?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceTaskTask>[] | undefined>;
 }
 
 /**
@@ -176,13 +182,13 @@ export interface NdbMaintenanceTaskState {
  */
 export interface NdbMaintenanceTaskArgs {
     /**
-     * dbserver cluster ids. Conflicts with "dbserverId"
+     * dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"">"dbserverId"</span>
      */
-    dbserverClusters?: pulumi.Input<pulumi.Input<string>[]>;
+    dbserverClusters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * dbserver vm id. Conflicts with "dbserverCluster"
+     * dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"">"dbserverCluster"</span>
      */
-    dbserverIds?: pulumi.Input<pulumi.Input<string>[]>;
+    dbserverIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * maintenance window id which has to be associated
      */
@@ -190,5 +196,5 @@ export interface NdbMaintenanceTaskArgs {
     /**
      * task input for Operating System Patching or Database Patching or both
      */
-    tasks?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceTaskTask>[]>;
+    tasks?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceTaskTask>[] | undefined>;
 }

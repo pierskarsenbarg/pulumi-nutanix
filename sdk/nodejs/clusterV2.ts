@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -74,6 +75,7 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class ClusterV2 extends pulumi.CustomResource {
     /**
@@ -211,41 +213,41 @@ export class ClusterV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ClusterV2 resources.
  */
 export interface ClusterV2State {
-    backupEligibilityScore?: pulumi.Input<number>;
+    backupEligibilityScore?: pulumi.Input<number | undefined>;
     /**
      * - (Optional) The reference to a project.
      */
-    categories?: pulumi.Input<pulumi.Input<string>[]>;
-    clusterProfileExtId?: pulumi.Input<string>;
+    categories?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    clusterProfileExtId?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Cluster configuration details.
      */
-    configs?: pulumi.Input<pulumi.Input<inputs.ClusterV2Config>[]>;
+    configs?: pulumi.Input<pulumi.Input<inputs.ClusterV2Config>[] | undefined>;
     /**
      * - (Optional) The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
      */
-    containerName?: pulumi.Input<string>;
+    containerName?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) parameter that allows long-running operations to execute in a dry-run mode providing ability to identify trouble spots and system failures without performing the actual operation. Additionally this mode also offers a summary snapshot of the resultant system in order to better understand how things fit together. The operation runs in dry-run mode only if the provided value is true.
      */
-    dryrun?: pulumi.Input<boolean>;
-    expand?: pulumi.Input<string>;
-    extId?: pulumi.Input<string>;
-    inefficientVmCount?: pulumi.Input<number>;
-    links?: pulumi.Input<pulumi.Input<inputs.ClusterV2Link>[]>;
+    dryrun?: pulumi.Input<boolean | undefined>;
+    expand?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string | undefined>;
+    inefficientVmCount?: pulumi.Input<number | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.ClusterV2Link>[] | undefined>;
     /**
      * - (Required) The name for the vm.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Network details of a cluster.
      */
-    networks?: pulumi.Input<pulumi.Input<inputs.ClusterV2Network>[]>;
+    networks?: pulumi.Input<pulumi.Input<inputs.ClusterV2Network>[] | undefined>;
     /**
      * - (Optional) The reference to a node.
      */
-    nodes?: pulumi.Input<pulumi.Input<inputs.ClusterV2Node>[]>;
-    tenantId?: pulumi.Input<string>;
+    nodes?: pulumi.Input<pulumi.Input<inputs.ClusterV2Node>[] | undefined>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The reference to a project.
      * Valid values are:
@@ -259,8 +261,8 @@ export interface ClusterV2State {
      * - "PREUPGRADE"	The cluster is in pre-upgrade state.
      * - "SCHEDULED"	The cluster upgrade is in scheduled state.
      */
-    upgradeStatus?: pulumi.Input<string>;
-    vmCount?: pulumi.Input<number>;
+    upgradeStatus?: pulumi.Input<string | undefined>;
+    vmCount?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -270,31 +272,31 @@ export interface ClusterV2Args {
     /**
      * - (Optional) The reference to a project.
      */
-    categories?: pulumi.Input<pulumi.Input<string>[]>;
+    categories?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * - (Optional) Cluster configuration details.
      */
-    configs?: pulumi.Input<pulumi.Input<inputs.ClusterV2Config>[]>;
+    configs?: pulumi.Input<pulumi.Input<inputs.ClusterV2Config>[] | undefined>;
     /**
      * - (Optional) The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
      */
-    containerName?: pulumi.Input<string>;
+    containerName?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) parameter that allows long-running operations to execute in a dry-run mode providing ability to identify trouble spots and system failures without performing the actual operation. Additionally this mode also offers a summary snapshot of the resultant system in order to better understand how things fit together. The operation runs in dry-run mode only if the provided value is true.
      */
-    dryrun?: pulumi.Input<boolean>;
-    expand?: pulumi.Input<string>;
-    extId?: pulumi.Input<string>;
+    dryrun?: pulumi.Input<boolean | undefined>;
+    expand?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * - (Required) The name for the vm.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Network details of a cluster.
      */
-    networks?: pulumi.Input<pulumi.Input<inputs.ClusterV2Network>[]>;
+    networks?: pulumi.Input<pulumi.Input<inputs.ClusterV2Network>[] | undefined>;
     /**
      * - (Optional) The reference to a node.
      */
-    nodes?: pulumi.Input<pulumi.Input<inputs.ClusterV2Node>[]>;
+    nodes?: pulumi.Input<pulumi.Input<inputs.ClusterV2Node>[] | undefined>;
 }

@@ -17,6 +17,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const idp = nutanix.getSamlIdentityProviderV2({
+        ///     extId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// idp = nutanix.get_saml_identity_provider_v2(ext_id="a2a8650a-358a-4791-90c9-7a8b6e2989d6")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,19 +40,76 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var idp = Nutanix.Index.GetSamlIdentityProviderV2.Invoke(new()
+        ///     var idp = Nutanix.GetSamlIdentityProviderV2.Invoke(new()
         ///     {
         ///         ExtId = "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetSamlIdentityProviderV2(ctx, &amp;nutanix.GetSamlIdentityProviderV2Args{
+        /// 			ExtId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetSamlIdentityProviderV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var idp = NutanixFunctions.getSamlIdentityProviderV2(GetSamlIdentityProviderV2Args.builder()
+        ///             .extId("a2a8650a-358a-4791-90c9-7a8b6e2989d6")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   idp:
+        ///     fn::invoke:
+        ///       function: nutanix:getSamlIdentityProviderV2
+        ///       arguments:
+        ///         extId: a2a8650a-358a-4791-90c9-7a8b6e2989d6
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `ExtId`: - External identifier of the SAML Identity Provider.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - External identifier of the SAML Identity Provider.
         /// </summary>
         public static Task<GetSamlIdentityProviderV2Result> InvokeAsync(GetSamlIdentityProviderV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSamlIdentityProviderV2Result>("nutanix:index/getSamlIdentityProviderV2:getSamlIdentityProviderV2", args ?? new GetSamlIdentityProviderV2Args(), options.WithDefaults());
@@ -47,6 +119,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const idp = nutanix.getSamlIdentityProviderV2({
+        ///     extId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// idp = nutanix.get_saml_identity_provider_v2(ext_id="a2a8650a-358a-4791-90c9-7a8b6e2989d6")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -55,19 +142,76 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var idp = Nutanix.Index.GetSamlIdentityProviderV2.Invoke(new()
+        ///     var idp = Nutanix.GetSamlIdentityProviderV2.Invoke(new()
         ///     {
         ///         ExtId = "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetSamlIdentityProviderV2(ctx, &amp;nutanix.GetSamlIdentityProviderV2Args{
+        /// 			ExtId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetSamlIdentityProviderV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var idp = NutanixFunctions.getSamlIdentityProviderV2(GetSamlIdentityProviderV2Args.builder()
+        ///             .extId("a2a8650a-358a-4791-90c9-7a8b6e2989d6")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   idp:
+        ///     fn::invoke:
+        ///       function: nutanix:getSamlIdentityProviderV2
+        ///       arguments:
+        ///         extId: a2a8650a-358a-4791-90c9-7a8b6e2989d6
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `ExtId`: - External identifier of the SAML Identity Provider.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - External identifier of the SAML Identity Provider.
         /// </summary>
         public static Output<GetSamlIdentityProviderV2Result> Invoke(GetSamlIdentityProviderV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSamlIdentityProviderV2Result>("nutanix:index/getSamlIdentityProviderV2:getSamlIdentityProviderV2", args ?? new GetSamlIdentityProviderV2InvokeArgs(), options.WithDefaults());
@@ -77,6 +221,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const idp = nutanix.getSamlIdentityProviderV2({
+        ///     extId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// idp = nutanix.get_saml_identity_provider_v2(ext_id="a2a8650a-358a-4791-90c9-7a8b6e2989d6")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -85,19 +244,76 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var idp = Nutanix.Index.GetSamlIdentityProviderV2.Invoke(new()
+        ///     var idp = Nutanix.GetSamlIdentityProviderV2.Invoke(new()
         ///     {
         ///         ExtId = "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetSamlIdentityProviderV2(ctx, &amp;nutanix.GetSamlIdentityProviderV2Args{
+        /// 			ExtId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetSamlIdentityProviderV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var idp = NutanixFunctions.getSamlIdentityProviderV2(GetSamlIdentityProviderV2Args.builder()
+        ///             .extId("a2a8650a-358a-4791-90c9-7a8b6e2989d6")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   idp:
+        ///     fn::invoke:
+        ///       function: nutanix:getSamlIdentityProviderV2
+        ///       arguments:
+        ///         extId: a2a8650a-358a-4791-90c9-7a8b6e2989d6
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `ExtId`: - External identifier of the SAML Identity Provider.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - External identifier of the SAML Identity Provider.
         /// </summary>
         public static Output<GetSamlIdentityProviderV2Result> Invoke(GetSamlIdentityProviderV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetSamlIdentityProviderV2Result>("nutanix:index/getSamlIdentityProviderV2:getSamlIdentityProviderV2", args ?? new GetSamlIdentityProviderV2InvokeArgs(), options.WithDefaults());

@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const test = nutanix.getPbrs({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPbrs(args?: GetPbrsArgs, opts?: pulumi.InvokeOptions): Promise<GetPbrsResult> {
     args = args || {};
@@ -62,12 +64,14 @@ export interface GetPbrsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const test = nutanix.getPbrs({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPbrsOutput(args?: GetPbrsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPbrsResult> {
     args = args || {};
@@ -84,5 +88,5 @@ export interface GetPbrsOutputArgs {
     /**
      * - The routing policies kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetPbrsMetadataArgs>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetPbrsMetadataArgs>[] | undefined>;
 }

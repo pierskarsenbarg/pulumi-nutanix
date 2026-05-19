@@ -15,12 +15,60 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes a Network security rule
         /// 
-        /// &gt; NOTE: The use of NetworkSecurityRule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+        /// &gt; NOTE: The use of&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "&gt; networkSecurityRule &lt;/span&gt;is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
         /// 
         /// ## Example Usage
         /// 
         /// ### Isolate Development VMs From Production VMs And Get Its Information)
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const isolation = new nutanix.NetworkSecurityRule("isolation", {
+        ///     name: "example-isolation-rule",
+        ///     description: "Isolation Rule Example",
+        ///     isolationRuleAction: "APPLY",
+        ///     isolationRuleFirstEntityFilterKindLists: ["vm"],
+        ///     isolationRuleFirstEntityFilterType: "CATEGORIES_MATCH_ALL",
+        ///     isolationRuleFirstEntityFilterParams: [{
+        ///         name: "Environment",
+        ///         values: ["Dev"],
+        ///     }],
+        ///     isolationRuleSecondEntityFilterKindLists: ["vm"],
+        ///     isolationRuleSecondEntityFilterType: "CATEGORIES_MATCH_ALL",
+        ///     isolationRuleSecondEntityFilterParams: [{
+        ///         name: "Environment",
+        ///         values: ["Production"],
+        ///     }],
+        /// });
+        /// const test = nutanix.getNetworkSecurityRuleOutput({
+        ///     networkSecurityRuleId: isolation.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// isolation = nutanix.NetworkSecurityRule("isolation",
+        ///     name="example-isolation-rule",
+        ///     description="Isolation Rule Example",
+        ///     isolation_rule_action="APPLY",
+        ///     isolation_rule_first_entity_filter_kind_lists=["vm"],
+        ///     isolation_rule_first_entity_filter_type="CATEGORIES_MATCH_ALL",
+        ///     isolation_rule_first_entity_filter_params=[{
+        ///         "name": "Environment",
+        ///         "values": ["Dev"],
+        ///     }],
+        ///     isolation_rule_second_entity_filter_kind_lists=["vm"],
+        ///     isolation_rule_second_entity_filter_type="CATEGORIES_MATCH_ALL",
+        ///     isolation_rule_second_entity_filter_params=[{
+        ///         "name": "Environment",
+        ///         "values": ["Production"],
+        ///     }])
+        /// test = nutanix.get_network_security_rule_output(network_security_rule_id=isolation.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -29,7 +77,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var isolation = new Nutanix.Index.NetworkSecurityRule("isolation", new()
+        ///     var isolation = new Nutanix.NetworkSecurityRule("isolation", new()
         ///     {
         ///         Name = "example-isolation-rule",
         ///         Description = "Isolation Rule Example",
@@ -68,13 +116,142 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetNetworkSecurityRule.Invoke(new()
+        ///     var test = Nutanix.GetNetworkSecurityRule.Invoke(new()
         ///     {
         ///         NetworkSecurityRuleId = isolation.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		isolation, err := nutanix.NewNetworkSecurityRule(ctx, "isolation", &amp;nutanix.NetworkSecurityRuleArgs{
+        /// 			Name:                pulumi.String("example-isolation-rule"),
+        /// 			Description:         pulumi.String("Isolation Rule Example"),
+        /// 			IsolationRuleAction: pulumi.String("APPLY"),
+        /// 			IsolationRuleFirstEntityFilterKindLists: pulumi.StringArray{
+        /// 				pulumi.String("vm"),
+        /// 			},
+        /// 			IsolationRuleFirstEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
+        /// 			IsolationRuleFirstEntityFilterParams: nutanix.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArray{
+        /// 				&amp;nutanix.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs{
+        /// 					Name: pulumi.String("Environment"),
+        /// 					Values: pulumi.StringArray{
+        /// 						pulumi.String("Dev"),
+        /// 					},
+        /// 				},
+        /// 			},
+        /// 			IsolationRuleSecondEntityFilterKindLists: pulumi.StringArray{
+        /// 				pulumi.String("vm"),
+        /// 			},
+        /// 			IsolationRuleSecondEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
+        /// 			IsolationRuleSecondEntityFilterParams: nutanix.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArray{
+        /// 				&amp;nutanix.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs{
+        /// 					Name: pulumi.String("Environment"),
+        /// 					Values: pulumi.StringArray{
+        /// 						pulumi.String("Production"),
+        /// 					},
+        /// 				},
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetNetworkSecurityRuleOutput(ctx, nutanix.GetNetworkSecurityRuleOutputArgs{
+        /// 			NetworkSecurityRuleId: isolation.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NetworkSecurityRule;
+        /// import com.pulumi.nutanix.NetworkSecurityRuleArgs;
+        /// import com.pulumi.nutanix.inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs;
+        /// import com.pulumi.nutanix.inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNetworkSecurityRuleArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var isolation = new NetworkSecurityRule("isolation", NetworkSecurityRuleArgs.builder()
+        ///             .name("example-isolation-rule")
+        ///             .description("Isolation Rule Example")
+        ///             .isolationRuleAction("APPLY")
+        ///             .isolationRuleFirstEntityFilterKindLists("vm")
+        ///             .isolationRuleFirstEntityFilterType("CATEGORIES_MATCH_ALL")
+        ///             .isolationRuleFirstEntityFilterParams(NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs.builder()
+        ///                 .name("Environment")
+        ///                 .values("Dev")
+        ///                 .build())
+        ///             .isolationRuleSecondEntityFilterKindLists("vm")
+        ///             .isolationRuleSecondEntityFilterType("CATEGORIES_MATCH_ALL")
+        ///             .isolationRuleSecondEntityFilterParams(NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs.builder()
+        ///                 .name("Environment")
+        ///                 .values("Production")
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getNetworkSecurityRule(GetNetworkSecurityRuleArgs.builder()
+        ///             .networkSecurityRuleId(isolation.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   isolation:
+        ///     type: nutanix:NetworkSecurityRule
+        ///     properties:
+        ///       name: example-isolation-rule
+        ///       description: Isolation Rule Example
+        ///       isolationRuleAction: APPLY
+        ///       isolationRuleFirstEntityFilterKindLists:
+        ///         - vm
+        ///       isolationRuleFirstEntityFilterType: CATEGORIES_MATCH_ALL
+        ///       isolationRuleFirstEntityFilterParams:
+        ///         - name: Environment
+        ///           values:
+        ///             - Dev
+        ///       isolationRuleSecondEntityFilterKindLists:
+        ///         - vm
+        ///       isolationRuleSecondEntityFilterType: CATEGORIES_MATCH_ALL
+        ///       isolationRuleSecondEntityFilterParams:
+        ///         - name: Environment
+        ///           values:
+        ///             - Production
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getNetworkSecurityRule
+        ///       arguments:
+        ///         networkSecurityRuleId: ${isolation.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNetworkSecurityRuleResult> InvokeAsync(GetNetworkSecurityRuleArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkSecurityRuleResult>("nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule", args ?? new GetNetworkSecurityRuleArgs(), options.WithDefaults());
@@ -82,12 +259,60 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes a Network security rule
         /// 
-        /// &gt; NOTE: The use of NetworkSecurityRule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+        /// &gt; NOTE: The use of&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "&gt; networkSecurityRule &lt;/span&gt;is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
         /// 
         /// ## Example Usage
         /// 
         /// ### Isolate Development VMs From Production VMs And Get Its Information)
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const isolation = new nutanix.NetworkSecurityRule("isolation", {
+        ///     name: "example-isolation-rule",
+        ///     description: "Isolation Rule Example",
+        ///     isolationRuleAction: "APPLY",
+        ///     isolationRuleFirstEntityFilterKindLists: ["vm"],
+        ///     isolationRuleFirstEntityFilterType: "CATEGORIES_MATCH_ALL",
+        ///     isolationRuleFirstEntityFilterParams: [{
+        ///         name: "Environment",
+        ///         values: ["Dev"],
+        ///     }],
+        ///     isolationRuleSecondEntityFilterKindLists: ["vm"],
+        ///     isolationRuleSecondEntityFilterType: "CATEGORIES_MATCH_ALL",
+        ///     isolationRuleSecondEntityFilterParams: [{
+        ///         name: "Environment",
+        ///         values: ["Production"],
+        ///     }],
+        /// });
+        /// const test = nutanix.getNetworkSecurityRuleOutput({
+        ///     networkSecurityRuleId: isolation.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// isolation = nutanix.NetworkSecurityRule("isolation",
+        ///     name="example-isolation-rule",
+        ///     description="Isolation Rule Example",
+        ///     isolation_rule_action="APPLY",
+        ///     isolation_rule_first_entity_filter_kind_lists=["vm"],
+        ///     isolation_rule_first_entity_filter_type="CATEGORIES_MATCH_ALL",
+        ///     isolation_rule_first_entity_filter_params=[{
+        ///         "name": "Environment",
+        ///         "values": ["Dev"],
+        ///     }],
+        ///     isolation_rule_second_entity_filter_kind_lists=["vm"],
+        ///     isolation_rule_second_entity_filter_type="CATEGORIES_MATCH_ALL",
+        ///     isolation_rule_second_entity_filter_params=[{
+        ///         "name": "Environment",
+        ///         "values": ["Production"],
+        ///     }])
+        /// test = nutanix.get_network_security_rule_output(network_security_rule_id=isolation.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -96,7 +321,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var isolation = new Nutanix.Index.NetworkSecurityRule("isolation", new()
+        ///     var isolation = new Nutanix.NetworkSecurityRule("isolation", new()
         ///     {
         ///         Name = "example-isolation-rule",
         ///         Description = "Isolation Rule Example",
@@ -135,13 +360,142 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetNetworkSecurityRule.Invoke(new()
+        ///     var test = Nutanix.GetNetworkSecurityRule.Invoke(new()
         ///     {
         ///         NetworkSecurityRuleId = isolation.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		isolation, err := nutanix.NewNetworkSecurityRule(ctx, "isolation", &amp;nutanix.NetworkSecurityRuleArgs{
+        /// 			Name:                pulumi.String("example-isolation-rule"),
+        /// 			Description:         pulumi.String("Isolation Rule Example"),
+        /// 			IsolationRuleAction: pulumi.String("APPLY"),
+        /// 			IsolationRuleFirstEntityFilterKindLists: pulumi.StringArray{
+        /// 				pulumi.String("vm"),
+        /// 			},
+        /// 			IsolationRuleFirstEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
+        /// 			IsolationRuleFirstEntityFilterParams: nutanix.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArray{
+        /// 				&amp;nutanix.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs{
+        /// 					Name: pulumi.String("Environment"),
+        /// 					Values: pulumi.StringArray{
+        /// 						pulumi.String("Dev"),
+        /// 					},
+        /// 				},
+        /// 			},
+        /// 			IsolationRuleSecondEntityFilterKindLists: pulumi.StringArray{
+        /// 				pulumi.String("vm"),
+        /// 			},
+        /// 			IsolationRuleSecondEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
+        /// 			IsolationRuleSecondEntityFilterParams: nutanix.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArray{
+        /// 				&amp;nutanix.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs{
+        /// 					Name: pulumi.String("Environment"),
+        /// 					Values: pulumi.StringArray{
+        /// 						pulumi.String("Production"),
+        /// 					},
+        /// 				},
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetNetworkSecurityRuleOutput(ctx, nutanix.GetNetworkSecurityRuleOutputArgs{
+        /// 			NetworkSecurityRuleId: isolation.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NetworkSecurityRule;
+        /// import com.pulumi.nutanix.NetworkSecurityRuleArgs;
+        /// import com.pulumi.nutanix.inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs;
+        /// import com.pulumi.nutanix.inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNetworkSecurityRuleArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var isolation = new NetworkSecurityRule("isolation", NetworkSecurityRuleArgs.builder()
+        ///             .name("example-isolation-rule")
+        ///             .description("Isolation Rule Example")
+        ///             .isolationRuleAction("APPLY")
+        ///             .isolationRuleFirstEntityFilterKindLists("vm")
+        ///             .isolationRuleFirstEntityFilterType("CATEGORIES_MATCH_ALL")
+        ///             .isolationRuleFirstEntityFilterParams(NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs.builder()
+        ///                 .name("Environment")
+        ///                 .values("Dev")
+        ///                 .build())
+        ///             .isolationRuleSecondEntityFilterKindLists("vm")
+        ///             .isolationRuleSecondEntityFilterType("CATEGORIES_MATCH_ALL")
+        ///             .isolationRuleSecondEntityFilterParams(NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs.builder()
+        ///                 .name("Environment")
+        ///                 .values("Production")
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getNetworkSecurityRule(GetNetworkSecurityRuleArgs.builder()
+        ///             .networkSecurityRuleId(isolation.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   isolation:
+        ///     type: nutanix:NetworkSecurityRule
+        ///     properties:
+        ///       name: example-isolation-rule
+        ///       description: Isolation Rule Example
+        ///       isolationRuleAction: APPLY
+        ///       isolationRuleFirstEntityFilterKindLists:
+        ///         - vm
+        ///       isolationRuleFirstEntityFilterType: CATEGORIES_MATCH_ALL
+        ///       isolationRuleFirstEntityFilterParams:
+        ///         - name: Environment
+        ///           values:
+        ///             - Dev
+        ///       isolationRuleSecondEntityFilterKindLists:
+        ///         - vm
+        ///       isolationRuleSecondEntityFilterType: CATEGORIES_MATCH_ALL
+        ///       isolationRuleSecondEntityFilterParams:
+        ///         - name: Environment
+        ///           values:
+        ///             - Production
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getNetworkSecurityRule
+        ///       arguments:
+        ///         networkSecurityRuleId: ${isolation.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNetworkSecurityRuleResult> Invoke(GetNetworkSecurityRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityRuleResult>("nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule", args ?? new GetNetworkSecurityRuleInvokeArgs(), options.WithDefaults());
@@ -149,12 +503,60 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes a Network security rule
         /// 
-        /// &gt; NOTE: The use of NetworkSecurityRule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+        /// &gt; NOTE: The use of&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "&gt; networkSecurityRule &lt;/span&gt;is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
         /// 
         /// ## Example Usage
         /// 
         /// ### Isolate Development VMs From Production VMs And Get Its Information)
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const isolation = new nutanix.NetworkSecurityRule("isolation", {
+        ///     name: "example-isolation-rule",
+        ///     description: "Isolation Rule Example",
+        ///     isolationRuleAction: "APPLY",
+        ///     isolationRuleFirstEntityFilterKindLists: ["vm"],
+        ///     isolationRuleFirstEntityFilterType: "CATEGORIES_MATCH_ALL",
+        ///     isolationRuleFirstEntityFilterParams: [{
+        ///         name: "Environment",
+        ///         values: ["Dev"],
+        ///     }],
+        ///     isolationRuleSecondEntityFilterKindLists: ["vm"],
+        ///     isolationRuleSecondEntityFilterType: "CATEGORIES_MATCH_ALL",
+        ///     isolationRuleSecondEntityFilterParams: [{
+        ///         name: "Environment",
+        ///         values: ["Production"],
+        ///     }],
+        /// });
+        /// const test = nutanix.getNetworkSecurityRuleOutput({
+        ///     networkSecurityRuleId: isolation.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// isolation = nutanix.NetworkSecurityRule("isolation",
+        ///     name="example-isolation-rule",
+        ///     description="Isolation Rule Example",
+        ///     isolation_rule_action="APPLY",
+        ///     isolation_rule_first_entity_filter_kind_lists=["vm"],
+        ///     isolation_rule_first_entity_filter_type="CATEGORIES_MATCH_ALL",
+        ///     isolation_rule_first_entity_filter_params=[{
+        ///         "name": "Environment",
+        ///         "values": ["Dev"],
+        ///     }],
+        ///     isolation_rule_second_entity_filter_kind_lists=["vm"],
+        ///     isolation_rule_second_entity_filter_type="CATEGORIES_MATCH_ALL",
+        ///     isolation_rule_second_entity_filter_params=[{
+        ///         "name": "Environment",
+        ///         "values": ["Production"],
+        ///     }])
+        /// test = nutanix.get_network_security_rule_output(network_security_rule_id=isolation.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -163,7 +565,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var isolation = new Nutanix.Index.NetworkSecurityRule("isolation", new()
+        ///     var isolation = new Nutanix.NetworkSecurityRule("isolation", new()
         ///     {
         ///         Name = "example-isolation-rule",
         ///         Description = "Isolation Rule Example",
@@ -202,13 +604,142 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetNetworkSecurityRule.Invoke(new()
+        ///     var test = Nutanix.GetNetworkSecurityRule.Invoke(new()
         ///     {
         ///         NetworkSecurityRuleId = isolation.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		isolation, err := nutanix.NewNetworkSecurityRule(ctx, "isolation", &amp;nutanix.NetworkSecurityRuleArgs{
+        /// 			Name:                pulumi.String("example-isolation-rule"),
+        /// 			Description:         pulumi.String("Isolation Rule Example"),
+        /// 			IsolationRuleAction: pulumi.String("APPLY"),
+        /// 			IsolationRuleFirstEntityFilterKindLists: pulumi.StringArray{
+        /// 				pulumi.String("vm"),
+        /// 			},
+        /// 			IsolationRuleFirstEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
+        /// 			IsolationRuleFirstEntityFilterParams: nutanix.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArray{
+        /// 				&amp;nutanix.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs{
+        /// 					Name: pulumi.String("Environment"),
+        /// 					Values: pulumi.StringArray{
+        /// 						pulumi.String("Dev"),
+        /// 					},
+        /// 				},
+        /// 			},
+        /// 			IsolationRuleSecondEntityFilterKindLists: pulumi.StringArray{
+        /// 				pulumi.String("vm"),
+        /// 			},
+        /// 			IsolationRuleSecondEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
+        /// 			IsolationRuleSecondEntityFilterParams: nutanix.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArray{
+        /// 				&amp;nutanix.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs{
+        /// 					Name: pulumi.String("Environment"),
+        /// 					Values: pulumi.StringArray{
+        /// 						pulumi.String("Production"),
+        /// 					},
+        /// 				},
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetNetworkSecurityRuleOutput(ctx, nutanix.GetNetworkSecurityRuleOutputArgs{
+        /// 			NetworkSecurityRuleId: isolation.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NetworkSecurityRule;
+        /// import com.pulumi.nutanix.NetworkSecurityRuleArgs;
+        /// import com.pulumi.nutanix.inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs;
+        /// import com.pulumi.nutanix.inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNetworkSecurityRuleArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var isolation = new NetworkSecurityRule("isolation", NetworkSecurityRuleArgs.builder()
+        ///             .name("example-isolation-rule")
+        ///             .description("Isolation Rule Example")
+        ///             .isolationRuleAction("APPLY")
+        ///             .isolationRuleFirstEntityFilterKindLists("vm")
+        ///             .isolationRuleFirstEntityFilterType("CATEGORIES_MATCH_ALL")
+        ///             .isolationRuleFirstEntityFilterParams(NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs.builder()
+        ///                 .name("Environment")
+        ///                 .values("Dev")
+        ///                 .build())
+        ///             .isolationRuleSecondEntityFilterKindLists("vm")
+        ///             .isolationRuleSecondEntityFilterType("CATEGORIES_MATCH_ALL")
+        ///             .isolationRuleSecondEntityFilterParams(NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs.builder()
+        ///                 .name("Environment")
+        ///                 .values("Production")
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getNetworkSecurityRule(GetNetworkSecurityRuleArgs.builder()
+        ///             .networkSecurityRuleId(isolation.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   isolation:
+        ///     type: nutanix:NetworkSecurityRule
+        ///     properties:
+        ///       name: example-isolation-rule
+        ///       description: Isolation Rule Example
+        ///       isolationRuleAction: APPLY
+        ///       isolationRuleFirstEntityFilterKindLists:
+        ///         - vm
+        ///       isolationRuleFirstEntityFilterType: CATEGORIES_MATCH_ALL
+        ///       isolationRuleFirstEntityFilterParams:
+        ///         - name: Environment
+        ///           values:
+        ///             - Dev
+        ///       isolationRuleSecondEntityFilterKindLists:
+        ///         - vm
+        ///       isolationRuleSecondEntityFilterType: CATEGORIES_MATCH_ALL
+        ///       isolationRuleSecondEntityFilterParams:
+        ///         - name: Environment
+        ///           values:
+        ///             - Production
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getNetworkSecurityRule
+        ///       arguments:
+        ///         networkSecurityRuleId: ${isolation.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNetworkSecurityRuleResult> Invoke(GetNetworkSecurityRuleInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityRuleResult>("nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule", args ?? new GetNetworkSecurityRuleInvokeArgs(), options.WithDefaults());
@@ -272,7 +803,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetNetworkSecurityRuleResult
     {
         /// <summary>
-        /// - These rules govern what flows are allowed. Target group is a required attribute. Empty InboundAllowList will not anything into target group. Empty OutboundAllowList will allow everything from target group.
+        /// - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         public readonly string AdRuleAction;
         /// <summary>
@@ -303,7 +834,7 @@ namespace PiersKarsenbarg.Nutanix
         public readonly bool AllowIpv6Traffic;
         public readonly string ApiVersion;
         /// <summary>
-        /// - These rules govern what flows are allowed. Target group is a required attribute. Empty InboundAllowList will not anything into target group. Empty OutboundAllowList will allow everything from target group.
+        /// - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         public readonly string AppRuleAction;
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleAppRuleInboundAllowListResult> AppRuleInboundAllowLists;
@@ -387,7 +918,7 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly ImmutableDictionary<string, string> ProjectReference;
         /// <summary>
-        /// These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty InboundAllowList will not allow anything into target group. Empty OutboundAllowList will allow everything from target group.
+        /// These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not allow anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         public readonly string QuarantineRuleAction;
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleQuarantineRuleInboundAllowListResult> QuarantineRuleInboundAllowLists;

@@ -17,6 +17,33 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const pbrs = nutanix.getPbrsV2({});
+        /// const pbrs_filter = nutanix.getPbrsV2({
+        ///     filter: "name eq 'pbr_example'",
+        /// });
+        /// const pbrs_limit = nutanix.getPbrsV2({
+        ///     limit: 10,
+        /// });
+        /// const pbrs_filter_limit = nutanix.getPbrsV2({
+        ///     filter: "name eq 'pbr_example'",
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// pbrs = nutanix.get_pbrs_v2()
+        /// pbrs_filter = nutanix.get_pbrs_v2(filter="name eq 'pbr_example'")
+        /// pbrs_limit = nutanix.get_pbrs_v2(limit=10)
+        /// pbrs_filter_limit = nutanix.get_pbrs_v2(filter="name eq 'pbr_example'",
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,19 +52,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var pbrs = Nutanix.Index.GetPbrsV2.Invoke();
+        ///     var pbrs = Nutanix.GetPbrsV2.Invoke();
         /// 
-        ///     var pbrs_filter = Nutanix.Index.GetPbrsV2.Invoke(new()
+        ///     var pbrs_filter = Nutanix.GetPbrsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'pbr_example'",
         ///     });
         /// 
-        ///     var pbrs_limit = Nutanix.Index.GetPbrsV2.Invoke(new()
+        ///     var pbrs_limit = Nutanix.GetPbrsV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });
         /// 
-        ///     var pbrs_filter_limit = Nutanix.Index.GetPbrsV2.Invoke(new()
+        ///     var pbrs_filter_limit = Nutanix.GetPbrsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'pbr_example'",
         ///         Limit = 10,
@@ -45,6 +72,107 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetPbrsV2(ctx, &amp;nutanix.GetPbrsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetPbrsV2(ctx, &amp;nutanix.GetPbrsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'pbr_example'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetPbrsV2(ctx, &amp;nutanix.GetPbrsV2Args{
+        /// 			Limit: pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetPbrsV2(ctx, &amp;nutanix.GetPbrsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'pbr_example'"),
+        /// 			Limit:  pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPbrsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var pbrs = NutanixFunctions.getPbrsV2(GetPbrsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var pbrs-filter = NutanixFunctions.getPbrsV2(GetPbrsV2Args.builder()
+        ///             .filter("name eq 'pbr_example'")
+        ///             .build());
+        /// 
+        ///         final var pbrs-limit = NutanixFunctions.getPbrsV2(GetPbrsV2Args.builder()
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///         final var pbrs-filter-limit = NutanixFunctions.getPbrsV2(GetPbrsV2Args.builder()
+        ///             .filter("name eq 'pbr_example'")
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   pbrs:
+        ///     fn::invoke:
+        ///       function: nutanix:getPbrsV2
+        ///       arguments: {}
+        ///   pbrs-filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getPbrsV2
+        ///       arguments:
+        ///         filter: name eq 'pbr_example'
+        ///   pbrs-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getPbrsV2
+        ///       arguments:
+        ///         limit: 10
+        ///   pbrs-filter-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getPbrsV2
+        ///       arguments:
+        ///         filter: name eq 'pbr_example'
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPbrsV2Result> InvokeAsync(GetPbrsV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPbrsV2Result>("nutanix:index/getPbrsV2:getPbrsV2", args ?? new GetPbrsV2Args(), options.WithDefaults());
@@ -54,6 +182,33 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const pbrs = nutanix.getPbrsV2({});
+        /// const pbrs_filter = nutanix.getPbrsV2({
+        ///     filter: "name eq 'pbr_example'",
+        /// });
+        /// const pbrs_limit = nutanix.getPbrsV2({
+        ///     limit: 10,
+        /// });
+        /// const pbrs_filter_limit = nutanix.getPbrsV2({
+        ///     filter: "name eq 'pbr_example'",
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// pbrs = nutanix.get_pbrs_v2()
+        /// pbrs_filter = nutanix.get_pbrs_v2(filter="name eq 'pbr_example'")
+        /// pbrs_limit = nutanix.get_pbrs_v2(limit=10)
+        /// pbrs_filter_limit = nutanix.get_pbrs_v2(filter="name eq 'pbr_example'",
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,19 +217,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var pbrs = Nutanix.Index.GetPbrsV2.Invoke();
+        ///     var pbrs = Nutanix.GetPbrsV2.Invoke();
         /// 
-        ///     var pbrs_filter = Nutanix.Index.GetPbrsV2.Invoke(new()
+        ///     var pbrs_filter = Nutanix.GetPbrsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'pbr_example'",
         ///     });
         /// 
-        ///     var pbrs_limit = Nutanix.Index.GetPbrsV2.Invoke(new()
+        ///     var pbrs_limit = Nutanix.GetPbrsV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });
         /// 
-        ///     var pbrs_filter_limit = Nutanix.Index.GetPbrsV2.Invoke(new()
+        ///     var pbrs_filter_limit = Nutanix.GetPbrsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'pbr_example'",
         ///         Limit = 10,
@@ -82,6 +237,107 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetPbrsV2(ctx, &amp;nutanix.GetPbrsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetPbrsV2(ctx, &amp;nutanix.GetPbrsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'pbr_example'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetPbrsV2(ctx, &amp;nutanix.GetPbrsV2Args{
+        /// 			Limit: pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetPbrsV2(ctx, &amp;nutanix.GetPbrsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'pbr_example'"),
+        /// 			Limit:  pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPbrsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var pbrs = NutanixFunctions.getPbrsV2(GetPbrsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var pbrs-filter = NutanixFunctions.getPbrsV2(GetPbrsV2Args.builder()
+        ///             .filter("name eq 'pbr_example'")
+        ///             .build());
+        /// 
+        ///         final var pbrs-limit = NutanixFunctions.getPbrsV2(GetPbrsV2Args.builder()
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///         final var pbrs-filter-limit = NutanixFunctions.getPbrsV2(GetPbrsV2Args.builder()
+        ///             .filter("name eq 'pbr_example'")
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   pbrs:
+        ///     fn::invoke:
+        ///       function: nutanix:getPbrsV2
+        ///       arguments: {}
+        ///   pbrs-filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getPbrsV2
+        ///       arguments:
+        ///         filter: name eq 'pbr_example'
+        ///   pbrs-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getPbrsV2
+        ///       arguments:
+        ///         limit: 10
+        ///   pbrs-filter-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getPbrsV2
+        ///       arguments:
+        ///         filter: name eq 'pbr_example'
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPbrsV2Result> Invoke(GetPbrsV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPbrsV2Result>("nutanix:index/getPbrsV2:getPbrsV2", args ?? new GetPbrsV2InvokeArgs(), options.WithDefaults());
@@ -91,6 +347,33 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const pbrs = nutanix.getPbrsV2({});
+        /// const pbrs_filter = nutanix.getPbrsV2({
+        ///     filter: "name eq 'pbr_example'",
+        /// });
+        /// const pbrs_limit = nutanix.getPbrsV2({
+        ///     limit: 10,
+        /// });
+        /// const pbrs_filter_limit = nutanix.getPbrsV2({
+        ///     filter: "name eq 'pbr_example'",
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// pbrs = nutanix.get_pbrs_v2()
+        /// pbrs_filter = nutanix.get_pbrs_v2(filter="name eq 'pbr_example'")
+        /// pbrs_limit = nutanix.get_pbrs_v2(limit=10)
+        /// pbrs_filter_limit = nutanix.get_pbrs_v2(filter="name eq 'pbr_example'",
+        ///     limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -99,19 +382,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var pbrs = Nutanix.Index.GetPbrsV2.Invoke();
+        ///     var pbrs = Nutanix.GetPbrsV2.Invoke();
         /// 
-        ///     var pbrs_filter = Nutanix.Index.GetPbrsV2.Invoke(new()
+        ///     var pbrs_filter = Nutanix.GetPbrsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'pbr_example'",
         ///     });
         /// 
-        ///     var pbrs_limit = Nutanix.Index.GetPbrsV2.Invoke(new()
+        ///     var pbrs_limit = Nutanix.GetPbrsV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });
         /// 
-        ///     var pbrs_filter_limit = Nutanix.Index.GetPbrsV2.Invoke(new()
+        ///     var pbrs_filter_limit = Nutanix.GetPbrsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'pbr_example'",
         ///         Limit = 10,
@@ -119,6 +402,107 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetPbrsV2(ctx, &amp;nutanix.GetPbrsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetPbrsV2(ctx, &amp;nutanix.GetPbrsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'pbr_example'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetPbrsV2(ctx, &amp;nutanix.GetPbrsV2Args{
+        /// 			Limit: pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetPbrsV2(ctx, &amp;nutanix.GetPbrsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'pbr_example'"),
+        /// 			Limit:  pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPbrsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var pbrs = NutanixFunctions.getPbrsV2(GetPbrsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var pbrs-filter = NutanixFunctions.getPbrsV2(GetPbrsV2Args.builder()
+        ///             .filter("name eq 'pbr_example'")
+        ///             .build());
+        /// 
+        ///         final var pbrs-limit = NutanixFunctions.getPbrsV2(GetPbrsV2Args.builder()
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///         final var pbrs-filter-limit = NutanixFunctions.getPbrsV2(GetPbrsV2Args.builder()
+        ///             .filter("name eq 'pbr_example'")
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   pbrs:
+        ///     fn::invoke:
+        ///       function: nutanix:getPbrsV2
+        ///       arguments: {}
+        ///   pbrs-filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getPbrsV2
+        ///       arguments:
+        ///         filter: name eq 'pbr_example'
+        ///   pbrs-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getPbrsV2
+        ///       arguments:
+        ///         limit: 10
+        ///   pbrs-filter-limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getPbrsV2
+        ///       arguments:
+        ///         filter: name eq 'pbr_example'
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPbrsV2Result> Invoke(GetPbrsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetPbrsV2Result>("nutanix:index/getPbrsV2:getPbrsV2", args ?? new GetPbrsV2InvokeArgs(), options.WithDefaults());

@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -39,6 +40,7 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class NdbClone extends pulumi.CustomResource {
     /**
@@ -381,185 +383,185 @@ export interface NdbCloneState {
     /**
      * if any action arguments is required
      */
-    actionarguments?: pulumi.Input<pulumi.Input<inputs.NdbCloneActionargument>[]>;
+    actionarguments?: pulumi.Input<pulumi.Input<inputs.NdbCloneActionargument>[] | undefined>;
     /**
      * cloned or not
      */
-    clone?: pulumi.Input<boolean>;
+    clone?: pulumi.Input<boolean | undefined>;
     /**
      * clone will be clustered or not
      */
-    clustered?: pulumi.Input<boolean>;
+    clustered?: pulumi.Input<boolean | undefined>;
     /**
      * specify the compute profile id
      */
-    computeProfileId?: pulumi.Input<string>;
+    computeProfileId?: pulumi.Input<string | undefined>;
     /**
      * create new dbserver
      */
-    createDbserver?: pulumi.Input<boolean>;
+    createDbserver?: pulumi.Input<boolean | undefined>;
     /**
      * database cluster type
      */
-    databaseClusterType?: pulumi.Input<string>;
+    databaseClusterType?: pulumi.Input<string | undefined>;
     /**
      * database name
      */
-    databaseName?: pulumi.Input<string>;
+    databaseName?: pulumi.Input<string | undefined>;
     /**
      * database nodes associated with database instance
      */
-    databaseNodes?: pulumi.Input<pulumi.Input<inputs.NdbCloneDatabaseNode>[]>;
+    databaseNodes?: pulumi.Input<pulumi.Input<inputs.NdbCloneDatabaseNode>[] | undefined>;
     /**
      * specify the database parameter profile id
      */
-    databaseParameterProfileId?: pulumi.Input<string>;
+    databaseParameterProfileId?: pulumi.Input<string | undefined>;
     /**
      * date created for clone
      */
-    dateCreated?: pulumi.Input<string>;
+    dateCreated?: pulumi.Input<string | undefined>;
     /**
      * last modified date for clone
      */
-    dateModified?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string | undefined>;
     /**
      * dbserver cluster id
      */
-    dbserverClusterId?: pulumi.Input<string>;
+    dbserverClusterId?: pulumi.Input<string | undefined>;
     /**
      * Specify if you want to create a database server. This value can be set to true or false as required.
      */
-    dbserverId?: pulumi.Input<string>;
+    dbserverId?: pulumi.Input<string | undefined>;
     /**
      * dbserver logical cluster
      */
-    dbserverLogicalCluster?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    dbserverLogicalCluster?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * dbserver logical cluster id
      */
-    dbserverLogicalClusterId?: pulumi.Input<string>;
+    dbserverLogicalClusterId?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Delete the database clone from the VM. Default value is true
      */
-    delete?: pulumi.Input<boolean>;
+    delete?: pulumi.Input<boolean | undefined>;
     /**
      * - (Optional) Delete the logical cluster. Default is true
      */
-    deleteLogicalCluster?: pulumi.Input<boolean>;
+    deleteLogicalCluster?: pulumi.Input<boolean | undefined>;
     /**
      * - (Optional) Delete the database's Time Machine (snapshots/logs) from the NDB. Default value is true
      */
-    deleteTimeMachine?: pulumi.Input<boolean>;
+    deleteTimeMachine?: pulumi.Input<boolean | undefined>;
     /**
      * database instance description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Force delete of instance. Default is false
      */
-    forced?: pulumi.Input<boolean>;
+    forced?: pulumi.Input<boolean | undefined>;
     /**
      * info of clone
      */
-    infos?: pulumi.Input<pulumi.Input<inputs.NdbCloneInfo>[]>;
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbCloneInfo>[] | undefined>;
     /**
      * latest snapshot
      */
-    latestSnapshot?: pulumi.Input<boolean>;
+    latestSnapshot?: pulumi.Input<boolean | undefined>;
     /**
      * LCM Config contains the expiry details and refresh details
      */
-    lcmConfigs?: pulumi.Input<pulumi.Input<inputs.NdbCloneLcmConfig>[]>;
+    lcmConfigs?: pulumi.Input<pulumi.Input<inputs.NdbCloneLcmConfig>[] | undefined>;
     /**
      * linked databases within database instance
      */
-    linkedDatabases?: pulumi.Input<pulumi.Input<inputs.NdbCloneLinkedDatabase>[]>;
+    linkedDatabases?: pulumi.Input<pulumi.Input<inputs.NdbCloneLinkedDatabase>[] | undefined>;
     /**
      * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
      */
-    metric?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metric?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * database instance name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * specify the network profile id
      */
-    networkProfileId?: pulumi.Input<string>;
+    networkProfileId?: pulumi.Input<string | undefined>;
     /**
      * Node count. Default is 1 for single instance
      */
-    nodeCount?: pulumi.Input<number>;
+    nodeCount?: pulumi.Input<number | undefined>;
     /**
      * Nodes contain info about dbservers vm
      */
-    nodes?: pulumi.Input<pulumi.Input<inputs.NdbCloneNode>[]>;
+    nodes?: pulumi.Input<pulumi.Input<inputs.NdbCloneNode>[] | undefined>;
     /**
      * cluster id on where clone will be present
      */
-    nxClusterId?: pulumi.Input<string>;
-    parentDatabaseId?: pulumi.Input<string>;
+    nxClusterId?: pulumi.Input<string | undefined>;
+    parentDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * postgresql info for the clone
      */
-    postgresqlInfos?: pulumi.Input<pulumi.Input<inputs.NdbClonePostgresqlInfo>[]>;
+    postgresqlInfos?: pulumi.Input<pulumi.Input<inputs.NdbClonePostgresqlInfo>[] | undefined>;
     /**
      * List of all the properties
      */
-    properties?: pulumi.Input<pulumi.Input<inputs.NdbCloneProperty>[]>;
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbCloneProperty>[] | undefined>;
     /**
      * - (Optional) Unregister the database clone from NDB. Default value is false
      */
-    remove?: pulumi.Input<boolean>;
+    remove?: pulumi.Input<boolean | undefined>;
     /**
      * remove logical cluster. Default value is false
      */
-    removeLogicalCluster?: pulumi.Input<boolean>;
+    removeLogicalCluster?: pulumi.Input<boolean | undefined>;
     /**
      * snapshot id from where clone is created
      */
-    snapshotId?: pulumi.Input<string>;
+    snapshotId?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Soft remove. Default will be false
      */
-    softRemove?: pulumi.Input<boolean>;
+    softRemove?: pulumi.Input<boolean | undefined>;
     /**
      * ssh public key
      */
-    sshPublicKey?: pulumi.Input<string>;
+    sshPublicKey?: pulumi.Input<string | undefined>;
     /**
      * status of clone
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.NdbCloneTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbCloneTag>[] | undefined>;
     /**
      * time machine id
      */
-    timeMachineId?: pulumi.Input<string>;
+    timeMachineId?: pulumi.Input<string | undefined>;
     /**
      * time machine name
      */
-    timeMachineName?: pulumi.Input<string>;
-    timeMachines?: pulumi.Input<pulumi.Input<inputs.NdbCloneTimeMachine>[]>;
+    timeMachineName?: pulumi.Input<string | undefined>;
+    timeMachines?: pulumi.Input<pulumi.Input<inputs.NdbCloneTimeMachine>[] | undefined>;
     /**
      * timezone
      */
-    timeZone?: pulumi.Input<string>;
+    timeZone?: pulumi.Input<string | undefined>;
     /**
      * type of clone
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * point in time for clone to be created
      */
-    userPitrTimestamp?: pulumi.Input<string>;
+    userPitrTimestamp?: pulumi.Input<string | undefined>;
     /**
      * vm password
      */
-    vmPassword?: pulumi.Input<string>;
+    vmPassword?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -569,75 +571,75 @@ export interface NdbCloneArgs {
     /**
      * if any action arguments is required
      */
-    actionarguments?: pulumi.Input<pulumi.Input<inputs.NdbCloneActionargument>[]>;
+    actionarguments?: pulumi.Input<pulumi.Input<inputs.NdbCloneActionargument>[] | undefined>;
     /**
      * clone will be clustered or not
      */
-    clustered?: pulumi.Input<boolean>;
+    clustered?: pulumi.Input<boolean | undefined>;
     /**
      * specify the compute profile id
      */
-    computeProfileId?: pulumi.Input<string>;
+    computeProfileId?: pulumi.Input<string | undefined>;
     /**
      * create new dbserver
      */
-    createDbserver?: pulumi.Input<boolean>;
+    createDbserver?: pulumi.Input<boolean | undefined>;
     /**
      * specify the database parameter profile id
      */
-    databaseParameterProfileId?: pulumi.Input<string>;
+    databaseParameterProfileId?: pulumi.Input<string | undefined>;
     /**
      * dbserver cluster id
      */
-    dbserverClusterId?: pulumi.Input<string>;
+    dbserverClusterId?: pulumi.Input<string | undefined>;
     /**
      * Specify if you want to create a database server. This value can be set to true or false as required.
      */
-    dbserverId?: pulumi.Input<string>;
+    dbserverId?: pulumi.Input<string | undefined>;
     /**
      * dbserver logical cluster id
      */
-    dbserverLogicalClusterId?: pulumi.Input<string>;
+    dbserverLogicalClusterId?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Delete the database clone from the VM. Default value is true
      */
-    delete?: pulumi.Input<boolean>;
+    delete?: pulumi.Input<boolean | undefined>;
     /**
      * - (Optional) Delete the logical cluster. Default is true
      */
-    deleteLogicalCluster?: pulumi.Input<boolean>;
+    deleteLogicalCluster?: pulumi.Input<boolean | undefined>;
     /**
      * - (Optional) Delete the database's Time Machine (snapshots/logs) from the NDB. Default value is true
      */
-    deleteTimeMachine?: pulumi.Input<boolean>;
+    deleteTimeMachine?: pulumi.Input<boolean | undefined>;
     /**
      * database instance description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Force delete of instance. Default is false
      */
-    forced?: pulumi.Input<boolean>;
+    forced?: pulumi.Input<boolean | undefined>;
     /**
      * latest snapshot
      */
-    latestSnapshot?: pulumi.Input<boolean>;
+    latestSnapshot?: pulumi.Input<boolean | undefined>;
     /**
      * LCM Config contains the expiry details and refresh details
      */
-    lcmConfigs?: pulumi.Input<pulumi.Input<inputs.NdbCloneLcmConfig>[]>;
+    lcmConfigs?: pulumi.Input<pulumi.Input<inputs.NdbCloneLcmConfig>[] | undefined>;
     /**
      * database instance name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * specify the network profile id
      */
-    networkProfileId?: pulumi.Input<string>;
+    networkProfileId?: pulumi.Input<string | undefined>;
     /**
      * Node count. Default is 1 for single instance
      */
-    nodeCount?: pulumi.Input<number>;
+    nodeCount?: pulumi.Input<number | undefined>;
     /**
      * Nodes contain info about dbservers vm
      */
@@ -649,49 +651,49 @@ export interface NdbCloneArgs {
     /**
      * postgresql info for the clone
      */
-    postgresqlInfos?: pulumi.Input<pulumi.Input<inputs.NdbClonePostgresqlInfo>[]>;
+    postgresqlInfos?: pulumi.Input<pulumi.Input<inputs.NdbClonePostgresqlInfo>[] | undefined>;
     /**
      * - (Optional) Unregister the database clone from NDB. Default value is false
      */
-    remove?: pulumi.Input<boolean>;
+    remove?: pulumi.Input<boolean | undefined>;
     /**
      * remove logical cluster. Default value is false
      */
-    removeLogicalCluster?: pulumi.Input<boolean>;
+    removeLogicalCluster?: pulumi.Input<boolean | undefined>;
     /**
      * snapshot id from where clone is created
      */
-    snapshotId?: pulumi.Input<string>;
+    snapshotId?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Soft remove. Default will be false
      */
-    softRemove?: pulumi.Input<boolean>;
+    softRemove?: pulumi.Input<boolean | undefined>;
     /**
      * ssh public key
      */
-    sshPublicKey?: pulumi.Input<string>;
+    sshPublicKey?: pulumi.Input<string | undefined>;
     /**
      * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.NdbCloneTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbCloneTag>[] | undefined>;
     /**
      * time machine id
      */
-    timeMachineId?: pulumi.Input<string>;
+    timeMachineId?: pulumi.Input<string | undefined>;
     /**
      * time machine name
      */
-    timeMachineName?: pulumi.Input<string>;
+    timeMachineName?: pulumi.Input<string | undefined>;
     /**
      * timezone
      */
-    timeZone?: pulumi.Input<string>;
+    timeZone?: pulumi.Input<string | undefined>;
     /**
      * point in time for clone to be created
      */
-    userPitrTimestamp?: pulumi.Input<string>;
+    userPitrTimestamp?: pulumi.Input<string | undefined>;
     /**
      * vm password
      */
-    vmPassword?: pulumi.Input<string>;
+    vmPassword?: pulumi.Input<string | undefined>;
 }

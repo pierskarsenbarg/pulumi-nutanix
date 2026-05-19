@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example:
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -17,6 +18,7 @@ import * as utilities from "./utilities";
  * // promote the protected virtual machine on the remote site
  * const promote_example = new nutanix.PromoteProtectedResourceV2("promote-example", {extId: "d22529bb-f02d-4710-894b-d1de772d7832"});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class PromoteProtectedResourceV2 extends pulumi.CustomResource {
     /**
@@ -90,7 +92,7 @@ export interface PromoteProtectedResourceV2State {
      *
      * See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/ProtectedResources/operation/promoteProtectedResource).
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
 }
 
 /**

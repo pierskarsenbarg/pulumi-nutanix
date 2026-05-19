@@ -140,7 +140,7 @@ export interface GetClusterResult {
      */
     readonly masqueradingIp: string;
     /**
-     * - Port used together with masqueradingIp to connect to the cluster.
+     * - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp "> masqueradingIp </span>to connect to the cluster.
      */
     readonly masqueradingPort: number;
     /**
@@ -254,13 +254,13 @@ export interface GetClusterOutputArgs {
     /**
      * - Categories for the image.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetClusterCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetClusterCategoryArgs>[] | undefined>;
     /**
      * Represents clusters uuid
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
     /**
      * Represents the name of cluster
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

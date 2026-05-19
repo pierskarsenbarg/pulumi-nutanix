@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -35,6 +36,7 @@ import * as utilities from "./utilities";
  *     parameters: {},
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRecoveryPlan(args?: GetRecoveryPlanArgs, opts?: pulumi.InvokeOptions): Promise<GetRecoveryPlanResult> {
     args = args || {};
@@ -52,7 +54,7 @@ export function getRecoveryPlan(args?: GetRecoveryPlanArgs, opts?: pulumi.Invoke
 export interface GetRecoveryPlanArgs {
     categories?: inputs.GetRecoveryPlanCategory[];
     /**
-     * - (Required) The `id` of the Recovery Plan.
+     * - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the Recovery Plan.
      */
     recoveryPlanId?: string;
     recoveryPlanName?: string;
@@ -96,6 +98,7 @@ export interface GetRecoveryPlanResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -120,6 +123,7 @@ export interface GetRecoveryPlanResult {
  *     parameters: {},
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRecoveryPlanOutput(args?: GetRecoveryPlanOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRecoveryPlanResult> {
     args = args || {};
@@ -135,10 +139,10 @@ export function getRecoveryPlanOutput(args?: GetRecoveryPlanOutputArgs, opts?: p
  * A collection of arguments for invoking getRecoveryPlan.
  */
 export interface GetRecoveryPlanOutputArgs {
-    categories?: pulumi.Input<pulumi.Input<inputs.GetRecoveryPlanCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetRecoveryPlanCategoryArgs>[] | undefined>;
     /**
-     * - (Required) The `id` of the Recovery Plan.
+     * - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the Recovery Plan.
      */
-    recoveryPlanId?: pulumi.Input<string>;
-    recoveryPlanName?: pulumi.Input<string>;
+    recoveryPlanId?: pulumi.Input<string | undefined>;
+    recoveryPlanName?: pulumi.Input<string | undefined>;
 }

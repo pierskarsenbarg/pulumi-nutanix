@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     //# resource for cloning using Point in time given time machine name
-    ///     var name = new Nutanix.Index.NdbClone("name", new()
+    ///     var name = new Nutanix.NdbClone("name", new()
     ///     {
     ///         TimeMachineName = "test-pg-inst",
     ///         Name = "test-inst-tf-check",
@@ -58,6 +59,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbClone:NdbClone")]
     public partial class NdbClone : global::Pulumi.CustomResource

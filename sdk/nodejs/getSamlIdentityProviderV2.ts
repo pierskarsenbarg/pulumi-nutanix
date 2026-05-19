@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,12 +20,13 @@ import * as utilities from "./utilities";
  *     extId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Argument Reference
  *
  * The following arguments are supported:
  *
- * * `extId`: - External identifier of the SAML Identity Provider.
+ * * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - External identifier of the SAML Identity Provider.
  */
 export function getSamlIdentityProviderV2(args: GetSamlIdentityProviderV2Args, opts?: pulumi.InvokeOptions): Promise<GetSamlIdentityProviderV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -97,6 +99,7 @@ export interface GetSamlIdentityProviderV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -105,12 +108,13 @@ export interface GetSamlIdentityProviderV2Result {
  *     extId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Argument Reference
  *
  * The following arguments are supported:
  *
- * * `extId`: - External identifier of the SAML Identity Provider.
+ * * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - External identifier of the SAML Identity Provider.
  */
 export function getSamlIdentityProviderV2Output(args: GetSamlIdentityProviderV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSamlIdentityProviderV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

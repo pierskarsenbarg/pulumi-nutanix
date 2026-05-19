@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -21,13 +22,14 @@ import * as utilities from "./utilities";
  *     extId: "<USER_KEY_UUID>",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Argument Reference
  *
  * The following arguments are supported:
  *
- * * `userExtId`: - ( Required ) External Identifier of the User.
- * * `extId`: - ( Required ) External identifier of the key.
+ * * <span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`">`userExtId`</span>: - ( Required ) External Identifier of the User.
+ * * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - ( Required ) External identifier of the key.
  */
 export class UserKeyRevokeV2 extends pulumi.CustomResource {
     /**
@@ -134,29 +136,29 @@ export interface UserKeyRevokeV2State {
     /**
      * - The map of argument name to value.
      */
-    argumentsMaps?: pulumi.Input<pulumi.Input<inputs.UserKeyRevokeV2ArgumentsMap>[]>;
+    argumentsMaps?: pulumi.Input<pulumi.Input<inputs.UserKeyRevokeV2ArgumentsMap>[] | undefined>;
     /**
      * - The code associated with this message.This string is typically prefixed by the namespace the endpoint belongs to. For example: VMM-40000.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * - The error group associated with this message of severity ERROR.
      */
-    errorGroup?: pulumi.Input<string>;
-    extId?: pulumi.Input<string>;
+    errorGroup?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * - Locale for this message. The default locale would be 'en-US'.
      */
-    locale?: pulumi.Input<string>;
+    locale?: pulumi.Input<string | undefined>;
     /**
      * - The message string.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * - The message severity.
      */
-    severity?: pulumi.Input<string>;
-    userExtId?: pulumi.Input<string>;
+    severity?: pulumi.Input<string | undefined>;
+    userExtId?: pulumi.Input<string | undefined>;
 }
 
 /**

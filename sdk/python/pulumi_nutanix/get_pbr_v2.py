@@ -174,12 +174,14 @@ def get_pbr_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     get_pbr = nutanix.get_pbr_v2(ext_id="96a22c81-ed58-4bed-96bc-46b488626612")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: pbr UUID
@@ -201,19 +203,21 @@ def get_pbr_v2(ext_id: Optional[_builtins.str] = None,
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         vpc_ext_id=pulumi.get(__ret__, 'vpc_ext_id'),
         vpcs=pulumi.get(__ret__, 'vpcs'))
-def get_pbr_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pbr_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPbrV2Result]:
     """
     Get a single Routing Policy corresponding to the extId.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     get_pbr = nutanix.get_pbr_v2(ext_id="96a22c81-ed58-4bed-96bc-46b488626612")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: pbr UUID

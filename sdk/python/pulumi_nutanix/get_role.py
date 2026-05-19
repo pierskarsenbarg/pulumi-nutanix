@@ -186,6 +186,7 @@ def get_role(categories: Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRole
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -199,6 +200,7 @@ def get_role(categories: Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRole
         }])
     test = nutanix.get_role_output(role_id=test_role.id)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']] categories: - Categories for the Role.
@@ -225,15 +227,16 @@ def get_role(categories: Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRole
         role_id=pulumi.get(__ret__, 'role_id'),
         role_name=pulumi.get(__ret__, 'role_name'),
         state=pulumi.get(__ret__, 'state'))
-def get_role_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']]]]] = None,
-                    role_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                    role_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_role_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']]]]] = None,
+                    role_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                    role_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRoleResult]:
     """
     Describes a Role.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -247,6 +250,7 @@ def get_role_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['G
         }])
     test = nutanix.get_role_output(role_id=test_role.id)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']] categories: - Categories for the Role.

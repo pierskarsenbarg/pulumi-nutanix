@@ -17,6 +17,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ### vpc creation with external subnet name
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -25,7 +26,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var vpc = new Nutanix.Index.Vpc("vpc", new()
+    ///     var vpc = new Nutanix.Vpc("vpc", new()
     ///     {
     ///         Name = "testtNew-1",
     ///         ExternalSubnetReferenceNames = new[]
@@ -56,9 +57,11 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ### vpc creation with external subnet uuid
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -67,7 +70,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var vpc = new Nutanix.Index.Vpc("vpc", new()
+    ///     var vpc = new Nutanix.Vpc("vpc", new()
     ///     {
     ///         Name = "testtNew-1",
     ///         ExternalSubnetReferenceUuids = new[]
@@ -98,6 +101,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/vpc:Vpc")]
     public partial class Vpc : global::Pulumi.CustomResource

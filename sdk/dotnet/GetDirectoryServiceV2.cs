@@ -17,6 +17,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Get a Directory Service.
+        /// const get_active_directory = nutanix.getDirectoryServiceV2({
+        ///     extId: "8a938cc5-282b-48c4-81be-de22de145d07",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Get a Directory Service.
+        /// get_active_directory = nutanix.get_directory_service_v2(ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,13 +43,73 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get a Directory Service.
-        ///     var get_active_directory = Nutanix.Index.GetDirectoryServiceV2.Invoke(new()
+        ///     var get_active_directory = Nutanix.GetDirectoryServiceV2.Invoke(new()
         ///     {
         ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get a Directory Service.
+        /// 		_, err := nutanix.GetDirectoryServiceV2(ctx, &amp;nutanix.GetDirectoryServiceV2Args{
+        /// 			ExtId: "8a938cc5-282b-48c4-81be-de22de145d07",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetDirectoryServiceV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Get a Directory Service.
+        ///         final var get-active-directory = NutanixFunctions.getDirectoryServiceV2(GetDirectoryServiceV2Args.builder()
+        ///             .extId("8a938cc5-282b-48c4-81be-de22de145d07")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Get a Directory Service.
+        ///   get-active-directory:
+        ///     fn::invoke:
+        ///       function: nutanix:getDirectoryServiceV2
+        ///       arguments:
+        ///         extId: 8a938cc5-282b-48c4-81be-de22de145d07
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDirectoryServiceV2Result> InvokeAsync(GetDirectoryServiceV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDirectoryServiceV2Result>("nutanix:index/getDirectoryServiceV2:getDirectoryServiceV2", args ?? new GetDirectoryServiceV2Args(), options.WithDefaults());
@@ -42,6 +119,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Get a Directory Service.
+        /// const get_active_directory = nutanix.getDirectoryServiceV2({
+        ///     extId: "8a938cc5-282b-48c4-81be-de22de145d07",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Get a Directory Service.
+        /// get_active_directory = nutanix.get_directory_service_v2(ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -51,13 +145,73 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get a Directory Service.
-        ///     var get_active_directory = Nutanix.Index.GetDirectoryServiceV2.Invoke(new()
+        ///     var get_active_directory = Nutanix.GetDirectoryServiceV2.Invoke(new()
         ///     {
         ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get a Directory Service.
+        /// 		_, err := nutanix.GetDirectoryServiceV2(ctx, &amp;nutanix.GetDirectoryServiceV2Args{
+        /// 			ExtId: "8a938cc5-282b-48c4-81be-de22de145d07",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetDirectoryServiceV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Get a Directory Service.
+        ///         final var get-active-directory = NutanixFunctions.getDirectoryServiceV2(GetDirectoryServiceV2Args.builder()
+        ///             .extId("8a938cc5-282b-48c4-81be-de22de145d07")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Get a Directory Service.
+        ///   get-active-directory:
+        ///     fn::invoke:
+        ///       function: nutanix:getDirectoryServiceV2
+        ///       arguments:
+        ///         extId: 8a938cc5-282b-48c4-81be-de22de145d07
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDirectoryServiceV2Result> Invoke(GetDirectoryServiceV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDirectoryServiceV2Result>("nutanix:index/getDirectoryServiceV2:getDirectoryServiceV2", args ?? new GetDirectoryServiceV2InvokeArgs(), options.WithDefaults());
@@ -67,6 +221,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // Get a Directory Service.
+        /// const get_active_directory = nutanix.getDirectoryServiceV2({
+        ///     extId: "8a938cc5-282b-48c4-81be-de22de145d07",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # Get a Directory Service.
+        /// get_active_directory = nutanix.get_directory_service_v2(ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -76,13 +247,73 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // Get a Directory Service.
-        ///     var get_active_directory = Nutanix.Index.GetDirectoryServiceV2.Invoke(new()
+        ///     var get_active_directory = Nutanix.GetDirectoryServiceV2.Invoke(new()
         ///     {
         ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// Get a Directory Service.
+        /// 		_, err := nutanix.GetDirectoryServiceV2(ctx, &amp;nutanix.GetDirectoryServiceV2Args{
+        /// 			ExtId: "8a938cc5-282b-48c4-81be-de22de145d07",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetDirectoryServiceV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // Get a Directory Service.
+        ///         final var get-active-directory = NutanixFunctions.getDirectoryServiceV2(GetDirectoryServiceV2Args.builder()
+        ///             .extId("8a938cc5-282b-48c4-81be-de22de145d07")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # Get a Directory Service.
+        ///   get-active-directory:
+        ///     fn::invoke:
+        ///       function: nutanix:getDirectoryServiceV2
+        ///       arguments:
+        ///         extId: 8a938cc5-282b-48c4-81be-de22de145d07
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDirectoryServiceV2Result> Invoke(GetDirectoryServiceV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetDirectoryServiceV2Result>("nutanix:index/getDirectoryServiceV2:getDirectoryServiceV2", args ?? new GetDirectoryServiceV2InvokeArgs(), options.WithDefaults());

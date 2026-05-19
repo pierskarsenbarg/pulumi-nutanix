@@ -17,6 +17,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const networkDetails = nutanix.getFoundationNodeNetworkDetails({
+        ///     ipv6Addresses: [
+        ///         "&lt;ipv6-address-1&gt;",
+        ///         "&lt;ipv6-address-2&gt;",
+        ///     ],
+        ///     timeout: "30",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// network_details = nutanix.get_foundation_node_network_details(ipv6_addresses=[
+        ///         "&lt;ipv6-address-1&gt;",
+        ///         "&lt;ipv6-address-2&gt;",
+        ///     ],
+        ///     timeout="30")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +48,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var networkDetails = Nutanix.Index.GetFoundationNodeNetworkDetails.Invoke(new()
+        ///     var networkDetails = Nutanix.GetFoundationNodeNetworkDetails.Invoke(new()
         ///     {
         ///         Ipv6Addresses = new[]
         ///         {
@@ -37,6 +60,73 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFoundationNodeNetworkDetails(ctx, &amp;nutanix.GetFoundationNodeNetworkDetailsArgs{
+        /// 			Ipv6Addresses: []string{
+        /// 				"&lt;ipv6-address-1&gt;",
+        /// 				"&lt;ipv6-address-2&gt;",
+        /// 			},
+        /// 			Timeout: pulumi.StringRef("30"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFoundationNodeNetworkDetailsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var networkDetails = NutanixFunctions.getFoundationNodeNetworkDetails(GetFoundationNodeNetworkDetailsArgs.builder()
+        ///             .ipv6Addresses(            
+        ///                 "&lt;ipv6-address-1&gt;",
+        ///                 "&lt;ipv6-address-2&gt;")
+        ///             .timeout("30")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   networkDetails:
+        ///     fn::invoke:
+        ///       function: nutanix:getFoundationNodeNetworkDetails
+        ///       arguments:
+        ///         ipv6Addresses:
+        ///           - &lt;ipv6-address-1&gt;
+        ///           - &lt;ipv6-address-2&gt;
+        ///         timeout: '30'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFoundationNodeNetworkDetailsResult> InvokeAsync(GetFoundationNodeNetworkDetailsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationNodeNetworkDetailsResult>("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", args ?? new GetFoundationNodeNetworkDetailsArgs(), options.WithDefaults());
@@ -46,6 +136,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const networkDetails = nutanix.getFoundationNodeNetworkDetails({
+        ///     ipv6Addresses: [
+        ///         "&lt;ipv6-address-1&gt;",
+        ///         "&lt;ipv6-address-2&gt;",
+        ///     ],
+        ///     timeout: "30",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// network_details = nutanix.get_foundation_node_network_details(ipv6_addresses=[
+        ///         "&lt;ipv6-address-1&gt;",
+        ///         "&lt;ipv6-address-2&gt;",
+        ///     ],
+        ///     timeout="30")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -54,7 +167,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var networkDetails = Nutanix.Index.GetFoundationNodeNetworkDetails.Invoke(new()
+        ///     var networkDetails = Nutanix.GetFoundationNodeNetworkDetails.Invoke(new()
         ///     {
         ///         Ipv6Addresses = new[]
         ///         {
@@ -66,6 +179,73 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFoundationNodeNetworkDetails(ctx, &amp;nutanix.GetFoundationNodeNetworkDetailsArgs{
+        /// 			Ipv6Addresses: []string{
+        /// 				"&lt;ipv6-address-1&gt;",
+        /// 				"&lt;ipv6-address-2&gt;",
+        /// 			},
+        /// 			Timeout: pulumi.StringRef("30"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFoundationNodeNetworkDetailsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var networkDetails = NutanixFunctions.getFoundationNodeNetworkDetails(GetFoundationNodeNetworkDetailsArgs.builder()
+        ///             .ipv6Addresses(            
+        ///                 "&lt;ipv6-address-1&gt;",
+        ///                 "&lt;ipv6-address-2&gt;")
+        ///             .timeout("30")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   networkDetails:
+        ///     fn::invoke:
+        ///       function: nutanix:getFoundationNodeNetworkDetails
+        ///       arguments:
+        ///         ipv6Addresses:
+        ///           - &lt;ipv6-address-1&gt;
+        ///           - &lt;ipv6-address-2&gt;
+        ///         timeout: '30'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFoundationNodeNetworkDetailsResult> Invoke(GetFoundationNodeNetworkDetailsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationNodeNetworkDetailsResult>("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", args ?? new GetFoundationNodeNetworkDetailsInvokeArgs(), options.WithDefaults());
@@ -75,6 +255,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const networkDetails = nutanix.getFoundationNodeNetworkDetails({
+        ///     ipv6Addresses: [
+        ///         "&lt;ipv6-address-1&gt;",
+        ///         "&lt;ipv6-address-2&gt;",
+        ///     ],
+        ///     timeout: "30",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// network_details = nutanix.get_foundation_node_network_details(ipv6_addresses=[
+        ///         "&lt;ipv6-address-1&gt;",
+        ///         "&lt;ipv6-address-2&gt;",
+        ///     ],
+        ///     timeout="30")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -83,7 +286,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var networkDetails = Nutanix.Index.GetFoundationNodeNetworkDetails.Invoke(new()
+        ///     var networkDetails = Nutanix.GetFoundationNodeNetworkDetails.Invoke(new()
         ///     {
         ///         Ipv6Addresses = new[]
         ///         {
@@ -95,6 +298,73 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFoundationNodeNetworkDetails(ctx, &amp;nutanix.GetFoundationNodeNetworkDetailsArgs{
+        /// 			Ipv6Addresses: []string{
+        /// 				"&lt;ipv6-address-1&gt;",
+        /// 				"&lt;ipv6-address-2&gt;",
+        /// 			},
+        /// 			Timeout: pulumi.StringRef("30"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFoundationNodeNetworkDetailsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var networkDetails = NutanixFunctions.getFoundationNodeNetworkDetails(GetFoundationNodeNetworkDetailsArgs.builder()
+        ///             .ipv6Addresses(            
+        ///                 "&lt;ipv6-address-1&gt;",
+        ///                 "&lt;ipv6-address-2&gt;")
+        ///             .timeout("30")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   networkDetails:
+        ///     fn::invoke:
+        ///       function: nutanix:getFoundationNodeNetworkDetails
+        ///       arguments:
+        ///         ipv6Addresses:
+        ///           - &lt;ipv6-address-1&gt;
+        ///           - &lt;ipv6-address-2&gt;
+        ///         timeout: '30'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFoundationNodeNetworkDetailsResult> Invoke(GetFoundationNodeNetworkDetailsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationNodeNetworkDetailsResult>("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", args ?? new GetFoundationNodeNetworkDetailsInvokeArgs(), options.WithDefaults());

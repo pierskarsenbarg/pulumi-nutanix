@@ -24,16 +24,16 @@ class SelfServiceAppPatchArgs:
                  app_uuid: pulumi.Input[_builtins.str],
                  config_name: pulumi.Input[_builtins.str],
                  patch_name: pulumi.Input[_builtins.str],
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchCategoryArgs']]]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchDiskArgs']]]] = None,
-                 nics: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchNicArgs']]]] = None,
-                 runlog_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_configs: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchVmConfigArgs']]]] = None):
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchCategoryArgs']]]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchDiskArgs']]]] = None,
+                 nics: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchNicArgs']]]] = None,
+                 runlog_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_configs: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchVmConfigArgs']]]] = None):
         """
         The set of arguments for constructing a SelfServiceAppPatch resource.
 
         :param pulumi.Input[_builtins.str] app_uuid: - (Required) The UUID of the application.
-        :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as patch_name for SINGLE VM)</b>
+        :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
         :param pulumi.Input[_builtins.str] patch_name: - (Required) The name of the patch to be applied. This is used to identify the action name which needs to be executed to update an application.
         :param pulumi.Input[_builtins.str] runlog_uuid: - (Computed) The UUID of the runlog that records the patch operation's execution details.
         """
@@ -67,7 +67,7 @@ class SelfServiceAppPatchArgs:
     @pulumi.getter(name="configName")
     def config_name(self) -> pulumi.Input[_builtins.str]:
         """
-        - (Required) The name of the patch configuration. (<b>Same as patch_name for SINGLE VM)</b>
+        - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
         """
         return pulumi.get(self, "config_name")
 
@@ -89,69 +89,69 @@ class SelfServiceAppPatchArgs:
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchCategoryArgs']]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchCategoryArgs']]]]:
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchCategoryArgs']]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter
-    def disks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchDiskArgs']]]]:
+    def disks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchDiskArgs']]]]:
         return pulumi.get(self, "disks")
 
     @disks.setter
-    def disks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchDiskArgs']]]]):
+    def disks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchDiskArgs']]]]):
         pulumi.set(self, "disks", value)
 
     @_builtins.property
     @pulumi.getter
-    def nics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchNicArgs']]]]:
+    def nics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchNicArgs']]]]:
         return pulumi.get(self, "nics")
 
     @nics.setter
-    def nics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchNicArgs']]]]):
+    def nics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchNicArgs']]]]):
         pulumi.set(self, "nics", value)
 
     @_builtins.property
     @pulumi.getter(name="runlogUuid")
-    def runlog_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def runlog_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Computed) The UUID of the runlog that records the patch operation's execution details.
         """
         return pulumi.get(self, "runlog_uuid")
 
     @runlog_uuid.setter
-    def runlog_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def runlog_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "runlog_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="vmConfigs")
-    def vm_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchVmConfigArgs']]]]:
+    def vm_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchVmConfigArgs']]]]:
         return pulumi.get(self, "vm_configs")
 
     @vm_configs.setter
-    def vm_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchVmConfigArgs']]]]):
+    def vm_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchVmConfigArgs']]]]):
         pulumi.set(self, "vm_configs", value)
 
 
 @pulumi.input_type
 class _SelfServiceAppPatchState:
     def __init__(__self__, *,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchCategoryArgs']]]] = None,
-                 config_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchDiskArgs']]]] = None,
-                 nics: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchNicArgs']]]] = None,
-                 patch_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 runlog_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_configs: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchVmConfigArgs']]]] = None):
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchCategoryArgs']]]] = None,
+                 config_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchDiskArgs']]]] = None,
+                 nics: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchNicArgs']]]] = None,
+                 patch_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 runlog_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_configs: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchVmConfigArgs']]]] = None):
         """
         Input properties used for looking up and filtering SelfServiceAppPatch resources.
 
         :param pulumi.Input[_builtins.str] app_uuid: - (Required) The UUID of the application.
-        :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as patch_name for SINGLE VM)</b>
+        :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
         :param pulumi.Input[_builtins.str] patch_name: - (Required) The name of the patch to be applied. This is used to identify the action name which needs to be executed to update an application.
         :param pulumi.Input[_builtins.str] runlog_uuid: - (Computed) The UUID of the runlog that records the patch operation's execution details.
         """
@@ -174,86 +174,86 @@ class _SelfServiceAppPatchState:
 
     @_builtins.property
     @pulumi.getter(name="appUuid")
-    def app_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The UUID of the application.
         """
         return pulumi.get(self, "app_uuid")
 
     @app_uuid.setter
-    def app_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_uuid", value)
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchCategoryArgs']]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchCategoryArgs']]]]:
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchCategoryArgs']]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter(name="configName")
-    def config_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - (Required) The name of the patch configuration. (<b>Same as patch_name for SINGLE VM)</b>
+        - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
         """
         return pulumi.get(self, "config_name")
 
     @config_name.setter
-    def config_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def disks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchDiskArgs']]]]:
+    def disks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchDiskArgs']]]]:
         return pulumi.get(self, "disks")
 
     @disks.setter
-    def disks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchDiskArgs']]]]):
+    def disks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchDiskArgs']]]]):
         pulumi.set(self, "disks", value)
 
     @_builtins.property
     @pulumi.getter
-    def nics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchNicArgs']]]]:
+    def nics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchNicArgs']]]]:
         return pulumi.get(self, "nics")
 
     @nics.setter
-    def nics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchNicArgs']]]]):
+    def nics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchNicArgs']]]]):
         pulumi.set(self, "nics", value)
 
     @_builtins.property
     @pulumi.getter(name="patchName")
-    def patch_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def patch_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name of the patch to be applied. This is used to identify the action name which needs to be executed to update an application.
         """
         return pulumi.get(self, "patch_name")
 
     @patch_name.setter
-    def patch_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def patch_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "patch_name", value)
 
     @_builtins.property
     @pulumi.getter(name="runlogUuid")
-    def runlog_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def runlog_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Computed) The UUID of the runlog that records the patch operation's execution details.
         """
         return pulumi.get(self, "runlog_uuid")
 
     @runlog_uuid.setter
-    def runlog_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def runlog_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "runlog_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="vmConfigs")
-    def vm_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchVmConfigArgs']]]]:
+    def vm_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchVmConfigArgs']]]]:
         return pulumi.get(self, "vm_configs")
 
     @vm_configs.setter
-    def vm_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppPatchVmConfigArgs']]]]):
+    def vm_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppPatchVmConfigArgs']]]]):
         pulumi.set(self, "vm_configs", value)
 
 
@@ -263,14 +263,14 @@ class SelfServiceAppPatch(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppPatchCategoryArgs', 'SelfServiceAppPatchCategoryArgsDict']]]]] = None,
-                 config_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppPatchDiskArgs', 'SelfServiceAppPatchDiskArgsDict']]]]] = None,
-                 nics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppPatchNicArgs', 'SelfServiceAppPatchNicArgsDict']]]]] = None,
-                 patch_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 runlog_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppPatchVmConfigArgs', 'SelfServiceAppPatchVmConfigArgsDict']]]]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchCategoryArgs', 'SelfServiceAppPatchCategoryArgsDict']]]]] = None,
+                 config_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchDiskArgs', 'SelfServiceAppPatchDiskArgsDict']]]]] = None,
+                 nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchNicArgs', 'SelfServiceAppPatchNicArgsDict']]]]] = None,
+                 patch_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 runlog_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchVmConfigArgs', 'SelfServiceAppPatchVmConfigArgsDict']]]]] = None,
                  __props__=None):
         """
         Run the specified patch on the application by running patch action to update vm configuration, add nics, add disks, add/delete categories.
@@ -279,6 +279,7 @@ class SelfServiceAppPatch(pulumi.CustomResource):
 
         This will run set patch config action in application.
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -294,9 +295,11 @@ class SelfServiceAppPatch(pulumi.CustomResource):
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Example 2: Update VM Configuration with runtime editable
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -312,14 +315,16 @@ class SelfServiceAppPatch(pulumi.CustomResource):
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG",
             vm_configs=[{
-                "memory_size_mib": "SIZE IN MiB",
-                "num_sockets": "vCPU count",
-                "num_vcpus_per_socket": "NUMBER OF CORES VCPU",
+                "memory_size_mib": int("SIZE IN MiB"),
+                "num_sockets": int("vCPU count"),
+                "num_vcpus_per_socket": int("NUMBER OF CORES VCPU"),
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Example 3: Add Category
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -339,9 +344,11 @@ class SelfServiceAppPatch(pulumi.CustomResource):
                 "operation": "add",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Example 4: Delete Category
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -361,9 +368,11 @@ class SelfServiceAppPatch(pulumi.CustomResource):
                 "operation": "delete",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Example 5: Add Disk
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -379,13 +388,15 @@ class SelfServiceAppPatch(pulumi.CustomResource):
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG",
             disks=[{
-                "disk_size_mib": "SIZE OF DISK IN MiB",
+                "disk_size_mib": int("SIZE OF DISK IN MiB"),
                 "operation": "add",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Example 6: Add Nic
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -401,17 +412,18 @@ class SelfServiceAppPatch(pulumi.CustomResource):
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG",
             nics=[{
-                "index": "DUMMY INDEX VALUE",
+                "index": int("DUMMY INDEX VALUE"),
                 "operation": "add",
                 "subnet_uuid": "VALID SUBNET UUID IN PROJECT ATTACHED TO APP",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] app_uuid: - (Required) The UUID of the application.
-        :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as patch_name for SINGLE VM)</b>
+        :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
         :param pulumi.Input[_builtins.str] patch_name: - (Required) The name of the patch to be applied. This is used to identify the action name which needs to be executed to update an application.
         :param pulumi.Input[_builtins.str] runlog_uuid: - (Computed) The UUID of the runlog that records the patch operation's execution details.
         """
@@ -428,6 +440,7 @@ class SelfServiceAppPatch(pulumi.CustomResource):
 
         This will run set patch config action in application.
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -443,9 +456,11 @@ class SelfServiceAppPatch(pulumi.CustomResource):
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Example 2: Update VM Configuration with runtime editable
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -461,14 +476,16 @@ class SelfServiceAppPatch(pulumi.CustomResource):
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG",
             vm_configs=[{
-                "memory_size_mib": "SIZE IN MiB",
-                "num_sockets": "vCPU count",
-                "num_vcpus_per_socket": "NUMBER OF CORES VCPU",
+                "memory_size_mib": int("SIZE IN MiB"),
+                "num_sockets": int("vCPU count"),
+                "num_vcpus_per_socket": int("NUMBER OF CORES VCPU"),
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Example 3: Add Category
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -488,9 +505,11 @@ class SelfServiceAppPatch(pulumi.CustomResource):
                 "operation": "add",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Example 4: Delete Category
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -510,9 +529,11 @@ class SelfServiceAppPatch(pulumi.CustomResource):
                 "operation": "delete",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Example 5: Add Disk
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -528,13 +549,15 @@ class SelfServiceAppPatch(pulumi.CustomResource):
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG",
             disks=[{
-                "disk_size_mib": "SIZE OF DISK IN MiB",
+                "disk_size_mib": int("SIZE OF DISK IN MiB"),
                 "operation": "add",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Example 6: Add Nic
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -550,11 +573,12 @@ class SelfServiceAppPatch(pulumi.CustomResource):
             patch_name="NAME OF PATCH ACTION",
             config_name="NAME OF PATCH CONFIG",
             nics=[{
-                "index": "DUMMY INDEX VALUE",
+                "index": int("DUMMY INDEX VALUE"),
                 "operation": "add",
                 "subnet_uuid": "VALID SUBNET UUID IN PROJECT ATTACHED TO APP",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -572,14 +596,14 @@ class SelfServiceAppPatch(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppPatchCategoryArgs', 'SelfServiceAppPatchCategoryArgsDict']]]]] = None,
-                 config_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppPatchDiskArgs', 'SelfServiceAppPatchDiskArgsDict']]]]] = None,
-                 nics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppPatchNicArgs', 'SelfServiceAppPatchNicArgsDict']]]]] = None,
-                 patch_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 runlog_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppPatchVmConfigArgs', 'SelfServiceAppPatchVmConfigArgsDict']]]]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchCategoryArgs', 'SelfServiceAppPatchCategoryArgsDict']]]]] = None,
+                 config_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchDiskArgs', 'SelfServiceAppPatchDiskArgsDict']]]]] = None,
+                 nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchNicArgs', 'SelfServiceAppPatchNicArgsDict']]]]] = None,
+                 patch_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 runlog_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchVmConfigArgs', 'SelfServiceAppPatchVmConfigArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -613,14 +637,14 @@ class SelfServiceAppPatch(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppPatchCategoryArgs', 'SelfServiceAppPatchCategoryArgsDict']]]]] = None,
-            config_name: Optional[pulumi.Input[_builtins.str]] = None,
-            disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppPatchDiskArgs', 'SelfServiceAppPatchDiskArgsDict']]]]] = None,
-            nics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppPatchNicArgs', 'SelfServiceAppPatchNicArgsDict']]]]] = None,
-            patch_name: Optional[pulumi.Input[_builtins.str]] = None,
-            runlog_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppPatchVmConfigArgs', 'SelfServiceAppPatchVmConfigArgsDict']]]]] = None) -> 'SelfServiceAppPatch':
+            app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchCategoryArgs', 'SelfServiceAppPatchCategoryArgsDict']]]]] = None,
+            config_name: pulumi.Input[Optional[_builtins.str]] = None,
+            disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchDiskArgs', 'SelfServiceAppPatchDiskArgsDict']]]]] = None,
+            nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchNicArgs', 'SelfServiceAppPatchNicArgsDict']]]]] = None,
+            patch_name: pulumi.Input[Optional[_builtins.str]] = None,
+            runlog_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchVmConfigArgs', 'SelfServiceAppPatchVmConfigArgsDict']]]]] = None) -> 'SelfServiceAppPatch':
         """
         Get an existing SelfServiceAppPatch resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -629,7 +653,7 @@ class SelfServiceAppPatch(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] app_uuid: - (Required) The UUID of the application.
-        :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as patch_name for SINGLE VM)</b>
+        :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
         :param pulumi.Input[_builtins.str] patch_name: - (Required) The name of the patch to be applied. This is used to identify the action name which needs to be executed to update an application.
         :param pulumi.Input[_builtins.str] runlog_uuid: - (Computed) The UUID of the runlog that records the patch operation's execution details.
         """
@@ -664,7 +688,7 @@ class SelfServiceAppPatch(pulumi.CustomResource):
     @pulumi.getter(name="configName")
     def config_name(self) -> pulumi.Output[_builtins.str]:
         """
-        - (Required) The name of the patch configuration. (<b>Same as patch_name for SINGLE VM)</b>
+        - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
         """
         return pulumi.get(self, "config_name")
 

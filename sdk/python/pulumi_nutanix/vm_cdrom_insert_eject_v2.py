@@ -23,7 +23,7 @@ class VmCdromInsertEjectV2Args:
     def __init__(__self__, *,
                  ext_id: pulumi.Input[_builtins.str],
                  vm_ext_id: pulumi.Input[_builtins.str],
-                 backing_infos: Optional[pulumi.Input[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoArgs']]]] = None):
+                 backing_infos: pulumi.Input[Optional[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoArgs']]]] = None):
         """
         The set of arguments for constructing a VmCdromInsertEjectV2 resource.
 
@@ -62,23 +62,23 @@ class VmCdromInsertEjectV2Args:
 
     @_builtins.property
     @pulumi.getter(name="backingInfos")
-    def backing_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoArgs']]]]:
+    def backing_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoArgs']]]]:
         """
         Storage provided by Nutanix ADSF
         """
         return pulumi.get(self, "backing_infos")
 
     @backing_infos.setter
-    def backing_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoArgs']]]]):
+    def backing_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoArgs']]]]):
         pulumi.set(self, "backing_infos", value)
 
 
 @pulumi.input_type
 class _VmCdromInsertEjectV2State:
     def __init__(__self__, *,
-                 backing_infos: Optional[pulumi.Input[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoArgs']]]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 backing_infos: pulumi.Input[Optional[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoArgs']]]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VmCdromInsertEjectV2 resources.
 
@@ -95,38 +95,38 @@ class _VmCdromInsertEjectV2State:
 
     @_builtins.property
     @pulumi.getter(name="backingInfos")
-    def backing_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoArgs']]]]:
+    def backing_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoArgs']]]]:
         """
         Storage provided by Nutanix ADSF
         """
         return pulumi.get(self, "backing_infos")
 
     @backing_infos.setter
-    def backing_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoArgs']]]]):
+    def backing_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoArgs']]]]):
         pulumi.set(self, "backing_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The globally unique identifier of a CD-ROM. It should be of type UUID.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vmExtId")
-    def vm_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The globally unique identifier of a VM. It should be of type UUID
         """
         return pulumi.get(self, "vm_ext_id")
 
     @vm_ext_id.setter
-    def vm_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_ext_id", value)
 
 
@@ -136,9 +136,9 @@ class VmCdromInsertEjectV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backing_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict']]]]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 backing_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict']]]]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Inserts the defined ISO into a CD-ROM device attached to a Virtual Machine.
@@ -146,6 +146,7 @@ class VmCdromInsertEjectV2(pulumi.CustomResource):
 
         ## Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -163,6 +164,7 @@ class VmCdromInsertEjectV2(pulumi.CustomResource):
                 }],
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -183,6 +185,7 @@ class VmCdromInsertEjectV2(pulumi.CustomResource):
 
         ## Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -200,6 +203,7 @@ class VmCdromInsertEjectV2(pulumi.CustomResource):
                 }],
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -217,9 +221,9 @@ class VmCdromInsertEjectV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backing_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict']]]]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 backing_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict']]]]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -246,9 +250,9 @@ class VmCdromInsertEjectV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            backing_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict']]]]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_ext_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'VmCdromInsertEjectV2':
+            backing_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VmCdromInsertEjectV2':
         """
         Get an existing VmCdromInsertEjectV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

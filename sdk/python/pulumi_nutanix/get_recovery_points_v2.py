@@ -138,6 +138,7 @@ def get_recovery_points_v2(apply: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -145,81 +146,112 @@ def get_recovery_points_v2(apply: Optional[_builtins.str] = None,
     recovery_points = nutanix.get_recovery_points_v2()
     filtered_recovery_points = nutanix.get_recovery_points_v2(filter="name eq 'recovery_point_001'")
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Recovery Points
 
-    The `recovery_points` attribute contains list of recovery points. Each recovery point contains the following attributes:
+    The <span pulumi-lang-nodejs="`recoveryPoints`" pulumi-lang-dotnet="`RecoveryPoints`" pulumi-lang-go="`recoveryPoints`" pulumi-lang-python="`recovery_points`" pulumi-lang-yaml="`recoveryPoints`" pulumi-lang-java="`recoveryPoints`">`recoveryPoints`</span> attribute contains list of recovery points. Each recovery point contains the following attributes:
 
-    * `ext_id`: recovery point UUID
-    * `tenant_id`: A globally unique identifier that represents the tenant that owns this entity
-    * `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-    * `location_agnostic_id`: Location agnostic identifier of the Recovery point.
-    * `name`: The name of the Recovery point.
-    * `creation_time`: The UTC date and time in ISO-8601 format when the Recovery point is created.
-    * `expiration_time`: The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
-    * `status`: The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: recovery point UUID
+    * <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`">`tenantId`</span>: A globally unique identifier that represents the tenant that owns this entity
+    * <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+    * <span pulumi-lang-nodejs="`locationAgnosticId`" pulumi-lang-dotnet="`LocationAgnosticId`" pulumi-lang-go="`locationAgnosticId`" pulumi-lang-python="`location_agnostic_id`" pulumi-lang-yaml="`locationAgnosticId`" pulumi-lang-java="`locationAgnosticId`">`locationAgnosticId`</span>: Location agnostic identifier of the Recovery point.
+    * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: The name of the Recovery point.
+    * <span pulumi-lang-nodejs="`creationTime`" pulumi-lang-dotnet="`CreationTime`" pulumi-lang-go="`creationTime`" pulumi-lang-python="`creation_time`" pulumi-lang-yaml="`creationTime`" pulumi-lang-java="`creationTime`">`creationTime`</span>: The UTC date and time in ISO-8601 format when the Recovery point is created.
+    * <span pulumi-lang-nodejs="`expirationTime`" pulumi-lang-dotnet="`ExpirationTime`" pulumi-lang-go="`expirationTime`" pulumi-lang-python="`expiration_time`" pulumi-lang-yaml="`expirationTime`" pulumi-lang-java="`expirationTime`">`expirationTime`</span>: The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
+    * <span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`">`status`</span>: The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
       * supported values:
           * `COMPLETE`: -  The Recovery point is in a complete state and ready to be consumed.
-    * `recovery_point_type`: Type of the Recovery point.
+    * <span pulumi-lang-nodejs="`recoveryPointType`" pulumi-lang-dotnet="`RecoveryPointType`" pulumi-lang-go="`recoveryPointType`" pulumi-lang-python="`recovery_point_type`" pulumi-lang-yaml="`recoveryPointType`" pulumi-lang-java="`recoveryPointType`">`recoveryPointType`</span>: Type of the Recovery point.
         * supported values:
           * `CRASH_CONSISTENT`: -  capture all the VM and application level details.
           * `APPLICATION_CONSISTENT`: -  stored in the memory and also the in-progress transaction details.
-    * `owner_ext_id`: A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
-    * `location_references`: List of location references where the VM or volume group recovery point are a part of the specified recovery point.
-    * `vm_recovery_points`: List of VM recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
-    * `volume_group_recovery_points`: List of volume group recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
+    * <span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`">`ownerExtId`</span>: A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
+    * <span pulumi-lang-nodejs="`locationReferences`" pulumi-lang-dotnet="`LocationReferences`" pulumi-lang-go="`locationReferences`" pulumi-lang-python="`location_references`" pulumi-lang-yaml="`locationReferences`" pulumi-lang-java="`locationReferences`">`locationReferences`</span>: List of location references where the VM or volume group recovery point are a part of the specified recovery point.
+    * <span pulumi-lang-nodejs="`vmRecoveryPoints`" pulumi-lang-dotnet="`VmRecoveryPoints`" pulumi-lang-go="`vmRecoveryPoints`" pulumi-lang-python="`vm_recovery_points`" pulumi-lang-yaml="`vmRecoveryPoints`" pulumi-lang-java="`vmRecoveryPoints`">`vmRecoveryPoints`</span>: List of VM recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
+    * <span pulumi-lang-nodejs="`volumeGroupRecoveryPoints`" pulumi-lang-dotnet="`VolumeGroupRecoveryPoints`" pulumi-lang-go="`volumeGroupRecoveryPoints`" pulumi-lang-python="`volume_group_recovery_points`" pulumi-lang-yaml="`volumeGroupRecoveryPoints`" pulumi-lang-java="`volumeGroupRecoveryPoints`">`volumeGroupRecoveryPoints`</span>: List of volume group recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
 
     ### Links
     The links attribute supports the following:
 
-    * `href`: - The URL at which the entity described by the link can be accessed.
-    * `rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+    * <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span>: - The URL at which the entity described by the link can be accessed.
+    * <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
 
-    ### location_references
+    ###<span pulumi-lang-nodejs=" locationReferences
+    " pulumi-lang-dotnet=" LocationReferences
+    " pulumi-lang-go=" locationReferences
+    " pulumi-lang-python=" location_references
+    " pulumi-lang-yaml=" locationReferences
+    " pulumi-lang-java=" locationReferences
+    "> locationReferences
+    </span>
+    * <span pulumi-lang-nodejs="`locationExtId`" pulumi-lang-dotnet="`LocationExtId`" pulumi-lang-go="`locationExtId`" pulumi-lang-python="`location_ext_id`" pulumi-lang-yaml="`locationExtId`" pulumi-lang-java="`locationExtId`">`locationExtId`</span>: External identifier of the cluster where the recovery point is present.
 
-    * `location_ext_id`: External identifier of the cluster where the recovery point is present.
-
-    ### vm_recovery_points
-    * `ext_id`: recovery point UUID
-    * `tenant_id`: A globally unique identifier that represents the tenant that owns this entity
-    * `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-    * `consistency_group_ext_id`: External identifier of the Consistency group which the VM was part of at the time of recovery point creation.
-    * `location_agnostic_id`: Location agnostic identifier of the Recovery point.
-    * `name` : The name of the Recovery point.
-    * `creation_time`: The UTC date and time in ISO-8601 format when the Recovery point is created.
-    * `expiration_time`: The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
-    * `status`: The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
+    ###<span pulumi-lang-nodejs=" vmRecoveryPoints
+    " pulumi-lang-dotnet=" VmRecoveryPoints
+    " pulumi-lang-go=" vmRecoveryPoints
+    " pulumi-lang-python=" vm_recovery_points
+    " pulumi-lang-yaml=" vmRecoveryPoints
+    " pulumi-lang-java=" vmRecoveryPoints
+    "> vmRecoveryPoints
+    </span>* <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: recovery point UUID
+    * <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`">`tenantId`</span>: A globally unique identifier that represents the tenant that owns this entity
+    * <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+    * <span pulumi-lang-nodejs="`consistencyGroupExtId`" pulumi-lang-dotnet="`ConsistencyGroupExtId`" pulumi-lang-go="`consistencyGroupExtId`" pulumi-lang-python="`consistency_group_ext_id`" pulumi-lang-yaml="`consistencyGroupExtId`" pulumi-lang-java="`consistencyGroupExtId`">`consistencyGroupExtId`</span>: External identifier of the Consistency group which the VM was part of at the time of recovery point creation.
+    * <span pulumi-lang-nodejs="`locationAgnosticId`" pulumi-lang-dotnet="`LocationAgnosticId`" pulumi-lang-go="`locationAgnosticId`" pulumi-lang-python="`location_agnostic_id`" pulumi-lang-yaml="`locationAgnosticId`" pulumi-lang-java="`locationAgnosticId`">`locationAgnosticId`</span>: Location agnostic identifier of the Recovery point.
+    * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span> : The name of the Recovery point.
+    * <span pulumi-lang-nodejs="`creationTime`" pulumi-lang-dotnet="`CreationTime`" pulumi-lang-go="`creationTime`" pulumi-lang-python="`creation_time`" pulumi-lang-yaml="`creationTime`" pulumi-lang-java="`creationTime`">`creationTime`</span>: The UTC date and time in ISO-8601 format when the Recovery point is created.
+    * <span pulumi-lang-nodejs="`expirationTime`" pulumi-lang-dotnet="`ExpirationTime`" pulumi-lang-go="`expirationTime`" pulumi-lang-python="`expiration_time`" pulumi-lang-yaml="`expirationTime`" pulumi-lang-java="`expirationTime`">`expirationTime`</span>: The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
+    * <span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`">`status`</span>: The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
       * supported values:
         * `COMPLETE`: -  The Recovery point is in a complete state and ready to be consumed.
-    * `recovery_point_type`: Type of the Recovery point.
-    * `disk_recovery_points`: array of disk recovery points.
-    * `vm_ext_id`: VM external identifier which is captured as a part of this recovery point.
-    * `vm_categories`: Category key-value pairs associated with the VM at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' is displayed as 'dept/hr'.
-    * `application_consistent_properties`: User-defined application-consistent properties for the recovery point.
+    * <span pulumi-lang-nodejs="`recoveryPointType`" pulumi-lang-dotnet="`RecoveryPointType`" pulumi-lang-go="`recoveryPointType`" pulumi-lang-python="`recovery_point_type`" pulumi-lang-yaml="`recoveryPointType`" pulumi-lang-java="`recoveryPointType`">`recoveryPointType`</span>: Type of the Recovery point.
+    * <span pulumi-lang-nodejs="`diskRecoveryPoints`" pulumi-lang-dotnet="`DiskRecoveryPoints`" pulumi-lang-go="`diskRecoveryPoints`" pulumi-lang-python="`disk_recovery_points`" pulumi-lang-yaml="`diskRecoveryPoints`" pulumi-lang-java="`diskRecoveryPoints`">`diskRecoveryPoints`</span>: array of disk recovery points.
+    * <span pulumi-lang-nodejs="`vmExtId`" pulumi-lang-dotnet="`VmExtId`" pulumi-lang-go="`vmExtId`" pulumi-lang-python="`vm_ext_id`" pulumi-lang-yaml="`vmExtId`" pulumi-lang-java="`vmExtId`">`vmExtId`</span>: VM external identifier which is captured as a part of this recovery point.
+    * <span pulumi-lang-nodejs="`vmCategories`" pulumi-lang-dotnet="`VmCategories`" pulumi-lang-go="`vmCategories`" pulumi-lang-python="`vm_categories`" pulumi-lang-yaml="`vmCategories`" pulumi-lang-java="`vmCategories`">`vmCategories`</span>: Category key-value pairs associated with the VM at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' is displayed as 'dept/hr'.
+    * <span pulumi-lang-nodejs="`applicationConsistentProperties`" pulumi-lang-dotnet="`ApplicationConsistentProperties`" pulumi-lang-go="`applicationConsistentProperties`" pulumi-lang-python="`application_consistent_properties`" pulumi-lang-yaml="`applicationConsistentProperties`" pulumi-lang-java="`applicationConsistentProperties`">`applicationConsistentProperties`</span>: User-defined application-consistent properties for the recovery point.
 
-    ### volume_group_recovery_points
-    * `ext_id`: recovery point UUID
-    * `tenant_id`: A globally unique identifier that represents the tenant that owns this entity
-    * `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-    * `consistency_group_ext_id`: External identifier of the Consistency group which the entity was part of at the time of recovery point creation.
-    * `location_agnostic_id`: Location agnostic identifier of the recovery point. This identifier is used to identify the same instances of a recovery point across different sites.
-    * `volume_group_ext_id`: Volume Group external identifier which is captured as part of this recovery point.
-    * `volume_group_categories`: Category key-value pairs associated with the volume group at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' will be represented as 'dept/hr'.
-    * `disk_recovery_points`: array of disk recovery points.
+    ###<span pulumi-lang-nodejs=" volumeGroupRecoveryPoints
+    " pulumi-lang-dotnet=" VolumeGroupRecoveryPoints
+    " pulumi-lang-go=" volumeGroupRecoveryPoints
+    " pulumi-lang-python=" volume_group_recovery_points
+    " pulumi-lang-yaml=" volumeGroupRecoveryPoints
+    " pulumi-lang-java=" volumeGroupRecoveryPoints
+    "> volumeGroupRecoveryPoints
+    </span>* <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: recovery point UUID
+    * <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`">`tenantId`</span>: A globally unique identifier that represents the tenant that owns this entity
+    * <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+    * <span pulumi-lang-nodejs="`consistencyGroupExtId`" pulumi-lang-dotnet="`ConsistencyGroupExtId`" pulumi-lang-go="`consistencyGroupExtId`" pulumi-lang-python="`consistency_group_ext_id`" pulumi-lang-yaml="`consistencyGroupExtId`" pulumi-lang-java="`consistencyGroupExtId`">`consistencyGroupExtId`</span>: External identifier of the Consistency group which the entity was part of at the time of recovery point creation.
+    * <span pulumi-lang-nodejs="`locationAgnosticId`" pulumi-lang-dotnet="`LocationAgnosticId`" pulumi-lang-go="`locationAgnosticId`" pulumi-lang-python="`location_agnostic_id`" pulumi-lang-yaml="`locationAgnosticId`" pulumi-lang-java="`locationAgnosticId`">`locationAgnosticId`</span>: Location agnostic identifier of the recovery point. This identifier is used to identify the same instances of a recovery point across different sites.
+    * <span pulumi-lang-nodejs="`volumeGroupExtId`" pulumi-lang-dotnet="`VolumeGroupExtId`" pulumi-lang-go="`volumeGroupExtId`" pulumi-lang-python="`volume_group_ext_id`" pulumi-lang-yaml="`volumeGroupExtId`" pulumi-lang-java="`volumeGroupExtId`">`volumeGroupExtId`</span>: Volume Group external identifier which is captured as part of this recovery point.
+    * <span pulumi-lang-nodejs="`volumeGroupCategories`" pulumi-lang-dotnet="`VolumeGroupCategories`" pulumi-lang-go="`volumeGroupCategories`" pulumi-lang-python="`volume_group_categories`" pulumi-lang-yaml="`volumeGroupCategories`" pulumi-lang-java="`volumeGroupCategories`">`volumeGroupCategories`</span>: Category key-value pairs associated with the volume group at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' will be represented as 'dept/hr'.
+    * <span pulumi-lang-nodejs="`diskRecoveryPoints`" pulumi-lang-dotnet="`DiskRecoveryPoints`" pulumi-lang-go="`diskRecoveryPoints`" pulumi-lang-python="`disk_recovery_points`" pulumi-lang-yaml="`diskRecoveryPoints`" pulumi-lang-java="`diskRecoveryPoints`">`diskRecoveryPoints`</span>: array of disk recovery points.
 
-    ### disk_recovery_points
-    * `disk_recovery_point_ext_id`: External identifier of the disk recovery point.
-    * `disk_ext_id`: External identifier of the disk.
+    ###<span pulumi-lang-nodejs=" diskRecoveryPoints
+    " pulumi-lang-dotnet=" DiskRecoveryPoints
+    " pulumi-lang-go=" diskRecoveryPoints
+    " pulumi-lang-python=" disk_recovery_points
+    " pulumi-lang-yaml=" diskRecoveryPoints
+    " pulumi-lang-java=" diskRecoveryPoints
+    "> diskRecoveryPoints
+    </span>* <span pulumi-lang-nodejs="`diskRecoveryPointExtId`" pulumi-lang-dotnet="`DiskRecoveryPointExtId`" pulumi-lang-go="`diskRecoveryPointExtId`" pulumi-lang-python="`disk_recovery_point_ext_id`" pulumi-lang-yaml="`diskRecoveryPointExtId`" pulumi-lang-java="`diskRecoveryPointExtId`">`diskRecoveryPointExtId`</span>: External identifier of the disk recovery point.
+    * <span pulumi-lang-nodejs="`diskExtId`" pulumi-lang-dotnet="`DiskExtId`" pulumi-lang-go="`diskExtId`" pulumi-lang-python="`disk_ext_id`" pulumi-lang-yaml="`diskExtId`" pulumi-lang-java="`diskExtId`">`diskExtId`</span>: External identifier of the disk.
 
-    ### application_consistent_properties
-    * `backup_type`: The backup type specifies the criteria for identifying the files to be backed up. This property should be specified to the application-consistent recovery points for Windows VMs/agents. The following backup types are supported for the application-consistent recovery points:
+    ###<span pulumi-lang-nodejs=" applicationConsistentProperties
+    " pulumi-lang-dotnet=" ApplicationConsistentProperties
+    " pulumi-lang-go=" applicationConsistentProperties
+    " pulumi-lang-python=" application_consistent_properties
+    " pulumi-lang-yaml=" applicationConsistentProperties
+    " pulumi-lang-java=" applicationConsistentProperties
+    "> applicationConsistentProperties
+    </span>* <span pulumi-lang-nodejs="`backupType`" pulumi-lang-dotnet="`BackupType`" pulumi-lang-go="`backupType`" pulumi-lang-python="`backup_type`" pulumi-lang-yaml="`backupType`" pulumi-lang-java="`backupType`">`backupType`</span>: The backup type specifies the criteria for identifying the files to be backed up. This property should be specified to the application-consistent recovery points for Windows VMs/agents. The following backup types are supported for the application-consistent recovery points:
       * supported values:
         * `FULL_BACKUP`: -  All the files are backed up irrespective of their last backup date/time or state. Also, this backup type updates the backup history of each file that participated in the recovery point. If not explicitly specified, this is the default backup type.
         * `COPY_BACKUP`: -  this backup type does not update the backup history of individual files involved in the recovery point.
-    * `should_include_writers`: Indicates whether the given set of VSS writers' UUIDs should be included or excluded from the application consistent recovery point. By default, the value is set to false, indicating that all listed VSS writers' UUIDs will be excluded.
-    * `writers`: List of VSS writer UUIDs that are used in an application consistent recovery point. The default values are the system and the registry writer UUIDs.
-    * `should_store_vss_metadata`: Indicates whether to store the VSS metadata if the user is interested in application-specific backup/restore. The VSS metadata consists of VSS writers and requester metadata details. These are compressed into a cabinet file(.cab file) during a VSS backup operation. This cabinet file must be saved to the backup media during a backup operation, as it is required during the restore operation.
-    * `object_type`: value: `dataprotection.v4.common.VssProperties`
+    * <span pulumi-lang-nodejs="`shouldIncludeWriters`" pulumi-lang-dotnet="`ShouldIncludeWriters`" pulumi-lang-go="`shouldIncludeWriters`" pulumi-lang-python="`should_include_writers`" pulumi-lang-yaml="`shouldIncludeWriters`" pulumi-lang-java="`shouldIncludeWriters`">`shouldIncludeWriters`</span>: Indicates whether the given set of VSS writers' UUIDs should be included or excluded from the application consistent recovery point. By default, the value is set to false, indicating that all listed VSS writers' UUIDs will be excluded.
+    * <span pulumi-lang-nodejs="`writers`" pulumi-lang-dotnet="`Writers`" pulumi-lang-go="`writers`" pulumi-lang-python="`writers`" pulumi-lang-yaml="`writers`" pulumi-lang-java="`writers`">`writers`</span>: List of VSS writer UUIDs that are used in an application consistent recovery point. The default values are the system and the registry writer UUIDs.
+    * <span pulumi-lang-nodejs="`shouldStoreVssMetadata`" pulumi-lang-dotnet="`ShouldStoreVssMetadata`" pulumi-lang-go="`shouldStoreVssMetadata`" pulumi-lang-python="`should_store_vss_metadata`" pulumi-lang-yaml="`shouldStoreVssMetadata`" pulumi-lang-java="`shouldStoreVssMetadata`">`shouldStoreVssMetadata`</span>: Indicates whether to store the VSS metadata if the user is interested in application-specific backup/restore. The VSS metadata consists of VSS writers and requester metadata details. These are compressed into a cabinet file(.cab file) during a VSS backup operation. This cabinet file must be saved to the backup media during a backup operation, as it is required during the restore operation.
+    * <span pulumi-lang-nodejs="`objectType`" pulumi-lang-dotnet="`ObjectType`" pulumi-lang-go="`objectType`" pulumi-lang-python="`object_type`" pulumi-lang-yaml="`objectType`" pulumi-lang-java="`objectType`">`objectType`</span>: value: `dataprotection.v4.common.VssProperties`
 
     See detailed information in [Nutanix List Recovery Points V4](http://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/RecoveryPoints/operation/listRecoveryPoints).
 
@@ -266,19 +298,20 @@ def get_recovery_points_v2(apply: Optional[_builtins.str] = None,
         page=pulumi.get(__ret__, 'page'),
         recovery_points=pulumi.get(__ret__, 'recovery_points'),
         select=pulumi.get(__ret__, 'select'))
-def get_recovery_points_v2_output(apply: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                  order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                  select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_recovery_points_v2_output(apply: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                  order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                  select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecoveryPointsV2Result]:
     """
     List all the service Groups.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -286,81 +319,112 @@ def get_recovery_points_v2_output(apply: Optional[pulumi.Input[Optional[_builtin
     recovery_points = nutanix.get_recovery_points_v2()
     filtered_recovery_points = nutanix.get_recovery_points_v2(filter="name eq 'recovery_point_001'")
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Recovery Points
 
-    The `recovery_points` attribute contains list of recovery points. Each recovery point contains the following attributes:
+    The <span pulumi-lang-nodejs="`recoveryPoints`" pulumi-lang-dotnet="`RecoveryPoints`" pulumi-lang-go="`recoveryPoints`" pulumi-lang-python="`recovery_points`" pulumi-lang-yaml="`recoveryPoints`" pulumi-lang-java="`recoveryPoints`">`recoveryPoints`</span> attribute contains list of recovery points. Each recovery point contains the following attributes:
 
-    * `ext_id`: recovery point UUID
-    * `tenant_id`: A globally unique identifier that represents the tenant that owns this entity
-    * `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-    * `location_agnostic_id`: Location agnostic identifier of the Recovery point.
-    * `name`: The name of the Recovery point.
-    * `creation_time`: The UTC date and time in ISO-8601 format when the Recovery point is created.
-    * `expiration_time`: The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
-    * `status`: The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: recovery point UUID
+    * <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`">`tenantId`</span>: A globally unique identifier that represents the tenant that owns this entity
+    * <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+    * <span pulumi-lang-nodejs="`locationAgnosticId`" pulumi-lang-dotnet="`LocationAgnosticId`" pulumi-lang-go="`locationAgnosticId`" pulumi-lang-python="`location_agnostic_id`" pulumi-lang-yaml="`locationAgnosticId`" pulumi-lang-java="`locationAgnosticId`">`locationAgnosticId`</span>: Location agnostic identifier of the Recovery point.
+    * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: The name of the Recovery point.
+    * <span pulumi-lang-nodejs="`creationTime`" pulumi-lang-dotnet="`CreationTime`" pulumi-lang-go="`creationTime`" pulumi-lang-python="`creation_time`" pulumi-lang-yaml="`creationTime`" pulumi-lang-java="`creationTime`">`creationTime`</span>: The UTC date and time in ISO-8601 format when the Recovery point is created.
+    * <span pulumi-lang-nodejs="`expirationTime`" pulumi-lang-dotnet="`ExpirationTime`" pulumi-lang-go="`expirationTime`" pulumi-lang-python="`expiration_time`" pulumi-lang-yaml="`expirationTime`" pulumi-lang-java="`expirationTime`">`expirationTime`</span>: The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
+    * <span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`">`status`</span>: The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
       * supported values:
           * `COMPLETE`: -  The Recovery point is in a complete state and ready to be consumed.
-    * `recovery_point_type`: Type of the Recovery point.
+    * <span pulumi-lang-nodejs="`recoveryPointType`" pulumi-lang-dotnet="`RecoveryPointType`" pulumi-lang-go="`recoveryPointType`" pulumi-lang-python="`recovery_point_type`" pulumi-lang-yaml="`recoveryPointType`" pulumi-lang-java="`recoveryPointType`">`recoveryPointType`</span>: Type of the Recovery point.
         * supported values:
           * `CRASH_CONSISTENT`: -  capture all the VM and application level details.
           * `APPLICATION_CONSISTENT`: -  stored in the memory and also the in-progress transaction details.
-    * `owner_ext_id`: A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
-    * `location_references`: List of location references where the VM or volume group recovery point are a part of the specified recovery point.
-    * `vm_recovery_points`: List of VM recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
-    * `volume_group_recovery_points`: List of volume group recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
+    * <span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`">`ownerExtId`</span>: A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
+    * <span pulumi-lang-nodejs="`locationReferences`" pulumi-lang-dotnet="`LocationReferences`" pulumi-lang-go="`locationReferences`" pulumi-lang-python="`location_references`" pulumi-lang-yaml="`locationReferences`" pulumi-lang-java="`locationReferences`">`locationReferences`</span>: List of location references where the VM or volume group recovery point are a part of the specified recovery point.
+    * <span pulumi-lang-nodejs="`vmRecoveryPoints`" pulumi-lang-dotnet="`VmRecoveryPoints`" pulumi-lang-go="`vmRecoveryPoints`" pulumi-lang-python="`vm_recovery_points`" pulumi-lang-yaml="`vmRecoveryPoints`" pulumi-lang-java="`vmRecoveryPoints`">`vmRecoveryPoints`</span>: List of VM recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
+    * <span pulumi-lang-nodejs="`volumeGroupRecoveryPoints`" pulumi-lang-dotnet="`VolumeGroupRecoveryPoints`" pulumi-lang-go="`volumeGroupRecoveryPoints`" pulumi-lang-python="`volume_group_recovery_points`" pulumi-lang-yaml="`volumeGroupRecoveryPoints`" pulumi-lang-java="`volumeGroupRecoveryPoints`">`volumeGroupRecoveryPoints`</span>: List of volume group recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
 
     ### Links
     The links attribute supports the following:
 
-    * `href`: - The URL at which the entity described by the link can be accessed.
-    * `rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+    * <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span>: - The URL at which the entity described by the link can be accessed.
+    * <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
 
-    ### location_references
+    ###<span pulumi-lang-nodejs=" locationReferences
+    " pulumi-lang-dotnet=" LocationReferences
+    " pulumi-lang-go=" locationReferences
+    " pulumi-lang-python=" location_references
+    " pulumi-lang-yaml=" locationReferences
+    " pulumi-lang-java=" locationReferences
+    "> locationReferences
+    </span>
+    * <span pulumi-lang-nodejs="`locationExtId`" pulumi-lang-dotnet="`LocationExtId`" pulumi-lang-go="`locationExtId`" pulumi-lang-python="`location_ext_id`" pulumi-lang-yaml="`locationExtId`" pulumi-lang-java="`locationExtId`">`locationExtId`</span>: External identifier of the cluster where the recovery point is present.
 
-    * `location_ext_id`: External identifier of the cluster where the recovery point is present.
-
-    ### vm_recovery_points
-    * `ext_id`: recovery point UUID
-    * `tenant_id`: A globally unique identifier that represents the tenant that owns this entity
-    * `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-    * `consistency_group_ext_id`: External identifier of the Consistency group which the VM was part of at the time of recovery point creation.
-    * `location_agnostic_id`: Location agnostic identifier of the Recovery point.
-    * `name` : The name of the Recovery point.
-    * `creation_time`: The UTC date and time in ISO-8601 format when the Recovery point is created.
-    * `expiration_time`: The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
-    * `status`: The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
+    ###<span pulumi-lang-nodejs=" vmRecoveryPoints
+    " pulumi-lang-dotnet=" VmRecoveryPoints
+    " pulumi-lang-go=" vmRecoveryPoints
+    " pulumi-lang-python=" vm_recovery_points
+    " pulumi-lang-yaml=" vmRecoveryPoints
+    " pulumi-lang-java=" vmRecoveryPoints
+    "> vmRecoveryPoints
+    </span>* <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: recovery point UUID
+    * <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`">`tenantId`</span>: A globally unique identifier that represents the tenant that owns this entity
+    * <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+    * <span pulumi-lang-nodejs="`consistencyGroupExtId`" pulumi-lang-dotnet="`ConsistencyGroupExtId`" pulumi-lang-go="`consistencyGroupExtId`" pulumi-lang-python="`consistency_group_ext_id`" pulumi-lang-yaml="`consistencyGroupExtId`" pulumi-lang-java="`consistencyGroupExtId`">`consistencyGroupExtId`</span>: External identifier of the Consistency group which the VM was part of at the time of recovery point creation.
+    * <span pulumi-lang-nodejs="`locationAgnosticId`" pulumi-lang-dotnet="`LocationAgnosticId`" pulumi-lang-go="`locationAgnosticId`" pulumi-lang-python="`location_agnostic_id`" pulumi-lang-yaml="`locationAgnosticId`" pulumi-lang-java="`locationAgnosticId`">`locationAgnosticId`</span>: Location agnostic identifier of the Recovery point.
+    * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span> : The name of the Recovery point.
+    * <span pulumi-lang-nodejs="`creationTime`" pulumi-lang-dotnet="`CreationTime`" pulumi-lang-go="`creationTime`" pulumi-lang-python="`creation_time`" pulumi-lang-yaml="`creationTime`" pulumi-lang-java="`creationTime`">`creationTime`</span>: The UTC date and time in ISO-8601 format when the Recovery point is created.
+    * <span pulumi-lang-nodejs="`expirationTime`" pulumi-lang-dotnet="`ExpirationTime`" pulumi-lang-go="`expirationTime`" pulumi-lang-python="`expiration_time`" pulumi-lang-yaml="`expirationTime`" pulumi-lang-java="`expirationTime`">`expirationTime`</span>: The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
+    * <span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`">`status`</span>: The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
       * supported values:
         * `COMPLETE`: -  The Recovery point is in a complete state and ready to be consumed.
-    * `recovery_point_type`: Type of the Recovery point.
-    * `disk_recovery_points`: array of disk recovery points.
-    * `vm_ext_id`: VM external identifier which is captured as a part of this recovery point.
-    * `vm_categories`: Category key-value pairs associated with the VM at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' is displayed as 'dept/hr'.
-    * `application_consistent_properties`: User-defined application-consistent properties for the recovery point.
+    * <span pulumi-lang-nodejs="`recoveryPointType`" pulumi-lang-dotnet="`RecoveryPointType`" pulumi-lang-go="`recoveryPointType`" pulumi-lang-python="`recovery_point_type`" pulumi-lang-yaml="`recoveryPointType`" pulumi-lang-java="`recoveryPointType`">`recoveryPointType`</span>: Type of the Recovery point.
+    * <span pulumi-lang-nodejs="`diskRecoveryPoints`" pulumi-lang-dotnet="`DiskRecoveryPoints`" pulumi-lang-go="`diskRecoveryPoints`" pulumi-lang-python="`disk_recovery_points`" pulumi-lang-yaml="`diskRecoveryPoints`" pulumi-lang-java="`diskRecoveryPoints`">`diskRecoveryPoints`</span>: array of disk recovery points.
+    * <span pulumi-lang-nodejs="`vmExtId`" pulumi-lang-dotnet="`VmExtId`" pulumi-lang-go="`vmExtId`" pulumi-lang-python="`vm_ext_id`" pulumi-lang-yaml="`vmExtId`" pulumi-lang-java="`vmExtId`">`vmExtId`</span>: VM external identifier which is captured as a part of this recovery point.
+    * <span pulumi-lang-nodejs="`vmCategories`" pulumi-lang-dotnet="`VmCategories`" pulumi-lang-go="`vmCategories`" pulumi-lang-python="`vm_categories`" pulumi-lang-yaml="`vmCategories`" pulumi-lang-java="`vmCategories`">`vmCategories`</span>: Category key-value pairs associated with the VM at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' is displayed as 'dept/hr'.
+    * <span pulumi-lang-nodejs="`applicationConsistentProperties`" pulumi-lang-dotnet="`ApplicationConsistentProperties`" pulumi-lang-go="`applicationConsistentProperties`" pulumi-lang-python="`application_consistent_properties`" pulumi-lang-yaml="`applicationConsistentProperties`" pulumi-lang-java="`applicationConsistentProperties`">`applicationConsistentProperties`</span>: User-defined application-consistent properties for the recovery point.
 
-    ### volume_group_recovery_points
-    * `ext_id`: recovery point UUID
-    * `tenant_id`: A globally unique identifier that represents the tenant that owns this entity
-    * `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-    * `consistency_group_ext_id`: External identifier of the Consistency group which the entity was part of at the time of recovery point creation.
-    * `location_agnostic_id`: Location agnostic identifier of the recovery point. This identifier is used to identify the same instances of a recovery point across different sites.
-    * `volume_group_ext_id`: Volume Group external identifier which is captured as part of this recovery point.
-    * `volume_group_categories`: Category key-value pairs associated with the volume group at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' will be represented as 'dept/hr'.
-    * `disk_recovery_points`: array of disk recovery points.
+    ###<span pulumi-lang-nodejs=" volumeGroupRecoveryPoints
+    " pulumi-lang-dotnet=" VolumeGroupRecoveryPoints
+    " pulumi-lang-go=" volumeGroupRecoveryPoints
+    " pulumi-lang-python=" volume_group_recovery_points
+    " pulumi-lang-yaml=" volumeGroupRecoveryPoints
+    " pulumi-lang-java=" volumeGroupRecoveryPoints
+    "> volumeGroupRecoveryPoints
+    </span>* <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: recovery point UUID
+    * <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`">`tenantId`</span>: A globally unique identifier that represents the tenant that owns this entity
+    * <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+    * <span pulumi-lang-nodejs="`consistencyGroupExtId`" pulumi-lang-dotnet="`ConsistencyGroupExtId`" pulumi-lang-go="`consistencyGroupExtId`" pulumi-lang-python="`consistency_group_ext_id`" pulumi-lang-yaml="`consistencyGroupExtId`" pulumi-lang-java="`consistencyGroupExtId`">`consistencyGroupExtId`</span>: External identifier of the Consistency group which the entity was part of at the time of recovery point creation.
+    * <span pulumi-lang-nodejs="`locationAgnosticId`" pulumi-lang-dotnet="`LocationAgnosticId`" pulumi-lang-go="`locationAgnosticId`" pulumi-lang-python="`location_agnostic_id`" pulumi-lang-yaml="`locationAgnosticId`" pulumi-lang-java="`locationAgnosticId`">`locationAgnosticId`</span>: Location agnostic identifier of the recovery point. This identifier is used to identify the same instances of a recovery point across different sites.
+    * <span pulumi-lang-nodejs="`volumeGroupExtId`" pulumi-lang-dotnet="`VolumeGroupExtId`" pulumi-lang-go="`volumeGroupExtId`" pulumi-lang-python="`volume_group_ext_id`" pulumi-lang-yaml="`volumeGroupExtId`" pulumi-lang-java="`volumeGroupExtId`">`volumeGroupExtId`</span>: Volume Group external identifier which is captured as part of this recovery point.
+    * <span pulumi-lang-nodejs="`volumeGroupCategories`" pulumi-lang-dotnet="`VolumeGroupCategories`" pulumi-lang-go="`volumeGroupCategories`" pulumi-lang-python="`volume_group_categories`" pulumi-lang-yaml="`volumeGroupCategories`" pulumi-lang-java="`volumeGroupCategories`">`volumeGroupCategories`</span>: Category key-value pairs associated with the volume group at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' will be represented as 'dept/hr'.
+    * <span pulumi-lang-nodejs="`diskRecoveryPoints`" pulumi-lang-dotnet="`DiskRecoveryPoints`" pulumi-lang-go="`diskRecoveryPoints`" pulumi-lang-python="`disk_recovery_points`" pulumi-lang-yaml="`diskRecoveryPoints`" pulumi-lang-java="`diskRecoveryPoints`">`diskRecoveryPoints`</span>: array of disk recovery points.
 
-    ### disk_recovery_points
-    * `disk_recovery_point_ext_id`: External identifier of the disk recovery point.
-    * `disk_ext_id`: External identifier of the disk.
+    ###<span pulumi-lang-nodejs=" diskRecoveryPoints
+    " pulumi-lang-dotnet=" DiskRecoveryPoints
+    " pulumi-lang-go=" diskRecoveryPoints
+    " pulumi-lang-python=" disk_recovery_points
+    " pulumi-lang-yaml=" diskRecoveryPoints
+    " pulumi-lang-java=" diskRecoveryPoints
+    "> diskRecoveryPoints
+    </span>* <span pulumi-lang-nodejs="`diskRecoveryPointExtId`" pulumi-lang-dotnet="`DiskRecoveryPointExtId`" pulumi-lang-go="`diskRecoveryPointExtId`" pulumi-lang-python="`disk_recovery_point_ext_id`" pulumi-lang-yaml="`diskRecoveryPointExtId`" pulumi-lang-java="`diskRecoveryPointExtId`">`diskRecoveryPointExtId`</span>: External identifier of the disk recovery point.
+    * <span pulumi-lang-nodejs="`diskExtId`" pulumi-lang-dotnet="`DiskExtId`" pulumi-lang-go="`diskExtId`" pulumi-lang-python="`disk_ext_id`" pulumi-lang-yaml="`diskExtId`" pulumi-lang-java="`diskExtId`">`diskExtId`</span>: External identifier of the disk.
 
-    ### application_consistent_properties
-    * `backup_type`: The backup type specifies the criteria for identifying the files to be backed up. This property should be specified to the application-consistent recovery points for Windows VMs/agents. The following backup types are supported for the application-consistent recovery points:
+    ###<span pulumi-lang-nodejs=" applicationConsistentProperties
+    " pulumi-lang-dotnet=" ApplicationConsistentProperties
+    " pulumi-lang-go=" applicationConsistentProperties
+    " pulumi-lang-python=" application_consistent_properties
+    " pulumi-lang-yaml=" applicationConsistentProperties
+    " pulumi-lang-java=" applicationConsistentProperties
+    "> applicationConsistentProperties
+    </span>* <span pulumi-lang-nodejs="`backupType`" pulumi-lang-dotnet="`BackupType`" pulumi-lang-go="`backupType`" pulumi-lang-python="`backup_type`" pulumi-lang-yaml="`backupType`" pulumi-lang-java="`backupType`">`backupType`</span>: The backup type specifies the criteria for identifying the files to be backed up. This property should be specified to the application-consistent recovery points for Windows VMs/agents. The following backup types are supported for the application-consistent recovery points:
       * supported values:
         * `FULL_BACKUP`: -  All the files are backed up irrespective of their last backup date/time or state. Also, this backup type updates the backup history of each file that participated in the recovery point. If not explicitly specified, this is the default backup type.
         * `COPY_BACKUP`: -  this backup type does not update the backup history of individual files involved in the recovery point.
-    * `should_include_writers`: Indicates whether the given set of VSS writers' UUIDs should be included or excluded from the application consistent recovery point. By default, the value is set to false, indicating that all listed VSS writers' UUIDs will be excluded.
-    * `writers`: List of VSS writer UUIDs that are used in an application consistent recovery point. The default values are the system and the registry writer UUIDs.
-    * `should_store_vss_metadata`: Indicates whether to store the VSS metadata if the user is interested in application-specific backup/restore. The VSS metadata consists of VSS writers and requester metadata details. These are compressed into a cabinet file(.cab file) during a VSS backup operation. This cabinet file must be saved to the backup media during a backup operation, as it is required during the restore operation.
-    * `object_type`: value: `dataprotection.v4.common.VssProperties`
+    * <span pulumi-lang-nodejs="`shouldIncludeWriters`" pulumi-lang-dotnet="`ShouldIncludeWriters`" pulumi-lang-go="`shouldIncludeWriters`" pulumi-lang-python="`should_include_writers`" pulumi-lang-yaml="`shouldIncludeWriters`" pulumi-lang-java="`shouldIncludeWriters`">`shouldIncludeWriters`</span>: Indicates whether the given set of VSS writers' UUIDs should be included or excluded from the application consistent recovery point. By default, the value is set to false, indicating that all listed VSS writers' UUIDs will be excluded.
+    * <span pulumi-lang-nodejs="`writers`" pulumi-lang-dotnet="`Writers`" pulumi-lang-go="`writers`" pulumi-lang-python="`writers`" pulumi-lang-yaml="`writers`" pulumi-lang-java="`writers`">`writers`</span>: List of VSS writer UUIDs that are used in an application consistent recovery point. The default values are the system and the registry writer UUIDs.
+    * <span pulumi-lang-nodejs="`shouldStoreVssMetadata`" pulumi-lang-dotnet="`ShouldStoreVssMetadata`" pulumi-lang-go="`shouldStoreVssMetadata`" pulumi-lang-python="`should_store_vss_metadata`" pulumi-lang-yaml="`shouldStoreVssMetadata`" pulumi-lang-java="`shouldStoreVssMetadata`">`shouldStoreVssMetadata`</span>: Indicates whether to store the VSS metadata if the user is interested in application-specific backup/restore. The VSS metadata consists of VSS writers and requester metadata details. These are compressed into a cabinet file(.cab file) during a VSS backup operation. This cabinet file must be saved to the backup media during a backup operation, as it is required during the restore operation.
+    * <span pulumi-lang-nodejs="`objectType`" pulumi-lang-dotnet="`ObjectType`" pulumi-lang-go="`objectType`" pulumi-lang-python="`object_type`" pulumi-lang-yaml="`objectType`" pulumi-lang-java="`objectType`">`objectType`</span>: value: `dataprotection.v4.common.VssProperties`
 
     See detailed information in [Nutanix List Recovery Points V4](http://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/RecoveryPoints/operation/listRecoveryPoints).
 

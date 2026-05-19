@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -24,6 +25,7 @@ import * as utilities from "./utilities";
  *     installerType: "esx",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## lifecycle
  *
@@ -133,27 +135,27 @@ export interface FoundationImageState {
     /**
      * - (Required) Name of installer file to be kept in foundation vm.
      */
-    filename?: pulumi.Input<string>;
+    filename?: pulumi.Input<string | undefined>;
     /**
      * - If hypervisor ISO is in whitelist.
      */
-    inWhitelist?: pulumi.Input<boolean>;
+    inWhitelist?: pulumi.Input<boolean | undefined>;
     /**
      * - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
      */
-    installerType?: pulumi.Input<string>;
+    installerType?: pulumi.Input<string | undefined>;
     /**
      * - md5sum of the ISO.
      */
-    md5sum?: pulumi.Input<string>;
+    md5sum?: pulumi.Input<string | undefined>;
     /**
      * - file location in foundation vm
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * - (Required) Complete path to the file in machine where the .tf  files runs.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
 }
 
 /**

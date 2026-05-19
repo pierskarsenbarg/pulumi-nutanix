@@ -86,7 +86,7 @@ def get_ndb_snapshots(filters: Optional[Sequence[Union['GetNdbSnapshotsFilterArg
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         snapshots=pulumi.get(__ret__, 'snapshots'))
-def get_ndb_snapshots_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbSnapshotsFilterArgs', 'GetNdbSnapshotsFilterArgsDict']]]]] = None,
+def get_ndb_snapshots_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbSnapshotsFilterArgs', 'GetNdbSnapshotsFilterArgsDict']]]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbSnapshotsResult]:
     """
     List all snapshots present in Nutanix Database Service

@@ -94,6 +94,7 @@ def get_users(metadatas: Optional[Sequence[Union['GetUsersMetadataArgs', 'GetUse
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -106,6 +107,7 @@ def get_users(metadatas: Optional[Sequence[Union['GetUsersMetadataArgs', 'GetUse
     })
     users = nutanix.get_user()
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetUsersMetadataArgs', 'GetUsersMetadataArgsDict']] metadatas: - The user kind metadata.
@@ -120,13 +122,14 @@ def get_users(metadatas: Optional[Sequence[Union['GetUsersMetadataArgs', 'GetUse
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-def get_users_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetUsersMetadataArgs', 'GetUsersMetadataArgsDict']]]]] = None,
+def get_users_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetUsersMetadataArgs', 'GetUsersMetadataArgsDict']]]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUsersResult]:
     """
     Provides a datasource to retrieve all the users.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -139,6 +142,7 @@ def get_users_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['G
     })
     users = nutanix.get_user()
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetUsersMetadataArgs', 'GetUsersMetadataArgsDict']] metadatas: - The user kind metadata.

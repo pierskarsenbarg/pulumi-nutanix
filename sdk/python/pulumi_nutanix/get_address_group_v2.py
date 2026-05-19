@@ -164,12 +164,14 @@ def get_address_group_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     get_addr_group = nutanix.get_address_group_v2(ext_id="0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: Address group UUID.
@@ -192,20 +194,22 @@ def get_address_group_v2(ext_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         policy_references=pulumi.get(__ret__, 'policy_references'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_address_group_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                ipv4_addresses: Optional[pulumi.Input[Optional[Sequence[Union['GetAddressGroupV2Ipv4AddressArgs', 'GetAddressGroupV2Ipv4AddressArgsDict']]]]] = None,
+def get_address_group_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                ipv4_addresses: pulumi.Input[Optional[Optional[Sequence[Union['GetAddressGroupV2Ipv4AddressArgs', 'GetAddressGroupV2Ipv4AddressArgsDict']]]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAddressGroupV2Result]:
     """
     Get an Address Group by ExtID
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     get_addr_group = nutanix.get_address_group_v2(ext_id="0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: Address group UUID.

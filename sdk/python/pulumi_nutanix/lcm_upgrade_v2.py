@@ -21,12 +21,12 @@ __all__ = ['LcmUpgradeV2Args', 'LcmUpgradeV2']
 @pulumi.input_type
 class LcmUpgradeV2Args:
     def __init__(__self__, *,
-                 auto_handle_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 entity_update_specs: Optional[pulumi.Input[Sequence[pulumi.Input['LcmUpgradeV2EntityUpdateSpecArgs']]]] = None,
-                 management_server: Optional[pulumi.Input['LcmUpgradeV2ManagementServerArgs']] = None,
-                 max_wait_time_in_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 skipped_precheck_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 auto_handle_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input['LcmUpgradeV2EntityUpdateSpecArgs']]]] = None,
+                 management_server: pulumi.Input[Optional['LcmUpgradeV2ManagementServerArgs']] = None,
+                 max_wait_time_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a LcmUpgradeV2 resource.
 
@@ -52,86 +52,86 @@ class LcmUpgradeV2Args:
 
     @_builtins.property
     @pulumi.getter(name="autoHandleFlags")
-    def auto_handle_flags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def auto_handle_flags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of automated system operations to perform, to avoid precheck failure and let the system restore state after an update is complete. The allowed flag is: - 'powerOffUvms': This allows the system to automatically power off user VMs which cannot be migrated to other hosts and power them on when the update is done. This option can avoid pinned VM precheck failure on the host which needs to enter maintenance mode during the update and allow the update to go through. Items Enum: `POWER_OFF_UVMS`
         """
         return pulumi.get(self, "auto_handle_flags")
 
     @auto_handle_flags.setter
-    def auto_handle_flags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def auto_handle_flags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "auto_handle_flags", value)
 
     @_builtins.property
     @pulumi.getter(name="entityUpdateSpecs")
-    def entity_update_specs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LcmUpgradeV2EntityUpdateSpecArgs']]]]:
+    def entity_update_specs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LcmUpgradeV2EntityUpdateSpecArgs']]]]:
         """
         List of entity update objects for getting recommendations.
         """
         return pulumi.get(self, "entity_update_specs")
 
     @entity_update_specs.setter
-    def entity_update_specs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LcmUpgradeV2EntityUpdateSpecArgs']]]]):
+    def entity_update_specs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LcmUpgradeV2EntityUpdateSpecArgs']]]]):
         pulumi.set(self, "entity_update_specs", value)
 
     @_builtins.property
     @pulumi.getter(name="managementServer")
-    def management_server(self) -> Optional[pulumi.Input['LcmUpgradeV2ManagementServerArgs']]:
+    def management_server(self) -> pulumi.Input[Optional['LcmUpgradeV2ManagementServerArgs']]:
         """
         Cluster management server configuration used while updating clusters with ESX or Hyper-V.
         """
         return pulumi.get(self, "management_server")
 
     @management_server.setter
-    def management_server(self, value: Optional[pulumi.Input['LcmUpgradeV2ManagementServerArgs']]):
+    def management_server(self, value: pulumi.Input[Optional['LcmUpgradeV2ManagementServerArgs']]):
         pulumi.set(self, "management_server", value)
 
     @_builtins.property
     @pulumi.getter(name="maxWaitTimeInSecs")
-    def max_wait_time_in_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_wait_time_in_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of seconds LCM waits for the VMs to come up after exiting host maintenance mode. Value in Range [ 60 .. 86400]
         """
         return pulumi.get(self, "max_wait_time_in_secs")
 
     @max_wait_time_in_secs.setter
-    def max_wait_time_in_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_wait_time_in_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_wait_time_in_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="skippedPrecheckFlags")
-    def skipped_precheck_flags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def skipped_precheck_flags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of prechecks to skip. The allowed value is 'powerOffUvms' that skips the pinned VM prechecks. Items Enum: `POWER_OFF_UVMS`
         """
         return pulumi.get(self, "skipped_precheck_flags")
 
     @skipped_precheck_flags.setter
-    def skipped_precheck_flags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def skipped_precheck_flags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "skipped_precheck_flags", value)
 
     @_builtins.property
     @pulumi.getter(name="xClusterId")
-    def x_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def x_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cluster uuid on which the resource is present or operation is being performed.
         """
         return pulumi.get(self, "x_cluster_id")
 
     @x_cluster_id.setter
-    def x_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def x_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "x_cluster_id", value)
 
 
 @pulumi.input_type
 class _LcmUpgradeV2State:
     def __init__(__self__, *,
-                 auto_handle_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 entity_update_specs: Optional[pulumi.Input[Sequence[pulumi.Input['LcmUpgradeV2EntityUpdateSpecArgs']]]] = None,
-                 management_server: Optional[pulumi.Input['LcmUpgradeV2ManagementServerArgs']] = None,
-                 max_wait_time_in_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 skipped_precheck_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 auto_handle_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input['LcmUpgradeV2EntityUpdateSpecArgs']]]] = None,
+                 management_server: pulumi.Input[Optional['LcmUpgradeV2ManagementServerArgs']] = None,
+                 max_wait_time_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LcmUpgradeV2 resources.
 
@@ -157,74 +157,74 @@ class _LcmUpgradeV2State:
 
     @_builtins.property
     @pulumi.getter(name="autoHandleFlags")
-    def auto_handle_flags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def auto_handle_flags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of automated system operations to perform, to avoid precheck failure and let the system restore state after an update is complete. The allowed flag is: - 'powerOffUvms': This allows the system to automatically power off user VMs which cannot be migrated to other hosts and power them on when the update is done. This option can avoid pinned VM precheck failure on the host which needs to enter maintenance mode during the update and allow the update to go through. Items Enum: `POWER_OFF_UVMS`
         """
         return pulumi.get(self, "auto_handle_flags")
 
     @auto_handle_flags.setter
-    def auto_handle_flags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def auto_handle_flags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "auto_handle_flags", value)
 
     @_builtins.property
     @pulumi.getter(name="entityUpdateSpecs")
-    def entity_update_specs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LcmUpgradeV2EntityUpdateSpecArgs']]]]:
+    def entity_update_specs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LcmUpgradeV2EntityUpdateSpecArgs']]]]:
         """
         List of entity update objects for getting recommendations.
         """
         return pulumi.get(self, "entity_update_specs")
 
     @entity_update_specs.setter
-    def entity_update_specs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LcmUpgradeV2EntityUpdateSpecArgs']]]]):
+    def entity_update_specs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LcmUpgradeV2EntityUpdateSpecArgs']]]]):
         pulumi.set(self, "entity_update_specs", value)
 
     @_builtins.property
     @pulumi.getter(name="managementServer")
-    def management_server(self) -> Optional[pulumi.Input['LcmUpgradeV2ManagementServerArgs']]:
+    def management_server(self) -> pulumi.Input[Optional['LcmUpgradeV2ManagementServerArgs']]:
         """
         Cluster management server configuration used while updating clusters with ESX or Hyper-V.
         """
         return pulumi.get(self, "management_server")
 
     @management_server.setter
-    def management_server(self, value: Optional[pulumi.Input['LcmUpgradeV2ManagementServerArgs']]):
+    def management_server(self, value: pulumi.Input[Optional['LcmUpgradeV2ManagementServerArgs']]):
         pulumi.set(self, "management_server", value)
 
     @_builtins.property
     @pulumi.getter(name="maxWaitTimeInSecs")
-    def max_wait_time_in_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_wait_time_in_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of seconds LCM waits for the VMs to come up after exiting host maintenance mode. Value in Range [ 60 .. 86400]
         """
         return pulumi.get(self, "max_wait_time_in_secs")
 
     @max_wait_time_in_secs.setter
-    def max_wait_time_in_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_wait_time_in_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_wait_time_in_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="skippedPrecheckFlags")
-    def skipped_precheck_flags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def skipped_precheck_flags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of prechecks to skip. The allowed value is 'powerOffUvms' that skips the pinned VM prechecks. Items Enum: `POWER_OFF_UVMS`
         """
         return pulumi.get(self, "skipped_precheck_flags")
 
     @skipped_precheck_flags.setter
-    def skipped_precheck_flags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def skipped_precheck_flags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "skipped_precheck_flags", value)
 
     @_builtins.property
     @pulumi.getter(name="xClusterId")
-    def x_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def x_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cluster uuid on which the resource is present or operation is being performed.
         """
         return pulumi.get(self, "x_cluster_id")
 
     @x_cluster_id.setter
-    def x_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def x_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "x_cluster_id", value)
 
 
@@ -234,18 +234,19 @@ class LcmUpgradeV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_handle_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 entity_update_specs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LcmUpgradeV2EntityUpdateSpecArgs', 'LcmUpgradeV2EntityUpdateSpecArgsDict']]]]] = None,
-                 management_server: Optional[pulumi.Input[Union['LcmUpgradeV2ManagementServerArgs', 'LcmUpgradeV2ManagementServerArgsDict']]] = None,
-                 max_wait_time_in_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 skipped_precheck_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_handle_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmUpgradeV2EntityUpdateSpecArgs', 'LcmUpgradeV2EntityUpdateSpecArgsDict']]]]] = None,
+                 management_server: pulumi.Input[Optional[Union['LcmUpgradeV2ManagementServerArgs', 'LcmUpgradeV2ManagementServerArgsDict']]] = None,
+                 max_wait_time_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Perform upgrade operation to a specific target version for discovered LCM entity/entities.
 
         ## Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -256,6 +257,7 @@ class LcmUpgradeV2(pulumi.CustomResource):
             "to_version": "4.0.0",
         }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -278,6 +280,7 @@ class LcmUpgradeV2(pulumi.CustomResource):
 
         ## Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -288,6 +291,7 @@ class LcmUpgradeV2(pulumi.CustomResource):
             "to_version": "4.0.0",
         }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -305,12 +309,12 @@ class LcmUpgradeV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_handle_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 entity_update_specs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LcmUpgradeV2EntityUpdateSpecArgs', 'LcmUpgradeV2EntityUpdateSpecArgsDict']]]]] = None,
-                 management_server: Optional[pulumi.Input[Union['LcmUpgradeV2ManagementServerArgs', 'LcmUpgradeV2ManagementServerArgsDict']]] = None,
-                 max_wait_time_in_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 skipped_precheck_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_handle_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmUpgradeV2EntityUpdateSpecArgs', 'LcmUpgradeV2EntityUpdateSpecArgsDict']]]]] = None,
+                 management_server: pulumi.Input[Optional[Union['LcmUpgradeV2ManagementServerArgs', 'LcmUpgradeV2ManagementServerArgsDict']]] = None,
+                 max_wait_time_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -336,12 +340,12 @@ class LcmUpgradeV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auto_handle_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            entity_update_specs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LcmUpgradeV2EntityUpdateSpecArgs', 'LcmUpgradeV2EntityUpdateSpecArgsDict']]]]] = None,
-            management_server: Optional[pulumi.Input[Union['LcmUpgradeV2ManagementServerArgs', 'LcmUpgradeV2ManagementServerArgsDict']]] = None,
-            max_wait_time_in_secs: Optional[pulumi.Input[_builtins.int]] = None,
-            skipped_precheck_flags: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'LcmUpgradeV2':
+            auto_handle_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmUpgradeV2EntityUpdateSpecArgs', 'LcmUpgradeV2EntityUpdateSpecArgsDict']]]]] = None,
+            management_server: pulumi.Input[Optional[Union['LcmUpgradeV2ManagementServerArgs', 'LcmUpgradeV2ManagementServerArgsDict']]] = None,
+            max_wait_time_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'LcmUpgradeV2':
         """
         Get an existing LcmUpgradeV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

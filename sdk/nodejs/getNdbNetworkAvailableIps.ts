@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,6 +20,7 @@ import * as utilities from "./utilities";
  *     profileId: "{{ network_profile_id }}",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbNetworkAvailableIps(args: GetNdbNetworkAvailableIpsArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbNetworkAvailableIpsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -59,6 +61,7 @@ export interface GetNdbNetworkAvailableIpsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -67,6 +70,7 @@ export interface GetNdbNetworkAvailableIpsResult {
  *     profileId: "{{ network_profile_id }}",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbNetworkAvailableIpsOutput(args: GetNdbNetworkAvailableIpsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbNetworkAvailableIpsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

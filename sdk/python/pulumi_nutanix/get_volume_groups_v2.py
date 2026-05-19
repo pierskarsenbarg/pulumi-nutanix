@@ -125,6 +125,7 @@ def get_volume_groups_v2(expand: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -137,73 +138,74 @@ def get_volume_groups_v2(expand: Optional[_builtins.str] = None,
     # list all the Volume Groups with filter.
     vg_filter = nutanix.get_volume_groups_v2(filter="name eq 'volume_group_test'")
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Argument Reference
 
     The following arguments are supported:
 
-    * `page`: - A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
-    * `limit` : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-    * `filter` : A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
+    * <span pulumi-lang-nodejs="`page`" pulumi-lang-dotnet="`Page`" pulumi-lang-go="`page`" pulumi-lang-python="`page`" pulumi-lang-yaml="`page`" pulumi-lang-java="`page`">`page`</span>: - A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+    * <span pulumi-lang-nodejs="`limit`" pulumi-lang-dotnet="`Limit`" pulumi-lang-go="`limit`" pulumi-lang-python="`limit`" pulumi-lang-yaml="`limit`" pulumi-lang-java="`limit`">`limit`</span> : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
+    * <span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`">`filter`</span> : A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
       - clusterReference
       - extId
       - name
-    * `orderby` : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
+    * <span pulumi-lang-nodejs="`orderby`" pulumi-lang-dotnet="`Orderby`" pulumi-lang-go="`orderby`" pulumi-lang-python="`orderby`" pulumi-lang-yaml="`orderby`" pulumi-lang-java="`orderby`">`orderby`</span> : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
       - clusterReference
       - extId
       - name
-    * `expand` : A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \\$filter, \\$select and \\$orderby. The following expansion keys are supported. The expand can be applied to the following fields:
+    * <span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`">`expand`</span> : A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \\$filter, \\$select and \\$orderby. The following expansion keys are supported. The expand can be applied to the following fields:
       - clusterReference
       - metadata
-    * `select` : A query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., \\*), then all properties on the matching resource will be returned. The select can be applied to the following fields:
+    * <span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`">`select`</span> : A query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., \\*), then all properties on the matching resource will be returned. The select can be applied to the following fields:
       - clusterReference
       - extId
       - name
 
     ## Volume Groups
 
-    The `volume_groups` contains list of Volume Groups. Each Volume Group contains the following attributes:
+    The <span pulumi-lang-nodejs="`volumeGroups`" pulumi-lang-dotnet="`VolumeGroups`" pulumi-lang-go="`volumeGroups`" pulumi-lang-python="`volume_groups`" pulumi-lang-yaml="`volumeGroups`" pulumi-lang-java="`volumeGroups`">`volumeGroups`</span> contains list of Volume Groups. Each Volume Group contains the following attributes:
 
-    * `tenant_id`: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-    * `ext_id`: - A globally unique identifier of an instance that is suitable for external consumption.
-    * `links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-    * `name`: -(Required) Volume Group name. This is an optional field.
-    * `description`: - Volume Group description. This is an optional field.
-    * `should_load_balance_vm_attachments`: - Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
-    * `sharing_status`: - Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
-    * `target_name`: - Name of the external client target that will be visible and accessible to the client.
-    * `enabled_authentications`: - The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
-    * `iscsi_features`: - iSCSI specific settings for the Volume Group.
-    * `created_by`: - Service/user who created this Volume Group.
-    * `cluster_reference`: - The UUID of the cluster that will host the Volume Group.
-    * `storage_features`: - Storage optimization features which must be enabled on the Volume Group.
-    * `usage_type`: - Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
-    * `is_hidden`: - Indicates whether the Volume Group is meant to be hidden or not.
+    * <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`">`tenantId`</span>: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - A globally unique identifier of an instance that is suitable for external consumption.
+    * <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+    * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: -(Required) Volume Group name. This is an optional field.
+    * <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>: - Volume Group description. This is an optional field.
+    * <span pulumi-lang-nodejs="`shouldLoadBalanceVmAttachments`" pulumi-lang-dotnet="`ShouldLoadBalanceVmAttachments`" pulumi-lang-go="`shouldLoadBalanceVmAttachments`" pulumi-lang-python="`should_load_balance_vm_attachments`" pulumi-lang-yaml="`shouldLoadBalanceVmAttachments`" pulumi-lang-java="`shouldLoadBalanceVmAttachments`">`shouldLoadBalanceVmAttachments`</span>: - Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
+    * <span pulumi-lang-nodejs="`sharingStatus`" pulumi-lang-dotnet="`SharingStatus`" pulumi-lang-go="`sharingStatus`" pulumi-lang-python="`sharing_status`" pulumi-lang-yaml="`sharingStatus`" pulumi-lang-java="`sharingStatus`">`sharingStatus`</span>: - Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
+    * <span pulumi-lang-nodejs="`targetName`" pulumi-lang-dotnet="`TargetName`" pulumi-lang-go="`targetName`" pulumi-lang-python="`target_name`" pulumi-lang-yaml="`targetName`" pulumi-lang-java="`targetName`">`targetName`</span>: - Name of the external client target that will be visible and accessible to the client.
+    * <span pulumi-lang-nodejs="`enabledAuthentications`" pulumi-lang-dotnet="`EnabledAuthentications`" pulumi-lang-go="`enabledAuthentications`" pulumi-lang-python="`enabled_authentications`" pulumi-lang-yaml="`enabledAuthentications`" pulumi-lang-java="`enabledAuthentications`">`enabledAuthentications`</span>: - The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
+    * <span pulumi-lang-nodejs="`iscsiFeatures`" pulumi-lang-dotnet="`IscsiFeatures`" pulumi-lang-go="`iscsiFeatures`" pulumi-lang-python="`iscsi_features`" pulumi-lang-yaml="`iscsiFeatures`" pulumi-lang-java="`iscsiFeatures`">`iscsiFeatures`</span>: - iSCSI specific settings for the Volume Group.
+    * <span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`">`createdBy`</span>: - Service/user who created this Volume Group.
+    * <span pulumi-lang-nodejs="`clusterReference`" pulumi-lang-dotnet="`ClusterReference`" pulumi-lang-go="`clusterReference`" pulumi-lang-python="`cluster_reference`" pulumi-lang-yaml="`clusterReference`" pulumi-lang-java="`clusterReference`">`clusterReference`</span>: - The UUID of the cluster that will host the Volume Group.
+    * <span pulumi-lang-nodejs="`storageFeatures`" pulumi-lang-dotnet="`StorageFeatures`" pulumi-lang-go="`storageFeatures`" pulumi-lang-python="`storage_features`" pulumi-lang-yaml="`storageFeatures`" pulumi-lang-java="`storageFeatures`">`storageFeatures`</span>: - Storage optimization features which must be enabled on the Volume Group.
+    * <span pulumi-lang-nodejs="`usageType`" pulumi-lang-dotnet="`UsageType`" pulumi-lang-go="`usageType`" pulumi-lang-python="`usage_type`" pulumi-lang-yaml="`usageType`" pulumi-lang-java="`usageType`">`usageType`</span>: - Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+    * <span pulumi-lang-nodejs="`isHidden`" pulumi-lang-dotnet="`IsHidden`" pulumi-lang-go="`isHidden`" pulumi-lang-python="`is_hidden`" pulumi-lang-yaml="`isHidden`" pulumi-lang-java="`isHidden`">`isHidden`</span>: - Indicates whether the Volume Group is meant to be hidden or not.
 
     #### Links
 
     The links attribute supports the following:
 
-    * `href`: - The URL at which the entity described by the link can be accessed.
-    * `rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+    * <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span>: - The URL at which the entity described by the link can be accessed.
+    * <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
 
     #### Iscsi Features
 
-    The iscsi_features attribute supports the following:
+    The<span pulumi-lang-nodejs=" iscsiFeatures " pulumi-lang-dotnet=" IscsiFeatures " pulumi-lang-go=" iscsiFeatures " pulumi-lang-python=" iscsi_features " pulumi-lang-yaml=" iscsiFeatures " pulumi-lang-java=" iscsiFeatures "> iscsiFeatures </span>attribute supports the following:
 
-    * `enabled_authentications`: - The authentication type enabled for the Volume Group.
+    * <span pulumi-lang-nodejs="`enabledAuthentications`" pulumi-lang-dotnet="`EnabledAuthentications`" pulumi-lang-go="`enabledAuthentications`" pulumi-lang-python="`enabled_authentications`" pulumi-lang-yaml="`enabledAuthentications`" pulumi-lang-java="`enabledAuthentications`">`enabledAuthentications`</span>: - The authentication type enabled for the Volume Group.
 
     #### Storage Features
 
     The storage features attribute supports the following:
 
-    * `flash_mode`: - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+    * <span pulumi-lang-nodejs="`flashMode`" pulumi-lang-dotnet="`FlashMode`" pulumi-lang-go="`flashMode`" pulumi-lang-python="`flash_mode`" pulumi-lang-yaml="`flashMode`" pulumi-lang-java="`flashMode`">`flashMode`</span>: - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
 
     ##### Flash Mode
 
     The flash mode features attribute supports the following:
 
-    * `is_enabled`: - Indicates whether the flash mode is enabled for the Volume Group.
+    * <span pulumi-lang-nodejs="`isEnabled`" pulumi-lang-dotnet="`IsEnabled`" pulumi-lang-go="`isEnabled`" pulumi-lang-python="`is_enabled`" pulumi-lang-yaml="`isEnabled`" pulumi-lang-java="`isEnabled`">`isEnabled`</span>: - Indicates whether the flash mode is enabled for the Volume Group.
 
     See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/listVolumeGroups).
     """
@@ -226,18 +228,19 @@ def get_volume_groups_v2(expand: Optional[_builtins.str] = None,
         page=pulumi.get(__ret__, 'page'),
         select=pulumi.get(__ret__, 'select'),
         volumes=pulumi.get(__ret__, 'volumes'))
-def get_volume_groups_v2_output(expand: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                orderby: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_volume_groups_v2_output(expand: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                orderby: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeGroupsV2Result]:
     """
     Describes a List all the Volume Groups.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -250,73 +253,74 @@ def get_volume_groups_v2_output(expand: Optional[pulumi.Input[Optional[_builtins
     # list all the Volume Groups with filter.
     vg_filter = nutanix.get_volume_groups_v2(filter="name eq 'volume_group_test'")
     ```
+    <!--End PulumiCodeChooser -->
 
     ## Argument Reference
 
     The following arguments are supported:
 
-    * `page`: - A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
-    * `limit` : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-    * `filter` : A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
+    * <span pulumi-lang-nodejs="`page`" pulumi-lang-dotnet="`Page`" pulumi-lang-go="`page`" pulumi-lang-python="`page`" pulumi-lang-yaml="`page`" pulumi-lang-java="`page`">`page`</span>: - A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+    * <span pulumi-lang-nodejs="`limit`" pulumi-lang-dotnet="`Limit`" pulumi-lang-go="`limit`" pulumi-lang-python="`limit`" pulumi-lang-yaml="`limit`" pulumi-lang-java="`limit`">`limit`</span> : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
+    * <span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`">`filter`</span> : A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
       - clusterReference
       - extId
       - name
-    * `orderby` : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
+    * <span pulumi-lang-nodejs="`orderby`" pulumi-lang-dotnet="`Orderby`" pulumi-lang-go="`orderby`" pulumi-lang-python="`orderby`" pulumi-lang-yaml="`orderby`" pulumi-lang-java="`orderby`">`orderby`</span> : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
       - clusterReference
       - extId
       - name
-    * `expand` : A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \\$filter, \\$select and \\$orderby. The following expansion keys are supported. The expand can be applied to the following fields:
+    * <span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`">`expand`</span> : A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \\$filter, \\$select and \\$orderby. The following expansion keys are supported. The expand can be applied to the following fields:
       - clusterReference
       - metadata
-    * `select` : A query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., \\*), then all properties on the matching resource will be returned. The select can be applied to the following fields:
+    * <span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`">`select`</span> : A query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., \\*), then all properties on the matching resource will be returned. The select can be applied to the following fields:
       - clusterReference
       - extId
       - name
 
     ## Volume Groups
 
-    The `volume_groups` contains list of Volume Groups. Each Volume Group contains the following attributes:
+    The <span pulumi-lang-nodejs="`volumeGroups`" pulumi-lang-dotnet="`VolumeGroups`" pulumi-lang-go="`volumeGroups`" pulumi-lang-python="`volume_groups`" pulumi-lang-yaml="`volumeGroups`" pulumi-lang-java="`volumeGroups`">`volumeGroups`</span> contains list of Volume Groups. Each Volume Group contains the following attributes:
 
-    * `tenant_id`: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-    * `ext_id`: - A globally unique identifier of an instance that is suitable for external consumption.
-    * `links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-    * `name`: -(Required) Volume Group name. This is an optional field.
-    * `description`: - Volume Group description. This is an optional field.
-    * `should_load_balance_vm_attachments`: - Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
-    * `sharing_status`: - Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
-    * `target_name`: - Name of the external client target that will be visible and accessible to the client.
-    * `enabled_authentications`: - The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
-    * `iscsi_features`: - iSCSI specific settings for the Volume Group.
-    * `created_by`: - Service/user who created this Volume Group.
-    * `cluster_reference`: - The UUID of the cluster that will host the Volume Group.
-    * `storage_features`: - Storage optimization features which must be enabled on the Volume Group.
-    * `usage_type`: - Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
-    * `is_hidden`: - Indicates whether the Volume Group is meant to be hidden or not.
+    * <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`">`tenantId`</span>: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - A globally unique identifier of an instance that is suitable for external consumption.
+    * <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+    * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: -(Required) Volume Group name. This is an optional field.
+    * <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>: - Volume Group description. This is an optional field.
+    * <span pulumi-lang-nodejs="`shouldLoadBalanceVmAttachments`" pulumi-lang-dotnet="`ShouldLoadBalanceVmAttachments`" pulumi-lang-go="`shouldLoadBalanceVmAttachments`" pulumi-lang-python="`should_load_balance_vm_attachments`" pulumi-lang-yaml="`shouldLoadBalanceVmAttachments`" pulumi-lang-java="`shouldLoadBalanceVmAttachments`">`shouldLoadBalanceVmAttachments`</span>: - Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
+    * <span pulumi-lang-nodejs="`sharingStatus`" pulumi-lang-dotnet="`SharingStatus`" pulumi-lang-go="`sharingStatus`" pulumi-lang-python="`sharing_status`" pulumi-lang-yaml="`sharingStatus`" pulumi-lang-java="`sharingStatus`">`sharingStatus`</span>: - Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
+    * <span pulumi-lang-nodejs="`targetName`" pulumi-lang-dotnet="`TargetName`" pulumi-lang-go="`targetName`" pulumi-lang-python="`target_name`" pulumi-lang-yaml="`targetName`" pulumi-lang-java="`targetName`">`targetName`</span>: - Name of the external client target that will be visible and accessible to the client.
+    * <span pulumi-lang-nodejs="`enabledAuthentications`" pulumi-lang-dotnet="`EnabledAuthentications`" pulumi-lang-go="`enabledAuthentications`" pulumi-lang-python="`enabled_authentications`" pulumi-lang-yaml="`enabledAuthentications`" pulumi-lang-java="`enabledAuthentications`">`enabledAuthentications`</span>: - The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
+    * <span pulumi-lang-nodejs="`iscsiFeatures`" pulumi-lang-dotnet="`IscsiFeatures`" pulumi-lang-go="`iscsiFeatures`" pulumi-lang-python="`iscsi_features`" pulumi-lang-yaml="`iscsiFeatures`" pulumi-lang-java="`iscsiFeatures`">`iscsiFeatures`</span>: - iSCSI specific settings for the Volume Group.
+    * <span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`">`createdBy`</span>: - Service/user who created this Volume Group.
+    * <span pulumi-lang-nodejs="`clusterReference`" pulumi-lang-dotnet="`ClusterReference`" pulumi-lang-go="`clusterReference`" pulumi-lang-python="`cluster_reference`" pulumi-lang-yaml="`clusterReference`" pulumi-lang-java="`clusterReference`">`clusterReference`</span>: - The UUID of the cluster that will host the Volume Group.
+    * <span pulumi-lang-nodejs="`storageFeatures`" pulumi-lang-dotnet="`StorageFeatures`" pulumi-lang-go="`storageFeatures`" pulumi-lang-python="`storage_features`" pulumi-lang-yaml="`storageFeatures`" pulumi-lang-java="`storageFeatures`">`storageFeatures`</span>: - Storage optimization features which must be enabled on the Volume Group.
+    * <span pulumi-lang-nodejs="`usageType`" pulumi-lang-dotnet="`UsageType`" pulumi-lang-go="`usageType`" pulumi-lang-python="`usage_type`" pulumi-lang-yaml="`usageType`" pulumi-lang-java="`usageType`">`usageType`</span>: - Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+    * <span pulumi-lang-nodejs="`isHidden`" pulumi-lang-dotnet="`IsHidden`" pulumi-lang-go="`isHidden`" pulumi-lang-python="`is_hidden`" pulumi-lang-yaml="`isHidden`" pulumi-lang-java="`isHidden`">`isHidden`</span>: - Indicates whether the Volume Group is meant to be hidden or not.
 
     #### Links
 
     The links attribute supports the following:
 
-    * `href`: - The URL at which the entity described by the link can be accessed.
-    * `rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+    * <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span>: - The URL at which the entity described by the link can be accessed.
+    * <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
 
     #### Iscsi Features
 
-    The iscsi_features attribute supports the following:
+    The<span pulumi-lang-nodejs=" iscsiFeatures " pulumi-lang-dotnet=" IscsiFeatures " pulumi-lang-go=" iscsiFeatures " pulumi-lang-python=" iscsi_features " pulumi-lang-yaml=" iscsiFeatures " pulumi-lang-java=" iscsiFeatures "> iscsiFeatures </span>attribute supports the following:
 
-    * `enabled_authentications`: - The authentication type enabled for the Volume Group.
+    * <span pulumi-lang-nodejs="`enabledAuthentications`" pulumi-lang-dotnet="`EnabledAuthentications`" pulumi-lang-go="`enabledAuthentications`" pulumi-lang-python="`enabled_authentications`" pulumi-lang-yaml="`enabledAuthentications`" pulumi-lang-java="`enabledAuthentications`">`enabledAuthentications`</span>: - The authentication type enabled for the Volume Group.
 
     #### Storage Features
 
     The storage features attribute supports the following:
 
-    * `flash_mode`: - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+    * <span pulumi-lang-nodejs="`flashMode`" pulumi-lang-dotnet="`FlashMode`" pulumi-lang-go="`flashMode`" pulumi-lang-python="`flash_mode`" pulumi-lang-yaml="`flashMode`" pulumi-lang-java="`flashMode`">`flashMode`</span>: - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
 
     ##### Flash Mode
 
     The flash mode features attribute supports the following:
 
-    * `is_enabled`: - Indicates whether the flash mode is enabled for the Volume Group.
+    * <span pulumi-lang-nodejs="`isEnabled`" pulumi-lang-dotnet="`IsEnabled`" pulumi-lang-go="`isEnabled`" pulumi-lang-python="`is_enabled`" pulumi-lang-yaml="`isEnabled`" pulumi-lang-java="`isEnabled`">`isEnabled`</span>: - Indicates whether the flash mode is enabled for the Volume Group.
 
     See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/listVolumeGroups).
     """

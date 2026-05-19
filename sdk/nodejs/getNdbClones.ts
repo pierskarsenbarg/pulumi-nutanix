@@ -59,5 +59,5 @@ export interface GetNdbClonesOutputArgs {
     /**
      * Fetches the clone info based on given params
      */
-    filters?: pulumi.Input<pulumi.Input<inputs.GetNdbClonesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GetNdbClonesFilterArgs>[] | undefined>;
 }

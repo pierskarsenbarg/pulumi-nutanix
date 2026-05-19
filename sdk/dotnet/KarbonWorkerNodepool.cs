@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var kworkerNp = new Nutanix.Index.KarbonWorkerNodepool("kworkerNp", new()
+    ///     var kworkerNp = new Nutanix.KarbonWorkerNodepool("kworkerNp", new()
     ///     {
     ///         ClusterName = "karbon",
     ///         Name = "workerpool1",
@@ -39,7 +40,9 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -48,7 +51,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var kworkerNp = new Nutanix.Index.KarbonWorkerNodepool("kworkerNp", new()
+    ///     var kworkerNp = new Nutanix.KarbonWorkerNodepool("kworkerNp", new()
     ///     {
     ///         ClusterName = "karbon",
     ///         Name = "workerpool1",
@@ -69,6 +72,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/karbonWorkerNodepool:KarbonWorkerNodepool")]
     public partial class KarbonWorkerNodepool : global::Pulumi.CustomResource

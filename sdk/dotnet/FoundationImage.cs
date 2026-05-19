@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,14 +24,14 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var nos_image = new Nutanix.Index.FoundationImage("nos-image", new()
+    ///     var nos_image = new Nutanix.FoundationImage("nos-image", new()
     ///     {
     ///         Source = "../../../files/nutanix_installer_x86_64.tar",
     ///         Filename = "nos_image.tar",
     ///         InstallerType = "nos",
     ///     });
     /// 
-    ///     var hypervisor_image = new Nutanix.Index.FoundationImage("hypervisor-image", new()
+    ///     var hypervisor_image = new Nutanix.FoundationImage("hypervisor-image", new()
     ///     {
     ///         Source = "../../../files/VMware-Installer.x86_64.iso",
     ///         Filename = "esx_image.iso",
@@ -39,6 +40,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## lifecycle
     /// 

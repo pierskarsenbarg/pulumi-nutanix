@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -27,6 +28,7 @@ import * as utilities from "./utilities";
  *     capablities: ["VSS_SNAPSHOT"],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class NgtInstallationV2 extends pulumi.CustomResource {
     /**
@@ -166,55 +168,55 @@ export interface NgtInstallationV2State {
     /**
      * Version of Nutanix Guest Tools available on the cluster.
      */
-    availableVersion?: pulumi.Input<string>;
+    availableVersion?: pulumi.Input<string | undefined>;
     /**
      * The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
      */
-    capablities?: pulumi.Input<pulumi.Input<string>[]>;
+    capablities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Sign in credentials for the server.
      */
-    credential?: pulumi.Input<inputs.NgtInstallationV2Credential>;
+    credential?: pulumi.Input<inputs.NgtInstallationV2Credential | undefined>;
     /**
      * uuid of the Virtual Machine.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * Version of the operating system on the VM.
      */
-    guestOsVersion?: pulumi.Input<string>;
+    guestOsVersion?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether Nutanix Guest Tools is enabled or not.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether Nutanix Guest Tools is installed on the VM or not.
      */
-    isInstalled?: pulumi.Input<boolean>;
+    isInstalled?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether Nutanix Guest Tools ISO is inserted or not.
      */
-    isIsoInserted?: pulumi.Input<boolean>;
+    isIsoInserted?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether the communication from VM to CVM is active or not.
      */
-    isReachable?: pulumi.Input<boolean>;
+    isReachable?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether the VM mobility drivers are installed on the VM or not.
      */
-    isVmMobilityDriversInstalled?: pulumi.Input<boolean>;
+    isVmMobilityDriversInstalled?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether the VM is configured to take VSS snapshots through NGT or not.
      */
-    isVssSnapshotCapable?: pulumi.Input<boolean>;
+    isVssSnapshotCapable?: pulumi.Input<boolean | undefined>;
     /**
      * The restart schedule after installing or upgrading Nutanix Guest Tools.
      */
-    rebootPreference?: pulumi.Input<inputs.NgtInstallationV2RebootPreference>;
+    rebootPreference?: pulumi.Input<inputs.NgtInstallationV2RebootPreference | undefined>;
     /**
      * Version of Nutanix Guest Tools installed on the VM.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -224,11 +226,11 @@ export interface NgtInstallationV2Args {
     /**
      * The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
      */
-    capablities?: pulumi.Input<pulumi.Input<string>[]>;
+    capablities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Sign in credentials for the server.
      */
-    credential?: pulumi.Input<inputs.NgtInstallationV2Credential>;
+    credential?: pulumi.Input<inputs.NgtInstallationV2Credential | undefined>;
     /**
      * uuid of the Virtual Machine.
      */
@@ -236,9 +238,9 @@ export interface NgtInstallationV2Args {
     /**
      * Indicates whether Nutanix Guest Tools is enabled or not.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The restart schedule after installing or upgrading Nutanix Guest Tools.
      */
-    rebootPreference?: pulumi.Input<inputs.NgtInstallationV2RebootPreference>;
+    rebootPreference?: pulumi.Input<inputs.NgtInstallationV2RebootPreference | undefined>;
 }

@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,12 +20,13 @@ import * as utilities from "./utilities";
  *     extId: "d3a3232a-9055-4740-b54f-b21a33524565",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Argument Reference
  *
  * The following arguments are supported:
  *
- * * `extId`: -(Required) External Identifier of the User.
+ * * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: -(Required) External Identifier of the User.
  */
 export function getUserV2(args: GetUserV2Args, opts?: pulumi.InvokeOptions): Promise<GetUserV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -143,6 +145,7 @@ export interface GetUserV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -151,12 +154,13 @@ export interface GetUserV2Result {
  *     extId: "d3a3232a-9055-4740-b54f-b21a33524565",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Argument Reference
  *
  * The following arguments are supported:
  *
- * * `extId`: -(Required) External Identifier of the User.
+ * * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: -(Required) External Identifier of the User.
  */
 export function getUserV2Output(args: GetUserV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUserV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

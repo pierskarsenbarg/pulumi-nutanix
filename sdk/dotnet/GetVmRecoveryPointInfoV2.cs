@@ -17,6 +17,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // vm recovery point details
+        /// const rp_vm_info = nutanix.getVmRecoveryPointInfoV2({
+        ///     recoveryPointExtId: "af1070f7-c946-49da-9b17-e337e06e0a18",
+        ///     extId: "85ac418e-c847-45ab-9816-40a3c4de148c",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # vm recovery point details
+        /// rp_vm_info = nutanix.get_vm_recovery_point_info_v2(recovery_point_ext_id="af1070f7-c946-49da-9b17-e337e06e0a18",
+        ///     ext_id="85ac418e-c847-45ab-9816-40a3c4de148c")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,7 +45,7 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // vm recovery point details
-        ///     var rp_vm_info = Nutanix.Index.GetVmRecoveryPointInfoV2.Invoke(new()
+        ///     var rp_vm_info = Nutanix.GetVmRecoveryPointInfoV2.Invoke(new()
         ///     {
         ///         RecoveryPointExtId = "af1070f7-c946-49da-9b17-e337e06e0a18",
         ///         ExtId = "85ac418e-c847-45ab-9816-40a3c4de148c",
@@ -34,6 +53,69 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// vm recovery point details
+        /// 		_, err := nutanix.GetVmRecoveryPointInfoV2(ctx, &amp;nutanix.GetVmRecoveryPointInfoV2Args{
+        /// 			RecoveryPointExtId: "af1070f7-c946-49da-9b17-e337e06e0a18",
+        /// 			ExtId:              "85ac418e-c847-45ab-9816-40a3c4de148c",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVmRecoveryPointInfoV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // vm recovery point details
+        ///         final var rp-vm-info = NutanixFunctions.getVmRecoveryPointInfoV2(GetVmRecoveryPointInfoV2Args.builder()
+        ///             .recoveryPointExtId("af1070f7-c946-49da-9b17-e337e06e0a18")
+        ///             .extId("85ac418e-c847-45ab-9816-40a3c4de148c")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # vm recovery point details
+        ///   rp-vm-info:
+        ///     fn::invoke:
+        ///       function: nutanix:getVmRecoveryPointInfoV2
+        ///       arguments:
+        ///         recoveryPointExtId: af1070f7-c946-49da-9b17-e337e06e0a18
+        ///         extId: 85ac418e-c847-45ab-9816-40a3c4de148c
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetVmRecoveryPointInfoV2Result> InvokeAsync(GetVmRecoveryPointInfoV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVmRecoveryPointInfoV2Result>("nutanix:index/getVmRecoveryPointInfoV2:getVmRecoveryPointInfoV2", args ?? new GetVmRecoveryPointInfoV2Args(), options.WithDefaults());
@@ -43,6 +125,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // vm recovery point details
+        /// const rp_vm_info = nutanix.getVmRecoveryPointInfoV2({
+        ///     recoveryPointExtId: "af1070f7-c946-49da-9b17-e337e06e0a18",
+        ///     extId: "85ac418e-c847-45ab-9816-40a3c4de148c",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # vm recovery point details
+        /// rp_vm_info = nutanix.get_vm_recovery_point_info_v2(recovery_point_ext_id="af1070f7-c946-49da-9b17-e337e06e0a18",
+        ///     ext_id="85ac418e-c847-45ab-9816-40a3c4de148c")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -52,7 +153,7 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // vm recovery point details
-        ///     var rp_vm_info = Nutanix.Index.GetVmRecoveryPointInfoV2.Invoke(new()
+        ///     var rp_vm_info = Nutanix.GetVmRecoveryPointInfoV2.Invoke(new()
         ///     {
         ///         RecoveryPointExtId = "af1070f7-c946-49da-9b17-e337e06e0a18",
         ///         ExtId = "85ac418e-c847-45ab-9816-40a3c4de148c",
@@ -60,6 +161,69 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// vm recovery point details
+        /// 		_, err := nutanix.GetVmRecoveryPointInfoV2(ctx, &amp;nutanix.GetVmRecoveryPointInfoV2Args{
+        /// 			RecoveryPointExtId: "af1070f7-c946-49da-9b17-e337e06e0a18",
+        /// 			ExtId:              "85ac418e-c847-45ab-9816-40a3c4de148c",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVmRecoveryPointInfoV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // vm recovery point details
+        ///         final var rp-vm-info = NutanixFunctions.getVmRecoveryPointInfoV2(GetVmRecoveryPointInfoV2Args.builder()
+        ///             .recoveryPointExtId("af1070f7-c946-49da-9b17-e337e06e0a18")
+        ///             .extId("85ac418e-c847-45ab-9816-40a3c4de148c")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # vm recovery point details
+        ///   rp-vm-info:
+        ///     fn::invoke:
+        ///       function: nutanix:getVmRecoveryPointInfoV2
+        ///       arguments:
+        ///         recoveryPointExtId: af1070f7-c946-49da-9b17-e337e06e0a18
+        ///         extId: 85ac418e-c847-45ab-9816-40a3c4de148c
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVmRecoveryPointInfoV2Result> Invoke(GetVmRecoveryPointInfoV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmRecoveryPointInfoV2Result>("nutanix:index/getVmRecoveryPointInfoV2:getVmRecoveryPointInfoV2", args ?? new GetVmRecoveryPointInfoV2InvokeArgs(), options.WithDefaults());
@@ -69,6 +233,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // vm recovery point details
+        /// const rp_vm_info = nutanix.getVmRecoveryPointInfoV2({
+        ///     recoveryPointExtId: "af1070f7-c946-49da-9b17-e337e06e0a18",
+        ///     extId: "85ac418e-c847-45ab-9816-40a3c4de148c",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # vm recovery point details
+        /// rp_vm_info = nutanix.get_vm_recovery_point_info_v2(recovery_point_ext_id="af1070f7-c946-49da-9b17-e337e06e0a18",
+        ///     ext_id="85ac418e-c847-45ab-9816-40a3c4de148c")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -78,7 +261,7 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // vm recovery point details
-        ///     var rp_vm_info = Nutanix.Index.GetVmRecoveryPointInfoV2.Invoke(new()
+        ///     var rp_vm_info = Nutanix.GetVmRecoveryPointInfoV2.Invoke(new()
         ///     {
         ///         RecoveryPointExtId = "af1070f7-c946-49da-9b17-e337e06e0a18",
         ///         ExtId = "85ac418e-c847-45ab-9816-40a3c4de148c",
@@ -86,6 +269,69 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// vm recovery point details
+        /// 		_, err := nutanix.GetVmRecoveryPointInfoV2(ctx, &amp;nutanix.GetVmRecoveryPointInfoV2Args{
+        /// 			RecoveryPointExtId: "af1070f7-c946-49da-9b17-e337e06e0a18",
+        /// 			ExtId:              "85ac418e-c847-45ab-9816-40a3c4de148c",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetVmRecoveryPointInfoV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // vm recovery point details
+        ///         final var rp-vm-info = NutanixFunctions.getVmRecoveryPointInfoV2(GetVmRecoveryPointInfoV2Args.builder()
+        ///             .recoveryPointExtId("af1070f7-c946-49da-9b17-e337e06e0a18")
+        ///             .extId("85ac418e-c847-45ab-9816-40a3c4de148c")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # vm recovery point details
+        ///   rp-vm-info:
+        ///     fn::invoke:
+        ///       function: nutanix:getVmRecoveryPointInfoV2
+        ///       arguments:
+        ///         recoveryPointExtId: af1070f7-c946-49da-9b17-e337e06e0a18
+        ///         extId: 85ac418e-c847-45ab-9816-40a3c4de148c
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetVmRecoveryPointInfoV2Result> Invoke(GetVmRecoveryPointInfoV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVmRecoveryPointInfoV2Result>("nutanix:index/getVmRecoveryPointInfoV2:getVmRecoveryPointInfoV2", args ?? new GetVmRecoveryPointInfoV2InvokeArgs(), options.WithDefaults());

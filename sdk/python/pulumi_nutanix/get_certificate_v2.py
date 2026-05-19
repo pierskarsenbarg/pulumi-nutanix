@@ -139,6 +139,7 @@ def get_certificate_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -146,6 +147,7 @@ def get_certificate_v2(ext_id: Optional[_builtins.str] = None,
     example = nutanix.get_certificate_v2(object_store_ext_id="ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
         ext_id="ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: -(Required) The UUID of the certificate of an Object store.
@@ -166,14 +168,15 @@ def get_certificate_v2(ext_id: Optional[_builtins.str] = None,
         metadatas=pulumi.get(__ret__, 'metadatas'),
         object_store_ext_id=pulumi.get(__ret__, 'object_store_ext_id'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_certificate_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              object_store_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_certificate_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              object_store_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificateV2Result]:
     """
     Get the details of the SSL certificate which can be used to connect to an Object store.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -181,6 +184,7 @@ def get_certificate_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = No
     example = nutanix.get_certificate_v2(object_store_ext_id="ac91151a-28b4-4ffe-b150-6bcb2ec80cd4",
         ext_id="ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: -(Required) The UUID of the certificate of an Object store.

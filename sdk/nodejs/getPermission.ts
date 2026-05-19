@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -24,6 +25,7 @@ import * as utilities from "./utilities";
  *     permissionName: "Access_Console_Virtual_Machine",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPermission(args?: GetPermissionArgs, opts?: pulumi.InvokeOptions): Promise<GetPermissionResult> {
     args = args || {};
@@ -44,11 +46,11 @@ export interface GetPermissionArgs {
      */
     categories?: inputs.GetPermissionCategory[];
     /**
-     * The `id` of the permission.
+     * The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the permission.
      */
     permissionId?: string;
     /**
-     * The `name` of the permission.
+     * The <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span> of the permission.
      */
     permissionName?: string;
 }
@@ -67,7 +69,7 @@ export interface GetPermissionResult {
      */
     readonly description: string;
     /**
-     * . The fields that can/cannot be accessed during the specified operation. fieldNameList will be a list of fields. e.g. if fieldMode = disallowed, fieldNameList = [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
+     * . The fields that can/cannot be accessed during the specified operation.<span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList "> fieldNameList </span>will be a list of fields. e.g. if<span pulumi-lang-nodejs=" fieldMode " pulumi-lang-dotnet=" FieldMode " pulumi-lang-go=" fieldMode " pulumi-lang-python=" field_mode " pulumi-lang-yaml=" fieldMode " pulumi-lang-java=" fieldMode "> fieldMode </span>= disallowed,<span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList "> fieldNameList </span>= [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
      */
     readonly fields: outputs.GetPermissionField[];
     /**
@@ -75,7 +77,7 @@ export interface GetPermissionResult {
      */
     readonly id: string;
     /**
-     * (Required) The kind name (Default value: `project`).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
      */
     readonly kind: string;
     /**
@@ -110,6 +112,7 @@ export interface GetPermissionResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -123,6 +126,7 @@ export interface GetPermissionResult {
  *     permissionName: "Access_Console_Virtual_Machine",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPermissionOutput(args?: GetPermissionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPermissionResult> {
     args = args || {};
@@ -141,13 +145,13 @@ export interface GetPermissionOutputArgs {
     /**
      * The categories for this resource.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetPermissionCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetPermissionCategoryArgs>[] | undefined>;
     /**
-     * The `id` of the permission.
+     * The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the permission.
      */
-    permissionId?: pulumi.Input<string>;
+    permissionId?: pulumi.Input<string | undefined>;
     /**
-     * The `name` of the permission.
+     * The <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span> of the permission.
      */
-    permissionName?: pulumi.Input<string>;
+    permissionName?: pulumi.Input<string | undefined>;
 }

@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix
     /// Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
     /// 
     /// ## Example Usage
+    /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/subnet:Subnet")]
     public partial class Subnet : global::Pulumi.CustomResource

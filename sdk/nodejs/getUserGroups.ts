@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const usergroups = nutanix.getUserGroups({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getUserGroups(args?: GetUserGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetUserGroupsResult> {
     args = args || {};
@@ -53,12 +55,14 @@ export interface GetUserGroupsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const usergroups = nutanix.getUserGroups({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getUserGroupsOutput(args?: GetUserGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUserGroupsResult> {
     args = args || {};
@@ -75,5 +79,5 @@ export interface GetUserGroupsOutputArgs {
     /**
      * - The user group kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetUserGroupsMetadataArgs>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetUserGroupsMetadataArgs>[] | undefined>;
 }

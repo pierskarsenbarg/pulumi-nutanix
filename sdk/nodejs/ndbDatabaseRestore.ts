@@ -139,7 +139,7 @@ export class NdbDatabaseRestore extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly timeZone: pulumi.Output<string>;
     /**
-     * timezone . Should be used with  `userPitrTimestamp`
+     * timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
      */
     declare public readonly timeZonePitr: pulumi.Output<string | undefined>;
     /**
@@ -240,116 +240,116 @@ export interface NdbDatabaseRestoreState {
     /**
      * whether instance is cloned or not
      */
-    clone?: pulumi.Input<boolean>;
+    clone?: pulumi.Input<boolean | undefined>;
     /**
      * database cluster type
      */
-    databaseClusterType?: pulumi.Input<string>;
+    databaseClusterType?: pulumi.Input<string | undefined>;
     /**
      * database id
      */
-    databaseId?: pulumi.Input<string>;
-    databaseInstanceId?: pulumi.Input<string>;
+    databaseId?: pulumi.Input<string | undefined>;
+    databaseInstanceId?: pulumi.Input<string | undefined>;
     /**
      * name of database
      */
-    databaseName?: pulumi.Input<string>;
+    databaseName?: pulumi.Input<string | undefined>;
     /**
      * database nodes associated with database instance
      */
-    databaseNodes?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreDatabaseNode>[]>;
+    databaseNodes?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreDatabaseNode>[] | undefined>;
     /**
      * date created for db instance
      */
-    dateCreated?: pulumi.Input<string>;
+    dateCreated?: pulumi.Input<string | undefined>;
     /**
      * date modified for instance
      */
-    dateModified?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string | undefined>;
     /**
      * dbserver logical cluster
      */
-    dbserverLogicalCluster?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    dbserverLogicalCluster?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * dbserver logical cluster id
      */
-    dbserverLogicalClusterId?: pulumi.Input<string>;
+    dbserverLogicalClusterId?: pulumi.Input<string | undefined>;
     /**
      * description of database instance
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * info of instance
      */
-    infos?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreInfo>[]>;
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreInfo>[] | undefined>;
     /**
      * latest snapshot id
      */
-    latestSnapshot?: pulumi.Input<string>;
+    latestSnapshot?: pulumi.Input<string | undefined>;
     /**
      * LCM config of instance
      */
-    lcmConfigs?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreLcmConfig>[]>;
+    lcmConfigs?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreLcmConfig>[] | undefined>;
     /**
      * linked databases within database instance
      */
-    linkedDatabases?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreLinkedDatabase>[]>;
+    linkedDatabases?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreLinkedDatabase>[] | undefined>;
     /**
      * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
      */
-    metric?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metric?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Name of database instance
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * parent database id
      */
-    parentDatabaseId?: pulumi.Input<string>;
+    parentDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * properties of database created
      */
-    properties?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreProperty>[]>;
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreProperty>[] | undefined>;
     /**
      * helps to restore the database with same config.
      */
-    restoreVersion?: pulumi.Input<number>;
+    restoreVersion?: pulumi.Input<number | undefined>;
     /**
      * snapshot id from you want to use for restoring the instance
      */
-    snapshotId?: pulumi.Input<string>;
+    snapshotId?: pulumi.Input<string | undefined>;
     /**
      * status of instance
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTag>[] | undefined>;
     /**
      * time machine id of instance
      */
-    timeMachineId?: pulumi.Input<string>;
+    timeMachineId?: pulumi.Input<string | undefined>;
     /**
      * Time Machine details of instance
      */
-    timeMachines?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTimeMachine>[]>;
+    timeMachines?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTimeMachine>[] | undefined>;
     /**
      * timezone on which instance is created xw
      */
-    timeZone?: pulumi.Input<string>;
+    timeZone?: pulumi.Input<string | undefined>;
     /**
-     * timezone . Should be used with  `userPitrTimestamp`
+     * timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
      */
-    timeZonePitr?: pulumi.Input<string>;
+    timeZonePitr?: pulumi.Input<string | undefined>;
     /**
      * type of database
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * the time to which you want to restore your instance.
      */
-    userPitrTimestamp?: pulumi.Input<string>;
+    userPitrTimestamp?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -363,25 +363,25 @@ export interface NdbDatabaseRestoreArgs {
     /**
      * latest snapshot id
      */
-    latestSnapshot?: pulumi.Input<string>;
+    latestSnapshot?: pulumi.Input<string | undefined>;
     /**
      * helps to restore the database with same config.
      */
-    restoreVersion?: pulumi.Input<number>;
+    restoreVersion?: pulumi.Input<number | undefined>;
     /**
      * snapshot id from you want to use for restoring the instance
      */
-    snapshotId?: pulumi.Input<string>;
+    snapshotId?: pulumi.Input<string | undefined>;
     /**
      * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTag>[] | undefined>;
     /**
-     * timezone . Should be used with  `userPitrTimestamp`
+     * timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
      */
-    timeZonePitr?: pulumi.Input<string>;
+    timeZonePitr?: pulumi.Input<string | undefined>;
     /**
      * the time to which you want to restore your instance.
      */
-    userPitrTimestamp?: pulumi.Input<string>;
+    userPitrTimestamp?: pulumi.Input<string | undefined>;
 }

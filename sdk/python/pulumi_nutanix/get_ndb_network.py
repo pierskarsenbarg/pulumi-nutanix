@@ -185,8 +185,8 @@ def get_ndb_network(id: Optional[_builtins.str] = None,
         properties_maps=pulumi.get(__ret__, 'properties_maps'),
         stretched_vlan_id=pulumi.get(__ret__, 'stretched_vlan_id'),
         type=pulumi.get(__ret__, 'type'))
-def get_ndb_network_output(id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_ndb_network_output(id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbNetworkResult]:
     """
     Describes a network in Nutanix Database Service

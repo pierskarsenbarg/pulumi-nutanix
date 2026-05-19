@@ -117,6 +117,7 @@ def get_address_group(uuid: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -130,6 +131,7 @@ def get_address_group(uuid: Optional[_builtins.str] = None,
         }])
     addr_group = nutanix.get_address_group_output(uuid=test_address.id)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str uuid: - (Required) UUID of the address group
@@ -146,13 +148,14 @@ def get_address_group(uuid: Optional[_builtins.str] = None,
         ip_address_block_lists=pulumi.get(__ret__, 'ip_address_block_lists'),
         name=pulumi.get(__ret__, 'name'),
         uuid=pulumi.get(__ret__, 'uuid'))
-def get_address_group_output(uuid: Optional[pulumi.Input[_builtins.str]] = None,
+def get_address_group_output(uuid: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAddressGroupResult]:
     """
     Provides a datasource to retrieve a address group.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -166,6 +169,7 @@ def get_address_group_output(uuid: Optional[pulumi.Input[_builtins.str]] = None,
         }])
     addr_group = nutanix.get_address_group_output(uuid=test_address.id)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str uuid: - (Required) UUID of the address group

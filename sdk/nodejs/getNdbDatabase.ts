@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -20,6 +21,7 @@ import * as utilities from "./utilities";
  * });
  * export const db1Output = db1;
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbDatabase(args: GetNdbDatabaseArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbDatabaseResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -149,6 +151,7 @@ export interface GetNdbDatabaseResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -158,6 +161,7 @@ export interface GetNdbDatabaseResult {
  * });
  * export const db1Output = db1;
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbDatabaseOutput(args: GetNdbDatabaseOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbDatabaseResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -178,5 +182,5 @@ export interface GetNdbDatabaseOutputArgs {
     /**
      * - tags attached
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbDatabaseTagArgs>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbDatabaseTagArgs>[] | undefined>;
 }

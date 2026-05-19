@@ -212,12 +212,14 @@ def get_ndb_maintenance_window(id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     window = nutanix.get_ndb_maintenance_window(id="{{ maintenance_window_id }}")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str id: Maintenance window id.
@@ -244,20 +246,22 @@ def get_ndb_maintenance_window(id: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'),
         tags=pulumi.get(__ret__, 'tags'),
         timezone=pulumi.get(__ret__, 'timezone'))
-def get_ndb_maintenance_window_output(id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbMaintenanceWindowTagArgs', 'GetNdbMaintenanceWindowTagArgsDict']]]]] = None,
+def get_ndb_maintenance_window_output(id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      tags: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbMaintenanceWindowTagArgs', 'GetNdbMaintenanceWindowTagArgsDict']]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbMaintenanceWindowResult]:
     """
     Describes a maintenance window in Nutanix Database Service
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     window = nutanix.get_ndb_maintenance_window(id="{{ maintenance_window_id }}")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str id: Maintenance window id.

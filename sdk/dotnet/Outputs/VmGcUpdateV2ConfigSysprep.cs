@@ -17,8 +17,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
         /// Valid values are:
-        /// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for `UnattendXml` parameter
-        /// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for `UnattendXml` parameter
+        /// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for &lt;span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`"&gt;`unattendXml`&lt;/span&gt; parameter
+        /// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for &lt;span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`"&gt;`unattendXml`&lt;/span&gt; parameter
         /// </summary>
         public readonly string? InstallType;
         public readonly ImmutableArray<Outputs.VmGcUpdateV2ConfigSysprepSysprepScript> SysprepScripts;

@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,6 +20,7 @@ import * as utilities from "./utilities";
  *     extId: "cf96e27a-4e52-4cec-b563-d0b25413cc4a",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getImagePlacementPolicyV2(args: GetImagePlacementPolicyV2Args, opts?: pulumi.InvokeOptions): Promise<GetImagePlacementPolicyV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -83,6 +85,7 @@ export interface GetImagePlacementPolicyV2Result {
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -91,6 +94,7 @@ export interface GetImagePlacementPolicyV2Result {
  *     extId: "cf96e27a-4e52-4cec-b563-d0b25413cc4a",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getImagePlacementPolicyV2Output(args: GetImagePlacementPolicyV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetImagePlacementPolicyV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

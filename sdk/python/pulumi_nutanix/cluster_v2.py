@@ -21,15 +21,15 @@ __all__ = ['ClusterV2Args', 'ClusterV2']
 @pulumi.input_type
 class ClusterV2Args:
     def __init__(__self__, *,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 configs: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2ConfigArgs']]]] = None,
-                 container_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dryrun: Optional[pulumi.Input[_builtins.bool]] = None,
-                 expand: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 networks: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2NetworkArgs']]]] = None,
-                 nodes: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2NodeArgs']]]] = None):
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 configs: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2ConfigArgs']]]] = None,
+                 container_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
+                 expand: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 networks: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2NetworkArgs']]]] = None,
+                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2NodeArgs']]]] = None):
         """
         The set of arguments for constructing a ClusterV2 resource.
 
@@ -62,126 +62,126 @@ class ClusterV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a project.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter
-    def configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2ConfigArgs']]]]:
+    def configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2ConfigArgs']]]]:
         """
         - (Optional) Cluster configuration details.
         """
         return pulumi.get(self, "configs")
 
     @configs.setter
-    def configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2ConfigArgs']]]]):
+    def configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2ConfigArgs']]]]):
         pulumi.set(self, "configs", value)
 
     @_builtins.property
     @pulumi.getter(name="containerName")
-    def container_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def container_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
         """
         return pulumi.get(self, "container_name")
 
     @container_name.setter
-    def container_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def container_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "container_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def dryrun(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def dryrun(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) parameter that allows long-running operations to execute in a dry-run mode providing ability to identify trouble spots and system failures without performing the actual operation. Additionally this mode also offers a summary snapshot of the resultant system in order to better understand how things fit together. The operation runs in dry-run mode only if the provided value is true.
         """
         return pulumi.get(self, "dryrun")
 
     @dryrun.setter
-    def dryrun(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def dryrun(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dryrun", value)
 
     @_builtins.property
     @pulumi.getter
-    def expand(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expand(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "expand")
 
     @expand.setter
-    def expand(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expand(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expand", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name for the vm.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def networks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2NetworkArgs']]]]:
+    def networks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2NetworkArgs']]]]:
         """
         - (Optional) Network details of a cluster.
         """
         return pulumi.get(self, "networks")
 
     @networks.setter
-    def networks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2NetworkArgs']]]]):
+    def networks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2NetworkArgs']]]]):
         pulumi.set(self, "networks", value)
 
     @_builtins.property
     @pulumi.getter
-    def nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2NodeArgs']]]]:
+    def nodes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2NodeArgs']]]]:
         """
         - (Optional) The reference to a node.
         """
         return pulumi.get(self, "nodes")
 
     @nodes.setter
-    def nodes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2NodeArgs']]]]):
+    def nodes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2NodeArgs']]]]):
         pulumi.set(self, "nodes", value)
 
 
 @pulumi.input_type
 class _ClusterV2State:
     def __init__(__self__, *,
-                 backup_eligibility_score: Optional[pulumi.Input[_builtins.int]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cluster_profile_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configs: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2ConfigArgs']]]] = None,
-                 container_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dryrun: Optional[pulumi.Input[_builtins.bool]] = None,
-                 expand: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 inefficient_vm_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 links: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2LinkArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 networks: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2NetworkArgs']]]] = None,
-                 nodes: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2NodeArgs']]]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 upgrade_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 backup_eligibility_score: pulumi.Input[Optional[_builtins.int]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_profile_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configs: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2ConfigArgs']]]] = None,
+                 container_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
+                 expand: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 inefficient_vm_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2LinkArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 networks: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2NetworkArgs']]]] = None,
+                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2NodeArgs']]]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgrade_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ClusterV2 resources.
 
@@ -239,154 +239,154 @@ class _ClusterV2State:
 
     @_builtins.property
     @pulumi.getter(name="backupEligibilityScore")
-    def backup_eligibility_score(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def backup_eligibility_score(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "backup_eligibility_score")
 
     @backup_eligibility_score.setter
-    def backup_eligibility_score(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def backup_eligibility_score(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "backup_eligibility_score", value)
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a project.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterProfileExtId")
-    def cluster_profile_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_profile_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cluster_profile_ext_id")
 
     @cluster_profile_ext_id.setter
-    def cluster_profile_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_profile_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_profile_ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2ConfigArgs']]]]:
+    def configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2ConfigArgs']]]]:
         """
         - (Optional) Cluster configuration details.
         """
         return pulumi.get(self, "configs")
 
     @configs.setter
-    def configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2ConfigArgs']]]]):
+    def configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2ConfigArgs']]]]):
         pulumi.set(self, "configs", value)
 
     @_builtins.property
     @pulumi.getter(name="containerName")
-    def container_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def container_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
         """
         return pulumi.get(self, "container_name")
 
     @container_name.setter
-    def container_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def container_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "container_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def dryrun(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def dryrun(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) parameter that allows long-running operations to execute in a dry-run mode providing ability to identify trouble spots and system failures without performing the actual operation. Additionally this mode also offers a summary snapshot of the resultant system in order to better understand how things fit together. The operation runs in dry-run mode only if the provided value is true.
         """
         return pulumi.get(self, "dryrun")
 
     @dryrun.setter
-    def dryrun(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def dryrun(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dryrun", value)
 
     @_builtins.property
     @pulumi.getter
-    def expand(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expand(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "expand")
 
     @expand.setter
-    def expand(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expand(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expand", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="inefficientVmCount")
-    def inefficient_vm_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def inefficient_vm_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "inefficient_vm_count")
 
     @inefficient_vm_count.setter
-    def inefficient_vm_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def inefficient_vm_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "inefficient_vm_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2LinkArgs']]]]:
+    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2LinkArgs']]]]:
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2LinkArgs']]]]):
+    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name for the vm.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def networks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2NetworkArgs']]]]:
+    def networks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2NetworkArgs']]]]:
         """
         - (Optional) Network details of a cluster.
         """
         return pulumi.get(self, "networks")
 
     @networks.setter
-    def networks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2NetworkArgs']]]]):
+    def networks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2NetworkArgs']]]]):
         pulumi.set(self, "networks", value)
 
     @_builtins.property
     @pulumi.getter
-    def nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2NodeArgs']]]]:
+    def nodes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2NodeArgs']]]]:
         """
         - (Optional) The reference to a node.
         """
         return pulumi.get(self, "nodes")
 
     @nodes.setter
-    def nodes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterV2NodeArgs']]]]):
+    def nodes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterV2NodeArgs']]]]):
         pulumi.set(self, "nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="upgradeStatus")
-    def upgrade_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def upgrade_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The reference to a project.
         Valid values are:
@@ -403,16 +403,16 @@ class _ClusterV2State:
         return pulumi.get(self, "upgrade_status")
 
     @upgrade_status.setter
-    def upgrade_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def upgrade_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "upgrade_status", value)
 
     @_builtins.property
     @pulumi.getter(name="vmCount")
-    def vm_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def vm_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "vm_count")
 
     @vm_count.setter
-    def vm_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def vm_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "vm_count", value)
 
 
@@ -422,21 +422,22 @@ class ClusterV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict']]]]] = None,
-                 container_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dryrun: Optional[pulumi.Input[_builtins.bool]] = None,
-                 expand: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 networks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict']]]]] = None,
-                 nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict']]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict']]]]] = None,
+                 container_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
+                 expand: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict']]]]] = None,
+                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict']]]]] = None,
                  __props__=None):
         """
         Represents the Cluster entity. Provides the basic infrastructure for compute, storage and networking. This includes the operations that can be carried out on cluster and its subresources - host (node), rsyslog servers etc and actions that can be performed on cluster - add a node, remove a node, attach categories.
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -499,6 +500,7 @@ class ClusterV2(pulumi.CustomResource):
                 }],
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -522,6 +524,7 @@ class ClusterV2(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -584,6 +587,7 @@ class ClusterV2(pulumi.CustomResource):
                 }],
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -601,15 +605,15 @@ class ClusterV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict']]]]] = None,
-                 container_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dryrun: Optional[pulumi.Input[_builtins.bool]] = None,
-                 expand: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 networks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict']]]]] = None,
-                 nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict']]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict']]]]] = None,
+                 container_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
+                 expand: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict']]]]] = None,
+                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -645,22 +649,22 @@ class ClusterV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            backup_eligibility_score: Optional[pulumi.Input[_builtins.int]] = None,
-            categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            cluster_profile_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict']]]]] = None,
-            container_name: Optional[pulumi.Input[_builtins.str]] = None,
-            dryrun: Optional[pulumi.Input[_builtins.bool]] = None,
-            expand: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            inefficient_vm_count: Optional[pulumi.Input[_builtins.int]] = None,
-            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2LinkArgs', 'ClusterV2LinkArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            networks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict']]]]] = None,
-            nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict']]]]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            upgrade_status: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_count: Optional[pulumi.Input[_builtins.int]] = None) -> 'ClusterV2':
+            backup_eligibility_score: pulumi.Input[Optional[_builtins.int]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cluster_profile_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict']]]]] = None,
+            container_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
+            expand: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            inefficient_vm_count: pulumi.Input[Optional[_builtins.int]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2LinkArgs', 'ClusterV2LinkArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict']]]]] = None,
+            nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict']]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            upgrade_status: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_count: pulumi.Input[Optional[_builtins.int]] = None) -> 'ClusterV2':
         """
         Get an existing ClusterV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

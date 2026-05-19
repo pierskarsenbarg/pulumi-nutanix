@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const tags = nutanix.getNdbTags({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbTags(args?: GetNdbTagsArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbTagsResult> {
     args = args || {};
@@ -58,12 +60,14 @@ export interface GetNdbTagsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const tags = nutanix.getNdbTags({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbTagsOutput(args?: GetNdbTagsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbTagsResult> {
     args = args || {};
@@ -80,5 +84,5 @@ export interface GetNdbTagsOutputArgs {
     /**
      * entity for the tag to be associated with.
      */
-    entityType?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string | undefined>;
 }

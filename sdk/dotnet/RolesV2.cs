@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,13 +25,13 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // filtered list operation
-    ///     var operations_filtered_list = Nutanix.Index.GetOperationsV2.Invoke(new()
+    ///     var operations_filtered_list = Nutanix.GetOperationsV2.Invoke(new()
     ///     {
     ///         Filter = "startswith(displayName, 'Create_')",
     ///     });
     /// 
     ///     // Create role
-    ///     var example_role = new Nutanix.Index.RolesV2("example-role", new()
+    ///     var example_role = new Nutanix.RolesV2("example-role", new()
     ///     {
     ///         DisplayName = "example_role",
     ///         Description = "create example role",
@@ -45,6 +46,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/rolesV2:RolesV2")]
     public partial class RolesV2 : global::Pulumi.CustomResource

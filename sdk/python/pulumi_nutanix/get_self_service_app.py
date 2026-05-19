@@ -165,6 +165,7 @@ def get_self_service_app(app_uuid: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -175,6 +176,7 @@ def get_self_service_app(app_uuid: Optional[_builtins.str] = None,
         app_description="DESCRIPTION OF APP")
     test = nutanix.get_self_service_app_output(app_uuid=test_self_service_app_provision.id)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str app_uuid: - (Required) The UUID of an app you want to get data from.
@@ -196,13 +198,14 @@ def get_self_service_app(app_uuid: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'),
         vms=pulumi.get(__ret__, 'vms'))
-def get_self_service_app_output(app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+def get_self_service_app_output(app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSelfServiceAppResult]:
     """
     Describes an Application (app) in NCM Self Service.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -213,6 +216,7 @@ def get_self_service_app_output(app_uuid: Optional[pulumi.Input[_builtins.str]] 
         app_description="DESCRIPTION OF APP")
     test = nutanix.get_self_service_app_output(app_uuid=test_self_service_app_provision.id)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str app_uuid: - (Required) The UUID of an app you want to get data from.

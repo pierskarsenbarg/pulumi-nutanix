@@ -189,12 +189,14 @@ def get_template_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     template = nutanix.get_template_v2(ext_id="7ad31035-9e8b-4fb1-b8fd-fa39326887d8")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: The identifier of a Template.
@@ -217,19 +219,21 @@ def get_template_v2(ext_id: Optional[_builtins.str] = None,
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         update_time=pulumi.get(__ret__, 'update_time'),
         updated_bies=pulumi.get(__ret__, 'updated_bies'))
-def get_template_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_template_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTemplateV2Result]:
     """
     Retrieve the Template details for the given Template identifier.
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     template = nutanix.get_template_v2(ext_id="7ad31035-9e8b-4fb1-b8fd-fa39326887d8")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: The identifier of a Template.

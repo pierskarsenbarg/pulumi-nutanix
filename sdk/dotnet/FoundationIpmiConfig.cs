@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var impi_1 = new Nutanix.Index.FoundationIpmiConfig("impi-1", new()
+    ///     var impi_1 = new Nutanix.FoundationIpmiConfig("impi-1", new()
     ///     {
     ///         IpmiUser = "username",
     ///         IpmiNetmask = "10.xx.xx.xx",
@@ -55,6 +56,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Error
     /// 

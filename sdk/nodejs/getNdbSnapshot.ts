@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -22,6 +23,7 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbSnapshot(args: GetNdbSnapshotArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbSnapshotResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -203,6 +205,7 @@ export interface GetNdbSnapshotResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -214,6 +217,7 @@ export interface GetNdbSnapshotResult {
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbSnapshotOutput(args: GetNdbSnapshotOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbSnapshotResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -231,7 +235,7 @@ export interface GetNdbSnapshotOutputArgs {
     /**
      * Filters will fetch the snapshot details as per input
      */
-    filters?: pulumi.Input<pulumi.Input<inputs.GetNdbSnapshotFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GetNdbSnapshotFilterArgs>[] | undefined>;
     /**
      * Snapshot ID to be given
      */
@@ -239,5 +243,5 @@ export interface GetNdbSnapshotOutputArgs {
     /**
      * tags
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbSnapshotTagArgs>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbSnapshotTagArgs>[] | undefined>;
 }

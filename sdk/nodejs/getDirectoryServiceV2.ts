@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -20,6 +21,7 @@ import * as utilities from "./utilities";
  *     extId: "8a938cc5-282b-48c4-81be-de22de145d07",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDirectoryServiceV2(args: GetDirectoryServiceV2Args, opts?: pulumi.InvokeOptions): Promise<GetDirectoryServiceV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -104,6 +106,7 @@ export interface GetDirectoryServiceV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -113,6 +116,7 @@ export interface GetDirectoryServiceV2Result {
  *     extId: "8a938cc5-282b-48c4-81be-de22de145d07",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getDirectoryServiceV2Output(args: GetDirectoryServiceV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDirectoryServiceV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

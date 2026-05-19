@@ -23,9 +23,9 @@ class RolesV2Args:
     def __init__(__self__, *,
                  display_name: pulumi.Input[_builtins.str],
                  operations: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 client_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 client_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a RolesV2 resource.
 
@@ -70,59 +70,59 @@ class RolesV2Args:
 
     @_builtins.property
     @pulumi.getter(name="clientName")
-    def client_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Client that created the entity.
         """
         return pulumi.get(self, "client_name")
 
     @client_name.setter
-    def client_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Description of the Role.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - A globally unique identifier of an instance that is suitable for external consumption.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
 
 @pulumi.input_type
 class _RolesV2State:
     def __init__(__self__, *,
-                 accessible_clients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 accessible_entity_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 assigned_users_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 assigned_users_groups_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 client_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_system_defined: Optional[pulumi.Input[_builtins.bool]] = None,
-                 last_updated_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 links: Optional[pulumi.Input[Sequence[pulumi.Input['RolesV2LinkArgs']]]] = None,
-                 operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 accessible_clients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 accessible_entity_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 assigned_users_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 assigned_users_groups_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 client_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
+                 last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['RolesV2LinkArgs']]]] = None,
+                 operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RolesV2 resources.
 
@@ -175,182 +175,182 @@ class _RolesV2State:
 
     @_builtins.property
     @pulumi.getter(name="accessibleClients")
-    def accessible_clients(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def accessible_clients(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - List of Accessible Clients for the Role.
         """
         return pulumi.get(self, "accessible_clients")
 
     @accessible_clients.setter
-    def accessible_clients(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def accessible_clients(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "accessible_clients", value)
 
     @_builtins.property
     @pulumi.getter(name="accessibleEntityTypes")
-    def accessible_entity_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def accessible_entity_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - List of Accessible Entity Types for the Role.
         """
         return pulumi.get(self, "accessible_entity_types")
 
     @accessible_entity_types.setter
-    def accessible_entity_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def accessible_entity_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "accessible_entity_types", value)
 
     @_builtins.property
     @pulumi.getter(name="assignedUsersCount")
-    def assigned_users_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def assigned_users_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - Number of Users assigned to given Role.
         """
         return pulumi.get(self, "assigned_users_count")
 
     @assigned_users_count.setter
-    def assigned_users_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def assigned_users_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "assigned_users_count", value)
 
     @_builtins.property
     @pulumi.getter(name="assignedUsersGroupsCount")
-    def assigned_users_groups_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def assigned_users_groups_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - Number of User Groups assigned to given Role.
         """
         return pulumi.get(self, "assigned_users_groups_count")
 
     @assigned_users_groups_count.setter
-    def assigned_users_groups_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def assigned_users_groups_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "assigned_users_groups_count", value)
 
     @_builtins.property
     @pulumi.getter(name="clientName")
-    def client_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Client that created the entity.
         """
         return pulumi.get(self, "client_name")
 
     @client_name.setter
-    def client_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_name", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - User or Service Name that created the Role.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="createdTime")
-    def created_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The creation time of the Role.
         """
         return pulumi.get(self, "created_time")
 
     @created_time.setter
-    def created_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Description of the Role.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) The display name for the Role.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - A globally unique identifier of an instance that is suitable for external consumption.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isSystemDefined")
-    def is_system_defined(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_system_defined(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - Flag identifying if the Role is system defined or not.
         """
         return pulumi.get(self, "is_system_defined")
 
     @is_system_defined.setter
-    def is_system_defined(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_system_defined(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_system_defined", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedTime")
-    def last_updated_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_updated_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The time when the Role was last updated.
         """
         return pulumi.get(self, "last_updated_time")
 
     @last_updated_time.setter
-    def last_updated_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_updated_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_updated_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RolesV2LinkArgs']]]]:
+    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RolesV2LinkArgs']]]]:
         """
         - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         """
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RolesV2LinkArgs']]]]):
+    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RolesV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         -(Required) List of operations for the role.
         """
         return pulumi.get(self, "operations")
 
     @operations.setter
-    def operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "operations", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
 
@@ -360,17 +360,18 @@ class RolesV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 client_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 client_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Provides a resource to add a Role.
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -388,6 +389,7 @@ class RolesV2(pulumi.CustomResource):
                 operations_filtered_list.operations[3].ext_id,
             ])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -409,6 +411,7 @@ class RolesV2(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -426,6 +429,7 @@ class RolesV2(pulumi.CustomResource):
                 operations_filtered_list.operations[3].ext_id,
             ])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -443,11 +447,11 @@ class RolesV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 client_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 client_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -486,21 +490,21 @@ class RolesV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            accessible_clients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            accessible_entity_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            assigned_users_count: Optional[pulumi.Input[_builtins.int]] = None,
-            assigned_users_groups_count: Optional[pulumi.Input[_builtins.int]] = None,
-            client_name: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            created_time: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_system_defined: Optional[pulumi.Input[_builtins.bool]] = None,
-            last_updated_time: Optional[pulumi.Input[_builtins.str]] = None,
-            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RolesV2LinkArgs', 'RolesV2LinkArgsDict']]]]] = None,
-            operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'RolesV2':
+            accessible_clients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            accessible_entity_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            assigned_users_count: pulumi.Input[Optional[_builtins.int]] = None,
+            assigned_users_groups_count: pulumi.Input[Optional[_builtins.int]] = None,
+            client_name: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_time: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RolesV2LinkArgs', 'RolesV2LinkArgsDict']]]]] = None,
+            operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'RolesV2':
         """
         Get an existing RolesV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

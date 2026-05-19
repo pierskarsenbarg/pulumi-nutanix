@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,14 +24,14 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example_1 = new Nutanix.Index.TemplateGuestOsActionsV2("example-1", new()
+    ///     var example_1 = new Nutanix.TemplateGuestOsActionsV2("example-1", new()
     ///     {
     ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
     ///         Action = "initiate",
     ///         VersionId = "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
     ///     });
     /// 
-    ///     var example_2 = new Nutanix.Index.TemplateGuestOsActionsV2("example-2", new()
+    ///     var example_2 = new Nutanix.TemplateGuestOsActionsV2("example-2", new()
     ///     {
     ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
     ///         Action = "complete",
@@ -39,7 +40,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         IsActiveVersion = "true",
     ///     });
     /// 
-    ///     var example_3 = new Nutanix.Index.TemplateGuestOsActionsV2("example-3", new()
+    ///     var example_3 = new Nutanix.TemplateGuestOsActionsV2("example-3", new()
     ///     {
     ///         ExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
     ///         Action = "cancel",
@@ -47,6 +48,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/templateGuestOsActionsV2:TemplateGuestOsActionsV2")]
     public partial class TemplateGuestOsActionsV2 : global::Pulumi.CustomResource
@@ -64,7 +66,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> ExtId { get; private set; } = null!;
 
         /// <summary>
-        /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `Complete` action.
+        /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with &lt;span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`"&gt;`complete`&lt;/span&gt; action.
         /// 
         /// 
         /// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/initiateGuestUpdate).
@@ -75,7 +77,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string?> IsActiveVersion { get; private set; } = null!;
 
         /// <summary>
-        /// The user defined description of a Template Version. (Required) Only applicable with `Complete` action.
+        /// The user defined description of a Template Version. (Required) Only applicable with &lt;span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`"&gt;`complete`&lt;/span&gt; action.
         /// </summary>
         [Output("versionDescription")]
         public Output<string?> VersionDescription { get; private set; } = null!;
@@ -87,7 +89,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string?> VersionId { get; private set; } = null!;
 
         /// <summary>
-        /// The user defined name of a Template Version. Only applicable with `Complete` action.
+        /// The user defined name of a Template Version. Only applicable with &lt;span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`"&gt;`complete`&lt;/span&gt; action.
         /// </summary>
         [Output("versionName")]
         public Output<string?> VersionName { get; private set; } = null!;
@@ -152,7 +154,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string> ExtId { get; set; } = null!;
 
         /// <summary>
-        /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `Complete` action.
+        /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with &lt;span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`"&gt;`complete`&lt;/span&gt; action.
         /// 
         /// 
         /// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/initiateGuestUpdate).
@@ -163,7 +165,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? IsActiveVersion { get; set; }
 
         /// <summary>
-        /// The user defined description of a Template Version. (Required) Only applicable with `Complete` action.
+        /// The user defined description of a Template Version. (Required) Only applicable with &lt;span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`"&gt;`complete`&lt;/span&gt; action.
         /// </summary>
         [Input("versionDescription")]
         public Input<string>? VersionDescription { get; set; }
@@ -175,7 +177,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? VersionId { get; set; }
 
         /// <summary>
-        /// The user defined name of a Template Version. Only applicable with `Complete` action.
+        /// The user defined name of a Template Version. Only applicable with &lt;span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`"&gt;`complete`&lt;/span&gt; action.
         /// </summary>
         [Input("versionName")]
         public Input<string>? VersionName { get; set; }
@@ -201,7 +203,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? ExtId { get; set; }
 
         /// <summary>
-        /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `Complete` action.
+        /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with &lt;span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`"&gt;`complete`&lt;/span&gt; action.
         /// 
         /// 
         /// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/initiateGuestUpdate).
@@ -212,7 +214,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? IsActiveVersion { get; set; }
 
         /// <summary>
-        /// The user defined description of a Template Version. (Required) Only applicable with `Complete` action.
+        /// The user defined description of a Template Version. (Required) Only applicable with &lt;span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`"&gt;`complete`&lt;/span&gt; action.
         /// </summary>
         [Input("versionDescription")]
         public Input<string>? VersionDescription { get; set; }
@@ -224,7 +226,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? VersionId { get; set; }
 
         /// <summary>
-        /// The user defined name of a Template Version. Only applicable with `Complete` action.
+        /// The user defined name of a Template Version. Only applicable with &lt;span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`"&gt;`complete`&lt;/span&gt; action.
         /// </summary>
         [Input("versionName")]
         public Input<string>? VersionName { get; set; }

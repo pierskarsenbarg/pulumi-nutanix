@@ -73,12 +73,12 @@ class FoundationImageArgs:
 @pulumi.input_type
 class _FoundationImageState:
     def __init__(__self__, *,
-                 filename: Optional[pulumi.Input[_builtins.str]] = None,
-                 in_whitelist: Optional[pulumi.Input[_builtins.bool]] = None,
-                 installer_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 md5sum: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None):
+                 filename: pulumi.Input[Optional[_builtins.str]] = None,
+                 in_whitelist: pulumi.Input[Optional[_builtins.bool]] = None,
+                 installer_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 md5sum: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FoundationImage resources.
 
@@ -104,74 +104,74 @@ class _FoundationImageState:
 
     @_builtins.property
     @pulumi.getter
-    def filename(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filename(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) Name of installer file to be kept in foundation vm.
         """
         return pulumi.get(self, "filename")
 
     @filename.setter
-    def filename(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filename(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filename", value)
 
     @_builtins.property
     @pulumi.getter(name="inWhitelist")
-    def in_whitelist(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def in_whitelist(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - If hypervisor ISO is in whitelist.
         """
         return pulumi.get(self, "in_whitelist")
 
     @in_whitelist.setter
-    def in_whitelist(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def in_whitelist(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "in_whitelist", value)
 
     @_builtins.property
     @pulumi.getter(name="installerType")
-    def installer_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def installer_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
         """
         return pulumi.get(self, "installer_type")
 
     @installer_type.setter
-    def installer_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def installer_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "installer_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def md5sum(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def md5sum(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - md5sum of the ISO.
         """
         return pulumi.get(self, "md5sum")
 
     @md5sum.setter
-    def md5sum(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def md5sum(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "md5sum", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - file location in foundation vm
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) Complete path to the file in machine where the .tf  files runs.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
 
@@ -181,15 +181,16 @@ class FoundationImage(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 filename: Optional[pulumi.Input[_builtins.str]] = None,
-                 installer_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
+                 filename: pulumi.Input[Optional[_builtins.str]] = None,
+                 installer_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Uploads hypervisor or AOS image to foundation.
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -203,6 +204,7 @@ class FoundationImage(pulumi.CustomResource):
             filename="esx_image.iso",
             installer_type="esx")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## lifecycle
 
@@ -228,6 +230,7 @@ class FoundationImage(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -241,6 +244,7 @@ class FoundationImage(pulumi.CustomResource):
             filename="esx_image.iso",
             installer_type="esx")
         ```
+        <!--End PulumiCodeChooser -->
 
         ## lifecycle
 
@@ -264,9 +268,9 @@ class FoundationImage(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 filename: Optional[pulumi.Input[_builtins.str]] = None,
-                 installer_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
+                 filename: pulumi.Input[Optional[_builtins.str]] = None,
+                 installer_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -298,12 +302,12 @@ class FoundationImage(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            filename: Optional[pulumi.Input[_builtins.str]] = None,
-            in_whitelist: Optional[pulumi.Input[_builtins.bool]] = None,
-            installer_type: Optional[pulumi.Input[_builtins.str]] = None,
-            md5sum: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            source: Optional[pulumi.Input[_builtins.str]] = None) -> 'FoundationImage':
+            filename: pulumi.Input[Optional[_builtins.str]] = None,
+            in_whitelist: pulumi.Input[Optional[_builtins.bool]] = None,
+            installer_type: pulumi.Input[Optional[_builtins.str]] = None,
+            md5sum: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None) -> 'FoundationImage':
         """
         Get an existing FoundationImage resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

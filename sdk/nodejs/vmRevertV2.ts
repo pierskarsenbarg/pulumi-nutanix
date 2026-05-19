@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,6 +20,7 @@ import * as utilities from "./utilities";
  *     vmRecoveryPointExtId: "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class VmRevertV2 extends pulumi.CustomResource {
     /**
@@ -101,15 +103,15 @@ export interface VmRevertV2State {
     /**
      * -(Required) The globally unique identifier of a VM. It should be of type UUID.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * - The status of the Revert operation.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * -(Required) The external identifier of the VM Recovery Point.
      */
-    vmRecoveryPointExtId?: pulumi.Input<string>;
+    vmRecoveryPointExtId?: pulumi.Input<string | undefined>;
 }
 
 /**

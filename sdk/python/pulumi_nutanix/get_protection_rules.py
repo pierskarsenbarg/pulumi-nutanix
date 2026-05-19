@@ -80,12 +80,14 @@ def get_protection_rules(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitab
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     protection_rules = nutanix.get_protection_rules()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -101,12 +103,14 @@ def get_protection_rules_output(opts: Optional[Union[pulumi.InvokeOptions, pulum
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     protection_rules = nutanix.get_protection_rules()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

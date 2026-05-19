@@ -128,6 +128,7 @@ def get_object_stores_v2(expand: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -136,6 +137,7 @@ def get_object_stores_v2(expand: Optional[_builtins.str] = None,
     filter = nutanix.get_object_stores_v2(filter="name eq 'object_store_example'")
     limit = nutanix.get_object_stores_v2(limit=10)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str expand: -(Optional) A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \\$filter, \\$select and \\$orderby. The following expansion keys are supported:
@@ -216,18 +218,19 @@ def get_object_stores_v2(expand: Optional[_builtins.str] = None,
         order_by=pulumi.get(__ret__, 'order_by'),
         page=pulumi.get(__ret__, 'page'),
         select=pulumi.get(__ret__, 'select'))
-def get_object_stores_v2_output(expand: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_object_stores_v2_output(expand: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetObjectStoresV2Result]:
     """
     Get an Object store for the provided UUID
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -236,6 +239,7 @@ def get_object_stores_v2_output(expand: Optional[pulumi.Input[Optional[_builtins
     filter = nutanix.get_object_stores_v2(filter="name eq 'object_store_example'")
     limit = nutanix.get_object_stores_v2(limit=10)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str expand: -(Optional) A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \\$filter, \\$select and \\$orderby. The following expansion keys are supported:

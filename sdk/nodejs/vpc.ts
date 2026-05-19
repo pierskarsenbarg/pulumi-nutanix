@@ -13,6 +13,7 @@ import * as utilities from "./utilities";
  *
  * ### vpc creation with external subnet name
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -37,9 +38,11 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ### vpc creation with external subnet uuid
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -62,6 +65,7 @@ import * as utilities from "./utilities";
  *     ],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class Vpc extends pulumi.CustomResource {
     /**
@@ -168,35 +172,35 @@ export interface VpcState {
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * List of domain name server IPs.
      */
-    commonDomainNameServerIpLists?: pulumi.Input<pulumi.Input<inputs.VpcCommonDomainNameServerIpList>[]>;
+    commonDomainNameServerIpLists?: pulumi.Input<pulumi.Input<inputs.VpcCommonDomainNameServerIpList>[] | undefined>;
     /**
      * Status of List of external subnets attached to this VPC
      */
-    externalSubnetListStatuses?: pulumi.Input<pulumi.Input<inputs.VpcExternalSubnetListStatus>[]>;
+    externalSubnetListStatuses?: pulumi.Input<pulumi.Input<inputs.VpcExternalSubnetListStatus>[] | undefined>;
     /**
      * List of external subnets name attached to this VPC. Should not be used with external_subnet_reference_uuid.
      */
-    externalSubnetReferenceNames?: pulumi.Input<pulumi.Input<string>[]>;
+    externalSubnetReferenceNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of external subnets uuid attached to this VPC. Should not be used with external_subnet_reference_name.
      */
-    externalSubnetReferenceUuids?: pulumi.Input<pulumi.Input<string>[]>;
+    externalSubnetReferenceUuids?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List Externally Routable IP Addresses. Required when external subnet with NoNAT is used.
      */
-    externallyRoutablePrefixLists?: pulumi.Input<pulumi.Input<inputs.VpcExternallyRoutablePrefixList>[]>;
+    externallyRoutablePrefixLists?: pulumi.Input<pulumi.Input<inputs.VpcExternallyRoutablePrefixList>[] | undefined>;
     /**
      * The vpc kind metadata.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name for the VPC.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -206,25 +210,25 @@ export interface VpcArgs {
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * List of domain name server IPs.
      */
-    commonDomainNameServerIpLists?: pulumi.Input<pulumi.Input<inputs.VpcCommonDomainNameServerIpList>[]>;
+    commonDomainNameServerIpLists?: pulumi.Input<pulumi.Input<inputs.VpcCommonDomainNameServerIpList>[] | undefined>;
     /**
      * List of external subnets name attached to this VPC. Should not be used with external_subnet_reference_uuid.
      */
-    externalSubnetReferenceNames?: pulumi.Input<pulumi.Input<string>[]>;
+    externalSubnetReferenceNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of external subnets uuid attached to this VPC. Should not be used with external_subnet_reference_name.
      */
-    externalSubnetReferenceUuids?: pulumi.Input<pulumi.Input<string>[]>;
+    externalSubnetReferenceUuids?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List Externally Routable IP Addresses. Required when external subnet with NoNAT is used.
      */
-    externallyRoutablePrefixLists?: pulumi.Input<pulumi.Input<inputs.VpcExternallyRoutablePrefixList>[]>;
+    externallyRoutablePrefixLists?: pulumi.Input<pulumi.Input<inputs.VpcExternallyRoutablePrefixList>[] | undefined>;
     /**
      * The name for the VPC.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

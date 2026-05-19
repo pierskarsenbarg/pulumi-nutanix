@@ -222,6 +222,7 @@ def get_user_group(categories: Optional[Sequence[Union['GetUserGroupCategoryArgs
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -233,6 +234,7 @@ def get_user_group(categories: Optional[Sequence[Union['GetUserGroupCategoryArgs
     #Retrieve by Distinguished Name
     test = nutanix.get_user_group(user_group_distinguished_name="cn=example-group-1,cn=users,dc=ntnxlab,dc=local")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetUserGroupCategoryArgs', 'GetUserGroupCategoryArgsDict']] categories: - The Distinguished Categories for the user group.
@@ -268,18 +270,19 @@ def get_user_group(categories: Optional[Sequence[Union['GetUserGroupCategoryArgs
         user_group_id=pulumi.get(__ret__, 'user_group_id'),
         user_group_name=pulumi.get(__ret__, 'user_group_name'),
         user_group_type=pulumi.get(__ret__, 'user_group_type'))
-def get_user_group_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetUserGroupCategoryArgs', 'GetUserGroupCategoryArgsDict']]]]] = None,
-                          owner_reference: Optional[pulumi.Input[Optional[Mapping[str, _builtins.str]]]] = None,
-                          project_reference: Optional[pulumi.Input[Optional[Mapping[str, _builtins.str]]]] = None,
-                          user_group_distinguished_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          user_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          user_group_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_user_group_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetUserGroupCategoryArgs', 'GetUserGroupCategoryArgsDict']]]]] = None,
+                          owner_reference: pulumi.Input[Optional[Optional[Mapping[str, _builtins.str]]]] = None,
+                          project_reference: pulumi.Input[Optional[Optional[Mapping[str, _builtins.str]]]] = None,
+                          user_group_distinguished_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          user_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          user_group_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserGroupResult]:
     """
     Provides a datasource to retrieve a user group based on the input parameters.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -291,6 +294,7 @@ def get_user_group_output(categories: Optional[pulumi.Input[Optional[Sequence[Un
     #Retrieve by Distinguished Name
     test = nutanix.get_user_group(user_group_distinguished_name="cn=example-group-1,cn=users,dc=ntnxlab,dc=local")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetUserGroupCategoryArgs', 'GetUserGroupCategoryArgsDict']] categories: - The Distinguished Categories for the user group.

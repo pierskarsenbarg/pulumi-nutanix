@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const clusters = nutanix.getKarbonClusters({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getKarbonClusters(opts?: pulumi.InvokeOptions): Promise<GetKarbonClustersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -39,12 +41,14 @@ export interface GetKarbonClustersResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const clusters = nutanix.getKarbonClusters({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getKarbonClustersOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetKarbonClustersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

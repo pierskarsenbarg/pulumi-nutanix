@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -21,6 +22,7 @@ import * as utilities from "./utilities";
  *     offset: 0,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSelfServiceAppSnapshots(args: GetSelfServiceAppSnapshotsArgs, opts?: pulumi.InvokeOptions): Promise<GetSelfServiceAppSnapshotsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -43,7 +45,7 @@ export interface GetSelfServiceAppSnapshotsArgs {
     /**
      * - (Optional) The UUID of the application.
      *
-     * Both (`appName` and `appUuid`) are optional but atleast one of them to be provided for this data source to work.
+     * Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them to be provided for this data source to work.
      */
     appUuid?: string;
     /**
@@ -93,6 +95,7 @@ export interface GetSelfServiceAppSnapshotsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -103,6 +106,7 @@ export interface GetSelfServiceAppSnapshotsResult {
  *     offset: 0,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getSelfServiceAppSnapshotsOutput(args: GetSelfServiceAppSnapshotsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSelfServiceAppSnapshotsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -121,13 +125,13 @@ export interface GetSelfServiceAppSnapshotsOutputArgs {
     /**
      * - (Optional) The name of the application.
      */
-    appName?: pulumi.Input<string>;
+    appName?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The UUID of the application.
      *
-     * Both (`appName` and `appUuid`) are optional but atleast one of them to be provided for this data source to work.
+     * Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them to be provided for this data source to work.
      */
-    appUuid?: pulumi.Input<string>;
+    appUuid?: pulumi.Input<string | undefined>;
     /**
      * - (Required) The number of snapshots to retrieve.
      */

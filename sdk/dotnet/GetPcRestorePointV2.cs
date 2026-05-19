@@ -17,6 +17,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // this is PE based module, so use PE provider alias
+        /// const getRestorePoint = nutanix.getPcRestorePointV2({
+        ///     restorableDomainManagerExtId: testNutanixRestorablePcsV2.restorablePcs[0].extId,
+        ///     restoreSourceExtId: cluster_location.id,
+        ///     extId: test.restorePoints[0].extId,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # this is PE based module, so use PE provider alias
+        /// get_restore_point = nutanix.get_pc_restore_point_v2(restorable_domain_manager_ext_id=test_nutanix_restorable_pcs_v2["restorablePcs"][0]["extId"],
+        ///     restore_source_ext_id=cluster_location["id"],
+        ///     ext_id=test["restorePoints"][0]["extId"])
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,7 +47,7 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // this is PE based module, so use PE provider alias
-        ///     var getRestorePoint = Nutanix.Index.GetPcRestorePointV2.Invoke(new()
+        ///     var getRestorePoint = Nutanix.GetPcRestorePointV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = testNutanixRestorablePcsV2.RestorablePcs[0].ExtId,
         ///         RestoreSourceExtId = cluster_location.Id,
@@ -35,6 +56,72 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// this is PE based module, so use PE provider alias
+        /// 		_, err := nutanix.GetPcRestorePointV2(ctx, &amp;nutanix.GetPcRestorePointV2Args{
+        /// 			RestorableDomainManagerExtId: testNutanixRestorablePcsV2.RestorablePcs[0].ExtId,
+        /// 			RestoreSourceExtId:           cluster_location.Id,
+        /// 			ExtId:                        test.RestorePoints[0].ExtId,
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPcRestorePointV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // this is PE based module, so use PE provider alias
+        ///         final var getRestorePoint = NutanixFunctions.getPcRestorePointV2(GetPcRestorePointV2Args.builder()
+        ///             .restorableDomainManagerExtId(testNutanixRestorablePcsV2.restorablePcs()[0].extId())
+        ///             .restoreSourceExtId(cluster_location.id())
+        ///             .extId(test.restorePoints()[0].extId())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # this is PE based module, so use PE provider alias
+        ///   getRestorePoint:
+        ///     fn::invoke:
+        ///       function: nutanix:getPcRestorePointV2
+        ///       arguments:
+        ///         restorableDomainManagerExtId: ${testNutanixRestorablePcsV2.restorablePcs[0].extId}
+        ///         restoreSourceExtId: ${["cluster-location"].id}
+        ///         extId: ${test.restorePoints[0].extId}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPcRestorePointV2Result> InvokeAsync(GetPcRestorePointV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPcRestorePointV2Result>("nutanix:index/getPcRestorePointV2:getPcRestorePointV2", args ?? new GetPcRestorePointV2Args(), options.WithDefaults());
@@ -44,6 +131,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // this is PE based module, so use PE provider alias
+        /// const getRestorePoint = nutanix.getPcRestorePointV2({
+        ///     restorableDomainManagerExtId: testNutanixRestorablePcsV2.restorablePcs[0].extId,
+        ///     restoreSourceExtId: cluster_location.id,
+        ///     extId: test.restorePoints[0].extId,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # this is PE based module, so use PE provider alias
+        /// get_restore_point = nutanix.get_pc_restore_point_v2(restorable_domain_manager_ext_id=test_nutanix_restorable_pcs_v2["restorablePcs"][0]["extId"],
+        ///     restore_source_ext_id=cluster_location["id"],
+        ///     ext_id=test["restorePoints"][0]["extId"])
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -53,7 +161,7 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // this is PE based module, so use PE provider alias
-        ///     var getRestorePoint = Nutanix.Index.GetPcRestorePointV2.Invoke(new()
+        ///     var getRestorePoint = Nutanix.GetPcRestorePointV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = testNutanixRestorablePcsV2.RestorablePcs[0].ExtId,
         ///         RestoreSourceExtId = cluster_location.Id,
@@ -62,6 +170,72 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// this is PE based module, so use PE provider alias
+        /// 		_, err := nutanix.GetPcRestorePointV2(ctx, &amp;nutanix.GetPcRestorePointV2Args{
+        /// 			RestorableDomainManagerExtId: testNutanixRestorablePcsV2.RestorablePcs[0].ExtId,
+        /// 			RestoreSourceExtId:           cluster_location.Id,
+        /// 			ExtId:                        test.RestorePoints[0].ExtId,
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPcRestorePointV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // this is PE based module, so use PE provider alias
+        ///         final var getRestorePoint = NutanixFunctions.getPcRestorePointV2(GetPcRestorePointV2Args.builder()
+        ///             .restorableDomainManagerExtId(testNutanixRestorablePcsV2.restorablePcs()[0].extId())
+        ///             .restoreSourceExtId(cluster_location.id())
+        ///             .extId(test.restorePoints()[0].extId())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # this is PE based module, so use PE provider alias
+        ///   getRestorePoint:
+        ///     fn::invoke:
+        ///       function: nutanix:getPcRestorePointV2
+        ///       arguments:
+        ///         restorableDomainManagerExtId: ${testNutanixRestorablePcsV2.restorablePcs[0].extId}
+        ///         restoreSourceExtId: ${["cluster-location"].id}
+        ///         extId: ${test.restorePoints[0].extId}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPcRestorePointV2Result> Invoke(GetPcRestorePointV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPcRestorePointV2Result>("nutanix:index/getPcRestorePointV2:getPcRestorePointV2", args ?? new GetPcRestorePointV2InvokeArgs(), options.WithDefaults());
@@ -71,6 +245,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // this is PE based module, so use PE provider alias
+        /// const getRestorePoint = nutanix.getPcRestorePointV2({
+        ///     restorableDomainManagerExtId: testNutanixRestorablePcsV2.restorablePcs[0].extId,
+        ///     restoreSourceExtId: cluster_location.id,
+        ///     extId: test.restorePoints[0].extId,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # this is PE based module, so use PE provider alias
+        /// get_restore_point = nutanix.get_pc_restore_point_v2(restorable_domain_manager_ext_id=test_nutanix_restorable_pcs_v2["restorablePcs"][0]["extId"],
+        ///     restore_source_ext_id=cluster_location["id"],
+        ///     ext_id=test["restorePoints"][0]["extId"])
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -80,7 +275,7 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // this is PE based module, so use PE provider alias
-        ///     var getRestorePoint = Nutanix.Index.GetPcRestorePointV2.Invoke(new()
+        ///     var getRestorePoint = Nutanix.GetPcRestorePointV2.Invoke(new()
         ///     {
         ///         RestorableDomainManagerExtId = testNutanixRestorablePcsV2.RestorablePcs[0].ExtId,
         ///         RestoreSourceExtId = cluster_location.Id,
@@ -89,6 +284,72 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// this is PE based module, so use PE provider alias
+        /// 		_, err := nutanix.GetPcRestorePointV2(ctx, &amp;nutanix.GetPcRestorePointV2Args{
+        /// 			RestorableDomainManagerExtId: testNutanixRestorablePcsV2.RestorablePcs[0].ExtId,
+        /// 			RestoreSourceExtId:           cluster_location.Id,
+        /// 			ExtId:                        test.RestorePoints[0].ExtId,
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPcRestorePointV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // this is PE based module, so use PE provider alias
+        ///         final var getRestorePoint = NutanixFunctions.getPcRestorePointV2(GetPcRestorePointV2Args.builder()
+        ///             .restorableDomainManagerExtId(testNutanixRestorablePcsV2.restorablePcs()[0].extId())
+        ///             .restoreSourceExtId(cluster_location.id())
+        ///             .extId(test.restorePoints()[0].extId())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # this is PE based module, so use PE provider alias
+        ///   getRestorePoint:
+        ///     fn::invoke:
+        ///       function: nutanix:getPcRestorePointV2
+        ///       arguments:
+        ///         restorableDomainManagerExtId: ${testNutanixRestorablePcsV2.restorablePcs[0].extId}
+        ///         restoreSourceExtId: ${["cluster-location"].id}
+        ///         extId: ${test.restorePoints[0].extId}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPcRestorePointV2Result> Invoke(GetPcRestorePointV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetPcRestorePointV2Result>("nutanix:index/getPcRestorePointV2:getPcRestorePointV2", args ?? new GetPcRestorePointV2InvokeArgs(), options.WithDefaults());

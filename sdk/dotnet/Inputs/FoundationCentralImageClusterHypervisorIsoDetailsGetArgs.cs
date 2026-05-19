@@ -20,7 +20,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<string>? HypervProductKey { get; set; }
 
         /// <summary>
-        /// SKU of hyperv to be installed if HypervisorType is hyperv.
+        /// SKU of hyperv to be installed if&lt;span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType "&gt; hypervisorType &lt;/span&gt;is hyperv.
         /// </summary>
         [Input("hypervSku")]
         public Input<string>? HypervSku { get; set; }

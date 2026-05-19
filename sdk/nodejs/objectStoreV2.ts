@@ -18,6 +18,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -84,6 +85,7 @@ import * as utilities from "./utilities";
  *     },
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class ObjectStoreV2 extends pulumi.CustomResource {
     /**
@@ -280,63 +282,63 @@ export interface ObjectStoreV2State {
     /**
      * - A list of the UUIDs of the certificates of an Object store.
      */
-    certificateExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    certificateExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * -(Optional) UUID of the AHV or ESXi cluster.
      */
-    clusterExtId?: pulumi.Input<string>;
+    clusterExtId?: pulumi.Input<string | undefined>;
     /**
      * - The time when the Object store was created.
      */
-    creationTime?: pulumi.Input<string>;
+    creationTime?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) The deployment version of the Object store.
      */
-    deploymentVersion?: pulumi.Input<string>;
+    deploymentVersion?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) A brief description of the Object store.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) The DNS domain/subdomain the Object store belongs to. All the Object stores under one Prism Central must have the same domain name. The domain name must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens, or underscores. Each part can be up to 63 characters long. The domain must begin and end with an alphanumeric character. For example - 'objects-0.pc_nutanix.com'.
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * - A globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * - The time when the Object store was last updated.
      */
-    lastUpdateTime?: pulumi.Input<string>;
+    lastUpdateTime?: pulumi.Input<string | undefined>;
     /**
      * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.ObjectStoreV2Link>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.ObjectStoreV2Link>[] | undefined>;
     /**
      * -(Optional) Metadata associated with this resource.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.ObjectStoreV2Metadata>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.ObjectStoreV2Metadata>[] | undefined>;
     /**
      * -(Required) The name of the Object store.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) The number of worker nodes (VMs) to be created for the Object store. Each worker node requires 10 vCPUs and 32 GiB of memory.
      */
-    numWorkerNodes?: pulumi.Input<number>;
+    numWorkerNodes?: pulumi.Input<number | undefined>;
     /**
      * -(Optional) A list of static IP addresses used as public IPs to access the Object store.
      */
-    publicNetworkIps?: pulumi.Input<pulumi.Input<inputs.ObjectStoreV2PublicNetworkIp>[]>;
+    publicNetworkIps?: pulumi.Input<pulumi.Input<inputs.ObjectStoreV2PublicNetworkIp>[] | undefined>;
     /**
      * -(Optional) Public network reference of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
      */
-    publicNetworkReference?: pulumi.Input<string>;
+    publicNetworkReference?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) The region in which the Object store is deployed.
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Enum for the state of the Object store.
      * | Enum                                   | Description                                                     |
@@ -352,27 +354,27 @@ export interface ObjectStoreV2State {
      * | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
      * | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
      */
-    storageNetworkDnsIp?: pulumi.Input<inputs.ObjectStoreV2StorageNetworkDnsIp>;
+    storageNetworkDnsIp?: pulumi.Input<inputs.ObjectStoreV2StorageNetworkDnsIp | undefined>;
     /**
      * -(Optional) Reference to the Storage Network of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
      */
-    storageNetworkReference?: pulumi.Input<string>;
+    storageNetworkReference?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
      */
-    storageNetworkVip?: pulumi.Input<inputs.ObjectStoreV2StorageNetworkVip>;
+    storageNetworkVip?: pulumi.Input<inputs.ObjectStoreV2StorageNetworkVip | undefined>;
     /**
      * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Size of the Object store in GiB.
      */
-    totalCapacityGib?: pulumi.Input<number>;
+    totalCapacityGib?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -382,47 +384,47 @@ export interface ObjectStoreV2Args {
     /**
      * - A list of the UUIDs of the certificates of an Object store.
      */
-    certificateExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    certificateExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * -(Optional) UUID of the AHV or ESXi cluster.
      */
-    clusterExtId?: pulumi.Input<string>;
+    clusterExtId?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) The deployment version of the Object store.
      */
-    deploymentVersion?: pulumi.Input<string>;
+    deploymentVersion?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) A brief description of the Object store.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) The DNS domain/subdomain the Object store belongs to. All the Object stores under one Prism Central must have the same domain name. The domain name must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens, or underscores. Each part can be up to 63 characters long. The domain must begin and end with an alphanumeric character. For example - 'objects-0.pc_nutanix.com'.
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Metadata associated with this resource.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.ObjectStoreV2Metadata>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.ObjectStoreV2Metadata>[] | undefined>;
     /**
      * -(Required) The name of the Object store.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) The number of worker nodes (VMs) to be created for the Object store. Each worker node requires 10 vCPUs and 32 GiB of memory.
      */
-    numWorkerNodes?: pulumi.Input<number>;
+    numWorkerNodes?: pulumi.Input<number | undefined>;
     /**
      * -(Optional) A list of static IP addresses used as public IPs to access the Object store.
      */
-    publicNetworkIps?: pulumi.Input<pulumi.Input<inputs.ObjectStoreV2PublicNetworkIp>[]>;
+    publicNetworkIps?: pulumi.Input<pulumi.Input<inputs.ObjectStoreV2PublicNetworkIp>[] | undefined>;
     /**
      * -(Optional) Public network reference of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
      */
-    publicNetworkReference?: pulumi.Input<string>;
+    publicNetworkReference?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) The region in which the Object store is deployed.
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Enum for the state of the Object store.
      * | Enum                                   | Description                                                     |
@@ -438,21 +440,21 @@ export interface ObjectStoreV2Args {
      * | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
      * | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
      */
-    storageNetworkDnsIp?: pulumi.Input<inputs.ObjectStoreV2StorageNetworkDnsIp>;
+    storageNetworkDnsIp?: pulumi.Input<inputs.ObjectStoreV2StorageNetworkDnsIp | undefined>;
     /**
      * -(Optional) Reference to the Storage Network of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
      */
-    storageNetworkReference?: pulumi.Input<string>;
+    storageNetworkReference?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
      */
-    storageNetworkVip?: pulumi.Input<inputs.ObjectStoreV2StorageNetworkVip>;
+    storageNetworkVip?: pulumi.Input<inputs.ObjectStoreV2StorageNetworkVip | undefined>;
     /**
      * -(Optional) Size of the Object store in GiB.
      */
-    totalCapacityGib?: pulumi.Input<number>;
+    totalCapacityGib?: pulumi.Input<number | undefined>;
 }

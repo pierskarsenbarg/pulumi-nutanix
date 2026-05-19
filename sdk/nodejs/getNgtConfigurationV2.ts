@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -17,6 +18,7 @@ import * as utilities from "./utilities";
  *     extId: "f29535e2-6bd8-4782-b879-409f17217b31",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNgtConfigurationV2(args: GetNgtConfigurationV2Args, opts?: pulumi.InvokeOptions): Promise<GetNgtConfigurationV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -93,6 +95,7 @@ export interface GetNgtConfigurationV2Result {
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -101,6 +104,7 @@ export interface GetNgtConfigurationV2Result {
  *     extId: "f29535e2-6bd8-4782-b879-409f17217b31",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNgtConfigurationV2Output(args: GetNgtConfigurationV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNgtConfigurationV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

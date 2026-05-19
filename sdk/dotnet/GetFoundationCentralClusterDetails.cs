@@ -17,6 +17,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const imagedClusterDetails = nutanix.getFoundationCentralClusterDetails({
+        ///     imagedClusterUuid: "&lt;CLUSTER-UUID&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// imaged_cluster_details = nutanix.get_foundation_central_cluster_details(imaged_cluster_uuid="&lt;CLUSTER-UUID&gt;")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,13 +40,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var imagedClusterDetails = Nutanix.Index.GetFoundationCentralClusterDetails.Invoke(new()
+        ///     var imagedClusterDetails = Nutanix.GetFoundationCentralClusterDetails.Invoke(new()
         ///     {
         ///         ImagedClusterUuid = "&lt;CLUSTER-UUID&gt;",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFoundationCentralClusterDetails(ctx, &amp;nutanix.GetFoundationCentralClusterDetailsArgs{
+        /// 			ImagedClusterUuid: "&lt;CLUSTER-UUID&gt;",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFoundationCentralClusterDetailsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var imagedClusterDetails = NutanixFunctions.getFoundationCentralClusterDetails(GetFoundationCentralClusterDetailsArgs.builder()
+        ///             .imagedClusterUuid("&lt;CLUSTER-UUID&gt;")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   imagedClusterDetails:
+        ///     fn::invoke:
+        ///       function: nutanix:getFoundationCentralClusterDetails
+        ///       arguments:
+        ///         imagedClusterUuid: &lt;CLUSTER-UUID&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFoundationCentralClusterDetailsResult> InvokeAsync(GetFoundationCentralClusterDetailsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralClusterDetailsResult>("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", args ?? new GetFoundationCentralClusterDetailsArgs(), options.WithDefaults());
@@ -41,6 +113,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const imagedClusterDetails = nutanix.getFoundationCentralClusterDetails({
+        ///     imagedClusterUuid: "&lt;CLUSTER-UUID&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// imaged_cluster_details = nutanix.get_foundation_central_cluster_details(imaged_cluster_uuid="&lt;CLUSTER-UUID&gt;")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -49,13 +136,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var imagedClusterDetails = Nutanix.Index.GetFoundationCentralClusterDetails.Invoke(new()
+        ///     var imagedClusterDetails = Nutanix.GetFoundationCentralClusterDetails.Invoke(new()
         ///     {
         ///         ImagedClusterUuid = "&lt;CLUSTER-UUID&gt;",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFoundationCentralClusterDetails(ctx, &amp;nutanix.GetFoundationCentralClusterDetailsArgs{
+        /// 			ImagedClusterUuid: "&lt;CLUSTER-UUID&gt;",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFoundationCentralClusterDetailsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var imagedClusterDetails = NutanixFunctions.getFoundationCentralClusterDetails(GetFoundationCentralClusterDetailsArgs.builder()
+        ///             .imagedClusterUuid("&lt;CLUSTER-UUID&gt;")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   imagedClusterDetails:
+        ///     fn::invoke:
+        ///       function: nutanix:getFoundationCentralClusterDetails
+        ///       arguments:
+        ///         imagedClusterUuid: &lt;CLUSTER-UUID&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFoundationCentralClusterDetailsResult> Invoke(GetFoundationCentralClusterDetailsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralClusterDetailsResult>("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", args ?? new GetFoundationCentralClusterDetailsInvokeArgs(), options.WithDefaults());
@@ -65,6 +209,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const imagedClusterDetails = nutanix.getFoundationCentralClusterDetails({
+        ///     imagedClusterUuid: "&lt;CLUSTER-UUID&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// imaged_cluster_details = nutanix.get_foundation_central_cluster_details(imaged_cluster_uuid="&lt;CLUSTER-UUID&gt;")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,13 +232,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var imagedClusterDetails = Nutanix.Index.GetFoundationCentralClusterDetails.Invoke(new()
+        ///     var imagedClusterDetails = Nutanix.GetFoundationCentralClusterDetails.Invoke(new()
         ///     {
         ///         ImagedClusterUuid = "&lt;CLUSTER-UUID&gt;",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetFoundationCentralClusterDetails(ctx, &amp;nutanix.GetFoundationCentralClusterDetailsArgs{
+        /// 			ImagedClusterUuid: "&lt;CLUSTER-UUID&gt;",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetFoundationCentralClusterDetailsArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var imagedClusterDetails = NutanixFunctions.getFoundationCentralClusterDetails(GetFoundationCentralClusterDetailsArgs.builder()
+        ///             .imagedClusterUuid("&lt;CLUSTER-UUID&gt;")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   imagedClusterDetails:
+        ///     fn::invoke:
+        ///       function: nutanix:getFoundationCentralClusterDetails
+        ///       arguments:
+        ///         imagedClusterUuid: &lt;CLUSTER-UUID&gt;
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFoundationCentralClusterDetailsResult> Invoke(GetFoundationCentralClusterDetailsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralClusterDetailsResult>("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", args ?? new GetFoundationCentralClusterDetailsInvokeArgs(), options.WithDefaults());

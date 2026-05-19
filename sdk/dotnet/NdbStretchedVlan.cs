@@ -16,6 +16,7 @@ namespace PiersKarsenbarg.Nutanix
     /// ## Example Usage
     /// 
     /// ### resource to add stretched vlan in NDB
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.Index.NdbStretchedVlan("name", new()
+    ///     var name = new Nutanix.NdbStretchedVlan("name", new()
     ///     {
     ///         Name = "test-stretcName",
     ///         Description = "vlan desc updated",
@@ -38,8 +39,10 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ### resource to update the strteched vlan with new gateway and subnet mask
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -48,7 +51,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var name = new Nutanix.Index.NdbStretchedVlan("name", new()
+    ///     var name = new Nutanix.NdbStretchedVlan("name", new()
     ///     {
     ///         Name = "test-stretcName",
     ///         Description = "vlan desc updated",
@@ -67,6 +70,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbStretchedVlan:NdbStretchedVlan")]
     public partial class NdbStretchedVlan : global::Pulumi.CustomResource
@@ -80,7 +84,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Update the stretched VLAN Gateway and Subnet Mask IP address
         /// * `metadata.gateway`: Update the gateway of stretched vlan
-        /// * `metadata.subnet_mask`: Update the SubnetMask of stretched vlan
+        /// * `metadata.subnet_mask`: Update the&lt;span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "&gt; subnetMask &lt;/span&gt;of stretched vlan
         /// </summary>
         [Output("metadata")]
         public Output<Outputs.NdbStretchedVlanMetadata> Metadata { get; private set; } = null!;
@@ -165,7 +169,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Update the stretched VLAN Gateway and Subnet Mask IP address
         /// * `metadata.gateway`: Update the gateway of stretched vlan
-        /// * `metadata.subnet_mask`: Update the SubnetMask of stretched vlan
+        /// * `metadata.subnet_mask`: Update the&lt;span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "&gt; subnetMask &lt;/span&gt;of stretched vlan
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.NdbStretchedVlanMetadataArgs>? Metadata { get; set; }
@@ -211,7 +215,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Update the stretched VLAN Gateway and Subnet Mask IP address
         /// * `metadata.gateway`: Update the gateway of stretched vlan
-        /// * `metadata.subnet_mask`: Update the SubnetMask of stretched vlan
+        /// * `metadata.subnet_mask`: Update the&lt;span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "&gt; subnetMask &lt;/span&gt;of stretched vlan
         /// </summary>
         [Input("metadata")]
         public Input<Inputs.NdbStretchedVlanMetadataGetArgs>? Metadata { get; set; }

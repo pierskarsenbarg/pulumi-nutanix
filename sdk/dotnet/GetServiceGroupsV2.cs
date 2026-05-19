@@ -17,6 +17,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const serviceGroup = nutanix.getServiceGroupsV2({});
+        /// const serviceGroupFiltered = nutanix.getServiceGroupsV2({
+        ///     filter: "name eq 'service_group_name'",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// service_group = nutanix.get_service_groups_v2()
+        /// service_group_filtered = nutanix.get_service_groups_v2(filter="name eq 'service_group_name'")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,15 +42,83 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var serviceGroup = Nutanix.Index.GetServiceGroupsV2.Invoke();
+        ///     var serviceGroup = Nutanix.GetServiceGroupsV2.Invoke();
         /// 
-        ///     var serviceGroupFiltered = Nutanix.Index.GetServiceGroupsV2.Invoke(new()
+        ///     var serviceGroupFiltered = Nutanix.GetServiceGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'service_group_name'",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetServiceGroupsV2(ctx, &amp;nutanix.LookupServiceGroupsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetServiceGroupsV2(ctx, &amp;nutanix.LookupServiceGroupsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'service_group_name'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetServiceGroupsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var serviceGroup = NutanixFunctions.getServiceGroupsV2(GetServiceGroupsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var serviceGroupFiltered = NutanixFunctions.getServiceGroupsV2(GetServiceGroupsV2Args.builder()
+        ///             .filter("name eq 'service_group_name'")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   serviceGroup:
+        ///     fn::invoke:
+        ///       function: nutanix:getServiceGroupsV2
+        ///       arguments: {}
+        ///   serviceGroupFiltered:
+        ///     fn::invoke:
+        ///       function: nutanix:getServiceGroupsV2
+        ///       arguments:
+        ///         filter: name eq 'service_group_name'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetServiceGroupsV2Result> InvokeAsync(GetServiceGroupsV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetServiceGroupsV2Result>("nutanix:index/getServiceGroupsV2:getServiceGroupsV2", args ?? new GetServiceGroupsV2Args(), options.WithDefaults());
@@ -43,6 +128,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const serviceGroup = nutanix.getServiceGroupsV2({});
+        /// const serviceGroupFiltered = nutanix.getServiceGroupsV2({
+        ///     filter: "name eq 'service_group_name'",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// service_group = nutanix.get_service_groups_v2()
+        /// service_group_filtered = nutanix.get_service_groups_v2(filter="name eq 'service_group_name'")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -51,15 +153,83 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var serviceGroup = Nutanix.Index.GetServiceGroupsV2.Invoke();
+        ///     var serviceGroup = Nutanix.GetServiceGroupsV2.Invoke();
         /// 
-        ///     var serviceGroupFiltered = Nutanix.Index.GetServiceGroupsV2.Invoke(new()
+        ///     var serviceGroupFiltered = Nutanix.GetServiceGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'service_group_name'",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetServiceGroupsV2(ctx, &amp;nutanix.LookupServiceGroupsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetServiceGroupsV2(ctx, &amp;nutanix.LookupServiceGroupsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'service_group_name'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetServiceGroupsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var serviceGroup = NutanixFunctions.getServiceGroupsV2(GetServiceGroupsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var serviceGroupFiltered = NutanixFunctions.getServiceGroupsV2(GetServiceGroupsV2Args.builder()
+        ///             .filter("name eq 'service_group_name'")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   serviceGroup:
+        ///     fn::invoke:
+        ///       function: nutanix:getServiceGroupsV2
+        ///       arguments: {}
+        ///   serviceGroupFiltered:
+        ///     fn::invoke:
+        ///       function: nutanix:getServiceGroupsV2
+        ///       arguments:
+        ///         filter: name eq 'service_group_name'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetServiceGroupsV2Result> Invoke(GetServiceGroupsV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceGroupsV2Result>("nutanix:index/getServiceGroupsV2:getServiceGroupsV2", args ?? new GetServiceGroupsV2InvokeArgs(), options.WithDefaults());
@@ -69,6 +239,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const serviceGroup = nutanix.getServiceGroupsV2({});
+        /// const serviceGroupFiltered = nutanix.getServiceGroupsV2({
+        ///     filter: "name eq 'service_group_name'",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// service_group = nutanix.get_service_groups_v2()
+        /// service_group_filtered = nutanix.get_service_groups_v2(filter="name eq 'service_group_name'")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -77,15 +264,83 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var serviceGroup = Nutanix.Index.GetServiceGroupsV2.Invoke();
+        ///     var serviceGroup = Nutanix.GetServiceGroupsV2.Invoke();
         /// 
-        ///     var serviceGroupFiltered = Nutanix.Index.GetServiceGroupsV2.Invoke(new()
+        ///     var serviceGroupFiltered = Nutanix.GetServiceGroupsV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'service_group_name'",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetServiceGroupsV2(ctx, &amp;nutanix.LookupServiceGroupsV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetServiceGroupsV2(ctx, &amp;nutanix.LookupServiceGroupsV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'service_group_name'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetServiceGroupsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var serviceGroup = NutanixFunctions.getServiceGroupsV2(GetServiceGroupsV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var serviceGroupFiltered = NutanixFunctions.getServiceGroupsV2(GetServiceGroupsV2Args.builder()
+        ///             .filter("name eq 'service_group_name'")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   serviceGroup:
+        ///     fn::invoke:
+        ///       function: nutanix:getServiceGroupsV2
+        ///       arguments: {}
+        ///   serviceGroupFiltered:
+        ///     fn::invoke:
+        ///       function: nutanix:getServiceGroupsV2
+        ///       arguments:
+        ///         filter: name eq 'service_group_name'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetServiceGroupsV2Result> Invoke(GetServiceGroupsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceGroupsV2Result>("nutanix:index/getServiceGroupsV2:getServiceGroupsV2", args ?? new GetServiceGroupsV2InvokeArgs(), options.WithDefaults());

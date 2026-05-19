@@ -68,12 +68,14 @@ def get_foundation_discover_nodes(opts: Optional[pulumi.InvokeOptions] = None) -
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     discovered_nodes = nutanix.get_foundation_discover_nodes()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -88,12 +90,14 @@ def get_foundation_discover_nodes_output(opts: Optional[Union[pulumi.InvokeOptio
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     discovered_nodes = nutanix.get_foundation_discover_nodes()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const test = nutanix.getFloatingIps({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFloatingIps(args?: GetFloatingIpsArgs, opts?: pulumi.InvokeOptions): Promise<GetFloatingIpsResult> {
     args = args || {};
@@ -31,7 +33,7 @@ export function getFloatingIps(args?: GetFloatingIpsArgs, opts?: pulumi.InvokeOp
  */
 export interface GetFloatingIpsArgs {
     /**
-     * - The floatingIp kind metadata.
+     * - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
      */
     metadatas?: inputs.GetFloatingIpsMetadata[];
 }
@@ -53,7 +55,7 @@ export interface GetFloatingIpsResult {
      */
     readonly id: string;
     /**
-     * - The floatingIp kind metadata.
+     * - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
      */
     readonly metadatas: outputs.GetFloatingIpsMetadata[];
 }
@@ -62,12 +64,14 @@ export interface GetFloatingIpsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const test = nutanix.getFloatingIps({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFloatingIpsOutput(args?: GetFloatingIpsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFloatingIpsResult> {
     args = args || {};
@@ -82,7 +86,7 @@ export function getFloatingIpsOutput(args?: GetFloatingIpsOutputArgs, opts?: pul
  */
 export interface GetFloatingIpsOutputArgs {
     /**
-     * - The floatingIp kind metadata.
+     * - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetFloatingIpsMetadataArgs>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetFloatingIpsMetadataArgs>[] | undefined>;
 }

@@ -27,13 +27,13 @@ class NdbClusterArgs:
                  password: pulumi.Input[_builtins.str],
                  storage_container: pulumi.Input[_builtins.str],
                  username: pulumi.Input[_builtins.str],
-                 agent_vm_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 agent_vm_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbCluster resource.
 
@@ -142,111 +142,111 @@ class NdbClusterArgs:
 
     @_builtins.property
     @pulumi.getter(name="agentVmPrefix")
-    def agent_vm_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_vm_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "agent_vm_prefix")
 
     @agent_vm_prefix.setter
-    def agent_vm_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_vm_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_vm_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterType")
-    def cluster_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cluster_type")
 
     @cluster_type.setter
-    def cluster_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         description of cluster
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         name of the cluster to be registered
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - version
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
 @pulumi.input_type
 class _NdbClusterState:
     def __init__(__self__, *,
-                 agent_network_infos: Optional[pulumi.Input[Sequence[pulumi.Input['NdbClusterAgentNetworkInfoArgs']]]] = None,
-                 agent_vm_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_info: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 date_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 date_modified: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_counts: Optional[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountArgs']]]] = None,
-                 fqdns: Optional[pulumi.Input[_builtins.str]] = None,
-                 healthy: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hypervisor_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 management_server_info: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 networks_infos: Optional[pulumi.Input[Sequence[pulumi.Input['NdbClusterNetworksInfoArgs']]]] = None,
-                 nx_cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input['NdbClusterPropertyArgs']]]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 reference_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_configs: Optional[pulumi.Input[Sequence[pulumi.Input['NdbClusterResourceConfigArgs']]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_container: Optional[pulumi.Input[_builtins.str]] = None,
-                 unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 agent_network_infos: pulumi.Input[Optional[Sequence[pulumi.Input['NdbClusterAgentNetworkInfoArgs']]]] = None,
+                 agent_vm_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_info: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 date_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_counts: pulumi.Input[Optional[Sequence[pulumi.Input['NdbClusterEntityCountArgs']]]] = None,
+                 fqdns: pulumi.Input[Optional[_builtins.str]] = None,
+                 healthy: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hypervisor_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 management_server_info: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 networks_infos: pulumi.Input[Optional[Sequence[pulumi.Input['NdbClusterNetworksInfoArgs']]]] = None,
+                 nx_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input['NdbClusterPropertyArgs']]]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 reference_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_configs: pulumi.Input[Optional[Sequence[pulumi.Input['NdbClusterResourceConfigArgs']]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_container: pulumi.Input[Optional[_builtins.str]] = None,
+                 unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbCluster resources.
 
@@ -343,362 +343,362 @@ class _NdbClusterState:
 
     @_builtins.property
     @pulumi.getter(name="agentNetworkInfos")
-    def agent_network_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbClusterAgentNetworkInfoArgs']]]]:
+    def agent_network_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbClusterAgentNetworkInfoArgs']]]]:
         """
         agent network info to register cluster
         """
         return pulumi.get(self, "agent_network_infos")
 
     @agent_network_infos.setter
-    def agent_network_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbClusterAgentNetworkInfoArgs']]]]):
+    def agent_network_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbClusterAgentNetworkInfoArgs']]]]):
         pulumi.set(self, "agent_network_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="agentVmPrefix")
-    def agent_vm_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_vm_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "agent_vm_prefix")
 
     @agent_vm_prefix.setter
-    def agent_vm_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_vm_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_vm_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudInfo")
-    def cloud_info(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_info(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - cloud info
         """
         return pulumi.get(self, "cloud_info")
 
     @cloud_info.setter
-    def cloud_info(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_info(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_info", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudType")
-    def cloud_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - cloud type
         """
         return pulumi.get(self, "cloud_type")
 
     @cloud_type.setter
-    def cloud_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_type", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterIp")
-    def cluster_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Prism Element IP address
         """
         return pulumi.get(self, "cluster_ip")
 
     @cluster_ip.setter
-    def cluster_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterType")
-    def cluster_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cluster_type")
 
     @cluster_type.setter
-    def cluster_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dateCreated")
-    def date_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def date_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - creation date
         """
         return pulumi.get(self, "date_created")
 
     @date_created.setter
-    def date_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def date_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "date_created", value)
 
     @_builtins.property
     @pulumi.getter(name="dateModified")
-    def date_modified(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def date_modified(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - date modified
         """
         return pulumi.get(self, "date_modified")
 
     @date_modified.setter
-    def date_modified(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def date_modified(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "date_modified", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         description of cluster
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="entityCounts")
-    def entity_counts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountArgs']]]]:
+    def entity_counts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbClusterEntityCountArgs']]]]:
         """
         - no. of entities related
         """
         return pulumi.get(self, "entity_counts")
 
     @entity_counts.setter
-    def entity_counts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountArgs']]]]):
+    def entity_counts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbClusterEntityCountArgs']]]]):
         pulumi.set(self, "entity_counts", value)
 
     @_builtins.property
     @pulumi.getter
-    def fqdns(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fqdns(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - fqdn
         """
         return pulumi.get(self, "fqdns")
 
     @fqdns.setter
-    def fqdns(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fqdns(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fqdns", value)
 
     @_builtins.property
     @pulumi.getter
-    def healthy(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def healthy(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - if healthy status
         """
         return pulumi.get(self, "healthy")
 
     @healthy.setter
-    def healthy(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def healthy(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "healthy", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorType")
-    def hypervisor_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hypervisor_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - hypervisor type
         """
         return pulumi.get(self, "hypervisor_type")
 
     @hypervisor_type.setter
-    def hypervisor_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hypervisor_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hypervisor_type", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorVersion")
-    def hypervisor_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hypervisor_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - hypervisor version
         """
         return pulumi.get(self, "hypervisor_version")
 
     @hypervisor_version.setter
-    def hypervisor_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hypervisor_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hypervisor_version", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddresses")
-    def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - IP address
         """
         return pulumi.get(self, "ip_addresses")
 
     @ip_addresses.setter
-    def ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="managementServerInfo")
-    def management_server_info(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_server_info(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - NA
         """
         return pulumi.get(self, "management_server_info")
 
     @management_server_info.setter
-    def management_server_info(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_server_info(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_server_info", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         name of the cluster to be registered
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networksInfos")
-    def networks_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbClusterNetworksInfoArgs']]]]:
+    def networks_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbClusterNetworksInfoArgs']]]]:
         """
         network segmentation to segment the network traffic of the agent VM.
         """
         return pulumi.get(self, "networks_infos")
 
     @networks_infos.setter
-    def networks_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbClusterNetworksInfoArgs']]]]):
+    def networks_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbClusterNetworksInfoArgs']]]]):
         pulumi.set(self, "networks_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="nxClusterUuid")
-    def nx_cluster_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nx_cluster_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - nutanix cluster uuid
         """
         return pulumi.get(self, "nx_cluster_uuid")
 
     @nx_cluster_uuid.setter
-    def nx_cluster_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nx_cluster_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nx_cluster_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerId")
-    def owner_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - owner UUID
         """
         return pulumi.get(self, "owner_id")
 
     @owner_id.setter
-    def owner_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Prism Element password
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbClusterPropertyArgs']]]]:
+    def properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbClusterPropertyArgs']]]]:
         """
         - list of properties
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbClusterPropertyArgs']]]]):
+    def properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbClusterPropertyArgs']]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="referenceCount")
-    def reference_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def reference_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - NA
         """
         return pulumi.get(self, "reference_count")
 
     @reference_count.setter
-    def reference_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def reference_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "reference_count", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceConfigs")
-    def resource_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbClusterResourceConfigArgs']]]]:
+    def resource_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbClusterResourceConfigArgs']]]]:
         """
         - resource related consumption info
         """
         return pulumi.get(self, "resource_configs")
 
     @resource_configs.setter
-    def resource_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbClusterResourceConfigArgs']]]]):
+    def resource_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbClusterResourceConfigArgs']]]]):
         pulumi.set(self, "resource_configs", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - current status
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="storageContainer")
-    def storage_container(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_container(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         select a storage container which is used for performing database operations in the cluster
         """
         return pulumi.get(self, "storage_container")
 
     @storage_container.setter
-    def storage_container(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_container(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_container", value)
 
     @_builtins.property
     @pulumi.getter(name="uniqueName")
-    def unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - unique name of cluster
         """
         return pulumi.get(self, "unique_name")
 
     @unique_name.setter
-    def unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unique_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         username of the Prism Element administrator
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - version
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -708,25 +708,26 @@ class NdbCluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agent_network_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterAgentNetworkInfoArgs', 'NdbClusterAgentNetworkInfoArgsDict']]]]] = None,
-                 agent_vm_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 networks_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterNetworksInfoArgs', 'NdbClusterNetworksInfoArgsDict']]]]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_container: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
+                 agent_network_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClusterAgentNetworkInfoArgs', 'NdbClusterAgentNetworkInfoArgsDict']]]]] = None,
+                 agent_vm_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 networks_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClusterNetworksInfoArgs', 'NdbClusterNetworksInfoArgsDict']]]]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_container: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to add a Nutanix cluster based on the input parameters.
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -757,6 +758,7 @@ class NdbCluster(pulumi.CustomResource):
                 ],
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -782,6 +784,7 @@ class NdbCluster(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -812,6 +815,7 @@ class NdbCluster(pulumi.CustomResource):
                 ],
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -829,19 +833,19 @@ class NdbCluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agent_network_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterAgentNetworkInfoArgs', 'NdbClusterAgentNetworkInfoArgsDict']]]]] = None,
-                 agent_vm_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 networks_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterNetworksInfoArgs', 'NdbClusterNetworksInfoArgsDict']]]]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_container: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
+                 agent_network_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClusterAgentNetworkInfoArgs', 'NdbClusterAgentNetworkInfoArgsDict']]]]] = None,
+                 agent_vm_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 networks_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClusterNetworksInfoArgs', 'NdbClusterNetworksInfoArgsDict']]]]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_container: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -906,37 +910,37 @@ class NdbCluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            agent_network_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterAgentNetworkInfoArgs', 'NdbClusterAgentNetworkInfoArgsDict']]]]] = None,
-            agent_vm_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-            cloud_info: Optional[pulumi.Input[_builtins.str]] = None,
-            cloud_type: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
-            date_created: Optional[pulumi.Input[_builtins.str]] = None,
-            date_modified: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_counts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterEntityCountArgs', 'NdbClusterEntityCountArgsDict']]]]] = None,
-            fqdns: Optional[pulumi.Input[_builtins.str]] = None,
-            healthy: Optional[pulumi.Input[_builtins.bool]] = None,
-            hypervisor_type: Optional[pulumi.Input[_builtins.str]] = None,
-            hypervisor_version: Optional[pulumi.Input[_builtins.str]] = None,
-            ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            management_server_info: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            networks_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterNetworksInfoArgs', 'NdbClusterNetworksInfoArgsDict']]]]] = None,
-            nx_cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            owner_id: Optional[pulumi.Input[_builtins.str]] = None,
-            password: Optional[pulumi.Input[_builtins.str]] = None,
-            port: Optional[pulumi.Input[_builtins.int]] = None,
-            properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterPropertyArgs', 'NdbClusterPropertyArgsDict']]]]] = None,
-            protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            reference_count: Optional[pulumi.Input[_builtins.int]] = None,
-            resource_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterResourceConfigArgs', 'NdbClusterResourceConfigArgsDict']]]]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            storage_container: Optional[pulumi.Input[_builtins.str]] = None,
-            unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-            username: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'NdbCluster':
+            agent_network_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClusterAgentNetworkInfoArgs', 'NdbClusterAgentNetworkInfoArgsDict']]]]] = None,
+            agent_vm_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            cloud_info: pulumi.Input[Optional[_builtins.str]] = None,
+            cloud_type: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
+            date_created: pulumi.Input[Optional[_builtins.str]] = None,
+            date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_counts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClusterEntityCountArgs', 'NdbClusterEntityCountArgsDict']]]]] = None,
+            fqdns: pulumi.Input[Optional[_builtins.str]] = None,
+            healthy: pulumi.Input[Optional[_builtins.bool]] = None,
+            hypervisor_type: pulumi.Input[Optional[_builtins.str]] = None,
+            hypervisor_version: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            management_server_info: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            networks_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClusterNetworksInfoArgs', 'NdbClusterNetworksInfoArgsDict']]]]] = None,
+            nx_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_id: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClusterPropertyArgs', 'NdbClusterPropertyArgsDict']]]]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            reference_count: pulumi.Input[Optional[_builtins.int]] = None,
+            resource_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClusterResourceConfigArgs', 'NdbClusterResourceConfigArgsDict']]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_container: pulumi.Input[Optional[_builtins.str]] = None,
+            unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'NdbCluster':
         """
         Get an existing NdbCluster resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

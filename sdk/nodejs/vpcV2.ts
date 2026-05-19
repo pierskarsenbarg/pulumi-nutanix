@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -63,6 +64,7 @@ import * as utilities from "./utilities";
  *     vpcType: "TRANSIT",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class VpcV2 extends pulumi.CustomResource {
     /**
@@ -190,48 +192,48 @@ export interface VpcV2State {
     /**
      * List of DHCP options to be configured.
      */
-    commonDhcpOptions?: pulumi.Input<pulumi.Input<inputs.VpcV2CommonDhcpOption>[]>;
+    commonDhcpOptions?: pulumi.Input<pulumi.Input<inputs.VpcV2CommonDhcpOption>[] | undefined>;
     /**
      * Description of the VPC.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * the vpc uuid.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * External routing domain associated with this route table
      */
-    externalRoutingDomainReference?: pulumi.Input<string>;
+    externalRoutingDomainReference?: pulumi.Input<string | undefined>;
     /**
      * List of external subnets that the VPC is attached to.
      */
-    externalSubnets?: pulumi.Input<pulumi.Input<inputs.VpcV2ExternalSubnet>[]>;
+    externalSubnets?: pulumi.Input<pulumi.Input<inputs.VpcV2ExternalSubnet>[] | undefined>;
     /**
      * CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
      */
-    externallyRoutablePrefixes?: pulumi.Input<pulumi.Input<inputs.VpcV2ExternallyRoutablePrefix>[]>;
+    externallyRoutablePrefixes?: pulumi.Input<pulumi.Input<inputs.VpcV2ExternallyRoutablePrefix>[] | undefined>;
     /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.VpcV2Link>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.VpcV2Link>[] | undefined>;
     /**
      * The vpc kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.VpcV2Metadata>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.VpcV2Metadata>[] | undefined>;
     /**
      * Name of the VPC.
      */
-    name?: pulumi.Input<string>;
-    snatIps?: pulumi.Input<pulumi.Input<inputs.VpcV2SnatIp>[]>;
+    name?: pulumi.Input<string | undefined>;
+    snatIps?: pulumi.Input<pulumi.Input<inputs.VpcV2SnatIp>[] | undefined>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
      */
-    vpcType?: pulumi.Input<string>;
+    vpcType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -241,29 +243,29 @@ export interface VpcV2Args {
     /**
      * List of DHCP options to be configured.
      */
-    commonDhcpOptions?: pulumi.Input<pulumi.Input<inputs.VpcV2CommonDhcpOption>[]>;
+    commonDhcpOptions?: pulumi.Input<pulumi.Input<inputs.VpcV2CommonDhcpOption>[] | undefined>;
     /**
      * Description of the VPC.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * External routing domain associated with this route table
      */
-    externalRoutingDomainReference?: pulumi.Input<string>;
+    externalRoutingDomainReference?: pulumi.Input<string | undefined>;
     /**
      * List of external subnets that the VPC is attached to.
      */
-    externalSubnets?: pulumi.Input<pulumi.Input<inputs.VpcV2ExternalSubnet>[]>;
+    externalSubnets?: pulumi.Input<pulumi.Input<inputs.VpcV2ExternalSubnet>[] | undefined>;
     /**
      * CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
      */
-    externallyRoutablePrefixes?: pulumi.Input<pulumi.Input<inputs.VpcV2ExternallyRoutablePrefix>[]>;
+    externallyRoutablePrefixes?: pulumi.Input<pulumi.Input<inputs.VpcV2ExternallyRoutablePrefix>[] | undefined>;
     /**
      * Name of the VPC.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
      */
-    vpcType?: pulumi.Input<string>;
+    vpcType?: pulumi.Input<string | undefined>;
 }

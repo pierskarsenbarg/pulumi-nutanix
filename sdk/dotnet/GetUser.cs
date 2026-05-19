@@ -17,6 +17,41 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const userUser = new nutanix.User("user", {directoryServiceUser: {
+        ///     userPrincipalName: "test-user@ntnxlab.local",
+        ///     directoryServiceReference: {
+        ///         uuid: "&lt;directory-service-uuid&gt;",
+        ///     },
+        /// }});
+        /// //Retrieve by UUID
+        /// const user = nutanix.getUserOutput({
+        ///     userId: userUser.id,
+        /// });
+        /// //Retrieve by Name
+        /// const userbyname = nutanix.getUserOutput({
+        ///     userName: userUser.name,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// user_user = nutanix.User("user", directory_service_user={
+        ///     "user_principal_name": "test-user@ntnxlab.local",
+        ///     "directory_service_reference": {
+        ///         "uuid": "&lt;directory-service-uuid&gt;",
+        ///     },
+        /// })
+        /// #Retrieve by UUID
+        /// user = nutanix.get_user_output(user_id=user_user.id)
+        /// #Retrieve by Name
+        /// userbyname = nutanix.get_user_output(user_name=user_user.name)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +60,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var userUser = new Nutanix.Index.User("user", new()
+        ///     var userUser = new Nutanix.User("user", new()
         ///     {
         ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
         ///         {
@@ -38,19 +73,124 @@ namespace PiersKarsenbarg.Nutanix
         ///     });
         /// 
         ///     //Retrieve by UUID
-        ///     var user = Nutanix.Index.GetUser.Invoke(new()
+        ///     var user = Nutanix.GetUser.Invoke(new()
         ///     {
         ///         UserId = userUser.Id,
         ///     });
         /// 
         ///     //Retrieve by Name
-        ///     var userbyname = Nutanix.Index.GetUser.Invoke(new()
+        ///     var userbyname = Nutanix.GetUser.Invoke(new()
         ///     {
         ///         UserName = userUser.Name,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		userUser, err := nutanix.NewUser(ctx, "user", &amp;nutanix.UserArgs{
+        /// 			DirectoryServiceUser: &amp;nutanix.UserDirectoryServiceUserArgs{
+        /// 				UserPrincipalName: pulumi.String("test-user@ntnxlab.local"),
+        /// 				DirectoryServiceReference: &amp;nutanix.UserDirectoryServiceUserDirectoryServiceReferenceArgs{
+        /// 					Uuid: pulumi.String("&lt;directory-service-uuid&gt;"),
+        /// 				},
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// Retrieve by UUID
+        /// 		_ = nutanix.GetUserOutput(ctx, nutanix.GetUserOutputArgs{
+        /// 			UserId: userUser.ID(),
+        /// 		}, nil)
+        /// 		// Retrieve by Name
+        /// 		_ = nutanix.GetUserOutput(ctx, nutanix.GetUserOutputArgs{
+        /// 			UserName: userUser.Name,
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.User;
+        /// import com.pulumi.nutanix.UserArgs;
+        /// import com.pulumi.nutanix.inputs.UserDirectoryServiceUserArgs;
+        /// import com.pulumi.nutanix.inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetUserArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var userUser = new User("userUser", UserArgs.builder()
+        ///             .directoryServiceUser(UserDirectoryServiceUserArgs.builder()
+        ///                 .userPrincipalName("test-user@ntnxlab.local")
+        ///                 .directoryServiceReference(UserDirectoryServiceUserDirectoryServiceReferenceArgs.builder()
+        ///                     .uuid("&lt;directory-service-uuid&gt;")
+        ///                     .build())
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         //Retrieve by UUID
+        ///         final var user = NutanixFunctions.getUser(GetUserArgs.builder()
+        ///             .userId(userUser.id())
+        ///             .build());
+        /// 
+        ///         //Retrieve by Name
+        ///         final var userbyname = NutanixFunctions.getUser(GetUserArgs.builder()
+        ///             .userName(userUser.name())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   userUser:
+        ///     type: nutanix:User
+        ///     name: user
+        ///     properties:
+        ///       directoryServiceUser:
+        ///         userPrincipalName: test-user@ntnxlab.local
+        ///         directoryServiceReference:
+        ///           uuid: &lt;directory-service-uuid&gt;
+        /// variables:
+        ///   # Retrieve by UUID
+        ///   user:
+        ///     fn::invoke:
+        ///       function: nutanix:getUser
+        ///       arguments:
+        ///         userId: ${userUser.id}
+        ///   # Retrieve by Name
+        ///   userbyname:
+        ///     fn::invoke:
+        ///       function: nutanix:getUser
+        ///       arguments:
+        ///         userName: ${userUser.name}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetUserResult> InvokeAsync(GetUserArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserResult>("nutanix:index/getUser:getUser", args ?? new GetUserArgs(), options.WithDefaults());
@@ -60,6 +200,41 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const userUser = new nutanix.User("user", {directoryServiceUser: {
+        ///     userPrincipalName: "test-user@ntnxlab.local",
+        ///     directoryServiceReference: {
+        ///         uuid: "&lt;directory-service-uuid&gt;",
+        ///     },
+        /// }});
+        /// //Retrieve by UUID
+        /// const user = nutanix.getUserOutput({
+        ///     userId: userUser.id,
+        /// });
+        /// //Retrieve by Name
+        /// const userbyname = nutanix.getUserOutput({
+        ///     userName: userUser.name,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// user_user = nutanix.User("user", directory_service_user={
+        ///     "user_principal_name": "test-user@ntnxlab.local",
+        ///     "directory_service_reference": {
+        ///         "uuid": "&lt;directory-service-uuid&gt;",
+        ///     },
+        /// })
+        /// #Retrieve by UUID
+        /// user = nutanix.get_user_output(user_id=user_user.id)
+        /// #Retrieve by Name
+        /// userbyname = nutanix.get_user_output(user_name=user_user.name)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +243,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var userUser = new Nutanix.Index.User("user", new()
+        ///     var userUser = new Nutanix.User("user", new()
         ///     {
         ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
         ///         {
@@ -81,19 +256,124 @@ namespace PiersKarsenbarg.Nutanix
         ///     });
         /// 
         ///     //Retrieve by UUID
-        ///     var user = Nutanix.Index.GetUser.Invoke(new()
+        ///     var user = Nutanix.GetUser.Invoke(new()
         ///     {
         ///         UserId = userUser.Id,
         ///     });
         /// 
         ///     //Retrieve by Name
-        ///     var userbyname = Nutanix.Index.GetUser.Invoke(new()
+        ///     var userbyname = Nutanix.GetUser.Invoke(new()
         ///     {
         ///         UserName = userUser.Name,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		userUser, err := nutanix.NewUser(ctx, "user", &amp;nutanix.UserArgs{
+        /// 			DirectoryServiceUser: &amp;nutanix.UserDirectoryServiceUserArgs{
+        /// 				UserPrincipalName: pulumi.String("test-user@ntnxlab.local"),
+        /// 				DirectoryServiceReference: &amp;nutanix.UserDirectoryServiceUserDirectoryServiceReferenceArgs{
+        /// 					Uuid: pulumi.String("&lt;directory-service-uuid&gt;"),
+        /// 				},
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// Retrieve by UUID
+        /// 		_ = nutanix.GetUserOutput(ctx, nutanix.GetUserOutputArgs{
+        /// 			UserId: userUser.ID(),
+        /// 		}, nil)
+        /// 		// Retrieve by Name
+        /// 		_ = nutanix.GetUserOutput(ctx, nutanix.GetUserOutputArgs{
+        /// 			UserName: userUser.Name,
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.User;
+        /// import com.pulumi.nutanix.UserArgs;
+        /// import com.pulumi.nutanix.inputs.UserDirectoryServiceUserArgs;
+        /// import com.pulumi.nutanix.inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetUserArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var userUser = new User("userUser", UserArgs.builder()
+        ///             .directoryServiceUser(UserDirectoryServiceUserArgs.builder()
+        ///                 .userPrincipalName("test-user@ntnxlab.local")
+        ///                 .directoryServiceReference(UserDirectoryServiceUserDirectoryServiceReferenceArgs.builder()
+        ///                     .uuid("&lt;directory-service-uuid&gt;")
+        ///                     .build())
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         //Retrieve by UUID
+        ///         final var user = NutanixFunctions.getUser(GetUserArgs.builder()
+        ///             .userId(userUser.id())
+        ///             .build());
+        /// 
+        ///         //Retrieve by Name
+        ///         final var userbyname = NutanixFunctions.getUser(GetUserArgs.builder()
+        ///             .userName(userUser.name())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   userUser:
+        ///     type: nutanix:User
+        ///     name: user
+        ///     properties:
+        ///       directoryServiceUser:
+        ///         userPrincipalName: test-user@ntnxlab.local
+        ///         directoryServiceReference:
+        ///           uuid: &lt;directory-service-uuid&gt;
+        /// variables:
+        ///   # Retrieve by UUID
+        ///   user:
+        ///     fn::invoke:
+        ///       function: nutanix:getUser
+        ///       arguments:
+        ///         userId: ${userUser.id}
+        ///   # Retrieve by Name
+        ///   userbyname:
+        ///     fn::invoke:
+        ///       function: nutanix:getUser
+        ///       arguments:
+        ///         userName: ${userUser.name}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetUserResult> Invoke(GetUserInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserResult>("nutanix:index/getUser:getUser", args ?? new GetUserInvokeArgs(), options.WithDefaults());
@@ -103,6 +383,41 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const userUser = new nutanix.User("user", {directoryServiceUser: {
+        ///     userPrincipalName: "test-user@ntnxlab.local",
+        ///     directoryServiceReference: {
+        ///         uuid: "&lt;directory-service-uuid&gt;",
+        ///     },
+        /// }});
+        /// //Retrieve by UUID
+        /// const user = nutanix.getUserOutput({
+        ///     userId: userUser.id,
+        /// });
+        /// //Retrieve by Name
+        /// const userbyname = nutanix.getUserOutput({
+        ///     userName: userUser.name,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// user_user = nutanix.User("user", directory_service_user={
+        ///     "user_principal_name": "test-user@ntnxlab.local",
+        ///     "directory_service_reference": {
+        ///         "uuid": "&lt;directory-service-uuid&gt;",
+        ///     },
+        /// })
+        /// #Retrieve by UUID
+        /// user = nutanix.get_user_output(user_id=user_user.id)
+        /// #Retrieve by Name
+        /// userbyname = nutanix.get_user_output(user_name=user_user.name)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -111,7 +426,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var userUser = new Nutanix.Index.User("user", new()
+        ///     var userUser = new Nutanix.User("user", new()
         ///     {
         ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
         ///         {
@@ -124,19 +439,124 @@ namespace PiersKarsenbarg.Nutanix
         ///     });
         /// 
         ///     //Retrieve by UUID
-        ///     var user = Nutanix.Index.GetUser.Invoke(new()
+        ///     var user = Nutanix.GetUser.Invoke(new()
         ///     {
         ///         UserId = userUser.Id,
         ///     });
         /// 
         ///     //Retrieve by Name
-        ///     var userbyname = Nutanix.Index.GetUser.Invoke(new()
+        ///     var userbyname = Nutanix.GetUser.Invoke(new()
         ///     {
         ///         UserName = userUser.Name,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		userUser, err := nutanix.NewUser(ctx, "user", &amp;nutanix.UserArgs{
+        /// 			DirectoryServiceUser: &amp;nutanix.UserDirectoryServiceUserArgs{
+        /// 				UserPrincipalName: pulumi.String("test-user@ntnxlab.local"),
+        /// 				DirectoryServiceReference: &amp;nutanix.UserDirectoryServiceUserDirectoryServiceReferenceArgs{
+        /// 					Uuid: pulumi.String("&lt;directory-service-uuid&gt;"),
+        /// 				},
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// Retrieve by UUID
+        /// 		_ = nutanix.GetUserOutput(ctx, nutanix.GetUserOutputArgs{
+        /// 			UserId: userUser.ID(),
+        /// 		}, nil)
+        /// 		// Retrieve by Name
+        /// 		_ = nutanix.GetUserOutput(ctx, nutanix.GetUserOutputArgs{
+        /// 			UserName: userUser.Name,
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.User;
+        /// import com.pulumi.nutanix.UserArgs;
+        /// import com.pulumi.nutanix.inputs.UserDirectoryServiceUserArgs;
+        /// import com.pulumi.nutanix.inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetUserArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var userUser = new User("userUser", UserArgs.builder()
+        ///             .directoryServiceUser(UserDirectoryServiceUserArgs.builder()
+        ///                 .userPrincipalName("test-user@ntnxlab.local")
+        ///                 .directoryServiceReference(UserDirectoryServiceUserDirectoryServiceReferenceArgs.builder()
+        ///                     .uuid("&lt;directory-service-uuid&gt;")
+        ///                     .build())
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///         //Retrieve by UUID
+        ///         final var user = NutanixFunctions.getUser(GetUserArgs.builder()
+        ///             .userId(userUser.id())
+        ///             .build());
+        /// 
+        ///         //Retrieve by Name
+        ///         final var userbyname = NutanixFunctions.getUser(GetUserArgs.builder()
+        ///             .userName(userUser.name())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   userUser:
+        ///     type: nutanix:User
+        ///     name: user
+        ///     properties:
+        ///       directoryServiceUser:
+        ///         userPrincipalName: test-user@ntnxlab.local
+        ///         directoryServiceReference:
+        ///           uuid: &lt;directory-service-uuid&gt;
+        /// variables:
+        ///   # Retrieve by UUID
+        ///   user:
+        ///     fn::invoke:
+        ///       function: nutanix:getUser
+        ///       arguments:
+        ///         userId: ${userUser.id}
+        ///   # Retrieve by Name
+        ///   userbyname:
+        ///     fn::invoke:
+        ///       function: nutanix:getUser
+        ///       arguments:
+        ///         userName: ${userUser.name}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetUserResult> Invoke(GetUserInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserResult>("nutanix:index/getUser:getUser", args ?? new GetUserInvokeArgs(), options.WithDefaults());

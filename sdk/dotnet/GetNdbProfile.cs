@@ -17,6 +17,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const profile1 = nutanix.getNdbProfile({
+        ///     profileType: "Network",
+        ///     profileName: "TEST_NETWORK_PROFILE",
+        /// });
+        /// export const profile = profile1;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// profile1 = nutanix.get_ndb_profile(profile_type="Network",
+        ///     profile_name="TEST_NETWORK_PROFILE")
+        /// pulumi.export("profile", profile1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +44,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var profile1 = Nutanix.Index.GetNdbProfile.Invoke(new()
+        ///     var profile1 = Nutanix.GetNdbProfile.Invoke(new()
         ///     {
         ///         ProfileType = "Network",
         ///         ProfileName = "TEST_NETWORK_PROFILE",
@@ -37,6 +56,70 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		profile1, err := nutanix.GetNdbProfile(ctx, &amp;nutanix.LookupNdbProfileArgs{
+        /// 			ProfileType: pulumi.StringRef("Network"),
+        /// 			ProfileName: pulumi.StringRef("TEST_NETWORK_PROFILE"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("profile", profile1)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbProfileArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var profile1 = NutanixFunctions.getNdbProfile(GetNdbProfileArgs.builder()
+        ///             .profileType("Network")
+        ///             .profileName("TEST_NETWORK_PROFILE")
+        ///             .build());
+        /// 
+        ///         ctx.export("profile", profile1);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   profile1:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbProfile
+        ///       arguments:
+        ///         profileType: Network
+        ///         profileName: TEST_NETWORK_PROFILE
+        /// outputs:
+        ///   profile: ${profile1}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNdbProfileResult> InvokeAsync(GetNdbProfileArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNdbProfileResult>("nutanix:index/getNdbProfile:getNdbProfile", args ?? new GetNdbProfileArgs(), options.WithDefaults());
@@ -46,6 +129,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const profile1 = nutanix.getNdbProfile({
+        ///     profileType: "Network",
+        ///     profileName: "TEST_NETWORK_PROFILE",
+        /// });
+        /// export const profile = profile1;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// profile1 = nutanix.get_ndb_profile(profile_type="Network",
+        ///     profile_name="TEST_NETWORK_PROFILE")
+        /// pulumi.export("profile", profile1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -54,7 +156,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var profile1 = Nutanix.Index.GetNdbProfile.Invoke(new()
+        ///     var profile1 = Nutanix.GetNdbProfile.Invoke(new()
         ///     {
         ///         ProfileType = "Network",
         ///         ProfileName = "TEST_NETWORK_PROFILE",
@@ -66,6 +168,70 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		profile1, err := nutanix.GetNdbProfile(ctx, &amp;nutanix.LookupNdbProfileArgs{
+        /// 			ProfileType: pulumi.StringRef("Network"),
+        /// 			ProfileName: pulumi.StringRef("TEST_NETWORK_PROFILE"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("profile", profile1)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbProfileArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var profile1 = NutanixFunctions.getNdbProfile(GetNdbProfileArgs.builder()
+        ///             .profileType("Network")
+        ///             .profileName("TEST_NETWORK_PROFILE")
+        ///             .build());
+        /// 
+        ///         ctx.export("profile", profile1);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   profile1:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbProfile
+        ///       arguments:
+        ///         profileType: Network
+        ///         profileName: TEST_NETWORK_PROFILE
+        /// outputs:
+        ///   profile: ${profile1}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNdbProfileResult> Invoke(GetNdbProfileInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbProfileResult>("nutanix:index/getNdbProfile:getNdbProfile", args ?? new GetNdbProfileInvokeArgs(), options.WithDefaults());
@@ -75,6 +241,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const profile1 = nutanix.getNdbProfile({
+        ///     profileType: "Network",
+        ///     profileName: "TEST_NETWORK_PROFILE",
+        /// });
+        /// export const profile = profile1;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// profile1 = nutanix.get_ndb_profile(profile_type="Network",
+        ///     profile_name="TEST_NETWORK_PROFILE")
+        /// pulumi.export("profile", profile1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -83,7 +268,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var profile1 = Nutanix.Index.GetNdbProfile.Invoke(new()
+        ///     var profile1 = Nutanix.GetNdbProfile.Invoke(new()
         ///     {
         ///         ProfileType = "Network",
         ///         ProfileName = "TEST_NETWORK_PROFILE",
@@ -95,6 +280,70 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		profile1, err := nutanix.GetNdbProfile(ctx, &amp;nutanix.LookupNdbProfileArgs{
+        /// 			ProfileType: pulumi.StringRef("Network"),
+        /// 			ProfileName: pulumi.StringRef("TEST_NETWORK_PROFILE"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("profile", profile1)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbProfileArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var profile1 = NutanixFunctions.getNdbProfile(GetNdbProfileArgs.builder()
+        ///             .profileType("Network")
+        ///             .profileName("TEST_NETWORK_PROFILE")
+        ///             .build());
+        /// 
+        ///         ctx.export("profile", profile1);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   profile1:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbProfile
+        ///       arguments:
+        ///         profileType: Network
+        ///         profileName: TEST_NETWORK_PROFILE
+        /// outputs:
+        ///   profile: ${profile1}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNdbProfileResult> Invoke(GetNdbProfileInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbProfileResult>("nutanix:index/getNdbProfile:getNdbProfile", args ?? new GetNdbProfileInvokeArgs(), options.WithDefaults());

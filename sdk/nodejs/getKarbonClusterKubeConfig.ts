@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -22,6 +23,7 @@ import * as utilities from "./utilities";
  *     karbonClusterName: "<YOUR-CLUSTER-NAME>",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getKarbonClusterKubeConfig(args?: GetKarbonClusterKubeConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetKarbonClusterKubeConfigResult> {
     args = args || {};
@@ -66,6 +68,7 @@ export interface GetKarbonClusterKubeConfigResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -79,6 +82,7 @@ export interface GetKarbonClusterKubeConfigResult {
  *     karbonClusterName: "<YOUR-CLUSTER-NAME>",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getKarbonClusterKubeConfigOutput(args?: GetKarbonClusterKubeConfigOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetKarbonClusterKubeConfigResult> {
     args = args || {};
@@ -96,9 +100,9 @@ export interface GetKarbonClusterKubeConfigOutputArgs {
     /**
      * Represents karbon cluster uuid
      */
-    karbonClusterId?: pulumi.Input<string>;
+    karbonClusterId?: pulumi.Input<string | undefined>;
     /**
      * Represents the name of karbon cluster
      */
-    karbonClusterName?: pulumi.Input<string>;
+    karbonClusterName?: pulumi.Input<string | undefined>;
 }

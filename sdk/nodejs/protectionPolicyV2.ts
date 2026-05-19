@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example—Synchronous Protection Policy
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -52,9 +53,11 @@ import * as utilities from "./utilities";
  *     categoryIds: ["b08ed184-6b0c-42c1-8179-7b9026fe2676"],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Example—Linear Retention Protection Policy
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -111,9 +114,11 @@ import * as utilities from "./utilities";
  *     categoryIds: ["b08ed184-6b0c-42c1-8179-7b9026fe2676"],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Example—Auto Rollup Retention Protection Policy
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -182,6 +187,7 @@ import * as utilities from "./utilities";
  *     categoryIds: ["b08ed184-6b0c-42c1-8179-7b9026fe2676"],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class ProtectionPolicyV2 extends pulumi.CustomResource {
     /**
@@ -294,28 +300,28 @@ export interface ProtectionPolicyV2State {
     /**
      * -(Optional) Host entity with its attributes.
      */
-    categoryIds?: pulumi.Input<pulumi.Input<string>[]>;
+    categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * -(Optional) Description of the protection policy.
      */
-    description?: pulumi.Input<string>;
-    extId?: pulumi.Input<string>;
-    isApprovalPolicyNeeded?: pulumi.Input<boolean>;
-    links?: pulumi.Input<pulumi.Input<inputs.ProtectionPolicyV2Link>[]>;
+    description?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string | undefined>;
+    isApprovalPolicyNeeded?: pulumi.Input<boolean | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.ProtectionPolicyV2Link>[] | undefined>;
     /**
      * -(Required) Name of the protection policy.
      */
-    name?: pulumi.Input<string>;
-    ownerExtId?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    ownerExtId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) Cluster reference for an entity.
      */
-    replicationConfigurations?: pulumi.Input<pulumi.Input<inputs.ProtectionPolicyV2ReplicationConfiguration>[]>;
+    replicationConfigurations?: pulumi.Input<pulumi.Input<inputs.ProtectionPolicyV2ReplicationConfiguration>[] | undefined>;
     /**
      * -(Required) Hypervisor details.
      */
-    replicationLocations?: pulumi.Input<pulumi.Input<inputs.ProtectionPolicyV2ReplicationLocation>[]>;
-    tenantId?: pulumi.Input<string>;
+    replicationLocations?: pulumi.Input<pulumi.Input<inputs.ProtectionPolicyV2ReplicationLocation>[] | undefined>;
+    tenantId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -329,11 +335,11 @@ export interface ProtectionPolicyV2Args {
     /**
      * -(Optional) Description of the protection policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * -(Required) Name of the protection policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * -(Required) Cluster reference for an entity.
      */

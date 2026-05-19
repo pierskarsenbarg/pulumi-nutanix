@@ -17,6 +17,101 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const subnet = new nutanix.Subnet("subnet", {
+        ///     clusterUuid: "&lt;YOUR_CLUSTER_ID&gt;",
+        ///     name: "sunet_test_name",
+        ///     description: "Description of my unit test VLAN",
+        ///     vlanId: 31,
+        ///     subnetType: "VLAN",
+        ///     subnetIp: "10.250.140.0",
+        ///     defaultGatewayIp: "10.250.140.1",
+        ///     prefixLength: 24,
+        ///     dhcpOptions: {
+        ///         boot_file_name: "bootfile",
+        ///         domain_name: "nutanix",
+        ///         tftp_server_name: "10.250.140.200",
+        ///     },
+        ///     dhcpDomainNameServerLists: [
+        ///         "8.8.8.8",
+        ///         "4.2.2.2",
+        ///     ],
+        ///     dhcpDomainSearchLists: [
+        ///         "terraform.nutanix.com",
+        ///         "terraform.unit.test.com",
+        ///     ],
+        /// });
+        /// const projectTest = new nutanix.Project("project_test", {
+        ///     name: "my-project",
+        ///     description: "This is my project",
+        ///     categories: [{
+        ///         name: "Environment",
+        ///         value: "Staging",
+        ///     }],
+        ///     resourceDomain: {
+        ///         resources: [{
+        ///             limit: 4,
+        ///             resourceType: "STORAGE",
+        ///         }],
+        ///     },
+        ///     defaultSubnetReference: {
+        ///         uuid: subnet.metadata.uuid,
+        ///     },
+        ///     apiVersion: "3.1",
+        /// });
+        /// const test = nutanix.getProjectOutput({
+        ///     projectId: projectTest.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// subnet = nutanix.Subnet("subnet",
+        ///     cluster_uuid="&lt;YOUR_CLUSTER_ID&gt;",
+        ///     name="sunet_test_name",
+        ///     description="Description of my unit test VLAN",
+        ///     vlan_id=31,
+        ///     subnet_type="VLAN",
+        ///     subnet_ip="10.250.140.0",
+        ///     default_gateway_ip="10.250.140.1",
+        ///     prefix_length=24,
+        ///     dhcp_options={
+        ///         "boot_file_name": "bootfile",
+        ///         "domain_name": "nutanix",
+        ///         "tftp_server_name": "10.250.140.200",
+        ///     },
+        ///     dhcp_domain_name_server_lists=[
+        ///         "8.8.8.8",
+        ///         "4.2.2.2",
+        ///     ],
+        ///     dhcp_domain_search_lists=[
+        ///         "terraform.nutanix.com",
+        ///         "terraform.unit.test.com",
+        ///     ])
+        /// project_test = nutanix.Project("project_test",
+        ///     name="my-project",
+        ///     description="This is my project",
+        ///     categories=[{
+        ///         "name": "Environment",
+        ///         "value": "Staging",
+        ///     }],
+        ///     resource_domain={
+        ///         "resources": [{
+        ///             "limit": 4,
+        ///             "resource_type": "STORAGE",
+        ///         }],
+        ///     },
+        ///     default_subnet_reference={
+        ///         "uuid": subnet.metadata["uuid"],
+        ///     },
+        ///     api_version="3.1")
+        /// test = nutanix.get_project_output(project_id=project_test.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +120,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var subnet = new Nutanix.Index.Subnet("subnet", new()
+        ///     var subnet = new Nutanix.Subnet("subnet", new()
         ///     {
         ///         ClusterUuid = "&lt;YOUR_CLUSTER_ID&gt;",
         ///         Name = "sunet_test_name",
@@ -53,7 +148,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var projectTest = new Nutanix.Index.Project("project_test", new()
+        ///     var projectTest = new Nutanix.Project("project_test", new()
         ///     {
         ///         Name = "my-project",
         ///         Description = "This is my project",
@@ -83,13 +178,206 @@ namespace PiersKarsenbarg.Nutanix
         ///         ApiVersion = "3.1",
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetProject.Invoke(new()
+        ///     var test = Nutanix.GetProject.Invoke(new()
         ///     {
         ///         ProjectId = projectTest.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		subnet, err := nutanix.NewSubnet(ctx, "subnet", &amp;nutanix.SubnetArgs{
+        /// 			ClusterUuid:      pulumi.String("&lt;YOUR_CLUSTER_ID&gt;"),
+        /// 			Name:             pulumi.String("sunet_test_name"),
+        /// 			Description:      pulumi.String("Description of my unit test VLAN"),
+        /// 			VlanId:           pulumi.Int(31),
+        /// 			SubnetType:       pulumi.String("VLAN"),
+        /// 			SubnetIp:         pulumi.String("10.250.140.0"),
+        /// 			DefaultGatewayIp: pulumi.String("10.250.140.1"),
+        /// 			PrefixLength:     pulumi.Int(24),
+        /// 			DhcpOptions: pulumi.StringMap{
+        /// 				"boot_file_name":   pulumi.String("bootfile"),
+        /// 				"domain_name":      pulumi.String("nutanix"),
+        /// 				"tftp_server_name": pulumi.String("10.250.140.200"),
+        /// 			},
+        /// 			DhcpDomainNameServerLists: pulumi.StringArray{
+        /// 				pulumi.String("8.8.8.8"),
+        /// 				pulumi.String("4.2.2.2"),
+        /// 			},
+        /// 			DhcpDomainSearchLists: pulumi.StringArray{
+        /// 				pulumi.String("terraform.nutanix.com"),
+        /// 				pulumi.String("terraform.unit.test.com"),
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		projectTest, err := nutanix.NewProject(ctx, "project_test", &amp;nutanix.ProjectArgs{
+        /// 			Name:        pulumi.String("my-project"),
+        /// 			Description: pulumi.String("This is my project"),
+        /// 			Categories: nutanix.ProjectCategoryArray{
+        /// 				&amp;nutanix.ProjectCategoryArgs{
+        /// 					Name:  pulumi.String("Environment"),
+        /// 					Value: pulumi.String("Staging"),
+        /// 				},
+        /// 			},
+        /// 			ResourceDomain: &amp;nutanix.ProjectResourceDomainArgs{
+        /// 				Resources: nutanix.ProjectResourceDomainResourceArray{
+        /// 					&amp;nutanix.ProjectResourceDomainResourceArgs{
+        /// 						Limit:        pulumi.Int(4),
+        /// 						ResourceType: pulumi.String("STORAGE"),
+        /// 					},
+        /// 				},
+        /// 			},
+        /// 			DefaultSubnetReference: &amp;nutanix.ProjectDefaultSubnetReferenceArgs{
+        /// 				Uuid: subnet.Metadata.ApplyT(func(metadata map[string]string) (string, error) {
+        /// 					return metadata["uuid"], nil
+        /// 				}).(pulumi.StringOutput),
+        /// 			},
+        /// 			ApiVersion: pulumi.String("3.1"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetProjectOutput(ctx, nutanix.GetProjectOutputArgs{
+        /// 			ProjectId: projectTest.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.Subnet;
+        /// import com.pulumi.nutanix.SubnetArgs;
+        /// import com.pulumi.nutanix.Project;
+        /// import com.pulumi.nutanix.ProjectArgs;
+        /// import com.pulumi.nutanix.inputs.ProjectCategoryArgs;
+        /// import com.pulumi.nutanix.inputs.ProjectResourceDomainArgs;
+        /// import com.pulumi.nutanix.inputs.ProjectDefaultSubnetReferenceArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetProjectArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var subnet = new Subnet("subnet", SubnetArgs.builder()
+        ///             .clusterUuid("&lt;YOUR_CLUSTER_ID&gt;")
+        ///             .name("sunet_test_name")
+        ///             .description("Description of my unit test VLAN")
+        ///             .vlanId(31)
+        ///             .subnetType("VLAN")
+        ///             .subnetIp("10.250.140.0")
+        ///             .defaultGatewayIp("10.250.140.1")
+        ///             .prefixLength(24)
+        ///             .dhcpOptions(Map.ofEntries(
+        ///                 Map.entry("boot_file_name", "bootfile"),
+        ///                 Map.entry("domain_name", "nutanix"),
+        ///                 Map.entry("tftp_server_name", "10.250.140.200")
+        ///             ))
+        ///             .dhcpDomainNameServerLists(            
+        ///                 "8.8.8.8",
+        ///                 "4.2.2.2")
+        ///             .dhcpDomainSearchLists(            
+        ///                 "terraform.nutanix.com",
+        ///                 "terraform.unit.test.com")
+        ///             .build());
+        /// 
+        ///         var projectTest = new Project("projectTest", ProjectArgs.builder()
+        ///             .name("my-project")
+        ///             .description("This is my project")
+        ///             .categories(ProjectCategoryArgs.builder()
+        ///                 .name("Environment")
+        ///                 .value("Staging")
+        ///                 .build())
+        ///             .resourceDomain(ProjectResourceDomainArgs.builder()
+        ///                 .resources(ProjectResourceDomainResourceArgs.builder()
+        ///                     .limit(4)
+        ///                     .resourceType("STORAGE")
+        ///                     .build())
+        ///                 .build())
+        ///             .defaultSubnetReference(ProjectDefaultSubnetReferenceArgs.builder()
+        ///                 .uuid(subnet.metadata().applyValue(_metadata -&gt; _metadata.uuid()))
+        ///                 .build())
+        ///             .apiVersion("3.1")
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getProject(GetProjectArgs.builder()
+        ///             .projectId(projectTest.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   subnet:
+        ///     type: nutanix:Subnet
+        ///     properties:
+        ///       clusterUuid: &lt;YOUR_CLUSTER_ID&gt;
+        ///       name: sunet_test_name
+        ///       description: Description of my unit test VLAN
+        ///       vlanId: 31
+        ///       subnetType: VLAN
+        ///       subnetIp: 10.250.140.0
+        ///       defaultGatewayIp: 10.250.140.1
+        ///       prefixLength: 24
+        ///       dhcpOptions:
+        ///         boot_file_name: bootfile
+        ///         domain_name: nutanix
+        ///         tftp_server_name: 10.250.140.200
+        ///       dhcpDomainNameServerLists:
+        ///         - 8.8.8.8
+        ///         - 4.2.2.2
+        ///       dhcpDomainSearchLists:
+        ///         - terraform.nutanix.com
+        ///         - terraform.unit.test.com
+        ///   projectTest:
+        ///     type: nutanix:Project
+        ///     name: project_test
+        ///     properties:
+        ///       name: my-project
+        ///       description: This is my project
+        ///       categories:
+        ///         - name: Environment
+        ///           value: Staging
+        ///       resourceDomain:
+        ///         resources:
+        ///           - limit: 4
+        ///             resourceType: STORAGE
+        ///       defaultSubnetReference:
+        ///         uuid: ${subnet.metadata.uuid}
+        ///       apiVersion: '3.1'
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getProject
+        ///       arguments:
+        ///         projectId: ${projectTest.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetProjectResult> InvokeAsync(GetProjectArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProjectResult>("nutanix:index/getProject:getProject", args ?? new GetProjectArgs(), options.WithDefaults());
@@ -99,6 +387,101 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const subnet = new nutanix.Subnet("subnet", {
+        ///     clusterUuid: "&lt;YOUR_CLUSTER_ID&gt;",
+        ///     name: "sunet_test_name",
+        ///     description: "Description of my unit test VLAN",
+        ///     vlanId: 31,
+        ///     subnetType: "VLAN",
+        ///     subnetIp: "10.250.140.0",
+        ///     defaultGatewayIp: "10.250.140.1",
+        ///     prefixLength: 24,
+        ///     dhcpOptions: {
+        ///         boot_file_name: "bootfile",
+        ///         domain_name: "nutanix",
+        ///         tftp_server_name: "10.250.140.200",
+        ///     },
+        ///     dhcpDomainNameServerLists: [
+        ///         "8.8.8.8",
+        ///         "4.2.2.2",
+        ///     ],
+        ///     dhcpDomainSearchLists: [
+        ///         "terraform.nutanix.com",
+        ///         "terraform.unit.test.com",
+        ///     ],
+        /// });
+        /// const projectTest = new nutanix.Project("project_test", {
+        ///     name: "my-project",
+        ///     description: "This is my project",
+        ///     categories: [{
+        ///         name: "Environment",
+        ///         value: "Staging",
+        ///     }],
+        ///     resourceDomain: {
+        ///         resources: [{
+        ///             limit: 4,
+        ///             resourceType: "STORAGE",
+        ///         }],
+        ///     },
+        ///     defaultSubnetReference: {
+        ///         uuid: subnet.metadata.uuid,
+        ///     },
+        ///     apiVersion: "3.1",
+        /// });
+        /// const test = nutanix.getProjectOutput({
+        ///     projectId: projectTest.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// subnet = nutanix.Subnet("subnet",
+        ///     cluster_uuid="&lt;YOUR_CLUSTER_ID&gt;",
+        ///     name="sunet_test_name",
+        ///     description="Description of my unit test VLAN",
+        ///     vlan_id=31,
+        ///     subnet_type="VLAN",
+        ///     subnet_ip="10.250.140.0",
+        ///     default_gateway_ip="10.250.140.1",
+        ///     prefix_length=24,
+        ///     dhcp_options={
+        ///         "boot_file_name": "bootfile",
+        ///         "domain_name": "nutanix",
+        ///         "tftp_server_name": "10.250.140.200",
+        ///     },
+        ///     dhcp_domain_name_server_lists=[
+        ///         "8.8.8.8",
+        ///         "4.2.2.2",
+        ///     ],
+        ///     dhcp_domain_search_lists=[
+        ///         "terraform.nutanix.com",
+        ///         "terraform.unit.test.com",
+        ///     ])
+        /// project_test = nutanix.Project("project_test",
+        ///     name="my-project",
+        ///     description="This is my project",
+        ///     categories=[{
+        ///         "name": "Environment",
+        ///         "value": "Staging",
+        ///     }],
+        ///     resource_domain={
+        ///         "resources": [{
+        ///             "limit": 4,
+        ///             "resource_type": "STORAGE",
+        ///         }],
+        ///     },
+        ///     default_subnet_reference={
+        ///         "uuid": subnet.metadata["uuid"],
+        ///     },
+        ///     api_version="3.1")
+        /// test = nutanix.get_project_output(project_id=project_test.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -107,7 +490,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var subnet = new Nutanix.Index.Subnet("subnet", new()
+        ///     var subnet = new Nutanix.Subnet("subnet", new()
         ///     {
         ///         ClusterUuid = "&lt;YOUR_CLUSTER_ID&gt;",
         ///         Name = "sunet_test_name",
@@ -135,7 +518,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var projectTest = new Nutanix.Index.Project("project_test", new()
+        ///     var projectTest = new Nutanix.Project("project_test", new()
         ///     {
         ///         Name = "my-project",
         ///         Description = "This is my project",
@@ -165,13 +548,206 @@ namespace PiersKarsenbarg.Nutanix
         ///         ApiVersion = "3.1",
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetProject.Invoke(new()
+        ///     var test = Nutanix.GetProject.Invoke(new()
         ///     {
         ///         ProjectId = projectTest.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		subnet, err := nutanix.NewSubnet(ctx, "subnet", &amp;nutanix.SubnetArgs{
+        /// 			ClusterUuid:      pulumi.String("&lt;YOUR_CLUSTER_ID&gt;"),
+        /// 			Name:             pulumi.String("sunet_test_name"),
+        /// 			Description:      pulumi.String("Description of my unit test VLAN"),
+        /// 			VlanId:           pulumi.Int(31),
+        /// 			SubnetType:       pulumi.String("VLAN"),
+        /// 			SubnetIp:         pulumi.String("10.250.140.0"),
+        /// 			DefaultGatewayIp: pulumi.String("10.250.140.1"),
+        /// 			PrefixLength:     pulumi.Int(24),
+        /// 			DhcpOptions: pulumi.StringMap{
+        /// 				"boot_file_name":   pulumi.String("bootfile"),
+        /// 				"domain_name":      pulumi.String("nutanix"),
+        /// 				"tftp_server_name": pulumi.String("10.250.140.200"),
+        /// 			},
+        /// 			DhcpDomainNameServerLists: pulumi.StringArray{
+        /// 				pulumi.String("8.8.8.8"),
+        /// 				pulumi.String("4.2.2.2"),
+        /// 			},
+        /// 			DhcpDomainSearchLists: pulumi.StringArray{
+        /// 				pulumi.String("terraform.nutanix.com"),
+        /// 				pulumi.String("terraform.unit.test.com"),
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		projectTest, err := nutanix.NewProject(ctx, "project_test", &amp;nutanix.ProjectArgs{
+        /// 			Name:        pulumi.String("my-project"),
+        /// 			Description: pulumi.String("This is my project"),
+        /// 			Categories: nutanix.ProjectCategoryArray{
+        /// 				&amp;nutanix.ProjectCategoryArgs{
+        /// 					Name:  pulumi.String("Environment"),
+        /// 					Value: pulumi.String("Staging"),
+        /// 				},
+        /// 			},
+        /// 			ResourceDomain: &amp;nutanix.ProjectResourceDomainArgs{
+        /// 				Resources: nutanix.ProjectResourceDomainResourceArray{
+        /// 					&amp;nutanix.ProjectResourceDomainResourceArgs{
+        /// 						Limit:        pulumi.Int(4),
+        /// 						ResourceType: pulumi.String("STORAGE"),
+        /// 					},
+        /// 				},
+        /// 			},
+        /// 			DefaultSubnetReference: &amp;nutanix.ProjectDefaultSubnetReferenceArgs{
+        /// 				Uuid: subnet.Metadata.ApplyT(func(metadata map[string]string) (string, error) {
+        /// 					return metadata["uuid"], nil
+        /// 				}).(pulumi.StringOutput),
+        /// 			},
+        /// 			ApiVersion: pulumi.String("3.1"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetProjectOutput(ctx, nutanix.GetProjectOutputArgs{
+        /// 			ProjectId: projectTest.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.Subnet;
+        /// import com.pulumi.nutanix.SubnetArgs;
+        /// import com.pulumi.nutanix.Project;
+        /// import com.pulumi.nutanix.ProjectArgs;
+        /// import com.pulumi.nutanix.inputs.ProjectCategoryArgs;
+        /// import com.pulumi.nutanix.inputs.ProjectResourceDomainArgs;
+        /// import com.pulumi.nutanix.inputs.ProjectDefaultSubnetReferenceArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetProjectArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var subnet = new Subnet("subnet", SubnetArgs.builder()
+        ///             .clusterUuid("&lt;YOUR_CLUSTER_ID&gt;")
+        ///             .name("sunet_test_name")
+        ///             .description("Description of my unit test VLAN")
+        ///             .vlanId(31)
+        ///             .subnetType("VLAN")
+        ///             .subnetIp("10.250.140.0")
+        ///             .defaultGatewayIp("10.250.140.1")
+        ///             .prefixLength(24)
+        ///             .dhcpOptions(Map.ofEntries(
+        ///                 Map.entry("boot_file_name", "bootfile"),
+        ///                 Map.entry("domain_name", "nutanix"),
+        ///                 Map.entry("tftp_server_name", "10.250.140.200")
+        ///             ))
+        ///             .dhcpDomainNameServerLists(            
+        ///                 "8.8.8.8",
+        ///                 "4.2.2.2")
+        ///             .dhcpDomainSearchLists(            
+        ///                 "terraform.nutanix.com",
+        ///                 "terraform.unit.test.com")
+        ///             .build());
+        /// 
+        ///         var projectTest = new Project("projectTest", ProjectArgs.builder()
+        ///             .name("my-project")
+        ///             .description("This is my project")
+        ///             .categories(ProjectCategoryArgs.builder()
+        ///                 .name("Environment")
+        ///                 .value("Staging")
+        ///                 .build())
+        ///             .resourceDomain(ProjectResourceDomainArgs.builder()
+        ///                 .resources(ProjectResourceDomainResourceArgs.builder()
+        ///                     .limit(4)
+        ///                     .resourceType("STORAGE")
+        ///                     .build())
+        ///                 .build())
+        ///             .defaultSubnetReference(ProjectDefaultSubnetReferenceArgs.builder()
+        ///                 .uuid(subnet.metadata().applyValue(_metadata -&gt; _metadata.uuid()))
+        ///                 .build())
+        ///             .apiVersion("3.1")
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getProject(GetProjectArgs.builder()
+        ///             .projectId(projectTest.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   subnet:
+        ///     type: nutanix:Subnet
+        ///     properties:
+        ///       clusterUuid: &lt;YOUR_CLUSTER_ID&gt;
+        ///       name: sunet_test_name
+        ///       description: Description of my unit test VLAN
+        ///       vlanId: 31
+        ///       subnetType: VLAN
+        ///       subnetIp: 10.250.140.0
+        ///       defaultGatewayIp: 10.250.140.1
+        ///       prefixLength: 24
+        ///       dhcpOptions:
+        ///         boot_file_name: bootfile
+        ///         domain_name: nutanix
+        ///         tftp_server_name: 10.250.140.200
+        ///       dhcpDomainNameServerLists:
+        ///         - 8.8.8.8
+        ///         - 4.2.2.2
+        ///       dhcpDomainSearchLists:
+        ///         - terraform.nutanix.com
+        ///         - terraform.unit.test.com
+        ///   projectTest:
+        ///     type: nutanix:Project
+        ///     name: project_test
+        ///     properties:
+        ///       name: my-project
+        ///       description: This is my project
+        ///       categories:
+        ///         - name: Environment
+        ///           value: Staging
+        ///       resourceDomain:
+        ///         resources:
+        ///           - limit: 4
+        ///             resourceType: STORAGE
+        ///       defaultSubnetReference:
+        ///         uuid: ${subnet.metadata.uuid}
+        ///       apiVersion: '3.1'
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getProject
+        ///       arguments:
+        ///         projectId: ${projectTest.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProjectResult> Invoke(GetProjectInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProjectResult>("nutanix:index/getProject:getProject", args ?? new GetProjectInvokeArgs(), options.WithDefaults());
@@ -181,6 +757,101 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const subnet = new nutanix.Subnet("subnet", {
+        ///     clusterUuid: "&lt;YOUR_CLUSTER_ID&gt;",
+        ///     name: "sunet_test_name",
+        ///     description: "Description of my unit test VLAN",
+        ///     vlanId: 31,
+        ///     subnetType: "VLAN",
+        ///     subnetIp: "10.250.140.0",
+        ///     defaultGatewayIp: "10.250.140.1",
+        ///     prefixLength: 24,
+        ///     dhcpOptions: {
+        ///         boot_file_name: "bootfile",
+        ///         domain_name: "nutanix",
+        ///         tftp_server_name: "10.250.140.200",
+        ///     },
+        ///     dhcpDomainNameServerLists: [
+        ///         "8.8.8.8",
+        ///         "4.2.2.2",
+        ///     ],
+        ///     dhcpDomainSearchLists: [
+        ///         "terraform.nutanix.com",
+        ///         "terraform.unit.test.com",
+        ///     ],
+        /// });
+        /// const projectTest = new nutanix.Project("project_test", {
+        ///     name: "my-project",
+        ///     description: "This is my project",
+        ///     categories: [{
+        ///         name: "Environment",
+        ///         value: "Staging",
+        ///     }],
+        ///     resourceDomain: {
+        ///         resources: [{
+        ///             limit: 4,
+        ///             resourceType: "STORAGE",
+        ///         }],
+        ///     },
+        ///     defaultSubnetReference: {
+        ///         uuid: subnet.metadata.uuid,
+        ///     },
+        ///     apiVersion: "3.1",
+        /// });
+        /// const test = nutanix.getProjectOutput({
+        ///     projectId: projectTest.id,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// subnet = nutanix.Subnet("subnet",
+        ///     cluster_uuid="&lt;YOUR_CLUSTER_ID&gt;",
+        ///     name="sunet_test_name",
+        ///     description="Description of my unit test VLAN",
+        ///     vlan_id=31,
+        ///     subnet_type="VLAN",
+        ///     subnet_ip="10.250.140.0",
+        ///     default_gateway_ip="10.250.140.1",
+        ///     prefix_length=24,
+        ///     dhcp_options={
+        ///         "boot_file_name": "bootfile",
+        ///         "domain_name": "nutanix",
+        ///         "tftp_server_name": "10.250.140.200",
+        ///     },
+        ///     dhcp_domain_name_server_lists=[
+        ///         "8.8.8.8",
+        ///         "4.2.2.2",
+        ///     ],
+        ///     dhcp_domain_search_lists=[
+        ///         "terraform.nutanix.com",
+        ///         "terraform.unit.test.com",
+        ///     ])
+        /// project_test = nutanix.Project("project_test",
+        ///     name="my-project",
+        ///     description="This is my project",
+        ///     categories=[{
+        ///         "name": "Environment",
+        ///         "value": "Staging",
+        ///     }],
+        ///     resource_domain={
+        ///         "resources": [{
+        ///             "limit": 4,
+        ///             "resource_type": "STORAGE",
+        ///         }],
+        ///     },
+        ///     default_subnet_reference={
+        ///         "uuid": subnet.metadata["uuid"],
+        ///     },
+        ///     api_version="3.1")
+        /// test = nutanix.get_project_output(project_id=project_test.id)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -189,7 +860,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var subnet = new Nutanix.Index.Subnet("subnet", new()
+        ///     var subnet = new Nutanix.Subnet("subnet", new()
         ///     {
         ///         ClusterUuid = "&lt;YOUR_CLUSTER_ID&gt;",
         ///         Name = "sunet_test_name",
@@ -217,7 +888,7 @@ namespace PiersKarsenbarg.Nutanix
         ///         },
         ///     });
         /// 
-        ///     var projectTest = new Nutanix.Index.Project("project_test", new()
+        ///     var projectTest = new Nutanix.Project("project_test", new()
         ///     {
         ///         Name = "my-project",
         ///         Description = "This is my project",
@@ -247,13 +918,206 @@ namespace PiersKarsenbarg.Nutanix
         ///         ApiVersion = "3.1",
         ///     });
         /// 
-        ///     var test = Nutanix.Index.GetProject.Invoke(new()
+        ///     var test = Nutanix.GetProject.Invoke(new()
         ///     {
         ///         ProjectId = projectTest.Id,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		subnet, err := nutanix.NewSubnet(ctx, "subnet", &amp;nutanix.SubnetArgs{
+        /// 			ClusterUuid:      pulumi.String("&lt;YOUR_CLUSTER_ID&gt;"),
+        /// 			Name:             pulumi.String("sunet_test_name"),
+        /// 			Description:      pulumi.String("Description of my unit test VLAN"),
+        /// 			VlanId:           pulumi.Int(31),
+        /// 			SubnetType:       pulumi.String("VLAN"),
+        /// 			SubnetIp:         pulumi.String("10.250.140.0"),
+        /// 			DefaultGatewayIp: pulumi.String("10.250.140.1"),
+        /// 			PrefixLength:     pulumi.Int(24),
+        /// 			DhcpOptions: pulumi.StringMap{
+        /// 				"boot_file_name":   pulumi.String("bootfile"),
+        /// 				"domain_name":      pulumi.String("nutanix"),
+        /// 				"tftp_server_name": pulumi.String("10.250.140.200"),
+        /// 			},
+        /// 			DhcpDomainNameServerLists: pulumi.StringArray{
+        /// 				pulumi.String("8.8.8.8"),
+        /// 				pulumi.String("4.2.2.2"),
+        /// 			},
+        /// 			DhcpDomainSearchLists: pulumi.StringArray{
+        /// 				pulumi.String("terraform.nutanix.com"),
+        /// 				pulumi.String("terraform.unit.test.com"),
+        /// 			},
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		projectTest, err := nutanix.NewProject(ctx, "project_test", &amp;nutanix.ProjectArgs{
+        /// 			Name:        pulumi.String("my-project"),
+        /// 			Description: pulumi.String("This is my project"),
+        /// 			Categories: nutanix.ProjectCategoryArray{
+        /// 				&amp;nutanix.ProjectCategoryArgs{
+        /// 					Name:  pulumi.String("Environment"),
+        /// 					Value: pulumi.String("Staging"),
+        /// 				},
+        /// 			},
+        /// 			ResourceDomain: &amp;nutanix.ProjectResourceDomainArgs{
+        /// 				Resources: nutanix.ProjectResourceDomainResourceArray{
+        /// 					&amp;nutanix.ProjectResourceDomainResourceArgs{
+        /// 						Limit:        pulumi.Int(4),
+        /// 						ResourceType: pulumi.String("STORAGE"),
+        /// 					},
+        /// 				},
+        /// 			},
+        /// 			DefaultSubnetReference: &amp;nutanix.ProjectDefaultSubnetReferenceArgs{
+        /// 				Uuid: subnet.Metadata.ApplyT(func(metadata map[string]string) (string, error) {
+        /// 					return metadata["uuid"], nil
+        /// 				}).(pulumi.StringOutput),
+        /// 			},
+        /// 			ApiVersion: pulumi.String("3.1"),
+        /// 		})
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_ = nutanix.GetProjectOutput(ctx, nutanix.GetProjectOutputArgs{
+        /// 			ProjectId: projectTest.ID(),
+        /// 		}, nil)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.Subnet;
+        /// import com.pulumi.nutanix.SubnetArgs;
+        /// import com.pulumi.nutanix.Project;
+        /// import com.pulumi.nutanix.ProjectArgs;
+        /// import com.pulumi.nutanix.inputs.ProjectCategoryArgs;
+        /// import com.pulumi.nutanix.inputs.ProjectResourceDomainArgs;
+        /// import com.pulumi.nutanix.inputs.ProjectDefaultSubnetReferenceArgs;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetProjectArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         var subnet = new Subnet("subnet", SubnetArgs.builder()
+        ///             .clusterUuid("&lt;YOUR_CLUSTER_ID&gt;")
+        ///             .name("sunet_test_name")
+        ///             .description("Description of my unit test VLAN")
+        ///             .vlanId(31)
+        ///             .subnetType("VLAN")
+        ///             .subnetIp("10.250.140.0")
+        ///             .defaultGatewayIp("10.250.140.1")
+        ///             .prefixLength(24)
+        ///             .dhcpOptions(Map.ofEntries(
+        ///                 Map.entry("boot_file_name", "bootfile"),
+        ///                 Map.entry("domain_name", "nutanix"),
+        ///                 Map.entry("tftp_server_name", "10.250.140.200")
+        ///             ))
+        ///             .dhcpDomainNameServerLists(            
+        ///                 "8.8.8.8",
+        ///                 "4.2.2.2")
+        ///             .dhcpDomainSearchLists(            
+        ///                 "terraform.nutanix.com",
+        ///                 "terraform.unit.test.com")
+        ///             .build());
+        /// 
+        ///         var projectTest = new Project("projectTest", ProjectArgs.builder()
+        ///             .name("my-project")
+        ///             .description("This is my project")
+        ///             .categories(ProjectCategoryArgs.builder()
+        ///                 .name("Environment")
+        ///                 .value("Staging")
+        ///                 .build())
+        ///             .resourceDomain(ProjectResourceDomainArgs.builder()
+        ///                 .resources(ProjectResourceDomainResourceArgs.builder()
+        ///                     .limit(4)
+        ///                     .resourceType("STORAGE")
+        ///                     .build())
+        ///                 .build())
+        ///             .defaultSubnetReference(ProjectDefaultSubnetReferenceArgs.builder()
+        ///                 .uuid(subnet.metadata().applyValue(_metadata -&gt; _metadata.uuid()))
+        ///                 .build())
+        ///             .apiVersion("3.1")
+        ///             .build());
+        /// 
+        ///         final var test = NutanixFunctions.getProject(GetProjectArgs.builder()
+        ///             .projectId(projectTest.id())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// resources:
+        ///   subnet:
+        ///     type: nutanix:Subnet
+        ///     properties:
+        ///       clusterUuid: &lt;YOUR_CLUSTER_ID&gt;
+        ///       name: sunet_test_name
+        ///       description: Description of my unit test VLAN
+        ///       vlanId: 31
+        ///       subnetType: VLAN
+        ///       subnetIp: 10.250.140.0
+        ///       defaultGatewayIp: 10.250.140.1
+        ///       prefixLength: 24
+        ///       dhcpOptions:
+        ///         boot_file_name: bootfile
+        ///         domain_name: nutanix
+        ///         tftp_server_name: 10.250.140.200
+        ///       dhcpDomainNameServerLists:
+        ///         - 8.8.8.8
+        ///         - 4.2.2.2
+        ///       dhcpDomainSearchLists:
+        ///         - terraform.nutanix.com
+        ///         - terraform.unit.test.com
+        ///   projectTest:
+        ///     type: nutanix:Project
+        ///     name: project_test
+        ///     properties:
+        ///       name: my-project
+        ///       description: This is my project
+        ///       categories:
+        ///         - name: Environment
+        ///           value: Staging
+        ///       resourceDomain:
+        ///         resources:
+        ///           - limit: 4
+        ///             resourceType: STORAGE
+        ///       defaultSubnetReference:
+        ///         uuid: ${subnet.metadata.uuid}
+        ///       apiVersion: '3.1'
+        /// variables:
+        ///   test:
+        ///     fn::invoke:
+        ///       function: nutanix:getProject
+        ///       arguments:
+        ///         projectId: ${projectTest.id}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProjectResult> Invoke(GetProjectInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetProjectResult>("nutanix:index/getProject:getProject", args ?? new GetProjectInvokeArgs(), options.WithDefaults());
@@ -279,9 +1143,15 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// List of directory service user groups. These groups are not managed by Nutanix.
-        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is `UserGroup`
-        /// * `external_user_group_reference_list.#.uuid` - The UUID of a UserGroup
-        /// * `external_user_group_reference_list.#.name` - The name of a user_group
+        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`"&gt;`userGroup`&lt;/span&gt;
+        /// * `external_user_group_reference_list.#.uuid` - The UUID of a&lt;span pulumi-lang-nodejs=" userGroup
+        /// " pulumi-lang-dotnet=" UserGroup
+        /// " pulumi-lang-go=" userGroup
+        /// " pulumi-lang-python=" user_group
+        /// " pulumi-lang-yaml=" userGroup
+        /// " pulumi-lang-java=" userGroup
+        /// "&gt; userGroup
+        /// &lt;/span&gt;* `external_user_group_reference_list.#.name` - The name of a user_group
         /// </summary>
         public List<Inputs.GetProjectExternalUserGroupReferenceListArgs> ExternalUserGroupReferenceLists
         {
@@ -290,7 +1160,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The `Id` of the project.
+        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt; of the project.
         /// </summary>
         [Input("projectId")]
         public string? ProjectId { get; set; }
@@ -303,7 +1173,7 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// List of subnets for the project.
-        /// * `subnet_reference_list.#.kind` - The kind name. Default value is `Subnet`
+        /// * `subnet_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`"&gt;`subnet`&lt;/span&gt;
         /// * `subnet_reference_list.#.uuid` - The UUID of a subnet
         /// * `subnet_reference_list.#.name` - The name of a subnet.
         /// </summary>
@@ -350,9 +1220,15 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// List of directory service user groups. These groups are not managed by Nutanix.
-        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is `UserGroup`
-        /// * `external_user_group_reference_list.#.uuid` - The UUID of a UserGroup
-        /// * `external_user_group_reference_list.#.name` - The name of a user_group
+        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`"&gt;`userGroup`&lt;/span&gt;
+        /// * `external_user_group_reference_list.#.uuid` - The UUID of a&lt;span pulumi-lang-nodejs=" userGroup
+        /// " pulumi-lang-dotnet=" UserGroup
+        /// " pulumi-lang-go=" userGroup
+        /// " pulumi-lang-python=" user_group
+        /// " pulumi-lang-yaml=" userGroup
+        /// " pulumi-lang-java=" userGroup
+        /// "&gt; userGroup
+        /// &lt;/span&gt;* `external_user_group_reference_list.#.name` - The name of a user_group
         /// </summary>
         public InputList<Inputs.GetProjectExternalUserGroupReferenceListInputArgs> ExternalUserGroupReferenceLists
         {
@@ -361,7 +1237,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The `Id` of the project.
+        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt; of the project.
         /// </summary>
         [Input("projectId")]
         public Input<string>? ProjectId { get; set; }
@@ -374,7 +1250,7 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// List of subnets for the project.
-        /// * `subnet_reference_list.#.kind` - The kind name. Default value is `Subnet`
+        /// * `subnet_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`"&gt;`subnet`&lt;/span&gt;
         /// * `subnet_reference_list.#.uuid` - The UUID of a subnet
         /// * `subnet_reference_list.#.name` - The name of a subnet.
         /// </summary>
@@ -408,7 +1284,7 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// List of accounts associated with the project.
-        /// * `account_reference_list.#.kind` - The kind name. Default value is `Account`
+        /// * `account_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`account`" pulumi-lang-dotnet="`Account`" pulumi-lang-go="`account`" pulumi-lang-python="`account`" pulumi-lang-yaml="`account`" pulumi-lang-java="`account`"&gt;`account`&lt;/span&gt;
         /// * `account_reference_list.#.uuid` - The UUID of an account.
         /// * `account_reference_list.#.name` - The name of an account.
         /// </summary>
@@ -421,7 +1297,7 @@ namespace PiersKarsenbarg.Nutanix
         public readonly ImmutableArray<Outputs.GetProjectCategoryResult> Categories;
         /// <summary>
         /// (Optional/Computed) List of clusters associated with the project..
-        /// * `cluster_reference_list.#.kind` - (Optional) The kind name. Default value is `Cluster`
+        /// * `cluster_reference_list.#.kind` - (Optional) The kind name. Default value is &lt;span pulumi-lang-nodejs="`cluster`" pulumi-lang-dotnet="`Cluster`" pulumi-lang-go="`cluster`" pulumi-lang-python="`cluster`" pulumi-lang-yaml="`cluster`" pulumi-lang-java="`cluster`"&gt;`cluster`&lt;/span&gt;
         /// * `cluster_reference_list.#.uuid` - (Required) The UUID of a cluster
         /// * `cluster_reference_list.#.name` - (Optional/Computed) The name of a cluster.
         /// </summary>
@@ -440,7 +1316,7 @@ namespace PiersKarsenbarg.Nutanix
         public readonly string Description;
         /// <summary>
         /// List of environments associated with the project.
-        /// * `environment_reference_list.#.kind` - The kind name. Default value is `Environment`
+        /// * `environment_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`"&gt;`environment`&lt;/span&gt;
         /// * `environment_reference_list.#.uuid` - The UUID of an environment.
         /// * `environment_reference_list.#.name` - The name of an environment.
         /// </summary>
@@ -453,9 +1329,15 @@ namespace PiersKarsenbarg.Nutanix
         public readonly ImmutableArray<Outputs.GetProjectExternalNetworkListResult> ExternalNetworkLists;
         /// <summary>
         /// List of directory service user groups. These groups are not managed by Nutanix.
-        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is `UserGroup`
-        /// * `external_user_group_reference_list.#.uuid` - The UUID of a UserGroup
-        /// * `external_user_group_reference_list.#.name` - The name of a user_group
+        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`"&gt;`userGroup`&lt;/span&gt;
+        /// * `external_user_group_reference_list.#.uuid` - The UUID of a&lt;span pulumi-lang-nodejs=" userGroup
+        /// " pulumi-lang-dotnet=" UserGroup
+        /// " pulumi-lang-go=" userGroup
+        /// " pulumi-lang-python=" user_group
+        /// " pulumi-lang-yaml=" userGroup
+        /// " pulumi-lang-java=" userGroup
+        /// "&gt; userGroup
+        /// &lt;/span&gt;* `external_user_group_reference_list.#.name` - The name of a user_group
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectExternalUserGroupReferenceListResult> ExternalUserGroupReferenceLists;
         /// <summary>
@@ -479,14 +1361,14 @@ namespace PiersKarsenbarg.Nutanix
         public readonly string State;
         /// <summary>
         /// List of subnets for the project.
-        /// * `subnet_reference_list.#.kind` - The kind name. Default value is `Subnet`
+        /// * `subnet_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`"&gt;`subnet`&lt;/span&gt;
         /// * `subnet_reference_list.#.uuid` - The UUID of a subnet
         /// * `subnet_reference_list.#.name` - The name of a subnet.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectSubnetReferenceListResult> SubnetReferenceLists;
         /// <summary>
         /// (Optional/Computed) List of tunnels associated with the project.
-        /// * `tunnel_reference_list.#.kind` - (Optional) The kind name. Default value is `Tunnel`
+        /// * `tunnel_reference_list.#.kind` - (Optional) The kind name. Default value is &lt;span pulumi-lang-nodejs="`tunnel`" pulumi-lang-dotnet="`Tunnel`" pulumi-lang-go="`tunnel`" pulumi-lang-python="`tunnel`" pulumi-lang-yaml="`tunnel`" pulumi-lang-java="`tunnel`"&gt;`tunnel`&lt;/span&gt;
         /// * `tunnel_reference_list.#.uuid` - (Required) The UUID of a tunnel
         /// * `tunnel_reference_list.#.name` - (Optional/Computed) The name of a tunnel.
         /// </summary>
@@ -497,7 +1379,7 @@ namespace PiersKarsenbarg.Nutanix
         public readonly ImmutableArray<Outputs.GetProjectUserReferenceListResult> UserReferenceLists;
         /// <summary>
         /// (Optional/Computed) List of VPCs associated with the project..
-        /// * `vpc_reference_list.#.kind` - (Optional) The kind name. Default value is `Vpc`
+        /// * `vpc_reference_list.#.kind` - (Optional) The kind name. Default value is &lt;span pulumi-lang-nodejs="`vpc`" pulumi-lang-dotnet="`Vpc`" pulumi-lang-go="`vpc`" pulumi-lang-python="`vpc`" pulumi-lang-yaml="`vpc`" pulumi-lang-java="`vpc`"&gt;`vpc`&lt;/span&gt;
         /// * `vpc_reference_list.#.uuid` - (Required) The UUID of a vpc
         /// * `vpc_reference_list.#.name` - (Optional/Computed) The name of a vpc.
         /// </summary>

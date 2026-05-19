@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const addrGroups = nutanix.getAddressGroups({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAddressGroups(args?: GetAddressGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetAddressGroupsResult> {
     args = args || {};
@@ -58,12 +60,14 @@ export interface GetAddressGroupsResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const addrGroups = nutanix.getAddressGroups({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAddressGroupsOutput(args?: GetAddressGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAddressGroupsResult> {
     args = args || {};
@@ -80,5 +84,5 @@ export interface GetAddressGroupsOutputArgs {
     /**
      * - (Optional) Use metadata to specify filters
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetAddressGroupsMetadataArgs>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetAddressGroupsMetadataArgs>[] | undefined>;
 }

@@ -29,7 +29,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<Inputs.VmCloneV2NicNetworkInfoNetworkFunctionChainArgs>? _networkFunctionChains;
 
         /// <summary>
-        /// - (Optional)The network function chain associates with the NIC. Only valid if NicType is NORMAL_NIC.
+        /// - (Optional)The network function chain associates with the NIC. Only valid if&lt;span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "&gt; nicType &lt;/span&gt;is NORMAL_NIC.
         /// </summary>
         public InputList<Inputs.VmCloneV2NicNetworkInfoNetworkFunctionChainArgs> NetworkFunctionChains
         {
@@ -70,7 +70,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<Inputs.VmCloneV2NicNetworkInfoSubnetArgs>? _subnets;
 
         /// <summary>
-        /// - (Optional) Network identifier for this adapter. Only valid if NicType is NORMAL_NIC or DIRECT_NIC.
+        /// - (Optional) Network identifier for this adapter. Only valid if&lt;span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "&gt; nicType &lt;/span&gt;is NORMAL_NIC or DIRECT_NIC.
         /// </summary>
         public InputList<Inputs.VmCloneV2NicNetworkInfoSubnetArgs> Subnets
         {

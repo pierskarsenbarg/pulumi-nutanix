@@ -145,12 +145,12 @@ def get_volume_group_disks_v2(filter: Optional[_builtins.str] = None,
         page=pulumi.get(__ret__, 'page'),
         select=pulumi.get(__ret__, 'select'),
         volume_group_ext_id=pulumi.get(__ret__, 'volume_group_ext_id'))
-def get_volume_group_disks_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                     orderby: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                     select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     volume_group_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_volume_group_disks_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                     orderby: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                     select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     volume_group_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeGroupDisksV2Result]:
     """
     Query the list of disks corresponding to a Volume Group identified by {volumeGroupExtId}.

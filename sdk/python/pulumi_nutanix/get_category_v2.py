@@ -185,12 +185,14 @@ def get_category_v2(expand: Optional[_builtins.str] = None,
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     get_category = nutanix.get_category_v2(ext_id="85e68112-5b2b-4220-bc8d-e529e4bf420e")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str expand: A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \\$filter, \\$select and \\$orderby. The following expansion keys are supported:
@@ -217,20 +219,22 @@ def get_category_v2(expand: Optional[_builtins.str] = None,
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         type=pulumi.get(__ret__, 'type'),
         value=pulumi.get(__ret__, 'value'))
-def get_category_v2_output(expand: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_category_v2_output(expand: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCategoryV2Result]:
     """
     Fetch a category
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     get_category = nutanix.get_category_v2(ext_id="85e68112-5b2b-4220-bc8d-e529e4bf420e")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str expand: A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \\$filter, \\$select and \\$orderby. The following expansion keys are supported:

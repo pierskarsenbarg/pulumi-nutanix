@@ -17,6 +17,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ### Cluster Location
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -25,7 +26,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var cluster_location = new Nutanix.Index.PcBackupTargetV2("cluster-location", new()
+    ///     var cluster_location = new Nutanix.PcBackupTargetV2("cluster-location", new()
     ///     {
     ///         DomainManagerExtId = "75dde184-3a0e-4f59-a185-03ca1efead17",
     ///         Location = new Nutanix.Inputs.PcBackupTargetV2LocationArgs
@@ -48,9 +49,11 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ### Object Store Location
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -60,7 +63,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     //using object store location
-    ///     var object_store_location = new Nutanix.Index.PcBackupTargetV2("object-store-location", new()
+    ///     var object_store_location = new Nutanix.PcBackupTargetV2("object-store-location", new()
     ///     {
     ///         DomainManagerExtId = "75dde184-3a0e-4f59-a185-03ca1efead17",
     ///         Location = new Nutanix.Inputs.PcBackupTargetV2LocationArgs
@@ -96,6 +99,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/pcBackupTargetV2:PcBackupTargetV2")]
     public partial class PcBackupTargetV2 : global::Pulumi.CustomResource

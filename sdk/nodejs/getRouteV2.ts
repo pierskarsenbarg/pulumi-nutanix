@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -20,6 +21,7 @@ import * as utilities from "./utilities";
  *     extId: "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRouteV2(args: GetRouteV2Args, opts?: pulumi.InvokeOptions): Promise<GetRouteV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -114,6 +116,7 @@ export interface GetRouteV2Result {
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -123,6 +126,7 @@ export interface GetRouteV2Result {
  *     extId: "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRouteV2Output(args: GetRouteV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRouteV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

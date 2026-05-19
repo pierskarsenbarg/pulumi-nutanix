@@ -203,6 +203,7 @@ def get_protection_rule(categories: Optional[Sequence[Union['GetProtectionRuleCa
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -230,9 +231,10 @@ def get_protection_rule(categories: Optional[Sequence[Union['GetProtectionRuleCa
         })
     test = nutanix.get_protection_rule_output(protection_rule_id=protection_rule_test.id)
     ```
+    <!--End PulumiCodeChooser -->
 
 
-    :param _builtins.str protection_rule_id: - (Required) The `id` of the protection rule.
+    :param _builtins.str protection_rule_id: - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the protection rule.
     """
     __args__ = dict()
     __args__['categories'] = categories
@@ -257,15 +259,16 @@ def get_protection_rule(categories: Optional[Sequence[Union['GetProtectionRuleCa
         protection_rule_name=pulumi.get(__ret__, 'protection_rule_name'),
         start_time=pulumi.get(__ret__, 'start_time'),
         state=pulumi.get(__ret__, 'state'))
-def get_protection_rule_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectionRuleCategoryArgs', 'GetProtectionRuleCategoryArgsDict']]]]] = None,
-                               protection_rule_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               protection_rule_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_protection_rule_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectionRuleCategoryArgs', 'GetProtectionRuleCategoryArgsDict']]]]] = None,
+                               protection_rule_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               protection_rule_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionRuleResult]:
     """
     Describe a Nutanix Protection Rule and its values (if it has them).
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -293,9 +296,10 @@ def get_protection_rule_output(categories: Optional[pulumi.Input[Optional[Sequen
         })
     test = nutanix.get_protection_rule_output(protection_rule_id=protection_rule_test.id)
     ```
+    <!--End PulumiCodeChooser -->
 
 
-    :param _builtins.str protection_rule_id: - (Required) The `id` of the protection rule.
+    :param _builtins.str protection_rule_id: - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the protection rule.
     """
     __args__ = dict()
     __args__['categories'] = categories

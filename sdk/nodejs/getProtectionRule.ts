@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -41,6 +42,7 @@ import * as utilities from "./utilities";
  *     protectionRuleId: protectionRuleTest.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProtectionRule(args?: GetProtectionRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectionRuleResult> {
     args = args || {};
@@ -58,7 +60,7 @@ export function getProtectionRule(args?: GetProtectionRuleArgs, opts?: pulumi.In
 export interface GetProtectionRuleArgs {
     categories?: inputs.GetProtectionRuleCategory[];
     /**
-     * - (Required) The `id` of the protection rule.
+     * - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the protection rule.
      */
     protectionRuleId?: string;
     protectionRuleName?: string;
@@ -109,6 +111,7 @@ export interface GetProtectionRuleResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -139,6 +142,7 @@ export interface GetProtectionRuleResult {
  *     protectionRuleId: protectionRuleTest.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProtectionRuleOutput(args?: GetProtectionRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectionRuleResult> {
     args = args || {};
@@ -154,10 +158,10 @@ export function getProtectionRuleOutput(args?: GetProtectionRuleOutputArgs, opts
  * A collection of arguments for invoking getProtectionRule.
  */
 export interface GetProtectionRuleOutputArgs {
-    categories?: pulumi.Input<pulumi.Input<inputs.GetProtectionRuleCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetProtectionRuleCategoryArgs>[] | undefined>;
     /**
-     * - (Required) The `id` of the protection rule.
+     * - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the protection rule.
      */
-    protectionRuleId?: pulumi.Input<string>;
-    protectionRuleName?: pulumi.Input<string>;
+    protectionRuleId?: pulumi.Input<string | undefined>;
+    protectionRuleName?: pulumi.Input<string | undefined>;
 }

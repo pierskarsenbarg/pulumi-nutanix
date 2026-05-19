@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -37,6 +38,7 @@ import * as utilities from "./utilities";
  *     ipmiPassword: "XXXXX",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Error
  *
@@ -151,23 +153,23 @@ export interface FoundationIpmiConfigState {
     /**
      * - (Required) List of blocks.
      */
-    blocks?: pulumi.Input<pulumi.Input<inputs.FoundationIpmiConfigBlock>[]>;
+    blocks?: pulumi.Input<pulumi.Input<inputs.FoundationIpmiConfigBlock>[] | undefined>;
     /**
      * - (Required) IPMI gateway.
      */
-    ipmiGateway?: pulumi.Input<string>;
+    ipmiGateway?: pulumi.Input<string | undefined>;
     /**
      * - (Required) IPMI netmask.
      */
-    ipmiNetmask?: pulumi.Input<string>;
+    ipmiNetmask?: pulumi.Input<string | undefined>;
     /**
      * - (Required) IPMI password.
      */
-    ipmiPassword?: pulumi.Input<string>;
+    ipmiPassword?: pulumi.Input<string | undefined>;
     /**
      * - (Required) IPMI username.
      */
-    ipmiUser?: pulumi.Input<string>;
+    ipmiUser?: pulumi.Input<string | undefined>;
 }
 
 /**

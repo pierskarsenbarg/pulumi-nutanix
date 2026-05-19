@@ -17,6 +17,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ### pbr creation with vpc name with any source or destination or protocol with permit action
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -25,7 +26,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var pbr = new Nutanix.Index.Pbr("pbr", new()
+    ///     var pbr = new Nutanix.Pbr("pbr", new()
     ///     {
     ///         Name = "test-policy-1",
     ///         Priority = 123,
@@ -44,6 +45,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/pbr:Pbr")]
     public partial class Pbr : global::Pulumi.CustomResource

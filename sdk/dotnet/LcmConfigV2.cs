@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Enable Auto Inventory, Add Auto Inventory Schedule and enable auto upgrade
-    ///     var lcm_configuration_update = new Nutanix.Index.LcmConfigV2("lcm-configuration-update", new()
+    ///     var lcm_configuration_update = new Nutanix.LcmConfigV2("lcm-configuration-update", new()
     ///     {
     ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
     ///         IsAutoInventoryEnabled = true,
@@ -33,7 +34,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     // Update the LCM url to darksite server
-    ///     var lcm_configuration_update_connectivity_type = new Nutanix.Index.LcmConfigV2("lcm-configuration-update-connectivity-type", new()
+    ///     var lcm_configuration_update_connectivity_type = new Nutanix.LcmConfigV2("lcm-configuration-update-connectivity-type", new()
     ///     {
     ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
     ///         Url = "https://x.x.x.x:8000/builds",
@@ -42,12 +43,13 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/lcmConfigV2:LcmConfigV2")]
     public partial class LcmConfigV2 : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when AutoInventoryEnabled is set to True. The default schedule time is 03:00(AM).
+        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when&lt;span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "&gt; autoInventoryEnabled &lt;/span&gt;is set to True. The default schedule time is 03:00(AM).
         /// </summary>
         [Output("autoInventorySchedule")]
         public Output<string?> AutoInventorySchedule { get; private set; } = null!;
@@ -141,7 +143,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class LcmConfigV2Args : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when AutoInventoryEnabled is set to True. The default schedule time is 03:00(AM).
+        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when&lt;span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "&gt; autoInventoryEnabled &lt;/span&gt;is set to True. The default schedule time is 03:00(AM).
         /// </summary>
         [Input("autoInventorySchedule")]
         public Input<string>? AutoInventorySchedule { get; set; }
@@ -193,7 +195,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class LcmConfigV2State : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when AutoInventoryEnabled is set to True. The default schedule time is 03:00(AM).
+        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when&lt;span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "&gt; autoInventoryEnabled &lt;/span&gt;is set to True. The default schedule time is 03:00(AM).
         /// </summary>
         [Input("autoInventorySchedule")]
         public Input<string>? AutoInventorySchedule { get; set; }

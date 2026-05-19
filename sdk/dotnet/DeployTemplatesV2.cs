@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var deploy_temp = new Nutanix.Index.DeployTemplatesV2("deploy-temp", new()
+    ///     var deploy_temp = new Nutanix.DeployTemplatesV2("deploy-temp", new()
     ///     {
     ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
     ///         NumberOfVms = 1,
@@ -43,6 +44,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/deployTemplatesV2:DeployTemplatesV2")]
     public partial class DeployTemplatesV2 : global::Pulumi.CustomResource

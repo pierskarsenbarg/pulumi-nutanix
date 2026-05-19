@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Create key under service account, never expires
-    ///     var createKey = new Nutanix.Index.UserKeyV2("create_key", new()
+    ///     var createKey = new Nutanix.UserKeyV2("create_key", new()
     ///     {
     ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
     ///         Name = "api_key_developers",
@@ -35,26 +36,27 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// ## Argument Reference
     /// 
     /// The following arguments are supported:
     /// 
-    /// * `UserExtId`: - ( Required ) External Identifier of the User.
-    /// * `Name`: - ( Required ) Identifier for the key in the form of a name.
-    /// * `Description`: - ( Optional ) Brief description of the key.
-    /// * `KeyType`: - ( Required ) The type of key. Enum Values:
+    /// * &lt;span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`"&gt;`userExtId`&lt;/span&gt;: - ( Required ) External Identifier of the User.
+    /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - ( Required ) Identifier for the key in the form of a name.
+    /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: - ( Optional ) Brief description of the key.
+    /// * &lt;span pulumi-lang-nodejs="`keyType`" pulumi-lang-dotnet="`KeyType`" pulumi-lang-go="`keyType`" pulumi-lang-python="`key_type`" pulumi-lang-yaml="`keyType`" pulumi-lang-java="`keyType`"&gt;`keyType`&lt;/span&gt;: - ( Required ) The type of key. Enum Values:
     ///       * "API_KEY":	A key type that is used to identify a service.
     ///       * "OBJECT_KEY":	A combination of access key and secret key to sign an API request.
-    /// * `CreationType`: - ( Optional ) The creation mechanism of this entity. Enum Values:
+    /// * &lt;span pulumi-lang-nodejs="`creationType`" pulumi-lang-dotnet="`CreationType`" pulumi-lang-go="`creationType`" pulumi-lang-python="`creation_type`" pulumi-lang-yaml="`creationType`" pulumi-lang-java="`creationType`"&gt;`creationType`&lt;/span&gt;: - ( Optional ) The creation mechanism of this entity. Enum Values:
     ///       * "PREDEFINED":	Predefined creator workflow type is for entity created by the system.
     ///       * "SERVICEDEFINED":	Servicedefined creator workflow type is for entity created by the service.
     ///       * "USERDEFINED":	Userdefined creator workflow type is for entity created by the users.
-    /// * `ExpiryTime`: - ( Optional ) The time when the key will expire.
-    /// * `Status`: - ( Optional ) The status of the key. Enum Values:
+    /// * &lt;span pulumi-lang-nodejs="`expiryTime`" pulumi-lang-dotnet="`ExpiryTime`" pulumi-lang-go="`expiryTime`" pulumi-lang-python="`expiry_time`" pulumi-lang-yaml="`expiryTime`" pulumi-lang-java="`expiryTime`"&gt;`expiryTime`&lt;/span&gt;: - ( Optional ) The time when the key will expire.
+    /// * &lt;span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`"&gt;`status`&lt;/span&gt;: - ( Optional ) The status of the key. Enum Values:
     ///       * "REVOKED":	Key is revoked.
     ///       * "VALID":	Key is valid.
     ///       * "EXPIRED":	Key is expired.
-    /// * `AssignedTo`: - ( Optional ) External client to whom the given key is allocated.
+    /// * &lt;span pulumi-lang-nodejs="`assignedTo`" pulumi-lang-dotnet="`AssignedTo`" pulumi-lang-go="`assignedTo`" pulumi-lang-python="`assigned_to`" pulumi-lang-yaml="`assignedTo`" pulumi-lang-java="`assignedTo`"&gt;`assignedTo`&lt;/span&gt;: - ( Optional ) External client to whom the given key is allocated.
     /// </summary>
     [NutanixResourceType("nutanix:index/userKeyV2:UserKeyV2")]
     public partial class UserKeyV2 : global::Pulumi.CustomResource

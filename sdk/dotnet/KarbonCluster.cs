@@ -19,6 +19,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -27,7 +28,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var exampleCluster = new Nutanix.Index.KarbonCluster("example_cluster", new()
+    ///     var exampleCluster = new Nutanix.KarbonCluster("example_cluster", new()
     ///     {
     ///         Name = "example_cluster",
     ///         Version = "1.18.15-1",
@@ -84,8 +85,10 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ### resource to create karbon cluster with timeouts
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -94,7 +97,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var exampleCluster = new Nutanix.Index.KarbonCluster("example_cluster", new()
+    ///     var exampleCluster = new Nutanix.KarbonCluster("example_cluster", new()
     ///     {
     ///         Name = "example_cluster",
     ///         Version = "1.18.15-1",
@@ -151,6 +154,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/karbonCluster:KarbonCluster")]
     public partial class KarbonCluster : global::Pulumi.CustomResource

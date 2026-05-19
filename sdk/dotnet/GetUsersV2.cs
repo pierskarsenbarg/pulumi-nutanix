@@ -17,6 +17,31 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // list all users
+        /// const list_users = nutanix.getUsersV2({});
+        /// const filtered_users = nutanix.getUsersV2({
+        ///     filter: "username eq 'username-example'",
+        /// });
+        /// // list users of user_type SERVICE_ACCOUNT
+        /// const listServiceAccount = nutanix.getUsersV2({
+        ///     filter: "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # list all users
+        /// list_users = nutanix.get_users_v2()
+        /// filtered_users = nutanix.get_users_v2(filter="username eq 'username-example'")
+        /// # list users of user_type SERVICE_ACCOUNT
+        /// list_service_account = nutanix.get_users_v2(filter="userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,29 +51,118 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // list all users
-        ///     var list_users = Nutanix.Index.GetUsersV2.Invoke();
+        ///     var list_users = Nutanix.GetUsersV2.Invoke();
         /// 
-        ///     var filtered_users = Nutanix.Index.GetUsersV2.Invoke(new()
+        ///     var filtered_users = Nutanix.GetUsersV2.Invoke(new()
         ///     {
         ///         Filter = "username eq 'username-example'",
         ///     });
         /// 
         ///     // list users of user_type SERVICE_ACCOUNT
-        ///     var listServiceAccount = Nutanix.Index.GetUsersV2.Invoke(new()
+        ///     var listServiceAccount = Nutanix.GetUsersV2.Invoke(new()
         ///     {
         ///         Filter = "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// list all users
+        /// 		_, err := nutanix.GetUsersV2(ctx, &amp;nutanix.LookupUsersV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetUsersV2(ctx, &amp;nutanix.LookupUsersV2Args{
+        /// 			Filter: pulumi.StringRef("username eq 'username-example'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list users of user_type SERVICE_ACCOUNT
+        /// 		_, err = nutanix.GetUsersV2(ctx, &amp;nutanix.LookupUsersV2Args{
+        /// 			Filter: pulumi.StringRef("userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetUsersV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // list all users
+        ///         final var list-users = NutanixFunctions.getUsersV2(GetUsersV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var filtered-users = NutanixFunctions.getUsersV2(GetUsersV2Args.builder()
+        ///             .filter("username eq 'username-example'")
+        ///             .build());
+        /// 
+        ///         // list users of user_type SERVICE_ACCOUNT
+        ///         final var listServiceAccount = NutanixFunctions.getUsersV2(GetUsersV2Args.builder()
+        ///             .filter("userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # list all users
+        ///   list-users:
+        ///     fn::invoke:
+        ///       function: nutanix:getUsersV2
+        ///       arguments: {}
+        ///   filtered-users:
+        ///     fn::invoke:
+        ///       function: nutanix:getUsersV2
+        ///       arguments:
+        ///         filter: username eq 'username-example'
+        ///   # list users of user_type SERVICE_ACCOUNT
+        ///   listServiceAccount:
+        ///     fn::invoke:
+        ///       function: nutanix:getUsersV2
+        ///       arguments:
+        ///         filter: userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `Page`: - A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
-        /// * `Limit` : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-        /// * `Filter` :A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
+        /// * &lt;span pulumi-lang-nodejs="`page`" pulumi-lang-dotnet="`Page`" pulumi-lang-go="`page`" pulumi-lang-python="`page`" pulumi-lang-yaml="`page`" pulumi-lang-java="`page`"&gt;`page`&lt;/span&gt;: - A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
+        /// * &lt;span pulumi-lang-nodejs="`limit`" pulumi-lang-dotnet="`Limit`" pulumi-lang-go="`limit`" pulumi-lang-python="`limit`" pulumi-lang-yaml="`limit`" pulumi-lang-java="`limit`"&gt;`limit`&lt;/span&gt; : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
+        /// * &lt;span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`"&gt;`filter`&lt;/span&gt; :A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
         ///     * createdBy
         ///     * displayName
         ///     * emailId
@@ -60,7 +174,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     * status
         ///     * userType
         ///     * username
-        /// * `Orderby` : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:     * createdBy
+        /// * &lt;span pulumi-lang-nodejs="`orderby`" pulumi-lang-dotnet="`Orderby`" pulumi-lang-go="`orderby`" pulumi-lang-python="`orderby`" pulumi-lang-yaml="`orderby`" pulumi-lang-java="`orderby`"&gt;`orderby`&lt;/span&gt; : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:     * createdBy
         ///     * createdTime
         ///     * displayName
         ///     * emailId
@@ -71,7 +185,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     * lastUpdatedTime
         ///     * userType
         ///     * username
-        /// * `Select` : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. following fields:
+        /// * &lt;span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`"&gt;`select`&lt;/span&gt; : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. following fields:
         ///     * additionalAttributes
         ///     * bucketsAccessKeys
         ///     * createdBy
@@ -103,6 +217,31 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // list all users
+        /// const list_users = nutanix.getUsersV2({});
+        /// const filtered_users = nutanix.getUsersV2({
+        ///     filter: "username eq 'username-example'",
+        /// });
+        /// // list users of user_type SERVICE_ACCOUNT
+        /// const listServiceAccount = nutanix.getUsersV2({
+        ///     filter: "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # list all users
+        /// list_users = nutanix.get_users_v2()
+        /// filtered_users = nutanix.get_users_v2(filter="username eq 'username-example'")
+        /// # list users of user_type SERVICE_ACCOUNT
+        /// list_service_account = nutanix.get_users_v2(filter="userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -112,29 +251,118 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // list all users
-        ///     var list_users = Nutanix.Index.GetUsersV2.Invoke();
+        ///     var list_users = Nutanix.GetUsersV2.Invoke();
         /// 
-        ///     var filtered_users = Nutanix.Index.GetUsersV2.Invoke(new()
+        ///     var filtered_users = Nutanix.GetUsersV2.Invoke(new()
         ///     {
         ///         Filter = "username eq 'username-example'",
         ///     });
         /// 
         ///     // list users of user_type SERVICE_ACCOUNT
-        ///     var listServiceAccount = Nutanix.Index.GetUsersV2.Invoke(new()
+        ///     var listServiceAccount = Nutanix.GetUsersV2.Invoke(new()
         ///     {
         ///         Filter = "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// list all users
+        /// 		_, err := nutanix.GetUsersV2(ctx, &amp;nutanix.LookupUsersV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetUsersV2(ctx, &amp;nutanix.LookupUsersV2Args{
+        /// 			Filter: pulumi.StringRef("username eq 'username-example'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list users of user_type SERVICE_ACCOUNT
+        /// 		_, err = nutanix.GetUsersV2(ctx, &amp;nutanix.LookupUsersV2Args{
+        /// 			Filter: pulumi.StringRef("userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetUsersV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // list all users
+        ///         final var list-users = NutanixFunctions.getUsersV2(GetUsersV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var filtered-users = NutanixFunctions.getUsersV2(GetUsersV2Args.builder()
+        ///             .filter("username eq 'username-example'")
+        ///             .build());
+        /// 
+        ///         // list users of user_type SERVICE_ACCOUNT
+        ///         final var listServiceAccount = NutanixFunctions.getUsersV2(GetUsersV2Args.builder()
+        ///             .filter("userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # list all users
+        ///   list-users:
+        ///     fn::invoke:
+        ///       function: nutanix:getUsersV2
+        ///       arguments: {}
+        ///   filtered-users:
+        ///     fn::invoke:
+        ///       function: nutanix:getUsersV2
+        ///       arguments:
+        ///         filter: username eq 'username-example'
+        ///   # list users of user_type SERVICE_ACCOUNT
+        ///   listServiceAccount:
+        ///     fn::invoke:
+        ///       function: nutanix:getUsersV2
+        ///       arguments:
+        ///         filter: userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `Page`: - A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
-        /// * `Limit` : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-        /// * `Filter` :A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
+        /// * &lt;span pulumi-lang-nodejs="`page`" pulumi-lang-dotnet="`Page`" pulumi-lang-go="`page`" pulumi-lang-python="`page`" pulumi-lang-yaml="`page`" pulumi-lang-java="`page`"&gt;`page`&lt;/span&gt;: - A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
+        /// * &lt;span pulumi-lang-nodejs="`limit`" pulumi-lang-dotnet="`Limit`" pulumi-lang-go="`limit`" pulumi-lang-python="`limit`" pulumi-lang-yaml="`limit`" pulumi-lang-java="`limit`"&gt;`limit`&lt;/span&gt; : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
+        /// * &lt;span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`"&gt;`filter`&lt;/span&gt; :A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
         ///     * createdBy
         ///     * displayName
         ///     * emailId
@@ -146,7 +374,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     * status
         ///     * userType
         ///     * username
-        /// * `Orderby` : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:     * createdBy
+        /// * &lt;span pulumi-lang-nodejs="`orderby`" pulumi-lang-dotnet="`Orderby`" pulumi-lang-go="`orderby`" pulumi-lang-python="`orderby`" pulumi-lang-yaml="`orderby`" pulumi-lang-java="`orderby`"&gt;`orderby`&lt;/span&gt; : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:     * createdBy
         ///     * createdTime
         ///     * displayName
         ///     * emailId
@@ -157,7 +385,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     * lastUpdatedTime
         ///     * userType
         ///     * username
-        /// * `Select` : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. following fields:
+        /// * &lt;span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`"&gt;`select`&lt;/span&gt; : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. following fields:
         ///     * additionalAttributes
         ///     * bucketsAccessKeys
         ///     * createdBy
@@ -189,6 +417,31 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // list all users
+        /// const list_users = nutanix.getUsersV2({});
+        /// const filtered_users = nutanix.getUsersV2({
+        ///     filter: "username eq 'username-example'",
+        /// });
+        /// // list users of user_type SERVICE_ACCOUNT
+        /// const listServiceAccount = nutanix.getUsersV2({
+        ///     filter: "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # list all users
+        /// list_users = nutanix.get_users_v2()
+        /// filtered_users = nutanix.get_users_v2(filter="username eq 'username-example'")
+        /// # list users of user_type SERVICE_ACCOUNT
+        /// list_service_account = nutanix.get_users_v2(filter="userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -198,29 +451,118 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     // list all users
-        ///     var list_users = Nutanix.Index.GetUsersV2.Invoke();
+        ///     var list_users = Nutanix.GetUsersV2.Invoke();
         /// 
-        ///     var filtered_users = Nutanix.Index.GetUsersV2.Invoke(new()
+        ///     var filtered_users = Nutanix.GetUsersV2.Invoke(new()
         ///     {
         ///         Filter = "username eq 'username-example'",
         ///     });
         /// 
         ///     // list users of user_type SERVICE_ACCOUNT
-        ///     var listServiceAccount = Nutanix.Index.GetUsersV2.Invoke(new()
+        ///     var listServiceAccount = Nutanix.GetUsersV2.Invoke(new()
         ///     {
         ///         Filter = "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// list all users
+        /// 		_, err := nutanix.GetUsersV2(ctx, &amp;nutanix.LookupUsersV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetUsersV2(ctx, &amp;nutanix.LookupUsersV2Args{
+        /// 			Filter: pulumi.StringRef("username eq 'username-example'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list users of user_type SERVICE_ACCOUNT
+        /// 		_, err = nutanix.GetUsersV2(ctx, &amp;nutanix.LookupUsersV2Args{
+        /// 			Filter: pulumi.StringRef("userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetUsersV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // list all users
+        ///         final var list-users = NutanixFunctions.getUsersV2(GetUsersV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var filtered-users = NutanixFunctions.getUsersV2(GetUsersV2Args.builder()
+        ///             .filter("username eq 'username-example'")
+        ///             .build());
+        /// 
+        ///         // list users of user_type SERVICE_ACCOUNT
+        ///         final var listServiceAccount = NutanixFunctions.getUsersV2(GetUsersV2Args.builder()
+        ///             .filter("userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   # list all users
+        ///   list-users:
+        ///     fn::invoke:
+        ///       function: nutanix:getUsersV2
+        ///       arguments: {}
+        ///   filtered-users:
+        ///     fn::invoke:
+        ///       function: nutanix:getUsersV2
+        ///       arguments:
+        ///         filter: username eq 'username-example'
+        ///   # list users of user_type SERVICE_ACCOUNT
+        ///   listServiceAccount:
+        ///     fn::invoke:
+        ///       function: nutanix:getUsersV2
+        ///       arguments:
+        ///         filter: userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ##  Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
-        /// * `Page`: - A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
-        /// * `Limit` : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-        /// * `Filter` :A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
+        /// * &lt;span pulumi-lang-nodejs="`page`" pulumi-lang-dotnet="`Page`" pulumi-lang-go="`page`" pulumi-lang-python="`page`" pulumi-lang-yaml="`page`" pulumi-lang-java="`page`"&gt;`page`&lt;/span&gt;: - A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
+        /// * &lt;span pulumi-lang-nodejs="`limit`" pulumi-lang-dotnet="`Limit`" pulumi-lang-go="`limit`" pulumi-lang-python="`limit`" pulumi-lang-yaml="`limit`" pulumi-lang-java="`limit`"&gt;`limit`&lt;/span&gt; : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
+        /// * &lt;span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`"&gt;`filter`&lt;/span&gt; :A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
         ///     * createdBy
         ///     * displayName
         ///     * emailId
@@ -232,7 +574,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     * status
         ///     * userType
         ///     * username
-        /// * `Orderby` : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:     * createdBy
+        /// * &lt;span pulumi-lang-nodejs="`orderby`" pulumi-lang-dotnet="`Orderby`" pulumi-lang-go="`orderby`" pulumi-lang-python="`orderby`" pulumi-lang-yaml="`orderby`" pulumi-lang-java="`orderby`"&gt;`orderby`&lt;/span&gt; : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:     * createdBy
         ///     * createdTime
         ///     * displayName
         ///     * emailId
@@ -243,7 +585,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     * lastUpdatedTime
         ///     * userType
         ///     * username
-        /// * `Select` : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. following fields:
+        /// * &lt;span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`"&gt;`select`&lt;/span&gt; : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. following fields:
         ///     * additionalAttributes
         ///     * bucketsAccessKeys
         ///     * createdBy

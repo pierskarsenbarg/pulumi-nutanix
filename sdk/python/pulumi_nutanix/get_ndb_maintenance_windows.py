@@ -68,12 +68,14 @@ def get_ndb_maintenance_windows(opts: Optional[pulumi.InvokeOptions] = None) -> 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     windows = nutanix.get_ndb_maintenance_windows()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -88,12 +90,14 @@ def get_ndb_maintenance_windows_output(opts: Optional[Union[pulumi.InvokeOptions
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     windows = nutanix.get_ndb_maintenance_windows()
     ```
+    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

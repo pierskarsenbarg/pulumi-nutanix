@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -24,39 +25,46 @@ import * as utilities from "./utilities";
  *     limit: 10,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Images
  *
- * The `images` object is a list of all images. Each image has the following attributes:
+ * The <span pulumi-lang-nodejs="`images`" pulumi-lang-dotnet="`Images`" pulumi-lang-go="`images`" pulumi-lang-python="`images`" pulumi-lang-yaml="`images`" pulumi-lang-java="`images`">`images`</span> object is a list of all images. Each image has the following attributes:
  *
- * * `extId`: A globally unique identifier of an instance that is suitable for external consumption.
- * * `name`: The user defined name of an image.
- * * `description`: The user defined description of an image.
- * * `type`: The type of an image.
- * * `checksum`: The checksum of an image.
- * * `sizeBytes`: The size in bytes of an image file.
- * * `source`: The source of an image. It can be a VM disk or a URL.
- * * `categoryExtIds`: List of category external identifiers for an image.
- * * `clusterLocationExtIds`: List of cluster external identifiers where the image is located.
- * * `createTime`: Create time of an image.
- * * `lastUpdateTime`: Last update time of an image.
- * * `ownerExtId`: External identifier of the owner of the image
- * * `placementPolicyStatus`: Status of an image placement policy.
+ * * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption.
+ * * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: The user defined name of an image.
+ * * <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>: The user defined description of an image.
+ * * <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`">`type`</span>: The type of an image.
+ * * <span pulumi-lang-nodejs="`checksum`" pulumi-lang-dotnet="`Checksum`" pulumi-lang-go="`checksum`" pulumi-lang-python="`checksum`" pulumi-lang-yaml="`checksum`" pulumi-lang-java="`checksum`">`checksum`</span>: The checksum of an image.
+ * * <span pulumi-lang-nodejs="`sizeBytes`" pulumi-lang-dotnet="`SizeBytes`" pulumi-lang-go="`sizeBytes`" pulumi-lang-python="`size_bytes`" pulumi-lang-yaml="`sizeBytes`" pulumi-lang-java="`sizeBytes`">`sizeBytes`</span>: The size in bytes of an image file.
+ * * <span pulumi-lang-nodejs="`source`" pulumi-lang-dotnet="`Source`" pulumi-lang-go="`source`" pulumi-lang-python="`source`" pulumi-lang-yaml="`source`" pulumi-lang-java="`source`">`source`</span>: The source of an image. It can be a VM disk or a URL.
+ * * <span pulumi-lang-nodejs="`categoryExtIds`" pulumi-lang-dotnet="`CategoryExtIds`" pulumi-lang-go="`categoryExtIds`" pulumi-lang-python="`category_ext_ids`" pulumi-lang-yaml="`categoryExtIds`" pulumi-lang-java="`categoryExtIds`">`categoryExtIds`</span>: List of category external identifiers for an image.
+ * * <span pulumi-lang-nodejs="`clusterLocationExtIds`" pulumi-lang-dotnet="`ClusterLocationExtIds`" pulumi-lang-go="`clusterLocationExtIds`" pulumi-lang-python="`cluster_location_ext_ids`" pulumi-lang-yaml="`clusterLocationExtIds`" pulumi-lang-java="`clusterLocationExtIds`">`clusterLocationExtIds`</span>: List of cluster external identifiers where the image is located.
+ * * <span pulumi-lang-nodejs="`createTime`" pulumi-lang-dotnet="`CreateTime`" pulumi-lang-go="`createTime`" pulumi-lang-python="`create_time`" pulumi-lang-yaml="`createTime`" pulumi-lang-java="`createTime`">`createTime`</span>: Create time of an image.
+ * * <span pulumi-lang-nodejs="`lastUpdateTime`" pulumi-lang-dotnet="`LastUpdateTime`" pulumi-lang-go="`lastUpdateTime`" pulumi-lang-python="`last_update_time`" pulumi-lang-yaml="`lastUpdateTime`" pulumi-lang-java="`lastUpdateTime`">`lastUpdateTime`</span>: Last update time of an image.
+ * * <span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`">`ownerExtId`</span>: External identifier of the owner of the image
+ * * <span pulumi-lang-nodejs="`placementPolicyStatus`" pulumi-lang-dotnet="`PlacementPolicyStatus`" pulumi-lang-go="`placementPolicyStatus`" pulumi-lang-python="`placement_policy_status`" pulumi-lang-yaml="`placementPolicyStatus`" pulumi-lang-java="`placementPolicyStatus`">`placementPolicyStatus`</span>: Status of an image placement policy.
  *
  * ### source
- * * `extId`: The external identifier of VM Disk.
- * * `url`: The URL for creating an image.
- * * `basicAuth`: Basic authentication credentials for image source HTTP/S URL.
+ * * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: The external identifier of VM Disk.
+ * * <span pulumi-lang-nodejs="`url`" pulumi-lang-dotnet="`Url`" pulumi-lang-go="`url`" pulumi-lang-python="`url`" pulumi-lang-yaml="`url`" pulumi-lang-java="`url`">`url`</span>: The URL for creating an image.
+ * * <span pulumi-lang-nodejs="`basicAuth`" pulumi-lang-dotnet="`BasicAuth`" pulumi-lang-go="`basicAuth`" pulumi-lang-python="`basic_auth`" pulumi-lang-yaml="`basicAuth`" pulumi-lang-java="`basicAuth`">`basicAuth`</span>: Basic authentication credentials for image source HTTP/S URL.
  * * `basic_auth.username`: Username for basic authentication.
  * * `basic_auth.password`: Password for basic authentication.
  *
- * ### placementPolicyStatus
- * * `placementPolicyExtId`: Image placement policy external identifier.
- * * `complianceStatus`: Compliance status for a placement policy.
- * * `enforcementMode`: Indicates whether the placement policy enforcement is ongoing or has failed.
- * * `policyClusterExtIds`: List of cluster external identifiers of the image location for the enforced placement policy.
- * * `enforcedClusterExtIds`: List of cluster external identifiers for the enforced placement policy.
- * * `conflictingPolicyExtIds`: List of image placement policy external identifier that conflict with the current one.
+ * ###<span pulumi-lang-nodejs=" placementPolicyStatus
+ * " pulumi-lang-dotnet=" PlacementPolicyStatus
+ * " pulumi-lang-go=" placementPolicyStatus
+ * " pulumi-lang-python=" placement_policy_status
+ * " pulumi-lang-yaml=" placementPolicyStatus
+ * " pulumi-lang-java=" placementPolicyStatus
+ * "> placementPolicyStatus
+ * </span>* <span pulumi-lang-nodejs="`placementPolicyExtId`" pulumi-lang-dotnet="`PlacementPolicyExtId`" pulumi-lang-go="`placementPolicyExtId`" pulumi-lang-python="`placement_policy_ext_id`" pulumi-lang-yaml="`placementPolicyExtId`" pulumi-lang-java="`placementPolicyExtId`">`placementPolicyExtId`</span>: Image placement policy external identifier.
+ * * <span pulumi-lang-nodejs="`complianceStatus`" pulumi-lang-dotnet="`ComplianceStatus`" pulumi-lang-go="`complianceStatus`" pulumi-lang-python="`compliance_status`" pulumi-lang-yaml="`complianceStatus`" pulumi-lang-java="`complianceStatus`">`complianceStatus`</span>: Compliance status for a placement policy.
+ * * <span pulumi-lang-nodejs="`enforcementMode`" pulumi-lang-dotnet="`EnforcementMode`" pulumi-lang-go="`enforcementMode`" pulumi-lang-python="`enforcement_mode`" pulumi-lang-yaml="`enforcementMode`" pulumi-lang-java="`enforcementMode`">`enforcementMode`</span>: Indicates whether the placement policy enforcement is ongoing or has failed.
+ * * <span pulumi-lang-nodejs="`policyClusterExtIds`" pulumi-lang-dotnet="`PolicyClusterExtIds`" pulumi-lang-go="`policyClusterExtIds`" pulumi-lang-python="`policy_cluster_ext_ids`" pulumi-lang-yaml="`policyClusterExtIds`" pulumi-lang-java="`policyClusterExtIds`">`policyClusterExtIds`</span>: List of cluster external identifiers of the image location for the enforced placement policy.
+ * * <span pulumi-lang-nodejs="`enforcedClusterExtIds`" pulumi-lang-dotnet="`EnforcedClusterExtIds`" pulumi-lang-go="`enforcedClusterExtIds`" pulumi-lang-python="`enforced_cluster_ext_ids`" pulumi-lang-yaml="`enforcedClusterExtIds`" pulumi-lang-java="`enforcedClusterExtIds`">`enforcedClusterExtIds`</span>: List of cluster external identifiers for the enforced placement policy.
+ * * <span pulumi-lang-nodejs="`conflictingPolicyExtIds`" pulumi-lang-dotnet="`ConflictingPolicyExtIds`" pulumi-lang-go="`conflictingPolicyExtIds`" pulumi-lang-python="`conflicting_policy_ext_ids`" pulumi-lang-yaml="`conflictingPolicyExtIds`" pulumi-lang-java="`conflictingPolicyExtIds`">`conflictingPolicyExtIds`</span>: List of image placement policy external identifier that conflict with the current one.
  *
  * See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Images)
  */
@@ -142,6 +150,7 @@ export interface GetImagesV2Result {
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -155,39 +164,46 @@ export interface GetImagesV2Result {
  *     limit: 10,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Images
  *
- * The `images` object is a list of all images. Each image has the following attributes:
+ * The <span pulumi-lang-nodejs="`images`" pulumi-lang-dotnet="`Images`" pulumi-lang-go="`images`" pulumi-lang-python="`images`" pulumi-lang-yaml="`images`" pulumi-lang-java="`images`">`images`</span> object is a list of all images. Each image has the following attributes:
  *
- * * `extId`: A globally unique identifier of an instance that is suitable for external consumption.
- * * `name`: The user defined name of an image.
- * * `description`: The user defined description of an image.
- * * `type`: The type of an image.
- * * `checksum`: The checksum of an image.
- * * `sizeBytes`: The size in bytes of an image file.
- * * `source`: The source of an image. It can be a VM disk or a URL.
- * * `categoryExtIds`: List of category external identifiers for an image.
- * * `clusterLocationExtIds`: List of cluster external identifiers where the image is located.
- * * `createTime`: Create time of an image.
- * * `lastUpdateTime`: Last update time of an image.
- * * `ownerExtId`: External identifier of the owner of the image
- * * `placementPolicyStatus`: Status of an image placement policy.
+ * * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption.
+ * * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: The user defined name of an image.
+ * * <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>: The user defined description of an image.
+ * * <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`">`type`</span>: The type of an image.
+ * * <span pulumi-lang-nodejs="`checksum`" pulumi-lang-dotnet="`Checksum`" pulumi-lang-go="`checksum`" pulumi-lang-python="`checksum`" pulumi-lang-yaml="`checksum`" pulumi-lang-java="`checksum`">`checksum`</span>: The checksum of an image.
+ * * <span pulumi-lang-nodejs="`sizeBytes`" pulumi-lang-dotnet="`SizeBytes`" pulumi-lang-go="`sizeBytes`" pulumi-lang-python="`size_bytes`" pulumi-lang-yaml="`sizeBytes`" pulumi-lang-java="`sizeBytes`">`sizeBytes`</span>: The size in bytes of an image file.
+ * * <span pulumi-lang-nodejs="`source`" pulumi-lang-dotnet="`Source`" pulumi-lang-go="`source`" pulumi-lang-python="`source`" pulumi-lang-yaml="`source`" pulumi-lang-java="`source`">`source`</span>: The source of an image. It can be a VM disk or a URL.
+ * * <span pulumi-lang-nodejs="`categoryExtIds`" pulumi-lang-dotnet="`CategoryExtIds`" pulumi-lang-go="`categoryExtIds`" pulumi-lang-python="`category_ext_ids`" pulumi-lang-yaml="`categoryExtIds`" pulumi-lang-java="`categoryExtIds`">`categoryExtIds`</span>: List of category external identifiers for an image.
+ * * <span pulumi-lang-nodejs="`clusterLocationExtIds`" pulumi-lang-dotnet="`ClusterLocationExtIds`" pulumi-lang-go="`clusterLocationExtIds`" pulumi-lang-python="`cluster_location_ext_ids`" pulumi-lang-yaml="`clusterLocationExtIds`" pulumi-lang-java="`clusterLocationExtIds`">`clusterLocationExtIds`</span>: List of cluster external identifiers where the image is located.
+ * * <span pulumi-lang-nodejs="`createTime`" pulumi-lang-dotnet="`CreateTime`" pulumi-lang-go="`createTime`" pulumi-lang-python="`create_time`" pulumi-lang-yaml="`createTime`" pulumi-lang-java="`createTime`">`createTime`</span>: Create time of an image.
+ * * <span pulumi-lang-nodejs="`lastUpdateTime`" pulumi-lang-dotnet="`LastUpdateTime`" pulumi-lang-go="`lastUpdateTime`" pulumi-lang-python="`last_update_time`" pulumi-lang-yaml="`lastUpdateTime`" pulumi-lang-java="`lastUpdateTime`">`lastUpdateTime`</span>: Last update time of an image.
+ * * <span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`">`ownerExtId`</span>: External identifier of the owner of the image
+ * * <span pulumi-lang-nodejs="`placementPolicyStatus`" pulumi-lang-dotnet="`PlacementPolicyStatus`" pulumi-lang-go="`placementPolicyStatus`" pulumi-lang-python="`placement_policy_status`" pulumi-lang-yaml="`placementPolicyStatus`" pulumi-lang-java="`placementPolicyStatus`">`placementPolicyStatus`</span>: Status of an image placement policy.
  *
  * ### source
- * * `extId`: The external identifier of VM Disk.
- * * `url`: The URL for creating an image.
- * * `basicAuth`: Basic authentication credentials for image source HTTP/S URL.
+ * * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: The external identifier of VM Disk.
+ * * <span pulumi-lang-nodejs="`url`" pulumi-lang-dotnet="`Url`" pulumi-lang-go="`url`" pulumi-lang-python="`url`" pulumi-lang-yaml="`url`" pulumi-lang-java="`url`">`url`</span>: The URL for creating an image.
+ * * <span pulumi-lang-nodejs="`basicAuth`" pulumi-lang-dotnet="`BasicAuth`" pulumi-lang-go="`basicAuth`" pulumi-lang-python="`basic_auth`" pulumi-lang-yaml="`basicAuth`" pulumi-lang-java="`basicAuth`">`basicAuth`</span>: Basic authentication credentials for image source HTTP/S URL.
  * * `basic_auth.username`: Username for basic authentication.
  * * `basic_auth.password`: Password for basic authentication.
  *
- * ### placementPolicyStatus
- * * `placementPolicyExtId`: Image placement policy external identifier.
- * * `complianceStatus`: Compliance status for a placement policy.
- * * `enforcementMode`: Indicates whether the placement policy enforcement is ongoing or has failed.
- * * `policyClusterExtIds`: List of cluster external identifiers of the image location for the enforced placement policy.
- * * `enforcedClusterExtIds`: List of cluster external identifiers for the enforced placement policy.
- * * `conflictingPolicyExtIds`: List of image placement policy external identifier that conflict with the current one.
+ * ###<span pulumi-lang-nodejs=" placementPolicyStatus
+ * " pulumi-lang-dotnet=" PlacementPolicyStatus
+ * " pulumi-lang-go=" placementPolicyStatus
+ * " pulumi-lang-python=" placement_policy_status
+ * " pulumi-lang-yaml=" placementPolicyStatus
+ * " pulumi-lang-java=" placementPolicyStatus
+ * "> placementPolicyStatus
+ * </span>* <span pulumi-lang-nodejs="`placementPolicyExtId`" pulumi-lang-dotnet="`PlacementPolicyExtId`" pulumi-lang-go="`placementPolicyExtId`" pulumi-lang-python="`placement_policy_ext_id`" pulumi-lang-yaml="`placementPolicyExtId`" pulumi-lang-java="`placementPolicyExtId`">`placementPolicyExtId`</span>: Image placement policy external identifier.
+ * * <span pulumi-lang-nodejs="`complianceStatus`" pulumi-lang-dotnet="`ComplianceStatus`" pulumi-lang-go="`complianceStatus`" pulumi-lang-python="`compliance_status`" pulumi-lang-yaml="`complianceStatus`" pulumi-lang-java="`complianceStatus`">`complianceStatus`</span>: Compliance status for a placement policy.
+ * * <span pulumi-lang-nodejs="`enforcementMode`" pulumi-lang-dotnet="`EnforcementMode`" pulumi-lang-go="`enforcementMode`" pulumi-lang-python="`enforcement_mode`" pulumi-lang-yaml="`enforcementMode`" pulumi-lang-java="`enforcementMode`">`enforcementMode`</span>: Indicates whether the placement policy enforcement is ongoing or has failed.
+ * * <span pulumi-lang-nodejs="`policyClusterExtIds`" pulumi-lang-dotnet="`PolicyClusterExtIds`" pulumi-lang-go="`policyClusterExtIds`" pulumi-lang-python="`policy_cluster_ext_ids`" pulumi-lang-yaml="`policyClusterExtIds`" pulumi-lang-java="`policyClusterExtIds`">`policyClusterExtIds`</span>: List of cluster external identifiers of the image location for the enforced placement policy.
+ * * <span pulumi-lang-nodejs="`enforcedClusterExtIds`" pulumi-lang-dotnet="`EnforcedClusterExtIds`" pulumi-lang-go="`enforcedClusterExtIds`" pulumi-lang-python="`enforced_cluster_ext_ids`" pulumi-lang-yaml="`enforcedClusterExtIds`" pulumi-lang-java="`enforcedClusterExtIds`">`enforcedClusterExtIds`</span>: List of cluster external identifiers for the enforced placement policy.
+ * * <span pulumi-lang-nodejs="`conflictingPolicyExtIds`" pulumi-lang-dotnet="`ConflictingPolicyExtIds`" pulumi-lang-go="`conflictingPolicyExtIds`" pulumi-lang-python="`conflicting_policy_ext_ids`" pulumi-lang-yaml="`conflictingPolicyExtIds`" pulumi-lang-java="`conflictingPolicyExtIds`">`conflictingPolicyExtIds`</span>: List of image placement policy external identifier that conflict with the current one.
  *
  * See detailed information in [Nutanix List Images V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Images)
  */
@@ -214,11 +230,11 @@ export interface GetImagesV2OutputArgs {
      * - sizeBytes
      * - type
      */
-    filter?: pulumi.Input<string>;
+    filter?: pulumi.Input<string | undefined>;
     /**
      * A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
      */
-    limit?: pulumi.Input<number>;
+    limit?: pulumi.Input<number | undefined>;
     /**
      * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
      * - description
@@ -227,11 +243,11 @@ export interface GetImagesV2OutputArgs {
      * - sizeBytes
      * - type
      */
-    orderBy?: pulumi.Input<string>;
+    orderBy?: pulumi.Input<string | undefined>;
     /**
      * A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
      */
-    page?: pulumi.Input<number>;
+    page?: pulumi.Input<number | undefined>;
     /**
      * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. The select can be applied to the following fields:
      * - categoryExtIds
@@ -247,5 +263,5 @@ export interface GetImagesV2OutputArgs {
      * - tenantId
      * - type
      */
-    select?: pulumi.Input<string>;
+    select?: pulumi.Input<string | undefined>;
 }

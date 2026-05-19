@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -17,6 +18,7 @@ import * as utilities from "./utilities";
  *     keyUuid: "<KEY_UUID>",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFoundationCentralApiKeys(args: GetFoundationCentralApiKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralApiKeysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -69,6 +71,7 @@ export interface GetFoundationCentralApiKeysResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -77,6 +80,7 @@ export interface GetFoundationCentralApiKeysResult {
  *     keyUuid: "<KEY_UUID>",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFoundationCentralApiKeysOutput(args: GetFoundationCentralApiKeysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFoundationCentralApiKeysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

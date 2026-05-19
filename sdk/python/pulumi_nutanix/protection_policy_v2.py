@@ -24,8 +24,8 @@ class ProtectionPolicyV2Args:
                  category_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  replication_configurations: pulumi.Input[Sequence[pulumi.Input['ProtectionPolicyV2ReplicationConfigurationArgs']]],
                  replication_locations: pulumi.Input[Sequence[pulumi.Input['ProtectionPolicyV2ReplicationLocationArgs']]],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProtectionPolicyV2 resource.
 
@@ -81,42 +81,42 @@ class ProtectionPolicyV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Description of the protection policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Name of the protection policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _ProtectionPolicyV2State:
     def __init__(__self__, *,
-                 category_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_approval_policy_needed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 links: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionPolicyV2LinkArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionPolicyV2ReplicationConfigurationArgs']]]] = None,
-                 replication_locations: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionPolicyV2ReplicationLocationArgs']]]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 category_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_approval_policy_needed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionPolicyV2LinkArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionPolicyV2ReplicationConfigurationArgs']]]] = None,
+                 replication_locations: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionPolicyV2ReplicationLocationArgs']]]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProtectionPolicyV2 resources.
 
@@ -149,107 +149,107 @@ class _ProtectionPolicyV2State:
 
     @_builtins.property
     @pulumi.getter(name="categoryIds")
-    def category_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def category_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         -(Optional) Host entity with its attributes.
         """
         return pulumi.get(self, "category_ids")
 
     @category_ids.setter
-    def category_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def category_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "category_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Description of the protection policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isApprovalPolicyNeeded")
-    def is_approval_policy_needed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_approval_policy_needed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_approval_policy_needed")
 
     @is_approval_policy_needed.setter
-    def is_approval_policy_needed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_approval_policy_needed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_approval_policy_needed", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionPolicyV2LinkArgs']]]]:
+    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionPolicyV2LinkArgs']]]]:
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionPolicyV2LinkArgs']]]]):
+    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionPolicyV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Name of the protection policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerExtId")
-    def owner_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "owner_ext_id")
 
     @owner_ext_id.setter
-    def owner_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationConfigurations")
-    def replication_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionPolicyV2ReplicationConfigurationArgs']]]]:
+    def replication_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionPolicyV2ReplicationConfigurationArgs']]]]:
         """
         -(Required) Cluster reference for an entity.
         """
         return pulumi.get(self, "replication_configurations")
 
     @replication_configurations.setter
-    def replication_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionPolicyV2ReplicationConfigurationArgs']]]]):
+    def replication_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionPolicyV2ReplicationConfigurationArgs']]]]):
         pulumi.set(self, "replication_configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationLocations")
-    def replication_locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionPolicyV2ReplicationLocationArgs']]]]:
+    def replication_locations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionPolicyV2ReplicationLocationArgs']]]]:
         """
         -(Required) Hypervisor details.
         """
         return pulumi.get(self, "replication_locations")
 
     @replication_locations.setter
-    def replication_locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionPolicyV2ReplicationLocationArgs']]]]):
+    def replication_locations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionPolicyV2ReplicationLocationArgs']]]]):
         pulumi.set(self, "replication_locations", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
 
@@ -259,17 +259,18 @@ class ProtectionPolicyV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 category_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationConfigurationArgs', 'ProtectionPolicyV2ReplicationConfigurationArgsDict']]]]] = None,
-                 replication_locations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict']]]]] = None,
+                 category_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationConfigurationArgs', 'ProtectionPolicyV2ReplicationConfigurationArgsDict']]]]] = None,
+                 replication_locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict']]]]] = None,
                  __props__=None):
         """
         Creates a protection policy to automate the recovery point creation and replication process.
 
         ## Example—Synchronous Protection Policy
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -310,9 +311,11 @@ class ProtectionPolicyV2(pulumi.CustomResource):
             ],
             category_ids=["b08ed184-6b0c-42c1-8179-7b9026fe2676"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Example—Linear Retention Protection Policy
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -368,9 +371,11 @@ class ProtectionPolicyV2(pulumi.CustomResource):
             ],
             category_ids=["b08ed184-6b0c-42c1-8179-7b9026fe2676"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Example—Auto Rollup Retention Protection Policy
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -438,6 +443,7 @@ class ProtectionPolicyV2(pulumi.CustomResource):
             ],
             category_ids=["b08ed184-6b0c-42c1-8179-7b9026fe2676"])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -459,6 +465,7 @@ class ProtectionPolicyV2(pulumi.CustomResource):
 
         ## Example—Synchronous Protection Policy
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -499,9 +506,11 @@ class ProtectionPolicyV2(pulumi.CustomResource):
             ],
             category_ids=["b08ed184-6b0c-42c1-8179-7b9026fe2676"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Example—Linear Retention Protection Policy
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -557,9 +566,11 @@ class ProtectionPolicyV2(pulumi.CustomResource):
             ],
             category_ids=["b08ed184-6b0c-42c1-8179-7b9026fe2676"])
         ```
+        <!--End PulumiCodeChooser -->
 
         ## Example—Auto Rollup Retention Protection Policy
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -627,6 +638,7 @@ class ProtectionPolicyV2(pulumi.CustomResource):
             ],
             category_ids=["b08ed184-6b0c-42c1-8179-7b9026fe2676"])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -644,11 +656,11 @@ class ProtectionPolicyV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 category_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationConfigurationArgs', 'ProtectionPolicyV2ReplicationConfigurationArgsDict']]]]] = None,
-                 replication_locations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict']]]]] = None,
+                 category_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationConfigurationArgs', 'ProtectionPolicyV2ReplicationConfigurationArgsDict']]]]] = None,
+                 replication_locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -684,16 +696,16 @@ class ProtectionPolicyV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            category_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_approval_policy_needed: Optional[pulumi.Input[_builtins.bool]] = None,
-            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionPolicyV2LinkArgs', 'ProtectionPolicyV2LinkArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            owner_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationConfigurationArgs', 'ProtectionPolicyV2ReplicationConfigurationArgsDict']]]]] = None,
-            replication_locations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict']]]]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ProtectionPolicyV2':
+            category_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_approval_policy_needed: pulumi.Input[Optional[_builtins.bool]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2LinkArgs', 'ProtectionPolicyV2LinkArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationConfigurationArgs', 'ProtectionPolicyV2ReplicationConfigurationArgsDict']]]]] = None,
+            replication_locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict']]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProtectionPolicyV2':
         """
         Get an existing ProtectionPolicyV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

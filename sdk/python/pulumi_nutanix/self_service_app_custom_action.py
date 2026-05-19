@@ -20,15 +20,15 @@ __all__ = ['SelfServiceAppCustomActionArgs', 'SelfServiceAppCustomAction']
 class SelfServiceAppCustomActionArgs:
     def __init__(__self__, *,
                  action_name: pulumi.Input[_builtins.str],
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 runlog_uuid: Optional[pulumi.Input[_builtins.str]] = None):
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 runlog_uuid: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a SelfServiceAppCustomAction resource.
 
         :param pulumi.Input[_builtins.str] action_name: - (Required) The name of the action to run.
                
-               Both (`app_name` and `app_uuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
+               Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
         :param pulumi.Input[_builtins.str] app_name: - (Optional) The name of the application.
         :param pulumi.Input[_builtins.str] app_uuid: - (Optional) The UUID of the application.
         :param pulumi.Input[_builtins.str] runlog_uuid: - (Computed) The UUID of the runlog associated with the execution of the custom action. This can be used to track the progress or status of the action execution.
@@ -47,7 +47,7 @@ class SelfServiceAppCustomActionArgs:
         """
         - (Required) The name of the action to run.
 
-        Both (`app_name` and `app_uuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
+        Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
         """
         return pulumi.get(self, "action_name")
 
@@ -57,54 +57,54 @@ class SelfServiceAppCustomActionArgs:
 
     @_builtins.property
     @pulumi.getter(name="appName")
-    def app_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The name of the application.
         """
         return pulumi.get(self, "app_name")
 
     @app_name.setter
-    def app_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_name", value)
 
     @_builtins.property
     @pulumi.getter(name="appUuid")
-    def app_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The UUID of the application.
         """
         return pulumi.get(self, "app_uuid")
 
     @app_uuid.setter
-    def app_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="runlogUuid")
-    def runlog_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def runlog_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Computed) The UUID of the runlog associated with the execution of the custom action. This can be used to track the progress or status of the action execution.
         """
         return pulumi.get(self, "runlog_uuid")
 
     @runlog_uuid.setter
-    def runlog_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def runlog_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "runlog_uuid", value)
 
 
 @pulumi.input_type
 class _SelfServiceAppCustomActionState:
     def __init__(__self__, *,
-                 action_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 runlog_uuid: Optional[pulumi.Input[_builtins.str]] = None):
+                 action_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 runlog_uuid: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SelfServiceAppCustomAction resources.
 
         :param pulumi.Input[_builtins.str] action_name: - (Required) The name of the action to run.
                
-               Both (`app_name` and `app_uuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
+               Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
         :param pulumi.Input[_builtins.str] app_name: - (Optional) The name of the application.
         :param pulumi.Input[_builtins.str] app_uuid: - (Optional) The UUID of the application.
         :param pulumi.Input[_builtins.str] runlog_uuid: - (Computed) The UUID of the runlog associated with the execution of the custom action. This can be used to track the progress or status of the action execution.
@@ -120,52 +120,52 @@ class _SelfServiceAppCustomActionState:
 
     @_builtins.property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name of the action to run.
 
-        Both (`app_name` and `app_uuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
+        Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
         """
         return pulumi.get(self, "action_name")
 
     @action_name.setter
-    def action_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_name", value)
 
     @_builtins.property
     @pulumi.getter(name="appName")
-    def app_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The name of the application.
         """
         return pulumi.get(self, "app_name")
 
     @app_name.setter
-    def app_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_name", value)
 
     @_builtins.property
     @pulumi.getter(name="appUuid")
-    def app_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The UUID of the application.
         """
         return pulumi.get(self, "app_uuid")
 
     @app_uuid.setter
-    def app_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="runlogUuid")
-    def runlog_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def runlog_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Computed) The UUID of the runlog associated with the execution of the custom action. This can be used to track the progress or status of the action execution.
         """
         return pulumi.get(self, "runlog_uuid")
 
     @runlog_uuid.setter
-    def runlog_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def runlog_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "runlog_uuid", value)
 
 
@@ -175,10 +175,10 @@ class SelfServiceAppCustomAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 runlog_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 runlog_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Triggers custom action execution using it's name in Self Service Application.
@@ -187,6 +187,7 @@ class SelfServiceAppCustomAction(pulumi.CustomResource):
 
         ### 
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -199,13 +200,14 @@ class SelfServiceAppCustomAction(pulumi.CustomResource):
             app_name=test.app_name,
             action_name="NAME OF ACTION")
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action_name: - (Required) The name of the action to run.
                
-               Both (`app_name` and `app_uuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
+               Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
         :param pulumi.Input[_builtins.str] app_name: - (Optional) The name of the application.
         :param pulumi.Input[_builtins.str] app_uuid: - (Optional) The UUID of the application.
         :param pulumi.Input[_builtins.str] runlog_uuid: - (Computed) The UUID of the runlog associated with the execution of the custom action. This can be used to track the progress or status of the action execution.
@@ -223,6 +225,7 @@ class SelfServiceAppCustomAction(pulumi.CustomResource):
 
         ### 
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -235,6 +238,7 @@ class SelfServiceAppCustomAction(pulumi.CustomResource):
             app_name=test.app_name,
             action_name="NAME OF ACTION")
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -252,10 +256,10 @@ class SelfServiceAppCustomAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 runlog_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 runlog_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -281,10 +285,10 @@ class SelfServiceAppCustomAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action_name: Optional[pulumi.Input[_builtins.str]] = None,
-            app_name: Optional[pulumi.Input[_builtins.str]] = None,
-            app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            runlog_uuid: Optional[pulumi.Input[_builtins.str]] = None) -> 'SelfServiceAppCustomAction':
+            action_name: pulumi.Input[Optional[_builtins.str]] = None,
+            app_name: pulumi.Input[Optional[_builtins.str]] = None,
+            app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            runlog_uuid: pulumi.Input[Optional[_builtins.str]] = None) -> 'SelfServiceAppCustomAction':
         """
         Get an existing SelfServiceAppCustomAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -294,7 +298,7 @@ class SelfServiceAppCustomAction(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action_name: - (Required) The name of the action to run.
                
-               Both (`app_name` and `app_uuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
+               Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
         :param pulumi.Input[_builtins.str] app_name: - (Optional) The name of the application.
         :param pulumi.Input[_builtins.str] app_uuid: - (Optional) The UUID of the application.
         :param pulumi.Input[_builtins.str] runlog_uuid: - (Computed) The UUID of the runlog associated with the execution of the custom action. This can be used to track the progress or status of the action execution.
@@ -315,7 +319,7 @@ class SelfServiceAppCustomAction(pulumi.CustomResource):
         """
         - (Required) The name of the action to run.
 
-        Both (`app_name` and `app_uuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
+        Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
         """
         return pulumi.get(self, "action_name")
 

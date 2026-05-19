@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -22,6 +23,7 @@ import * as utilities from "./utilities";
  *     extId: test.restorePoints[0].extId,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPcRestorePointV2(args: GetPcRestorePointV2Args, opts?: pulumi.InvokeOptions): Promise<GetPcRestorePointV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -86,6 +88,7 @@ export interface GetPcRestorePointV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -97,6 +100,7 @@ export interface GetPcRestorePointV2Result {
  *     extId: test.restorePoints[0].extId,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getPcRestorePointV2Output(args: GetPcRestorePointV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPcRestorePointV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

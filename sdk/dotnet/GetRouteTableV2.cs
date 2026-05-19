@@ -18,6 +18,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_route_table = nutanix.getRouteTableV2({
+        ///     extId: "ad7692ff-50f8-4a47-b3c9-fd5a3462d455",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_route_table = nutanix.get_route_table_v2(ext_id="ad7692ff-50f8-4a47-b3c9-fd5a3462d455")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,13 +41,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_route_table = Nutanix.Index.GetRouteTableV2.Invoke(new()
+        ///     var get_route_table = Nutanix.GetRouteTableV2.Invoke(new()
         ///     {
         ///         ExtId = "ad7692ff-50f8-4a47-b3c9-fd5a3462d455",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetRouteTableV2(ctx, &amp;nutanix.GetRouteTableV2Args{
+        /// 			ExtId: "ad7692ff-50f8-4a47-b3c9-fd5a3462d455",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetRouteTableV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-route-table = NutanixFunctions.getRouteTableV2(GetRouteTableV2Args.builder()
+        ///             .extId("ad7692ff-50f8-4a47-b3c9-fd5a3462d455")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-route-table:
+        ///     fn::invoke:
+        ///       function: nutanix:getRouteTableV2
+        ///       arguments:
+        ///         extId: ad7692ff-50f8-4a47-b3c9-fd5a3462d455
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetRouteTableV2Result> InvokeAsync(GetRouteTableV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRouteTableV2Result>("nutanix:index/getRouteTableV2:getRouteTableV2", args ?? new GetRouteTableV2Args(), options.WithDefaults());
@@ -43,6 +115,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_route_table = nutanix.getRouteTableV2({
+        ///     extId: "ad7692ff-50f8-4a47-b3c9-fd5a3462d455",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_route_table = nutanix.get_route_table_v2(ext_id="ad7692ff-50f8-4a47-b3c9-fd5a3462d455")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -51,13 +138,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_route_table = Nutanix.Index.GetRouteTableV2.Invoke(new()
+        ///     var get_route_table = Nutanix.GetRouteTableV2.Invoke(new()
         ///     {
         ///         ExtId = "ad7692ff-50f8-4a47-b3c9-fd5a3462d455",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetRouteTableV2(ctx, &amp;nutanix.GetRouteTableV2Args{
+        /// 			ExtId: "ad7692ff-50f8-4a47-b3c9-fd5a3462d455",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetRouteTableV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-route-table = NutanixFunctions.getRouteTableV2(GetRouteTableV2Args.builder()
+        ///             .extId("ad7692ff-50f8-4a47-b3c9-fd5a3462d455")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-route-table:
+        ///     fn::invoke:
+        ///       function: nutanix:getRouteTableV2
+        ///       arguments:
+        ///         extId: ad7692ff-50f8-4a47-b3c9-fd5a3462d455
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRouteTableV2Result> Invoke(GetRouteTableV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRouteTableV2Result>("nutanix:index/getRouteTableV2:getRouteTableV2", args ?? new GetRouteTableV2InvokeArgs(), options.WithDefaults());
@@ -68,6 +212,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_route_table = nutanix.getRouteTableV2({
+        ///     extId: "ad7692ff-50f8-4a47-b3c9-fd5a3462d455",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_route_table = nutanix.get_route_table_v2(ext_id="ad7692ff-50f8-4a47-b3c9-fd5a3462d455")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -76,13 +235,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_route_table = Nutanix.Index.GetRouteTableV2.Invoke(new()
+        ///     var get_route_table = Nutanix.GetRouteTableV2.Invoke(new()
         ///     {
         ///         ExtId = "ad7692ff-50f8-4a47-b3c9-fd5a3462d455",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetRouteTableV2(ctx, &amp;nutanix.GetRouteTableV2Args{
+        /// 			ExtId: "ad7692ff-50f8-4a47-b3c9-fd5a3462d455",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetRouteTableV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-route-table = NutanixFunctions.getRouteTableV2(GetRouteTableV2Args.builder()
+        ///             .extId("ad7692ff-50f8-4a47-b3c9-fd5a3462d455")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-route-table:
+        ///     fn::invoke:
+        ///       function: nutanix:getRouteTableV2
+        ///       arguments:
+        ///         extId: ad7692ff-50f8-4a47-b3c9-fd5a3462d455
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetRouteTableV2Result> Invoke(GetRouteTableV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetRouteTableV2Result>("nutanix:index/getRouteTableV2:getRouteTableV2", args ?? new GetRouteTableV2InvokeArgs(), options.WithDefaults());

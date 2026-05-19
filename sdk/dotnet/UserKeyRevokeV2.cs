@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // revoke key
-    ///     var revoke_key = new Nutanix.Index.UserKeyRevokeV2("revoke-key", new()
+    ///     var revoke_key = new Nutanix.UserKeyRevokeV2("revoke-key", new()
     ///     {
     ///         UserExtId = "&lt;SERVICE_ACCOUNT_UUID&gt;",
     ///         ExtId = "&lt;USER_KEY_UUID&gt;",
@@ -32,13 +33,14 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Argument Reference
     /// 
     /// The following arguments are supported:
     /// 
-    /// * `UserExtId`: - ( Required ) External Identifier of the User.
-    /// * `ExtId`: - ( Required ) External identifier of the key.
+    /// * &lt;span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`"&gt;`userExtId`&lt;/span&gt;: - ( Required ) External Identifier of the User.
+    /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - ( Required ) External identifier of the key.
     /// </summary>
     [NutanixResourceType("nutanix:index/userKeyRevokeV2:UserKeyRevokeV2")]
     public partial class UserKeyRevokeV2 : global::Pulumi.CustomResource

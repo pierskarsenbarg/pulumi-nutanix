@@ -362,192 +362,192 @@ export interface NdbRegisterDatabaseState {
     /**
      * action arguments
      */
-    actionarguments?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseActionargument>[]>;
+    actionarguments?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseActionargument>[] | undefined>;
     /**
      * auto tune staging drive. Default is true
      */
-    autoTuneStagingDrive?: pulumi.Input<boolean>;
+    autoTuneStagingDrive?: pulumi.Input<boolean | undefined>;
     /**
      * category of database. Default is "DEFAULT"
      */
-    category?: pulumi.Input<string>;
+    category?: pulumi.Input<string | undefined>;
     /**
      * whether instance is cloned or not
      */
-    clone?: pulumi.Input<boolean>;
+    clone?: pulumi.Input<boolean | undefined>;
     /**
      * clustered or not. Default is false
      */
-    clustered?: pulumi.Input<boolean>;
+    clustered?: pulumi.Input<boolean | undefined>;
     /**
      * database cluster type
      */
-    databaseClusterType?: pulumi.Input<string>;
+    databaseClusterType?: pulumi.Input<string | undefined>;
     /**
      * name of database
      */
-    databaseName?: pulumi.Input<string>;
+    databaseName?: pulumi.Input<string | undefined>;
     /**
      * database nodes associated with database instance
      */
-    databaseNodes?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseDatabaseNode>[]>;
+    databaseNodes?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseDatabaseNode>[] | undefined>;
     /**
      * status of database
      */
-    databaseStatus?: pulumi.Input<string>;
+    databaseStatus?: pulumi.Input<string | undefined>;
     /**
      * type of database. Required value: postgres_database
      */
-    databaseType?: pulumi.Input<string>;
+    databaseType?: pulumi.Input<string | undefined>;
     /**
      * date created for db instance
      */
-    dateCreated?: pulumi.Input<string>;
+    dateCreated?: pulumi.Input<string | undefined>;
     /**
      * date modified for instance
      */
-    dateModified?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string | undefined>;
     /**
      * dbserver logical cluster
      */
-    dbserverLogicalCluster?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    dbserverLogicalCluster?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * dbserver logical cluster id
      */
-    dbserverLogicalClusterId?: pulumi.Input<string>;
+    dbserverLogicalClusterId?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Delete the database from the VM. Default value is false
      */
-    delete?: pulumi.Input<boolean>;
+    delete?: pulumi.Input<boolean | undefined>;
     /**
      * - (Optional) Delete the logical cluster. Default is true
      */
-    deleteLogicalCluster?: pulumi.Input<boolean>;
+    deleteLogicalCluster?: pulumi.Input<boolean | undefined>;
     /**
      * - (Optional) Delete the database's Time Machine (snapshots/logs) from the NDB. Default value is true
      */
-    deleteTimeMachine?: pulumi.Input<boolean>;
+    deleteTimeMachine?: pulumi.Input<boolean | undefined>;
     /**
      * description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Force delete of instance. Default is false
      */
-    forced?: pulumi.Input<boolean>;
+    forced?: pulumi.Input<boolean | undefined>;
     /**
      * forced install. Default:  true
      */
-    forcedInstall?: pulumi.Input<boolean>;
-    groupInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    forcedInstall?: pulumi.Input<boolean | undefined>;
+    groupInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * info of instance
      */
-    infos?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseInfo>[]>;
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseInfo>[] | undefined>;
     /**
      * LCM config of instance
      */
-    lcmConfigs?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseLcmConfig>[]>;
+    lcmConfigs?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseLcmConfig>[] | undefined>;
     /**
      * linked databases within database instance
      */
-    linkedDatabases?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseLinkedDatabase>[]>;
+    linkedDatabases?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseLinkedDatabase>[] | undefined>;
     /**
      * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
      */
-    metric?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metric?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Name of database instance
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * cluster on which NDB is present
      */
-    nxClusterId?: pulumi.Input<string>;
+    nxClusterId?: pulumi.Input<string | undefined>;
     /**
      * parent database id
      */
-    parentDatabaseId?: pulumi.Input<string>;
+    parentDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * parent source database id
      */
-    parentSourceDatabaseId?: pulumi.Input<string>;
+    parentSourceDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * parent time machine id
      */
-    parentTimeMachineId?: pulumi.Input<string>;
+    parentTimeMachineId?: pulumi.Input<string | undefined>;
     /**
      * Postgress_Info for registering.
      */
-    postgressInfos?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabasePostgressInfo>[]>;
+    postgressInfos?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabasePostgressInfo>[] | undefined>;
     /**
      * properties of database created
      */
-    properties?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseProperty>[]>;
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseProperty>[] | undefined>;
     /**
      * - (Optional) Unregister the database from NDB. Default value is true
      */
-    remove?: pulumi.Input<boolean>;
+    remove?: pulumi.Input<boolean | undefined>;
     /**
      * Reset description in cluster
      */
-    resetDescriptionInNxCluster?: pulumi.Input<boolean>;
+    resetDescriptionInNxCluster?: pulumi.Input<boolean | undefined>;
     /**
      * - (Optional) Soft remove. Default will be false
      */
-    softRemove?: pulumi.Input<boolean>;
+    softRemove?: pulumi.Input<boolean | undefined>;
     /**
      * status of instance
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * tags
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTag>[] | undefined>;
     /**
      * time machine id of instance
      */
-    timeMachineId?: pulumi.Input<string>;
+    timeMachineId?: pulumi.Input<string | undefined>;
     /**
      * Time Machine info
      */
-    timeMachineInfo?: pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineInfo>;
+    timeMachineInfo?: pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineInfo | undefined>;
     /**
      * Time Machine details of instance
      */
-    timeMachines?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTimeMachine>[]>;
+    timeMachines?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTimeMachine>[] | undefined>;
     /**
      * timezone on which instance is created xw
      */
-    timeZone?: pulumi.Input<string>;
+    timeZone?: pulumi.Input<string | undefined>;
     /**
      * type of database
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * description for VM
      */
-    vmDescription?: pulumi.Input<string>;
+    vmDescription?: pulumi.Input<string | undefined>;
     /**
      * IP address of dbserver VM
      */
-    vmIp?: pulumi.Input<string>;
+    vmIp?: pulumi.Input<string | undefined>;
     /**
      * password of the NDB drive user account.
      */
-    vmPassword?: pulumi.Input<string>;
+    vmPassword?: pulumi.Input<string | undefined>;
     /**
      * ssh key for vm
      */
-    vmSshkey?: pulumi.Input<string>;
+    vmSshkey?: pulumi.Input<string | undefined>;
     /**
      * username of the NDB drive user account that has sudo access.
      */
-    vmUsername?: pulumi.Input<string>;
+    vmUsername?: pulumi.Input<string | undefined>;
     /**
      * working directory. Default is /tmp
      */
-    workingDirectory?: pulumi.Input<string>;
+    workingDirectory?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -557,19 +557,19 @@ export interface NdbRegisterDatabaseArgs {
     /**
      * action arguments
      */
-    actionarguments?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseActionargument>[]>;
+    actionarguments?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseActionargument>[] | undefined>;
     /**
      * auto tune staging drive. Default is true
      */
-    autoTuneStagingDrive?: pulumi.Input<boolean>;
+    autoTuneStagingDrive?: pulumi.Input<boolean | undefined>;
     /**
      * category of database. Default is "DEFAULT"
      */
-    category?: pulumi.Input<string>;
+    category?: pulumi.Input<string | undefined>;
     /**
      * clustered or not. Default is false
      */
-    clustered?: pulumi.Input<boolean>;
+    clustered?: pulumi.Input<boolean | undefined>;
     /**
      * name of database
      */
@@ -581,59 +581,59 @@ export interface NdbRegisterDatabaseArgs {
     /**
      * - (Optional) Delete the database from the VM. Default value is false
      */
-    delete?: pulumi.Input<boolean>;
+    delete?: pulumi.Input<boolean | undefined>;
     /**
      * - (Optional) Delete the logical cluster. Default is true
      */
-    deleteLogicalCluster?: pulumi.Input<boolean>;
+    deleteLogicalCluster?: pulumi.Input<boolean | undefined>;
     /**
      * - (Optional) Delete the database's Time Machine (snapshots/logs) from the NDB. Default value is true
      */
-    deleteTimeMachine?: pulumi.Input<boolean>;
+    deleteTimeMachine?: pulumi.Input<boolean | undefined>;
     /**
      * description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Force delete of instance. Default is false
      */
-    forced?: pulumi.Input<boolean>;
+    forced?: pulumi.Input<boolean | undefined>;
     /**
      * forced install. Default:  true
      */
-    forcedInstall?: pulumi.Input<boolean>;
+    forcedInstall?: pulumi.Input<boolean | undefined>;
     /**
      * cluster on which NDB is present
      */
-    nxClusterId?: pulumi.Input<string>;
+    nxClusterId?: pulumi.Input<string | undefined>;
     /**
      * Postgress_Info for registering.
      */
-    postgressInfos?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabasePostgressInfo>[]>;
+    postgressInfos?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabasePostgressInfo>[] | undefined>;
     /**
      * - (Optional) Unregister the database from NDB. Default value is true
      */
-    remove?: pulumi.Input<boolean>;
+    remove?: pulumi.Input<boolean | undefined>;
     /**
      * Reset description in cluster
      */
-    resetDescriptionInNxCluster?: pulumi.Input<boolean>;
+    resetDescriptionInNxCluster?: pulumi.Input<boolean | undefined>;
     /**
      * - (Optional) Soft remove. Default will be false
      */
-    softRemove?: pulumi.Input<boolean>;
+    softRemove?: pulumi.Input<boolean | undefined>;
     /**
      * tags
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTag>[] | undefined>;
     /**
      * Time Machine info
      */
-    timeMachineInfo?: pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineInfo>;
+    timeMachineInfo?: pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineInfo | undefined>;
     /**
      * description for VM
      */
-    vmDescription?: pulumi.Input<string>;
+    vmDescription?: pulumi.Input<string | undefined>;
     /**
      * IP address of dbserver VM
      */
@@ -641,17 +641,17 @@ export interface NdbRegisterDatabaseArgs {
     /**
      * password of the NDB drive user account.
      */
-    vmPassword?: pulumi.Input<string>;
+    vmPassword?: pulumi.Input<string | undefined>;
     /**
      * ssh key for vm
      */
-    vmSshkey?: pulumi.Input<string>;
+    vmSshkey?: pulumi.Input<string | undefined>;
     /**
      * username of the NDB drive user account that has sudo access.
      */
-    vmUsername?: pulumi.Input<string>;
+    vmUsername?: pulumi.Input<string | undefined>;
     /**
      * working directory. Default is /tmp
      */
-    workingDirectory?: pulumi.Input<string>;
+    workingDirectory?: pulumi.Input<string | undefined>;
 }

@@ -18,6 +18,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example 1: Get Protected Virtual Machine
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const protected_vm = nutanix.getProtectedResourceV2({
+        ///     extId: "d22529bb-f02d-4710-894b-d1de772d7832",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// protected_vm = nutanix.get_protected_resource_v2(ext_id="d22529bb-f02d-4710-894b-d1de772d7832")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -26,16 +41,88 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protected_vm = Nutanix.Index.GetProtectedResourceV2.Invoke(new()
+        ///     var protected_vm = Nutanix.GetProtectedResourceV2.Invoke(new()
         ///     {
         ///         ExtId = "d22529bb-f02d-4710-894b-d1de772d7832",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetProtectedResourceV2(ctx, &amp;nutanix.GetProtectedResourceV2Args{
+        /// 			ExtId: "d22529bb-f02d-4710-894b-d1de772d7832",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetProtectedResourceV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var protected-vm = NutanixFunctions.getProtectedResourceV2(GetProtectedResourceV2Args.builder()
+        ///             .extId("d22529bb-f02d-4710-894b-d1de772d7832")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   protected-vm:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectedResourceV2
+        ///       arguments:
+        ///         extId: d22529bb-f02d-4710-894b-d1de772d7832
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ## Example 2: Get Protected Volume Group
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const protected_vg = nutanix.getProtectedResourceV2({
+        ///     extId: "246c651a-1b16-4983-b5ff-204840f85e07",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// protected_vg = nutanix.get_protected_resource_v2(ext_id="246c651a-1b16-4983-b5ff-204840f85e07")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -44,13 +131,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protected_vg = Nutanix.Index.GetProtectedResourceV2.Invoke(new()
+        ///     var protected_vg = Nutanix.GetProtectedResourceV2.Invoke(new()
         ///     {
         ///         ExtId = "246c651a-1b16-4983-b5ff-204840f85e07",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetProtectedResourceV2(ctx, &amp;nutanix.GetProtectedResourceV2Args{
+        /// 			ExtId: "246c651a-1b16-4983-b5ff-204840f85e07",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetProtectedResourceV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var protected-vg = NutanixFunctions.getProtectedResourceV2(GetProtectedResourceV2Args.builder()
+        ///             .extId("246c651a-1b16-4983-b5ff-204840f85e07")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   protected-vg:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectedResourceV2
+        ///       arguments:
+        ///         extId: 246c651a-1b16-4983-b5ff-204840f85e07
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetProtectedResourceV2Result> InvokeAsync(GetProtectedResourceV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectedResourceV2Result>("nutanix:index/getProtectedResourceV2:getProtectedResourceV2", args ?? new GetProtectedResourceV2Args(), options.WithDefaults());
@@ -61,6 +205,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example 1: Get Protected Virtual Machine
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const protected_vm = nutanix.getProtectedResourceV2({
+        ///     extId: "d22529bb-f02d-4710-894b-d1de772d7832",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// protected_vm = nutanix.get_protected_resource_v2(ext_id="d22529bb-f02d-4710-894b-d1de772d7832")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -69,16 +228,88 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protected_vm = Nutanix.Index.GetProtectedResourceV2.Invoke(new()
+        ///     var protected_vm = Nutanix.GetProtectedResourceV2.Invoke(new()
         ///     {
         ///         ExtId = "d22529bb-f02d-4710-894b-d1de772d7832",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetProtectedResourceV2(ctx, &amp;nutanix.GetProtectedResourceV2Args{
+        /// 			ExtId: "d22529bb-f02d-4710-894b-d1de772d7832",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetProtectedResourceV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var protected-vm = NutanixFunctions.getProtectedResourceV2(GetProtectedResourceV2Args.builder()
+        ///             .extId("d22529bb-f02d-4710-894b-d1de772d7832")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   protected-vm:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectedResourceV2
+        ///       arguments:
+        ///         extId: d22529bb-f02d-4710-894b-d1de772d7832
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ## Example 2: Get Protected Volume Group
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const protected_vg = nutanix.getProtectedResourceV2({
+        ///     extId: "246c651a-1b16-4983-b5ff-204840f85e07",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// protected_vg = nutanix.get_protected_resource_v2(ext_id="246c651a-1b16-4983-b5ff-204840f85e07")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -87,13 +318,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protected_vg = Nutanix.Index.GetProtectedResourceV2.Invoke(new()
+        ///     var protected_vg = Nutanix.GetProtectedResourceV2.Invoke(new()
         ///     {
         ///         ExtId = "246c651a-1b16-4983-b5ff-204840f85e07",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetProtectedResourceV2(ctx, &amp;nutanix.GetProtectedResourceV2Args{
+        /// 			ExtId: "246c651a-1b16-4983-b5ff-204840f85e07",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetProtectedResourceV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var protected-vg = NutanixFunctions.getProtectedResourceV2(GetProtectedResourceV2Args.builder()
+        ///             .extId("246c651a-1b16-4983-b5ff-204840f85e07")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   protected-vg:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectedResourceV2
+        ///       arguments:
+        ///         extId: 246c651a-1b16-4983-b5ff-204840f85e07
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProtectedResourceV2Result> Invoke(GetProtectedResourceV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectedResourceV2Result>("nutanix:index/getProtectedResourceV2:getProtectedResourceV2", args ?? new GetProtectedResourceV2InvokeArgs(), options.WithDefaults());
@@ -104,6 +392,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example 1: Get Protected Virtual Machine
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const protected_vm = nutanix.getProtectedResourceV2({
+        ///     extId: "d22529bb-f02d-4710-894b-d1de772d7832",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// protected_vm = nutanix.get_protected_resource_v2(ext_id="d22529bb-f02d-4710-894b-d1de772d7832")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -112,16 +415,88 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protected_vm = Nutanix.Index.GetProtectedResourceV2.Invoke(new()
+        ///     var protected_vm = Nutanix.GetProtectedResourceV2.Invoke(new()
         ///     {
         ///         ExtId = "d22529bb-f02d-4710-894b-d1de772d7832",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetProtectedResourceV2(ctx, &amp;nutanix.GetProtectedResourceV2Args{
+        /// 			ExtId: "d22529bb-f02d-4710-894b-d1de772d7832",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetProtectedResourceV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var protected-vm = NutanixFunctions.getProtectedResourceV2(GetProtectedResourceV2Args.builder()
+        ///             .extId("d22529bb-f02d-4710-894b-d1de772d7832")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   protected-vm:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectedResourceV2
+        ///       arguments:
+        ///         extId: d22529bb-f02d-4710-894b-d1de772d7832
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
         /// ## Example 2: Get Protected Volume Group
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const protected_vg = nutanix.getProtectedResourceV2({
+        ///     extId: "246c651a-1b16-4983-b5ff-204840f85e07",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// protected_vg = nutanix.get_protected_resource_v2(ext_id="246c651a-1b16-4983-b5ff-204840f85e07")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -130,13 +505,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var protected_vg = Nutanix.Index.GetProtectedResourceV2.Invoke(new()
+        ///     var protected_vg = Nutanix.GetProtectedResourceV2.Invoke(new()
         ///     {
         ///         ExtId = "246c651a-1b16-4983-b5ff-204840f85e07",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetProtectedResourceV2(ctx, &amp;nutanix.GetProtectedResourceV2Args{
+        /// 			ExtId: "246c651a-1b16-4983-b5ff-204840f85e07",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetProtectedResourceV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var protected-vg = NutanixFunctions.getProtectedResourceV2(GetProtectedResourceV2Args.builder()
+        ///             .extId("246c651a-1b16-4983-b5ff-204840f85e07")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   protected-vg:
+        ///     fn::invoke:
+        ///       function: nutanix:getProtectedResourceV2
+        ///       arguments:
+        ///         extId: 246c651a-1b16-4983-b5ff-204840f85e07
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProtectedResourceV2Result> Invoke(GetProtectedResourceV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectedResourceV2Result>("nutanix:index/getProtectedResourceV2:getProtectedResourceV2", args ?? new GetProtectedResourceV2InvokeArgs(), options.WithDefaults());

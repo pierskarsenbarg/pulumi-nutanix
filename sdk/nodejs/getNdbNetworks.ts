@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const nw = nutanix.getNdbNetworks({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbNetworks(opts?: pulumi.InvokeOptions): Promise<GetNdbNetworksResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -42,12 +44,14 @@ export interface GetNdbNetworksResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const nw = nutanix.getNdbNetworks({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getNdbNetworksOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbNetworksResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

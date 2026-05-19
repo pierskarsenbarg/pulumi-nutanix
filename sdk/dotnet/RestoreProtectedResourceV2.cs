@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example 1: Restore Virtual Machine
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -25,7 +26,7 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     // create a category and a protection policy on the local site
     ///     // restore the protected virtual machine on the remote site
-    ///     var rp_vm = new Nutanix.Index.RestoreProtectedResourceV2("rp-vm", new()
+    ///     var rp_vm = new Nutanix.RestoreProtectedResourceV2("rp-vm", new()
     ///     {
     ///         ExtId = "d22529bb-f02d-4710-894b-d1de772d7832",
     ///         ClusterExtId = "0005b6b1-1b16-4983-b5ff-204840f85e07",
@@ -33,9 +34,11 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Example 2: Restore Volume Group
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -46,7 +49,7 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     // create a category , a protection policy and VG on the local site
     ///     // restore the protected volume group on the remote site
-    ///     var rp_vg = new Nutanix.Index.RestoreProtectedResourceV2("rp-vg", new()
+    ///     var rp_vg = new Nutanix.RestoreProtectedResourceV2("rp-vg", new()
     ///     {
     ///         ExtId = "246c651a-1b16-4983-b5ff-204840f85e07",
     ///         ClusterExtId = "0005b6b1-1b16-4983-b5ff-204840f85e07",
@@ -54,6 +57,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/restoreProtectedResourceV2:RestoreProtectedResourceV2")]
     public partial class RestoreProtectedResourceV2 : global::Pulumi.CustomResource

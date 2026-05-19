@@ -19,14 +19,14 @@ __all__ = ['NdbSlaArgs', 'NdbSla']
 @pulumi.input_type
 class NdbSlaArgs:
     def __init__(__self__, *,
-                 continuous_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 daily_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 monthly_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 quarterly_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 weekly_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 yearly_retention: Optional[pulumi.Input[_builtins.int]] = None):
+                 continuous_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 daily_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 quarterly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 weekly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 yearly_retention: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a NdbSla resource.
 
@@ -58,120 +58,120 @@ class NdbSlaArgs:
 
     @_builtins.property
     @pulumi.getter(name="continuousRetention")
-    def continuous_retention(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def continuous_retention(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Duration in days for which transaction logs are retained in NDB.
         """
         return pulumi.get(self, "continuous_retention")
 
     @continuous_retention.setter
-    def continuous_retention(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def continuous_retention(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "continuous_retention", value)
 
     @_builtins.property
     @pulumi.getter(name="dailyRetention")
-    def daily_retention(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def daily_retention(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Duration in days for which a daily snapshot must be retained in NDB.
         """
         return pulumi.get(self, "daily_retention")
 
     @daily_retention.setter
-    def daily_retention(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def daily_retention(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "daily_retention", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of profile
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="monthlyRetention")
-    def monthly_retention(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def monthly_retention(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Duration in months for which a monthly snapshot must be retained in NDB
         """
         return pulumi.get(self, "monthly_retention")
 
     @monthly_retention.setter
-    def monthly_retention(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def monthly_retention(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "monthly_retention", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of profile
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="quarterlyRetention")
-    def quarterly_retention(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def quarterly_retention(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Duration in number of quarters for which a quarterly snapshot must be retained in NDB.
         """
         return pulumi.get(self, "quarterly_retention")
 
     @quarterly_retention.setter
-    def quarterly_retention(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def quarterly_retention(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "quarterly_retention", value)
 
     @_builtins.property
     @pulumi.getter(name="weeklyRetention")
-    def weekly_retention(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def weekly_retention(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Duration in weeks for which a weekly snapshot must be retained in NDB.
         """
         return pulumi.get(self, "weekly_retention")
 
     @weekly_retention.setter
-    def weekly_retention(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def weekly_retention(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "weekly_retention", value)
 
     @_builtins.property
     @pulumi.getter(name="yearlyRetention")
-    def yearly_retention(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def yearly_retention(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Not supported as of now.
         """
         return pulumi.get(self, "yearly_retention")
 
     @yearly_retention.setter
-    def yearly_retention(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def yearly_retention(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "yearly_retention", value)
 
 
 @pulumi.input_type
 class _NdbSlaState:
     def __init__(__self__, *,
-                 continuous_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 current_active_frequency: Optional[pulumi.Input[_builtins.str]] = None,
-                 daily_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 date_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 date_modified: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 monthly_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pitr_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 quarterly_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 reference_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 system_sla: Optional[pulumi.Input[_builtins.bool]] = None,
-                 unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 weekly_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 yearly_retention: Optional[pulumi.Input[_builtins.int]] = None):
+                 continuous_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 current_active_frequency: pulumi.Input[Optional[_builtins.str]] = None,
+                 daily_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 date_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pitr_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 quarterly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 reference_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 system_sla: pulumi.Input[Optional[_builtins.bool]] = None,
+                 unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 weekly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 yearly_retention: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering NdbSla resources.
 
@@ -227,194 +227,194 @@ class _NdbSlaState:
 
     @_builtins.property
     @pulumi.getter(name="continuousRetention")
-    def continuous_retention(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def continuous_retention(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Duration in days for which transaction logs are retained in NDB.
         """
         return pulumi.get(self, "continuous_retention")
 
     @continuous_retention.setter
-    def continuous_retention(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def continuous_retention(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "continuous_retention", value)
 
     @_builtins.property
     @pulumi.getter(name="currentActiveFrequency")
-    def current_active_frequency(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_active_frequency(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         slas current frequency
         """
         return pulumi.get(self, "current_active_frequency")
 
     @current_active_frequency.setter
-    def current_active_frequency(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_active_frequency(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_active_frequency", value)
 
     @_builtins.property
     @pulumi.getter(name="dailyRetention")
-    def daily_retention(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def daily_retention(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Duration in days for which a daily snapshot must be retained in NDB.
         """
         return pulumi.get(self, "daily_retention")
 
     @daily_retention.setter
-    def daily_retention(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def daily_retention(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "daily_retention", value)
 
     @_builtins.property
     @pulumi.getter(name="dateCreated")
-    def date_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def date_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         sla created data
         """
         return pulumi.get(self, "date_created")
 
     @date_created.setter
-    def date_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def date_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "date_created", value)
 
     @_builtins.property
     @pulumi.getter(name="dateModified")
-    def date_modified(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def date_modified(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         sla last modified date
         """
         return pulumi.get(self, "date_modified")
 
     @date_modified.setter
-    def date_modified(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def date_modified(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "date_modified", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of profile
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="monthlyRetention")
-    def monthly_retention(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def monthly_retention(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Duration in months for which a monthly snapshot must be retained in NDB
         """
         return pulumi.get(self, "monthly_retention")
 
     @monthly_retention.setter
-    def monthly_retention(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def monthly_retention(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "monthly_retention", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of profile
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerId")
-    def owner_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         owner id
         """
         return pulumi.get(self, "owner_id")
 
     @owner_id.setter
-    def owner_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner_id", value)
 
     @_builtins.property
     @pulumi.getter(name="pitrEnabled")
-    def pitr_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def pitr_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         pitr enabled
         """
         return pulumi.get(self, "pitr_enabled")
 
     @pitr_enabled.setter
-    def pitr_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def pitr_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "pitr_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="quarterlyRetention")
-    def quarterly_retention(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def quarterly_retention(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Duration in number of quarters for which a quarterly snapshot must be retained in NDB.
         """
         return pulumi.get(self, "quarterly_retention")
 
     @quarterly_retention.setter
-    def quarterly_retention(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def quarterly_retention(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "quarterly_retention", value)
 
     @_builtins.property
     @pulumi.getter(name="referenceCount")
-    def reference_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def reference_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         reference count
         """
         return pulumi.get(self, "reference_count")
 
     @reference_count.setter
-    def reference_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def reference_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "reference_count", value)
 
     @_builtins.property
     @pulumi.getter(name="systemSla")
-    def system_sla(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def system_sla(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         refers whether sla is custom or built-in
         """
         return pulumi.get(self, "system_sla")
 
     @system_sla.setter
-    def system_sla(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def system_sla(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "system_sla", value)
 
     @_builtins.property
     @pulumi.getter(name="uniqueName")
-    def unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         name of sla
         """
         return pulumi.get(self, "unique_name")
 
     @unique_name.setter
-    def unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="weeklyRetention")
-    def weekly_retention(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def weekly_retention(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Duration in weeks for which a weekly snapshot must be retained in NDB.
         """
         return pulumi.get(self, "weekly_retention")
 
     @weekly_retention.setter
-    def weekly_retention(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def weekly_retention(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "weekly_retention", value)
 
     @_builtins.property
     @pulumi.getter(name="yearlyRetention")
-    def yearly_retention(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def yearly_retention(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Not supported as of now.
         """
         return pulumi.get(self, "yearly_retention")
 
     @yearly_retention.setter
-    def yearly_retention(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def yearly_retention(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "yearly_retention", value)
 
 
@@ -424,20 +424,21 @@ class NdbSla(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 continuous_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 daily_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 monthly_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 quarterly_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 weekly_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 yearly_retention: Optional[pulumi.Input[_builtins.int]] = None,
+                 continuous_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 daily_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 quarterly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 weekly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 yearly_retention: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Provides a resource to create SLAs based on the input parameters.
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -451,6 +452,7 @@ class NdbSla(pulumi.CustomResource):
             monthly_retention=1,
             quarterly_retention=1)
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -475,6 +477,7 @@ class NdbSla(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -488,6 +491,7 @@ class NdbSla(pulumi.CustomResource):
             monthly_retention=1,
             quarterly_retention=1)
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -505,14 +509,14 @@ class NdbSla(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 continuous_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 daily_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 monthly_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 quarterly_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 weekly_retention: Optional[pulumi.Input[_builtins.int]] = None,
-                 yearly_retention: Optional[pulumi.Input[_builtins.int]] = None,
+                 continuous_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 daily_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 quarterly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 weekly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+                 yearly_retention: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -548,22 +552,22 @@ class NdbSla(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            continuous_retention: Optional[pulumi.Input[_builtins.int]] = None,
-            current_active_frequency: Optional[pulumi.Input[_builtins.str]] = None,
-            daily_retention: Optional[pulumi.Input[_builtins.int]] = None,
-            date_created: Optional[pulumi.Input[_builtins.str]] = None,
-            date_modified: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            monthly_retention: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            owner_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pitr_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            quarterly_retention: Optional[pulumi.Input[_builtins.int]] = None,
-            reference_count: Optional[pulumi.Input[_builtins.int]] = None,
-            system_sla: Optional[pulumi.Input[_builtins.bool]] = None,
-            unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-            weekly_retention: Optional[pulumi.Input[_builtins.int]] = None,
-            yearly_retention: Optional[pulumi.Input[_builtins.int]] = None) -> 'NdbSla':
+            continuous_retention: pulumi.Input[Optional[_builtins.int]] = None,
+            current_active_frequency: pulumi.Input[Optional[_builtins.str]] = None,
+            daily_retention: pulumi.Input[Optional[_builtins.int]] = None,
+            date_created: pulumi.Input[Optional[_builtins.str]] = None,
+            date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            monthly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pitr_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            quarterly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+            reference_count: pulumi.Input[Optional[_builtins.int]] = None,
+            system_sla: pulumi.Input[Optional[_builtins.bool]] = None,
+            unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            weekly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+            yearly_retention: pulumi.Input[Optional[_builtins.int]] = None) -> 'NdbSla':
         """
         Get an existing NdbSla resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

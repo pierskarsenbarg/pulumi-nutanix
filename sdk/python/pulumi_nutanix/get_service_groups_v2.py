@@ -118,6 +118,7 @@ def get_service_groups_v2(filter: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -125,6 +126,7 @@ def get_service_groups_v2(filter: Optional[_builtins.str] = None,
     service_group = nutanix.get_service_groups_v2()
     service_group_filtered = nutanix.get_service_groups_v2(filter="name eq 'service_group_name'")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
@@ -152,17 +154,18 @@ def get_service_groups_v2(filter: Optional[_builtins.str] = None,
         page=pulumi.get(__ret__, 'page'),
         select=pulumi.get(__ret__, 'select'),
         service_groups=pulumi.get(__ret__, 'service_groups'))
-def get_service_groups_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                 order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                 select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_service_groups_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                 order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                 select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceGroupsV2Result]:
     """
     List all the service Groups.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -170,6 +173,7 @@ def get_service_groups_v2_output(filter: Optional[pulumi.Input[Optional[_builtin
     service_group = nutanix.get_service_groups_v2()
     service_group_filtered = nutanix.get_service_groups_v2(filter="name eq 'service_group_name'")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:

@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -20,6 +21,7 @@ import * as utilities from "./utilities";
  *     extId: "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCertificateV2(args: GetCertificateV2Args, opts?: pulumi.InvokeOptions): Promise<GetCertificateV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -82,6 +84,7 @@ export interface GetCertificateV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -91,6 +94,7 @@ export interface GetCertificateV2Result {
  *     extId: "ef0a9a54-e7e1-42e2-a59f-de779ec1c9ea",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getCertificateV2Output(args: GetCertificateV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCertificateV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

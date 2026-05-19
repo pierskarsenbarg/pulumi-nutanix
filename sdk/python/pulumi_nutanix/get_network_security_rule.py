@@ -160,7 +160,7 @@ class GetNetworkSecurityRuleResult:
     @pulumi.getter(name="adRuleAction")
     def ad_rule_action(self) -> _builtins.str:
         """
-        - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "> outboundAllowList </span>will allow everything from target group.
         """
         return pulumi.get(self, "ad_rule_action")
 
@@ -231,7 +231,7 @@ class GetNetworkSecurityRuleResult:
     @pulumi.getter(name="appRuleAction")
     def app_rule_action(self) -> _builtins.str:
         """
-        - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "> outboundAllowList </span>will allow everything from target group.
         """
         return pulumi.get(self, "app_rule_action")
 
@@ -411,7 +411,7 @@ class GetNetworkSecurityRuleResult:
     @pulumi.getter(name="quarantineRuleAction")
     def quarantine_rule_action(self) -> _builtins.str:
         """
-        These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty inbound_allow_list will not allow anything into target group. Empty outbound_allow_list will allow everything from target group.
+        These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "> inboundAllowList </span>will not allow anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "> outboundAllowList </span>will allow everything from target group.
         """
         return pulumi.get(self, "quarantine_rule_action")
 
@@ -522,12 +522,13 @@ def get_network_security_rule(categories: Optional[Sequence[Union['GetNetworkSec
     """
     Describes a Network security rule
 
-    > NOTE: The use of network_security_rule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+    > NOTE: The use of<span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "> networkSecurityRule </span>is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
 
     ## Example Usage
 
     ### Isolate Development VMs From Production VMs And Get Its Information)
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -550,6 +551,7 @@ def get_network_security_rule(categories: Optional[Sequence[Union['GetNetworkSec
         }])
     test = nutanix.get_network_security_rule_output(network_security_rule_id=isolation.id)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict']] categories: Categories for the network_security_rule.
@@ -604,18 +606,19 @@ def get_network_security_rule(categories: Optional[Sequence[Union['GetNetworkSec
         quarantine_rule_target_group_filter_params=pulumi.get(__ret__, 'quarantine_rule_target_group_filter_params'),
         quarantine_rule_target_group_filter_type=pulumi.get(__ret__, 'quarantine_rule_target_group_filter_type'),
         quarantine_rule_target_group_peer_specification_type=pulumi.get(__ret__, 'quarantine_rule_target_group_peer_specification_type'))
-def get_network_security_rule_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict']]]]] = None,
-                                     network_security_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_security_rule_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict']]]]] = None,
+                                     network_security_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSecurityRuleResult]:
     """
     Describes a Network security rule
 
-    > NOTE: The use of network_security_rule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+    > NOTE: The use of<span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "> networkSecurityRule </span>is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
 
     ## Example Usage
 
     ### Isolate Development VMs From Production VMs And Get Its Information)
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -638,6 +641,7 @@ def get_network_security_rule_output(categories: Optional[pulumi.Input[Optional[
         }])
     test = nutanix.get_network_security_rule_output(network_security_rule_id=isolation.id)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict']] categories: Categories for the network_security_rule.

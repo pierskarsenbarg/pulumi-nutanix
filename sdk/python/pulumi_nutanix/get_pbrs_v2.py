@@ -108,6 +108,7 @@ def get_pbrs_v2(filter: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -118,6 +119,7 @@ def get_pbrs_v2(filter: Optional[_builtins.str] = None,
     pbrs_filter_limit = nutanix.get_pbrs_v2(filter="name eq 'pbr_example'",
         limit=10)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
@@ -148,16 +150,17 @@ def get_pbrs_v2(filter: Optional[_builtins.str] = None,
         order_by=pulumi.get(__ret__, 'order_by'),
         page=pulumi.get(__ret__, 'page'),
         routing_policies=pulumi.get(__ret__, 'routing_policies'))
-def get_pbrs_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                       order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_pbrs_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                       order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPbrsV2Result]:
     """
     Get a list of Routing Policies.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -168,6 +171,7 @@ def get_pbrs_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] =
     pbrs_filter_limit = nutanix.get_pbrs_v2(filter="name eq 'pbr_example'",
         limit=10)
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:

@@ -18,6 +18,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -28,7 +29,7 @@ namespace PiersKarsenbarg.Nutanix
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     // Fetch Cluster Ext ID from PC
-    ///     var clusters = Nutanix.Index.GetClustersV2.Invoke();
+    ///     var clusters = Nutanix.GetClustersV2.Invoke();
     /// 
     ///     var domainManagerExtId = cls.ClusterEntities[0].ExtId;
     /// 
@@ -39,7 +40,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     ///     // Create a restore source, before make sure to get the cluster ext_id from PC and create backup target
     ///     // wait until backup target is synced, you can check the last_sync_time from the backup target data source
-    ///     var cluster_location = new Nutanix.Index.PcRestoreSourceV2("cluster-location", new()
+    ///     var cluster_location = new Nutanix.PcRestoreSourceV2("cluster-location", new()
     ///     {
     ///         Location = new Nutanix.Inputs.PcRestoreSourceV2LocationArgs
     ///         {
@@ -59,20 +60,20 @@ namespace PiersKarsenbarg.Nutanix
     ///         },
     ///     });
     /// 
-    ///     var restorable_pcs = Nutanix.Index.GetRestorablePcsV2.Invoke(new()
+    ///     var restorable_pcs = Nutanix.GetRestorablePcsV2.Invoke(new()
     ///     {
     ///         RestoreSourceExtId = cluster_location.ExtId,
     ///     });
     /// 
     ///     var restorablePcExtId = restorable_pcs.Apply(restorable_pcs =&gt; restorable_pcs.Apply(getRestorablePcsV2Result =&gt; getRestorablePcsV2Result.RestorablePcs[0]?.ExtId));
     /// 
-    ///     var restore_points = Nutanix.Index.GetPcRestorePointsV2.Invoke(new()
+    ///     var restore_points = Nutanix.GetPcRestorePointsV2.Invoke(new()
     ///     {
     ///         RestorableDomainManagerExtId = restorablePcExtId,
     ///         RestoreSourceExtId = cluster_location.Id,
     ///     });
     /// 
-    ///     var restore_point = Nutanix.Index.GetPcRestorePointV2.Invoke(new()
+    ///     var restore_point = Nutanix.GetPcRestorePointV2.Invoke(new()
     ///     {
     ///         RestoreSourceExtId = cluster_location.Id,
     ///         RestorableDomainManagerExtId = restorablePcExtId,
@@ -83,7 +84,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     ///     // define the restore pc resource
     ///     // you can get these values from the data source nutanix_pc_v2, this data source is on PC provider
-    ///     var test = new Nutanix.Index.PcRestoreV2("test", new()
+    ///     var test = new Nutanix.PcRestoreV2("test", new()
     ///     {
     ///         ExtId = restorePoint.Apply(restorePoint =&gt; restorePoint.ExtId),
     ///         RestoreSourceExtId = cluster_location.Id,
@@ -200,6 +201,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/pcRestoreV2:PcRestoreV2")]
     public partial class PcRestoreV2 : global::Pulumi.CustomResource

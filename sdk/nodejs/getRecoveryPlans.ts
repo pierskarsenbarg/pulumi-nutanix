@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const recoveryPlans = nutanix.getRecoveryPlans({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRecoveryPlans(opts?: pulumi.InvokeOptions): Promise<GetRecoveryPlansResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -46,12 +48,14 @@ export interface GetRecoveryPlansResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const recoveryPlans = nutanix.getRecoveryPlans({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getRecoveryPlansOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRecoveryPlansResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

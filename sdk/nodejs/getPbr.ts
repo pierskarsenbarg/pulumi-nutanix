@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Provides a datasource to retrieve PBR with pbrUuid .
+ * Provides a datasource to retrieve PBR with<span pulumi-lang-nodejs=" pbrUuid " pulumi-lang-dotnet=" PbrUuid " pulumi-lang-go=" pbrUuid " pulumi-lang-python=" pbr_uuid " pulumi-lang-yaml=" pbrUuid " pulumi-lang-java=" pbrUuid "> pbrUuid </span>.
  */
 export function getPbr(args: GetPbrArgs, opts?: pulumi.InvokeOptions): Promise<GetPbrResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -53,7 +53,7 @@ export interface GetPbrResult {
     readonly statuses: outputs.GetPbrStatus[];
 }
 /**
- * Provides a datasource to retrieve PBR with pbrUuid .
+ * Provides a datasource to retrieve PBR with<span pulumi-lang-nodejs=" pbrUuid " pulumi-lang-dotnet=" PbrUuid " pulumi-lang-go=" pbrUuid " pulumi-lang-python=" pbr_uuid " pulumi-lang-yaml=" pbrUuid " pulumi-lang-java=" pbrUuid "> pbrUuid </span>.
  */
 export function getPbrOutput(args: GetPbrOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPbrResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

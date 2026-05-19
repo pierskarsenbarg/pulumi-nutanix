@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -40,6 +41,7 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class AddressGroupsV2 extends pulumi.CustomResource {
     /**
@@ -152,39 +154,39 @@ export interface AddressGroupsV2State {
     /**
      * created by.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Description of the Address group
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * address group uuid.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) List of IP range containing start and end IP.
      */
-    ipRanges?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2IpRange>[]>;
+    ipRanges?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2IpRange>[] | undefined>;
     /**
      * - (Optional) List of CIDR blocks in the Address Group.
      */
-    ipv4Addresses?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2Ipv4Address>[]>;
+    ipv4Addresses?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2Ipv4Address>[] | undefined>;
     /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2Link>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2Link>[] | undefined>;
     /**
      * - (Required) Name of the Address group
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Reference to policy associated with Address Group.
      */
-    policyReferences?: pulumi.Input<pulumi.Input<string>[]>;
+    policyReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -194,17 +196,17 @@ export interface AddressGroupsV2Args {
     /**
      * - (Optional) Description of the Address group
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) List of IP range containing start and end IP.
      */
-    ipRanges?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2IpRange>[]>;
+    ipRanges?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2IpRange>[] | undefined>;
     /**
      * - (Optional) List of CIDR blocks in the Address Group.
      */
-    ipv4Addresses?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2Ipv4Address>[]>;
+    ipv4Addresses?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2Ipv4Address>[] | undefined>;
     /**
      * - (Required) Name of the Address group
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

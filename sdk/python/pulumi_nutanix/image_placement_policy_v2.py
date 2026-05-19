@@ -24,12 +24,12 @@ class ImagePlacementPolicyV2Args:
                  cluster_entity_filters: pulumi.Input[Sequence[pulumi.Input['ImagePlacementPolicyV2ClusterEntityFilterArgs']]],
                  image_entity_filters: pulumi.Input[Sequence[pulumi.Input['ImagePlacementPolicyV2ImageEntityFilterArgs']]],
                  placement_type: pulumi.Input[_builtins.str],
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enforcement_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 should_cancel_running_tasks: Optional[pulumi.Input[_builtins.bool]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enforcement_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_cancel_running_tasks: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ImagePlacementPolicyV2 resource.
 
@@ -95,86 +95,86 @@ class ImagePlacementPolicyV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action to be performed on the image placement policy. Valid values "RESUME", "SUSPEND"
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the image placement policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="enforcementState")
-    def enforcement_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enforcement_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enforcement status of the image placement policy. Valid values "ACTIVE", "SUSPENDED"
         """
         return pulumi.get(self, "enforcement_state")
 
     @enforcement_state.setter
-    def enforcement_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enforcement_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enforcement_state", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the image placement policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldCancelRunningTasks")
-    def should_cancel_running_tasks(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_cancel_running_tasks(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "should_cancel_running_tasks")
 
     @should_cancel_running_tasks.setter
-    def should_cancel_running_tasks(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_cancel_running_tasks(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_cancel_running_tasks", value)
 
 
 @pulumi.input_type
 class _ImagePlacementPolicyV2State:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_entity_filters: Optional[pulumi.Input[Sequence[pulumi.Input['ImagePlacementPolicyV2ClusterEntityFilterArgs']]]] = None,
-                 create_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enforcement_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_entity_filters: Optional[pulumi.Input[Sequence[pulumi.Input['ImagePlacementPolicyV2ImageEntityFilterArgs']]]] = None,
-                 last_update_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 placement_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 should_cancel_running_tasks: Optional[pulumi.Input[_builtins.bool]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input['ImagePlacementPolicyV2ClusterEntityFilterArgs']]]] = None,
+                 create_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enforcement_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input['ImagePlacementPolicyV2ImageEntityFilterArgs']]]] = None,
+                 last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 placement_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_cancel_running_tasks: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ImagePlacementPolicyV2 resources.
 
@@ -213,131 +213,131 @@ class _ImagePlacementPolicyV2State:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Action to be performed on the image placement policy. Valid values "RESUME", "SUSPEND"
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterEntityFilters")
-    def cluster_entity_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImagePlacementPolicyV2ClusterEntityFilterArgs']]]]:
+    def cluster_entity_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImagePlacementPolicyV2ClusterEntityFilterArgs']]]]:
         """
         Category-based entity filter.
         """
         return pulumi.get(self, "cluster_entity_filters")
 
     @cluster_entity_filters.setter
-    def cluster_entity_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImagePlacementPolicyV2ClusterEntityFilterArgs']]]]):
+    def cluster_entity_filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImagePlacementPolicyV2ClusterEntityFilterArgs']]]]):
         pulumi.set(self, "cluster_entity_filters", value)
 
     @_builtins.property
     @pulumi.getter(name="createTime")
-    def create_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def create_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "create_time")
 
     @create_time.setter
-    def create_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def create_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "create_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the image placement policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="enforcementState")
-    def enforcement_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enforcement_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enforcement status of the image placement policy. Valid values "ACTIVE", "SUSPENDED"
         """
         return pulumi.get(self, "enforcement_state")
 
     @enforcement_state.setter
-    def enforcement_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enforcement_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enforcement_state", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="imageEntityFilters")
-    def image_entity_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ImagePlacementPolicyV2ImageEntityFilterArgs']]]]:
+    def image_entity_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImagePlacementPolicyV2ImageEntityFilterArgs']]]]:
         """
         Category-based entity filter.
         """
         return pulumi.get(self, "image_entity_filters")
 
     @image_entity_filters.setter
-    def image_entity_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ImagePlacementPolicyV2ImageEntityFilterArgs']]]]):
+    def image_entity_filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ImagePlacementPolicyV2ImageEntityFilterArgs']]]]):
         pulumi.set(self, "image_entity_filters", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdateTime")
-    def last_update_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "last_update_time")
 
     @last_update_time.setter
-    def last_update_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_update_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_update_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the image placement policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerExtId")
-    def owner_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "owner_ext_id")
 
     @owner_ext_id.setter
-    def owner_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="placementType")
-    def placement_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def placement_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the image placement policy. Valid values "HARD", "SOFT"
         """
         return pulumi.get(self, "placement_type")
 
     @placement_type.setter
-    def placement_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def placement_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "placement_type", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldCancelRunningTasks")
-    def should_cancel_running_tasks(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_cancel_running_tasks(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "should_cancel_running_tasks")
 
     @should_cancel_running_tasks.setter
-    def should_cancel_running_tasks(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_cancel_running_tasks(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_cancel_running_tasks", value)
 
 
@@ -347,19 +347,20 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_entity_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ClusterEntityFilterArgs', 'ImagePlacementPolicyV2ClusterEntityFilterArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enforcement_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_entity_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ImageEntityFilterArgs', 'ImagePlacementPolicyV2ImageEntityFilterArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 placement_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 should_cancel_running_tasks: Optional[pulumi.Input[_builtins.bool]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ClusterEntityFilterArgs', 'ImagePlacementPolicyV2ClusterEntityFilterArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enforcement_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ImageEntityFilterArgs', 'ImagePlacementPolicyV2ImageEntityFilterArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 placement_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_cancel_running_tasks: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create an image placement policy using the provided request body. Name, placement_type, image_entity_filter and source are mandatory fields to create an policy.
+        Create an image placement policy using the provided request body. Name, placement_type,<span pulumi-lang-nodejs=" imageEntityFilter " pulumi-lang-dotnet=" ImageEntityFilter " pulumi-lang-go=" imageEntityFilter " pulumi-lang-python=" image_entity_filter " pulumi-lang-yaml=" imageEntityFilter " pulumi-lang-java=" imageEntityFilter "> imageEntityFilter </span>and source are mandatory fields to create an policy.
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -377,6 +378,7 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
                 "type": "CATEGORIES_MATCH_ALL",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -396,8 +398,9 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
                  args: ImagePlacementPolicyV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create an image placement policy using the provided request body. Name, placement_type, image_entity_filter and source are mandatory fields to create an policy.
+        Create an image placement policy using the provided request body. Name, placement_type,<span pulumi-lang-nodejs=" imageEntityFilter " pulumi-lang-dotnet=" ImageEntityFilter " pulumi-lang-go=" imageEntityFilter " pulumi-lang-python=" image_entity_filter " pulumi-lang-yaml=" imageEntityFilter " pulumi-lang-java=" imageEntityFilter "> imageEntityFilter </span>and source are mandatory fields to create an policy.
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -415,6 +418,7 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
                 "type": "CATEGORIES_MATCH_ALL",
             }])
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -432,15 +436,15 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_entity_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ClusterEntityFilterArgs', 'ImagePlacementPolicyV2ClusterEntityFilterArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 enforcement_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_entity_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ImageEntityFilterArgs', 'ImagePlacementPolicyV2ImageEntityFilterArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 placement_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 should_cancel_running_tasks: Optional[pulumi.Input[_builtins.bool]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ClusterEntityFilterArgs', 'ImagePlacementPolicyV2ClusterEntityFilterArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 enforcement_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ImageEntityFilterArgs', 'ImagePlacementPolicyV2ImageEntityFilterArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 placement_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_cancel_running_tasks: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -478,18 +482,18 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_entity_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ClusterEntityFilterArgs', 'ImagePlacementPolicyV2ClusterEntityFilterArgsDict']]]]] = None,
-            create_time: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            enforcement_state: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            image_entity_filters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ImageEntityFilterArgs', 'ImagePlacementPolicyV2ImageEntityFilterArgsDict']]]]] = None,
-            last_update_time: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            owner_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            placement_type: Optional[pulumi.Input[_builtins.str]] = None,
-            should_cancel_running_tasks: Optional[pulumi.Input[_builtins.bool]] = None) -> 'ImagePlacementPolicyV2':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ClusterEntityFilterArgs', 'ImagePlacementPolicyV2ClusterEntityFilterArgsDict']]]]] = None,
+            create_time: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            enforcement_state: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            image_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ImageEntityFilterArgs', 'ImagePlacementPolicyV2ImageEntityFilterArgsDict']]]]] = None,
+            last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            placement_type: pulumi.Input[Optional[_builtins.str]] = None,
+            should_cancel_running_tasks: pulumi.Input[Optional[_builtins.bool]] = None) -> 'ImagePlacementPolicyV2':
         """
         Get an existing ImagePlacementPolicyV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

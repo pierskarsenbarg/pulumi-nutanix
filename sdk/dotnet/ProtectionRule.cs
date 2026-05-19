@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -23,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var protectionRuleTest = new Nutanix.Index.ProtectionRule("protection_rule_test", new()
+    ///     var protectionRuleTest = new Nutanix.ProtectionRule("protection_rule_test", new()
     ///     {
     ///         Name = "test",
     ///         Description = "test",
@@ -70,6 +71,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/protectionRule:ProtectionRule")]
     public partial class ProtectionRule : global::Pulumi.CustomResource

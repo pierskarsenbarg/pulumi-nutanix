@@ -188,12 +188,14 @@ def get_ngt_configuration_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     example = nutanix.get_ngt_configuration_v2(ext_id="f29535e2-6bd8-4782-b879-409f17217b31")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: uuid of the Virtual Machine.
@@ -216,19 +218,21 @@ def get_ngt_configuration_v2(ext_id: Optional[_builtins.str] = None,
         is_vm_mobility_drivers_installed=pulumi.get(__ret__, 'is_vm_mobility_drivers_installed'),
         is_vss_snapshot_capable=pulumi.get(__ret__, 'is_vss_snapshot_capable'),
         version=pulumi.get(__ret__, 'version'))
-def get_ngt_configuration_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_ngt_configuration_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNgtConfigurationV2Result]:
     """
     Provides Nutanix datasource to Retrieves the Nutanix Guest Tools configuration for a Virtual Machine.
 
     ## Example
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     example = nutanix.get_ngt_configuration_v2(ext_id="f29535e2-6bd8-4782-b879-409f17217b31")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: uuid of the Virtual Machine.

@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -60,6 +61,7 @@ import * as utilities from "./utilities";
  *     projectId: projectTest.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProject(args?: GetProjectArgs, opts?: pulumi.InvokeOptions): Promise<GetProjectResult> {
     args = args || {};
@@ -84,19 +86,25 @@ export interface GetProjectArgs {
     categories?: inputs.GetProjectCategory[];
     /**
      * List of directory service user groups. These groups are not managed by Nutanix.
-     * * `external_user_group_reference_list.#.kind` - The kind name. Default value is `userGroup`
-     * * `external_user_group_reference_list.#.uuid` - The UUID of a userGroup
-     * * `external_user_group_reference_list.#.name` - The name of a user_group
+     * * `external_user_group_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`">`userGroup`</span>
+     * * `external_user_group_reference_list.#.uuid` - The UUID of a<span pulumi-lang-nodejs=" userGroup
+     * " pulumi-lang-dotnet=" UserGroup
+     * " pulumi-lang-go=" userGroup
+     * " pulumi-lang-python=" user_group
+     * " pulumi-lang-yaml=" userGroup
+     * " pulumi-lang-java=" userGroup
+     * "> userGroup
+     * </span>* `external_user_group_reference_list.#.name` - The name of a user_group
      */
     externalUserGroupReferenceLists?: inputs.GetProjectExternalUserGroupReferenceList[];
     /**
-     * - (Required) The `id` of the project.
+     * - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the project.
      */
     projectId?: string;
     projectName?: string;
     /**
      * List of subnets for the project.
-     * * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
+     * * `subnet_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`">`subnet`</span>
      * * `subnet_reference_list.#.uuid` - The UUID of a subnet
      * * `subnet_reference_list.#.name` - The name of a subnet.
      */
@@ -113,7 +121,7 @@ export interface GetProjectArgs {
 export interface GetProjectResult {
     /**
      * List of accounts associated with the project.
-     * * `account_reference_list.#.kind` - The kind name. Default value is `account`
+     * * `account_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`account`" pulumi-lang-dotnet="`Account`" pulumi-lang-go="`account`" pulumi-lang-python="`account`" pulumi-lang-yaml="`account`" pulumi-lang-java="`account`">`account`</span>
      * * `account_reference_list.#.uuid` - The UUID of an account.
      * * `account_reference_list.#.name` - The name of an account.
      */
@@ -126,7 +134,7 @@ export interface GetProjectResult {
     readonly categories: outputs.GetProjectCategory[];
     /**
      * (Optional/Computed) List of clusters associated with the project..
-     * * `cluster_reference_list.#.kind` - (Optional) The kind name. Default value is `cluster`
+     * * `cluster_reference_list.#.kind` - (Optional) The kind name. Default value is <span pulumi-lang-nodejs="`cluster`" pulumi-lang-dotnet="`Cluster`" pulumi-lang-go="`cluster`" pulumi-lang-python="`cluster`" pulumi-lang-yaml="`cluster`" pulumi-lang-java="`cluster`">`cluster`</span>
      * * `cluster_reference_list.#.uuid` - (Required) The UUID of a cluster
      * * `cluster_reference_list.#.name` - (Optional/Computed) The name of a cluster.
      */
@@ -145,7 +153,7 @@ export interface GetProjectResult {
     readonly description: string;
     /**
      * List of environments associated with the project.
-     * * `environment_reference_list.#.kind` - The kind name. Default value is `environment`
+     * * `environment_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`">`environment`</span>
      * * `environment_reference_list.#.uuid` - The UUID of an environment.
      * * `environment_reference_list.#.name` - The name of an environment.
      */
@@ -158,9 +166,15 @@ export interface GetProjectResult {
     readonly externalNetworkLists: outputs.GetProjectExternalNetworkList[];
     /**
      * List of directory service user groups. These groups are not managed by Nutanix.
-     * * `external_user_group_reference_list.#.kind` - The kind name. Default value is `userGroup`
-     * * `external_user_group_reference_list.#.uuid` - The UUID of a userGroup
-     * * `external_user_group_reference_list.#.name` - The name of a user_group
+     * * `external_user_group_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`">`userGroup`</span>
+     * * `external_user_group_reference_list.#.uuid` - The UUID of a<span pulumi-lang-nodejs=" userGroup
+     * " pulumi-lang-dotnet=" UserGroup
+     * " pulumi-lang-go=" userGroup
+     * " pulumi-lang-python=" user_group
+     * " pulumi-lang-yaml=" userGroup
+     * " pulumi-lang-java=" userGroup
+     * "> userGroup
+     * </span>* `external_user_group_reference_list.#.name` - The name of a user_group
      */
     readonly externalUserGroupReferenceLists: outputs.GetProjectExternalUserGroupReferenceList[];
     /**
@@ -184,14 +198,14 @@ export interface GetProjectResult {
     readonly state: string;
     /**
      * List of subnets for the project.
-     * * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
+     * * `subnet_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`">`subnet`</span>
      * * `subnet_reference_list.#.uuid` - The UUID of a subnet
      * * `subnet_reference_list.#.name` - The name of a subnet.
      */
     readonly subnetReferenceLists: outputs.GetProjectSubnetReferenceList[];
     /**
      * (Optional/Computed) List of tunnels associated with the project.
-     * * `tunnel_reference_list.#.kind` - (Optional) The kind name. Default value is `tunnel`
+     * * `tunnel_reference_list.#.kind` - (Optional) The kind name. Default value is <span pulumi-lang-nodejs="`tunnel`" pulumi-lang-dotnet="`Tunnel`" pulumi-lang-go="`tunnel`" pulumi-lang-python="`tunnel`" pulumi-lang-yaml="`tunnel`" pulumi-lang-java="`tunnel`">`tunnel`</span>
      * * `tunnel_reference_list.#.uuid` - (Required) The UUID of a tunnel
      * * `tunnel_reference_list.#.name` - (Optional/Computed) The name of a tunnel.
      */
@@ -202,7 +216,7 @@ export interface GetProjectResult {
     readonly userReferenceLists: outputs.GetProjectUserReferenceList[];
     /**
      * (Optional/Computed) List of VPCs associated with the project..
-     * * `vpc_reference_list.#.kind` - (Optional) The kind name. Default value is `vpc`
+     * * `vpc_reference_list.#.kind` - (Optional) The kind name. Default value is <span pulumi-lang-nodejs="`vpc`" pulumi-lang-dotnet="`Vpc`" pulumi-lang-go="`vpc`" pulumi-lang-python="`vpc`" pulumi-lang-yaml="`vpc`" pulumi-lang-java="`vpc`">`vpc`</span>
      * * `vpc_reference_list.#.uuid` - (Required) The UUID of a vpc
      * * `vpc_reference_list.#.name` - (Optional/Computed) The name of a vpc.
      */
@@ -213,6 +227,7 @@ export interface GetProjectResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -262,6 +277,7 @@ export interface GetProjectResult {
  *     projectId: projectTest.id,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getProjectOutput(args?: GetProjectOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProjectResult> {
     args = args || {};
@@ -283,28 +299,34 @@ export interface GetProjectOutputArgs {
     /**
      * - (Optional) The category values represented as a dictionary of key > list of values.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetProjectCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetProjectCategoryArgs>[] | undefined>;
     /**
      * List of directory service user groups. These groups are not managed by Nutanix.
-     * * `external_user_group_reference_list.#.kind` - The kind name. Default value is `userGroup`
-     * * `external_user_group_reference_list.#.uuid` - The UUID of a userGroup
-     * * `external_user_group_reference_list.#.name` - The name of a user_group
+     * * `external_user_group_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`">`userGroup`</span>
+     * * `external_user_group_reference_list.#.uuid` - The UUID of a<span pulumi-lang-nodejs=" userGroup
+     * " pulumi-lang-dotnet=" UserGroup
+     * " pulumi-lang-go=" userGroup
+     * " pulumi-lang-python=" user_group
+     * " pulumi-lang-yaml=" userGroup
+     * " pulumi-lang-java=" userGroup
+     * "> userGroup
+     * </span>* `external_user_group_reference_list.#.name` - The name of a user_group
      */
-    externalUserGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.GetProjectExternalUserGroupReferenceListArgs>[]>;
+    externalUserGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.GetProjectExternalUserGroupReferenceListArgs>[] | undefined>;
     /**
-     * - (Required) The `id` of the project.
+     * - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the project.
      */
-    projectId?: pulumi.Input<string>;
-    projectName?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
+    projectName?: pulumi.Input<string | undefined>;
     /**
      * List of subnets for the project.
-     * * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
+     * * `subnet_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`">`subnet`</span>
      * * `subnet_reference_list.#.uuid` - The UUID of a subnet
      * * `subnet_reference_list.#.name` - The name of a subnet.
      */
-    subnetReferenceLists?: pulumi.Input<pulumi.Input<inputs.GetProjectSubnetReferenceListArgs>[]>;
+    subnetReferenceLists?: pulumi.Input<pulumi.Input<inputs.GetProjectSubnetReferenceListArgs>[] | undefined>;
     /**
      * List of Reference of users.
      */
-    userReferenceLists?: pulumi.Input<pulumi.Input<inputs.GetProjectUserReferenceListArgs>[]>;
+    userReferenceLists?: pulumi.Input<pulumi.Input<inputs.GetProjectUserReferenceListArgs>[] | undefined>;
 }

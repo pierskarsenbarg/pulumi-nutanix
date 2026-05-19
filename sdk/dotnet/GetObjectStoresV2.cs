@@ -17,6 +17,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const list = nutanix.getObjectStoresV2({});
+        /// const filter = nutanix.getObjectStoresV2({
+        ///     filter: "name eq 'object_store_example'",
+        /// });
+        /// const limit = nutanix.getObjectStoresV2({
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// list = nutanix.get_object_stores_v2()
+        /// filter = nutanix.get_object_stores_v2(filter="name eq 'object_store_example'")
+        /// limit = nutanix.get_object_stores_v2(limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,20 +46,103 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var list = Nutanix.Index.GetObjectStoresV2.Invoke();
+        ///     var list = Nutanix.GetObjectStoresV2.Invoke();
         /// 
-        ///     var filter = Nutanix.Index.GetObjectStoresV2.Invoke(new()
+        ///     var filter = Nutanix.GetObjectStoresV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'object_store_example'",
         ///     });
         /// 
-        ///     var limit = Nutanix.Index.GetObjectStoresV2.Invoke(new()
+        ///     var limit = Nutanix.GetObjectStoresV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetObjectStoresV2(ctx, &amp;nutanix.GetObjectStoresV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetObjectStoresV2(ctx, &amp;nutanix.GetObjectStoresV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'object_store_example'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetObjectStoresV2(ctx, &amp;nutanix.GetObjectStoresV2Args{
+        /// 			Limit: pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetObjectStoresV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var list = NutanixFunctions.getObjectStoresV2(GetObjectStoresV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var filter = NutanixFunctions.getObjectStoresV2(GetObjectStoresV2Args.builder()
+        ///             .filter("name eq 'object_store_example'")
+        ///             .build());
+        /// 
+        ///         final var limit = NutanixFunctions.getObjectStoresV2(GetObjectStoresV2Args.builder()
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   list:
+        ///     fn::invoke:
+        ///       function: nutanix:getObjectStoresV2
+        ///       arguments: {}
+        ///   filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getObjectStoresV2
+        ///       arguments:
+        ///         filter: name eq 'object_store_example'
+        ///   limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getObjectStoresV2
+        ///       arguments:
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetObjectStoresV2Result> InvokeAsync(GetObjectStoresV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetObjectStoresV2Result>("nutanix:index/getObjectStoresV2:getObjectStoresV2", args ?? new GetObjectStoresV2Args(), options.WithDefaults());
@@ -48,6 +152,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const list = nutanix.getObjectStoresV2({});
+        /// const filter = nutanix.getObjectStoresV2({
+        ///     filter: "name eq 'object_store_example'",
+        /// });
+        /// const limit = nutanix.getObjectStoresV2({
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// list = nutanix.get_object_stores_v2()
+        /// filter = nutanix.get_object_stores_v2(filter="name eq 'object_store_example'")
+        /// limit = nutanix.get_object_stores_v2(limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -56,20 +181,103 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var list = Nutanix.Index.GetObjectStoresV2.Invoke();
+        ///     var list = Nutanix.GetObjectStoresV2.Invoke();
         /// 
-        ///     var filter = Nutanix.Index.GetObjectStoresV2.Invoke(new()
+        ///     var filter = Nutanix.GetObjectStoresV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'object_store_example'",
         ///     });
         /// 
-        ///     var limit = Nutanix.Index.GetObjectStoresV2.Invoke(new()
+        ///     var limit = Nutanix.GetObjectStoresV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetObjectStoresV2(ctx, &amp;nutanix.GetObjectStoresV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetObjectStoresV2(ctx, &amp;nutanix.GetObjectStoresV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'object_store_example'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetObjectStoresV2(ctx, &amp;nutanix.GetObjectStoresV2Args{
+        /// 			Limit: pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetObjectStoresV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var list = NutanixFunctions.getObjectStoresV2(GetObjectStoresV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var filter = NutanixFunctions.getObjectStoresV2(GetObjectStoresV2Args.builder()
+        ///             .filter("name eq 'object_store_example'")
+        ///             .build());
+        /// 
+        ///         final var limit = NutanixFunctions.getObjectStoresV2(GetObjectStoresV2Args.builder()
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   list:
+        ///     fn::invoke:
+        ///       function: nutanix:getObjectStoresV2
+        ///       arguments: {}
+        ///   filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getObjectStoresV2
+        ///       arguments:
+        ///         filter: name eq 'object_store_example'
+        ///   limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getObjectStoresV2
+        ///       arguments:
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetObjectStoresV2Result> Invoke(GetObjectStoresV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetObjectStoresV2Result>("nutanix:index/getObjectStoresV2:getObjectStoresV2", args ?? new GetObjectStoresV2InvokeArgs(), options.WithDefaults());
@@ -79,6 +287,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const list = nutanix.getObjectStoresV2({});
+        /// const filter = nutanix.getObjectStoresV2({
+        ///     filter: "name eq 'object_store_example'",
+        /// });
+        /// const limit = nutanix.getObjectStoresV2({
+        ///     limit: 10,
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// list = nutanix.get_object_stores_v2()
+        /// filter = nutanix.get_object_stores_v2(filter="name eq 'object_store_example'")
+        /// limit = nutanix.get_object_stores_v2(limit=10)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -87,20 +316,103 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var list = Nutanix.Index.GetObjectStoresV2.Invoke();
+        ///     var list = Nutanix.GetObjectStoresV2.Invoke();
         /// 
-        ///     var filter = Nutanix.Index.GetObjectStoresV2.Invoke(new()
+        ///     var filter = Nutanix.GetObjectStoresV2.Invoke(new()
         ///     {
         ///         Filter = "name eq 'object_store_example'",
         ///     });
         /// 
-        ///     var limit = Nutanix.Index.GetObjectStoresV2.Invoke(new()
+        ///     var limit = Nutanix.GetObjectStoresV2.Invoke(new()
         ///     {
         ///         Limit = 10,
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetObjectStoresV2(ctx, &amp;nutanix.GetObjectStoresV2Args{}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetObjectStoresV2(ctx, &amp;nutanix.GetObjectStoresV2Args{
+        /// 			Filter: pulumi.StringRef("name eq 'object_store_example'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		_, err = nutanix.GetObjectStoresV2(ctx, &amp;nutanix.GetObjectStoresV2Args{
+        /// 			Limit: pulumi.IntRef(10),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetObjectStoresV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var list = NutanixFunctions.getObjectStoresV2(GetObjectStoresV2Args.builder()
+        ///             .build());
+        /// 
+        ///         final var filter = NutanixFunctions.getObjectStoresV2(GetObjectStoresV2Args.builder()
+        ///             .filter("name eq 'object_store_example'")
+        ///             .build());
+        /// 
+        ///         final var limit = NutanixFunctions.getObjectStoresV2(GetObjectStoresV2Args.builder()
+        ///             .limit(10)
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   list:
+        ///     fn::invoke:
+        ///       function: nutanix:getObjectStoresV2
+        ///       arguments: {}
+        ///   filter:
+        ///     fn::invoke:
+        ///       function: nutanix:getObjectStoresV2
+        ///       arguments:
+        ///         filter: name eq 'object_store_example'
+        ///   limit:
+        ///     fn::invoke:
+        ///       function: nutanix:getObjectStoresV2
+        ///       arguments:
+        ///         limit: 10
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetObjectStoresV2Result> Invoke(GetObjectStoresV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetObjectStoresV2Result>("nutanix:index/getObjectStoresV2:getObjectStoresV2", args ?? new GetObjectStoresV2InvokeArgs(), options.WithDefaults());

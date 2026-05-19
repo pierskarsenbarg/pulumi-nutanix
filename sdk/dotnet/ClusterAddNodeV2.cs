@@ -15,6 +15,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -30,7 +31,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     var cvmIp = "10.xx.xx.xx";
     /// 
     ///     //# check if the node to add is un configured or not
-    ///     var cluster_node = new Nutanix.Index.ClustersDiscoverUnconfiguredNodesV2("cluster-node", new()
+    ///     var cluster_node = new Nutanix.ClustersDiscoverUnconfiguredNodesV2("cluster-node", new()
     ///     {
     ///         ExtId = clustersExtId,
     ///         AddressType = "IPV4",
@@ -50,7 +51,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     //# fetch Network info for unconfigured node
-    ///     var node_network_info = new Nutanix.Index.ClustersUnconfiguredNodeNetworksV2("node-network-info", new()
+    ///     var node_network_info = new Nutanix.ClustersUnconfiguredNodeNetworksV2("node-network-info", new()
     ///     {
     ///         ExtId = clustersExtId,
     ///         RequestType = "expand_cluster",
@@ -95,7 +96,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     });
     /// 
     ///     //# add node to the cluster
-    ///     var add_node = new Nutanix.Index.ClusterAddNodeV2("add-node", new()
+    ///     var add_node = new Nutanix.ClusterAddNodeV2("add-node", new()
     ///     {
     ///         ClusterExtId = clustersExtId,
     ///         ShouldSkipAddNode = false,
@@ -236,6 +237,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/clusterAddNodeV2:ClusterAddNodeV2")]
     public partial class ClusterAddNodeV2 : global::Pulumi.CustomResource

@@ -17,6 +17,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ### 
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -25,14 +26,14 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test = new Nutanix.Index.SelfServiceAppProvision("test", new()
+    ///     var test = new Nutanix.SelfServiceAppProvision("test", new()
     ///     {
     ///         BpName = "NAME OF BLUEPRINT",
     ///         AppName = "NAME OF APPLICATION",
     ///         AppDescription = "DESCRIPTION OF APPLICATION",
     ///     });
     /// 
-    ///     var testSelfServiceAppCustomAction = new Nutanix.Index.SelfServiceAppCustomAction("test", new()
+    ///     var testSelfServiceAppCustomAction = new Nutanix.SelfServiceAppCustomAction("test", new()
     ///     {
     ///         AppName = test.AppName,
     ///         ActionName = "NAME OF ACTION",
@@ -40,6 +41,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/selfServiceAppCustomAction:SelfServiceAppCustomAction")]
     public partial class SelfServiceAppCustomAction : global::Pulumi.CustomResource
@@ -47,7 +49,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The name of the action to run.
         /// 
-        /// Both (`AppName` and `AppUuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
+        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`"&gt;`appUuid`&lt;/span&gt;) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
         /// </summary>
         [Output("actionName")]
         public Output<string> ActionName { get; private set; } = null!;
@@ -120,7 +122,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The name of the action to run.
         /// 
-        /// Both (`AppName` and `AppUuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
+        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`"&gt;`appUuid`&lt;/span&gt;) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
         /// </summary>
         [Input("actionName", required: true)]
         public Input<string> ActionName { get; set; } = null!;
@@ -154,7 +156,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The name of the action to run.
         /// 
-        /// Both (`AppName` and `AppUuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
+        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`"&gt;`appUuid`&lt;/span&gt;) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
         /// </summary>
         [Input("actionName")]
         public Input<string>? ActionName { get; set; }

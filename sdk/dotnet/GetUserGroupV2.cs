@@ -17,6 +17,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_ug = nutanix.getUserGroupV2({
+        ///     extId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_ug = nutanix.get_user_group_v2(ext_id="a2a8650a-358a-4791-90c9-7a8b6e2989d6")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,13 +40,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_ug = Nutanix.Index.GetUserGroupV2.Invoke(new()
+        ///     var get_ug = Nutanix.GetUserGroupV2.Invoke(new()
         ///     {
         ///         ExtId = "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetUserGroupV2(ctx, &amp;nutanix.GetUserGroupV2Args{
+        /// 			ExtId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetUserGroupV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-ug = NutanixFunctions.getUserGroupV2(GetUserGroupV2Args.builder()
+        ///             .extId("a2a8650a-358a-4791-90c9-7a8b6e2989d6")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-ug:
+        ///     fn::invoke:
+        ///       function: nutanix:getUserGroupV2
+        ///       arguments:
+        ///         extId: a2a8650a-358a-4791-90c9-7a8b6e2989d6
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetUserGroupV2Result> InvokeAsync(GetUserGroupV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserGroupV2Result>("nutanix:index/getUserGroupV2:getUserGroupV2", args ?? new GetUserGroupV2Args(), options.WithDefaults());
@@ -41,6 +113,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_ug = nutanix.getUserGroupV2({
+        ///     extId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_ug = nutanix.get_user_group_v2(ext_id="a2a8650a-358a-4791-90c9-7a8b6e2989d6")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -49,13 +136,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_ug = Nutanix.Index.GetUserGroupV2.Invoke(new()
+        ///     var get_ug = Nutanix.GetUserGroupV2.Invoke(new()
         ///     {
         ///         ExtId = "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetUserGroupV2(ctx, &amp;nutanix.GetUserGroupV2Args{
+        /// 			ExtId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetUserGroupV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-ug = NutanixFunctions.getUserGroupV2(GetUserGroupV2Args.builder()
+        ///             .extId("a2a8650a-358a-4791-90c9-7a8b6e2989d6")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-ug:
+        ///     fn::invoke:
+        ///       function: nutanix:getUserGroupV2
+        ///       arguments:
+        ///         extId: a2a8650a-358a-4791-90c9-7a8b6e2989d6
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetUserGroupV2Result> Invoke(GetUserGroupV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserGroupV2Result>("nutanix:index/getUserGroupV2:getUserGroupV2", args ?? new GetUserGroupV2InvokeArgs(), options.WithDefaults());
@@ -65,6 +209,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const get_ug = nutanix.getUserGroupV2({
+        ///     extId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// get_ug = nutanix.get_user_group_v2(ext_id="a2a8650a-358a-4791-90c9-7a8b6e2989d6")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -73,13 +232,70 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var get_ug = Nutanix.Index.GetUserGroupV2.Invoke(new()
+        ///     var get_ug = Nutanix.GetUserGroupV2.Invoke(new()
         ///     {
         ///         ExtId = "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
         ///     });
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetUserGroupV2(ctx, &amp;nutanix.GetUserGroupV2Args{
+        /// 			ExtId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetUserGroupV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var get-ug = NutanixFunctions.getUserGroupV2(GetUserGroupV2Args.builder()
+        ///             .extId("a2a8650a-358a-4791-90c9-7a8b6e2989d6")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   get-ug:
+        ///     fn::invoke:
+        ///       function: nutanix:getUserGroupV2
+        ///       arguments:
+        ///         extId: a2a8650a-358a-4791-90c9-7a8b6e2989d6
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetUserGroupV2Result> Invoke(GetUserGroupV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserGroupV2Result>("nutanix:index/getUserGroupV2:getUserGroupV2", args ?? new GetUserGroupV2InvokeArgs(), options.WithDefaults());

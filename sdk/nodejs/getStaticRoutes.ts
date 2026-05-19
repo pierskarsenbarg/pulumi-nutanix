@@ -42,15 +42,15 @@ export interface GetStaticRoutesResult {
      */
     readonly id: string;
     /**
-     * The vpcRouteTable kind metadata
+     * The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata
      */
     readonly metadata: {[key: string]: string};
     /**
-     * An intentful representation of a vpcRouteTable spec
+     * An intentful representation of a<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>spec
      */
     readonly specs: outputs.GetStaticRoutesSpec[];
     /**
-     * An intentful representation of a vpcRouteTable status
+     * An intentful representation of a<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>status
      */
     readonly statuses: outputs.GetStaticRoutesStatus[];
     readonly vpcName?: string;
@@ -72,9 +72,9 @@ export function getStaticRoutesOutput(args?: GetStaticRoutesOutputArgs, opts?: p
  * A collection of arguments for invoking getStaticRoutes.
  */
 export interface GetStaticRoutesOutputArgs {
-    vpcName?: pulumi.Input<string>;
+    vpcName?: pulumi.Input<string | undefined>;
     /**
      * vpc UUID
      */
-    vpcReferenceUuid?: pulumi.Input<string>;
+    vpcReferenceUuid?: pulumi.Input<string | undefined>;
 }

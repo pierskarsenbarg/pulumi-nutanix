@@ -466,12 +466,14 @@ def get_foundation_central_imaged_node_details(imaged_node_uuid: Optional[_built
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     nodes_details = nutanix.get_foundation_central_imaged_node_details(imaged_node_uuid="<IMAGED-NODE-UUID>")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str imaged_node_uuid: UUID of the node whose details need to be fetched.
@@ -521,21 +523,23 @@ def get_foundation_central_imaged_node_details(imaged_node_uuid: Optional[_built
         node_state=pulumi.get(__ret__, 'node_state'),
         node_type=pulumi.get(__ret__, 'node_type'),
         object_version=pulumi.get(__ret__, 'object_version'))
-def get_foundation_central_imaged_node_details_output(imaged_node_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      ipv6_interface: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      object_version: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_foundation_central_imaged_node_details_output(imaged_node_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      ipv6_interface: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      object_version: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFoundationCentralImagedNodeDetailsResult]:
     """
     Get the details of a single node given its UUID.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     nodes_details = nutanix.get_foundation_central_imaged_node_details(imaged_node_uuid="<IMAGED-NODE-UUID>")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str imaged_node_uuid: UUID of the node whose details need to be fetched.

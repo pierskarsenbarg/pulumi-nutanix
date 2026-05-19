@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -19,6 +20,7 @@ import * as utilities from "./utilities";
  *     extId: "0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAddressGroupV2(args: GetAddressGroupV2Args, opts?: pulumi.InvokeOptions): Promise<GetAddressGroupV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -89,6 +91,7 @@ export interface GetAddressGroupV2Result {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -97,6 +100,7 @@ export interface GetAddressGroupV2Result {
  *     extId: "0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAddressGroupV2Output(args: GetAddressGroupV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAddressGroupV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -117,5 +121,5 @@ export interface GetAddressGroupV2OutputArgs {
     /**
      * List of CIDR blocks in the Address Group.
      */
-    ipv4Addresses?: pulumi.Input<pulumi.Input<inputs.GetAddressGroupV2Ipv4AddressArgs>[]>;
+    ipv4Addresses?: pulumi.Input<pulumi.Input<inputs.GetAddressGroupV2Ipv4AddressArgs>[] | undefined>;
 }

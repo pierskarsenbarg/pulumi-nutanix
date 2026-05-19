@@ -17,6 +17,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const example = nutanix.getPcBackupTargetV2({
+        ///     domainManagerExtId: "75dde184-3a0e-4f59-a185-03ca1efead17",
+        ///     extId: "00062d3d-5d07-0da6-0000-000000028f57",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// example = nutanix.get_pc_backup_target_v2(domain_manager_ext_id="75dde184-3a0e-4f59-a185-03ca1efead17",
+        ///     ext_id="00062d3d-5d07-0da6-0000-000000028f57")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +42,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.Index.GetPcBackupTargetV2.Invoke(new()
+        ///     var example = Nutanix.GetPcBackupTargetV2.Invoke(new()
         ///     {
         ///         DomainManagerExtId = "75dde184-3a0e-4f59-a185-03ca1efead17",
         ///         ExtId = "00062d3d-5d07-0da6-0000-000000028f57",
@@ -33,6 +50,66 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetPcBackupTargetV2(ctx, &amp;nutanix.LookupPcBackupTargetV2Args{
+        /// 			DomainManagerExtId: "75dde184-3a0e-4f59-a185-03ca1efead17",
+        /// 			ExtId:              "00062d3d-5d07-0da6-0000-000000028f57",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPcBackupTargetV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var example = NutanixFunctions.getPcBackupTargetV2(GetPcBackupTargetV2Args.builder()
+        ///             .domainManagerExtId("75dde184-3a0e-4f59-a185-03ca1efead17")
+        ///             .extId("00062d3d-5d07-0da6-0000-000000028f57")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getPcBackupTargetV2
+        ///       arguments:
+        ///         domainManagerExtId: 75dde184-3a0e-4f59-a185-03ca1efead17
+        ///         extId: 00062d3d-5d07-0da6-0000-000000028f57
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPcBackupTargetV2Result> InvokeAsync(GetPcBackupTargetV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPcBackupTargetV2Result>("nutanix:index/getPcBackupTargetV2:getPcBackupTargetV2", args ?? new GetPcBackupTargetV2Args(), options.WithDefaults());
@@ -42,6 +119,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const example = nutanix.getPcBackupTargetV2({
+        ///     domainManagerExtId: "75dde184-3a0e-4f59-a185-03ca1efead17",
+        ///     extId: "00062d3d-5d07-0da6-0000-000000028f57",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// example = nutanix.get_pc_backup_target_v2(domain_manager_ext_id="75dde184-3a0e-4f59-a185-03ca1efead17",
+        ///     ext_id="00062d3d-5d07-0da6-0000-000000028f57")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -50,7 +144,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.Index.GetPcBackupTargetV2.Invoke(new()
+        ///     var example = Nutanix.GetPcBackupTargetV2.Invoke(new()
         ///     {
         ///         DomainManagerExtId = "75dde184-3a0e-4f59-a185-03ca1efead17",
         ///         ExtId = "00062d3d-5d07-0da6-0000-000000028f57",
@@ -58,6 +152,66 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetPcBackupTargetV2(ctx, &amp;nutanix.LookupPcBackupTargetV2Args{
+        /// 			DomainManagerExtId: "75dde184-3a0e-4f59-a185-03ca1efead17",
+        /// 			ExtId:              "00062d3d-5d07-0da6-0000-000000028f57",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPcBackupTargetV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var example = NutanixFunctions.getPcBackupTargetV2(GetPcBackupTargetV2Args.builder()
+        ///             .domainManagerExtId("75dde184-3a0e-4f59-a185-03ca1efead17")
+        ///             .extId("00062d3d-5d07-0da6-0000-000000028f57")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getPcBackupTargetV2
+        ///       arguments:
+        ///         domainManagerExtId: 75dde184-3a0e-4f59-a185-03ca1efead17
+        ///         extId: 00062d3d-5d07-0da6-0000-000000028f57
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPcBackupTargetV2Result> Invoke(GetPcBackupTargetV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPcBackupTargetV2Result>("nutanix:index/getPcBackupTargetV2:getPcBackupTargetV2", args ?? new GetPcBackupTargetV2InvokeArgs(), options.WithDefaults());
@@ -67,6 +221,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const example = nutanix.getPcBackupTargetV2({
+        ///     domainManagerExtId: "75dde184-3a0e-4f59-a185-03ca1efead17",
+        ///     extId: "00062d3d-5d07-0da6-0000-000000028f57",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// example = nutanix.get_pc_backup_target_v2(domain_manager_ext_id="75dde184-3a0e-4f59-a185-03ca1efead17",
+        ///     ext_id="00062d3d-5d07-0da6-0000-000000028f57")
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -75,7 +246,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.Index.GetPcBackupTargetV2.Invoke(new()
+        ///     var example = Nutanix.GetPcBackupTargetV2.Invoke(new()
         ///     {
         ///         DomainManagerExtId = "75dde184-3a0e-4f59-a185-03ca1efead17",
         ///         ExtId = "00062d3d-5d07-0da6-0000-000000028f57",
@@ -83,6 +254,66 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetPcBackupTargetV2(ctx, &amp;nutanix.LookupPcBackupTargetV2Args{
+        /// 			DomainManagerExtId: "75dde184-3a0e-4f59-a185-03ca1efead17",
+        /// 			ExtId:              "00062d3d-5d07-0da6-0000-000000028f57",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetPcBackupTargetV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var example = NutanixFunctions.getPcBackupTargetV2(GetPcBackupTargetV2Args.builder()
+        ///             .domainManagerExtId("75dde184-3a0e-4f59-a185-03ca1efead17")
+        ///             .extId("00062d3d-5d07-0da6-0000-000000028f57")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   example:
+        ///     fn::invoke:
+        ///       function: nutanix:getPcBackupTargetV2
+        ///       arguments:
+        ///         domainManagerExtId: 75dde184-3a0e-4f59-a185-03ca1efead17
+        ///         extId: 00062d3d-5d07-0da6-0000-000000028f57
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPcBackupTargetV2Result> Invoke(GetPcBackupTargetV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetPcBackupTargetV2Result>("nutanix:index/getPcBackupTargetV2:getPcBackupTargetV2", args ?? new GetPcBackupTargetV2InvokeArgs(), options.WithDefaults());

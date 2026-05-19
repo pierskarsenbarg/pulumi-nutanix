@@ -16,6 +16,7 @@ namespace PiersKarsenbarg.Nutanix
     /// ## Example Usage
     /// 
     /// ### resource to create weekly maintenance window
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -24,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var acctest_managed = new Nutanix.Index.NdbMaintenanceWindow("acctest-managed", new()
+    ///     var acctest_managed = new Nutanix.NdbMaintenanceWindow("acctest-managed", new()
     ///     {
     ///         Name = "test-maintenance",
     ///         Description = "desc",
@@ -36,8 +37,10 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ### resource to create monthly maintenance window
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -46,7 +49,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var acctest_managed = new Nutanix.Index.NdbMaintenanceWindow("acctest-managed", new()
+    ///     var acctest_managed = new Nutanix.NdbMaintenanceWindow("acctest-managed", new()
     ///     {
     ///         Name = "test-maintenance",
     ///         Description = "description",
@@ -59,6 +62,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbMaintenanceWindow:NdbMaintenanceWindow")]
     public partial class NdbMaintenanceWindow : global::Pulumi.CustomResource

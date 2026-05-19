@@ -11,6 +11,7 @@ import * as utilities from "./utilities";
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -21,6 +22,7 @@ import * as utilities from "./utilities";
  *     xClusterId: "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLcmConfigV2(args?: GetLcmConfigV2Args, opts?: pulumi.InvokeOptions): Promise<GetLcmConfigV2Result> {
     args = args || {};
@@ -45,7 +47,7 @@ export interface GetLcmConfigV2Args {
  */
 export interface GetLcmConfigV2Result {
     /**
-     * The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when autoInventoryEnabled is set to True. The default schedule time is 03:00(AM).
+     * The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
      */
     readonly autoInventorySchedule: string;
     /**
@@ -114,6 +116,7 @@ export interface GetLcmConfigV2Result {
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -124,6 +127,7 @@ export interface GetLcmConfigV2Result {
  *     xClusterId: "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getLcmConfigV2Output(args?: GetLcmConfigV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetLcmConfigV2Result> {
     args = args || {};
@@ -140,5 +144,5 @@ export interface GetLcmConfigV2OutputArgs {
     /**
      * Cluster uuid on which the resource is present or operation is being performed.
      */
-    xClusterId?: pulumi.Input<string>;
+    xClusterId?: pulumi.Input<string | undefined>;
 }

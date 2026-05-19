@@ -90,10 +90,10 @@ class PcRestoreV2Args:
 @pulumi.input_type
 class _PcRestoreV2State:
     def __init__(__self__, *,
-                 domain_manager: Optional[pulumi.Input['PcRestoreV2DomainManagerArgs']] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 restorable_domain_manager_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 restore_source_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 domain_manager: pulumi.Input[Optional['PcRestoreV2DomainManagerArgs']] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 restorable_domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 restore_source_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PcRestoreV2 resources.
 
@@ -113,50 +113,50 @@ class _PcRestoreV2State:
 
     @_builtins.property
     @pulumi.getter(name="domainManager")
-    def domain_manager(self) -> Optional[pulumi.Input['PcRestoreV2DomainManagerArgs']]:
+    def domain_manager(self) -> pulumi.Input[Optional['PcRestoreV2DomainManagerArgs']]:
         """
         -(Required) Domain manager (Prism Central) details.
         """
         return pulumi.get(self, "domain_manager")
 
     @domain_manager.setter
-    def domain_manager(self, value: Optional[pulumi.Input['PcRestoreV2DomainManagerArgs']]):
+    def domain_manager(self, value: pulumi.Input[Optional['PcRestoreV2DomainManagerArgs']]):
         pulumi.set(self, "domain_manager", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Restore point ID for the backup created in cluster/object store.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="restorableDomainManagerExtId")
-    def restorable_domain_manager_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restorable_domain_manager_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) A unique identifier for the domain manager.
         """
         return pulumi.get(self, "restorable_domain_manager_ext_id")
 
     @restorable_domain_manager_ext_id.setter
-    def restorable_domain_manager_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restorable_domain_manager_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restorable_domain_manager_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="restoreSourceExtId")
-    def restore_source_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restore_source_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) A unique identifier obtained from the restore source API that corresponds to the details provided for the restore source.
         """
         return pulumi.get(self, "restore_source_ext_id")
 
     @restore_source_ext_id.setter
-    def restore_source_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restore_source_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restore_source_ext_id", value)
 
 
@@ -166,10 +166,10 @@ class PcRestoreV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 domain_manager: Optional[pulumi.Input[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict']]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 restorable_domain_manager_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 restore_source_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 domain_manager: pulumi.Input[Optional[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict']]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 restorable_domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 restore_source_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         > - The Pc Restore V2 resource is an action-only resource that supports creating actions. The update and delete operations have no effect. To run it again, destroy and reapply the resource.
@@ -178,6 +178,9 @@ class PcRestoreV2(pulumi.CustomResource):
         The restore domain manager is a task-driven operation to restore a domain manager from a cluster or object store backup location based on the selected restore point.
 
         ## Example Usage
+
+        <!--Start PulumiCodeChooser -->
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -201,6 +204,9 @@ class PcRestoreV2(pulumi.CustomResource):
 
         ## Example Usage
 
+        <!--Start PulumiCodeChooser -->
+        <!--End PulumiCodeChooser -->
+
 
         :param str resource_name: The name of the resource.
         :param PcRestoreV2Args args: The arguments to use to populate this resource's properties.
@@ -217,10 +223,10 @@ class PcRestoreV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 domain_manager: Optional[pulumi.Input[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict']]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 restorable_domain_manager_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 restore_source_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 domain_manager: pulumi.Input[Optional[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict']]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 restorable_domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 restore_source_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -252,10 +258,10 @@ class PcRestoreV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            domain_manager: Optional[pulumi.Input[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict']]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            restorable_domain_manager_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            restore_source_ext_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'PcRestoreV2':
+            domain_manager: pulumi.Input[Optional[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict']]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            restorable_domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            restore_source_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PcRestoreV2':
         """
         Get an existing PcRestoreV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

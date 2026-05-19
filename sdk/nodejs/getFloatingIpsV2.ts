@@ -7,10 +7,11 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Provides a datasource to retrieve floating IP with floatingIpUuid .
+ * Provides a datasource to retrieve floating IP with<span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid "> floatingIpUuid </span>.
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -27,6 +28,7 @@ import * as utilities from "./utilities";
  *     limit: 10,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFloatingIpsV2(args?: GetFloatingIpsV2Args, opts?: pulumi.InvokeOptions): Promise<GetFloatingIpsV2Result> {
     args = args || {};
@@ -96,10 +98,11 @@ export interface GetFloatingIpsV2Result {
     readonly page?: number;
 }
 /**
- * Provides a datasource to retrieve floating IP with floatingIpUuid .
+ * Provides a datasource to retrieve floating IP with<span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid "> floatingIpUuid </span>.
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -116,6 +119,7 @@ export interface GetFloatingIpsV2Result {
  *     limit: 10,
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getFloatingIpsV2Output(args?: GetFloatingIpsV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFloatingIpsV2Result> {
     args = args || {};
@@ -139,7 +143,7 @@ export interface GetFloatingIpsV2OutputArgs {
      * - vpc
      * - vmNic
      */
-    expand?: pulumi.Input<string>;
+    expand?: pulumi.Input<string | undefined>;
     /**
      * A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
      * - externalSubnetReference
@@ -148,20 +152,20 @@ export interface GetFloatingIpsV2OutputArgs {
      * - loadBalancerSessionReference
      * - name
      */
-    filter?: pulumi.Input<string>;
+    filter?: pulumi.Input<string | undefined>;
     /**
      * A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
      */
-    limit?: pulumi.Input<number>;
+    limit?: pulumi.Input<number | undefined>;
     /**
      * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
      * - floatingIp/ipv4/value
      * - floatingIp/ipv6/value
      * - name
      */
-    orderBy?: pulumi.Input<string>;
+    orderBy?: pulumi.Input<string | undefined>;
     /**
      * A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
      */
-    page?: pulumi.Input<number>;
+    page?: pulumi.Input<number | undefined>;
 }

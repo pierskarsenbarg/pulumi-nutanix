@@ -9,6 +9,7 @@ import * as utilities from "./utilities";
  *
  * ## Example
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
@@ -16,6 +17,7 @@ import * as utilities from "./utilities";
  * // perform inventory
  * const inventory = new nutanix.LcmPerformInventoryV2("inventory", {xClusterId: "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b"});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export class LcmPerformInventoryV2 extends pulumi.CustomResource {
     /**
@@ -84,7 +86,7 @@ export interface LcmPerformInventoryV2State {
      *
      * See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
      */
-    xClusterId?: pulumi.Input<string>;
+    xClusterId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -96,5 +98,5 @@ export interface LcmPerformInventoryV2Args {
      *
      * See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
      */
-    xClusterId?: pulumi.Input<string>;
+    xClusterId?: pulumi.Input<string | undefined>;
 }

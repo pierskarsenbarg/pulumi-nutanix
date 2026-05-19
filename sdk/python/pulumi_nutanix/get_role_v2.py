@@ -237,12 +237,14 @@ def get_role_v2(ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     role = nutanix.get_role_v2(ext_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: - (Required) ExtId for the Role.
@@ -269,19 +271,21 @@ def get_role_v2(ext_id: Optional[_builtins.str] = None,
         links=pulumi.get(__ret__, 'links'),
         operations=pulumi.get(__ret__, 'operations'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_role_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_role_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRoleV2Result]:
     """
     Fetches a role based on the provided external identifier.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     role = nutanix.get_role_v2(ext_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str ext_id: - (Required) ExtId for the Role.

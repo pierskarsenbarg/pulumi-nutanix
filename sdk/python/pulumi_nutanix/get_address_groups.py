@@ -82,12 +82,14 @@ def get_address_groups(metadatas: Optional[Sequence[Union['GetAddressGroupsMetad
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     addr_groups = nutanix.get_address_groups()
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetAddressGroupsMetadataArgs', 'GetAddressGroupsMetadataArgsDict']] metadatas: - (Optional) Use metadata to specify filters
@@ -101,19 +103,21 @@ def get_address_groups(metadatas: Optional[Sequence[Union['GetAddressGroupsMetad
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-def get_address_groups_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetAddressGroupsMetadataArgs', 'GetAddressGroupsMetadataArgsDict']]]]] = None,
+def get_address_groups_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetAddressGroupsMetadataArgs', 'GetAddressGroupsMetadataArgsDict']]]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAddressGroupsResult]:
     """
     Provides a datasource to retrieve list of address groups.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
 
     addr_groups = nutanix.get_address_groups()
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[Union['GetAddressGroupsMetadataArgs', 'GetAddressGroupsMetadataArgsDict']] metadatas: - (Optional) Use metadata to specify filters

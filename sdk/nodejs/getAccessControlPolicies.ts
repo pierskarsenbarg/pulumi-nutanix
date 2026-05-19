@@ -11,12 +11,14 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const test = nutanix.getAccessControlPolicies({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAccessControlPolicies(args?: GetAccessControlPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessControlPoliciesResult> {
     args = args || {};
@@ -62,12 +64,14 @@ export interface GetAccessControlPoliciesResult {
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const test = nutanix.getAccessControlPolicies({});
  * ```
+ * <!--End PulumiCodeChooser -->
  */
 export function getAccessControlPoliciesOutput(args?: GetAccessControlPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAccessControlPoliciesResult> {
     args = args || {};
@@ -84,5 +88,5 @@ export interface GetAccessControlPoliciesOutputArgs {
     /**
      * - The Access Control Policy kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetAccessControlPoliciesMetadataArgs>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetAccessControlPoliciesMetadataArgs>[] | undefined>;
 }

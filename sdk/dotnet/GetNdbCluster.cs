@@ -17,6 +17,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const c1 = nutanix.getNdbCluster({
+        ///     clusterName: "&lt;era-cluster-name&gt;",
+        /// });
+        /// export const cluster = c1;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// c1 = nutanix.get_ndb_cluster(cluster_name="&lt;era-cluster-name&gt;")
+        /// pulumi.export("cluster", c1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +42,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var c1 = Nutanix.Index.GetNdbCluster.Invoke(new()
+        ///     var c1 = Nutanix.GetNdbCluster.Invoke(new()
         ///     {
         ///         ClusterName = "&lt;era-cluster-name&gt;",
         ///     });
@@ -36,6 +53,67 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		c1, err := nutanix.GetNdbCluster(ctx, &amp;nutanix.LookupNdbClusterArgs{
+        /// 			ClusterName: pulumi.StringRef("&lt;era-cluster-name&gt;"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("cluster", c1)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbClusterArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var c1 = NutanixFunctions.getNdbCluster(GetNdbClusterArgs.builder()
+        ///             .clusterName("&lt;era-cluster-name&gt;")
+        ///             .build());
+        /// 
+        ///         ctx.export("cluster", c1);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   c1:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbCluster
+        ///       arguments:
+        ///         clusterName: &lt;era-cluster-name&gt;
+        /// outputs:
+        ///   cluster: ${c1}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNdbClusterResult> InvokeAsync(GetNdbClusterArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNdbClusterResult>("nutanix:index/getNdbCluster:getNdbCluster", args ?? new GetNdbClusterArgs(), options.WithDefaults());
@@ -45,6 +123,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const c1 = nutanix.getNdbCluster({
+        ///     clusterName: "&lt;era-cluster-name&gt;",
+        /// });
+        /// export const cluster = c1;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// c1 = nutanix.get_ndb_cluster(cluster_name="&lt;era-cluster-name&gt;")
+        /// pulumi.export("cluster", c1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -53,7 +148,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var c1 = Nutanix.Index.GetNdbCluster.Invoke(new()
+        ///     var c1 = Nutanix.GetNdbCluster.Invoke(new()
         ///     {
         ///         ClusterName = "&lt;era-cluster-name&gt;",
         ///     });
@@ -64,6 +159,67 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		c1, err := nutanix.GetNdbCluster(ctx, &amp;nutanix.LookupNdbClusterArgs{
+        /// 			ClusterName: pulumi.StringRef("&lt;era-cluster-name&gt;"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("cluster", c1)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbClusterArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var c1 = NutanixFunctions.getNdbCluster(GetNdbClusterArgs.builder()
+        ///             .clusterName("&lt;era-cluster-name&gt;")
+        ///             .build());
+        /// 
+        ///         ctx.export("cluster", c1);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   c1:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbCluster
+        ///       arguments:
+        ///         clusterName: &lt;era-cluster-name&gt;
+        /// outputs:
+        ///   cluster: ${c1}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNdbClusterResult> Invoke(GetNdbClusterInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbClusterResult>("nutanix:index/getNdbCluster:getNdbCluster", args ?? new GetNdbClusterInvokeArgs(), options.WithDefaults());
@@ -73,6 +229,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const c1 = nutanix.getNdbCluster({
+        ///     clusterName: "&lt;era-cluster-name&gt;",
+        /// });
+        /// export const cluster = c1;
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// c1 = nutanix.get_ndb_cluster(cluster_name="&lt;era-cluster-name&gt;")
+        /// pulumi.export("cluster", c1)
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -81,7 +254,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var c1 = Nutanix.Index.GetNdbCluster.Invoke(new()
+        ///     var c1 = Nutanix.GetNdbCluster.Invoke(new()
         ///     {
         ///         ClusterName = "&lt;era-cluster-name&gt;",
         ///     });
@@ -92,6 +265,67 @@ namespace PiersKarsenbarg.Nutanix
         ///     };
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		c1, err := nutanix.GetNdbCluster(ctx, &amp;nutanix.LookupNdbClusterArgs{
+        /// 			ClusterName: pulumi.StringRef("&lt;era-cluster-name&gt;"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		ctx.Export("cluster", c1)
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbClusterArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var c1 = NutanixFunctions.getNdbCluster(GetNdbClusterArgs.builder()
+        ///             .clusterName("&lt;era-cluster-name&gt;")
+        ///             .build());
+        /// 
+        ///         ctx.export("cluster", c1);
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   c1:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbCluster
+        ///       arguments:
+        ///         clusterName: &lt;era-cluster-name&gt;
+        /// outputs:
+        ///   cluster: ${c1}
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNdbClusterResult> Invoke(GetNdbClusterInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbClusterResult>("nutanix:index/getNdbCluster:getNdbCluster", args ?? new GetNdbClusterInvokeArgs(), options.WithDefaults());
@@ -107,7 +341,7 @@ namespace PiersKarsenbarg.Nutanix
         public string? ClusterId { get; set; }
 
         /// <summary>
-        /// and `ClusterId` are mutually exclusive.
+        /// and &lt;span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`"&gt;`clusterId`&lt;/span&gt; are mutually exclusive.
         /// </summary>
         [Input("clusterName")]
         public string? ClusterName { get; set; }
@@ -127,7 +361,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? ClusterId { get; set; }
 
         /// <summary>
-        /// and `ClusterId` are mutually exclusive.
+        /// and &lt;span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`"&gt;`clusterId`&lt;/span&gt; are mutually exclusive.
         /// </summary>
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }

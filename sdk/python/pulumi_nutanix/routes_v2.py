@@ -23,14 +23,14 @@ class RoutesV2Args:
     def __init__(__self__, *,
                  route_table_ext_id: pulumi.Input[_builtins.str],
                  route_type: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination: Optional[pulumi.Input['RoutesV2DestinationArgs']] = None,
-                 external_routing_domain_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input['RoutesV2MetadataArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_hop: Optional[pulumi.Input['RoutesV2NextHopArgs']] = None,
-                 route_table_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_reference: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination: pulumi.Input[Optional['RoutesV2DestinationArgs']] = None,
+                 external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional['RoutesV2MetadataArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_hop: pulumi.Input[Optional['RoutesV2NextHopArgs']] = None,
+                 route_table_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_reference: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a RoutesV2 resource.
 
@@ -90,119 +90,119 @@ class RoutesV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         BGP session description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def destination(self) -> Optional[pulumi.Input['RoutesV2DestinationArgs']]:
+    def destination(self) -> pulumi.Input[Optional['RoutesV2DestinationArgs']]:
         """
         Destination IP Subnet Configuration.
         """
         return pulumi.get(self, "destination")
 
     @destination.setter
-    def destination(self, value: Optional[pulumi.Input['RoutesV2DestinationArgs']]):
+    def destination(self, value: pulumi.Input[Optional['RoutesV2DestinationArgs']]):
         pulumi.set(self, "destination", value)
 
     @_builtins.property
     @pulumi.getter(name="externalRoutingDomainReference")
-    def external_routing_domain_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_routing_domain_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         External routing domain associated with this route table.
         """
         return pulumi.get(self, "external_routing_domain_reference")
 
     @external_routing_domain_reference.setter
-    def external_routing_domain_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_routing_domain_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_routing_domain_reference", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['RoutesV2MetadataArgs']]:
+    def metadata(self) -> pulumi.Input[Optional['RoutesV2MetadataArgs']]:
         """
         Metadata associated with this resource.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['RoutesV2MetadataArgs']]):
+    def metadata(self, value: pulumi.Input[Optional['RoutesV2MetadataArgs']]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Route name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nextHop")
-    def next_hop(self) -> Optional[pulumi.Input['RoutesV2NextHopArgs']]:
+    def next_hop(self) -> pulumi.Input[Optional['RoutesV2NextHopArgs']]:
         """
         Route nexthop.
         """
         return pulumi.get(self, "next_hop")
 
     @next_hop.setter
-    def next_hop(self, value: Optional[pulumi.Input['RoutesV2NextHopArgs']]):
+    def next_hop(self, value: pulumi.Input[Optional['RoutesV2NextHopArgs']]):
         pulumi.set(self, "next_hop", value)
 
     @_builtins.property
     @pulumi.getter(name="routeTableReference")
-    def route_table_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_table_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Route table reference.
         """
         return pulumi.get(self, "route_table_reference")
 
     @route_table_reference.setter
-    def route_table_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_table_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_table_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcReference")
-    def vpc_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPC reference.
         """
         return pulumi.get(self, "vpc_reference")
 
     @vpc_reference.setter
-    def vpc_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_reference", value)
 
 
 @pulumi.input_type
 class _RoutesV2State:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination: Optional[pulumi.Input['RoutesV2DestinationArgs']] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_routing_domain_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 links: Optional[pulumi.Input[Sequence[pulumi.Input['RoutesV2LinkArgs']]]] = None,
-                 metadata: Optional[pulumi.Input['RoutesV2MetadataArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_hop: Optional[pulumi.Input['RoutesV2NextHopArgs']] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 route_table_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_table_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_reference: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination: pulumi.Input[Optional['RoutesV2DestinationArgs']] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['RoutesV2LinkArgs']]]] = None,
+                 metadata: pulumi.Input[Optional['RoutesV2MetadataArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_hop: pulumi.Input[Optional['RoutesV2NextHopArgs']] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 route_table_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_table_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_reference: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RoutesV2 resources.
 
@@ -255,182 +255,182 @@ class _RoutesV2State:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         BGP session description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def destination(self) -> Optional[pulumi.Input['RoutesV2DestinationArgs']]:
+    def destination(self) -> pulumi.Input[Optional['RoutesV2DestinationArgs']]:
         """
         Destination IP Subnet Configuration.
         """
         return pulumi.get(self, "destination")
 
     @destination.setter
-    def destination(self, value: Optional[pulumi.Input['RoutesV2DestinationArgs']]):
+    def destination(self, value: pulumi.Input[Optional['RoutesV2DestinationArgs']]):
         pulumi.set(self, "destination", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Route UUID
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="externalRoutingDomainReference")
-    def external_routing_domain_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_routing_domain_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         External routing domain associated with this route table.
         """
         return pulumi.get(self, "external_routing_domain_reference")
 
     @external_routing_domain_reference.setter
-    def external_routing_domain_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_routing_domain_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_routing_domain_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="isActive")
-    def is_active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the route is active in the forwarding plane.
         """
         return pulumi.get(self, "is_active")
 
     @is_active.setter
-    def is_active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_active", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RoutesV2LinkArgs']]]]:
+    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RoutesV2LinkArgs']]]]:
         """
         A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         """
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RoutesV2LinkArgs']]]]):
+    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RoutesV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['RoutesV2MetadataArgs']]:
+    def metadata(self) -> pulumi.Input[Optional['RoutesV2MetadataArgs']]:
         """
         Metadata associated with this resource.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['RoutesV2MetadataArgs']]):
+    def metadata(self, value: pulumi.Input[Optional['RoutesV2MetadataArgs']]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Route name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nextHop")
-    def next_hop(self) -> Optional[pulumi.Input['RoutesV2NextHopArgs']]:
+    def next_hop(self) -> pulumi.Input[Optional['RoutesV2NextHopArgs']]:
         """
         Route nexthop.
         """
         return pulumi.get(self, "next_hop")
 
     @next_hop.setter
-    def next_hop(self, value: Optional[pulumi.Input['RoutesV2NextHopArgs']]):
+    def next_hop(self, value: pulumi.Input[Optional['RoutesV2NextHopArgs']]):
         pulumi.set(self, "next_hop", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Route priority. A higher value implies greater preference is assigned to the route.
         """
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
     @_builtins.property
     @pulumi.getter(name="routeTableExtId")
-    def route_table_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_table_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Route table UUID
         """
         return pulumi.get(self, "route_table_ext_id")
 
     @route_table_ext_id.setter
-    def route_table_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_table_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_table_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="routeTableReference")
-    def route_table_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_table_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Route table reference.
         """
         return pulumi.get(self, "route_table_reference")
 
     @route_table_reference.setter
-    def route_table_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_table_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_table_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="routeType")
-    def route_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Route type. Acceptable values are "STATIC", "LOCAL", "DYNAMIC"
         """
         return pulumi.get(self, "route_type")
 
     @route_type.setter
-    def route_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_type", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A globally unique identifier that represents the tenant that owns this entity
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcReference")
-    def vpc_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VPC reference.
         """
         return pulumi.get(self, "vpc_reference")
 
     @vpc_reference.setter
-    def vpc_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_reference", value)
 
 
@@ -440,22 +440,23 @@ class RoutesV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination: Optional[pulumi.Input[Union['RoutesV2DestinationArgs', 'RoutesV2DestinationArgsDict']]] = None,
-                 external_routing_domain_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_hop: Optional[pulumi.Input[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict']]] = None,
-                 route_table_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_table_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_reference: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination: pulumi.Input[Optional[Union['RoutesV2DestinationArgs', 'RoutesV2DestinationArgsDict']]] = None,
+                 external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_hop: pulumi.Input[Optional[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict']]] = None,
+                 route_table_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_table_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides Nutanix resource to Create Route.
 
         ## Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -484,6 +485,7 @@ class RoutesV2(pulumi.CustomResource):
             },
             route_type="STATIC")
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -510,6 +512,7 @@ class RoutesV2(pulumi.CustomResource):
 
         ## Example
 
+        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -538,6 +541,7 @@ class RoutesV2(pulumi.CustomResource):
             },
             route_type="STATIC")
         ```
+        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -555,16 +559,16 @@ class RoutesV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination: Optional[pulumi.Input[Union['RoutesV2DestinationArgs', 'RoutesV2DestinationArgsDict']]] = None,
-                 external_routing_domain_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_hop: Optional[pulumi.Input[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict']]] = None,
-                 route_table_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_table_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 route_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_reference: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination: pulumi.Input[Optional[Union['RoutesV2DestinationArgs', 'RoutesV2DestinationArgsDict']]] = None,
+                 external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_hop: pulumi.Input[Optional[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict']]] = None,
+                 route_table_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_table_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 route_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -603,21 +607,21 @@ class RoutesV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            destination: Optional[pulumi.Input[Union['RoutesV2DestinationArgs', 'RoutesV2DestinationArgsDict']]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            external_routing_domain_reference: Optional[pulumi.Input[_builtins.str]] = None,
-            is_active: Optional[pulumi.Input[_builtins.bool]] = None,
-            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RoutesV2LinkArgs', 'RoutesV2LinkArgsDict']]]]] = None,
-            metadata: Optional[pulumi.Input[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict']]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            next_hop: Optional[pulumi.Input[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict']]] = None,
-            priority: Optional[pulumi.Input[_builtins.int]] = None,
-            route_table_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            route_table_reference: Optional[pulumi.Input[_builtins.str]] = None,
-            route_type: Optional[pulumi.Input[_builtins.str]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vpc_reference: Optional[pulumi.Input[_builtins.str]] = None) -> 'RoutesV2':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            destination: pulumi.Input[Optional[Union['RoutesV2DestinationArgs', 'RoutesV2DestinationArgsDict']]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            is_active: pulumi.Input[Optional[_builtins.bool]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoutesV2LinkArgs', 'RoutesV2LinkArgsDict']]]]] = None,
+            metadata: pulumi.Input[Optional[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            next_hop: pulumi.Input[Optional[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict']]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None,
+            route_table_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            route_table_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            route_type: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc_reference: pulumi.Input[Optional[_builtins.str]] = None) -> 'RoutesV2':
         """
         Get an existing RoutesV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

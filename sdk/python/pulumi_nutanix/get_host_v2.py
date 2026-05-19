@@ -517,6 +517,7 @@ def get_host_v2(cluster_ext_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -524,6 +525,7 @@ def get_host_v2(cluster_ext_id: Optional[_builtins.str] = None,
     host = nutanix.get_host_v2(cluster_ext_id="021151dc-3ed1-4fec-a81d-39606451750c",
         ext_id="919c9488-0b50-4fc8-9159-923e56a3abca")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str cluster_ext_id: - (Required) cluster uuid
@@ -575,14 +577,15 @@ def get_host_v2(cluster_ext_id: Optional[_builtins.str] = None,
         number_of_cpu_threads=pulumi.get(__ret__, 'number_of_cpu_threads'),
         rackable_unit_uuid=pulumi.get(__ret__, 'rackable_unit_uuid'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_host_v2_output(cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_host_v2_output(cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHostV2Result]:
     """
     Describes the statistics data of the host identified by {hostExtId} belonging to the cluster identified by {clusterExtId}.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -590,6 +593,7 @@ def get_host_v2_output(cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = N
     host = nutanix.get_host_v2(cluster_ext_id="021151dc-3ed1-4fec-a81d-39606451750c",
         ext_id="919c9488-0b50-4fc8-9159-923e56a3abca")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str cluster_ext_id: - (Required) cluster uuid

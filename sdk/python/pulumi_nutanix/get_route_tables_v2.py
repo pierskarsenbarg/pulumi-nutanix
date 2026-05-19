@@ -108,6 +108,7 @@ def get_route_tables_v2(filter: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -116,6 +117,7 @@ def get_route_tables_v2(filter: Optional[_builtins.str] = None,
     route_tables_with_filter = nutanix.get_route_tables_v2(filter="vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'")
     route_tables_with_orderby = nutanix.get_route_tables_v2(order_by="vpcReference")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources.
@@ -143,16 +145,17 @@ def get_route_tables_v2(filter: Optional[_builtins.str] = None,
         order_by=pulumi.get(__ret__, 'order_by'),
         page=pulumi.get(__ret__, 'page'),
         route_tables=pulumi.get(__ret__, 'route_tables'))
-def get_route_tables_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                               order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_route_tables_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                               order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRouteTablesV2Result]:
     """
     Provides Nutanix datasource to List route tables.
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_nutanix as nutanix
@@ -161,6 +164,7 @@ def get_route_tables_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.
     route_tables_with_filter = nutanix.get_route_tables_v2(filter="vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'")
     route_tables_with_orderby = nutanix.get_route_tables_v2(order_by="vpcReference")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param _builtins.str filter: A URL query parameter that allows clients to filter a collection of resources.

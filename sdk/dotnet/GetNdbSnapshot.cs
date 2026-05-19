@@ -17,6 +17,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const snaps = nutanix.getNdbSnapshot({
+        ///     snapshotId: "{{ snapshot_id }}",
+        ///     filters: [{
+        ///         loadReplicatedChildSnapshots: "true",
+        ///     }],
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// snaps = nutanix.get_ndb_snapshot(snapshot_id="{{ snapshot_id }}",
+        ///     filters=[{
+        ///         "load_replicated_child_snapshots": "true",
+        ///     }])
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -25,7 +46,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var snaps = Nutanix.Index.GetNdbSnapshot.Invoke(new()
+        ///     var snaps = Nutanix.GetNdbSnapshot.Invoke(new()
         ///     {
         ///         SnapshotId = "{{ snapshot_id }}",
         ///         Filters = new[]
@@ -39,6 +60,73 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetNdbSnapshot(ctx, &amp;nutanix.GetNdbSnapshotArgs{
+        /// 			SnapshotId: "{{ snapshot_id }}",
+        /// 			Filters: []nutanix.GetNdbSnapshotFilter{
+        /// 				{
+        /// 					LoadReplicatedChildSnapshots: pulumi.StringRef("true"),
+        /// 				},
+        /// 			},
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbSnapshotArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var snaps = NutanixFunctions.getNdbSnapshot(GetNdbSnapshotArgs.builder()
+        ///             .snapshotId("{{ snapshot_id }}")
+        ///             .filters(GetNdbSnapshotFilterArgs.builder()
+        ///                 .loadReplicatedChildSnapshots("true")
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   snaps:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbSnapshot
+        ///       arguments:
+        ///         snapshotId: '{{ snapshot_id }}'
+        ///         filters:
+        ///           - loadReplicatedChildSnapshots: true
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNdbSnapshotResult> InvokeAsync(GetNdbSnapshotArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNdbSnapshotResult>("nutanix:index/getNdbSnapshot:getNdbSnapshot", args ?? new GetNdbSnapshotArgs(), options.WithDefaults());
@@ -48,6 +136,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const snaps = nutanix.getNdbSnapshot({
+        ///     snapshotId: "{{ snapshot_id }}",
+        ///     filters: [{
+        ///         loadReplicatedChildSnapshots: "true",
+        ///     }],
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// snaps = nutanix.get_ndb_snapshot(snapshot_id="{{ snapshot_id }}",
+        ///     filters=[{
+        ///         "load_replicated_child_snapshots": "true",
+        ///     }])
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -56,7 +165,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var snaps = Nutanix.Index.GetNdbSnapshot.Invoke(new()
+        ///     var snaps = Nutanix.GetNdbSnapshot.Invoke(new()
         ///     {
         ///         SnapshotId = "{{ snapshot_id }}",
         ///         Filters = new[]
@@ -70,6 +179,73 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetNdbSnapshot(ctx, &amp;nutanix.GetNdbSnapshotArgs{
+        /// 			SnapshotId: "{{ snapshot_id }}",
+        /// 			Filters: []nutanix.GetNdbSnapshotFilter{
+        /// 				{
+        /// 					LoadReplicatedChildSnapshots: pulumi.StringRef("true"),
+        /// 				},
+        /// 			},
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbSnapshotArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var snaps = NutanixFunctions.getNdbSnapshot(GetNdbSnapshotArgs.builder()
+        ///             .snapshotId("{{ snapshot_id }}")
+        ///             .filters(GetNdbSnapshotFilterArgs.builder()
+        ///                 .loadReplicatedChildSnapshots("true")
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   snaps:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbSnapshot
+        ///       arguments:
+        ///         snapshotId: '{{ snapshot_id }}'
+        ///         filters:
+        ///           - loadReplicatedChildSnapshots: true
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNdbSnapshotResult> Invoke(GetNdbSnapshotInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbSnapshotResult>("nutanix:index/getNdbSnapshot:getNdbSnapshot", args ?? new GetNdbSnapshotInvokeArgs(), options.WithDefaults());
@@ -79,6 +255,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const snaps = nutanix.getNdbSnapshot({
+        ///     snapshotId: "{{ snapshot_id }}",
+        ///     filters: [{
+        ///         loadReplicatedChildSnapshots: "true",
+        ///     }],
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// snaps = nutanix.get_ndb_snapshot(snapshot_id="{{ snapshot_id }}",
+        ///     filters=[{
+        ///         "load_replicated_child_snapshots": "true",
+        ///     }])
+        /// ```
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -87,7 +284,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var snaps = Nutanix.Index.GetNdbSnapshot.Invoke(new()
+        ///     var snaps = Nutanix.GetNdbSnapshot.Invoke(new()
         ///     {
         ///         SnapshotId = "{{ snapshot_id }}",
         ///         Filters = new[]
@@ -101,6 +298,73 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetNdbSnapshot(ctx, &amp;nutanix.GetNdbSnapshotArgs{
+        /// 			SnapshotId: "{{ snapshot_id }}",
+        /// 			Filters: []nutanix.GetNdbSnapshotFilter{
+        /// 				{
+        /// 					LoadReplicatedChildSnapshots: pulumi.StringRef("true"),
+        /// 				},
+        /// 			},
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetNdbSnapshotArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var snaps = NutanixFunctions.getNdbSnapshot(GetNdbSnapshotArgs.builder()
+        ///             .snapshotId("{{ snapshot_id }}")
+        ///             .filters(GetNdbSnapshotFilterArgs.builder()
+        ///                 .loadReplicatedChildSnapshots("true")
+        ///                 .build())
+        ///             .build());
+        /// 
+        ///     }
+        /// }
+        /// ```
+        /// ```yaml
+        /// variables:
+        ///   snaps:
+        ///     fn::invoke:
+        ///       function: nutanix:getNdbSnapshot
+        ///       arguments:
+        ///         snapshotId: '{{ snapshot_id }}'
+        ///         filters:
+        ///           - loadReplicatedChildSnapshots: true
+        /// ```
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNdbSnapshotResult> Invoke(GetNdbSnapshotInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbSnapshotResult>("nutanix:index/getNdbSnapshot:getNdbSnapshot", args ?? new GetNdbSnapshotInvokeArgs(), options.WithDefaults());
