@@ -95,32 +95,8 @@ namespace PiersKarsenbarg.Nutanix
     ///             {
     ///                 new Nutanix.Inputs.PcRestoreV2DomainManagerNetworkArgs
     ///                 {
-    ///                     NameServers = restorePoint.Apply(restorePoint =&gt; .Select(entry =&gt; 
-    ///                     {
-    ///                         return 
-    ///                         {
-    ///                             { "ipv4s", new[]
-    ///                             {
-    ///                                 
-    ///                                 {
-    ///                                     { "value", entry.Ipv4[0].Value },
-    ///                                 },
-    ///                             } },
-    ///                         };
-    ///                     }).ToList()),
-    ///                     NtpServers = restorePoint.Apply(restorePoint =&gt; .Select(entry2 =&gt; 
-    ///                     {
-    ///                         return 
-    ///                         {
-    ///                             { "fqdns", new[]
-    ///                             {
-    ///                                 
-    ///                                 {
-    ///                                     { "value", entry2.Fqdn[0].Value },
-    ///                                 },
-    ///                             } },
-    ///                         };
-    ///                     }).ToList()),
+    ///                     NameServers = ,
+    ///                     NtpServers = ,
     ///                     ExternalAddress = new Nutanix.Inputs.PcRestoreV2DomainManagerNetworkExternalAddressArgs
     ///                     {
     ///                         Ipv4s = new[]

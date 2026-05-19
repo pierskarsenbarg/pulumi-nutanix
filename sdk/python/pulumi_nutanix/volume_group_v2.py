@@ -638,8 +638,7 @@ class VolumeGroupV2(pulumi.CustomResource):
                 }],
             }],
             usage_type="USER",
-            is_hidden=False,
-            opts = pulumi.ResourceOptions(ignore_changes=["iscsiFeatures[0].targetSecret"]))
+            is_hidden=False)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -703,8 +702,7 @@ class VolumeGroupV2(pulumi.CustomResource):
                 }],
             }],
             usage_type="USER",
-            is_hidden=False,
-            opts = pulumi.ResourceOptions(ignore_changes=["iscsiFeatures[0].targetSecret"]))
+            is_hidden=False)
         ```
         <!--End PulumiCodeChooser -->
 
