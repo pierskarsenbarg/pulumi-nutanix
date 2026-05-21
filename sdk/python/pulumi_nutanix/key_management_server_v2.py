@@ -165,7 +165,11 @@ class KeyManagementServerV2(pulumi.CustomResource):
                     "client_secret": "7Z3uQ~vO4trhXk8B5M9qjwgT1pR2uC9yD1zF0wX3",
                     "credential_expiry_date": "2026-09-01",
                 },
-            })
+            },
+            opts = pulumi.ResourceOptions(ignore_changes=[
+                    "accessInformation.clientSecret",
+                    "accessInformation.keyId",
+                ]))
         ```
         <!--End PulumiCodeChooser -->
 
@@ -202,7 +206,11 @@ class KeyManagementServerV2(pulumi.CustomResource):
                     "client_secret": "7Z3uQ~vO4trhXk8B5M9qjwgT1pR2uC9yD1zF0wX3",
                     "credential_expiry_date": "2026-09-01",
                 },
-            })
+            },
+            opts = pulumi.ResourceOptions(ignore_changes=[
+                    "accessInformation.clientSecret",
+                    "accessInformation.keyId",
+                ]))
         ```
         <!--End PulumiCodeChooser -->
 

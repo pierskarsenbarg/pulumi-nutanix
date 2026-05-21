@@ -198,7 +198,8 @@ class PcRestoreSourceV2(pulumi.CustomResource):
                     "rpo_in_minutes": 120,
                 }],
             }],
-        })
+        },
+        opts = pulumi.ResourceOptions(ignore_changes=["location.objectStoreLocations[0].providerConfigs[0].credentials"]))
         ```
         <!--End PulumiCodeChooser -->
 
@@ -264,7 +265,8 @@ class PcRestoreSourceV2(pulumi.CustomResource):
                     "rpo_in_minutes": 120,
                 }],
             }],
-        })
+        },
+        opts = pulumi.ResourceOptions(ignore_changes=["location.objectStoreLocations[0].providerConfigs[0].credentials"]))
         ```
         <!--End PulumiCodeChooser -->
 

@@ -56,6 +56,8 @@ import * as utilities from "./utilities";
  *             }],
  *         }],
  *     },
+ * }, {
+ *     ignoreChanges: ["location.objectStoreLocations[0].providerConfigs[0].credentials"],
  * });
  * ```
  * <!--End PulumiCodeChooser -->

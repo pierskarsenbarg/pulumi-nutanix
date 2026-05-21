@@ -576,7 +576,12 @@ class ClusterV2(pulumi.CustomResource):
                 "fault_tolerance_states": [{
                     "domain_awareness_level": "NODE",
                 }],
-            }])
+            }],
+            opts = pulumi.ResourceOptions(ignore_changes=[
+                    links,
+                    "categories",
+                    "configs[0].clusterFunctions",
+                ]))
         ```
         <!--End PulumiCodeChooser -->
 
@@ -792,7 +797,12 @@ class ClusterV2(pulumi.CustomResource):
                 "fault_tolerance_states": [{
                     "domain_awareness_level": "NODE",
                 }],
-            }])
+            }],
+            opts = pulumi.ResourceOptions(ignore_changes=[
+                    links,
+                    "categories",
+                    "configs[0].clusterFunctions",
+                ]))
         ```
         <!--End PulumiCodeChooser -->
 

@@ -84,6 +84,12 @@ namespace PiersKarsenbarg.Nutanix
     ///                 },
     ///             },
     ///         },
+    ///     }, new CustomResourceOptions
+    ///     {
+    ///         IgnoreChanges =
+    ///         {
+    ///             "sources",
+    ///         },
     ///     });
     /// 
     /// });

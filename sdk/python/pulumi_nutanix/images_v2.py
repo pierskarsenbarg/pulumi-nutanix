@@ -424,7 +424,8 @@ class ImagesV2(pulumi.CustomResource):
                 "object_lite_sources": [{
                     "key": "img-lite-key-example",
                 }],
-            }])
+            }],
+            opts = pulumi.ResourceOptions(ignore_changes=["sources"]))
         ```
         <!--End PulumiCodeChooser -->
 
@@ -480,7 +481,8 @@ class ImagesV2(pulumi.CustomResource):
                 "object_lite_sources": [{
                     "key": "img-lite-key-example",
                 }],
-            }])
+            }],
+            opts = pulumi.ResourceOptions(ignore_changes=["sources"]))
         ```
         <!--End PulumiCodeChooser -->
 

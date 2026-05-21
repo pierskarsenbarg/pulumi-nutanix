@@ -57,7 +57,9 @@ import * as utilities from "./utilities";
  *             rpoInMinutes: 120,
  *         }],
  *     }],
- * }});
+ * }}, {
+ *     ignoreChanges: ["location.objectStoreLocations[0].providerConfigs[0].credentials"],
+ * });
  * ```
  * <!--End PulumiCodeChooser -->
  */

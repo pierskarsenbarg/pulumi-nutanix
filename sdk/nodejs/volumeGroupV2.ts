@@ -35,6 +35,8 @@ import * as utilities from "./utilities";
  *     }],
  *     usageType: "USER",
  *     isHidden: false,
+ * }, {
+ *     ignoreChanges: ["iscsiFeatures[0].targetSecret"],
  * });
  * ```
  * <!--End PulumiCodeChooser -->

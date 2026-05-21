@@ -77,7 +77,9 @@ import (
 //						},
 //					},
 //				},
-//			})
+//			}, pulumi.IgnoreChanges([]string{
+//				"sources",
+//			}))
 //			if err != nil {
 //				return err
 //			}

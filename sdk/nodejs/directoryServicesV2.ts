@@ -27,6 +27,8 @@ import * as utilities from "./utilities";
  *         password: "password",
  *     }],
  *     whiteListedGroups: ["example"],
+ * }, {
+ *     ignoreChanges: ["serviceAccounts[0].password"],
  * });
  * ```
  * <!--End PulumiCodeChooser -->

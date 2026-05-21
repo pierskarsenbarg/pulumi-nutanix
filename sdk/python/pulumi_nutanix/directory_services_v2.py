@@ -437,7 +437,8 @@ class DirectoryServicesV2(pulumi.CustomResource):
                 "username": "username",
                 "password": "password",
             }],
-            white_listed_groups=["example"])
+            white_listed_groups=["example"],
+            opts = pulumi.ResourceOptions(ignore_changes=["serviceAccounts[0].password"]))
         ```
         <!--End PulumiCodeChooser -->
 
@@ -481,7 +482,8 @@ class DirectoryServicesV2(pulumi.CustomResource):
                 "username": "username",
                 "password": "password",
             }],
-            white_listed_groups=["example"])
+            white_listed_groups=["example"],
+            opts = pulumi.ResourceOptions(ignore_changes=["serviceAccounts[0].password"]))
         ```
         <!--End PulumiCodeChooser -->
 
