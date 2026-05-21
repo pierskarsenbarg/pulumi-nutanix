@@ -63,7 +63,6 @@ build_python:: install_plugins tfgen # build the python sdk
 
 build_dotnet:: DOTNET_VERSION := $(shell pulumictl get version --language dotnet)
 build_dotnet:: install_plugins tfgen # build the dotnet sdk
-	pulumictl get version --language dotnet
 	pulumi package gen-sdk $(WORKING_DIR)/bin/${PROVIDER} --language dotnet --out sdk
 	cd sdk/dotnet/ && \
 		echo "${DOTNET_VERSION}" >version.txt && \
