@@ -28,11 +28,6 @@ import * as utilities from "./utilities";
  *             credentialExpiryDate: "2026-09-01",
  *         },
  *     },
- * }, {
- *     ignoreChanges: [
- *         "accessInformation.clientSecret",
- *         "accessInformation.keyId",
- *     ],
  * });
  * ```
  * <!--End PulumiCodeChooser -->

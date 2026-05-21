@@ -36,11 +36,6 @@ import * as utilities from "./utilities";
  *             isEnabled: false,
  *         }],
  *     }],
- * }, {
- *     ignoreChanges: [
- *         "diskDataSourceReferences",
- *         links,
- *     ],
  * });
  * ```
  * <!--End PulumiCodeChooser -->

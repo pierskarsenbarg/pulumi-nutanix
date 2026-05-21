@@ -44,9 +44,7 @@ import (
 //				WhiteListedGroups: pulumi.StringArray{
 //					pulumi.String("example"),
 //				},
-//			}, pulumi.IgnoreChanges([]string{
-//				"serviceAccounts[0].password",
-//			}))
+//			})
 //			if err != nil {
 //				return err
 //			}

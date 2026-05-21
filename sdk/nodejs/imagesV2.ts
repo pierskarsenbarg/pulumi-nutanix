@@ -44,8 +44,6 @@ import * as utilities from "./utilities";
  *             key: "img-lite-key-example",
  *         }],
  *     }],
- * }, {
- *     ignoreChanges: ["sources"],
  * });
  * ```
  * <!--End PulumiCodeChooser -->

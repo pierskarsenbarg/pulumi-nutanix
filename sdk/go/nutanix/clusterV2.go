@@ -212,11 +212,7 @@ import (
 //						},
 //					},
 //				},
-//			}, pulumi.IgnoreChanges([]string{
-//				links,
-//				"categories",
-//				"configs[0].clusterFunctions",
-//			}))
+//			})
 //			if err != nil {
 //				return err
 //			}

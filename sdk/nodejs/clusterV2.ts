@@ -131,12 +131,6 @@ import * as utilities from "./utilities";
  *             domainAwarenessLevel: "NODE",
  *         }],
  *     }],
- * }, {
- *     ignoreChanges: [
- *         links,
- *         "categories",
- *         "configs[0].clusterFunctions",
- *     ],
  * });
  * ```
  * <!--End PulumiCodeChooser -->

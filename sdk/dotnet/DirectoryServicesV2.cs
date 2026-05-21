@@ -43,12 +43,6 @@ namespace PiersKarsenbarg.Nutanix
     ///         {
     ///             "example",
     ///         },
-    ///     }, new CustomResourceOptions
-    ///     {
-    ///         IgnoreChanges =
-    ///         {
-    ///             "serviceAccounts[0].password",
-    ///         },
     ///     });
     /// 
     /// });

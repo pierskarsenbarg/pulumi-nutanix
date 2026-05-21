@@ -261,14 +261,6 @@ namespace PiersKarsenbarg.Nutanix
     ///                 },
     ///             },
     ///         },
-    ///     }, new CustomResourceOptions
-    ///     {
-    ///         IgnoreChanges =
-    ///         {
-    ///             "links",
-    ///             "categories",
-    ///             "configs[0].clusterFunctions",
-    ///         },
     ///     });
     /// 
     /// });

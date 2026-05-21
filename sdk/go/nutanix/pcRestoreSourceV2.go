@@ -99,9 +99,7 @@ import (
 //						},
 //					},
 //				},
-//			}, pulumi.IgnoreChanges([]string{
-//				"location.objectStoreLocations[0].providerConfigs[0].credentials",
-//			}))
+//			})
 //			if err != nil {
 //				return err
 //			}

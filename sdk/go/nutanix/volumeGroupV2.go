@@ -54,9 +54,7 @@ import (
 //				},
 //				UsageType: pulumi.String("USER"),
 //				IsHidden:  pulumi.Bool(false),
-//			}, pulumi.IgnoreChanges([]string{
-//				"iscsiFeatures[0].targetSecret",
-//			}))
+//			})
 //			if err != nil {
 //				return err
 //			}

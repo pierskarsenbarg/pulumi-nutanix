@@ -58,13 +58,6 @@ namespace PiersKarsenbarg.Nutanix
     ///                 },
     ///             },
     ///         },
-    ///     }, new CustomResourceOptions
-    ///     {
-    ///         IgnoreChanges =
-    ///         {
-    ///             "diskDataSourceReferences",
-    ///             "links",
-    ///         },
     ///     });
     /// 
     /// });

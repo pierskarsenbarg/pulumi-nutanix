@@ -41,10 +41,7 @@ import (
 //						CredentialExpiryDate: pulumi.String("2026-09-01"),
 //					},
 //				},
-//			}, pulumi.IgnoreChanges([]string{
-//				"accessInformation.clientSecret",
-//				"accessInformation.keyId",
-//			}))
+//			})
 //			if err != nil {
 //				return err
 //			}

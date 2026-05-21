@@ -39,13 +39,6 @@ namespace PiersKarsenbarg.Nutanix
     ///                 CredentialExpiryDate = "2026-09-01",
     ///             },
     ///         },
-    ///     }, new CustomResourceOptions
-    ///     {
-    ///         IgnoreChanges =
-    ///         {
-    ///             "accessInformation.clientSecret",
-    ///             "accessInformation.keyId",
-    ///         },
     ///     });
     /// 
     /// });
