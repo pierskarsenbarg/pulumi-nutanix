@@ -25,7 +25,7 @@ import * as utilities from "./utilities";
  * ## lifecycle
  *
  * * `Create` : - Resource will trigger onboarding of the node.
- * * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`">`delete`</span> : - Node will be removed from FC "imaged nodes" but will still be available in the hardware manager for re-onboarding.
+ * * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`" pulumi-lang-hcl="`delete`">`delete`</span> : - Node will be removed from FC "imaged nodes" but will still be available in the hardware manager for re-onboarding.
  */
 export class FoundationCentralOnboardNodes extends pulumi.CustomResource {
     /**
@@ -60,7 +60,7 @@ export class FoundationCentralOnboardNodes extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly blockSerial: pulumi.Output<string>;
     /**
-     * UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode "> imagedNode </span>in FC
+     * UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode " pulumi-lang-hcl=" imaged_node "> imagedNode </span>in FC
      */
     declare public /*out*/ readonly imagedNodeUuid: pulumi.Output<string>;
     /**
@@ -123,27 +123,27 @@ export interface FoundationCentralOnboardNodesState {
     /**
      * Block serial number of the node
      */
-    blockSerial?: pulumi.Input<string | undefined>;
+    blockSerial?: pulumi.Input<string>;
     /**
-     * UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode "> imagedNode </span>in FC
+     * UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode " pulumi-lang-hcl=" imaged_node "> imagedNode </span>in FC
      */
-    imagedNodeUuid?: pulumi.Input<string | undefined>;
+    imagedNodeUuid?: pulumi.Input<string>;
     /**
      * Model of the node
      */
-    model?: pulumi.Input<string | undefined>;
+    model?: pulumi.Input<string>;
     /**
      * Serial number of the node to onboard
      */
-    nodeSerial?: pulumi.Input<string | undefined>;
+    nodeSerial?: pulumi.Input<string>;
     /**
      * State of the node (e.g. STATE_ONBOARDED)
      */
-    nodeState?: pulumi.Input<string | undefined>;
+    nodeState?: pulumi.Input<string>;
     /**
      * Type of node (e.g. "on-prem")
      */
-    nodeType?: pulumi.Input<string | undefined>;
+    nodeType?: pulumi.Input<string>;
 }
 
 /**

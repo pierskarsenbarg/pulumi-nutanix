@@ -25,9 +25,9 @@ class AuthorizationPolicyV2Args:
                  entities: pulumi.Input[Sequence[pulumi.Input['AuthorizationPolicyV2EntityArgs']]],
                  identities: pulumi.Input[Sequence[pulumi.Input['AuthorizationPolicyV2IdentityArgs']]],
                  role: pulumi.Input[_builtins.str],
-                 authorization_policy_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 authorization_policy_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AuthorizationPolicyV2 resource.
 
@@ -105,7 +105,7 @@ class AuthorizationPolicyV2Args:
 
     @_builtins.property
     @pulumi.getter(name="authorizationPolicyType")
-    def authorization_policy_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def authorization_policy_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Type of Authorization Policy.
         - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
@@ -117,49 +117,49 @@ class AuthorizationPolicyV2Args:
         return pulumi.get(self, "authorization_policy_type")
 
     @authorization_policy_type.setter
-    def authorization_policy_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def authorization_policy_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "authorization_policy_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Description of the Authorization Policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         ext_id of Authorization policy.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
 
 @pulumi.input_type
 class _AuthorizationPolicyV2State:
     def __init__(__self__, *,
-                 authorization_policy_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 client_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
-                 created_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 entities: pulumi.Input[Optional[Sequence[pulumi.Input['AuthorizationPolicyV2EntityArgs']]]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 identities: pulumi.Input[Optional[Sequence[pulumi.Input['AuthorizationPolicyV2IdentityArgs']]]] = None,
-                 is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
-                 last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 role: pulumi.Input[Optional[_builtins.str]] = None):
+                 authorization_policy_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 client_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
+                 created_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 entities: Optional[pulumi.Input[Sequence[pulumi.Input['AuthorizationPolicyV2EntityArgs']]]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 identities: Optional[pulumi.Input[Sequence[pulumi.Input['AuthorizationPolicyV2IdentityArgs']]]] = None,
+                 is_system_defined: Optional[pulumi.Input[_builtins.bool]] = None,
+                 last_updated_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 role: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AuthorizationPolicyV2 resources.
 
@@ -208,7 +208,7 @@ class _AuthorizationPolicyV2State:
 
     @_builtins.property
     @pulumi.getter(name="authorizationPolicyType")
-    def authorization_policy_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def authorization_policy_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Type of Authorization Policy.
         - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
@@ -220,139 +220,139 @@ class _AuthorizationPolicyV2State:
         return pulumi.get(self, "authorization_policy_type")
 
     @authorization_policy_type.setter
-    def authorization_policy_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def authorization_policy_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "authorization_policy_type", value)
 
     @_builtins.property
     @pulumi.getter(name="clientName")
-    def client_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def client_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Client that created the entity.
         """
         return pulumi.get(self, "client_name")
 
     @client_name.setter
-    def client_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def client_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "client_name", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         User or Service Name that created the Authorization Policy.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="createdTime")
-    def created_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def created_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The creation time of the Authorization Policy.
         """
         return pulumi.get(self, "created_time")
 
     @created_time.setter
-    def created_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def created_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "created_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Description of the Authorization Policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Name of the Authorization Policy.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def entities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AuthorizationPolicyV2EntityArgs']]]]:
+    def entities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AuthorizationPolicyV2EntityArgs']]]]:
         """
         The entities being qualified by the Authorization Policy.
         """
         return pulumi.get(self, "entities")
 
     @entities.setter
-    def entities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AuthorizationPolicyV2EntityArgs']]]]):
+    def entities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AuthorizationPolicyV2EntityArgs']]]]):
         pulumi.set(self, "entities", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         ext_id of Authorization policy.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def identities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AuthorizationPolicyV2IdentityArgs']]]]:
+    def identities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AuthorizationPolicyV2IdentityArgs']]]]:
         """
         The identities for which the Authorization Policy is created.
         """
         return pulumi.get(self, "identities")
 
     @identities.setter
-    def identities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AuthorizationPolicyV2IdentityArgs']]]]):
+    def identities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AuthorizationPolicyV2IdentityArgs']]]]):
         pulumi.set(self, "identities", value)
 
     @_builtins.property
     @pulumi.getter(name="isSystemDefined")
-    def is_system_defined(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def is_system_defined(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         Flag identifying if the Authorization Policy is system defined or not.
         """
         return pulumi.get(self, "is_system_defined")
 
     @is_system_defined.setter
-    def is_system_defined(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def is_system_defined(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_system_defined", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedTime")
-    def last_updated_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def last_updated_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The time when the Authorization Policy was last updated.
         """
         return pulumi.get(self, "last_updated_time")
 
     @last_updated_time.setter
-    def last_updated_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def last_updated_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "last_updated_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The Role associated with the Authorization Policy.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "role", value)
 
 
@@ -362,13 +362,13 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 authorization_policy_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 entities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict']]]]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 identities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict']]]]] = None,
-                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization_policy_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 entities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict']]]]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 identities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict']]]]] = None,
+                 role: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Provides Nutanix resource to create authorization policy.
@@ -466,13 +466,13 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 authorization_policy_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 entities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict']]]]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 identities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict']]]]] = None,
-                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization_policy_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 entities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict']]]]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 identities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict']]]]] = None,
+                 role: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -512,18 +512,18 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            authorization_policy_type: pulumi.Input[Optional[_builtins.str]] = None,
-            client_name: pulumi.Input[Optional[_builtins.str]] = None,
-            created_by: pulumi.Input[Optional[_builtins.str]] = None,
-            created_time: pulumi.Input[Optional[_builtins.str]] = None,
-            description: pulumi.Input[Optional[_builtins.str]] = None,
-            display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            entities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict']]]]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            identities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict']]]]] = None,
-            is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
-            last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
-            role: pulumi.Input[Optional[_builtins.str]] = None) -> 'AuthorizationPolicyV2':
+            authorization_policy_type: Optional[pulumi.Input[_builtins.str]] = None,
+            client_name: Optional[pulumi.Input[_builtins.str]] = None,
+            created_by: Optional[pulumi.Input[_builtins.str]] = None,
+            created_time: Optional[pulumi.Input[_builtins.str]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
+            display_name: Optional[pulumi.Input[_builtins.str]] = None,
+            entities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict']]]]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            identities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict']]]]] = None,
+            is_system_defined: Optional[pulumi.Input[_builtins.bool]] = None,
+            last_updated_time: Optional[pulumi.Input[_builtins.str]] = None,
+            role: Optional[pulumi.Input[_builtins.str]] = None) -> 'AuthorizationPolicyV2':
         """
         Get an existing AuthorizationPolicyV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

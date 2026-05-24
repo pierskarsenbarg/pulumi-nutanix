@@ -9,7 +9,7 @@ import * as utilities from "./utilities";
 /**
  * Provides a Nutanix network security rule resource to Create a network security rule.
  *
- * > NOTE: The use of<span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "> networkSecurityRule </span>is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+ * > NOTE: The use of<span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule " pulumi-lang-hcl=" network_security_rule "> networkSecurityRule </span>is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
  *
  * ## Example Usage
  *
@@ -336,7 +336,7 @@ export class NetworkSecurityRule extends pulumi.CustomResource {
     }
 
     /**
-     * - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "> outboundAllowList </span>will allow everything from target group.
+     * - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList " pulumi-lang-hcl=" inbound_allow_list "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList " pulumi-lang-hcl=" outbound_allow_list "> outboundAllowList </span>will allow everything from target group.
      */
     declare public readonly adRuleAction: pulumi.Output<string>;
     /**
@@ -373,7 +373,7 @@ export class NetworkSecurityRule extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly apiVersion: pulumi.Output<string>;
     /**
-     * - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "> outboundAllowList </span>will allow everything from target group.
+     * - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList " pulumi-lang-hcl=" inbound_allow_list "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList " pulumi-lang-hcl=" outbound_allow_list "> outboundAllowList </span>will allow everything from target group.
      */
     declare public readonly appRuleAction: pulumi.Output<string>;
     /**
@@ -442,7 +442,7 @@ export class NetworkSecurityRule extends pulumi.CustomResource {
      */
     declare public readonly isolationRuleSecondEntityFilterType: pulumi.Output<string>;
     /**
-     * - The<span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "> networkSecurityRule </span>kind metadata.
+     * - The<span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule " pulumi-lang-hcl=" network_security_rule "> networkSecurityRule </span>kind metadata.
      */
     declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
@@ -548,127 +548,127 @@ export class NetworkSecurityRule extends pulumi.CustomResource {
  */
 export interface NetworkSecurityRuleState {
     /**
-     * - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "> outboundAllowList </span>will allow everything from target group.
+     * - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList " pulumi-lang-hcl=" inbound_allow_list "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList " pulumi-lang-hcl=" outbound_allow_list "> outboundAllowList </span>will allow everything from target group.
      */
-    adRuleAction?: pulumi.Input<string | undefined>;
+    adRuleAction?: pulumi.Input<string>;
     /**
      * - (Optional) The set of categories that matching VMs need to have.
      */
-    adRuleInboundAllowLists?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAdRuleInboundAllowList>[] | undefined>;
+    adRuleInboundAllowLists?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAdRuleInboundAllowList>[]>;
     /**
      * - (Optional)
      */
-    adRuleOutboundAllowLists?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAdRuleOutboundAllowList>[] | undefined>;
+    adRuleOutboundAllowLists?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAdRuleOutboundAllowList>[]>;
     /**
      * - (Optional) - Default policy for communication within target group.
      */
-    adRuleTargetGroupDefaultInternalPolicy?: pulumi.Input<string | undefined>;
+    adRuleTargetGroupDefaultInternalPolicy?: pulumi.Input<string>;
     /**
      * - (Optional) - List of kinds associated with this filter.
      */
-    adRuleTargetGroupFilterKindLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    adRuleTargetGroupFilterKindLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - (Optional) - A list of category key and list of values.
      */
-    adRuleTargetGroupFilterParams?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAdRuleTargetGroupFilterParam>[] | undefined>;
+    adRuleTargetGroupFilterParams?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAdRuleTargetGroupFilterParam>[]>;
     /**
      * - (Optional) - The type of the filter being used.
      */
-    adRuleTargetGroupFilterType?: pulumi.Input<string | undefined>;
+    adRuleTargetGroupFilterType?: pulumi.Input<string>;
     /**
      * - (Optional) - Way to identify the object for which rule is applied.
      */
-    adRuleTargetGroupPeerSpecificationType?: pulumi.Input<string | undefined>;
-    allowIpv6Traffic?: pulumi.Input<boolean | undefined>;
+    adRuleTargetGroupPeerSpecificationType?: pulumi.Input<string>;
+    allowIpv6Traffic?: pulumi.Input<boolean>;
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string | undefined>;
+    apiVersion?: pulumi.Input<string>;
     /**
-     * - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "> outboundAllowList </span>will allow everything from target group.
+     * - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList " pulumi-lang-hcl=" inbound_allow_list "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList " pulumi-lang-hcl=" outbound_allow_list "> outboundAllowList </span>will allow everything from target group.
      */
-    appRuleAction?: pulumi.Input<string | undefined>;
+    appRuleAction?: pulumi.Input<string>;
     /**
      * - (Optional) The set of categories that matching VMs need to have.
      */
-    appRuleInboundAllowLists?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAppRuleInboundAllowList>[] | undefined>;
+    appRuleInboundAllowLists?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAppRuleInboundAllowList>[]>;
     /**
      * - (Optional)
      */
-    appRuleOutboundAllowLists?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAppRuleOutboundAllowList>[] | undefined>;
+    appRuleOutboundAllowLists?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAppRuleOutboundAllowList>[]>;
     /**
      * - (Optional) - Default policy for communication within target group.
      */
-    appRuleTargetGroupDefaultInternalPolicy?: pulumi.Input<string | undefined>;
+    appRuleTargetGroupDefaultInternalPolicy?: pulumi.Input<string>;
     /**
      * - (Optional) - List of kinds associated with this filter.
      */
-    appRuleTargetGroupFilterKindLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    appRuleTargetGroupFilterKindLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - (Optional) - A list of category key and list of values.
      */
-    appRuleTargetGroupFilterParams?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAppRuleTargetGroupFilterParam>[] | undefined>;
+    appRuleTargetGroupFilterParams?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAppRuleTargetGroupFilterParam>[]>;
     /**
      * - (Optional) - The type of the filter being used.
      */
-    appRuleTargetGroupFilterType?: pulumi.Input<string | undefined>;
+    appRuleTargetGroupFilterType?: pulumi.Input<string>;
     /**
      * - (Optional) - Way to identify the object for which rule is applied.
      */
-    appRuleTargetGroupPeerSpecificationType?: pulumi.Input<string | undefined>;
+    appRuleTargetGroupPeerSpecificationType?: pulumi.Input<string>;
     /**
      * - (Optional) Categories for the network_security_rule.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleCategory>[] | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleCategory>[]>;
     /**
      * - (Optional) A description for network_security_rule.
      */
-    description?: pulumi.Input<string | undefined>;
-    isPolicyHitlogEnabled?: pulumi.Input<boolean | undefined>;
+    description?: pulumi.Input<string>;
+    isPolicyHitlogEnabled?: pulumi.Input<boolean>;
     /**
      * - (Optional) - These rules are used for environmental isolation.
      */
-    isolationRuleAction?: pulumi.Input<string | undefined>;
+    isolationRuleAction?: pulumi.Input<string>;
     /**
      * - (Optional) - List of kinds associated with this filter.
      */
-    isolationRuleFirstEntityFilterKindLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    isolationRuleFirstEntityFilterKindLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - (Optional) - A list of category key and list of values.
      */
-    isolationRuleFirstEntityFilterParams?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParam>[] | undefined>;
+    isolationRuleFirstEntityFilterParams?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParam>[]>;
     /**
      * - (Optional) - The type of the filter being used.
      */
-    isolationRuleFirstEntityFilterType?: pulumi.Input<string | undefined>;
+    isolationRuleFirstEntityFilterType?: pulumi.Input<string>;
     /**
      * - (Optional) - List of kinds associated with this filter.
      */
-    isolationRuleSecondEntityFilterKindLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    isolationRuleSecondEntityFilterKindLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - (Optional) - A list of category key and list of values.
      */
-    isolationRuleSecondEntityFilterParams?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParam>[] | undefined>;
+    isolationRuleSecondEntityFilterParams?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParam>[]>;
     /**
      * - (Optional) - The type of the filter being used.
      */
-    isolationRuleSecondEntityFilterType?: pulumi.Input<string | undefined>;
+    isolationRuleSecondEntityFilterType?: pulumi.Input<string>;
     /**
-     * - The<span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "> networkSecurityRule </span>kind metadata.
+     * - The<span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule " pulumi-lang-hcl=" network_security_rule "> networkSecurityRule </span>kind metadata.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Required) The name for the network_security_rule.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * - (Optional) The reference to a user.
      */
-    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) The reference to a project.
      */
-    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }
 
 /**
@@ -676,117 +676,117 @@ export interface NetworkSecurityRuleState {
  */
 export interface NetworkSecurityRuleArgs {
     /**
-     * - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "> outboundAllowList </span>will allow everything from target group.
+     * - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList " pulumi-lang-hcl=" inbound_allow_list "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList " pulumi-lang-hcl=" outbound_allow_list "> outboundAllowList </span>will allow everything from target group.
      */
-    adRuleAction?: pulumi.Input<string | undefined>;
+    adRuleAction?: pulumi.Input<string>;
     /**
      * - (Optional) The set of categories that matching VMs need to have.
      */
-    adRuleInboundAllowLists?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAdRuleInboundAllowList>[] | undefined>;
+    adRuleInboundAllowLists?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAdRuleInboundAllowList>[]>;
     /**
      * - (Optional)
      */
-    adRuleOutboundAllowLists?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAdRuleOutboundAllowList>[] | undefined>;
+    adRuleOutboundAllowLists?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAdRuleOutboundAllowList>[]>;
     /**
      * - (Optional) - Default policy for communication within target group.
      */
-    adRuleTargetGroupDefaultInternalPolicy?: pulumi.Input<string | undefined>;
+    adRuleTargetGroupDefaultInternalPolicy?: pulumi.Input<string>;
     /**
      * - (Optional) - List of kinds associated with this filter.
      */
-    adRuleTargetGroupFilterKindLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    adRuleTargetGroupFilterKindLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - (Optional) - A list of category key and list of values.
      */
-    adRuleTargetGroupFilterParams?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAdRuleTargetGroupFilterParam>[] | undefined>;
+    adRuleTargetGroupFilterParams?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAdRuleTargetGroupFilterParam>[]>;
     /**
      * - (Optional) - The type of the filter being used.
      */
-    adRuleTargetGroupFilterType?: pulumi.Input<string | undefined>;
+    adRuleTargetGroupFilterType?: pulumi.Input<string>;
     /**
      * - (Optional) - Way to identify the object for which rule is applied.
      */
-    adRuleTargetGroupPeerSpecificationType?: pulumi.Input<string | undefined>;
-    allowIpv6Traffic?: pulumi.Input<boolean | undefined>;
+    adRuleTargetGroupPeerSpecificationType?: pulumi.Input<string>;
+    allowIpv6Traffic?: pulumi.Input<boolean>;
     /**
-     * - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "> outboundAllowList </span>will allow everything from target group.
+     * - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList " pulumi-lang-hcl=" inbound_allow_list "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList " pulumi-lang-hcl=" outbound_allow_list "> outboundAllowList </span>will allow everything from target group.
      */
-    appRuleAction?: pulumi.Input<string | undefined>;
+    appRuleAction?: pulumi.Input<string>;
     /**
      * - (Optional) The set of categories that matching VMs need to have.
      */
-    appRuleInboundAllowLists?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAppRuleInboundAllowList>[] | undefined>;
+    appRuleInboundAllowLists?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAppRuleInboundAllowList>[]>;
     /**
      * - (Optional)
      */
-    appRuleOutboundAllowLists?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAppRuleOutboundAllowList>[] | undefined>;
+    appRuleOutboundAllowLists?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAppRuleOutboundAllowList>[]>;
     /**
      * - (Optional) - Default policy for communication within target group.
      */
-    appRuleTargetGroupDefaultInternalPolicy?: pulumi.Input<string | undefined>;
+    appRuleTargetGroupDefaultInternalPolicy?: pulumi.Input<string>;
     /**
      * - (Optional) - List of kinds associated with this filter.
      */
-    appRuleTargetGroupFilterKindLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    appRuleTargetGroupFilterKindLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - (Optional) - A list of category key and list of values.
      */
-    appRuleTargetGroupFilterParams?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAppRuleTargetGroupFilterParam>[] | undefined>;
+    appRuleTargetGroupFilterParams?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleAppRuleTargetGroupFilterParam>[]>;
     /**
      * - (Optional) - The type of the filter being used.
      */
-    appRuleTargetGroupFilterType?: pulumi.Input<string | undefined>;
+    appRuleTargetGroupFilterType?: pulumi.Input<string>;
     /**
      * - (Optional) - Way to identify the object for which rule is applied.
      */
-    appRuleTargetGroupPeerSpecificationType?: pulumi.Input<string | undefined>;
+    appRuleTargetGroupPeerSpecificationType?: pulumi.Input<string>;
     /**
      * - (Optional) Categories for the network_security_rule.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleCategory>[] | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleCategory>[]>;
     /**
      * - (Optional) A description for network_security_rule.
      */
-    description?: pulumi.Input<string | undefined>;
-    isPolicyHitlogEnabled?: pulumi.Input<boolean | undefined>;
+    description?: pulumi.Input<string>;
+    isPolicyHitlogEnabled?: pulumi.Input<boolean>;
     /**
      * - (Optional) - These rules are used for environmental isolation.
      */
-    isolationRuleAction?: pulumi.Input<string | undefined>;
+    isolationRuleAction?: pulumi.Input<string>;
     /**
      * - (Optional) - List of kinds associated with this filter.
      */
-    isolationRuleFirstEntityFilterKindLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    isolationRuleFirstEntityFilterKindLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - (Optional) - A list of category key and list of values.
      */
-    isolationRuleFirstEntityFilterParams?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParam>[] | undefined>;
+    isolationRuleFirstEntityFilterParams?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParam>[]>;
     /**
      * - (Optional) - The type of the filter being used.
      */
-    isolationRuleFirstEntityFilterType?: pulumi.Input<string | undefined>;
+    isolationRuleFirstEntityFilterType?: pulumi.Input<string>;
     /**
      * - (Optional) - List of kinds associated with this filter.
      */
-    isolationRuleSecondEntityFilterKindLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    isolationRuleSecondEntityFilterKindLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - (Optional) - A list of category key and list of values.
      */
-    isolationRuleSecondEntityFilterParams?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParam>[] | undefined>;
+    isolationRuleSecondEntityFilterParams?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParam>[]>;
     /**
      * - (Optional) - The type of the filter being used.
      */
-    isolationRuleSecondEntityFilterType?: pulumi.Input<string | undefined>;
+    isolationRuleSecondEntityFilterType?: pulumi.Input<string>;
     /**
      * - (Required) The name for the network_security_rule.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * - (Optional) The reference to a user.
      */
-    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) The reference to a project.
      */
-    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

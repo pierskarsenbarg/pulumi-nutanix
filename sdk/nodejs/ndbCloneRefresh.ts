@@ -122,18 +122,18 @@ export interface NdbCloneRefreshState {
     /**
      * clone id
      */
-    cloneId?: pulumi.Input<string | undefined>;
+    cloneId?: pulumi.Input<string>;
     /**
      * snapshot id where clone has to be refreshed
      */
-    snapshotId?: pulumi.Input<string | undefined>;
+    snapshotId?: pulumi.Input<string>;
     /**
      * timezone. Default is Asia/Calcutta. 
      *
      * See detailed information in [NDB Clone Refresh](https://www.nutanix.dev/api_references/ndb/#/d4e53fff274fa-start-refresh-operation-for-the-given-clone).
      */
-    timezone?: pulumi.Input<string | undefined>;
-    userPitrTimestamp?: pulumi.Input<string | undefined>;
+    timezone?: pulumi.Input<string>;
+    userPitrTimestamp?: pulumi.Input<string>;
 }
 
 /**
@@ -147,12 +147,12 @@ export interface NdbCloneRefreshArgs {
     /**
      * snapshot id where clone has to be refreshed
      */
-    snapshotId?: pulumi.Input<string | undefined>;
+    snapshotId?: pulumi.Input<string>;
     /**
      * timezone. Default is Asia/Calcutta. 
      *
      * See detailed information in [NDB Clone Refresh](https://www.nutanix.dev/api_references/ndb/#/d4e53fff274fa-start-refresh-operation-for-the-given-clone).
      */
-    timezone?: pulumi.Input<string | undefined>;
-    userPitrTimestamp?: pulumi.Input<string | undefined>;
+    timezone?: pulumi.Input<string>;
+    userPitrTimestamp?: pulumi.Input<string>;
 }

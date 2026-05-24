@@ -119,7 +119,7 @@ export interface ProviderArgs {
      * alternative to username/password. When set, the X-Ntnx-Api-Key header
      * will be used instead of Basic Authentication.
      */
-    apiKey?: pulumi.Input<string | undefined>;
+    apiKey?: pulumi.Input<string>;
     /**
      * Custom HTTP headers to add to all API requests. Useful for
      * environments that require additional headers such as Cloudflare Access
@@ -127,54 +127,54 @@ export interface ProviderArgs {
      * the NUTANIX_HEADER_ prefix (e.g., NUTANIX_HEADER_CF_ACCESS_CLIENT_ID
      * becomes Cf-Access-Client-Id). Config values take precedence over env vars.
      */
-    customHeaders?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    customHeaders?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
      * note, this is never the data services VIP, and should not be an
      * individual CVM address, as this would cause calls to fail during
      * cluster lifecycle management operations, such as AOS upgrades.
      */
-    endpoint?: pulumi.Input<string | undefined>;
+    endpoint?: pulumi.Input<string>;
     /**
      * endpoint for foundation VM (eg. Foundation VM IP)
      */
-    foundationEndpoint?: pulumi.Input<string | undefined>;
+    foundationEndpoint?: pulumi.Input<string>;
     /**
      * Port for foundation VM
      */
-    foundationPort?: pulumi.Input<string | undefined>;
+    foundationPort?: pulumi.Input<string>;
     /**
-     * Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>
+     * Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>
      */
-    insecure?: pulumi.Input<boolean | undefined>;
+    insecure?: pulumi.Input<boolean>;
     /**
      * endpoint for Era VM (era ip)
      */
-    ndbEndpoint?: pulumi.Input<string | undefined>;
-    ndbPassword?: pulumi.Input<string | undefined>;
-    ndbUsername?: pulumi.Input<string | undefined>;
+    ndbEndpoint?: pulumi.Input<string>;
+    ndbPassword?: pulumi.Input<string>;
+    ndbUsername?: pulumi.Input<string>;
     /**
      * Password for provided user name.
      */
-    password?: pulumi.Input<string | undefined>;
+    password?: pulumi.Input<string>;
     /**
      * Port for Nutanix Prism.
      */
-    port?: pulumi.Input<string | undefined>;
-    proxyUrl?: pulumi.Input<string | undefined>;
+    port?: pulumi.Input<string>;
+    proxyUrl?: pulumi.Input<string>;
     /**
      * Use session authentification instead of basic auth for each request
      */
-    sessionAuth?: pulumi.Input<boolean | undefined>;
+    sessionAuth?: pulumi.Input<boolean>;
     /**
      * User name for Nutanix Prism. Could be
      * local cluster auth (e.g. 'admin') or directory auth.
      */
-    username?: pulumi.Input<string | undefined>;
+    username?: pulumi.Input<string>;
     /**
      * Set if you know that the creation o update of a resource may take long time (minutes)
      */
-    waitTimeout?: pulumi.Input<number | undefined>;
+    waitTimeout?: pulumi.Input<number>;
 }
 
 export namespace Provider {

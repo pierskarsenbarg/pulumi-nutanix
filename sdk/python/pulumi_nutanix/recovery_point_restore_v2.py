@@ -23,8 +23,8 @@ class RecoveryPointRestoreV2Args:
     def __init__(__self__, *,
                  cluster_ext_id: pulumi.Input[_builtins.str],
                  ext_id: pulumi.Input[_builtins.str],
-                 vm_recovery_point_restore_overrides: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs']]]] = None,
-                 volume_group_recovery_point_restore_overrides: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs']]]] = None):
+                 vm_recovery_point_restore_overrides: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs']]]] = None,
+                 volume_group_recovery_point_restore_overrides: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs']]]] = None):
         """
         The set of arguments for constructing a RecoveryPointRestoreV2 resource.
 
@@ -66,38 +66,38 @@ class RecoveryPointRestoreV2Args:
 
     @_builtins.property
     @pulumi.getter(name="vmRecoveryPointRestoreOverrides")
-    def vm_recovery_point_restore_overrides(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs']]]]:
+    def vm_recovery_point_restore_overrides(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs']]]]:
         """
         -(Optional) List of specifications to restore a specific VM recovery point(s) that are a part of the top-level recovery point. A specific VM recovery point can be selected for restore by specifying its external identifier along with override specification (if any).
         """
         return pulumi.get(self, "vm_recovery_point_restore_overrides")
 
     @vm_recovery_point_restore_overrides.setter
-    def vm_recovery_point_restore_overrides(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs']]]]):
+    def vm_recovery_point_restore_overrides(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs']]]]):
         pulumi.set(self, "vm_recovery_point_restore_overrides", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeGroupRecoveryPointRestoreOverrides")
-    def volume_group_recovery_point_restore_overrides(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs']]]]:
+    def volume_group_recovery_point_restore_overrides(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs']]]]:
         """
         -(Optional) List of specifications to restore a specific volume group recovery point(s) that are a part of the top-level recovery point. A specific volume group recovery point can be selected for restore by specifying its external identifier along with override specification (if any).
         """
         return pulumi.get(self, "volume_group_recovery_point_restore_overrides")
 
     @volume_group_recovery_point_restore_overrides.setter
-    def volume_group_recovery_point_restore_overrides(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs']]]]):
+    def volume_group_recovery_point_restore_overrides(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs']]]]):
         pulumi.set(self, "volume_group_recovery_point_restore_overrides", value)
 
 
 @pulumi.input_type
 class _RecoveryPointRestoreV2State:
     def __init__(__self__, *,
-                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vm_recovery_point_restore_overrides: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs']]]] = None,
-                 volume_group_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 volume_group_recovery_point_restore_overrides: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs']]]] = None):
+                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vm_recovery_point_restore_overrides: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs']]]] = None,
+                 volume_group_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 volume_group_recovery_point_restore_overrides: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs']]]] = None):
         """
         Input properties used for looking up and filtering RecoveryPointRestoreV2 resources.
 
@@ -123,74 +123,74 @@ class _RecoveryPointRestoreV2State:
 
     @_builtins.property
     @pulumi.getter(name="clusterExtId")
-    def cluster_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def cluster_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Required) External identifier of the cluster.
         """
         return pulumi.get(self, "cluster_ext_id")
 
     @cluster_ext_id.setter
-    def cluster_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def cluster_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "cluster_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Required) The external identifier that can be used to retrieve the recovery point using its URL.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vmExtIds")
-    def vm_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def vm_ext_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - List of external identifiers of the created(restored) VMs.
         """
         return pulumi.get(self, "vm_ext_ids")
 
     @vm_ext_ids.setter
-    def vm_ext_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def vm_ext_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "vm_ext_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="vmRecoveryPointRestoreOverrides")
-    def vm_recovery_point_restore_overrides(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs']]]]:
+    def vm_recovery_point_restore_overrides(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs']]]]:
         """
         -(Optional) List of specifications to restore a specific VM recovery point(s) that are a part of the top-level recovery point. A specific VM recovery point can be selected for restore by specifying its external identifier along with override specification (if any).
         """
         return pulumi.get(self, "vm_recovery_point_restore_overrides")
 
     @vm_recovery_point_restore_overrides.setter
-    def vm_recovery_point_restore_overrides(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs']]]]):
+    def vm_recovery_point_restore_overrides(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs']]]]):
         pulumi.set(self, "vm_recovery_point_restore_overrides", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeGroupExtIds")
-    def volume_group_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def volume_group_ext_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - List of external identifiers of the created(restored) volume groups.
         """
         return pulumi.get(self, "volume_group_ext_ids")
 
     @volume_group_ext_ids.setter
-    def volume_group_ext_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def volume_group_ext_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "volume_group_ext_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeGroupRecoveryPointRestoreOverrides")
-    def volume_group_recovery_point_restore_overrides(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs']]]]:
+    def volume_group_recovery_point_restore_overrides(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs']]]]:
         """
         -(Optional) List of specifications to restore a specific volume group recovery point(s) that are a part of the top-level recovery point. A specific volume group recovery point can be selected for restore by specifying its external identifier along with override specification (if any).
         """
         return pulumi.get(self, "volume_group_recovery_point_restore_overrides")
 
     @volume_group_recovery_point_restore_overrides.setter
-    def volume_group_recovery_point_restore_overrides(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs']]]]):
+    def volume_group_recovery_point_restore_overrides(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs']]]]):
         pulumi.set(self, "volume_group_recovery_point_restore_overrides", value)
 
 
@@ -200,14 +200,14 @@ class RecoveryPointRestoreV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_recovery_point_restore_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs', 'RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgsDict']]]]] = None,
-                 volume_group_recovery_point_restore_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs', 'RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgsDict']]]]] = None,
+                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_recovery_point_restore_overrides: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs', 'RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgsDict']]]]] = None,
+                 volume_group_recovery_point_restore_overrides: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs', 'RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgsDict']]]]] = None,
                  __props__=None):
         """
         This operation Restore a recovery point identified by {extId}.
-        A comma separated list of the created VM and volume group external identifiers can be found in the task completion details under the keys <span pulumi-lang-nodejs="`vmExtIds`" pulumi-lang-dotnet="`VmExtIds`" pulumi-lang-go="`vmExtIds`" pulumi-lang-python="`vm_ext_ids`" pulumi-lang-yaml="`vmExtIds`" pulumi-lang-java="`vmExtIds`">`vmExtIds`</span> and <span pulumi-lang-nodejs="`volumeGroupExtIds`" pulumi-lang-dotnet="`VolumeGroupExtIds`" pulumi-lang-go="`volumeGroupExtIds`" pulumi-lang-python="`volume_group_ext_ids`" pulumi-lang-yaml="`volumeGroupExtIds`" pulumi-lang-java="`volumeGroupExtIds`">`volumeGroupExtIds`</span> respectively.
+        A comma separated list of the created VM and volume group external identifiers can be found in the task completion details under the keys <span pulumi-lang-nodejs="`vmExtIds`" pulumi-lang-dotnet="`VmExtIds`" pulumi-lang-go="`vmExtIds`" pulumi-lang-python="`vm_ext_ids`" pulumi-lang-yaml="`vmExtIds`" pulumi-lang-java="`vmExtIds`" pulumi-lang-hcl="`vm_ext_ids`">`vmExtIds`</span> and <span pulumi-lang-nodejs="`volumeGroupExtIds`" pulumi-lang-dotnet="`VolumeGroupExtIds`" pulumi-lang-go="`volumeGroupExtIds`" pulumi-lang-python="`volume_group_ext_ids`" pulumi-lang-yaml="`volumeGroupExtIds`" pulumi-lang-java="`volumeGroupExtIds`" pulumi-lang-hcl="`volume_group_ext_ids`">`volumeGroupExtIds`</span> respectively.
 
         ## Example Usage
 
@@ -248,7 +248,7 @@ class RecoveryPointRestoreV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         This operation Restore a recovery point identified by {extId}.
-        A comma separated list of the created VM and volume group external identifiers can be found in the task completion details under the keys <span pulumi-lang-nodejs="`vmExtIds`" pulumi-lang-dotnet="`VmExtIds`" pulumi-lang-go="`vmExtIds`" pulumi-lang-python="`vm_ext_ids`" pulumi-lang-yaml="`vmExtIds`" pulumi-lang-java="`vmExtIds`">`vmExtIds`</span> and <span pulumi-lang-nodejs="`volumeGroupExtIds`" pulumi-lang-dotnet="`VolumeGroupExtIds`" pulumi-lang-go="`volumeGroupExtIds`" pulumi-lang-python="`volume_group_ext_ids`" pulumi-lang-yaml="`volumeGroupExtIds`" pulumi-lang-java="`volumeGroupExtIds`">`volumeGroupExtIds`</span> respectively.
+        A comma separated list of the created VM and volume group external identifiers can be found in the task completion details under the keys <span pulumi-lang-nodejs="`vmExtIds`" pulumi-lang-dotnet="`VmExtIds`" pulumi-lang-go="`vmExtIds`" pulumi-lang-python="`vm_ext_ids`" pulumi-lang-yaml="`vmExtIds`" pulumi-lang-java="`vmExtIds`" pulumi-lang-hcl="`vm_ext_ids`">`vmExtIds`</span> and <span pulumi-lang-nodejs="`volumeGroupExtIds`" pulumi-lang-dotnet="`VolumeGroupExtIds`" pulumi-lang-go="`volumeGroupExtIds`" pulumi-lang-python="`volume_group_ext_ids`" pulumi-lang-yaml="`volumeGroupExtIds`" pulumi-lang-java="`volumeGroupExtIds`" pulumi-lang-hcl="`volume_group_ext_ids`">`volumeGroupExtIds`</span> respectively.
 
         ## Example Usage
 
@@ -289,10 +289,10 @@ class RecoveryPointRestoreV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_recovery_point_restore_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs', 'RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgsDict']]]]] = None,
-                 volume_group_recovery_point_restore_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs', 'RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgsDict']]]]] = None,
+                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_recovery_point_restore_overrides: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs', 'RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgsDict']]]]] = None,
+                 volume_group_recovery_point_restore_overrides: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs', 'RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -322,12 +322,12 @@ class RecoveryPointRestoreV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            vm_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            vm_recovery_point_restore_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs', 'RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgsDict']]]]] = None,
-            volume_group_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            volume_group_recovery_point_restore_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs', 'RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgsDict']]]]] = None) -> 'RecoveryPointRestoreV2':
+            cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            vm_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            vm_recovery_point_restore_overrides: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs', 'RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgsDict']]]]] = None,
+            volume_group_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            volume_group_recovery_point_restore_overrides: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs', 'RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgsDict']]]]] = None) -> 'RecoveryPointRestoreV2':
         """
         Get an existing RecoveryPointRestoreV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

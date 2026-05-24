@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Create an image placement policy using the provided request body. Name, placement_type,<span pulumi-lang-nodejs=" imageEntityFilter " pulumi-lang-dotnet=" ImageEntityFilter " pulumi-lang-go=" imageEntityFilter " pulumi-lang-python=" image_entity_filter " pulumi-lang-yaml=" imageEntityFilter " pulumi-lang-java=" imageEntityFilter "> imageEntityFilter </span>and source are mandatory fields to create an policy.
+ * Create an image placement policy using the provided request body. Name, placement_type,<span pulumi-lang-nodejs=" imageEntityFilter " pulumi-lang-dotnet=" ImageEntityFilter " pulumi-lang-go=" imageEntityFilter " pulumi-lang-python=" image_entity_filter " pulumi-lang-yaml=" imageEntityFilter " pulumi-lang-java=" imageEntityFilter " pulumi-lang-hcl=" image_entity_filter "> imageEntityFilter </span>and source are mandatory fields to create an policy.
  *
  * <!--Start PulumiCodeChooser -->
  * ```typescript
@@ -153,36 +153,36 @@ export interface ImagePlacementPolicyV2State {
     /**
      * Action to be performed on the image placement policy. Valid values "RESUME", "SUSPEND"
      */
-    action?: pulumi.Input<string | undefined>;
+    action?: pulumi.Input<string>;
     /**
      * Category-based entity filter.
      */
-    clusterEntityFilters?: pulumi.Input<pulumi.Input<inputs.ImagePlacementPolicyV2ClusterEntityFilter>[] | undefined>;
-    createTime?: pulumi.Input<string | undefined>;
+    clusterEntityFilters?: pulumi.Input<pulumi.Input<inputs.ImagePlacementPolicyV2ClusterEntityFilter>[]>;
+    createTime?: pulumi.Input<string>;
     /**
      * Description of the image placement policy.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * Enforcement status of the image placement policy. Valid values "ACTIVE", "SUSPENDED"
      */
-    enforcementState?: pulumi.Input<string | undefined>;
-    extId?: pulumi.Input<string | undefined>;
+    enforcementState?: pulumi.Input<string>;
+    extId?: pulumi.Input<string>;
     /**
      * Category-based entity filter.
      */
-    imageEntityFilters?: pulumi.Input<pulumi.Input<inputs.ImagePlacementPolicyV2ImageEntityFilter>[] | undefined>;
-    lastUpdateTime?: pulumi.Input<string | undefined>;
+    imageEntityFilters?: pulumi.Input<pulumi.Input<inputs.ImagePlacementPolicyV2ImageEntityFilter>[]>;
+    lastUpdateTime?: pulumi.Input<string>;
     /**
      * Name of the image placement policy.
      */
-    name?: pulumi.Input<string | undefined>;
-    ownerExtId?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
+    ownerExtId?: pulumi.Input<string>;
     /**
      * Type of the image placement policy. Valid values "HARD", "SOFT"
      */
-    placementType?: pulumi.Input<string | undefined>;
-    shouldCancelRunningTasks?: pulumi.Input<boolean | undefined>;
+    placementType?: pulumi.Input<string>;
+    shouldCancelRunningTasks?: pulumi.Input<boolean>;
 }
 
 /**
@@ -192,7 +192,7 @@ export interface ImagePlacementPolicyV2Args {
     /**
      * Action to be performed on the image placement policy. Valid values "RESUME", "SUSPEND"
      */
-    action?: pulumi.Input<string | undefined>;
+    action?: pulumi.Input<string>;
     /**
      * Category-based entity filter.
      */
@@ -200,12 +200,12 @@ export interface ImagePlacementPolicyV2Args {
     /**
      * Description of the image placement policy.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * Enforcement status of the image placement policy. Valid values "ACTIVE", "SUSPENDED"
      */
-    enforcementState?: pulumi.Input<string | undefined>;
-    extId?: pulumi.Input<string | undefined>;
+    enforcementState?: pulumi.Input<string>;
+    extId?: pulumi.Input<string>;
     /**
      * Category-based entity filter.
      */
@@ -213,10 +213,10 @@ export interface ImagePlacementPolicyV2Args {
     /**
      * Name of the image placement policy.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * Type of the image placement policy. Valid values "HARD", "SOFT"
      */
     placementType: pulumi.Input<string>;
-    shouldCancelRunningTasks?: pulumi.Input<boolean | undefined>;
+    shouldCancelRunningTasks?: pulumi.Input<boolean>;
 }

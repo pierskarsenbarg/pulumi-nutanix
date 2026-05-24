@@ -222,7 +222,7 @@ def get_entity_group_v2(ext_id: Optional[_builtins.str] = None,
         owner_ext_id=pulumi.get(__ret__, 'owner_ext_id'),
         policy_ext_ids=pulumi.get(__ret__, 'policy_ext_ids'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_entity_group_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_entity_group_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEntityGroupV2Result]:
     """
     Fetches a single entity group by its external identifier (ext_id). Use this data source when you know the entity group UUID and need its attributes.

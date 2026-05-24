@@ -89,7 +89,7 @@ def get_ndb_clones(filters: Optional[Sequence[Union['GetNdbClonesFilterArgs', 'G
         clones=pulumi.get(__ret__, 'clones'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_ndb_clones_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbClonesFilterArgs', 'GetNdbClonesFilterArgsDict']]]]] = None,
+def get_ndb_clones_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbClonesFilterArgs', 'GetNdbClonesFilterArgsDict']]]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbClonesResult]:
     """
     List all the clone present in Nutanix Database Service

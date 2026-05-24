@@ -72,7 +72,7 @@ class GetFloatingIpResult:
     @pulumi.getter
     def metadata(self) -> Mapping[str, _builtins.str]:
         """
-        - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
+        - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp " pulumi-lang-hcl=" floating_ip "> floatingIp </span>kind metadata.
         """
         return pulumi.get(self, "metadata")
 
@@ -110,7 +110,7 @@ class AwaitableGetFloatingIpResult(GetFloatingIpResult):
 def get_floating_ip(floating_ip_uuid: Optional[_builtins.str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFloatingIpResult:
     """
-    Provides a datasource to retrieve floating IPs with<span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid "> floatingIpUuid </span>.
+    Provides a datasource to retrieve floating IPs with<span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid " pulumi-lang-hcl=" floating_ip_uuid "> floatingIpUuid </span>.
 
 
     :param _builtins.str floating_ip_uuid: Floating IP UUID
@@ -127,10 +127,10 @@ def get_floating_ip(floating_ip_uuid: Optional[_builtins.str] = None,
         metadata=pulumi.get(__ret__, 'metadata'),
         specs=pulumi.get(__ret__, 'specs'),
         statuses=pulumi.get(__ret__, 'statuses'))
-def get_floating_ip_output(floating_ip_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+def get_floating_ip_output(floating_ip_uuid: Optional[pulumi.Input[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFloatingIpResult]:
     """
-    Provides a datasource to retrieve floating IPs with<span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid "> floatingIpUuid </span>.
+    Provides a datasource to retrieve floating IPs with<span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid " pulumi-lang-hcl=" floating_ip_uuid "> floatingIpUuid </span>.
 
 
     :param _builtins.str floating_ip_uuid: Floating IP UUID

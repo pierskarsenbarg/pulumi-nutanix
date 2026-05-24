@@ -364,8 +364,8 @@ def get_object_store_v2(ext_id: Optional[_builtins.str] = None,
         storage_network_vips=pulumi.get(__ret__, 'storage_network_vips'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         total_capacity_gib=pulumi.get(__ret__, 'total_capacity_gib'))
-def get_object_store_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                               num_worker_nodes: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+def get_object_store_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                               num_worker_nodes: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetObjectStoreV2Result]:
     """
     Get an Object store for the provided UUID

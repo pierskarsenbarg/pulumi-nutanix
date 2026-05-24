@@ -117,9 +117,9 @@ export interface GetNdbTagOutputArgs {
     /**
      * tag id. Conflicts with  name.
      */
-    id?: pulumi.Input<string | undefined>;
+    id?: pulumi.Input<string>;
     /**
      * tag name. Conflicts with id.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
 }

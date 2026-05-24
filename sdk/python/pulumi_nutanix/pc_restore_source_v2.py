@@ -45,13 +45,13 @@ class PcRestoreSourceV2Args:
 @pulumi.input_type
 class _PcRestoreSourceV2State:
     def __init__(__self__, *,
-                 backup_pause_reason: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 is_backup_paused: pulumi.Input[Optional[_builtins.bool]] = None,
-                 last_sync_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 links: pulumi.Input[Optional[Sequence[pulumi.Input['PcRestoreSourceV2LinkArgs']]]] = None,
-                 location: pulumi.Input[Optional['PcRestoreSourceV2LocationArgs']] = None,
-                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 backup_pause_reason: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_backup_paused: Optional[pulumi.Input[_builtins.bool]] = None,
+                 last_sync_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 links: Optional[pulumi.Input[Sequence[pulumi.Input['PcRestoreSourceV2LinkArgs']]]] = None,
+                 location: Optional[pulumi.Input['PcRestoreSourceV2LocationArgs']] = None,
+                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PcRestoreSourceV2 resources.
 
@@ -74,68 +74,68 @@ class _PcRestoreSourceV2State:
 
     @_builtins.property
     @pulumi.getter(name="backupPauseReason")
-    def backup_pause_reason(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def backup_pause_reason(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "backup_pause_reason")
 
     @backup_pause_reason.setter
-    def backup_pause_reason(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def backup_pause_reason(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "backup_pause_reason", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isBackupPaused")
-    def is_backup_paused(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def is_backup_paused(self) -> Optional[pulumi.Input[_builtins.bool]]:
         return pulumi.get(self, "is_backup_paused")
 
     @is_backup_paused.setter
-    def is_backup_paused(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def is_backup_paused(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_backup_paused", value)
 
     @_builtins.property
     @pulumi.getter(name="lastSyncTime")
-    def last_sync_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def last_sync_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "last_sync_time")
 
     @last_sync_time.setter
-    def last_sync_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def last_sync_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "last_sync_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PcRestoreSourceV2LinkArgs']]]]:
+    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PcRestoreSourceV2LinkArgs']]]]:
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PcRestoreSourceV2LinkArgs']]]]):
+    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PcRestoreSourceV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def location(self) -> pulumi.Input[Optional['PcRestoreSourceV2LocationArgs']]:
+    def location(self) -> Optional[pulumi.Input['PcRestoreSourceV2LocationArgs']]:
         """
         -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
         """
         return pulumi.get(self, "location")
 
     @location.setter
-    def location(self, value: pulumi.Input[Optional['PcRestoreSourceV2LocationArgs']]):
+    def location(self, value: Optional[pulumi.Input['PcRestoreSourceV2LocationArgs']]):
         pulumi.set(self, "location", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
 
@@ -145,12 +145,12 @@ class PcRestoreSourceV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 location: pulumi.Input[Optional[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict']]] = None,
+                 location: Optional[pulumi.Input[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict']]] = None,
                  __props__=None):
         """
-        > **Authentication:** The <span pulumi-lang-nodejs="`nutanix.PcRestoreSourceV2`" pulumi-lang-dotnet="`nutanix.PcRestoreSourceV2`" pulumi-lang-go="`PcRestoreSourceV2`" pulumi-lang-python="`PcRestoreSourceV2`" pulumi-lang-yaml="`nutanix.PcRestoreSourceV2`" pulumi-lang-java="`nutanix.PcRestoreSourceV2`">`nutanix.PcRestoreSourceV2`</span> resource does **not** support API key authentication. The CreateRestoreSource API routes requests to the target cluster (Prism Element), which only supports basic auth (username/password). Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`">`password`</span> in the provider configuration—do not use <span pulumi-lang-nodejs="`apiKey`" pulumi-lang-dotnet="`ApiKey`" pulumi-lang-go="`apiKey`" pulumi-lang-python="`api_key`" pulumi-lang-yaml="`apiKey`" pulumi-lang-java="`apiKey`">`apiKey`</span>. Using API key will result in "Invalid cookies present in the request" errors.
+        > **Authentication:** The <span pulumi-lang-nodejs="`nutanix.PcRestoreSourceV2`" pulumi-lang-dotnet="`nutanix.PcRestoreSourceV2`" pulumi-lang-go="`PcRestoreSourceV2`" pulumi-lang-python="`PcRestoreSourceV2`" pulumi-lang-yaml="`nutanix.PcRestoreSourceV2`" pulumi-lang-java="`nutanix.PcRestoreSourceV2`" pulumi-lang-hcl="`nutanix_pc_restore_source_v2`">`nutanix.PcRestoreSourceV2`</span> resource does **not** support API key authentication. The CreateRestoreSource API routes requests to the target cluster (Prism Element), which only supports basic auth (username/password). Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`" pulumi-lang-hcl="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`" pulumi-lang-hcl="`password`">`password`</span> in the provider configuration—do not use <span pulumi-lang-nodejs="`apiKey`" pulumi-lang-dotnet="`ApiKey`" pulumi-lang-go="`apiKey`" pulumi-lang-python="`api_key`" pulumi-lang-yaml="`apiKey`" pulumi-lang-java="`apiKey`" pulumi-lang-hcl="`api_key`">`apiKey`</span>. Using API key will result in "Invalid cookies present in the request" errors.
 
-        > The restore source is auto-deleted after sometime,<span pulumi-lang-nodejs=" nutanix.PcRestoreSourceV2 " pulumi-lang-dotnet=" nutanix.PcRestoreSourceV2 " pulumi-lang-go=" PcRestoreSourceV2 " pulumi-lang-python=" PcRestoreSourceV2 " pulumi-lang-yaml=" nutanix.PcRestoreSourceV2 " pulumi-lang-java=" nutanix.PcRestoreSourceV2 "> nutanix.PcRestoreSourceV2 </span>resource is auto-create new restore source if it was deleted, so notice that the id of the restore source resource will be different after recreation. and for update restore source, it will create a new restore source with the new configuration
+        > The restore source is auto-deleted after sometime,<span pulumi-lang-nodejs=" nutanix.PcRestoreSourceV2 " pulumi-lang-dotnet=" nutanix.PcRestoreSourceV2 " pulumi-lang-go=" PcRestoreSourceV2 " pulumi-lang-python=" PcRestoreSourceV2 " pulumi-lang-yaml=" nutanix.PcRestoreSourceV2 " pulumi-lang-java=" nutanix.PcRestoreSourceV2 " pulumi-lang-hcl=" nutanix_pc_restore_source_v2 "> nutanix.PcRestoreSourceV2 </span>resource is auto-create new restore source if it was deleted, so notice that the id of the restore source resource will be different after recreation. and for update restore source, it will create a new restore source with the new configuration
 
         Create a restore source pointing to a cluster or object store to restore the domain manager. The created restore source is intended to be deleted after use. If the restore source is not deleted using the deleteRestoreSource API, then it is auto-deleted after sometime. Also note that a restore source will not contain a backup policy. It is only used to access the backup data at the location from where the Prism Central may be restored. Credentials used to access the restore source are not validated at the time of creation of the restore source. They are validated when the restore source is used to fetch data.
 
@@ -214,9 +214,9 @@ class PcRestoreSourceV2(pulumi.CustomResource):
                  args: PcRestoreSourceV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        > **Authentication:** The <span pulumi-lang-nodejs="`nutanix.PcRestoreSourceV2`" pulumi-lang-dotnet="`nutanix.PcRestoreSourceV2`" pulumi-lang-go="`PcRestoreSourceV2`" pulumi-lang-python="`PcRestoreSourceV2`" pulumi-lang-yaml="`nutanix.PcRestoreSourceV2`" pulumi-lang-java="`nutanix.PcRestoreSourceV2`">`nutanix.PcRestoreSourceV2`</span> resource does **not** support API key authentication. The CreateRestoreSource API routes requests to the target cluster (Prism Element), which only supports basic auth (username/password). Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`">`password`</span> in the provider configuration—do not use <span pulumi-lang-nodejs="`apiKey`" pulumi-lang-dotnet="`ApiKey`" pulumi-lang-go="`apiKey`" pulumi-lang-python="`api_key`" pulumi-lang-yaml="`apiKey`" pulumi-lang-java="`apiKey`">`apiKey`</span>. Using API key will result in "Invalid cookies present in the request" errors.
+        > **Authentication:** The <span pulumi-lang-nodejs="`nutanix.PcRestoreSourceV2`" pulumi-lang-dotnet="`nutanix.PcRestoreSourceV2`" pulumi-lang-go="`PcRestoreSourceV2`" pulumi-lang-python="`PcRestoreSourceV2`" pulumi-lang-yaml="`nutanix.PcRestoreSourceV2`" pulumi-lang-java="`nutanix.PcRestoreSourceV2`" pulumi-lang-hcl="`nutanix_pc_restore_source_v2`">`nutanix.PcRestoreSourceV2`</span> resource does **not** support API key authentication. The CreateRestoreSource API routes requests to the target cluster (Prism Element), which only supports basic auth (username/password). Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`" pulumi-lang-hcl="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`" pulumi-lang-hcl="`password`">`password`</span> in the provider configuration—do not use <span pulumi-lang-nodejs="`apiKey`" pulumi-lang-dotnet="`ApiKey`" pulumi-lang-go="`apiKey`" pulumi-lang-python="`api_key`" pulumi-lang-yaml="`apiKey`" pulumi-lang-java="`apiKey`" pulumi-lang-hcl="`api_key`">`apiKey`</span>. Using API key will result in "Invalid cookies present in the request" errors.
 
-        > The restore source is auto-deleted after sometime,<span pulumi-lang-nodejs=" nutanix.PcRestoreSourceV2 " pulumi-lang-dotnet=" nutanix.PcRestoreSourceV2 " pulumi-lang-go=" PcRestoreSourceV2 " pulumi-lang-python=" PcRestoreSourceV2 " pulumi-lang-yaml=" nutanix.PcRestoreSourceV2 " pulumi-lang-java=" nutanix.PcRestoreSourceV2 "> nutanix.PcRestoreSourceV2 </span>resource is auto-create new restore source if it was deleted, so notice that the id of the restore source resource will be different after recreation. and for update restore source, it will create a new restore source with the new configuration
+        > The restore source is auto-deleted after sometime,<span pulumi-lang-nodejs=" nutanix.PcRestoreSourceV2 " pulumi-lang-dotnet=" nutanix.PcRestoreSourceV2 " pulumi-lang-go=" PcRestoreSourceV2 " pulumi-lang-python=" PcRestoreSourceV2 " pulumi-lang-yaml=" nutanix.PcRestoreSourceV2 " pulumi-lang-java=" nutanix.PcRestoreSourceV2 " pulumi-lang-hcl=" nutanix_pc_restore_source_v2 "> nutanix.PcRestoreSourceV2 </span>resource is auto-create new restore source if it was deleted, so notice that the id of the restore source resource will be different after recreation. and for update restore source, it will create a new restore source with the new configuration
 
         Create a restore source pointing to a cluster or object store to restore the domain manager. The created restore source is intended to be deleted after use. If the restore source is not deleted using the deleteRestoreSource API, then it is auto-deleted after sometime. Also note that a restore source will not contain a backup policy. It is only used to access the backup data at the location from where the Prism Central may be restored. Credentials used to access the restore source are not validated at the time of creation of the restore source. They are validated when the restore source is used to fetch data.
 
@@ -284,7 +284,7 @@ class PcRestoreSourceV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 location: pulumi.Input[Optional[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict']]] = None,
+                 location: Optional[pulumi.Input[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -313,13 +313,13 @@ class PcRestoreSourceV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            backup_pause_reason: pulumi.Input[Optional[_builtins.str]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            is_backup_paused: pulumi.Input[Optional[_builtins.bool]] = None,
-            last_sync_time: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcRestoreSourceV2LinkArgs', 'PcRestoreSourceV2LinkArgsDict']]]]] = None,
-            location: pulumi.Input[Optional[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict']]] = None,
-            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PcRestoreSourceV2':
+            backup_pause_reason: Optional[pulumi.Input[_builtins.str]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            is_backup_paused: Optional[pulumi.Input[_builtins.bool]] = None,
+            last_sync_time: Optional[pulumi.Input[_builtins.str]] = None,
+            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PcRestoreSourceV2LinkArgs', 'PcRestoreSourceV2LinkArgsDict']]]]] = None,
+            location: Optional[pulumi.Input[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict']]] = None,
+            tenant_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'PcRestoreSourceV2':
         """
         Get an existing PcRestoreSourceV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

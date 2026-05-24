@@ -129,7 +129,7 @@ def get_network_security_policy_rules_v2(filter: Optional[_builtins.str] = None,
 
     :param _builtins.str filter: Filter expression for the list. The filter can be applied to the following fields:
     :param _builtins.int limit: Maximum number of rules to return (1–100). Default is 50 if not set.
-    :param _builtins.str order_by: Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy "> orderBy </span>can be applied to the following fields:
+    :param _builtins.str order_by: Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy " pulumi-lang-hcl=" order_by "> orderBy </span>can be applied to the following fields:
     :param _builtins.int page: Page number for pagination (0-based).
     :param _builtins.str policy_ext_id: ExtId of the network security policy to list rules for.
     :param _builtins.str select: Comma-separated list of fields to return. The select can be applied to the following fields:
@@ -153,12 +153,12 @@ def get_network_security_policy_rules_v2(filter: Optional[_builtins.str] = None,
         page=pulumi.get(__ret__, 'page'),
         policy_ext_id=pulumi.get(__ret__, 'policy_ext_id'),
         select=pulumi.get(__ret__, 'select'))
-def get_network_security_policy_rules_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
-                                                order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
-                                                policy_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                                select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+def get_network_security_policy_rules_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                                limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+                                                order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                                page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+                                                policy_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                                                select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSecurityPolicyRulesV2Result]:
     """
     Gets the list of Network Security Policy rules for a given policy ExtID.
@@ -166,7 +166,7 @@ def get_network_security_policy_rules_v2_output(filter: pulumi.Input[Optional[Op
 
     :param _builtins.str filter: Filter expression for the list. The filter can be applied to the following fields:
     :param _builtins.int limit: Maximum number of rules to return (1–100). Default is 50 if not set.
-    :param _builtins.str order_by: Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy "> orderBy </span>can be applied to the following fields:
+    :param _builtins.str order_by: Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy " pulumi-lang-hcl=" order_by "> orderBy </span>can be applied to the following fields:
     :param _builtins.int page: Page number for pagination (0-based).
     :param _builtins.str policy_ext_id: ExtId of the network security policy to list rules for.
     :param _builtins.str select: Comma-separated list of fields to return. The select can be applied to the following fields:

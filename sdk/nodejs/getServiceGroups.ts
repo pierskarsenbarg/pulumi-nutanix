@@ -44,5 +44,5 @@ export function getServiceGroupsOutput(args?: GetServiceGroupsOutputArgs, opts?:
  * A collection of arguments for invoking getServiceGroups.
  */
 export interface GetServiceGroupsOutputArgs {
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetServiceGroupsMetadataArgs>[] | undefined>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetServiceGroupsMetadataArgs>[]>;
 }

@@ -168,71 +168,71 @@ export interface NdbProfileState {
     /**
      * associated databases of profiles
      */
-    assocDatabases?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    assocDatabases?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * associated database servers for associated profiles
      */
-    assocDbServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    assocDbServers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * cluster availability of profile
      */
-    clusterAvailabilities?: pulumi.Input<pulumi.Input<inputs.NdbProfileClusterAvailability>[] | undefined>;
+    clusterAvailabilities?: pulumi.Input<pulumi.Input<inputs.NdbProfileClusterAvailability>[]>;
     /**
      * Compute Profile
      */
-    computeProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileComputeProfile>[] | undefined>;
+    computeProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileComputeProfile>[]>;
     /**
      * Database Parameter Profile
      */
-    databaseParameterProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileDatabaseParameterProfile>[] | undefined>;
+    databaseParameterProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileDatabaseParameterProfile>[]>;
     /**
      * Description of profile
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * Engine Type of database
      */
-    engineType?: pulumi.Input<string | undefined>;
+    engineType?: pulumi.Input<string>;
     /**
      * latest version of profile
      */
-    latestVersion?: pulumi.Input<string | undefined>;
+    latestVersion?: pulumi.Input<string>;
     /**
      * latest version id of profile
      */
-    latestVersionId?: pulumi.Input<string | undefined>;
+    latestVersionId?: pulumi.Input<string>;
     /**
      * Name of profile
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * Network Profile
      */
-    networkProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileNetworkProfile>[] | undefined>;
+    networkProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileNetworkProfile>[]>;
     /**
      * cluster on which profile created
      */
-    nxClusterId?: pulumi.Input<string | undefined>;
+    nxClusterId?: pulumi.Input<string>;
     /**
      * owner  of profile
      */
-    owner?: pulumi.Input<string | undefined>;
+    owner?: pulumi.Input<string>;
     /**
      * Publish for all users
      */
-    published?: pulumi.Input<boolean | undefined>;
+    published?: pulumi.Input<boolean>;
     /**
      * Software Profile
      */
-    softwareProfile?: pulumi.Input<inputs.NdbProfileSoftwareProfile | undefined>;
+    softwareProfile?: pulumi.Input<inputs.NdbProfileSoftwareProfile>;
     /**
      * status of profile
      */
-    status?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string>;
     /**
      * versions of associated profiles
      */
-    versions?: pulumi.Input<pulumi.Input<inputs.NdbProfileVersion>[] | undefined>;
+    versions?: pulumi.Input<pulumi.Input<inputs.NdbProfileVersion>[]>;
 }
 
 /**
@@ -242,33 +242,33 @@ export interface NdbProfileArgs {
     /**
      * Compute Profile
      */
-    computeProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileComputeProfile>[] | undefined>;
+    computeProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileComputeProfile>[]>;
     /**
      * Database Parameter Profile
      */
-    databaseParameterProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileDatabaseParameterProfile>[] | undefined>;
+    databaseParameterProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileDatabaseParameterProfile>[]>;
     /**
      * Description of profile
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * Engine Type of database
      */
-    engineType?: pulumi.Input<string | undefined>;
+    engineType?: pulumi.Input<string>;
     /**
      * Name of profile
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * Network Profile
      */
-    networkProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileNetworkProfile>[] | undefined>;
+    networkProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileNetworkProfile>[]>;
     /**
      * Publish for all users
      */
-    published?: pulumi.Input<boolean | undefined>;
+    published?: pulumi.Input<boolean>;
     /**
      * Software Profile
      */
-    softwareProfile?: pulumi.Input<inputs.NdbProfileSoftwareProfile | undefined>;
+    softwareProfile?: pulumi.Input<inputs.NdbProfileSoftwareProfile>;
 }

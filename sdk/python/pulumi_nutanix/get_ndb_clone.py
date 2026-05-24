@@ -456,10 +456,10 @@ def get_ndb_clone(clone_id: Optional[_builtins.str] = None,
         time_machines=pulumi.get(__ret__, 'time_machines'),
         time_zone=pulumi.get(__ret__, 'time_zone'),
         type=pulumi.get(__ret__, 'type'))
-def get_ndb_clone_output(clone_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                         clone_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbCloneFilterArgs', 'GetNdbCloneFilterArgsDict']]]]] = None,
-                         tags: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbCloneTagArgs', 'GetNdbCloneTagArgsDict']]]]] = None,
+def get_ndb_clone_output(clone_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                         clone_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbCloneFilterArgs', 'GetNdbCloneFilterArgsDict']]]]] = None,
+                         tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbCloneTagArgs', 'GetNdbCloneTagArgsDict']]]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbCloneResult]:
     """
     Describes the clone present in Nutanix Database Service

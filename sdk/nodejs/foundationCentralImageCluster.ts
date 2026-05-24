@@ -100,7 +100,7 @@ import * as utilities from "./utilities";
  * ## lifecycle
  *
  * * `Update` : - Resource will trigger new resource create call for any kind of update in resource config.
- * * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`">`delete`</span> : - Resource will be deleted from Foundation Central deployment history. For Actual Cluster delete , manually destroy the cluster.
+ * * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`" pulumi-lang-hcl="`delete`">`delete`</span> : - Resource will be deleted from Foundation Central deployment history. For Actual Cluster delete , manually destroy the cluster.
  *
  * See detailed information in [Nutanix Foundation Central Create a Cluster](https://www.nutanix.dev/api_references/foundation-central/#/cba507f282927-request-to-create-a-cluster).
  */
@@ -288,57 +288,57 @@ export interface FoundationCentralImageClusterState {
     /**
      * Sha256sum of AOS package.
      */
-    aosPackageSha256sum?: pulumi.Input<string | undefined>;
+    aosPackageSha256sum?: pulumi.Input<string>;
     /**
      * URL to download AOS package. Required only if imaging is needed.
      */
-    aosPackageUrl?: pulumi.Input<string | undefined>;
-    archived?: pulumi.Input<boolean | undefined>;
+    aosPackageUrl?: pulumi.Input<string>;
+    archived?: pulumi.Input<boolean>;
     /**
      * External management ip of the cluster.
      */
-    clusterExternalIp?: pulumi.Input<string | undefined>;
+    clusterExternalIp?: pulumi.Input<string>;
     /**
      * Name of the cluster.
      */
-    clusterName?: pulumi.Input<string | undefined>;
+    clusterName?: pulumi.Input<string>;
     /**
      * Number of nodes in the cluster.
      */
-    clusterSize?: pulumi.Input<number | undefined>;
-    clusterStatus?: pulumi.Input<inputs.FoundationCentralImageClusterClusterStatus | undefined>;
+    clusterSize?: pulumi.Input<number>;
+    clusterStatus?: pulumi.Input<inputs.FoundationCentralImageClusterClusterStatus>;
     /**
      * Common network settings across the nodes in the cluster.
      */
-    commonNetworkSettings?: pulumi.Input<inputs.FoundationCentralImageClusterCommonNetworkSettings | undefined>;
-    createdTimestamp?: pulumi.Input<string | undefined>;
-    currentTime?: pulumi.Input<string | undefined>;
-    destroyed?: pulumi.Input<boolean | undefined>;
+    commonNetworkSettings?: pulumi.Input<inputs.FoundationCentralImageClusterCommonNetworkSettings>;
+    createdTimestamp?: pulumi.Input<string>;
+    currentTime?: pulumi.Input<string>;
+    destroyed?: pulumi.Input<boolean>;
     /**
      * UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
      */
-    fcApiKeyUuid?: pulumi.Input<string | undefined>;
-    foundationInitConfigs?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterFoundationInitConfig>[] | undefined>;
-    foundationInitNodeUuid?: pulumi.Input<string | undefined>;
+    fcApiKeyUuid?: pulumi.Input<string>;
+    foundationInitConfigs?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterFoundationInitConfig>[]>;
+    foundationInitNodeUuid?: pulumi.Input<string>;
     /**
      * Details of the hypervisor iso. (Deprecated)
      */
-    hypervisorIsoDetails?: pulumi.Input<inputs.FoundationCentralImageClusterHypervisorIsoDetails | undefined>;
+    hypervisorIsoDetails?: pulumi.Input<inputs.FoundationCentralImageClusterHypervisorIsoDetails>;
     /**
      * Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
      */
-    hypervisorIsos?: pulumi.Input<inputs.FoundationCentralImageClusterHypervisorIsos | undefined>;
-    imageClusterUuid?: pulumi.Input<string | undefined>;
+    hypervisorIsos?: pulumi.Input<inputs.FoundationCentralImageClusterHypervisorIsos>;
+    imageClusterUuid?: pulumi.Input<string>;
     /**
      * Unique id of the cluster.
      */
-    imagedClusterUuid?: pulumi.Input<string | undefined>;
-    imagedNodeUuidLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
-    nodeLists?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterNodeList>[] | undefined>;
+    imagedClusterUuid?: pulumi.Input<string>;
+    imagedNodeUuidLists?: pulumi.Input<pulumi.Input<string>[]>;
+    nodeLists?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterNodeList>[]>;
     /**
      * Redundancy factor of the cluster.
      */
-    redundancyFactor?: pulumi.Input<number | undefined>;
+    redundancyFactor?: pulumi.Input<number>;
     /**
      * JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
      * ```
@@ -349,17 +349,17 @@ export interface FoundationCentralImageClusterState {
      * })
      * ```
      */
-    serverConfigurationData?: pulumi.Input<string | undefined>;
-    skipClusterCreation?: pulumi.Input<boolean | undefined>;
+    serverConfigurationData?: pulumi.Input<string>;
+    skipClusterCreation?: pulumi.Input<boolean>;
     /**
      * Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
      */
-    storageNodeCount?: pulumi.Input<number | undefined>;
+    storageNodeCount?: pulumi.Input<number>;
     /**
      * Timezone to be set on the cluster.
      */
-    timezone?: pulumi.Input<string | undefined>;
-    workflowType?: pulumi.Input<string | undefined>;
+    timezone?: pulumi.Input<string>;
+    workflowType?: pulumi.Input<string>;
 }
 
 /**
@@ -369,46 +369,46 @@ export interface FoundationCentralImageClusterArgs {
     /**
      * Sha256sum of AOS package.
      */
-    aosPackageSha256sum?: pulumi.Input<string | undefined>;
+    aosPackageSha256sum?: pulumi.Input<string>;
     /**
      * URL to download AOS package. Required only if imaging is needed.
      */
-    aosPackageUrl?: pulumi.Input<string | undefined>;
+    aosPackageUrl?: pulumi.Input<string>;
     /**
      * External management ip of the cluster.
      */
-    clusterExternalIp?: pulumi.Input<string | undefined>;
+    clusterExternalIp?: pulumi.Input<string>;
     /**
      * Name of the cluster.
      */
-    clusterName?: pulumi.Input<string | undefined>;
+    clusterName?: pulumi.Input<string>;
     /**
      * Number of nodes in the cluster.
      */
-    clusterSize?: pulumi.Input<number | undefined>;
-    clusterStatus?: pulumi.Input<inputs.FoundationCentralImageClusterClusterStatus | undefined>;
+    clusterSize?: pulumi.Input<number>;
+    clusterStatus?: pulumi.Input<inputs.FoundationCentralImageClusterClusterStatus>;
     /**
      * Common network settings across the nodes in the cluster.
      */
-    commonNetworkSettings?: pulumi.Input<inputs.FoundationCentralImageClusterCommonNetworkSettings | undefined>;
+    commonNetworkSettings?: pulumi.Input<inputs.FoundationCentralImageClusterCommonNetworkSettings>;
     /**
      * UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
      */
-    fcApiKeyUuid?: pulumi.Input<string | undefined>;
+    fcApiKeyUuid?: pulumi.Input<string>;
     /**
      * Details of the hypervisor iso. (Deprecated)
      */
-    hypervisorIsoDetails?: pulumi.Input<inputs.FoundationCentralImageClusterHypervisorIsoDetails | undefined>;
+    hypervisorIsoDetails?: pulumi.Input<inputs.FoundationCentralImageClusterHypervisorIsoDetails>;
     /**
      * Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
      */
-    hypervisorIsos?: pulumi.Input<inputs.FoundationCentralImageClusterHypervisorIsos | undefined>;
-    imageClusterUuid?: pulumi.Input<string | undefined>;
-    nodeLists?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterNodeList>[] | undefined>;
+    hypervisorIsos?: pulumi.Input<inputs.FoundationCentralImageClusterHypervisorIsos>;
+    imageClusterUuid?: pulumi.Input<string>;
+    nodeLists?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterNodeList>[]>;
     /**
      * Redundancy factor of the cluster.
      */
-    redundancyFactor?: pulumi.Input<number | undefined>;
+    redundancyFactor?: pulumi.Input<number>;
     /**
      * JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
      * ```
@@ -419,14 +419,14 @@ export interface FoundationCentralImageClusterArgs {
      * })
      * ```
      */
-    serverConfigurationData?: pulumi.Input<string | undefined>;
-    skipClusterCreation?: pulumi.Input<boolean | undefined>;
+    serverConfigurationData?: pulumi.Input<string>;
+    skipClusterCreation?: pulumi.Input<boolean>;
     /**
      * Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
      */
-    storageNodeCount?: pulumi.Input<number | undefined>;
+    storageNodeCount?: pulumi.Input<number>;
     /**
      * Timezone to be set on the cluster.
      */
-    timezone?: pulumi.Input<string | undefined>;
+    timezone?: pulumi.Input<string>;
 }

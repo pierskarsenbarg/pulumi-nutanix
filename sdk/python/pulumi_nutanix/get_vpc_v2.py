@@ -194,7 +194,7 @@ class AwaitableGetVpcV2Result(GetVpcV2Result):
 def get_vpc_v2(ext_id: Optional[_builtins.str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVpcV2Result:
     """
-    Provides a datasource to retrieve VPC with<span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "> vpcUuid </span>.
+    Provides a datasource to retrieve VPC with<span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid " pulumi-lang-hcl=" vpc_uuid "> vpcUuid </span>.
 
     ## Example Usage
 
@@ -229,10 +229,10 @@ def get_vpc_v2(ext_id: Optional[_builtins.str] = None,
         snat_ips=pulumi.get(__ret__, 'snat_ips'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         vpc_type=pulumi.get(__ret__, 'vpc_type'))
-def get_vpc_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_vpc_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVpcV2Result]:
     """
-    Provides a datasource to retrieve VPC with<span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "> vpcUuid </span>.
+    Provides a datasource to retrieve VPC with<span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid " pulumi-lang-hcl=" vpc_uuid "> vpcUuid </span>.
 
     ## Example Usage
 

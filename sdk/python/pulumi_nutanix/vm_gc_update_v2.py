@@ -22,7 +22,7 @@ __all__ = ['VmGcUpdateV2Args', 'VmGcUpdateV2']
 class VmGcUpdateV2Args:
     def __init__(__self__, *,
                  ext_id: pulumi.Input[_builtins.str],
-                 configs: pulumi.Input[Optional[Sequence[pulumi.Input['VmGcUpdateV2ConfigArgs']]]] = None):
+                 configs: Optional[pulumi.Input[Sequence[pulumi.Input['VmGcUpdateV2ConfigArgs']]]] = None):
         """
         The set of arguments for constructing a VmGcUpdateV2 resource.
 
@@ -47,22 +47,22 @@ class VmGcUpdateV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VmGcUpdateV2ConfigArgs']]]]:
+    def configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmGcUpdateV2ConfigArgs']]]]:
         """
         - (Optional) The Nutanix Guest Tools customization settings.
         """
         return pulumi.get(self, "configs")
 
     @configs.setter
-    def configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VmGcUpdateV2ConfigArgs']]]]):
+    def configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmGcUpdateV2ConfigArgs']]]]):
         pulumi.set(self, "configs", value)
 
 
 @pulumi.input_type
 class _VmGcUpdateV2State:
     def __init__(__self__, *,
-                 configs: pulumi.Input[Optional[Sequence[pulumi.Input['VmGcUpdateV2ConfigArgs']]]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 configs: Optional[pulumi.Input[Sequence[pulumi.Input['VmGcUpdateV2ConfigArgs']]]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VmGcUpdateV2 resources.
 
@@ -76,26 +76,26 @@ class _VmGcUpdateV2State:
 
     @_builtins.property
     @pulumi.getter
-    def configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VmGcUpdateV2ConfigArgs']]]]:
+    def configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmGcUpdateV2ConfigArgs']]]]:
         """
         - (Optional) The Nutanix Guest Tools customization settings.
         """
         return pulumi.get(self, "configs")
 
     @configs.setter
-    def configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VmGcUpdateV2ConfigArgs']]]]):
+    def configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmGcUpdateV2ConfigArgs']]]]):
         pulumi.set(self, "configs", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Required) The globally unique identifier of a VM. It should be of type UUID.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
 
@@ -105,8 +105,8 @@ class VmGcUpdateV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmGcUpdateV2ConfigArgs', 'VmGcUpdateV2ConfigArgsDict']]]]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmGcUpdateV2ConfigArgs', 'VmGcUpdateV2ConfigArgsDict']]]]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a Nutanix Virtual Machine resource to Create a virtual machine guest customization update.
@@ -186,8 +186,8 @@ class VmGcUpdateV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmGcUpdateV2ConfigArgs', 'VmGcUpdateV2ConfigArgsDict']]]]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmGcUpdateV2ConfigArgs', 'VmGcUpdateV2ConfigArgsDict']]]]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -211,8 +211,8 @@ class VmGcUpdateV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmGcUpdateV2ConfigArgs', 'VmGcUpdateV2ConfigArgsDict']]]]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VmGcUpdateV2':
+            configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmGcUpdateV2ConfigArgs', 'VmGcUpdateV2ConfigArgsDict']]]]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'VmGcUpdateV2':
         """
         Get an existing VmGcUpdateV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

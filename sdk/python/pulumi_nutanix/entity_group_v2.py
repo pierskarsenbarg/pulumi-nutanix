@@ -21,11 +21,11 @@ __all__ = ['EntityGroupV2Args', 'EntityGroupV2']
 @pulumi.input_type
 class EntityGroupV2Args:
     def __init__(__self__, *,
-                 allowed_config: pulumi.Input[Optional['EntityGroupV2AllowedConfigArgs']] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 except_config: pulumi.Input[Optional['EntityGroupV2ExceptConfigArgs']] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 policy_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 allowed_config: Optional[pulumi.Input['EntityGroupV2AllowedConfigArgs']] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 except_config: Optional[pulumi.Input['EntityGroupV2ExceptConfigArgs']] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 policy_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a EntityGroupV2 resource.
 
@@ -48,79 +48,79 @@ class EntityGroupV2Args:
 
     @_builtins.property
     @pulumi.getter(name="allowedConfig")
-    def allowed_config(self) -> pulumi.Input[Optional['EntityGroupV2AllowedConfigArgs']]:
+    def allowed_config(self) -> Optional[pulumi.Input['EntityGroupV2AllowedConfigArgs']]:
         """
         Configuration of the allowed entities in the Entity Group.
         """
         return pulumi.get(self, "allowed_config")
 
     @allowed_config.setter
-    def allowed_config(self, value: pulumi.Input[Optional['EntityGroupV2AllowedConfigArgs']]):
+    def allowed_config(self, value: Optional[pulumi.Input['EntityGroupV2AllowedConfigArgs']]):
         pulumi.set(self, "allowed_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         A user defined annotation for an Entity Group.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="exceptConfig")
-    def except_config(self) -> pulumi.Input[Optional['EntityGroupV2ExceptConfigArgs']]:
+    def except_config(self) -> Optional[pulumi.Input['EntityGroupV2ExceptConfigArgs']]:
         """
         Configuration of except entities in the Entity Group.
         """
         return pulumi.get(self, "except_config")
 
     @except_config.setter
-    def except_config(self, value: pulumi.Input[Optional['EntityGroupV2ExceptConfigArgs']]):
+    def except_config(self, value: Optional[pulumi.Input['EntityGroupV2ExceptConfigArgs']]):
         pulumi.set(self, "except_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         A short identifier of an Entity Group.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="policyExtIds")
-    def policy_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def policy_ext_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of policy external identifiers.
         """
         return pulumi.get(self, "policy_ext_ids")
 
     @policy_ext_ids.setter
-    def policy_ext_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def policy_ext_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "policy_ext_ids", value)
 
 
 @pulumi.input_type
 class _EntityGroupV2State:
     def __init__(__self__, *,
-                 allowed_config: pulumi.Input[Optional['EntityGroupV2AllowedConfigArgs']] = None,
-                 creation_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 except_config: pulumi.Input[Optional['EntityGroupV2ExceptConfigArgs']] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 links: pulumi.Input[Optional[Sequence[pulumi.Input['EntityGroupV2LinkArgs']]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 policy_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 allowed_config: Optional[pulumi.Input['EntityGroupV2AllowedConfigArgs']] = None,
+                 creation_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 except_config: Optional[pulumi.Input['EntityGroupV2ExceptConfigArgs']] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 last_update_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 links: Optional[pulumi.Input[Sequence[pulumi.Input['EntityGroupV2LinkArgs']]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 owner_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 policy_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering EntityGroupV2 resources.
 
@@ -161,134 +161,134 @@ class _EntityGroupV2State:
 
     @_builtins.property
     @pulumi.getter(name="allowedConfig")
-    def allowed_config(self) -> pulumi.Input[Optional['EntityGroupV2AllowedConfigArgs']]:
+    def allowed_config(self) -> Optional[pulumi.Input['EntityGroupV2AllowedConfigArgs']]:
         """
         Configuration of the allowed entities in the Entity Group.
         """
         return pulumi.get(self, "allowed_config")
 
     @allowed_config.setter
-    def allowed_config(self, value: pulumi.Input[Optional['EntityGroupV2AllowedConfigArgs']]):
+    def allowed_config(self, value: Optional[pulumi.Input['EntityGroupV2AllowedConfigArgs']]):
         pulumi.set(self, "allowed_config", value)
 
     @_builtins.property
     @pulumi.getter(name="creationTime")
-    def creation_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def creation_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The timestamp when the Entity Group was created.
         """
         return pulumi.get(self, "creation_time")
 
     @creation_time.setter
-    def creation_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def creation_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "creation_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         A user defined annotation for an Entity Group.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="exceptConfig")
-    def except_config(self) -> pulumi.Input[Optional['EntityGroupV2ExceptConfigArgs']]:
+    def except_config(self) -> Optional[pulumi.Input['EntityGroupV2ExceptConfigArgs']]:
         """
         Configuration of except entities in the Entity Group.
         """
         return pulumi.get(self, "except_config")
 
     @except_config.setter
-    def except_config(self, value: pulumi.Input[Optional['EntityGroupV2ExceptConfigArgs']]):
+    def except_config(self, value: Optional[pulumi.Input['EntityGroupV2ExceptConfigArgs']]):
         pulumi.set(self, "except_config", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Entity group UUID.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdateTime")
-    def last_update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def last_update_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The timestamp when the Entity Group was last updated.
         """
         return pulumi.get(self, "last_update_time")
 
     @last_update_time.setter
-    def last_update_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def last_update_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "last_update_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['EntityGroupV2LinkArgs']]]]:
+    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['EntityGroupV2LinkArgs']]]]:
         """
         A HATEOAS style link for the response.
         """
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['EntityGroupV2LinkArgs']]]]):
+    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['EntityGroupV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         A short identifier of an Entity Group.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerExtId")
-    def owner_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def owner_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The external identifier of the user who created the Entity Group.
         """
         return pulumi.get(self, "owner_ext_id")
 
     @owner_ext_id.setter
-    def owner_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def owner_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "owner_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="policyExtIds")
-    def policy_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def policy_ext_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of policy external identifiers.
         """
         return pulumi.get(self, "policy_ext_ids")
 
     @policy_ext_ids.setter
-    def policy_ext_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def policy_ext_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "policy_ext_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         A globally unique identifier that represents the tenant that owns this entity.
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
 
@@ -298,11 +298,11 @@ class EntityGroupV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_config: pulumi.Input[Optional[Union['EntityGroupV2AllowedConfigArgs', 'EntityGroupV2AllowedConfigArgsDict']]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 except_config: pulumi.Input[Optional[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict']]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 policy_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_config: Optional[pulumi.Input[Union['EntityGroupV2AllowedConfigArgs', 'EntityGroupV2AllowedConfigArgsDict']]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 except_config: Optional[pulumi.Input[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict']]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 policy_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create and manage an Entity Group for microsegmentation.
@@ -355,20 +355,20 @@ class EntityGroupV2(pulumi.CustomResource):
 
         ## Validation Requirements
 
-        The following validation rules apply to <span pulumi-lang-nodejs="`allowedConfig`" pulumi-lang-dotnet="`AllowedConfig`" pulumi-lang-go="`allowedConfig`" pulumi-lang-python="`allowed_config`" pulumi-lang-yaml="`allowedConfig`" pulumi-lang-java="`allowedConfig`">`allowedConfig`</span> entities:
+        The following validation rules apply to <span pulumi-lang-nodejs="`allowedConfig`" pulumi-lang-dotnet="`AllowedConfig`" pulumi-lang-go="`allowedConfig`" pulumi-lang-python="`allowed_config`" pulumi-lang-yaml="`allowedConfig`" pulumi-lang-java="`allowedConfig`" pulumi-lang-hcl="`allowed_config`">`allowedConfig`</span> entities:
 
         ### Required Fields
 
-        * <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`">`type`</span> - (Required) Must be specified for all entities in <span pulumi-lang-nodejs="`allowedConfig`" pulumi-lang-dotnet="`AllowedConfig`" pulumi-lang-go="`allowedConfig`" pulumi-lang-python="`allowed_config`" pulumi-lang-yaml="`allowedConfig`" pulumi-lang-java="`allowedConfig`">`allowedConfig`</span>.
+        * <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> - (Required) Must be specified for all entities in <span pulumi-lang-nodejs="`allowedConfig`" pulumi-lang-dotnet="`AllowedConfig`" pulumi-lang-go="`allowedConfig`" pulumi-lang-python="`allowed_config`" pulumi-lang-yaml="`allowedConfig`" pulumi-lang-java="`allowedConfig`" pulumi-lang-hcl="`allowed_config`">`allowedConfig`</span>.
 
         ### Conditional Requirements
 
-        * <span pulumi-lang-nodejs="`kubeEntities`" pulumi-lang-dotnet="`KubeEntities`" pulumi-lang-go="`kubeEntities`" pulumi-lang-python="`kube_entities`" pulumi-lang-yaml="`kubeEntities`" pulumi-lang-java="`kubeEntities`">`kubeEntities`</span> - Required when <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`">`type`</span> is one of: `KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`. Must not be empty.
-        * <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`">`referenceExtIds`</span> - Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`">`selectedBy`</span> is `EXT_ID`. Must not be empty.
+        * <span pulumi-lang-nodejs="`kubeEntities`" pulumi-lang-dotnet="`KubeEntities`" pulumi-lang-go="`kubeEntities`" pulumi-lang-python="`kube_entities`" pulumi-lang-yaml="`kubeEntities`" pulumi-lang-java="`kubeEntities`" pulumi-lang-hcl="`kube_entities`">`kubeEntities`</span> - Required when <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> is one of: `KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`. Must not be empty.
+        * <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`" pulumi-lang-hcl="`reference_ext_ids`">`referenceExtIds`</span> - Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`. Must not be empty.
 
         ### Valid Combinations
 
-        The combination of <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`">`selectedBy`</span> and <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`">`type`</span> must be one of the following valid pairs:
+        The combination of <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> and <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> must be one of the following valid pairs:
 
         * `(CATEGORY_EXT_ID, VM)`
         * `(CATEGORY_EXT_ID, SUBNET)`
@@ -384,14 +384,14 @@ class EntityGroupV2(pulumi.CustomResource):
 
         ### Duplicate (selected_by, type) Not Allowed
 
-        Within one entity group, you cannot have two entities with the same `(selected_by, type)` pair. For example, two entities both using `IP_VALUES` and `ADDRESS_GROUP` are invalid. Combine all addresses and<span pulumi-lang-nodejs=" ipRanges " pulumi-lang-dotnet=" IpRanges " pulumi-lang-go=" ipRanges " pulumi-lang-python=" ip_ranges " pulumi-lang-yaml=" ipRanges " pulumi-lang-java=" ipRanges "> ipRanges </span>into a single entity block when using `(IP_VALUES, ADDRESS_GROUP)`.
+        Within one entity group, you cannot have two entities with the same `(selected_by, type)` pair. For example, two entities both using `IP_VALUES` and `ADDRESS_GROUP` are invalid. Combine all addresses and<span pulumi-lang-nodejs=" ipRanges " pulumi-lang-dotnet=" IpRanges " pulumi-lang-go=" ipRanges " pulumi-lang-python=" ip_ranges " pulumi-lang-yaml=" ipRanges " pulumi-lang-java=" ipRanges " pulumi-lang-hcl=" ip_ranges "> ipRanges </span>into a single entity block when using `(IP_VALUES, ADDRESS_GROUP)`.
 
         ## Import
 
         Entity Group can be imported using the entity group uuid `entityGroupUUID` (ext_id in v4 terms). eg,
 
         // create its configuration in the root module. For example:
-        resource <span pulumi-lang-nodejs=""nutanix.EntityGroupV2"" pulumi-lang-dotnet=""nutanix.EntityGroupV2"" pulumi-lang-go=""EntityGroupV2"" pulumi-lang-python=""EntityGroupV2"" pulumi-lang-yaml=""nutanix.EntityGroupV2"" pulumi-lang-java=""nutanix.EntityGroupV2"">"nutanix.EntityGroupV2"</span> <span pulumi-lang-nodejs=""importEntityGroup"" pulumi-lang-dotnet=""ImportEntityGroup"" pulumi-lang-go=""importEntityGroup"" pulumi-lang-python=""import_entity_group"" pulumi-lang-yaml=""importEntityGroup"" pulumi-lang-java=""importEntityGroup"">"importEntityGroup"</span>{}
+        resource <span pulumi-lang-nodejs=""nutanix.EntityGroupV2"" pulumi-lang-dotnet=""nutanix.EntityGroupV2"" pulumi-lang-go=""EntityGroupV2"" pulumi-lang-python=""EntityGroupV2"" pulumi-lang-yaml=""nutanix.EntityGroupV2"" pulumi-lang-java=""nutanix.EntityGroupV2"" pulumi-lang-hcl=""nutanix_entity_group_v2"">"nutanix.EntityGroupV2"</span> <span pulumi-lang-nodejs=""importEntityGroup"" pulumi-lang-dotnet=""ImportEntityGroup"" pulumi-lang-go=""importEntityGroup"" pulumi-lang-python=""import_entity_group"" pulumi-lang-yaml=""importEntityGroup"" pulumi-lang-java=""importEntityGroup"" pulumi-lang-hcl=""import_entity_group"">"importEntityGroup"</span>{}
 
         // execute the below command.
 
@@ -467,20 +467,20 @@ class EntityGroupV2(pulumi.CustomResource):
 
         ## Validation Requirements
 
-        The following validation rules apply to <span pulumi-lang-nodejs="`allowedConfig`" pulumi-lang-dotnet="`AllowedConfig`" pulumi-lang-go="`allowedConfig`" pulumi-lang-python="`allowed_config`" pulumi-lang-yaml="`allowedConfig`" pulumi-lang-java="`allowedConfig`">`allowedConfig`</span> entities:
+        The following validation rules apply to <span pulumi-lang-nodejs="`allowedConfig`" pulumi-lang-dotnet="`AllowedConfig`" pulumi-lang-go="`allowedConfig`" pulumi-lang-python="`allowed_config`" pulumi-lang-yaml="`allowedConfig`" pulumi-lang-java="`allowedConfig`" pulumi-lang-hcl="`allowed_config`">`allowedConfig`</span> entities:
 
         ### Required Fields
 
-        * <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`">`type`</span> - (Required) Must be specified for all entities in <span pulumi-lang-nodejs="`allowedConfig`" pulumi-lang-dotnet="`AllowedConfig`" pulumi-lang-go="`allowedConfig`" pulumi-lang-python="`allowed_config`" pulumi-lang-yaml="`allowedConfig`" pulumi-lang-java="`allowedConfig`">`allowedConfig`</span>.
+        * <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> - (Required) Must be specified for all entities in <span pulumi-lang-nodejs="`allowedConfig`" pulumi-lang-dotnet="`AllowedConfig`" pulumi-lang-go="`allowedConfig`" pulumi-lang-python="`allowed_config`" pulumi-lang-yaml="`allowedConfig`" pulumi-lang-java="`allowedConfig`" pulumi-lang-hcl="`allowed_config`">`allowedConfig`</span>.
 
         ### Conditional Requirements
 
-        * <span pulumi-lang-nodejs="`kubeEntities`" pulumi-lang-dotnet="`KubeEntities`" pulumi-lang-go="`kubeEntities`" pulumi-lang-python="`kube_entities`" pulumi-lang-yaml="`kubeEntities`" pulumi-lang-java="`kubeEntities`">`kubeEntities`</span> - Required when <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`">`type`</span> is one of: `KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`. Must not be empty.
-        * <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`">`referenceExtIds`</span> - Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`">`selectedBy`</span> is `EXT_ID`. Must not be empty.
+        * <span pulumi-lang-nodejs="`kubeEntities`" pulumi-lang-dotnet="`KubeEntities`" pulumi-lang-go="`kubeEntities`" pulumi-lang-python="`kube_entities`" pulumi-lang-yaml="`kubeEntities`" pulumi-lang-java="`kubeEntities`" pulumi-lang-hcl="`kube_entities`">`kubeEntities`</span> - Required when <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> is one of: `KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`. Must not be empty.
+        * <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`" pulumi-lang-hcl="`reference_ext_ids`">`referenceExtIds`</span> - Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`. Must not be empty.
 
         ### Valid Combinations
 
-        The combination of <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`">`selectedBy`</span> and <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`">`type`</span> must be one of the following valid pairs:
+        The combination of <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> and <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> must be one of the following valid pairs:
 
         * `(CATEGORY_EXT_ID, VM)`
         * `(CATEGORY_EXT_ID, SUBNET)`
@@ -496,14 +496,14 @@ class EntityGroupV2(pulumi.CustomResource):
 
         ### Duplicate (selected_by, type) Not Allowed
 
-        Within one entity group, you cannot have two entities with the same `(selected_by, type)` pair. For example, two entities both using `IP_VALUES` and `ADDRESS_GROUP` are invalid. Combine all addresses and<span pulumi-lang-nodejs=" ipRanges " pulumi-lang-dotnet=" IpRanges " pulumi-lang-go=" ipRanges " pulumi-lang-python=" ip_ranges " pulumi-lang-yaml=" ipRanges " pulumi-lang-java=" ipRanges "> ipRanges </span>into a single entity block when using `(IP_VALUES, ADDRESS_GROUP)`.
+        Within one entity group, you cannot have two entities with the same `(selected_by, type)` pair. For example, two entities both using `IP_VALUES` and `ADDRESS_GROUP` are invalid. Combine all addresses and<span pulumi-lang-nodejs=" ipRanges " pulumi-lang-dotnet=" IpRanges " pulumi-lang-go=" ipRanges " pulumi-lang-python=" ip_ranges " pulumi-lang-yaml=" ipRanges " pulumi-lang-java=" ipRanges " pulumi-lang-hcl=" ip_ranges "> ipRanges </span>into a single entity block when using `(IP_VALUES, ADDRESS_GROUP)`.
 
         ## Import
 
         Entity Group can be imported using the entity group uuid `entityGroupUUID` (ext_id in v4 terms). eg,
 
         // create its configuration in the root module. For example:
-        resource <span pulumi-lang-nodejs=""nutanix.EntityGroupV2"" pulumi-lang-dotnet=""nutanix.EntityGroupV2"" pulumi-lang-go=""EntityGroupV2"" pulumi-lang-python=""EntityGroupV2"" pulumi-lang-yaml=""nutanix.EntityGroupV2"" pulumi-lang-java=""nutanix.EntityGroupV2"">"nutanix.EntityGroupV2"</span> <span pulumi-lang-nodejs=""importEntityGroup"" pulumi-lang-dotnet=""ImportEntityGroup"" pulumi-lang-go=""importEntityGroup"" pulumi-lang-python=""import_entity_group"" pulumi-lang-yaml=""importEntityGroup"" pulumi-lang-java=""importEntityGroup"">"importEntityGroup"</span>{}
+        resource <span pulumi-lang-nodejs=""nutanix.EntityGroupV2"" pulumi-lang-dotnet=""nutanix.EntityGroupV2"" pulumi-lang-go=""EntityGroupV2"" pulumi-lang-python=""EntityGroupV2"" pulumi-lang-yaml=""nutanix.EntityGroupV2"" pulumi-lang-java=""nutanix.EntityGroupV2"" pulumi-lang-hcl=""nutanix_entity_group_v2"">"nutanix.EntityGroupV2"</span> <span pulumi-lang-nodejs=""importEntityGroup"" pulumi-lang-dotnet=""ImportEntityGroup"" pulumi-lang-go=""importEntityGroup"" pulumi-lang-python=""import_entity_group"" pulumi-lang-yaml=""importEntityGroup"" pulumi-lang-java=""importEntityGroup"" pulumi-lang-hcl=""import_entity_group"">"importEntityGroup"</span>{}
 
         // execute the below command.
 
@@ -529,11 +529,11 @@ class EntityGroupV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_config: pulumi.Input[Optional[Union['EntityGroupV2AllowedConfigArgs', 'EntityGroupV2AllowedConfigArgsDict']]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 except_config: pulumi.Input[Optional[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict']]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 policy_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowed_config: Optional[pulumi.Input[Union['EntityGroupV2AllowedConfigArgs', 'EntityGroupV2AllowedConfigArgsDict']]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 except_config: Optional[pulumi.Input[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict']]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 policy_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -564,17 +564,17 @@ class EntityGroupV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allowed_config: pulumi.Input[Optional[Union['EntityGroupV2AllowedConfigArgs', 'EntityGroupV2AllowedConfigArgsDict']]] = None,
-            creation_time: pulumi.Input[Optional[_builtins.str]] = None,
-            description: pulumi.Input[Optional[_builtins.str]] = None,
-            except_config: pulumi.Input[Optional[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict']]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EntityGroupV2LinkArgs', 'EntityGroupV2LinkArgsDict']]]]] = None,
-            name: pulumi.Input[Optional[_builtins.str]] = None,
-            owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            policy_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'EntityGroupV2':
+            allowed_config: Optional[pulumi.Input[Union['EntityGroupV2AllowedConfigArgs', 'EntityGroupV2AllowedConfigArgsDict']]] = None,
+            creation_time: Optional[pulumi.Input[_builtins.str]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
+            except_config: Optional[pulumi.Input[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict']]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            last_update_time: Optional[pulumi.Input[_builtins.str]] = None,
+            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['EntityGroupV2LinkArgs', 'EntityGroupV2LinkArgsDict']]]]] = None,
+            name: Optional[pulumi.Input[_builtins.str]] = None,
+            owner_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            policy_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tenant_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'EntityGroupV2':
         """
         Get an existing EntityGroupV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

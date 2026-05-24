@@ -217,75 +217,75 @@ export interface NdbMaintenanceWindowState {
     /**
      * access level
      */
-    accessLevel?: pulumi.Input<string | undefined>;
+    accessLevel?: pulumi.Input<string>;
     /**
      * created date of maintenance window
      */
-    dateCreated?: pulumi.Input<string | undefined>;
+    dateCreated?: pulumi.Input<string>;
     /**
      * modified date of maintenance window
      */
-    dateModified?: pulumi.Input<string | undefined>;
+    dateModified?: pulumi.Input<string>;
     /**
      * Day of the week to trigger maintenance window. Supports [ MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
      */
-    dayOfWeek?: pulumi.Input<string | undefined>;
+    dayOfWeek?: pulumi.Input<string>;
     /**
      * Description for maintenance window
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * duration in hours. Default is 2
      */
-    duration?: pulumi.Input<number | undefined>;
+    duration?: pulumi.Input<number>;
     /**
      * entity task association for maintenance window
      */
-    entityTaskAssocs?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceWindowEntityTaskAssoc>[] | undefined>;
+    entityTaskAssocs?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceWindowEntityTaskAssoc>[]>;
     /**
      * Name for the maintenance window.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * next run time for maintenance window to trigger
      */
-    nextRunTime?: pulumi.Input<string | undefined>;
+    nextRunTime?: pulumi.Input<string>;
     /**
      * owner id of maintenance window
      */
-    ownerId?: pulumi.Input<string | undefined>;
+    ownerId?: pulumi.Input<string>;
     /**
      * properties of maintenance window
      */
-    properties?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceWindowProperty>[] | undefined>;
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceWindowProperty>[]>;
     /**
      * Supported values [ MONTHLY, WEEKLY ]
      */
-    recurrence?: pulumi.Input<string | undefined>;
+    recurrence?: pulumi.Input<string>;
     /**
      * schedule of maintenance window
      */
-    schedules?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceWindowSchedule>[] | undefined>;
+    schedules?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceWindowSchedule>[]>;
     /**
      * start time for maintenance window to trigger
      */
-    startTime?: pulumi.Input<string | undefined>;
+    startTime?: pulumi.Input<string>;
     /**
      * status of maintennace window
      */
-    status?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string>;
     /**
      * tags of maintenance window
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceWindowTag>[] | undefined>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceWindowTag>[]>;
     /**
      * timezone . Default is Asia/Calcutta .
      */
-    timezone?: pulumi.Input<string | undefined>;
+    timezone?: pulumi.Input<string>;
     /**
      * week of the month. Supports [1, 2, 3, 4] .
      */
-    weekOfMonth?: pulumi.Input<number | undefined>;
+    weekOfMonth?: pulumi.Input<number>;
 }
 
 /**
@@ -295,19 +295,19 @@ export interface NdbMaintenanceWindowArgs {
     /**
      * Day of the week to trigger maintenance window. Supports [ MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
      */
-    dayOfWeek?: pulumi.Input<string | undefined>;
+    dayOfWeek?: pulumi.Input<string>;
     /**
      * Description for maintenance window
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * duration in hours. Default is 2
      */
-    duration?: pulumi.Input<number | undefined>;
+    duration?: pulumi.Input<number>;
     /**
      * Name for the maintenance window.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * Supported values [ MONTHLY, WEEKLY ]
      */
@@ -319,13 +319,13 @@ export interface NdbMaintenanceWindowArgs {
     /**
      * tags of maintenance window
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceWindowTag>[] | undefined>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceWindowTag>[]>;
     /**
      * timezone . Default is Asia/Calcutta .
      */
-    timezone?: pulumi.Input<string | undefined>;
+    timezone?: pulumi.Input<string>;
     /**
      * week of the month. Supports [1, 2, 3, 4] .
      */
-    weekOfMonth?: pulumi.Input<number | undefined>;
+    weekOfMonth?: pulumi.Input<number>;
 }

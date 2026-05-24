@@ -108,15 +108,15 @@ export interface VmNetworkDeviceAssignIpV2State {
     /**
      * - (Required) The globally unique identifier of a Nic. It should be of type UUID.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * - (Optional) Ip config settings.
      */
-    ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceAssignIpV2IpAddress>[] | undefined>;
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceAssignIpV2IpAddress>[]>;
     /**
      * - (Required) The globally unique identifier of a VM. It should be of type UUID.
      */
-    vmExtId?: pulumi.Input<string | undefined>;
+    vmExtId?: pulumi.Input<string>;
 }
 
 /**
@@ -130,7 +130,7 @@ export interface VmNetworkDeviceAssignIpV2Args {
     /**
      * - (Optional) Ip config settings.
      */
-    ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceAssignIpV2IpAddress>[] | undefined>;
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceAssignIpV2IpAddress>[]>;
     /**
      * - (Required) The globally unique identifier of a VM. It should be of type UUID.
      */

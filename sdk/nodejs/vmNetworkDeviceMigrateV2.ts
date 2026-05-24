@@ -75,7 +75,7 @@ export class VmNetworkDeviceMigrateV2 extends pulumi.CustomResource {
      */
     declare public readonly migrateType: pulumi.Output<string>;
     /**
-     * - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+     * - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
      */
     declare public readonly subnets: pulumi.Output<outputs.VmNetworkDeviceMigrateV2Subnet[]>;
     /**
@@ -133,26 +133,26 @@ export interface VmNetworkDeviceMigrateV2State {
     /**
      * - (Required) The globally unique identifier of a Nic. It should be of type UUID.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * - (Optional) Ip config settings.
      */
-    ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceMigrateV2IpAddress>[] | undefined>;
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceMigrateV2IpAddress>[]>;
     /**
      * - (Required) The type of IP address management for NIC migration.
      * Valid values are:
      * - `ASSIGN_IP` The type of NIC is Span-Destination.
      * - `RELEASE_IP` The type of NIC is Normal.
      */
-    migrateType?: pulumi.Input<string | undefined>;
+    migrateType?: pulumi.Input<string>;
     /**
-     * - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+     * - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
      */
-    subnets?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceMigrateV2Subnet>[] | undefined>;
+    subnets?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceMigrateV2Subnet>[]>;
     /**
      * - (Required) The globally unique identifier of a VM. It should be of type UUID.
      */
-    vmExtId?: pulumi.Input<string | undefined>;
+    vmExtId?: pulumi.Input<string>;
 }
 
 /**
@@ -166,7 +166,7 @@ export interface VmNetworkDeviceMigrateV2Args {
     /**
      * - (Optional) Ip config settings.
      */
-    ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceMigrateV2IpAddress>[] | undefined>;
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceMigrateV2IpAddress>[]>;
     /**
      * - (Required) The type of IP address management for NIC migration.
      * Valid values are:
@@ -175,7 +175,7 @@ export interface VmNetworkDeviceMigrateV2Args {
      */
     migrateType: pulumi.Input<string>;
     /**
-     * - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+     * - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
      */
     subnets: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceMigrateV2Subnet>[]>;
     /**

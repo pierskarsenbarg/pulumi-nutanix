@@ -20,11 +20,11 @@ __all__ = ['SslCertificateV2Args', 'SslCertificateV2']
 class SslCertificateV2Args:
     def __init__(__self__, *,
                  cluster_ext_id: pulumi.Input[_builtins.str],
-                 ca_chain: pulumi.Input[Optional[_builtins.str]] = None,
-                 passphrase: pulumi.Input[Optional[_builtins.str]] = None,
-                 private_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 private_key_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
-                 public_certificate: pulumi.Input[Optional[_builtins.str]] = None):
+                 ca_chain: Optional[pulumi.Input[_builtins.str]] = None,
+                 passphrase: Optional[pulumi.Input[_builtins.str]] = None,
+                 private_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 private_key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
+                 public_certificate: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SslCertificateV2 resource.
 
@@ -73,43 +73,43 @@ class SslCertificateV2Args:
 
     @_builtins.property
     @pulumi.getter(name="caChain")
-    def ca_chain(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ca_chain(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         — Description of the certificate authority (CA) chain.
         """
         return pulumi.get(self, "ca_chain")
 
     @ca_chain.setter
-    def ca_chain(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ca_chain(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ca_chain", value)
 
     @_builtins.property
     @pulumi.getter
-    def passphrase(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def passphrase(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         — Passphrase used for SSL certificate.
         """
         return pulumi.get(self, "passphrase")
 
     @passphrase.setter
-    def passphrase(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def passphrase(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "passphrase", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKey")
-    def private_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def private_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         — Private Key used for SSL certificate.
         """
         return pulumi.get(self, "private_key")
 
     @private_key.setter
-    def private_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def private_key(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "private_key", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKeyAlgorithm")
-    def private_key_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def private_key_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         — Private Key Algorithm used for SSL certificate.
 
@@ -128,31 +128,31 @@ class SslCertificateV2Args:
         return pulumi.get(self, "private_key_algorithm")
 
     @private_key_algorithm.setter
-    def private_key_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def private_key_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "private_key_algorithm", value)
 
     @_builtins.property
     @pulumi.getter(name="publicCertificate")
-    def public_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def public_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         — Public Certificate used for SSL certificate.
         """
         return pulumi.get(self, "public_certificate")
 
     @public_certificate.setter
-    def public_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def public_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "public_certificate", value)
 
 
 @pulumi.input_type
 class _SslCertificateV2State:
     def __init__(__self__, *,
-                 ca_chain: pulumi.Input[Optional[_builtins.str]] = None,
-                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 passphrase: pulumi.Input[Optional[_builtins.str]] = None,
-                 private_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 private_key_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
-                 public_certificate: pulumi.Input[Optional[_builtins.str]] = None):
+                 ca_chain: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 passphrase: Optional[pulumi.Input[_builtins.str]] = None,
+                 private_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 private_key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
+                 public_certificate: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SslCertificateV2 resources.
 
@@ -190,55 +190,55 @@ class _SslCertificateV2State:
 
     @_builtins.property
     @pulumi.getter(name="caChain")
-    def ca_chain(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ca_chain(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         — Description of the certificate authority (CA) chain.
         """
         return pulumi.get(self, "ca_chain")
 
     @ca_chain.setter
-    def ca_chain(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ca_chain(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ca_chain", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterExtId")
-    def cluster_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def cluster_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         — UUID of the cluster to which the host NIC belongs.
         """
         return pulumi.get(self, "cluster_ext_id")
 
     @cluster_ext_id.setter
-    def cluster_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def cluster_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "cluster_ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def passphrase(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def passphrase(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         — Passphrase used for SSL certificate.
         """
         return pulumi.get(self, "passphrase")
 
     @passphrase.setter
-    def passphrase(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def passphrase(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "passphrase", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKey")
-    def private_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def private_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         — Private Key used for SSL certificate.
         """
         return pulumi.get(self, "private_key")
 
     @private_key.setter
-    def private_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def private_key(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "private_key", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKeyAlgorithm")
-    def private_key_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def private_key_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         — Private Key Algorithm used for SSL certificate.
 
@@ -257,19 +257,19 @@ class _SslCertificateV2State:
         return pulumi.get(self, "private_key_algorithm")
 
     @private_key_algorithm.setter
-    def private_key_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def private_key_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "private_key_algorithm", value)
 
     @_builtins.property
     @pulumi.getter(name="publicCertificate")
-    def public_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def public_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         — Public Certificate used for SSL certificate.
         """
         return pulumi.get(self, "public_certificate")
 
     @public_certificate.setter
-    def public_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def public_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "public_certificate", value)
 
 
@@ -279,12 +279,12 @@ class SslCertificateV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ca_chain: pulumi.Input[Optional[_builtins.str]] = None,
-                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 passphrase: pulumi.Input[Optional[_builtins.str]] = None,
-                 private_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 private_key_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
-                 public_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 ca_chain: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 passphrase: Optional[pulumi.Input[_builtins.str]] = None,
+                 private_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 private_key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
+                 public_certificate: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Update the SSL certificate for a specific cluster. To update the SSL certificate for a specific cluster, you must provide a valid certificate payload in `Base64` format. You can either import a new SSL certificate or replace an existing one by supplying all necessary fields, including the Base64-encoded certificate and private key. Alternatively, you can regenerate a self-signed certificate by specifying the privateKeyAlgorithm, noting that only the RSA_2048 algorithm is supported for SSL certificate regeneration. This process helps maintain the security and integrity of your cluster's communications by allowing you to update or regenerate the SSL certificate as needed.
@@ -380,12 +380,12 @@ class SslCertificateV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ca_chain: pulumi.Input[Optional[_builtins.str]] = None,
-                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 passphrase: pulumi.Input[Optional[_builtins.str]] = None,
-                 private_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 private_key_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
-                 public_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 ca_chain: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 passphrase: Optional[pulumi.Input[_builtins.str]] = None,
+                 private_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 private_key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
+                 public_certificate: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -415,12 +415,12 @@ class SslCertificateV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ca_chain: pulumi.Input[Optional[_builtins.str]] = None,
-            cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            passphrase: pulumi.Input[Optional[_builtins.str]] = None,
-            private_key: pulumi.Input[Optional[_builtins.str]] = None,
-            private_key_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
-            public_certificate: pulumi.Input[Optional[_builtins.str]] = None) -> 'SslCertificateV2':
+            ca_chain: Optional[pulumi.Input[_builtins.str]] = None,
+            cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            passphrase: Optional[pulumi.Input[_builtins.str]] = None,
+            private_key: Optional[pulumi.Input[_builtins.str]] = None,
+            private_key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
+            public_certificate: Optional[pulumi.Input[_builtins.str]] = None) -> 'SslCertificateV2':
         """
         Get an existing SslCertificateV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

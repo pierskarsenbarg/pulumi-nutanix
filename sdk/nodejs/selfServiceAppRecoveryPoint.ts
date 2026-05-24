@@ -61,7 +61,7 @@ export class SelfServiceAppRecoveryPoint extends pulumi.CustomResource {
     /**
      * - (Required) The UUID of the application.
      *
-     * Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
+     * Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
      */
     declare public readonly appUuid: pulumi.Output<string | undefined>;
     /**
@@ -108,21 +108,21 @@ export interface SelfServiceAppRecoveryPointState {
     /**
      * - (Required) The name of the snapshot action to trigger.
      */
-    actionName?: pulumi.Input<string | undefined>;
+    actionName?: pulumi.Input<string>;
     /**
      * - (Optional) The name of the application
      */
-    appName?: pulumi.Input<string | undefined>;
+    appName?: pulumi.Input<string>;
     /**
      * - (Required) The UUID of the application.
      *
-     * Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
+     * Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
      */
-    appUuid?: pulumi.Input<string | undefined>;
+    appUuid?: pulumi.Input<string>;
     /**
      * - (Required) The name of recovery point.
      */
-    recoveryPointName?: pulumi.Input<string | undefined>;
+    recoveryPointName?: pulumi.Input<string>;
 }
 
 /**
@@ -136,15 +136,15 @@ export interface SelfServiceAppRecoveryPointArgs {
     /**
      * - (Optional) The name of the application
      */
-    appName?: pulumi.Input<string | undefined>;
+    appName?: pulumi.Input<string>;
     /**
      * - (Required) The UUID of the application.
      *
-     * Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
+     * Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
      */
-    appUuid?: pulumi.Input<string | undefined>;
+    appUuid?: pulumi.Input<string>;
     /**
      * - (Required) The name of recovery point.
      */
-    recoveryPointName?: pulumi.Input<string | undefined>;
+    recoveryPointName?: pulumi.Input<string>;
 }

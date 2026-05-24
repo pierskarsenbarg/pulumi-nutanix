@@ -195,71 +195,71 @@ export interface NdbSoftwareVersionProfileState {
     /**
      * available cluster ids
      */
-    availableClusterIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    availableClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Db version of software profile
      */
-    dbVersion?: pulumi.Input<string | undefined>;
+    dbVersion?: pulumi.Input<string>;
     /**
      * deprecated or not
      */
-    deprecated?: pulumi.Input<boolean | undefined>;
+    deprecated?: pulumi.Input<boolean>;
     /**
      * description of profile
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * engine type of profile
      */
-    engineType?: pulumi.Input<string | undefined>;
+    engineType?: pulumi.Input<string>;
     /**
      * Name of profile
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * owner  of profile
      */
-    owner?: pulumi.Input<string | undefined>;
+    owner?: pulumi.Input<string>;
     /**
      * postgres database info
      */
-    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfilePostgresDatabase>[] | undefined>;
+    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfilePostgresDatabase>[]>;
     /**
      * profile id
      */
-    profileId?: pulumi.Input<string | undefined>;
+    profileId?: pulumi.Input<string>;
     /**
      * properties of software profile
      */
-    properties?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfileProperty>[] | undefined>;
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfileProperty>[]>;
     /**
      * properties map of profile
      */
-    propertiesMap?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    propertiesMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Published or not
      */
-    published?: pulumi.Input<boolean | undefined>;
+    published?: pulumi.Input<boolean>;
     /**
      * status of profile. Allowed Values are "deprecated", "published", "unpublished"
      */
-    status?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string>;
     /**
      * system profile or not.
      */
-    systemProfile?: pulumi.Input<boolean | undefined>;
+    systemProfile?: pulumi.Input<boolean>;
     /**
      * topology of software profile
      */
-    topology?: pulumi.Input<string | undefined>;
+    topology?: pulumi.Input<string>;
     /**
      * Version of software profile
      */
-    version?: pulumi.Input<string | undefined>;
+    version?: pulumi.Input<string>;
     /**
      * version cluster association
      */
-    versionClusterAssociations?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfileVersionClusterAssociation>[] | undefined>;
+    versionClusterAssociations?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfileVersionClusterAssociation>[]>;
 }
 
 /**
@@ -269,11 +269,11 @@ export interface NdbSoftwareVersionProfileArgs {
     /**
      * available cluster ids
      */
-    availableClusterIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    availableClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * description of profile
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * engine type of profile
      */
@@ -281,11 +281,11 @@ export interface NdbSoftwareVersionProfileArgs {
     /**
      * Name of profile
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * postgres database info
      */
-    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfilePostgresDatabase>[] | undefined>;
+    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfilePostgresDatabase>[]>;
     /**
      * profile id
      */
@@ -293,5 +293,5 @@ export interface NdbSoftwareVersionProfileArgs {
     /**
      * status of profile. Allowed Values are "deprecated", "published", "unpublished"
      */
-    status?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string>;
 }

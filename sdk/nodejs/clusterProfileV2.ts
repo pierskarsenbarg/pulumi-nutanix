@@ -294,54 +294,54 @@ export interface ClusterProfileV2State {
      * | NAME_SERVER_CONFIG          | Name server configuration                  |
      * | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
      */
-    allowedOverrides?: pulumi.Input<pulumi.Input<string>[] | undefined>;
-    clusterCount?: pulumi.Input<number | undefined>;
-    clusters?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2Cluster>[] | undefined>;
-    createTime?: pulumi.Input<string | undefined>;
-    createdBy?: pulumi.Input<string | undefined>;
+    allowedOverrides?: pulumi.Input<pulumi.Input<string>[]>;
+    clusterCount?: pulumi.Input<number>;
+    clusters?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2Cluster>[]>;
+    createTime?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string>;
     /**
      * - (Optional) Detailed description of a cluster profile.
      */
-    description?: pulumi.Input<string | undefined>;
-    driftedClusterCount?: pulumi.Input<number | undefined>;
-    dryrun?: pulumi.Input<boolean | undefined>;
-    extId?: pulumi.Input<string | undefined>;
-    lastUpdateTime?: pulumi.Input<string | undefined>;
-    lastUpdatedBy?: pulumi.Input<string | undefined>;
-    links?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2Link>[] | undefined>;
+    description?: pulumi.Input<string>;
+    driftedClusterCount?: pulumi.Input<number>;
+    dryrun?: pulumi.Input<boolean>;
+    extId?: pulumi.Input<string>;
+    lastUpdateTime?: pulumi.Input<string>;
+    lastUpdatedBy?: pulumi.Input<string>;
+    links?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2Link>[]>;
     /**
      * - (Required) Name of the cluster profile.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * - (Optional) List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
      */
-    nameServerIpLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NameServerIpList>[] | undefined>;
+    nameServerIpLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NameServerIpList>[]>;
     /**
      * - (Optional) NFS subnet allowlist addresses. This is part of the payload for cluster update operation only.
      */
-    nfsSubnetWhiteLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    nfsSubnetWhiteLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
      */
-    ntpServerIpLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NtpServerIpList>[] | undefined>;
+    ntpServerIpLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NtpServerIpList>[]>;
     /**
      * - (Optional) Pulse status for a cluster.
      */
-    pulseStatuses?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2PulseStatus>[] | undefined>;
+    pulseStatuses?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2PulseStatus>[]>;
     /**
      * - (Optional) RSYSLOG Server.
      */
-    rsyslogServerLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2RsyslogServerList>[] | undefined>;
+    rsyslogServerLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2RsyslogServerList>[]>;
     /**
      * - (Optional) SMTP servers on a cluster. This is part of payload for cluster update operation only.
      */
-    smtpServer?: pulumi.Input<inputs.ClusterProfileV2SmtpServer | undefined>;
+    smtpServer?: pulumi.Input<inputs.ClusterProfileV2SmtpServer>;
     /**
      * - (Optional) SNMP information.
      */
-    snmpConfig?: pulumi.Input<inputs.ClusterProfileV2SnmpConfig | undefined>;
-    tenantId?: pulumi.Input<string | undefined>;
+    snmpConfig?: pulumi.Input<inputs.ClusterProfileV2SnmpConfig>;
+    tenantId?: pulumi.Input<string>;
 }
 
 /**
@@ -361,42 +361,42 @@ export interface ClusterProfileV2Args {
      * | NAME_SERVER_CONFIG          | Name server configuration                  |
      * | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
      */
-    allowedOverrides?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    allowedOverrides?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - (Optional) Detailed description of a cluster profile.
      */
-    description?: pulumi.Input<string | undefined>;
-    dryrun?: pulumi.Input<boolean | undefined>;
+    description?: pulumi.Input<string>;
+    dryrun?: pulumi.Input<boolean>;
     /**
      * - (Required) Name of the cluster profile.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * - (Optional) List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
      */
-    nameServerIpLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NameServerIpList>[] | undefined>;
+    nameServerIpLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NameServerIpList>[]>;
     /**
      * - (Optional) NFS subnet allowlist addresses. This is part of the payload for cluster update operation only.
      */
-    nfsSubnetWhiteLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    nfsSubnetWhiteLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
      */
-    ntpServerIpLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NtpServerIpList>[] | undefined>;
+    ntpServerIpLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NtpServerIpList>[]>;
     /**
      * - (Optional) Pulse status for a cluster.
      */
-    pulseStatuses?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2PulseStatus>[] | undefined>;
+    pulseStatuses?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2PulseStatus>[]>;
     /**
      * - (Optional) RSYSLOG Server.
      */
-    rsyslogServerLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2RsyslogServerList>[] | undefined>;
+    rsyslogServerLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2RsyslogServerList>[]>;
     /**
      * - (Optional) SMTP servers on a cluster. This is part of payload for cluster update operation only.
      */
-    smtpServer?: pulumi.Input<inputs.ClusterProfileV2SmtpServer | undefined>;
+    smtpServer?: pulumi.Input<inputs.ClusterProfileV2SmtpServer>;
     /**
      * - (Optional) SNMP information.
      */
-    snmpConfig?: pulumi.Input<inputs.ClusterProfileV2SnmpConfig | undefined>;
+    snmpConfig?: pulumi.Input<inputs.ClusterProfileV2SnmpConfig>;
 }

@@ -148,31 +148,31 @@ export interface VolumeGroupDiskV2State {
     /**
      * - Volume Disk description.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * -(Required) Disk Data Source Reference.
      */
-    diskDataSourceReferences?: pulumi.Input<pulumi.Input<inputs.VolumeGroupDiskV2DiskDataSourceReference>[] | undefined>;
+    diskDataSourceReferences?: pulumi.Input<pulumi.Input<inputs.VolumeGroupDiskV2DiskDataSourceReference>[]>;
     /**
      * - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
      */
-    diskSizeBytes?: pulumi.Input<number | undefined>;
+    diskSizeBytes?: pulumi.Input<number>;
     /**
      * - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
      */
-    diskStorageFeatures?: pulumi.Input<pulumi.Input<inputs.VolumeGroupDiskV2DiskStorageFeature>[] | undefined>;
+    diskStorageFeatures?: pulumi.Input<pulumi.Input<inputs.VolumeGroupDiskV2DiskStorageFeature>[]>;
     /**
      * - A globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * - Index of the disk in a Volume Group. This field is optional and immutable.
      */
-    index?: pulumi.Input<number | undefined>;
+    index?: pulumi.Input<number>;
     /**
      * The external identifier of the volume group.
      */
-    volumeGroupExtId?: pulumi.Input<string | undefined>;
+    volumeGroupExtId?: pulumi.Input<string>;
 }
 
 /**
@@ -182,7 +182,7 @@ export interface VolumeGroupDiskV2Args {
     /**
      * - Volume Disk description.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * -(Required) Disk Data Source Reference.
      */
@@ -194,11 +194,11 @@ export interface VolumeGroupDiskV2Args {
     /**
      * - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
      */
-    diskStorageFeatures?: pulumi.Input<pulumi.Input<inputs.VolumeGroupDiskV2DiskStorageFeature>[] | undefined>;
+    diskStorageFeatures?: pulumi.Input<pulumi.Input<inputs.VolumeGroupDiskV2DiskStorageFeature>[]>;
     /**
      * - Index of the disk in a Volume Group. This field is optional and immutable.
      */
-    index?: pulumi.Input<number | undefined>;
+    index?: pulumi.Input<number>;
     /**
      * The external identifier of the volume group.
      */

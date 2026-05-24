@@ -184,5 +184,5 @@ export interface GetObjectStoreV2OutputArgs {
     /**
      * - The number of worker nodes (VMs) to be created for the Object store. Each worker node requires 10 vCPUs and 32 GiB of memory.
      */
-    numWorkerNodes?: pulumi.Input<number | undefined>;
+    numWorkerNodes?: pulumi.Input<number>;
 }

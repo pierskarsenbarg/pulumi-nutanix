@@ -21,22 +21,22 @@ __all__ = ['ObjectStoreV2Args', 'ObjectStoreV2']
 @pulumi.input_type
 class ObjectStoreV2Args:
     def __init__(__self__, *,
-                 certificate_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 deployment_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreV2MetadataArgs']]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 num_worker_nodes: pulumi.Input[Optional[_builtins.int]] = None,
-                 public_network_ips: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreV2PublicNetworkIpArgs']]]] = None,
-                 public_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 region: pulumi.Input[Optional[_builtins.str]] = None,
-                 state: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage_network_dns_ip: pulumi.Input[Optional['ObjectStoreV2StorageNetworkDnsIpArgs']] = None,
-                 storage_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage_network_vip: pulumi.Input[Optional['ObjectStoreV2StorageNetworkVipArgs']] = None,
-                 total_capacity_gib: pulumi.Input[Optional[_builtins.int]] = None):
+                 certificate_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 deployment_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreV2MetadataArgs']]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 num_worker_nodes: Optional[pulumi.Input[_builtins.int]] = None,
+                 public_network_ips: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreV2PublicNetworkIpArgs']]]] = None,
+                 public_network_reference: Optional[pulumi.Input[_builtins.str]] = None,
+                 region: Optional[pulumi.Input[_builtins.str]] = None,
+                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 storage_network_dns_ip: Optional[pulumi.Input['ObjectStoreV2StorageNetworkDnsIpArgs']] = None,
+                 storage_network_reference: Optional[pulumi.Input[_builtins.str]] = None,
+                 storage_network_vip: Optional[pulumi.Input['ObjectStoreV2StorageNetworkVipArgs']] = None,
+                 total_capacity_gib: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a ObjectStoreV2 resource.
 
@@ -104,139 +104,139 @@ class ObjectStoreV2Args:
 
     @_builtins.property
     @pulumi.getter(name="certificateExtIds")
-    def certificate_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def certificate_ext_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - A list of the UUIDs of the certificates of an Object store.
         """
         return pulumi.get(self, "certificate_ext_ids")
 
     @certificate_ext_ids.setter
-    def certificate_ext_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def certificate_ext_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "certificate_ext_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterExtId")
-    def cluster_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def cluster_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) UUID of the AHV or ESXi cluster.
         """
         return pulumi.get(self, "cluster_ext_id")
 
     @cluster_ext_id.setter
-    def cluster_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def cluster_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "cluster_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentVersion")
-    def deployment_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def deployment_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) The deployment version of the Object store.
         """
         return pulumi.get(self, "deployment_version")
 
     @deployment_version.setter
-    def deployment_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def deployment_version(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "deployment_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) A brief description of the Object store.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) The DNS domain/subdomain the Object store belongs to. All the Object stores under one Prism Central must have the same domain name. The domain name must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens, or underscores. Each part can be up to 63 characters long. The domain must begin and end with an alphanumeric character. For example - 'objects-0.pc_nutanix.com'.
         """
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreV2MetadataArgs']]]]:
+    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreV2MetadataArgs']]]]:
         """
         -(Optional) Metadata associated with this resource.
         """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
-    def metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreV2MetadataArgs']]]]):
+    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreV2MetadataArgs']]]]):
         pulumi.set(self, "metadatas", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Required) The name of the Object store.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="numWorkerNodes")
-    def num_worker_nodes(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def num_worker_nodes(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         -(Optional) The number of worker nodes (VMs) to be created for the Object store. Each worker node requires 10 vCPUs and 32 GiB of memory.
         """
         return pulumi.get(self, "num_worker_nodes")
 
     @num_worker_nodes.setter
-    def num_worker_nodes(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def num_worker_nodes(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "num_worker_nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="publicNetworkIps")
-    def public_network_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreV2PublicNetworkIpArgs']]]]:
+    def public_network_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreV2PublicNetworkIpArgs']]]]:
         """
         -(Optional) A list of static IP addresses used as public IPs to access the Object store.
         """
         return pulumi.get(self, "public_network_ips")
 
     @public_network_ips.setter
-    def public_network_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreV2PublicNetworkIpArgs']]]]):
+    def public_network_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreV2PublicNetworkIpArgs']]]]):
         pulumi.set(self, "public_network_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="publicNetworkReference")
-    def public_network_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def public_network_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) Public network reference of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
         """
         return pulumi.get(self, "public_network_reference")
 
     @public_network_reference.setter
-    def public_network_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def public_network_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "public_network_reference", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) The region in which the Object store is deployed.
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) Enum for the state of the Object store.
         | Enum | Description |
@@ -255,82 +255,82 @@ class ObjectStoreV2Args:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="storageNetworkDnsIp")
-    def storage_network_dns_ip(self) -> pulumi.Input[Optional['ObjectStoreV2StorageNetworkDnsIpArgs']]:
+    def storage_network_dns_ip(self) -> Optional[pulumi.Input['ObjectStoreV2StorageNetworkDnsIpArgs']]:
         """
         -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
         """
         return pulumi.get(self, "storage_network_dns_ip")
 
     @storage_network_dns_ip.setter
-    def storage_network_dns_ip(self, value: pulumi.Input[Optional['ObjectStoreV2StorageNetworkDnsIpArgs']]):
+    def storage_network_dns_ip(self, value: Optional[pulumi.Input['ObjectStoreV2StorageNetworkDnsIpArgs']]):
         pulumi.set(self, "storage_network_dns_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="storageNetworkReference")
-    def storage_network_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def storage_network_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) Reference to the Storage Network of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
         """
         return pulumi.get(self, "storage_network_reference")
 
     @storage_network_reference.setter
-    def storage_network_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def storage_network_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "storage_network_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="storageNetworkVip")
-    def storage_network_vip(self) -> pulumi.Input[Optional['ObjectStoreV2StorageNetworkVipArgs']]:
+    def storage_network_vip(self) -> Optional[pulumi.Input['ObjectStoreV2StorageNetworkVipArgs']]:
         """
         -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
         """
         return pulumi.get(self, "storage_network_vip")
 
     @storage_network_vip.setter
-    def storage_network_vip(self, value: pulumi.Input[Optional['ObjectStoreV2StorageNetworkVipArgs']]):
+    def storage_network_vip(self, value: Optional[pulumi.Input['ObjectStoreV2StorageNetworkVipArgs']]):
         pulumi.set(self, "storage_network_vip", value)
 
     @_builtins.property
     @pulumi.getter(name="totalCapacityGib")
-    def total_capacity_gib(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def total_capacity_gib(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         -(Optional) Size of the Object store in GiB.
         """
         return pulumi.get(self, "total_capacity_gib")
 
     @total_capacity_gib.setter
-    def total_capacity_gib(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def total_capacity_gib(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "total_capacity_gib", value)
 
 
 @pulumi.input_type
 class _ObjectStoreV2State:
     def __init__(__self__, *,
-                 certificate_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 creation_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 deployment_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 links: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreV2LinkArgs']]]] = None,
-                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreV2MetadataArgs']]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 num_worker_nodes: pulumi.Input[Optional[_builtins.int]] = None,
-                 public_network_ips: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreV2PublicNetworkIpArgs']]]] = None,
-                 public_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 region: pulumi.Input[Optional[_builtins.str]] = None,
-                 state: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage_network_dns_ip: pulumi.Input[Optional['ObjectStoreV2StorageNetworkDnsIpArgs']] = None,
-                 storage_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage_network_vip: pulumi.Input[Optional['ObjectStoreV2StorageNetworkVipArgs']] = None,
-                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 total_capacity_gib: pulumi.Input[Optional[_builtins.int]] = None):
+                 certificate_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 creation_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 deployment_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 last_update_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 links: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreV2LinkArgs']]]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreV2MetadataArgs']]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 num_worker_nodes: Optional[pulumi.Input[_builtins.int]] = None,
+                 public_network_ips: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreV2PublicNetworkIpArgs']]]] = None,
+                 public_network_reference: Optional[pulumi.Input[_builtins.str]] = None,
+                 region: Optional[pulumi.Input[_builtins.str]] = None,
+                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 storage_network_dns_ip: Optional[pulumi.Input['ObjectStoreV2StorageNetworkDnsIpArgs']] = None,
+                 storage_network_reference: Optional[pulumi.Input[_builtins.str]] = None,
+                 storage_network_vip: Optional[pulumi.Input['ObjectStoreV2StorageNetworkVipArgs']] = None,
+                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 total_capacity_gib: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering ObjectStoreV2 resources.
 
@@ -413,187 +413,187 @@ class _ObjectStoreV2State:
 
     @_builtins.property
     @pulumi.getter(name="certificateExtIds")
-    def certificate_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def certificate_ext_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - A list of the UUIDs of the certificates of an Object store.
         """
         return pulumi.get(self, "certificate_ext_ids")
 
     @certificate_ext_ids.setter
-    def certificate_ext_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def certificate_ext_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "certificate_ext_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterExtId")
-    def cluster_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def cluster_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) UUID of the AHV or ESXi cluster.
         """
         return pulumi.get(self, "cluster_ext_id")
 
     @cluster_ext_id.setter
-    def cluster_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def cluster_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "cluster_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="creationTime")
-    def creation_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def creation_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - The time when the Object store was created.
         """
         return pulumi.get(self, "creation_time")
 
     @creation_time.setter
-    def creation_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def creation_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "creation_time", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentVersion")
-    def deployment_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def deployment_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) The deployment version of the Object store.
         """
         return pulumi.get(self, "deployment_version")
 
     @deployment_version.setter
-    def deployment_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def deployment_version(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "deployment_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) A brief description of the Object store.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) The DNS domain/subdomain the Object store belongs to. All the Object stores under one Prism Central must have the same domain name. The domain name must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens, or underscores. Each part can be up to 63 characters long. The domain must begin and end with an alphanumeric character. For example - 'objects-0.pc_nutanix.com'.
         """
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - A globally unique identifier of an instance that is suitable for external consumption.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdateTime")
-    def last_update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def last_update_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - The time when the Object store was last updated.
         """
         return pulumi.get(self, "last_update_time")
 
     @last_update_time.setter
-    def last_update_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def last_update_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "last_update_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreV2LinkArgs']]]]:
+    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreV2LinkArgs']]]]:
         """
         - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         """
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreV2LinkArgs']]]]):
+    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreV2MetadataArgs']]]]:
+    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreV2MetadataArgs']]]]:
         """
         -(Optional) Metadata associated with this resource.
         """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
-    def metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreV2MetadataArgs']]]]):
+    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreV2MetadataArgs']]]]):
         pulumi.set(self, "metadatas", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Required) The name of the Object store.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="numWorkerNodes")
-    def num_worker_nodes(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def num_worker_nodes(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         -(Optional) The number of worker nodes (VMs) to be created for the Object store. Each worker node requires 10 vCPUs and 32 GiB of memory.
         """
         return pulumi.get(self, "num_worker_nodes")
 
     @num_worker_nodes.setter
-    def num_worker_nodes(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def num_worker_nodes(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "num_worker_nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="publicNetworkIps")
-    def public_network_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreV2PublicNetworkIpArgs']]]]:
+    def public_network_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreV2PublicNetworkIpArgs']]]]:
         """
         -(Optional) A list of static IP addresses used as public IPs to access the Object store.
         """
         return pulumi.get(self, "public_network_ips")
 
     @public_network_ips.setter
-    def public_network_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ObjectStoreV2PublicNetworkIpArgs']]]]):
+    def public_network_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ObjectStoreV2PublicNetworkIpArgs']]]]):
         pulumi.set(self, "public_network_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="publicNetworkReference")
-    def public_network_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def public_network_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) Public network reference of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
         """
         return pulumi.get(self, "public_network_reference")
 
     @public_network_reference.setter
-    def public_network_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def public_network_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "public_network_reference", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) The region in which the Object store is deployed.
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) Enum for the state of the Object store.
         | Enum | Description |
@@ -612,67 +612,67 @@ class _ObjectStoreV2State:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="storageNetworkDnsIp")
-    def storage_network_dns_ip(self) -> pulumi.Input[Optional['ObjectStoreV2StorageNetworkDnsIpArgs']]:
+    def storage_network_dns_ip(self) -> Optional[pulumi.Input['ObjectStoreV2StorageNetworkDnsIpArgs']]:
         """
         -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
         """
         return pulumi.get(self, "storage_network_dns_ip")
 
     @storage_network_dns_ip.setter
-    def storage_network_dns_ip(self, value: pulumi.Input[Optional['ObjectStoreV2StorageNetworkDnsIpArgs']]):
+    def storage_network_dns_ip(self, value: Optional[pulumi.Input['ObjectStoreV2StorageNetworkDnsIpArgs']]):
         pulumi.set(self, "storage_network_dns_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="storageNetworkReference")
-    def storage_network_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def storage_network_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) Reference to the Storage Network of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
         """
         return pulumi.get(self, "storage_network_reference")
 
     @storage_network_reference.setter
-    def storage_network_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def storage_network_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "storage_network_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="storageNetworkVip")
-    def storage_network_vip(self) -> pulumi.Input[Optional['ObjectStoreV2StorageNetworkVipArgs']]:
+    def storage_network_vip(self) -> Optional[pulumi.Input['ObjectStoreV2StorageNetworkVipArgs']]:
         """
         -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
         """
         return pulumi.get(self, "storage_network_vip")
 
     @storage_network_vip.setter
-    def storage_network_vip(self, value: pulumi.Input[Optional['ObjectStoreV2StorageNetworkVipArgs']]):
+    def storage_network_vip(self, value: Optional[pulumi.Input['ObjectStoreV2StorageNetworkVipArgs']]):
         pulumi.set(self, "storage_network_vip", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="totalCapacityGib")
-    def total_capacity_gib(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def total_capacity_gib(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         -(Optional) Size of the Object store in GiB.
         """
         return pulumi.get(self, "total_capacity_gib")
 
     @total_capacity_gib.setter
-    def total_capacity_gib(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def total_capacity_gib(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "total_capacity_gib", value)
 
 
@@ -682,22 +682,22 @@ class ObjectStoreV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 deployment_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2MetadataArgs', 'ObjectStoreV2MetadataArgsDict']]]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 num_worker_nodes: pulumi.Input[Optional[_builtins.int]] = None,
-                 public_network_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2PublicNetworkIpArgs', 'ObjectStoreV2PublicNetworkIpArgsDict']]]]] = None,
-                 public_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 region: pulumi.Input[Optional[_builtins.str]] = None,
-                 state: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage_network_dns_ip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict']]] = None,
-                 storage_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage_network_vip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict']]] = None,
-                 total_capacity_gib: pulumi.Input[Optional[_builtins.int]] = None,
+                 certificate_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 deployment_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreV2MetadataArgs', 'ObjectStoreV2MetadataArgsDict']]]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 num_worker_nodes: Optional[pulumi.Input[_builtins.int]] = None,
+                 public_network_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreV2PublicNetworkIpArgs', 'ObjectStoreV2PublicNetworkIpArgsDict']]]]] = None,
+                 public_network_reference: Optional[pulumi.Input[_builtins.str]] = None,
+                 region: Optional[pulumi.Input[_builtins.str]] = None,
+                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 storage_network_dns_ip: Optional[pulumi.Input[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict']]] = None,
+                 storage_network_reference: Optional[pulumi.Input[_builtins.str]] = None,
+                 storage_network_vip: Optional[pulumi.Input[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict']]] = None,
+                 total_capacity_gib: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
         Run the prechecks, create and start the deployment of an Object store on Prism Central.
@@ -705,7 +705,7 @@ class ObjectStoreV2(pulumi.CustomResource):
         > ⚠️ **Warning:** Before deleting the Object Store, make sure to delete all buckets inside it manually.
         Currently, the Terraform provider does not support the Delete Bucket API.
 
-        > ⚠️ **Warning:** The Object Store **update** operation does **not** allow modification of any configuration parameters (including <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span> and <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>). As per the API design, the update operation is supported exclusively for retrying a failed deployment. No other changes can be performed through update.
+        > ⚠️ **Warning:** The Object Store **update** operation does **not** allow modification of any configuration parameters (including <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`">`name`</span> and <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`" pulumi-lang-hcl="`description`">`description`</span>). As per the API design, the update operation is supported exclusively for retrying a failed deployment. No other changes can be performed through update.
         It should be used when the Object Store is in the `OBJECT_STORE_DEPLOYMENT_FAILED` state.
         Triggering an update in this state will attempt to resume the deployment process.
 
@@ -818,7 +818,7 @@ class ObjectStoreV2(pulumi.CustomResource):
         > ⚠️ **Warning:** Before deleting the Object Store, make sure to delete all buckets inside it manually.
         Currently, the Terraform provider does not support the Delete Bucket API.
 
-        > ⚠️ **Warning:** The Object Store **update** operation does **not** allow modification of any configuration parameters (including <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span> and <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>). As per the API design, the update operation is supported exclusively for retrying a failed deployment. No other changes can be performed through update.
+        > ⚠️ **Warning:** The Object Store **update** operation does **not** allow modification of any configuration parameters (including <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`">`name`</span> and <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`" pulumi-lang-hcl="`description`">`description`</span>). As per the API design, the update operation is supported exclusively for retrying a failed deployment. No other changes can be performed through update.
         It should be used when the Object Store is in the `OBJECT_STORE_DEPLOYMENT_FAILED` state.
         Triggering an update in this state will attempt to resume the deployment process.
 
@@ -903,22 +903,22 @@ class ObjectStoreV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 deployment_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2MetadataArgs', 'ObjectStoreV2MetadataArgsDict']]]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 num_worker_nodes: pulumi.Input[Optional[_builtins.int]] = None,
-                 public_network_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2PublicNetworkIpArgs', 'ObjectStoreV2PublicNetworkIpArgsDict']]]]] = None,
-                 public_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 region: pulumi.Input[Optional[_builtins.str]] = None,
-                 state: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage_network_dns_ip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict']]] = None,
-                 storage_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage_network_vip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict']]] = None,
-                 total_capacity_gib: pulumi.Input[Optional[_builtins.int]] = None,
+                 certificate_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 deployment_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreV2MetadataArgs', 'ObjectStoreV2MetadataArgsDict']]]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 num_worker_nodes: Optional[pulumi.Input[_builtins.int]] = None,
+                 public_network_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreV2PublicNetworkIpArgs', 'ObjectStoreV2PublicNetworkIpArgsDict']]]]] = None,
+                 public_network_reference: Optional[pulumi.Input[_builtins.str]] = None,
+                 region: Optional[pulumi.Input[_builtins.str]] = None,
+                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 storage_network_dns_ip: Optional[pulumi.Input[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict']]] = None,
+                 storage_network_reference: Optional[pulumi.Input[_builtins.str]] = None,
+                 storage_network_vip: Optional[pulumi.Input[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict']]] = None,
+                 total_capacity_gib: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -959,27 +959,27 @@ class ObjectStoreV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            certificate_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            creation_time: pulumi.Input[Optional[_builtins.str]] = None,
-            deployment_version: pulumi.Input[Optional[_builtins.str]] = None,
-            description: pulumi.Input[Optional[_builtins.str]] = None,
-            domain: pulumi.Input[Optional[_builtins.str]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2LinkArgs', 'ObjectStoreV2LinkArgsDict']]]]] = None,
-            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2MetadataArgs', 'ObjectStoreV2MetadataArgsDict']]]]] = None,
-            name: pulumi.Input[Optional[_builtins.str]] = None,
-            num_worker_nodes: pulumi.Input[Optional[_builtins.int]] = None,
-            public_network_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2PublicNetworkIpArgs', 'ObjectStoreV2PublicNetworkIpArgsDict']]]]] = None,
-            public_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
-            region: pulumi.Input[Optional[_builtins.str]] = None,
-            state: pulumi.Input[Optional[_builtins.str]] = None,
-            storage_network_dns_ip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict']]] = None,
-            storage_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
-            storage_network_vip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict']]] = None,
-            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
-            total_capacity_gib: pulumi.Input[Optional[_builtins.int]] = None) -> 'ObjectStoreV2':
+            certificate_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            creation_time: Optional[pulumi.Input[_builtins.str]] = None,
+            deployment_version: Optional[pulumi.Input[_builtins.str]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
+            domain: Optional[pulumi.Input[_builtins.str]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            last_update_time: Optional[pulumi.Input[_builtins.str]] = None,
+            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreV2LinkArgs', 'ObjectStoreV2LinkArgsDict']]]]] = None,
+            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreV2MetadataArgs', 'ObjectStoreV2MetadataArgsDict']]]]] = None,
+            name: Optional[pulumi.Input[_builtins.str]] = None,
+            num_worker_nodes: Optional[pulumi.Input[_builtins.int]] = None,
+            public_network_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreV2PublicNetworkIpArgs', 'ObjectStoreV2PublicNetworkIpArgsDict']]]]] = None,
+            public_network_reference: Optional[pulumi.Input[_builtins.str]] = None,
+            region: Optional[pulumi.Input[_builtins.str]] = None,
+            state: Optional[pulumi.Input[_builtins.str]] = None,
+            storage_network_dns_ip: Optional[pulumi.Input[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict']]] = None,
+            storage_network_reference: Optional[pulumi.Input[_builtins.str]] = None,
+            storage_network_vip: Optional[pulumi.Input[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict']]] = None,
+            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
+            total_capacity_gib: Optional[pulumi.Input[_builtins.int]] = None) -> 'ObjectStoreV2':
         """
         Get an existing ObjectStoreV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

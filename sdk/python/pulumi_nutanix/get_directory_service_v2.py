@@ -246,7 +246,7 @@ def get_directory_service_v2(ext_id: Optional[_builtins.str] = None,
         service_accounts=pulumi.get(__ret__, 'service_accounts'),
         url=pulumi.get(__ret__, 'url'),
         white_listed_groups=pulumi.get(__ret__, 'white_listed_groups'))
-def get_directory_service_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_directory_service_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDirectoryServiceV2Result]:
     """
     Provides a datasource to retrieve all Directory Service(s).

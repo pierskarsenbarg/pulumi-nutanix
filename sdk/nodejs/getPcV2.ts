@@ -126,5 +126,5 @@ export interface GetPcV2OutputArgs {
     /**
      * - This configuration enables Prism Central to be deployed in scale-out mode.
      */
-    shouldEnableHighAvailability?: pulumi.Input<boolean | undefined>;
+    shouldEnableHighAvailability?: pulumi.Input<boolean>;
 }

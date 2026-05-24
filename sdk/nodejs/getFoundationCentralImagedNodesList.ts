@@ -96,13 +96,13 @@ export function getFoundationCentralImagedNodesListOutput(args?: GetFoundationCe
  * A collection of arguments for invoking getFoundationCentralImagedNodesList.
  */
 export interface GetFoundationCentralImagedNodesListOutputArgs {
-    filters?: pulumi.Input<inputs.GetFoundationCentralImagedNodesListFiltersArgs | undefined>;
+    filters?: pulumi.Input<inputs.GetFoundationCentralImagedNodesListFiltersArgs>;
     /**
      * The number of records retrieved.
      */
-    length?: pulumi.Input<number | undefined>;
+    length?: pulumi.Input<number>;
     /**
      * Offset from the start of the object list.
      */
-    offset?: pulumi.Input<number | undefined>;
+    offset?: pulumi.Input<number>;
 }

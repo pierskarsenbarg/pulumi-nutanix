@@ -105,20 +105,20 @@ export class NdbLinkedDatabases extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NdbLinkedDatabases resources.
  */
 export interface NdbLinkedDatabasesState {
-    databaseId?: pulumi.Input<string | undefined>;
-    databaseName?: pulumi.Input<string | undefined>;
-    databaseStatus?: pulumi.Input<string | undefined>;
-    dateCreated?: pulumi.Input<string | undefined>;
-    dateModified?: pulumi.Input<string | undefined>;
-    description?: pulumi.Input<string | undefined>;
-    infos?: pulumi.Input<pulumi.Input<inputs.NdbLinkedDatabasesInfo>[] | undefined>;
-    metric?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
-    name?: pulumi.Input<string | undefined>;
-    parentDatabaseId?: pulumi.Input<string | undefined>;
-    parentLinkedDatabaseId?: pulumi.Input<string | undefined>;
-    snapshotId?: pulumi.Input<string | undefined>;
-    status?: pulumi.Input<string | undefined>;
-    timezone?: pulumi.Input<string | undefined>;
+    databaseId?: pulumi.Input<string>;
+    databaseName?: pulumi.Input<string>;
+    databaseStatus?: pulumi.Input<string>;
+    dateCreated?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbLinkedDatabasesInfo>[]>;
+    metric?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    name?: pulumi.Input<string>;
+    parentDatabaseId?: pulumi.Input<string>;
+    parentLinkedDatabaseId?: pulumi.Input<string>;
+    snapshotId?: pulumi.Input<string>;
+    status?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string>;
 }
 
 /**
@@ -126,5 +126,5 @@ export interface NdbLinkedDatabasesState {
  */
 export interface NdbLinkedDatabasesArgs {
     databaseId: pulumi.Input<string>;
-    databaseName?: pulumi.Input<string | undefined>;
+    databaseName?: pulumi.Input<string>;
 }

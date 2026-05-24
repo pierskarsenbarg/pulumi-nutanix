@@ -85,7 +85,7 @@ export class StaticRoutes extends pulumi.CustomResource {
      */
     declare public readonly defaultRouteNexthops: pulumi.Output<outputs.StaticRoutesDefaultRouteNexthop[] | undefined>;
     /**
-     * The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata.
+     * The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable " pulumi-lang-hcl=" vpc_route_table "> vpcRouteTable </span>kind metadata.
      */
     declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
@@ -141,27 +141,27 @@ export interface StaticRoutesState {
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string | undefined>;
+    apiVersion?: pulumi.Input<string>;
     /**
      * Default Route
      */
-    defaultRouteNexthops?: pulumi.Input<pulumi.Input<inputs.StaticRoutesDefaultRouteNexthop>[] | undefined>;
+    defaultRouteNexthops?: pulumi.Input<pulumi.Input<inputs.StaticRoutesDefaultRouteNexthop>[]>;
     /**
-     * The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata.
+     * The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable " pulumi-lang-hcl=" vpc_route_table "> vpcRouteTable </span>kind metadata.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Static Routes.
      */
-    staticRoutesLists?: pulumi.Input<pulumi.Input<inputs.StaticRoutesStaticRoutesList>[] | undefined>;
+    staticRoutesLists?: pulumi.Input<pulumi.Input<inputs.StaticRoutesStaticRoutesList>[]>;
     /**
      * vpc Name. Should not be used with vpc_uuid.
      */
-    vpcName?: pulumi.Input<string | undefined>;
+    vpcName?: pulumi.Input<string>;
     /**
      * Reference to a VPC UUID. Should not be used with vpc_name.
      */
-    vpcUuid?: pulumi.Input<string | undefined>;
+    vpcUuid?: pulumi.Input<string>;
 }
 
 /**
@@ -171,21 +171,21 @@ export interface StaticRoutesArgs {
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string | undefined>;
+    apiVersion?: pulumi.Input<string>;
     /**
      * Default Route
      */
-    defaultRouteNexthops?: pulumi.Input<pulumi.Input<inputs.StaticRoutesDefaultRouteNexthop>[] | undefined>;
+    defaultRouteNexthops?: pulumi.Input<pulumi.Input<inputs.StaticRoutesDefaultRouteNexthop>[]>;
     /**
      * Static Routes.
      */
-    staticRoutesLists?: pulumi.Input<pulumi.Input<inputs.StaticRoutesStaticRoutesList>[] | undefined>;
+    staticRoutesLists?: pulumi.Input<pulumi.Input<inputs.StaticRoutesStaticRoutesList>[]>;
     /**
      * vpc Name. Should not be used with vpc_uuid.
      */
-    vpcName?: pulumi.Input<string | undefined>;
+    vpcName?: pulumi.Input<string>;
     /**
      * Reference to a VPC UUID. Should not be used with vpc_name.
      */
-    vpcUuid?: pulumi.Input<string | undefined>;
+    vpcUuid?: pulumi.Input<string>;
 }

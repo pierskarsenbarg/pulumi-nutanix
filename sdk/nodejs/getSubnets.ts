@@ -98,5 +98,5 @@ export interface GetSubnetsOutputArgs {
     /**
      * The subnet kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetSubnetsMetadataArgs>[] | undefined>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetSubnetsMetadataArgs>[]>;
 }

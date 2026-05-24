@@ -366,9 +366,9 @@ def get_image(categories: Optional[Sequence[Union['GetImageCategoryArgs', 'GetIm
         source_uri=pulumi.get(__ret__, 'source_uri'),
         state=pulumi.get(__ret__, 'state'),
         version=pulumi.get(__ret__, 'version'))
-def get_image_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict']]]]] = None,
-                     image_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                     image_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+def get_image_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict']]]]] = None,
+                     image_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                     image_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImageResult]:
     """
     Describes a Image

@@ -110,19 +110,19 @@ export interface RecoveryPointReplicateV2State {
     /**
      * -(Required) External identifier of the cluster.
      */
-    clusterExtId?: pulumi.Input<string | undefined>;
+    clusterExtId?: pulumi.Input<string>;
     /**
      * -(Required) The external identifier that can be used to retrieve the recovery point using its URL.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * -(Required) External identifier of the Prism Central.
      */
-    pcExtId?: pulumi.Input<string | undefined>;
+    pcExtId?: pulumi.Input<string>;
     /**
      * - External identifier of replicated recovery point.
      */
-    replicatedRpExtId?: pulumi.Input<string | undefined>;
+    replicatedRpExtId?: pulumi.Input<string>;
 }
 
 /**
@@ -132,7 +132,7 @@ export interface RecoveryPointReplicateV2Args {
     /**
      * -(Required) External identifier of the cluster.
      */
-    clusterExtId?: pulumi.Input<string | undefined>;
+    clusterExtId?: pulumi.Input<string>;
     /**
      * -(Required) The external identifier that can be used to retrieve the recovery point using its URL.
      */

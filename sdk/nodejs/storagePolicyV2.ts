@@ -10,9 +10,9 @@ import * as utilities from "./utilities";
  * Provides Nutanix resource to create storage policy
  *
  * > **Note**:
- * Once <span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`">`encryptionState`</span> is explicitly set to `ENABLED`, it cannot be reverted back to a system-derived value.
+ * Once <span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`" pulumi-lang-hcl="`encryption_state`">`encryptionState`</span> is explicitly set to `ENABLED`, it cannot be reverted back to a system-derived value.
  *
- * If compression_state, encryption_state, or<span pulumi-lang-nodejs=" replicationFactor " pulumi-lang-dotnet=" ReplicationFactor " pulumi-lang-go=" replicationFactor " pulumi-lang-python=" replication_factor " pulumi-lang-yaml=" replicationFactor " pulumi-lang-java=" replicationFactor "> replicationFactor </span>are intended to be system-derived, ensure that the<span pulumi-lang-nodejs=" qosSpec " pulumi-lang-dotnet=" QosSpec " pulumi-lang-go=" qosSpec " pulumi-lang-python=" qos_spec " pulumi-lang-yaml=" qosSpec " pulumi-lang-java=" qosSpec "> qosSpec </span>block is included.
+ * If compression_state, encryption_state, or<span pulumi-lang-nodejs=" replicationFactor " pulumi-lang-dotnet=" ReplicationFactor " pulumi-lang-go=" replicationFactor " pulumi-lang-python=" replication_factor " pulumi-lang-yaml=" replicationFactor " pulumi-lang-java=" replicationFactor " pulumi-lang-hcl=" replication_factor "> replicationFactor </span>are intended to be system-derived, ensure that the<span pulumi-lang-nodejs=" qosSpec " pulumi-lang-dotnet=" QosSpec " pulumi-lang-go=" qosSpec " pulumi-lang-python=" qos_spec " pulumi-lang-yaml=" qosSpec " pulumi-lang-java=" qosSpec " pulumi-lang-hcl=" qos_spec "> qosSpec </span>block is included.
  *
  * ## Example
  *
@@ -252,43 +252,43 @@ export interface StoragePolicyV2State {
     /**
      * - (Optional) List of external identifiers for Categories to be included in the Storage Policy. Each ID must be a valid UUID format. Maximum 20 items allowed.
      */
-    categoryExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    categoryExtIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - (Optional) Defines compression parameters for entities governed by the Storage Policy.
      */
-    compressionSpecs?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2CompressionSpec>[] | undefined>;
+    compressionSpecs?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2CompressionSpec>[]>;
     /**
      * - (Optional) Defines encryption parameters for entities governed by the Storage Policy.
      */
-    encryptionSpecs?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2EncryptionSpec>[] | undefined>;
+    encryptionSpecs?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2EncryptionSpec>[]>;
     /**
      * - (Computed) External identifier of the Storage Policy.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * - (Optional) Defines Fault Tolerance parameters for the entities.
      */
-    faultToleranceSpecs?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2FaultToleranceSpec>[] | undefined>;
+    faultToleranceSpecs?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2FaultToleranceSpec>[]>;
     /**
      * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2Link>[] | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2Link>[]>;
     /**
      * - (Required) Storage Policy name. Must be unique and cannot exceed 64 characters.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * - (Computed) Indicates whether the policy is user-created or system-created. Valid values: `"USER"`, `"SYSTEM"`.
      */
-    policyType?: pulumi.Input<string | undefined>;
+    policyType?: pulumi.Input<string>;
     /**
      * - (Optional) Defines Storage Quality of Service (QOS) parameters for the entities.
      */
-    qosSpecs?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2QosSpec>[] | undefined>;
+    qosSpecs?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2QosSpec>[]>;
     /**
      * - A globally unique identifier that represents the tenant that owns this entity.
      */
-    tenantId?: pulumi.Input<string | undefined>;
+    tenantId?: pulumi.Input<string>;
 }
 
 /**
@@ -298,25 +298,25 @@ export interface StoragePolicyV2Args {
     /**
      * - (Optional) List of external identifiers for Categories to be included in the Storage Policy. Each ID must be a valid UUID format. Maximum 20 items allowed.
      */
-    categoryExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    categoryExtIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - (Optional) Defines compression parameters for entities governed by the Storage Policy.
      */
-    compressionSpecs?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2CompressionSpec>[] | undefined>;
+    compressionSpecs?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2CompressionSpec>[]>;
     /**
      * - (Optional) Defines encryption parameters for entities governed by the Storage Policy.
      */
-    encryptionSpecs?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2EncryptionSpec>[] | undefined>;
+    encryptionSpecs?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2EncryptionSpec>[]>;
     /**
      * - (Optional) Defines Fault Tolerance parameters for the entities.
      */
-    faultToleranceSpecs?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2FaultToleranceSpec>[] | undefined>;
+    faultToleranceSpecs?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2FaultToleranceSpec>[]>;
     /**
      * - (Required) Storage Policy name. Must be unique and cannot exceed 64 characters.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * - (Optional) Defines Storage Quality of Service (QOS) parameters for the entities.
      */
-    qosSpecs?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2QosSpec>[] | undefined>;
+    qosSpecs?: pulumi.Input<pulumi.Input<inputs.StoragePolicyV2QosSpec>[]>;
 }

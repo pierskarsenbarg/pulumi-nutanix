@@ -21,13 +21,13 @@ __all__ = ['NdbDatabaseSnapshotArgs', 'NdbDatabaseSnapshot']
 @pulumi.input_type
 class NdbDatabaseSnapshotArgs:
     def __init__(__self__, *,
-                 expiry_date_timezone: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 remove_schedule_in_days: pulumi.Input[Optional[_builtins.int]] = None,
-                 replicate_to_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDatabaseSnapshotTagArgs']]]] = None,
-                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 time_machine_name: pulumi.Input[Optional[_builtins.str]] = None):
+                 expiry_date_timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 remove_schedule_in_days: Optional[pulumi.Input[_builtins.int]] = None,
+                 replicate_to_clusters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseSnapshotTagArgs']]]] = None,
+                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_machine_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbDatabaseSnapshot resource.
 
@@ -56,134 +56,134 @@ class NdbDatabaseSnapshotArgs:
 
     @_builtins.property
     @pulumi.getter(name="expiryDateTimezone")
-    def expiry_date_timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def expiry_date_timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Default is set to Asia/Calcutta
         """
         return pulumi.get(self, "expiry_date_timezone")
 
     @expiry_date_timezone.setter
-    def expiry_date_timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def expiry_date_timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "expiry_date_timezone", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Snapshot name. Default value is era_manual_snapshot.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="removeScheduleInDays")
-    def remove_schedule_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def remove_schedule_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         Removal schedule after which the snapshot should be removed.
         """
         return pulumi.get(self, "remove_schedule_in_days")
 
     @remove_schedule_in_days.setter
-    def remove_schedule_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def remove_schedule_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "remove_schedule_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="replicateToClusters")
-    def replicate_to_clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def replicate_to_clusters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         snapshots to be replicated to clusters.
         """
         return pulumi.get(self, "replicate_to_clusters")
 
     @replicate_to_clusters.setter
-    def replicate_to_clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def replicate_to_clusters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "replicate_to_clusters", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbDatabaseSnapshotTagArgs']]]]:
+    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseSnapshotTagArgs']]]]:
         """
         tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDatabaseSnapshotTagArgs']]]]):
+    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseSnapshotTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachineId")
-    def time_machine_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def time_machine_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Time Machine Id
         """
         return pulumi.get(self, "time_machine_id")
 
     @time_machine_id.setter
-    def time_machine_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def time_machine_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_machine_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachineName")
-    def time_machine_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def time_machine_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Time Machine Name
         """
         return pulumi.get(self, "time_machine_name")
 
     @time_machine_name.setter
-    def time_machine_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def time_machine_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_machine_name", value)
 
 
 @pulumi.input_type
 class _NdbDatabaseSnapshotState:
     def __init__(__self__, *,
-                 app_info_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 applicable_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 database_node_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 database_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
-                 date_created: pulumi.Input[Optional[_builtins.str]] = None,
-                 date_modified: pulumi.Input[Optional[_builtins.str]] = None,
-                 dbserver_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 dbserver_ip: pulumi.Input[Optional[_builtins.str]] = None,
-                 dbserver_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 dbserver_storage_metadata_version: pulumi.Input[Optional[_builtins.int]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 expiry_date_timezone: pulumi.Input[Optional[_builtins.str]] = None,
-                 from_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
-                 lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDatabaseSnapshotLcmConfigArgs']]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 parent_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
-                 parent_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 processed: pulumi.Input[Optional[_builtins.bool]] = None,
-                 properties: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDatabaseSnapshotPropertyArgs']]]] = None,
-                 protection_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 remove_schedule_in_days: pulumi.Input[Optional[_builtins.int]] = None,
-                 replicate_to_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 replicated_snapshots: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 santized: pulumi.Input[Optional[_builtins.bool]] = None,
-                 santized_from_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 santized_snapshots: pulumi.Input[Optional[_builtins.str]] = None,
-                 snapshot_family: pulumi.Input[Optional[_builtins.str]] = None,
-                 snapshot_size: pulumi.Input[Optional[_builtins.float]] = None,
-                 snapshot_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
-                 snapshot_timestamp_date: pulumi.Input[Optional[_builtins.int]] = None,
-                 snapshot_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 software_database_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
-                 software_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
-                 software_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 status: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDatabaseSnapshotTagArgs']]]] = None,
-                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 time_machine_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
-                 to_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
-                 type: pulumi.Input[Optional[_builtins.str]] = None):
+                 app_info_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 applicable_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 database_node_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 database_snapshot: Optional[pulumi.Input[_builtins.bool]] = None,
+                 date_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 date_modified: Optional[pulumi.Input[_builtins.str]] = None,
+                 dbserver_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 dbserver_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 dbserver_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 dbserver_storage_metadata_version: Optional[pulumi.Input[_builtins.int]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 expiry_date_timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 from_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
+                 lcm_configs: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseSnapshotLcmConfigArgs']]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 nx_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 parent_snapshot: Optional[pulumi.Input[_builtins.bool]] = None,
+                 parent_snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 processed: Optional[pulumi.Input[_builtins.bool]] = None,
+                 properties: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseSnapshotPropertyArgs']]]] = None,
+                 protection_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 remove_schedule_in_days: Optional[pulumi.Input[_builtins.int]] = None,
+                 replicate_to_clusters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 replicated_snapshots: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 santized: Optional[pulumi.Input[_builtins.bool]] = None,
+                 santized_from_snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 santized_snapshots: Optional[pulumi.Input[_builtins.str]] = None,
+                 snapshot_family: Optional[pulumi.Input[_builtins.str]] = None,
+                 snapshot_size: Optional[pulumi.Input[_builtins.float]] = None,
+                 snapshot_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
+                 snapshot_timestamp_date: Optional[pulumi.Input[_builtins.int]] = None,
+                 snapshot_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 software_database_snapshot: Optional[pulumi.Input[_builtins.bool]] = None,
+                 software_snapshot: Optional[pulumi.Input[_builtins.str]] = None,
+                 software_snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseSnapshotTagArgs']]]] = None,
+                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_machine_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 to_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbDatabaseSnapshot resources.
 
@@ -314,497 +314,497 @@ class _NdbDatabaseSnapshotState:
 
     @_builtins.property
     @pulumi.getter(name="appInfoVersion")
-    def app_info_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def app_info_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         App info version
         """
         return pulumi.get(self, "app_info_version")
 
     @app_info_version.setter
-    def app_info_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def app_info_version(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "app_info_version", value)
 
     @_builtins.property
     @pulumi.getter(name="applicableTypes")
-    def applicable_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def applicable_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Applicable types
         """
         return pulumi.get(self, "applicable_types")
 
     @applicable_types.setter
-    def applicable_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def applicable_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "applicable_types", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseNodeId")
-    def database_node_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def database_node_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         database node id
         """
         return pulumi.get(self, "database_node_id")
 
     @database_node_id.setter
-    def database_node_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def database_node_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "database_node_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSnapshot")
-    def database_snapshot(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def database_snapshot(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         database snapshot
         """
         return pulumi.get(self, "database_snapshot")
 
     @database_snapshot.setter
-    def database_snapshot(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def database_snapshot(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "database_snapshot", value)
 
     @_builtins.property
     @pulumi.getter(name="dateCreated")
-    def date_created(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def date_created(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         created date
         """
         return pulumi.get(self, "date_created")
 
     @date_created.setter
-    def date_created(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def date_created(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "date_created", value)
 
     @_builtins.property
     @pulumi.getter(name="dateModified")
-    def date_modified(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def date_modified(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         modified date
         """
         return pulumi.get(self, "date_modified")
 
     @date_modified.setter
-    def date_modified(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def date_modified(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "date_modified", value)
 
     @_builtins.property
     @pulumi.getter(name="dbserverId")
-    def dbserver_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def dbserver_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         dbserver id
         """
         return pulumi.get(self, "dbserver_id")
 
     @dbserver_id.setter
-    def dbserver_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def dbserver_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "dbserver_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbserverIp")
-    def dbserver_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def dbserver_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         dbserver ip
         """
         return pulumi.get(self, "dbserver_ip")
 
     @dbserver_ip.setter
-    def dbserver_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def dbserver_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "dbserver_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="dbserverName")
-    def dbserver_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def dbserver_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         dbserver name
         """
         return pulumi.get(self, "dbserver_name")
 
     @dbserver_name.setter
-    def dbserver_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def dbserver_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "dbserver_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbserverStorageMetadataVersion")
-    def dbserver_storage_metadata_version(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def dbserver_storage_metadata_version(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         dbserver storage metadata version
         """
         return pulumi.get(self, "dbserver_storage_metadata_version")
 
     @dbserver_storage_metadata_version.setter
-    def dbserver_storage_metadata_version(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def dbserver_storage_metadata_version(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "dbserver_storage_metadata_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         description of snapshot
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="expiryDateTimezone")
-    def expiry_date_timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def expiry_date_timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Default is set to Asia/Calcutta
         """
         return pulumi.get(self, "expiry_date_timezone")
 
     @expiry_date_timezone.setter
-    def expiry_date_timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def expiry_date_timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "expiry_date_timezone", value)
 
     @_builtins.property
     @pulumi.getter(name="fromTimestamp")
-    def from_timestamp(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def from_timestamp(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         from timestamp
         """
         return pulumi.get(self, "from_timestamp")
 
     @from_timestamp.setter
-    def from_timestamp(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def from_timestamp(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "from_timestamp", value)
 
     @_builtins.property
     @pulumi.getter(name="lcmConfigs")
-    def lcm_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbDatabaseSnapshotLcmConfigArgs']]]]:
+    def lcm_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseSnapshotLcmConfigArgs']]]]:
         """
         LCM config
         """
         return pulumi.get(self, "lcm_configs")
 
     @lcm_configs.setter
-    def lcm_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDatabaseSnapshotLcmConfigArgs']]]]):
+    def lcm_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseSnapshotLcmConfigArgs']]]]):
         pulumi.set(self, "lcm_configs", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Snapshot name. Default value is era_manual_snapshot.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nxClusterId")
-    def nx_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def nx_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         nx cluster id
         """
         return pulumi.get(self, "nx_cluster_id")
 
     @nx_cluster_id.setter
-    def nx_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def nx_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "nx_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="parentSnapshot")
-    def parent_snapshot(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def parent_snapshot(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         parent snapshot
         """
         return pulumi.get(self, "parent_snapshot")
 
     @parent_snapshot.setter
-    def parent_snapshot(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def parent_snapshot(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "parent_snapshot", value)
 
     @_builtins.property
     @pulumi.getter(name="parentSnapshotId")
-    def parent_snapshot_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def parent_snapshot_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         parent snapshot id
         """
         return pulumi.get(self, "parent_snapshot_id")
 
     @parent_snapshot_id.setter
-    def parent_snapshot_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def parent_snapshot_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "parent_snapshot_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def processed(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def processed(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         processed
         """
         return pulumi.get(self, "processed")
 
     @processed.setter
-    def processed(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def processed(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "processed", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbDatabaseSnapshotPropertyArgs']]]]:
+    def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseSnapshotPropertyArgs']]]]:
         """
         properties
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDatabaseSnapshotPropertyArgs']]]]):
+    def properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseSnapshotPropertyArgs']]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter(name="protectionDomainId")
-    def protection_domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def protection_domain_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         protection domain
         """
         return pulumi.get(self, "protection_domain_id")
 
     @protection_domain_id.setter
-    def protection_domain_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def protection_domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "protection_domain_id", value)
 
     @_builtins.property
     @pulumi.getter(name="removeScheduleInDays")
-    def remove_schedule_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def remove_schedule_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         Removal schedule after which the snapshot should be removed.
         """
         return pulumi.get(self, "remove_schedule_in_days")
 
     @remove_schedule_in_days.setter
-    def remove_schedule_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def remove_schedule_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "remove_schedule_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="replicateToClusters")
-    def replicate_to_clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def replicate_to_clusters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         snapshots to be replicated to clusters.
         """
         return pulumi.get(self, "replicate_to_clusters")
 
     @replicate_to_clusters.setter
-    def replicate_to_clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def replicate_to_clusters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "replicate_to_clusters", value)
 
     @_builtins.property
     @pulumi.getter(name="replicatedSnapshots")
-    def replicated_snapshots(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def replicated_snapshots(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         replicated snapshots
         """
         return pulumi.get(self, "replicated_snapshots")
 
     @replicated_snapshots.setter
-    def replicated_snapshots(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def replicated_snapshots(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "replicated_snapshots", value)
 
     @_builtins.property
     @pulumi.getter
-    def santized(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def santized(self) -> Optional[pulumi.Input[_builtins.bool]]:
         return pulumi.get(self, "santized")
 
     @santized.setter
-    def santized(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def santized(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "santized", value)
 
     @_builtins.property
     @pulumi.getter(name="santizedFromSnapshotId")
-    def santized_from_snapshot_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def santized_from_snapshot_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "santized_from_snapshot_id")
 
     @santized_from_snapshot_id.setter
-    def santized_from_snapshot_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def santized_from_snapshot_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "santized_from_snapshot_id", value)
 
     @_builtins.property
     @pulumi.getter(name="santizedSnapshots")
-    def santized_snapshots(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def santized_snapshots(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "santized_snapshots")
 
     @santized_snapshots.setter
-    def santized_snapshots(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def santized_snapshots(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "santized_snapshots", value)
 
     @_builtins.property
     @pulumi.getter(name="snapshotFamily")
-    def snapshot_family(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def snapshot_family(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         snapshot family
         """
         return pulumi.get(self, "snapshot_family")
 
     @snapshot_family.setter
-    def snapshot_family(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def snapshot_family(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "snapshot_family", value)
 
     @_builtins.property
     @pulumi.getter(name="snapshotSize")
-    def snapshot_size(self) -> pulumi.Input[Optional[_builtins.float]]:
+    def snapshot_size(self) -> Optional[pulumi.Input[_builtins.float]]:
         """
         snapshot size
         """
         return pulumi.get(self, "snapshot_size")
 
     @snapshot_size.setter
-    def snapshot_size(self, value: pulumi.Input[Optional[_builtins.float]]):
+    def snapshot_size(self, value: Optional[pulumi.Input[_builtins.float]]):
         pulumi.set(self, "snapshot_size", value)
 
     @_builtins.property
     @pulumi.getter(name="snapshotTimestamp")
-    def snapshot_timestamp(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def snapshot_timestamp(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         snapshot timeStamp
         """
         return pulumi.get(self, "snapshot_timestamp")
 
     @snapshot_timestamp.setter
-    def snapshot_timestamp(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def snapshot_timestamp(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "snapshot_timestamp", value)
 
     @_builtins.property
     @pulumi.getter(name="snapshotTimestampDate")
-    def snapshot_timestamp_date(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def snapshot_timestamp_date(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         snapshot timestamp date
         """
         return pulumi.get(self, "snapshot_timestamp_date")
 
     @snapshot_timestamp_date.setter
-    def snapshot_timestamp_date(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def snapshot_timestamp_date(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "snapshot_timestamp_date", value)
 
     @_builtins.property
     @pulumi.getter(name="snapshotUuid")
-    def snapshot_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def snapshot_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         snapshot uuid
         """
         return pulumi.get(self, "snapshot_uuid")
 
     @snapshot_uuid.setter
-    def snapshot_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def snapshot_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "snapshot_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareDatabaseSnapshot")
-    def software_database_snapshot(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def software_database_snapshot(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         software database snapshot
         """
         return pulumi.get(self, "software_database_snapshot")
 
     @software_database_snapshot.setter
-    def software_database_snapshot(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def software_database_snapshot(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "software_database_snapshot", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareSnapshot")
-    def software_snapshot(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def software_snapshot(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         software snapshot
         """
         return pulumi.get(self, "software_snapshot")
 
     @software_snapshot.setter
-    def software_snapshot(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def software_snapshot(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "software_snapshot", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareSnapshotId")
-    def software_snapshot_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def software_snapshot_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         software snapshot id
         """
         return pulumi.get(self, "software_snapshot_id")
 
     @software_snapshot_id.setter
-    def software_snapshot_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def software_snapshot_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "software_snapshot_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         status
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbDatabaseSnapshotTagArgs']]]]:
+    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseSnapshotTagArgs']]]]:
         """
         tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbDatabaseSnapshotTagArgs']]]]):
+    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseSnapshotTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachineId")
-    def time_machine_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def time_machine_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Time Machine Id
         """
         return pulumi.get(self, "time_machine_id")
 
     @time_machine_id.setter
-    def time_machine_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def time_machine_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_machine_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachineName")
-    def time_machine_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def time_machine_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Time Machine Name
         """
         return pulumi.get(self, "time_machine_name")
 
     @time_machine_name.setter
-    def time_machine_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def time_machine_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_machine_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         timezone
         """
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
     @_builtins.property
     @pulumi.getter(name="toTimestamp")
-    def to_timestamp(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def to_timestamp(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         to timestamp
         """
         return pulumi.get(self, "to_timestamp")
 
     @to_timestamp.setter
-    def to_timestamp(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def to_timestamp(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "to_timestamp", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         type
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -814,13 +814,13 @@ class NdbDatabaseSnapshot(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 expiry_date_timezone: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 remove_schedule_in_days: pulumi.Input[Optional[_builtins.int]] = None,
-                 replicate_to_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotTagArgs', 'NdbDatabaseSnapshotTagArgsDict']]]]] = None,
-                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 time_machine_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiry_date_timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 remove_schedule_in_days: Optional[pulumi.Input[_builtins.int]] = None,
+                 replicate_to_clusters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotTagArgs', 'NdbDatabaseSnapshotTagArgsDict']]]]] = None,
+                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_machine_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to perform the snapshot for database instance based on the input parameters.
@@ -861,13 +861,13 @@ class NdbDatabaseSnapshot(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 expiry_date_timezone: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 remove_schedule_in_days: pulumi.Input[Optional[_builtins.int]] = None,
-                 replicate_to_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotTagArgs', 'NdbDatabaseSnapshotTagArgsDict']]]]] = None,
-                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 time_machine_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiry_date_timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 remove_schedule_in_days: Optional[pulumi.Input[_builtins.int]] = None,
+                 replicate_to_clusters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotTagArgs', 'NdbDatabaseSnapshotTagArgsDict']]]]] = None,
+                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_machine_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -929,48 +929,48 @@ class NdbDatabaseSnapshot(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            app_info_version: pulumi.Input[Optional[_builtins.str]] = None,
-            applicable_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            database_node_id: pulumi.Input[Optional[_builtins.str]] = None,
-            database_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
-            date_created: pulumi.Input[Optional[_builtins.str]] = None,
-            date_modified: pulumi.Input[Optional[_builtins.str]] = None,
-            dbserver_id: pulumi.Input[Optional[_builtins.str]] = None,
-            dbserver_ip: pulumi.Input[Optional[_builtins.str]] = None,
-            dbserver_name: pulumi.Input[Optional[_builtins.str]] = None,
-            dbserver_storage_metadata_version: pulumi.Input[Optional[_builtins.int]] = None,
-            description: pulumi.Input[Optional[_builtins.str]] = None,
-            expiry_date_timezone: pulumi.Input[Optional[_builtins.str]] = None,
-            from_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
-            lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotLcmConfigArgs', 'NdbDatabaseSnapshotLcmConfigArgsDict']]]]] = None,
-            name: pulumi.Input[Optional[_builtins.str]] = None,
-            nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-            parent_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
-            parent_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
-            processed: pulumi.Input[Optional[_builtins.bool]] = None,
-            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotPropertyArgs', 'NdbDatabaseSnapshotPropertyArgsDict']]]]] = None,
-            protection_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
-            remove_schedule_in_days: pulumi.Input[Optional[_builtins.int]] = None,
-            replicate_to_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            replicated_snapshots: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            santized: pulumi.Input[Optional[_builtins.bool]] = None,
-            santized_from_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
-            santized_snapshots: pulumi.Input[Optional[_builtins.str]] = None,
-            snapshot_family: pulumi.Input[Optional[_builtins.str]] = None,
-            snapshot_size: pulumi.Input[Optional[_builtins.float]] = None,
-            snapshot_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
-            snapshot_timestamp_date: pulumi.Input[Optional[_builtins.int]] = None,
-            snapshot_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-            software_database_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
-            software_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
-            software_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
-            status: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotTagArgs', 'NdbDatabaseSnapshotTagArgsDict']]]]] = None,
-            time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
-            time_machine_name: pulumi.Input[Optional[_builtins.str]] = None,
-            timezone: pulumi.Input[Optional[_builtins.str]] = None,
-            to_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
-            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'NdbDatabaseSnapshot':
+            app_info_version: Optional[pulumi.Input[_builtins.str]] = None,
+            applicable_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            database_node_id: Optional[pulumi.Input[_builtins.str]] = None,
+            database_snapshot: Optional[pulumi.Input[_builtins.bool]] = None,
+            date_created: Optional[pulumi.Input[_builtins.str]] = None,
+            date_modified: Optional[pulumi.Input[_builtins.str]] = None,
+            dbserver_id: Optional[pulumi.Input[_builtins.str]] = None,
+            dbserver_ip: Optional[pulumi.Input[_builtins.str]] = None,
+            dbserver_name: Optional[pulumi.Input[_builtins.str]] = None,
+            dbserver_storage_metadata_version: Optional[pulumi.Input[_builtins.int]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
+            expiry_date_timezone: Optional[pulumi.Input[_builtins.str]] = None,
+            from_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
+            lcm_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotLcmConfigArgs', 'NdbDatabaseSnapshotLcmConfigArgsDict']]]]] = None,
+            name: Optional[pulumi.Input[_builtins.str]] = None,
+            nx_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+            parent_snapshot: Optional[pulumi.Input[_builtins.bool]] = None,
+            parent_snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
+            processed: Optional[pulumi.Input[_builtins.bool]] = None,
+            properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotPropertyArgs', 'NdbDatabaseSnapshotPropertyArgsDict']]]]] = None,
+            protection_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
+            remove_schedule_in_days: Optional[pulumi.Input[_builtins.int]] = None,
+            replicate_to_clusters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            replicated_snapshots: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            santized: Optional[pulumi.Input[_builtins.bool]] = None,
+            santized_from_snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
+            santized_snapshots: Optional[pulumi.Input[_builtins.str]] = None,
+            snapshot_family: Optional[pulumi.Input[_builtins.str]] = None,
+            snapshot_size: Optional[pulumi.Input[_builtins.float]] = None,
+            snapshot_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
+            snapshot_timestamp_date: Optional[pulumi.Input[_builtins.int]] = None,
+            snapshot_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+            software_database_snapshot: Optional[pulumi.Input[_builtins.bool]] = None,
+            software_snapshot: Optional[pulumi.Input[_builtins.str]] = None,
+            software_snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
+            status: Optional[pulumi.Input[_builtins.str]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotTagArgs', 'NdbDatabaseSnapshotTagArgsDict']]]]] = None,
+            time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
+            time_machine_name: Optional[pulumi.Input[_builtins.str]] = None,
+            timezone: Optional[pulumi.Input[_builtins.str]] = None,
+            to_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
+            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'NdbDatabaseSnapshot':
         """
         Get an existing NdbDatabaseSnapshot resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

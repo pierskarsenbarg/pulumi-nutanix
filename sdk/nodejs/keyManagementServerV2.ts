@@ -113,14 +113,14 @@ export interface KeyManagementServerV2State {
     /**
      * - (Required) KMS Access information, it can be Azure Key Vault access information or KMIP based External Key Manager Access Information.
      */
-    accessInformation?: pulumi.Input<inputs.KeyManagementServerV2AccessInformation | undefined>;
-    extId?: pulumi.Input<string | undefined>;
-    links?: pulumi.Input<pulumi.Input<inputs.KeyManagementServerV2Link>[] | undefined>;
+    accessInformation?: pulumi.Input<inputs.KeyManagementServerV2AccessInformation>;
+    extId?: pulumi.Input<string>;
+    links?: pulumi.Input<pulumi.Input<inputs.KeyManagementServerV2Link>[]>;
     /**
      * - (Required) Name of the key management server (KMS).
      */
-    name?: pulumi.Input<string | undefined>;
-    tenantId?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string>;
 }
 
 /**
@@ -134,5 +134,5 @@ export interface KeyManagementServerV2Args {
     /**
      * - (Required) Name of the key management server (KMS).
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
 }

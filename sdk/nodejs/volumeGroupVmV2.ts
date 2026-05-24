@@ -111,22 +111,22 @@ export interface VolumeGroupVmV2State {
     /**
      * A globally unique identifier of a task.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
      *
      *
      * See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
      */
-    index?: pulumi.Input<number | undefined>;
+    index?: pulumi.Input<number>;
     /**
      * -(Required) A globally unique identifier of an instance that is suitable for external consumption.
      */
-    vmExtId?: pulumi.Input<string | undefined>;
+    vmExtId?: pulumi.Input<string>;
     /**
      * -(Required) The external identifier of the volume group.
      */
-    volumeGroupExtId?: pulumi.Input<string | undefined>;
+    volumeGroupExtId?: pulumi.Input<string>;
 }
 
 /**
@@ -139,7 +139,7 @@ export interface VolumeGroupVmV2Args {
      *
      * See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
      */
-    index?: pulumi.Input<number | undefined>;
+    index?: pulumi.Input<number>;
     /**
      * -(Required) A globally unique identifier of an instance that is suitable for external consumption.
      */

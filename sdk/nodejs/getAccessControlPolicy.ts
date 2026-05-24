@@ -152,10 +152,10 @@ export interface GetAccessControlPolicyOutputArgs {
     /**
      * - (Required) The UUID of an access control policy.
      */
-    accessControlPolicyId?: pulumi.Input<string | undefined>;
-    accessControlPolicyName?: pulumi.Input<string | undefined>;
+    accessControlPolicyId?: pulumi.Input<string>;
+    accessControlPolicyName?: pulumi.Input<string>;
     /**
      * - The category values represented as a dictionary of key > list of values.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetAccessControlPolicyCategoryArgs>[] | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetAccessControlPolicyCategoryArgs>[]>;
 }

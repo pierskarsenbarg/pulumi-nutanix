@@ -23,13 +23,13 @@ class NdbMaintenanceWindowArgs:
     def __init__(__self__, *,
                  recurrence: pulumi.Input[_builtins.str],
                  start_time: pulumi.Input[_builtins.str],
-                 day_of_week: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 duration: pulumi.Input[Optional[_builtins.int]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['NdbMaintenanceWindowTagArgs']]]] = None,
-                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
-                 week_of_month: pulumi.Input[Optional[_builtins.int]] = None):
+                 day_of_week: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 duration: Optional[pulumi.Input[_builtins.int]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowTagArgs']]]] = None,
+                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 week_of_month: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a NdbMaintenanceWindow resource.
 
@@ -86,110 +86,110 @@ class NdbMaintenanceWindowArgs:
 
     @_builtins.property
     @pulumi.getter(name="dayOfWeek")
-    def day_of_week(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def day_of_week(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Day of the week to trigger maintenance window. Supports [ MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
         """
         return pulumi.get(self, "day_of_week")
 
     @day_of_week.setter
-    def day_of_week(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def day_of_week(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "day_of_week", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Description for maintenance window
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def duration(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def duration(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         duration in hours. Default is 2
         """
         return pulumi.get(self, "duration")
 
     @duration.setter
-    def duration(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def duration(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "duration", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Name for the maintenance window.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbMaintenanceWindowTagArgs']]]]:
+    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowTagArgs']]]]:
         """
         tags of maintenance window
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbMaintenanceWindowTagArgs']]]]):
+    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         timezone . Default is Asia/Calcutta .
         """
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
     @_builtins.property
     @pulumi.getter(name="weekOfMonth")
-    def week_of_month(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def week_of_month(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         week of the month. Supports [1, 2, 3, 4] .
         """
         return pulumi.get(self, "week_of_month")
 
     @week_of_month.setter
-    def week_of_month(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def week_of_month(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "week_of_month", value)
 
 
 @pulumi.input_type
 class _NdbMaintenanceWindowState:
     def __init__(__self__, *,
-                 access_level: pulumi.Input[Optional[_builtins.str]] = None,
-                 date_created: pulumi.Input[Optional[_builtins.str]] = None,
-                 date_modified: pulumi.Input[Optional[_builtins.str]] = None,
-                 day_of_week: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 duration: pulumi.Input[Optional[_builtins.int]] = None,
-                 entity_task_assocs: pulumi.Input[Optional[Sequence[pulumi.Input['NdbMaintenanceWindowEntityTaskAssocArgs']]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 next_run_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 owner_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 properties: pulumi.Input[Optional[Sequence[pulumi.Input['NdbMaintenanceWindowPropertyArgs']]]] = None,
-                 recurrence: pulumi.Input[Optional[_builtins.str]] = None,
-                 schedules: pulumi.Input[Optional[Sequence[pulumi.Input['NdbMaintenanceWindowScheduleArgs']]]] = None,
-                 start_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 status: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['NdbMaintenanceWindowTagArgs']]]] = None,
-                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
-                 week_of_month: pulumi.Input[Optional[_builtins.int]] = None):
+                 access_level: Optional[pulumi.Input[_builtins.str]] = None,
+                 date_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 date_modified: Optional[pulumi.Input[_builtins.str]] = None,
+                 day_of_week: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 duration: Optional[pulumi.Input[_builtins.int]] = None,
+                 entity_task_assocs: Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowEntityTaskAssocArgs']]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 next_run_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 owner_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 properties: Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowPropertyArgs']]]] = None,
+                 recurrence: Optional[pulumi.Input[_builtins.str]] = None,
+                 schedules: Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowScheduleArgs']]]] = None,
+                 start_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowTagArgs']]]] = None,
+                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 week_of_month: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering NdbMaintenanceWindow resources.
 
@@ -251,218 +251,218 @@ class _NdbMaintenanceWindowState:
 
     @_builtins.property
     @pulumi.getter(name="accessLevel")
-    def access_level(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def access_level(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         access level
         """
         return pulumi.get(self, "access_level")
 
     @access_level.setter
-    def access_level(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def access_level(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "access_level", value)
 
     @_builtins.property
     @pulumi.getter(name="dateCreated")
-    def date_created(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def date_created(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         created date of maintenance window
         """
         return pulumi.get(self, "date_created")
 
     @date_created.setter
-    def date_created(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def date_created(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "date_created", value)
 
     @_builtins.property
     @pulumi.getter(name="dateModified")
-    def date_modified(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def date_modified(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         modified date of maintenance window
         """
         return pulumi.get(self, "date_modified")
 
     @date_modified.setter
-    def date_modified(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def date_modified(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "date_modified", value)
 
     @_builtins.property
     @pulumi.getter(name="dayOfWeek")
-    def day_of_week(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def day_of_week(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Day of the week to trigger maintenance window. Supports [ MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
         """
         return pulumi.get(self, "day_of_week")
 
     @day_of_week.setter
-    def day_of_week(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def day_of_week(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "day_of_week", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Description for maintenance window
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def duration(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def duration(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         duration in hours. Default is 2
         """
         return pulumi.get(self, "duration")
 
     @duration.setter
-    def duration(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def duration(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "duration", value)
 
     @_builtins.property
     @pulumi.getter(name="entityTaskAssocs")
-    def entity_task_assocs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbMaintenanceWindowEntityTaskAssocArgs']]]]:
+    def entity_task_assocs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowEntityTaskAssocArgs']]]]:
         """
         entity task association for maintenance window
         """
         return pulumi.get(self, "entity_task_assocs")
 
     @entity_task_assocs.setter
-    def entity_task_assocs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbMaintenanceWindowEntityTaskAssocArgs']]]]):
+    def entity_task_assocs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowEntityTaskAssocArgs']]]]):
         pulumi.set(self, "entity_task_assocs", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Name for the maintenance window.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nextRunTime")
-    def next_run_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def next_run_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         next run time for maintenance window to trigger
         """
         return pulumi.get(self, "next_run_time")
 
     @next_run_time.setter
-    def next_run_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def next_run_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "next_run_time", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerId")
-    def owner_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def owner_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         owner id of maintenance window
         """
         return pulumi.get(self, "owner_id")
 
     @owner_id.setter
-    def owner_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def owner_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "owner_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbMaintenanceWindowPropertyArgs']]]]:
+    def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowPropertyArgs']]]]:
         """
         properties of maintenance window
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbMaintenanceWindowPropertyArgs']]]]):
+    def properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowPropertyArgs']]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter
-    def recurrence(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def recurrence(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Supported values [ MONTHLY, WEEKLY ]
         """
         return pulumi.get(self, "recurrence")
 
     @recurrence.setter
-    def recurrence(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def recurrence(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "recurrence", value)
 
     @_builtins.property
     @pulumi.getter
-    def schedules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbMaintenanceWindowScheduleArgs']]]]:
+    def schedules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowScheduleArgs']]]]:
         """
         schedule of maintenance window
         """
         return pulumi.get(self, "schedules")
 
     @schedules.setter
-    def schedules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbMaintenanceWindowScheduleArgs']]]]):
+    def schedules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowScheduleArgs']]]]):
         pulumi.set(self, "schedules", value)
 
     @_builtins.property
     @pulumi.getter(name="startTime")
-    def start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def start_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         start time for maintenance window to trigger
         """
         return pulumi.get(self, "start_time")
 
     @start_time.setter
-    def start_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def start_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "start_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         status of maintennace window
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbMaintenanceWindowTagArgs']]]]:
+    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowTagArgs']]]]:
         """
         tags of maintenance window
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbMaintenanceWindowTagArgs']]]]):
+    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         timezone . Default is Asia/Calcutta .
         """
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
     @_builtins.property
     @pulumi.getter(name="weekOfMonth")
-    def week_of_month(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def week_of_month(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         week of the month. Supports [1, 2, 3, 4] .
         """
         return pulumi.get(self, "week_of_month")
 
     @week_of_month.setter
-    def week_of_month(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def week_of_month(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "week_of_month", value)
 
 
@@ -472,15 +472,15 @@ class NdbMaintenanceWindow(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 day_of_week: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 duration: pulumi.Input[Optional[_builtins.int]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 recurrence: pulumi.Input[Optional[_builtins.str]] = None,
-                 start_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowTagArgs', 'NdbMaintenanceWindowTagArgsDict']]]]] = None,
-                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
-                 week_of_month: pulumi.Input[Optional[_builtins.int]] = None,
+                 day_of_week: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 duration: Optional[pulumi.Input[_builtins.int]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 recurrence: Optional[pulumi.Input[_builtins.str]] = None,
+                 start_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceWindowTagArgs', 'NdbMaintenanceWindowTagArgsDict']]]]] = None,
+                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 week_of_month: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
         Provides a resource to create maintenance window based on the input parameters.
@@ -593,15 +593,15 @@ class NdbMaintenanceWindow(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 day_of_week: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 duration: pulumi.Input[Optional[_builtins.int]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 recurrence: pulumi.Input[Optional[_builtins.str]] = None,
-                 start_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowTagArgs', 'NdbMaintenanceWindowTagArgsDict']]]]] = None,
-                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
-                 week_of_month: pulumi.Input[Optional[_builtins.int]] = None,
+                 day_of_week: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 duration: Optional[pulumi.Input[_builtins.int]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 recurrence: Optional[pulumi.Input[_builtins.str]] = None,
+                 start_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceWindowTagArgs', 'NdbMaintenanceWindowTagArgsDict']]]]] = None,
+                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 week_of_month: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -643,24 +643,24 @@ class NdbMaintenanceWindow(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_level: pulumi.Input[Optional[_builtins.str]] = None,
-            date_created: pulumi.Input[Optional[_builtins.str]] = None,
-            date_modified: pulumi.Input[Optional[_builtins.str]] = None,
-            day_of_week: pulumi.Input[Optional[_builtins.str]] = None,
-            description: pulumi.Input[Optional[_builtins.str]] = None,
-            duration: pulumi.Input[Optional[_builtins.int]] = None,
-            entity_task_assocs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowEntityTaskAssocArgs', 'NdbMaintenanceWindowEntityTaskAssocArgsDict']]]]] = None,
-            name: pulumi.Input[Optional[_builtins.str]] = None,
-            next_run_time: pulumi.Input[Optional[_builtins.str]] = None,
-            owner_id: pulumi.Input[Optional[_builtins.str]] = None,
-            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowPropertyArgs', 'NdbMaintenanceWindowPropertyArgsDict']]]]] = None,
-            recurrence: pulumi.Input[Optional[_builtins.str]] = None,
-            schedules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowScheduleArgs', 'NdbMaintenanceWindowScheduleArgsDict']]]]] = None,
-            start_time: pulumi.Input[Optional[_builtins.str]] = None,
-            status: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowTagArgs', 'NdbMaintenanceWindowTagArgsDict']]]]] = None,
-            timezone: pulumi.Input[Optional[_builtins.str]] = None,
-            week_of_month: pulumi.Input[Optional[_builtins.int]] = None) -> 'NdbMaintenanceWindow':
+            access_level: Optional[pulumi.Input[_builtins.str]] = None,
+            date_created: Optional[pulumi.Input[_builtins.str]] = None,
+            date_modified: Optional[pulumi.Input[_builtins.str]] = None,
+            day_of_week: Optional[pulumi.Input[_builtins.str]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
+            duration: Optional[pulumi.Input[_builtins.int]] = None,
+            entity_task_assocs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceWindowEntityTaskAssocArgs', 'NdbMaintenanceWindowEntityTaskAssocArgsDict']]]]] = None,
+            name: Optional[pulumi.Input[_builtins.str]] = None,
+            next_run_time: Optional[pulumi.Input[_builtins.str]] = None,
+            owner_id: Optional[pulumi.Input[_builtins.str]] = None,
+            properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceWindowPropertyArgs', 'NdbMaintenanceWindowPropertyArgsDict']]]]] = None,
+            recurrence: Optional[pulumi.Input[_builtins.str]] = None,
+            schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceWindowScheduleArgs', 'NdbMaintenanceWindowScheduleArgsDict']]]]] = None,
+            start_time: Optional[pulumi.Input[_builtins.str]] = None,
+            status: Optional[pulumi.Input[_builtins.str]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceWindowTagArgs', 'NdbMaintenanceWindowTagArgsDict']]]]] = None,
+            timezone: Optional[pulumi.Input[_builtins.str]] = None,
+            week_of_month: Optional[pulumi.Input[_builtins.int]] = None) -> 'NdbMaintenanceWindow':
         """
         Get an existing NdbMaintenanceWindow resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

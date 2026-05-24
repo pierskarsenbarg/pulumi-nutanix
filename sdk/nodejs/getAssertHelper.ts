@@ -43,5 +43,5 @@ export function getAssertHelperOutput(args?: GetAssertHelperOutputArgs, opts?: p
  * A collection of arguments for invoking getAssertHelper.
  */
 export interface GetAssertHelperOutputArgs {
-    checks?: pulumi.Input<pulumi.Input<inputs.GetAssertHelperCheckArgs>[] | undefined>;
+    checks?: pulumi.Input<pulumi.Input<inputs.GetAssertHelperCheckArgs>[]>;
 }

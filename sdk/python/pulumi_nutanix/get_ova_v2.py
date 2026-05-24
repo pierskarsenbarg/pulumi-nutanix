@@ -266,8 +266,8 @@ def get_ova_v2(cluster_location_ext_ids: Optional[Sequence[_builtins.str]] = Non
         sources=pulumi.get(__ret__, 'sources'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         vm_configs=pulumi.get(__ret__, 'vm_configs'))
-def get_ova_v2_output(cluster_location_ext_ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
-                      ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_ova_v2_output(cluster_location_ext_ids: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+                      ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOvaV2Result]:
     """
     Retrieves the OVA details for the provided external identifier.

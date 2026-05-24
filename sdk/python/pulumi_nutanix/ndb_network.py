@@ -23,13 +23,13 @@ class NdbNetworkArgs:
     def __init__(__self__, *,
                  cluster_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 dns_domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_pools: pulumi.Input[Optional[Sequence[pulumi.Input['NdbNetworkIpPoolArgs']]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 primary_dns: pulumi.Input[Optional[_builtins.str]] = None,
-                 secondary_dns: pulumi.Input[Optional[_builtins.str]] = None,
-                 subnet_mask: pulumi.Input[Optional[_builtins.str]] = None):
+                 dns_domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_pools: Optional[pulumi.Input[Sequence[pulumi.Input['NdbNetworkIpPoolArgs']]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 primary_dns: Optional[pulumi.Input[_builtins.str]] = None,
+                 secondary_dns: Optional[pulumi.Input[_builtins.str]] = None,
+                 subnet_mask: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbNetwork resource.
 
@@ -86,105 +86,105 @@ class NdbNetworkArgs:
 
     @_builtins.property
     @pulumi.getter(name="dnsDomain")
-    def dns_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def dns_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         dns domain for vlan. (Static IP address assignment only)
         """
         return pulumi.get(self, "dns_domain")
 
     @dns_domain.setter
-    def dns_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def dns_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "dns_domain", value)
 
     @_builtins.property
     @pulumi.getter
-    def gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Gateway for vlan. Supports in Static IP address assignment only
         """
         return pulumi.get(self, "gateway")
 
     @gateway.setter
-    def gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "gateway", value)
 
     @_builtins.property
     @pulumi.getter(name="ipPools")
-    def ip_pools(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbNetworkIpPoolArgs']]]]:
+    def ip_pools(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbNetworkIpPoolArgs']]]]:
         """
         Manage IP Address Pool in NDB option if you want to assign static IP addresses to your database server VMs
         """
         return pulumi.get(self, "ip_pools")
 
     @ip_pools.setter
-    def ip_pools(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbNetworkIpPoolArgs']]]]):
+    def ip_pools(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbNetworkIpPoolArgs']]]]):
         pulumi.set(self, "ip_pools", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Name of the vlan to be attached in NDB
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryDns")
-    def primary_dns(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def primary_dns(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         primary dns for vlan. (Static IP address assignment only)
         """
         return pulumi.get(self, "primary_dns")
 
     @primary_dns.setter
-    def primary_dns(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def primary_dns(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "primary_dns", value)
 
     @_builtins.property
     @pulumi.getter(name="secondaryDns")
-    def secondary_dns(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def secondary_dns(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         secondary dns for vlan. (Static IP address assignment only)
         """
         return pulumi.get(self, "secondary_dns")
 
     @secondary_dns.setter
-    def secondary_dns(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def secondary_dns(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "secondary_dns", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetMask")
-    def subnet_mask(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def subnet_mask(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Subnet mask for vlan. (Static IP address assignment only)
         """
         return pulumi.get(self, "subnet_mask")
 
     @subnet_mask.setter
-    def subnet_mask(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def subnet_mask(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "subnet_mask", value)
 
 
 @pulumi.input_type
 class _NdbNetworkState:
     def __init__(__self__, *,
-                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 dns_domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_pools: pulumi.Input[Optional[Sequence[pulumi.Input['NdbNetworkIpPoolArgs']]]] = None,
-                 managed: pulumi.Input[Optional[_builtins.bool]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 primary_dns: pulumi.Input[Optional[_builtins.str]] = None,
-                 properties: pulumi.Input[Optional[Sequence[pulumi.Input['NdbNetworkPropertyArgs']]]] = None,
-                 properties_maps: pulumi.Input[Optional[Sequence[pulumi.Input['NdbNetworkPropertiesMapArgs']]]] = None,
-                 secondary_dns: pulumi.Input[Optional[_builtins.str]] = None,
-                 stretched_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 subnet_mask: pulumi.Input[Optional[_builtins.str]] = None,
-                 type: pulumi.Input[Optional[_builtins.str]] = None):
+                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 dns_domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_pools: Optional[pulumi.Input[Sequence[pulumi.Input['NdbNetworkIpPoolArgs']]]] = None,
+                 managed: Optional[pulumi.Input[_builtins.bool]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 primary_dns: Optional[pulumi.Input[_builtins.str]] = None,
+                 properties: Optional[pulumi.Input[Sequence[pulumi.Input['NdbNetworkPropertyArgs']]]] = None,
+                 properties_maps: Optional[pulumi.Input[Sequence[pulumi.Input['NdbNetworkPropertiesMapArgs']]]] = None,
+                 secondary_dns: Optional[pulumi.Input[_builtins.str]] = None,
+                 stretched_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 subnet_mask: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbNetwork resources.
 
@@ -231,158 +231,158 @@ class _NdbNetworkState:
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Select the Nutanix cluster on which you want to add the VLAN.
         """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
-    def cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsDomain")
-    def dns_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def dns_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         dns domain for vlan. (Static IP address assignment only)
         """
         return pulumi.get(self, "dns_domain")
 
     @dns_domain.setter
-    def dns_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def dns_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "dns_domain", value)
 
     @_builtins.property
     @pulumi.getter
-    def gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Gateway for vlan. Supports in Static IP address assignment only
         """
         return pulumi.get(self, "gateway")
 
     @gateway.setter
-    def gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "gateway", value)
 
     @_builtins.property
     @pulumi.getter(name="ipPools")
-    def ip_pools(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbNetworkIpPoolArgs']]]]:
+    def ip_pools(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbNetworkIpPoolArgs']]]]:
         """
         Manage IP Address Pool in NDB option if you want to assign static IP addresses to your database server VMs
         """
         return pulumi.get(self, "ip_pools")
 
     @ip_pools.setter
-    def ip_pools(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbNetworkIpPoolArgs']]]]):
+    def ip_pools(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbNetworkIpPoolArgs']]]]):
         pulumi.set(self, "ip_pools", value)
 
     @_builtins.property
     @pulumi.getter
-    def managed(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def managed(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         Managed by NDB or not
         """
         return pulumi.get(self, "managed")
 
     @managed.setter
-    def managed(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def managed(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "managed", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Name of the vlan to be attached in NDB
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryDns")
-    def primary_dns(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def primary_dns(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         primary dns for vlan. (Static IP address assignment only)
         """
         return pulumi.get(self, "primary_dns")
 
     @primary_dns.setter
-    def primary_dns(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def primary_dns(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "primary_dns", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbNetworkPropertyArgs']]]]:
+    def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbNetworkPropertyArgs']]]]:
         """
         properties of network
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbNetworkPropertyArgs']]]]):
+    def properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbNetworkPropertyArgs']]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter(name="propertiesMaps")
-    def properties_maps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbNetworkPropertiesMapArgs']]]]:
+    def properties_maps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbNetworkPropertiesMapArgs']]]]:
         """
         properties map of network
         """
         return pulumi.get(self, "properties_maps")
 
     @properties_maps.setter
-    def properties_maps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbNetworkPropertiesMapArgs']]]]):
+    def properties_maps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbNetworkPropertiesMapArgs']]]]):
         pulumi.set(self, "properties_maps", value)
 
     @_builtins.property
     @pulumi.getter(name="secondaryDns")
-    def secondary_dns(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def secondary_dns(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         secondary dns for vlan. (Static IP address assignment only)
         """
         return pulumi.get(self, "secondary_dns")
 
     @secondary_dns.setter
-    def secondary_dns(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def secondary_dns(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "secondary_dns", value)
 
     @_builtins.property
     @pulumi.getter(name="stretchedVlanId")
-    def stretched_vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def stretched_vlan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         stretched vlan id
         """
         return pulumi.get(self, "stretched_vlan_id")
 
     @stretched_vlan_id.setter
-    def stretched_vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def stretched_vlan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "stretched_vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetMask")
-    def subnet_mask(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def subnet_mask(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Subnet mask for vlan. (Static IP address assignment only)
         """
         return pulumi.get(self, "subnet_mask")
 
     @subnet_mask.setter
-    def subnet_mask(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def subnet_mask(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "subnet_mask", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Vlan type. Supports [DHCP, Static]
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -392,15 +392,15 @@ class NdbNetwork(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 dns_domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_pools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkIpPoolArgs', 'NdbNetworkIpPoolArgsDict']]]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 primary_dns: pulumi.Input[Optional[_builtins.str]] = None,
-                 secondary_dns: pulumi.Input[Optional[_builtins.str]] = None,
-                 subnet_mask: pulumi.Input[Optional[_builtins.str]] = None,
-                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 dns_domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_pools: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbNetworkIpPoolArgs', 'NdbNetworkIpPoolArgsDict']]]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 primary_dns: Optional[pulumi.Input[_builtins.str]] = None,
+                 secondary_dns: Optional[pulumi.Input[_builtins.str]] = None,
+                 subnet_mask: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to create VLANs and IP address pools that are managed both in NDB and outside NDB.
@@ -489,15 +489,15 @@ class NdbNetwork(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 dns_domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_pools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkIpPoolArgs', 'NdbNetworkIpPoolArgsDict']]]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 primary_dns: pulumi.Input[Optional[_builtins.str]] = None,
-                 secondary_dns: pulumi.Input[Optional[_builtins.str]] = None,
-                 subnet_mask: pulumi.Input[Optional[_builtins.str]] = None,
-                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 dns_domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_pools: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbNetworkIpPoolArgs', 'NdbNetworkIpPoolArgsDict']]]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 primary_dns: Optional[pulumi.Input[_builtins.str]] = None,
+                 secondary_dns: Optional[pulumi.Input[_builtins.str]] = None,
+                 subnet_mask: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -534,19 +534,19 @@ class NdbNetwork(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-            dns_domain: pulumi.Input[Optional[_builtins.str]] = None,
-            gateway: pulumi.Input[Optional[_builtins.str]] = None,
-            ip_pools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkIpPoolArgs', 'NdbNetworkIpPoolArgsDict']]]]] = None,
-            managed: pulumi.Input[Optional[_builtins.bool]] = None,
-            name: pulumi.Input[Optional[_builtins.str]] = None,
-            primary_dns: pulumi.Input[Optional[_builtins.str]] = None,
-            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkPropertyArgs', 'NdbNetworkPropertyArgsDict']]]]] = None,
-            properties_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkPropertiesMapArgs', 'NdbNetworkPropertiesMapArgsDict']]]]] = None,
-            secondary_dns: pulumi.Input[Optional[_builtins.str]] = None,
-            stretched_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
-            subnet_mask: pulumi.Input[Optional[_builtins.str]] = None,
-            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'NdbNetwork':
+            cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+            dns_domain: Optional[pulumi.Input[_builtins.str]] = None,
+            gateway: Optional[pulumi.Input[_builtins.str]] = None,
+            ip_pools: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbNetworkIpPoolArgs', 'NdbNetworkIpPoolArgsDict']]]]] = None,
+            managed: Optional[pulumi.Input[_builtins.bool]] = None,
+            name: Optional[pulumi.Input[_builtins.str]] = None,
+            primary_dns: Optional[pulumi.Input[_builtins.str]] = None,
+            properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbNetworkPropertyArgs', 'NdbNetworkPropertyArgsDict']]]]] = None,
+            properties_maps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbNetworkPropertiesMapArgs', 'NdbNetworkPropertiesMapArgsDict']]]]] = None,
+            secondary_dns: Optional[pulumi.Input[_builtins.str]] = None,
+            stretched_vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
+            subnet_mask: Optional[pulumi.Input[_builtins.str]] = None,
+            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'NdbNetwork':
         """
         Get an existing NdbNetwork resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

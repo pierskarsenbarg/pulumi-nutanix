@@ -143,24 +143,24 @@ export class ProtectionRule extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ProtectionRule resources.
  */
 export interface ProtectionRuleState {
-    apiVersion?: pulumi.Input<string | undefined>;
-    availabilityZoneConnectivityLists?: pulumi.Input<pulumi.Input<inputs.ProtectionRuleAvailabilityZoneConnectivityList>[] | undefined>;
-    categories?: pulumi.Input<pulumi.Input<inputs.ProtectionRuleCategory>[] | undefined>;
-    categoryFilter?: pulumi.Input<inputs.ProtectionRuleCategoryFilter | undefined>;
+    apiVersion?: pulumi.Input<string>;
+    availabilityZoneConnectivityLists?: pulumi.Input<pulumi.Input<inputs.ProtectionRuleAvailabilityZoneConnectivityList>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.ProtectionRuleCategory>[]>;
+    categoryFilter?: pulumi.Input<inputs.ProtectionRuleCategoryFilter>;
     /**
      * A description for protection rule.
      */
-    description?: pulumi.Input<string | undefined>;
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    description?: pulumi.Input<string>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The name for the protection rule.
      */
-    name?: pulumi.Input<string | undefined>;
-    orderedAvailabilityZoneLists?: pulumi.Input<pulumi.Input<inputs.ProtectionRuleOrderedAvailabilityZoneList>[] | undefined>;
-    ownerReference?: pulumi.Input<inputs.ProtectionRuleOwnerReference | undefined>;
-    projectReference?: pulumi.Input<inputs.ProtectionRuleProjectReference | undefined>;
-    startTime?: pulumi.Input<string | undefined>;
-    state?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
+    orderedAvailabilityZoneLists?: pulumi.Input<pulumi.Input<inputs.ProtectionRuleOrderedAvailabilityZoneList>[]>;
+    ownerReference?: pulumi.Input<inputs.ProtectionRuleOwnerReference>;
+    projectReference?: pulumi.Input<inputs.ProtectionRuleProjectReference>;
+    startTime?: pulumi.Input<string>;
+    state?: pulumi.Input<string>;
 }
 
 /**
@@ -168,18 +168,18 @@ export interface ProtectionRuleState {
  */
 export interface ProtectionRuleArgs {
     availabilityZoneConnectivityLists: pulumi.Input<pulumi.Input<inputs.ProtectionRuleAvailabilityZoneConnectivityList>[]>;
-    categories?: pulumi.Input<pulumi.Input<inputs.ProtectionRuleCategory>[] | undefined>;
-    categoryFilter?: pulumi.Input<inputs.ProtectionRuleCategoryFilter | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.ProtectionRuleCategory>[]>;
+    categoryFilter?: pulumi.Input<inputs.ProtectionRuleCategoryFilter>;
     /**
      * A description for protection rule.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * The name for the protection rule.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     orderedAvailabilityZoneLists: pulumi.Input<pulumi.Input<inputs.ProtectionRuleOrderedAvailabilityZoneList>[]>;
-    ownerReference?: pulumi.Input<inputs.ProtectionRuleOwnerReference | undefined>;
-    projectReference?: pulumi.Input<inputs.ProtectionRuleProjectReference | undefined>;
-    startTime?: pulumi.Input<string | undefined>;
+    ownerReference?: pulumi.Input<inputs.ProtectionRuleOwnerReference>;
+    projectReference?: pulumi.Input<inputs.ProtectionRuleProjectReference>;
+    startTime?: pulumi.Input<string>;
 }

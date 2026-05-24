@@ -88,5 +88,5 @@ export interface GetPermissionsOutputArgs {
     /**
      * The permission kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetPermissionsMetadataArgs>[] | undefined>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetPermissionsMetadataArgs>[]>;
 }

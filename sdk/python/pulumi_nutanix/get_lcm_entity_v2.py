@@ -338,7 +338,7 @@ def get_lcm_entity_v2(ext_id: Optional[_builtins.str] = None,
         sub_entities=pulumi.get(__ret__, 'sub_entities'),
         target_version=pulumi.get(__ret__, 'target_version'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_lcm_entity_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_lcm_entity_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLcmEntityV2Result]:
     """
     Get details about an LCM entity.

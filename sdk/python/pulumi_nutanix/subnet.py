@@ -22,28 +22,28 @@ __all__ = ['SubnetArgs', 'Subnet']
 class SubnetArgs:
     def __init__(__self__, *,
                  subnet_type: pulumi.Input[_builtins.str],
-                 availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetCategoryArgs']]]] = None,
-                 cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 default_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 dhcp_domain_name_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_domain_search_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_options: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_server_address: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_server_address_port: pulumi.Input[Optional[_builtins.int]] = None,
-                 enable_nat: pulumi.Input[Optional[_builtins.bool]] = None,
-                 ip_config_pool_list_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_external: pulumi.Input[Optional[_builtins.bool]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 network_function_chain_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
-                 project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 subnet_ip: pulumi.Input[Optional[_builtins.str]] = None,
-                 vlan_id: pulumi.Input[Optional[_builtins.int]] = None,
-                 vpc_reference_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 vswitch_name: pulumi.Input[Optional[_builtins.str]] = None):
+                 availability_zone_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetCategoryArgs']]]] = None,
+                 cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 default_gateway_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 dhcp_domain_name_server_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_domain_search_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_options: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_server_address: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_server_address_port: Optional[pulumi.Input[_builtins.int]] = None,
+                 enable_nat: Optional[pulumi.Input[_builtins.bool]] = None,
+                 ip_config_pool_list_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_external: Optional[pulumi.Input[_builtins.bool]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_function_chain_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
+                 project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 subnet_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 vlan_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 vpc_reference_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 vswitch_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Subnet resource.
 
@@ -131,299 +131,299 @@ class SubnetArgs:
 
     @_builtins.property
     @pulumi.getter(name="availabilityZoneReference")
-    def availability_zone_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def availability_zone_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a availability_zone.
         """
         return pulumi.get(self, "availability_zone_reference")
 
     @availability_zone_reference.setter
-    def availability_zone_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def availability_zone_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "availability_zone_reference", value)
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetCategoryArgs']]]]:
+    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetCategoryArgs']]]]:
         """
         - (Optional) The categories of the resource.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetCategoryArgs']]]]):
+    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterUuid")
-    def cluster_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def cluster_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Required) The UUID of the cluster.
         """
         return pulumi.get(self, "cluster_uuid")
 
     @cluster_uuid.setter
-    def cluster_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def cluster_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "cluster_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultGatewayIp")
-    def default_gateway_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def default_gateway_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Optional) Default gateway IP address.
         """
         return pulumi.get(self, "default_gateway_ip")
 
     @default_gateway_ip.setter
-    def default_gateway_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def default_gateway_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "default_gateway_ip", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Optional) A description for subnet.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="dhcpDomainNameServerLists")
-    def dhcp_domain_name_server_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dhcp_domain_name_server_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional). List of Domain Name Server addresses .
         """
         return pulumi.get(self, "dhcp_domain_name_server_lists")
 
     @dhcp_domain_name_server_lists.setter
-    def dhcp_domain_name_server_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dhcp_domain_name_server_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dhcp_domain_name_server_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="dhcpDomainSearchLists")
-    def dhcp_domain_search_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dhcp_domain_search_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional).The DNS domain search list .
         """
         return pulumi.get(self, "dhcp_domain_search_lists")
 
     @dhcp_domain_search_lists.setter
-    def dhcp_domain_search_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dhcp_domain_search_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dhcp_domain_search_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="dhcpOptions")
-    def dhcp_options(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def dhcp_options(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Spec for defining DHCP options.
         """
         return pulumi.get(self, "dhcp_options")
 
     @dhcp_options.setter
-    def dhcp_options(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def dhcp_options(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dhcp_options", value)
 
     @_builtins.property
     @pulumi.getter(name="dhcpServerAddress")
-    def dhcp_server_address(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def dhcp_server_address(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Host address.
         """
         return pulumi.get(self, "dhcp_server_address")
 
     @dhcp_server_address.setter
-    def dhcp_server_address(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def dhcp_server_address(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dhcp_server_address", value)
 
     @_builtins.property
     @pulumi.getter(name="dhcpServerAddressPort")
-    def dhcp_server_address_port(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def dhcp_server_address_port(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         - (Optional) Port Number.
         """
         return pulumi.get(self, "dhcp_server_address_port")
 
     @dhcp_server_address_port.setter
-    def dhcp_server_address_port(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def dhcp_server_address_port(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "dhcp_server_address_port", value)
 
     @_builtins.property
     @pulumi.getter(name="enableNat")
-    def enable_nat(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def enable_nat(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
         """
         return pulumi.get(self, "enable_nat")
 
     @enable_nat.setter
-    def enable_nat(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def enable_nat(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "enable_nat", value)
 
     @_builtins.property
     @pulumi.getter(name="ipConfigPoolListRanges")
-    def ip_config_pool_list_ranges(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ip_config_pool_list_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
         """
         return pulumi.get(self, "ip_config_pool_list_ranges")
 
     @ip_config_pool_list_ranges.setter
-    def ip_config_pool_list_ranges(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ip_config_pool_list_ranges(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ip_config_pool_list_ranges", value)
 
     @_builtins.property
     @pulumi.getter(name="isExternal")
-    def is_external(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def is_external(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - (Optional) Whether the subnet is external subnet or not.
         """
         return pulumi.get(self, "is_external")
 
     @is_external.setter
-    def is_external(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def is_external(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_external", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Optional) Subnet name (Readonly).
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkFunctionChainReference")
-    def network_function_chain_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def network_function_chain_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a network_function_chain.
         """
         return pulumi.get(self, "network_function_chain_reference")
 
     @network_function_chain_reference.setter
-    def network_function_chain_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def network_function_chain_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "network_function_chain_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerReference")
-    def owner_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def owner_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a user.
         """
         return pulumi.get(self, "owner_reference")
 
     @owner_reference.setter
-    def owner_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def owner_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "owner_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="prefixLength")
-    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def prefix_length(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         - (Optional).
         """
         return pulumi.get(self, "prefix_length")
 
     @prefix_length.setter
-    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def prefix_length(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "prefix_length", value)
 
     @_builtins.property
     @pulumi.getter(name="projectReference")
-    def project_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def project_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a project.
         """
         return pulumi.get(self, "project_reference")
 
     @project_reference.setter
-    def project_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def project_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "project_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetIp")
-    def subnet_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def subnet_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Optional) Subnet IP address.
         """
         return pulumi.get(self, "subnet_ip")
 
     @subnet_ip.setter
-    def subnet_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def subnet_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "subnet_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="vlanId")
-    def vlan_id(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def vlan_id(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         - (Optional). For VLAN subnet.
         """
         return pulumi.get(self, "vlan_id")
 
     @vlan_id.setter
-    def vlan_id(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def vlan_id(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcReferenceUuid")
-    def vpc_reference_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def vpc_reference_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         VPC reference uuid
         """
         return pulumi.get(self, "vpc_reference_uuid")
 
     @vpc_reference_uuid.setter
-    def vpc_reference_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def vpc_reference_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vpc_reference_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="vswitchName")
-    def vswitch_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def vswitch_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Optional).
         """
         return pulumi.get(self, "vswitch_name")
 
     @vswitch_name.setter
-    def vswitch_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def vswitch_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vswitch_name", value)
 
 
 @pulumi.input_type
 class _SubnetState:
     def __init__(__self__, *,
-                 api_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetCategoryArgs']]]] = None,
-                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 default_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 dhcp_domain_name_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_domain_search_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_options: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_server_address: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_server_address_port: pulumi.Input[Optional[_builtins.int]] = None,
-                 enable_nat: pulumi.Input[Optional[_builtins.bool]] = None,
-                 ip_config_pool_list_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_external: pulumi.Input[Optional[_builtins.bool]] = None,
-                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 network_function_chain_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
-                 project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 state: pulumi.Input[Optional[_builtins.str]] = None,
-                 subnet_ip: pulumi.Input[Optional[_builtins.str]] = None,
-                 subnet_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 vlan_id: pulumi.Input[Optional[_builtins.int]] = None,
-                 vpc_reference_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 vswitch_name: pulumi.Input[Optional[_builtins.str]] = None):
+                 api_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_zone_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetCategoryArgs']]]] = None,
+                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 default_gateway_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 dhcp_domain_name_server_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_domain_search_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_options: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_server_address: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_server_address_port: Optional[pulumi.Input[_builtins.int]] = None,
+                 enable_nat: Optional[pulumi.Input[_builtins.bool]] = None,
+                 ip_config_pool_list_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_external: Optional[pulumi.Input[_builtins.bool]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_function_chain_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
+                 project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 subnet_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 subnet_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 vlan_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 vpc_reference_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 vswitch_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Subnet resources.
 
@@ -511,323 +511,323 @@ class _SubnetState:
 
     @_builtins.property
     @pulumi.getter(name="apiVersion")
-    def api_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def api_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The version of the API.
         """
         return pulumi.get(self, "api_version")
 
     @api_version.setter
-    def api_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def api_version(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "api_version", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityZoneReference")
-    def availability_zone_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def availability_zone_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a availability_zone.
         """
         return pulumi.get(self, "availability_zone_reference")
 
     @availability_zone_reference.setter
-    def availability_zone_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def availability_zone_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "availability_zone_reference", value)
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetCategoryArgs']]]]:
+    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetCategoryArgs']]]]:
         """
         - (Optional) The categories of the resource.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetCategoryArgs']]]]):
+    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterName")
-    def cluster_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def cluster_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
-    def cluster_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def cluster_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "cluster_name", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterUuid")
-    def cluster_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def cluster_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Required) The UUID of the cluster.
         """
         return pulumi.get(self, "cluster_uuid")
 
     @cluster_uuid.setter
-    def cluster_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def cluster_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "cluster_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultGatewayIp")
-    def default_gateway_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def default_gateway_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Optional) Default gateway IP address.
         """
         return pulumi.get(self, "default_gateway_ip")
 
     @default_gateway_ip.setter
-    def default_gateway_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def default_gateway_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "default_gateway_ip", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Optional) A description for subnet.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="dhcpDomainNameServerLists")
-    def dhcp_domain_name_server_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dhcp_domain_name_server_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional). List of Domain Name Server addresses .
         """
         return pulumi.get(self, "dhcp_domain_name_server_lists")
 
     @dhcp_domain_name_server_lists.setter
-    def dhcp_domain_name_server_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dhcp_domain_name_server_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dhcp_domain_name_server_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="dhcpDomainSearchLists")
-    def dhcp_domain_search_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dhcp_domain_search_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional).The DNS domain search list .
         """
         return pulumi.get(self, "dhcp_domain_search_lists")
 
     @dhcp_domain_search_lists.setter
-    def dhcp_domain_search_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dhcp_domain_search_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dhcp_domain_search_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="dhcpOptions")
-    def dhcp_options(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def dhcp_options(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Spec for defining DHCP options.
         """
         return pulumi.get(self, "dhcp_options")
 
     @dhcp_options.setter
-    def dhcp_options(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def dhcp_options(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dhcp_options", value)
 
     @_builtins.property
     @pulumi.getter(name="dhcpServerAddress")
-    def dhcp_server_address(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def dhcp_server_address(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Host address.
         """
         return pulumi.get(self, "dhcp_server_address")
 
     @dhcp_server_address.setter
-    def dhcp_server_address(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def dhcp_server_address(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dhcp_server_address", value)
 
     @_builtins.property
     @pulumi.getter(name="dhcpServerAddressPort")
-    def dhcp_server_address_port(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def dhcp_server_address_port(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         - (Optional) Port Number.
         """
         return pulumi.get(self, "dhcp_server_address_port")
 
     @dhcp_server_address_port.setter
-    def dhcp_server_address_port(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def dhcp_server_address_port(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "dhcp_server_address_port", value)
 
     @_builtins.property
     @pulumi.getter(name="enableNat")
-    def enable_nat(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def enable_nat(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
         """
         return pulumi.get(self, "enable_nat")
 
     @enable_nat.setter
-    def enable_nat(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def enable_nat(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "enable_nat", value)
 
     @_builtins.property
     @pulumi.getter(name="ipConfigPoolListRanges")
-    def ip_config_pool_list_ranges(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ip_config_pool_list_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Range of IPs (example: 10.0.0.9 10.0.0.19).
         """
         return pulumi.get(self, "ip_config_pool_list_ranges")
 
     @ip_config_pool_list_ranges.setter
-    def ip_config_pool_list_ranges(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ip_config_pool_list_ranges(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ip_config_pool_list_ranges", value)
 
     @_builtins.property
     @pulumi.getter(name="isExternal")
-    def is_external(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def is_external(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - (Optional) Whether the subnet is external subnet or not.
         """
         return pulumi.get(self, "is_external")
 
     @is_external.setter
-    def is_external(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def is_external(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_external", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Required) The subnet kind metadata.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Optional) Subnet name (Readonly).
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkFunctionChainReference")
-    def network_function_chain_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def network_function_chain_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a network_function_chain.
         """
         return pulumi.get(self, "network_function_chain_reference")
 
     @network_function_chain_reference.setter
-    def network_function_chain_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def network_function_chain_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "network_function_chain_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerReference")
-    def owner_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def owner_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a user.
         """
         return pulumi.get(self, "owner_reference")
 
     @owner_reference.setter
-    def owner_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def owner_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "owner_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="prefixLength")
-    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def prefix_length(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         - (Optional).
         """
         return pulumi.get(self, "prefix_length")
 
     @prefix_length.setter
-    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def prefix_length(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "prefix_length", value)
 
     @_builtins.property
     @pulumi.getter(name="projectReference")
-    def project_reference(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def project_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) The reference to a project.
         """
         return pulumi.get(self, "project_reference")
 
     @project_reference.setter
-    def project_reference(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def project_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "project_reference", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - The state of the subnet.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetIp")
-    def subnet_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def subnet_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Optional) Subnet IP address.
         """
         return pulumi.get(self, "subnet_ip")
 
     @subnet_ip.setter
-    def subnet_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def subnet_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "subnet_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetType")
-    def subnet_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def subnet_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Optional). Valid Types are ["VLAN", "OVERLAY"]
         """
         return pulumi.get(self, "subnet_type")
 
     @subnet_type.setter
-    def subnet_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def subnet_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "subnet_type", value)
 
     @_builtins.property
     @pulumi.getter(name="vlanId")
-    def vlan_id(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def vlan_id(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         - (Optional). For VLAN subnet.
         """
         return pulumi.get(self, "vlan_id")
 
     @vlan_id.setter
-    def vlan_id(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def vlan_id(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "vlan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcReferenceUuid")
-    def vpc_reference_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def vpc_reference_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         VPC reference uuid
         """
         return pulumi.get(self, "vpc_reference_uuid")
 
     @vpc_reference_uuid.setter
-    def vpc_reference_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def vpc_reference_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vpc_reference_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="vswitchName")
-    def vswitch_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def vswitch_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Optional).
         """
         return pulumi.get(self, "vswitch_name")
 
     @vswitch_name.setter
-    def vswitch_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def vswitch_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vswitch_name", value)
 
 
@@ -837,29 +837,29 @@ class Subnet(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetCategoryArgs', 'SubnetCategoryArgsDict']]]]] = None,
-                 cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 default_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 dhcp_domain_name_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_domain_search_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_options: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_server_address: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_server_address_port: pulumi.Input[Optional[_builtins.int]] = None,
-                 enable_nat: pulumi.Input[Optional[_builtins.bool]] = None,
-                 ip_config_pool_list_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_external: pulumi.Input[Optional[_builtins.bool]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 network_function_chain_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
-                 project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 subnet_ip: pulumi.Input[Optional[_builtins.str]] = None,
-                 subnet_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 vlan_id: pulumi.Input[Optional[_builtins.int]] = None,
-                 vpc_reference_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 vswitch_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_zone_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetCategoryArgs', 'SubnetCategoryArgsDict']]]]] = None,
+                 cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 default_gateway_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 dhcp_domain_name_server_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_domain_search_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_options: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_server_address: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_server_address_port: Optional[pulumi.Input[_builtins.int]] = None,
+                 enable_nat: Optional[pulumi.Input[_builtins.bool]] = None,
+                 ip_config_pool_list_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_external: Optional[pulumi.Input[_builtins.bool]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_function_chain_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
+                 project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 subnet_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 subnet_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 vlan_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 vpc_reference_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 vswitch_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
@@ -926,29 +926,29 @@ class Subnet(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetCategoryArgs', 'SubnetCategoryArgsDict']]]]] = None,
-                 cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 default_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 dhcp_domain_name_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_domain_search_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_options: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_server_address: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_server_address_port: pulumi.Input[Optional[_builtins.int]] = None,
-                 enable_nat: pulumi.Input[Optional[_builtins.bool]] = None,
-                 ip_config_pool_list_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_external: pulumi.Input[Optional[_builtins.bool]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 network_function_chain_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
-                 project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 subnet_ip: pulumi.Input[Optional[_builtins.str]] = None,
-                 subnet_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 vlan_id: pulumi.Input[Optional[_builtins.int]] = None,
-                 vpc_reference_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 vswitch_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_zone_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetCategoryArgs', 'SubnetCategoryArgsDict']]]]] = None,
+                 cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 default_gateway_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 dhcp_domain_name_server_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_domain_search_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_options: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_server_address: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_server_address_port: Optional[pulumi.Input[_builtins.int]] = None,
+                 enable_nat: Optional[pulumi.Input[_builtins.bool]] = None,
+                 ip_config_pool_list_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_external: Optional[pulumi.Input[_builtins.bool]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_function_chain_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
+                 project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 subnet_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 subnet_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 vlan_id: Optional[pulumi.Input[_builtins.int]] = None,
+                 vpc_reference_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 vswitch_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -997,33 +997,33 @@ class Subnet(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            api_version: pulumi.Input[Optional[_builtins.str]] = None,
-            availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetCategoryArgs', 'SubnetCategoryArgsDict']]]]] = None,
-            cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
-            cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-            default_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
-            description: pulumi.Input[Optional[_builtins.str]] = None,
-            dhcp_domain_name_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dhcp_domain_search_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            dhcp_options: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            dhcp_server_address: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            dhcp_server_address_port: pulumi.Input[Optional[_builtins.int]] = None,
-            enable_nat: pulumi.Input[Optional[_builtins.bool]] = None,
-            ip_config_pool_list_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            is_external: pulumi.Input[Optional[_builtins.bool]] = None,
-            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            name: pulumi.Input[Optional[_builtins.str]] = None,
-            network_function_chain_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
-            project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            state: pulumi.Input[Optional[_builtins.str]] = None,
-            subnet_ip: pulumi.Input[Optional[_builtins.str]] = None,
-            subnet_type: pulumi.Input[Optional[_builtins.str]] = None,
-            vlan_id: pulumi.Input[Optional[_builtins.int]] = None,
-            vpc_reference_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-            vswitch_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'Subnet':
+            api_version: Optional[pulumi.Input[_builtins.str]] = None,
+            availability_zone_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetCategoryArgs', 'SubnetCategoryArgsDict']]]]] = None,
+            cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
+            cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+            default_gateway_ip: Optional[pulumi.Input[_builtins.str]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
+            dhcp_domain_name_server_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dhcp_domain_search_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dhcp_options: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            dhcp_server_address: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            dhcp_server_address_port: Optional[pulumi.Input[_builtins.int]] = None,
+            enable_nat: Optional[pulumi.Input[_builtins.bool]] = None,
+            ip_config_pool_list_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            is_external: Optional[pulumi.Input[_builtins.bool]] = None,
+            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: Optional[pulumi.Input[_builtins.str]] = None,
+            network_function_chain_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            prefix_length: Optional[pulumi.Input[_builtins.int]] = None,
+            project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: Optional[pulumi.Input[_builtins.str]] = None,
+            subnet_ip: Optional[pulumi.Input[_builtins.str]] = None,
+            subnet_type: Optional[pulumi.Input[_builtins.str]] = None,
+            vlan_id: Optional[pulumi.Input[_builtins.int]] = None,
+            vpc_reference_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+            vswitch_name: Optional[pulumi.Input[_builtins.str]] = None) -> 'Subnet':
         """
         Get an existing Subnet resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

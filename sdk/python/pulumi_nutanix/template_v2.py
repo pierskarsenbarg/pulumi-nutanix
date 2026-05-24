@@ -23,11 +23,11 @@ class TemplateV2Args:
     def __init__(__self__, *,
                  template_name: pulumi.Input[_builtins.str],
                  template_version_spec: pulumi.Input['TemplateV2TemplateVersionSpecArgs'],
-                 category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2CreatedByArgs']]]] = None,
-                 guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]]] = None,
-                 template_description: pulumi.Input[Optional[_builtins.str]] = None,
-                 updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2UpdatedByArgs']]]] = None):
+                 category_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2CreatedByArgs']]]] = None,
+                 guest_update_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]]] = None,
+                 template_description: Optional[pulumi.Input[_builtins.str]] = None,
+                 updated_bies: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2UpdatedByArgs']]]] = None):
         """
         The set of arguments for constructing a TemplateV2 resource.
 
@@ -75,71 +75,71 @@ class TemplateV2Args:
 
     @_builtins.property
     @pulumi.getter(name="categoryExtIds")
-    def category_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def category_ext_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "category_ext_ids")
 
     @category_ext_ids.setter
-    def category_ext_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def category_ext_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "category_ext_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBies")
-    def created_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2CreatedByArgs']]]]:
+    def created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2CreatedByArgs']]]]:
         return pulumi.get(self, "created_bies")
 
     @created_bies.setter
-    def created_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2CreatedByArgs']]]]):
+    def created_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2CreatedByArgs']]]]):
         pulumi.set(self, "created_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="guestUpdateStatuses")
-    def guest_update_statuses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]]]:
+    def guest_update_statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]]]:
         """
         Status of a guest update.
         """
         return pulumi.get(self, "guest_update_statuses")
 
     @guest_update_statuses.setter
-    def guest_update_statuses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]]]):
+    def guest_update_statuses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]]]):
         pulumi.set(self, "guest_update_statuses", value)
 
     @_builtins.property
     @pulumi.getter(name="templateDescription")
-    def template_description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def template_description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The user defined description of a Template.
         """
         return pulumi.get(self, "template_description")
 
     @template_description.setter
-    def template_description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def template_description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "template_description", value)
 
     @_builtins.property
     @pulumi.getter(name="updatedBies")
-    def updated_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2UpdatedByArgs']]]]:
+    def updated_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2UpdatedByArgs']]]]:
         return pulumi.get(self, "updated_bies")
 
     @updated_bies.setter
-    def updated_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2UpdatedByArgs']]]]):
+    def updated_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2UpdatedByArgs']]]]):
         pulumi.set(self, "updated_bies", value)
 
 
 @pulumi.input_type
 class _TemplateV2State:
     def __init__(__self__, *,
-                 category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 create_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2CreatedByArgs']]]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]]] = None,
-                 links: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2LinkArgs']]]] = None,
-                 template_description: pulumi.Input[Optional[_builtins.str]] = None,
-                 template_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 template_version_spec: pulumi.Input[Optional['TemplateV2TemplateVersionSpecArgs']] = None,
-                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 update_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2UpdatedByArgs']]]] = None):
+                 category_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 create_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2CreatedByArgs']]]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 guest_update_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]]] = None,
+                 links: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2LinkArgs']]]] = None,
+                 template_description: Optional[pulumi.Input[_builtins.str]] = None,
+                 template_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 template_version_spec: Optional[pulumi.Input['TemplateV2TemplateVersionSpecArgs']] = None,
+                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 update_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 updated_bies: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2UpdatedByArgs']]]] = None):
         """
         Input properties used for looking up and filtering TemplateV2 resources.
 
@@ -175,122 +175,122 @@ class _TemplateV2State:
 
     @_builtins.property
     @pulumi.getter(name="categoryExtIds")
-    def category_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def category_ext_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "category_ext_ids")
 
     @category_ext_ids.setter
-    def category_ext_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def category_ext_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "category_ext_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="createTime")
-    def create_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def create_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "create_time")
 
     @create_time.setter
-    def create_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def create_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "create_time", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBies")
-    def created_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2CreatedByArgs']]]]:
+    def created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2CreatedByArgs']]]]:
         return pulumi.get(self, "created_bies")
 
     @created_bies.setter
-    def created_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2CreatedByArgs']]]]):
+    def created_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2CreatedByArgs']]]]):
         pulumi.set(self, "created_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="guestUpdateStatuses")
-    def guest_update_statuses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]]]:
+    def guest_update_statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]]]:
         """
         Status of a guest update.
         """
         return pulumi.get(self, "guest_update_statuses")
 
     @guest_update_statuses.setter
-    def guest_update_statuses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]]]):
+    def guest_update_statuses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]]]):
         pulumi.set(self, "guest_update_statuses", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2LinkArgs']]]]:
+    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2LinkArgs']]]]:
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2LinkArgs']]]]):
+    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter(name="templateDescription")
-    def template_description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def template_description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The user defined description of a Template.
         """
         return pulumi.get(self, "template_description")
 
     @template_description.setter
-    def template_description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def template_description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "template_description", value)
 
     @_builtins.property
     @pulumi.getter(name="templateName")
-    def template_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def template_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The user defined name of a Template.
         """
         return pulumi.get(self, "template_name")
 
     @template_name.setter
-    def template_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def template_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "template_name", value)
 
     @_builtins.property
     @pulumi.getter(name="templateVersionSpec")
-    def template_version_spec(self) -> pulumi.Input[Optional['TemplateV2TemplateVersionSpecArgs']]:
+    def template_version_spec(self) -> Optional[pulumi.Input['TemplateV2TemplateVersionSpecArgs']]:
         """
         A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
         """
         return pulumi.get(self, "template_version_spec")
 
     @template_version_spec.setter
-    def template_version_spec(self, value: pulumi.Input[Optional['TemplateV2TemplateVersionSpecArgs']]):
+    def template_version_spec(self, value: Optional[pulumi.Input['TemplateV2TemplateVersionSpecArgs']]):
         pulumi.set(self, "template_version_spec", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="updateTime")
-    def update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def update_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "update_time")
 
     @update_time.setter
-    def update_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def update_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "update_time", value)
 
     @_builtins.property
     @pulumi.getter(name="updatedBies")
-    def updated_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2UpdatedByArgs']]]]:
+    def updated_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2UpdatedByArgs']]]]:
         return pulumi.get(self, "updated_bies")
 
     @updated_bies.setter
-    def updated_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2UpdatedByArgs']]]]):
+    def updated_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TemplateV2UpdatedByArgs']]]]):
         pulumi.set(self, "updated_bies", value)
 
 
@@ -300,13 +300,13 @@ class TemplateV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict']]]]] = None,
-                 guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict']]]]] = None,
-                 template_description: pulumi.Input[Optional[_builtins.str]] = None,
-                 template_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 template_version_spec: pulumi.Input[Optional[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict']]] = None,
-                 updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2UpdatedByArgs', 'TemplateV2UpdatedByArgsDict']]]]] = None,
+                 category_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict']]]]] = None,
+                 guest_update_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict']]]]] = None,
+                 template_description: Optional[pulumi.Input[_builtins.str]] = None,
+                 template_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 template_version_spec: Optional[pulumi.Input[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict']]] = None,
+                 updated_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2UpdatedByArgs', 'TemplateV2UpdatedByArgsDict']]]]] = None,
                  __props__=None):
         """
         Create a Template from the given VM identifier. A Template stores the VM configuration and disks from the source VM.
@@ -344,13 +344,13 @@ class TemplateV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict']]]]] = None,
-                 guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict']]]]] = None,
-                 template_description: pulumi.Input[Optional[_builtins.str]] = None,
-                 template_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 template_version_spec: pulumi.Input[Optional[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict']]] = None,
-                 updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2UpdatedByArgs', 'TemplateV2UpdatedByArgsDict']]]]] = None,
+                 category_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict']]]]] = None,
+                 guest_update_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict']]]]] = None,
+                 template_description: Optional[pulumi.Input[_builtins.str]] = None,
+                 template_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 template_version_spec: Optional[pulumi.Input[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict']]] = None,
+                 updated_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2UpdatedByArgs', 'TemplateV2UpdatedByArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -386,18 +386,18 @@ class TemplateV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            create_time: pulumi.Input[Optional[_builtins.str]] = None,
-            created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict']]]]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict']]]]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2LinkArgs', 'TemplateV2LinkArgsDict']]]]] = None,
-            template_description: pulumi.Input[Optional[_builtins.str]] = None,
-            template_name: pulumi.Input[Optional[_builtins.str]] = None,
-            template_version_spec: pulumi.Input[Optional[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict']]] = None,
-            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
-            update_time: pulumi.Input[Optional[_builtins.str]] = None,
-            updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2UpdatedByArgs', 'TemplateV2UpdatedByArgsDict']]]]] = None) -> 'TemplateV2':
+            category_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            create_time: Optional[pulumi.Input[_builtins.str]] = None,
+            created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict']]]]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            guest_update_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict']]]]] = None,
+            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2LinkArgs', 'TemplateV2LinkArgsDict']]]]] = None,
+            template_description: Optional[pulumi.Input[_builtins.str]] = None,
+            template_name: Optional[pulumi.Input[_builtins.str]] = None,
+            template_version_spec: Optional[pulumi.Input[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict']]] = None,
+            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
+            update_time: Optional[pulumi.Input[_builtins.str]] = None,
+            updated_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2UpdatedByArgs', 'TemplateV2UpdatedByArgsDict']]]]] = None) -> 'TemplateV2':
         """
         Get an existing TemplateV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

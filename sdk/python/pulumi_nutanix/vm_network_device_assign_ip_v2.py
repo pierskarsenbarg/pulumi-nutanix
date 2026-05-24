@@ -23,7 +23,7 @@ class VmNetworkDeviceAssignIpV2Args:
     def __init__(__self__, *,
                  ext_id: pulumi.Input[_builtins.str],
                  vm_ext_id: pulumi.Input[_builtins.str],
-                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input['VmNetworkDeviceAssignIpV2IpAddressArgs']]]] = None):
+                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['VmNetworkDeviceAssignIpV2IpAddressArgs']]]] = None):
         """
         The set of arguments for constructing a VmNetworkDeviceAssignIpV2 resource.
 
@@ -62,23 +62,23 @@ class VmNetworkDeviceAssignIpV2Args:
 
     @_builtins.property
     @pulumi.getter(name="ipAddresses")
-    def ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VmNetworkDeviceAssignIpV2IpAddressArgs']]]]:
+    def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmNetworkDeviceAssignIpV2IpAddressArgs']]]]:
         """
         - (Optional) Ip config settings.
         """
         return pulumi.get(self, "ip_addresses")
 
     @ip_addresses.setter
-    def ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VmNetworkDeviceAssignIpV2IpAddressArgs']]]]):
+    def ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmNetworkDeviceAssignIpV2IpAddressArgs']]]]):
         pulumi.set(self, "ip_addresses", value)
 
 
 @pulumi.input_type
 class _VmNetworkDeviceAssignIpV2State:
     def __init__(__self__, *,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input['VmNetworkDeviceAssignIpV2IpAddressArgs']]]] = None,
-                 vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['VmNetworkDeviceAssignIpV2IpAddressArgs']]]] = None,
+                 vm_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VmNetworkDeviceAssignIpV2 resources.
 
@@ -95,38 +95,38 @@ class _VmNetworkDeviceAssignIpV2State:
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Required) The globally unique identifier of a Nic. It should be of type UUID.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddresses")
-    def ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VmNetworkDeviceAssignIpV2IpAddressArgs']]]]:
+    def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VmNetworkDeviceAssignIpV2IpAddressArgs']]]]:
         """
         - (Optional) Ip config settings.
         """
         return pulumi.get(self, "ip_addresses")
 
     @ip_addresses.setter
-    def ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VmNetworkDeviceAssignIpV2IpAddressArgs']]]]):
+    def ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VmNetworkDeviceAssignIpV2IpAddressArgs']]]]):
         pulumi.set(self, "ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="vmExtId")
-    def vm_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def vm_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Required) The globally unique identifier of a VM. It should be of type UUID.
         """
         return pulumi.get(self, "vm_ext_id")
 
     @vm_ext_id.setter
-    def vm_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def vm_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vm_ext_id", value)
 
 
@@ -136,9 +136,9 @@ class VmNetworkDeviceAssignIpV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceAssignIpV2IpAddressArgs', 'VmNetworkDeviceAssignIpV2IpAddressArgsDict']]]]] = None,
-                 vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceAssignIpV2IpAddressArgs', 'VmNetworkDeviceAssignIpV2IpAddressArgsDict']]]]] = None,
+                 vm_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a Nutanix Virtual Machine resource to Assign IP.
@@ -209,9 +209,9 @@ class VmNetworkDeviceAssignIpV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceAssignIpV2IpAddressArgs', 'VmNetworkDeviceAssignIpV2IpAddressArgsDict']]]]] = None,
-                 vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceAssignIpV2IpAddressArgs', 'VmNetworkDeviceAssignIpV2IpAddressArgsDict']]]]] = None,
+                 vm_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -238,9 +238,9 @@ class VmNetworkDeviceAssignIpV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceAssignIpV2IpAddressArgs', 'VmNetworkDeviceAssignIpV2IpAddressArgsDict']]]]] = None,
-            vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VmNetworkDeviceAssignIpV2':
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceAssignIpV2IpAddressArgs', 'VmNetworkDeviceAssignIpV2IpAddressArgsDict']]]]] = None,
+            vm_ext_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'VmNetworkDeviceAssignIpV2':
         """
         Get an existing VmNetworkDeviceAssignIpV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

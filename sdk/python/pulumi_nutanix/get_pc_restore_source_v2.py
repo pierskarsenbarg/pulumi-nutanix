@@ -129,7 +129,7 @@ def get_pc_restore_source_v2(ext_id: Optional[_builtins.str] = None,
         links=pulumi.get(__ret__, 'links'),
         locations=pulumi.get(__ret__, 'locations'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_pc_restore_source_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_pc_restore_source_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPcRestoreSourceV2Result]:
     """
     Retrieves the restore source from the PE cache store and returns the restore source configuration and external identifier to the user.

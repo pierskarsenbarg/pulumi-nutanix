@@ -198,7 +198,7 @@ def get_image_placement_policy_v2(ext_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         owner_ext_id=pulumi.get(__ret__, 'owner_ext_id'),
         placement_type=pulumi.get(__ret__, 'placement_type'))
-def get_image_placement_policy_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_image_placement_policy_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImagePlacementPolicyV2Result]:
     """
     Retrieve the image placement policy details for the provided external identifier.

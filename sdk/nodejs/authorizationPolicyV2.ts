@@ -187,51 +187,51 @@ export interface AuthorizationPolicyV2State {
      * - `SERVICE_DEFINED` : ACP defined by a service.
      * - `USER_DEFINED` : ACP defined by an User.
      */
-    authorizationPolicyType?: pulumi.Input<string | undefined>;
+    authorizationPolicyType?: pulumi.Input<string>;
     /**
      * Client that created the entity.
      */
-    clientName?: pulumi.Input<string | undefined>;
+    clientName?: pulumi.Input<string>;
     /**
      * User or Service Name that created the Authorization Policy.
      */
-    createdBy?: pulumi.Input<string | undefined>;
+    createdBy?: pulumi.Input<string>;
     /**
      * The creation time of the Authorization Policy.
      */
-    createdTime?: pulumi.Input<string | undefined>;
+    createdTime?: pulumi.Input<string>;
     /**
      * Description of the Authorization Policy.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * Name of the Authorization Policy.
      */
-    displayName?: pulumi.Input<string | undefined>;
+    displayName?: pulumi.Input<string>;
     /**
      * The entities being qualified by the Authorization Policy.
      */
-    entities?: pulumi.Input<pulumi.Input<inputs.AuthorizationPolicyV2Entity>[] | undefined>;
+    entities?: pulumi.Input<pulumi.Input<inputs.AuthorizationPolicyV2Entity>[]>;
     /**
      * ext_id of Authorization policy.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * The identities for which the Authorization Policy is created.
      */
-    identities?: pulumi.Input<pulumi.Input<inputs.AuthorizationPolicyV2Identity>[] | undefined>;
+    identities?: pulumi.Input<pulumi.Input<inputs.AuthorizationPolicyV2Identity>[]>;
     /**
      * Flag identifying if the Authorization Policy is system defined or not.
      */
-    isSystemDefined?: pulumi.Input<boolean | undefined>;
+    isSystemDefined?: pulumi.Input<boolean>;
     /**
      * The time when the Authorization Policy was last updated.
      */
-    lastUpdatedTime?: pulumi.Input<string | undefined>;
+    lastUpdatedTime?: pulumi.Input<string>;
     /**
      * The Role associated with the Authorization Policy.
      */
-    role?: pulumi.Input<string | undefined>;
+    role?: pulumi.Input<string>;
 }
 
 /**
@@ -246,11 +246,11 @@ export interface AuthorizationPolicyV2Args {
      * - `SERVICE_DEFINED` : ACP defined by a service.
      * - `USER_DEFINED` : ACP defined by an User.
      */
-    authorizationPolicyType?: pulumi.Input<string | undefined>;
+    authorizationPolicyType?: pulumi.Input<string>;
     /**
      * Description of the Authorization Policy.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * Name of the Authorization Policy.
      */
@@ -262,7 +262,7 @@ export interface AuthorizationPolicyV2Args {
     /**
      * ext_id of Authorization policy.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * The identities for which the Authorization Policy is created.
      */

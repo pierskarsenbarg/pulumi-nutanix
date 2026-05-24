@@ -21,14 +21,14 @@ __all__ = ['NdbProfileArgs', 'NdbProfile']
 @pulumi.input_type
 class NdbProfileArgs:
     def __init__(__self__, *,
-                 compute_profiles: pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileComputeProfileArgs']]]] = None,
-                 database_parameter_profiles: pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfileArgs']]]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 engine_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 network_profiles: pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileNetworkProfileArgs']]]] = None,
-                 published: pulumi.Input[Optional[_builtins.bool]] = None,
-                 software_profile: pulumi.Input[Optional['NdbProfileSoftwareProfileArgs']] = None):
+                 compute_profiles: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileComputeProfileArgs']]]] = None,
+                 database_parameter_profiles: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfileArgs']]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 engine_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_profiles: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfileArgs']]]] = None,
+                 published: Optional[pulumi.Input[_builtins.bool]] = None,
+                 software_profile: Optional[pulumi.Input['NdbProfileSoftwareProfileArgs']] = None):
         """
         The set of arguments for constructing a NdbProfile resource.
 
@@ -60,121 +60,121 @@ class NdbProfileArgs:
 
     @_builtins.property
     @pulumi.getter(name="computeProfiles")
-    def compute_profiles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileComputeProfileArgs']]]]:
+    def compute_profiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileComputeProfileArgs']]]]:
         """
         Compute Profile
         """
         return pulumi.get(self, "compute_profiles")
 
     @compute_profiles.setter
-    def compute_profiles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileComputeProfileArgs']]]]):
+    def compute_profiles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileComputeProfileArgs']]]]):
         pulumi.set(self, "compute_profiles", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseParameterProfiles")
-    def database_parameter_profiles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfileArgs']]]]:
+    def database_parameter_profiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfileArgs']]]]:
         """
         Database Parameter Profile
         """
         return pulumi.get(self, "database_parameter_profiles")
 
     @database_parameter_profiles.setter
-    def database_parameter_profiles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfileArgs']]]]):
+    def database_parameter_profiles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfileArgs']]]]):
         pulumi.set(self, "database_parameter_profiles", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Description of profile
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="engineType")
-    def engine_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def engine_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Engine Type of database
         """
         return pulumi.get(self, "engine_type")
 
     @engine_type.setter
-    def engine_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def engine_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "engine_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Name of profile
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkProfiles")
-    def network_profiles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileNetworkProfileArgs']]]]:
+    def network_profiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfileArgs']]]]:
         """
         Network Profile
         """
         return pulumi.get(self, "network_profiles")
 
     @network_profiles.setter
-    def network_profiles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileNetworkProfileArgs']]]]):
+    def network_profiles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfileArgs']]]]):
         pulumi.set(self, "network_profiles", value)
 
     @_builtins.property
     @pulumi.getter
-    def published(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def published(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         Publish for all users
         """
         return pulumi.get(self, "published")
 
     @published.setter
-    def published(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def published(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "published", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareProfile")
-    def software_profile(self) -> pulumi.Input[Optional['NdbProfileSoftwareProfileArgs']]:
+    def software_profile(self) -> Optional[pulumi.Input['NdbProfileSoftwareProfileArgs']]:
         """
         Software Profile
         """
         return pulumi.get(self, "software_profile")
 
     @software_profile.setter
-    def software_profile(self, value: pulumi.Input[Optional['NdbProfileSoftwareProfileArgs']]):
+    def software_profile(self, value: Optional[pulumi.Input['NdbProfileSoftwareProfileArgs']]):
         pulumi.set(self, "software_profile", value)
 
 
 @pulumi.input_type
 class _NdbProfileState:
     def __init__(__self__, *,
-                 assoc_databases: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 assoc_db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cluster_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileClusterAvailabilityArgs']]]] = None,
-                 compute_profiles: pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileComputeProfileArgs']]]] = None,
-                 database_parameter_profiles: pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfileArgs']]]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 engine_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 latest_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 latest_version_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 network_profiles: pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileNetworkProfileArgs']]]] = None,
-                 nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 owner: pulumi.Input[Optional[_builtins.str]] = None,
-                 published: pulumi.Input[Optional[_builtins.bool]] = None,
-                 software_profile: pulumi.Input[Optional['NdbProfileSoftwareProfileArgs']] = None,
-                 status: pulumi.Input[Optional[_builtins.str]] = None,
-                 versions: pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileVersionArgs']]]] = None):
+                 assoc_databases: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 assoc_db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileClusterAvailabilityArgs']]]] = None,
+                 compute_profiles: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileComputeProfileArgs']]]] = None,
+                 database_parameter_profiles: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfileArgs']]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 engine_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 latest_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 latest_version_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_profiles: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfileArgs']]]] = None,
+                 nx_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 owner: Optional[pulumi.Input[_builtins.str]] = None,
+                 published: Optional[pulumi.Input[_builtins.bool]] = None,
+                 software_profile: Optional[pulumi.Input['NdbProfileSoftwareProfileArgs']] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 versions: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileVersionArgs']]]] = None):
         """
         Input properties used for looking up and filtering NdbProfile resources.
 
@@ -233,206 +233,206 @@ class _NdbProfileState:
 
     @_builtins.property
     @pulumi.getter(name="assocDatabases")
-    def assoc_databases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def assoc_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         associated databases of profiles
         """
         return pulumi.get(self, "assoc_databases")
 
     @assoc_databases.setter
-    def assoc_databases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def assoc_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "assoc_databases", value)
 
     @_builtins.property
     @pulumi.getter(name="assocDbServers")
-    def assoc_db_servers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def assoc_db_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         associated database servers for associated profiles
         """
         return pulumi.get(self, "assoc_db_servers")
 
     @assoc_db_servers.setter
-    def assoc_db_servers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def assoc_db_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "assoc_db_servers", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterAvailabilities")
-    def cluster_availabilities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileClusterAvailabilityArgs']]]]:
+    def cluster_availabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileClusterAvailabilityArgs']]]]:
         """
         cluster availability of profile
         """
         return pulumi.get(self, "cluster_availabilities")
 
     @cluster_availabilities.setter
-    def cluster_availabilities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileClusterAvailabilityArgs']]]]):
+    def cluster_availabilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileClusterAvailabilityArgs']]]]):
         pulumi.set(self, "cluster_availabilities", value)
 
     @_builtins.property
     @pulumi.getter(name="computeProfiles")
-    def compute_profiles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileComputeProfileArgs']]]]:
+    def compute_profiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileComputeProfileArgs']]]]:
         """
         Compute Profile
         """
         return pulumi.get(self, "compute_profiles")
 
     @compute_profiles.setter
-    def compute_profiles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileComputeProfileArgs']]]]):
+    def compute_profiles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileComputeProfileArgs']]]]):
         pulumi.set(self, "compute_profiles", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseParameterProfiles")
-    def database_parameter_profiles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfileArgs']]]]:
+    def database_parameter_profiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfileArgs']]]]:
         """
         Database Parameter Profile
         """
         return pulumi.get(self, "database_parameter_profiles")
 
     @database_parameter_profiles.setter
-    def database_parameter_profiles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfileArgs']]]]):
+    def database_parameter_profiles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfileArgs']]]]):
         pulumi.set(self, "database_parameter_profiles", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Description of profile
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="engineType")
-    def engine_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def engine_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Engine Type of database
         """
         return pulumi.get(self, "engine_type")
 
     @engine_type.setter
-    def engine_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def engine_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "engine_type", value)
 
     @_builtins.property
     @pulumi.getter(name="latestVersion")
-    def latest_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def latest_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         latest version of profile
         """
         return pulumi.get(self, "latest_version")
 
     @latest_version.setter
-    def latest_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def latest_version(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "latest_version", value)
 
     @_builtins.property
     @pulumi.getter(name="latestVersionId")
-    def latest_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def latest_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         latest version id of profile
         """
         return pulumi.get(self, "latest_version_id")
 
     @latest_version_id.setter
-    def latest_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def latest_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "latest_version_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Name of profile
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkProfiles")
-    def network_profiles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileNetworkProfileArgs']]]]:
+    def network_profiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfileArgs']]]]:
         """
         Network Profile
         """
         return pulumi.get(self, "network_profiles")
 
     @network_profiles.setter
-    def network_profiles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileNetworkProfileArgs']]]]):
+    def network_profiles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfileArgs']]]]):
         pulumi.set(self, "network_profiles", value)
 
     @_builtins.property
     @pulumi.getter(name="nxClusterId")
-    def nx_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def nx_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         cluster on which profile created
         """
         return pulumi.get(self, "nx_cluster_id")
 
     @nx_cluster_id.setter
-    def nx_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def nx_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "nx_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def owner(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         owner  of profile
         """
         return pulumi.get(self, "owner")
 
     @owner.setter
-    def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def owner(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "owner", value)
 
     @_builtins.property
     @pulumi.getter
-    def published(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def published(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         Publish for all users
         """
         return pulumi.get(self, "published")
 
     @published.setter
-    def published(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def published(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "published", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareProfile")
-    def software_profile(self) -> pulumi.Input[Optional['NdbProfileSoftwareProfileArgs']]:
+    def software_profile(self) -> Optional[pulumi.Input['NdbProfileSoftwareProfileArgs']]:
         """
         Software Profile
         """
         return pulumi.get(self, "software_profile")
 
     @software_profile.setter
-    def software_profile(self, value: pulumi.Input[Optional['NdbProfileSoftwareProfileArgs']]):
+    def software_profile(self, value: Optional[pulumi.Input['NdbProfileSoftwareProfileArgs']]):
         pulumi.set(self, "software_profile", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         status of profile
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def versions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileVersionArgs']]]]:
+    def versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileVersionArgs']]]]:
         """
         versions of associated profiles
         """
         return pulumi.get(self, "versions")
 
     @versions.setter
-    def versions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbProfileVersionArgs']]]]):
+    def versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileVersionArgs']]]]):
         pulumi.set(self, "versions", value)
 
 
@@ -442,14 +442,14 @@ class NdbProfile(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compute_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict']]]]] = None,
-                 database_parameter_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileDatabaseParameterProfileArgs', 'NdbProfileDatabaseParameterProfileArgsDict']]]]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 engine_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 network_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileNetworkProfileArgs', 'NdbProfileNetworkProfileArgsDict']]]]] = None,
-                 published: pulumi.Input[Optional[_builtins.bool]] = None,
-                 software_profile: pulumi.Input[Optional[Union['NdbProfileSoftwareProfileArgs', 'NdbProfileSoftwareProfileArgsDict']]] = None,
+                 compute_profiles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict']]]]] = None,
+                 database_parameter_profiles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileDatabaseParameterProfileArgs', 'NdbProfileDatabaseParameterProfileArgsDict']]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 engine_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_profiles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileNetworkProfileArgs', 'NdbProfileNetworkProfileArgsDict']]]]] = None,
+                 published: Optional[pulumi.Input[_builtins.bool]] = None,
+                 software_profile: Optional[pulumi.Input[Union['NdbProfileSoftwareProfileArgs', 'NdbProfileSoftwareProfileArgsDict']]] = None,
                  __props__=None):
         """
         Provides a resource to create profiles (Software, Network, Database Parameter, Compute) based on the input parameters.
@@ -491,14 +491,14 @@ class NdbProfile(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compute_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict']]]]] = None,
-                 database_parameter_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileDatabaseParameterProfileArgs', 'NdbProfileDatabaseParameterProfileArgsDict']]]]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 engine_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 network_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileNetworkProfileArgs', 'NdbProfileNetworkProfileArgsDict']]]]] = None,
-                 published: pulumi.Input[Optional[_builtins.bool]] = None,
-                 software_profile: pulumi.Input[Optional[Union['NdbProfileSoftwareProfileArgs', 'NdbProfileSoftwareProfileArgsDict']]] = None,
+                 compute_profiles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict']]]]] = None,
+                 database_parameter_profiles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileDatabaseParameterProfileArgs', 'NdbProfileDatabaseParameterProfileArgsDict']]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 engine_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 network_profiles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileNetworkProfileArgs', 'NdbProfileNetworkProfileArgsDict']]]]] = None,
+                 published: Optional[pulumi.Input[_builtins.bool]] = None,
+                 software_profile: Optional[pulumi.Input[Union['NdbProfileSoftwareProfileArgs', 'NdbProfileSoftwareProfileArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -535,23 +535,23 @@ class NdbProfile(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            assoc_databases: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            assoc_db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            cluster_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileClusterAvailabilityArgs', 'NdbProfileClusterAvailabilityArgsDict']]]]] = None,
-            compute_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict']]]]] = None,
-            database_parameter_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileDatabaseParameterProfileArgs', 'NdbProfileDatabaseParameterProfileArgsDict']]]]] = None,
-            description: pulumi.Input[Optional[_builtins.str]] = None,
-            engine_type: pulumi.Input[Optional[_builtins.str]] = None,
-            latest_version: pulumi.Input[Optional[_builtins.str]] = None,
-            latest_version_id: pulumi.Input[Optional[_builtins.str]] = None,
-            name: pulumi.Input[Optional[_builtins.str]] = None,
-            network_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileNetworkProfileArgs', 'NdbProfileNetworkProfileArgsDict']]]]] = None,
-            nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-            owner: pulumi.Input[Optional[_builtins.str]] = None,
-            published: pulumi.Input[Optional[_builtins.bool]] = None,
-            software_profile: pulumi.Input[Optional[Union['NdbProfileSoftwareProfileArgs', 'NdbProfileSoftwareProfileArgsDict']]] = None,
-            status: pulumi.Input[Optional[_builtins.str]] = None,
-            versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileVersionArgs', 'NdbProfileVersionArgsDict']]]]] = None) -> 'NdbProfile':
+            assoc_databases: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            assoc_db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cluster_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileClusterAvailabilityArgs', 'NdbProfileClusterAvailabilityArgsDict']]]]] = None,
+            compute_profiles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict']]]]] = None,
+            database_parameter_profiles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileDatabaseParameterProfileArgs', 'NdbProfileDatabaseParameterProfileArgsDict']]]]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
+            engine_type: Optional[pulumi.Input[_builtins.str]] = None,
+            latest_version: Optional[pulumi.Input[_builtins.str]] = None,
+            latest_version_id: Optional[pulumi.Input[_builtins.str]] = None,
+            name: Optional[pulumi.Input[_builtins.str]] = None,
+            network_profiles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileNetworkProfileArgs', 'NdbProfileNetworkProfileArgsDict']]]]] = None,
+            nx_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+            owner: Optional[pulumi.Input[_builtins.str]] = None,
+            published: Optional[pulumi.Input[_builtins.bool]] = None,
+            software_profile: Optional[pulumi.Input[Union['NdbProfileSoftwareProfileArgs', 'NdbProfileSoftwareProfileArgsDict']]] = None,
+            status: Optional[pulumi.Input[_builtins.str]] = None,
+            versions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileVersionArgs', 'NdbProfileVersionArgsDict']]]]] = None) -> 'NdbProfile':
         """
         Get an existing NdbProfile resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

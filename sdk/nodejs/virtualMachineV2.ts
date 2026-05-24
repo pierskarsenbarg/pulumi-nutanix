@@ -172,11 +172,11 @@ import * as utilities from "./utilities";
  *
  * ## Lifecycle Behavior
  *
- * > Important: Updates to <span pulumi-lang-nodejs="`guestCustomization`" pulumi-lang-dotnet="`GuestCustomization`" pulumi-lang-go="`guestCustomization`" pulumi-lang-python="`guest_customization`" pulumi-lang-yaml="`guestCustomization`" pulumi-lang-java="`guestCustomization`">`guestCustomization`</span> are treated as create-time only changes and will force the VM to be replaced.
+ * > Important: Updates to <span pulumi-lang-nodejs="`guestCustomization`" pulumi-lang-dotnet="`GuestCustomization`" pulumi-lang-go="`guestCustomization`" pulumi-lang-python="`guest_customization`" pulumi-lang-yaml="`guestCustomization`" pulumi-lang-java="`guestCustomization`" pulumi-lang-hcl="`guest_customization`">`guestCustomization`</span> are treated as create-time only changes and will force the VM to be replaced.
  *
  * Guest customization settings such as `config.cloud_init` and `config.sysprep` are consumed during the initial boot of the virtual machine and are not re-applied on later updates.
  *
- * As a result, changing the <span pulumi-lang-nodejs="`guestCustomization`" pulumi-lang-dotnet="`GuestCustomization`" pulumi-lang-go="`guestCustomization`" pulumi-lang-python="`guest_customization`" pulumi-lang-yaml="`guestCustomization`" pulumi-lang-java="`guestCustomization`">`guestCustomization`</span> block causes Terraform to destroy and recreate the <span pulumi-lang-nodejs="`nutanix.VirtualMachineV2`" pulumi-lang-dotnet="`nutanix.VirtualMachineV2`" pulumi-lang-go="`VirtualMachineV2`" pulumi-lang-python="`VirtualMachineV2`" pulumi-lang-yaml="`nutanix.VirtualMachineV2`" pulumi-lang-java="`nutanix.VirtualMachineV2`">`nutanix.VirtualMachineV2`</span> resource instead of performing an in-place update.
+ * As a result, changing the <span pulumi-lang-nodejs="`guestCustomization`" pulumi-lang-dotnet="`GuestCustomization`" pulumi-lang-go="`guestCustomization`" pulumi-lang-python="`guest_customization`" pulumi-lang-yaml="`guestCustomization`" pulumi-lang-java="`guestCustomization`" pulumi-lang-hcl="`guest_customization`">`guestCustomization`</span> block causes Terraform to destroy and recreate the <span pulumi-lang-nodejs="`nutanix.VirtualMachineV2`" pulumi-lang-dotnet="`nutanix.VirtualMachineV2`" pulumi-lang-go="`VirtualMachineV2`" pulumi-lang-python="`VirtualMachineV2`" pulumi-lang-yaml="`nutanix.VirtualMachineV2`" pulumi-lang-java="`nutanix.VirtualMachineV2`" pulumi-lang-hcl="`nutanix_virtual_machine_v2`">`nutanix.VirtualMachineV2`</span> resource instead of performing an in-place update.
  *
  * This behavior applies to both:
  *
@@ -506,177 +506,177 @@ export interface VirtualMachineV2State {
     /**
      * Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
      */
-    apcConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2ApcConfig>[] | undefined>;
-    availabilityZones?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2AvailabilityZone>[] | undefined>;
+    apcConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2ApcConfig>[]>;
+    availabilityZones?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2AvailabilityZone>[]>;
     /**
      * BIOS UUID of the VM. It should be of type UUID.
      */
-    biosUuid?: pulumi.Input<string | undefined>;
+    biosUuid?: pulumi.Input<string>;
     /**
      * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
      */
-    bootConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2BootConfig>[] | undefined>;
+    bootConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2BootConfig>[]>;
     /**
      * Categories for the VM.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Category>[] | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Category>[]>;
     /**
      * CD-ROMs attached to the VM.
      */
-    cdRoms?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2CdRom>[] | undefined>;
+    cdRoms?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2CdRom>[]>;
     /**
      * Reference to a cluster.
      */
-    clusters?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Cluster>[] | undefined>;
+    clusters?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Cluster>[]>;
     /**
      * VM creation time
      */
-    createTime?: pulumi.Input<string | undefined>;
+    createTime?: pulumi.Input<string>;
     /**
      * VM description
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * Disks attached to the VM.
      */
-    disks?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Disk>[] | undefined>;
+    disks?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Disk>[]>;
     /**
      * The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor. Valid values are "HARDWARE_VIRTUALIZATION".
      */
-    enabledCpuFeatures?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    enabledCpuFeatures?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * Generation UUID of the VM. It should be of type UUID.
      */
-    generationUuid?: pulumi.Input<string | undefined>;
+    generationUuid?: pulumi.Input<string>;
     /**
      * GPUs attached to the VM.
      */
-    gpuses?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Gpus>[] | undefined>;
+    gpuses?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Gpus>[]>;
     /**
      * Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
      */
-    guestCustomizations?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2GuestCustomization>[] | undefined>;
+    guestCustomizations?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2GuestCustomization>[]>;
     /**
      * The details about Nutanix Guest Tools for a VM.
      */
-    guestTools?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2GuestTool>[] | undefined>;
+    guestTools?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2GuestTool>[]>;
     /**
      * VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
      */
-    hardwareClockTimezone?: pulumi.Input<string | undefined>;
+    hardwareClockTimezone?: pulumi.Input<string>;
     /**
      * Reference to the host, the VM is running on.
      */
-    hosts?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Host>[] | undefined>;
+    hosts?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Host>[]>;
     /**
      * Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
      */
-    isAgentVm?: pulumi.Input<boolean | undefined>;
+    isAgentVm?: pulumi.Input<boolean>;
     /**
      * Indicates whether to remove AHV branding from VM firmware tables or not.
      */
-    isBrandingEnabled?: pulumi.Input<boolean | undefined>;
+    isBrandingEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates whether the VM CPU hotplug is enabled.
      */
-    isCpuHotplugEnabled?: pulumi.Input<boolean | undefined>;
+    isCpuHotplugEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
      */
-    isCpuPassthroughEnabled?: pulumi.Input<boolean | undefined>;
+    isCpuPassthroughEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates whether the vGPU console is enabled or not.
      */
-    isGpuConsoleEnabled?: pulumi.Input<boolean | undefined>;
+    isGpuConsoleEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
      */
-    isMemoryOvercommitEnabled?: pulumi.Input<boolean | undefined>;
+    isMemoryOvercommitEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates whether the VM SCSI controller is enabled.
      */
-    isScsiControllerEnabled?: pulumi.Input<boolean | undefined>;
+    isScsiControllerEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
      */
-    isVcpuHardPinningEnabled?: pulumi.Input<boolean | undefined>;
+    isVcpuHardPinningEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates whether the VGA console should be disabled or not.
      */
-    isVgaConsoleEnabled?: pulumi.Input<boolean | undefined>;
+    isVgaConsoleEnabled?: pulumi.Input<boolean>;
     /**
      * Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks. Valid values are "PSERIES", "Q35", "PC" .
      */
-    machineType?: pulumi.Input<string | undefined>;
+    machineType?: pulumi.Input<string>;
     /**
      * Memory size in bytes.
      */
-    memorySizeBytes?: pulumi.Input<number | undefined>;
+    memorySizeBytes?: pulumi.Input<number>;
     /**
      * VM name.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * NICs attached to the VM.
      */
-    nics?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Nic>[] | undefined>;
+    nics?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Nic>[]>;
     /**
      * Number of cores per socket. Value should be at least 1.
      */
-    numCoresPerSocket?: pulumi.Input<number | undefined>;
+    numCoresPerSocket?: pulumi.Input<number>;
     /**
      * Number of NUMA nodes. 0 means NUMA is disabled.
      */
-    numNumaNodes?: pulumi.Input<number | undefined>;
+    numNumaNodes?: pulumi.Input<number>;
     /**
      * Number of vCPU sockets. Value should be at least 1.
      */
-    numSockets?: pulumi.Input<number | undefined>;
+    numSockets?: pulumi.Input<number>;
     /**
      * Number of threads per core. Value should be at least 1.
      */
-    numThreadsPerCore?: pulumi.Input<number | undefined>;
+    numThreadsPerCore?: pulumi.Input<number>;
     /**
      * Ownership information for the VM.
      */
-    ownershipInfos?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2OwnershipInfo>[] | undefined>;
-    powerState?: pulumi.Input<string | undefined>;
+    ownershipInfos?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2OwnershipInfo>[]>;
+    powerState?: pulumi.Input<string>;
     /**
      * Reference to a project.
      */
-    projects?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Project>[] | undefined>;
+    projects?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Project>[]>;
     /**
      * Status of protection policy applied to this VM.
      */
-    protectionPolicyStates?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2ProtectionPolicyState>[] | undefined>;
+    protectionPolicyStates?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2ProtectionPolicyState>[]>;
     /**
      * The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
      */
-    protectionType?: pulumi.Input<string | undefined>;
+    protectionType?: pulumi.Input<string>;
     /**
      * Serial ports configured on the VM.
      */
-    serialPorts?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2SerialPort>[] | undefined>;
+    serialPorts?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2SerialPort>[]>;
     /**
      * Reference to an entity that the VM should be cloned or created from. Valid values are "VM", "VM_RECOVERY_POINT".
      */
-    sources?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Source>[] | undefined>;
+    sources?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Source>[]>;
     /**
      * Storage configuration for VM.
      */
-    storageConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2StorageConfig>[] | undefined>;
+    storageConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2StorageConfig>[]>;
     /**
      * VM last updated time.
      */
-    updateTime?: pulumi.Input<string | undefined>;
+    updateTime?: pulumi.Input<string>;
     /**
      * Indicates how the vTPM for the VM should be configured.
      */
-    vtpmConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2VtpmConfig>[] | undefined>;
+    vtpmConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2VtpmConfig>[]>;
 }
 
 /**
@@ -686,163 +686,163 @@ export interface VirtualMachineV2Args {
     /**
      * Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
      */
-    apcConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2ApcConfig>[] | undefined>;
-    availabilityZones?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2AvailabilityZone>[] | undefined>;
+    apcConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2ApcConfig>[]>;
+    availabilityZones?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2AvailabilityZone>[]>;
     /**
      * BIOS UUID of the VM. It should be of type UUID.
      */
-    biosUuid?: pulumi.Input<string | undefined>;
+    biosUuid?: pulumi.Input<string>;
     /**
      * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
      */
-    bootConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2BootConfig>[] | undefined>;
+    bootConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2BootConfig>[]>;
     /**
      * Categories for the VM.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Category>[] | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Category>[]>;
     /**
      * CD-ROMs attached to the VM.
      */
-    cdRoms?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2CdRom>[] | undefined>;
+    cdRoms?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2CdRom>[]>;
     /**
      * Reference to a cluster.
      */
-    clusters?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Cluster>[] | undefined>;
+    clusters?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Cluster>[]>;
     /**
      * VM description
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * Disks attached to the VM.
      */
-    disks?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Disk>[] | undefined>;
+    disks?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Disk>[]>;
     /**
      * The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor. Valid values are "HARDWARE_VIRTUALIZATION".
      */
-    enabledCpuFeatures?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    enabledCpuFeatures?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Generation UUID of the VM. It should be of type UUID.
      */
-    generationUuid?: pulumi.Input<string | undefined>;
+    generationUuid?: pulumi.Input<string>;
     /**
      * GPUs attached to the VM.
      */
-    gpuses?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Gpus>[] | undefined>;
+    gpuses?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Gpus>[]>;
     /**
      * Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
      */
-    guestCustomizations?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2GuestCustomization>[] | undefined>;
+    guestCustomizations?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2GuestCustomization>[]>;
     /**
      * The details about Nutanix Guest Tools for a VM.
      */
-    guestTools?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2GuestTool>[] | undefined>;
+    guestTools?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2GuestTool>[]>;
     /**
      * VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
      */
-    hardwareClockTimezone?: pulumi.Input<string | undefined>;
+    hardwareClockTimezone?: pulumi.Input<string>;
     /**
      * Reference to the host, the VM is running on.
      */
-    hosts?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Host>[] | undefined>;
+    hosts?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Host>[]>;
     /**
      * Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
      */
-    isAgentVm?: pulumi.Input<boolean | undefined>;
+    isAgentVm?: pulumi.Input<boolean>;
     /**
      * Indicates whether to remove AHV branding from VM firmware tables or not.
      */
-    isBrandingEnabled?: pulumi.Input<boolean | undefined>;
+    isBrandingEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates whether the VM CPU hotplug is enabled.
      */
-    isCpuHotplugEnabled?: pulumi.Input<boolean | undefined>;
+    isCpuHotplugEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
      */
-    isCpuPassthroughEnabled?: pulumi.Input<boolean | undefined>;
+    isCpuPassthroughEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates whether the vGPU console is enabled or not.
      */
-    isGpuConsoleEnabled?: pulumi.Input<boolean | undefined>;
+    isGpuConsoleEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
      */
-    isMemoryOvercommitEnabled?: pulumi.Input<boolean | undefined>;
+    isMemoryOvercommitEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates whether the VM SCSI controller is enabled.
      */
-    isScsiControllerEnabled?: pulumi.Input<boolean | undefined>;
+    isScsiControllerEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
      */
-    isVcpuHardPinningEnabled?: pulumi.Input<boolean | undefined>;
+    isVcpuHardPinningEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates whether the VGA console should be disabled or not.
      */
-    isVgaConsoleEnabled?: pulumi.Input<boolean | undefined>;
+    isVgaConsoleEnabled?: pulumi.Input<boolean>;
     /**
      * Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks. Valid values are "PSERIES", "Q35", "PC" .
      */
-    machineType?: pulumi.Input<string | undefined>;
+    machineType?: pulumi.Input<string>;
     /**
      * Memory size in bytes.
      */
-    memorySizeBytes?: pulumi.Input<number | undefined>;
+    memorySizeBytes?: pulumi.Input<number>;
     /**
      * VM name.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * NICs attached to the VM.
      */
-    nics?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Nic>[] | undefined>;
+    nics?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Nic>[]>;
     /**
      * Number of cores per socket. Value should be at least 1.
      */
-    numCoresPerSocket?: pulumi.Input<number | undefined>;
+    numCoresPerSocket?: pulumi.Input<number>;
     /**
      * Number of NUMA nodes. 0 means NUMA is disabled.
      */
-    numNumaNodes?: pulumi.Input<number | undefined>;
+    numNumaNodes?: pulumi.Input<number>;
     /**
      * Number of vCPU sockets. Value should be at least 1.
      */
-    numSockets?: pulumi.Input<number | undefined>;
+    numSockets?: pulumi.Input<number>;
     /**
      * Number of threads per core. Value should be at least 1.
      */
-    numThreadsPerCore?: pulumi.Input<number | undefined>;
+    numThreadsPerCore?: pulumi.Input<number>;
     /**
      * Ownership information for the VM.
      */
-    ownershipInfos?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2OwnershipInfo>[] | undefined>;
-    powerState?: pulumi.Input<string | undefined>;
+    ownershipInfos?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2OwnershipInfo>[]>;
+    powerState?: pulumi.Input<string>;
     /**
      * Reference to a project.
      */
-    projects?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Project>[] | undefined>;
+    projects?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Project>[]>;
     /**
      * Status of protection policy applied to this VM.
      */
-    protectionPolicyStates?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2ProtectionPolicyState>[] | undefined>;
+    protectionPolicyStates?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2ProtectionPolicyState>[]>;
     /**
      * The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
      */
-    protectionType?: pulumi.Input<string | undefined>;
+    protectionType?: pulumi.Input<string>;
     /**
      * Serial ports configured on the VM.
      */
-    serialPorts?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2SerialPort>[] | undefined>;
+    serialPorts?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2SerialPort>[]>;
     /**
      * Reference to an entity that the VM should be cloned or created from. Valid values are "VM", "VM_RECOVERY_POINT".
      */
-    sources?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Source>[] | undefined>;
+    sources?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2Source>[]>;
     /**
      * Storage configuration for VM.
      */
-    storageConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2StorageConfig>[] | undefined>;
+    storageConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2StorageConfig>[]>;
     /**
      * Indicates how the vTPM for the VM should be configured.
      */
-    vtpmConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2VtpmConfig>[] | undefined>;
+    vtpmConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2VtpmConfig>[]>;
 }

@@ -296,115 +296,115 @@ export interface NdbClusterState {
     /**
      * agent network info to register cluster
      */
-    agentNetworkInfos?: pulumi.Input<pulumi.Input<inputs.NdbClusterAgentNetworkInfo>[] | undefined>;
-    agentVmPrefix?: pulumi.Input<string | undefined>;
+    agentNetworkInfos?: pulumi.Input<pulumi.Input<inputs.NdbClusterAgentNetworkInfo>[]>;
+    agentVmPrefix?: pulumi.Input<string>;
     /**
      * - cloud info
      */
-    cloudInfo?: pulumi.Input<string | undefined>;
+    cloudInfo?: pulumi.Input<string>;
     /**
      * - cloud type
      */
-    cloudType?: pulumi.Input<string | undefined>;
+    cloudType?: pulumi.Input<string>;
     /**
      * Prism Element IP address
      */
-    clusterIp?: pulumi.Input<string | undefined>;
-    clusterType?: pulumi.Input<string | undefined>;
+    clusterIp?: pulumi.Input<string>;
+    clusterType?: pulumi.Input<string>;
     /**
      * - creation date
      */
-    dateCreated?: pulumi.Input<string | undefined>;
+    dateCreated?: pulumi.Input<string>;
     /**
      * - date modified
      */
-    dateModified?: pulumi.Input<string | undefined>;
+    dateModified?: pulumi.Input<string>;
     /**
      * description of cluster
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * - no. of entities related
      */
-    entityCounts?: pulumi.Input<pulumi.Input<inputs.NdbClusterEntityCount>[] | undefined>;
+    entityCounts?: pulumi.Input<pulumi.Input<inputs.NdbClusterEntityCount>[]>;
     /**
      * - fqdn
      */
-    fqdns?: pulumi.Input<string | undefined>;
+    fqdns?: pulumi.Input<string>;
     /**
      * - if healthy status
      */
-    healthy?: pulumi.Input<boolean | undefined>;
+    healthy?: pulumi.Input<boolean>;
     /**
      * - hypervisor type
      */
-    hypervisorType?: pulumi.Input<string | undefined>;
+    hypervisorType?: pulumi.Input<string>;
     /**
      * - hypervisor version
      */
-    hypervisorVersion?: pulumi.Input<string | undefined>;
+    hypervisorVersion?: pulumi.Input<string>;
     /**
      * - IP address
      */
-    ipAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    ipAddresses?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - NA
      */
-    managementServerInfo?: pulumi.Input<string | undefined>;
+    managementServerInfo?: pulumi.Input<string>;
     /**
      * name of the cluster to be registered
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * network segmentation to segment the network traffic of the agent VM.
      */
-    networksInfos?: pulumi.Input<pulumi.Input<inputs.NdbClusterNetworksInfo>[] | undefined>;
+    networksInfos?: pulumi.Input<pulumi.Input<inputs.NdbClusterNetworksInfo>[]>;
     /**
      * - nutanix cluster uuid
      */
-    nxClusterUuid?: pulumi.Input<string | undefined>;
+    nxClusterUuid?: pulumi.Input<string>;
     /**
      * - owner UUID
      */
-    ownerId?: pulumi.Input<string | undefined>;
+    ownerId?: pulumi.Input<string>;
     /**
      * Prism Element password
      */
-    password?: pulumi.Input<string | undefined>;
-    port?: pulumi.Input<number | undefined>;
+    password?: pulumi.Input<string>;
+    port?: pulumi.Input<number>;
     /**
      * - list of properties
      */
-    properties?: pulumi.Input<pulumi.Input<inputs.NdbClusterProperty>[] | undefined>;
-    protocol?: pulumi.Input<string | undefined>;
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbClusterProperty>[]>;
+    protocol?: pulumi.Input<string>;
     /**
      * - NA
      */
-    referenceCount?: pulumi.Input<number | undefined>;
+    referenceCount?: pulumi.Input<number>;
     /**
      * - resource related consumption info
      */
-    resourceConfigs?: pulumi.Input<pulumi.Input<inputs.NdbClusterResourceConfig>[] | undefined>;
+    resourceConfigs?: pulumi.Input<pulumi.Input<inputs.NdbClusterResourceConfig>[]>;
     /**
      * - current status
      */
-    status?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string>;
     /**
      * select a storage container which is used for performing database operations in the cluster
      */
-    storageContainer?: pulumi.Input<string | undefined>;
+    storageContainer?: pulumi.Input<string>;
     /**
      * - unique name of cluster
      */
-    uniqueName?: pulumi.Input<string | undefined>;
+    uniqueName?: pulumi.Input<string>;
     /**
      * username of the Prism Element administrator
      */
-    username?: pulumi.Input<string | undefined>;
+    username?: pulumi.Input<string>;
     /**
      * - version
      */
-    version?: pulumi.Input<string | undefined>;
+    version?: pulumi.Input<string>;
 }
 
 /**
@@ -415,20 +415,20 @@ export interface NdbClusterArgs {
      * agent network info to register cluster
      */
     agentNetworkInfos: pulumi.Input<pulumi.Input<inputs.NdbClusterAgentNetworkInfo>[]>;
-    agentVmPrefix?: pulumi.Input<string | undefined>;
+    agentVmPrefix?: pulumi.Input<string>;
     /**
      * Prism Element IP address
      */
     clusterIp: pulumi.Input<string>;
-    clusterType?: pulumi.Input<string | undefined>;
+    clusterType?: pulumi.Input<string>;
     /**
      * description of cluster
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * name of the cluster to be registered
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * network segmentation to segment the network traffic of the agent VM.
      */
@@ -437,8 +437,8 @@ export interface NdbClusterArgs {
      * Prism Element password
      */
     password: pulumi.Input<string>;
-    port?: pulumi.Input<number | undefined>;
-    protocol?: pulumi.Input<string | undefined>;
+    port?: pulumi.Input<number>;
+    protocol?: pulumi.Input<string>;
     /**
      * select a storage container which is used for performing database operations in the cluster
      */
@@ -450,5 +450,5 @@ export interface NdbClusterArgs {
     /**
      * - version
      */
-    version?: pulumi.Input<string | undefined>;
+    version?: pulumi.Input<string>;
 }

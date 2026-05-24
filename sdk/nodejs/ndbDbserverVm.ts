@@ -103,7 +103,7 @@ export class NdbDbserverVm extends pulumi.CustomResource {
      */
     declare public readonly softRemove: pulumi.Output<boolean | undefined>;
     /**
-     * software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+     * software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
      */
     declare public readonly softwareProfileId: pulumi.Output<string | undefined>;
     /**
@@ -235,92 +235,92 @@ export class NdbDbserverVm extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NdbDbserverVm resources.
  */
 export interface NdbDbserverVmState {
-    clientId?: pulumi.Input<string | undefined>;
+    clientId?: pulumi.Input<string>;
     /**
      * Compute profile id.
      */
-    computeProfileId?: pulumi.Input<string | undefined>;
-    credentials?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmCredential>[] | undefined>;
+    computeProfileId?: pulumi.Input<string>;
+    credentials?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmCredential>[]>;
     /**
      * database type. Valid values: postgres_database
      */
-    databaseType?: pulumi.Input<string | undefined>;
-    dbserverClusterId?: pulumi.Input<string | undefined>;
+    databaseType?: pulumi.Input<string>;
+    dbserverClusterId?: pulumi.Input<string>;
     /**
      * - (Optional) Delete the VM and associated storage. Default value is true
      */
-    delete?: pulumi.Input<boolean | undefined>;
+    delete?: pulumi.Input<boolean>;
     /**
      * - (Optional) Delete volume grous. Default value is true
      */
-    deleteVgs?: pulumi.Input<boolean | undefined>;
+    deleteVgs?: pulumi.Input<boolean>;
     /**
      * - (Optional) Delete the vm snapshots. Default is true
      */
-    deleteVmSnapshots?: pulumi.Input<boolean | undefined>;
+    deleteVmSnapshots?: pulumi.Input<boolean>;
     /**
      * Type a description for the database server VM.
      */
-    description?: pulumi.Input<string | undefined>;
-    eraDriveId?: pulumi.Input<string | undefined>;
-    eraVersion?: pulumi.Input<string | undefined>;
-    fqdns?: pulumi.Input<string | undefined>;
-    ipAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
-    latestSnapshot?: pulumi.Input<boolean | undefined>;
-    macAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    description?: pulumi.Input<string>;
+    eraDriveId?: pulumi.Input<string>;
+    eraVersion?: pulumi.Input<string>;
+    fqdns?: pulumi.Input<string>;
+    ipAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+    latestSnapshot?: pulumi.Input<boolean>;
+    macAddresses?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * maintenance window configured to enable automated patching.
      */
-    maintenanceTasks?: pulumi.Input<inputs.NdbDbserverVmMaintenanceTasks | undefined>;
-    name?: pulumi.Input<string | undefined>;
+    maintenanceTasks?: pulumi.Input<inputs.NdbDbserverVmMaintenanceTasks>;
+    name?: pulumi.Input<string>;
     /**
      * Network profile id.
      */
-    networkProfileId?: pulumi.Input<string | undefined>;
-    nxClusterId?: pulumi.Input<string | undefined>;
+    networkProfileId?: pulumi.Input<string>;
+    nxClusterId?: pulumi.Input<string>;
     /**
      * Postgres database server vm
      */
-    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmPostgresDatabase>[] | undefined>;
+    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmPostgresDatabase>[]>;
     /**
      * List of all the properties
      */
-    properties?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmProperty>[] | undefined>;
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmProperty>[]>;
     /**
      * - (Optional) Unregister the database from NDB. Default value is false
      */
-    remove?: pulumi.Input<boolean | undefined>;
+    remove?: pulumi.Input<boolean>;
     /**
      * Snapshot id. If not given, it will use latest snapshot to provision db server vm.
      */
-    snapshotId?: pulumi.Input<string | undefined>;
+    snapshotId?: pulumi.Input<string>;
     /**
      * - (Optional) Soft remove. Default will be false
      */
-    softRemove?: pulumi.Input<boolean | undefined>;
+    softRemove?: pulumi.Input<boolean>;
     /**
-     * software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+     * software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
      */
-    softwareProfileId?: pulumi.Input<string | undefined>;
+    softwareProfileId?: pulumi.Input<string>;
     /**
      * SOftware Profile Version Id.
      */
-    softwareProfileVersionId?: pulumi.Input<string | undefined>;
-    status?: pulumi.Input<string | undefined>;
-    tags?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmTag>[] | undefined>;
+    softwareProfileVersionId?: pulumi.Input<string>;
+    status?: pulumi.Input<string>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmTag>[]>;
     /**
      * Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
      */
-    timeMachineId?: pulumi.Input<string | undefined>;
-    timezone?: pulumi.Input<string | undefined>;
-    type?: pulumi.Input<string | undefined>;
-    vmClusterName?: pulumi.Input<string | undefined>;
-    vmClusterUuid?: pulumi.Input<string | undefined>;
+    timeMachineId?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string>;
+    type?: pulumi.Input<string>;
+    vmClusterName?: pulumi.Input<string>;
+    vmClusterUuid?: pulumi.Input<string>;
     /**
      * password of the NDB drive user account.
      */
-    vmPassword?: pulumi.Input<string | undefined>;
-    vmTimezone?: pulumi.Input<string | undefined>;
+    vmPassword?: pulumi.Input<string>;
+    vmTimezone?: pulumi.Input<string>;
 }
 
 /**
@@ -331,7 +331,7 @@ export interface NdbDbserverVmArgs {
      * Compute profile id.
      */
     computeProfileId: pulumi.Input<string>;
-    credentials?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmCredential>[] | undefined>;
+    credentials?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmCredential>[]>;
     /**
      * database type. Valid values: postgres_database
      */
@@ -339,24 +339,24 @@ export interface NdbDbserverVmArgs {
     /**
      * - (Optional) Delete the VM and associated storage. Default value is true
      */
-    delete?: pulumi.Input<boolean | undefined>;
+    delete?: pulumi.Input<boolean>;
     /**
      * - (Optional) Delete volume grous. Default value is true
      */
-    deleteVgs?: pulumi.Input<boolean | undefined>;
+    deleteVgs?: pulumi.Input<boolean>;
     /**
      * - (Optional) Delete the vm snapshots. Default is true
      */
-    deleteVmSnapshots?: pulumi.Input<boolean | undefined>;
+    deleteVmSnapshots?: pulumi.Input<boolean>;
     /**
      * Type a description for the database server VM.
      */
-    description?: pulumi.Input<string | undefined>;
-    latestSnapshot?: pulumi.Input<boolean | undefined>;
+    description?: pulumi.Input<string>;
+    latestSnapshot?: pulumi.Input<boolean>;
     /**
      * maintenance window configured to enable automated patching.
      */
-    maintenanceTasks?: pulumi.Input<inputs.NdbDbserverVmMaintenanceTasks | undefined>;
+    maintenanceTasks?: pulumi.Input<inputs.NdbDbserverVmMaintenanceTasks>;
     /**
      * Network profile id.
      */
@@ -365,35 +365,35 @@ export interface NdbDbserverVmArgs {
     /**
      * Postgres database server vm
      */
-    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmPostgresDatabase>[] | undefined>;
+    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmPostgresDatabase>[]>;
     /**
      * - (Optional) Unregister the database from NDB. Default value is false
      */
-    remove?: pulumi.Input<boolean | undefined>;
+    remove?: pulumi.Input<boolean>;
     /**
      * Snapshot id. If not given, it will use latest snapshot to provision db server vm.
      */
-    snapshotId?: pulumi.Input<string | undefined>;
+    snapshotId?: pulumi.Input<string>;
     /**
      * - (Optional) Soft remove. Default will be false
      */
-    softRemove?: pulumi.Input<boolean | undefined>;
+    softRemove?: pulumi.Input<boolean>;
     /**
-     * software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+     * software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
      */
-    softwareProfileId?: pulumi.Input<string | undefined>;
+    softwareProfileId?: pulumi.Input<string>;
     /**
      * SOftware Profile Version Id.
      */
-    softwareProfileVersionId?: pulumi.Input<string | undefined>;
-    tags?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmTag>[] | undefined>;
+    softwareProfileVersionId?: pulumi.Input<string>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmTag>[]>;
     /**
      * Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
      */
-    timeMachineId?: pulumi.Input<string | undefined>;
-    timezone?: pulumi.Input<string | undefined>;
+    timeMachineId?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string>;
     /**
      * password of the NDB drive user account.
      */
-    vmPassword?: pulumi.Input<string | undefined>;
+    vmPassword?: pulumi.Input<string>;
 }

@@ -175,43 +175,43 @@ export interface PbrV2State {
     /**
      * A description of the routing policy.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * A globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.PbrV2Link>[] | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.PbrV2Link>[]>;
     /**
      * Metadata associated with this resource.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.PbrV2Metadata>[] | undefined>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.PbrV2Metadata>[]>;
     /**
      * Name of the routing policy.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * Routing Policies.
      */
-    policies?: pulumi.Input<pulumi.Input<inputs.PbrV2Policy>[] | undefined>;
+    policies?: pulumi.Input<pulumi.Input<inputs.PbrV2Policy>[]>;
     /**
      * Priority of the routing policy.
      */
-    priority?: pulumi.Input<number | undefined>;
+    priority?: pulumi.Input<number>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity
      */
-    tenantId?: pulumi.Input<string | undefined>;
+    tenantId?: pulumi.Input<string>;
     /**
      * ExtId of the VPC extId to which the routing policy belongs.
      */
-    vpcExtId?: pulumi.Input<string | undefined>;
+    vpcExtId?: pulumi.Input<string>;
     /**
      * VPC name for projections
      */
-    vpcs?: pulumi.Input<pulumi.Input<inputs.PbrV2Vpc>[] | undefined>;
+    vpcs?: pulumi.Input<pulumi.Input<inputs.PbrV2Vpc>[]>;
 }
 
 /**
@@ -221,15 +221,15 @@ export interface PbrV2Args {
     /**
      * A description of the routing policy.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * A globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * Name of the routing policy.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * Routing Policies.
      */

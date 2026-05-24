@@ -43,17 +43,17 @@ class FoundationCentralOnboardNodesArgs:
 @pulumi.input_type
 class _FoundationCentralOnboardNodesState:
     def __init__(__self__, *,
-                 block_serial: pulumi.Input[Optional[_builtins.str]] = None,
-                 imaged_node_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 model: pulumi.Input[Optional[_builtins.str]] = None,
-                 node_serial: pulumi.Input[Optional[_builtins.str]] = None,
-                 node_state: pulumi.Input[Optional[_builtins.str]] = None,
-                 node_type: pulumi.Input[Optional[_builtins.str]] = None):
+                 block_serial: Optional[pulumi.Input[_builtins.str]] = None,
+                 imaged_node_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 model: Optional[pulumi.Input[_builtins.str]] = None,
+                 node_serial: Optional[pulumi.Input[_builtins.str]] = None,
+                 node_state: Optional[pulumi.Input[_builtins.str]] = None,
+                 node_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FoundationCentralOnboardNodes resources.
 
         :param pulumi.Input[_builtins.str] block_serial: Block serial number of the node
-        :param pulumi.Input[_builtins.str] imaged_node_uuid: UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode "> imagedNode </span>in FC
+        :param pulumi.Input[_builtins.str] imaged_node_uuid: UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode " pulumi-lang-hcl=" imaged_node "> imagedNode </span>in FC
         :param pulumi.Input[_builtins.str] model: Model of the node
         :param pulumi.Input[_builtins.str] node_serial: Serial number of the node to onboard
         :param pulumi.Input[_builtins.str] node_state: State of the node (e.g. STATE_ONBOARDED)
@@ -74,74 +74,74 @@ class _FoundationCentralOnboardNodesState:
 
     @_builtins.property
     @pulumi.getter(name="blockSerial")
-    def block_serial(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def block_serial(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Block serial number of the node
         """
         return pulumi.get(self, "block_serial")
 
     @block_serial.setter
-    def block_serial(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def block_serial(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "block_serial", value)
 
     @_builtins.property
     @pulumi.getter(name="imagedNodeUuid")
-    def imaged_node_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def imaged_node_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode "> imagedNode </span>in FC
+        UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode " pulumi-lang-hcl=" imaged_node "> imagedNode </span>in FC
         """
         return pulumi.get(self, "imaged_node_uuid")
 
     @imaged_node_uuid.setter
-    def imaged_node_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def imaged_node_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "imaged_node_uuid", value)
 
     @_builtins.property
     @pulumi.getter
-    def model(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def model(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Model of the node
         """
         return pulumi.get(self, "model")
 
     @model.setter
-    def model(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def model(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "model", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeSerial")
-    def node_serial(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def node_serial(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Serial number of the node to onboard
         """
         return pulumi.get(self, "node_serial")
 
     @node_serial.setter
-    def node_serial(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def node_serial(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "node_serial", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeState")
-    def node_state(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def node_state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         State of the node (e.g. STATE_ONBOARDED)
         """
         return pulumi.get(self, "node_state")
 
     @node_state.setter
-    def node_state(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def node_state(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "node_state", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeType")
-    def node_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def node_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Type of node (e.g. "on-prem")
         """
         return pulumi.get(self, "node_type")
 
     @node_type.setter
-    def node_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def node_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "node_type", value)
 
 
@@ -151,7 +151,7 @@ class FoundationCentralOnboardNodes(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 node_serial: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_serial: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Onboard nodes from a hardware manager (such as Cisco Intersight) into Foundation Central.
@@ -174,7 +174,7 @@ class FoundationCentralOnboardNodes(pulumi.CustomResource):
         ## lifecycle
 
         * `Create` : - Resource will trigger onboarding of the node.
-        * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`">`delete`</span> : - Node will be removed from FC "imaged nodes" but will still be available in the hardware manager for re-onboarding.
+        * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`" pulumi-lang-hcl="`delete`">`delete`</span> : - Node will be removed from FC "imaged nodes" but will still be available in the hardware manager for re-onboarding.
 
 
         :param str resource_name: The name of the resource.
@@ -208,7 +208,7 @@ class FoundationCentralOnboardNodes(pulumi.CustomResource):
         ## lifecycle
 
         * `Create` : - Resource will trigger onboarding of the node.
-        * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`">`delete`</span> : - Node will be removed from FC "imaged nodes" but will still be available in the hardware manager for re-onboarding.
+        * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`" pulumi-lang-hcl="`delete`">`delete`</span> : - Node will be removed from FC "imaged nodes" but will still be available in the hardware manager for re-onboarding.
 
 
         :param str resource_name: The name of the resource.
@@ -226,7 +226,7 @@ class FoundationCentralOnboardNodes(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 node_serial: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_serial: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -254,12 +254,12 @@ class FoundationCentralOnboardNodes(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            block_serial: pulumi.Input[Optional[_builtins.str]] = None,
-            imaged_node_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-            model: pulumi.Input[Optional[_builtins.str]] = None,
-            node_serial: pulumi.Input[Optional[_builtins.str]] = None,
-            node_state: pulumi.Input[Optional[_builtins.str]] = None,
-            node_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'FoundationCentralOnboardNodes':
+            block_serial: Optional[pulumi.Input[_builtins.str]] = None,
+            imaged_node_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+            model: Optional[pulumi.Input[_builtins.str]] = None,
+            node_serial: Optional[pulumi.Input[_builtins.str]] = None,
+            node_state: Optional[pulumi.Input[_builtins.str]] = None,
+            node_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'FoundationCentralOnboardNodes':
         """
         Get an existing FoundationCentralOnboardNodes resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -268,7 +268,7 @@ class FoundationCentralOnboardNodes(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] block_serial: Block serial number of the node
-        :param pulumi.Input[_builtins.str] imaged_node_uuid: UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode "> imagedNode </span>in FC
+        :param pulumi.Input[_builtins.str] imaged_node_uuid: UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode " pulumi-lang-hcl=" imaged_node "> imagedNode </span>in FC
         :param pulumi.Input[_builtins.str] model: Model of the node
         :param pulumi.Input[_builtins.str] node_serial: Serial number of the node to onboard
         :param pulumi.Input[_builtins.str] node_state: State of the node (e.g. STATE_ONBOARDED)
@@ -298,7 +298,7 @@ class FoundationCentralOnboardNodes(pulumi.CustomResource):
     @pulumi.getter(name="imagedNodeUuid")
     def imaged_node_uuid(self) -> pulumi.Output[_builtins.str]:
         """
-        UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode "> imagedNode </span>in FC
+        UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode " pulumi-lang-hcl=" imaged_node "> imagedNode </span>in FC
         """
         return pulumi.get(self, "imaged_node_uuid")
 

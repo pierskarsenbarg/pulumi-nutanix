@@ -72,7 +72,7 @@ export class UserGroups extends pulumi.CustomResource {
      */
     declare public readonly directoryServiceUserGroups: pulumi.Output<outputs.UserGroupsDirectoryServiceUserGroup[] | undefined>;
     /**
-     * The<span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup "> userGroup </span>kind metadata.
+     * The<span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup " pulumi-lang-hcl=" user_group "> userGroup </span>kind metadata.
      */
     declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     declare public readonly ownerReference: pulumi.Output<{[key: string]: string}>;
@@ -121,44 +121,44 @@ export class UserGroups extends pulumi.CustomResource {
  * Input properties used for looking up and filtering UserGroups resources.
  */
 export interface UserGroupsState {
-    categories?: pulumi.Input<pulumi.Input<inputs.UserGroupsCategory>[] | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.UserGroupsCategory>[]>;
     /**
      * - (Optional) A Directory Service organizational unit.
      */
-    directoryServiceOus?: pulumi.Input<pulumi.Input<inputs.UserGroupsDirectoryServiceOus>[] | undefined>;
+    directoryServiceOus?: pulumi.Input<pulumi.Input<inputs.UserGroupsDirectoryServiceOus>[]>;
     /**
      * - (Optional) A Directory Service user group.
      */
-    directoryServiceUserGroups?: pulumi.Input<pulumi.Input<inputs.UserGroupsDirectoryServiceUserGroup>[] | undefined>;
+    directoryServiceUserGroups?: pulumi.Input<pulumi.Input<inputs.UserGroupsDirectoryServiceUserGroup>[]>;
     /**
-     * The<span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup "> userGroup </span>kind metadata.
+     * The<span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup " pulumi-lang-hcl=" user_group "> userGroup </span>kind metadata.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
-    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
-    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) A SAML Service user group.
      */
-    samlUserGroups?: pulumi.Input<pulumi.Input<inputs.UserGroupsSamlUserGroup>[] | undefined>;
+    samlUserGroups?: pulumi.Input<pulumi.Input<inputs.UserGroupsSamlUserGroup>[]>;
 }
 
 /**
  * The set of arguments for constructing a UserGroups resource.
  */
 export interface UserGroupsArgs {
-    categories?: pulumi.Input<pulumi.Input<inputs.UserGroupsCategory>[] | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.UserGroupsCategory>[]>;
     /**
      * - (Optional) A Directory Service organizational unit.
      */
-    directoryServiceOus?: pulumi.Input<pulumi.Input<inputs.UserGroupsDirectoryServiceOus>[] | undefined>;
+    directoryServiceOus?: pulumi.Input<pulumi.Input<inputs.UserGroupsDirectoryServiceOus>[]>;
     /**
      * - (Optional) A Directory Service user group.
      */
-    directoryServiceUserGroups?: pulumi.Input<pulumi.Input<inputs.UserGroupsDirectoryServiceUserGroup>[] | undefined>;
-    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
-    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    directoryServiceUserGroups?: pulumi.Input<pulumi.Input<inputs.UserGroupsDirectoryServiceUserGroup>[]>;
+    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) A SAML Service user group.
      */
-    samlUserGroups?: pulumi.Input<pulumi.Input<inputs.UserGroupsSamlUserGroup>[] | undefined>;
+    samlUserGroups?: pulumi.Input<pulumi.Input<inputs.UserGroupsSamlUserGroup>[]>;
 }

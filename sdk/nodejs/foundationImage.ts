@@ -135,27 +135,27 @@ export interface FoundationImageState {
     /**
      * - (Required) Name of installer file to be kept in foundation vm.
      */
-    filename?: pulumi.Input<string | undefined>;
+    filename?: pulumi.Input<string>;
     /**
      * - If hypervisor ISO is in whitelist.
      */
-    inWhitelist?: pulumi.Input<boolean | undefined>;
+    inWhitelist?: pulumi.Input<boolean>;
     /**
      * - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
      */
-    installerType?: pulumi.Input<string | undefined>;
+    installerType?: pulumi.Input<string>;
     /**
      * - md5sum of the ISO.
      */
-    md5sum?: pulumi.Input<string | undefined>;
+    md5sum?: pulumi.Input<string>;
     /**
      * - file location in foundation vm
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * - (Required) Complete path to the file in machine where the .tf  files runs.
      */
-    source?: pulumi.Input<string | undefined>;
+    source?: pulumi.Input<string>;
 }
 
 /**

@@ -272,11 +272,11 @@ def get_user(categories: Optional[Sequence[Union['GetUserCategoryArgs', 'GetUser
         user_id=pulumi.get(__ret__, 'user_id'),
         user_name=pulumi.get(__ret__, 'user_name'),
         user_type=pulumi.get(__ret__, 'user_type'))
-def get_user_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetUserCategoryArgs', 'GetUserCategoryArgsDict']]]]] = None,
-                    owner_reference: pulumi.Input[Optional[Optional[Mapping[str, _builtins.str]]]] = None,
-                    project_reference: pulumi.Input[Optional[Optional[Mapping[str, _builtins.str]]]] = None,
-                    user_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                    user_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+def get_user_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetUserCategoryArgs', 'GetUserCategoryArgsDict']]]]] = None,
+                    owner_reference: Optional[pulumi.Input[Optional[Mapping[str, _builtins.str]]]] = None,
+                    project_reference: Optional[pulumi.Input[Optional[Mapping[str, _builtins.str]]]] = None,
+                    user_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                    user_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserResult]:
     """
     Provides a datasource to retrieve a user based on the input parameters.

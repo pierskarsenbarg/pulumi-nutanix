@@ -23,13 +23,13 @@ class NetworkFunctionV2Args:
     def __init__(__self__, *,
                  high_availability_mode: pulumi.Input[_builtins.str],
                  nic_pairs: pulumi.Input[Sequence[pulumi.Input['NetworkFunctionV2NicPairArgs']]],
-                 data_plane_health_check_config: pulumi.Input[Optional['NetworkFunctionV2DataPlaneHealthCheckConfigArgs']] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 failure_handling: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFunctionV2MetadataArgs']]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 traffic_forwarding_mode: pulumi.Input[Optional[_builtins.str]] = None):
+                 data_plane_health_check_config: Optional[pulumi.Input['NetworkFunctionV2DataPlaneHealthCheckConfigArgs']] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 failure_handling: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFunctionV2MetadataArgs']]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 traffic_forwarding_mode: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFunctionV2 resource.
 
@@ -105,43 +105,43 @@ class NetworkFunctionV2Args:
 
     @_builtins.property
     @pulumi.getter(name="dataPlaneHealthCheckConfig")
-    def data_plane_health_check_config(self) -> pulumi.Input[Optional['NetworkFunctionV2DataPlaneHealthCheckConfigArgs']]:
+    def data_plane_health_check_config(self) -> Optional[pulumi.Input['NetworkFunctionV2DataPlaneHealthCheckConfigArgs']]:
         """
         Data Plane Health check configuration applied for the network function.
         """
         return pulumi.get(self, "data_plane_health_check_config")
 
     @data_plane_health_check_config.setter
-    def data_plane_health_check_config(self, value: pulumi.Input[Optional['NetworkFunctionV2DataPlaneHealthCheckConfigArgs']]):
+    def data_plane_health_check_config(self, value: Optional[pulumi.Input['NetworkFunctionV2DataPlaneHealthCheckConfigArgs']]):
         pulumi.set(self, "data_plane_health_check_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Description of the network function.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         globally unique identifier of an instance that is suitable for external consumption.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="failureHandling")
-    def failure_handling(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def failure_handling(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Failure handling behavior when network function is unhealthy. Values:
 
@@ -154,36 +154,36 @@ class NetworkFunctionV2Args:
         return pulumi.get(self, "failure_handling")
 
     @failure_handling.setter
-    def failure_handling(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def failure_handling(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "failure_handling", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFunctionV2MetadataArgs']]]]:
+    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFunctionV2MetadataArgs']]]]:
         """
         Metadata associated with this resource.
         """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
-    def metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFunctionV2MetadataArgs']]]]):
+    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFunctionV2MetadataArgs']]]]):
         pulumi.set(self, "metadatas", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Name of the network function.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="trafficForwardingMode")
-    def traffic_forwarding_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def traffic_forwarding_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Traffic forwarding mode. Values:
 
@@ -195,24 +195,24 @@ class NetworkFunctionV2Args:
         return pulumi.get(self, "traffic_forwarding_mode")
 
     @traffic_forwarding_mode.setter
-    def traffic_forwarding_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def traffic_forwarding_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "traffic_forwarding_mode", value)
 
 
 @pulumi.input_type
 class _NetworkFunctionV2State:
     def __init__(__self__, *,
-                 data_plane_health_check_config: pulumi.Input[Optional['NetworkFunctionV2DataPlaneHealthCheckConfigArgs']] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 failure_handling: pulumi.Input[Optional[_builtins.str]] = None,
-                 high_availability_mode: pulumi.Input[Optional[_builtins.str]] = None,
-                 links: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFunctionV2LinkArgs']]]] = None,
-                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFunctionV2MetadataArgs']]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 nic_pairs: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFunctionV2NicPairArgs']]]] = None,
-                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 traffic_forwarding_mode: pulumi.Input[Optional[_builtins.str]] = None):
+                 data_plane_health_check_config: Optional[pulumi.Input['NetworkFunctionV2DataPlaneHealthCheckConfigArgs']] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 failure_handling: Optional[pulumi.Input[_builtins.str]] = None,
+                 high_availability_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 links: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFunctionV2LinkArgs']]]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFunctionV2MetadataArgs']]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 nic_pairs: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFunctionV2NicPairArgs']]]] = None,
+                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 traffic_forwarding_mode: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkFunctionV2 resources.
 
@@ -268,43 +268,43 @@ class _NetworkFunctionV2State:
 
     @_builtins.property
     @pulumi.getter(name="dataPlaneHealthCheckConfig")
-    def data_plane_health_check_config(self) -> pulumi.Input[Optional['NetworkFunctionV2DataPlaneHealthCheckConfigArgs']]:
+    def data_plane_health_check_config(self) -> Optional[pulumi.Input['NetworkFunctionV2DataPlaneHealthCheckConfigArgs']]:
         """
         Data Plane Health check configuration applied for the network function.
         """
         return pulumi.get(self, "data_plane_health_check_config")
 
     @data_plane_health_check_config.setter
-    def data_plane_health_check_config(self, value: pulumi.Input[Optional['NetworkFunctionV2DataPlaneHealthCheckConfigArgs']]):
+    def data_plane_health_check_config(self, value: Optional[pulumi.Input['NetworkFunctionV2DataPlaneHealthCheckConfigArgs']]):
         pulumi.set(self, "data_plane_health_check_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Description of the network function.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         globally unique identifier of an instance that is suitable for external consumption.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="failureHandling")
-    def failure_handling(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def failure_handling(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Failure handling behavior when network function is unhealthy. Values:
 
@@ -317,12 +317,12 @@ class _NetworkFunctionV2State:
         return pulumi.get(self, "failure_handling")
 
     @failure_handling.setter
-    def failure_handling(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def failure_handling(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "failure_handling", value)
 
     @_builtins.property
     @pulumi.getter(name="highAvailabilityMode")
-    def high_availability_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def high_availability_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         High availability configuration used between virtual NIC pairs. Traffic is only redirected to the ACTIVE NIC pair. Values:
 
@@ -333,72 +333,72 @@ class _NetworkFunctionV2State:
         return pulumi.get(self, "high_availability_mode")
 
     @high_availability_mode.setter
-    def high_availability_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def high_availability_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "high_availability_mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFunctionV2LinkArgs']]]]:
+    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFunctionV2LinkArgs']]]]:
         """
         A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         """
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFunctionV2LinkArgs']]]]):
+    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFunctionV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFunctionV2MetadataArgs']]]]:
+    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFunctionV2MetadataArgs']]]]:
         """
         Metadata associated with this resource.
         """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
-    def metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFunctionV2MetadataArgs']]]]):
+    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFunctionV2MetadataArgs']]]]):
         pulumi.set(self, "metadatas", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Name of the network function.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nicPairs")
-    def nic_pairs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFunctionV2NicPairArgs']]]]:
+    def nic_pairs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFunctionV2NicPairArgs']]]]:
         """
         List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
         """
         return pulumi.get(self, "nic_pairs")
 
     @nic_pairs.setter
-    def nic_pairs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFunctionV2NicPairArgs']]]]):
+    def nic_pairs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFunctionV2NicPairArgs']]]]):
         pulumi.set(self, "nic_pairs", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         A globally unique identifier that represents the tenant that owns this entity.
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="trafficForwardingMode")
-    def traffic_forwarding_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def traffic_forwarding_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Traffic forwarding mode. Values:
 
@@ -410,7 +410,7 @@ class _NetworkFunctionV2State:
         return pulumi.get(self, "traffic_forwarding_mode")
 
     @traffic_forwarding_mode.setter
-    def traffic_forwarding_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def traffic_forwarding_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "traffic_forwarding_mode", value)
 
 
@@ -420,15 +420,15 @@ class NetworkFunctionV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 data_plane_health_check_config: pulumi.Input[Optional[Union['NetworkFunctionV2DataPlaneHealthCheckConfigArgs', 'NetworkFunctionV2DataPlaneHealthCheckConfigArgsDict']]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 failure_handling: pulumi.Input[Optional[_builtins.str]] = None,
-                 high_availability_mode: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict']]]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 nic_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict']]]]] = None,
-                 traffic_forwarding_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_plane_health_check_config: Optional[pulumi.Input[Union['NetworkFunctionV2DataPlaneHealthCheckConfigArgs', 'NetworkFunctionV2DataPlaneHealthCheckConfigArgsDict']]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 failure_handling: Optional[pulumi.Input[_builtins.str]] = None,
+                 high_availability_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict']]]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 nic_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict']]]]] = None,
+                 traffic_forwarding_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Create and manage a Network Function.
@@ -558,15 +558,15 @@ class NetworkFunctionV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 data_plane_health_check_config: pulumi.Input[Optional[Union['NetworkFunctionV2DataPlaneHealthCheckConfigArgs', 'NetworkFunctionV2DataPlaneHealthCheckConfigArgsDict']]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 failure_handling: pulumi.Input[Optional[_builtins.str]] = None,
-                 high_availability_mode: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict']]]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 nic_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict']]]]] = None,
-                 traffic_forwarding_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_plane_health_check_config: Optional[pulumi.Input[Union['NetworkFunctionV2DataPlaneHealthCheckConfigArgs', 'NetworkFunctionV2DataPlaneHealthCheckConfigArgsDict']]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 failure_handling: Optional[pulumi.Input[_builtins.str]] = None,
+                 high_availability_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict']]]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 nic_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict']]]]] = None,
+                 traffic_forwarding_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -601,17 +601,17 @@ class NetworkFunctionV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            data_plane_health_check_config: pulumi.Input[Optional[Union['NetworkFunctionV2DataPlaneHealthCheckConfigArgs', 'NetworkFunctionV2DataPlaneHealthCheckConfigArgsDict']]] = None,
-            description: pulumi.Input[Optional[_builtins.str]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            failure_handling: pulumi.Input[Optional[_builtins.str]] = None,
-            high_availability_mode: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2LinkArgs', 'NetworkFunctionV2LinkArgsDict']]]]] = None,
-            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict']]]]] = None,
-            name: pulumi.Input[Optional[_builtins.str]] = None,
-            nic_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict']]]]] = None,
-            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
-            traffic_forwarding_mode: pulumi.Input[Optional[_builtins.str]] = None) -> 'NetworkFunctionV2':
+            data_plane_health_check_config: Optional[pulumi.Input[Union['NetworkFunctionV2DataPlaneHealthCheckConfigArgs', 'NetworkFunctionV2DataPlaneHealthCheckConfigArgsDict']]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            failure_handling: Optional[pulumi.Input[_builtins.str]] = None,
+            high_availability_mode: Optional[pulumi.Input[_builtins.str]] = None,
+            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2LinkArgs', 'NetworkFunctionV2LinkArgsDict']]]]] = None,
+            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict']]]]] = None,
+            name: Optional[pulumi.Input[_builtins.str]] = None,
+            nic_pairs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict']]]]] = None,
+            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
+            traffic_forwarding_mode: Optional[pulumi.Input[_builtins.str]] = None) -> 'NetworkFunctionV2':
         """
         Get an existing NetworkFunctionV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

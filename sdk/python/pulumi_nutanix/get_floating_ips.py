@@ -70,7 +70,7 @@ class GetFloatingIpsResult:
     @pulumi.getter
     def metadatas(self) -> Sequence['outputs.GetFloatingIpsMetadataResult']:
         """
-        - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
+        - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp " pulumi-lang-hcl=" floating_ip "> floatingIp </span>kind metadata.
         """
         return pulumi.get(self, "metadatas")
 
@@ -104,7 +104,7 @@ def get_floating_ips(metadatas: Optional[Sequence[Union['GetFloatingIpsMetadataA
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetFloatingIpsMetadataArgs', 'GetFloatingIpsMetadataArgsDict']] metadatas: - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
+    :param Sequence[Union['GetFloatingIpsMetadataArgs', 'GetFloatingIpsMetadataArgsDict']] metadatas: - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp " pulumi-lang-hcl=" floating_ip "> floatingIp </span>kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
@@ -116,7 +116,7 @@ def get_floating_ips(metadatas: Optional[Sequence[Union['GetFloatingIpsMetadataA
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-def get_floating_ips_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetFloatingIpsMetadataArgs', 'GetFloatingIpsMetadataArgsDict']]]]] = None,
+def get_floating_ips_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetFloatingIpsMetadataArgs', 'GetFloatingIpsMetadataArgsDict']]]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFloatingIpsResult]:
     """
     Provides a datasource to retrieve all the floating IPs .
@@ -133,7 +133,7 @@ def get_floating_ips_output(metadatas: pulumi.Input[Optional[Optional[Sequence[U
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetFloatingIpsMetadataArgs', 'GetFloatingIpsMetadataArgsDict']] metadatas: - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
+    :param Sequence[Union['GetFloatingIpsMetadataArgs', 'GetFloatingIpsMetadataArgsDict']] metadatas: - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp " pulumi-lang-hcl=" floating_ip "> floatingIp </span>kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas

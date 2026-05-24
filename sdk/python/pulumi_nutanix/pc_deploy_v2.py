@@ -23,13 +23,13 @@ class PcDeployV2Args:
     def __init__(__self__, *,
                  config: pulumi.Input['PcDeployV2ConfigArgs'],
                  network: pulumi.Input['PcDeployV2NetworkArgs'],
-                 should_enable_high_availability: pulumi.Input[Optional[_builtins.bool]] = None):
+                 should_enable_high_availability: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a PcDeployV2 resource.
 
         :param pulumi.Input['PcDeployV2ConfigArgs'] config: -(Required) Domain manager (Prism Central) cluster configuration details.
         :param pulumi.Input['PcDeployV2NetworkArgs'] network: -(Required) Domain manager (Prism Central) network configuration details.
-        :param pulumi.Input[_builtins.bool] should_enable_high_availability: -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+        :param pulumi.Input[_builtins.bool] should_enable_high_availability: -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>.
         """
         pulumi.set(__self__, "config", config)
         pulumi.set(__self__, "network", network)
@@ -62,29 +62,29 @@ class PcDeployV2Args:
 
     @_builtins.property
     @pulumi.getter(name="shouldEnableHighAvailability")
-    def should_enable_high_availability(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def should_enable_high_availability(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+        -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>.
         """
         return pulumi.get(self, "should_enable_high_availability")
 
     @should_enable_high_availability.setter
-    def should_enable_high_availability(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def should_enable_high_availability(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "should_enable_high_availability", value)
 
 
 @pulumi.input_type
 class _PcDeployV2State:
     def __init__(__self__, *,
-                 config: pulumi.Input[Optional['PcDeployV2ConfigArgs']] = None,
-                 network: pulumi.Input[Optional['PcDeployV2NetworkArgs']] = None,
-                 should_enable_high_availability: pulumi.Input[Optional[_builtins.bool]] = None):
+                 config: Optional[pulumi.Input['PcDeployV2ConfigArgs']] = None,
+                 network: Optional[pulumi.Input['PcDeployV2NetworkArgs']] = None,
+                 should_enable_high_availability: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering PcDeployV2 resources.
 
         :param pulumi.Input['PcDeployV2ConfigArgs'] config: -(Required) Domain manager (Prism Central) cluster configuration details.
         :param pulumi.Input['PcDeployV2NetworkArgs'] network: -(Required) Domain manager (Prism Central) network configuration details.
-        :param pulumi.Input[_builtins.bool] should_enable_high_availability: -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+        :param pulumi.Input[_builtins.bool] should_enable_high_availability: -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>.
         """
         if config is not None:
             pulumi.set(__self__, "config", config)
@@ -95,38 +95,38 @@ class _PcDeployV2State:
 
     @_builtins.property
     @pulumi.getter
-    def config(self) -> pulumi.Input[Optional['PcDeployV2ConfigArgs']]:
+    def config(self) -> Optional[pulumi.Input['PcDeployV2ConfigArgs']]:
         """
         -(Required) Domain manager (Prism Central) cluster configuration details.
         """
         return pulumi.get(self, "config")
 
     @config.setter
-    def config(self, value: pulumi.Input[Optional['PcDeployV2ConfigArgs']]):
+    def config(self, value: Optional[pulumi.Input['PcDeployV2ConfigArgs']]):
         pulumi.set(self, "config", value)
 
     @_builtins.property
     @pulumi.getter
-    def network(self) -> pulumi.Input[Optional['PcDeployV2NetworkArgs']]:
+    def network(self) -> Optional[pulumi.Input['PcDeployV2NetworkArgs']]:
         """
         -(Required) Domain manager (Prism Central) network configuration details.
         """
         return pulumi.get(self, "network")
 
     @network.setter
-    def network(self, value: pulumi.Input[Optional['PcDeployV2NetworkArgs']]):
+    def network(self, value: Optional[pulumi.Input['PcDeployV2NetworkArgs']]):
         pulumi.set(self, "network", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldEnableHighAvailability")
-    def should_enable_high_availability(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def should_enable_high_availability(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+        -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>.
         """
         return pulumi.get(self, "should_enable_high_availability")
 
     @should_enable_high_availability.setter
-    def should_enable_high_availability(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def should_enable_high_availability(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "should_enable_high_availability", value)
 
 
@@ -136,9 +136,9 @@ class PcDeployV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config: pulumi.Input[Optional[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict']]] = None,
-                 network: pulumi.Input[Optional[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict']]] = None,
-                 should_enable_high_availability: pulumi.Input[Optional[_builtins.bool]] = None,
+                 config: Optional[pulumi.Input[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict']]] = None,
+                 network: Optional[pulumi.Input[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict']]] = None,
+                 should_enable_high_availability: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
         > - The Pc Deploy V2 resource is an action-only resource that supports creating actions. The update and delete operations have no effect. To run it again, destroy and reapply the resource.
@@ -220,7 +220,7 @@ class PcDeployV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict']] config: -(Required) Domain manager (Prism Central) cluster configuration details.
         :param pulumi.Input[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict']] network: -(Required) Domain manager (Prism Central) network configuration details.
-        :param pulumi.Input[_builtins.bool] should_enable_high_availability: -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+        :param pulumi.Input[_builtins.bool] should_enable_high_availability: -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>.
         """
         ...
     @overload
@@ -319,9 +319,9 @@ class PcDeployV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config: pulumi.Input[Optional[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict']]] = None,
-                 network: pulumi.Input[Optional[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict']]] = None,
-                 should_enable_high_availability: pulumi.Input[Optional[_builtins.bool]] = None,
+                 config: Optional[pulumi.Input[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict']]] = None,
+                 network: Optional[pulumi.Input[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict']]] = None,
+                 should_enable_high_availability: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -348,9 +348,9 @@ class PcDeployV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config: pulumi.Input[Optional[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict']]] = None,
-            network: pulumi.Input[Optional[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict']]] = None,
-            should_enable_high_availability: pulumi.Input[Optional[_builtins.bool]] = None) -> 'PcDeployV2':
+            config: Optional[pulumi.Input[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict']]] = None,
+            network: Optional[pulumi.Input[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict']]] = None,
+            should_enable_high_availability: Optional[pulumi.Input[_builtins.bool]] = None) -> 'PcDeployV2':
         """
         Get an existing PcDeployV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -360,7 +360,7 @@ class PcDeployV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict']] config: -(Required) Domain manager (Prism Central) cluster configuration details.
         :param pulumi.Input[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict']] network: -(Required) Domain manager (Prism Central) network configuration details.
-        :param pulumi.Input[_builtins.bool] should_enable_high_availability: -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+        :param pulumi.Input[_builtins.bool] should_enable_high_availability: -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -391,7 +391,7 @@ class PcDeployV2(pulumi.CustomResource):
     @pulumi.getter(name="shouldEnableHighAvailability")
     def should_enable_high_availability(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
-        -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+        -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>.
         """
         return pulumi.get(self, "should_enable_high_availability")
 

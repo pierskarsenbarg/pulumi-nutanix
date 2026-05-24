@@ -120,23 +120,23 @@ export class ObjectStoreCertificateV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ObjectStoreCertificateV2 resources.
  */
 export interface ObjectStoreCertificateV2State {
-    alternateFqdns?: pulumi.Input<pulumi.Input<inputs.ObjectStoreCertificateV2AlternateFqdn>[] | undefined>;
-    alternateIps?: pulumi.Input<pulumi.Input<inputs.ObjectStoreCertificateV2AlternateIp>[] | undefined>;
+    alternateFqdns?: pulumi.Input<pulumi.Input<inputs.ObjectStoreCertificateV2AlternateFqdn>[]>;
+    alternateIps?: pulumi.Input<pulumi.Input<inputs.ObjectStoreCertificateV2AlternateIp>[]>;
     /**
      * -(Required) The UUID of the certificate of an Object store.
      */
-    extId?: pulumi.Input<string | undefined>;
-    links?: pulumi.Input<pulumi.Input<inputs.ObjectStoreCertificateV2Link>[] | undefined>;
-    metadatas?: pulumi.Input<pulumi.Input<inputs.ObjectStoreCertificateV2Metadata>[] | undefined>;
+    extId?: pulumi.Input<string>;
+    links?: pulumi.Input<pulumi.Input<inputs.ObjectStoreCertificateV2Link>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.ObjectStoreCertificateV2Metadata>[]>;
     /**
      * -(Required) The UUID of the Object store.
      */
-    objectStoreExtId?: pulumi.Input<string | undefined>;
+    objectStoreExtId?: pulumi.Input<string>;
     /**
      * -(Required) Path to a JSON file which contains the public certificates, private key, and CA certificate or chain, along with a list of alternate FQDNs and alternate IPs to create a certificate for the Object store.
      */
-    path?: pulumi.Input<string | undefined>;
-    tenantId?: pulumi.Input<string | undefined>;
+    path?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string>;
 }
 
 /**

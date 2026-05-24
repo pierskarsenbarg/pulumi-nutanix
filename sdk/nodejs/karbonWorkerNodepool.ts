@@ -158,31 +158,31 @@ export interface KarbonWorkerNodepoolState {
     /**
      * VM configuration in AHV.
      */
-    ahvConfig?: pulumi.Input<inputs.KarbonWorkerNodepoolAhvConfig | undefined>;
+    ahvConfig?: pulumi.Input<inputs.KarbonWorkerNodepoolAhvConfig>;
     /**
      * Kubernetes cluster name
      */
-    clusterName?: pulumi.Input<string | undefined>;
+    clusterName?: pulumi.Input<string>;
     /**
      * labels of node
      */
-    labels?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    labels?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * unique worker nodepool name
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * The version of the node OS image
      */
-    nodeOsVersion?: pulumi.Input<string | undefined>;
+    nodeOsVersion?: pulumi.Input<string>;
     /**
      * List of node details of pool.
      */
-    nodes?: pulumi.Input<pulumi.Input<inputs.KarbonWorkerNodepoolNode>[] | undefined>;
+    nodes?: pulumi.Input<pulumi.Input<inputs.KarbonWorkerNodepoolNode>[]>;
     /**
      * number of node instances
      */
-    numInstances?: pulumi.Input<number | undefined>;
+    numInstances?: pulumi.Input<number>;
 }
 
 /**
@@ -192,7 +192,7 @@ export interface KarbonWorkerNodepoolArgs {
     /**
      * VM configuration in AHV.
      */
-    ahvConfig?: pulumi.Input<inputs.KarbonWorkerNodepoolAhvConfig | undefined>;
+    ahvConfig?: pulumi.Input<inputs.KarbonWorkerNodepoolAhvConfig>;
     /**
      * Kubernetes cluster name
      */
@@ -200,15 +200,15 @@ export interface KarbonWorkerNodepoolArgs {
     /**
      * labels of node
      */
-    labels?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    labels?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * unique worker nodepool name
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * The version of the node OS image
      */
-    nodeOsVersion?: pulumi.Input<string | undefined>;
+    nodeOsVersion?: pulumi.Input<string>;
     /**
      * number of node instances
      */

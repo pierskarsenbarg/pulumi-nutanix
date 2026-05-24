@@ -22,13 +22,13 @@ __all__ = ['VolumeGroupIscsiClientV2Args', 'VolumeGroupIscsiClientV2']
 class VolumeGroupIscsiClientV2Args:
     def __init__(__self__, *,
                  vg_ext_id: pulumi.Input[_builtins.str],
-                 attachment_site: pulumi.Input[Optional[_builtins.str]] = None,
-                 client_secret: pulumi.Input[Optional[_builtins.str]] = None,
-                 enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 iscsi_initiator_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 iscsi_initiator_network_ids: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs']]]] = None,
-                 num_virtual_targets: pulumi.Input[Optional[_builtins.int]] = None):
+                 attachment_site: Optional[pulumi.Input[_builtins.str]] = None,
+                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled_authentications: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 iscsi_initiator_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 iscsi_initiator_network_ids: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs']]]] = None,
+                 num_virtual_targets: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a VolumeGroupIscsiClientV2 resource.
 
@@ -71,100 +71,100 @@ class VolumeGroupIscsiClientV2Args:
 
     @_builtins.property
     @pulumi.getter(name="attachmentSite")
-    def attachment_site(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def attachment_site(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
         """
         return pulumi.get(self, "attachment_site")
 
     @attachment_site.setter
-    def attachment_site(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def attachment_site(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "attachment_site", value)
 
     @_builtins.property
     @pulumi.getter(name="clientSecret")
-    def client_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def client_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) iSCSI initiator client secret in case of CHAP authentication. This field should not be provided in case the authentication type is not set to CHAP.
         """
         return pulumi.get(self, "client_secret")
 
     @client_secret.setter
-    def client_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def client_secret(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "client_secret", value)
 
     @_builtins.property
     @pulumi.getter(name="enabledAuthentications")
-    def enabled_authentications(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def enabled_authentications(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
         """
         return pulumi.get(self, "enabled_authentications")
 
     @enabled_authentications.setter
-    def enabled_authentications(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def enabled_authentications(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "enabled_authentications", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Required) A globally unique identifier of an instance that is suitable for external consumption.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="iscsiInitiatorName")
-    def iscsi_initiator_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def iscsi_initiator_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -iSCSI initiator name. During the attach operation, exactly one of iscsiInitiatorName and iscsiInitiatorNetworkId must be specified. This field is immutable.
         """
         return pulumi.get(self, "iscsi_initiator_name")
 
     @iscsi_initiator_name.setter
-    def iscsi_initiator_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def iscsi_initiator_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "iscsi_initiator_name", value)
 
     @_builtins.property
     @pulumi.getter(name="iscsiInitiatorNetworkIds")
-    def iscsi_initiator_network_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs']]]]:
+    def iscsi_initiator_network_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs']]]]:
         """
         - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
         """
         return pulumi.get(self, "iscsi_initiator_network_ids")
 
     @iscsi_initiator_network_ids.setter
-    def iscsi_initiator_network_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs']]]]):
+    def iscsi_initiator_network_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs']]]]):
         pulumi.set(self, "iscsi_initiator_network_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="numVirtualTargets")
-    def num_virtual_targets(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def num_virtual_targets(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         -(Optional) Number of virtual targets generated for the iSCSI target. This field is immutable.
         """
         return pulumi.get(self, "num_virtual_targets")
 
     @num_virtual_targets.setter
-    def num_virtual_targets(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def num_virtual_targets(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "num_virtual_targets", value)
 
 
 @pulumi.input_type
 class _VolumeGroupIscsiClientV2State:
     def __init__(__self__, *,
-                 attachment_site: pulumi.Input[Optional[_builtins.str]] = None,
-                 client_secret: pulumi.Input[Optional[_builtins.str]] = None,
-                 enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 iscsi_initiator_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 iscsi_initiator_network_ids: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs']]]] = None,
-                 num_virtual_targets: pulumi.Input[Optional[_builtins.int]] = None,
-                 vg_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 attachment_site: Optional[pulumi.Input[_builtins.str]] = None,
+                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled_authentications: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 iscsi_initiator_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 iscsi_initiator_network_ids: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs']]]] = None,
+                 num_virtual_targets: Optional[pulumi.Input[_builtins.int]] = None,
+                 vg_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VolumeGroupIscsiClientV2 resources.
 
@@ -196,98 +196,98 @@ class _VolumeGroupIscsiClientV2State:
 
     @_builtins.property
     @pulumi.getter(name="attachmentSite")
-    def attachment_site(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def attachment_site(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
         """
         return pulumi.get(self, "attachment_site")
 
     @attachment_site.setter
-    def attachment_site(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def attachment_site(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "attachment_site", value)
 
     @_builtins.property
     @pulumi.getter(name="clientSecret")
-    def client_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def client_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) iSCSI initiator client secret in case of CHAP authentication. This field should not be provided in case the authentication type is not set to CHAP.
         """
         return pulumi.get(self, "client_secret")
 
     @client_secret.setter
-    def client_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def client_secret(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "client_secret", value)
 
     @_builtins.property
     @pulumi.getter(name="enabledAuthentications")
-    def enabled_authentications(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def enabled_authentications(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
         """
         return pulumi.get(self, "enabled_authentications")
 
     @enabled_authentications.setter
-    def enabled_authentications(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def enabled_authentications(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "enabled_authentications", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Required) A globally unique identifier of an instance that is suitable for external consumption.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="iscsiInitiatorName")
-    def iscsi_initiator_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def iscsi_initiator_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -iSCSI initiator name. During the attach operation, exactly one of iscsiInitiatorName and iscsiInitiatorNetworkId must be specified. This field is immutable.
         """
         return pulumi.get(self, "iscsi_initiator_name")
 
     @iscsi_initiator_name.setter
-    def iscsi_initiator_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def iscsi_initiator_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "iscsi_initiator_name", value)
 
     @_builtins.property
     @pulumi.getter(name="iscsiInitiatorNetworkIds")
-    def iscsi_initiator_network_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs']]]]:
+    def iscsi_initiator_network_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs']]]]:
         """
         - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
         """
         return pulumi.get(self, "iscsi_initiator_network_ids")
 
     @iscsi_initiator_network_ids.setter
-    def iscsi_initiator_network_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs']]]]):
+    def iscsi_initiator_network_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs']]]]):
         pulumi.set(self, "iscsi_initiator_network_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="numVirtualTargets")
-    def num_virtual_targets(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def num_virtual_targets(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         -(Optional) Number of virtual targets generated for the iSCSI target. This field is immutable.
         """
         return pulumi.get(self, "num_virtual_targets")
 
     @num_virtual_targets.setter
-    def num_virtual_targets(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def num_virtual_targets(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "num_virtual_targets", value)
 
     @_builtins.property
     @pulumi.getter(name="vgExtId")
-    def vg_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def vg_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Required) The external identifier of the volume group.
         """
         return pulumi.get(self, "vg_ext_id")
 
     @vg_ext_id.setter
-    def vg_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def vg_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vg_ext_id", value)
 
 
@@ -297,14 +297,14 @@ class VolumeGroupIscsiClientV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attachment_site: pulumi.Input[Optional[_builtins.str]] = None,
-                 client_secret: pulumi.Input[Optional[_builtins.str]] = None,
-                 enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 iscsi_initiator_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 iscsi_initiator_network_ids: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs', 'VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgsDict']]]]] = None,
-                 num_virtual_targets: pulumi.Input[Optional[_builtins.int]] = None,
-                 vg_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 attachment_site: Optional[pulumi.Input[_builtins.str]] = None,
+                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled_authentications: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 iscsi_initiator_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 iscsi_initiator_network_ids: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs', 'VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgsDict']]]]] = None,
+                 num_virtual_targets: Optional[pulumi.Input[_builtins.int]] = None,
+                 vg_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Attaches iSCSI initiator to a Volume Group identified by {extId}.
@@ -380,14 +380,14 @@ class VolumeGroupIscsiClientV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attachment_site: pulumi.Input[Optional[_builtins.str]] = None,
-                 client_secret: pulumi.Input[Optional[_builtins.str]] = None,
-                 enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 iscsi_initiator_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 iscsi_initiator_network_ids: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs', 'VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgsDict']]]]] = None,
-                 num_virtual_targets: pulumi.Input[Optional[_builtins.int]] = None,
-                 vg_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 attachment_site: Optional[pulumi.Input[_builtins.str]] = None,
+                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
+                 enabled_authentications: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 iscsi_initiator_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 iscsi_initiator_network_ids: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs', 'VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgsDict']]]]] = None,
+                 num_virtual_targets: Optional[pulumi.Input[_builtins.int]] = None,
+                 vg_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -417,14 +417,14 @@ class VolumeGroupIscsiClientV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attachment_site: pulumi.Input[Optional[_builtins.str]] = None,
-            client_secret: pulumi.Input[Optional[_builtins.str]] = None,
-            enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            iscsi_initiator_name: pulumi.Input[Optional[_builtins.str]] = None,
-            iscsi_initiator_network_ids: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs', 'VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgsDict']]]]] = None,
-            num_virtual_targets: pulumi.Input[Optional[_builtins.int]] = None,
-            vg_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VolumeGroupIscsiClientV2':
+            attachment_site: Optional[pulumi.Input[_builtins.str]] = None,
+            client_secret: Optional[pulumi.Input[_builtins.str]] = None,
+            enabled_authentications: Optional[pulumi.Input[_builtins.str]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            iscsi_initiator_name: Optional[pulumi.Input[_builtins.str]] = None,
+            iscsi_initiator_network_ids: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs', 'VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgsDict']]]]] = None,
+            num_virtual_targets: Optional[pulumi.Input[_builtins.int]] = None,
+            vg_ext_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'VolumeGroupIscsiClientV2':
         """
         Get an existing VolumeGroupIscsiClientV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

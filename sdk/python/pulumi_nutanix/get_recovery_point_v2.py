@@ -247,7 +247,7 @@ def get_recovery_point_v2(ext_id: Optional[_builtins.str] = None,
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         vm_recovery_points=pulumi.get(__ret__, 'vm_recovery_points'),
         volume_group_recovery_points=pulumi.get(__ret__, 'volume_group_recovery_points'))
-def get_recovery_point_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_recovery_point_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecoveryPointV2Result]:
     """
     Get a single recovery point  corresponding to the extId.

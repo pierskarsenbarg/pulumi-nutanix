@@ -135,35 +135,35 @@ export interface VolumeGroupIscsiClientV2State {
     /**
      * -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
      */
-    attachmentSite?: pulumi.Input<string | undefined>;
+    attachmentSite?: pulumi.Input<string>;
     /**
      * -(Optional) iSCSI initiator client secret in case of CHAP authentication. This field should not be provided in case the authentication type is not set to CHAP.
      */
-    clientSecret?: pulumi.Input<string | undefined>;
+    clientSecret?: pulumi.Input<string>;
     /**
      * -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
      */
-    enabledAuthentications?: pulumi.Input<string | undefined>;
+    enabledAuthentications?: pulumi.Input<string>;
     /**
      * -(Required) A globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * -iSCSI initiator name. During the attach operation, exactly one of iscsiInitiatorName and iscsiInitiatorNetworkId must be specified. This field is immutable.
      */
-    iscsiInitiatorName?: pulumi.Input<string | undefined>;
+    iscsiInitiatorName?: pulumi.Input<string>;
     /**
      * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
      */
-    iscsiInitiatorNetworkIds?: pulumi.Input<pulumi.Input<inputs.VolumeGroupIscsiClientV2IscsiInitiatorNetworkId>[] | undefined>;
+    iscsiInitiatorNetworkIds?: pulumi.Input<pulumi.Input<inputs.VolumeGroupIscsiClientV2IscsiInitiatorNetworkId>[]>;
     /**
      * -(Optional) Number of virtual targets generated for the iSCSI target. This field is immutable.
      */
-    numVirtualTargets?: pulumi.Input<number | undefined>;
+    numVirtualTargets?: pulumi.Input<number>;
     /**
      * -(Required) The external identifier of the volume group.
      */
-    vgExtId?: pulumi.Input<string | undefined>;
+    vgExtId?: pulumi.Input<string>;
 }
 
 /**
@@ -173,31 +173,31 @@ export interface VolumeGroupIscsiClientV2Args {
     /**
      * -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
      */
-    attachmentSite?: pulumi.Input<string | undefined>;
+    attachmentSite?: pulumi.Input<string>;
     /**
      * -(Optional) iSCSI initiator client secret in case of CHAP authentication. This field should not be provided in case the authentication type is not set to CHAP.
      */
-    clientSecret?: pulumi.Input<string | undefined>;
+    clientSecret?: pulumi.Input<string>;
     /**
      * -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
      */
-    enabledAuthentications?: pulumi.Input<string | undefined>;
+    enabledAuthentications?: pulumi.Input<string>;
     /**
      * -(Required) A globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * -iSCSI initiator name. During the attach operation, exactly one of iscsiInitiatorName and iscsiInitiatorNetworkId must be specified. This field is immutable.
      */
-    iscsiInitiatorName?: pulumi.Input<string | undefined>;
+    iscsiInitiatorName?: pulumi.Input<string>;
     /**
      * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
      */
-    iscsiInitiatorNetworkIds?: pulumi.Input<pulumi.Input<inputs.VolumeGroupIscsiClientV2IscsiInitiatorNetworkId>[] | undefined>;
+    iscsiInitiatorNetworkIds?: pulumi.Input<pulumi.Input<inputs.VolumeGroupIscsiClientV2IscsiInitiatorNetworkId>[]>;
     /**
      * -(Optional) Number of virtual targets generated for the iSCSI target. This field is immutable.
      */
-    numVirtualTargets?: pulumi.Input<number | undefined>;
+    numVirtualTargets?: pulumi.Input<number>;
     /**
      * -(Required) The external identifier of the volume group.
      */

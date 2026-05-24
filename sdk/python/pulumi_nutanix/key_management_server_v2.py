@@ -22,7 +22,7 @@ __all__ = ['KeyManagementServerV2Args', 'KeyManagementServerV2']
 class KeyManagementServerV2Args:
     def __init__(__self__, *,
                  access_information: pulumi.Input['KeyManagementServerV2AccessInformationArgs'],
-                 name: pulumi.Input[Optional[_builtins.str]] = None):
+                 name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a KeyManagementServerV2 resource.
 
@@ -47,25 +47,25 @@ class KeyManagementServerV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Required) Name of the key management server (KMS).
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _KeyManagementServerV2State:
     def __init__(__self__, *,
-                 access_information: pulumi.Input[Optional['KeyManagementServerV2AccessInformationArgs']] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 links: pulumi.Input[Optional[Sequence[pulumi.Input['KeyManagementServerV2LinkArgs']]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 access_information: Optional[pulumi.Input['KeyManagementServerV2AccessInformationArgs']] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 links: Optional[pulumi.Input[Sequence[pulumi.Input['KeyManagementServerV2LinkArgs']]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering KeyManagementServerV2 resources.
 
@@ -85,53 +85,53 @@ class _KeyManagementServerV2State:
 
     @_builtins.property
     @pulumi.getter(name="accessInformation")
-    def access_information(self) -> pulumi.Input[Optional['KeyManagementServerV2AccessInformationArgs']]:
+    def access_information(self) -> Optional[pulumi.Input['KeyManagementServerV2AccessInformationArgs']]:
         """
         - (Required) KMS Access information, it can be Azure Key Vault access information or KMIP based External Key Manager Access Information.
         """
         return pulumi.get(self, "access_information")
 
     @access_information.setter
-    def access_information(self, value: pulumi.Input[Optional['KeyManagementServerV2AccessInformationArgs']]):
+    def access_information(self, value: Optional[pulumi.Input['KeyManagementServerV2AccessInformationArgs']]):
         pulumi.set(self, "access_information", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['KeyManagementServerV2LinkArgs']]]]:
+    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['KeyManagementServerV2LinkArgs']]]]:
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['KeyManagementServerV2LinkArgs']]]]):
+    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['KeyManagementServerV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Required) Name of the key management server (KMS).
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
 
@@ -141,8 +141,8 @@ class KeyManagementServerV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_information: pulumi.Input[Optional[Union['KeyManagementServerV2AccessInformationArgs', 'KeyManagementServerV2AccessInformationArgsDict']]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 access_information: Optional[pulumi.Input[Union['KeyManagementServerV2AccessInformationArgs', 'KeyManagementServerV2AccessInformationArgsDict']]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Creates a new key management server with the specified access credentials.
@@ -222,8 +222,8 @@ class KeyManagementServerV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_information: pulumi.Input[Optional[Union['KeyManagementServerV2AccessInformationArgs', 'KeyManagementServerV2AccessInformationArgsDict']]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 access_information: Optional[pulumi.Input[Union['KeyManagementServerV2AccessInformationArgs', 'KeyManagementServerV2AccessInformationArgsDict']]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -250,11 +250,11 @@ class KeyManagementServerV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_information: pulumi.Input[Optional[Union['KeyManagementServerV2AccessInformationArgs', 'KeyManagementServerV2AccessInformationArgsDict']]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyManagementServerV2LinkArgs', 'KeyManagementServerV2LinkArgsDict']]]]] = None,
-            name: pulumi.Input[Optional[_builtins.str]] = None,
-            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'KeyManagementServerV2':
+            access_information: Optional[pulumi.Input[Union['KeyManagementServerV2AccessInformationArgs', 'KeyManagementServerV2AccessInformationArgsDict']]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeyManagementServerV2LinkArgs', 'KeyManagementServerV2LinkArgsDict']]]]] = None,
+            name: Optional[pulumi.Input[_builtins.str]] = None,
+            tenant_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'KeyManagementServerV2':
         """
         Get an existing KeyManagementServerV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

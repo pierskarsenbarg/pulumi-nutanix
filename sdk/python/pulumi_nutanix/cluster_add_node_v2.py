@@ -23,10 +23,10 @@ class ClusterAddNodeV2Args:
     def __init__(__self__, *,
                  cluster_ext_id: pulumi.Input[_builtins.str],
                  node_params: pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2NodeParamArgs']]],
-                 config_params: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterAddNodeV2ConfigParamArgs']]]] = None,
-                 remove_node_params: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterAddNodeV2RemoveNodeParamArgs']]]] = None,
-                 should_skip_add_node: pulumi.Input[Optional[_builtins.bool]] = None,
-                 should_skip_pre_expand_checks: pulumi.Input[Optional[_builtins.bool]] = None):
+                 config_params: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2ConfigParamArgs']]]] = None,
+                 remove_node_params: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2RemoveNodeParamArgs']]]] = None,
+                 should_skip_add_node: Optional[pulumi.Input[_builtins.bool]] = None,
+                 should_skip_pre_expand_checks: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a ClusterAddNodeV2 resource.
 
@@ -74,62 +74,62 @@ class ClusterAddNodeV2Args:
 
     @_builtins.property
     @pulumi.getter(name="configParams")
-    def config_params(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterAddNodeV2ConfigParamArgs']]]]:
+    def config_params(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2ConfigParamArgs']]]]:
         """
         -(Optional) Config parameters.
         """
         return pulumi.get(self, "config_params")
 
     @config_params.setter
-    def config_params(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterAddNodeV2ConfigParamArgs']]]]):
+    def config_params(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2ConfigParamArgs']]]]):
         pulumi.set(self, "config_params", value)
 
     @_builtins.property
     @pulumi.getter(name="removeNodeParams")
-    def remove_node_params(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterAddNodeV2RemoveNodeParamArgs']]]]:
+    def remove_node_params(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2RemoveNodeParamArgs']]]]:
         """
         -(Optional) configuration for node removal.
         """
         return pulumi.get(self, "remove_node_params")
 
     @remove_node_params.setter
-    def remove_node_params(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterAddNodeV2RemoveNodeParamArgs']]]]):
+    def remove_node_params(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2RemoveNodeParamArgs']]]]):
         pulumi.set(self, "remove_node_params", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldSkipAddNode")
-    def should_skip_add_node(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def should_skip_add_node(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         -(Optional) Indicates if node addition can be skipped.
         """
         return pulumi.get(self, "should_skip_add_node")
 
     @should_skip_add_node.setter
-    def should_skip_add_node(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def should_skip_add_node(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "should_skip_add_node", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldSkipPreExpandChecks")
-    def should_skip_pre_expand_checks(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def should_skip_pre_expand_checks(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         -(Optional) Indicates if pre-expand checks can be skipped for node addition.
         """
         return pulumi.get(self, "should_skip_pre_expand_checks")
 
     @should_skip_pre_expand_checks.setter
-    def should_skip_pre_expand_checks(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def should_skip_pre_expand_checks(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "should_skip_pre_expand_checks", value)
 
 
 @pulumi.input_type
 class _ClusterAddNodeV2State:
     def __init__(__self__, *,
-                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 config_params: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterAddNodeV2ConfigParamArgs']]]] = None,
-                 node_params: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterAddNodeV2NodeParamArgs']]]] = None,
-                 remove_node_params: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterAddNodeV2RemoveNodeParamArgs']]]] = None,
-                 should_skip_add_node: pulumi.Input[Optional[_builtins.bool]] = None,
-                 should_skip_pre_expand_checks: pulumi.Input[Optional[_builtins.bool]] = None):
+                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_params: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2ConfigParamArgs']]]] = None,
+                 node_params: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2NodeParamArgs']]]] = None,
+                 remove_node_params: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2RemoveNodeParamArgs']]]] = None,
+                 should_skip_add_node: Optional[pulumi.Input[_builtins.bool]] = None,
+                 should_skip_pre_expand_checks: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ClusterAddNodeV2 resources.
 
@@ -155,74 +155,74 @@ class _ClusterAddNodeV2State:
 
     @_builtins.property
     @pulumi.getter(name="clusterExtId")
-    def cluster_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def cluster_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Required) Cluster UUID.
         """
         return pulumi.get(self, "cluster_ext_id")
 
     @cluster_ext_id.setter
-    def cluster_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def cluster_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "cluster_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configParams")
-    def config_params(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterAddNodeV2ConfigParamArgs']]]]:
+    def config_params(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2ConfigParamArgs']]]]:
         """
         -(Optional) Config parameters.
         """
         return pulumi.get(self, "config_params")
 
     @config_params.setter
-    def config_params(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterAddNodeV2ConfigParamArgs']]]]):
+    def config_params(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2ConfigParamArgs']]]]):
         pulumi.set(self, "config_params", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeParams")
-    def node_params(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterAddNodeV2NodeParamArgs']]]]:
+    def node_params(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2NodeParamArgs']]]]:
         """
         -(Required) Parameters of the node to be added.
         """
         return pulumi.get(self, "node_params")
 
     @node_params.setter
-    def node_params(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterAddNodeV2NodeParamArgs']]]]):
+    def node_params(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2NodeParamArgs']]]]):
         pulumi.set(self, "node_params", value)
 
     @_builtins.property
     @pulumi.getter(name="removeNodeParams")
-    def remove_node_params(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterAddNodeV2RemoveNodeParamArgs']]]]:
+    def remove_node_params(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2RemoveNodeParamArgs']]]]:
         """
         -(Optional) configuration for node removal.
         """
         return pulumi.get(self, "remove_node_params")
 
     @remove_node_params.setter
-    def remove_node_params(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterAddNodeV2RemoveNodeParamArgs']]]]):
+    def remove_node_params(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterAddNodeV2RemoveNodeParamArgs']]]]):
         pulumi.set(self, "remove_node_params", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldSkipAddNode")
-    def should_skip_add_node(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def should_skip_add_node(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         -(Optional) Indicates if node addition can be skipped.
         """
         return pulumi.get(self, "should_skip_add_node")
 
     @should_skip_add_node.setter
-    def should_skip_add_node(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def should_skip_add_node(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "should_skip_add_node", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldSkipPreExpandChecks")
-    def should_skip_pre_expand_checks(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def should_skip_pre_expand_checks(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         -(Optional) Indicates if pre-expand checks can be skipped for node addition.
         """
         return pulumi.get(self, "should_skip_pre_expand_checks")
 
     @should_skip_pre_expand_checks.setter
-    def should_skip_pre_expand_checks(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def should_skip_pre_expand_checks(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "should_skip_pre_expand_checks", value)
 
 
@@ -232,17 +232,17 @@ class ClusterAddNodeV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 config_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2ConfigParamArgs', 'ClusterAddNodeV2ConfigParamArgsDict']]]]] = None,
-                 node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2NodeParamArgs', 'ClusterAddNodeV2NodeParamArgsDict']]]]] = None,
-                 remove_node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2RemoveNodeParamArgs', 'ClusterAddNodeV2RemoveNodeParamArgsDict']]]]] = None,
-                 should_skip_add_node: pulumi.Input[Optional[_builtins.bool]] = None,
-                 should_skip_pre_expand_checks: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2ConfigParamArgs', 'ClusterAddNodeV2ConfigParamArgsDict']]]]] = None,
+                 node_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2NodeParamArgs', 'ClusterAddNodeV2NodeParamArgsDict']]]]] = None,
+                 remove_node_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2RemoveNodeParamArgs', 'ClusterAddNodeV2RemoveNodeParamArgsDict']]]]] = None,
+                 should_skip_add_node: Optional[pulumi.Input[_builtins.bool]] = None,
+                 should_skip_pre_expand_checks: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
         Add node on a cluster identified by {extId}.
 
-        > **Note:** Starting with v2.3.2, users can now perform node add/remove operations directly through the <span pulumi-lang-nodejs="`nutanix.ClusterV2`" pulumi-lang-dotnet="`nutanix.ClusterV2`" pulumi-lang-go="`ClusterV2`" pulumi-lang-python="`ClusterV2`" pulumi-lang-yaml="`nutanix.ClusterV2`" pulumi-lang-java="`nutanix.ClusterV2`">`nutanix.ClusterV2`</span> resource, which offers a more consistent and automated approach to managing cluster scaling operations.
+        > **Note:** Starting with v2.3.2, users can now perform node add/remove operations directly through the <span pulumi-lang-nodejs="`nutanix.ClusterV2`" pulumi-lang-dotnet="`nutanix.ClusterV2`" pulumi-lang-go="`ClusterV2`" pulumi-lang-python="`ClusterV2`" pulumi-lang-yaml="`nutanix.ClusterV2`" pulumi-lang-java="`nutanix.ClusterV2`" pulumi-lang-hcl="`nutanix_cluster_v2`">`nutanix.ClusterV2`</span> resource, which offers a more consistent and automated approach to managing cluster scaling operations.
 
         ## Example Usage
 
@@ -371,7 +371,7 @@ class ClusterAddNodeV2(pulumi.CustomResource):
         """
         Add node on a cluster identified by {extId}.
 
-        > **Note:** Starting with v2.3.2, users can now perform node add/remove operations directly through the <span pulumi-lang-nodejs="`nutanix.ClusterV2`" pulumi-lang-dotnet="`nutanix.ClusterV2`" pulumi-lang-go="`ClusterV2`" pulumi-lang-python="`ClusterV2`" pulumi-lang-yaml="`nutanix.ClusterV2`" pulumi-lang-java="`nutanix.ClusterV2`">`nutanix.ClusterV2`</span> resource, which offers a more consistent and automated approach to managing cluster scaling operations.
+        > **Note:** Starting with v2.3.2, users can now perform node add/remove operations directly through the <span pulumi-lang-nodejs="`nutanix.ClusterV2`" pulumi-lang-dotnet="`nutanix.ClusterV2`" pulumi-lang-go="`ClusterV2`" pulumi-lang-python="`ClusterV2`" pulumi-lang-yaml="`nutanix.ClusterV2`" pulumi-lang-java="`nutanix.ClusterV2`" pulumi-lang-hcl="`nutanix_cluster_v2`">`nutanix.ClusterV2`</span> resource, which offers a more consistent and automated approach to managing cluster scaling operations.
 
         ## Example Usage
 
@@ -497,12 +497,12 @@ class ClusterAddNodeV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 config_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2ConfigParamArgs', 'ClusterAddNodeV2ConfigParamArgsDict']]]]] = None,
-                 node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2NodeParamArgs', 'ClusterAddNodeV2NodeParamArgsDict']]]]] = None,
-                 remove_node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2RemoveNodeParamArgs', 'ClusterAddNodeV2RemoveNodeParamArgsDict']]]]] = None,
-                 should_skip_add_node: pulumi.Input[Optional[_builtins.bool]] = None,
-                 should_skip_pre_expand_checks: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 config_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2ConfigParamArgs', 'ClusterAddNodeV2ConfigParamArgsDict']]]]] = None,
+                 node_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2NodeParamArgs', 'ClusterAddNodeV2NodeParamArgsDict']]]]] = None,
+                 remove_node_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2RemoveNodeParamArgs', 'ClusterAddNodeV2RemoveNodeParamArgsDict']]]]] = None,
+                 should_skip_add_node: Optional[pulumi.Input[_builtins.bool]] = None,
+                 should_skip_pre_expand_checks: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -532,12 +532,12 @@ class ClusterAddNodeV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            config_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2ConfigParamArgs', 'ClusterAddNodeV2ConfigParamArgsDict']]]]] = None,
-            node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2NodeParamArgs', 'ClusterAddNodeV2NodeParamArgsDict']]]]] = None,
-            remove_node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2RemoveNodeParamArgs', 'ClusterAddNodeV2RemoveNodeParamArgsDict']]]]] = None,
-            should_skip_add_node: pulumi.Input[Optional[_builtins.bool]] = None,
-            should_skip_pre_expand_checks: pulumi.Input[Optional[_builtins.bool]] = None) -> 'ClusterAddNodeV2':
+            cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            config_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2ConfigParamArgs', 'ClusterAddNodeV2ConfigParamArgsDict']]]]] = None,
+            node_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2NodeParamArgs', 'ClusterAddNodeV2NodeParamArgsDict']]]]] = None,
+            remove_node_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2RemoveNodeParamArgs', 'ClusterAddNodeV2RemoveNodeParamArgsDict']]]]] = None,
+            should_skip_add_node: Optional[pulumi.Input[_builtins.bool]] = None,
+            should_skip_pre_expand_checks: Optional[pulumi.Input[_builtins.bool]] = None) -> 'ClusterAddNodeV2':
         """
         Get an existing ClusterAddNodeV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

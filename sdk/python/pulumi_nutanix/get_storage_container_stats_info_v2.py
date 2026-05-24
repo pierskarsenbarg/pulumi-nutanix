@@ -607,11 +607,11 @@ def get_storage_container_stats_info_v2(end_time: Optional[_builtins.str] = None
         storage_tier_ssd_usage_bytes=pulumi.get(__ret__, 'storage_tier_ssd_usage_bytes'),
         storage_usage_bytes=pulumi.get(__ret__, 'storage_usage_bytes'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_storage_container_stats_info_v2_output(end_time: pulumi.Input[Optional[_builtins.str]] = None,
-                                               ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                               sampling_interval: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
-                                               start_time: pulumi.Input[Optional[_builtins.str]] = None,
-                                               stat_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+def get_storage_container_stats_info_v2_output(end_time: Optional[pulumi.Input[_builtins.str]] = None,
+                                               ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                                               sampling_interval: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+                                               start_time: Optional[pulumi.Input[_builtins.str]] = None,
+                                               stat_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStorageContainerStatsInfoV2Result]:
     """
     Provides a datasource to Fetches the stats information of the Storage Container identified by {containerExtId}.

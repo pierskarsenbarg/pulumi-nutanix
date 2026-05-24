@@ -232,7 +232,7 @@ def get_ndb_tms_capability(time_machine_id: Optional[_builtins.str] = None,
         source=pulumi.get(__ret__, 'source'),
         time_machine_id=pulumi.get(__ret__, 'time_machine_id'),
         type=pulumi.get(__ret__, 'type'))
-def get_ndb_tms_capability_output(time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_ndb_tms_capability_output(time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbTmsCapabilityResult]:
     """
     Use this data source to access information about an existing resource.

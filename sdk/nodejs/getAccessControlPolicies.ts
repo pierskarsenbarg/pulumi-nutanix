@@ -88,5 +88,5 @@ export interface GetAccessControlPoliciesOutputArgs {
     /**
      * - The Access Control Policy kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetAccessControlPoliciesMetadataArgs>[] | undefined>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetAccessControlPoliciesMetadataArgs>[]>;
 }

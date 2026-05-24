@@ -111,19 +111,19 @@ export interface AddressGroupState {
     /**
      * - (ReadOnly) Address Group string
      */
-    addressGroupString?: pulumi.Input<string | undefined>;
+    addressGroupString?: pulumi.Input<string>;
     /**
      * - (Optional) Description of the service group
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * - (Required) list of IP address blocks with their prefix length
      */
-    ipAddressBlockLists?: pulumi.Input<pulumi.Input<inputs.AddressGroupIpAddressBlockList>[] | undefined>;
+    ipAddressBlockLists?: pulumi.Input<pulumi.Input<inputs.AddressGroupIpAddressBlockList>[]>;
     /**
      * - (Required) Name of the service group
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
 }
 
 /**
@@ -133,7 +133,7 @@ export interface AddressGroupArgs {
     /**
      * - (Optional) Description of the service group
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * - (Required) list of IP address blocks with their prefix length
      */
@@ -141,5 +141,5 @@ export interface AddressGroupArgs {
     /**
      * - (Required) Name of the service group
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
 }

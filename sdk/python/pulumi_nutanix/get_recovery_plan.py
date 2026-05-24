@@ -207,7 +207,7 @@ def get_recovery_plan(categories: Optional[Sequence[Union['GetRecoveryPlanCatego
     <!--End PulumiCodeChooser -->
 
 
-    :param _builtins.str recovery_plan_id: - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the Recovery Plan.
+    :param _builtins.str recovery_plan_id: - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`">`id`</span> of the Recovery Plan.
     """
     __args__ = dict()
     __args__['categories'] = categories
@@ -230,9 +230,9 @@ def get_recovery_plan(categories: Optional[Sequence[Union['GetRecoveryPlanCatego
         recovery_plan_name=pulumi.get(__ret__, 'recovery_plan_name'),
         stage_lists=pulumi.get(__ret__, 'stage_lists'),
         state=pulumi.get(__ret__, 'state'))
-def get_recovery_plan_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetRecoveryPlanCategoryArgs', 'GetRecoveryPlanCategoryArgsDict']]]]] = None,
-                             recovery_plan_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                             recovery_plan_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+def get_recovery_plan_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetRecoveryPlanCategoryArgs', 'GetRecoveryPlanCategoryArgsDict']]]]] = None,
+                             recovery_plan_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                             recovery_plan_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecoveryPlanResult]:
     """
     Describe a Nutanix Recovery Plan and its values (if it has them).
@@ -266,7 +266,7 @@ def get_recovery_plan_output(categories: pulumi.Input[Optional[Optional[Sequence
     <!--End PulumiCodeChooser -->
 
 
-    :param _builtins.str recovery_plan_id: - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the Recovery Plan.
+    :param _builtins.str recovery_plan_id: - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`">`id`</span> of the Recovery Plan.
     """
     __args__ = dict()
     __args__['categories'] = categories

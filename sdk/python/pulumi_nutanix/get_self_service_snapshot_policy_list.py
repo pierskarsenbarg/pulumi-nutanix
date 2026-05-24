@@ -126,7 +126,7 @@ def get_self_service_snapshot_policy_list(bp_name: Optional[_builtins.str] = Non
     :param _builtins.str bp_name: - (Optional) The UUID of the blueprint for which snapshot policies should be listed.
     :param _builtins.str bp_uuid: - (Optional) The name of the blueprint for which snapshot policies should be listed.
            
-           Both (<span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span>) are optional but atleast one of them to be provided for this data source to work.
+           Both (<span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`" pulumi-lang-hcl="`bp_name`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`" pulumi-lang-hcl="`bp_uuid`">`bpUuid`</span>) are optional but atleast one of them to be provided for this data source to work.
     :param _builtins.int length: - (Required) The number of snapshot policy records to return.
     :param _builtins.int offset: - (Required) The index of the first snapshot policy to return Used for pagination. Default value: 0
     """
@@ -145,10 +145,10 @@ def get_self_service_snapshot_policy_list(bp_name: Optional[_builtins.str] = Non
         length=pulumi.get(__ret__, 'length'),
         offset=pulumi.get(__ret__, 'offset'),
         policy_lists=pulumi.get(__ret__, 'policy_lists'))
-def get_self_service_snapshot_policy_list_output(bp_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                 bp_uuid: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                 length: pulumi.Input[Optional[_builtins.int]] = None,
-                                                 offset: pulumi.Input[Optional[_builtins.int]] = None,
+def get_self_service_snapshot_policy_list_output(bp_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                                 bp_uuid: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                                 length: Optional[pulumi.Input[_builtins.int]] = None,
+                                                 offset: Optional[pulumi.Input[_builtins.int]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSelfServiceSnapshotPolicyListResult]:
     """
     Describes snapshot policies present in a blueprint. Environment containing snapshot policy must be added in blueprint for this data source to work.
@@ -170,7 +170,7 @@ def get_self_service_snapshot_policy_list_output(bp_name: pulumi.Input[Optional[
     :param _builtins.str bp_name: - (Optional) The UUID of the blueprint for which snapshot policies should be listed.
     :param _builtins.str bp_uuid: - (Optional) The name of the blueprint for which snapshot policies should be listed.
            
-           Both (<span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span>) are optional but atleast one of them to be provided for this data source to work.
+           Both (<span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`" pulumi-lang-hcl="`bp_name`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`" pulumi-lang-hcl="`bp_uuid`">`bpUuid`</span>) are optional but atleast one of them to be provided for this data source to work.
     :param _builtins.int length: - (Required) The number of snapshot policy records to return.
     :param _builtins.int offset: - (Required) The index of the first snapshot policy to return Used for pagination. Default value: 0
     """

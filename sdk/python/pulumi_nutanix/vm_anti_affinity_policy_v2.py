@@ -20,12 +20,12 @@ __all__ = ['VmAntiAffinityPolicyV2Args', 'VmAntiAffinityPolicyV2']
 class VmAntiAffinityPolicyV2Args:
     def __init__(__self__, *,
                  categories: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None):
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a VmAntiAffinityPolicyV2 resource.
 
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
         :param pulumi.Input[_builtins.str] description: A description of the VM-VM Anti-Affinity policy.
         :param pulumi.Input[_builtins.str] name: The name of the VM-VM Anti-Affinity policy.
         """
@@ -39,7 +39,7 @@ class VmAntiAffinityPolicyV2Args:
     @pulumi.getter
     def categories(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
         """
-        List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+        List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
         """
         return pulumi.get(self, "categories")
 
@@ -49,47 +49,47 @@ class VmAntiAffinityPolicyV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         A description of the VM-VM Anti-Affinity policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The name of the VM-VM Anti-Affinity policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _VmAntiAffinityPolicyV2State:
     def __init__(__self__, *,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 create_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 created_by: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 num_compliant_vms: pulumi.Input[Optional[_builtins.int]] = None,
-                 num_non_compliant_vms: pulumi.Input[Optional[_builtins.int]] = None,
-                 num_pending_vms: pulumi.Input[Optional[_builtins.int]] = None,
-                 update_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 updated_by: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 create_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 created_by: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 num_compliant_vms: Optional[pulumi.Input[_builtins.int]] = None,
+                 num_non_compliant_vms: Optional[pulumi.Input[_builtins.int]] = None,
+                 num_pending_vms: Optional[pulumi.Input[_builtins.int]] = None,
+                 update_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 updated_by: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering VmAntiAffinityPolicyV2 resources.
 
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
         :param pulumi.Input[_builtins.str] create_time: The timestamp when the policy was created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] created_by: Information about the entity that created the policy.
         :param pulumi.Input[_builtins.str] description: A description of the VM-VM Anti-Affinity policy.
@@ -126,134 +126,134 @@ class _VmAntiAffinityPolicyV2State:
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+        List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter(name="createTime")
-    def create_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def create_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The timestamp when the policy was created.
         """
         return pulumi.get(self, "create_time")
 
     @create_time.setter
-    def create_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def create_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "create_time", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def created_by(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Information about the entity that created the policy.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def created_by(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         A description of the VM-VM Anti-Affinity policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The external identifier of the policy.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The name of the VM-VM Anti-Affinity policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="numCompliantVms")
-    def num_compliant_vms(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def num_compliant_vms(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         Number of compliant VMs which are part of the VM-VM anti-affinity policy.
         """
         return pulumi.get(self, "num_compliant_vms")
 
     @num_compliant_vms.setter
-    def num_compliant_vms(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def num_compliant_vms(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "num_compliant_vms", value)
 
     @_builtins.property
     @pulumi.getter(name="numNonCompliantVms")
-    def num_non_compliant_vms(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def num_non_compliant_vms(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         Number of non-compliant VMs which are part of the VM-VM anti-affinity policy.
         """
         return pulumi.get(self, "num_non_compliant_vms")
 
     @num_non_compliant_vms.setter
-    def num_non_compliant_vms(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def num_non_compliant_vms(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "num_non_compliant_vms", value)
 
     @_builtins.property
     @pulumi.getter(name="numPendingVms")
-    def num_pending_vms(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def num_pending_vms(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         Number of VMs with compliance state as pending, which are part of the VM-VM anti-affinity policy.
         """
         return pulumi.get(self, "num_pending_vms")
 
     @num_pending_vms.setter
-    def num_pending_vms(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def num_pending_vms(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "num_pending_vms", value)
 
     @_builtins.property
     @pulumi.getter(name="updateTime")
-    def update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def update_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The timestamp when the policy was last updated.
         """
         return pulumi.get(self, "update_time")
 
     @update_time.setter
-    def update_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def update_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "update_time", value)
 
     @_builtins.property
     @pulumi.getter(name="updatedBy")
-    def updated_by(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def updated_by(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Information about the entity that last updated the policy.
         """
         return pulumi.get(self, "updated_by")
 
     @updated_by.setter
-    def updated_by(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def updated_by(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "updated_by", value)
 
 
@@ -263,9 +263,9 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to create, read, update, and delete VM-VM Anti-Affinity policies. VM-VM Anti-Affinity policies ensure that VMs in specified categories are spread across different hosts for high availability and fault tolerance. This helps prevent single points of failure by distributing VMs across the cluster. For more information on VM-VM Anti-Affinity policies, see the [AHV Administration Guide](https://portal.nutanix.com/page/documents/details?targetId=AHV-Admin-Guide-v11_0:ahv-anti-affinity-policies-c.html).
@@ -308,7 +308,7 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
         :param pulumi.Input[_builtins.str] description: A description of the VM-VM Anti-Affinity policy.
         :param pulumi.Input[_builtins.str] name: The name of the VM-VM Anti-Affinity policy.
         """
@@ -372,9 +372,9 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -407,17 +407,17 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            create_time: pulumi.Input[Optional[_builtins.str]] = None,
-            created_by: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: pulumi.Input[Optional[_builtins.str]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            name: pulumi.Input[Optional[_builtins.str]] = None,
-            num_compliant_vms: pulumi.Input[Optional[_builtins.int]] = None,
-            num_non_compliant_vms: pulumi.Input[Optional[_builtins.int]] = None,
-            num_pending_vms: pulumi.Input[Optional[_builtins.int]] = None,
-            update_time: pulumi.Input[Optional[_builtins.str]] = None,
-            updated_by: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> 'VmAntiAffinityPolicyV2':
+            categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            create_time: Optional[pulumi.Input[_builtins.str]] = None,
+            created_by: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            name: Optional[pulumi.Input[_builtins.str]] = None,
+            num_compliant_vms: Optional[pulumi.Input[_builtins.int]] = None,
+            num_non_compliant_vms: Optional[pulumi.Input[_builtins.int]] = None,
+            num_pending_vms: Optional[pulumi.Input[_builtins.int]] = None,
+            update_time: Optional[pulumi.Input[_builtins.str]] = None,
+            updated_by: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> 'VmAntiAffinityPolicyV2':
         """
         Get an existing VmAntiAffinityPolicyV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -425,7 +425,7 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
         :param pulumi.Input[_builtins.str] create_time: The timestamp when the policy was created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] created_by: Information about the entity that created the policy.
         :param pulumi.Input[_builtins.str] description: A description of the VM-VM Anti-Affinity policy.
@@ -458,7 +458,7 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
     @pulumi.getter
     def categories(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+        List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
         """
         return pulumi.get(self, "categories")
 

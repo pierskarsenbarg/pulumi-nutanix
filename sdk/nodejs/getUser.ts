@@ -170,15 +170,15 @@ export interface GetUserOutputArgs {
     /**
      * - (Optional) Categories for the Access Control Policy.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetUserCategoryArgs>[] | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetUserCategoryArgs>[]>;
     /**
      * - (Optional) The reference to a user.
      */
-    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) The reference to a project.
      */
-    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
-    userId?: pulumi.Input<string | undefined>;
-    userName?: pulumi.Input<string | undefined>;
+    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    userId?: pulumi.Input<string>;
+    userName?: pulumi.Input<string>;
 }

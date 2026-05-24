@@ -33,7 +33,7 @@ export function getFloatingIps(args?: GetFloatingIpsArgs, opts?: pulumi.InvokeOp
  */
 export interface GetFloatingIpsArgs {
     /**
-     * - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
+     * - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp " pulumi-lang-hcl=" floating_ip "> floatingIp </span>kind metadata.
      */
     metadatas?: inputs.GetFloatingIpsMetadata[];
 }
@@ -55,7 +55,7 @@ export interface GetFloatingIpsResult {
      */
     readonly id: string;
     /**
-     * - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
+     * - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp " pulumi-lang-hcl=" floating_ip "> floatingIp </span>kind metadata.
      */
     readonly metadatas: outputs.GetFloatingIpsMetadata[];
 }
@@ -86,7 +86,7 @@ export function getFloatingIpsOutput(args?: GetFloatingIpsOutputArgs, opts?: pul
  */
 export interface GetFloatingIpsOutputArgs {
     /**
-     * - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
+     * - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp " pulumi-lang-hcl=" floating_ip "> floatingIp </span>kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetFloatingIpsMetadataArgs>[] | undefined>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetFloatingIpsMetadataArgs>[]>;
 }

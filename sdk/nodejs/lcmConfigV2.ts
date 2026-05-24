@@ -59,7 +59,7 @@ export class LcmConfigV2 extends pulumi.CustomResource {
     }
 
     /**
-     * The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+     * The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
      */
     declare public readonly autoInventorySchedule: pulumi.Output<string | undefined>;
     /**
@@ -132,36 +132,36 @@ export class LcmConfigV2 extends pulumi.CustomResource {
  */
 export interface LcmConfigV2State {
     /**
-     * The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+     * The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
      */
-    autoInventorySchedule?: pulumi.Input<string | undefined>;
+    autoInventorySchedule?: pulumi.Input<string>;
     /**
      * This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
      */
-    connectivityType?: pulumi.Input<string | undefined>;
-    extId?: pulumi.Input<string | undefined>;
+    connectivityType?: pulumi.Input<string>;
+    extId?: pulumi.Input<string>;
     /**
      * Indicates if LCM is enabled to auto-upgrade products. The default value is False.
      *
      * See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
      */
-    hasModuleAutoUpgradeEnabled?: pulumi.Input<boolean | undefined>;
+    hasModuleAutoUpgradeEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates if the auto inventory operation is enabled. The default value is set to False.
      */
-    isAutoInventoryEnabled?: pulumi.Input<boolean | undefined>;
+    isAutoInventoryEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates if the LCM URL has HTTPS enabled. The default value is True.
      */
-    isHttpsEnabled?: pulumi.Input<boolean | undefined>;
+    isHttpsEnabled?: pulumi.Input<boolean>;
     /**
      * URL of the LCM repository.
      */
-    url?: pulumi.Input<string | undefined>;
+    url?: pulumi.Input<string>;
     /**
      * Cluster uuid on which the resource is present or operation is being performed.
      */
-    xClusterId?: pulumi.Input<string | undefined>;
+    xClusterId?: pulumi.Input<string>;
 }
 
 /**
@@ -169,33 +169,33 @@ export interface LcmConfigV2State {
  */
 export interface LcmConfigV2Args {
     /**
-     * The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+     * The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
      */
-    autoInventorySchedule?: pulumi.Input<string | undefined>;
+    autoInventorySchedule?: pulumi.Input<string>;
     /**
      * This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
      */
-    connectivityType?: pulumi.Input<string | undefined>;
+    connectivityType?: pulumi.Input<string>;
     /**
      * Indicates if LCM is enabled to auto-upgrade products. The default value is False.
      *
      * See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
      */
-    hasModuleAutoUpgradeEnabled?: pulumi.Input<boolean | undefined>;
+    hasModuleAutoUpgradeEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates if the auto inventory operation is enabled. The default value is set to False.
      */
-    isAutoInventoryEnabled?: pulumi.Input<boolean | undefined>;
+    isAutoInventoryEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates if the LCM URL has HTTPS enabled. The default value is True.
      */
-    isHttpsEnabled?: pulumi.Input<boolean | undefined>;
+    isHttpsEnabled?: pulumi.Input<boolean>;
     /**
      * URL of the LCM repository.
      */
-    url?: pulumi.Input<string | undefined>;
+    url?: pulumi.Input<string>;
     /**
      * Cluster uuid on which the resource is present or operation is being performed.
      */
-    xClusterId?: pulumi.Input<string | undefined>;
+    xClusterId?: pulumi.Input<string>;
 }

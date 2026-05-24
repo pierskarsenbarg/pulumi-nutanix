@@ -88,5 +88,5 @@ export interface GetRolesOutputArgs {
     /**
      * - The role kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetRolesMetadataArgs>[] | undefined>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetRolesMetadataArgs>[]>;
 }

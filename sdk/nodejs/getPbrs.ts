@@ -88,5 +88,5 @@ export interface GetPbrsOutputArgs {
     /**
      * - The routing policies kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetPbrsMetadataArgs>[] | undefined>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetPbrsMetadataArgs>[]>;
 }

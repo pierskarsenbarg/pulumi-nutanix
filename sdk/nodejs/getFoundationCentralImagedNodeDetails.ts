@@ -228,9 +228,9 @@ export interface GetFoundationCentralImagedNodeDetailsOutputArgs {
     /**
      * Name of the cvm interface having ipv6 address.
      */
-    ipv6Interface?: pulumi.Input<string | undefined>;
+    ipv6Interface?: pulumi.Input<string>;
     /**
      * Version of the node used for CAS.
      */
-    objectVersion?: pulumi.Input<number | undefined>;
+    objectVersion?: pulumi.Input<number>;
 }

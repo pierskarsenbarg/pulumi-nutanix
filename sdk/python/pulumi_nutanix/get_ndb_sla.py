@@ -278,7 +278,7 @@ def get_ndb_sla(sla_id: Optional[_builtins.str] = None,
     <!--End PulumiCodeChooser -->
 
 
-    :param _builtins.str sla_id: and <span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`">`slaName`</span> are mutually exclusive.
+    :param _builtins.str sla_id: and <span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`" pulumi-lang-hcl="`sla_name`">`slaName`</span> are mutually exclusive.
     :param _builtins.str sla_name: SLA Name for query
     """
     __args__ = dict()
@@ -307,8 +307,8 @@ def get_ndb_sla(sla_id: Optional[_builtins.str] = None,
         unique_name=pulumi.get(__ret__, 'unique_name'),
         weekly_retention=pulumi.get(__ret__, 'weekly_retention'),
         yearly_retention=pulumi.get(__ret__, 'yearly_retention'))
-def get_ndb_sla_output(sla_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       sla_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+def get_ndb_sla_output(sla_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                       sla_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbSlaResult]:
     """
     Describes a SLA in Nutanix Database Service
@@ -326,7 +326,7 @@ def get_ndb_sla_output(sla_id: pulumi.Input[Optional[Optional[_builtins.str]]] =
     <!--End PulumiCodeChooser -->
 
 
-    :param _builtins.str sla_id: and <span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`">`slaName`</span> are mutually exclusive.
+    :param _builtins.str sla_id: and <span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`" pulumi-lang-hcl="`sla_name`">`slaName`</span> are mutually exclusive.
     :param _builtins.str sla_name: SLA Name for query
     """
     __args__ = dict()

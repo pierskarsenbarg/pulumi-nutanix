@@ -86,7 +86,7 @@ export class NdbStretchedVlan extends pulumi.CustomResource {
     /**
      * Update the stretched VLAN Gateway and Subnet Mask IP address
      * * `metadata.gateway`: Update the gateway of stretched vlan
-     * * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "> subnetMask </span>of stretched vlan
+     * * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask " pulumi-lang-hcl=" subnet_mask "> subnetMask </span>of stretched vlan
      */
     declare public readonly metadata: pulumi.Output<outputs.NdbStretchedVlanMetadata>;
     /**
@@ -152,29 +152,29 @@ export interface NdbStretchedVlanState {
     /**
      * Description of stretched vlan
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * Update the stretched VLAN Gateway and Subnet Mask IP address
      * * `metadata.gateway`: Update the gateway of stretched vlan
-     * * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "> subnetMask </span>of stretched vlan
+     * * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask " pulumi-lang-hcl=" subnet_mask "> subnetMask </span>of stretched vlan
      */
-    metadata?: pulumi.Input<inputs.NdbStretchedVlanMetadata | undefined>;
+    metadata?: pulumi.Input<inputs.NdbStretchedVlanMetadata>;
     /**
      * name for the stretched VLAN
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
      */
-    type?: pulumi.Input<string | undefined>;
+    type?: pulumi.Input<string>;
     /**
      * list of vlan ids to be added in NDB
      */
-    vlanIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    vlanIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * properties of vlans
      */
-    vlansLists?: pulumi.Input<pulumi.Input<inputs.NdbStretchedVlanVlansList>[] | undefined>;
+    vlansLists?: pulumi.Input<pulumi.Input<inputs.NdbStretchedVlanVlansList>[]>;
 }
 
 /**
@@ -184,17 +184,17 @@ export interface NdbStretchedVlanArgs {
     /**
      * Description of stretched vlan
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * Update the stretched VLAN Gateway and Subnet Mask IP address
      * * `metadata.gateway`: Update the gateway of stretched vlan
-     * * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "> subnetMask </span>of stretched vlan
+     * * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask " pulumi-lang-hcl=" subnet_mask "> subnetMask </span>of stretched vlan
      */
-    metadata?: pulumi.Input<inputs.NdbStretchedVlanMetadata | undefined>;
+    metadata?: pulumi.Input<inputs.NdbStretchedVlanMetadata>;
     /**
      * name for the stretched VLAN
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
      */

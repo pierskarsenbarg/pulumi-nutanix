@@ -23,23 +23,23 @@ class NdbRegisterDbserverArgs:
     def __init__(__self__, *,
                  database_type: pulumi.Input[_builtins.str],
                  vm_ip: pulumi.Input[_builtins.str],
-                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverCredentialArgs']]]] = None,
-                 delete: pulumi.Input[Optional[_builtins.bool]] = None,
-                 delete_vgs: pulumi.Input[Optional[_builtins.bool]] = None,
-                 delete_vm_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 forced_install: pulumi.Input[Optional[_builtins.bool]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 nxcluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 password: pulumi.Input[Optional[_builtins.str]] = None,
-                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverPostgresDatabaseArgs']]]] = None,
-                 remove: pulumi.Input[Optional[_builtins.bool]] = None,
-                 soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
-                 ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverTagArgs']]]] = None,
-                 update_name_description_in_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
-                 username: pulumi.Input[Optional[_builtins.str]] = None,
-                 working_directory: pulumi.Input[Optional[_builtins.str]] = None):
+                 credentials: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverCredentialArgs']]]] = None,
+                 delete: Optional[pulumi.Input[_builtins.bool]] = None,
+                 delete_vgs: Optional[pulumi.Input[_builtins.bool]] = None,
+                 delete_vm_snapshots: Optional[pulumi.Input[_builtins.bool]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 forced_install: Optional[pulumi.Input[_builtins.bool]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 nxcluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 password: Optional[pulumi.Input[_builtins.str]] = None,
+                 postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverPostgresDatabaseArgs']]]] = None,
+                 remove: Optional[pulumi.Input[_builtins.bool]] = None,
+                 soft_remove: Optional[pulumi.Input[_builtins.bool]] = None,
+                 ssh_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverTagArgs']]]] = None,
+                 update_name_description_in_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
+                 username: Optional[pulumi.Input[_builtins.str]] = None,
+                 working_directory: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbRegisterDbserver resource.
 
@@ -124,240 +124,240 @@ class NdbRegisterDbserverArgs:
 
     @_builtins.property
     @pulumi.getter
-    def credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverCredentialArgs']]]]:
+    def credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverCredentialArgs']]]]:
         return pulumi.get(self, "credentials")
 
     @credentials.setter
-    def credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverCredentialArgs']]]]):
+    def credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverCredentialArgs']]]]):
         pulumi.set(self, "credentials", value)
 
     @_builtins.property
     @pulumi.getter
-    def delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - (Optional) Delete the VM and associated storage. Default value is false
         """
         return pulumi.get(self, "delete")
 
     @delete.setter
-    def delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "delete", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteVgs")
-    def delete_vgs(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def delete_vgs(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - (Optional) Delete volume grous. Default value is true
         """
         return pulumi.get(self, "delete_vgs")
 
     @delete_vgs.setter
-    def delete_vgs(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def delete_vgs(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "delete_vgs", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteVmSnapshots")
-    def delete_vm_snapshots(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def delete_vm_snapshots(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - (Optional) Delete the vm snapshots. Default is true
         """
         return pulumi.get(self, "delete_vm_snapshots")
 
     @delete_vm_snapshots.setter
-    def delete_vm_snapshots(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def delete_vm_snapshots(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "delete_vm_snapshots", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         description of db server vm. Should be used in update Method only .
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="forcedInstall")
-    def forced_install(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def forced_install(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         forced install the packages. Default is true
         """
         return pulumi.get(self, "forced_install")
 
     @forced_install.setter
-    def forced_install(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def forced_install(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "forced_install", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Name of db server vm. Should be used in Update Method only.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nxclusterId")
-    def nxcluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def nxcluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         cluster on which you want to register the database server VM.
         """
         return pulumi.get(self, "nxcluster_id")
 
     @nxcluster_id.setter
-    def nxcluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def nxcluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "nxcluster_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         password of the NDB drive user account. Conflicts with ssh_key.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="postgresDatabases")
-    def postgres_databases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverPostgresDatabaseArgs']]]]:
+    def postgres_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverPostgresDatabaseArgs']]]]:
         """
         postgres info for dbserver
         """
         return pulumi.get(self, "postgres_databases")
 
     @postgres_databases.setter
-    def postgres_databases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverPostgresDatabaseArgs']]]]):
+    def postgres_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverPostgresDatabaseArgs']]]]):
         pulumi.set(self, "postgres_databases", value)
 
     @_builtins.property
     @pulumi.getter
-    def remove(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def remove(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - (Optional) Unregister the database from NDB. Default value is true
         """
         return pulumi.get(self, "remove")
 
     @remove.setter
-    def remove(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def remove(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "remove", value)
 
     @_builtins.property
     @pulumi.getter(name="softRemove")
-    def soft_remove(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def soft_remove(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - (Optional) Soft remove. Default will be false
         """
         return pulumi.get(self, "soft_remove")
 
     @soft_remove.setter
-    def soft_remove(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def soft_remove(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "soft_remove", value)
 
     @_builtins.property
     @pulumi.getter(name="sshKey")
-    def ssh_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ssh_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         the private key. Conflicts with password.
         """
         return pulumi.get(self, "ssh_key")
 
     @ssh_key.setter
-    def ssh_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ssh_key(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ssh_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverTagArgs']]]]:
+    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverTagArgs']]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverTagArgs']]]]):
+    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="updateNameDescriptionInCluster")
-    def update_name_description_in_cluster(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def update_name_description_in_cluster(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         Updates the name and description in cluster. Should be used in Update Method only.
         """
         return pulumi.get(self, "update_name_description_in_cluster")
 
     @update_name_description_in_cluster.setter
-    def update_name_description_in_cluster(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def update_name_description_in_cluster(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "update_name_description_in_cluster", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         username of the NDB drive user account that has sudo access
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "username", value)
 
     @_builtins.property
     @pulumi.getter(name="workingDirectory")
-    def working_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def working_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         working directory of postgres. Default is "/tmp"
         """
         return pulumi.get(self, "working_directory")
 
     @working_directory.setter
-    def working_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def working_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "working_directory", value)
 
 
 @pulumi.input_type
 class _NdbRegisterDbserverState:
     def __init__(__self__, *,
-                 client_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverCredentialArgs']]]] = None,
-                 database_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 dbserver_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 delete: pulumi.Input[Optional[_builtins.bool]] = None,
-                 delete_vgs: pulumi.Input[Optional[_builtins.bool]] = None,
-                 delete_vm_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 era_created: pulumi.Input[Optional[_builtins.bool]] = None,
-                 era_drive_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 era_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 forced_install: pulumi.Input[Optional[_builtins.bool]] = None,
-                 fqdns: pulumi.Input[Optional[_builtins.str]] = None,
-                 internal: pulumi.Input[Optional[_builtins.bool]] = None,
-                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 mac_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 nxcluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 password: pulumi.Input[Optional[_builtins.str]] = None,
-                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverPostgresDatabaseArgs']]]] = None,
-                 properties: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverPropertyArgs']]]] = None,
-                 remove: pulumi.Input[Optional[_builtins.bool]] = None,
-                 soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
-                 ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 status: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverTagArgs']]]] = None,
-                 type: pulumi.Input[Optional[_builtins.str]] = None,
-                 update_name_description_in_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
-                 username: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_ip: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_timezone: pulumi.Input[Optional[_builtins.str]] = None,
-                 working_directory: pulumi.Input[Optional[_builtins.str]] = None):
+                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 credentials: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverCredentialArgs']]]] = None,
+                 database_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 dbserver_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 delete: Optional[pulumi.Input[_builtins.bool]] = None,
+                 delete_vgs: Optional[pulumi.Input[_builtins.bool]] = None,
+                 delete_vm_snapshots: Optional[pulumi.Input[_builtins.bool]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 era_created: Optional[pulumi.Input[_builtins.bool]] = None,
+                 era_drive_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 era_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 forced_install: Optional[pulumi.Input[_builtins.bool]] = None,
+                 fqdns: Optional[pulumi.Input[_builtins.str]] = None,
+                 internal: Optional[pulumi.Input[_builtins.bool]] = None,
+                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 mac_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 nxcluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 password: Optional[pulumi.Input[_builtins.str]] = None,
+                 postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverPostgresDatabaseArgs']]]] = None,
+                 properties: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverPropertyArgs']]]] = None,
+                 remove: Optional[pulumi.Input[_builtins.bool]] = None,
+                 soft_remove: Optional[pulumi.Input[_builtins.bool]] = None,
+                 ssh_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverTagArgs']]]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 update_name_description_in_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
+                 username: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 working_directory: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbRegisterDbserver resources.
 
@@ -451,362 +451,362 @@ class _NdbRegisterDbserverState:
 
     @_builtins.property
     @pulumi.getter(name="clientId")
-    def client_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def client_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "client_id")
 
     @client_id.setter
-    def client_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def client_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "client_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverCredentialArgs']]]]:
+    def credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverCredentialArgs']]]]:
         return pulumi.get(self, "credentials")
 
     @credentials.setter
-    def credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverCredentialArgs']]]]):
+    def credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverCredentialArgs']]]]):
         pulumi.set(self, "credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseType")
-    def database_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def database_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         database type i.e. postgres_database
         """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
-    def database_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def database_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "database_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dbserverClusterId")
-    def dbserver_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def dbserver_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "dbserver_cluster_id")
 
     @dbserver_cluster_id.setter
-    def dbserver_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def dbserver_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "dbserver_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - (Optional) Delete the VM and associated storage. Default value is false
         """
         return pulumi.get(self, "delete")
 
     @delete.setter
-    def delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "delete", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteVgs")
-    def delete_vgs(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def delete_vgs(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - (Optional) Delete volume grous. Default value is true
         """
         return pulumi.get(self, "delete_vgs")
 
     @delete_vgs.setter
-    def delete_vgs(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def delete_vgs(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "delete_vgs", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteVmSnapshots")
-    def delete_vm_snapshots(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def delete_vm_snapshots(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - (Optional) Delete the vm snapshots. Default is true
         """
         return pulumi.get(self, "delete_vm_snapshots")
 
     @delete_vm_snapshots.setter
-    def delete_vm_snapshots(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def delete_vm_snapshots(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "delete_vm_snapshots", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         description of db server vm. Should be used in update Method only .
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="eraCreated")
-    def era_created(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def era_created(self) -> Optional[pulumi.Input[_builtins.bool]]:
         return pulumi.get(self, "era_created")
 
     @era_created.setter
-    def era_created(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def era_created(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "era_created", value)
 
     @_builtins.property
     @pulumi.getter(name="eraDriveId")
-    def era_drive_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def era_drive_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "era_drive_id")
 
     @era_drive_id.setter
-    def era_drive_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def era_drive_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "era_drive_id", value)
 
     @_builtins.property
     @pulumi.getter(name="eraVersion")
-    def era_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def era_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "era_version")
 
     @era_version.setter
-    def era_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def era_version(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "era_version", value)
 
     @_builtins.property
     @pulumi.getter(name="forcedInstall")
-    def forced_install(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def forced_install(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         forced install the packages. Default is true
         """
         return pulumi.get(self, "forced_install")
 
     @forced_install.setter
-    def forced_install(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def forced_install(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "forced_install", value)
 
     @_builtins.property
     @pulumi.getter
-    def fqdns(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def fqdns(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "fqdns")
 
     @fqdns.setter
-    def fqdns(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def fqdns(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "fqdns", value)
 
     @_builtins.property
     @pulumi.getter
-    def internal(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def internal(self) -> Optional[pulumi.Input[_builtins.bool]]:
         return pulumi.get(self, "internal")
 
     @internal.setter
-    def internal(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def internal(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "internal", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddresses")
-    def ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "ip_addresses")
 
     @ip_addresses.setter
-    def ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="macAddresses")
-    def mac_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def mac_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "mac_addresses")
 
     @mac_addresses.setter
-    def mac_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def mac_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "mac_addresses", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Name of db server vm. Should be used in Update Method only.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nxclusterId")
-    def nxcluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def nxcluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         cluster on which you want to register the database server VM.
         """
         return pulumi.get(self, "nxcluster_id")
 
     @nxcluster_id.setter
-    def nxcluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def nxcluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "nxcluster_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         password of the NDB drive user account. Conflicts with ssh_key.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="postgresDatabases")
-    def postgres_databases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverPostgresDatabaseArgs']]]]:
+    def postgres_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverPostgresDatabaseArgs']]]]:
         """
         postgres info for dbserver
         """
         return pulumi.get(self, "postgres_databases")
 
     @postgres_databases.setter
-    def postgres_databases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverPostgresDatabaseArgs']]]]):
+    def postgres_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverPostgresDatabaseArgs']]]]):
         pulumi.set(self, "postgres_databases", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverPropertyArgs']]]]:
+    def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverPropertyArgs']]]]:
         """
         List of all the properties
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverPropertyArgs']]]]):
+    def properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverPropertyArgs']]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter
-    def remove(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def remove(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - (Optional) Unregister the database from NDB. Default value is true
         """
         return pulumi.get(self, "remove")
 
     @remove.setter
-    def remove(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def remove(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "remove", value)
 
     @_builtins.property
     @pulumi.getter(name="softRemove")
-    def soft_remove(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def soft_remove(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - (Optional) Soft remove. Default will be false
         """
         return pulumi.get(self, "soft_remove")
 
     @soft_remove.setter
-    def soft_remove(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def soft_remove(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "soft_remove", value)
 
     @_builtins.property
     @pulumi.getter(name="sshKey")
-    def ssh_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ssh_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         the private key. Conflicts with password.
         """
         return pulumi.get(self, "ssh_key")
 
     @ssh_key.setter
-    def ssh_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ssh_key(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ssh_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverTagArgs']]]]:
+    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverTagArgs']]]]:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDbserverTagArgs']]]]):
+    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="updateNameDescriptionInCluster")
-    def update_name_description_in_cluster(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def update_name_description_in_cluster(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         Updates the name and description in cluster. Should be used in Update Method only.
         """
         return pulumi.get(self, "update_name_description_in_cluster")
 
     @update_name_description_in_cluster.setter
-    def update_name_description_in_cluster(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def update_name_description_in_cluster(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "update_name_description_in_cluster", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         username of the NDB drive user account that has sudo access
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "username", value)
 
     @_builtins.property
     @pulumi.getter(name="vmClusterName")
-    def vm_cluster_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def vm_cluster_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "vm_cluster_name")
 
     @vm_cluster_name.setter
-    def vm_cluster_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def vm_cluster_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vm_cluster_name", value)
 
     @_builtins.property
     @pulumi.getter(name="vmClusterUuid")
-    def vm_cluster_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def vm_cluster_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "vm_cluster_uuid")
 
     @vm_cluster_uuid.setter
-    def vm_cluster_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def vm_cluster_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vm_cluster_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="vmIp")
-    def vm_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def vm_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         IP address of the database server VM
         """
         return pulumi.get(self, "vm_ip")
 
     @vm_ip.setter
-    def vm_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def vm_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vm_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="vmTimezone")
-    def vm_timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def vm_timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "vm_timezone")
 
     @vm_timezone.setter
-    def vm_timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def vm_timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vm_timezone", value)
 
     @_builtins.property
     @pulumi.getter(name="workingDirectory")
-    def working_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def working_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         working directory of postgres. Default is "/tmp"
         """
         return pulumi.get(self, "working_directory")
 
     @working_directory.setter
-    def working_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def working_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "working_directory", value)
 
 
@@ -816,25 +816,25 @@ class NdbRegisterDbserver(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverCredentialArgs', 'NdbRegisterDbserverCredentialArgsDict']]]]] = None,
-                 database_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 delete: pulumi.Input[Optional[_builtins.bool]] = None,
-                 delete_vgs: pulumi.Input[Optional[_builtins.bool]] = None,
-                 delete_vm_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 forced_install: pulumi.Input[Optional[_builtins.bool]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 nxcluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 password: pulumi.Input[Optional[_builtins.str]] = None,
-                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverPostgresDatabaseArgs', 'NdbRegisterDbserverPostgresDatabaseArgsDict']]]]] = None,
-                 remove: pulumi.Input[Optional[_builtins.bool]] = None,
-                 soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
-                 ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverTagArgs', 'NdbRegisterDbserverTagArgsDict']]]]] = None,
-                 update_name_description_in_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
-                 username: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_ip: pulumi.Input[Optional[_builtins.str]] = None,
-                 working_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDbserverCredentialArgs', 'NdbRegisterDbserverCredentialArgsDict']]]]] = None,
+                 database_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 delete: Optional[pulumi.Input[_builtins.bool]] = None,
+                 delete_vgs: Optional[pulumi.Input[_builtins.bool]] = None,
+                 delete_vm_snapshots: Optional[pulumi.Input[_builtins.bool]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 forced_install: Optional[pulumi.Input[_builtins.bool]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 nxcluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 password: Optional[pulumi.Input[_builtins.str]] = None,
+                 postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDbserverPostgresDatabaseArgs', 'NdbRegisterDbserverPostgresDatabaseArgsDict']]]]] = None,
+                 remove: Optional[pulumi.Input[_builtins.bool]] = None,
+                 soft_remove: Optional[pulumi.Input[_builtins.bool]] = None,
+                 ssh_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDbserverTagArgs', 'NdbRegisterDbserverTagArgsDict']]]]] = None,
+                 update_name_description_in_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
+                 username: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 working_directory: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to register database server VMs based on the input parameters. For 1.8.0 release, only postgress database type is qualified and officially supported.
@@ -885,25 +885,25 @@ class NdbRegisterDbserver(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverCredentialArgs', 'NdbRegisterDbserverCredentialArgsDict']]]]] = None,
-                 database_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 delete: pulumi.Input[Optional[_builtins.bool]] = None,
-                 delete_vgs: pulumi.Input[Optional[_builtins.bool]] = None,
-                 delete_vm_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 forced_install: pulumi.Input[Optional[_builtins.bool]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 nxcluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 password: pulumi.Input[Optional[_builtins.str]] = None,
-                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverPostgresDatabaseArgs', 'NdbRegisterDbserverPostgresDatabaseArgsDict']]]]] = None,
-                 remove: pulumi.Input[Optional[_builtins.bool]] = None,
-                 soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
-                 ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverTagArgs', 'NdbRegisterDbserverTagArgsDict']]]]] = None,
-                 update_name_description_in_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
-                 username: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_ip: pulumi.Input[Optional[_builtins.str]] = None,
-                 working_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDbserverCredentialArgs', 'NdbRegisterDbserverCredentialArgsDict']]]]] = None,
+                 database_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 delete: Optional[pulumi.Input[_builtins.bool]] = None,
+                 delete_vgs: Optional[pulumi.Input[_builtins.bool]] = None,
+                 delete_vm_snapshots: Optional[pulumi.Input[_builtins.bool]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 forced_install: Optional[pulumi.Input[_builtins.bool]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 nxcluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 password: Optional[pulumi.Input[_builtins.str]] = None,
+                 postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDbserverPostgresDatabaseArgs', 'NdbRegisterDbserverPostgresDatabaseArgsDict']]]]] = None,
+                 remove: Optional[pulumi.Input[_builtins.bool]] = None,
+                 soft_remove: Optional[pulumi.Input[_builtins.bool]] = None,
+                 ssh_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDbserverTagArgs', 'NdbRegisterDbserverTagArgsDict']]]]] = None,
+                 update_name_description_in_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
+                 username: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 working_directory: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -963,40 +963,40 @@ class NdbRegisterDbserver(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            client_id: pulumi.Input[Optional[_builtins.str]] = None,
-            credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverCredentialArgs', 'NdbRegisterDbserverCredentialArgsDict']]]]] = None,
-            database_type: pulumi.Input[Optional[_builtins.str]] = None,
-            dbserver_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-            delete: pulumi.Input[Optional[_builtins.bool]] = None,
-            delete_vgs: pulumi.Input[Optional[_builtins.bool]] = None,
-            delete_vm_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
-            description: pulumi.Input[Optional[_builtins.str]] = None,
-            era_created: pulumi.Input[Optional[_builtins.bool]] = None,
-            era_drive_id: pulumi.Input[Optional[_builtins.str]] = None,
-            era_version: pulumi.Input[Optional[_builtins.str]] = None,
-            forced_install: pulumi.Input[Optional[_builtins.bool]] = None,
-            fqdns: pulumi.Input[Optional[_builtins.str]] = None,
-            internal: pulumi.Input[Optional[_builtins.bool]] = None,
-            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            mac_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            name: pulumi.Input[Optional[_builtins.str]] = None,
-            nxcluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-            password: pulumi.Input[Optional[_builtins.str]] = None,
-            postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverPostgresDatabaseArgs', 'NdbRegisterDbserverPostgresDatabaseArgsDict']]]]] = None,
-            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverPropertyArgs', 'NdbRegisterDbserverPropertyArgsDict']]]]] = None,
-            remove: pulumi.Input[Optional[_builtins.bool]] = None,
-            soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
-            ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
-            status: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverTagArgs', 'NdbRegisterDbserverTagArgsDict']]]]] = None,
-            type: pulumi.Input[Optional[_builtins.str]] = None,
-            update_name_description_in_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
-            username: pulumi.Input[Optional[_builtins.str]] = None,
-            vm_cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
-            vm_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-            vm_ip: pulumi.Input[Optional[_builtins.str]] = None,
-            vm_timezone: pulumi.Input[Optional[_builtins.str]] = None,
-            working_directory: pulumi.Input[Optional[_builtins.str]] = None) -> 'NdbRegisterDbserver':
+            client_id: Optional[pulumi.Input[_builtins.str]] = None,
+            credentials: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDbserverCredentialArgs', 'NdbRegisterDbserverCredentialArgsDict']]]]] = None,
+            database_type: Optional[pulumi.Input[_builtins.str]] = None,
+            dbserver_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+            delete: Optional[pulumi.Input[_builtins.bool]] = None,
+            delete_vgs: Optional[pulumi.Input[_builtins.bool]] = None,
+            delete_vm_snapshots: Optional[pulumi.Input[_builtins.bool]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
+            era_created: Optional[pulumi.Input[_builtins.bool]] = None,
+            era_drive_id: Optional[pulumi.Input[_builtins.str]] = None,
+            era_version: Optional[pulumi.Input[_builtins.str]] = None,
+            forced_install: Optional[pulumi.Input[_builtins.bool]] = None,
+            fqdns: Optional[pulumi.Input[_builtins.str]] = None,
+            internal: Optional[pulumi.Input[_builtins.bool]] = None,
+            ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            mac_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: Optional[pulumi.Input[_builtins.str]] = None,
+            nxcluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+            password: Optional[pulumi.Input[_builtins.str]] = None,
+            postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDbserverPostgresDatabaseArgs', 'NdbRegisterDbserverPostgresDatabaseArgsDict']]]]] = None,
+            properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDbserverPropertyArgs', 'NdbRegisterDbserverPropertyArgsDict']]]]] = None,
+            remove: Optional[pulumi.Input[_builtins.bool]] = None,
+            soft_remove: Optional[pulumi.Input[_builtins.bool]] = None,
+            ssh_key: Optional[pulumi.Input[_builtins.str]] = None,
+            status: Optional[pulumi.Input[_builtins.str]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDbserverTagArgs', 'NdbRegisterDbserverTagArgsDict']]]]] = None,
+            type: Optional[pulumi.Input[_builtins.str]] = None,
+            update_name_description_in_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
+            username: Optional[pulumi.Input[_builtins.str]] = None,
+            vm_cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
+            vm_cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+            vm_ip: Optional[pulumi.Input[_builtins.str]] = None,
+            vm_timezone: Optional[pulumi.Input[_builtins.str]] = None,
+            working_directory: Optional[pulumi.Input[_builtins.str]] = None) -> 'NdbRegisterDbserver':
         """
         Get an existing NdbRegisterDbserver resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

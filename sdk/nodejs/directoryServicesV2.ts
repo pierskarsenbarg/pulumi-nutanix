@@ -178,55 +178,55 @@ export interface DirectoryServicesV2State {
     /**
      * - User or Service who created the Directory Service.
      */
-    createdBy?: pulumi.Input<string | undefined>;
+    createdBy?: pulumi.Input<string>;
     /**
      * - Creation time of the Directory Service.
      */
-    createdTime?: pulumi.Input<string | undefined>;
+    createdTime?: pulumi.Input<string>;
     /**
      * -(Required) Type of Directory Service, Supported values are: "ACTIVE_DIRECTORY" (Directory Service type is Active Directory.) and "OPEN_LDAP" (Directory Service type is Open LDAP.)
      */
-    directoryType?: pulumi.Input<string | undefined>;
+    directoryType?: pulumi.Input<string>;
     /**
      * -(Required) Domain name for the Directory Service.
      */
-    domainName?: pulumi.Input<string | undefined>;
+    domainName?: pulumi.Input<string>;
     /**
      * -(Optional) A globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * -(Optional) Group membership search type for the Directory Service. Supported values are: "NON_RECURSIVE" (Doesn't search recursively within groups.) and "RECURSIVE" (Searches recursively within groups.)
      */
-    groupSearchType?: pulumi.Input<string | undefined>;
+    groupSearchType?: pulumi.Input<string>;
     /**
      * - Last updated time of the Directory Service.
      */
-    lastUpdatedTime?: pulumi.Input<string | undefined>;
+    lastUpdatedTime?: pulumi.Input<string>;
     /**
      * -(Required) Name for the Directory Service.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * -(Optional) Configuration for OpenLDAP Directory Service.
      */
-    openLdapConfigurations?: pulumi.Input<pulumi.Input<inputs.DirectoryServicesV2OpenLdapConfiguration>[] | undefined>;
+    openLdapConfigurations?: pulumi.Input<pulumi.Input<inputs.DirectoryServicesV2OpenLdapConfiguration>[]>;
     /**
      * -(Optional) Secondary URL for the Directory Service.
      */
-    secondaryUrls?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    secondaryUrls?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * -(Required) Information of Service account to connect to the Directory Service.
      */
-    serviceAccounts?: pulumi.Input<pulumi.Input<inputs.DirectoryServicesV2ServiceAccount>[] | undefined>;
+    serviceAccounts?: pulumi.Input<pulumi.Input<inputs.DirectoryServicesV2ServiceAccount>[]>;
     /**
      * -(Required) URL for the Directory Service.
      */
-    url?: pulumi.Input<string | undefined>;
+    url?: pulumi.Input<string>;
     /**
      * -(Optional) List of allowed User Groups for the Directory Service.
      */
-    whiteListedGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    whiteListedGroups?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 /**
@@ -244,23 +244,23 @@ export interface DirectoryServicesV2Args {
     /**
      * -(Optional) A globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * -(Optional) Group membership search type for the Directory Service. Supported values are: "NON_RECURSIVE" (Doesn't search recursively within groups.) and "RECURSIVE" (Searches recursively within groups.)
      */
-    groupSearchType?: pulumi.Input<string | undefined>;
+    groupSearchType?: pulumi.Input<string>;
     /**
      * -(Required) Name for the Directory Service.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * -(Optional) Configuration for OpenLDAP Directory Service.
      */
-    openLdapConfigurations?: pulumi.Input<pulumi.Input<inputs.DirectoryServicesV2OpenLdapConfiguration>[] | undefined>;
+    openLdapConfigurations?: pulumi.Input<pulumi.Input<inputs.DirectoryServicesV2OpenLdapConfiguration>[]>;
     /**
      * -(Optional) Secondary URL for the Directory Service.
      */
-    secondaryUrls?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    secondaryUrls?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * -(Required) Information of Service account to connect to the Directory Service.
      */
@@ -272,5 +272,5 @@ export interface DirectoryServicesV2Args {
     /**
      * -(Optional) List of allowed User Groups for the Directory Service.
      */
-    whiteListedGroups?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    whiteListedGroups?: pulumi.Input<pulumi.Input<string>[]>;
 }

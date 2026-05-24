@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * > **Authentication:** The <span pulumi-lang-nodejs="`nutanix.ProtectionPolicyV2`" pulumi-lang-dotnet="`nutanix.ProtectionPolicyV2`" pulumi-lang-go="`ProtectionPolicyV2`" pulumi-lang-python="`ProtectionPolicyV2`" pulumi-lang-yaml="`nutanix.ProtectionPolicyV2`" pulumi-lang-java="`nutanix.ProtectionPolicyV2`">`nutanix.ProtectionPolicyV2`</span> resource does **not** support API key authentication for multi-site protection policy operations. Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`">`password`</span> in the provider configuration—do not use <span pulumi-lang-nodejs="`apiKey`" pulumi-lang-dotnet="`ApiKey`" pulumi-lang-go="`apiKey`" pulumi-lang-python="`api_key`" pulumi-lang-yaml="`apiKey`" pulumi-lang-java="`apiKey`">`apiKey`</span>. Using API key will result in authorization errors (DPO-10600).
+ * > **Authentication:** The <span pulumi-lang-nodejs="`nutanix.ProtectionPolicyV2`" pulumi-lang-dotnet="`nutanix.ProtectionPolicyV2`" pulumi-lang-go="`ProtectionPolicyV2`" pulumi-lang-python="`ProtectionPolicyV2`" pulumi-lang-yaml="`nutanix.ProtectionPolicyV2`" pulumi-lang-java="`nutanix.ProtectionPolicyV2`" pulumi-lang-hcl="`nutanix_protection_policy_v2`">`nutanix.ProtectionPolicyV2`</span> resource does **not** support API key authentication for multi-site protection policy operations. Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`" pulumi-lang-hcl="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`" pulumi-lang-hcl="`password`">`password`</span> in the provider configuration—do not use <span pulumi-lang-nodejs="`apiKey`" pulumi-lang-dotnet="`ApiKey`" pulumi-lang-go="`apiKey`" pulumi-lang-python="`api_key`" pulumi-lang-yaml="`apiKey`" pulumi-lang-java="`apiKey`" pulumi-lang-hcl="`api_key`">`apiKey`</span>. Using API key will result in authorization errors (DPO-10600).
  *
  * Creates a protection policy to automate the recovery point creation and replication process.
  *
@@ -302,28 +302,28 @@ export interface ProtectionPolicyV2State {
     /**
      * -(Optional) Host entity with its attributes.
      */
-    categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    categoryIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * -(Optional) Description of the protection policy.
      */
-    description?: pulumi.Input<string | undefined>;
-    extId?: pulumi.Input<string | undefined>;
-    isApprovalPolicyNeeded?: pulumi.Input<boolean | undefined>;
-    links?: pulumi.Input<pulumi.Input<inputs.ProtectionPolicyV2Link>[] | undefined>;
+    description?: pulumi.Input<string>;
+    extId?: pulumi.Input<string>;
+    isApprovalPolicyNeeded?: pulumi.Input<boolean>;
+    links?: pulumi.Input<pulumi.Input<inputs.ProtectionPolicyV2Link>[]>;
     /**
      * -(Required) Name of the protection policy.
      */
-    name?: pulumi.Input<string | undefined>;
-    ownerExtId?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
+    ownerExtId?: pulumi.Input<string>;
     /**
      * -(Required) Cluster reference for an entity.
      */
-    replicationConfigurations?: pulumi.Input<pulumi.Input<inputs.ProtectionPolicyV2ReplicationConfiguration>[] | undefined>;
+    replicationConfigurations?: pulumi.Input<pulumi.Input<inputs.ProtectionPolicyV2ReplicationConfiguration>[]>;
     /**
      * -(Required) Hypervisor details.
      */
-    replicationLocations?: pulumi.Input<pulumi.Input<inputs.ProtectionPolicyV2ReplicationLocation>[] | undefined>;
-    tenantId?: pulumi.Input<string | undefined>;
+    replicationLocations?: pulumi.Input<pulumi.Input<inputs.ProtectionPolicyV2ReplicationLocation>[]>;
+    tenantId?: pulumi.Input<string>;
 }
 
 /**
@@ -337,11 +337,11 @@ export interface ProtectionPolicyV2Args {
     /**
      * -(Optional) Description of the protection policy.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * -(Required) Name of the protection policy.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * -(Required) Cluster reference for an entity.
      */

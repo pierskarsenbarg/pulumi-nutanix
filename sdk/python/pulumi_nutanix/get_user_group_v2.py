@@ -206,7 +206,7 @@ def get_user_group_v2(ext_id: Optional[_builtins.str] = None,
         links=pulumi.get(__ret__, 'links'),
         name=pulumi.get(__ret__, 'name'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_user_group_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_user_group_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserGroupV2Result]:
     """
     Provides a datasource to retrieve a user group based on the External Identifier of the User Group.

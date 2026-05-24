@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Provides a datasource to retrieve VPC with<span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "> vpcUuid </span>or<span pulumi-lang-nodejs=" vpcName " pulumi-lang-dotnet=" VpcName " pulumi-lang-go=" vpcName " pulumi-lang-python=" vpc_name " pulumi-lang-yaml=" vpcName " pulumi-lang-java=" vpcName "> vpcName </span>.
+ * Provides a datasource to retrieve VPC with<span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid " pulumi-lang-hcl=" vpc_uuid "> vpcUuid </span>or<span pulumi-lang-nodejs=" vpcName " pulumi-lang-dotnet=" VpcName " pulumi-lang-go=" vpcName " pulumi-lang-python=" vpc_name " pulumi-lang-yaml=" vpcName " pulumi-lang-java=" vpcName " pulumi-lang-hcl=" vpc_name "> vpcName </span>.
  */
 export function getVpc(args?: GetVpcArgs, opts?: pulumi.InvokeOptions): Promise<GetVpcResult> {
     args = args || {};
@@ -60,7 +60,7 @@ export interface GetVpcResult {
     readonly vpcUuid?: string;
 }
 /**
- * Provides a datasource to retrieve VPC with<span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "> vpcUuid </span>or<span pulumi-lang-nodejs=" vpcName " pulumi-lang-dotnet=" VpcName " pulumi-lang-go=" vpcName " pulumi-lang-python=" vpc_name " pulumi-lang-yaml=" vpcName " pulumi-lang-java=" vpcName "> vpcName </span>.
+ * Provides a datasource to retrieve VPC with<span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid " pulumi-lang-hcl=" vpc_uuid "> vpcUuid </span>or<span pulumi-lang-nodejs=" vpcName " pulumi-lang-dotnet=" VpcName " pulumi-lang-go=" vpcName " pulumi-lang-python=" vpc_name " pulumi-lang-yaml=" vpcName " pulumi-lang-java=" vpcName " pulumi-lang-hcl=" vpc_name "> vpcName </span>.
  */
 export function getVpcOutput(args?: GetVpcOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVpcResult> {
     args = args || {};
@@ -78,9 +78,9 @@ export interface GetVpcOutputArgs {
     /**
      * vpc Name
      */
-    vpcName?: pulumi.Input<string | undefined>;
+    vpcName?: pulumi.Input<string>;
     /**
      * vpc UUID
      */
-    vpcUuid?: pulumi.Input<string | undefined>;
+    vpcUuid?: pulumi.Input<string>;
 }

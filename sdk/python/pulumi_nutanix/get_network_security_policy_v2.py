@@ -286,7 +286,7 @@ def get_network_security_policy_v2(ext_id: Optional[_builtins.str] = None,
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         type=pulumi.get(__ret__, 'type'),
         vpc_references=pulumi.get(__ret__, 'vpc_references'))
-def get_network_security_policy_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_network_security_policy_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSecurityPolicyV2Result]:
     """
     Get a Network Security Policy by ExtID

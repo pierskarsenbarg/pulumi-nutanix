@@ -138,9 +138,9 @@ def get_foundation_central_imaged_clusters_list(filters: Optional[Union['GetFoun
         length=pulumi.get(__ret__, 'length'),
         metadatas=pulumi.get(__ret__, 'metadatas'),
         offset=pulumi.get(__ret__, 'offset'))
-def get_foundation_central_imaged_clusters_list_output(filters: pulumi.Input[Optional[Optional[Union['GetFoundationCentralImagedClustersListFiltersArgs', 'GetFoundationCentralImagedClustersListFiltersArgsDict']]]] = None,
-                                                       length: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
-                                                       offset: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+def get_foundation_central_imaged_clusters_list_output(filters: Optional[pulumi.Input[Optional[Union['GetFoundationCentralImagedClustersListFiltersArgs', 'GetFoundationCentralImagedClustersListFiltersArgsDict']]]] = None,
+                                                       length: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+                                                       offset: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFoundationCentralImagedClustersListResult]:
     """
     List all the clusters created using Foundation Central.

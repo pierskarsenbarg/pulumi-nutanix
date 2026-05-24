@@ -227,101 +227,101 @@ export class NdbRegisterDbserver extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NdbRegisterDbserver resources.
  */
 export interface NdbRegisterDbserverState {
-    clientId?: pulumi.Input<string | undefined>;
-    credentials?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDbserverCredential>[] | undefined>;
+    clientId?: pulumi.Input<string>;
+    credentials?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDbserverCredential>[]>;
     /**
      * database type i.e. postgres_database
      */
-    databaseType?: pulumi.Input<string | undefined>;
-    dbserverClusterId?: pulumi.Input<string | undefined>;
+    databaseType?: pulumi.Input<string>;
+    dbserverClusterId?: pulumi.Input<string>;
     /**
      * - (Optional) Delete the VM and associated storage. Default value is false
      */
-    delete?: pulumi.Input<boolean | undefined>;
+    delete?: pulumi.Input<boolean>;
     /**
      * - (Optional) Delete volume grous. Default value is true
      */
-    deleteVgs?: pulumi.Input<boolean | undefined>;
+    deleteVgs?: pulumi.Input<boolean>;
     /**
      * - (Optional) Delete the vm snapshots. Default is true
      */
-    deleteVmSnapshots?: pulumi.Input<boolean | undefined>;
+    deleteVmSnapshots?: pulumi.Input<boolean>;
     /**
      * description of db server vm. Should be used in update Method only .
      */
-    description?: pulumi.Input<string | undefined>;
-    eraCreated?: pulumi.Input<boolean | undefined>;
-    eraDriveId?: pulumi.Input<string | undefined>;
-    eraVersion?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
+    eraCreated?: pulumi.Input<boolean>;
+    eraDriveId?: pulumi.Input<string>;
+    eraVersion?: pulumi.Input<string>;
     /**
      * forced install the packages. Default is true
      */
-    forcedInstall?: pulumi.Input<boolean | undefined>;
-    fqdns?: pulumi.Input<string | undefined>;
-    internal?: pulumi.Input<boolean | undefined>;
-    ipAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
-    macAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    forcedInstall?: pulumi.Input<boolean>;
+    fqdns?: pulumi.Input<string>;
+    internal?: pulumi.Input<boolean>;
+    ipAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+    macAddresses?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Name of db server vm. Should be used in Update Method only.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * cluster on which you want to register the database server VM.
      */
-    nxclusterId?: pulumi.Input<string | undefined>;
+    nxclusterId?: pulumi.Input<string>;
     /**
      * password of the NDB drive user account. Conflicts with ssh_key.
      */
-    password?: pulumi.Input<string | undefined>;
+    password?: pulumi.Input<string>;
     /**
      * postgres info for dbserver
      */
-    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDbserverPostgresDatabase>[] | undefined>;
+    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDbserverPostgresDatabase>[]>;
     /**
      * List of all the properties
      */
-    properties?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDbserverProperty>[] | undefined>;
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDbserverProperty>[]>;
     /**
      * - (Optional) Unregister the database from NDB. Default value is true
      */
-    remove?: pulumi.Input<boolean | undefined>;
+    remove?: pulumi.Input<boolean>;
     /**
      * - (Optional) Soft remove. Default will be false
      */
-    softRemove?: pulumi.Input<boolean | undefined>;
+    softRemove?: pulumi.Input<boolean>;
     /**
      * the private key. Conflicts with password.
      */
-    sshKey?: pulumi.Input<string | undefined>;
-    status?: pulumi.Input<string | undefined>;
-    tags?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDbserverTag>[] | undefined>;
-    type?: pulumi.Input<string | undefined>;
+    sshKey?: pulumi.Input<string>;
+    status?: pulumi.Input<string>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDbserverTag>[]>;
+    type?: pulumi.Input<string>;
     /**
      * Updates the name and description in cluster. Should be used in Update Method only.
      */
-    updateNameDescriptionInCluster?: pulumi.Input<boolean | undefined>;
+    updateNameDescriptionInCluster?: pulumi.Input<boolean>;
     /**
      * username of the NDB drive user account that has sudo access
      */
-    username?: pulumi.Input<string | undefined>;
-    vmClusterName?: pulumi.Input<string | undefined>;
-    vmClusterUuid?: pulumi.Input<string | undefined>;
+    username?: pulumi.Input<string>;
+    vmClusterName?: pulumi.Input<string>;
+    vmClusterUuid?: pulumi.Input<string>;
     /**
      * IP address of the database server VM
      */
-    vmIp?: pulumi.Input<string | undefined>;
-    vmTimezone?: pulumi.Input<string | undefined>;
+    vmIp?: pulumi.Input<string>;
+    vmTimezone?: pulumi.Input<string>;
     /**
      * working directory of postgres. Default is "/tmp"
      */
-    workingDirectory?: pulumi.Input<string | undefined>;
+    workingDirectory?: pulumi.Input<string>;
 }
 
 /**
  * The set of arguments for constructing a NdbRegisterDbserver resource.
  */
 export interface NdbRegisterDbserverArgs {
-    credentials?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDbserverCredential>[] | undefined>;
+    credentials?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDbserverCredential>[]>;
     /**
      * database type i.e. postgres_database
      */
@@ -329,60 +329,60 @@ export interface NdbRegisterDbserverArgs {
     /**
      * - (Optional) Delete the VM and associated storage. Default value is false
      */
-    delete?: pulumi.Input<boolean | undefined>;
+    delete?: pulumi.Input<boolean>;
     /**
      * - (Optional) Delete volume grous. Default value is true
      */
-    deleteVgs?: pulumi.Input<boolean | undefined>;
+    deleteVgs?: pulumi.Input<boolean>;
     /**
      * - (Optional) Delete the vm snapshots. Default is true
      */
-    deleteVmSnapshots?: pulumi.Input<boolean | undefined>;
+    deleteVmSnapshots?: pulumi.Input<boolean>;
     /**
      * description of db server vm. Should be used in update Method only .
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * forced install the packages. Default is true
      */
-    forcedInstall?: pulumi.Input<boolean | undefined>;
+    forcedInstall?: pulumi.Input<boolean>;
     /**
      * Name of db server vm. Should be used in Update Method only.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * cluster on which you want to register the database server VM.
      */
-    nxclusterId?: pulumi.Input<string | undefined>;
+    nxclusterId?: pulumi.Input<string>;
     /**
      * password of the NDB drive user account. Conflicts with ssh_key.
      */
-    password?: pulumi.Input<string | undefined>;
+    password?: pulumi.Input<string>;
     /**
      * postgres info for dbserver
      */
-    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDbserverPostgresDatabase>[] | undefined>;
+    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDbserverPostgresDatabase>[]>;
     /**
      * - (Optional) Unregister the database from NDB. Default value is true
      */
-    remove?: pulumi.Input<boolean | undefined>;
+    remove?: pulumi.Input<boolean>;
     /**
      * - (Optional) Soft remove. Default will be false
      */
-    softRemove?: pulumi.Input<boolean | undefined>;
+    softRemove?: pulumi.Input<boolean>;
     /**
      * the private key. Conflicts with password.
      */
-    sshKey?: pulumi.Input<string | undefined>;
-    tags?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDbserverTag>[] | undefined>;
+    sshKey?: pulumi.Input<string>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDbserverTag>[]>;
     /**
      * Updates the name and description in cluster. Should be used in Update Method only.
      */
-    updateNameDescriptionInCluster?: pulumi.Input<boolean | undefined>;
+    updateNameDescriptionInCluster?: pulumi.Input<boolean>;
     /**
      * username of the NDB drive user account that has sudo access
      */
-    username?: pulumi.Input<string | undefined>;
+    username?: pulumi.Input<string>;
     /**
      * IP address of the database server VM
      */
@@ -390,5 +390,5 @@ export interface NdbRegisterDbserverArgs {
     /**
      * working directory of postgres. Default is "/tmp"
      */
-    workingDirectory?: pulumi.Input<string | undefined>;
+    workingDirectory?: pulumi.Input<string>;
 }

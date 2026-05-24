@@ -155,7 +155,7 @@ class GetIamEntityV2Result:
     @pulumi.getter
     def links(self) -> Sequence['outputs.GetIamEntityV2LinkResult']:
         """
-        HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+        HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
         """
         return pulumi.get(self, "links")
 
@@ -247,7 +247,7 @@ def get_iam_entity_v2(ext_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         search_url=pulumi.get(__ret__, 'search_url'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_iam_entity_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_iam_entity_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIamEntityV2Result]:
     """
     Provides a datasource to retrieve an IAM Entity by its external identifier. Entities are used in authorization policies (e.g. user, role, cluster).

@@ -68,17 +68,17 @@ class PcRegistrationV2Args:
 @pulumi.input_type
 class _PcRegistrationV2State:
     def __init__(__self__, *,
-                 configs: pulumi.Input[Optional[Sequence[pulumi.Input['PcRegistrationV2ConfigArgs']]]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 hosting_cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 is_registered_with_hosting_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
-                 links: pulumi.Input[Optional[Sequence[pulumi.Input['PcRegistrationV2LinkArgs']]]] = None,
-                 networks: pulumi.Input[Optional[Sequence[pulumi.Input['PcRegistrationV2NetworkArgs']]]] = None,
-                 node_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 remote_cluster: pulumi.Input[Optional['PcRegistrationV2RemoteClusterArgs']] = None,
-                 should_enable_high_availability: pulumi.Input[Optional[_builtins.bool]] = None,
-                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 configs: Optional[pulumi.Input[Sequence[pulumi.Input['PcRegistrationV2ConfigArgs']]]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 hosting_cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_registered_with_hosting_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
+                 links: Optional[pulumi.Input[Sequence[pulumi.Input['PcRegistrationV2LinkArgs']]]] = None,
+                 networks: Optional[pulumi.Input[Sequence[pulumi.Input['PcRegistrationV2NetworkArgs']]]] = None,
+                 node_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pc_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 remote_cluster: Optional[pulumi.Input['PcRegistrationV2RemoteClusterArgs']] = None,
+                 should_enable_high_availability: Optional[pulumi.Input[_builtins.bool]] = None,
+                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PcRegistrationV2 resources.
 
@@ -114,82 +114,82 @@ class _PcRegistrationV2State:
 
     @_builtins.property
     @pulumi.getter
-    def configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PcRegistrationV2ConfigArgs']]]]:
+    def configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PcRegistrationV2ConfigArgs']]]]:
         return pulumi.get(self, "configs")
 
     @configs.setter
-    def configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PcRegistrationV2ConfigArgs']]]]):
+    def configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PcRegistrationV2ConfigArgs']]]]):
         pulumi.set(self, "configs", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="hostingClusterExtId")
-    def hosting_cluster_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def hosting_cluster_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "hosting_cluster_ext_id")
 
     @hosting_cluster_ext_id.setter
-    def hosting_cluster_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def hosting_cluster_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "hosting_cluster_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isRegisteredWithHostingCluster")
-    def is_registered_with_hosting_cluster(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def is_registered_with_hosting_cluster(self) -> Optional[pulumi.Input[_builtins.bool]]:
         return pulumi.get(self, "is_registered_with_hosting_cluster")
 
     @is_registered_with_hosting_cluster.setter
-    def is_registered_with_hosting_cluster(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def is_registered_with_hosting_cluster(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_registered_with_hosting_cluster", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PcRegistrationV2LinkArgs']]]]:
+    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PcRegistrationV2LinkArgs']]]]:
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PcRegistrationV2LinkArgs']]]]):
+    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PcRegistrationV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def networks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PcRegistrationV2NetworkArgs']]]]:
+    def networks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PcRegistrationV2NetworkArgs']]]]:
         return pulumi.get(self, "networks")
 
     @networks.setter
-    def networks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PcRegistrationV2NetworkArgs']]]]):
+    def networks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PcRegistrationV2NetworkArgs']]]]):
         pulumi.set(self, "networks", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeExtIds")
-    def node_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def node_ext_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "node_ext_ids")
 
     @node_ext_ids.setter
-    def node_ext_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def node_ext_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "node_ext_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="pcExtId")
-    def pc_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def pc_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Required) The display name for the Role.
         """
         return pulumi.get(self, "pc_ext_id")
 
     @pc_ext_id.setter
-    def pc_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def pc_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "pc_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteCluster")
-    def remote_cluster(self) -> pulumi.Input[Optional['PcRegistrationV2RemoteClusterArgs']]:
+    def remote_cluster(self) -> Optional[pulumi.Input['PcRegistrationV2RemoteClusterArgs']]:
         """
         -(Required)  The registration request consists of the remote cluster details. Credentials must be of domain manager (Prism Central) role.
         The remote cluster details are different based on the object type. The object type is used to determine the type of remote cluster. The object type can be one of the following:
@@ -200,25 +200,25 @@ class _PcRegistrationV2State:
         return pulumi.get(self, "remote_cluster")
 
     @remote_cluster.setter
-    def remote_cluster(self, value: pulumi.Input[Optional['PcRegistrationV2RemoteClusterArgs']]):
+    def remote_cluster(self, value: Optional[pulumi.Input['PcRegistrationV2RemoteClusterArgs']]):
         pulumi.set(self, "remote_cluster", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldEnableHighAvailability")
-    def should_enable_high_availability(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def should_enable_high_availability(self) -> Optional[pulumi.Input[_builtins.bool]]:
         return pulumi.get(self, "should_enable_high_availability")
 
     @should_enable_high_availability.setter
-    def should_enable_high_availability(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def should_enable_high_availability(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "should_enable_high_availability", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
 
@@ -228,8 +228,8 @@ class PcRegistrationV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 remote_cluster: pulumi.Input[Optional[Union['PcRegistrationV2RemoteClusterArgs', 'PcRegistrationV2RemoteClusterArgsDict']]] = None,
+                 pc_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 remote_cluster: Optional[pulumi.Input[Union['PcRegistrationV2RemoteClusterArgs', 'PcRegistrationV2RemoteClusterArgsDict']]] = None,
                  __props__=None):
         """
         Provides a resource to Registers a domain manager (Prism Central) instance to other entities like PE and PC. This process is asynchronous, creating a registration task and returning its UUID.
@@ -269,8 +269,8 @@ class PcRegistrationV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 remote_cluster: pulumi.Input[Optional[Union['PcRegistrationV2RemoteClusterArgs', 'PcRegistrationV2RemoteClusterArgsDict']]] = None,
+                 pc_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 remote_cluster: Optional[pulumi.Input[Union['PcRegistrationV2RemoteClusterArgs', 'PcRegistrationV2RemoteClusterArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -305,17 +305,17 @@ class PcRegistrationV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcRegistrationV2ConfigArgs', 'PcRegistrationV2ConfigArgsDict']]]]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            hosting_cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            is_registered_with_hosting_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcRegistrationV2LinkArgs', 'PcRegistrationV2LinkArgsDict']]]]] = None,
-            networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcRegistrationV2NetworkArgs', 'PcRegistrationV2NetworkArgsDict']]]]] = None,
-            node_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            remote_cluster: pulumi.Input[Optional[Union['PcRegistrationV2RemoteClusterArgs', 'PcRegistrationV2RemoteClusterArgsDict']]] = None,
-            should_enable_high_availability: pulumi.Input[Optional[_builtins.bool]] = None,
-            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PcRegistrationV2':
+            configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PcRegistrationV2ConfigArgs', 'PcRegistrationV2ConfigArgsDict']]]]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            hosting_cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            is_registered_with_hosting_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
+            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PcRegistrationV2LinkArgs', 'PcRegistrationV2LinkArgsDict']]]]] = None,
+            networks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PcRegistrationV2NetworkArgs', 'PcRegistrationV2NetworkArgsDict']]]]] = None,
+            node_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pc_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            remote_cluster: Optional[pulumi.Input[Union['PcRegistrationV2RemoteClusterArgs', 'PcRegistrationV2RemoteClusterArgsDict']]] = None,
+            should_enable_high_availability: Optional[pulumi.Input[_builtins.bool]] = None,
+            tenant_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'PcRegistrationV2':
         """
         Get an existing PcRegistrationV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

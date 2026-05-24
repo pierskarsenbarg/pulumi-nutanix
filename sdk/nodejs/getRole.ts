@@ -146,13 +146,13 @@ export interface GetRoleOutputArgs {
     /**
      * - Categories for the Role.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetRoleCategoryArgs>[] | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetRoleCategoryArgs>[]>;
     /**
      * - (Optional) The UUID of a Role.
      */
-    roleId?: pulumi.Input<string | undefined>;
+    roleId?: pulumi.Input<string>;
     /**
      * - (Optional) The name of a Role.
      */
-    roleName?: pulumi.Input<string | undefined>;
+    roleName?: pulumi.Input<string>;
 }

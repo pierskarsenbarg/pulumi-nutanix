@@ -150,20 +150,20 @@ export class PcBackupTargetV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering PcBackupTargetV2 resources.
  */
 export interface PcBackupTargetV2State {
-    backupPauseReason?: pulumi.Input<string | undefined>;
+    backupPauseReason?: pulumi.Input<string>;
     /**
      * -(Required) A unique identifier for the domain manager.
      */
-    domainManagerExtId?: pulumi.Input<string | undefined>;
-    extId?: pulumi.Input<string | undefined>;
-    isBackupPaused?: pulumi.Input<boolean | undefined>;
-    lastSyncTime?: pulumi.Input<string | undefined>;
-    links?: pulumi.Input<pulumi.Input<inputs.PcBackupTargetV2Link>[] | undefined>;
+    domainManagerExtId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string>;
+    isBackupPaused?: pulumi.Input<boolean>;
+    lastSyncTime?: pulumi.Input<string>;
+    links?: pulumi.Input<pulumi.Input<inputs.PcBackupTargetV2Link>[]>;
     /**
      * -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
      */
-    location?: pulumi.Input<inputs.PcBackupTargetV2Location | undefined>;
-    tenantId?: pulumi.Input<string | undefined>;
+    location?: pulumi.Input<inputs.PcBackupTargetV2Location>;
+    tenantId?: pulumi.Input<string>;
 }
 
 /**

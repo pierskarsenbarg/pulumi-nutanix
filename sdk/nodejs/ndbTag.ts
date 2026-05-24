@@ -154,39 +154,39 @@ export interface NdbTagState {
     /**
      * date created of the tag
      */
-    dateCreated?: pulumi.Input<string | undefined>;
+    dateCreated?: pulumi.Input<string>;
     /**
      * modified date of tha tag
      */
-    dateModified?: pulumi.Input<string | undefined>;
+    dateModified?: pulumi.Input<string>;
     /**
      * description for the tag
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * entity for the tag to be associated with. Supported values [ DATABASE, TIME_MACHINE, CLONE, DATABASE_SERVER ].
      */
-    entityType?: pulumi.Input<string | undefined>;
+    entityType?: pulumi.Input<string>;
     /**
      * name for the tag
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * owner id of the tag
      */
-    owner?: pulumi.Input<string | undefined>;
+    owner?: pulumi.Input<string>;
     /**
      * provide a tag value for entities.
      */
-    required?: pulumi.Input<boolean | undefined>;
+    required?: pulumi.Input<boolean>;
     /**
      * Status of the tag. Supported values are [ ENABLED, DEPRECATED ]
      */
-    status?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string>;
     /**
      * value for the tag
      */
-    values?: pulumi.Input<number | undefined>;
+    values?: pulumi.Input<number>;
 }
 
 /**
@@ -196,7 +196,7 @@ export interface NdbTagArgs {
     /**
      * description for the tag
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * entity for the tag to be associated with. Supported values [ DATABASE, TIME_MACHINE, CLONE, DATABASE_SERVER ].
      */
@@ -204,13 +204,13 @@ export interface NdbTagArgs {
     /**
      * name for the tag
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * provide a tag value for entities.
      */
-    required?: pulumi.Input<boolean | undefined>;
+    required?: pulumi.Input<boolean>;
     /**
      * Status of the tag. Supported values are [ ENABLED, DEPRECATED ]
      */
-    status?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string>;
 }

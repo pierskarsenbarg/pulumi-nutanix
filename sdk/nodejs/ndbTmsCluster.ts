@@ -172,59 +172,59 @@ export interface NdbTmsClusterState {
     /**
      * created date of time machine associated with cluster
      */
-    dateCreated?: pulumi.Input<string | undefined>;
+    dateCreated?: pulumi.Input<string>;
     /**
      * modified date of time machine associated with cluster
      */
-    dateModified?: pulumi.Input<string | undefined>;
+    dateModified?: pulumi.Input<string>;
     /**
      * description of nutanix cluster associated with time machine
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * log drive id
      */
-    logDriveId?: pulumi.Input<string | undefined>;
+    logDriveId?: pulumi.Input<string>;
     /**
      * log drive status of time machine
      */
-    logDriveStatus?: pulumi.Input<string | undefined>;
+    logDriveStatus?: pulumi.Input<string>;
     /**
      * Nutanix cluster id on the associated registered clusters.
      */
-    nxClusterId?: pulumi.Input<string | undefined>;
+    nxClusterId?: pulumi.Input<string>;
     /**
      * owner id
      */
-    ownerId?: pulumi.Input<string | undefined>;
+    ownerId?: pulumi.Input<string>;
     /**
      * schedule id of the data associated with time machine
      */
-    scheduleId?: pulumi.Input<string | undefined>;
+    scheduleId?: pulumi.Input<string>;
     /**
      * SLA id for the associated cluster.
      */
-    slaId?: pulumi.Input<string | undefined>;
+    slaId?: pulumi.Input<string>;
     /**
      * source is present or not
      */
-    source?: pulumi.Input<boolean | undefined>;
+    source?: pulumi.Input<boolean>;
     /**
      * source clusters in time machines
      */
-    sourceClusters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    sourceClusters?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * status of the cluster associated with time machine
      */
-    status?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string>;
     /**
      * time machine id
      */
-    timeMachineId?: pulumi.Input<string | undefined>;
+    timeMachineId?: pulumi.Input<string>;
     /**
      * Default value is "OTHER"
      */
-    type?: pulumi.Input<string | undefined>;
+    type?: pulumi.Input<string>;
 }
 
 /**
@@ -246,5 +246,5 @@ export interface NdbTmsClusterArgs {
     /**
      * Default value is "OTHER"
      */
-    type?: pulumi.Input<string | undefined>;
+    type?: pulumi.Input<string>;
 }

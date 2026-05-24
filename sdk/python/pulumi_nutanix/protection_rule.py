@@ -23,13 +23,13 @@ class ProtectionRuleArgs:
     def __init__(__self__, *,
                  availability_zone_connectivity_lists: pulumi.Input[Sequence[pulumi.Input['ProtectionRuleAvailabilityZoneConnectivityListArgs']]],
                  ordered_availability_zone_lists: pulumi.Input[Sequence[pulumi.Input['ProtectionRuleOrderedAvailabilityZoneListArgs']]],
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleCategoryArgs']]]] = None,
-                 category_filter: pulumi.Input[Optional['ProtectionRuleCategoryFilterArgs']] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 owner_reference: pulumi.Input[Optional['ProtectionRuleOwnerReferenceArgs']] = None,
-                 project_reference: pulumi.Input[Optional['ProtectionRuleProjectReferenceArgs']] = None,
-                 start_time: pulumi.Input[Optional[_builtins.str]] = None):
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleCategoryArgs']]]] = None,
+                 category_filter: Optional[pulumi.Input['ProtectionRuleCategoryFilterArgs']] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 owner_reference: Optional[pulumi.Input['ProtectionRuleOwnerReferenceArgs']] = None,
+                 project_reference: Optional[pulumi.Input['ProtectionRuleProjectReferenceArgs']] = None,
+                 start_time: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProtectionRule resource.
 
@@ -73,89 +73,89 @@ class ProtectionRuleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleCategoryArgs']]]]:
+    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleCategoryArgs']]]]:
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleCategoryArgs']]]]):
+    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter(name="categoryFilter")
-    def category_filter(self) -> pulumi.Input[Optional['ProtectionRuleCategoryFilterArgs']]:
+    def category_filter(self) -> Optional[pulumi.Input['ProtectionRuleCategoryFilterArgs']]:
         return pulumi.get(self, "category_filter")
 
     @category_filter.setter
-    def category_filter(self, value: pulumi.Input[Optional['ProtectionRuleCategoryFilterArgs']]):
+    def category_filter(self, value: Optional[pulumi.Input['ProtectionRuleCategoryFilterArgs']]):
         pulumi.set(self, "category_filter", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         A description for protection rule.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The name for the protection rule.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerReference")
-    def owner_reference(self) -> pulumi.Input[Optional['ProtectionRuleOwnerReferenceArgs']]:
+    def owner_reference(self) -> Optional[pulumi.Input['ProtectionRuleOwnerReferenceArgs']]:
         return pulumi.get(self, "owner_reference")
 
     @owner_reference.setter
-    def owner_reference(self, value: pulumi.Input[Optional['ProtectionRuleOwnerReferenceArgs']]):
+    def owner_reference(self, value: Optional[pulumi.Input['ProtectionRuleOwnerReferenceArgs']]):
         pulumi.set(self, "owner_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="projectReference")
-    def project_reference(self) -> pulumi.Input[Optional['ProtectionRuleProjectReferenceArgs']]:
+    def project_reference(self) -> Optional[pulumi.Input['ProtectionRuleProjectReferenceArgs']]:
         return pulumi.get(self, "project_reference")
 
     @project_reference.setter
-    def project_reference(self, value: pulumi.Input[Optional['ProtectionRuleProjectReferenceArgs']]):
+    def project_reference(self, value: Optional[pulumi.Input['ProtectionRuleProjectReferenceArgs']]):
         pulumi.set(self, "project_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="startTime")
-    def start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def start_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "start_time")
 
     @start_time.setter
-    def start_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def start_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "start_time", value)
 
 
 @pulumi.input_type
 class _ProtectionRuleState:
     def __init__(__self__, *,
-                 api_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 availability_zone_connectivity_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleAvailabilityZoneConnectivityListArgs']]]] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleCategoryArgs']]]] = None,
-                 category_filter: pulumi.Input[Optional['ProtectionRuleCategoryFilterArgs']] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 ordered_availability_zone_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleOrderedAvailabilityZoneListArgs']]]] = None,
-                 owner_reference: pulumi.Input[Optional['ProtectionRuleOwnerReferenceArgs']] = None,
-                 project_reference: pulumi.Input[Optional['ProtectionRuleProjectReferenceArgs']] = None,
-                 start_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 state: pulumi.Input[Optional[_builtins.str]] = None):
+                 api_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_zone_connectivity_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleAvailabilityZoneConnectivityListArgs']]]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleCategoryArgs']]]] = None,
+                 category_filter: Optional[pulumi.Input['ProtectionRuleCategoryFilterArgs']] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 ordered_availability_zone_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleOrderedAvailabilityZoneListArgs']]]] = None,
+                 owner_reference: Optional[pulumi.Input['ProtectionRuleOwnerReferenceArgs']] = None,
+                 project_reference: Optional[pulumi.Input['ProtectionRuleProjectReferenceArgs']] = None,
+                 start_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProtectionRule resources.
 
@@ -189,116 +189,116 @@ class _ProtectionRuleState:
 
     @_builtins.property
     @pulumi.getter(name="apiVersion")
-    def api_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def api_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "api_version")
 
     @api_version.setter
-    def api_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def api_version(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "api_version", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityZoneConnectivityLists")
-    def availability_zone_connectivity_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleAvailabilityZoneConnectivityListArgs']]]]:
+    def availability_zone_connectivity_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleAvailabilityZoneConnectivityListArgs']]]]:
         return pulumi.get(self, "availability_zone_connectivity_lists")
 
     @availability_zone_connectivity_lists.setter
-    def availability_zone_connectivity_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleAvailabilityZoneConnectivityListArgs']]]]):
+    def availability_zone_connectivity_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleAvailabilityZoneConnectivityListArgs']]]]):
         pulumi.set(self, "availability_zone_connectivity_lists", value)
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleCategoryArgs']]]]:
+    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleCategoryArgs']]]]:
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleCategoryArgs']]]]):
+    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter(name="categoryFilter")
-    def category_filter(self) -> pulumi.Input[Optional['ProtectionRuleCategoryFilterArgs']]:
+    def category_filter(self) -> Optional[pulumi.Input['ProtectionRuleCategoryFilterArgs']]:
         return pulumi.get(self, "category_filter")
 
     @category_filter.setter
-    def category_filter(self, value: pulumi.Input[Optional['ProtectionRuleCategoryFilterArgs']]):
+    def category_filter(self, value: Optional[pulumi.Input['ProtectionRuleCategoryFilterArgs']]):
         pulumi.set(self, "category_filter", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         A description for protection rule.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The name for the protection rule.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="orderedAvailabilityZoneLists")
-    def ordered_availability_zone_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleOrderedAvailabilityZoneListArgs']]]]:
+    def ordered_availability_zone_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleOrderedAvailabilityZoneListArgs']]]]:
         return pulumi.get(self, "ordered_availability_zone_lists")
 
     @ordered_availability_zone_lists.setter
-    def ordered_availability_zone_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleOrderedAvailabilityZoneListArgs']]]]):
+    def ordered_availability_zone_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleOrderedAvailabilityZoneListArgs']]]]):
         pulumi.set(self, "ordered_availability_zone_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerReference")
-    def owner_reference(self) -> pulumi.Input[Optional['ProtectionRuleOwnerReferenceArgs']]:
+    def owner_reference(self) -> Optional[pulumi.Input['ProtectionRuleOwnerReferenceArgs']]:
         return pulumi.get(self, "owner_reference")
 
     @owner_reference.setter
-    def owner_reference(self, value: pulumi.Input[Optional['ProtectionRuleOwnerReferenceArgs']]):
+    def owner_reference(self, value: Optional[pulumi.Input['ProtectionRuleOwnerReferenceArgs']]):
         pulumi.set(self, "owner_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="projectReference")
-    def project_reference(self) -> pulumi.Input[Optional['ProtectionRuleProjectReferenceArgs']]:
+    def project_reference(self) -> Optional[pulumi.Input['ProtectionRuleProjectReferenceArgs']]:
         return pulumi.get(self, "project_reference")
 
     @project_reference.setter
-    def project_reference(self, value: pulumi.Input[Optional['ProtectionRuleProjectReferenceArgs']]):
+    def project_reference(self, value: Optional[pulumi.Input['ProtectionRuleProjectReferenceArgs']]):
         pulumi.set(self, "project_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="startTime")
-    def start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def start_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "start_time")
 
     @start_time.setter
-    def start_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def start_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "start_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -308,15 +308,15 @@ class ProtectionRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_zone_connectivity_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleAvailabilityZoneConnectivityListArgs', 'ProtectionRuleAvailabilityZoneConnectivityListArgsDict']]]]] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleCategoryArgs', 'ProtectionRuleCategoryArgsDict']]]]] = None,
-                 category_filter: pulumi.Input[Optional[Union['ProtectionRuleCategoryFilterArgs', 'ProtectionRuleCategoryFilterArgsDict']]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 ordered_availability_zone_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleOrderedAvailabilityZoneListArgs', 'ProtectionRuleOrderedAvailabilityZoneListArgsDict']]]]] = None,
-                 owner_reference: pulumi.Input[Optional[Union['ProtectionRuleOwnerReferenceArgs', 'ProtectionRuleOwnerReferenceArgsDict']]] = None,
-                 project_reference: pulumi.Input[Optional[Union['ProtectionRuleProjectReferenceArgs', 'ProtectionRuleProjectReferenceArgsDict']]] = None,
-                 start_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_zone_connectivity_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleAvailabilityZoneConnectivityListArgs', 'ProtectionRuleAvailabilityZoneConnectivityListArgsDict']]]]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleCategoryArgs', 'ProtectionRuleCategoryArgsDict']]]]] = None,
+                 category_filter: Optional[pulumi.Input[Union['ProtectionRuleCategoryFilterArgs', 'ProtectionRuleCategoryFilterArgsDict']]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 ordered_availability_zone_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleOrderedAvailabilityZoneListArgs', 'ProtectionRuleOrderedAvailabilityZoneListArgsDict']]]]] = None,
+                 owner_reference: Optional[pulumi.Input[Union['ProtectionRuleOwnerReferenceArgs', 'ProtectionRuleOwnerReferenceArgsDict']]] = None,
+                 project_reference: Optional[pulumi.Input[Union['ProtectionRuleProjectReferenceArgs', 'ProtectionRuleProjectReferenceArgsDict']]] = None,
+                 start_time: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a Nutanix Protection Rule resource to Create a Protection Rule.
@@ -414,15 +414,15 @@ class ProtectionRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_zone_connectivity_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleAvailabilityZoneConnectivityListArgs', 'ProtectionRuleAvailabilityZoneConnectivityListArgsDict']]]]] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleCategoryArgs', 'ProtectionRuleCategoryArgsDict']]]]] = None,
-                 category_filter: pulumi.Input[Optional[Union['ProtectionRuleCategoryFilterArgs', 'ProtectionRuleCategoryFilterArgsDict']]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 ordered_availability_zone_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleOrderedAvailabilityZoneListArgs', 'ProtectionRuleOrderedAvailabilityZoneListArgsDict']]]]] = None,
-                 owner_reference: pulumi.Input[Optional[Union['ProtectionRuleOwnerReferenceArgs', 'ProtectionRuleOwnerReferenceArgsDict']]] = None,
-                 project_reference: pulumi.Input[Optional[Union['ProtectionRuleProjectReferenceArgs', 'ProtectionRuleProjectReferenceArgsDict']]] = None,
-                 start_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_zone_connectivity_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleAvailabilityZoneConnectivityListArgs', 'ProtectionRuleAvailabilityZoneConnectivityListArgsDict']]]]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleCategoryArgs', 'ProtectionRuleCategoryArgsDict']]]]] = None,
+                 category_filter: Optional[pulumi.Input[Union['ProtectionRuleCategoryFilterArgs', 'ProtectionRuleCategoryFilterArgsDict']]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 ordered_availability_zone_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleOrderedAvailabilityZoneListArgs', 'ProtectionRuleOrderedAvailabilityZoneListArgsDict']]]]] = None,
+                 owner_reference: Optional[pulumi.Input[Union['ProtectionRuleOwnerReferenceArgs', 'ProtectionRuleOwnerReferenceArgsDict']]] = None,
+                 project_reference: Optional[pulumi.Input[Union['ProtectionRuleProjectReferenceArgs', 'ProtectionRuleProjectReferenceArgsDict']]] = None,
+                 start_time: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -458,18 +458,18 @@ class ProtectionRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            api_version: pulumi.Input[Optional[_builtins.str]] = None,
-            availability_zone_connectivity_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleAvailabilityZoneConnectivityListArgs', 'ProtectionRuleAvailabilityZoneConnectivityListArgsDict']]]]] = None,
-            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleCategoryArgs', 'ProtectionRuleCategoryArgsDict']]]]] = None,
-            category_filter: pulumi.Input[Optional[Union['ProtectionRuleCategoryFilterArgs', 'ProtectionRuleCategoryFilterArgsDict']]] = None,
-            description: pulumi.Input[Optional[_builtins.str]] = None,
-            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            name: pulumi.Input[Optional[_builtins.str]] = None,
-            ordered_availability_zone_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleOrderedAvailabilityZoneListArgs', 'ProtectionRuleOrderedAvailabilityZoneListArgsDict']]]]] = None,
-            owner_reference: pulumi.Input[Optional[Union['ProtectionRuleOwnerReferenceArgs', 'ProtectionRuleOwnerReferenceArgsDict']]] = None,
-            project_reference: pulumi.Input[Optional[Union['ProtectionRuleProjectReferenceArgs', 'ProtectionRuleProjectReferenceArgsDict']]] = None,
-            start_time: pulumi.Input[Optional[_builtins.str]] = None,
-            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProtectionRule':
+            api_version: Optional[pulumi.Input[_builtins.str]] = None,
+            availability_zone_connectivity_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleAvailabilityZoneConnectivityListArgs', 'ProtectionRuleAvailabilityZoneConnectivityListArgsDict']]]]] = None,
+            categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleCategoryArgs', 'ProtectionRuleCategoryArgsDict']]]]] = None,
+            category_filter: Optional[pulumi.Input[Union['ProtectionRuleCategoryFilterArgs', 'ProtectionRuleCategoryFilterArgsDict']]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
+            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: Optional[pulumi.Input[_builtins.str]] = None,
+            ordered_availability_zone_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleOrderedAvailabilityZoneListArgs', 'ProtectionRuleOrderedAvailabilityZoneListArgsDict']]]]] = None,
+            owner_reference: Optional[pulumi.Input[Union['ProtectionRuleOwnerReferenceArgs', 'ProtectionRuleOwnerReferenceArgsDict']]] = None,
+            project_reference: Optional[pulumi.Input[Union['ProtectionRuleProjectReferenceArgs', 'ProtectionRuleProjectReferenceArgsDict']]] = None,
+            start_time: Optional[pulumi.Input[_builtins.str]] = None,
+            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'ProtectionRule':
         """
         Get an existing ProtectionRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

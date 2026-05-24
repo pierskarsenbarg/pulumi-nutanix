@@ -655,7 +655,7 @@ def get_virtual_machine_v2(ext_id: Optional[_builtins.str] = None,
         storage_configs=pulumi.get(__ret__, 'storage_configs'),
         update_time=pulumi.get(__ret__, 'update_time'),
         vtpm_configs=pulumi.get(__ret__, 'vtpm_configs'))
-def get_virtual_machine_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_virtual_machine_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualMachineV2Result]:
     """
     Retrieves configuration details for a Virtual Machine.

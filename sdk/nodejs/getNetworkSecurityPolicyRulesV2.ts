@@ -34,7 +34,7 @@ export interface GetNetworkSecurityPolicyRulesV2Args {
      */
     limit?: number;
     /**
-     * Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy "> orderBy </span>can be applied to the following fields:
+     * Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy " pulumi-lang-hcl=" order_by "> orderBy </span>can be applied to the following fields:
      */
     orderBy?: string;
     /**
@@ -92,19 +92,19 @@ export interface GetNetworkSecurityPolicyRulesV2OutputArgs {
     /**
      * Filter expression for the list. The filter can be applied to the following fields:
      */
-    filter?: pulumi.Input<string | undefined>;
+    filter?: pulumi.Input<string>;
     /**
      * Maximum number of rules to return (1–100). Default is 50 if not set.
      */
-    limit?: pulumi.Input<number | undefined>;
+    limit?: pulumi.Input<number>;
     /**
-     * Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy "> orderBy </span>can be applied to the following fields:
+     * Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy " pulumi-lang-hcl=" order_by "> orderBy </span>can be applied to the following fields:
      */
-    orderBy?: pulumi.Input<string | undefined>;
+    orderBy?: pulumi.Input<string>;
     /**
      * Page number for pagination (0-based).
      */
-    page?: pulumi.Input<number | undefined>;
+    page?: pulumi.Input<number>;
     /**
      * ExtId of the network security policy to list rules for.
      */
@@ -112,5 +112,5 @@ export interface GetNetworkSecurityPolicyRulesV2OutputArgs {
     /**
      * Comma-separated list of fields to return. The select can be applied to the following fields:
      */
-    select?: pulumi.Input<string | undefined>;
+    select?: pulumi.Input<string>;
 }

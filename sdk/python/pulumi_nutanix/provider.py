@@ -19,21 +19,21 @@ __all__ = ['ProviderArgs', 'Provider']
 @pulumi.input_type
 class ProviderArgs:
     def __init__(__self__, *,
-                 api_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 custom_headers: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-                 foundation_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-                 foundation_port: pulumi.Input[Optional[_builtins.str]] = None,
-                 insecure: pulumi.Input[Optional[_builtins.bool]] = None,
-                 ndb_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-                 ndb_password: pulumi.Input[Optional[_builtins.str]] = None,
-                 ndb_username: pulumi.Input[Optional[_builtins.str]] = None,
-                 password: pulumi.Input[Optional[_builtins.str]] = None,
-                 port: pulumi.Input[Optional[_builtins.str]] = None,
-                 proxy_url: pulumi.Input[Optional[_builtins.str]] = None,
-                 session_auth: pulumi.Input[Optional[_builtins.bool]] = None,
-                 username: pulumi.Input[Optional[_builtins.str]] = None,
-                 wait_timeout: pulumi.Input[Optional[_builtins.int]] = None):
+                 api_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 custom_headers: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 foundation_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 foundation_port: Optional[pulumi.Input[_builtins.str]] = None,
+                 insecure: Optional[pulumi.Input[_builtins.bool]] = None,
+                 ndb_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 ndb_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 ndb_username: Optional[pulumi.Input[_builtins.str]] = None,
+                 password: Optional[pulumi.Input[_builtins.str]] = None,
+                 port: Optional[pulumi.Input[_builtins.str]] = None,
+                 proxy_url: Optional[pulumi.Input[_builtins.str]] = None,
+                 session_auth: Optional[pulumi.Input[_builtins.bool]] = None,
+                 username: Optional[pulumi.Input[_builtins.str]] = None,
+                 wait_timeout: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a Provider resource.
 
@@ -51,7 +51,7 @@ class ProviderArgs:
                cluster lifecycle management operations, such as AOS upgrades.
         :param pulumi.Input[_builtins.str] foundation_endpoint: endpoint for foundation VM (eg. Foundation VM IP)
         :param pulumi.Input[_builtins.str] foundation_port: Port for foundation VM
-        :param pulumi.Input[_builtins.bool] insecure: Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>
+        :param pulumi.Input[_builtins.bool] insecure: Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>
         :param pulumi.Input[_builtins.str] ndb_endpoint: endpoint for Era VM (era ip)
         :param pulumi.Input[_builtins.str] password: Password for provided user name.
         :param pulumi.Input[_builtins.str] port: Port for Nutanix Prism.
@@ -93,7 +93,7 @@ class ProviderArgs:
 
     @_builtins.property
     @pulumi.getter(name="apiKey")
-    def api_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def api_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         API key for Nutanix Prism authentication. Can be used as an
         alternative to username/password. When set, the X-Ntnx-Api-Key header
@@ -102,12 +102,12 @@ class ProviderArgs:
         return pulumi.get(self, "api_key")
 
     @api_key.setter
-    def api_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def api_key(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "api_key", value)
 
     @_builtins.property
     @pulumi.getter(name="customHeaders")
-    def custom_headers(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def custom_headers(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Custom HTTP headers to add to all API requests. Useful for
         environments that require additional headers such as Cloudflare Access
@@ -118,12 +118,12 @@ class ProviderArgs:
         return pulumi.get(self, "custom_headers")
 
     @custom_headers.setter
-    def custom_headers(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def custom_headers(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "custom_headers", value)
 
     @_builtins.property
     @pulumi.getter
-    def endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
         note, this is never the data services VIP, and should not be an
@@ -133,123 +133,123 @@ class ProviderArgs:
         return pulumi.get(self, "endpoint")
 
     @endpoint.setter
-    def endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="foundationEndpoint")
-    def foundation_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def foundation_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         endpoint for foundation VM (eg. Foundation VM IP)
         """
         return pulumi.get(self, "foundation_endpoint")
 
     @foundation_endpoint.setter
-    def foundation_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def foundation_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "foundation_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="foundationPort")
-    def foundation_port(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def foundation_port(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Port for foundation VM
         """
         return pulumi.get(self, "foundation_port")
 
     @foundation_port.setter
-    def foundation_port(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def foundation_port(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "foundation_port", value)
 
     @_builtins.property
     @pulumi.getter
-    def insecure(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def insecure(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>
+        Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>
         """
         return pulumi.get(self, "insecure")
 
     @insecure.setter
-    def insecure(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def insecure(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "insecure", value)
 
     @_builtins.property
     @pulumi.getter(name="ndbEndpoint")
-    def ndb_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ndb_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         endpoint for Era VM (era ip)
         """
         return pulumi.get(self, "ndb_endpoint")
 
     @ndb_endpoint.setter
-    def ndb_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ndb_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ndb_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="ndbPassword")
-    def ndb_password(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ndb_password(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "ndb_password")
 
     @ndb_password.setter
-    def ndb_password(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ndb_password(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ndb_password", value)
 
     @_builtins.property
     @pulumi.getter(name="ndbUsername")
-    def ndb_username(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ndb_username(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "ndb_username")
 
     @ndb_username.setter
-    def ndb_username(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ndb_username(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ndb_username", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Password for provided user name.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def port(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Port for Nutanix Prism.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def port(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="proxyUrl")
-    def proxy_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def proxy_url(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "proxy_url")
 
     @proxy_url.setter
-    def proxy_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def proxy_url(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "proxy_url", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionAuth")
-    def session_auth(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def session_auth(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         Use session authentification instead of basic auth for each request
         """
         return pulumi.get(self, "session_auth")
 
     @session_auth.setter
-    def session_auth(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def session_auth(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "session_auth", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         User name for Nutanix Prism. Could be
         local cluster auth (e.g. 'admin') or directory auth.
@@ -257,19 +257,19 @@ class ProviderArgs:
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "username", value)
 
     @_builtins.property
     @pulumi.getter(name="waitTimeout")
-    def wait_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def wait_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         Set if you know that the creation o update of a resource may take long time (minutes)
         """
         return pulumi.get(self, "wait_timeout")
 
     @wait_timeout.setter
-    def wait_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def wait_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "wait_timeout", value)
 
 
@@ -279,21 +279,21 @@ class Provider(pulumi.ProviderResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 api_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 custom_headers: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-                 foundation_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-                 foundation_port: pulumi.Input[Optional[_builtins.str]] = None,
-                 insecure: pulumi.Input[Optional[_builtins.bool]] = None,
-                 ndb_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-                 ndb_password: pulumi.Input[Optional[_builtins.str]] = None,
-                 ndb_username: pulumi.Input[Optional[_builtins.str]] = None,
-                 password: pulumi.Input[Optional[_builtins.str]] = None,
-                 port: pulumi.Input[Optional[_builtins.str]] = None,
-                 proxy_url: pulumi.Input[Optional[_builtins.str]] = None,
-                 session_auth: pulumi.Input[Optional[_builtins.bool]] = None,
-                 username: pulumi.Input[Optional[_builtins.str]] = None,
-                 wait_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 api_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 custom_headers: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 foundation_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 foundation_port: Optional[pulumi.Input[_builtins.str]] = None,
+                 insecure: Optional[pulumi.Input[_builtins.bool]] = None,
+                 ndb_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 ndb_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 ndb_username: Optional[pulumi.Input[_builtins.str]] = None,
+                 password: Optional[pulumi.Input[_builtins.str]] = None,
+                 port: Optional[pulumi.Input[_builtins.str]] = None,
+                 proxy_url: Optional[pulumi.Input[_builtins.str]] = None,
+                 session_auth: Optional[pulumi.Input[_builtins.bool]] = None,
+                 username: Optional[pulumi.Input[_builtins.str]] = None,
+                 wait_timeout: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
         The provider type for the nutanix package. By default, resources use package-wide configuration
@@ -318,7 +318,7 @@ class Provider(pulumi.ProviderResource):
                cluster lifecycle management operations, such as AOS upgrades.
         :param pulumi.Input[_builtins.str] foundation_endpoint: endpoint for foundation VM (eg. Foundation VM IP)
         :param pulumi.Input[_builtins.str] foundation_port: Port for foundation VM
-        :param pulumi.Input[_builtins.bool] insecure: Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>
+        :param pulumi.Input[_builtins.bool] insecure: Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>
         :param pulumi.Input[_builtins.str] ndb_endpoint: endpoint for Era VM (era ip)
         :param pulumi.Input[_builtins.str] password: Password for provided user name.
         :param pulumi.Input[_builtins.str] port: Port for Nutanix Prism.
@@ -355,21 +355,21 @@ class Provider(pulumi.ProviderResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 api_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 custom_headers: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-                 foundation_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-                 foundation_port: pulumi.Input[Optional[_builtins.str]] = None,
-                 insecure: pulumi.Input[Optional[_builtins.bool]] = None,
-                 ndb_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
-                 ndb_password: pulumi.Input[Optional[_builtins.str]] = None,
-                 ndb_username: pulumi.Input[Optional[_builtins.str]] = None,
-                 password: pulumi.Input[Optional[_builtins.str]] = None,
-                 port: pulumi.Input[Optional[_builtins.str]] = None,
-                 proxy_url: pulumi.Input[Optional[_builtins.str]] = None,
-                 session_auth: pulumi.Input[Optional[_builtins.bool]] = None,
-                 username: pulumi.Input[Optional[_builtins.str]] = None,
-                 wait_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 api_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 custom_headers: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 foundation_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 foundation_port: Optional[pulumi.Input[_builtins.str]] = None,
+                 insecure: Optional[pulumi.Input[_builtins.bool]] = None,
+                 ndb_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 ndb_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 ndb_username: Optional[pulumi.Input[_builtins.str]] = None,
+                 password: Optional[pulumi.Input[_builtins.str]] = None,
+                 port: Optional[pulumi.Input[_builtins.str]] = None,
+                 proxy_url: Optional[pulumi.Input[_builtins.str]] = None,
+                 session_auth: Optional[pulumi.Input[_builtins.bool]] = None,
+                 username: Optional[pulumi.Input[_builtins.str]] = None,
+                 wait_timeout: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):

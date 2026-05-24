@@ -21,10 +21,10 @@ __all__ = ['AddressGroupsV2Args', 'AddressGroupsV2']
 @pulumi.input_type
 class AddressGroupsV2Args:
     def __init__(__self__, *,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_ranges: pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]]] = None,
-                 ipv4_addresses: pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None):
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_ranges: Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]]] = None,
+                 ipv4_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a AddressGroupsV2 resource.
 
@@ -44,65 +44,65 @@ class AddressGroupsV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Optional) Description of the Address group
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="ipRanges")
-    def ip_ranges(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]]]:
+    def ip_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]]]:
         """
         - (Optional) List of IP range containing start and end IP.
         """
         return pulumi.get(self, "ip_ranges")
 
     @ip_ranges.setter
-    def ip_ranges(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]]]):
+    def ip_ranges(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]]]):
         pulumi.set(self, "ip_ranges", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv4Addresses")
-    def ipv4_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]]]:
+    def ipv4_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]]]:
         """
         - (Optional) List of CIDR blocks in the Address Group.
         """
         return pulumi.get(self, "ipv4_addresses")
 
     @ipv4_addresses.setter
-    def ipv4_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]]]):
+    def ipv4_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]]]):
         pulumi.set(self, "ipv4_addresses", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Required) Name of the Address group
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _AddressGroupsV2State:
     def __init__(__self__, *,
-                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_ranges: pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]]] = None,
-                 ipv4_addresses: pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]]] = None,
-                 links: pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2LinkArgs']]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 policy_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_ranges: Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]]] = None,
+                 ipv4_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]]] = None,
+                 links: Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2LinkArgs']]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 policy_references: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AddressGroupsV2 resources.
 
@@ -137,110 +137,110 @@ class _AddressGroupsV2State:
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         created by.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Optional) Description of the Address group
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         address group uuid.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipRanges")
-    def ip_ranges(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]]]:
+    def ip_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]]]:
         """
         - (Optional) List of IP range containing start and end IP.
         """
         return pulumi.get(self, "ip_ranges")
 
     @ip_ranges.setter
-    def ip_ranges(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]]]):
+    def ip_ranges(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]]]):
         pulumi.set(self, "ip_ranges", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv4Addresses")
-    def ipv4_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]]]:
+    def ipv4_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]]]:
         """
         - (Optional) List of CIDR blocks in the Address Group.
         """
         return pulumi.get(self, "ipv4_addresses")
 
     @ipv4_addresses.setter
-    def ipv4_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]]]):
+    def ipv4_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]]]):
         pulumi.set(self, "ipv4_addresses", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2LinkArgs']]]]:
+    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2LinkArgs']]]]:
         """
         A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         """
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2LinkArgs']]]]):
+    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Required) Name of the Address group
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="policyReferences")
-    def policy_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def policy_references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Reference to policy associated with Address Group.
         """
         return pulumi.get(self, "policy_references")
 
     @policy_references.setter
-    def policy_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def policy_references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "policy_references", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         A globally unique identifier that represents the tenant that owns this entity.
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
 
@@ -250,10 +250,10 @@ class AddressGroupsV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict']]]]] = None,
-                 ipv4_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict']]]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict']]]]] = None,
+                 ipv4_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict']]]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Create an Address Group
@@ -355,10 +355,10 @@ class AddressGroupsV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict']]]]] = None,
-                 ipv4_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict']]]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict']]]]] = None,
+                 ipv4_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict']]]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -387,15 +387,15 @@ class AddressGroupsV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            created_by: pulumi.Input[Optional[_builtins.str]] = None,
-            description: pulumi.Input[Optional[_builtins.str]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            ip_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict']]]]] = None,
-            ipv4_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict']]]]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2LinkArgs', 'AddressGroupsV2LinkArgsDict']]]]] = None,
-            name: pulumi.Input[Optional[_builtins.str]] = None,
-            policy_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AddressGroupsV2':
+            created_by: Optional[pulumi.Input[_builtins.str]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            ip_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict']]]]] = None,
+            ipv4_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict']]]]] = None,
+            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2LinkArgs', 'AddressGroupsV2LinkArgsDict']]]]] = None,
+            name: Optional[pulumi.Input[_builtins.str]] = None,
+            policy_references: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tenant_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AddressGroupsV2':
         """
         Get an existing AddressGroupsV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

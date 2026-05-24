@@ -75,9 +75,9 @@ class OvaVmDeployV2Args:
 @pulumi.input_type
 class _OvaVmDeployV2State:
     def __init__(__self__, *,
-                 cluster_location_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 override_vm_config: pulumi.Input[Optional['OvaVmDeployV2OverrideVmConfigArgs']] = None):
+                 cluster_location_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 override_vm_config: Optional[pulumi.Input['OvaVmDeployV2OverrideVmConfigArgs']] = None):
         """
         Input properties used for looking up and filtering OvaVmDeployV2 resources.
 
@@ -94,38 +94,38 @@ class _OvaVmDeployV2State:
 
     @_builtins.property
     @pulumi.getter(name="clusterLocationExtId")
-    def cluster_location_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def cluster_location_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Required) Cluster identifier to deploy VM from OVA. This field is required when deploying an OVA and must be a part of the OVA location list.
         """
         return pulumi.get(self, "cluster_location_ext_id")
 
     @cluster_location_ext_id.setter
-    def cluster_location_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def cluster_location_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "cluster_location_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Required) The external identifier for an OVA.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="overrideVmConfig")
-    def override_vm_config(self) -> pulumi.Input[Optional['OvaVmDeployV2OverrideVmConfigArgs']]:
+    def override_vm_config(self) -> Optional[pulumi.Input['OvaVmDeployV2OverrideVmConfigArgs']]:
         """
         -(Required) VM config override spec for OVA VM deploy endpoint
         """
         return pulumi.get(self, "override_vm_config")
 
     @override_vm_config.setter
-    def override_vm_config(self, value: pulumi.Input[Optional['OvaVmDeployV2OverrideVmConfigArgs']]):
+    def override_vm_config(self, value: Optional[pulumi.Input['OvaVmDeployV2OverrideVmConfigArgs']]):
         pulumi.set(self, "override_vm_config", value)
 
 
@@ -135,9 +135,9 @@ class OvaVmDeployV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_location_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 override_vm_config: pulumi.Input[Optional[Union['OvaVmDeployV2OverrideVmConfigArgs', 'OvaVmDeployV2OverrideVmConfigArgsDict']]] = None,
+                 cluster_location_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 override_vm_config: Optional[pulumi.Input[Union['OvaVmDeployV2OverrideVmConfigArgs', 'OvaVmDeployV2OverrideVmConfigArgsDict']]] = None,
                  __props__=None):
         """
         Deploys a VM from an OVA, allowing you to override the VM configuration if needed.
@@ -266,9 +266,9 @@ class OvaVmDeployV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_location_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 override_vm_config: pulumi.Input[Optional[Union['OvaVmDeployV2OverrideVmConfigArgs', 'OvaVmDeployV2OverrideVmConfigArgsDict']]] = None,
+                 cluster_location_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 override_vm_config: Optional[pulumi.Input[Union['OvaVmDeployV2OverrideVmConfigArgs', 'OvaVmDeployV2OverrideVmConfigArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -297,9 +297,9 @@ class OvaVmDeployV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cluster_location_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            override_vm_config: pulumi.Input[Optional[Union['OvaVmDeployV2OverrideVmConfigArgs', 'OvaVmDeployV2OverrideVmConfigArgsDict']]] = None) -> 'OvaVmDeployV2':
+            cluster_location_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            override_vm_config: Optional[pulumi.Input[Union['OvaVmDeployV2OverrideVmConfigArgs', 'OvaVmDeployV2OverrideVmConfigArgsDict']]] = None) -> 'OvaVmDeployV2':
         """
         Get an existing OvaVmDeployV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

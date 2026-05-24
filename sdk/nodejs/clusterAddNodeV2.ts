@@ -9,7 +9,7 @@ import * as utilities from "./utilities";
 /**
  * Add node on a cluster identified by {extId}.
  *
- * > **Note:** Starting with v2.3.2, users can now perform node add/remove operations directly through the <span pulumi-lang-nodejs="`nutanix.ClusterV2`" pulumi-lang-dotnet="`nutanix.ClusterV2`" pulumi-lang-go="`ClusterV2`" pulumi-lang-python="`ClusterV2`" pulumi-lang-yaml="`nutanix.ClusterV2`" pulumi-lang-java="`nutanix.ClusterV2`">`nutanix.ClusterV2`</span> resource, which offers a more consistent and automated approach to managing cluster scaling operations.
+ * > **Note:** Starting with v2.3.2, users can now perform node add/remove operations directly through the <span pulumi-lang-nodejs="`nutanix.ClusterV2`" pulumi-lang-dotnet="`nutanix.ClusterV2`" pulumi-lang-go="`ClusterV2`" pulumi-lang-python="`ClusterV2`" pulumi-lang-yaml="`nutanix.ClusterV2`" pulumi-lang-java="`nutanix.ClusterV2`" pulumi-lang-hcl="`nutanix_cluster_v2`">`nutanix.ClusterV2`</span> resource, which offers a more consistent and automated approach to managing cluster scaling operations.
  *
  * ## Example Usage
  *
@@ -223,27 +223,27 @@ export interface ClusterAddNodeV2State {
     /**
      * -(Required) Cluster UUID.
      */
-    clusterExtId?: pulumi.Input<string | undefined>;
+    clusterExtId?: pulumi.Input<string>;
     /**
      * -(Optional) Config parameters.
      */
-    configParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2ConfigParam>[] | undefined>;
+    configParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2ConfigParam>[]>;
     /**
      * -(Required) Parameters of the node to be added.
      */
-    nodeParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2NodeParam>[] | undefined>;
+    nodeParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2NodeParam>[]>;
     /**
      * -(Optional) configuration for node removal.
      */
-    removeNodeParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2RemoveNodeParam>[] | undefined>;
+    removeNodeParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2RemoveNodeParam>[]>;
     /**
      * -(Optional) Indicates if node addition can be skipped.
      */
-    shouldSkipAddNode?: pulumi.Input<boolean | undefined>;
+    shouldSkipAddNode?: pulumi.Input<boolean>;
     /**
      * -(Optional) Indicates if pre-expand checks can be skipped for node addition.
      */
-    shouldSkipPreExpandChecks?: pulumi.Input<boolean | undefined>;
+    shouldSkipPreExpandChecks?: pulumi.Input<boolean>;
 }
 
 /**
@@ -257,7 +257,7 @@ export interface ClusterAddNodeV2Args {
     /**
      * -(Optional) Config parameters.
      */
-    configParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2ConfigParam>[] | undefined>;
+    configParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2ConfigParam>[]>;
     /**
      * -(Required) Parameters of the node to be added.
      */
@@ -265,13 +265,13 @@ export interface ClusterAddNodeV2Args {
     /**
      * -(Optional) configuration for node removal.
      */
-    removeNodeParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2RemoveNodeParam>[] | undefined>;
+    removeNodeParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2RemoveNodeParam>[]>;
     /**
      * -(Optional) Indicates if node addition can be skipped.
      */
-    shouldSkipAddNode?: pulumi.Input<boolean | undefined>;
+    shouldSkipAddNode?: pulumi.Input<boolean>;
     /**
      * -(Optional) Indicates if pre-expand checks can be skipped for node addition.
      */
-    shouldSkipPreExpandChecks?: pulumi.Input<boolean | undefined>;
+    shouldSkipPreExpandChecks?: pulumi.Input<boolean>;
 }

@@ -275,8 +275,8 @@ def get_user_key_v2(description: Optional[_builtins.str] = None,
 
     The following arguments are supported:
 
-    * <span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`">`userExtId`</span>: - ( Required ) External Identifier of the User.
-    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - ( Required ) External identifier of the key.
+    * <span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`" pulumi-lang-hcl="`user_ext_id`">`userExtId`</span>: - ( Required ) External Identifier of the User.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>: - ( Required ) External identifier of the key.
 
 
     :param _builtins.str description: - Brief description of the key.
@@ -308,9 +308,9 @@ def get_user_key_v2(description: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         user_ext_id=pulumi.get(__ret__, 'user_ext_id'))
-def get_user_key_v2_output(description: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                           ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                           user_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_user_key_v2_output(description: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                           ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                           user_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserKeyV2Result]:
     """
     Fetches the requested key through the provided external identifier for the user and the key.
@@ -332,8 +332,8 @@ def get_user_key_v2_output(description: pulumi.Input[Optional[Optional[_builtins
 
     The following arguments are supported:
 
-    * <span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`">`userExtId`</span>: - ( Required ) External Identifier of the User.
-    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - ( Required ) External identifier of the key.
+    * <span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`" pulumi-lang-hcl="`user_ext_id`">`userExtId`</span>: - ( Required ) External Identifier of the User.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>: - ( Required ) External identifier of the key.
 
 
     :param _builtins.str description: - Brief description of the key.

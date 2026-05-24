@@ -229,7 +229,7 @@ def get_template_v2(ext_id: Optional[_builtins.str] = None,
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         update_time=pulumi.get(__ret__, 'update_time'),
         updated_bies=pulumi.get(__ret__, 'updated_bies'))
-def get_template_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_template_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTemplateV2Result]:
     """
     Retrieve the Template details for the given Template identifier.

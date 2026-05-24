@@ -86,7 +86,7 @@ export interface LcmPerformInventoryV2State {
      *
      * See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
      */
-    xClusterId?: pulumi.Input<string | undefined>;
+    xClusterId?: pulumi.Input<string>;
 }
 
 /**
@@ -98,5 +98,5 @@ export interface LcmPerformInventoryV2Args {
      *
      * See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
      */
-    xClusterId?: pulumi.Input<string | undefined>;
+    xClusterId?: pulumi.Input<string>;
 }

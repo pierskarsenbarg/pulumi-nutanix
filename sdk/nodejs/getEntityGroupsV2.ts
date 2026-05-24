@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Retrieves a list of entity groups. Use this data source when you need to list or filter entity groups rather than fetch a single group by <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span> (use the <span pulumi-lang-nodejs="`nutanix.EntityGroupV2`" pulumi-lang-dotnet="`nutanix.EntityGroupV2`" pulumi-lang-go="`EntityGroupV2`" pulumi-lang-python="`EntityGroupV2`" pulumi-lang-yaml="`nutanix.EntityGroupV2`" pulumi-lang-java="`nutanix.EntityGroupV2`">`nutanix.EntityGroupV2`</span> data source for that).
+ * Retrieves a list of entity groups. Use this data source when you need to list or filter entity groups rather than fetch a single group by <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span> (use the <span pulumi-lang-nodejs="`nutanix.EntityGroupV2`" pulumi-lang-dotnet="`nutanix.EntityGroupV2`" pulumi-lang-go="`EntityGroupV2`" pulumi-lang-python="`EntityGroupV2`" pulumi-lang-yaml="`nutanix.EntityGroupV2`" pulumi-lang-java="`nutanix.EntityGroupV2`" pulumi-lang-hcl="`nutanix_entity_group_v2`">`nutanix.EntityGroupV2`</span> data source for that).
  *
  * ## Example Usage
  *
@@ -91,7 +91,7 @@ export interface GetEntityGroupsV2Result {
     readonly select?: string;
 }
 /**
- * Retrieves a list of entity groups. Use this data source when you need to list or filter entity groups rather than fetch a single group by <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span> (use the <span pulumi-lang-nodejs="`nutanix.EntityGroupV2`" pulumi-lang-dotnet="`nutanix.EntityGroupV2`" pulumi-lang-go="`EntityGroupV2`" pulumi-lang-python="`EntityGroupV2`" pulumi-lang-yaml="`nutanix.EntityGroupV2`" pulumi-lang-java="`nutanix.EntityGroupV2`">`nutanix.EntityGroupV2`</span> data source for that).
+ * Retrieves a list of entity groups. Use this data source when you need to list or filter entity groups rather than fetch a single group by <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span> (use the <span pulumi-lang-nodejs="`nutanix.EntityGroupV2`" pulumi-lang-dotnet="`nutanix.EntityGroupV2`" pulumi-lang-go="`EntityGroupV2`" pulumi-lang-python="`EntityGroupV2`" pulumi-lang-yaml="`nutanix.EntityGroupV2`" pulumi-lang-java="`nutanix.EntityGroupV2`" pulumi-lang-hcl="`nutanix_entity_group_v2`">`nutanix.EntityGroupV2`</span> data source for that).
  *
  * ## Example Usage
  *
@@ -137,21 +137,21 @@ export interface GetEntityGroupsV2OutputArgs {
     /**
      * A URL query parameter that allows clients to filter a collection of resources. The expression must conform to OData V4.01 URL conventions. The filter can be applied to the following fields:
      */
-    filter?: pulumi.Input<string | undefined>;
+    filter?: pulumi.Input<string>;
     /**
      * A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
      */
-    limit?: pulumi.Input<number | undefined>;
+    limit?: pulumi.Input<number>;
     /**
      * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
      */
-    orderBy?: pulumi.Input<string | undefined>;
+    orderBy?: pulumi.Input<string>;
     /**
      * A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
      */
-    page?: pulumi.Input<number | undefined>;
+    page?: pulumi.Input<number>;
     /**
      * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions.
      */
-    select?: pulumi.Input<string | undefined>;
+    select?: pulumi.Input<string>;
 }

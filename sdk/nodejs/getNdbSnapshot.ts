@@ -235,7 +235,7 @@ export interface GetNdbSnapshotOutputArgs {
     /**
      * Filters will fetch the snapshot details as per input
      */
-    filters?: pulumi.Input<pulumi.Input<inputs.GetNdbSnapshotFilterArgs>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GetNdbSnapshotFilterArgs>[]>;
     /**
      * Snapshot ID to be given
      */
@@ -243,5 +243,5 @@ export interface GetNdbSnapshotOutputArgs {
     /**
      * tags
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbSnapshotTagArgs>[] | undefined>;
+    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbSnapshotTagArgs>[]>;
 }

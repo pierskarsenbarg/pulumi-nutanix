@@ -153,23 +153,23 @@ export interface FoundationIpmiConfigState {
     /**
      * - (Required) List of blocks.
      */
-    blocks?: pulumi.Input<pulumi.Input<inputs.FoundationIpmiConfigBlock>[] | undefined>;
+    blocks?: pulumi.Input<pulumi.Input<inputs.FoundationIpmiConfigBlock>[]>;
     /**
      * - (Required) IPMI gateway.
      */
-    ipmiGateway?: pulumi.Input<string | undefined>;
+    ipmiGateway?: pulumi.Input<string>;
     /**
      * - (Required) IPMI netmask.
      */
-    ipmiNetmask?: pulumi.Input<string | undefined>;
+    ipmiNetmask?: pulumi.Input<string>;
     /**
      * - (Required) IPMI password.
      */
-    ipmiPassword?: pulumi.Input<string | undefined>;
+    ipmiPassword?: pulumi.Input<string>;
     /**
      * - (Required) IPMI username.
      */
-    ipmiUser?: pulumi.Input<string | undefined>;
+    ipmiUser?: pulumi.Input<string>;
 }
 
 /**

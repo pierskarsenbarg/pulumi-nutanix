@@ -179,67 +179,67 @@ export interface NdbSlaState {
     /**
      * Duration in days for which transaction logs are retained in NDB.
      */
-    continuousRetention?: pulumi.Input<number | undefined>;
+    continuousRetention?: pulumi.Input<number>;
     /**
      * slas current frequency
      */
-    currentActiveFrequency?: pulumi.Input<string | undefined>;
+    currentActiveFrequency?: pulumi.Input<string>;
     /**
      * Duration in days for which a daily snapshot must be retained in NDB.
      */
-    dailyRetention?: pulumi.Input<number | undefined>;
+    dailyRetention?: pulumi.Input<number>;
     /**
      * sla created data
      */
-    dateCreated?: pulumi.Input<string | undefined>;
+    dateCreated?: pulumi.Input<string>;
     /**
      * sla last modified date
      */
-    dateModified?: pulumi.Input<string | undefined>;
+    dateModified?: pulumi.Input<string>;
     /**
      * Description of profile
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * Duration in months for which a monthly snapshot must be retained in NDB
      */
-    monthlyRetention?: pulumi.Input<number | undefined>;
+    monthlyRetention?: pulumi.Input<number>;
     /**
      * Name of profile
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * owner id
      */
-    ownerId?: pulumi.Input<string | undefined>;
+    ownerId?: pulumi.Input<string>;
     /**
      * pitr enabled
      */
-    pitrEnabled?: pulumi.Input<boolean | undefined>;
+    pitrEnabled?: pulumi.Input<boolean>;
     /**
      * Duration in number of quarters for which a quarterly snapshot must be retained in NDB.
      */
-    quarterlyRetention?: pulumi.Input<number | undefined>;
+    quarterlyRetention?: pulumi.Input<number>;
     /**
      * reference count
      */
-    referenceCount?: pulumi.Input<number | undefined>;
+    referenceCount?: pulumi.Input<number>;
     /**
      * refers whether sla is custom or built-in
      */
-    systemSla?: pulumi.Input<boolean | undefined>;
+    systemSla?: pulumi.Input<boolean>;
     /**
      * name of sla
      */
-    uniqueName?: pulumi.Input<string | undefined>;
+    uniqueName?: pulumi.Input<string>;
     /**
      * Duration in weeks for which a weekly snapshot must be retained in NDB.
      */
-    weeklyRetention?: pulumi.Input<number | undefined>;
+    weeklyRetention?: pulumi.Input<number>;
     /**
      * Not supported as of now.
      */
-    yearlyRetention?: pulumi.Input<number | undefined>;
+    yearlyRetention?: pulumi.Input<number>;
 }
 
 /**
@@ -249,33 +249,33 @@ export interface NdbSlaArgs {
     /**
      * Duration in days for which transaction logs are retained in NDB.
      */
-    continuousRetention?: pulumi.Input<number | undefined>;
+    continuousRetention?: pulumi.Input<number>;
     /**
      * Duration in days for which a daily snapshot must be retained in NDB.
      */
-    dailyRetention?: pulumi.Input<number | undefined>;
+    dailyRetention?: pulumi.Input<number>;
     /**
      * Description of profile
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * Duration in months for which a monthly snapshot must be retained in NDB
      */
-    monthlyRetention?: pulumi.Input<number | undefined>;
+    monthlyRetention?: pulumi.Input<number>;
     /**
      * Name of profile
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * Duration in number of quarters for which a quarterly snapshot must be retained in NDB.
      */
-    quarterlyRetention?: pulumi.Input<number | undefined>;
+    quarterlyRetention?: pulumi.Input<number>;
     /**
      * Duration in weeks for which a weekly snapshot must be retained in NDB.
      */
-    weeklyRetention?: pulumi.Input<number | undefined>;
+    weeklyRetention?: pulumi.Input<number>;
     /**
      * Not supported as of now.
      */
-    yearlyRetention?: pulumi.Input<number | undefined>;
+    yearlyRetention?: pulumi.Input<number>;
 }

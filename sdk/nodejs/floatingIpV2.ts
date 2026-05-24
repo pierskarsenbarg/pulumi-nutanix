@@ -198,63 +198,63 @@ export interface FloatingIpV2State {
     /**
      * Association status of floating IP.
      */
-    associationStatus?: pulumi.Input<string | undefined>;
+    associationStatus?: pulumi.Input<string>;
     /**
      * Association of the Floating IP with either NIC or Private IP
      */
-    associations?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2Association>[] | undefined>;
+    associations?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2Association>[]>;
     /**
      * Description for the Floating IP.
      */
-    description?: pulumi.Input<string | undefined>;
-    extId?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
+    extId?: pulumi.Input<string>;
     /**
      * External subnet reference for the Floating IP to be allocated in on-prem only.
      */
-    externalSubnetReference?: pulumi.Input<string | undefined>;
+    externalSubnetReference?: pulumi.Input<string>;
     /**
      * Networking common base object
      */
-    externalSubnets?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2ExternalSubnet>[] | undefined>;
-    floatingIpValue?: pulumi.Input<string | undefined>;
+    externalSubnets?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2ExternalSubnet>[]>;
+    floatingIpValue?: pulumi.Input<string>;
     /**
      * Floating IP address.
      */
-    floatingIps?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2FloatingIp>[] | undefined>;
+    floatingIps?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2FloatingIp>[]>;
     /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2Link>[] | undefined>;
-    loadBalancerSessionReference?: pulumi.Input<string | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2Link>[]>;
+    loadBalancerSessionReference?: pulumi.Input<string>;
     /**
      * Metadata associated with this resource.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2Metadata>[] | undefined>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2Metadata>[]>;
     /**
      * Name of the floating IP.
      */
-    name?: pulumi.Input<string | undefined>;
-    privateIp?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
+    privateIp?: pulumi.Input<string>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
-    tenantId?: pulumi.Input<string | undefined>;
+    tenantId?: pulumi.Input<string>;
     /**
      * VM NIC reference.
      */
-    vmNicReference?: pulumi.Input<string | undefined>;
+    vmNicReference?: pulumi.Input<string>;
     /**
      * Virtual NIC for projections
      */
-    vmNics?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2VmNic>[] | undefined>;
+    vmNics?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2VmNic>[]>;
     /**
      * VPC reference UUID
      */
-    vpcReference?: pulumi.Input<string | undefined>;
+    vpcReference?: pulumi.Input<string>;
     /**
      * Networking common base object
      */
-    vpcs?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2Vpc>[] | undefined>;
+    vpcs?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2Vpc>[]>;
 }
 
 /**
@@ -264,43 +264,43 @@ export interface FloatingIpV2Args {
     /**
      * Association of the Floating IP with either NIC or Private IP
      */
-    associations?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2Association>[] | undefined>;
+    associations?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2Association>[]>;
     /**
      * Description for the Floating IP.
      */
-    description?: pulumi.Input<string | undefined>;
-    extId?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
+    extId?: pulumi.Input<string>;
     /**
      * External subnet reference for the Floating IP to be allocated in on-prem only.
      */
-    externalSubnetReference?: pulumi.Input<string | undefined>;
+    externalSubnetReference?: pulumi.Input<string>;
     /**
      * Networking common base object
      */
-    externalSubnets?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2ExternalSubnet>[] | undefined>;
+    externalSubnets?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2ExternalSubnet>[]>;
     /**
      * Floating IP address.
      */
-    floatingIps?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2FloatingIp>[] | undefined>;
-    loadBalancerSessionReference?: pulumi.Input<string | undefined>;
+    floatingIps?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2FloatingIp>[]>;
+    loadBalancerSessionReference?: pulumi.Input<string>;
     /**
      * Name of the floating IP.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * VM NIC reference.
      */
-    vmNicReference?: pulumi.Input<string | undefined>;
+    vmNicReference?: pulumi.Input<string>;
     /**
      * Virtual NIC for projections
      */
-    vmNics?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2VmNic>[] | undefined>;
+    vmNics?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2VmNic>[]>;
     /**
      * VPC reference UUID
      */
-    vpcReference?: pulumi.Input<string | undefined>;
+    vpcReference?: pulumi.Input<string>;
     /**
      * Networking common base object
      */
-    vpcs?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2Vpc>[] | undefined>;
+    vpcs?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2Vpc>[]>;
 }

@@ -192,8 +192,8 @@ def get_ndb_tag(id: Optional[_builtins.str] = None,
         required=pulumi.get(__ret__, 'required'),
         status=pulumi.get(__ret__, 'status'),
         values=pulumi.get(__ret__, 'values'))
-def get_ndb_tag_output(id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+def get_ndb_tag_output(id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                       name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbTagResult]:
     """
     Describes a tag in Nutanix Database Service

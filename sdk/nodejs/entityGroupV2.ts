@@ -59,20 +59,20 @@ import * as utilities from "./utilities";
  *
  * ## Validation Requirements
  *
- * The following validation rules apply to <span pulumi-lang-nodejs="`allowedConfig`" pulumi-lang-dotnet="`AllowedConfig`" pulumi-lang-go="`allowedConfig`" pulumi-lang-python="`allowed_config`" pulumi-lang-yaml="`allowedConfig`" pulumi-lang-java="`allowedConfig`">`allowedConfig`</span> entities:
+ * The following validation rules apply to <span pulumi-lang-nodejs="`allowedConfig`" pulumi-lang-dotnet="`AllowedConfig`" pulumi-lang-go="`allowedConfig`" pulumi-lang-python="`allowed_config`" pulumi-lang-yaml="`allowedConfig`" pulumi-lang-java="`allowedConfig`" pulumi-lang-hcl="`allowed_config`">`allowedConfig`</span> entities:
  *
  * ### Required Fields
  *
- * * <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`">`type`</span> - (Required) Must be specified for all entities in <span pulumi-lang-nodejs="`allowedConfig`" pulumi-lang-dotnet="`AllowedConfig`" pulumi-lang-go="`allowedConfig`" pulumi-lang-python="`allowed_config`" pulumi-lang-yaml="`allowedConfig`" pulumi-lang-java="`allowedConfig`">`allowedConfig`</span>.
+ * * <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> - (Required) Must be specified for all entities in <span pulumi-lang-nodejs="`allowedConfig`" pulumi-lang-dotnet="`AllowedConfig`" pulumi-lang-go="`allowedConfig`" pulumi-lang-python="`allowed_config`" pulumi-lang-yaml="`allowedConfig`" pulumi-lang-java="`allowedConfig`" pulumi-lang-hcl="`allowed_config`">`allowedConfig`</span>.
  *
  * ### Conditional Requirements
  *
- * * <span pulumi-lang-nodejs="`kubeEntities`" pulumi-lang-dotnet="`KubeEntities`" pulumi-lang-go="`kubeEntities`" pulumi-lang-python="`kube_entities`" pulumi-lang-yaml="`kubeEntities`" pulumi-lang-java="`kubeEntities`">`kubeEntities`</span> - Required when <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`">`type`</span> is one of: `KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`. Must not be empty.
- * * <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`">`referenceExtIds`</span> - Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`">`selectedBy`</span> is `EXT_ID`. Must not be empty.
+ * * <span pulumi-lang-nodejs="`kubeEntities`" pulumi-lang-dotnet="`KubeEntities`" pulumi-lang-go="`kubeEntities`" pulumi-lang-python="`kube_entities`" pulumi-lang-yaml="`kubeEntities`" pulumi-lang-java="`kubeEntities`" pulumi-lang-hcl="`kube_entities`">`kubeEntities`</span> - Required when <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> is one of: `KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`. Must not be empty.
+ * * <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`" pulumi-lang-hcl="`reference_ext_ids`">`referenceExtIds`</span> - Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`. Must not be empty.
  *
  * ### Valid Combinations
  *
- * The combination of <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`">`selectedBy`</span> and <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`">`type`</span> must be one of the following valid pairs:
+ * The combination of <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> and <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> must be one of the following valid pairs:
  *
  * * `(CATEGORY_EXT_ID, VM)`
  * * `(CATEGORY_EXT_ID, SUBNET)`
@@ -88,14 +88,14 @@ import * as utilities from "./utilities";
  *
  * ### Duplicate (selected_by, type) Not Allowed
  *
- * Within one entity group, you cannot have two entities with the same `(selected_by, type)` pair. For example, two entities both using `IP_VALUES` and `ADDRESS_GROUP` are invalid. Combine all addresses and<span pulumi-lang-nodejs=" ipRanges " pulumi-lang-dotnet=" IpRanges " pulumi-lang-go=" ipRanges " pulumi-lang-python=" ip_ranges " pulumi-lang-yaml=" ipRanges " pulumi-lang-java=" ipRanges "> ipRanges </span>into a single entity block when using `(IP_VALUES, ADDRESS_GROUP)`.
+ * Within one entity group, you cannot have two entities with the same `(selected_by, type)` pair. For example, two entities both using `IP_VALUES` and `ADDRESS_GROUP` are invalid. Combine all addresses and<span pulumi-lang-nodejs=" ipRanges " pulumi-lang-dotnet=" IpRanges " pulumi-lang-go=" ipRanges " pulumi-lang-python=" ip_ranges " pulumi-lang-yaml=" ipRanges " pulumi-lang-java=" ipRanges " pulumi-lang-hcl=" ip_ranges "> ipRanges </span>into a single entity block when using `(IP_VALUES, ADDRESS_GROUP)`.
  *
  * ## Import
  *
  * Entity Group can be imported using the entity group uuid `entityGroupUUID` (ext_id in v4 terms). eg,
  *
  * // create its configuration in the root module. For example:
- * resource <span pulumi-lang-nodejs=""nutanix.EntityGroupV2"" pulumi-lang-dotnet=""nutanix.EntityGroupV2"" pulumi-lang-go=""EntityGroupV2"" pulumi-lang-python=""EntityGroupV2"" pulumi-lang-yaml=""nutanix.EntityGroupV2"" pulumi-lang-java=""nutanix.EntityGroupV2"">"nutanix.EntityGroupV2"</span> <span pulumi-lang-nodejs=""importEntityGroup"" pulumi-lang-dotnet=""ImportEntityGroup"" pulumi-lang-go=""importEntityGroup"" pulumi-lang-python=""import_entity_group"" pulumi-lang-yaml=""importEntityGroup"" pulumi-lang-java=""importEntityGroup"">"importEntityGroup"</span>{}
+ * resource <span pulumi-lang-nodejs=""nutanix.EntityGroupV2"" pulumi-lang-dotnet=""nutanix.EntityGroupV2"" pulumi-lang-go=""EntityGroupV2"" pulumi-lang-python=""EntityGroupV2"" pulumi-lang-yaml=""nutanix.EntityGroupV2"" pulumi-lang-java=""nutanix.EntityGroupV2"" pulumi-lang-hcl=""nutanix_entity_group_v2"">"nutanix.EntityGroupV2"</span> <span pulumi-lang-nodejs=""importEntityGroup"" pulumi-lang-dotnet=""ImportEntityGroup"" pulumi-lang-go=""importEntityGroup"" pulumi-lang-python=""import_entity_group"" pulumi-lang-yaml=""importEntityGroup"" pulumi-lang-java=""importEntityGroup"" pulumi-lang-hcl=""import_entity_group"">"importEntityGroup"</span>{}
  *
  * // execute the below command.
  *
@@ -228,47 +228,47 @@ export interface EntityGroupV2State {
     /**
      * Configuration of the allowed entities in the Entity Group.
      */
-    allowedConfig?: pulumi.Input<inputs.EntityGroupV2AllowedConfig | undefined>;
+    allowedConfig?: pulumi.Input<inputs.EntityGroupV2AllowedConfig>;
     /**
      * The timestamp when the Entity Group was created.
      */
-    creationTime?: pulumi.Input<string | undefined>;
+    creationTime?: pulumi.Input<string>;
     /**
      * A user defined annotation for an Entity Group.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * Configuration of except entities in the Entity Group.
      */
-    exceptConfig?: pulumi.Input<inputs.EntityGroupV2ExceptConfig | undefined>;
+    exceptConfig?: pulumi.Input<inputs.EntityGroupV2ExceptConfig>;
     /**
      * Entity group UUID.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * The timestamp when the Entity Group was last updated.
      */
-    lastUpdateTime?: pulumi.Input<string | undefined>;
+    lastUpdateTime?: pulumi.Input<string>;
     /**
      * A HATEOAS style link for the response.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.EntityGroupV2Link>[] | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.EntityGroupV2Link>[]>;
     /**
      * A short identifier of an Entity Group.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * The external identifier of the user who created the Entity Group.
      */
-    ownerExtId?: pulumi.Input<string | undefined>;
+    ownerExtId?: pulumi.Input<string>;
     /**
      * List of policy external identifiers.
      */
-    policyExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    policyExtIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
-    tenantId?: pulumi.Input<string | undefined>;
+    tenantId?: pulumi.Input<string>;
 }
 
 /**
@@ -278,21 +278,21 @@ export interface EntityGroupV2Args {
     /**
      * Configuration of the allowed entities in the Entity Group.
      */
-    allowedConfig?: pulumi.Input<inputs.EntityGroupV2AllowedConfig | undefined>;
+    allowedConfig?: pulumi.Input<inputs.EntityGroupV2AllowedConfig>;
     /**
      * A user defined annotation for an Entity Group.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * Configuration of except entities in the Entity Group.
      */
-    exceptConfig?: pulumi.Input<inputs.EntityGroupV2ExceptConfig | undefined>;
+    exceptConfig?: pulumi.Input<inputs.EntityGroupV2ExceptConfig>;
     /**
      * A short identifier of an Entity Group.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * List of policy external identifiers.
      */
-    policyExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    policyExtIds?: pulumi.Input<pulumi.Input<string>[]>;
 }

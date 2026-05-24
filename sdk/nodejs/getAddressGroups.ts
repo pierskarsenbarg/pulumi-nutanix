@@ -84,5 +84,5 @@ export interface GetAddressGroupsOutputArgs {
     /**
      * - (Optional) Use metadata to specify filters
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetAddressGroupsMetadataArgs>[] | undefined>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetAddressGroupsMetadataArgs>[]>;
 }

@@ -309,162 +309,162 @@ export interface NdbDatabaseSnapshotState {
     /**
      * App info version
      */
-    appInfoVersion?: pulumi.Input<string | undefined>;
+    appInfoVersion?: pulumi.Input<string>;
     /**
      * Applicable types
      */
-    applicableTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    applicableTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * database node id
      */
-    databaseNodeId?: pulumi.Input<string | undefined>;
+    databaseNodeId?: pulumi.Input<string>;
     /**
      * database snapshot
      */
-    databaseSnapshot?: pulumi.Input<boolean | undefined>;
+    databaseSnapshot?: pulumi.Input<boolean>;
     /**
      * created date
      */
-    dateCreated?: pulumi.Input<string | undefined>;
+    dateCreated?: pulumi.Input<string>;
     /**
      * modified date
      */
-    dateModified?: pulumi.Input<string | undefined>;
+    dateModified?: pulumi.Input<string>;
     /**
      * dbserver id
      */
-    dbserverId?: pulumi.Input<string | undefined>;
+    dbserverId?: pulumi.Input<string>;
     /**
      * dbserver ip
      */
-    dbserverIp?: pulumi.Input<string | undefined>;
+    dbserverIp?: pulumi.Input<string>;
     /**
      * dbserver name
      */
-    dbserverName?: pulumi.Input<string | undefined>;
+    dbserverName?: pulumi.Input<string>;
     /**
      * dbserver storage metadata version
      */
-    dbserverStorageMetadataVersion?: pulumi.Input<number | undefined>;
+    dbserverStorageMetadataVersion?: pulumi.Input<number>;
     /**
      * description of snapshot
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * Default is set to Asia/Calcutta
      */
-    expiryDateTimezone?: pulumi.Input<string | undefined>;
+    expiryDateTimezone?: pulumi.Input<string>;
     /**
      * from timestamp
      */
-    fromTimestamp?: pulumi.Input<string | undefined>;
+    fromTimestamp?: pulumi.Input<string>;
     /**
      * LCM config
      */
-    lcmConfigs?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseSnapshotLcmConfig>[] | undefined>;
+    lcmConfigs?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseSnapshotLcmConfig>[]>;
     /**
      * Snapshot name. Default value is era_manual_snapshot.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * nx cluster id
      */
-    nxClusterId?: pulumi.Input<string | undefined>;
+    nxClusterId?: pulumi.Input<string>;
     /**
      * parent snapshot
      */
-    parentSnapshot?: pulumi.Input<boolean | undefined>;
+    parentSnapshot?: pulumi.Input<boolean>;
     /**
      * parent snapshot id
      */
-    parentSnapshotId?: pulumi.Input<string | undefined>;
+    parentSnapshotId?: pulumi.Input<string>;
     /**
      * processed
      */
-    processed?: pulumi.Input<boolean | undefined>;
+    processed?: pulumi.Input<boolean>;
     /**
      * properties
      */
-    properties?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseSnapshotProperty>[] | undefined>;
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseSnapshotProperty>[]>;
     /**
      * protection domain
      */
-    protectionDomainId?: pulumi.Input<string | undefined>;
+    protectionDomainId?: pulumi.Input<string>;
     /**
      * Removal schedule after which the snapshot should be removed.
      */
-    removeScheduleInDays?: pulumi.Input<number | undefined>;
+    removeScheduleInDays?: pulumi.Input<number>;
     /**
      * snapshots to be replicated to clusters.
      */
-    replicateToClusters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    replicateToClusters?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * replicated snapshots
      */
-    replicatedSnapshots?: pulumi.Input<pulumi.Input<string>[] | undefined>;
-    santized?: pulumi.Input<boolean | undefined>;
-    santizedFromSnapshotId?: pulumi.Input<string | undefined>;
-    santizedSnapshots?: pulumi.Input<string | undefined>;
+    replicatedSnapshots?: pulumi.Input<pulumi.Input<string>[]>;
+    santized?: pulumi.Input<boolean>;
+    santizedFromSnapshotId?: pulumi.Input<string>;
+    santizedSnapshots?: pulumi.Input<string>;
     /**
      * snapshot family
      */
-    snapshotFamily?: pulumi.Input<string | undefined>;
+    snapshotFamily?: pulumi.Input<string>;
     /**
      * snapshot size
      */
-    snapshotSize?: pulumi.Input<number | undefined>;
+    snapshotSize?: pulumi.Input<number>;
     /**
      * snapshot timeStamp
      */
-    snapshotTimestamp?: pulumi.Input<string | undefined>;
+    snapshotTimestamp?: pulumi.Input<string>;
     /**
      * snapshot timestamp date
      */
-    snapshotTimestampDate?: pulumi.Input<number | undefined>;
+    snapshotTimestampDate?: pulumi.Input<number>;
     /**
      * snapshot uuid
      */
-    snapshotUuid?: pulumi.Input<string | undefined>;
+    snapshotUuid?: pulumi.Input<string>;
     /**
      * software database snapshot
      */
-    softwareDatabaseSnapshot?: pulumi.Input<boolean | undefined>;
+    softwareDatabaseSnapshot?: pulumi.Input<boolean>;
     /**
      * software snapshot
      */
-    softwareSnapshot?: pulumi.Input<string | undefined>;
+    softwareSnapshot?: pulumi.Input<string>;
     /**
      * software snapshot id
      */
-    softwareSnapshotId?: pulumi.Input<string | undefined>;
+    softwareSnapshotId?: pulumi.Input<string>;
     /**
      * status
      */
-    status?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string>;
     /**
      * tags
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseSnapshotTag>[] | undefined>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseSnapshotTag>[]>;
     /**
      * Time Machine Id
      */
-    timeMachineId?: pulumi.Input<string | undefined>;
+    timeMachineId?: pulumi.Input<string>;
     /**
      * Time Machine Name
      */
-    timeMachineName?: pulumi.Input<string | undefined>;
+    timeMachineName?: pulumi.Input<string>;
     /**
      * timezone
      */
-    timezone?: pulumi.Input<string | undefined>;
+    timezone?: pulumi.Input<string>;
     /**
      * to timestamp
      */
-    toTimestamp?: pulumi.Input<string | undefined>;
+    toTimestamp?: pulumi.Input<string>;
     /**
      * type
      */
-    type?: pulumi.Input<string | undefined>;
+    type?: pulumi.Input<string>;
 }
 
 /**
@@ -474,29 +474,29 @@ export interface NdbDatabaseSnapshotArgs {
     /**
      * Default is set to Asia/Calcutta
      */
-    expiryDateTimezone?: pulumi.Input<string | undefined>;
+    expiryDateTimezone?: pulumi.Input<string>;
     /**
      * Snapshot name. Default value is era_manual_snapshot.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * Removal schedule after which the snapshot should be removed.
      */
-    removeScheduleInDays?: pulumi.Input<number | undefined>;
+    removeScheduleInDays?: pulumi.Input<number>;
     /**
      * snapshots to be replicated to clusters.
      */
-    replicateToClusters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    replicateToClusters?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * tags
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseSnapshotTag>[] | undefined>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseSnapshotTag>[]>;
     /**
      * Time Machine Id
      */
-    timeMachineId?: pulumi.Input<string | undefined>;
+    timeMachineId?: pulumi.Input<string>;
     /**
      * Time Machine Name
      */
-    timeMachineName?: pulumi.Input<string | undefined>;
+    timeMachineName?: pulumi.Input<string>;
 }

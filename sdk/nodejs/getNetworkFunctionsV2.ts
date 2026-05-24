@@ -52,8 +52,8 @@ export interface GetNetworkFunctionsV2Args {
     limit?: number;
     /**
      * Order by expression. Examples:
-     * - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy ">`orderBy </span>= "name"`
-     * - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy ">`orderBy </span>= "name desc"`
+     * - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by ">`orderBy </span>= "name"`
+     * - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by ">`orderBy </span>= "name desc"`
      */
     orderBy?: string;
     /**
@@ -118,19 +118,19 @@ export interface GetNetworkFunctionsV2OutputArgs {
      * - `filter = "extId eq '887fddf0-b125-4da3-8110-b82bdbd21da2'"`
      * - `filter = "name eq 'samplenf'"`
      */
-    filter?: pulumi.Input<string | undefined>;
+    filter?: pulumi.Input<string>;
     /**
      * Maximum number of items per page.
      */
-    limit?: pulumi.Input<number | undefined>;
+    limit?: pulumi.Input<number>;
     /**
      * Order by expression. Examples:
-     * - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy ">`orderBy </span>= "name"`
-     * - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy ">`orderBy </span>= "name desc"`
+     * - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by ">`orderBy </span>= "name"`
+     * - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by ">`orderBy </span>= "name desc"`
      */
-    orderBy?: pulumi.Input<string | undefined>;
+    orderBy?: pulumi.Input<string>;
     /**
      * Page number.
      */
-    page?: pulumi.Input<number | undefined>;
+    page?: pulumi.Input<number>;
 }

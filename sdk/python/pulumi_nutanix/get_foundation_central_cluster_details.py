@@ -306,14 +306,14 @@ def get_foundation_central_cluster_details(cluster_external_ip: Optional[_builti
         redundancy_factor=pulumi.get(__ret__, 'redundancy_factor'),
         storage_node_count=pulumi.get(__ret__, 'storage_node_count'),
         workflow_type=pulumi.get(__ret__, 'workflow_type'))
-def get_foundation_central_cluster_details_output(cluster_external_ip: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                  cluster_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                                  cluster_size: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
-                                                  cluster_status: pulumi.Input[Optional[Optional[Union['GetFoundationCentralClusterDetailsClusterStatusArgs', 'GetFoundationCentralClusterDetailsClusterStatusArgsDict']]]] = None,
-                                                  common_network_settings: pulumi.Input[Optional[Optional[Union['GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs', 'GetFoundationCentralClusterDetailsCommonNetworkSettingsArgsDict']]]] = None,
-                                                  imaged_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                                                  redundancy_factor: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
-                                                  storage_node_count: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+def get_foundation_central_cluster_details_output(cluster_external_ip: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                                  cluster_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                                  cluster_size: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+                                                  cluster_status: Optional[pulumi.Input[Optional[Union['GetFoundationCentralClusterDetailsClusterStatusArgs', 'GetFoundationCentralClusterDetailsClusterStatusArgsDict']]]] = None,
+                                                  common_network_settings: Optional[pulumi.Input[Optional[Union['GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs', 'GetFoundationCentralClusterDetailsCommonNetworkSettingsArgsDict']]]] = None,
+                                                  imaged_cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                                                  redundancy_factor: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+                                                  storage_node_count: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFoundationCentralClusterDetailsResult]:
     """
     Get a cluster details created using Foundation Central.

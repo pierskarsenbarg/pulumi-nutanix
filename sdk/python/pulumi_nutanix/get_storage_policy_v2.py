@@ -206,7 +206,7 @@ def get_storage_policy_v2(ext_id: Optional[_builtins.str] = None,
         policy_type=pulumi.get(__ret__, 'policy_type'),
         qos_specs=pulumi.get(__ret__, 'qos_specs'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_storage_policy_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_storage_policy_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStoragePolicyV2Result]:
     """
     Provides a datasource to Fetch the configuration details of the existing Storage Policy identified by the {policyExtId}.

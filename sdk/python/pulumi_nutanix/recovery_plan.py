@@ -23,11 +23,11 @@ class RecoveryPlanArgs:
     def __init__(__self__, *,
                  parameters: pulumi.Input['RecoveryPlanParametersArgs'],
                  stage_lists: pulumi.Input[Sequence[pulumi.Input['RecoveryPlanStageListArgs']]],
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanCategoryArgs']]]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 owner_reference: pulumi.Input[Optional['RecoveryPlanOwnerReferenceArgs']] = None,
-                 project_reference: pulumi.Input[Optional['RecoveryPlanProjectReferenceArgs']] = None):
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanCategoryArgs']]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 owner_reference: Optional[pulumi.Input['RecoveryPlanOwnerReferenceArgs']] = None,
+                 project_reference: Optional[pulumi.Input['RecoveryPlanProjectReferenceArgs']] = None):
         """
         The set of arguments for constructing a RecoveryPlan resource.
 
@@ -67,69 +67,69 @@ class RecoveryPlanArgs:
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanCategoryArgs']]]]:
+    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanCategoryArgs']]]]:
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanCategoryArgs']]]]):
+    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         A description for Recovery Plan.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The name for the Recovery Plan.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerReference")
-    def owner_reference(self) -> pulumi.Input[Optional['RecoveryPlanOwnerReferenceArgs']]:
+    def owner_reference(self) -> Optional[pulumi.Input['RecoveryPlanOwnerReferenceArgs']]:
         return pulumi.get(self, "owner_reference")
 
     @owner_reference.setter
-    def owner_reference(self, value: pulumi.Input[Optional['RecoveryPlanOwnerReferenceArgs']]):
+    def owner_reference(self, value: Optional[pulumi.Input['RecoveryPlanOwnerReferenceArgs']]):
         pulumi.set(self, "owner_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="projectReference")
-    def project_reference(self) -> pulumi.Input[Optional['RecoveryPlanProjectReferenceArgs']]:
+    def project_reference(self) -> Optional[pulumi.Input['RecoveryPlanProjectReferenceArgs']]:
         return pulumi.get(self, "project_reference")
 
     @project_reference.setter
-    def project_reference(self, value: pulumi.Input[Optional['RecoveryPlanProjectReferenceArgs']]):
+    def project_reference(self, value: Optional[pulumi.Input['RecoveryPlanProjectReferenceArgs']]):
         pulumi.set(self, "project_reference", value)
 
 
 @pulumi.input_type
 class _RecoveryPlanState:
     def __init__(__self__, *,
-                 api_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanCategoryArgs']]]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 owner_reference: pulumi.Input[Optional['RecoveryPlanOwnerReferenceArgs']] = None,
-                 parameters: pulumi.Input[Optional['RecoveryPlanParametersArgs']] = None,
-                 project_reference: pulumi.Input[Optional['RecoveryPlanProjectReferenceArgs']] = None,
-                 stage_lists: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanStageListArgs']]]] = None,
-                 state: pulumi.Input[Optional[_builtins.str]] = None):
+                 api_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanCategoryArgs']]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 owner_reference: Optional[pulumi.Input['RecoveryPlanOwnerReferenceArgs']] = None,
+                 parameters: Optional[pulumi.Input['RecoveryPlanParametersArgs']] = None,
+                 project_reference: Optional[pulumi.Input['RecoveryPlanProjectReferenceArgs']] = None,
+                 stage_lists: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanStageListArgs']]]] = None,
+                 state: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RecoveryPlan resources.
 
@@ -159,98 +159,98 @@ class _RecoveryPlanState:
 
     @_builtins.property
     @pulumi.getter(name="apiVersion")
-    def api_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def api_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "api_version")
 
     @api_version.setter
-    def api_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def api_version(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "api_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanCategoryArgs']]]]:
+    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanCategoryArgs']]]]:
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanCategoryArgs']]]]):
+    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         A description for Recovery Plan.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The name for the Recovery Plan.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerReference")
-    def owner_reference(self) -> pulumi.Input[Optional['RecoveryPlanOwnerReferenceArgs']]:
+    def owner_reference(self) -> Optional[pulumi.Input['RecoveryPlanOwnerReferenceArgs']]:
         return pulumi.get(self, "owner_reference")
 
     @owner_reference.setter
-    def owner_reference(self, value: pulumi.Input[Optional['RecoveryPlanOwnerReferenceArgs']]):
+    def owner_reference(self, value: Optional[pulumi.Input['RecoveryPlanOwnerReferenceArgs']]):
         pulumi.set(self, "owner_reference", value)
 
     @_builtins.property
     @pulumi.getter
-    def parameters(self) -> pulumi.Input[Optional['RecoveryPlanParametersArgs']]:
+    def parameters(self) -> Optional[pulumi.Input['RecoveryPlanParametersArgs']]:
         return pulumi.get(self, "parameters")
 
     @parameters.setter
-    def parameters(self, value: pulumi.Input[Optional['RecoveryPlanParametersArgs']]):
+    def parameters(self, value: Optional[pulumi.Input['RecoveryPlanParametersArgs']]):
         pulumi.set(self, "parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="projectReference")
-    def project_reference(self) -> pulumi.Input[Optional['RecoveryPlanProjectReferenceArgs']]:
+    def project_reference(self) -> Optional[pulumi.Input['RecoveryPlanProjectReferenceArgs']]:
         return pulumi.get(self, "project_reference")
 
     @project_reference.setter
-    def project_reference(self, value: pulumi.Input[Optional['RecoveryPlanProjectReferenceArgs']]):
+    def project_reference(self, value: Optional[pulumi.Input['RecoveryPlanProjectReferenceArgs']]):
         pulumi.set(self, "project_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="stageLists")
-    def stage_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanStageListArgs']]]]:
+    def stage_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanStageListArgs']]]]:
         return pulumi.get(self, "stage_lists")
 
     @stage_lists.setter
-    def stage_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanStageListArgs']]]]):
+    def stage_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanStageListArgs']]]]):
         pulumi.set(self, "stage_lists", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -260,13 +260,13 @@ class RecoveryPlan(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPlanCategoryArgs', 'RecoveryPlanCategoryArgsDict']]]]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 owner_reference: pulumi.Input[Optional[Union['RecoveryPlanOwnerReferenceArgs', 'RecoveryPlanOwnerReferenceArgsDict']]] = None,
-                 parameters: pulumi.Input[Optional[Union['RecoveryPlanParametersArgs', 'RecoveryPlanParametersArgsDict']]] = None,
-                 project_reference: pulumi.Input[Optional[Union['RecoveryPlanProjectReferenceArgs', 'RecoveryPlanProjectReferenceArgsDict']]] = None,
-                 stage_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPlanStageListArgs', 'RecoveryPlanStageListArgsDict']]]]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPlanCategoryArgs', 'RecoveryPlanCategoryArgsDict']]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 owner_reference: Optional[pulumi.Input[Union['RecoveryPlanOwnerReferenceArgs', 'RecoveryPlanOwnerReferenceArgsDict']]] = None,
+                 parameters: Optional[pulumi.Input[Union['RecoveryPlanParametersArgs', 'RecoveryPlanParametersArgsDict']]] = None,
+                 project_reference: Optional[pulumi.Input[Union['RecoveryPlanProjectReferenceArgs', 'RecoveryPlanProjectReferenceArgsDict']]] = None,
+                 stage_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPlanStageListArgs', 'RecoveryPlanStageListArgsDict']]]]] = None,
                  __props__=None):
         """
         Provides a Nutanix Recovery Plan resource to Create a Recovery Plan.
@@ -358,13 +358,13 @@ class RecoveryPlan(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPlanCategoryArgs', 'RecoveryPlanCategoryArgsDict']]]]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 owner_reference: pulumi.Input[Optional[Union['RecoveryPlanOwnerReferenceArgs', 'RecoveryPlanOwnerReferenceArgsDict']]] = None,
-                 parameters: pulumi.Input[Optional[Union['RecoveryPlanParametersArgs', 'RecoveryPlanParametersArgsDict']]] = None,
-                 project_reference: pulumi.Input[Optional[Union['RecoveryPlanProjectReferenceArgs', 'RecoveryPlanProjectReferenceArgsDict']]] = None,
-                 stage_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPlanStageListArgs', 'RecoveryPlanStageListArgsDict']]]]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPlanCategoryArgs', 'RecoveryPlanCategoryArgsDict']]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 owner_reference: Optional[pulumi.Input[Union['RecoveryPlanOwnerReferenceArgs', 'RecoveryPlanOwnerReferenceArgsDict']]] = None,
+                 parameters: Optional[pulumi.Input[Union['RecoveryPlanParametersArgs', 'RecoveryPlanParametersArgsDict']]] = None,
+                 project_reference: Optional[pulumi.Input[Union['RecoveryPlanProjectReferenceArgs', 'RecoveryPlanProjectReferenceArgsDict']]] = None,
+                 stage_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPlanStageListArgs', 'RecoveryPlanStageListArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -398,16 +398,16 @@ class RecoveryPlan(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            api_version: pulumi.Input[Optional[_builtins.str]] = None,
-            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPlanCategoryArgs', 'RecoveryPlanCategoryArgsDict']]]]] = None,
-            description: pulumi.Input[Optional[_builtins.str]] = None,
-            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            name: pulumi.Input[Optional[_builtins.str]] = None,
-            owner_reference: pulumi.Input[Optional[Union['RecoveryPlanOwnerReferenceArgs', 'RecoveryPlanOwnerReferenceArgsDict']]] = None,
-            parameters: pulumi.Input[Optional[Union['RecoveryPlanParametersArgs', 'RecoveryPlanParametersArgsDict']]] = None,
-            project_reference: pulumi.Input[Optional[Union['RecoveryPlanProjectReferenceArgs', 'RecoveryPlanProjectReferenceArgsDict']]] = None,
-            stage_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPlanStageListArgs', 'RecoveryPlanStageListArgsDict']]]]] = None,
-            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'RecoveryPlan':
+            api_version: Optional[pulumi.Input[_builtins.str]] = None,
+            categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPlanCategoryArgs', 'RecoveryPlanCategoryArgsDict']]]]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
+            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: Optional[pulumi.Input[_builtins.str]] = None,
+            owner_reference: Optional[pulumi.Input[Union['RecoveryPlanOwnerReferenceArgs', 'RecoveryPlanOwnerReferenceArgsDict']]] = None,
+            parameters: Optional[pulumi.Input[Union['RecoveryPlanParametersArgs', 'RecoveryPlanParametersArgsDict']]] = None,
+            project_reference: Optional[pulumi.Input[Union['RecoveryPlanProjectReferenceArgs', 'RecoveryPlanProjectReferenceArgsDict']]] = None,
+            stage_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPlanStageListArgs', 'RecoveryPlanStageListArgsDict']]]]] = None,
+            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'RecoveryPlan':
         """
         Get an existing RecoveryPlan resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

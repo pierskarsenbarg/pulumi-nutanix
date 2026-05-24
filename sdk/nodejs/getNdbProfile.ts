@@ -167,17 +167,17 @@ export interface GetNdbProfileOutputArgs {
     /**
      * Database engine. For eg. postgres_database
      */
-    engine?: pulumi.Input<string | undefined>;
+    engine?: pulumi.Input<string>;
     /**
      * Profile ID for query
      */
-    profileId?: pulumi.Input<string | undefined>;
+    profileId?: pulumi.Input<string>;
     /**
      * Profile Name for query
      */
-    profileName?: pulumi.Input<string | undefined>;
+    profileName?: pulumi.Input<string>;
     /**
      * Profile type. Types: Software, Compute, Network and Database_Parameter
      */
-    profileType?: pulumi.Input<string | undefined>;
+    profileType?: pulumi.Input<string>;
 }

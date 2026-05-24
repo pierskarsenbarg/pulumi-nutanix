@@ -219,7 +219,7 @@ def get_network_function_v2(ext_id: Optional[_builtins.str] = None,
         nic_pairs=pulumi.get(__ret__, 'nic_pairs'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         traffic_forwarding_mode=pulumi.get(__ret__, 'traffic_forwarding_mode'))
-def get_network_function_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_network_function_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFunctionV2Result]:
     """
     Get a single Network Function corresponding to the ext_id.

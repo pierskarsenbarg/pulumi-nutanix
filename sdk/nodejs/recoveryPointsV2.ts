@@ -169,60 +169,60 @@ export interface RecoveryPointsV2State {
     /**
      * The UTC date and time in ISO-8601 format when the Recovery point is created.
      */
-    creationTime?: pulumi.Input<string | undefined>;
+    creationTime?: pulumi.Input<string>;
     /**
      * -(Optional) The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
      */
-    expirationTime?: pulumi.Input<string | undefined>;
+    expirationTime?: pulumi.Input<string>;
     /**
      * recovery point UUID
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.RecoveryPointsV2Link>[] | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.RecoveryPointsV2Link>[]>;
     /**
      * Location agnostic identifier of the recovery point. This identifier is used to identify the same instances of a recovery point across different sites.
      */
-    locationAgnosticId?: pulumi.Input<string | undefined>;
+    locationAgnosticId?: pulumi.Input<string>;
     /**
      * List of location references where the VM or volume group recovery point are a part of the specified recovery point.
      */
-    locationReferences?: pulumi.Input<pulumi.Input<inputs.RecoveryPointsV2LocationReference>[] | undefined>;
+    locationReferences?: pulumi.Input<pulumi.Input<inputs.RecoveryPointsV2LocationReference>[]>;
     /**
      * -(Optional) The name of the Recovery point.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
      */
-    ownerExtId?: pulumi.Input<string | undefined>;
+    ownerExtId?: pulumi.Input<string>;
     /**
      * -(Optional) Type of the Recovery point.
      * * supported values:
      * * `CRASH_CONSISTENT`: -  capture all the VM and application level details.
      * * `APPLICATION_CONSISTENT`: -  stored in the memory and also the in-progress transaction details.
      */
-    recoveryPointType?: pulumi.Input<string | undefined>;
+    recoveryPointType?: pulumi.Input<string>;
     /**
      * -(Optional) The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
      * * supported values:
      * * `COMPLETE`: -  The Recovery point is in a complete state and ready to be consumed.
      */
-    status?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity
      */
-    tenantId?: pulumi.Input<string | undefined>;
+    tenantId?: pulumi.Input<string>;
     /**
      * -(Optional) List of VM recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
      */
-    vmRecoveryPoints?: pulumi.Input<pulumi.Input<inputs.RecoveryPointsV2VmRecoveryPoint>[] | undefined>;
+    vmRecoveryPoints?: pulumi.Input<pulumi.Input<inputs.RecoveryPointsV2VmRecoveryPoint>[]>;
     /**
      * -(Optional) List of volume group recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
      */
-    volumeGroupRecoveryPoints?: pulumi.Input<pulumi.Input<inputs.RecoveryPointsV2VolumeGroupRecoveryPoint>[] | undefined>;
+    volumeGroupRecoveryPoints?: pulumi.Input<pulumi.Input<inputs.RecoveryPointsV2VolumeGroupRecoveryPoint>[]>;
 }
 
 /**
@@ -232,30 +232,30 @@ export interface RecoveryPointsV2Args {
     /**
      * -(Optional) The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
      */
-    expirationTime?: pulumi.Input<string | undefined>;
+    expirationTime?: pulumi.Input<string>;
     /**
      * -(Optional) The name of the Recovery point.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * -(Optional) Type of the Recovery point.
      * * supported values:
      * * `CRASH_CONSISTENT`: -  capture all the VM and application level details.
      * * `APPLICATION_CONSISTENT`: -  stored in the memory and also the in-progress transaction details.
      */
-    recoveryPointType?: pulumi.Input<string | undefined>;
+    recoveryPointType?: pulumi.Input<string>;
     /**
      * -(Optional) The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
      * * supported values:
      * * `COMPLETE`: -  The Recovery point is in a complete state and ready to be consumed.
      */
-    status?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string>;
     /**
      * -(Optional) List of VM recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
      */
-    vmRecoveryPoints?: pulumi.Input<pulumi.Input<inputs.RecoveryPointsV2VmRecoveryPoint>[] | undefined>;
+    vmRecoveryPoints?: pulumi.Input<pulumi.Input<inputs.RecoveryPointsV2VmRecoveryPoint>[]>;
     /**
      * -(Optional) List of volume group recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
      */
-    volumeGroupRecoveryPoints?: pulumi.Input<pulumi.Input<inputs.RecoveryPointsV2VolumeGroupRecoveryPoint>[] | undefined>;
+    volumeGroupRecoveryPoints?: pulumi.Input<pulumi.Input<inputs.RecoveryPointsV2VolumeGroupRecoveryPoint>[]>;
 }

@@ -21,18 +21,18 @@ __all__ = ['SamlIdentityProvidersV2Args', 'SamlIdentityProvidersV2']
 @pulumi.input_type
 class SamlIdentityProvidersV2Args:
     def __init__(__self__, *,
-                 custom_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 email_attribute: pulumi.Input[Optional[_builtins.str]] = None,
-                 entity_issuer: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 groups_attribute: pulumi.Input[Optional[_builtins.str]] = None,
-                 groups_delim: pulumi.Input[Optional[_builtins.str]] = None,
-                 idp_metadata_url: pulumi.Input[Optional[_builtins.str]] = None,
-                 idp_metadata_xml: pulumi.Input[Optional[_builtins.str]] = None,
-                 idp_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]] = None,
-                 is_signed_authn_req_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 username_attribute: pulumi.Input[Optional[_builtins.str]] = None):
+                 custom_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 email_attribute: Optional[pulumi.Input[_builtins.str]] = None,
+                 entity_issuer: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 groups_attribute: Optional[pulumi.Input[_builtins.str]] = None,
+                 groups_delim: Optional[pulumi.Input[_builtins.str]] = None,
+                 idp_metadata_url: Optional[pulumi.Input[_builtins.str]] = None,
+                 idp_metadata_xml: Optional[pulumi.Input[_builtins.str]] = None,
+                 idp_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]] = None,
+                 is_signed_authn_req_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 username_attribute: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a SamlIdentityProvidersV2 resource.
 
@@ -70,149 +70,149 @@ class SamlIdentityProvidersV2Args:
 
     @_builtins.property
     @pulumi.getter(name="customAttributes")
-    def custom_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def custom_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "custom_attributes")
 
     @custom_attributes.setter
-    def custom_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def custom_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "custom_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="emailAttribute")
-    def email_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def email_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "email_attribute")
 
     @email_attribute.setter
-    def email_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def email_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "email_attribute", value)
 
     @_builtins.property
     @pulumi.getter(name="entityIssuer")
-    def entity_issuer(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def entity_issuer(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - It will be used as Issuer in SAML authnRequest.
         """
         return pulumi.get(self, "entity_issuer")
 
     @entity_issuer.setter
-    def entity_issuer(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def entity_issuer(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "entity_issuer", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The External Identifier of the User Group.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="groupsAttribute")
-    def groups_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def groups_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "groups_attribute")
 
     @groups_attribute.setter
-    def groups_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def groups_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "groups_attribute", value)
 
     @_builtins.property
     @pulumi.getter(name="groupsDelim")
-    def groups_delim(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def groups_delim(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - Delimiter is used to split the value of attribute into multiple groups.
         """
         return pulumi.get(self, "groups_delim")
 
     @groups_delim.setter
-    def groups_delim(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def groups_delim(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "groups_delim", value)
 
     @_builtins.property
     @pulumi.getter(name="idpMetadataUrl")
-    def idp_metadata_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def idp_metadata_url(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "idp_metadata_url")
 
     @idp_metadata_url.setter
-    def idp_metadata_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def idp_metadata_url(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "idp_metadata_url", value)
 
     @_builtins.property
     @pulumi.getter(name="idpMetadataXml")
-    def idp_metadata_xml(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def idp_metadata_xml(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "idp_metadata_xml")
 
     @idp_metadata_xml.setter
-    def idp_metadata_xml(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def idp_metadata_xml(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "idp_metadata_xml", value)
 
     @_builtins.property
     @pulumi.getter(name="idpMetadatas")
-    def idp_metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]:
+    def idp_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]:
         """
         - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
         """
         return pulumi.get(self, "idp_metadatas")
 
     @idp_metadatas.setter
-    def idp_metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]):
+    def idp_metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]):
         pulumi.set(self, "idp_metadatas", value)
 
     @_builtins.property
     @pulumi.getter(name="isSignedAuthnReqEnabled")
-    def is_signed_authn_req_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def is_signed_authn_req_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - Flag indicating signing of SAML authnRequests.
         """
         return pulumi.get(self, "is_signed_authn_req_enabled")
 
     @is_signed_authn_req_enabled.setter
-    def is_signed_authn_req_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def is_signed_authn_req_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_signed_authn_req_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - Unique name of the IDP.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="usernameAttribute")
-    def username_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def username_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "username_attribute")
 
     @username_attribute.setter
-    def username_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def username_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "username_attribute", value)
 
 
 @pulumi.input_type
 class _SamlIdentityProvidersV2State:
     def __init__(__self__, *,
-                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
-                 created_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 custom_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 email_attribute: pulumi.Input[Optional[_builtins.str]] = None,
-                 entity_issuer: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 groups_attribute: pulumi.Input[Optional[_builtins.str]] = None,
-                 groups_delim: pulumi.Input[Optional[_builtins.str]] = None,
-                 idp_metadata_url: pulumi.Input[Optional[_builtins.str]] = None,
-                 idp_metadata_xml: pulumi.Input[Optional[_builtins.str]] = None,
-                 idp_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]] = None,
-                 is_signed_authn_req_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 username_attribute: pulumi.Input[Optional[_builtins.str]] = None):
+                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
+                 created_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 custom_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 email_attribute: Optional[pulumi.Input[_builtins.str]] = None,
+                 entity_issuer: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 groups_attribute: Optional[pulumi.Input[_builtins.str]] = None,
+                 groups_delim: Optional[pulumi.Input[_builtins.str]] = None,
+                 idp_metadata_url: Optional[pulumi.Input[_builtins.str]] = None,
+                 idp_metadata_xml: Optional[pulumi.Input[_builtins.str]] = None,
+                 idp_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]] = None,
+                 is_signed_authn_req_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 last_updated_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 username_attribute: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SamlIdentityProvidersV2 resources.
 
@@ -259,164 +259,164 @@ class _SamlIdentityProvidersV2State:
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - User or Service who created the SAML Identity Provider.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="createdTime")
-    def created_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def created_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - Creation time of the SAML Identity Provider.
         """
         return pulumi.get(self, "created_time")
 
     @created_time.setter
-    def created_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def created_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "created_time", value)
 
     @_builtins.property
     @pulumi.getter(name="customAttributes")
-    def custom_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def custom_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "custom_attributes")
 
     @custom_attributes.setter
-    def custom_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def custom_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "custom_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="emailAttribute")
-    def email_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def email_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "email_attribute")
 
     @email_attribute.setter
-    def email_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def email_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "email_attribute", value)
 
     @_builtins.property
     @pulumi.getter(name="entityIssuer")
-    def entity_issuer(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def entity_issuer(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - It will be used as Issuer in SAML authnRequest.
         """
         return pulumi.get(self, "entity_issuer")
 
     @entity_issuer.setter
-    def entity_issuer(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def entity_issuer(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "entity_issuer", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The External Identifier of the User Group.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="groupsAttribute")
-    def groups_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def groups_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "groups_attribute")
 
     @groups_attribute.setter
-    def groups_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def groups_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "groups_attribute", value)
 
     @_builtins.property
     @pulumi.getter(name="groupsDelim")
-    def groups_delim(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def groups_delim(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - Delimiter is used to split the value of attribute into multiple groups.
         """
         return pulumi.get(self, "groups_delim")
 
     @groups_delim.setter
-    def groups_delim(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def groups_delim(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "groups_delim", value)
 
     @_builtins.property
     @pulumi.getter(name="idpMetadataUrl")
-    def idp_metadata_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def idp_metadata_url(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "idp_metadata_url")
 
     @idp_metadata_url.setter
-    def idp_metadata_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def idp_metadata_url(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "idp_metadata_url", value)
 
     @_builtins.property
     @pulumi.getter(name="idpMetadataXml")
-    def idp_metadata_xml(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def idp_metadata_xml(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "idp_metadata_xml")
 
     @idp_metadata_xml.setter
-    def idp_metadata_xml(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def idp_metadata_xml(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "idp_metadata_xml", value)
 
     @_builtins.property
     @pulumi.getter(name="idpMetadatas")
-    def idp_metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]:
+    def idp_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]:
         """
         - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
         """
         return pulumi.get(self, "idp_metadatas")
 
     @idp_metadatas.setter
-    def idp_metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]):
+    def idp_metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]):
         pulumi.set(self, "idp_metadatas", value)
 
     @_builtins.property
     @pulumi.getter(name="isSignedAuthnReqEnabled")
-    def is_signed_authn_req_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def is_signed_authn_req_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - Flag indicating signing of SAML authnRequests.
         """
         return pulumi.get(self, "is_signed_authn_req_enabled")
 
     @is_signed_authn_req_enabled.setter
-    def is_signed_authn_req_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def is_signed_authn_req_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_signed_authn_req_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedTime")
-    def last_updated_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def last_updated_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - Last updated time of the SAML Identity Provider.
         """
         return pulumi.get(self, "last_updated_time")
 
     @last_updated_time.setter
-    def last_updated_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def last_updated_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "last_updated_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - Unique name of the IDP.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="usernameAttribute")
-    def username_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def username_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "username_attribute")
 
     @username_attribute.setter
-    def username_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def username_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "username_attribute", value)
 
 
@@ -426,18 +426,18 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 custom_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 email_attribute: pulumi.Input[Optional[_builtins.str]] = None,
-                 entity_issuer: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 groups_attribute: pulumi.Input[Optional[_builtins.str]] = None,
-                 groups_delim: pulumi.Input[Optional[_builtins.str]] = None,
-                 idp_metadata_url: pulumi.Input[Optional[_builtins.str]] = None,
-                 idp_metadata_xml: pulumi.Input[Optional[_builtins.str]] = None,
-                 idp_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SamlIdentityProvidersV2IdpMetadataArgs', 'SamlIdentityProvidersV2IdpMetadataArgsDict']]]]] = None,
-                 is_signed_authn_req_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 username_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 email_attribute: Optional[pulumi.Input[_builtins.str]] = None,
+                 entity_issuer: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 groups_attribute: Optional[pulumi.Input[_builtins.str]] = None,
+                 groups_delim: Optional[pulumi.Input[_builtins.str]] = None,
+                 idp_metadata_url: Optional[pulumi.Input[_builtins.str]] = None,
+                 idp_metadata_xml: Optional[pulumi.Input[_builtins.str]] = None,
+                 idp_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SamlIdentityProvidersV2IdpMetadataArgs', 'SamlIdentityProvidersV2IdpMetadataArgsDict']]]]] = None,
+                 is_signed_authn_req_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 username_attribute: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to Create a SAML Identity Provider.
@@ -476,39 +476,39 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
 
         The following arguments are supported:
 
-        * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: -(Optional) External identifier of the SAML Identity Provider.
-        * <span pulumi-lang-nodejs="`idpMetadataUrl`" pulumi-lang-dotnet="`IdpMetadataUrl`" pulumi-lang-go="`idpMetadataUrl`" pulumi-lang-python="`idp_metadata_url`" pulumi-lang-yaml="`idpMetadataUrl`" pulumi-lang-java="`idpMetadataUrl`">`idpMetadataUrl`</span>: -(Optional) Metadata url that provides IDP details.
-        * <span pulumi-lang-nodejs="`idpMetadataXml`" pulumi-lang-dotnet="`IdpMetadataXml`" pulumi-lang-go="`idpMetadataXml`" pulumi-lang-python="`idp_metadata_xml`" pulumi-lang-yaml="`idpMetadataXml`" pulumi-lang-java="`idpMetadataXml`">`idpMetadataXml`</span>: -(Optional) Base64 encoded metadata in XML format with IDP details.
-        * <span pulumi-lang-nodejs="`idpMetadata`" pulumi-lang-dotnet="`IdpMetadata`" pulumi-lang-go="`idpMetadata`" pulumi-lang-python="`idp_metadata`" pulumi-lang-yaml="`idpMetadata`" pulumi-lang-java="`idpMetadata`">`idpMetadata`</span>: -(Optional) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
-        * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: -(Required) Unique name of the IDP.
-        * <span pulumi-lang-nodejs="`usernameAttr`" pulumi-lang-dotnet="`UsernameAttr`" pulumi-lang-go="`usernameAttr`" pulumi-lang-python="`username_attr`" pulumi-lang-yaml="`usernameAttr`" pulumi-lang-java="`usernameAttr`">`usernameAttr`</span>: -(Optional) SAML assertion Username attribute element.
-        * <span pulumi-lang-nodejs="`emailAttr`" pulumi-lang-dotnet="`EmailAttr`" pulumi-lang-go="`emailAttr`" pulumi-lang-python="`email_attr`" pulumi-lang-yaml="`emailAttr`" pulumi-lang-java="`emailAttr`">`emailAttr`</span>: -(Optional) SAML assertion email attribute element.
-        * <span pulumi-lang-nodejs="`groupsAttr`" pulumi-lang-dotnet="`GroupsAttr`" pulumi-lang-go="`groupsAttr`" pulumi-lang-python="`groups_attr`" pulumi-lang-yaml="`groupsAttr`" pulumi-lang-java="`groupsAttr`">`groupsAttr`</span>: -(Optional) SAML assertion groups attribute element.
-        * <span pulumi-lang-nodejs="`groupsDelim`" pulumi-lang-dotnet="`GroupsDelim`" pulumi-lang-go="`groupsDelim`" pulumi-lang-python="`groups_delim`" pulumi-lang-yaml="`groupsDelim`" pulumi-lang-java="`groupsDelim`">`groupsDelim`</span>: -(Optional) Delimiter is used to split the value of attribute into multiple groups.
-        * <span pulumi-lang-nodejs="`customAttr`" pulumi-lang-dotnet="`CustomAttr`" pulumi-lang-go="`customAttr`" pulumi-lang-python="`custom_attr`" pulumi-lang-yaml="`customAttr`" pulumi-lang-java="`customAttr`">`customAttr`</span>: -(Optional) SAML assertions for list of custom attribute elements.
-        * <span pulumi-lang-nodejs="`entityIssuer`" pulumi-lang-dotnet="`EntityIssuer`" pulumi-lang-go="`entityIssuer`" pulumi-lang-python="`entity_issuer`" pulumi-lang-yaml="`entityIssuer`" pulumi-lang-java="`entityIssuer`">`entityIssuer`</span>: -(Optional) It will be used as Issuer in SAML authnRequest.
-        * <span pulumi-lang-nodejs="`isSignedAuthnReqEnabled`" pulumi-lang-dotnet="`IsSignedAuthnReqEnabled`" pulumi-lang-go="`isSignedAuthnReqEnabled`" pulumi-lang-python="`is_signed_authn_req_enabled`" pulumi-lang-yaml="`isSignedAuthnReqEnabled`" pulumi-lang-java="`isSignedAuthnReqEnabled`">`isSignedAuthnReqEnabled`</span>: -(Optional) Flag indicating signing of SAML authnRequests.
+        * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>: -(Optional) External identifier of the SAML Identity Provider.
+        * <span pulumi-lang-nodejs="`idpMetadataUrl`" pulumi-lang-dotnet="`IdpMetadataUrl`" pulumi-lang-go="`idpMetadataUrl`" pulumi-lang-python="`idp_metadata_url`" pulumi-lang-yaml="`idpMetadataUrl`" pulumi-lang-java="`idpMetadataUrl`" pulumi-lang-hcl="`idp_metadata_url`">`idpMetadataUrl`</span>: -(Optional) Metadata url that provides IDP details.
+        * <span pulumi-lang-nodejs="`idpMetadataXml`" pulumi-lang-dotnet="`IdpMetadataXml`" pulumi-lang-go="`idpMetadataXml`" pulumi-lang-python="`idp_metadata_xml`" pulumi-lang-yaml="`idpMetadataXml`" pulumi-lang-java="`idpMetadataXml`" pulumi-lang-hcl="`idp_metadata_xml`">`idpMetadataXml`</span>: -(Optional) Base64 encoded metadata in XML format with IDP details.
+        * <span pulumi-lang-nodejs="`idpMetadata`" pulumi-lang-dotnet="`IdpMetadata`" pulumi-lang-go="`idpMetadata`" pulumi-lang-python="`idp_metadata`" pulumi-lang-yaml="`idpMetadata`" pulumi-lang-java="`idpMetadata`" pulumi-lang-hcl="`idp_metadata`">`idpMetadata`</span>: -(Optional) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`">`name`</span>: -(Required) Unique name of the IDP.
+        * <span pulumi-lang-nodejs="`usernameAttr`" pulumi-lang-dotnet="`UsernameAttr`" pulumi-lang-go="`usernameAttr`" pulumi-lang-python="`username_attr`" pulumi-lang-yaml="`usernameAttr`" pulumi-lang-java="`usernameAttr`" pulumi-lang-hcl="`username_attr`">`usernameAttr`</span>: -(Optional) SAML assertion Username attribute element.
+        * <span pulumi-lang-nodejs="`emailAttr`" pulumi-lang-dotnet="`EmailAttr`" pulumi-lang-go="`emailAttr`" pulumi-lang-python="`email_attr`" pulumi-lang-yaml="`emailAttr`" pulumi-lang-java="`emailAttr`" pulumi-lang-hcl="`email_attr`">`emailAttr`</span>: -(Optional) SAML assertion email attribute element.
+        * <span pulumi-lang-nodejs="`groupsAttr`" pulumi-lang-dotnet="`GroupsAttr`" pulumi-lang-go="`groupsAttr`" pulumi-lang-python="`groups_attr`" pulumi-lang-yaml="`groupsAttr`" pulumi-lang-java="`groupsAttr`" pulumi-lang-hcl="`groups_attr`">`groupsAttr`</span>: -(Optional) SAML assertion groups attribute element.
+        * <span pulumi-lang-nodejs="`groupsDelim`" pulumi-lang-dotnet="`GroupsDelim`" pulumi-lang-go="`groupsDelim`" pulumi-lang-python="`groups_delim`" pulumi-lang-yaml="`groupsDelim`" pulumi-lang-java="`groupsDelim`" pulumi-lang-hcl="`groups_delim`">`groupsDelim`</span>: -(Optional) Delimiter is used to split the value of attribute into multiple groups.
+        * <span pulumi-lang-nodejs="`customAttr`" pulumi-lang-dotnet="`CustomAttr`" pulumi-lang-go="`customAttr`" pulumi-lang-python="`custom_attr`" pulumi-lang-yaml="`customAttr`" pulumi-lang-java="`customAttr`" pulumi-lang-hcl="`custom_attr`">`customAttr`</span>: -(Optional) SAML assertions for list of custom attribute elements.
+        * <span pulumi-lang-nodejs="`entityIssuer`" pulumi-lang-dotnet="`EntityIssuer`" pulumi-lang-go="`entityIssuer`" pulumi-lang-python="`entity_issuer`" pulumi-lang-yaml="`entityIssuer`" pulumi-lang-java="`entityIssuer`" pulumi-lang-hcl="`entity_issuer`">`entityIssuer`</span>: -(Optional) It will be used as Issuer in SAML authnRequest.
+        * <span pulumi-lang-nodejs="`isSignedAuthnReqEnabled`" pulumi-lang-dotnet="`IsSignedAuthnReqEnabled`" pulumi-lang-go="`isSignedAuthnReqEnabled`" pulumi-lang-python="`is_signed_authn_req_enabled`" pulumi-lang-yaml="`isSignedAuthnReqEnabled`" pulumi-lang-java="`isSignedAuthnReqEnabled`" pulumi-lang-hcl="`is_signed_authn_req_enabled`">`isSignedAuthnReqEnabled`</span>: -(Optional) Flag indicating signing of SAML authnRequests.
 
         ### Idp Metadata
 
-        The<span pulumi-lang-nodejs=" idpMetadata " pulumi-lang-dotnet=" IdpMetadata " pulumi-lang-go=" idpMetadata " pulumi-lang-python=" idp_metadata " pulumi-lang-yaml=" idpMetadata " pulumi-lang-java=" idpMetadata "> idpMetadata </span>attribute supports the following:
+        The<span pulumi-lang-nodejs=" idpMetadata " pulumi-lang-dotnet=" IdpMetadata " pulumi-lang-go=" idpMetadata " pulumi-lang-python=" idp_metadata " pulumi-lang-yaml=" idpMetadata " pulumi-lang-java=" idpMetadata " pulumi-lang-hcl=" idp_metadata "> idpMetadata </span>attribute supports the following:
 
-        * <span pulumi-lang-nodejs="`entityId`" pulumi-lang-dotnet="`EntityId`" pulumi-lang-go="`entityId`" pulumi-lang-python="`entity_id`" pulumi-lang-yaml="`entityId`" pulumi-lang-java="`entityId`">`entityId`</span>: -(Required) Entity Identifier of Identity provider.
-        * <span pulumi-lang-nodejs="`loginUrl`" pulumi-lang-dotnet="`LoginUrl`" pulumi-lang-go="`loginUrl`" pulumi-lang-python="`login_url`" pulumi-lang-yaml="`loginUrl`" pulumi-lang-java="`loginUrl`">`loginUrl`</span>: -(Required) Login URL of the Identity provider.
-        * <span pulumi-lang-nodejs="`logoutUrl`" pulumi-lang-dotnet="`LogoutUrl`" pulumi-lang-go="`logoutUrl`" pulumi-lang-python="`logout_url`" pulumi-lang-yaml="`logoutUrl`" pulumi-lang-java="`logoutUrl`">`logoutUrl`</span>: -(Optional) Logout URL of the Identity provider.
-        * <span pulumi-lang-nodejs="`errorUrl`" pulumi-lang-dotnet="`ErrorUrl`" pulumi-lang-go="`errorUrl`" pulumi-lang-python="`error_url`" pulumi-lang-yaml="`errorUrl`" pulumi-lang-java="`errorUrl`">`errorUrl`</span>: - (Optional) Error URL of the Identity provider.
-        * <span pulumi-lang-nodejs="`certificate`" pulumi-lang-dotnet="`Certificate`" pulumi-lang-go="`certificate`" pulumi-lang-python="`certificate`" pulumi-lang-yaml="`certificate`" pulumi-lang-java="`certificate`">`certificate`</span>: -(Required) Certificate for verification.
-        * <span pulumi-lang-nodejs="`nameIdPolicyFormat`" pulumi-lang-dotnet="`NameIdPolicyFormat`" pulumi-lang-go="`nameIdPolicyFormat`" pulumi-lang-python="`name_id_policy_format`" pulumi-lang-yaml="`nameIdPolicyFormat`" pulumi-lang-java="`nameIdPolicyFormat`">`nameIdPolicyFormat`</span>: -(Optional) Name ID Policy format.
+        * <span pulumi-lang-nodejs="`entityId`" pulumi-lang-dotnet="`EntityId`" pulumi-lang-go="`entityId`" pulumi-lang-python="`entity_id`" pulumi-lang-yaml="`entityId`" pulumi-lang-java="`entityId`" pulumi-lang-hcl="`entity_id`">`entityId`</span>: -(Required) Entity Identifier of Identity provider.
+        * <span pulumi-lang-nodejs="`loginUrl`" pulumi-lang-dotnet="`LoginUrl`" pulumi-lang-go="`loginUrl`" pulumi-lang-python="`login_url`" pulumi-lang-yaml="`loginUrl`" pulumi-lang-java="`loginUrl`" pulumi-lang-hcl="`login_url`">`loginUrl`</span>: -(Required) Login URL of the Identity provider.
+        * <span pulumi-lang-nodejs="`logoutUrl`" pulumi-lang-dotnet="`LogoutUrl`" pulumi-lang-go="`logoutUrl`" pulumi-lang-python="`logout_url`" pulumi-lang-yaml="`logoutUrl`" pulumi-lang-java="`logoutUrl`" pulumi-lang-hcl="`logout_url`">`logoutUrl`</span>: -(Optional) Logout URL of the Identity provider.
+        * <span pulumi-lang-nodejs="`errorUrl`" pulumi-lang-dotnet="`ErrorUrl`" pulumi-lang-go="`errorUrl`" pulumi-lang-python="`error_url`" pulumi-lang-yaml="`errorUrl`" pulumi-lang-java="`errorUrl`" pulumi-lang-hcl="`error_url`">`errorUrl`</span>: - (Optional) Error URL of the Identity provider.
+        * <span pulumi-lang-nodejs="`certificate`" pulumi-lang-dotnet="`Certificate`" pulumi-lang-go="`certificate`" pulumi-lang-python="`certificate`" pulumi-lang-yaml="`certificate`" pulumi-lang-java="`certificate`" pulumi-lang-hcl="`certificate`">`certificate`</span>: -(Required) Certificate for verification.
+        * <span pulumi-lang-nodejs="`nameIdPolicyFormat`" pulumi-lang-dotnet="`NameIdPolicyFormat`" pulumi-lang-go="`nameIdPolicyFormat`" pulumi-lang-python="`name_id_policy_format`" pulumi-lang-yaml="`nameIdPolicyFormat`" pulumi-lang-java="`nameIdPolicyFormat`" pulumi-lang-hcl="`name_id_policy_format`">`nameIdPolicyFormat`</span>: -(Optional) Name ID Policy format.
           * supported values:
             * `emailAddress`: -  Uses email address as NameID format
-            * <span pulumi-lang-nodejs="`encrypted`" pulumi-lang-dotnet="`Encrypted`" pulumi-lang-go="`encrypted`" pulumi-lang-python="`encrypted`" pulumi-lang-yaml="`encrypted`" pulumi-lang-java="`encrypted`">`encrypted`</span>: -  Uses encrypted as NameID format.
-            * <span pulumi-lang-nodejs="`unspecified`" pulumi-lang-dotnet="`Unspecified`" pulumi-lang-go="`unspecified`" pulumi-lang-python="`unspecified`" pulumi-lang-yaml="`unspecified`" pulumi-lang-java="`unspecified`">`unspecified`</span>: -  NameID format is left to individual implementations.
-            * <span pulumi-lang-nodejs="`transient`" pulumi-lang-dotnet="`Transient`" pulumi-lang-go="`transient`" pulumi-lang-python="`transient`" pulumi-lang-yaml="`transient`" pulumi-lang-java="`transient`">`transient`</span>: -  	Uses identifier with transient semantics as NameID format.
+            * <span pulumi-lang-nodejs="`encrypted`" pulumi-lang-dotnet="`Encrypted`" pulumi-lang-go="`encrypted`" pulumi-lang-python="`encrypted`" pulumi-lang-yaml="`encrypted`" pulumi-lang-java="`encrypted`" pulumi-lang-hcl="`encrypted`">`encrypted`</span>: -  Uses encrypted as NameID format.
+            * <span pulumi-lang-nodejs="`unspecified`" pulumi-lang-dotnet="`Unspecified`" pulumi-lang-go="`unspecified`" pulumi-lang-python="`unspecified`" pulumi-lang-yaml="`unspecified`" pulumi-lang-java="`unspecified`" pulumi-lang-hcl="`unspecified`">`unspecified`</span>: -  NameID format is left to individual implementations.
+            * <span pulumi-lang-nodejs="`transient`" pulumi-lang-dotnet="`Transient`" pulumi-lang-go="`transient`" pulumi-lang-python="`transient`" pulumi-lang-yaml="`transient`" pulumi-lang-java="`transient`" pulumi-lang-hcl="`transient`">`transient`</span>: -  	Uses identifier with transient semantics as NameID format.
             * `WindowsDomainQualifiedName`: -  Uses Windows domain qualified name as NameID format.
             * `X509SubjectName`: -  	Uses X509SubjectName as NameID format.
-            * <span pulumi-lang-nodejs="`kerberos`" pulumi-lang-dotnet="`Kerberos`" pulumi-lang-go="`kerberos`" pulumi-lang-python="`kerberos`" pulumi-lang-yaml="`kerberos`" pulumi-lang-java="`kerberos`">`kerberos`</span>: -  	Uses kerberos principal name as NameID format.
-            * <span pulumi-lang-nodejs="`persistent`" pulumi-lang-dotnet="`Persistent`" pulumi-lang-go="`persistent`" pulumi-lang-python="`persistent`" pulumi-lang-yaml="`persistent`" pulumi-lang-java="`persistent`">`persistent`</span>: -  Uses persistent name identifier as NameID format.
-            * <span pulumi-lang-nodejs="`entity`" pulumi-lang-dotnet="`Entity`" pulumi-lang-go="`entity`" pulumi-lang-python="`entity`" pulumi-lang-yaml="`entity`" pulumi-lang-java="`entity`">`entity`</span>: -  Uses identifier of an entity as NameID format.
+            * <span pulumi-lang-nodejs="`kerberos`" pulumi-lang-dotnet="`Kerberos`" pulumi-lang-go="`kerberos`" pulumi-lang-python="`kerberos`" pulumi-lang-yaml="`kerberos`" pulumi-lang-java="`kerberos`" pulumi-lang-hcl="`kerberos`">`kerberos`</span>: -  	Uses kerberos principal name as NameID format.
+            * <span pulumi-lang-nodejs="`persistent`" pulumi-lang-dotnet="`Persistent`" pulumi-lang-go="`persistent`" pulumi-lang-python="`persistent`" pulumi-lang-yaml="`persistent`" pulumi-lang-java="`persistent`" pulumi-lang-hcl="`persistent`">`persistent`</span>: -  Uses persistent name identifier as NameID format.
+            * <span pulumi-lang-nodejs="`entity`" pulumi-lang-dotnet="`Entity`" pulumi-lang-go="`entity`" pulumi-lang-python="`entity`" pulumi-lang-yaml="`entity`" pulumi-lang-java="`entity`" pulumi-lang-hcl="`entity`">`entity`</span>: -  Uses identifier of an entity as NameID format.
 
 
         :param str resource_name: The name of the resource.
@@ -563,39 +563,39 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
 
         The following arguments are supported:
 
-        * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: -(Optional) External identifier of the SAML Identity Provider.
-        * <span pulumi-lang-nodejs="`idpMetadataUrl`" pulumi-lang-dotnet="`IdpMetadataUrl`" pulumi-lang-go="`idpMetadataUrl`" pulumi-lang-python="`idp_metadata_url`" pulumi-lang-yaml="`idpMetadataUrl`" pulumi-lang-java="`idpMetadataUrl`">`idpMetadataUrl`</span>: -(Optional) Metadata url that provides IDP details.
-        * <span pulumi-lang-nodejs="`idpMetadataXml`" pulumi-lang-dotnet="`IdpMetadataXml`" pulumi-lang-go="`idpMetadataXml`" pulumi-lang-python="`idp_metadata_xml`" pulumi-lang-yaml="`idpMetadataXml`" pulumi-lang-java="`idpMetadataXml`">`idpMetadataXml`</span>: -(Optional) Base64 encoded metadata in XML format with IDP details.
-        * <span pulumi-lang-nodejs="`idpMetadata`" pulumi-lang-dotnet="`IdpMetadata`" pulumi-lang-go="`idpMetadata`" pulumi-lang-python="`idp_metadata`" pulumi-lang-yaml="`idpMetadata`" pulumi-lang-java="`idpMetadata`">`idpMetadata`</span>: -(Optional) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
-        * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: -(Required) Unique name of the IDP.
-        * <span pulumi-lang-nodejs="`usernameAttr`" pulumi-lang-dotnet="`UsernameAttr`" pulumi-lang-go="`usernameAttr`" pulumi-lang-python="`username_attr`" pulumi-lang-yaml="`usernameAttr`" pulumi-lang-java="`usernameAttr`">`usernameAttr`</span>: -(Optional) SAML assertion Username attribute element.
-        * <span pulumi-lang-nodejs="`emailAttr`" pulumi-lang-dotnet="`EmailAttr`" pulumi-lang-go="`emailAttr`" pulumi-lang-python="`email_attr`" pulumi-lang-yaml="`emailAttr`" pulumi-lang-java="`emailAttr`">`emailAttr`</span>: -(Optional) SAML assertion email attribute element.
-        * <span pulumi-lang-nodejs="`groupsAttr`" pulumi-lang-dotnet="`GroupsAttr`" pulumi-lang-go="`groupsAttr`" pulumi-lang-python="`groups_attr`" pulumi-lang-yaml="`groupsAttr`" pulumi-lang-java="`groupsAttr`">`groupsAttr`</span>: -(Optional) SAML assertion groups attribute element.
-        * <span pulumi-lang-nodejs="`groupsDelim`" pulumi-lang-dotnet="`GroupsDelim`" pulumi-lang-go="`groupsDelim`" pulumi-lang-python="`groups_delim`" pulumi-lang-yaml="`groupsDelim`" pulumi-lang-java="`groupsDelim`">`groupsDelim`</span>: -(Optional) Delimiter is used to split the value of attribute into multiple groups.
-        * <span pulumi-lang-nodejs="`customAttr`" pulumi-lang-dotnet="`CustomAttr`" pulumi-lang-go="`customAttr`" pulumi-lang-python="`custom_attr`" pulumi-lang-yaml="`customAttr`" pulumi-lang-java="`customAttr`">`customAttr`</span>: -(Optional) SAML assertions for list of custom attribute elements.
-        * <span pulumi-lang-nodejs="`entityIssuer`" pulumi-lang-dotnet="`EntityIssuer`" pulumi-lang-go="`entityIssuer`" pulumi-lang-python="`entity_issuer`" pulumi-lang-yaml="`entityIssuer`" pulumi-lang-java="`entityIssuer`">`entityIssuer`</span>: -(Optional) It will be used as Issuer in SAML authnRequest.
-        * <span pulumi-lang-nodejs="`isSignedAuthnReqEnabled`" pulumi-lang-dotnet="`IsSignedAuthnReqEnabled`" pulumi-lang-go="`isSignedAuthnReqEnabled`" pulumi-lang-python="`is_signed_authn_req_enabled`" pulumi-lang-yaml="`isSignedAuthnReqEnabled`" pulumi-lang-java="`isSignedAuthnReqEnabled`">`isSignedAuthnReqEnabled`</span>: -(Optional) Flag indicating signing of SAML authnRequests.
+        * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>: -(Optional) External identifier of the SAML Identity Provider.
+        * <span pulumi-lang-nodejs="`idpMetadataUrl`" pulumi-lang-dotnet="`IdpMetadataUrl`" pulumi-lang-go="`idpMetadataUrl`" pulumi-lang-python="`idp_metadata_url`" pulumi-lang-yaml="`idpMetadataUrl`" pulumi-lang-java="`idpMetadataUrl`" pulumi-lang-hcl="`idp_metadata_url`">`idpMetadataUrl`</span>: -(Optional) Metadata url that provides IDP details.
+        * <span pulumi-lang-nodejs="`idpMetadataXml`" pulumi-lang-dotnet="`IdpMetadataXml`" pulumi-lang-go="`idpMetadataXml`" pulumi-lang-python="`idp_metadata_xml`" pulumi-lang-yaml="`idpMetadataXml`" pulumi-lang-java="`idpMetadataXml`" pulumi-lang-hcl="`idp_metadata_xml`">`idpMetadataXml`</span>: -(Optional) Base64 encoded metadata in XML format with IDP details.
+        * <span pulumi-lang-nodejs="`idpMetadata`" pulumi-lang-dotnet="`IdpMetadata`" pulumi-lang-go="`idpMetadata`" pulumi-lang-python="`idp_metadata`" pulumi-lang-yaml="`idpMetadata`" pulumi-lang-java="`idpMetadata`" pulumi-lang-hcl="`idp_metadata`">`idpMetadata`</span>: -(Optional) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`">`name`</span>: -(Required) Unique name of the IDP.
+        * <span pulumi-lang-nodejs="`usernameAttr`" pulumi-lang-dotnet="`UsernameAttr`" pulumi-lang-go="`usernameAttr`" pulumi-lang-python="`username_attr`" pulumi-lang-yaml="`usernameAttr`" pulumi-lang-java="`usernameAttr`" pulumi-lang-hcl="`username_attr`">`usernameAttr`</span>: -(Optional) SAML assertion Username attribute element.
+        * <span pulumi-lang-nodejs="`emailAttr`" pulumi-lang-dotnet="`EmailAttr`" pulumi-lang-go="`emailAttr`" pulumi-lang-python="`email_attr`" pulumi-lang-yaml="`emailAttr`" pulumi-lang-java="`emailAttr`" pulumi-lang-hcl="`email_attr`">`emailAttr`</span>: -(Optional) SAML assertion email attribute element.
+        * <span pulumi-lang-nodejs="`groupsAttr`" pulumi-lang-dotnet="`GroupsAttr`" pulumi-lang-go="`groupsAttr`" pulumi-lang-python="`groups_attr`" pulumi-lang-yaml="`groupsAttr`" pulumi-lang-java="`groupsAttr`" pulumi-lang-hcl="`groups_attr`">`groupsAttr`</span>: -(Optional) SAML assertion groups attribute element.
+        * <span pulumi-lang-nodejs="`groupsDelim`" pulumi-lang-dotnet="`GroupsDelim`" pulumi-lang-go="`groupsDelim`" pulumi-lang-python="`groups_delim`" pulumi-lang-yaml="`groupsDelim`" pulumi-lang-java="`groupsDelim`" pulumi-lang-hcl="`groups_delim`">`groupsDelim`</span>: -(Optional) Delimiter is used to split the value of attribute into multiple groups.
+        * <span pulumi-lang-nodejs="`customAttr`" pulumi-lang-dotnet="`CustomAttr`" pulumi-lang-go="`customAttr`" pulumi-lang-python="`custom_attr`" pulumi-lang-yaml="`customAttr`" pulumi-lang-java="`customAttr`" pulumi-lang-hcl="`custom_attr`">`customAttr`</span>: -(Optional) SAML assertions for list of custom attribute elements.
+        * <span pulumi-lang-nodejs="`entityIssuer`" pulumi-lang-dotnet="`EntityIssuer`" pulumi-lang-go="`entityIssuer`" pulumi-lang-python="`entity_issuer`" pulumi-lang-yaml="`entityIssuer`" pulumi-lang-java="`entityIssuer`" pulumi-lang-hcl="`entity_issuer`">`entityIssuer`</span>: -(Optional) It will be used as Issuer in SAML authnRequest.
+        * <span pulumi-lang-nodejs="`isSignedAuthnReqEnabled`" pulumi-lang-dotnet="`IsSignedAuthnReqEnabled`" pulumi-lang-go="`isSignedAuthnReqEnabled`" pulumi-lang-python="`is_signed_authn_req_enabled`" pulumi-lang-yaml="`isSignedAuthnReqEnabled`" pulumi-lang-java="`isSignedAuthnReqEnabled`" pulumi-lang-hcl="`is_signed_authn_req_enabled`">`isSignedAuthnReqEnabled`</span>: -(Optional) Flag indicating signing of SAML authnRequests.
 
         ### Idp Metadata
 
-        The<span pulumi-lang-nodejs=" idpMetadata " pulumi-lang-dotnet=" IdpMetadata " pulumi-lang-go=" idpMetadata " pulumi-lang-python=" idp_metadata " pulumi-lang-yaml=" idpMetadata " pulumi-lang-java=" idpMetadata "> idpMetadata </span>attribute supports the following:
+        The<span pulumi-lang-nodejs=" idpMetadata " pulumi-lang-dotnet=" IdpMetadata " pulumi-lang-go=" idpMetadata " pulumi-lang-python=" idp_metadata " pulumi-lang-yaml=" idpMetadata " pulumi-lang-java=" idpMetadata " pulumi-lang-hcl=" idp_metadata "> idpMetadata </span>attribute supports the following:
 
-        * <span pulumi-lang-nodejs="`entityId`" pulumi-lang-dotnet="`EntityId`" pulumi-lang-go="`entityId`" pulumi-lang-python="`entity_id`" pulumi-lang-yaml="`entityId`" pulumi-lang-java="`entityId`">`entityId`</span>: -(Required) Entity Identifier of Identity provider.
-        * <span pulumi-lang-nodejs="`loginUrl`" pulumi-lang-dotnet="`LoginUrl`" pulumi-lang-go="`loginUrl`" pulumi-lang-python="`login_url`" pulumi-lang-yaml="`loginUrl`" pulumi-lang-java="`loginUrl`">`loginUrl`</span>: -(Required) Login URL of the Identity provider.
-        * <span pulumi-lang-nodejs="`logoutUrl`" pulumi-lang-dotnet="`LogoutUrl`" pulumi-lang-go="`logoutUrl`" pulumi-lang-python="`logout_url`" pulumi-lang-yaml="`logoutUrl`" pulumi-lang-java="`logoutUrl`">`logoutUrl`</span>: -(Optional) Logout URL of the Identity provider.
-        * <span pulumi-lang-nodejs="`errorUrl`" pulumi-lang-dotnet="`ErrorUrl`" pulumi-lang-go="`errorUrl`" pulumi-lang-python="`error_url`" pulumi-lang-yaml="`errorUrl`" pulumi-lang-java="`errorUrl`">`errorUrl`</span>: - (Optional) Error URL of the Identity provider.
-        * <span pulumi-lang-nodejs="`certificate`" pulumi-lang-dotnet="`Certificate`" pulumi-lang-go="`certificate`" pulumi-lang-python="`certificate`" pulumi-lang-yaml="`certificate`" pulumi-lang-java="`certificate`">`certificate`</span>: -(Required) Certificate for verification.
-        * <span pulumi-lang-nodejs="`nameIdPolicyFormat`" pulumi-lang-dotnet="`NameIdPolicyFormat`" pulumi-lang-go="`nameIdPolicyFormat`" pulumi-lang-python="`name_id_policy_format`" pulumi-lang-yaml="`nameIdPolicyFormat`" pulumi-lang-java="`nameIdPolicyFormat`">`nameIdPolicyFormat`</span>: -(Optional) Name ID Policy format.
+        * <span pulumi-lang-nodejs="`entityId`" pulumi-lang-dotnet="`EntityId`" pulumi-lang-go="`entityId`" pulumi-lang-python="`entity_id`" pulumi-lang-yaml="`entityId`" pulumi-lang-java="`entityId`" pulumi-lang-hcl="`entity_id`">`entityId`</span>: -(Required) Entity Identifier of Identity provider.
+        * <span pulumi-lang-nodejs="`loginUrl`" pulumi-lang-dotnet="`LoginUrl`" pulumi-lang-go="`loginUrl`" pulumi-lang-python="`login_url`" pulumi-lang-yaml="`loginUrl`" pulumi-lang-java="`loginUrl`" pulumi-lang-hcl="`login_url`">`loginUrl`</span>: -(Required) Login URL of the Identity provider.
+        * <span pulumi-lang-nodejs="`logoutUrl`" pulumi-lang-dotnet="`LogoutUrl`" pulumi-lang-go="`logoutUrl`" pulumi-lang-python="`logout_url`" pulumi-lang-yaml="`logoutUrl`" pulumi-lang-java="`logoutUrl`" pulumi-lang-hcl="`logout_url`">`logoutUrl`</span>: -(Optional) Logout URL of the Identity provider.
+        * <span pulumi-lang-nodejs="`errorUrl`" pulumi-lang-dotnet="`ErrorUrl`" pulumi-lang-go="`errorUrl`" pulumi-lang-python="`error_url`" pulumi-lang-yaml="`errorUrl`" pulumi-lang-java="`errorUrl`" pulumi-lang-hcl="`error_url`">`errorUrl`</span>: - (Optional) Error URL of the Identity provider.
+        * <span pulumi-lang-nodejs="`certificate`" pulumi-lang-dotnet="`Certificate`" pulumi-lang-go="`certificate`" pulumi-lang-python="`certificate`" pulumi-lang-yaml="`certificate`" pulumi-lang-java="`certificate`" pulumi-lang-hcl="`certificate`">`certificate`</span>: -(Required) Certificate for verification.
+        * <span pulumi-lang-nodejs="`nameIdPolicyFormat`" pulumi-lang-dotnet="`NameIdPolicyFormat`" pulumi-lang-go="`nameIdPolicyFormat`" pulumi-lang-python="`name_id_policy_format`" pulumi-lang-yaml="`nameIdPolicyFormat`" pulumi-lang-java="`nameIdPolicyFormat`" pulumi-lang-hcl="`name_id_policy_format`">`nameIdPolicyFormat`</span>: -(Optional) Name ID Policy format.
           * supported values:
             * `emailAddress`: -  Uses email address as NameID format
-            * <span pulumi-lang-nodejs="`encrypted`" pulumi-lang-dotnet="`Encrypted`" pulumi-lang-go="`encrypted`" pulumi-lang-python="`encrypted`" pulumi-lang-yaml="`encrypted`" pulumi-lang-java="`encrypted`">`encrypted`</span>: -  Uses encrypted as NameID format.
-            * <span pulumi-lang-nodejs="`unspecified`" pulumi-lang-dotnet="`Unspecified`" pulumi-lang-go="`unspecified`" pulumi-lang-python="`unspecified`" pulumi-lang-yaml="`unspecified`" pulumi-lang-java="`unspecified`">`unspecified`</span>: -  NameID format is left to individual implementations.
-            * <span pulumi-lang-nodejs="`transient`" pulumi-lang-dotnet="`Transient`" pulumi-lang-go="`transient`" pulumi-lang-python="`transient`" pulumi-lang-yaml="`transient`" pulumi-lang-java="`transient`">`transient`</span>: -  	Uses identifier with transient semantics as NameID format.
+            * <span pulumi-lang-nodejs="`encrypted`" pulumi-lang-dotnet="`Encrypted`" pulumi-lang-go="`encrypted`" pulumi-lang-python="`encrypted`" pulumi-lang-yaml="`encrypted`" pulumi-lang-java="`encrypted`" pulumi-lang-hcl="`encrypted`">`encrypted`</span>: -  Uses encrypted as NameID format.
+            * <span pulumi-lang-nodejs="`unspecified`" pulumi-lang-dotnet="`Unspecified`" pulumi-lang-go="`unspecified`" pulumi-lang-python="`unspecified`" pulumi-lang-yaml="`unspecified`" pulumi-lang-java="`unspecified`" pulumi-lang-hcl="`unspecified`">`unspecified`</span>: -  NameID format is left to individual implementations.
+            * <span pulumi-lang-nodejs="`transient`" pulumi-lang-dotnet="`Transient`" pulumi-lang-go="`transient`" pulumi-lang-python="`transient`" pulumi-lang-yaml="`transient`" pulumi-lang-java="`transient`" pulumi-lang-hcl="`transient`">`transient`</span>: -  	Uses identifier with transient semantics as NameID format.
             * `WindowsDomainQualifiedName`: -  Uses Windows domain qualified name as NameID format.
             * `X509SubjectName`: -  	Uses X509SubjectName as NameID format.
-            * <span pulumi-lang-nodejs="`kerberos`" pulumi-lang-dotnet="`Kerberos`" pulumi-lang-go="`kerberos`" pulumi-lang-python="`kerberos`" pulumi-lang-yaml="`kerberos`" pulumi-lang-java="`kerberos`">`kerberos`</span>: -  	Uses kerberos principal name as NameID format.
-            * <span pulumi-lang-nodejs="`persistent`" pulumi-lang-dotnet="`Persistent`" pulumi-lang-go="`persistent`" pulumi-lang-python="`persistent`" pulumi-lang-yaml="`persistent`" pulumi-lang-java="`persistent`">`persistent`</span>: -  Uses persistent name identifier as NameID format.
-            * <span pulumi-lang-nodejs="`entity`" pulumi-lang-dotnet="`Entity`" pulumi-lang-go="`entity`" pulumi-lang-python="`entity`" pulumi-lang-yaml="`entity`" pulumi-lang-java="`entity`">`entity`</span>: -  Uses identifier of an entity as NameID format.
+            * <span pulumi-lang-nodejs="`kerberos`" pulumi-lang-dotnet="`Kerberos`" pulumi-lang-go="`kerberos`" pulumi-lang-python="`kerberos`" pulumi-lang-yaml="`kerberos`" pulumi-lang-java="`kerberos`" pulumi-lang-hcl="`kerberos`">`kerberos`</span>: -  	Uses kerberos principal name as NameID format.
+            * <span pulumi-lang-nodejs="`persistent`" pulumi-lang-dotnet="`Persistent`" pulumi-lang-go="`persistent`" pulumi-lang-python="`persistent`" pulumi-lang-yaml="`persistent`" pulumi-lang-java="`persistent`" pulumi-lang-hcl="`persistent`">`persistent`</span>: -  Uses persistent name identifier as NameID format.
+            * <span pulumi-lang-nodejs="`entity`" pulumi-lang-dotnet="`Entity`" pulumi-lang-go="`entity`" pulumi-lang-python="`entity`" pulumi-lang-yaml="`entity`" pulumi-lang-java="`entity`" pulumi-lang-hcl="`entity`">`entity`</span>: -  Uses identifier of an entity as NameID format.
 
 
         :param str resource_name: The name of the resource.
@@ -613,18 +613,18 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 custom_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 email_attribute: pulumi.Input[Optional[_builtins.str]] = None,
-                 entity_issuer: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 groups_attribute: pulumi.Input[Optional[_builtins.str]] = None,
-                 groups_delim: pulumi.Input[Optional[_builtins.str]] = None,
-                 idp_metadata_url: pulumi.Input[Optional[_builtins.str]] = None,
-                 idp_metadata_xml: pulumi.Input[Optional[_builtins.str]] = None,
-                 idp_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SamlIdentityProvidersV2IdpMetadataArgs', 'SamlIdentityProvidersV2IdpMetadataArgsDict']]]]] = None,
-                 is_signed_authn_req_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 username_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 email_attribute: Optional[pulumi.Input[_builtins.str]] = None,
+                 entity_issuer: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 groups_attribute: Optional[pulumi.Input[_builtins.str]] = None,
+                 groups_delim: Optional[pulumi.Input[_builtins.str]] = None,
+                 idp_metadata_url: Optional[pulumi.Input[_builtins.str]] = None,
+                 idp_metadata_xml: Optional[pulumi.Input[_builtins.str]] = None,
+                 idp_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SamlIdentityProvidersV2IdpMetadataArgs', 'SamlIdentityProvidersV2IdpMetadataArgsDict']]]]] = None,
+                 is_signed_authn_req_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 username_attribute: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -659,21 +659,21 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            created_by: pulumi.Input[Optional[_builtins.str]] = None,
-            created_time: pulumi.Input[Optional[_builtins.str]] = None,
-            custom_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            email_attribute: pulumi.Input[Optional[_builtins.str]] = None,
-            entity_issuer: pulumi.Input[Optional[_builtins.str]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            groups_attribute: pulumi.Input[Optional[_builtins.str]] = None,
-            groups_delim: pulumi.Input[Optional[_builtins.str]] = None,
-            idp_metadata_url: pulumi.Input[Optional[_builtins.str]] = None,
-            idp_metadata_xml: pulumi.Input[Optional[_builtins.str]] = None,
-            idp_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SamlIdentityProvidersV2IdpMetadataArgs', 'SamlIdentityProvidersV2IdpMetadataArgsDict']]]]] = None,
-            is_signed_authn_req_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
-            name: pulumi.Input[Optional[_builtins.str]] = None,
-            username_attribute: pulumi.Input[Optional[_builtins.str]] = None) -> 'SamlIdentityProvidersV2':
+            created_by: Optional[pulumi.Input[_builtins.str]] = None,
+            created_time: Optional[pulumi.Input[_builtins.str]] = None,
+            custom_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            email_attribute: Optional[pulumi.Input[_builtins.str]] = None,
+            entity_issuer: Optional[pulumi.Input[_builtins.str]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            groups_attribute: Optional[pulumi.Input[_builtins.str]] = None,
+            groups_delim: Optional[pulumi.Input[_builtins.str]] = None,
+            idp_metadata_url: Optional[pulumi.Input[_builtins.str]] = None,
+            idp_metadata_xml: Optional[pulumi.Input[_builtins.str]] = None,
+            idp_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SamlIdentityProvidersV2IdpMetadataArgs', 'SamlIdentityProvidersV2IdpMetadataArgsDict']]]]] = None,
+            is_signed_authn_req_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+            last_updated_time: Optional[pulumi.Input[_builtins.str]] = None,
+            name: Optional[pulumi.Input[_builtins.str]] = None,
+            username_attribute: Optional[pulumi.Input[_builtins.str]] = None) -> 'SamlIdentityProvidersV2':
         """
         Get an existing SamlIdentityProvidersV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

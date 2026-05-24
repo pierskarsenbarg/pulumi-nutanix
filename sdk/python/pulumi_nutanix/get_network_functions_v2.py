@@ -126,8 +126,8 @@ def get_network_functions_v2(filter: Optional[_builtins.str] = None,
            - `filter = "name eq 'samplenf'"`
     :param _builtins.int limit: Maximum number of items per page.
     :param _builtins.str order_by: Order by expression. Examples:
-           - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy ">`orderBy </span>= "name"`
-           - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy ">`orderBy </span>= "name desc"`
+           - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by ">`orderBy </span>= "name"`
+           - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by ">`orderBy </span>= "name desc"`
     :param _builtins.int page: Page number.
     """
     __args__ = dict()
@@ -145,10 +145,10 @@ def get_network_functions_v2(filter: Optional[_builtins.str] = None,
         network_functions=pulumi.get(__ret__, 'network_functions'),
         order_by=pulumi.get(__ret__, 'order_by'),
         page=pulumi.get(__ret__, 'page'))
-def get_network_functions_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                    limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
-                                    order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                    page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+def get_network_functions_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                    limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+                                    order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                    page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFunctionsV2Result]:
     """
     List Network Functions.
@@ -173,8 +173,8 @@ def get_network_functions_v2_output(filter: pulumi.Input[Optional[Optional[_buil
            - `filter = "name eq 'samplenf'"`
     :param _builtins.int limit: Maximum number of items per page.
     :param _builtins.str order_by: Order by expression. Examples:
-           - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy ">`orderBy </span>= "name"`
-           - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy ">`orderBy </span>= "name desc"`
+           - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by ">`orderBy </span>= "name"`
+           - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by ">`orderBy </span>= "name desc"`
     :param _builtins.int page: Page number.
     """
     __args__ = dict()

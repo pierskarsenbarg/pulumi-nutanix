@@ -85,42 +85,42 @@ export class NdbLogCatchups extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NdbLogCatchups resources.
  */
 export interface NdbLogCatchupsState {
-    databaseId?: pulumi.Input<string | undefined>;
+    databaseId?: pulumi.Input<string>;
     /**
      * Logs to Backup. The database may contain additional logs. Backup any remaining logs before restore or they will be lost.
      */
-    forRestore?: pulumi.Input<boolean | undefined>;
+    forRestore?: pulumi.Input<boolean>;
     /**
      * it helps to perform same operation with same config.
      *
      *
      * See detailed information in [NDB Log Catchups](https://www.nutanix.dev/api_references/ndb/#/6100cd9959e52-start-log-catchup-for-given-time-machine) .
      */
-    logCatchupVersion?: pulumi.Input<number | undefined>;
+    logCatchupVersion?: pulumi.Input<number>;
     /**
      * Time machine id of
      */
-    timeMachineId?: pulumi.Input<string | undefined>;
+    timeMachineId?: pulumi.Input<string>;
 }
 
 /**
  * The set of arguments for constructing a NdbLogCatchups resource.
  */
 export interface NdbLogCatchupsArgs {
-    databaseId?: pulumi.Input<string | undefined>;
+    databaseId?: pulumi.Input<string>;
     /**
      * Logs to Backup. The database may contain additional logs. Backup any remaining logs before restore or they will be lost.
      */
-    forRestore?: pulumi.Input<boolean | undefined>;
+    forRestore?: pulumi.Input<boolean>;
     /**
      * it helps to perform same operation with same config.
      *
      *
      * See detailed information in [NDB Log Catchups](https://www.nutanix.dev/api_references/ndb/#/6100cd9959e52-start-log-catchup-for-given-time-machine) .
      */
-    logCatchupVersion?: pulumi.Input<number | undefined>;
+    logCatchupVersion?: pulumi.Input<number>;
     /**
      * Time machine id of
      */
-    timeMachineId?: pulumi.Input<string | undefined>;
+    timeMachineId?: pulumi.Input<string>;
 }

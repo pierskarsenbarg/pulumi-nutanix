@@ -179,13 +179,13 @@ export interface GetImageOutputArgs {
     /**
      * - Categories for the image.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetImageCategoryArgs>[] | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetImageCategoryArgs>[]>;
     /**
      * Represents image UUID
      */
-    imageId?: pulumi.Input<string | undefined>;
+    imageId?: pulumi.Input<string>;
     /**
      * Represents image name
      */
-    imageName?: pulumi.Input<string | undefined>;
+    imageName?: pulumi.Input<string>;
 }

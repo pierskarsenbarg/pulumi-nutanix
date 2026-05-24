@@ -174,55 +174,55 @@ export interface UserState {
     /**
      * - List of ACP references. See #reference for more details.
      */
-    accessControlPolicyReferenceLists?: pulumi.Input<pulumi.Input<inputs.UserAccessControlPolicyReferenceList>[] | undefined>;
+    accessControlPolicyReferenceLists?: pulumi.Input<pulumi.Input<inputs.UserAccessControlPolicyReferenceList>[]>;
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string | undefined>;
+    apiVersion?: pulumi.Input<string>;
     /**
      * - (Optional) Categories for the Access Control Policy.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.UserCategory>[] | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.UserCategory>[]>;
     /**
      * - (Optional) The directory service user configuration. See below for more information.
      */
-    directoryServiceUser?: pulumi.Input<inputs.UserDirectoryServiceUser | undefined>;
+    directoryServiceUser?: pulumi.Input<inputs.UserDirectoryServiceUser>;
     /**
      * - The display name of the user (common name) provided by the directory service.
      */
-    displayName?: pulumi.Input<string | undefined>;
+    displayName?: pulumi.Input<string>;
     /**
      * - (Optional) (Optional) The identity provider user configuration. See below for more information.
      */
-    identityProviderUser?: pulumi.Input<inputs.UserIdentityProviderUser | undefined>;
+    identityProviderUser?: pulumi.Input<inputs.UserIdentityProviderUser>;
     /**
      * - The vm kind metadata.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - the name(Optional).
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * - (Optional) The reference to a user.
      */
-    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) The reference to a project.
      */
-    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - A list of projects the user is part of. See #reference for more details.
      */
-    projectReferenceLists?: pulumi.Input<pulumi.Input<inputs.UserProjectReferenceList>[] | undefined>;
+    projectReferenceLists?: pulumi.Input<pulumi.Input<inputs.UserProjectReferenceList>[]>;
     /**
      * - The state of the entity.
      */
-    state?: pulumi.Input<string | undefined>;
+    state?: pulumi.Input<string>;
     /**
      * - The name of the user.
      */
-    userType?: pulumi.Input<string | undefined>;
+    userType?: pulumi.Input<string>;
 }
 
 /**
@@ -232,21 +232,21 @@ export interface UserArgs {
     /**
      * - (Optional) Categories for the Access Control Policy.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.UserCategory>[] | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.UserCategory>[]>;
     /**
      * - (Optional) The directory service user configuration. See below for more information.
      */
-    directoryServiceUser?: pulumi.Input<inputs.UserDirectoryServiceUser | undefined>;
+    directoryServiceUser?: pulumi.Input<inputs.UserDirectoryServiceUser>;
     /**
      * - (Optional) (Optional) The identity provider user configuration. See below for more information.
      */
-    identityProviderUser?: pulumi.Input<inputs.UserIdentityProviderUser | undefined>;
+    identityProviderUser?: pulumi.Input<inputs.UserIdentityProviderUser>;
     /**
      * - (Optional) The reference to a user.
      */
-    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) The reference to a project.
      */
-    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

@@ -127,23 +127,23 @@ export interface DeployTemplatesV2State {
     /**
      * The identifier of the Cluster where the VM(s) will be created using a Template.
      */
-    clusterReference?: pulumi.Input<string | undefined>;
+    clusterReference?: pulumi.Input<string>;
     /**
      * The identifier of a Template.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * Number of VMs to be deployed.
      */
-    numberOfVms?: pulumi.Input<number | undefined>;
+    numberOfVms?: pulumi.Input<number>;
     /**
      * The map specifying the VM configuration overrides for each of the specified VM(s) to be created. The overrides can include the created VM Name, Configuration and Guest Customization.
      */
-    overrideVmConfigMaps?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMap>[] | undefined>;
+    overrideVmConfigMaps?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMap>[]>;
     /**
      * The identifier of a Template Version.
      */
-    versionId?: pulumi.Input<string | undefined>;
+    versionId?: pulumi.Input<string>;
 }
 
 /**
@@ -165,9 +165,9 @@ export interface DeployTemplatesV2Args {
     /**
      * The map specifying the VM configuration overrides for each of the specified VM(s) to be created. The overrides can include the created VM Name, Configuration and Guest Customization.
      */
-    overrideVmConfigMaps?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMap>[] | undefined>;
+    overrideVmConfigMaps?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMap>[]>;
     /**
      * The identifier of a Template Version.
      */
-    versionId?: pulumi.Input<string | undefined>;
+    versionId?: pulumi.Input<string>;
 }

@@ -187,63 +187,63 @@ export interface RolesV2State {
     /**
      * - List of Accessible Clients for the Role.
      */
-    accessibleClients?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    accessibleClients?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - List of Accessible Entity Types for the Role.
      */
-    accessibleEntityTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    accessibleEntityTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - Number of Users assigned to given Role.
      */
-    assignedUsersCount?: pulumi.Input<number | undefined>;
+    assignedUsersCount?: pulumi.Input<number>;
     /**
      * - Number of User Groups assigned to given Role.
      */
-    assignedUsersGroupsCount?: pulumi.Input<number | undefined>;
+    assignedUsersGroupsCount?: pulumi.Input<number>;
     /**
      * - Client that created the entity.
      */
-    clientName?: pulumi.Input<string | undefined>;
+    clientName?: pulumi.Input<string>;
     /**
      * - User or Service Name that created the Role.
      */
-    createdBy?: pulumi.Input<string | undefined>;
+    createdBy?: pulumi.Input<string>;
     /**
      * - The creation time of the Role.
      */
-    createdTime?: pulumi.Input<string | undefined>;
+    createdTime?: pulumi.Input<string>;
     /**
      * - Description of the Role.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * -(Required) The display name for the Role.
      */
-    displayName?: pulumi.Input<string | undefined>;
+    displayName?: pulumi.Input<string>;
     /**
      * - A globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * - Flag identifying if the Role is system defined or not.
      */
-    isSystemDefined?: pulumi.Input<boolean | undefined>;
+    isSystemDefined?: pulumi.Input<boolean>;
     /**
      * - The time when the Role was last updated.
      */
-    lastUpdatedTime?: pulumi.Input<string | undefined>;
+    lastUpdatedTime?: pulumi.Input<string>;
     /**
      * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.RolesV2Link>[] | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.RolesV2Link>[]>;
     /**
      * -(Required) List of operations for the role.
      */
-    operations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    operations?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
      */
-    tenantId?: pulumi.Input<string | undefined>;
+    tenantId?: pulumi.Input<string>;
 }
 
 /**
@@ -253,11 +253,11 @@ export interface RolesV2Args {
     /**
      * - Client that created the entity.
      */
-    clientName?: pulumi.Input<string | undefined>;
+    clientName?: pulumi.Input<string>;
     /**
      * - Description of the Role.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * -(Required) The display name for the Role.
      */
@@ -265,7 +265,7 @@ export interface RolesV2Args {
     /**
      * - A globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * -(Required) List of operations for the role.
      */

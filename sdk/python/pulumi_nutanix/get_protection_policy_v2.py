@@ -173,7 +173,7 @@ class AwaitableGetProtectionPolicyV2Result(GetProtectionPolicyV2Result):
 def get_protection_policy_v2(ext_id: Optional[_builtins.str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtectionPolicyV2Result:
     """
-    > **Authentication:** Protection policy operations do **not** support API key authentication. Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`">`password`</span> in the provider configuration.
+    > **Authentication:** Protection policy operations do **not** support API key authentication. Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`" pulumi-lang-hcl="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`" pulumi-lang-hcl="`password`">`password`</span> in the provider configuration.
 
     Fetches the protection policy identified by an external identifier.
 
@@ -208,10 +208,10 @@ def get_protection_policy_v2(ext_id: Optional[_builtins.str] = None,
         replication_configurations=pulumi.get(__ret__, 'replication_configurations'),
         replication_locations=pulumi.get(__ret__, 'replication_locations'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_protection_policy_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_protection_policy_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionPolicyV2Result]:
     """
-    > **Authentication:** Protection policy operations do **not** support API key authentication. Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`">`password`</span> in the provider configuration.
+    > **Authentication:** Protection policy operations do **not** support API key authentication. Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`" pulumi-lang-hcl="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`" pulumi-lang-hcl="`password`">`password`</span> in the provider configuration.
 
     Fetches the protection policy identified by an external identifier.
 

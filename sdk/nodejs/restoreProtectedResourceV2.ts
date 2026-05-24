@@ -123,18 +123,18 @@ export interface RestoreProtectedResourceV2State {
     /**
      * -(Required) The external identifier of the cluster on which the entity has valid restorable time ranges. The restored entity will be created on the same cluster.
      */
-    clusterExtId?: pulumi.Input<string | undefined>;
+    clusterExtId?: pulumi.Input<string>;
     /**
      * -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
      *
      *
      * See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
      */
-    restoreTime?: pulumi.Input<string | undefined>;
+    restoreTime?: pulumi.Input<string>;
 }
 
 /**
@@ -155,5 +155,5 @@ export interface RestoreProtectedResourceV2Args {
      *
      * See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
      */
-    restoreTime?: pulumi.Input<string | undefined>;
+    restoreTime?: pulumi.Input<string>;
 }

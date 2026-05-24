@@ -104,11 +104,11 @@ export interface VmGcUpdateV2State {
     /**
      * - (Optional) The Nutanix Guest Tools customization settings.
      */
-    configs?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2Config>[] | undefined>;
+    configs?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2Config>[]>;
     /**
      * - (Required) The globally unique identifier of a VM. It should be of type UUID.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
 }
 
 /**
@@ -118,7 +118,7 @@ export interface VmGcUpdateV2Args {
     /**
      * - (Optional) The Nutanix Guest Tools customization settings.
      */
-    configs?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2Config>[] | undefined>;
+    configs?: pulumi.Input<pulumi.Input<inputs.VmGcUpdateV2Config>[]>;
     /**
      * - (Required) The globally unique identifier of a VM. It should be of type UUID.
      */

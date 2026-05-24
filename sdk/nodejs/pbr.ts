@@ -175,46 +175,46 @@ export interface PbrState {
     /**
      * Routing policy action. Must be one of {DENY, PERMIT, REROUTE} .
      */
-    action?: pulumi.Input<string | undefined>;
+    action?: pulumi.Input<string>;
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string | undefined>;
-    destination?: pulumi.Input<inputs.PbrDestination | undefined>;
+    apiVersion?: pulumi.Input<string>;
+    destination?: pulumi.Input<inputs.PbrDestination>;
     /**
      * Additionally create Policy in reverse direction. Should be used with {TCP, UDP with start and end port ranges and ICMP with icmp code and type}. Supported with 2022.x.
      */
-    isBidirectional?: pulumi.Input<boolean | undefined>;
+    isBidirectional?: pulumi.Input<boolean>;
     /**
      * The routing policies kind metadata.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * name of policy
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * priority of policy
      */
-    priority?: pulumi.Input<number | undefined>;
-    protocolParameters?: pulumi.Input<inputs.PbrProtocolParameters | undefined>;
+    priority?: pulumi.Input<number>;
+    protocolParameters?: pulumi.Input<inputs.PbrProtocolParameters>;
     /**
      * Protocol type of policy based routing. Must be one of {TCP, UDP, ICMP, PROTOCOL_NUMBER, ALL} .
      */
-    protocolType?: pulumi.Input<string | undefined>;
+    protocolType?: pulumi.Input<string>;
     /**
      * IP addresses of network services. This field is valid only when action is REROUTE.
      */
-    serviceIpLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
-    source?: pulumi.Input<inputs.PbrSource | undefined>;
+    serviceIpLists?: pulumi.Input<pulumi.Input<string>[]>;
+    source?: pulumi.Input<inputs.PbrSource>;
     /**
      * The reference to a vpc. Should not be used with {vpc_reference_uuid}
      */
-    vpcName?: pulumi.Input<string | undefined>;
+    vpcName?: pulumi.Input<string>;
     /**
      * The reference to a vpc . Should not be used with {vpc_name} .
      */
-    vpcReferenceUuid?: pulumi.Input<string | undefined>;
+    vpcReferenceUuid?: pulumi.Input<string>;
 }
 
 /**
@@ -228,21 +228,21 @@ export interface PbrArgs {
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string | undefined>;
+    apiVersion?: pulumi.Input<string>;
     destination: pulumi.Input<inputs.PbrDestination>;
     /**
      * Additionally create Policy in reverse direction. Should be used with {TCP, UDP with start and end port ranges and ICMP with icmp code and type}. Supported with 2022.x.
      */
-    isBidirectional?: pulumi.Input<boolean | undefined>;
+    isBidirectional?: pulumi.Input<boolean>;
     /**
      * name of policy
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * priority of policy
      */
     priority: pulumi.Input<number>;
-    protocolParameters?: pulumi.Input<inputs.PbrProtocolParameters | undefined>;
+    protocolParameters?: pulumi.Input<inputs.PbrProtocolParameters>;
     /**
      * Protocol type of policy based routing. Must be one of {TCP, UDP, ICMP, PROTOCOL_NUMBER, ALL} .
      */
@@ -250,14 +250,14 @@ export interface PbrArgs {
     /**
      * IP addresses of network services. This field is valid only when action is REROUTE.
      */
-    serviceIpLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    serviceIpLists?: pulumi.Input<pulumi.Input<string>[]>;
     source: pulumi.Input<inputs.PbrSource>;
     /**
      * The reference to a vpc. Should not be used with {vpc_reference_uuid}
      */
-    vpcName?: pulumi.Input<string | undefined>;
+    vpcName?: pulumi.Input<string>;
     /**
      * The reference to a vpc . Should not be used with {vpc_name} .
      */
-    vpcReferenceUuid?: pulumi.Input<string | undefined>;
+    vpcReferenceUuid?: pulumi.Input<string>;
 }

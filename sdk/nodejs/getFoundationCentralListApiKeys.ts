@@ -101,13 +101,13 @@ export interface GetFoundationCentralListApiKeysOutputArgs {
     /**
      * The number of records retrieved.
      */
-    length?: pulumi.Input<number | undefined>;
+    length?: pulumi.Input<number>;
     /**
      * List metadata output for all list apis.
      */
-    metadata?: pulumi.Input<inputs.GetFoundationCentralListApiKeysMetadataArgs | undefined>;
+    metadata?: pulumi.Input<inputs.GetFoundationCentralListApiKeysMetadataArgs>;
     /**
      * Offset from the start of the object list.
      */
-    offset?: pulumi.Input<number | undefined>;
+    offset?: pulumi.Input<number>;
 }

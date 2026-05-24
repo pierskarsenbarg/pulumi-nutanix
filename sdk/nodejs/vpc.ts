@@ -172,35 +172,35 @@ export interface VpcState {
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string | undefined>;
+    apiVersion?: pulumi.Input<string>;
     /**
      * List of domain name server IPs.
      */
-    commonDomainNameServerIpLists?: pulumi.Input<pulumi.Input<inputs.VpcCommonDomainNameServerIpList>[] | undefined>;
+    commonDomainNameServerIpLists?: pulumi.Input<pulumi.Input<inputs.VpcCommonDomainNameServerIpList>[]>;
     /**
      * Status of List of external subnets attached to this VPC
      */
-    externalSubnetListStatuses?: pulumi.Input<pulumi.Input<inputs.VpcExternalSubnetListStatus>[] | undefined>;
+    externalSubnetListStatuses?: pulumi.Input<pulumi.Input<inputs.VpcExternalSubnetListStatus>[]>;
     /**
      * List of external subnets name attached to this VPC. Should not be used with external_subnet_reference_uuid.
      */
-    externalSubnetReferenceNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    externalSubnetReferenceNames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * List of external subnets uuid attached to this VPC. Should not be used with external_subnet_reference_name.
      */
-    externalSubnetReferenceUuids?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    externalSubnetReferenceUuids?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * List Externally Routable IP Addresses. Required when external subnet with NoNAT is used.
      */
-    externallyRoutablePrefixLists?: pulumi.Input<pulumi.Input<inputs.VpcExternallyRoutablePrefixList>[] | undefined>;
+    externallyRoutablePrefixLists?: pulumi.Input<pulumi.Input<inputs.VpcExternallyRoutablePrefixList>[]>;
     /**
      * The vpc kind metadata.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The name for the VPC.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
 }
 
 /**
@@ -210,25 +210,25 @@ export interface VpcArgs {
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string | undefined>;
+    apiVersion?: pulumi.Input<string>;
     /**
      * List of domain name server IPs.
      */
-    commonDomainNameServerIpLists?: pulumi.Input<pulumi.Input<inputs.VpcCommonDomainNameServerIpList>[] | undefined>;
+    commonDomainNameServerIpLists?: pulumi.Input<pulumi.Input<inputs.VpcCommonDomainNameServerIpList>[]>;
     /**
      * List of external subnets name attached to this VPC. Should not be used with external_subnet_reference_uuid.
      */
-    externalSubnetReferenceNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    externalSubnetReferenceNames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * List of external subnets uuid attached to this VPC. Should not be used with external_subnet_reference_name.
      */
-    externalSubnetReferenceUuids?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    externalSubnetReferenceUuids?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * List Externally Routable IP Addresses. Required when external subnet with NoNAT is used.
      */
-    externallyRoutablePrefixLists?: pulumi.Input<pulumi.Input<inputs.VpcExternallyRoutablePrefixList>[] | undefined>;
+    externallyRoutablePrefixLists?: pulumi.Input<pulumi.Input<inputs.VpcExternallyRoutablePrefixList>[]>;
     /**
      * The name for the VPC.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
 }

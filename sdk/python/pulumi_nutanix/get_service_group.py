@@ -112,7 +112,7 @@ def get_service_group(uuid: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         service_lists=pulumi.get(__ret__, 'service_lists'),
         uuid=pulumi.get(__ret__, 'uuid'))
-def get_service_group_output(uuid: pulumi.Input[Optional[_builtins.str]] = None,
+def get_service_group_output(uuid: Optional[pulumi.Input[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceGroupResult]:
     """
     Use this data source to access information about an existing resource.

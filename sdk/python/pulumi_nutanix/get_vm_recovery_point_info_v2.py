@@ -213,9 +213,9 @@ def get_vm_recovery_point_info_v2(disk_recovery_points: Optional[Sequence[Union[
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         vm_categories=pulumi.get(__ret__, 'vm_categories'),
         vm_ext_id=pulumi.get(__ret__, 'vm_ext_id'))
-def get_vm_recovery_point_info_v2_output(disk_recovery_points: pulumi.Input[Optional[Optional[Sequence[Union['GetVmRecoveryPointInfoV2DiskRecoveryPointArgs', 'GetVmRecoveryPointInfoV2DiskRecoveryPointArgsDict']]]]] = None,
-                                         ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                         recovery_point_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_vm_recovery_point_info_v2_output(disk_recovery_points: Optional[pulumi.Input[Optional[Sequence[Union['GetVmRecoveryPointInfoV2DiskRecoveryPointArgs', 'GetVmRecoveryPointInfoV2DiskRecoveryPointArgsDict']]]]] = None,
+                                         ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                                         recovery_point_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmRecoveryPointInfoV2Result]:
     """
     Get the VM recovery point identified by ex_id.

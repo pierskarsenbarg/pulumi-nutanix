@@ -262,9 +262,9 @@ def get_access_control_policy(access_control_policy_id: Optional[_builtins.str] 
         state=pulumi.get(__ret__, 'state'),
         user_group_reference_lists=pulumi.get(__ret__, 'user_group_reference_lists'),
         user_reference_lists=pulumi.get(__ret__, 'user_reference_lists'))
-def get_access_control_policy_output(access_control_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     access_control_policy_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     categories: pulumi.Input[Optional[Optional[Sequence[Union['GetAccessControlPolicyCategoryArgs', 'GetAccessControlPolicyCategoryArgsDict']]]]] = None,
+def get_access_control_policy_output(access_control_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                     access_control_policy_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                     categories: Optional[pulumi.Input[Optional[Sequence[Union['GetAccessControlPolicyCategoryArgs', 'GetAccessControlPolicyCategoryArgsDict']]]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAccessControlPolicyResult]:
     """
     Describes an Access Control Policy.

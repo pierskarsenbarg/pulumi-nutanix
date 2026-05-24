@@ -86,11 +86,11 @@ export interface PcUnregistrationV2State {
      *
      * See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/unregister).
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * -(Required) The external identifier of the domain manager (Prism Central) resource
      */
-    pcExtId?: pulumi.Input<string | undefined>;
+    pcExtId?: pulumi.Input<string>;
 }
 
 /**

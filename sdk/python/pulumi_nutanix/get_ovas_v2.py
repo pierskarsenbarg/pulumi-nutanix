@@ -220,11 +220,11 @@ def get_ovas_v2(filter: Optional[_builtins.str] = None,
         ovas=pulumi.get(__ret__, 'ovas'),
         page=pulumi.get(__ret__, 'page'),
         select=pulumi.get(__ret__, 'select'))
-def get_ovas_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
-                       order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
-                       select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+def get_ovas_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                       limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+                       order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                       page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+                       select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOvasV2Result]:
     """
     This lists all accessible OVAs using the default pagination, which can be customized.

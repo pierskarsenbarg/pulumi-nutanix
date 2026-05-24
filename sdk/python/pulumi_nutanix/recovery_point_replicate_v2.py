@@ -21,7 +21,7 @@ class RecoveryPointReplicateV2Args:
     def __init__(__self__, *,
                  ext_id: pulumi.Input[_builtins.str],
                  pc_ext_id: pulumi.Input[_builtins.str],
-                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a RecoveryPointReplicateV2 resource.
 
@@ -60,24 +60,24 @@ class RecoveryPointReplicateV2Args:
 
     @_builtins.property
     @pulumi.getter(name="clusterExtId")
-    def cluster_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def cluster_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Required) External identifier of the cluster.
         """
         return pulumi.get(self, "cluster_ext_id")
 
     @cluster_ext_id.setter
-    def cluster_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def cluster_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "cluster_ext_id", value)
 
 
 @pulumi.input_type
 class _RecoveryPointReplicateV2State:
     def __init__(__self__, *,
-                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 replicated_rp_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 pc_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 replicated_rp_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RecoveryPointReplicateV2 resources.
 
@@ -97,50 +97,50 @@ class _RecoveryPointReplicateV2State:
 
     @_builtins.property
     @pulumi.getter(name="clusterExtId")
-    def cluster_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def cluster_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Required) External identifier of the cluster.
         """
         return pulumi.get(self, "cluster_ext_id")
 
     @cluster_ext_id.setter
-    def cluster_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def cluster_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "cluster_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Required) The external identifier that can be used to retrieve the recovery point using its URL.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="pcExtId")
-    def pc_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def pc_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Required) External identifier of the Prism Central.
         """
         return pulumi.get(self, "pc_ext_id")
 
     @pc_ext_id.setter
-    def pc_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def pc_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "pc_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="replicatedRpExtId")
-    def replicated_rp_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def replicated_rp_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - External identifier of replicated recovery point.
         """
         return pulumi.get(self, "replicated_rp_ext_id")
 
     @replicated_rp_ext_id.setter
-    def replicated_rp_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def replicated_rp_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "replicated_rp_ext_id", value)
 
 
@@ -150,9 +150,9 @@ class RecoveryPointReplicateV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 pc_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         External identifier of the replicated recovery point can be found in the task completion details under the key
@@ -219,9 +219,9 @@ class RecoveryPointReplicateV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 pc_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -249,10 +249,10 @@ class RecoveryPointReplicateV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            replicated_rp_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'RecoveryPointReplicateV2':
+            cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            pc_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            replicated_rp_ext_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'RecoveryPointReplicateV2':
         """
         Get an existing RecoveryPointReplicateV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

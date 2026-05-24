@@ -270,116 +270,116 @@ export interface StorageContainersV2State {
     /**
      * -(Optional) Affinity host extId for RF 1 Storage Container.
      */
-    affinityHostExtId?: pulumi.Input<string | undefined>;
+    affinityHostExtId?: pulumi.Input<string>;
     /**
      * -(Optional) Indicates the current status of Cache Deduplication for the Container. available values:  `NONE`,    `OFF`,    `ON`
      */
-    cacheDeduplication?: pulumi.Input<string | undefined>;
+    cacheDeduplication?: pulumi.Input<string>;
     /**
      * - ext id for the cluster owning the storage container.
      */
-    clusterExtId?: pulumi.Input<string | undefined>;
+    clusterExtId?: pulumi.Input<string>;
     /**
      * - Corresponding name of the Cluster owning the Storage Container instance.
      */
-    clusterName?: pulumi.Input<string | undefined>;
+    clusterName?: pulumi.Input<string>;
     /**
      * -(Optional) The compression delay in seconds.
      */
-    compressionDelaySecs?: pulumi.Input<number | undefined>;
+    compressionDelaySecs?: pulumi.Input<number>;
     /**
      * - the storage container ext id
      */
-    containerExtId?: pulumi.Input<string | undefined>;
+    containerExtId?: pulumi.Input<string>;
     /**
      * -(Optional) Indicates the current status value for Erasure Coding for the Container. available values:  `NONE`,    `OFF`,    `ON`
      */
-    erasureCode?: pulumi.Input<string | undefined>;
+    erasureCode?: pulumi.Input<string>;
     /**
      * -(Optional) Delay in performing ErasureCode for the current Container instance.
      */
-    erasureCodeDelaySecs?: pulumi.Input<number | undefined>;
+    erasureCodeDelaySecs?: pulumi.Input<number>;
     /**
      * - the storage container uuid
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * -(Optional) Indicates whether to prefer a higher Erasure Code fault domain.
      */
-    hasHigherEcFaultDomainPreference?: pulumi.Input<boolean | undefined>;
-    ignoreSmallFiles?: pulumi.Input<boolean | undefined>;
+    hasHigherEcFaultDomainPreference?: pulumi.Input<boolean>;
+    ignoreSmallFiles?: pulumi.Input<boolean>;
     /**
      * -(Optional) Indicates whether the compression is enabled for the Container.
      */
-    isCompressionEnabled?: pulumi.Input<boolean | undefined>;
+    isCompressionEnabled?: pulumi.Input<boolean>;
     /**
      * - Indicates whether the Container is encrypted or not.
      */
-    isEncrypted?: pulumi.Input<boolean | undefined>;
+    isEncrypted?: pulumi.Input<boolean>;
     /**
      * -(Optional) Indicates whether data written to this container should be inline erasure coded or not. This field is only considered when ErasureCoding is enabled.
      */
-    isInlineEcEnabled?: pulumi.Input<boolean | undefined>;
+    isInlineEcEnabled?: pulumi.Input<boolean>;
     /**
      * - Indicates whether the Container is internal and is managed by Nutanix.
      */
-    isInternal?: pulumi.Input<boolean | undefined>;
+    isInternal?: pulumi.Input<boolean>;
     /**
      * - Indicates if the Storage Container is marked for removal. This field is set when the Storage Container is about to be destroyed.
      */
-    isMarkedForRemoval?: pulumi.Input<boolean | undefined>;
+    isMarkedForRemoval?: pulumi.Input<boolean>;
     /**
      * -(Optional) Indicates whether the Container instance has software encryption enabled.
      */
-    isSoftwareEncryptionEnabled?: pulumi.Input<boolean | undefined>;
+    isSoftwareEncryptionEnabled?: pulumi.Input<boolean>;
     /**
      * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.StorageContainersV2Link>[] | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.StorageContainersV2Link>[]>;
     /**
      * -(Optional) Max capacity of the Container as defined by the user.
      */
-    logicalAdvertisedCapacityBytes?: pulumi.Input<number | undefined>;
+    logicalAdvertisedCapacityBytes?: pulumi.Input<number>;
     /**
      * -(Optional) Total reserved size (in bytes) of the container (set by Admin). This also accounts for the container's replication factor. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity.
      */
-    logicalExplicitReservedCapacityBytes?: pulumi.Input<number | undefined>;
+    logicalExplicitReservedCapacityBytes?: pulumi.Input<number>;
     /**
      * - This is the summation of reservations provisioned on all vdisks in the container. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity
      */
-    logicalImplicitReservedCapacityBytes?: pulumi.Input<number | undefined>;
+    logicalImplicitReservedCapacityBytes?: pulumi.Input<number>;
     /**
      * - Maximum physical capacity of the Storage Container in bytes.
      */
-    maxCapacityBytes?: pulumi.Input<number | undefined>;
+    maxCapacityBytes?: pulumi.Input<number>;
     /**
      * -(Required) Name of the storage container.  Note that the name of Storage Container should be unique per cluster.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * -(Optional) List of NFS addresses which need to be whitelisted.
      */
-    nfsWhitelistAddresses?: pulumi.Input<pulumi.Input<inputs.StorageContainersV2NfsWhitelistAddress>[] | undefined>;
+    nfsWhitelistAddresses?: pulumi.Input<pulumi.Input<inputs.StorageContainersV2NfsWhitelistAddress>[]>;
     /**
      * - Indicates the current status of Disk Deduplication for the Container. available values:  `NONE`,    `OFF`,    `POST_PROCESS`
      */
-    onDiskDedup?: pulumi.Input<string | undefined>;
+    onDiskDedup?: pulumi.Input<string>;
     /**
      * -(Optional) owner ext id
      */
-    ownerExtId?: pulumi.Input<string | undefined>;
+    ownerExtId?: pulumi.Input<string>;
     /**
      * -(Optional) Replication factor of the Storage Container.
      */
-    replicationFactor?: pulumi.Input<number | undefined>;
+    replicationFactor?: pulumi.Input<number>;
     /**
      * - extId of the Storage Pool owning the Storage Container instance.
      */
-    storagePoolExtId?: pulumi.Input<string | undefined>;
+    storagePoolExtId?: pulumi.Input<string>;
     /**
      * - A globally unique identifier that represents the tenant that owns this entity.
      */
-    tenantId?: pulumi.Input<string | undefined>;
+    tenantId?: pulumi.Input<string>;
 }
 
 /**
@@ -389,11 +389,11 @@ export interface StorageContainersV2Args {
     /**
      * -(Optional) Affinity host extId for RF 1 Storage Container.
      */
-    affinityHostExtId?: pulumi.Input<string | undefined>;
+    affinityHostExtId?: pulumi.Input<string>;
     /**
      * -(Optional) Indicates the current status of Cache Deduplication for the Container. available values:  `NONE`,    `OFF`,    `ON`
      */
-    cacheDeduplication?: pulumi.Input<string | undefined>;
+    cacheDeduplication?: pulumi.Input<string>;
     /**
      * - ext id for the cluster owning the storage container.
      */
@@ -401,70 +401,70 @@ export interface StorageContainersV2Args {
     /**
      * -(Optional) The compression delay in seconds.
      */
-    compressionDelaySecs?: pulumi.Input<number | undefined>;
+    compressionDelaySecs?: pulumi.Input<number>;
     /**
      * - the storage container ext id
      */
-    containerExtId?: pulumi.Input<string | undefined>;
+    containerExtId?: pulumi.Input<string>;
     /**
      * -(Optional) Indicates the current status value for Erasure Coding for the Container. available values:  `NONE`,    `OFF`,    `ON`
      */
-    erasureCode?: pulumi.Input<string | undefined>;
+    erasureCode?: pulumi.Input<string>;
     /**
      * -(Optional) Delay in performing ErasureCode for the current Container instance.
      */
-    erasureCodeDelaySecs?: pulumi.Input<number | undefined>;
+    erasureCodeDelaySecs?: pulumi.Input<number>;
     /**
      * - the storage container uuid
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * -(Optional) Indicates whether to prefer a higher Erasure Code fault domain.
      */
-    hasHigherEcFaultDomainPreference?: pulumi.Input<boolean | undefined>;
-    ignoreSmallFiles?: pulumi.Input<boolean | undefined>;
+    hasHigherEcFaultDomainPreference?: pulumi.Input<boolean>;
+    ignoreSmallFiles?: pulumi.Input<boolean>;
     /**
      * -(Optional) Indicates whether the compression is enabled for the Container.
      */
-    isCompressionEnabled?: pulumi.Input<boolean | undefined>;
+    isCompressionEnabled?: pulumi.Input<boolean>;
     /**
      * -(Optional) Indicates whether data written to this container should be inline erasure coded or not. This field is only considered when ErasureCoding is enabled.
      */
-    isInlineEcEnabled?: pulumi.Input<boolean | undefined>;
+    isInlineEcEnabled?: pulumi.Input<boolean>;
     /**
      * - Indicates whether the Container is internal and is managed by Nutanix.
      */
-    isInternal?: pulumi.Input<boolean | undefined>;
+    isInternal?: pulumi.Input<boolean>;
     /**
      * -(Optional) Indicates whether the Container instance has software encryption enabled.
      */
-    isSoftwareEncryptionEnabled?: pulumi.Input<boolean | undefined>;
+    isSoftwareEncryptionEnabled?: pulumi.Input<boolean>;
     /**
      * -(Optional) Max capacity of the Container as defined by the user.
      */
-    logicalAdvertisedCapacityBytes?: pulumi.Input<number | undefined>;
+    logicalAdvertisedCapacityBytes?: pulumi.Input<number>;
     /**
      * -(Optional) Total reserved size (in bytes) of the container (set by Admin). This also accounts for the container's replication factor. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity.
      */
-    logicalExplicitReservedCapacityBytes?: pulumi.Input<number | undefined>;
+    logicalExplicitReservedCapacityBytes?: pulumi.Input<number>;
     /**
      * -(Required) Name of the storage container.  Note that the name of Storage Container should be unique per cluster.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * -(Optional) List of NFS addresses which need to be whitelisted.
      */
-    nfsWhitelistAddresses?: pulumi.Input<pulumi.Input<inputs.StorageContainersV2NfsWhitelistAddress>[] | undefined>;
+    nfsWhitelistAddresses?: pulumi.Input<pulumi.Input<inputs.StorageContainersV2NfsWhitelistAddress>[]>;
     /**
      * - Indicates the current status of Disk Deduplication for the Container. available values:  `NONE`,    `OFF`,    `POST_PROCESS`
      */
-    onDiskDedup?: pulumi.Input<string | undefined>;
+    onDiskDedup?: pulumi.Input<string>;
     /**
      * -(Optional) owner ext id
      */
-    ownerExtId?: pulumi.Input<string | undefined>;
+    ownerExtId?: pulumi.Input<string>;
     /**
      * -(Optional) Replication factor of the Storage Container.
      */
-    replicationFactor?: pulumi.Input<number | undefined>;
+    replicationFactor?: pulumi.Input<number>;
 }

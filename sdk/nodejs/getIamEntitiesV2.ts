@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Provides a datasource to list IAM Entities. Entities are used in authorization policies (e.g. user, role, cluster). Supports pagination and OData <span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`">`filter`</span>, <span pulumi-lang-nodejs="`orderBy`" pulumi-lang-dotnet="`OrderBy`" pulumi-lang-go="`orderBy`" pulumi-lang-python="`order_by`" pulumi-lang-yaml="`orderBy`" pulumi-lang-java="`orderBy`">`orderBy`</span>, and <span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`">`select`</span>.
+ * Provides a datasource to list IAM Entities. Entities are used in authorization policies (e.g. user, role, cluster). Supports pagination and OData <span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`" pulumi-lang-hcl="`filter`">`filter`</span>, <span pulumi-lang-nodejs="`orderBy`" pulumi-lang-dotnet="`OrderBy`" pulumi-lang-go="`orderBy`" pulumi-lang-python="`order_by`" pulumi-lang-yaml="`orderBy`" pulumi-lang-java="`orderBy`" pulumi-lang-hcl="`order_by`">`orderBy`</span>, and <span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`" pulumi-lang-hcl="`select`">`select`</span>.
  *
  * ## Example Usage
  *
@@ -107,7 +107,7 @@ export interface GetIamEntitiesV2Result {
     readonly select?: string;
 }
 /**
- * Provides a datasource to list IAM Entities. Entities are used in authorization policies (e.g. user, role, cluster). Supports pagination and OData <span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`">`filter`</span>, <span pulumi-lang-nodejs="`orderBy`" pulumi-lang-dotnet="`OrderBy`" pulumi-lang-go="`orderBy`" pulumi-lang-python="`order_by`" pulumi-lang-yaml="`orderBy`" pulumi-lang-java="`orderBy`">`orderBy`</span>, and <span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`">`select`</span>.
+ * Provides a datasource to list IAM Entities. Entities are used in authorization policies (e.g. user, role, cluster). Supports pagination and OData <span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`" pulumi-lang-hcl="`filter`">`filter`</span>, <span pulumi-lang-nodejs="`orderBy`" pulumi-lang-dotnet="`OrderBy`" pulumi-lang-go="`orderBy`" pulumi-lang-python="`order_by`" pulumi-lang-yaml="`orderBy`" pulumi-lang-java="`orderBy`" pulumi-lang-hcl="`order_by`">`orderBy`</span>, and <span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`" pulumi-lang-hcl="`select`">`select`</span>.
  *
  * ## Example Usage
  *
@@ -161,11 +161,11 @@ export interface GetIamEntitiesV2OutputArgs {
      * * `extId` - Filter by entity external identifier.
      * * `lastUpdatedTime` - Filter by last updated time (ISO 8601 format).
      */
-    filter?: pulumi.Input<string | undefined>;
+    filter?: pulumi.Input<string>;
     /**
      * Number of records to return. Must be between 1 and 100. Default is 50.
      */
-    limit?: pulumi.Input<number | undefined>;
+    limit?: pulumi.Input<number>;
     /**
      * OData orderby expression. The orderby can be applied to the following fields:
      *
@@ -174,16 +174,16 @@ export interface GetIamEntitiesV2OutputArgs {
      * * `extId` - Sort by entity external identifier.
      * * `lastUpdatedTime` - Sort by last updated time (ISO 8601 format).
      */
-    orderBy?: pulumi.Input<string | undefined>;
+    orderBy?: pulumi.Input<string>;
     /**
      * Page number of the result set (0-based). Must be between 0 and the maximum number of pages.
      */
-    page?: pulumi.Input<number | undefined>;
+    page?: pulumi.Input<number>;
     /**
      * OData select expression. The select can be applied to the following fields:
      * * `clientName` - Select by client name.
      * * `createdBy` - Select by creator (user or service ext_id).
      * * `createdTime` - Select by creation time (ISO 8601 format).
      */
-    select?: pulumi.Input<string | undefined>;
+    select?: pulumi.Input<string>;
 }

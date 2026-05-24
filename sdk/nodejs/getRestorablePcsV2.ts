@@ -60,8 +60,8 @@ export function getRestorablePcsV2Output(args: GetRestorablePcsV2OutputArgs, opt
  * A collection of arguments for invoking getRestorablePcsV2.
  */
 export interface GetRestorablePcsV2OutputArgs {
-    filter?: pulumi.Input<string | undefined>;
-    limit?: pulumi.Input<string | undefined>;
-    page?: pulumi.Input<string | undefined>;
+    filter?: pulumi.Input<string>;
+    limit?: pulumi.Input<string>;
+    page?: pulumi.Input<string>;
     restoreSourceExtId: pulumi.Input<string>;
 }

@@ -35,7 +35,7 @@ export function getNdbSla(args?: GetNdbSlaArgs, opts?: pulumi.InvokeOptions): Pr
  */
 export interface GetNdbSlaArgs {
     /**
-     * and <span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`">`slaName`</span> are mutually exclusive.
+     * and <span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`" pulumi-lang-hcl="`sla_name`">`slaName`</span> are mutually exclusive.
      */
     slaId?: string;
     /**
@@ -150,11 +150,11 @@ export function getNdbSlaOutput(args?: GetNdbSlaOutputArgs, opts?: pulumi.Invoke
  */
 export interface GetNdbSlaOutputArgs {
     /**
-     * and <span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`">`slaName`</span> are mutually exclusive.
+     * and <span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`" pulumi-lang-hcl="`sla_name`">`slaName`</span> are mutually exclusive.
      */
-    slaId?: pulumi.Input<string | undefined>;
+    slaId?: pulumi.Input<string>;
     /**
      * SLA Name for query
      */
-    slaName?: pulumi.Input<string | undefined>;
+    slaName?: pulumi.Input<string>;
 }

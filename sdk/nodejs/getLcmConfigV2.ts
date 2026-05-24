@@ -47,7 +47,7 @@ export interface GetLcmConfigV2Args {
  */
 export interface GetLcmConfigV2Result {
     /**
-     * The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+     * The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
      */
     readonly autoInventorySchedule: string;
     /**
@@ -144,5 +144,5 @@ export interface GetLcmConfigV2OutputArgs {
     /**
      * Cluster uuid on which the resource is present or operation is being performed.
      */
-    xClusterId?: pulumi.Input<string | undefined>;
+    xClusterId?: pulumi.Input<string>;
 }

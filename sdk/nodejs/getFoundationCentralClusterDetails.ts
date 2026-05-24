@@ -184,23 +184,23 @@ export interface GetFoundationCentralClusterDetailsOutputArgs {
     /**
      * External management ip of the cluster.
      */
-    clusterExternalIp?: pulumi.Input<string | undefined>;
+    clusterExternalIp?: pulumi.Input<string>;
     /**
      * Cluster name.
      */
-    clusterName?: pulumi.Input<string | undefined>;
+    clusterName?: pulumi.Input<string>;
     /**
      * Number of nodes in the cluster.
      */
-    clusterSize?: pulumi.Input<number | undefined>;
+    clusterSize?: pulumi.Input<number>;
     /**
      * Details of cluster creation process.
      */
-    clusterStatus?: pulumi.Input<inputs.GetFoundationCentralClusterDetailsClusterStatusArgs | undefined>;
+    clusterStatus?: pulumi.Input<inputs.GetFoundationCentralClusterDetailsClusterStatusArgs>;
     /**
      * Common network settings across the nodes in the cluster.
      */
-    commonNetworkSettings?: pulumi.Input<inputs.GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs | undefined>;
+    commonNetworkSettings?: pulumi.Input<inputs.GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs>;
     /**
      * UUID of the cluster whose details need to be fetched.
      */
@@ -208,9 +208,9 @@ export interface GetFoundationCentralClusterDetailsOutputArgs {
     /**
      * Redundancy factor of the cluster.
      */
-    redundancyFactor?: pulumi.Input<number | undefined>;
+    redundancyFactor?: pulumi.Input<number>;
     /**
      * Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
      */
-    storageNodeCount?: pulumi.Input<number | undefined>;
+    storageNodeCount?: pulumi.Input<number>;
 }

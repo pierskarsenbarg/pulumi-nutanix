@@ -204,89 +204,89 @@ export interface UsersV2State {
     /**
      * -(Optional) Any additional attribute for the User.
      */
-    additionalAttributes?: pulumi.Input<pulumi.Input<inputs.UsersV2AdditionalAttribute>[] | undefined>;
+    additionalAttributes?: pulumi.Input<pulumi.Input<inputs.UsersV2AdditionalAttribute>[]>;
     /**
      * - Bucket Access Keys for the User.
      */
-    bucketsAccessKeys?: pulumi.Input<pulumi.Input<inputs.UsersV2BucketsAccessKey>[] | undefined>;
+    bucketsAccessKeys?: pulumi.Input<pulumi.Input<inputs.UsersV2BucketsAccessKey>[]>;
     /**
      * - User or Service who created the User.
      */
-    createdBy?: pulumi.Input<string | undefined>;
+    createdBy?: pulumi.Input<string>;
     /**
      * - Creation time for the Bucket Access Key.
      */
-    createdTime?: pulumi.Input<string | undefined>;
+    createdTime?: pulumi.Input<string>;
     /**
      * -( Optional ) Description of the user.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * -(Optional) Display name for the User.
      */
-    displayName?: pulumi.Input<string | undefined>;
+    displayName?: pulumi.Input<string>;
     /**
      * -(Optional) Email Id for the User.
      */
-    emailId?: pulumi.Input<string | undefined>;
+    emailId?: pulumi.Input<string>;
     /**
      * -(Optional) External Identifier of the User.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * -(Optional) First name for the User.
      */
-    firstName?: pulumi.Input<string | undefined>;
-    forceResetPassword?: pulumi.Input<boolean | undefined>;
+    firstName?: pulumi.Input<string>;
+    forceResetPassword?: pulumi.Input<boolean>;
     /**
      * -(Optional) Identifier of the IDP for the User.
      */
-    idpId?: pulumi.Input<string | undefined>;
+    idpId?: pulumi.Input<string>;
     /**
      * - Last successful logged in time for the User.
      */
-    lastLoginTime?: pulumi.Input<string | undefined>;
+    lastLoginTime?: pulumi.Input<string>;
     /**
      * -(Optional) Last name for the User.
      */
-    lastName?: pulumi.Input<string | undefined>;
+    lastName?: pulumi.Input<string>;
     /**
      * - Last updated time of the User.
      */
-    lastUpdatedTime?: pulumi.Input<string | undefined>;
+    lastUpdatedTime?: pulumi.Input<string>;
     /**
      * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.UsersV2Link>[] | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.UsersV2Link>[]>;
     /**
      * -(Optional) Default locale for the User.
      */
-    locale?: pulumi.Input<string | undefined>;
+    locale?: pulumi.Input<string>;
     /**
      * -(Optional) Middle name for the User.
      */
-    middleInitial?: pulumi.Input<string | undefined>;
+    middleInitial?: pulumi.Input<string>;
     /**
      * -(Optional) Password for the User.
      */
-    password?: pulumi.Input<string | undefined>;
+    password?: pulumi.Input<string>;
     /**
      * -(Optional) Default Region for the User.
      */
-    region?: pulumi.Input<string | undefined>;
+    region?: pulumi.Input<string>;
     /**
      * -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
      */
-    status?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string>;
     /**
      * -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
      * Type of the User.
      */
-    userType?: pulumi.Input<string | undefined>;
+    userType?: pulumi.Input<string>;
     /**
      * -(Required) Identifier for the User in the form an email address.
      */
-    username?: pulumi.Input<string | undefined>;
+    username?: pulumi.Input<string>;
 }
 
 /**
@@ -296,52 +296,52 @@ export interface UsersV2Args {
     /**
      * -(Optional) Any additional attribute for the User.
      */
-    additionalAttributes?: pulumi.Input<pulumi.Input<inputs.UsersV2AdditionalAttribute>[] | undefined>;
+    additionalAttributes?: pulumi.Input<pulumi.Input<inputs.UsersV2AdditionalAttribute>[]>;
     /**
      * -( Optional ) Description of the user.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * -(Optional) Display name for the User.
      */
-    displayName?: pulumi.Input<string | undefined>;
+    displayName?: pulumi.Input<string>;
     /**
      * -(Optional) Email Id for the User.
      */
-    emailId?: pulumi.Input<string | undefined>;
+    emailId?: pulumi.Input<string>;
     /**
      * -(Optional) First name for the User.
      */
-    firstName?: pulumi.Input<string | undefined>;
-    forceResetPassword?: pulumi.Input<boolean | undefined>;
+    firstName?: pulumi.Input<string>;
+    forceResetPassword?: pulumi.Input<boolean>;
     /**
      * -(Optional) Identifier of the IDP for the User.
      */
-    idpId?: pulumi.Input<string | undefined>;
+    idpId?: pulumi.Input<string>;
     /**
      * -(Optional) Last name for the User.
      */
-    lastName?: pulumi.Input<string | undefined>;
+    lastName?: pulumi.Input<string>;
     /**
      * -(Optional) Default locale for the User.
      */
-    locale?: pulumi.Input<string | undefined>;
+    locale?: pulumi.Input<string>;
     /**
      * -(Optional) Middle name for the User.
      */
-    middleInitial?: pulumi.Input<string | undefined>;
+    middleInitial?: pulumi.Input<string>;
     /**
      * -(Optional) Password for the User.
      */
-    password?: pulumi.Input<string | undefined>;
+    password?: pulumi.Input<string>;
     /**
      * -(Optional) Default Region for the User.
      */
-    region?: pulumi.Input<string | undefined>;
+    region?: pulumi.Input<string>;
     /**
      * -(Optional) Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
      */
-    status?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string>;
     /**
      * -(Required) Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL` `SERVICE_ACCOUNT`
      * Type of the User.

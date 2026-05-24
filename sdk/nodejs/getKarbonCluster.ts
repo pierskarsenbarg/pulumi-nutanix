@@ -109,9 +109,9 @@ export interface GetKarbonClusterOutputArgs {
     /**
      * Represents karbon cluster uuid
      */
-    karbonClusterId?: pulumi.Input<string | undefined>;
+    karbonClusterId?: pulumi.Input<string>;
     /**
      * Represents the name of karbon cluster
      */
-    karbonClusterName?: pulumi.Input<string | undefined>;
+    karbonClusterName?: pulumi.Input<string>;
 }

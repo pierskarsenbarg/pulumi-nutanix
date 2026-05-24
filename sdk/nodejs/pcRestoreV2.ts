@@ -37,15 +37,15 @@ import * as utilities from "./utilities";
  *     restoreSourceExtId: cluster_location.extId,
  * });
  * const restorablePcExtId = restorable_pcs.apply(restorable_pcs => restorable_pcs.restorablePcs?.[0]?.extId);
- * const restore_points = pulumi.all([restorablePcExtId, cluster_location.id]).apply(([restorablePcExtId, id]) => nutanix.getPcRestorePointsV2Output({
+ * const restore_points = nutanix.getPcRestorePointsV2Output({
  *     restorableDomainManagerExtId: restorablePcExtId,
- *     restoreSourceExtId: id,
- * }));
- * const restore_point = pulumi.all([cluster_location.id, restorablePcExtId, restore_points]).apply(([id, restorablePcExtId, restore_points]) => nutanix.getPcRestorePointV2Output({
- *     restoreSourceExtId: id,
+ *     restoreSourceExtId: cluster_location.id,
+ * });
+ * const restore_point = nutanix.getPcRestorePointV2Output({
+ *     restoreSourceExtId: cluster_location.id,
  *     restorableDomainManagerExtId: restorablePcExtId,
- *     extId: restore_points.restorePoints?.[0]?.extId,
- * }));
+ *     extId: restore_points.apply(restore_points => restore_points.restorePoints?.[0]?.extId),
+ * });
  * const restorePoint = restore_point;
  * // define the restore pc resource
  * // you can get these values from the data source nutanix_pc_v2, this data source is on PC provider
@@ -211,19 +211,19 @@ export interface PcRestoreV2State {
     /**
      * -(Required) Domain manager (Prism Central) details.
      */
-    domainManager?: pulumi.Input<inputs.PcRestoreV2DomainManager | undefined>;
+    domainManager?: pulumi.Input<inputs.PcRestoreV2DomainManager>;
     /**
      * -(Required) Restore point ID for the backup created in cluster/object store.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * -(Required) A unique identifier for the domain manager.
      */
-    restorableDomainManagerExtId?: pulumi.Input<string | undefined>;
+    restorableDomainManagerExtId?: pulumi.Input<string>;
     /**
      * -(Required) A unique identifier obtained from the restore source API that corresponds to the details provided for the restore source.
      */
-    restoreSourceExtId?: pulumi.Input<string | undefined>;
+    restoreSourceExtId?: pulumi.Input<string>;
 }
 
 /**

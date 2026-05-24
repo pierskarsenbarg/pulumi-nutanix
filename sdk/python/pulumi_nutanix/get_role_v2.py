@@ -271,7 +271,7 @@ def get_role_v2(ext_id: Optional[_builtins.str] = None,
         links=pulumi.get(__ret__, 'links'),
         operations=pulumi.get(__ret__, 'operations'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_role_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_role_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRoleV2Result]:
     """
     Fetches a role based on the provided external identifier.

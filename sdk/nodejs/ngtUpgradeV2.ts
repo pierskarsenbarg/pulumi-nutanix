@@ -157,51 +157,51 @@ export interface NgtUpgradeV2State {
     /**
      * Version of Nutanix Guest Tools available on the cluster.
      */
-    availableVersion?: pulumi.Input<string | undefined>;
+    availableVersion?: pulumi.Input<string>;
     /**
      * The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
      */
-    capablities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    capablities?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * uuid of the Virtual Machine.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * Version of the operating system on the VM.
      */
-    guestOsVersion?: pulumi.Input<string | undefined>;
+    guestOsVersion?: pulumi.Input<string>;
     /**
      * Indicates whether Nutanix Guest Tools is enabled or not.
      */
-    isEnabled?: pulumi.Input<boolean | undefined>;
+    isEnabled?: pulumi.Input<boolean>;
     /**
      * Indicates whether Nutanix Guest Tools is installed on the VM or not.
      */
-    isInstalled?: pulumi.Input<boolean | undefined>;
+    isInstalled?: pulumi.Input<boolean>;
     /**
      * Indicates whether Nutanix Guest Tools ISO is inserted or not.
      */
-    isIsoInserted?: pulumi.Input<boolean | undefined>;
+    isIsoInserted?: pulumi.Input<boolean>;
     /**
      * Indicates whether the communication from VM to CVM is active or not.
      */
-    isReachable?: pulumi.Input<boolean | undefined>;
+    isReachable?: pulumi.Input<boolean>;
     /**
      * Indicates whether the VM mobility drivers are installed on the VM or not.
      */
-    isVmMobilityDriversInstalled?: pulumi.Input<boolean | undefined>;
+    isVmMobilityDriversInstalled?: pulumi.Input<boolean>;
     /**
      * Indicates whether the VM is configured to take VSS snapshots through NGT or not.
      */
-    isVssSnapshotCapable?: pulumi.Input<boolean | undefined>;
+    isVssSnapshotCapable?: pulumi.Input<boolean>;
     /**
      * The restart schedule after installing or upgrading Nutanix Guest Tools.
      */
-    rebootPreference?: pulumi.Input<inputs.NgtUpgradeV2RebootPreference | undefined>;
+    rebootPreference?: pulumi.Input<inputs.NgtUpgradeV2RebootPreference>;
     /**
      * Version of Nutanix Guest Tools installed on the VM.
      */
-    version?: pulumi.Input<string | undefined>;
+    version?: pulumi.Input<string>;
 }
 
 /**
@@ -215,5 +215,5 @@ export interface NgtUpgradeV2Args {
     /**
      * The restart schedule after installing or upgrading Nutanix Guest Tools.
      */
-    rebootPreference?: pulumi.Input<inputs.NgtUpgradeV2RebootPreference | undefined>;
+    rebootPreference?: pulumi.Input<inputs.NgtUpgradeV2RebootPreference>;
 }

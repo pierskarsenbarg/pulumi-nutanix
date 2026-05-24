@@ -157,11 +157,11 @@ def get_certificates_v2(filter: Optional[_builtins.str] = None,
         object_store_ext_id=pulumi.get(__ret__, 'object_store_ext_id'),
         page=pulumi.get(__ret__, 'page'),
         select=pulumi.get(__ret__, 'select'))
-def get_certificates_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                               limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
-                               object_store_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                               page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
-                               select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+def get_certificates_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                               limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+                               object_store_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                               page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+                               select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificatesV2Result]:
     """
     Get a list of the SSL certificates which can be used to access an Object store.

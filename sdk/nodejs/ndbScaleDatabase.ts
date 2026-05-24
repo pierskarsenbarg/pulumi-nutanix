@@ -271,121 +271,121 @@ export interface NdbScaleDatabaseState {
     /**
      * type of instance. eg: postgres_database
      */
-    applicationType?: pulumi.Input<string | undefined>;
+    applicationType?: pulumi.Input<string>;
     /**
      * whether instance is cloned or not
      */
-    clone?: pulumi.Input<boolean | undefined>;
+    clone?: pulumi.Input<boolean>;
     /**
      * data area (in GiB) to be added to the existing database.
      */
-    dataStorageSize?: pulumi.Input<number | undefined>;
+    dataStorageSize?: pulumi.Input<number>;
     /**
      * database cluster type
      */
-    databaseClusterType?: pulumi.Input<string | undefined>;
-    databaseInstanceId?: pulumi.Input<string | undefined>;
+    databaseClusterType?: pulumi.Input<string>;
+    databaseInstanceId?: pulumi.Input<string>;
     /**
      * name of database
      */
-    databaseName?: pulumi.Input<string | undefined>;
+    databaseName?: pulumi.Input<string>;
     /**
      * database nodes associated with database instance
      */
-    databaseNodes?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseDatabaseNode>[] | undefined>;
+    databaseNodes?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseDatabaseNode>[]>;
     /**
      * Database id
      */
-    databaseUuid?: pulumi.Input<string | undefined>;
+    databaseUuid?: pulumi.Input<string>;
     /**
      * type of database
      */
-    databasetype?: pulumi.Input<string | undefined>;
+    databasetype?: pulumi.Input<string>;
     /**
      * date created for db instance
      */
-    dateCreated?: pulumi.Input<string | undefined>;
+    dateCreated?: pulumi.Input<string>;
     /**
      * date modified for instance
      */
-    dateModified?: pulumi.Input<string | undefined>;
+    dateModified?: pulumi.Input<string>;
     /**
      * dbserver logical cluster
      */
-    dbserverLogicalCluster?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    dbserverLogicalCluster?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * dbserver logical cluster id
      */
-    dbserverLogicalClusterId?: pulumi.Input<string | undefined>;
+    dbserverLogicalClusterId?: pulumi.Input<string>;
     /**
      * description of database instance
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * info of instance
      */
-    infos?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseInfo>[] | undefined>;
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseInfo>[]>;
     /**
      * LCM config of instance
      */
-    lcmConfigs?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseLcmConfig>[] | undefined>;
+    lcmConfigs?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseLcmConfig>[]>;
     /**
      * linked databases within database instance
      */
-    linkedDatabases?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseLinkedDatabase>[] | undefined>;
+    linkedDatabases?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseLinkedDatabase>[]>;
     /**
      * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
      */
-    metric?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    metric?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Name of database instance
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * parent database id
      */
-    parentDatabaseId?: pulumi.Input<string | undefined>;
-    parentSourceDatabaseId?: pulumi.Input<string | undefined>;
+    parentDatabaseId?: pulumi.Input<string>;
+    parentSourceDatabaseId?: pulumi.Input<string>;
     /**
      * post script command
      */
-    postScriptCmd?: pulumi.Input<string | undefined>;
+    postScriptCmd?: pulumi.Input<string>;
     /**
      * pre script command
      */
-    preScriptCmd?: pulumi.Input<string | undefined>;
+    preScriptCmd?: pulumi.Input<string>;
     /**
      * properties of database created
      */
-    properties?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseProperty>[] | undefined>;
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseProperty>[]>;
     /**
      * scale count helps to scale the same instance with same config
      */
-    scaleCount?: pulumi.Input<number | undefined>;
+    scaleCount?: pulumi.Input<number>;
     /**
      * status of instance
      */
-    status?: pulumi.Input<string | undefined>;
+    status?: pulumi.Input<string>;
     /**
      * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTag>[] | undefined>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTag>[]>;
     /**
      * time machine id of instance
      */
-    timeMachineId?: pulumi.Input<string | undefined>;
+    timeMachineId?: pulumi.Input<string>;
     /**
      * Time Machine details of instance
      */
-    timeMachines?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachine>[] | undefined>;
+    timeMachines?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachine>[]>;
     /**
      * timezone on which instance is created xw
      */
-    timeZone?: pulumi.Input<string | undefined>;
+    timeZone?: pulumi.Input<string>;
     /**
      * type of database
      */
-    type?: pulumi.Input<string | undefined>;
+    type?: pulumi.Input<string>;
 }
 
 /**
@@ -407,17 +407,17 @@ export interface NdbScaleDatabaseArgs {
     /**
      * post script command
      */
-    postScriptCmd?: pulumi.Input<string | undefined>;
+    postScriptCmd?: pulumi.Input<string>;
     /**
      * pre script command
      */
-    preScriptCmd?: pulumi.Input<string | undefined>;
+    preScriptCmd?: pulumi.Input<string>;
     /**
      * scale count helps to scale the same instance with same config
      */
-    scaleCount?: pulumi.Input<number | undefined>;
+    scaleCount?: pulumi.Input<number>;
     /**
      * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTag>[] | undefined>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTag>[]>;
 }

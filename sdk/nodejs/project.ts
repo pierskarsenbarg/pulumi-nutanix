@@ -48,7 +48,7 @@ export class Project extends pulumi.CustomResource {
     declare public readonly categories: pulumi.Output<outputs.ProjectCategory[]>;
     declare public readonly clusterReferenceLists: pulumi.Output<outputs.ProjectClusterReferenceList[]>;
     /**
-     * The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag).
+     * The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag).
      */
     declare public readonly clusterUuid: pulumi.Output<string | undefined>;
     declare public readonly defaultEnvironmentReference: pulumi.Output<outputs.ProjectDefaultEnvironmentReference>;
@@ -58,7 +58,7 @@ export class Project extends pulumi.CustomResource {
      */
     declare public readonly description: pulumi.Output<string>;
     /**
-     * flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag)
+     * flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
      */
     declare public readonly enableCollab: pulumi.Output<boolean | undefined>;
     declare public readonly environmentReferenceLists: pulumi.Output<outputs.ProjectEnvironmentReferenceList[]>;
@@ -73,7 +73,7 @@ export class Project extends pulumi.CustomResource {
     declare public readonly ownerReference: pulumi.Output<{[key: string]: string}>;
     declare public readonly projectReference: pulumi.Output<{[key: string]: string}>;
     /**
-     * @deprecated Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
+     * @deprecated Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`" pulumi-lang-hcl="`resource_domain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
      */
     declare public readonly resourceDomain: pulumi.Output<outputs.ProjectResourceDomain | undefined>;
     declare public /*out*/ readonly state: pulumi.Output<string>;
@@ -176,109 +176,109 @@ export class Project extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Project resources.
  */
 export interface ProjectState {
-    accountReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectAccountReferenceList>[] | undefined>;
-    acps?: pulumi.Input<pulumi.Input<inputs.ProjectAcp>[] | undefined>;
-    apiVersion?: pulumi.Input<string | undefined>;
+    accountReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectAccountReferenceList>[]>;
+    acps?: pulumi.Input<pulumi.Input<inputs.ProjectAcp>[]>;
+    apiVersion?: pulumi.Input<string>;
     /**
      * - (Optional) The category values represented as a dictionary of key > list of values.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.ProjectCategory>[] | undefined>;
-    clusterReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectClusterReferenceList>[] | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.ProjectCategory>[]>;
+    clusterReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectClusterReferenceList>[]>;
     /**
-     * The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag).
+     * The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag).
      */
-    clusterUuid?: pulumi.Input<string | undefined>;
-    defaultEnvironmentReference?: pulumi.Input<inputs.ProjectDefaultEnvironmentReference | undefined>;
-    defaultSubnetReference?: pulumi.Input<inputs.ProjectDefaultSubnetReference | undefined>;
+    clusterUuid?: pulumi.Input<string>;
+    defaultEnvironmentReference?: pulumi.Input<inputs.ProjectDefaultEnvironmentReference>;
+    defaultSubnetReference?: pulumi.Input<inputs.ProjectDefaultSubnetReference>;
     /**
      * A description for project.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
-     * flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag)
+     * flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
      */
-    enableCollab?: pulumi.Input<boolean | undefined>;
-    environmentReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectEnvironmentReferenceList>[] | undefined>;
-    externalNetworkLists?: pulumi.Input<pulumi.Input<inputs.ProjectExternalNetworkList>[] | undefined>;
-    externalUserGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectExternalUserGroupReferenceList>[] | undefined>;
-    isDefault?: pulumi.Input<boolean | undefined>;
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    enableCollab?: pulumi.Input<boolean>;
+    environmentReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectEnvironmentReferenceList>[]>;
+    externalNetworkLists?: pulumi.Input<pulumi.Input<inputs.ProjectExternalNetworkList>[]>;
+    externalUserGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectExternalUserGroupReferenceList>[]>;
+    isDefault?: pulumi.Input<boolean>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The name for the project.
      */
-    name?: pulumi.Input<string | undefined>;
-    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
-    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    name?: pulumi.Input<string>;
+    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * @deprecated Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
+     * @deprecated Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`" pulumi-lang-hcl="`resource_domain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
      */
-    resourceDomain?: pulumi.Input<inputs.ProjectResourceDomain | undefined>;
-    state?: pulumi.Input<string | undefined>;
-    subnetReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectSubnetReferenceList>[] | undefined>;
-    tunnelReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectTunnelReferenceList>[] | undefined>;
+    resourceDomain?: pulumi.Input<inputs.ProjectResourceDomain>;
+    state?: pulumi.Input<string>;
+    subnetReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectSubnetReferenceList>[]>;
+    tunnelReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectTunnelReferenceList>[]>;
     /**
      * flag to use project internal for user role mapping
      */
-    useProjectInternal?: pulumi.Input<boolean | undefined>;
-    userGroupLists?: pulumi.Input<pulumi.Input<inputs.ProjectUserGroupList>[] | undefined>;
-    userLists?: pulumi.Input<pulumi.Input<inputs.ProjectUserList>[] | undefined>;
+    useProjectInternal?: pulumi.Input<boolean>;
+    userGroupLists?: pulumi.Input<pulumi.Input<inputs.ProjectUserGroupList>[]>;
+    userLists?: pulumi.Input<pulumi.Input<inputs.ProjectUserList>[]>;
     /**
      * List of Reference of users.
      */
-    userReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectUserReferenceList>[] | undefined>;
-    vpcReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectVpcReferenceList>[] | undefined>;
+    userReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectUserReferenceList>[]>;
+    vpcReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectVpcReferenceList>[]>;
 }
 
 /**
  * The set of arguments for constructing a Project resource.
  */
 export interface ProjectArgs {
-    accountReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectAccountReferenceList>[] | undefined>;
-    acps?: pulumi.Input<pulumi.Input<inputs.ProjectAcp>[] | undefined>;
-    apiVersion?: pulumi.Input<string | undefined>;
+    accountReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectAccountReferenceList>[]>;
+    acps?: pulumi.Input<pulumi.Input<inputs.ProjectAcp>[]>;
+    apiVersion?: pulumi.Input<string>;
     /**
      * - (Optional) The category values represented as a dictionary of key > list of values.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.ProjectCategory>[] | undefined>;
-    clusterReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectClusterReferenceList>[] | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.ProjectCategory>[]>;
+    clusterReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectClusterReferenceList>[]>;
     /**
-     * The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag).
+     * The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag).
      */
-    clusterUuid?: pulumi.Input<string | undefined>;
-    defaultEnvironmentReference?: pulumi.Input<inputs.ProjectDefaultEnvironmentReference | undefined>;
+    clusterUuid?: pulumi.Input<string>;
+    defaultEnvironmentReference?: pulumi.Input<inputs.ProjectDefaultEnvironmentReference>;
     defaultSubnetReference: pulumi.Input<inputs.ProjectDefaultSubnetReference>;
     /**
      * A description for project.
      */
     description: pulumi.Input<string>;
     /**
-     * flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag)
+     * flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
      */
-    enableCollab?: pulumi.Input<boolean | undefined>;
-    environmentReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectEnvironmentReferenceList>[] | undefined>;
-    externalNetworkLists?: pulumi.Input<pulumi.Input<inputs.ProjectExternalNetworkList>[] | undefined>;
-    externalUserGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectExternalUserGroupReferenceList>[] | undefined>;
+    enableCollab?: pulumi.Input<boolean>;
+    environmentReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectEnvironmentReferenceList>[]>;
+    externalNetworkLists?: pulumi.Input<pulumi.Input<inputs.ProjectExternalNetworkList>[]>;
+    externalUserGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectExternalUserGroupReferenceList>[]>;
     /**
      * The name for the project.
      */
-    name?: pulumi.Input<string | undefined>;
-    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
-    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    name?: pulumi.Input<string>;
+    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * @deprecated Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
+     * @deprecated Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`" pulumi-lang-hcl="`resource_domain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
      */
-    resourceDomain?: pulumi.Input<inputs.ProjectResourceDomain | undefined>;
-    subnetReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectSubnetReferenceList>[] | undefined>;
-    tunnelReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectTunnelReferenceList>[] | undefined>;
+    resourceDomain?: pulumi.Input<inputs.ProjectResourceDomain>;
+    subnetReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectSubnetReferenceList>[]>;
+    tunnelReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectTunnelReferenceList>[]>;
     /**
      * flag to use project internal for user role mapping
      */
-    useProjectInternal?: pulumi.Input<boolean | undefined>;
-    userGroupLists?: pulumi.Input<pulumi.Input<inputs.ProjectUserGroupList>[] | undefined>;
-    userLists?: pulumi.Input<pulumi.Input<inputs.ProjectUserList>[] | undefined>;
+    useProjectInternal?: pulumi.Input<boolean>;
+    userGroupLists?: pulumi.Input<pulumi.Input<inputs.ProjectUserGroupList>[]>;
+    userLists?: pulumi.Input<pulumi.Input<inputs.ProjectUserList>[]>;
     /**
      * List of Reference of users.
      */
-    userReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectUserReferenceList>[] | undefined>;
-    vpcReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectVpcReferenceList>[] | undefined>;
+    userReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectUserReferenceList>[]>;
+    vpcReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectVpcReferenceList>[]>;
 }

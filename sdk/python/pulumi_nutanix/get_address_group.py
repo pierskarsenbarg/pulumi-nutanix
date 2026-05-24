@@ -148,7 +148,7 @@ def get_address_group(uuid: Optional[_builtins.str] = None,
         ip_address_block_lists=pulumi.get(__ret__, 'ip_address_block_lists'),
         name=pulumi.get(__ret__, 'name'),
         uuid=pulumi.get(__ret__, 'uuid'))
-def get_address_group_output(uuid: pulumi.Input[Optional[_builtins.str]] = None,
+def get_address_group_output(uuid: Optional[pulumi.Input[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAddressGroupResult]:
     """
     Provides a datasource to retrieve a address group.

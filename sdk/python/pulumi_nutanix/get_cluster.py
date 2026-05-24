@@ -389,7 +389,7 @@ class GetClusterResult:
     @pulumi.getter(name="masqueradingPort")
     def masquerading_port(self) -> _builtins.int:
         """
-        - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp "> masqueradingIp </span>to connect to the cluster.
+        - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp " pulumi-lang-hcl=" masquerading_ip "> masqueradingIp </span>to connect to the cluster.
         """
         return pulumi.get(self, "masquerading_port")
 
@@ -710,9 +710,9 @@ def get_cluster(categories: Optional[Sequence[Union['GetClusterCategoryArgs', 'G
         state=pulumi.get(__ret__, 'state'),
         supported_information_verbosity=pulumi.get(__ret__, 'supported_information_verbosity'),
         timezone=pulumi.get(__ret__, 'timezone'))
-def get_cluster_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetClusterCategoryArgs', 'GetClusterCategoryArgsDict']]]]] = None,
-                       cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+def get_cluster_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetClusterCategoryArgs', 'GetClusterCategoryArgsDict']]]]] = None,
+                       cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                       name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterResult]:
     """
     Describes Clusters

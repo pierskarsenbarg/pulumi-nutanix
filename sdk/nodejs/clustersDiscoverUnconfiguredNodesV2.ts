@@ -120,32 +120,32 @@ export interface ClustersDiscoverUnconfiguredNodesV2State {
      * - "IPV4"	IPV4 address type.
      * - "IPV6"	IPV6 address type.
      */
-    addressType?: pulumi.Input<string | undefined>;
+    addressType?: pulumi.Input<string>;
     /**
      * -(Required) Cluster UUID.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * - (Optional) Interface name that is used for packet broadcasting.
      */
-    interfaceFilterLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    interfaceFilterLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - (Optional) IP addresses of the unconfigured nodes.
      */
-    ipFilterLists?: pulumi.Input<pulumi.Input<inputs.ClustersDiscoverUnconfiguredNodesV2IpFilterList>[] | undefined>;
+    ipFilterLists?: pulumi.Input<pulumi.Input<inputs.ClustersDiscoverUnconfiguredNodesV2IpFilterList>[]>;
     /**
      * - (Optional) Indicates if the discovery is manual or not.
      */
-    isManualDiscovery?: pulumi.Input<boolean | undefined>;
+    isManualDiscovery?: pulumi.Input<boolean>;
     /**
      * - (Optional) Timeout for the workflow in seconds.
      */
-    timeout?: pulumi.Input<number | undefined>;
-    unconfiguredNodes?: pulumi.Input<pulumi.Input<inputs.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode>[] | undefined>;
+    timeout?: pulumi.Input<number>;
+    unconfiguredNodes?: pulumi.Input<pulumi.Input<inputs.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode>[]>;
     /**
      * - (Optional) Unconfigured node UUIDs.
      */
-    uuidFilterLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    uuidFilterLists?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 /**
@@ -158,7 +158,7 @@ export interface ClustersDiscoverUnconfiguredNodesV2Args {
      * - "IPV4"	IPV4 address type.
      * - "IPV6"	IPV6 address type.
      */
-    addressType?: pulumi.Input<string | undefined>;
+    addressType?: pulumi.Input<string>;
     /**
      * -(Required) Cluster UUID.
      */
@@ -166,21 +166,21 @@ export interface ClustersDiscoverUnconfiguredNodesV2Args {
     /**
      * - (Optional) Interface name that is used for packet broadcasting.
      */
-    interfaceFilterLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    interfaceFilterLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - (Optional) IP addresses of the unconfigured nodes.
      */
-    ipFilterLists?: pulumi.Input<pulumi.Input<inputs.ClustersDiscoverUnconfiguredNodesV2IpFilterList>[] | undefined>;
+    ipFilterLists?: pulumi.Input<pulumi.Input<inputs.ClustersDiscoverUnconfiguredNodesV2IpFilterList>[]>;
     /**
      * - (Optional) Indicates if the discovery is manual or not.
      */
-    isManualDiscovery?: pulumi.Input<boolean | undefined>;
+    isManualDiscovery?: pulumi.Input<boolean>;
     /**
      * - (Optional) Timeout for the workflow in seconds.
      */
-    timeout?: pulumi.Input<number | undefined>;
+    timeout?: pulumi.Input<number>;
     /**
      * - (Optional) Unconfigured node UUIDs.
      */
-    uuidFilterLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    uuidFilterLists?: pulumi.Input<pulumi.Input<string>[]>;
 }

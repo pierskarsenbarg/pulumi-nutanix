@@ -219,8 +219,8 @@ def get_category_v2(expand: Optional[_builtins.str] = None,
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         type=pulumi.get(__ret__, 'type'),
         value=pulumi.get(__ret__, 'value'))
-def get_category_v2_output(expand: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                           ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_category_v2_output(expand: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                           ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCategoryV2Result]:
     """
     Fetch a category

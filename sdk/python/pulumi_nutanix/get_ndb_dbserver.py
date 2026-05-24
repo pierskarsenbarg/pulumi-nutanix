@@ -503,14 +503,14 @@ def get_ndb_dbserver(dbserver_cluster_id: Optional[_builtins.str] = None,
         vm_timezone=pulumi.get(__ret__, 'vm_timezone'),
         windows_db_server=pulumi.get(__ret__, 'windows_db_server'),
         working_directory=pulumi.get(__ret__, 'working_directory'))
-def get_ndb_dbserver_output(dbserver_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            ip: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            nx_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            tags: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbDbserverTagArgs', 'GetNdbDbserverTagArgsDict']]]]] = None,
-                            vm_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            vm_cluster_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+def get_ndb_dbserver_output(dbserver_cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                            id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                            ip: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                            name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                            nx_cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                            tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbDbserverTagArgs', 'GetNdbDbserverTagArgsDict']]]]] = None,
+                            vm_cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                            vm_cluster_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbDbserverResult]:
     """
     Describes Database Server VM in Nutanix Database Service

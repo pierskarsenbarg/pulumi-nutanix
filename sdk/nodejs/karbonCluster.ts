@@ -275,53 +275,53 @@ export interface KarbonClusterState {
     /**
      * - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
      */
-    activePassiveConfig?: pulumi.Input<inputs.KarbonClusterActivePassiveConfig | undefined>;
+    activePassiveConfig?: pulumi.Input<inputs.KarbonClusterActivePassiveConfig>;
     /**
      * - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
      */
-    cniConfig?: pulumi.Input<inputs.KarbonClusterCniConfig | undefined>;
-    deploymentType?: pulumi.Input<string | undefined>;
+    cniConfig?: pulumi.Input<inputs.KarbonClusterCniConfig>;
+    deploymentType?: pulumi.Input<string>;
     /**
      * - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
      */
-    etcdNodePool?: pulumi.Input<inputs.KarbonClusterEtcdNodePool | undefined>;
+    etcdNodePool?: pulumi.Input<inputs.KarbonClusterEtcdNodePool>;
     /**
      * - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
      */
-    externalLbConfig?: pulumi.Input<inputs.KarbonClusterExternalLbConfig | undefined>;
-    kubeapiServerIpv4Address?: pulumi.Input<string | undefined>;
+    externalLbConfig?: pulumi.Input<inputs.KarbonClusterExternalLbConfig>;
+    kubeapiServerIpv4Address?: pulumi.Input<string>;
     /**
      * - (Required) Configuration of the master node pools.
      */
-    masterNodePool?: pulumi.Input<inputs.KarbonClusterMasterNodePool | undefined>;
+    masterNodePool?: pulumi.Input<inputs.KarbonClusterMasterNodePool>;
     /**
      * - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
      */
-    privateRegistries?: pulumi.Input<pulumi.Input<inputs.KarbonClusterPrivateRegistry>[] | undefined>;
+    privateRegistries?: pulumi.Input<pulumi.Input<inputs.KarbonClusterPrivateRegistry>[]>;
     /**
      * - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
      */
-    singleMasterConfig?: pulumi.Input<inputs.KarbonClusterSingleMasterConfig | undefined>;
-    status?: pulumi.Input<string | undefined>;
+    singleMasterConfig?: pulumi.Input<inputs.KarbonClusterSingleMasterConfig>;
+    status?: pulumi.Input<string>;
     /**
      * - (Required) Storage class configuration attribute for defining the persistent volume attributes. **Note:** Updates to this attribute forces new resource creation.
      */
-    storageClassConfig?: pulumi.Input<inputs.KarbonClusterStorageClassConfig | undefined>;
+    storageClassConfig?: pulumi.Input<inputs.KarbonClusterStorageClassConfig>;
     /**
      * - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
      */
-    version?: pulumi.Input<string | undefined>;
+    version?: pulumi.Input<string>;
     /**
      * - (Optional) Maximum wait time for the Karbon cluster to provision.
      *
      * @deprecated use timeouts instead
      */
-    waitTimeoutMinutes?: pulumi.Input<number | undefined>;
-    workerNodePool?: pulumi.Input<inputs.KarbonClusterWorkerNodePool | undefined>;
+    waitTimeoutMinutes?: pulumi.Input<number>;
+    workerNodePool?: pulumi.Input<inputs.KarbonClusterWorkerNodePool>;
 }
 
 /**
@@ -331,7 +331,7 @@ export interface KarbonClusterArgs {
     /**
      * - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
      */
-    activePassiveConfig?: pulumi.Input<inputs.KarbonClusterActivePassiveConfig | undefined>;
+    activePassiveConfig?: pulumi.Input<inputs.KarbonClusterActivePassiveConfig>;
     /**
      * - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
      */
@@ -343,7 +343,7 @@ export interface KarbonClusterArgs {
     /**
      * - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
      */
-    externalLbConfig?: pulumi.Input<inputs.KarbonClusterExternalLbConfig | undefined>;
+    externalLbConfig?: pulumi.Input<inputs.KarbonClusterExternalLbConfig>;
     /**
      * - (Required) Configuration of the master node pools.
      */
@@ -351,15 +351,15 @@ export interface KarbonClusterArgs {
     /**
      * - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
      */
-    privateRegistries?: pulumi.Input<pulumi.Input<inputs.KarbonClusterPrivateRegistry>[] | undefined>;
+    privateRegistries?: pulumi.Input<pulumi.Input<inputs.KarbonClusterPrivateRegistry>[]>;
     /**
      * - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
      */
-    singleMasterConfig?: pulumi.Input<inputs.KarbonClusterSingleMasterConfig | undefined>;
+    singleMasterConfig?: pulumi.Input<inputs.KarbonClusterSingleMasterConfig>;
     /**
      * - (Required) Storage class configuration attribute for defining the persistent volume attributes. **Note:** Updates to this attribute forces new resource creation.
      */
@@ -373,6 +373,6 @@ export interface KarbonClusterArgs {
      *
      * @deprecated use timeouts instead
      */
-    waitTimeoutMinutes?: pulumi.Input<number | undefined>;
+    waitTimeoutMinutes?: pulumi.Input<number>;
     workerNodePool: pulumi.Input<inputs.KarbonClusterWorkerNodePool>;
 }

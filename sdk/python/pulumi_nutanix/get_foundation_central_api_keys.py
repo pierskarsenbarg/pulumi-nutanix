@@ -140,7 +140,7 @@ def get_foundation_central_api_keys(key_uuid: Optional[_builtins.str] = None,
         current_time=pulumi.get(__ret__, 'current_time'),
         id=pulumi.get(__ret__, 'id'),
         key_uuid=pulumi.get(__ret__, 'key_uuid'))
-def get_foundation_central_api_keys_output(key_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+def get_foundation_central_api_keys_output(key_uuid: Optional[pulumi.Input[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFoundationCentralApiKeysResult]:
     """
     Get an api key given its UUID.

@@ -21,8 +21,8 @@ class VmHostAffinityPolicyV2Args:
     def __init__(__self__, *,
                  host_categories: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  vm_categories: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None):
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a VmHostAffinityPolicyV2 resource.
 
@@ -64,45 +64,45 @@ class VmHostAffinityPolicyV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         A description of the VM-Host Affinity policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The name of the VM-Host Affinity policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _VmHostAffinityPolicyV2State:
     def __init__(__self__, *,
-                 create_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 created_by: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 host_categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 last_updated_by: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 num_compliant_vms: pulumi.Input[Optional[_builtins.int]] = None,
-                 num_hosts: pulumi.Input[Optional[_builtins.int]] = None,
-                 num_non_compliant_vms: pulumi.Input[Optional[_builtins.int]] = None,
-                 num_vms: pulumi.Input[Optional[_builtins.int]] = None,
-                 update_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 create_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 created_by: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 host_categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 last_updated_by: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 num_compliant_vms: Optional[pulumi.Input[_builtins.int]] = None,
+                 num_hosts: Optional[pulumi.Input[_builtins.int]] = None,
+                 num_non_compliant_vms: Optional[pulumi.Input[_builtins.int]] = None,
+                 num_vms: Optional[pulumi.Input[_builtins.int]] = None,
+                 update_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering VmHostAffinityPolicyV2 resources.
 
@@ -149,158 +149,158 @@ class _VmHostAffinityPolicyV2State:
 
     @_builtins.property
     @pulumi.getter(name="createTime")
-    def create_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def create_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The timestamp when the policy was created.
         """
         return pulumi.get(self, "create_time")
 
     @create_time.setter
-    def create_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def create_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "create_time", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def created_by(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Information about the entity that created the policy.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def created_by(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         A description of the VM-Host Affinity policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The external identifier of the policy.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="hostCategories")
-    def host_categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def host_categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of host category external IDs that define where the VMs can be placed. Hosts with these categories will be used for VM placement.
         """
         return pulumi.get(self, "host_categories")
 
     @host_categories.setter
-    def host_categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def host_categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "host_categories", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedBy")
-    def last_updated_by(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def last_updated_by(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Information about the entity that last updated the policy.
         """
         return pulumi.get(self, "last_updated_by")
 
     @last_updated_by.setter
-    def last_updated_by(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def last_updated_by(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "last_updated_by", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The name of the VM-Host Affinity policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="numCompliantVms")
-    def num_compliant_vms(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def num_compliant_vms(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         Number of VMs which are compliant with the VM-host affinity policy.
         """
         return pulumi.get(self, "num_compliant_vms")
 
     @num_compliant_vms.setter
-    def num_compliant_vms(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def num_compliant_vms(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "num_compliant_vms", value)
 
     @_builtins.property
     @pulumi.getter(name="numHosts")
-    def num_hosts(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def num_hosts(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         Number of hosts associated with the VM-host affinity policy.
         """
         return pulumi.get(self, "num_hosts")
 
     @num_hosts.setter
-    def num_hosts(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def num_hosts(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "num_hosts", value)
 
     @_builtins.property
     @pulumi.getter(name="numNonCompliantVms")
-    def num_non_compliant_vms(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def num_non_compliant_vms(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         Number of VMs which are not compliant with the VM-host affinity policy.
         """
         return pulumi.get(self, "num_non_compliant_vms")
 
     @num_non_compliant_vms.setter
-    def num_non_compliant_vms(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def num_non_compliant_vms(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "num_non_compliant_vms", value)
 
     @_builtins.property
     @pulumi.getter(name="numVms")
-    def num_vms(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def num_vms(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         Number of VMs associated with the VM-host affinity policy.
         """
         return pulumi.get(self, "num_vms")
 
     @num_vms.setter
-    def num_vms(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def num_vms(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "num_vms", value)
 
     @_builtins.property
     @pulumi.getter(name="updateTime")
-    def update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def update_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The timestamp when the policy was last updated.
         """
         return pulumi.get(self, "update_time")
 
     @update_time.setter
-    def update_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def update_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "update_time", value)
 
     @_builtins.property
     @pulumi.getter(name="vmCategories")
-    def vm_categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def vm_categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of VM category external IDs that this policy applies to. VMs with these categories will be subject to the affinity placement rules.
         """
         return pulumi.get(self, "vm_categories")
 
     @vm_categories.setter
-    def vm_categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def vm_categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "vm_categories", value)
 
 
@@ -310,10 +310,10 @@ class VmHostAffinityPolicyV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 host_categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 host_categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Provides a resource to create, read, update, and delete VM-Host Affinity policies. VM-Host Affinity policies ensure that VMs in specific categories are placed on hosts in specified categories. This enables better control over VM placement for compliance, performance, or licensing requirements. For more information on VM-Host Affinity Policies, see the [AHV Administration Guide](https://portal.nutanix.com/page/documents/details?targetId=AHV-Admin-Guide-v11_0:ahv-affinity-policies.html).
@@ -431,10 +431,10 @@ class VmHostAffinityPolicyV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: pulumi.Input[Optional[_builtins.str]] = None,
-                 host_categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 host_categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -471,19 +471,19 @@ class VmHostAffinityPolicyV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            create_time: pulumi.Input[Optional[_builtins.str]] = None,
-            created_by: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: pulumi.Input[Optional[_builtins.str]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            host_categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            last_updated_by: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            name: pulumi.Input[Optional[_builtins.str]] = None,
-            num_compliant_vms: pulumi.Input[Optional[_builtins.int]] = None,
-            num_hosts: pulumi.Input[Optional[_builtins.int]] = None,
-            num_non_compliant_vms: pulumi.Input[Optional[_builtins.int]] = None,
-            num_vms: pulumi.Input[Optional[_builtins.int]] = None,
-            update_time: pulumi.Input[Optional[_builtins.str]] = None,
-            vm_categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'VmHostAffinityPolicyV2':
+            create_time: Optional[pulumi.Input[_builtins.str]] = None,
+            created_by: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: Optional[pulumi.Input[_builtins.str]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            host_categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            last_updated_by: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: Optional[pulumi.Input[_builtins.str]] = None,
+            num_compliant_vms: Optional[pulumi.Input[_builtins.int]] = None,
+            num_hosts: Optional[pulumi.Input[_builtins.int]] = None,
+            num_non_compliant_vms: Optional[pulumi.Input[_builtins.int]] = None,
+            num_vms: Optional[pulumi.Input[_builtins.int]] = None,
+            update_time: Optional[pulumi.Input[_builtins.str]] = None,
+            vm_categories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'VmHostAffinityPolicyV2':
         """
         Get an existing VmHostAffinityPolicyV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

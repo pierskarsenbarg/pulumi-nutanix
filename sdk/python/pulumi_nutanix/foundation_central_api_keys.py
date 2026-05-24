@@ -43,11 +43,11 @@ class FoundationCentralApiKeysArgs:
 @pulumi.input_type
 class _FoundationCentralApiKeysState:
     def __init__(__self__, *,
-                 alias: pulumi.Input[Optional[_builtins.str]] = None,
-                 api_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 created_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
-                 current_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 key_uuid: pulumi.Input[Optional[_builtins.str]] = None):
+                 alias: Optional[pulumi.Input[_builtins.str]] = None,
+                 api_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 created_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
+                 current_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 key_uuid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FoundationCentralApiKeys resources.
 
@@ -70,62 +70,62 @@ class _FoundationCentralApiKeysState:
 
     @_builtins.property
     @pulumi.getter
-    def alias(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def alias(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Required) Alias for the api key to be created.
         """
         return pulumi.get(self, "alias")
 
     @alias.setter
-    def alias(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def alias(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "alias", value)
 
     @_builtins.property
     @pulumi.getter(name="apiKey")
-    def api_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def api_key(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Api key in string format.
         """
         return pulumi.get(self, "api_key")
 
     @api_key.setter
-    def api_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def api_key(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "api_key", value)
 
     @_builtins.property
     @pulumi.getter(name="createdTimestamp")
-    def created_timestamp(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def created_timestamp(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Time when the api key was created.
         """
         return pulumi.get(self, "created_timestamp")
 
     @created_timestamp.setter
-    def created_timestamp(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def created_timestamp(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "created_timestamp", value)
 
     @_builtins.property
     @pulumi.getter(name="currentTime")
-    def current_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def current_time(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Current time of Foundation Central.
         """
         return pulumi.get(self, "current_time")
 
     @current_time.setter
-    def current_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def current_time(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "current_time", value)
 
     @_builtins.property
     @pulumi.getter(name="keyUuid")
-    def key_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def key_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         UUID of the api key.
         """
         return pulumi.get(self, "key_uuid")
 
     @key_uuid.setter
-    def key_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def key_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "key_uuid", value)
 
 
@@ -135,7 +135,7 @@ class FoundationCentralApiKeys(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alias: pulumi.Input[Optional[_builtins.str]] = None,
+                 alias: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to create a new API key for nodes registration with Foundation Central.
@@ -192,7 +192,7 @@ class FoundationCentralApiKeys(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alias: pulumi.Input[Optional[_builtins.str]] = None,
+                 alias: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -219,11 +219,11 @@ class FoundationCentralApiKeys(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            alias: pulumi.Input[Optional[_builtins.str]] = None,
-            api_key: pulumi.Input[Optional[_builtins.str]] = None,
-            created_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
-            current_time: pulumi.Input[Optional[_builtins.str]] = None,
-            key_uuid: pulumi.Input[Optional[_builtins.str]] = None) -> 'FoundationCentralApiKeys':
+            alias: Optional[pulumi.Input[_builtins.str]] = None,
+            api_key: Optional[pulumi.Input[_builtins.str]] = None,
+            created_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
+            current_time: Optional[pulumi.Input[_builtins.str]] = None,
+            key_uuid: Optional[pulumi.Input[_builtins.str]] = None) -> 'FoundationCentralApiKeys':
         """
         Get an existing FoundationCentralApiKeys resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

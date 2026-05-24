@@ -19,10 +19,10 @@ __all__ = ['NdbLogCatchupsArgs', 'NdbLogCatchups']
 @pulumi.input_type
 class NdbLogCatchupsArgs:
     def __init__(__self__, *,
-                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 for_restore: pulumi.Input[Optional[_builtins.bool]] = None,
-                 log_catchup_version: pulumi.Input[Optional[_builtins.int]] = None,
-                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 for_restore: Optional[pulumi.Input[_builtins.bool]] = None,
+                 log_catchup_version: Optional[pulumi.Input[_builtins.int]] = None,
+                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbLogCatchups resource.
 
@@ -44,28 +44,28 @@ class NdbLogCatchupsArgs:
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "database_id")
 
     @database_id.setter
-    def database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="forRestore")
-    def for_restore(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def for_restore(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         Logs to Backup. The database may contain additional logs. Backup any remaining logs before restore or they will be lost.
         """
         return pulumi.get(self, "for_restore")
 
     @for_restore.setter
-    def for_restore(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def for_restore(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "for_restore", value)
 
     @_builtins.property
     @pulumi.getter(name="logCatchupVersion")
-    def log_catchup_version(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def log_catchup_version(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         it helps to perform same operation with same config.
 
@@ -75,29 +75,29 @@ class NdbLogCatchupsArgs:
         return pulumi.get(self, "log_catchup_version")
 
     @log_catchup_version.setter
-    def log_catchup_version(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def log_catchup_version(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "log_catchup_version", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachineId")
-    def time_machine_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def time_machine_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Time machine id of
         """
         return pulumi.get(self, "time_machine_id")
 
     @time_machine_id.setter
-    def time_machine_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def time_machine_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_machine_id", value)
 
 
 @pulumi.input_type
 class _NdbLogCatchupsState:
     def __init__(__self__, *,
-                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 for_restore: pulumi.Input[Optional[_builtins.bool]] = None,
-                 log_catchup_version: pulumi.Input[Optional[_builtins.int]] = None,
-                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 for_restore: Optional[pulumi.Input[_builtins.bool]] = None,
+                 log_catchup_version: Optional[pulumi.Input[_builtins.int]] = None,
+                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbLogCatchups resources.
 
@@ -119,28 +119,28 @@ class _NdbLogCatchupsState:
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         return pulumi.get(self, "database_id")
 
     @database_id.setter
-    def database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="forRestore")
-    def for_restore(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def for_restore(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         Logs to Backup. The database may contain additional logs. Backup any remaining logs before restore or they will be lost.
         """
         return pulumi.get(self, "for_restore")
 
     @for_restore.setter
-    def for_restore(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def for_restore(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "for_restore", value)
 
     @_builtins.property
     @pulumi.getter(name="logCatchupVersion")
-    def log_catchup_version(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def log_catchup_version(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         it helps to perform same operation with same config.
 
@@ -150,19 +150,19 @@ class _NdbLogCatchupsState:
         return pulumi.get(self, "log_catchup_version")
 
     @log_catchup_version.setter
-    def log_catchup_version(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def log_catchup_version(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "log_catchup_version", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachineId")
-    def time_machine_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def time_machine_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         Time machine id of
         """
         return pulumi.get(self, "time_machine_id")
 
     @time_machine_id.setter
-    def time_machine_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def time_machine_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_machine_id", value)
 
 
@@ -172,10 +172,10 @@ class NdbLogCatchups(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 for_restore: pulumi.Input[Optional[_builtins.bool]] = None,
-                 log_catchup_version: pulumi.Input[Optional[_builtins.int]] = None,
-                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 for_restore: Optional[pulumi.Input[_builtins.bool]] = None,
+                 log_catchup_version: Optional[pulumi.Input[_builtins.int]] = None,
+                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to perform the log cactup for database instance based on the input parameters.
@@ -215,10 +215,10 @@ class NdbLogCatchups(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 for_restore: pulumi.Input[Optional[_builtins.bool]] = None,
-                 log_catchup_version: pulumi.Input[Optional[_builtins.int]] = None,
-                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 for_restore: Optional[pulumi.Input[_builtins.bool]] = None,
+                 log_catchup_version: Optional[pulumi.Input[_builtins.int]] = None,
+                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -242,10 +242,10 @@ class NdbLogCatchups(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            database_id: pulumi.Input[Optional[_builtins.str]] = None,
-            for_restore: pulumi.Input[Optional[_builtins.bool]] = None,
-            log_catchup_version: pulumi.Input[Optional[_builtins.int]] = None,
-            time_machine_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'NdbLogCatchups':
+            database_id: Optional[pulumi.Input[_builtins.str]] = None,
+            for_restore: Optional[pulumi.Input[_builtins.bool]] = None,
+            log_catchup_version: Optional[pulumi.Input[_builtins.int]] = None,
+            time_machine_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'NdbLogCatchups':
         """
         Get an existing NdbLogCatchups resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

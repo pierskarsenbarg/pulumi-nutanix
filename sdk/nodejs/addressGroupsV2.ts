@@ -154,39 +154,39 @@ export interface AddressGroupsV2State {
     /**
      * created by.
      */
-    createdBy?: pulumi.Input<string | undefined>;
+    createdBy?: pulumi.Input<string>;
     /**
      * - (Optional) Description of the Address group
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * address group uuid.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * - (Optional) List of IP range containing start and end IP.
      */
-    ipRanges?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2IpRange>[] | undefined>;
+    ipRanges?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2IpRange>[]>;
     /**
      * - (Optional) List of CIDR blocks in the Address Group.
      */
-    ipv4Addresses?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2Ipv4Address>[] | undefined>;
+    ipv4Addresses?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2Ipv4Address>[]>;
     /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2Link>[] | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2Link>[]>;
     /**
      * - (Required) Name of the Address group
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * Reference to policy associated with Address Group.
      */
-    policyReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    policyReferences?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
-    tenantId?: pulumi.Input<string | undefined>;
+    tenantId?: pulumi.Input<string>;
 }
 
 /**
@@ -196,17 +196,17 @@ export interface AddressGroupsV2Args {
     /**
      * - (Optional) Description of the Address group
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * - (Optional) List of IP range containing start and end IP.
      */
-    ipRanges?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2IpRange>[] | undefined>;
+    ipRanges?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2IpRange>[]>;
     /**
      * - (Optional) List of CIDR blocks in the Address Group.
      */
-    ipv4Addresses?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2Ipv4Address>[] | undefined>;
+    ipv4Addresses?: pulumi.Input<pulumi.Input<inputs.AddressGroupsV2Ipv4Address>[]>;
     /**
      * - (Required) Name of the Address group
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
 }

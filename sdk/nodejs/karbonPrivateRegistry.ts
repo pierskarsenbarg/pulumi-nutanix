@@ -123,31 +123,31 @@ export interface KarbonPrivateRegistryState {
     /**
      * - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
      */
-    cert?: pulumi.Input<string | undefined>;
+    cert?: pulumi.Input<string>;
     /**
      * - Endpoint of the private in format `url:port`.
      */
-    endpoint?: pulumi.Input<string | undefined>;
+    endpoint?: pulumi.Input<string>;
     /**
      * - (Required) Name of the private registry configuration. **Note:** Updates to this attribute forces new resource creation.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * - (Optional) Password for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
      */
-    password?: pulumi.Input<string | undefined>;
+    password?: pulumi.Input<string>;
     /**
      * - (Optional) Port of the private registry.
      */
-    port?: pulumi.Input<number | undefined>;
+    port?: pulumi.Input<number>;
     /**
      * - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.
      */
-    url?: pulumi.Input<string | undefined>;
+    url?: pulumi.Input<string>;
     /**
      * - (Optional) Username for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
      */
-    username?: pulumi.Input<string | undefined>;
+    username?: pulumi.Input<string>;
 }
 
 /**
@@ -157,19 +157,19 @@ export interface KarbonPrivateRegistryArgs {
     /**
      * - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
      */
-    cert?: pulumi.Input<string | undefined>;
+    cert?: pulumi.Input<string>;
     /**
      * - (Required) Name of the private registry configuration. **Note:** Updates to this attribute forces new resource creation.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * - (Optional) Password for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
      */
-    password?: pulumi.Input<string | undefined>;
+    password?: pulumi.Input<string>;
     /**
      * - (Optional) Port of the private registry.
      */
-    port?: pulumi.Input<number | undefined>;
+    port?: pulumi.Input<number>;
     /**
      * - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.
      */
@@ -177,5 +177,5 @@ export interface KarbonPrivateRegistryArgs {
     /**
      * - (Optional) Username for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
      */
-    username?: pulumi.Input<string | undefined>;
+    username?: pulumi.Input<string>;
 }

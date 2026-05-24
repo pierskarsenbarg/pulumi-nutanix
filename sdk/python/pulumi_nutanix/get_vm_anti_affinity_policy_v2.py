@@ -216,7 +216,7 @@ def get_vm_anti_affinity_policy_v2(ext_id: Optional[_builtins.str] = None,
         num_pending_vms=pulumi.get(__ret__, 'num_pending_vms'),
         update_time=pulumi.get(__ret__, 'update_time'),
         updated_by=pulumi.get(__ret__, 'updated_by'))
-def get_vm_anti_affinity_policy_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_vm_anti_affinity_policy_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmAntiAffinityPolicyV2Result]:
     """
     Retrieve the VM-VM Anti-Affinity policy details for the provided external identifier (ext_id).

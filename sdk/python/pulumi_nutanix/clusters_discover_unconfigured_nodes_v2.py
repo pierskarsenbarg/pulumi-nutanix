@@ -22,12 +22,12 @@ __all__ = ['ClustersDiscoverUnconfiguredNodesV2Args', 'ClustersDiscoverUnconfigu
 class ClustersDiscoverUnconfiguredNodesV2Args:
     def __init__(__self__, *,
                  ext_id: pulumi.Input[_builtins.str],
-                 address_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 interface_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ip_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs']]]] = None,
-                 is_manual_discovery: pulumi.Input[Optional[_builtins.bool]] = None,
-                 timeout: pulumi.Input[Optional[_builtins.int]] = None,
-                 uuid_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 address_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 interface_filter_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ip_filter_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs']]]] = None,
+                 is_manual_discovery: Optional[pulumi.Input[_builtins.bool]] = None,
+                 timeout: Optional[pulumi.Input[_builtins.int]] = None,
+                 uuid_filter_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ClustersDiscoverUnconfiguredNodesV2 resource.
 
@@ -70,7 +70,7 @@ class ClustersDiscoverUnconfiguredNodesV2Args:
 
     @_builtins.property
     @pulumi.getter(name="addressType")
-    def address_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def address_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Optional) Address type.
         Valid values are:
@@ -80,81 +80,81 @@ class ClustersDiscoverUnconfiguredNodesV2Args:
         return pulumi.get(self, "address_type")
 
     @address_type.setter
-    def address_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def address_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "address_type", value)
 
     @_builtins.property
     @pulumi.getter(name="interfaceFilterLists")
-    def interface_filter_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def interface_filter_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Interface name that is used for packet broadcasting.
         """
         return pulumi.get(self, "interface_filter_lists")
 
     @interface_filter_lists.setter
-    def interface_filter_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def interface_filter_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "interface_filter_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="ipFilterLists")
-    def ip_filter_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs']]]]:
+    def ip_filter_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs']]]]:
         """
         - (Optional) IP addresses of the unconfigured nodes.
         """
         return pulumi.get(self, "ip_filter_lists")
 
     @ip_filter_lists.setter
-    def ip_filter_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs']]]]):
+    def ip_filter_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs']]]]):
         pulumi.set(self, "ip_filter_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="isManualDiscovery")
-    def is_manual_discovery(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def is_manual_discovery(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - (Optional) Indicates if the discovery is manual or not.
         """
         return pulumi.get(self, "is_manual_discovery")
 
     @is_manual_discovery.setter
-    def is_manual_discovery(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def is_manual_discovery(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_manual_discovery", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         - (Optional) Timeout for the workflow in seconds.
         """
         return pulumi.get(self, "timeout")
 
     @timeout.setter
-    def timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="uuidFilterLists")
-    def uuid_filter_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def uuid_filter_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Unconfigured node UUIDs.
         """
         return pulumi.get(self, "uuid_filter_lists")
 
     @uuid_filter_lists.setter
-    def uuid_filter_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def uuid_filter_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "uuid_filter_lists", value)
 
 
 @pulumi.input_type
 class _ClustersDiscoverUnconfiguredNodesV2State:
     def __init__(__self__, *,
-                 address_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 interface_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ip_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs']]]] = None,
-                 is_manual_discovery: pulumi.Input[Optional[_builtins.bool]] = None,
-                 timeout: pulumi.Input[Optional[_builtins.int]] = None,
-                 unconfigured_nodes: pulumi.Input[Optional[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeArgs']]]] = None,
-                 uuid_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 address_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 interface_filter_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ip_filter_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs']]]] = None,
+                 is_manual_discovery: Optional[pulumi.Input[_builtins.bool]] = None,
+                 timeout: Optional[pulumi.Input[_builtins.int]] = None,
+                 unconfigured_nodes: Optional[pulumi.Input[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeArgs']]]] = None,
+                 uuid_filter_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering ClustersDiscoverUnconfiguredNodesV2 resources.
 
@@ -188,7 +188,7 @@ class _ClustersDiscoverUnconfiguredNodesV2State:
 
     @_builtins.property
     @pulumi.getter(name="addressType")
-    def address_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def address_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         - (Optional) Address type.
         Valid values are:
@@ -198,88 +198,88 @@ class _ClustersDiscoverUnconfiguredNodesV2State:
         return pulumi.get(self, "address_type")
 
     @address_type.setter
-    def address_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def address_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "address_type", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         -(Required) Cluster UUID.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="interfaceFilterLists")
-    def interface_filter_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def interface_filter_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Interface name that is used for packet broadcasting.
         """
         return pulumi.get(self, "interface_filter_lists")
 
     @interface_filter_lists.setter
-    def interface_filter_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def interface_filter_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "interface_filter_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="ipFilterLists")
-    def ip_filter_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs']]]]:
+    def ip_filter_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs']]]]:
         """
         - (Optional) IP addresses of the unconfigured nodes.
         """
         return pulumi.get(self, "ip_filter_lists")
 
     @ip_filter_lists.setter
-    def ip_filter_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs']]]]):
+    def ip_filter_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs']]]]):
         pulumi.set(self, "ip_filter_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="isManualDiscovery")
-    def is_manual_discovery(self) -> pulumi.Input[Optional[_builtins.bool]]:
+    def is_manual_discovery(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
         - (Optional) Indicates if the discovery is manual or not.
         """
         return pulumi.get(self, "is_manual_discovery")
 
     @is_manual_discovery.setter
-    def is_manual_discovery(self, value: pulumi.Input[Optional[_builtins.bool]]):
+    def is_manual_discovery(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_manual_discovery", value)
 
     @_builtins.property
     @pulumi.getter
-    def timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
+    def timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         - (Optional) Timeout for the workflow in seconds.
         """
         return pulumi.get(self, "timeout")
 
     @timeout.setter
-    def timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
+    def timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="unconfiguredNodes")
-    def unconfigured_nodes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeArgs']]]]:
+    def unconfigured_nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeArgs']]]]:
         return pulumi.get(self, "unconfigured_nodes")
 
     @unconfigured_nodes.setter
-    def unconfigured_nodes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeArgs']]]]):
+    def unconfigured_nodes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeArgs']]]]):
         pulumi.set(self, "unconfigured_nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="uuidFilterLists")
-    def uuid_filter_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+    def uuid_filter_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Unconfigured node UUIDs.
         """
         return pulumi.get(self, "uuid_filter_lists")
 
     @uuid_filter_lists.setter
-    def uuid_filter_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+    def uuid_filter_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "uuid_filter_lists", value)
 
 
@@ -289,13 +289,13 @@ class ClustersDiscoverUnconfiguredNodesV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 address_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 interface_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ip_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs', 'ClustersDiscoverUnconfiguredNodesV2IpFilterListArgsDict']]]]] = None,
-                 is_manual_discovery: pulumi.Input[Optional[_builtins.bool]] = None,
-                 timeout: pulumi.Input[Optional[_builtins.int]] = None,
-                 uuid_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 address_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 interface_filter_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ip_filter_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs', 'ClustersDiscoverUnconfiguredNodesV2IpFilterListArgsDict']]]]] = None,
+                 is_manual_discovery: Optional[pulumi.Input[_builtins.bool]] = None,
+                 timeout: Optional[pulumi.Input[_builtins.int]] = None,
+                 uuid_filter_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Get the unconfigured node details such as node UUID, node position, node IP, foundation version and more.
@@ -339,13 +339,13 @@ class ClustersDiscoverUnconfiguredNodesV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 address_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 interface_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ip_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs', 'ClustersDiscoverUnconfiguredNodesV2IpFilterListArgsDict']]]]] = None,
-                 is_manual_discovery: pulumi.Input[Optional[_builtins.bool]] = None,
-                 timeout: pulumi.Input[Optional[_builtins.int]] = None,
-                 uuid_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 address_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 interface_filter_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ip_filter_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs', 'ClustersDiscoverUnconfiguredNodesV2IpFilterListArgsDict']]]]] = None,
+                 is_manual_discovery: Optional[pulumi.Input[_builtins.bool]] = None,
+                 timeout: Optional[pulumi.Input[_builtins.int]] = None,
+                 uuid_filter_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -375,14 +375,14 @@ class ClustersDiscoverUnconfiguredNodesV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            address_type: pulumi.Input[Optional[_builtins.str]] = None,
-            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            interface_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ip_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs', 'ClustersDiscoverUnconfiguredNodesV2IpFilterListArgsDict']]]]] = None,
-            is_manual_discovery: pulumi.Input[Optional[_builtins.bool]] = None,
-            timeout: pulumi.Input[Optional[_builtins.int]] = None,
-            unconfigured_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeArgs', 'ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeArgsDict']]]]] = None,
-            uuid_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'ClustersDiscoverUnconfiguredNodesV2':
+            address_type: Optional[pulumi.Input[_builtins.str]] = None,
+            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+            interface_filter_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ip_filter_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs', 'ClustersDiscoverUnconfiguredNodesV2IpFilterListArgsDict']]]]] = None,
+            is_manual_discovery: Optional[pulumi.Input[_builtins.bool]] = None,
+            timeout: Optional[pulumi.Input[_builtins.int]] = None,
+            unconfigured_nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeArgs', 'ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeArgsDict']]]]] = None,
+            uuid_filter_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'ClustersDiscoverUnconfiguredNodesV2':
         """
         Get an existing ClustersDiscoverUnconfiguredNodesV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -140,35 +140,35 @@ export interface UserGroupsV2State {
     /**
      * - User or Service who created the User Group.
      */
-    createdBy?: pulumi.Input<string | undefined>;
+    createdBy?: pulumi.Input<string>;
     /**
      * - Creation time of the User Group.
      */
-    createdTime?: pulumi.Input<string | undefined>;
+    createdTime?: pulumi.Input<string>;
     /**
      * -(Optional) Identifier for the User Group in the form of a distinguished name.
      */
-    distinguishedName?: pulumi.Input<string | undefined>;
+    distinguishedName?: pulumi.Input<string>;
     /**
      * The External Identifier of the User Group.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
      */
-    groupType?: pulumi.Input<string | undefined>;
+    groupType?: pulumi.Input<string>;
     /**
      * -(Required) Identifier of the IDP for the User Group.
      */
-    idpId?: pulumi.Input<string | undefined>;
+    idpId?: pulumi.Input<string>;
     /**
      * - Last updated time of the User Group.
      */
-    lastUpdatedTime?: pulumi.Input<string | undefined>;
+    lastUpdatedTime?: pulumi.Input<string>;
     /**
      * -(Optional) Common Name of the User Group.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
 }
 
 /**
@@ -178,11 +178,11 @@ export interface UserGroupsV2Args {
     /**
      * -(Optional) Identifier for the User Group in the form of a distinguished name.
      */
-    distinguishedName?: pulumi.Input<string | undefined>;
+    distinguishedName?: pulumi.Input<string>;
     /**
      * The External Identifier of the User Group.
      */
-    extId?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string>;
     /**
      * -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
      */
@@ -194,5 +194,5 @@ export interface UserGroupsV2Args {
     /**
      * -(Optional) Common Name of the User Group.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
 }

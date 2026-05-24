@@ -120,7 +120,7 @@ def get_vpc(vpc_name: Optional[_builtins.str] = None,
             vpc_uuid: Optional[_builtins.str] = None,
             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVpcResult:
     """
-    Provides a datasource to retrieve VPC with<span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "> vpcUuid </span>or<span pulumi-lang-nodejs=" vpcName " pulumi-lang-dotnet=" VpcName " pulumi-lang-go=" vpcName " pulumi-lang-python=" vpc_name " pulumi-lang-yaml=" vpcName " pulumi-lang-java=" vpcName "> vpcName </span>.
+    Provides a datasource to retrieve VPC with<span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid " pulumi-lang-hcl=" vpc_uuid "> vpcUuid </span>or<span pulumi-lang-nodejs=" vpcName " pulumi-lang-dotnet=" VpcName " pulumi-lang-go=" vpcName " pulumi-lang-python=" vpc_name " pulumi-lang-yaml=" vpcName " pulumi-lang-java=" vpcName " pulumi-lang-hcl=" vpc_name "> vpcName </span>.
 
 
     :param _builtins.str vpc_name: vpc Name
@@ -140,11 +140,11 @@ def get_vpc(vpc_name: Optional[_builtins.str] = None,
         statuses=pulumi.get(__ret__, 'statuses'),
         vpc_name=pulumi.get(__ret__, 'vpc_name'),
         vpc_uuid=pulumi.get(__ret__, 'vpc_uuid'))
-def get_vpc_output(vpc_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                   vpc_uuid: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+def get_vpc_output(vpc_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                   vpc_uuid: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVpcResult]:
     """
-    Provides a datasource to retrieve VPC with<span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "> vpcUuid </span>or<span pulumi-lang-nodejs=" vpcName " pulumi-lang-dotnet=" VpcName " pulumi-lang-go=" vpcName " pulumi-lang-python=" vpc_name " pulumi-lang-yaml=" vpcName " pulumi-lang-java=" vpcName "> vpcName </span>.
+    Provides a datasource to retrieve VPC with<span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid " pulumi-lang-hcl=" vpc_uuid "> vpcUuid </span>or<span pulumi-lang-nodejs=" vpcName " pulumi-lang-dotnet=" VpcName " pulumi-lang-go=" vpcName " pulumi-lang-python=" vpc_name " pulumi-lang-yaml=" vpcName " pulumi-lang-java=" vpcName " pulumi-lang-hcl=" vpc_name "> vpcName </span>.
 
 
     :param _builtins.str vpc_name: vpc Name

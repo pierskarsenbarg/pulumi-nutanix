@@ -114,7 +114,7 @@ export class VirtualMachine extends pulumi.CustomResource {
      */
     declare public readonly bootDeviceOrderLists: pulumi.Output<string[]>;
     /**
-     * - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like<span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice "> bootDevice </span>and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+     * - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like<span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice " pulumi-lang-hcl=" boot_device "> bootDevice </span>and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
      */
     declare public readonly bootType: pulumi.Output<string>;
     /**
@@ -155,11 +155,11 @@ export class VirtualMachine extends pulumi.CustomResource {
      */
     declare public readonly guestCustomizationCloudInitCustomKeyValues: pulumi.Output<{[key: string]: string}>;
     /**
-     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
      */
     declare public readonly guestCustomizationCloudInitMetaData: pulumi.Output<string>;
     /**
-     * - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+     * - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData " pulumi-lang-hcl=" user_data "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
      */
     declare public readonly guestCustomizationCloudInitUserData: pulumi.Output<string>;
     /**
@@ -167,7 +167,7 @@ export class VirtualMachine extends pulumi.CustomResource {
      */
     declare public readonly guestCustomizationIsOverridable: pulumi.Output<boolean>;
     /**
-     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
      */
     declare public readonly guestCustomizationSysprep: pulumi.Output<{[key: string]: string}>;
     /**
@@ -275,7 +275,7 @@ export class VirtualMachine extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
-     * - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span>.
+     * - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>.
      */
     declare public readonly useHotAdd: pulumi.Output<boolean | undefined>;
     /**
@@ -410,192 +410,192 @@ export interface VirtualMachineState {
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string | undefined>;
+    apiVersion?: pulumi.Input<string>;
     /**
      * - (Optional) The reference to a availability_zone.
      */
-    availabilityZoneReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    availabilityZoneReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) Address of disk to boot from.
      */
-    bootDeviceDiskAddress?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    bootDeviceDiskAddress?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) MAC address of nic to boot from.
      */
-    bootDeviceMacAddress?: pulumi.Input<string | undefined>;
+    bootDeviceMacAddress?: pulumi.Input<string>;
     /**
      * - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
      */
-    bootDeviceOrderLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    bootDeviceOrderLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like<span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice "> bootDevice </span>and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+     * - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like<span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice " pulumi-lang-hcl=" boot_device "> bootDevice </span>and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
      */
-    bootType?: pulumi.Input<string | undefined>;
+    bootType?: pulumi.Input<string>;
     /**
      * - (Optional) Categories for the vm.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.VirtualMachineCategory>[] | undefined>;
-    cloudInitCdromUuid?: pulumi.Input<string | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.VirtualMachineCategory>[]>;
+    cloudInitCdromUuid?: pulumi.Input<string>;
     /**
      * - The name of the cluster.
      */
-    clusterName?: pulumi.Input<string | undefined>;
+    clusterName?: pulumi.Input<string>;
     /**
      * - (Required) The UUID of the cluster.
      */
-    clusterUuid?: pulumi.Input<string | undefined>;
+    clusterUuid?: pulumi.Input<string>;
     /**
      * - (Optional) A description for vm.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * Disks attached to the VM.
      */
-    diskLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineDiskList>[] | undefined>;
+    diskLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineDiskList>[]>;
     /**
      * - (Optional) Add true to enable CPU passthrough.
      */
-    enableCpuPassthrough?: pulumi.Input<boolean | undefined>;
+    enableCpuPassthrough?: pulumi.Input<boolean>;
     /**
      * - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
      */
-    enableScriptExec?: pulumi.Input<boolean | undefined>;
+    enableScriptExec?: pulumi.Input<boolean>;
     /**
      * - (Optional) GPUs attached to the VM.
      */
-    gpuLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineGpuList>[] | undefined>;
+    gpuLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineGpuList>[]>;
     /**
      * - (Optional) Generic key value pair used for custom attributes in cloud init.
      */
-    guestCustomizationCloudInitCustomKeyValues?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    guestCustomizationCloudInitCustomKeyValues?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
      */
-    guestCustomizationCloudInitMetaData?: pulumi.Input<string | undefined>;
+    guestCustomizationCloudInitMetaData?: pulumi.Input<string>;
     /**
-     * - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+     * - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData " pulumi-lang-hcl=" user_data "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
      */
-    guestCustomizationCloudInitUserData?: pulumi.Input<string | undefined>;
+    guestCustomizationCloudInitUserData?: pulumi.Input<string>;
     /**
      * - (Optional) Flag to allow override of customization by deployer.
      */
-    guestCustomizationIsOverridable?: pulumi.Input<boolean | undefined>;
+    guestCustomizationIsOverridable?: pulumi.Input<boolean>;
     /**
-     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
      */
-    guestCustomizationSysprep?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    guestCustomizationSysprep?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) Generic key value pair used for custom attributes in sysprep.
      */
-    guestCustomizationSysprepCustomKeyValues?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    guestCustomizationSysprepCustomKeyValues?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
      */
-    guestOsId?: pulumi.Input<string | undefined>;
+    guestOsId?: pulumi.Input<string>;
     /**
      * - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
      */
-    hardwareClockTimezone?: pulumi.Input<string | undefined>;
+    hardwareClockTimezone?: pulumi.Input<string>;
     /**
      * - Reference to a host.
      */
-    hostReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    hostReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - The hypervisor type for the hypervisor the VM is hosted on.
      */
-    hypervisorType?: pulumi.Input<string | undefined>;
+    hypervisorType?: pulumi.Input<string>;
     /**
      * - (Optional) Add true to enable CPU pinning.
      */
-    isVcpuHardPinned?: pulumi.Input<boolean | undefined>;
+    isVcpuHardPinned?: pulumi.Input<boolean>;
     /**
      * - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
      */
-    machineType?: pulumi.Input<string | undefined>;
+    machineType?: pulumi.Input<string>;
     /**
      * - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
      */
-    memorySizeMib?: pulumi.Input<number | undefined>;
+    memorySizeMib?: pulumi.Input<number>;
     /**
      * - The vm kind metadata.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Required) The name for the vm.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * - (Ooptional) Credentials to login server.
      */
-    ngtCredentials?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    ngtCredentials?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Application names that are enabled.
      */
-    ngtEnabledCapabilityLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    ngtEnabledCapabilityLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - Status NICs attached to the VM.
      */
-    nicListStatuses?: pulumi.Input<pulumi.Input<inputs.VirtualMachineNicListStatus>[] | undefined>;
+    nicListStatuses?: pulumi.Input<pulumi.Input<inputs.VirtualMachineNicListStatus>[]>;
     /**
      * - (Optional) Spec NICs attached to the VM.
      */
-    nicLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineNicList>[] | undefined>;
+    nicLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineNicList>[]>;
     /**
      * - (Optional) Number of vCPU sockets.
      */
-    numSockets?: pulumi.Input<number | undefined>;
+    numSockets?: pulumi.Input<number>;
     /**
      * - (Optional) Number of vCPUs per socket.
      */
-    numVcpusPerSocket?: pulumi.Input<number | undefined>;
+    numVcpusPerSocket?: pulumi.Input<number>;
     /**
      * - (Optional) Number of vNUMA nodes. 0 means vNUMA is disabled.
      */
-    numVnumaNodes?: pulumi.Input<number | undefined>;
+    numVnumaNodes?: pulumi.Input<number>;
     /**
      * - (Optional) Information regarding Nutanix Guest Tools.
      */
-    nutanixGuestTools?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    nutanixGuestTools?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) The reference to a user.
      */
-    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) Reference to an entity that the VM cloned from.
      */
-    parentReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    parentReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
      */
-    powerState?: pulumi.Input<string | undefined>;
+    powerState?: pulumi.Input<string>;
     /**
      * - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
      */
-    powerStateMechanism?: pulumi.Input<string | undefined>;
+    powerStateMechanism?: pulumi.Input<string>;
     /**
      * - (Optional) The reference to a project.
      */
-    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) Serial Ports configured on the VM.
      */
-    serialPortLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineSerialPortList>[] | undefined>;
+    serialPortLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineSerialPortList>[]>;
     /**
      * - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
      */
-    shouldFailOnScriptFailure?: pulumi.Input<boolean | undefined>;
+    shouldFailOnScriptFailure?: pulumi.Input<boolean>;
     /**
      * - The state of the vm.
      */
-    state?: pulumi.Input<string | undefined>;
+    state?: pulumi.Input<string>;
     /**
-     * - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span>.
+     * - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>.
      */
-    useHotAdd?: pulumi.Input<boolean | undefined>;
+    useHotAdd?: pulumi.Input<boolean>;
     /**
      * - (Optional) Indicates whether VGA console should be enabled or not.
      */
-    vgaConsoleEnabled?: pulumi.Input<boolean | undefined>;
+    vgaConsoleEnabled?: pulumi.Input<boolean>;
 }
 
 /**
@@ -605,28 +605,28 @@ export interface VirtualMachineArgs {
     /**
      * - (Optional) The reference to a availability_zone.
      */
-    availabilityZoneReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    availabilityZoneReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) Address of disk to boot from.
      */
-    bootDeviceDiskAddress?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    bootDeviceDiskAddress?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) MAC address of nic to boot from.
      */
-    bootDeviceMacAddress?: pulumi.Input<string | undefined>;
+    bootDeviceMacAddress?: pulumi.Input<string>;
     /**
      * - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
      */
-    bootDeviceOrderLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    bootDeviceOrderLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like<span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice "> bootDevice </span>and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+     * - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like<span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice " pulumi-lang-hcl=" boot_device "> bootDevice </span>and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
      */
-    bootType?: pulumi.Input<string | undefined>;
+    bootType?: pulumi.Input<string>;
     /**
      * - (Optional) Categories for the vm.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.VirtualMachineCategory>[] | undefined>;
-    cloudInitCdromUuid?: pulumi.Input<string | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.VirtualMachineCategory>[]>;
+    cloudInitCdromUuid?: pulumi.Input<string>;
     /**
      * - (Required) The UUID of the cluster.
      */
@@ -634,133 +634,133 @@ export interface VirtualMachineArgs {
     /**
      * - (Optional) A description for vm.
      */
-    description?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string>;
     /**
      * Disks attached to the VM.
      */
-    diskLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineDiskList>[] | undefined>;
+    diskLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineDiskList>[]>;
     /**
      * - (Optional) Add true to enable CPU passthrough.
      */
-    enableCpuPassthrough?: pulumi.Input<boolean | undefined>;
+    enableCpuPassthrough?: pulumi.Input<boolean>;
     /**
      * - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
      */
-    enableScriptExec?: pulumi.Input<boolean | undefined>;
+    enableScriptExec?: pulumi.Input<boolean>;
     /**
      * - (Optional) GPUs attached to the VM.
      */
-    gpuLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineGpuList>[] | undefined>;
+    gpuLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineGpuList>[]>;
     /**
      * - (Optional) Generic key value pair used for custom attributes in cloud init.
      */
-    guestCustomizationCloudInitCustomKeyValues?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    guestCustomizationCloudInitCustomKeyValues?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
      */
-    guestCustomizationCloudInitMetaData?: pulumi.Input<string | undefined>;
+    guestCustomizationCloudInitMetaData?: pulumi.Input<string>;
     /**
-     * - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+     * - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData " pulumi-lang-hcl=" user_data "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
      */
-    guestCustomizationCloudInitUserData?: pulumi.Input<string | undefined>;
+    guestCustomizationCloudInitUserData?: pulumi.Input<string>;
     /**
      * - (Optional) Flag to allow override of customization by deployer.
      */
-    guestCustomizationIsOverridable?: pulumi.Input<boolean | undefined>;
+    guestCustomizationIsOverridable?: pulumi.Input<boolean>;
     /**
-     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
      */
-    guestCustomizationSysprep?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    guestCustomizationSysprep?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) Generic key value pair used for custom attributes in sysprep.
      */
-    guestCustomizationSysprepCustomKeyValues?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    guestCustomizationSysprepCustomKeyValues?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
      */
-    guestOsId?: pulumi.Input<string | undefined>;
+    guestOsId?: pulumi.Input<string>;
     /**
      * - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
      */
-    hardwareClockTimezone?: pulumi.Input<string | undefined>;
+    hardwareClockTimezone?: pulumi.Input<string>;
     /**
      * - (Optional) Add true to enable CPU pinning.
      */
-    isVcpuHardPinned?: pulumi.Input<boolean | undefined>;
+    isVcpuHardPinned?: pulumi.Input<boolean>;
     /**
      * - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
      */
-    machineType?: pulumi.Input<string | undefined>;
+    machineType?: pulumi.Input<string>;
     /**
      * - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
      */
-    memorySizeMib?: pulumi.Input<number | undefined>;
+    memorySizeMib?: pulumi.Input<number>;
     /**
      * - (Required) The name for the vm.
      */
-    name?: pulumi.Input<string | undefined>;
+    name?: pulumi.Input<string>;
     /**
      * - (Ooptional) Credentials to login server.
      */
-    ngtCredentials?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    ngtCredentials?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Application names that are enabled.
      */
-    ngtEnabledCapabilityLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    ngtEnabledCapabilityLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * - (Optional) Spec NICs attached to the VM.
      */
-    nicLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineNicList>[] | undefined>;
+    nicLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineNicList>[]>;
     /**
      * - (Optional) Number of vCPU sockets.
      */
-    numSockets?: pulumi.Input<number | undefined>;
+    numSockets?: pulumi.Input<number>;
     /**
      * - (Optional) Number of vCPUs per socket.
      */
-    numVcpusPerSocket?: pulumi.Input<number | undefined>;
+    numVcpusPerSocket?: pulumi.Input<number>;
     /**
      * - (Optional) Number of vNUMA nodes. 0 means vNUMA is disabled.
      */
-    numVnumaNodes?: pulumi.Input<number | undefined>;
+    numVnumaNodes?: pulumi.Input<number>;
     /**
      * - (Optional) Information regarding Nutanix Guest Tools.
      */
-    nutanixGuestTools?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    nutanixGuestTools?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) The reference to a user.
      */
-    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) Reference to an entity that the VM cloned from.
      */
-    parentReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    parentReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
      */
-    powerState?: pulumi.Input<string | undefined>;
+    powerState?: pulumi.Input<string>;
     /**
      * - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
      */
-    powerStateMechanism?: pulumi.Input<string | undefined>;
+    powerStateMechanism?: pulumi.Input<string>;
     /**
      * - (Optional) The reference to a project.
      */
-    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) Serial Ports configured on the VM.
      */
-    serialPortLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineSerialPortList>[] | undefined>;
+    serialPortLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineSerialPortList>[]>;
     /**
      * - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
      */
-    shouldFailOnScriptFailure?: pulumi.Input<boolean | undefined>;
+    shouldFailOnScriptFailure?: pulumi.Input<boolean>;
     /**
-     * - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span>.
+     * - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>.
      */
-    useHotAdd?: pulumi.Input<boolean | undefined>;
+    useHotAdd?: pulumi.Input<boolean>;
     /**
      * - (Optional) Indicates whether VGA console should be enabled or not.
      */
-    vgaConsoleEnabled?: pulumi.Input<boolean | undefined>;
+    vgaConsoleEnabled?: pulumi.Input<boolean>;
 }
