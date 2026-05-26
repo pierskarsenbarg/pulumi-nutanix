@@ -102,5 +102,5 @@ export interface GetFoundationNodeNetworkDetailsOutputArgs {
     /**
      * timeout in seconds
      */
-    timeout?: pulumi.Input<string>;
+    timeout?: pulumi.Input<string | undefined>;
 }

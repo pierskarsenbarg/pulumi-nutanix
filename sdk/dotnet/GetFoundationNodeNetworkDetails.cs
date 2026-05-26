@@ -84,6 +84,20 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getfoundationnodenetworkdetails" "networkDetails" {
+        ///   ipv6_addresses = ["&lt;ipv6-address-1&gt;", "&lt;ipv6-address-2&gt;"]
+        ///   timeout        = "30"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -203,6 +217,20 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getfoundationnodenetworkdetails" "networkDetails" {
+        ///   ipv6_addresses = ["&lt;ipv6-address-1&gt;", "&lt;ipv6-address-2&gt;"]
+        ///   timeout        = "30"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -320,6 +348,20 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getfoundationnodenetworkdetails" "networkDetails" {
+        ///   ipv6_addresses = ["&lt;ipv6-address-1&gt;", "&lt;ipv6-address-2&gt;"]
+        ///   timeout        = "30"
         /// }
         /// ```
         /// ```java

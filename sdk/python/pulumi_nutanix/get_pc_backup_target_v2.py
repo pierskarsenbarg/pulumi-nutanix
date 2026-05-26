@@ -181,8 +181,8 @@ def get_pc_backup_target_v2(domain_manager_ext_id: Optional[_builtins.str] = Non
         links=pulumi.get(__ret__, 'links'),
         locations=pulumi.get(__ret__, 'locations'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_pc_backup_target_v2_output(domain_manager_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pc_backup_target_v2_output(domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPcBackupTargetV2Result]:
     """
     Retrieves the backup targets (cluster or object store) from a domain manager and returns the backup configuration and lastSyncTimestamp parameter to the user.

@@ -109,6 +109,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getpbrsv2" "pbrs" {
+        /// }
+        /// data "nutanix_getpbrsv2" "pbrs-filter" {
+        ///   filter = "name eq 'pbr_example'"
+        /// }
+        /// data "nutanix_getpbrsv2" "pbrs-limit" {
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getpbrsv2" "pbrs-filter-limit" {
+        ///   filter = "name eq 'pbr_example'"
+        ///   limit  = 10
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -274,6 +296,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getpbrsv2" "pbrs" {
+        /// }
+        /// data "nutanix_getpbrsv2" "pbrs-filter" {
+        ///   filter = "name eq 'pbr_example'"
+        /// }
+        /// data "nutanix_getpbrsv2" "pbrs-limit" {
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getpbrsv2" "pbrs-filter-limit" {
+        ///   filter = "name eq 'pbr_example'"
+        ///   limit  = 10
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -437,6 +481,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getpbrsv2" "pbrs" {
+        /// }
+        /// data "nutanix_getpbrsv2" "pbrs-filter" {
+        ///   filter = "name eq 'pbr_example'"
+        /// }
+        /// data "nutanix_getpbrsv2" "pbrs-limit" {
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getpbrsv2" "pbrs-filter-limit" {
+        ///   filter = "name eq 'pbr_example'"
+        ///   limit  = 10
         /// }
         /// ```
         /// ```java

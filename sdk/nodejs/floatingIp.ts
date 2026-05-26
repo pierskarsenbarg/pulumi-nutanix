@@ -139,36 +139,36 @@ export interface FloatingIpState {
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * The reference to a subnet. Should not be used with 
      * {external_subnet_reference_uuid} .
      */
-    externalSubnetReferenceName?: pulumi.Input<string>;
+    externalSubnetReferenceName?: pulumi.Input<string | undefined>;
     /**
      * The reference to a subnet. Should not be used with {external_subnet_reference_name} .
      */
-    externalSubnetReferenceUuid?: pulumi.Input<string>;
+    externalSubnetReferenceUuid?: pulumi.Input<string | undefined>;
     /**
      * The<span pulumi-lang-nodejs=" floatingIps " pulumi-lang-dotnet=" FloatingIps " pulumi-lang-go=" floatingIps " pulumi-lang-python=" floating_ips " pulumi-lang-yaml=" floatingIps " pulumi-lang-java=" floatingIps " pulumi-lang-hcl=" floating_ips "> floatingIps </span>kind metadata.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Private IP with which floating IP is associated. Should be used with<span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference " pulumi-lang-hcl=" vpc_reference "> vpcReference </span>.
      */
-    privateIp?: pulumi.Input<string>;
+    privateIp?: pulumi.Input<string | undefined>;
     /**
      * The reference to a<span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic " pulumi-lang-hcl=" vm_nic "> vmNic </span>.
      */
-    vmNicReferenceUuid?: pulumi.Input<string>;
+    vmNicReferenceUuid?: pulumi.Input<string | undefined>;
     /**
      * The reference to a vpc. Should not be used with {vpc_reference_uuid}.
      */
-    vpcReferenceName?: pulumi.Input<string>;
+    vpcReferenceName?: pulumi.Input<string | undefined>;
     /**
      * The reference to a vpc. Should not be used with {vpc_reference_name}.
      */
-    vpcReferenceUuid?: pulumi.Input<string>;
+    vpcReferenceUuid?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -178,30 +178,30 @@ export interface FloatingIpArgs {
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * The reference to a subnet. Should not be used with 
      * {external_subnet_reference_uuid} .
      */
-    externalSubnetReferenceName?: pulumi.Input<string>;
+    externalSubnetReferenceName?: pulumi.Input<string | undefined>;
     /**
      * The reference to a subnet. Should not be used with {external_subnet_reference_name} .
      */
-    externalSubnetReferenceUuid?: pulumi.Input<string>;
+    externalSubnetReferenceUuid?: pulumi.Input<string | undefined>;
     /**
      * Private IP with which floating IP is associated. Should be used with<span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference " pulumi-lang-hcl=" vpc_reference "> vpcReference </span>.
      */
-    privateIp?: pulumi.Input<string>;
+    privateIp?: pulumi.Input<string | undefined>;
     /**
      * The reference to a<span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic " pulumi-lang-hcl=" vm_nic "> vmNic </span>.
      */
-    vmNicReferenceUuid?: pulumi.Input<string>;
+    vmNicReferenceUuid?: pulumi.Input<string | undefined>;
     /**
      * The reference to a vpc. Should not be used with {vpc_reference_uuid}.
      */
-    vpcReferenceName?: pulumi.Input<string>;
+    vpcReferenceName?: pulumi.Input<string | undefined>;
     /**
      * The reference to a vpc. Should not be used with {vpc_reference_name}.
      */
-    vpcReferenceUuid?: pulumi.Input<string>;
+    vpcReferenceUuid?: pulumi.Input<string | undefined>;
 }

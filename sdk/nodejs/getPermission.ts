@@ -145,13 +145,13 @@ export interface GetPermissionOutputArgs {
     /**
      * The categories for this resource.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetPermissionCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetPermissionCategoryArgs>[] | undefined>;
     /**
      * The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`">`id`</span> of the permission.
      */
-    permissionId?: pulumi.Input<string>;
+    permissionId?: pulumi.Input<string | undefined>;
     /**
      * The <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`">`name`</span> of the permission.
      */
-    permissionName?: pulumi.Input<string>;
+    permissionName?: pulumi.Input<string | undefined>;
 }

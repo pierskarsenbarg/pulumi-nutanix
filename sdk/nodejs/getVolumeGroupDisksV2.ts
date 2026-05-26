@@ -71,10 +71,10 @@ export function getVolumeGroupDisksV2Output(args: GetVolumeGroupDisksV2OutputArg
  * A collection of arguments for invoking getVolumeGroupDisksV2.
  */
 export interface GetVolumeGroupDisksV2OutputArgs {
-    filter?: pulumi.Input<string>;
-    limit?: pulumi.Input<number>;
-    orderby?: pulumi.Input<string>;
-    page?: pulumi.Input<number>;
-    select?: pulumi.Input<string>;
+    filter?: pulumi.Input<string | undefined>;
+    limit?: pulumi.Input<number | undefined>;
+    orderby?: pulumi.Input<string | undefined>;
+    page?: pulumi.Input<number | undefined>;
+    select?: pulumi.Input<string | undefined>;
     volumeGroupExtId: pulumi.Input<string>;
 }

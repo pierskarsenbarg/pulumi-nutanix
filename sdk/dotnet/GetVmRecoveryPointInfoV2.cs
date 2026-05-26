@@ -75,6 +75,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvmrecoverypointinfov2" "rp-vm-info" {
+        ///   recovery_point_ext_id = "af1070f7-c946-49da-9b17-e337e06e0a18"
+        ///   ext_id                = "85ac418e-c847-45ab-9816-40a3c4de148c"
+        /// }
+        /// 
+        /// # vm recovery point details
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -183,6 +199,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvmrecoverypointinfov2" "rp-vm-info" {
+        ///   recovery_point_ext_id = "af1070f7-c946-49da-9b17-e337e06e0a18"
+        ///   ext_id                = "85ac418e-c847-45ab-9816-40a3c4de148c"
+        /// }
+        /// 
+        /// # vm recovery point details
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -290,6 +322,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvmrecoverypointinfov2" "rp-vm-info" {
+        ///   recovery_point_ext_id = "af1070f7-c946-49da-9b17-e337e06e0a18"
+        ///   ext_id                = "85ac418e-c847-45ab-9816-40a3c4de148c"
+        /// }
+        /// 
+        /// # vm recovery point details
         /// ```
         /// ```java
         /// package generated_program;

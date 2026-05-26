@@ -197,8 +197,8 @@ def get_volume_iscsi_client_v2(ext_id: Optional[_builtins.str] = None,
         iscsi_initiator_network_ids=pulumi.get(__ret__, 'iscsi_initiator_network_ids'),
         links=pulumi.get(__ret__, 'links'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_volume_iscsi_client_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      iscsi_initiator_network_ids: Optional[pulumi.Input[Optional[Sequence[Union['GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgs', 'GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgsDict']]]]] = None,
+def get_volume_iscsi_client_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      iscsi_initiator_network_ids: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgs', 'GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgsDict']]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeIscsiClientV2Result]:
     """
     Fetches the iSCSI client details identified by {extId}.

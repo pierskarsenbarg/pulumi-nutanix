@@ -90,15 +90,15 @@ export interface VmShutdownActionV2State {
     /**
      * It supports "shutdown", <span pulumi-lang-nodejs=""guestShutdown"" pulumi-lang-dotnet=""GuestShutdown"" pulumi-lang-go=""guestShutdown"" pulumi-lang-python=""guest_shutdown"" pulumi-lang-yaml=""guestShutdown"" pulumi-lang-java=""guestShutdown"" pulumi-lang-hcl=""guest_shutdown"">"guestShutdown"</span>, "reboot", <span pulumi-lang-nodejs=""guestReboot"" pulumi-lang-dotnet=""GuestReboot"" pulumi-lang-go=""guestReboot"" pulumi-lang-python=""guest_reboot"" pulumi-lang-yaml=""guestReboot"" pulumi-lang-java=""guestReboot"" pulumi-lang-hcl=""guest_reboot"">"guestReboot"</span>.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * The globally unique identifier of a VM. It should be of type UUID.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * Additional configuration for Nutanix Gust Tools power state transition. It should be only used with <span pulumi-lang-nodejs="`guestShutdown`" pulumi-lang-dotnet="`GuestShutdown`" pulumi-lang-go="`guestShutdown`" pulumi-lang-python="`guest_shutdown`" pulumi-lang-yaml="`guestShutdown`" pulumi-lang-java="`guestShutdown`" pulumi-lang-hcl="`guest_shutdown`">`guestShutdown`</span> or <span pulumi-lang-nodejs="`guestReboot`" pulumi-lang-dotnet="`GuestReboot`" pulumi-lang-go="`guestReboot`" pulumi-lang-python="`guest_reboot`" pulumi-lang-yaml="`guestReboot`" pulumi-lang-java="`guestReboot`" pulumi-lang-hcl="`guest_reboot`">`guestReboot`</span>.
      */
-    guestPowerStateTransitionConfigs?: pulumi.Input<pulumi.Input<inputs.VmShutdownActionV2GuestPowerStateTransitionConfig>[]>;
+    guestPowerStateTransitionConfigs?: pulumi.Input<pulumi.Input<inputs.VmShutdownActionV2GuestPowerStateTransitionConfig>[] | undefined>;
 }
 
 /**
@@ -116,5 +116,5 @@ export interface VmShutdownActionV2Args {
     /**
      * Additional configuration for Nutanix Gust Tools power state transition. It should be only used with <span pulumi-lang-nodejs="`guestShutdown`" pulumi-lang-dotnet="`GuestShutdown`" pulumi-lang-go="`guestShutdown`" pulumi-lang-python="`guest_shutdown`" pulumi-lang-yaml="`guestShutdown`" pulumi-lang-java="`guestShutdown`" pulumi-lang-hcl="`guest_shutdown`">`guestShutdown`</span> or <span pulumi-lang-nodejs="`guestReboot`" pulumi-lang-dotnet="`GuestReboot`" pulumi-lang-go="`guestReboot`" pulumi-lang-python="`guest_reboot`" pulumi-lang-yaml="`guestReboot`" pulumi-lang-java="`guestReboot`" pulumi-lang-hcl="`guest_reboot`">`guestReboot`</span>.
      */
-    guestPowerStateTransitionConfigs?: pulumi.Input<pulumi.Input<inputs.VmShutdownActionV2GuestPowerStateTransitionConfig>[]>;
+    guestPowerStateTransitionConfigs?: pulumi.Input<pulumi.Input<inputs.VmShutdownActionV2GuestPowerStateTransitionConfig>[] | undefined>;
 }

@@ -22,29 +22,29 @@ __all__ = ['SubnetV2Args', 'SubnetV2']
 class SubnetV2Args:
     def __init__(__self__, *,
                  subnet_type: pulumi.Input[_builtins.str],
-                 bridge_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dhcp_options: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2DhcpOptionArgs']]]] = None,
-                 dynamic_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2DynamicIpAddressArgs']]]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_configs: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2IpConfigArgs']]]] = None,
-                 ip_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_usages: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2IpUsageArgs']]]] = None,
-                 is_advanced_networking: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_external: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_nat_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2MetadataArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_function_chain_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 reserved_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2ReservedIpAddressArgs']]]] = None,
-                 virtual_switch_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_switches: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2VirtualSwitchArgs']]]] = None,
-                 vpc_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpcs: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2VpcArgs']]]] = None):
+                 bridge_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dhcp_options: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2DhcpOptionArgs']]]] = None,
+                 dynamic_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2DynamicIpAddressArgs']]]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_configs: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2IpConfigArgs']]]] = None,
+                 ip_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_usages: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2IpUsageArgs']]]] = None,
+                 is_advanced_networking: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_external: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_nat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2MetadataArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_function_chain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 reserved_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2ReservedIpAddressArgs']]]] = None,
+                 virtual_switch_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_switches: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VirtualSwitchArgs']]]] = None,
+                 vpc_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpcs: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VpcArgs']]]] = None):
         """
         The set of arguments for constructing a SubnetV2 resource.
 
@@ -132,301 +132,301 @@ class SubnetV2Args:
 
     @_builtins.property
     @pulumi.getter(name="bridgeName")
-    def bridge_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bridge_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the bridge on the host for the subnet.
         """
         return pulumi.get(self, "bridge_name")
 
     @bridge_name.setter
-    def bridge_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bridge_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bridge_name", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterName")
-    def cluster_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cluster Name
         """
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
-    def cluster_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_name", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterReference")
-    def cluster_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         UUID of the cluster this subnet belongs to.
         """
         return pulumi.get(self, "cluster_reference")
 
     @cluster_reference.setter
-    def cluster_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_reference", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the subnet.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="dhcpOptions")
-    def dhcp_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2DhcpOptionArgs']]]]:
+    def dhcp_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2DhcpOptionArgs']]]]:
         """
         List of DHCP options to be configured.
         """
         return pulumi.get(self, "dhcp_options")
 
     @dhcp_options.setter
-    def dhcp_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2DhcpOptionArgs']]]]):
+    def dhcp_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2DhcpOptionArgs']]]]):
         pulumi.set(self, "dhcp_options", value)
 
     @_builtins.property
     @pulumi.getter(name="dynamicIpAddresses")
-    def dynamic_ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2DynamicIpAddressArgs']]]]:
+    def dynamic_ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2DynamicIpAddressArgs']]]]:
         """
         List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
         """
         return pulumi.get(self, "dynamic_ip_addresses")
 
     @dynamic_ip_addresses.setter
-    def dynamic_ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2DynamicIpAddressArgs']]]]):
+    def dynamic_ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2DynamicIpAddressArgs']]]]):
         pulumi.set(self, "dynamic_ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorType")
-    def hypervisor_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hypervisor_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Hypervisor Type
         """
         return pulumi.get(self, "hypervisor_type")
 
     @hypervisor_type.setter
-    def hypervisor_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hypervisor_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hypervisor_type", value)
 
     @_builtins.property
     @pulumi.getter(name="ipConfigs")
-    def ip_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2IpConfigArgs']]]]:
+    def ip_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2IpConfigArgs']]]]:
         """
         IP configuration for the subnet.
         """
         return pulumi.get(self, "ip_configs")
 
     @ip_configs.setter
-    def ip_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2IpConfigArgs']]]]):
+    def ip_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2IpConfigArgs']]]]):
         pulumi.set(self, "ip_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="ipPrefix")
-    def ip_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IP Prefix in CIDR format.
         """
         return pulumi.get(self, "ip_prefix")
 
     @ip_prefix.setter
-    def ip_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="ipUsages")
-    def ip_usages(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2IpUsageArgs']]]]:
+    def ip_usages(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2IpUsageArgs']]]]:
         return pulumi.get(self, "ip_usages")
 
     @ip_usages.setter
-    def ip_usages(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2IpUsageArgs']]]]):
+    def ip_usages(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2IpUsageArgs']]]]):
         pulumi.set(self, "ip_usages", value)
 
     @_builtins.property
     @pulumi.getter(name="isAdvancedNetworking")
-    def is_advanced_networking(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_advanced_networking(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the subnet is used for advanced networking.
         """
         return pulumi.get(self, "is_advanced_networking")
 
     @is_advanced_networking.setter
-    def is_advanced_networking(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_advanced_networking(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_advanced_networking", value)
 
     @_builtins.property
     @pulumi.getter(name="isExternal")
-    def is_external(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_external(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the subnet is used for external connectivity.
         """
         return pulumi.get(self, "is_external")
 
     @is_external.setter
-    def is_external(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_external(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_external", value)
 
     @_builtins.property
     @pulumi.getter(name="isNatEnabled")
-    def is_nat_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_nat_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
         """
         return pulumi.get(self, "is_nat_enabled")
 
     @is_nat_enabled.setter
-    def is_nat_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_nat_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_nat_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2MetadataArgs']]]]:
+    def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2MetadataArgs']]]]:
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
-    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2MetadataArgs']]]]):
+    def metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2MetadataArgs']]]]):
         pulumi.set(self, "metadatas", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the subnet.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkFunctionChainReference")
-    def network_function_chain_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_function_chain_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
         """
         return pulumi.get(self, "network_function_chain_reference")
 
     @network_function_chain_reference.setter
-    def network_function_chain_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_function_chain_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_function_chain_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="networkId")
-    def network_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def network_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         For VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
         """
         return pulumi.get(self, "network_id")
 
     @network_id.setter
-    def network_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def network_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "network_id", value)
 
     @_builtins.property
     @pulumi.getter(name="reservedIpAddresses")
-    def reserved_ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2ReservedIpAddressArgs']]]]:
+    def reserved_ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2ReservedIpAddressArgs']]]]:
         """
         List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
         """
         return pulumi.get(self, "reserved_ip_addresses")
 
     @reserved_ip_addresses.setter
-    def reserved_ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2ReservedIpAddressArgs']]]]):
+    def reserved_ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2ReservedIpAddressArgs']]]]):
         pulumi.set(self, "reserved_ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualSwitchReference")
-    def virtual_switch_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def virtual_switch_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         UUID of the virtual switch this subnet belongs to (type VLAN only).
         """
         return pulumi.get(self, "virtual_switch_reference")
 
     @virtual_switch_reference.setter
-    def virtual_switch_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def virtual_switch_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "virtual_switch_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualSwitches")
-    def virtual_switches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2VirtualSwitchArgs']]]]:
+    def virtual_switches(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VirtualSwitchArgs']]]]:
         """
         Schema to configure a virtual switch
         """
         return pulumi.get(self, "virtual_switches")
 
     @virtual_switches.setter
-    def virtual_switches(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2VirtualSwitchArgs']]]]):
+    def virtual_switches(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VirtualSwitchArgs']]]]):
         pulumi.set(self, "virtual_switches", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcReference")
-    def vpc_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
         """
         return pulumi.get(self, "vpc_reference")
 
     @vpc_reference.setter
-    def vpc_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_reference", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpcs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2VpcArgs']]]]:
+    def vpcs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VpcArgs']]]]:
         """
         Networking common base object
         """
         return pulumi.get(self, "vpcs")
 
     @vpcs.setter
-    def vpcs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2VpcArgs']]]]):
+    def vpcs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VpcArgs']]]]):
         pulumi.set(self, "vpcs", value)
 
 
 @pulumi.input_type
 class _SubnetV2State:
     def __init__(__self__, *,
-                 bridge_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dhcp_options: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2DhcpOptionArgs']]]] = None,
-                 dynamic_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2DynamicIpAddressArgs']]]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_configs: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2IpConfigArgs']]]] = None,
-                 ip_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_usages: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2IpUsageArgs']]]] = None,
-                 is_advanced_networking: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_external: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_nat_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 links: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2LinkArgs']]]] = None,
-                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2MetadataArgs']]]] = None,
-                 migration_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_function_chain_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 reserved_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2ReservedIpAddressArgs']]]] = None,
-                 subnet_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_switch_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_switches: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2VirtualSwitchArgs']]]] = None,
-                 vpc_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpcs: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2VpcArgs']]]] = None):
+                 bridge_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dhcp_options: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2DhcpOptionArgs']]]] = None,
+                 dynamic_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2DynamicIpAddressArgs']]]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_configs: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2IpConfigArgs']]]] = None,
+                 ip_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_usages: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2IpUsageArgs']]]] = None,
+                 is_advanced_networking: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_external: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_nat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2LinkArgs']]]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2MetadataArgs']]]] = None,
+                 migration_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_function_chain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 reserved_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2ReservedIpAddressArgs']]]] = None,
+                 subnet_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_switch_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_switches: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VirtualSwitchArgs']]]] = None,
+                 vpc_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpcs: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VpcArgs']]]] = None):
         """
         Input properties used for looking up and filtering SubnetV2 resources.
 
@@ -507,299 +507,299 @@ class _SubnetV2State:
 
     @_builtins.property
     @pulumi.getter(name="bridgeName")
-    def bridge_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bridge_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the bridge on the host for the subnet.
         """
         return pulumi.get(self, "bridge_name")
 
     @bridge_name.setter
-    def bridge_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bridge_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bridge_name", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterName")
-    def cluster_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cluster Name
         """
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
-    def cluster_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_name", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterReference")
-    def cluster_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         UUID of the cluster this subnet belongs to.
         """
         return pulumi.get(self, "cluster_reference")
 
     @cluster_reference.setter
-    def cluster_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_reference", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the subnet.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="dhcpOptions")
-    def dhcp_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2DhcpOptionArgs']]]]:
+    def dhcp_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2DhcpOptionArgs']]]]:
         """
         List of DHCP options to be configured.
         """
         return pulumi.get(self, "dhcp_options")
 
     @dhcp_options.setter
-    def dhcp_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2DhcpOptionArgs']]]]):
+    def dhcp_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2DhcpOptionArgs']]]]):
         pulumi.set(self, "dhcp_options", value)
 
     @_builtins.property
     @pulumi.getter(name="dynamicIpAddresses")
-    def dynamic_ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2DynamicIpAddressArgs']]]]:
+    def dynamic_ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2DynamicIpAddressArgs']]]]:
         """
         List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
         """
         return pulumi.get(self, "dynamic_ip_addresses")
 
     @dynamic_ip_addresses.setter
-    def dynamic_ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2DynamicIpAddressArgs']]]]):
+    def dynamic_ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2DynamicIpAddressArgs']]]]):
         pulumi.set(self, "dynamic_ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorType")
-    def hypervisor_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hypervisor_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Hypervisor Type
         """
         return pulumi.get(self, "hypervisor_type")
 
     @hypervisor_type.setter
-    def hypervisor_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hypervisor_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hypervisor_type", value)
 
     @_builtins.property
     @pulumi.getter(name="ipConfigs")
-    def ip_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2IpConfigArgs']]]]:
+    def ip_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2IpConfigArgs']]]]:
         """
         IP configuration for the subnet.
         """
         return pulumi.get(self, "ip_configs")
 
     @ip_configs.setter
-    def ip_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2IpConfigArgs']]]]):
+    def ip_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2IpConfigArgs']]]]):
         pulumi.set(self, "ip_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="ipPrefix")
-    def ip_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IP Prefix in CIDR format.
         """
         return pulumi.get(self, "ip_prefix")
 
     @ip_prefix.setter
-    def ip_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="ipUsages")
-    def ip_usages(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2IpUsageArgs']]]]:
+    def ip_usages(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2IpUsageArgs']]]]:
         return pulumi.get(self, "ip_usages")
 
     @ip_usages.setter
-    def ip_usages(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2IpUsageArgs']]]]):
+    def ip_usages(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2IpUsageArgs']]]]):
         pulumi.set(self, "ip_usages", value)
 
     @_builtins.property
     @pulumi.getter(name="isAdvancedNetworking")
-    def is_advanced_networking(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_advanced_networking(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the subnet is used for advanced networking.
         """
         return pulumi.get(self, "is_advanced_networking")
 
     @is_advanced_networking.setter
-    def is_advanced_networking(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_advanced_networking(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_advanced_networking", value)
 
     @_builtins.property
     @pulumi.getter(name="isExternal")
-    def is_external(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_external(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the subnet is used for external connectivity.
         """
         return pulumi.get(self, "is_external")
 
     @is_external.setter
-    def is_external(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_external(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_external", value)
 
     @_builtins.property
     @pulumi.getter(name="isNatEnabled")
-    def is_nat_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_nat_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
         """
         return pulumi.get(self, "is_nat_enabled")
 
     @is_nat_enabled.setter
-    def is_nat_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_nat_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_nat_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2LinkArgs']]]]:
+    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2LinkArgs']]]]:
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2LinkArgs']]]]):
+    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2MetadataArgs']]]]:
+    def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2MetadataArgs']]]]:
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
-    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2MetadataArgs']]]]):
+    def metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2MetadataArgs']]]]):
         pulumi.set(self, "metadatas", value)
 
     @_builtins.property
     @pulumi.getter(name="migrationState")
-    def migration_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def migration_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "migration_state")
 
     @migration_state.setter
-    def migration_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def migration_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "migration_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the subnet.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkFunctionChainReference")
-    def network_function_chain_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_function_chain_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
         """
         return pulumi.get(self, "network_function_chain_reference")
 
     @network_function_chain_reference.setter
-    def network_function_chain_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_function_chain_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_function_chain_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="networkId")
-    def network_id(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def network_id(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         For VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
         """
         return pulumi.get(self, "network_id")
 
     @network_id.setter
-    def network_id(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def network_id(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "network_id", value)
 
     @_builtins.property
     @pulumi.getter(name="reservedIpAddresses")
-    def reserved_ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2ReservedIpAddressArgs']]]]:
+    def reserved_ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2ReservedIpAddressArgs']]]]:
         """
         List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
         """
         return pulumi.get(self, "reserved_ip_addresses")
 
     @reserved_ip_addresses.setter
-    def reserved_ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2ReservedIpAddressArgs']]]]):
+    def reserved_ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2ReservedIpAddressArgs']]]]):
         pulumi.set(self, "reserved_ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetType")
-    def subnet_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of subnet. Acceptables values are "OVERLAY", "VLAN".
         """
         return pulumi.get(self, "subnet_type")
 
     @subnet_type.setter
-    def subnet_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_type", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualSwitchReference")
-    def virtual_switch_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def virtual_switch_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         UUID of the virtual switch this subnet belongs to (type VLAN only).
         """
         return pulumi.get(self, "virtual_switch_reference")
 
     @virtual_switch_reference.setter
-    def virtual_switch_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def virtual_switch_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "virtual_switch_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualSwitches")
-    def virtual_switches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2VirtualSwitchArgs']]]]:
+    def virtual_switches(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VirtualSwitchArgs']]]]:
         """
         Schema to configure a virtual switch
         """
         return pulumi.get(self, "virtual_switches")
 
     @virtual_switches.setter
-    def virtual_switches(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2VirtualSwitchArgs']]]]):
+    def virtual_switches(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VirtualSwitchArgs']]]]):
         pulumi.set(self, "virtual_switches", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcReference")
-    def vpc_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
         """
         return pulumi.get(self, "vpc_reference")
 
     @vpc_reference.setter
-    def vpc_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_reference", value)
 
     @_builtins.property
     @pulumi.getter
-    def vpcs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2VpcArgs']]]]:
+    def vpcs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VpcArgs']]]]:
         """
         Networking common base object
         """
         return pulumi.get(self, "vpcs")
 
     @vpcs.setter
-    def vpcs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SubnetV2VpcArgs']]]]):
+    def vpcs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VpcArgs']]]]):
         pulumi.set(self, "vpcs", value)
 
 
@@ -809,30 +809,30 @@ class SubnetV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bridge_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dhcp_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2DhcpOptionArgs', 'SubnetV2DhcpOptionArgsDict']]]]] = None,
-                 dynamic_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2DynamicIpAddressArgs', 'SubnetV2DynamicIpAddressArgsDict']]]]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2IpConfigArgs', 'SubnetV2IpConfigArgsDict']]]]] = None,
-                 ip_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_usages: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2IpUsageArgs', 'SubnetV2IpUsageArgsDict']]]]] = None,
-                 is_advanced_networking: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_external: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_nat_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2MetadataArgs', 'SubnetV2MetadataArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_function_chain_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 reserved_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2ReservedIpAddressArgs', 'SubnetV2ReservedIpAddressArgsDict']]]]] = None,
-                 subnet_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_switch_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_switches: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2VirtualSwitchArgs', 'SubnetV2VirtualSwitchArgsDict']]]]] = None,
-                 vpc_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpcs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2VpcArgs', 'SubnetV2VpcArgsDict']]]]] = None,
+                 bridge_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dhcp_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2DhcpOptionArgs', 'SubnetV2DhcpOptionArgsDict']]]]] = None,
+                 dynamic_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2DynamicIpAddressArgs', 'SubnetV2DynamicIpAddressArgsDict']]]]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2IpConfigArgs', 'SubnetV2IpConfigArgsDict']]]]] = None,
+                 ip_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_usages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2IpUsageArgs', 'SubnetV2IpUsageArgsDict']]]]] = None,
+                 is_advanced_networking: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_external: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_nat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2MetadataArgs', 'SubnetV2MetadataArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_function_chain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 reserved_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2ReservedIpAddressArgs', 'SubnetV2ReservedIpAddressArgsDict']]]]] = None,
+                 subnet_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_switch_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_switches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2VirtualSwitchArgs', 'SubnetV2VirtualSwitchArgsDict']]]]] = None,
+                 vpc_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2VpcArgs', 'SubnetV2VpcArgsDict']]]]] = None,
                  __props__=None):
         """
         Provides a resource to create a subnet based on the input parameters.
@@ -1057,30 +1057,30 @@ class SubnetV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bridge_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dhcp_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2DhcpOptionArgs', 'SubnetV2DhcpOptionArgsDict']]]]] = None,
-                 dynamic_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2DynamicIpAddressArgs', 'SubnetV2DynamicIpAddressArgsDict']]]]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2IpConfigArgs', 'SubnetV2IpConfigArgsDict']]]]] = None,
-                 ip_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_usages: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2IpUsageArgs', 'SubnetV2IpUsageArgsDict']]]]] = None,
-                 is_advanced_networking: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_external: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_nat_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2MetadataArgs', 'SubnetV2MetadataArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_function_chain_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_id: Optional[pulumi.Input[_builtins.int]] = None,
-                 reserved_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2ReservedIpAddressArgs', 'SubnetV2ReservedIpAddressArgsDict']]]]] = None,
-                 subnet_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_switch_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_switches: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2VirtualSwitchArgs', 'SubnetV2VirtualSwitchArgsDict']]]]] = None,
-                 vpc_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpcs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2VpcArgs', 'SubnetV2VpcArgsDict']]]]] = None,
+                 bridge_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dhcp_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2DhcpOptionArgs', 'SubnetV2DhcpOptionArgsDict']]]]] = None,
+                 dynamic_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2DynamicIpAddressArgs', 'SubnetV2DynamicIpAddressArgsDict']]]]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2IpConfigArgs', 'SubnetV2IpConfigArgsDict']]]]] = None,
+                 ip_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_usages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2IpUsageArgs', 'SubnetV2IpUsageArgsDict']]]]] = None,
+                 is_advanced_networking: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_external: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_nat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2MetadataArgs', 'SubnetV2MetadataArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_function_chain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 reserved_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2ReservedIpAddressArgs', 'SubnetV2ReservedIpAddressArgsDict']]]]] = None,
+                 subnet_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_switch_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_switches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2VirtualSwitchArgs', 'SubnetV2VirtualSwitchArgsDict']]]]] = None,
+                 vpc_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2VpcArgs', 'SubnetV2VpcArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1128,32 +1128,32 @@ class SubnetV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bridge_name: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_reference: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            dhcp_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2DhcpOptionArgs', 'SubnetV2DhcpOptionArgsDict']]]]] = None,
-            dynamic_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2DynamicIpAddressArgs', 'SubnetV2DynamicIpAddressArgsDict']]]]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            hypervisor_type: Optional[pulumi.Input[_builtins.str]] = None,
-            ip_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2IpConfigArgs', 'SubnetV2IpConfigArgsDict']]]]] = None,
-            ip_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-            ip_usages: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2IpUsageArgs', 'SubnetV2IpUsageArgsDict']]]]] = None,
-            is_advanced_networking: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_external: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_nat_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2LinkArgs', 'SubnetV2LinkArgsDict']]]]] = None,
-            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2MetadataArgs', 'SubnetV2MetadataArgsDict']]]]] = None,
-            migration_state: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_function_chain_reference: Optional[pulumi.Input[_builtins.str]] = None,
-            network_id: Optional[pulumi.Input[_builtins.int]] = None,
-            reserved_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2ReservedIpAddressArgs', 'SubnetV2ReservedIpAddressArgsDict']]]]] = None,
-            subnet_type: Optional[pulumi.Input[_builtins.str]] = None,
-            virtual_switch_reference: Optional[pulumi.Input[_builtins.str]] = None,
-            virtual_switches: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2VirtualSwitchArgs', 'SubnetV2VirtualSwitchArgsDict']]]]] = None,
-            vpc_reference: Optional[pulumi.Input[_builtins.str]] = None,
-            vpcs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SubnetV2VpcArgs', 'SubnetV2VpcArgsDict']]]]] = None) -> 'SubnetV2':
+            bridge_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dhcp_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2DhcpOptionArgs', 'SubnetV2DhcpOptionArgsDict']]]]] = None,
+            dynamic_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2DynamicIpAddressArgs', 'SubnetV2DynamicIpAddressArgsDict']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            hypervisor_type: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2IpConfigArgs', 'SubnetV2IpConfigArgsDict']]]]] = None,
+            ip_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_usages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2IpUsageArgs', 'SubnetV2IpUsageArgsDict']]]]] = None,
+            is_advanced_networking: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_external: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_nat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2LinkArgs', 'SubnetV2LinkArgsDict']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2MetadataArgs', 'SubnetV2MetadataArgsDict']]]]] = None,
+            migration_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_function_chain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            network_id: pulumi.Input[Optional[_builtins.int]] = None,
+            reserved_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2ReservedIpAddressArgs', 'SubnetV2ReservedIpAddressArgsDict']]]]] = None,
+            subnet_type: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual_switch_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual_switches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2VirtualSwitchArgs', 'SubnetV2VirtualSwitchArgsDict']]]]] = None,
+            vpc_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2VpcArgs', 'SubnetV2VpcArgsDict']]]]] = None) -> 'SubnetV2':
         """
         Get an existing SubnetV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

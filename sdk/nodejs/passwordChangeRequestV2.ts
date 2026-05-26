@@ -106,18 +106,18 @@ export interface PasswordChangeRequestV2State {
     /**
      * -(Optional) Existing password of a user account.
      */
-    currentPassword?: pulumi.Input<string>;
+    currentPassword?: pulumi.Input<string | undefined>;
     /**
      * -(Required) External identifier of the system user password.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) New password for a user account.
      *
      *
      * See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
      */
-    newPassword?: pulumi.Input<string>;
+    newPassword?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -127,7 +127,7 @@ export interface PasswordChangeRequestV2Args {
     /**
      * -(Optional) Existing password of a user account.
      */
-    currentPassword?: pulumi.Input<string>;
+    currentPassword?: pulumi.Input<string | undefined>;
     /**
      * -(Required) External identifier of the system user password.
      */

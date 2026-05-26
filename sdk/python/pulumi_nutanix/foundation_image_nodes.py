@@ -27,36 +27,36 @@ class FoundationImageNodesArgs:
                  hypervisor_gateway: pulumi.Input[_builtins.str],
                  hypervisor_netmask: pulumi.Input[_builtins.str],
                  nos_package: pulumi.Input[_builtins.str],
-                 clusters: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]]] = None,
-                 eos_metadata: Optional[pulumi.Input['FoundationImageNodesEosMetadataArgs']] = None,
-                 fc_settings: Optional[pulumi.Input['FoundationImageNodesFcSettingsArgs']] = None,
-                 hyperv_external_vnic: Optional[pulumi.Input[_builtins.str]] = None,
-                 hyperv_external_vswitch: Optional[pulumi.Input[_builtins.str]] = None,
-                 hyperv_product_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 hyperv_sku: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hypervisor_iso: Optional[pulumi.Input['FoundationImageNodesHypervisorIsoArgs']] = None,
-                 hypervisor_nameserver: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 install_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 layout_egg_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 skip_hypervisor: Optional[pulumi.Input[_builtins.bool]] = None,
-                 svm_rescue_args: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tests: Optional[pulumi.Input['FoundationImageNodesTestsArgs']] = None,
-                 ucsm_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 ucsm_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ucsm_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 unc_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 unc_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 unc_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 xen_config_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 xs_master_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 xs_master_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 xs_master_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 xs_master_username: Optional[pulumi.Input[_builtins.str]] = None):
+                 clusters: pulumi.Input[Optional[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]]] = None,
+                 eos_metadata: pulumi.Input[Optional['FoundationImageNodesEosMetadataArgs']] = None,
+                 fc_settings: pulumi.Input[Optional['FoundationImageNodesFcSettingsArgs']] = None,
+                 hyperv_external_vnic: pulumi.Input[Optional[_builtins.str]] = None,
+                 hyperv_external_vswitch: pulumi.Input[Optional[_builtins.str]] = None,
+                 hyperv_product_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 hyperv_sku: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hypervisor_iso: pulumi.Input[Optional['FoundationImageNodesHypervisorIsoArgs']] = None,
+                 hypervisor_nameserver: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 install_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 layout_egg_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 skip_hypervisor: pulumi.Input[Optional[_builtins.bool]] = None,
+                 svm_rescue_args: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tests: pulumi.Input[Optional['FoundationImageNodesTestsArgs']] = None,
+                 ucsm_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 ucsm_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ucsm_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 unc_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 unc_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 unc_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 xen_config_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 xs_master_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 xs_master_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 xs_master_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 xs_master_username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a FoundationImageNodes resource.
 
@@ -237,403 +237,403 @@ class FoundationImageNodesArgs:
 
     @_builtins.property
     @pulumi.getter
-    def clusters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]]]:
+    def clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]]]:
         """
         - Terraform blocks of clusters config
         """
         return pulumi.get(self, "clusters")
 
     @clusters.setter
-    def clusters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]]]):
+    def clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]]]):
         pulumi.set(self, "clusters", value)
 
     @_builtins.property
     @pulumi.getter(name="eosMetadata")
-    def eos_metadata(self) -> Optional[pulumi.Input['FoundationImageNodesEosMetadataArgs']]:
+    def eos_metadata(self) -> pulumi.Input[Optional['FoundationImageNodesEosMetadataArgs']]:
         """
         - Contains user data from Eos portal.
         """
         return pulumi.get(self, "eos_metadata")
 
     @eos_metadata.setter
-    def eos_metadata(self, value: Optional[pulumi.Input['FoundationImageNodesEosMetadataArgs']]):
+    def eos_metadata(self, value: pulumi.Input[Optional['FoundationImageNodesEosMetadataArgs']]):
         pulumi.set(self, "eos_metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="fcSettings")
-    def fc_settings(self) -> Optional[pulumi.Input['FoundationImageNodesFcSettingsArgs']]:
+    def fc_settings(self) -> pulumi.Input[Optional['FoundationImageNodesFcSettingsArgs']]:
         """
         - Foundation Central specific settings.
         """
         return pulumi.get(self, "fc_settings")
 
     @fc_settings.setter
-    def fc_settings(self, value: Optional[pulumi.Input['FoundationImageNodesFcSettingsArgs']]):
+    def fc_settings(self, value: pulumi.Input[Optional['FoundationImageNodesFcSettingsArgs']]):
         pulumi.set(self, "fc_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervExternalVnic")
-    def hyperv_external_vnic(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hyperv_external_vnic(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Hyperv External virtual network adapter name.
         """
         return pulumi.get(self, "hyperv_external_vnic")
 
     @hyperv_external_vnic.setter
-    def hyperv_external_vnic(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hyperv_external_vnic(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hyperv_external_vnic", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervExternalVswitch")
-    def hyperv_external_vswitch(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hyperv_external_vswitch(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Hyperv External vswitch name.
         """
         return pulumi.get(self, "hyperv_external_vswitch")
 
     @hyperv_external_vswitch.setter
-    def hyperv_external_vswitch(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hyperv_external_vswitch(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hyperv_external_vswitch", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervProductKey")
-    def hyperv_product_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hyperv_product_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Hyperv product key.
         """
         return pulumi.get(self, "hyperv_product_key")
 
     @hyperv_product_key.setter
-    def hyperv_product_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hyperv_product_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hyperv_product_key", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervSku")
-    def hyperv_sku(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def hyperv_sku(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - Hyperv SKU.
         """
         return pulumi.get(self, "hyperv_sku")
 
     @hyperv_sku.setter
-    def hyperv_sku(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def hyperv_sku(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "hyperv_sku", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorIso")
-    def hypervisor_iso(self) -> Optional[pulumi.Input['FoundationImageNodesHypervisorIsoArgs']]:
+    def hypervisor_iso(self) -> pulumi.Input[Optional['FoundationImageNodesHypervisorIsoArgs']]:
         """
         - Hypervisor ISO.
         """
         return pulumi.get(self, "hypervisor_iso")
 
     @hypervisor_iso.setter
-    def hypervisor_iso(self, value: Optional[pulumi.Input['FoundationImageNodesHypervisorIsoArgs']]):
+    def hypervisor_iso(self, value: pulumi.Input[Optional['FoundationImageNodesHypervisorIsoArgs']]):
         pulumi.set(self, "hypervisor_iso", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorNameserver")
-    def hypervisor_nameserver(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hypervisor_nameserver(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "hypervisor_nameserver")
 
     @hypervisor_nameserver.setter
-    def hypervisor_nameserver(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hypervisor_nameserver(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hypervisor_nameserver", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorPassword")
-    def hypervisor_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hypervisor_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Hypervisor password.
         """
         return pulumi.get(self, "hypervisor_password")
 
     @hypervisor_password.setter
-    def hypervisor_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hypervisor_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hypervisor_password", value)
 
     @_builtins.property
     @pulumi.getter(name="installScript")
-    def install_script(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def install_script(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - install script.
         """
         return pulumi.get(self, "install_script")
 
     @install_script.setter
-    def install_script(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def install_script(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "install_script", value)
 
     @_builtins.property
     @pulumi.getter(name="ipmiGateway")
-    def ipmi_gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipmi_gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required incase using IPMI based imaging either here or inside node spec) default IPMI gateway
         """
         return pulumi.get(self, "ipmi_gateway")
 
     @ipmi_gateway.setter
-    def ipmi_gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipmi_gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipmi_gateway", value)
 
     @_builtins.property
     @pulumi.getter(name="ipmiNetmask")
-    def ipmi_netmask(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipmi_netmask(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required incase using IPMI based imaging either here or inside node spec) default IPMI netmask
         """
         return pulumi.get(self, "ipmi_netmask")
 
     @ipmi_netmask.setter
-    def ipmi_netmask(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipmi_netmask(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipmi_netmask", value)
 
     @_builtins.property
     @pulumi.getter(name="ipmiPassword")
-    def ipmi_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipmi_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
         """
         return pulumi.get(self, "ipmi_password")
 
     @ipmi_password.setter
-    def ipmi_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipmi_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipmi_password", value)
 
     @_builtins.property
     @pulumi.getter(name="ipmiUser")
-    def ipmi_user(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipmi_user(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
         """
         return pulumi.get(self, "ipmi_user")
 
     @ipmi_user.setter
-    def ipmi_user(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipmi_user(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipmi_user", value)
 
     @_builtins.property
     @pulumi.getter(name="layoutEggUuid")
-    def layout_egg_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def layout_egg_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Id of the custom layout which needs to be passed to imaging request.
         """
         return pulumi.get(self, "layout_egg_uuid")
 
     @layout_egg_uuid.setter
-    def layout_egg_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def layout_egg_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "layout_egg_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="skipHypervisor")
-    def skip_hypervisor(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def skip_hypervisor(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - If hypervisor installation should be skipped.
         """
         return pulumi.get(self, "skip_hypervisor")
 
     @skip_hypervisor.setter
-    def skip_hypervisor(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def skip_hypervisor(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "skip_hypervisor", value)
 
     @_builtins.property
     @pulumi.getter(name="svmRescueArgs")
-    def svm_rescue_args(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def svm_rescue_args(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue " pulumi-lang-hcl=" svm_rescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         """
         return pulumi.get(self, "svm_rescue_args")
 
     @svm_rescue_args.setter
-    def svm_rescue_args(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def svm_rescue_args(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "svm_rescue_args", value)
 
     @_builtins.property
     @pulumi.getter
-    def tests(self) -> Optional[pulumi.Input['FoundationImageNodesTestsArgs']]:
+    def tests(self) -> pulumi.Input[Optional['FoundationImageNodesTestsArgs']]:
         """
         - Types of tests to be performed.
         """
         return pulumi.get(self, "tests")
 
     @tests.setter
-    def tests(self, value: Optional[pulumi.Input['FoundationImageNodesTestsArgs']]):
+    def tests(self, value: pulumi.Input[Optional['FoundationImageNodesTestsArgs']]):
         pulumi.set(self, "tests", value)
 
     @_builtins.property
     @pulumi.getter(name="ucsmIp")
-    def ucsm_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ucsm_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - UCSM IP address.
         """
         return pulumi.get(self, "ucsm_ip")
 
     @ucsm_ip.setter
-    def ucsm_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ucsm_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ucsm_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="ucsmPassword")
-    def ucsm_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ucsm_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - UCSM password.
         """
         return pulumi.get(self, "ucsm_password")
 
     @ucsm_password.setter
-    def ucsm_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ucsm_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ucsm_password", value)
 
     @_builtins.property
     @pulumi.getter(name="ucsmUser")
-    def ucsm_user(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ucsm_user(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - UCSM username.
         """
         return pulumi.get(self, "ucsm_user")
 
     @ucsm_user.setter
-    def ucsm_user(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ucsm_user(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ucsm_user", value)
 
     @_builtins.property
     @pulumi.getter(name="uncPassword")
-    def unc_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unc_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - UNC password.
         """
         return pulumi.get(self, "unc_password")
 
     @unc_password.setter
-    def unc_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unc_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unc_password", value)
 
     @_builtins.property
     @pulumi.getter(name="uncPath")
-    def unc_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unc_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - UNC Path.
         """
         return pulumi.get(self, "unc_path")
 
     @unc_path.setter
-    def unc_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unc_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unc_path", value)
 
     @_builtins.property
     @pulumi.getter(name="uncUsername")
-    def unc_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unc_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - UNC username.
         """
         return pulumi.get(self, "unc_username")
 
     @unc_username.setter
-    def unc_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unc_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unc_username", value)
 
     @_builtins.property
     @pulumi.getter(name="xenConfigType")
-    def xen_config_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def xen_config_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - xen config types.
         """
         return pulumi.get(self, "xen_config_type")
 
     @xen_config_type.setter
-    def xen_config_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def xen_config_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "xen_config_type", value)
 
     @_builtins.property
     @pulumi.getter(name="xsMasterIp")
-    def xs_master_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def xs_master_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - xen server master IP address.
         """
         return pulumi.get(self, "xs_master_ip")
 
     @xs_master_ip.setter
-    def xs_master_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def xs_master_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "xs_master_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="xsMasterLabel")
-    def xs_master_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def xs_master_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - xen server master label.
         """
         return pulumi.get(self, "xs_master_label")
 
     @xs_master_label.setter
-    def xs_master_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def xs_master_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "xs_master_label", value)
 
     @_builtins.property
     @pulumi.getter(name="xsMasterPassword")
-    def xs_master_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def xs_master_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - xen server master password.
         """
         return pulumi.get(self, "xs_master_password")
 
     @xs_master_password.setter
-    def xs_master_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def xs_master_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "xs_master_password", value)
 
     @_builtins.property
     @pulumi.getter(name="xsMasterUsername")
-    def xs_master_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def xs_master_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - xen server master username.
         """
         return pulumi.get(self, "xs_master_username")
 
     @xs_master_username.setter
-    def xs_master_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def xs_master_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "xs_master_username", value)
 
 
 @pulumi.input_type
 class _FoundationImageNodesState:
     def __init__(__self__, *,
-                 blocks: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesBlockArgs']]]] = None,
-                 cluster_urls: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesClusterUrlArgs']]]] = None,
-                 clusters: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]]] = None,
-                 cvm_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 cvm_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-                 eos_metadata: Optional[pulumi.Input['FoundationImageNodesEosMetadataArgs']] = None,
-                 fc_settings: Optional[pulumi.Input['FoundationImageNodesFcSettingsArgs']] = None,
-                 hyperv_external_vnic: Optional[pulumi.Input[_builtins.str]] = None,
-                 hyperv_external_vswitch: Optional[pulumi.Input[_builtins.str]] = None,
-                 hyperv_product_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 hyperv_sku: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hypervisor_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_iso: Optional[pulumi.Input['FoundationImageNodesHypervisorIsoArgs']] = None,
-                 hypervisor_nameserver: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 install_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 layout_egg_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 nos_package: Optional[pulumi.Input[_builtins.str]] = None,
-                 session_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 skip_hypervisor: Optional[pulumi.Input[_builtins.bool]] = None,
-                 svm_rescue_args: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tests: Optional[pulumi.Input['FoundationImageNodesTestsArgs']] = None,
-                 ucsm_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 ucsm_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ucsm_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 unc_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 unc_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 unc_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 xen_config_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 xs_master_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 xs_master_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 xs_master_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 xs_master_username: Optional[pulumi.Input[_builtins.str]] = None):
+                 blocks: pulumi.Input[Optional[Sequence[pulumi.Input['FoundationImageNodesBlockArgs']]]] = None,
+                 cluster_urls: pulumi.Input[Optional[Sequence[pulumi.Input['FoundationImageNodesClusterUrlArgs']]]] = None,
+                 clusters: pulumi.Input[Optional[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]]] = None,
+                 cvm_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 cvm_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+                 eos_metadata: pulumi.Input[Optional['FoundationImageNodesEosMetadataArgs']] = None,
+                 fc_settings: pulumi.Input[Optional['FoundationImageNodesFcSettingsArgs']] = None,
+                 hyperv_external_vnic: pulumi.Input[Optional[_builtins.str]] = None,
+                 hyperv_external_vswitch: pulumi.Input[Optional[_builtins.str]] = None,
+                 hyperv_product_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 hyperv_sku: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hypervisor_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_iso: pulumi.Input[Optional['FoundationImageNodesHypervisorIsoArgs']] = None,
+                 hypervisor_nameserver: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 install_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 layout_egg_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 nos_package: pulumi.Input[Optional[_builtins.str]] = None,
+                 session_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 skip_hypervisor: pulumi.Input[Optional[_builtins.bool]] = None,
+                 svm_rescue_args: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tests: pulumi.Input[Optional['FoundationImageNodesTestsArgs']] = None,
+                 ucsm_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 ucsm_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ucsm_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 unc_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 unc_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 unc_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 xen_config_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 xs_master_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 xs_master_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 xs_master_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 xs_master_username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FoundationImageNodes resources.
 
@@ -763,19 +763,19 @@ class _FoundationImageNodesState:
 
     @_builtins.property
     @pulumi.getter
-    def blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesBlockArgs']]]]:
+    def blocks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FoundationImageNodesBlockArgs']]]]:
         """
         - (Required) Terraform blocks of Block level parameters.
         """
         return pulumi.get(self, "blocks")
 
     @blocks.setter
-    def blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesBlockArgs']]]]):
+    def blocks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FoundationImageNodesBlockArgs']]]]):
         pulumi.set(self, "blocks", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterUrls")
-    def cluster_urls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesClusterUrlArgs']]]]:
+    def cluster_urls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FoundationImageNodesClusterUrlArgs']]]]:
         """
         - list containing cluster name and cluster urls for created clusters in current session
         * `cluster_urls.#.cluster_name` :-<span pulumi-lang-nodejs=" clusterName
@@ -791,436 +791,436 @@ class _FoundationImageNodesState:
         return pulumi.get(self, "cluster_urls")
 
     @cluster_urls.setter
-    def cluster_urls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesClusterUrlArgs']]]]):
+    def cluster_urls(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FoundationImageNodesClusterUrlArgs']]]]):
         pulumi.set(self, "cluster_urls", value)
 
     @_builtins.property
     @pulumi.getter
-    def clusters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]]]:
+    def clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]]]:
         """
         - Terraform blocks of clusters config
         """
         return pulumi.get(self, "clusters")
 
     @clusters.setter
-    def clusters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]]]):
+    def clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]]]):
         pulumi.set(self, "clusters", value)
 
     @_builtins.property
     @pulumi.getter(name="cvmGateway")
-    def cvm_gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cvm_gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) CVM gateway.
         """
         return pulumi.get(self, "cvm_gateway")
 
     @cvm_gateway.setter
-    def cvm_gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cvm_gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cvm_gateway", value)
 
     @_builtins.property
     @pulumi.getter(name="cvmNetmask")
-    def cvm_netmask(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cvm_netmask(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) CVM netmask.
         """
         return pulumi.get(self, "cvm_netmask")
 
     @cvm_netmask.setter
-    def cvm_netmask(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cvm_netmask(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cvm_netmask", value)
 
     @_builtins.property
     @pulumi.getter(name="eosMetadata")
-    def eos_metadata(self) -> Optional[pulumi.Input['FoundationImageNodesEosMetadataArgs']]:
+    def eos_metadata(self) -> pulumi.Input[Optional['FoundationImageNodesEosMetadataArgs']]:
         """
         - Contains user data from Eos portal.
         """
         return pulumi.get(self, "eos_metadata")
 
     @eos_metadata.setter
-    def eos_metadata(self, value: Optional[pulumi.Input['FoundationImageNodesEosMetadataArgs']]):
+    def eos_metadata(self, value: pulumi.Input[Optional['FoundationImageNodesEosMetadataArgs']]):
         pulumi.set(self, "eos_metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="fcSettings")
-    def fc_settings(self) -> Optional[pulumi.Input['FoundationImageNodesFcSettingsArgs']]:
+    def fc_settings(self) -> pulumi.Input[Optional['FoundationImageNodesFcSettingsArgs']]:
         """
         - Foundation Central specific settings.
         """
         return pulumi.get(self, "fc_settings")
 
     @fc_settings.setter
-    def fc_settings(self, value: Optional[pulumi.Input['FoundationImageNodesFcSettingsArgs']]):
+    def fc_settings(self, value: pulumi.Input[Optional['FoundationImageNodesFcSettingsArgs']]):
         pulumi.set(self, "fc_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervExternalVnic")
-    def hyperv_external_vnic(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hyperv_external_vnic(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Hyperv External virtual network adapter name.
         """
         return pulumi.get(self, "hyperv_external_vnic")
 
     @hyperv_external_vnic.setter
-    def hyperv_external_vnic(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hyperv_external_vnic(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hyperv_external_vnic", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervExternalVswitch")
-    def hyperv_external_vswitch(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hyperv_external_vswitch(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Hyperv External vswitch name.
         """
         return pulumi.get(self, "hyperv_external_vswitch")
 
     @hyperv_external_vswitch.setter
-    def hyperv_external_vswitch(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hyperv_external_vswitch(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hyperv_external_vswitch", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervProductKey")
-    def hyperv_product_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hyperv_product_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Hyperv product key.
         """
         return pulumi.get(self, "hyperv_product_key")
 
     @hyperv_product_key.setter
-    def hyperv_product_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hyperv_product_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hyperv_product_key", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervSku")
-    def hyperv_sku(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def hyperv_sku(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - Hyperv SKU.
         """
         return pulumi.get(self, "hyperv_sku")
 
     @hyperv_sku.setter
-    def hyperv_sku(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def hyperv_sku(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "hyperv_sku", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorGateway")
-    def hypervisor_gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hypervisor_gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) Hypervisor gateway.
         """
         return pulumi.get(self, "hypervisor_gateway")
 
     @hypervisor_gateway.setter
-    def hypervisor_gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hypervisor_gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hypervisor_gateway", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorIso")
-    def hypervisor_iso(self) -> Optional[pulumi.Input['FoundationImageNodesHypervisorIsoArgs']]:
+    def hypervisor_iso(self) -> pulumi.Input[Optional['FoundationImageNodesHypervisorIsoArgs']]:
         """
         - Hypervisor ISO.
         """
         return pulumi.get(self, "hypervisor_iso")
 
     @hypervisor_iso.setter
-    def hypervisor_iso(self, value: Optional[pulumi.Input['FoundationImageNodesHypervisorIsoArgs']]):
+    def hypervisor_iso(self, value: pulumi.Input[Optional['FoundationImageNodesHypervisorIsoArgs']]):
         pulumi.set(self, "hypervisor_iso", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorNameserver")
-    def hypervisor_nameserver(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hypervisor_nameserver(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "hypervisor_nameserver")
 
     @hypervisor_nameserver.setter
-    def hypervisor_nameserver(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hypervisor_nameserver(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hypervisor_nameserver", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorNetmask")
-    def hypervisor_netmask(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hypervisor_netmask(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) Hypervisor netmask.
         """
         return pulumi.get(self, "hypervisor_netmask")
 
     @hypervisor_netmask.setter
-    def hypervisor_netmask(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hypervisor_netmask(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hypervisor_netmask", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorPassword")
-    def hypervisor_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hypervisor_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Hypervisor password.
         """
         return pulumi.get(self, "hypervisor_password")
 
     @hypervisor_password.setter
-    def hypervisor_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hypervisor_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hypervisor_password", value)
 
     @_builtins.property
     @pulumi.getter(name="installScript")
-    def install_script(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def install_script(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - install script.
         """
         return pulumi.get(self, "install_script")
 
     @install_script.setter
-    def install_script(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def install_script(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "install_script", value)
 
     @_builtins.property
     @pulumi.getter(name="ipmiGateway")
-    def ipmi_gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipmi_gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required incase using IPMI based imaging either here or inside node spec) default IPMI gateway
         """
         return pulumi.get(self, "ipmi_gateway")
 
     @ipmi_gateway.setter
-    def ipmi_gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipmi_gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipmi_gateway", value)
 
     @_builtins.property
     @pulumi.getter(name="ipmiNetmask")
-    def ipmi_netmask(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipmi_netmask(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required incase using IPMI based imaging either here or inside node spec) default IPMI netmask
         """
         return pulumi.get(self, "ipmi_netmask")
 
     @ipmi_netmask.setter
-    def ipmi_netmask(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipmi_netmask(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipmi_netmask", value)
 
     @_builtins.property
     @pulumi.getter(name="ipmiPassword")
-    def ipmi_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipmi_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
         """
         return pulumi.get(self, "ipmi_password")
 
     @ipmi_password.setter
-    def ipmi_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipmi_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipmi_password", value)
 
     @_builtins.property
     @pulumi.getter(name="ipmiUser")
-    def ipmi_user(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipmi_user(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
         """
         return pulumi.get(self, "ipmi_user")
 
     @ipmi_user.setter
-    def ipmi_user(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipmi_user(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipmi_user", value)
 
     @_builtins.property
     @pulumi.getter(name="layoutEggUuid")
-    def layout_egg_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def layout_egg_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Id of the custom layout which needs to be passed to imaging request.
         """
         return pulumi.get(self, "layout_egg_uuid")
 
     @layout_egg_uuid.setter
-    def layout_egg_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def layout_egg_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "layout_egg_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="nosPackage")
-    def nos_package(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nos_package(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) NOS package.
         """
         return pulumi.get(self, "nos_package")
 
     @nos_package.setter
-    def nos_package(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nos_package(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nos_package", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionId")
-    def session_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def session_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -<span pulumi-lang-nodejs=" sessionId " pulumi-lang-dotnet=" SessionId " pulumi-lang-go=" sessionId " pulumi-lang-python=" session_id " pulumi-lang-yaml=" sessionId " pulumi-lang-java=" sessionId " pulumi-lang-hcl=" session_id "> sessionId </span>of the imaging session
         """
         return pulumi.get(self, "session_id")
 
     @session_id.setter
-    def session_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def session_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "session_id", value)
 
     @_builtins.property
     @pulumi.getter(name="skipHypervisor")
-    def skip_hypervisor(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def skip_hypervisor(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - If hypervisor installation should be skipped.
         """
         return pulumi.get(self, "skip_hypervisor")
 
     @skip_hypervisor.setter
-    def skip_hypervisor(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def skip_hypervisor(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "skip_hypervisor", value)
 
     @_builtins.property
     @pulumi.getter(name="svmRescueArgs")
-    def svm_rescue_args(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def svm_rescue_args(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue " pulumi-lang-hcl=" svm_rescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         """
         return pulumi.get(self, "svm_rescue_args")
 
     @svm_rescue_args.setter
-    def svm_rescue_args(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def svm_rescue_args(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "svm_rescue_args", value)
 
     @_builtins.property
     @pulumi.getter
-    def tests(self) -> Optional[pulumi.Input['FoundationImageNodesTestsArgs']]:
+    def tests(self) -> pulumi.Input[Optional['FoundationImageNodesTestsArgs']]:
         """
         - Types of tests to be performed.
         """
         return pulumi.get(self, "tests")
 
     @tests.setter
-    def tests(self, value: Optional[pulumi.Input['FoundationImageNodesTestsArgs']]):
+    def tests(self, value: pulumi.Input[Optional['FoundationImageNodesTestsArgs']]):
         pulumi.set(self, "tests", value)
 
     @_builtins.property
     @pulumi.getter(name="ucsmIp")
-    def ucsm_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ucsm_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - UCSM IP address.
         """
         return pulumi.get(self, "ucsm_ip")
 
     @ucsm_ip.setter
-    def ucsm_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ucsm_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ucsm_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="ucsmPassword")
-    def ucsm_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ucsm_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - UCSM password.
         """
         return pulumi.get(self, "ucsm_password")
 
     @ucsm_password.setter
-    def ucsm_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ucsm_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ucsm_password", value)
 
     @_builtins.property
     @pulumi.getter(name="ucsmUser")
-    def ucsm_user(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ucsm_user(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - UCSM username.
         """
         return pulumi.get(self, "ucsm_user")
 
     @ucsm_user.setter
-    def ucsm_user(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ucsm_user(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ucsm_user", value)
 
     @_builtins.property
     @pulumi.getter(name="uncPassword")
-    def unc_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unc_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - UNC password.
         """
         return pulumi.get(self, "unc_password")
 
     @unc_password.setter
-    def unc_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unc_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unc_password", value)
 
     @_builtins.property
     @pulumi.getter(name="uncPath")
-    def unc_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unc_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - UNC Path.
         """
         return pulumi.get(self, "unc_path")
 
     @unc_path.setter
-    def unc_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unc_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unc_path", value)
 
     @_builtins.property
     @pulumi.getter(name="uncUsername")
-    def unc_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unc_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - UNC username.
         """
         return pulumi.get(self, "unc_username")
 
     @unc_username.setter
-    def unc_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unc_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unc_username", value)
 
     @_builtins.property
     @pulumi.getter(name="xenConfigType")
-    def xen_config_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def xen_config_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - xen config types.
         """
         return pulumi.get(self, "xen_config_type")
 
     @xen_config_type.setter
-    def xen_config_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def xen_config_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "xen_config_type", value)
 
     @_builtins.property
     @pulumi.getter(name="xsMasterIp")
-    def xs_master_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def xs_master_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - xen server master IP address.
         """
         return pulumi.get(self, "xs_master_ip")
 
     @xs_master_ip.setter
-    def xs_master_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def xs_master_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "xs_master_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="xsMasterLabel")
-    def xs_master_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def xs_master_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - xen server master label.
         """
         return pulumi.get(self, "xs_master_label")
 
     @xs_master_label.setter
-    def xs_master_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def xs_master_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "xs_master_label", value)
 
     @_builtins.property
     @pulumi.getter(name="xsMasterPassword")
-    def xs_master_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def xs_master_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - xen server master password.
         """
         return pulumi.get(self, "xs_master_password")
 
     @xs_master_password.setter
-    def xs_master_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def xs_master_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "xs_master_password", value)
 
     @_builtins.property
     @pulumi.getter(name="xsMasterUsername")
-    def xs_master_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def xs_master_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - xen server master username.
         """
         return pulumi.get(self, "xs_master_username")
 
     @xs_master_username.setter
-    def xs_master_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def xs_master_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "xs_master_username", value)
 
 
@@ -1230,42 +1230,42 @@ class FoundationImageNodes(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 blocks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesBlockArgs', 'FoundationImageNodesBlockArgsDict']]]]] = None,
-                 clusters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesClusterArgs', 'FoundationImageNodesClusterArgsDict']]]]] = None,
-                 cvm_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 cvm_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-                 eos_metadata: Optional[pulumi.Input[Union['FoundationImageNodesEosMetadataArgs', 'FoundationImageNodesEosMetadataArgsDict']]] = None,
-                 fc_settings: Optional[pulumi.Input[Union['FoundationImageNodesFcSettingsArgs', 'FoundationImageNodesFcSettingsArgsDict']]] = None,
-                 hyperv_external_vnic: Optional[pulumi.Input[_builtins.str]] = None,
-                 hyperv_external_vswitch: Optional[pulumi.Input[_builtins.str]] = None,
-                 hyperv_product_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 hyperv_sku: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hypervisor_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_iso: Optional[pulumi.Input[Union['FoundationImageNodesHypervisorIsoArgs', 'FoundationImageNodesHypervisorIsoArgsDict']]] = None,
-                 hypervisor_nameserver: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 install_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 layout_egg_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 nos_package: Optional[pulumi.Input[_builtins.str]] = None,
-                 skip_hypervisor: Optional[pulumi.Input[_builtins.bool]] = None,
-                 svm_rescue_args: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tests: Optional[pulumi.Input[Union['FoundationImageNodesTestsArgs', 'FoundationImageNodesTestsArgsDict']]] = None,
-                 ucsm_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 ucsm_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ucsm_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 unc_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 unc_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 unc_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 xen_config_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 xs_master_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 xs_master_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 xs_master_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 xs_master_username: Optional[pulumi.Input[_builtins.str]] = None,
+                 blocks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationImageNodesBlockArgs', 'FoundationImageNodesBlockArgsDict']]]]] = None,
+                 clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationImageNodesClusterArgs', 'FoundationImageNodesClusterArgsDict']]]]] = None,
+                 cvm_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 cvm_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+                 eos_metadata: pulumi.Input[Optional[Union['FoundationImageNodesEosMetadataArgs', 'FoundationImageNodesEosMetadataArgsDict']]] = None,
+                 fc_settings: pulumi.Input[Optional[Union['FoundationImageNodesFcSettingsArgs', 'FoundationImageNodesFcSettingsArgsDict']]] = None,
+                 hyperv_external_vnic: pulumi.Input[Optional[_builtins.str]] = None,
+                 hyperv_external_vswitch: pulumi.Input[Optional[_builtins.str]] = None,
+                 hyperv_product_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 hyperv_sku: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hypervisor_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_iso: pulumi.Input[Optional[Union['FoundationImageNodesHypervisorIsoArgs', 'FoundationImageNodesHypervisorIsoArgsDict']]] = None,
+                 hypervisor_nameserver: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 install_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 layout_egg_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 nos_package: pulumi.Input[Optional[_builtins.str]] = None,
+                 skip_hypervisor: pulumi.Input[Optional[_builtins.bool]] = None,
+                 svm_rescue_args: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tests: pulumi.Input[Optional[Union['FoundationImageNodesTestsArgs', 'FoundationImageNodesTestsArgsDict']]] = None,
+                 ucsm_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 ucsm_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ucsm_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 unc_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 unc_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 unc_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 xen_config_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 xs_master_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 xs_master_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 xs_master_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 xs_master_username: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Images node(s) and optionally creates clusters.
@@ -1586,42 +1586,42 @@ class FoundationImageNodes(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 blocks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesBlockArgs', 'FoundationImageNodesBlockArgsDict']]]]] = None,
-                 clusters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesClusterArgs', 'FoundationImageNodesClusterArgsDict']]]]] = None,
-                 cvm_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 cvm_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-                 eos_metadata: Optional[pulumi.Input[Union['FoundationImageNodesEosMetadataArgs', 'FoundationImageNodesEosMetadataArgsDict']]] = None,
-                 fc_settings: Optional[pulumi.Input[Union['FoundationImageNodesFcSettingsArgs', 'FoundationImageNodesFcSettingsArgsDict']]] = None,
-                 hyperv_external_vnic: Optional[pulumi.Input[_builtins.str]] = None,
-                 hyperv_external_vswitch: Optional[pulumi.Input[_builtins.str]] = None,
-                 hyperv_product_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 hyperv_sku: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hypervisor_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_iso: Optional[pulumi.Input[Union['FoundationImageNodesHypervisorIsoArgs', 'FoundationImageNodesHypervisorIsoArgsDict']]] = None,
-                 hypervisor_nameserver: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 install_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 layout_egg_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 nos_package: Optional[pulumi.Input[_builtins.str]] = None,
-                 skip_hypervisor: Optional[pulumi.Input[_builtins.bool]] = None,
-                 svm_rescue_args: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tests: Optional[pulumi.Input[Union['FoundationImageNodesTestsArgs', 'FoundationImageNodesTestsArgsDict']]] = None,
-                 ucsm_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 ucsm_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ucsm_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 unc_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 unc_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 unc_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 xen_config_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 xs_master_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 xs_master_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 xs_master_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 xs_master_username: Optional[pulumi.Input[_builtins.str]] = None,
+                 blocks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationImageNodesBlockArgs', 'FoundationImageNodesBlockArgsDict']]]]] = None,
+                 clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationImageNodesClusterArgs', 'FoundationImageNodesClusterArgsDict']]]]] = None,
+                 cvm_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 cvm_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+                 eos_metadata: pulumi.Input[Optional[Union['FoundationImageNodesEosMetadataArgs', 'FoundationImageNodesEosMetadataArgsDict']]] = None,
+                 fc_settings: pulumi.Input[Optional[Union['FoundationImageNodesFcSettingsArgs', 'FoundationImageNodesFcSettingsArgsDict']]] = None,
+                 hyperv_external_vnic: pulumi.Input[Optional[_builtins.str]] = None,
+                 hyperv_external_vswitch: pulumi.Input[Optional[_builtins.str]] = None,
+                 hyperv_product_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 hyperv_sku: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hypervisor_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_iso: pulumi.Input[Optional[Union['FoundationImageNodesHypervisorIsoArgs', 'FoundationImageNodesHypervisorIsoArgsDict']]] = None,
+                 hypervisor_nameserver: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 install_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 layout_egg_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 nos_package: pulumi.Input[Optional[_builtins.str]] = None,
+                 skip_hypervisor: pulumi.Input[Optional[_builtins.bool]] = None,
+                 svm_rescue_args: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tests: pulumi.Input[Optional[Union['FoundationImageNodesTestsArgs', 'FoundationImageNodesTestsArgsDict']]] = None,
+                 ucsm_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 ucsm_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ucsm_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 unc_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 unc_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 unc_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 xen_config_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 xs_master_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 xs_master_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 xs_master_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 xs_master_username: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1691,44 +1691,44 @@ class FoundationImageNodes(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            blocks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesBlockArgs', 'FoundationImageNodesBlockArgsDict']]]]] = None,
-            cluster_urls: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesClusterUrlArgs', 'FoundationImageNodesClusterUrlArgsDict']]]]] = None,
-            clusters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesClusterArgs', 'FoundationImageNodesClusterArgsDict']]]]] = None,
-            cvm_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-            cvm_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-            eos_metadata: Optional[pulumi.Input[Union['FoundationImageNodesEosMetadataArgs', 'FoundationImageNodesEosMetadataArgsDict']]] = None,
-            fc_settings: Optional[pulumi.Input[Union['FoundationImageNodesFcSettingsArgs', 'FoundationImageNodesFcSettingsArgsDict']]] = None,
-            hyperv_external_vnic: Optional[pulumi.Input[_builtins.str]] = None,
-            hyperv_external_vswitch: Optional[pulumi.Input[_builtins.str]] = None,
-            hyperv_product_key: Optional[pulumi.Input[_builtins.str]] = None,
-            hyperv_sku: Optional[pulumi.Input[_builtins.bool]] = None,
-            hypervisor_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-            hypervisor_iso: Optional[pulumi.Input[Union['FoundationImageNodesHypervisorIsoArgs', 'FoundationImageNodesHypervisorIsoArgsDict']]] = None,
-            hypervisor_nameserver: Optional[pulumi.Input[_builtins.str]] = None,
-            hypervisor_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-            hypervisor_password: Optional[pulumi.Input[_builtins.str]] = None,
-            install_script: Optional[pulumi.Input[_builtins.str]] = None,
-            ipmi_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-            ipmi_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-            ipmi_password: Optional[pulumi.Input[_builtins.str]] = None,
-            ipmi_user: Optional[pulumi.Input[_builtins.str]] = None,
-            layout_egg_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            nos_package: Optional[pulumi.Input[_builtins.str]] = None,
-            session_id: Optional[pulumi.Input[_builtins.str]] = None,
-            skip_hypervisor: Optional[pulumi.Input[_builtins.bool]] = None,
-            svm_rescue_args: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tests: Optional[pulumi.Input[Union['FoundationImageNodesTestsArgs', 'FoundationImageNodesTestsArgsDict']]] = None,
-            ucsm_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            ucsm_password: Optional[pulumi.Input[_builtins.str]] = None,
-            ucsm_user: Optional[pulumi.Input[_builtins.str]] = None,
-            unc_password: Optional[pulumi.Input[_builtins.str]] = None,
-            unc_path: Optional[pulumi.Input[_builtins.str]] = None,
-            unc_username: Optional[pulumi.Input[_builtins.str]] = None,
-            xen_config_type: Optional[pulumi.Input[_builtins.str]] = None,
-            xs_master_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            xs_master_label: Optional[pulumi.Input[_builtins.str]] = None,
-            xs_master_password: Optional[pulumi.Input[_builtins.str]] = None,
-            xs_master_username: Optional[pulumi.Input[_builtins.str]] = None) -> 'FoundationImageNodes':
+            blocks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationImageNodesBlockArgs', 'FoundationImageNodesBlockArgsDict']]]]] = None,
+            cluster_urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationImageNodesClusterUrlArgs', 'FoundationImageNodesClusterUrlArgsDict']]]]] = None,
+            clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationImageNodesClusterArgs', 'FoundationImageNodesClusterArgsDict']]]]] = None,
+            cvm_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            cvm_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+            eos_metadata: pulumi.Input[Optional[Union['FoundationImageNodesEosMetadataArgs', 'FoundationImageNodesEosMetadataArgsDict']]] = None,
+            fc_settings: pulumi.Input[Optional[Union['FoundationImageNodesFcSettingsArgs', 'FoundationImageNodesFcSettingsArgsDict']]] = None,
+            hyperv_external_vnic: pulumi.Input[Optional[_builtins.str]] = None,
+            hyperv_external_vswitch: pulumi.Input[Optional[_builtins.str]] = None,
+            hyperv_product_key: pulumi.Input[Optional[_builtins.str]] = None,
+            hyperv_sku: pulumi.Input[Optional[_builtins.bool]] = None,
+            hypervisor_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            hypervisor_iso: pulumi.Input[Optional[Union['FoundationImageNodesHypervisorIsoArgs', 'FoundationImageNodesHypervisorIsoArgsDict']]] = None,
+            hypervisor_nameserver: pulumi.Input[Optional[_builtins.str]] = None,
+            hypervisor_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+            hypervisor_password: pulumi.Input[Optional[_builtins.str]] = None,
+            install_script: pulumi.Input[Optional[_builtins.str]] = None,
+            ipmi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            ipmi_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+            ipmi_password: pulumi.Input[Optional[_builtins.str]] = None,
+            ipmi_user: pulumi.Input[Optional[_builtins.str]] = None,
+            layout_egg_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            nos_package: pulumi.Input[Optional[_builtins.str]] = None,
+            session_id: pulumi.Input[Optional[_builtins.str]] = None,
+            skip_hypervisor: pulumi.Input[Optional[_builtins.bool]] = None,
+            svm_rescue_args: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tests: pulumi.Input[Optional[Union['FoundationImageNodesTestsArgs', 'FoundationImageNodesTestsArgsDict']]] = None,
+            ucsm_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            ucsm_password: pulumi.Input[Optional[_builtins.str]] = None,
+            ucsm_user: pulumi.Input[Optional[_builtins.str]] = None,
+            unc_password: pulumi.Input[Optional[_builtins.str]] = None,
+            unc_path: pulumi.Input[Optional[_builtins.str]] = None,
+            unc_username: pulumi.Input[Optional[_builtins.str]] = None,
+            xen_config_type: pulumi.Input[Optional[_builtins.str]] = None,
+            xs_master_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            xs_master_label: pulumi.Input[Optional[_builtins.str]] = None,
+            xs_master_password: pulumi.Input[Optional[_builtins.str]] = None,
+            xs_master_username: pulumi.Input[Optional[_builtins.str]] = None) -> 'FoundationImageNodes':
         """
         Get an existing FoundationImageNodes resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

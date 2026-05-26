@@ -227,9 +227,9 @@ def get_role(categories: Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRole
         role_id=pulumi.get(__ret__, 'role_id'),
         role_name=pulumi.get(__ret__, 'role_name'),
         state=pulumi.get(__ret__, 'state'))
-def get_role_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']]]]] = None,
-                    role_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                    role_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_role_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']]]]] = None,
+                    role_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                    role_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRoleResult]:
     """
     Describes a Role.

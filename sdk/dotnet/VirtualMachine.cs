@@ -132,7 +132,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<string>> BootDeviceOrderLists { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like&lt;span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice "&gt; bootDevice &lt;/span&gt;and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+        /// - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like&lt;span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice " pulumi-lang-hcl=" boot_device "&gt; bootDevice &lt;/span&gt;and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
         /// </summary>
         [Output("bootType")]
         public Output<string> BootType { get; private set; } = null!;
@@ -195,13 +195,13 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableDictionary<string, string>> GuestCustomizationCloudInitCustomKeyValues { get; private set; } = null!;
 
         /// <summary>
-        /// The contents of the&lt;span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "&gt; metaData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+        /// The contents of the&lt;span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "&gt; metaData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
         /// </summary>
         [Output("guestCustomizationCloudInitMetaData")]
         public Output<string> GuestCustomizationCloudInitMetaData { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional) The contents of the&lt;span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "&gt; userData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+        /// - (Optional) The contents of the&lt;span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData " pulumi-lang-hcl=" user_data "&gt; userData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         /// </summary>
         [Output("guestCustomizationCloudInitUserData")]
         public Output<string> GuestCustomizationCloudInitUserData { get; private set; } = null!;
@@ -213,7 +213,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<bool> GuestCustomizationIsOverridable { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or&lt;span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "&gt; cloudInit &lt;/span&gt;should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+        /// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or&lt;span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "&gt; cloudInit &lt;/span&gt;should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
         /// </summary>
         [Output("guestCustomizationSysprep")]
         public Output<ImmutableDictionary<string, string>> GuestCustomizationSysprep { get; private set; } = null!;
@@ -375,7 +375,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is &lt;span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`"&gt;`true`&lt;/span&gt;.
+        /// - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is &lt;span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`"&gt;`true`&lt;/span&gt;.
         /// </summary>
         [Output("useHotAdd")]
         public Output<bool?> UseHotAdd { get; private set; } = null!;
@@ -476,7 +476,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like&lt;span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice "&gt; bootDevice &lt;/span&gt;and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+        /// - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like&lt;span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice " pulumi-lang-hcl=" boot_device "&gt; bootDevice &lt;/span&gt;and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
         /// </summary>
         [Input("bootType")]
         public Input<string>? BootType { get; set; }
@@ -557,13 +557,13 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// The contents of the&lt;span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "&gt; metaData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+        /// The contents of the&lt;span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "&gt; metaData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
         /// </summary>
         [Input("guestCustomizationCloudInitMetaData")]
         public Input<string>? GuestCustomizationCloudInitMetaData { get; set; }
 
         /// <summary>
-        /// - (Optional) The contents of the&lt;span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "&gt; userData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+        /// - (Optional) The contents of the&lt;span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData " pulumi-lang-hcl=" user_data "&gt; userData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         /// </summary>
         [Input("guestCustomizationCloudInitUserData")]
         public Input<string>? GuestCustomizationCloudInitUserData { get; set; }
@@ -578,7 +578,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputMap<string>? _guestCustomizationSysprep;
 
         /// <summary>
-        /// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or&lt;span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "&gt; cloudInit &lt;/span&gt;should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+        /// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or&lt;span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "&gt; cloudInit &lt;/span&gt;should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
         /// </summary>
         public InputMap<string> GuestCustomizationSysprep
         {
@@ -767,7 +767,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<bool>? ShouldFailOnScriptFailure { get; set; }
 
         /// <summary>
-        /// - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is &lt;span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`"&gt;`true`&lt;/span&gt;.
+        /// - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is &lt;span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`"&gt;`true`&lt;/span&gt;.
         /// </summary>
         [Input("useHotAdd")]
         public Input<bool>? UseHotAdd { get; set; }
@@ -835,7 +835,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like&lt;span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice "&gt; bootDevice &lt;/span&gt;and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+        /// - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like&lt;span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice " pulumi-lang-hcl=" boot_device "&gt; bootDevice &lt;/span&gt;and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
         /// </summary>
         [Input("bootType")]
         public Input<string>? BootType { get; set; }
@@ -922,13 +922,13 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// The contents of the&lt;span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "&gt; metaData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+        /// The contents of the&lt;span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "&gt; metaData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
         /// </summary>
         [Input("guestCustomizationCloudInitMetaData")]
         public Input<string>? GuestCustomizationCloudInitMetaData { get; set; }
 
         /// <summary>
-        /// - (Optional) The contents of the&lt;span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "&gt; userData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+        /// - (Optional) The contents of the&lt;span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData " pulumi-lang-hcl=" user_data "&gt; userData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         /// </summary>
         [Input("guestCustomizationCloudInitUserData")]
         public Input<string>? GuestCustomizationCloudInitUserData { get; set; }
@@ -943,7 +943,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputMap<string>? _guestCustomizationSysprep;
 
         /// <summary>
-        /// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or&lt;span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "&gt; cloudInit &lt;/span&gt;should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+        /// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or&lt;span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "&gt; cloudInit &lt;/span&gt;should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
         /// </summary>
         public InputMap<string> GuestCustomizationSysprep
         {
@@ -1180,7 +1180,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is &lt;span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`"&gt;`true`&lt;/span&gt;.
+        /// - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is &lt;span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`"&gt;`true`&lt;/span&gt;.
         /// </summary>
         [Input("useHotAdd")]
         public Input<bool>? UseHotAdd { get; set; }

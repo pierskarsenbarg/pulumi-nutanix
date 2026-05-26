@@ -30,7 +30,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string? HypervProductKey;
         /// <summary>
-        /// SKU of hyperv to be installed if&lt;span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType "&gt; hypervisorType &lt;/span&gt;is hyperv.
+        /// SKU of hyperv to be installed if&lt;span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType " pulumi-lang-hcl=" hypervisor_type "&gt; hypervisorType &lt;/span&gt;is hyperv.
         /// </summary>
         public readonly string? HypervSku;
         /// <summary>

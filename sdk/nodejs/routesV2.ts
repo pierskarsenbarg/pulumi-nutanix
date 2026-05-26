@@ -196,63 +196,63 @@ export interface RoutesV2State {
     /**
      * BGP session description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Destination IP Subnet Configuration.
      */
-    destination?: pulumi.Input<inputs.RoutesV2Destination>;
+    destination?: pulumi.Input<inputs.RoutesV2Destination | undefined>;
     /**
      * Route UUID
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * External routing domain associated with this route table.
      */
-    externalRoutingDomainReference?: pulumi.Input<string>;
+    externalRoutingDomainReference?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the route is active in the forwarding plane.
      */
-    isActive?: pulumi.Input<boolean>;
+    isActive?: pulumi.Input<boolean | undefined>;
     /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.RoutesV2Link>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.RoutesV2Link>[] | undefined>;
     /**
      * Metadata associated with this resource.
      */
-    metadata?: pulumi.Input<inputs.RoutesV2Metadata>;
+    metadata?: pulumi.Input<inputs.RoutesV2Metadata | undefined>;
     /**
      * Route name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Route nexthop.
      */
-    nextHop?: pulumi.Input<inputs.RoutesV2NextHop>;
+    nextHop?: pulumi.Input<inputs.RoutesV2NextHop | undefined>;
     /**
      * Route priority. A higher value implies greater preference is assigned to the route.
      */
-    priority?: pulumi.Input<number>;
+    priority?: pulumi.Input<number | undefined>;
     /**
      * Route table UUID
      */
-    routeTableExtId?: pulumi.Input<string>;
+    routeTableExtId?: pulumi.Input<string | undefined>;
     /**
      * Route table reference.
      */
-    routeTableReference?: pulumi.Input<string>;
+    routeTableReference?: pulumi.Input<string | undefined>;
     /**
      * Route type. Acceptable values are "STATIC", "LOCAL", "DYNAMIC"
      */
-    routeType?: pulumi.Input<string>;
+    routeType?: pulumi.Input<string | undefined>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * VPC reference.
      */
-    vpcReference?: pulumi.Input<string>;
+    vpcReference?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -262,27 +262,27 @@ export interface RoutesV2Args {
     /**
      * BGP session description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Destination IP Subnet Configuration.
      */
-    destination?: pulumi.Input<inputs.RoutesV2Destination>;
+    destination?: pulumi.Input<inputs.RoutesV2Destination | undefined>;
     /**
      * External routing domain associated with this route table.
      */
-    externalRoutingDomainReference?: pulumi.Input<string>;
+    externalRoutingDomainReference?: pulumi.Input<string | undefined>;
     /**
      * Metadata associated with this resource.
      */
-    metadata?: pulumi.Input<inputs.RoutesV2Metadata>;
+    metadata?: pulumi.Input<inputs.RoutesV2Metadata | undefined>;
     /**
      * Route name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Route nexthop.
      */
-    nextHop?: pulumi.Input<inputs.RoutesV2NextHop>;
+    nextHop?: pulumi.Input<inputs.RoutesV2NextHop | undefined>;
     /**
      * Route table UUID
      */
@@ -290,7 +290,7 @@ export interface RoutesV2Args {
     /**
      * Route table reference.
      */
-    routeTableReference?: pulumi.Input<string>;
+    routeTableReference?: pulumi.Input<string | undefined>;
     /**
      * Route type. Acceptable values are "STATIC", "LOCAL", "DYNAMIC"
      */
@@ -298,5 +298,5 @@ export interface RoutesV2Args {
     /**
      * VPC reference.
      */
-    vpcReference?: pulumi.Input<string>;
+    vpcReference?: pulumi.Input<string | undefined>;
 }

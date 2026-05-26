@@ -197,8 +197,8 @@ def get_pc_v2(ext_id: Optional[_builtins.str] = None,
         node_ext_ids=pulumi.get(__ret__, 'node_ext_ids'),
         should_enable_high_availability=pulumi.get(__ret__, 'should_enable_high_availability'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_pc_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                     should_enable_high_availability: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_pc_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                     should_enable_high_availability: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPcV2Result]:
     """
     Fetches the attributes associated with the domain manager (Prism Central) resource based on the provided external identifier. It includes attributes like config, network, node and other information such as size, environment and resource specifications.

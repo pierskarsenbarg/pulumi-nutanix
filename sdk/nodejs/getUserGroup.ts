@@ -175,25 +175,25 @@ export interface GetUserGroupOutputArgs {
     /**
      * - The Distinguished Categories for the user group.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetUserGroupCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetUserGroupCategoryArgs>[] | undefined>;
     /**
      * - The reference to a user.
      */
-    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - The Distinguished The reference to a project.
      */
-    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The distinguished name for the user group
      */
-    userGroupDistinguishedName?: pulumi.Input<string>;
+    userGroupDistinguishedName?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The UUID for the user group
      */
-    userGroupId?: pulumi.Input<string>;
+    userGroupId?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The name for the user group
      */
-    userGroupName?: pulumi.Input<string>;
+    userGroupName?: pulumi.Input<string | undefined>;
 }

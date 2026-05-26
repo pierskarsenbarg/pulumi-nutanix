@@ -258,11 +258,11 @@ def get_protection_policies_v2(filter: Optional[_builtins.str] = None,
         page=pulumi.get(__ret__, 'page'),
         protection_policies=pulumi.get(__ret__, 'protection_policies'),
         select=pulumi.get(__ret__, 'select'))
-def get_protection_policies_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                      order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                      select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_protection_policies_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                      order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                      select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionPoliciesV2Result]:
     """
     > **Authentication:** Protection policy operations do **not** support API key authentication. Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`" pulumi-lang-hcl="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`" pulumi-lang-hcl="`password`">`password`</span> in the provider configuration.

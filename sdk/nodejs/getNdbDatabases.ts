@@ -151,5 +151,5 @@ export function getNdbDatabasesOutput(args?: GetNdbDatabasesOutputArgs, opts?: p
  * A collection of arguments for invoking getNdbDatabases.
  */
 export interface GetNdbDatabasesOutputArgs {
-    databaseType?: pulumi.Input<string>;
+    databaseType?: pulumi.Input<string | undefined>;
 }

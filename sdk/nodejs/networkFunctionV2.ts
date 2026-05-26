@@ -190,15 +190,15 @@ export interface NetworkFunctionV2State {
     /**
      * Data Plane Health check configuration applied for the network function.
      */
-    dataPlaneHealthCheckConfig?: pulumi.Input<inputs.NetworkFunctionV2DataPlaneHealthCheckConfig>;
+    dataPlaneHealthCheckConfig?: pulumi.Input<inputs.NetworkFunctionV2DataPlaneHealthCheckConfig | undefined>;
     /**
      * Description of the network function.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * Failure handling behavior when network function is unhealthy. Values:
      *
@@ -208,7 +208,7 @@ export interface NetworkFunctionV2State {
      * | `FAIL_CLOSE` | When all the network function VM(s) are down, all traffic from sources is blocked to prevent it from bypassing the security. |
      * | `FAIL_OPEN` | When all the network function VM(s) are down, traffic from sources can be forwarded directly to the destinations, effectively bypassing the network function VM. |
      */
-    failureHandling?: pulumi.Input<string>;
+    failureHandling?: pulumi.Input<string | undefined>;
     /**
      * High availability configuration used between virtual NIC pairs. Traffic is only redirected to the ACTIVE NIC pair. Values:
      *
@@ -216,27 +216,27 @@ export interface NetworkFunctionV2State {
      * | --- | --- |
      * | `ACTIVE_PASSIVE` | NIC pair is in ACTIVE_PASSIVE mode. In ACTIVE_PASSIVE mode, one of the NIC pairs will be selected as the ACTIVE network function and all other NIC pairs will be on STANDBY |
      */
-    highAvailabilityMode?: pulumi.Input<string>;
+    highAvailabilityMode?: pulumi.Input<string | undefined>;
     /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.NetworkFunctionV2Link>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.NetworkFunctionV2Link>[] | undefined>;
     /**
      * Metadata associated with this resource.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.NetworkFunctionV2Metadata>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.NetworkFunctionV2Metadata>[] | undefined>;
     /**
      * Name of the network function.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
      */
-    nicPairs?: pulumi.Input<pulumi.Input<inputs.NetworkFunctionV2NicPair>[]>;
+    nicPairs?: pulumi.Input<pulumi.Input<inputs.NetworkFunctionV2NicPair>[] | undefined>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * Traffic forwarding mode. Values:
      *
@@ -245,7 +245,7 @@ export interface NetworkFunctionV2State {
      * | `INLINE` | Inline traffic redirection is applied through the network function VM to enable comprehensive inspection and policy enforcement. |
      * | `VTAP` | Traffic is passively mirrored to the network function VM for out-of-band monitoring, without affecting the original traffic flow. The failureHandling or dataPlaneHealthCheckConfig or egressNicReference inside any of NicPair is not supported along with this mode. API will fail as part of validation if passed with VTAP trafficForwardingMode. |
      */
-    trafficForwardingMode?: pulumi.Input<string>;
+    trafficForwardingMode?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -255,15 +255,15 @@ export interface NetworkFunctionV2Args {
     /**
      * Data Plane Health check configuration applied for the network function.
      */
-    dataPlaneHealthCheckConfig?: pulumi.Input<inputs.NetworkFunctionV2DataPlaneHealthCheckConfig>;
+    dataPlaneHealthCheckConfig?: pulumi.Input<inputs.NetworkFunctionV2DataPlaneHealthCheckConfig | undefined>;
     /**
      * Description of the network function.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * Failure handling behavior when network function is unhealthy. Values:
      *
@@ -273,7 +273,7 @@ export interface NetworkFunctionV2Args {
      * | `FAIL_CLOSE` | When all the network function VM(s) are down, all traffic from sources is blocked to prevent it from bypassing the security. |
      * | `FAIL_OPEN` | When all the network function VM(s) are down, traffic from sources can be forwarded directly to the destinations, effectively bypassing the network function VM. |
      */
-    failureHandling?: pulumi.Input<string>;
+    failureHandling?: pulumi.Input<string | undefined>;
     /**
      * High availability configuration used between virtual NIC pairs. Traffic is only redirected to the ACTIVE NIC pair. Values:
      *
@@ -285,11 +285,11 @@ export interface NetworkFunctionV2Args {
     /**
      * Metadata associated with this resource.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.NetworkFunctionV2Metadata>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.NetworkFunctionV2Metadata>[] | undefined>;
     /**
      * Name of the network function.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
      */
@@ -302,5 +302,5 @@ export interface NetworkFunctionV2Args {
      * | `INLINE` | Inline traffic redirection is applied through the network function VM to enable comprehensive inspection and policy enforcement. |
      * | `VTAP` | Traffic is passively mirrored to the network function VM for out-of-band monitoring, without affecting the original traffic flow. The failureHandling or dataPlaneHealthCheckConfig or egressNicReference inside any of NicPair is not supported along with this mode. API will fail as part of validation if passed with VTAP trafficForwardingMode. |
      */
-    trafficForwardingMode?: pulumi.Input<string>;
+    trafficForwardingMode?: pulumi.Input<string | undefined>;
 }

@@ -90,6 +90,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getentitygroupv2" "example" {
+        ///   ext_id = "00000000-0000-0000-0000-000000000000"
+        /// }
+        /// data "nutanix_getentitygroupv2" "byId" {
+        ///   ext_id = myGroup.id
+        /// }
+        /// 
+        /// # Fetch by known ext_id
+        /// # Fetch entity group created by a resource
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -222,6 +241,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getentitygroupv2" "example" {
+        ///   ext_id = "00000000-0000-0000-0000-000000000000"
+        /// }
+        /// data "nutanix_getentitygroupv2" "byId" {
+        ///   ext_id = myGroup.id
+        /// }
+        /// 
+        /// # Fetch by known ext_id
+        /// # Fetch entity group created by a resource
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -353,6 +391,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getentitygroupv2" "example" {
+        ///   ext_id = "00000000-0000-0000-0000-000000000000"
+        /// }
+        /// data "nutanix_getentitygroupv2" "byId" {
+        ///   ext_id = myGroup.id
+        /// }
+        /// 
+        /// # Fetch by known ext_id
+        /// # Fetch entity group created by a resource
         /// ```
         /// ```java
         /// package generated_program;

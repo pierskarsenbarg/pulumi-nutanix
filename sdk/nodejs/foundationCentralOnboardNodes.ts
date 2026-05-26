@@ -123,27 +123,27 @@ export interface FoundationCentralOnboardNodesState {
     /**
      * Block serial number of the node
      */
-    blockSerial?: pulumi.Input<string>;
+    blockSerial?: pulumi.Input<string | undefined>;
     /**
      * UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode " pulumi-lang-hcl=" imaged_node "> imagedNode </span>in FC
      */
-    imagedNodeUuid?: pulumi.Input<string>;
+    imagedNodeUuid?: pulumi.Input<string | undefined>;
     /**
      * Model of the node
      */
-    model?: pulumi.Input<string>;
+    model?: pulumi.Input<string | undefined>;
     /**
      * Serial number of the node to onboard
      */
-    nodeSerial?: pulumi.Input<string>;
+    nodeSerial?: pulumi.Input<string | undefined>;
     /**
      * State of the node (e.g. STATE_ONBOARDED)
      */
-    nodeState?: pulumi.Input<string>;
+    nodeState?: pulumi.Input<string | undefined>;
     /**
      * Type of node (e.g. "on-prem")
      */
-    nodeType?: pulumi.Input<string>;
+    nodeType?: pulumi.Input<string | undefined>;
 }
 
 /**

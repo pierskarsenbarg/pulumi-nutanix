@@ -67,6 +67,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getsamlidentityproviderv2" "idp" {
+        ///   ext_id = "a2a8650a-358a-4791-90c9-7a8b6e2989d6"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -109,7 +122,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following arguments are supported:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - External identifier of the SAML Identity Provider.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: - External identifier of the SAML Identity Provider.
         /// </summary>
         public static Task<GetSamlIdentityProviderV2Result> InvokeAsync(GetSamlIdentityProviderV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSamlIdentityProviderV2Result>("nutanix:index/getSamlIdentityProviderV2:getSamlIdentityProviderV2", args ?? new GetSamlIdentityProviderV2Args(), options.WithDefaults());
@@ -169,6 +182,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getsamlidentityproviderv2" "idp" {
+        ///   ext_id = "a2a8650a-358a-4791-90c9-7a8b6e2989d6"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -211,7 +237,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following arguments are supported:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - External identifier of the SAML Identity Provider.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: - External identifier of the SAML Identity Provider.
         /// </summary>
         public static Output<GetSamlIdentityProviderV2Result> Invoke(GetSamlIdentityProviderV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSamlIdentityProviderV2Result>("nutanix:index/getSamlIdentityProviderV2:getSamlIdentityProviderV2", args ?? new GetSamlIdentityProviderV2InvokeArgs(), options.WithDefaults());
@@ -271,6 +297,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getsamlidentityproviderv2" "idp" {
+        ///   ext_id = "a2a8650a-358a-4791-90c9-7a8b6e2989d6"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -313,7 +352,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following arguments are supported:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - External identifier of the SAML Identity Provider.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: - External identifier of the SAML Identity Provider.
         /// </summary>
         public static Output<GetSamlIdentityProviderV2Result> Invoke(GetSamlIdentityProviderV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetSamlIdentityProviderV2Result>("nutanix:index/getSamlIdentityProviderV2:getSamlIdentityProviderV2", args ?? new GetSamlIdentityProviderV2InvokeArgs(), options.WithDefaults());

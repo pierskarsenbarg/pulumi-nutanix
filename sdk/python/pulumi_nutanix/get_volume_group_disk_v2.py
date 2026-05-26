@@ -207,8 +207,8 @@ def get_volume_group_disk_v2(ext_id: Optional[_builtins.str] = None,
         storage_container_id=pulumi.get(__ret__, 'storage_container_id'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         volume_group_ext_id=pulumi.get(__ret__, 'volume_group_ext_id'))
-def get_volume_group_disk_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    volume_group_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_volume_group_disk_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    volume_group_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeGroupDiskV2Result]:
     """
     Describes a Query the Volume Disk identified by {extId} in the Volume Group identified by {volumeGroupExtId}.

@@ -21,7 +21,7 @@ class RestoreProtectedResourceV2Args:
     def __init__(__self__, *,
                  cluster_ext_id: pulumi.Input[_builtins.str],
                  ext_id: pulumi.Input[_builtins.str],
-                 restore_time: Optional[pulumi.Input[_builtins.str]] = None):
+                 restore_time: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a RestoreProtectedResourceV2 resource.
 
@@ -63,7 +63,7 @@ class RestoreProtectedResourceV2Args:
 
     @_builtins.property
     @pulumi.getter(name="restoreTime")
-    def restore_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restore_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
 
@@ -73,16 +73,16 @@ class RestoreProtectedResourceV2Args:
         return pulumi.get(self, "restore_time")
 
     @restore_time.setter
-    def restore_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restore_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restore_time", value)
 
 
 @pulumi.input_type
 class _RestoreProtectedResourceV2State:
     def __init__(__self__, *,
-                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 restore_time: Optional[pulumi.Input[_builtins.str]] = None):
+                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 restore_time: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RestoreProtectedResourceV2 resources.
 
@@ -102,31 +102,31 @@ class _RestoreProtectedResourceV2State:
 
     @_builtins.property
     @pulumi.getter(name="clusterExtId")
-    def cluster_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) The external identifier of the cluster on which the entity has valid restorable time ranges. The restored entity will be created on the same cluster.
         """
         return pulumi.get(self, "cluster_ext_id")
 
     @cluster_ext_id.setter
-    def cluster_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="restoreTime")
-    def restore_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restore_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
 
@@ -136,7 +136,7 @@ class _RestoreProtectedResourceV2State:
         return pulumi.get(self, "restore_time")
 
     @restore_time.setter
-    def restore_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restore_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restore_time", value)
 
 
@@ -146,9 +146,9 @@ class RestoreProtectedResourceV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 restore_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 restore_time: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Restore the specified protected resource from its state at the given timestamp on the given cluster. This is only relevant if the entity is protected in a minutely schedule at the given timestamp.
@@ -248,9 +248,9 @@ class RestoreProtectedResourceV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 restore_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 restore_time: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -277,9 +277,9 @@ class RestoreProtectedResourceV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            restore_time: Optional[pulumi.Input[_builtins.str]] = None) -> 'RestoreProtectedResourceV2':
+            cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            restore_time: pulumi.Input[Optional[_builtins.str]] = None) -> 'RestoreProtectedResourceV2':
         """
         Get an existing RestoreProtectedResourceV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

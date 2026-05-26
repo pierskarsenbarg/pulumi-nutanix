@@ -29,7 +29,7 @@ type SelfServiceAppRestore struct {
 	RestoreActionName pulumi.StringOutput `pulumi:"restoreActionName"`
 	// - (Required) The UUID of the snapshot to which the application will be restored.
 	//
-	// Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
+	// Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
 	SnapshotUuid pulumi.StringOutput `pulumi:"snapshotUuid"`
 	// - (Computed) This will be set after the restore action has been processed.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -79,7 +79,7 @@ type selfServiceAppRestoreState struct {
 	RestoreActionName *string `pulumi:"restoreActionName"`
 	// - (Required) The UUID of the snapshot to which the application will be restored.
 	//
-	// Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
+	// Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
 	SnapshotUuid *string `pulumi:"snapshotUuid"`
 	// - (Computed) This will be set after the restore action has been processed.
 	State *string `pulumi:"state"`
@@ -94,7 +94,7 @@ type SelfServiceAppRestoreState struct {
 	RestoreActionName pulumi.StringPtrInput
 	// - (Required) The UUID of the snapshot to which the application will be restored.
 	//
-	// Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
+	// Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
 	SnapshotUuid pulumi.StringPtrInput
 	// - (Computed) This will be set after the restore action has been processed.
 	State pulumi.StringPtrInput
@@ -113,7 +113,7 @@ type selfServiceAppRestoreArgs struct {
 	RestoreActionName string `pulumi:"restoreActionName"`
 	// - (Required) The UUID of the snapshot to which the application will be restored.
 	//
-	// Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
+	// Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
 	SnapshotUuid string `pulumi:"snapshotUuid"`
 }
 
@@ -127,7 +127,7 @@ type SelfServiceAppRestoreArgs struct {
 	RestoreActionName pulumi.StringInput
 	// - (Required) The UUID of the snapshot to which the application will be restored.
 	//
-	// Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
+	// Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
 	SnapshotUuid pulumi.StringInput
 }
 
@@ -235,7 +235,7 @@ func (o SelfServiceAppRestoreOutput) RestoreActionName() pulumi.StringOutput {
 
 // - (Required) The UUID of the snapshot to which the application will be restored.
 //
-// Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
+// Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
 func (o SelfServiceAppRestoreOutput) SnapshotUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v *SelfServiceAppRestore) pulumi.StringOutput { return v.SnapshotUuid }).(pulumi.StringOutput)
 }

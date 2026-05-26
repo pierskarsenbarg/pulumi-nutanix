@@ -133,27 +133,27 @@ export interface RecoveryPointRestoreV2State {
     /**
      * -(Required) External identifier of the cluster.
      */
-    clusterExtId?: pulumi.Input<string>;
+    clusterExtId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) The external identifier that can be used to retrieve the recovery point using its URL.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * - List of external identifiers of the created(restored) VMs.
      */
-    vmExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    vmExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * -(Optional) List of specifications to restore a specific VM recovery point(s) that are a part of the top-level recovery point. A specific VM recovery point can be selected for restore by specifying its external identifier along with override specification (if any).
      */
-    vmRecoveryPointRestoreOverrides?: pulumi.Input<pulumi.Input<inputs.RecoveryPointRestoreV2VmRecoveryPointRestoreOverride>[]>;
+    vmRecoveryPointRestoreOverrides?: pulumi.Input<pulumi.Input<inputs.RecoveryPointRestoreV2VmRecoveryPointRestoreOverride>[] | undefined>;
     /**
      * - List of external identifiers of the created(restored) volume groups.
      */
-    volumeGroupExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    volumeGroupExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * -(Optional) List of specifications to restore a specific volume group recovery point(s) that are a part of the top-level recovery point. A specific volume group recovery point can be selected for restore by specifying its external identifier along with override specification (if any).
      */
-    volumeGroupRecoveryPointRestoreOverrides?: pulumi.Input<pulumi.Input<inputs.RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverride>[]>;
+    volumeGroupRecoveryPointRestoreOverrides?: pulumi.Input<pulumi.Input<inputs.RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverride>[] | undefined>;
 }
 
 /**
@@ -171,9 +171,9 @@ export interface RecoveryPointRestoreV2Args {
     /**
      * -(Optional) List of specifications to restore a specific VM recovery point(s) that are a part of the top-level recovery point. A specific VM recovery point can be selected for restore by specifying its external identifier along with override specification (if any).
      */
-    vmRecoveryPointRestoreOverrides?: pulumi.Input<pulumi.Input<inputs.RecoveryPointRestoreV2VmRecoveryPointRestoreOverride>[]>;
+    vmRecoveryPointRestoreOverrides?: pulumi.Input<pulumi.Input<inputs.RecoveryPointRestoreV2VmRecoveryPointRestoreOverride>[] | undefined>;
     /**
      * -(Optional) List of specifications to restore a specific volume group recovery point(s) that are a part of the top-level recovery point. A specific volume group recovery point can be selected for restore by specifying its external identifier along with override specification (if any).
      */
-    volumeGroupRecoveryPointRestoreOverrides?: pulumi.Input<pulumi.Input<inputs.RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverride>[]>;
+    volumeGroupRecoveryPointRestoreOverrides?: pulumi.Input<pulumi.Input<inputs.RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverride>[] | undefined>;
 }

@@ -336,11 +336,11 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Lifecycle Behavior
     /// 
-    /// &gt; Important: Updates to &lt;span pulumi-lang-nodejs="`guestCustomization`" pulumi-lang-dotnet="`GuestCustomization`" pulumi-lang-go="`guestCustomization`" pulumi-lang-python="`guest_customization`" pulumi-lang-yaml="`guestCustomization`" pulumi-lang-java="`guestCustomization`"&gt;`guestCustomization`&lt;/span&gt; are treated as create-time only changes and will force the VM to be replaced.
+    /// &gt; Important: Updates to &lt;span pulumi-lang-nodejs="`guestCustomization`" pulumi-lang-dotnet="`GuestCustomization`" pulumi-lang-go="`guestCustomization`" pulumi-lang-python="`guest_customization`" pulumi-lang-yaml="`guestCustomization`" pulumi-lang-java="`guestCustomization`" pulumi-lang-hcl="`guest_customization`"&gt;`guestCustomization`&lt;/span&gt; are treated as create-time only changes and will force the VM to be replaced.
     /// 
     /// Guest customization settings such as `config.cloud_init` and `config.sysprep` are consumed during the initial boot of the virtual machine and are not re-applied on later updates.
     /// 
-    /// As a result, changing the &lt;span pulumi-lang-nodejs="`guestCustomization`" pulumi-lang-dotnet="`GuestCustomization`" pulumi-lang-go="`guestCustomization`" pulumi-lang-python="`guest_customization`" pulumi-lang-yaml="`guestCustomization`" pulumi-lang-java="`guestCustomization`"&gt;`guestCustomization`&lt;/span&gt; block causes Terraform to destroy and recreate the &lt;span pulumi-lang-nodejs="`nutanix.VirtualMachineV2`" pulumi-lang-dotnet="`nutanix.VirtualMachineV2`" pulumi-lang-go="`VirtualMachineV2`" pulumi-lang-python="`VirtualMachineV2`" pulumi-lang-yaml="`nutanix.VirtualMachineV2`" pulumi-lang-java="`nutanix.VirtualMachineV2`"&gt;`nutanix.VirtualMachineV2`&lt;/span&gt; resource instead of performing an in-place update.
+    /// As a result, changing the &lt;span pulumi-lang-nodejs="`guestCustomization`" pulumi-lang-dotnet="`GuestCustomization`" pulumi-lang-go="`guestCustomization`" pulumi-lang-python="`guest_customization`" pulumi-lang-yaml="`guestCustomization`" pulumi-lang-java="`guestCustomization`" pulumi-lang-hcl="`guest_customization`"&gt;`guestCustomization`&lt;/span&gt; block causes Terraform to destroy and recreate the &lt;span pulumi-lang-nodejs="`nutanix.VirtualMachineV2`" pulumi-lang-dotnet="`nutanix.VirtualMachineV2`" pulumi-lang-go="`VirtualMachineV2`" pulumi-lang-python="`VirtualMachineV2`" pulumi-lang-yaml="`nutanix.VirtualMachineV2`" pulumi-lang-java="`nutanix.VirtualMachineV2`" pulumi-lang-hcl="`nutanix_virtual_machine_v2`"&gt;`nutanix.VirtualMachineV2`&lt;/span&gt; resource instead of performing an in-place update.
     /// 
     /// This behavior applies to both:
     /// 

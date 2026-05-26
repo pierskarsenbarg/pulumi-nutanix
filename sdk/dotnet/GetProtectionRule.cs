@@ -187,6 +187,42 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getprotectionrule" "test" {
+        ///   protection_rule_id = nutanix_protectionrule.protection_rule_test.id
+        /// }
+        /// 
+        /// resource "nutanix_protectionrule" "protection_rule_test" {
+        ///   name        = "test"
+        ///   description = "test"
+        ///   ordered_availability_zone_lists {
+        ///     availability_zone_url = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd"
+        ///   }
+        ///   availability_zone_connectivity_lists {
+        ///     snapshot_schedule_lists {
+        ///       recovery_point_objective_secs = 3600
+        ///       snapshot_type                 = "CRASH_CONSISTENT"
+        ///       local_snapshot_retention_policy = {
+        ///         num_snapshots = 1
+        ///       }
+        ///     }
+        ///   }
+        ///   category_filter = {
+        ///     params = [{
+        ///       "name"   = "Environment"
+        ///       "values" = ["Dev"]
+        ///     }]
+        ///   }
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -449,6 +485,42 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}, nil)
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getprotectionrule" "test" {
+        ///   protection_rule_id = nutanix_protectionrule.protection_rule_test.id
+        /// }
+        /// 
+        /// resource "nutanix_protectionrule" "protection_rule_test" {
+        ///   name        = "test"
+        ///   description = "test"
+        ///   ordered_availability_zone_lists {
+        ///     availability_zone_url = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd"
+        ///   }
+        ///   availability_zone_connectivity_lists {
+        ///     snapshot_schedule_lists {
+        ///       recovery_point_objective_secs = 3600
+        ///       snapshot_type                 = "CRASH_CONSISTENT"
+        ///       local_snapshot_retention_policy = {
+        ///         num_snapshots = 1
+        ///       }
+        ///     }
+        ///   }
+        ///   category_filter = {
+        ///     params = [{
+        ///       "name"   = "Environment"
+        ///       "values" = ["Dev"]
+        ///     }]
+        ///   }
         /// }
         /// ```
         /// ```java
@@ -715,6 +787,42 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getprotectionrule" "test" {
+        ///   protection_rule_id = nutanix_protectionrule.protection_rule_test.id
+        /// }
+        /// 
+        /// resource "nutanix_protectionrule" "protection_rule_test" {
+        ///   name        = "test"
+        ///   description = "test"
+        ///   ordered_availability_zone_lists {
+        ///     availability_zone_url = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd"
+        ///   }
+        ///   availability_zone_connectivity_lists {
+        ///     snapshot_schedule_lists {
+        ///       recovery_point_objective_secs = 3600
+        ///       snapshot_type                 = "CRASH_CONSISTENT"
+        ///       local_snapshot_retention_policy = {
+        ///         num_snapshots = 1
+        ///       }
+        ///     }
+        ///   }
+        ///   category_filter = {
+        ///     params = [{
+        ///       "name"   = "Environment"
+        ///       "values" = ["Dev"]
+        ///     }]
+        ///   }
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -817,7 +925,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt; of the protection rule.
+        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`"&gt;`id`&lt;/span&gt; of the protection rule.
         /// </summary>
         [Input("protectionRuleId")]
         public string? ProtectionRuleId { get; set; }
@@ -842,7 +950,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt; of the protection rule.
+        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`"&gt;`id`&lt;/span&gt; of the protection rule.
         /// </summary>
         [Input("protectionRuleId")]
         public Input<string>? ProtectionRuleId { get; set; }

@@ -67,6 +67,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getuserv2" "get-user" {
+        ///   ext_id = "d3a3232a-9055-4740-b54f-b21a33524565"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -109,7 +122,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following arguments are supported:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: -(Required) External Identifier of the User.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: -(Required) External Identifier of the User.
         /// </summary>
         public static Task<GetUserV2Result> InvokeAsync(GetUserV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserV2Result>("nutanix:index/getUserV2:getUserV2", args ?? new GetUserV2Args(), options.WithDefaults());
@@ -169,6 +182,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getuserv2" "get-user" {
+        ///   ext_id = "d3a3232a-9055-4740-b54f-b21a33524565"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -211,7 +237,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following arguments are supported:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: -(Required) External Identifier of the User.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: -(Required) External Identifier of the User.
         /// </summary>
         public static Output<GetUserV2Result> Invoke(GetUserV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserV2Result>("nutanix:index/getUserV2:getUserV2", args ?? new GetUserV2InvokeArgs(), options.WithDefaults());
@@ -271,6 +297,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getuserv2" "get-user" {
+        ///   ext_id = "d3a3232a-9055-4740-b54f-b21a33524565"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -313,7 +352,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following arguments are supported:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: -(Required) External Identifier of the User.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: -(Required) External Identifier of the User.
         /// </summary>
         public static Output<GetUserV2Result> Invoke(GetUserV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserV2Result>("nutanix:index/getUserV2:getUserV2", args ?? new GetUserV2InvokeArgs(), options.WithDefaults());

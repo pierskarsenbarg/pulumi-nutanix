@@ -22,21 +22,21 @@ __all__ = ['VolumeGroupV2Args', 'VolumeGroupV2']
 class VolumeGroupV2Args:
     def __init__(__self__, *,
                  cluster_reference: pulumi.Input[_builtins.str],
-                 attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2DiskArgs']]]] = None,
-                 enabled_authentications: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_hidden: Optional[pulumi.Input[_builtins.bool]] = None,
-                 iscsi_features: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2IscsiFeatureArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 sharing_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 should_load_balance_vm_attachments: Optional[pulumi.Input[_builtins.bool]] = None,
-                 storage_features: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureArgs']]]] = None,
-                 target_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 usage_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2DiskArgs']]]] = None,
+                 enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_hidden: pulumi.Input[Optional[_builtins.bool]] = None,
+                 iscsi_features: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2IscsiFeatureArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 sharing_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_load_balance_vm_attachments: pulumi.Input[Optional[_builtins.bool]] = None,
+                 storage_features: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureArgs']]]] = None,
+                 target_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 usage_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a VolumeGroupV2 resource.
 
@@ -109,7 +109,7 @@ class VolumeGroupV2Args:
 
     @_builtins.property
     @pulumi.getter(name="attachmentType")
-    def attachment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attachment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) The field indicates whether a VG has a VM or an external attachment associated with it. Valid values are :
         - EXTERNAL : Volume Group has an external iSCSI or NVMf attachment.
@@ -119,96 +119,96 @@ class VolumeGroupV2Args:
         return pulumi.get(self, "attachment_type")
 
     @attachment_type.setter
-    def attachment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attachment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attachment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Service/user who created this Volume Group.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Volume Group description. This is an optional field.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def disks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2DiskArgs']]]]:
+    def disks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2DiskArgs']]]]:
         """
         -(Optional) A list of Volume Disks to be attached to the Volume Group.
         """
         return pulumi.get(self, "disks")
 
     @disks.setter
-    def disks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2DiskArgs']]]]):
+    def disks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2DiskArgs']]]]):
         pulumi.set(self, "disks", value)
 
     @_builtins.property
     @pulumi.getter(name="enabledAuthentications")
-    def enabled_authentications(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enabled_authentications(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
         """
         return pulumi.get(self, "enabled_authentications")
 
     @enabled_authentications.setter
-    def enabled_authentications(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enabled_authentications(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enabled_authentications", value)
 
     @_builtins.property
     @pulumi.getter(name="isHidden")
-    def is_hidden(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hidden(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         -(Optional) Indicates whether the Volume Group is meant to be hidden or not.
         """
         return pulumi.get(self, "is_hidden")
 
     @is_hidden.setter
-    def is_hidden(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hidden(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hidden", value)
 
     @_builtins.property
     @pulumi.getter(name="iscsiFeatures")
-    def iscsi_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2IscsiFeatureArgs']]]]:
+    def iscsi_features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2IscsiFeatureArgs']]]]:
         """
         -(Optional) iSCSI specific settings for the Volume Group.
         """
         return pulumi.get(self, "iscsi_features")
 
     @iscsi_features.setter
-    def iscsi_features(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2IscsiFeatureArgs']]]]):
+    def iscsi_features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2IscsiFeatureArgs']]]]):
         pulumi.set(self, "iscsi_features", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Volume Group name. This is an optional field.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Type of protocol to be used for Volume Group. Valid values are :
         - NOT_ASSIGNED : Volume Group does not use any protocol.
@@ -218,102 +218,102 @@ class VolumeGroupV2Args:
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="sharingStatus")
-    def sharing_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sharing_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
         """
         return pulumi.get(self, "sharing_status")
 
     @sharing_status.setter
-    def sharing_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sharing_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sharing_status", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldLoadBalanceVmAttachments")
-    def should_load_balance_vm_attachments(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_load_balance_vm_attachments(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         -(Optional) Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
         """
         return pulumi.get(self, "should_load_balance_vm_attachments")
 
     @should_load_balance_vm_attachments.setter
-    def should_load_balance_vm_attachments(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_load_balance_vm_attachments(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_load_balance_vm_attachments", value)
 
     @_builtins.property
     @pulumi.getter(name="storageFeatures")
-    def storage_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureArgs']]]]:
+    def storage_features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureArgs']]]]:
         """
         -(Optional) Storage optimization features which must be enabled on the Volume Group.
         """
         return pulumi.get(self, "storage_features")
 
     @storage_features.setter
-    def storage_features(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureArgs']]]]):
+    def storage_features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureArgs']]]]):
         pulumi.set(self, "storage_features", value)
 
     @_builtins.property
     @pulumi.getter(name="targetName")
-    def target_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Name of the external client target that will be visible and accessible to the client.
         """
         return pulumi.get(self, "target_name")
 
     @target_name.setter
-    def target_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_name", value)
 
     @_builtins.property
     @pulumi.getter(name="targetPrefix")
-    def target_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The specifications contain the target prefix for external clients as the value. This is an optional field.
         """
         return pulumi.get(self, "target_prefix")
 
     @target_prefix.setter
-    def target_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="usageType")
-    def usage_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def usage_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
         """
         return pulumi.get(self, "usage_type")
 
     @usage_type.setter
-    def usage_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def usage_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "usage_type", value)
 
 
 @pulumi.input_type
 class _VolumeGroupV2State:
     def __init__(__self__, *,
-                 attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2DiskArgs']]]] = None,
-                 enabled_authentications: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_hidden: Optional[pulumi.Input[_builtins.bool]] = None,
-                 iscsi_features: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2IscsiFeatureArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 sharing_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 should_load_balance_vm_attachments: Optional[pulumi.Input[_builtins.bool]] = None,
-                 storage_features: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureArgs']]]] = None,
-                 target_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 usage_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2DiskArgs']]]] = None,
+                 enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_hidden: pulumi.Input[Optional[_builtins.bool]] = None,
+                 iscsi_features: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2IscsiFeatureArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 sharing_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_load_balance_vm_attachments: pulumi.Input[Optional[_builtins.bool]] = None,
+                 storage_features: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureArgs']]]] = None,
+                 target_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 usage_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VolumeGroupV2 resources.
 
@@ -378,7 +378,7 @@ class _VolumeGroupV2State:
 
     @_builtins.property
     @pulumi.getter(name="attachmentType")
-    def attachment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attachment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) The field indicates whether a VG has a VM or an external attachment associated with it. Valid values are :
         - EXTERNAL : Volume Group has an external iSCSI or NVMf attachment.
@@ -388,120 +388,120 @@ class _VolumeGroupV2State:
         return pulumi.get(self, "attachment_type")
 
     @attachment_type.setter
-    def attachment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attachment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attachment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterReference")
-    def cluster_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) The UUID of the cluster that will host the Volume Group.
         """
         return pulumi.get(self, "cluster_reference")
 
     @cluster_reference.setter
-    def cluster_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Service/user who created this Volume Group.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Volume Group description. This is an optional field.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def disks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2DiskArgs']]]]:
+    def disks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2DiskArgs']]]]:
         """
         -(Optional) A list of Volume Disks to be attached to the Volume Group.
         """
         return pulumi.get(self, "disks")
 
     @disks.setter
-    def disks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2DiskArgs']]]]):
+    def disks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2DiskArgs']]]]):
         pulumi.set(self, "disks", value)
 
     @_builtins.property
     @pulumi.getter(name="enabledAuthentications")
-    def enabled_authentications(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enabled_authentications(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
         """
         return pulumi.get(self, "enabled_authentications")
 
     @enabled_authentications.setter
-    def enabled_authentications(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enabled_authentications(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enabled_authentications", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) A globally unique identifier of an instance that is suitable for external consumption.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isHidden")
-    def is_hidden(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hidden(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         -(Optional) Indicates whether the Volume Group is meant to be hidden or not.
         """
         return pulumi.get(self, "is_hidden")
 
     @is_hidden.setter
-    def is_hidden(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hidden(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hidden", value)
 
     @_builtins.property
     @pulumi.getter(name="iscsiFeatures")
-    def iscsi_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2IscsiFeatureArgs']]]]:
+    def iscsi_features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2IscsiFeatureArgs']]]]:
         """
         -(Optional) iSCSI specific settings for the Volume Group.
         """
         return pulumi.get(self, "iscsi_features")
 
     @iscsi_features.setter
-    def iscsi_features(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2IscsiFeatureArgs']]]]):
+    def iscsi_features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2IscsiFeatureArgs']]]]):
         pulumi.set(self, "iscsi_features", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Volume Group name. This is an optional field.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Type of protocol to be used for Volume Group. Valid values are :
         - NOT_ASSIGNED : Volume Group does not use any protocol.
@@ -511,79 +511,79 @@ class _VolumeGroupV2State:
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="sharingStatus")
-    def sharing_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sharing_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
         """
         return pulumi.get(self, "sharing_status")
 
     @sharing_status.setter
-    def sharing_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sharing_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sharing_status", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldLoadBalanceVmAttachments")
-    def should_load_balance_vm_attachments(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_load_balance_vm_attachments(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         -(Optional) Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
         """
         return pulumi.get(self, "should_load_balance_vm_attachments")
 
     @should_load_balance_vm_attachments.setter
-    def should_load_balance_vm_attachments(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_load_balance_vm_attachments(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_load_balance_vm_attachments", value)
 
     @_builtins.property
     @pulumi.getter(name="storageFeatures")
-    def storage_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureArgs']]]]:
+    def storage_features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureArgs']]]]:
         """
         -(Optional) Storage optimization features which must be enabled on the Volume Group.
         """
         return pulumi.get(self, "storage_features")
 
     @storage_features.setter
-    def storage_features(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureArgs']]]]):
+    def storage_features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureArgs']]]]):
         pulumi.set(self, "storage_features", value)
 
     @_builtins.property
     @pulumi.getter(name="targetName")
-    def target_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Name of the external client target that will be visible and accessible to the client.
         """
         return pulumi.get(self, "target_name")
 
     @target_name.setter
-    def target_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_name", value)
 
     @_builtins.property
     @pulumi.getter(name="targetPrefix")
-    def target_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The specifications contain the target prefix for external clients as the value. This is an optional field.
         """
         return pulumi.get(self, "target_prefix")
 
     @target_prefix.setter
-    def target_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="usageType")
-    def usage_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def usage_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
         """
         return pulumi.get(self, "usage_type")
 
     @usage_type.setter
-    def usage_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def usage_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "usage_type", value)
 
 
@@ -593,22 +593,22 @@ class VolumeGroupV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2DiskArgs', 'VolumeGroupV2DiskArgsDict']]]]] = None,
-                 enabled_authentications: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_hidden: Optional[pulumi.Input[_builtins.bool]] = None,
-                 iscsi_features: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 sharing_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 should_load_balance_vm_attachments: Optional[pulumi.Input[_builtins.bool]] = None,
-                 storage_features: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict']]]]] = None,
-                 target_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 usage_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2DiskArgs', 'VolumeGroupV2DiskArgsDict']]]]] = None,
+                 enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_hidden: pulumi.Input[Optional[_builtins.bool]] = None,
+                 iscsi_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 sharing_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_load_balance_vm_attachments: pulumi.Input[Optional[_builtins.bool]] = None,
+                 storage_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict']]]]] = None,
+                 target_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 usage_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to Create a new Volume Group.
@@ -722,22 +722,22 @@ class VolumeGroupV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2DiskArgs', 'VolumeGroupV2DiskArgsDict']]]]] = None,
-                 enabled_authentications: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_hidden: Optional[pulumi.Input[_builtins.bool]] = None,
-                 iscsi_features: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 sharing_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 should_load_balance_vm_attachments: Optional[pulumi.Input[_builtins.bool]] = None,
-                 storage_features: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict']]]]] = None,
-                 target_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 usage_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2DiskArgs', 'VolumeGroupV2DiskArgsDict']]]]] = None,
+                 enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_hidden: pulumi.Input[Optional[_builtins.bool]] = None,
+                 iscsi_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 sharing_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_load_balance_vm_attachments: pulumi.Input[Optional[_builtins.bool]] = None,
+                 storage_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict']]]]] = None,
+                 target_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 usage_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -776,23 +776,23 @@ class VolumeGroupV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_reference: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2DiskArgs', 'VolumeGroupV2DiskArgsDict']]]]] = None,
-            enabled_authentications: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_hidden: Optional[pulumi.Input[_builtins.bool]] = None,
-            iscsi_features: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            sharing_status: Optional[pulumi.Input[_builtins.str]] = None,
-            should_load_balance_vm_attachments: Optional[pulumi.Input[_builtins.bool]] = None,
-            storage_features: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict']]]]] = None,
-            target_name: Optional[pulumi.Input[_builtins.str]] = None,
-            target_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-            usage_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'VolumeGroupV2':
+            attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2DiskArgs', 'VolumeGroupV2DiskArgsDict']]]]] = None,
+            enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_hidden: pulumi.Input[Optional[_builtins.bool]] = None,
+            iscsi_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            sharing_status: pulumi.Input[Optional[_builtins.str]] = None,
+            should_load_balance_vm_attachments: pulumi.Input[Optional[_builtins.bool]] = None,
+            storage_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict']]]]] = None,
+            target_name: pulumi.Input[Optional[_builtins.str]] = None,
+            target_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            usage_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'VolumeGroupV2':
         """
         Get an existing VolumeGroupV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

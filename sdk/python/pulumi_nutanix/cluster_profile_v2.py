@@ -21,17 +21,17 @@ __all__ = ['ClusterProfileV2Args', 'ClusterProfileV2']
 @pulumi.input_type
 class ClusterProfileV2Args:
     def __init__(__self__, *,
-                 allowed_overrides: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dryrun: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name_server_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NameServerIpListArgs']]]] = None,
-                 nfs_subnet_white_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ntp_server_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]]] = None,
-                 pulse_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]]] = None,
-                 rsyslog_server_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListArgs']]]] = None,
-                 smtp_server: Optional[pulumi.Input['ClusterProfileV2SmtpServerArgs']] = None,
-                 snmp_config: Optional[pulumi.Input['ClusterProfileV2SnmpConfigArgs']] = None):
+                 allowed_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NameServerIpListArgs']]]] = None,
+                 nfs_subnet_white_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]]] = None,
+                 pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]]] = None,
+                 rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListArgs']]]] = None,
+                 smtp_server: pulumi.Input[Optional['ClusterProfileV2SmtpServerArgs']] = None,
+                 snmp_config: pulumi.Input[Optional['ClusterProfileV2SnmpConfigArgs']] = None):
         """
         The set of arguments for constructing a ClusterProfileV2 resource.
 
@@ -81,7 +81,7 @@ class ClusterProfileV2Args:
 
     @_builtins.property
     @pulumi.getter(name="allowedOverrides")
-    def allowed_overrides(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_overrides(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Indicates if a configuration of attached clusters can be skipped from monitoring.
 
@@ -98,151 +98,151 @@ class ClusterProfileV2Args:
         return pulumi.get(self, "allowed_overrides")
 
     @allowed_overrides.setter
-    def allowed_overrides(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_overrides(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_overrides", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Detailed description of a cluster profile.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def dryrun(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def dryrun(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "dryrun")
 
     @dryrun.setter
-    def dryrun(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def dryrun(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dryrun", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) Name of the cluster profile.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nameServerIpLists")
-    def name_server_ip_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NameServerIpListArgs']]]]:
+    def name_server_ip_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NameServerIpListArgs']]]]:
         """
         - (Optional) List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
         """
         return pulumi.get(self, "name_server_ip_lists")
 
     @name_server_ip_lists.setter
-    def name_server_ip_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NameServerIpListArgs']]]]):
+    def name_server_ip_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NameServerIpListArgs']]]]):
         pulumi.set(self, "name_server_ip_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="nfsSubnetWhiteLists")
-    def nfs_subnet_white_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nfs_subnet_white_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) NFS subnet allowlist addresses. This is part of the payload for cluster update operation only.
         """
         return pulumi.get(self, "nfs_subnet_white_lists")
 
     @nfs_subnet_white_lists.setter
-    def nfs_subnet_white_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nfs_subnet_white_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nfs_subnet_white_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="ntpServerIpLists")
-    def ntp_server_ip_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]]]:
+    def ntp_server_ip_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]]]:
         """
         - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
         """
         return pulumi.get(self, "ntp_server_ip_lists")
 
     @ntp_server_ip_lists.setter
-    def ntp_server_ip_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]]]):
+    def ntp_server_ip_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]]]):
         pulumi.set(self, "ntp_server_ip_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="pulseStatuses")
-    def pulse_statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]]]:
+    def pulse_statuses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]]]:
         """
         - (Optional) Pulse status for a cluster.
         """
         return pulumi.get(self, "pulse_statuses")
 
     @pulse_statuses.setter
-    def pulse_statuses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]]]):
+    def pulse_statuses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]]]):
         pulumi.set(self, "pulse_statuses", value)
 
     @_builtins.property
     @pulumi.getter(name="rsyslogServerLists")
-    def rsyslog_server_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListArgs']]]]:
+    def rsyslog_server_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListArgs']]]]:
         """
         - (Optional) RSYSLOG Server.
         """
         return pulumi.get(self, "rsyslog_server_lists")
 
     @rsyslog_server_lists.setter
-    def rsyslog_server_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListArgs']]]]):
+    def rsyslog_server_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListArgs']]]]):
         pulumi.set(self, "rsyslog_server_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="smtpServer")
-    def smtp_server(self) -> Optional[pulumi.Input['ClusterProfileV2SmtpServerArgs']]:
+    def smtp_server(self) -> pulumi.Input[Optional['ClusterProfileV2SmtpServerArgs']]:
         """
         - (Optional) SMTP servers on a cluster. This is part of payload for cluster update operation only.
         """
         return pulumi.get(self, "smtp_server")
 
     @smtp_server.setter
-    def smtp_server(self, value: Optional[pulumi.Input['ClusterProfileV2SmtpServerArgs']]):
+    def smtp_server(self, value: pulumi.Input[Optional['ClusterProfileV2SmtpServerArgs']]):
         pulumi.set(self, "smtp_server", value)
 
     @_builtins.property
     @pulumi.getter(name="snmpConfig")
-    def snmp_config(self) -> Optional[pulumi.Input['ClusterProfileV2SnmpConfigArgs']]:
+    def snmp_config(self) -> pulumi.Input[Optional['ClusterProfileV2SnmpConfigArgs']]:
         """
         - (Optional) SNMP information.
         """
         return pulumi.get(self, "snmp_config")
 
     @snmp_config.setter
-    def snmp_config(self, value: Optional[pulumi.Input['ClusterProfileV2SnmpConfigArgs']]):
+    def snmp_config(self, value: pulumi.Input[Optional['ClusterProfileV2SnmpConfigArgs']]):
         pulumi.set(self, "snmp_config", value)
 
 
 @pulumi.input_type
 class _ClusterProfileV2State:
     def __init__(__self__, *,
-                 allowed_overrides: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cluster_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 clusters: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2ClusterArgs']]]] = None,
-                 create_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 drifted_cluster_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 dryrun: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_update_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_updated_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 links: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2LinkArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name_server_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NameServerIpListArgs']]]] = None,
-                 nfs_subnet_white_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ntp_server_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]]] = None,
-                 pulse_statuses: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]]] = None,
-                 rsyslog_server_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListArgs']]]] = None,
-                 smtp_server: Optional[pulumi.Input['ClusterProfileV2SmtpServerArgs']] = None,
-                 snmp_config: Optional[pulumi.Input['ClusterProfileV2SnmpConfigArgs']] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 allowed_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 clusters: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2ClusterArgs']]]] = None,
+                 create_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 drifted_cluster_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2LinkArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NameServerIpListArgs']]]] = None,
+                 nfs_subnet_white_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]]] = None,
+                 pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]]] = None,
+                 rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListArgs']]]] = None,
+                 smtp_server: pulumi.Input[Optional['ClusterProfileV2SmtpServerArgs']] = None,
+                 snmp_config: pulumi.Input[Optional['ClusterProfileV2SnmpConfigArgs']] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ClusterProfileV2 resources.
 
@@ -312,7 +312,7 @@ class _ClusterProfileV2State:
 
     @_builtins.property
     @pulumi.getter(name="allowedOverrides")
-    def allowed_overrides(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_overrides(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Indicates if a configuration of attached clusters can be skipped from monitoring.
 
@@ -329,214 +329,214 @@ class _ClusterProfileV2State:
         return pulumi.get(self, "allowed_overrides")
 
     @allowed_overrides.setter
-    def allowed_overrides(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_overrides(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_overrides", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterCount")
-    def cluster_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cluster_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "cluster_count")
 
     @cluster_count.setter
-    def cluster_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cluster_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cluster_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def clusters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2ClusterArgs']]]]:
+    def clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2ClusterArgs']]]]:
         return pulumi.get(self, "clusters")
 
     @clusters.setter
-    def clusters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2ClusterArgs']]]]):
+    def clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2ClusterArgs']]]]):
         pulumi.set(self, "clusters", value)
 
     @_builtins.property
     @pulumi.getter(name="createTime")
-    def create_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def create_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "create_time")
 
     @create_time.setter
-    def create_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def create_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "create_time", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Detailed description of a cluster profile.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="driftedClusterCount")
-    def drifted_cluster_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def drifted_cluster_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "drifted_cluster_count")
 
     @drifted_cluster_count.setter
-    def drifted_cluster_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def drifted_cluster_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "drifted_cluster_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def dryrun(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def dryrun(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "dryrun")
 
     @dryrun.setter
-    def dryrun(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def dryrun(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dryrun", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdateTime")
-    def last_update_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "last_update_time")
 
     @last_update_time.setter
-    def last_update_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_update_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_update_time", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedBy")
-    def last_updated_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_updated_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "last_updated_by")
 
     @last_updated_by.setter
-    def last_updated_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_updated_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_updated_by", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2LinkArgs']]]]:
+    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2LinkArgs']]]]:
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2LinkArgs']]]]):
+    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) Name of the cluster profile.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nameServerIpLists")
-    def name_server_ip_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NameServerIpListArgs']]]]:
+    def name_server_ip_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NameServerIpListArgs']]]]:
         """
         - (Optional) List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
         """
         return pulumi.get(self, "name_server_ip_lists")
 
     @name_server_ip_lists.setter
-    def name_server_ip_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NameServerIpListArgs']]]]):
+    def name_server_ip_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NameServerIpListArgs']]]]):
         pulumi.set(self, "name_server_ip_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="nfsSubnetWhiteLists")
-    def nfs_subnet_white_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nfs_subnet_white_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) NFS subnet allowlist addresses. This is part of the payload for cluster update operation only.
         """
         return pulumi.get(self, "nfs_subnet_white_lists")
 
     @nfs_subnet_white_lists.setter
-    def nfs_subnet_white_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nfs_subnet_white_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nfs_subnet_white_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="ntpServerIpLists")
-    def ntp_server_ip_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]]]:
+    def ntp_server_ip_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]]]:
         """
         - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
         """
         return pulumi.get(self, "ntp_server_ip_lists")
 
     @ntp_server_ip_lists.setter
-    def ntp_server_ip_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]]]):
+    def ntp_server_ip_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]]]):
         pulumi.set(self, "ntp_server_ip_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="pulseStatuses")
-    def pulse_statuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]]]:
+    def pulse_statuses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]]]:
         """
         - (Optional) Pulse status for a cluster.
         """
         return pulumi.get(self, "pulse_statuses")
 
     @pulse_statuses.setter
-    def pulse_statuses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]]]):
+    def pulse_statuses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]]]):
         pulumi.set(self, "pulse_statuses", value)
 
     @_builtins.property
     @pulumi.getter(name="rsyslogServerLists")
-    def rsyslog_server_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListArgs']]]]:
+    def rsyslog_server_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListArgs']]]]:
         """
         - (Optional) RSYSLOG Server.
         """
         return pulumi.get(self, "rsyslog_server_lists")
 
     @rsyslog_server_lists.setter
-    def rsyslog_server_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListArgs']]]]):
+    def rsyslog_server_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListArgs']]]]):
         pulumi.set(self, "rsyslog_server_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="smtpServer")
-    def smtp_server(self) -> Optional[pulumi.Input['ClusterProfileV2SmtpServerArgs']]:
+    def smtp_server(self) -> pulumi.Input[Optional['ClusterProfileV2SmtpServerArgs']]:
         """
         - (Optional) SMTP servers on a cluster. This is part of payload for cluster update operation only.
         """
         return pulumi.get(self, "smtp_server")
 
     @smtp_server.setter
-    def smtp_server(self, value: Optional[pulumi.Input['ClusterProfileV2SmtpServerArgs']]):
+    def smtp_server(self, value: pulumi.Input[Optional['ClusterProfileV2SmtpServerArgs']]):
         pulumi.set(self, "smtp_server", value)
 
     @_builtins.property
     @pulumi.getter(name="snmpConfig")
-    def snmp_config(self) -> Optional[pulumi.Input['ClusterProfileV2SnmpConfigArgs']]:
+    def snmp_config(self) -> pulumi.Input[Optional['ClusterProfileV2SnmpConfigArgs']]:
         """
         - (Optional) SNMP information.
         """
         return pulumi.get(self, "snmp_config")
 
     @snmp_config.setter
-    def snmp_config(self, value: Optional[pulumi.Input['ClusterProfileV2SnmpConfigArgs']]):
+    def snmp_config(self, value: pulumi.Input[Optional['ClusterProfileV2SnmpConfigArgs']]):
         pulumi.set(self, "snmp_config", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
 
@@ -546,17 +546,17 @@ class ClusterProfileV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_overrides: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dryrun: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name_server_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict']]]]] = None,
-                 nfs_subnet_white_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ntp_server_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict']]]]] = None,
-                 pulse_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict']]]]] = None,
-                 rsyslog_server_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict']]]]] = None,
-                 smtp_server: Optional[pulumi.Input[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict']]] = None,
-                 snmp_config: Optional[pulumi.Input[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict']]] = None,
+                 allowed_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict']]]]] = None,
+                 nfs_subnet_white_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict']]]]] = None,
+                 pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict']]]]] = None,
+                 rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict']]]]] = None,
+                 smtp_server: pulumi.Input[Optional[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict']]] = None,
+                 snmp_config: pulumi.Input[Optional[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict']]] = None,
                  __props__=None):
         """
         ## Example Usage
@@ -838,17 +838,17 @@ class ClusterProfileV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_overrides: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dryrun: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name_server_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict']]]]] = None,
-                 nfs_subnet_white_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ntp_server_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict']]]]] = None,
-                 pulse_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict']]]]] = None,
-                 rsyslog_server_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict']]]]] = None,
-                 smtp_server: Optional[pulumi.Input[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict']]] = None,
-                 snmp_config: Optional[pulumi.Input[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict']]] = None,
+                 allowed_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict']]]]] = None,
+                 nfs_subnet_white_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict']]]]] = None,
+                 pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict']]]]] = None,
+                 rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict']]]]] = None,
+                 smtp_server: pulumi.Input[Optional[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict']]] = None,
+                 snmp_config: pulumi.Input[Optional[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -889,27 +889,27 @@ class ClusterProfileV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allowed_overrides: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            cluster_count: Optional[pulumi.Input[_builtins.int]] = None,
-            clusters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2ClusterArgs', 'ClusterProfileV2ClusterArgsDict']]]]] = None,
-            create_time: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            drifted_cluster_count: Optional[pulumi.Input[_builtins.int]] = None,
-            dryrun: Optional[pulumi.Input[_builtins.bool]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            last_update_time: Optional[pulumi.Input[_builtins.str]] = None,
-            last_updated_by: Optional[pulumi.Input[_builtins.str]] = None,
-            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2LinkArgs', 'ClusterProfileV2LinkArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            name_server_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict']]]]] = None,
-            nfs_subnet_white_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ntp_server_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict']]]]] = None,
-            pulse_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict']]]]] = None,
-            rsyslog_server_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict']]]]] = None,
-            smtp_server: Optional[pulumi.Input[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict']]] = None,
-            snmp_config: Optional[pulumi.Input[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict']]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ClusterProfileV2':
+            allowed_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cluster_count: pulumi.Input[Optional[_builtins.int]] = None,
+            clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2ClusterArgs', 'ClusterProfileV2ClusterArgsDict']]]]] = None,
+            create_time: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            drifted_cluster_count: pulumi.Input[Optional[_builtins.int]] = None,
+            dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+            last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2LinkArgs', 'ClusterProfileV2LinkArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict']]]]] = None,
+            nfs_subnet_white_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict']]]]] = None,
+            pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict']]]]] = None,
+            rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict']]]]] = None,
+            smtp_server: pulumi.Input[Optional[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict']]] = None,
+            snmp_config: pulumi.Input[Optional[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict']]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ClusterProfileV2':
         """
         Get an existing ClusterProfileV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

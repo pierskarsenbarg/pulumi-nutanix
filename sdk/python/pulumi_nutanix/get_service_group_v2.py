@@ -216,7 +216,7 @@ def get_service_group_v2(ext_id: Optional[_builtins.str] = None,
         tcp_services=pulumi.get(__ret__, 'tcp_services'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         udp_services=pulumi.get(__ret__, 'udp_services'))
-def get_service_group_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_service_group_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceGroupV2Result]:
     """
     Get an service Group by ExtID

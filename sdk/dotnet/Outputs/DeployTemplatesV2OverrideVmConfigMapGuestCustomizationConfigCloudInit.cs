@@ -29,7 +29,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string? DatasourceType;
         /// <summary>
-        /// The contents of the&lt;span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "&gt; metaData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+        /// The contents of the&lt;span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "&gt; metaData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
         /// </summary>
         public readonly string? Metadata;
 

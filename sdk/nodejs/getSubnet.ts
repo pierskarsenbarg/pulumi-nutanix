@@ -176,17 +176,17 @@ export interface GetSubnetOutputArgs {
     /**
      * - Additional filters to narrow down list of subnets.
      */
-    additionalFilters?: pulumi.Input<pulumi.Input<inputs.GetSubnetAdditionalFilterArgs>[]>;
+    additionalFilters?: pulumi.Input<pulumi.Input<inputs.GetSubnetAdditionalFilterArgs>[] | undefined>;
     /**
      * The API Version.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetSubnetCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetSubnetCategoryArgs>[] | undefined>;
     /**
      * - (Optional) The ID for the subnet.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The name for the subnet
      */
-    subnetName?: pulumi.Input<string>;
+    subnetName?: pulumi.Input<string | undefined>;
 }

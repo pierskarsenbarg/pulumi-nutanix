@@ -191,55 +191,55 @@ export interface VmHostAffinityPolicyV2State {
     /**
      * The timestamp when the policy was created.
      */
-    createTime?: pulumi.Input<string>;
+    createTime?: pulumi.Input<string | undefined>;
     /**
      * Information about the entity that created the policy.
      */
-    createdBy?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    createdBy?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A description of the VM-Host Affinity policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The external identifier of the policy.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * List of host category external IDs that define where the VMs can be placed. Hosts with these categories will be used for VM placement.
      */
-    hostCategories?: pulumi.Input<pulumi.Input<string>[]>;
+    hostCategories?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Information about the entity that last updated the policy.
      */
-    lastUpdatedBy?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    lastUpdatedBy?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name of the VM-Host Affinity policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Number of VMs which are compliant with the VM-host affinity policy.
      */
-    numCompliantVms?: pulumi.Input<number>;
+    numCompliantVms?: pulumi.Input<number | undefined>;
     /**
      * Number of hosts associated with the VM-host affinity policy.
      */
-    numHosts?: pulumi.Input<number>;
+    numHosts?: pulumi.Input<number | undefined>;
     /**
      * Number of VMs which are not compliant with the VM-host affinity policy.
      */
-    numNonCompliantVms?: pulumi.Input<number>;
+    numNonCompliantVms?: pulumi.Input<number | undefined>;
     /**
      * Number of VMs associated with the VM-host affinity policy.
      */
-    numVms?: pulumi.Input<number>;
+    numVms?: pulumi.Input<number | undefined>;
     /**
      * The timestamp when the policy was last updated.
      */
-    updateTime?: pulumi.Input<string>;
+    updateTime?: pulumi.Input<string | undefined>;
     /**
      * List of VM category external IDs that this policy applies to. VMs with these categories will be subject to the affinity placement rules.
      */
-    vmCategories?: pulumi.Input<pulumi.Input<string>[]>;
+    vmCategories?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -249,7 +249,7 @@ export interface VmHostAffinityPolicyV2Args {
     /**
      * A description of the VM-Host Affinity policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * List of host category external IDs that define where the VMs can be placed. Hosts with these categories will be used for VM placement.
      */
@@ -257,7 +257,7 @@ export interface VmHostAffinityPolicyV2Args {
     /**
      * The name of the VM-Host Affinity policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * List of VM category external IDs that this policy applies to. VMs with these categories will be subject to the affinity placement rules.
      */

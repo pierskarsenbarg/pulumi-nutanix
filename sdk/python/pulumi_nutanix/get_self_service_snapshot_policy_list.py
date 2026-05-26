@@ -145,10 +145,10 @@ def get_self_service_snapshot_policy_list(bp_name: Optional[_builtins.str] = Non
         length=pulumi.get(__ret__, 'length'),
         offset=pulumi.get(__ret__, 'offset'),
         policy_lists=pulumi.get(__ret__, 'policy_lists'))
-def get_self_service_snapshot_policy_list_output(bp_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 bp_uuid: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 length: Optional[pulumi.Input[_builtins.int]] = None,
-                                                 offset: Optional[pulumi.Input[_builtins.int]] = None,
+def get_self_service_snapshot_policy_list_output(bp_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 bp_uuid: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 length: pulumi.Input[Optional[_builtins.int]] = None,
+                                                 offset: pulumi.Input[Optional[_builtins.int]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSelfServiceSnapshotPolicyListResult]:
     """
     Describes snapshot policies present in a blueprint. Environment containing snapshot policy must be added in blueprint for this data source to work.

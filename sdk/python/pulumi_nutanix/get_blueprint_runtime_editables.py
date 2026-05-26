@@ -117,8 +117,8 @@ def get_blueprint_runtime_editables(bp_name: Optional[_builtins.str] = None,
         bp_uuid=pulumi.get(__ret__, 'bp_uuid'),
         id=pulumi.get(__ret__, 'id'),
         runtime_editables=pulumi.get(__ret__, 'runtime_editables'))
-def get_blueprint_runtime_editables_output(bp_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           bp_uuid: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_blueprint_runtime_editables_output(bp_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           bp_uuid: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBlueprintRuntimeEditablesResult]:
     """
     Describes runtime editables that are present in a blueprint.

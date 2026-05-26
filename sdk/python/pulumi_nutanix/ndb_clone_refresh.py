@@ -20,9 +20,9 @@ __all__ = ['NdbCloneRefreshArgs', 'NdbCloneRefresh']
 class NdbCloneRefreshArgs:
     def __init__(__self__, *,
                  clone_id: pulumi.Input[_builtins.str],
-                 snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_pitr_timestamp: Optional[pulumi.Input[_builtins.str]] = None):
+                 snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_pitr_timestamp: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbCloneRefresh resource.
 
@@ -54,19 +54,19 @@ class NdbCloneRefreshArgs:
 
     @_builtins.property
     @pulumi.getter(name="snapshotId")
-    def snapshot_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def snapshot_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         snapshot id where clone has to be refreshed
         """
         return pulumi.get(self, "snapshot_id")
 
     @snapshot_id.setter
-    def snapshot_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def snapshot_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "snapshot_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         timezone. Default is Asia/Calcutta. 
 
@@ -75,26 +75,26 @@ class NdbCloneRefreshArgs:
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
     @_builtins.property
     @pulumi.getter(name="userPitrTimestamp")
-    def user_pitr_timestamp(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_pitr_timestamp(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "user_pitr_timestamp")
 
     @user_pitr_timestamp.setter
-    def user_pitr_timestamp(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_pitr_timestamp(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_pitr_timestamp", value)
 
 
 @pulumi.input_type
 class _NdbCloneRefreshState:
     def __init__(__self__, *,
-                 clone_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_pitr_timestamp: Optional[pulumi.Input[_builtins.str]] = None):
+                 clone_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_pitr_timestamp: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbCloneRefresh resources.
 
@@ -115,31 +115,31 @@ class _NdbCloneRefreshState:
 
     @_builtins.property
     @pulumi.getter(name="cloneId")
-    def clone_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def clone_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         clone id
         """
         return pulumi.get(self, "clone_id")
 
     @clone_id.setter
-    def clone_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def clone_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "clone_id", value)
 
     @_builtins.property
     @pulumi.getter(name="snapshotId")
-    def snapshot_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def snapshot_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         snapshot id where clone has to be refreshed
         """
         return pulumi.get(self, "snapshot_id")
 
     @snapshot_id.setter
-    def snapshot_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def snapshot_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "snapshot_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         timezone. Default is Asia/Calcutta. 
 
@@ -148,16 +148,16 @@ class _NdbCloneRefreshState:
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
     @_builtins.property
     @pulumi.getter(name="userPitrTimestamp")
-    def user_pitr_timestamp(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_pitr_timestamp(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "user_pitr_timestamp")
 
     @user_pitr_timestamp.setter
-    def user_pitr_timestamp(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_pitr_timestamp(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_pitr_timestamp", value)
 
 
@@ -167,10 +167,10 @@ class NdbCloneRefresh(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 clone_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_pitr_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
+                 clone_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_pitr_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to perform the refresh clone of database based on the input parameters.
@@ -269,10 +269,10 @@ class NdbCloneRefresh(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 clone_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_pitr_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
+                 clone_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_pitr_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -298,10 +298,10 @@ class NdbCloneRefresh(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            clone_id: Optional[pulumi.Input[_builtins.str]] = None,
-            snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
-            timezone: Optional[pulumi.Input[_builtins.str]] = None,
-            user_pitr_timestamp: Optional[pulumi.Input[_builtins.str]] = None) -> 'NdbCloneRefresh':
+            clone_id: pulumi.Input[Optional[_builtins.str]] = None,
+            snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+            timezone: pulumi.Input[Optional[_builtins.str]] = None,
+            user_pitr_timestamp: pulumi.Input[Optional[_builtins.str]] = None) -> 'NdbCloneRefresh':
         """
         Get an existing NdbCloneRefresh resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

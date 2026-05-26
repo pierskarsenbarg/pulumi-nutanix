@@ -34,7 +34,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         }
 
         /// <summary>
-        /// - (Optional) The size of the subnet from the&lt;span pulumi-lang-nodejs=" podIpv4Cidr " pulumi-lang-dotnet=" PodIpv4Cidr " pulumi-lang-go=" podIpv4Cidr " pulumi-lang-python=" pod_ipv4_cidr " pulumi-lang-yaml=" podIpv4Cidr " pulumi-lang-java=" podIpv4Cidr "&gt; podIpv4Cidr &lt;/span&gt;assigned to each host. A value of 24 would allow up to 255 pods per node.
+        /// - (Optional) The size of the subnet from the&lt;span pulumi-lang-nodejs=" podIpv4Cidr " pulumi-lang-dotnet=" PodIpv4Cidr " pulumi-lang-go=" podIpv4Cidr " pulumi-lang-python=" pod_ipv4_cidr " pulumi-lang-yaml=" podIpv4Cidr " pulumi-lang-java=" podIpv4Cidr " pulumi-lang-hcl=" pod_ipv4_cidr "&gt; podIpv4Cidr &lt;/span&gt;assigned to each host. A value of 24 would allow up to 255 pods per node.
         /// </summary>
         [Input("nodeCidrMaskSize")]
         public Input<int>? NodeCidrMaskSize { get; set; }

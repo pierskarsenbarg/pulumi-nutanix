@@ -710,9 +710,9 @@ def get_cluster(categories: Optional[Sequence[Union['GetClusterCategoryArgs', 'G
         state=pulumi.get(__ret__, 'state'),
         supported_information_verbosity=pulumi.get(__ret__, 'supported_information_verbosity'),
         timezone=pulumi.get(__ret__, 'timezone'))
-def get_cluster_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetClusterCategoryArgs', 'GetClusterCategoryArgsDict']]]]] = None,
-                       cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_cluster_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetClusterCategoryArgs', 'GetClusterCategoryArgsDict']]]]] = None,
+                       cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterResult]:
     """
     Describes Clusters

@@ -139,22 +139,22 @@ export interface VmCdromInsertEjectV2State {
     /**
      * Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * Storage provided by Nutanix ADSF
      */
-    backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfo>[]>;
-    cdromExtId?: pulumi.Input<string>;
-    diskAddresses?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2DiskAddress>[]>;
+    backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfo>[] | undefined>;
+    cdromExtId?: pulumi.Input<string | undefined>;
+    diskAddresses?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2DiskAddress>[] | undefined>;
     /**
      * The globally unique identifier of a CD-ROM. It should be of type UUID.
      */
-    extId?: pulumi.Input<string>;
-    isoType?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
+    isoType?: pulumi.Input<string | undefined>;
     /**
      * The globally unique identifier of a VM. It should be of type UUID
      */
-    vmExtId?: pulumi.Input<string>;
+    vmExtId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -164,11 +164,11 @@ export interface VmCdromInsertEjectV2Args {
     /**
      * Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * Storage provided by Nutanix ADSF
      */
-    backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfo>[]>;
+    backingInfos?: pulumi.Input<pulumi.Input<inputs.VmCdromInsertEjectV2BackingInfo>[] | undefined>;
     /**
      * The globally unique identifier of a CD-ROM. It should be of type UUID.
      */

@@ -127,7 +127,7 @@ def get_pbr(pbr_uuid: Optional[_builtins.str] = None,
         pbr_uuid=pulumi.get(__ret__, 'pbr_uuid'),
         specs=pulumi.get(__ret__, 'specs'),
         statuses=pulumi.get(__ret__, 'statuses'))
-def get_pbr_output(pbr_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pbr_output(pbr_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPbrResult]:
     """
     Provides a datasource to retrieve PBR with<span pulumi-lang-nodejs=" pbrUuid " pulumi-lang-dotnet=" PbrUuid " pulumi-lang-go=" pbrUuid " pulumi-lang-python=" pbr_uuid " pulumi-lang-yaml=" pbrUuid " pulumi-lang-java=" pbrUuid " pulumi-lang-hcl=" pbr_uuid "> pbrUuid </span>.

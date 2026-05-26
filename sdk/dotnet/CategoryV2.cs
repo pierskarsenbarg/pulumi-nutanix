@@ -43,7 +43,7 @@ namespace PiersKarsenbarg.Nutanix
     /// `
     /// 
     /// Note:
-    /// We have two resources separately for category key (nutanix_category_key) and value (nutanix_category_key). Using v4 API, &lt;span pulumi-lang-nodejs="`nutanix.CategoryV2`" pulumi-lang-dotnet="`nutanix.CategoryV2`" pulumi-lang-go="`CategoryV2`" pulumi-lang-python="`CategoryV2`" pulumi-lang-yaml="`nutanix.CategoryV2`" pulumi-lang-java="`nutanix.CategoryV2`"&gt;`nutanix.CategoryV2`&lt;/span&gt; represents category key value pair as one entity.
+    /// We have two resources separately for category key (nutanix_category_key) and value (nutanix_category_key). Using v4 API, &lt;span pulumi-lang-nodejs="`nutanix.CategoryV2`" pulumi-lang-dotnet="`nutanix.CategoryV2`" pulumi-lang-go="`CategoryV2`" pulumi-lang-python="`CategoryV2`" pulumi-lang-yaml="`nutanix.CategoryV2`" pulumi-lang-java="`nutanix.CategoryV2`" pulumi-lang-hcl="`nutanix_category_v2`"&gt;`nutanix.CategoryV2`&lt;/span&gt; represents category key value pair as one entity.
     /// 
     /// Please use datasources (nutanix_categories_v2) to fetch uuids (ext_id) of all category key valye pairs to import them.
     /// 

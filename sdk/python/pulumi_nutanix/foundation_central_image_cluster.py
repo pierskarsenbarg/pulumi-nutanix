@@ -21,23 +21,23 @@ __all__ = ['FoundationCentralImageClusterArgs', 'FoundationCentralImageCluster']
 @pulumi.input_type
 class FoundationCentralImageClusterArgs:
     def __init__(__self__, *,
-                 aos_package_sha256sum: Optional[pulumi.Input[_builtins.str]] = None,
-                 aos_package_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_external_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 cluster_status: Optional[pulumi.Input['FoundationCentralImageClusterClusterStatusArgs']] = None,
-                 common_network_settings: Optional[pulumi.Input['FoundationCentralImageClusterCommonNetworkSettingsArgs']] = None,
-                 fc_api_key_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_iso_details: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs']] = None,
-                 hypervisor_isos: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsosArgs']] = None,
-                 image_cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_lists: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterNodeListArgs']]]] = None,
-                 redundancy_factor: Optional[pulumi.Input[_builtins.int]] = None,
-                 server_configuration_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 skip_cluster_creation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 storage_node_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None):
+                 aos_package_sha256sum: pulumi.Input[Optional[_builtins.str]] = None,
+                 aos_package_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_external_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 cluster_status: pulumi.Input[Optional['FoundationCentralImageClusterClusterStatusArgs']] = None,
+                 common_network_settings: pulumi.Input[Optional['FoundationCentralImageClusterCommonNetworkSettingsArgs']] = None,
+                 fc_api_key_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_iso_details: pulumi.Input[Optional['FoundationCentralImageClusterHypervisorIsoDetailsArgs']] = None,
+                 hypervisor_isos: pulumi.Input[Optional['FoundationCentralImageClusterHypervisorIsosArgs']] = None,
+                 image_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input['FoundationCentralImageClusterNodeListArgs']]]] = None,
+                 redundancy_factor: pulumi.Input[Optional[_builtins.int]] = None,
+                 server_configuration_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 skip_cluster_creation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 storage_node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a FoundationCentralImageCluster resource.
 
@@ -99,154 +99,154 @@ class FoundationCentralImageClusterArgs:
 
     @_builtins.property
     @pulumi.getter(name="aosPackageSha256sum")
-    def aos_package_sha256sum(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def aos_package_sha256sum(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sha256sum of AOS package.
         """
         return pulumi.get(self, "aos_package_sha256sum")
 
     @aos_package_sha256sum.setter
-    def aos_package_sha256sum(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def aos_package_sha256sum(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "aos_package_sha256sum", value)
 
     @_builtins.property
     @pulumi.getter(name="aosPackageUrl")
-    def aos_package_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def aos_package_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URL to download AOS package. Required only if imaging is needed.
         """
         return pulumi.get(self, "aos_package_url")
 
     @aos_package_url.setter
-    def aos_package_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def aos_package_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "aos_package_url", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterExternalIp")
-    def cluster_external_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_external_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         External management ip of the cluster.
         """
         return pulumi.get(self, "cluster_external_ip")
 
     @cluster_external_ip.setter
-    def cluster_external_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_external_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_external_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterName")
-    def cluster_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the cluster.
         """
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
-    def cluster_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_name", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterSize")
-    def cluster_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cluster_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of nodes in the cluster.
         """
         return pulumi.get(self, "cluster_size")
 
     @cluster_size.setter
-    def cluster_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cluster_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cluster_size", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterStatus")
-    def cluster_status(self) -> Optional[pulumi.Input['FoundationCentralImageClusterClusterStatusArgs']]:
+    def cluster_status(self) -> pulumi.Input[Optional['FoundationCentralImageClusterClusterStatusArgs']]:
         return pulumi.get(self, "cluster_status")
 
     @cluster_status.setter
-    def cluster_status(self, value: Optional[pulumi.Input['FoundationCentralImageClusterClusterStatusArgs']]):
+    def cluster_status(self, value: pulumi.Input[Optional['FoundationCentralImageClusterClusterStatusArgs']]):
         pulumi.set(self, "cluster_status", value)
 
     @_builtins.property
     @pulumi.getter(name="commonNetworkSettings")
-    def common_network_settings(self) -> Optional[pulumi.Input['FoundationCentralImageClusterCommonNetworkSettingsArgs']]:
+    def common_network_settings(self) -> pulumi.Input[Optional['FoundationCentralImageClusterCommonNetworkSettingsArgs']]:
         """
         Common network settings across the nodes in the cluster.
         """
         return pulumi.get(self, "common_network_settings")
 
     @common_network_settings.setter
-    def common_network_settings(self, value: Optional[pulumi.Input['FoundationCentralImageClusterCommonNetworkSettingsArgs']]):
+    def common_network_settings(self, value: pulumi.Input[Optional['FoundationCentralImageClusterCommonNetworkSettingsArgs']]):
         pulumi.set(self, "common_network_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="fcApiKeyUuid")
-    def fc_api_key_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fc_api_key_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
         """
         return pulumi.get(self, "fc_api_key_uuid")
 
     @fc_api_key_uuid.setter
-    def fc_api_key_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fc_api_key_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fc_api_key_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorIsoDetails")
-    def hypervisor_iso_details(self) -> Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs']]:
+    def hypervisor_iso_details(self) -> pulumi.Input[Optional['FoundationCentralImageClusterHypervisorIsoDetailsArgs']]:
         """
         Details of the hypervisor iso. (Deprecated)
         """
         return pulumi.get(self, "hypervisor_iso_details")
 
     @hypervisor_iso_details.setter
-    def hypervisor_iso_details(self, value: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs']]):
+    def hypervisor_iso_details(self, value: pulumi.Input[Optional['FoundationCentralImageClusterHypervisorIsoDetailsArgs']]):
         pulumi.set(self, "hypervisor_iso_details", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorIsos")
-    def hypervisor_isos(self) -> Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsosArgs']]:
+    def hypervisor_isos(self) -> pulumi.Input[Optional['FoundationCentralImageClusterHypervisorIsosArgs']]:
         """
         Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
         """
         return pulumi.get(self, "hypervisor_isos")
 
     @hypervisor_isos.setter
-    def hypervisor_isos(self, value: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsosArgs']]):
+    def hypervisor_isos(self, value: pulumi.Input[Optional['FoundationCentralImageClusterHypervisorIsosArgs']]):
         pulumi.set(self, "hypervisor_isos", value)
 
     @_builtins.property
     @pulumi.getter(name="imageClusterUuid")
-    def image_cluster_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image_cluster_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "image_cluster_uuid")
 
     @image_cluster_uuid.setter
-    def image_cluster_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image_cluster_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image_cluster_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeLists")
-    def node_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterNodeListArgs']]]]:
+    def node_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FoundationCentralImageClusterNodeListArgs']]]]:
         return pulumi.get(self, "node_lists")
 
     @node_lists.setter
-    def node_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterNodeListArgs']]]]):
+    def node_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FoundationCentralImageClusterNodeListArgs']]]]):
         pulumi.set(self, "node_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="redundancyFactor")
-    def redundancy_factor(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def redundancy_factor(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Redundancy factor of the cluster.
         """
         return pulumi.get(self, "redundancy_factor")
 
     @redundancy_factor.setter
-    def redundancy_factor(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def redundancy_factor(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "redundancy_factor", value)
 
     @_builtins.property
     @pulumi.getter(name="serverConfigurationData")
-    def server_configuration_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def server_configuration_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
         ```
@@ -260,72 +260,72 @@ class FoundationCentralImageClusterArgs:
         return pulumi.get(self, "server_configuration_data")
 
     @server_configuration_data.setter
-    def server_configuration_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def server_configuration_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "server_configuration_data", value)
 
     @_builtins.property
     @pulumi.getter(name="skipClusterCreation")
-    def skip_cluster_creation(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def skip_cluster_creation(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "skip_cluster_creation")
 
     @skip_cluster_creation.setter
-    def skip_cluster_creation(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def skip_cluster_creation(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "skip_cluster_creation", value)
 
     @_builtins.property
     @pulumi.getter(name="storageNodeCount")
-    def storage_node_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def storage_node_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
         """
         return pulumi.get(self, "storage_node_count")
 
     @storage_node_count.setter
-    def storage_node_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def storage_node_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "storage_node_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Timezone to be set on the cluster.
         """
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
 
 @pulumi.input_type
 class _FoundationCentralImageClusterState:
     def __init__(__self__, *,
-                 aos_package_sha256sum: Optional[pulumi.Input[_builtins.str]] = None,
-                 aos_package_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 archived: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cluster_external_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 cluster_status: Optional[pulumi.Input['FoundationCentralImageClusterClusterStatusArgs']] = None,
-                 common_network_settings: Optional[pulumi.Input['FoundationCentralImageClusterCommonNetworkSettingsArgs']] = None,
-                 created_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 destroyed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 fc_api_key_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 foundation_init_configs: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterFoundationInitConfigArgs']]]] = None,
-                 foundation_init_node_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_iso_details: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs']] = None,
-                 hypervisor_isos: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsosArgs']] = None,
-                 image_cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 imaged_cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 imaged_node_uuid_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 node_lists: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterNodeListArgs']]]] = None,
-                 redundancy_factor: Optional[pulumi.Input[_builtins.int]] = None,
-                 server_configuration_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 skip_cluster_creation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 storage_node_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 workflow_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 aos_package_sha256sum: pulumi.Input[Optional[_builtins.str]] = None,
+                 aos_package_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 archived: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cluster_external_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 cluster_status: pulumi.Input[Optional['FoundationCentralImageClusterClusterStatusArgs']] = None,
+                 common_network_settings: pulumi.Input[Optional['FoundationCentralImageClusterCommonNetworkSettingsArgs']] = None,
+                 created_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 destroyed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 fc_api_key_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 foundation_init_configs: pulumi.Input[Optional[Sequence[pulumi.Input['FoundationCentralImageClusterFoundationInitConfigArgs']]]] = None,
+                 foundation_init_node_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_iso_details: pulumi.Input[Optional['FoundationCentralImageClusterHypervisorIsoDetailsArgs']] = None,
+                 hypervisor_isos: pulumi.Input[Optional['FoundationCentralImageClusterHypervisorIsosArgs']] = None,
+                 image_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 imaged_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 imaged_node_uuid_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input['FoundationCentralImageClusterNodeListArgs']]]] = None,
+                 redundancy_factor: pulumi.Input[Optional[_builtins.int]] = None,
+                 server_configuration_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 skip_cluster_creation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 storage_node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 workflow_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FoundationCentralImageCluster resources.
 
@@ -406,229 +406,229 @@ class _FoundationCentralImageClusterState:
 
     @_builtins.property
     @pulumi.getter(name="aosPackageSha256sum")
-    def aos_package_sha256sum(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def aos_package_sha256sum(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Sha256sum of AOS package.
         """
         return pulumi.get(self, "aos_package_sha256sum")
 
     @aos_package_sha256sum.setter
-    def aos_package_sha256sum(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def aos_package_sha256sum(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "aos_package_sha256sum", value)
 
     @_builtins.property
     @pulumi.getter(name="aosPackageUrl")
-    def aos_package_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def aos_package_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URL to download AOS package. Required only if imaging is needed.
         """
         return pulumi.get(self, "aos_package_url")
 
     @aos_package_url.setter
-    def aos_package_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def aos_package_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "aos_package_url", value)
 
     @_builtins.property
     @pulumi.getter
-    def archived(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def archived(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "archived")
 
     @archived.setter
-    def archived(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def archived(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "archived", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterExternalIp")
-    def cluster_external_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_external_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         External management ip of the cluster.
         """
         return pulumi.get(self, "cluster_external_ip")
 
     @cluster_external_ip.setter
-    def cluster_external_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_external_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_external_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterName")
-    def cluster_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the cluster.
         """
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
-    def cluster_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_name", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterSize")
-    def cluster_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cluster_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of nodes in the cluster.
         """
         return pulumi.get(self, "cluster_size")
 
     @cluster_size.setter
-    def cluster_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cluster_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cluster_size", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterStatus")
-    def cluster_status(self) -> Optional[pulumi.Input['FoundationCentralImageClusterClusterStatusArgs']]:
+    def cluster_status(self) -> pulumi.Input[Optional['FoundationCentralImageClusterClusterStatusArgs']]:
         return pulumi.get(self, "cluster_status")
 
     @cluster_status.setter
-    def cluster_status(self, value: Optional[pulumi.Input['FoundationCentralImageClusterClusterStatusArgs']]):
+    def cluster_status(self, value: pulumi.Input[Optional['FoundationCentralImageClusterClusterStatusArgs']]):
         pulumi.set(self, "cluster_status", value)
 
     @_builtins.property
     @pulumi.getter(name="commonNetworkSettings")
-    def common_network_settings(self) -> Optional[pulumi.Input['FoundationCentralImageClusterCommonNetworkSettingsArgs']]:
+    def common_network_settings(self) -> pulumi.Input[Optional['FoundationCentralImageClusterCommonNetworkSettingsArgs']]:
         """
         Common network settings across the nodes in the cluster.
         """
         return pulumi.get(self, "common_network_settings")
 
     @common_network_settings.setter
-    def common_network_settings(self, value: Optional[pulumi.Input['FoundationCentralImageClusterCommonNetworkSettingsArgs']]):
+    def common_network_settings(self, value: pulumi.Input[Optional['FoundationCentralImageClusterCommonNetworkSettingsArgs']]):
         pulumi.set(self, "common_network_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="createdTimestamp")
-    def created_timestamp(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_timestamp(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "created_timestamp")
 
     @created_timestamp.setter
-    def created_timestamp(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_timestamp(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_timestamp", value)
 
     @_builtins.property
     @pulumi.getter(name="currentTime")
-    def current_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "current_time")
 
     @current_time.setter
-    def current_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def destroyed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def destroyed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "destroyed")
 
     @destroyed.setter
-    def destroyed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def destroyed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "destroyed", value)
 
     @_builtins.property
     @pulumi.getter(name="fcApiKeyUuid")
-    def fc_api_key_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fc_api_key_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
         """
         return pulumi.get(self, "fc_api_key_uuid")
 
     @fc_api_key_uuid.setter
-    def fc_api_key_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fc_api_key_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fc_api_key_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="foundationInitConfigs")
-    def foundation_init_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterFoundationInitConfigArgs']]]]:
+    def foundation_init_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FoundationCentralImageClusterFoundationInitConfigArgs']]]]:
         return pulumi.get(self, "foundation_init_configs")
 
     @foundation_init_configs.setter
-    def foundation_init_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterFoundationInitConfigArgs']]]]):
+    def foundation_init_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FoundationCentralImageClusterFoundationInitConfigArgs']]]]):
         pulumi.set(self, "foundation_init_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="foundationInitNodeUuid")
-    def foundation_init_node_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def foundation_init_node_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "foundation_init_node_uuid")
 
     @foundation_init_node_uuid.setter
-    def foundation_init_node_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def foundation_init_node_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "foundation_init_node_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorIsoDetails")
-    def hypervisor_iso_details(self) -> Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs']]:
+    def hypervisor_iso_details(self) -> pulumi.Input[Optional['FoundationCentralImageClusterHypervisorIsoDetailsArgs']]:
         """
         Details of the hypervisor iso. (Deprecated)
         """
         return pulumi.get(self, "hypervisor_iso_details")
 
     @hypervisor_iso_details.setter
-    def hypervisor_iso_details(self, value: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs']]):
+    def hypervisor_iso_details(self, value: pulumi.Input[Optional['FoundationCentralImageClusterHypervisorIsoDetailsArgs']]):
         pulumi.set(self, "hypervisor_iso_details", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorIsos")
-    def hypervisor_isos(self) -> Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsosArgs']]:
+    def hypervisor_isos(self) -> pulumi.Input[Optional['FoundationCentralImageClusterHypervisorIsosArgs']]:
         """
         Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
         """
         return pulumi.get(self, "hypervisor_isos")
 
     @hypervisor_isos.setter
-    def hypervisor_isos(self, value: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsosArgs']]):
+    def hypervisor_isos(self, value: pulumi.Input[Optional['FoundationCentralImageClusterHypervisorIsosArgs']]):
         pulumi.set(self, "hypervisor_isos", value)
 
     @_builtins.property
     @pulumi.getter(name="imageClusterUuid")
-    def image_cluster_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image_cluster_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "image_cluster_uuid")
 
     @image_cluster_uuid.setter
-    def image_cluster_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image_cluster_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image_cluster_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="imagedClusterUuid")
-    def imaged_cluster_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def imaged_cluster_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique id of the cluster.
         """
         return pulumi.get(self, "imaged_cluster_uuid")
 
     @imaged_cluster_uuid.setter
-    def imaged_cluster_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def imaged_cluster_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "imaged_cluster_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="imagedNodeUuidLists")
-    def imaged_node_uuid_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def imaged_node_uuid_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "imaged_node_uuid_lists")
 
     @imaged_node_uuid_lists.setter
-    def imaged_node_uuid_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def imaged_node_uuid_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "imaged_node_uuid_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeLists")
-    def node_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterNodeListArgs']]]]:
+    def node_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FoundationCentralImageClusterNodeListArgs']]]]:
         return pulumi.get(self, "node_lists")
 
     @node_lists.setter
-    def node_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterNodeListArgs']]]]):
+    def node_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FoundationCentralImageClusterNodeListArgs']]]]):
         pulumi.set(self, "node_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="redundancyFactor")
-    def redundancy_factor(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def redundancy_factor(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Redundancy factor of the cluster.
         """
         return pulumi.get(self, "redundancy_factor")
 
     @redundancy_factor.setter
-    def redundancy_factor(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def redundancy_factor(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "redundancy_factor", value)
 
     @_builtins.property
     @pulumi.getter(name="serverConfigurationData")
-    def server_configuration_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def server_configuration_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
         ```
@@ -642,49 +642,49 @@ class _FoundationCentralImageClusterState:
         return pulumi.get(self, "server_configuration_data")
 
     @server_configuration_data.setter
-    def server_configuration_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def server_configuration_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "server_configuration_data", value)
 
     @_builtins.property
     @pulumi.getter(name="skipClusterCreation")
-    def skip_cluster_creation(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def skip_cluster_creation(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "skip_cluster_creation")
 
     @skip_cluster_creation.setter
-    def skip_cluster_creation(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def skip_cluster_creation(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "skip_cluster_creation", value)
 
     @_builtins.property
     @pulumi.getter(name="storageNodeCount")
-    def storage_node_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def storage_node_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
         """
         return pulumi.get(self, "storage_node_count")
 
     @storage_node_count.setter
-    def storage_node_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def storage_node_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "storage_node_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Timezone to be set on the cluster.
         """
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
     @_builtins.property
     @pulumi.getter(name="workflowType")
-    def workflow_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def workflow_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "workflow_type")
 
     @workflow_type.setter
-    def workflow_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def workflow_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "workflow_type", value)
 
 
@@ -694,23 +694,23 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 aos_package_sha256sum: Optional[pulumi.Input[_builtins.str]] = None,
-                 aos_package_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_external_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 cluster_status: Optional[pulumi.Input[Union['FoundationCentralImageClusterClusterStatusArgs', 'FoundationCentralImageClusterClusterStatusArgsDict']]] = None,
-                 common_network_settings: Optional[pulumi.Input[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']]] = None,
-                 fc_api_key_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_iso_details: Optional[pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']]] = None,
-                 hypervisor_isos: Optional[pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']]] = None,
-                 image_cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict']]]]] = None,
-                 redundancy_factor: Optional[pulumi.Input[_builtins.int]] = None,
-                 server_configuration_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 skip_cluster_creation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 storage_node_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 aos_package_sha256sum: pulumi.Input[Optional[_builtins.str]] = None,
+                 aos_package_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_external_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 cluster_status: pulumi.Input[Optional[Union['FoundationCentralImageClusterClusterStatusArgs', 'FoundationCentralImageClusterClusterStatusArgsDict']]] = None,
+                 common_network_settings: pulumi.Input[Optional[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']]] = None,
+                 fc_api_key_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_iso_details: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']]] = None,
+                 hypervisor_isos: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']]] = None,
+                 image_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict']]]]] = None,
+                 redundancy_factor: pulumi.Input[Optional[_builtins.int]] = None,
+                 server_configuration_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 skip_cluster_creation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 storage_node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Image Nodes and Create a cluster out of nodes registered with Foundation Central.
@@ -952,23 +952,23 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 aos_package_sha256sum: Optional[pulumi.Input[_builtins.str]] = None,
-                 aos_package_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_external_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 cluster_status: Optional[pulumi.Input[Union['FoundationCentralImageClusterClusterStatusArgs', 'FoundationCentralImageClusterClusterStatusArgsDict']]] = None,
-                 common_network_settings: Optional[pulumi.Input[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']]] = None,
-                 fc_api_key_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_iso_details: Optional[pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']]] = None,
-                 hypervisor_isos: Optional[pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']]] = None,
-                 image_cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict']]]]] = None,
-                 redundancy_factor: Optional[pulumi.Input[_builtins.int]] = None,
-                 server_configuration_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 skip_cluster_creation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 storage_node_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 aos_package_sha256sum: pulumi.Input[Optional[_builtins.str]] = None,
+                 aos_package_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_external_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 cluster_status: pulumi.Input[Optional[Union['FoundationCentralImageClusterClusterStatusArgs', 'FoundationCentralImageClusterClusterStatusArgsDict']]] = None,
+                 common_network_settings: pulumi.Input[Optional[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']]] = None,
+                 fc_api_key_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_iso_details: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']]] = None,
+                 hypervisor_isos: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']]] = None,
+                 image_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict']]]]] = None,
+                 redundancy_factor: pulumi.Input[Optional[_builtins.int]] = None,
+                 server_configuration_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 skip_cluster_creation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 storage_node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1014,32 +1014,32 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            aos_package_sha256sum: Optional[pulumi.Input[_builtins.str]] = None,
-            aos_package_url: Optional[pulumi.Input[_builtins.str]] = None,
-            archived: Optional[pulumi.Input[_builtins.bool]] = None,
-            cluster_external_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_size: Optional[pulumi.Input[_builtins.int]] = None,
-            cluster_status: Optional[pulumi.Input[Union['FoundationCentralImageClusterClusterStatusArgs', 'FoundationCentralImageClusterClusterStatusArgsDict']]] = None,
-            common_network_settings: Optional[pulumi.Input[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']]] = None,
-            created_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
-            current_time: Optional[pulumi.Input[_builtins.str]] = None,
-            destroyed: Optional[pulumi.Input[_builtins.bool]] = None,
-            fc_api_key_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            foundation_init_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationCentralImageClusterFoundationInitConfigArgs', 'FoundationCentralImageClusterFoundationInitConfigArgsDict']]]]] = None,
-            foundation_init_node_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            hypervisor_iso_details: Optional[pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']]] = None,
-            hypervisor_isos: Optional[pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']]] = None,
-            image_cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            imaged_cluster_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            imaged_node_uuid_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            node_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict']]]]] = None,
-            redundancy_factor: Optional[pulumi.Input[_builtins.int]] = None,
-            server_configuration_data: Optional[pulumi.Input[_builtins.str]] = None,
-            skip_cluster_creation: Optional[pulumi.Input[_builtins.bool]] = None,
-            storage_node_count: Optional[pulumi.Input[_builtins.int]] = None,
-            timezone: Optional[pulumi.Input[_builtins.str]] = None,
-            workflow_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'FoundationCentralImageCluster':
+            aos_package_sha256sum: pulumi.Input[Optional[_builtins.str]] = None,
+            aos_package_url: pulumi.Input[Optional[_builtins.str]] = None,
+            archived: pulumi.Input[Optional[_builtins.bool]] = None,
+            cluster_external_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_size: pulumi.Input[Optional[_builtins.int]] = None,
+            cluster_status: pulumi.Input[Optional[Union['FoundationCentralImageClusterClusterStatusArgs', 'FoundationCentralImageClusterClusterStatusArgsDict']]] = None,
+            common_network_settings: pulumi.Input[Optional[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']]] = None,
+            created_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+            current_time: pulumi.Input[Optional[_builtins.str]] = None,
+            destroyed: pulumi.Input[Optional[_builtins.bool]] = None,
+            fc_api_key_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            foundation_init_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationCentralImageClusterFoundationInitConfigArgs', 'FoundationCentralImageClusterFoundationInitConfigArgsDict']]]]] = None,
+            foundation_init_node_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            hypervisor_iso_details: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']]] = None,
+            hypervisor_isos: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']]] = None,
+            image_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            imaged_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            imaged_node_uuid_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict']]]]] = None,
+            redundancy_factor: pulumi.Input[Optional[_builtins.int]] = None,
+            server_configuration_data: pulumi.Input[Optional[_builtins.str]] = None,
+            skip_cluster_creation: pulumi.Input[Optional[_builtins.bool]] = None,
+            storage_node_count: pulumi.Input[Optional[_builtins.int]] = None,
+            timezone: pulumi.Input[Optional[_builtins.str]] = None,
+            workflow_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'FoundationCentralImageCluster':
         """
         Get an existing FoundationCentralImageCluster resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

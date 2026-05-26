@@ -20,7 +20,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<int>? ArchiveWalExpireDays { get; set; }
 
         /// <summary>
-        /// - (Optional) backup policy for instance. Default is &lt;span pulumi-lang-nodejs=""primaryOnly"" pulumi-lang-dotnet=""PrimaryOnly"" pulumi-lang-go=""primaryOnly"" pulumi-lang-python=""primary_only"" pulumi-lang-yaml=""primaryOnly"" pulumi-lang-java=""primaryOnly""&gt;"primaryOnly"&lt;/span&gt;
+        /// - (Optional) backup policy for instance. Default is &lt;span pulumi-lang-nodejs=""primaryOnly"" pulumi-lang-dotnet=""PrimaryOnly"" pulumi-lang-go=""primaryOnly"" pulumi-lang-python=""primary_only"" pulumi-lang-yaml=""primaryOnly"" pulumi-lang-java=""primaryOnly"" pulumi-lang-hcl=""primary_only""&gt;"primaryOnly"&lt;/span&gt;
         /// </summary>
         [Input("backupPolicy")]
         public Input<string>? BackupPolicy { get; set; }

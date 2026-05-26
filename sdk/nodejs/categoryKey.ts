@@ -102,19 +102,19 @@ export interface CategoryKeyState {
     /**
      * (Optional) The version of the API.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) A description for category key.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - (Required) The name for the category key.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * - Specifying whether its a system defined category.
      */
-    systemDefined?: pulumi.Input<boolean>;
+    systemDefined?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -124,9 +124,9 @@ export interface CategoryKeyArgs {
     /**
      * - (Optional) A description for category key.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - (Required) The name for the category key.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

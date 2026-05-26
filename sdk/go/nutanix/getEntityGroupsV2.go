@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Retrieves a list of entity groups. Use this data source when you need to list or filter entity groups rather than fetch a single group by <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span> (use the <span pulumi-lang-nodejs="`nutanix.EntityGroupV2`" pulumi-lang-dotnet="`nutanix.EntityGroupV2`" pulumi-lang-go="`EntityGroupV2`" pulumi-lang-python="`EntityGroupV2`" pulumi-lang-yaml="`nutanix.EntityGroupV2`" pulumi-lang-java="`nutanix.EntityGroupV2`">`nutanix.EntityGroupV2`</span> data source for that).
+// Retrieves a list of entity groups. Use this data source when you need to list or filter entity groups rather than fetch a single group by <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span> (use the <span pulumi-lang-nodejs="`nutanix.EntityGroupV2`" pulumi-lang-dotnet="`nutanix.EntityGroupV2`" pulumi-lang-go="`EntityGroupV2`" pulumi-lang-python="`EntityGroupV2`" pulumi-lang-yaml="`nutanix.EntityGroupV2`" pulumi-lang-java="`nutanix.EntityGroupV2`" pulumi-lang-hcl="`nutanix_entity_group_v2`">`nutanix.EntityGroupV2`</span> data source for that).
 //
 // ## Example Usage
 //

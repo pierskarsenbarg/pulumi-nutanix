@@ -36,7 +36,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string ContainerName;
         /// <summary>
         /// -(Optional) A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby.
-        /// The &lt;span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`"&gt;`expand`&lt;/span&gt; can be applied on the following fields:
+        /// The &lt;span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`" pulumi-lang-hcl="`expand`"&gt;`expand`&lt;/span&gt; can be applied on the following fields:
         /// - clusterProfile
         /// - storageSummary
         /// </summary>

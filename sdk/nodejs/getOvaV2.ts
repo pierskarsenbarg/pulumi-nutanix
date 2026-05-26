@@ -146,7 +146,7 @@ export interface GetOvaV2OutputArgs {
     /**
      * - List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload.
      */
-    clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * -(Required) The external identifier for an OVA.
      */

@@ -293,7 +293,7 @@ type SelfServiceAppPatch struct {
 	// - (Required) The UUID of the application.
 	AppUuid    pulumi.StringOutput                    `pulumi:"appUuid"`
 	Categories SelfServiceAppPatchCategoryArrayOutput `pulumi:"categories"`
-	// - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
+	// - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "> patchName </span>for SINGLE VM)</b>
 	ConfigName pulumi.StringOutput                `pulumi:"configName"`
 	Disks      SelfServiceAppPatchDiskArrayOutput `pulumi:"disks"`
 	Nics       SelfServiceAppPatchNicArrayOutput  `pulumi:"nics"`
@@ -346,7 +346,7 @@ type selfServiceAppPatchState struct {
 	// - (Required) The UUID of the application.
 	AppUuid    *string                       `pulumi:"appUuid"`
 	Categories []SelfServiceAppPatchCategory `pulumi:"categories"`
-	// - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
+	// - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "> patchName </span>for SINGLE VM)</b>
 	ConfigName *string                   `pulumi:"configName"`
 	Disks      []SelfServiceAppPatchDisk `pulumi:"disks"`
 	Nics       []SelfServiceAppPatchNic  `pulumi:"nics"`
@@ -361,7 +361,7 @@ type SelfServiceAppPatchState struct {
 	// - (Required) The UUID of the application.
 	AppUuid    pulumi.StringPtrInput
 	Categories SelfServiceAppPatchCategoryArrayInput
-	// - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
+	// - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "> patchName </span>for SINGLE VM)</b>
 	ConfigName pulumi.StringPtrInput
 	Disks      SelfServiceAppPatchDiskArrayInput
 	Nics       SelfServiceAppPatchNicArrayInput
@@ -380,7 +380,7 @@ type selfServiceAppPatchArgs struct {
 	// - (Required) The UUID of the application.
 	AppUuid    string                        `pulumi:"appUuid"`
 	Categories []SelfServiceAppPatchCategory `pulumi:"categories"`
-	// - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
+	// - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "> patchName </span>for SINGLE VM)</b>
 	ConfigName string                    `pulumi:"configName"`
 	Disks      []SelfServiceAppPatchDisk `pulumi:"disks"`
 	Nics       []SelfServiceAppPatchNic  `pulumi:"nics"`
@@ -396,7 +396,7 @@ type SelfServiceAppPatchArgs struct {
 	// - (Required) The UUID of the application.
 	AppUuid    pulumi.StringInput
 	Categories SelfServiceAppPatchCategoryArrayInput
-	// - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
+	// - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "> patchName </span>for SINGLE VM)</b>
 	ConfigName pulumi.StringInput
 	Disks      SelfServiceAppPatchDiskArrayInput
 	Nics       SelfServiceAppPatchNicArrayInput
@@ -503,7 +503,7 @@ func (o SelfServiceAppPatchOutput) Categories() SelfServiceAppPatchCategoryArray
 	return o.ApplyT(func(v *SelfServiceAppPatch) SelfServiceAppPatchCategoryArrayOutput { return v.Categories }).(SelfServiceAppPatchCategoryArrayOutput)
 }
 
-// - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
+// - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "> patchName </span>for SINGLE VM)</b>
 func (o SelfServiceAppPatchOutput) ConfigName() pulumi.StringOutput {
 	return o.ApplyT(func(v *SelfServiceAppPatch) pulumi.StringOutput { return v.ConfigName }).(pulumi.StringOutput)
 }

@@ -181,47 +181,47 @@ export interface ServiceGroupsV2State {
     /**
      * created by.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * Description of the service group
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * address group uuid.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * Icmp Type Code List.
      */
-    icmpServices?: pulumi.Input<pulumi.Input<inputs.ServiceGroupsV2IcmpService>[]>;
+    icmpServices?: pulumi.Input<pulumi.Input<inputs.ServiceGroupsV2IcmpService>[] | undefined>;
     /**
      * Service Group is system defined or not.
      */
-    isSystemDefined?: pulumi.Input<boolean>;
+    isSystemDefined?: pulumi.Input<boolean | undefined>;
     /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.ServiceGroupsV2Link>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.ServiceGroupsV2Link>[] | undefined>;
     /**
      * Name of the service group
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Reference to policy associated with Address Group.
      */
-    policyReferences?: pulumi.Input<pulumi.Input<string>[]>;
+    policyReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * List of TCP ports in the service.
      */
-    tcpServices?: pulumi.Input<pulumi.Input<inputs.ServiceGroupsV2TcpService>[]>;
+    tcpServices?: pulumi.Input<pulumi.Input<inputs.ServiceGroupsV2TcpService>[] | undefined>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * List of UDP ports in the service.
      */
-    udpServices?: pulumi.Input<pulumi.Input<inputs.ServiceGroupsV2UdpService>[]>;
+    udpServices?: pulumi.Input<pulumi.Input<inputs.ServiceGroupsV2UdpService>[] | undefined>;
 }
 
 /**
@@ -231,21 +231,21 @@ export interface ServiceGroupsV2Args {
     /**
      * Description of the service group
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Icmp Type Code List.
      */
-    icmpServices?: pulumi.Input<pulumi.Input<inputs.ServiceGroupsV2IcmpService>[]>;
+    icmpServices?: pulumi.Input<pulumi.Input<inputs.ServiceGroupsV2IcmpService>[] | undefined>;
     /**
      * Name of the service group
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * List of TCP ports in the service.
      */
-    tcpServices?: pulumi.Input<pulumi.Input<inputs.ServiceGroupsV2TcpService>[]>;
+    tcpServices?: pulumi.Input<pulumi.Input<inputs.ServiceGroupsV2TcpService>[] | undefined>;
     /**
      * List of UDP ports in the service.
      */
-    udpServices?: pulumi.Input<pulumi.Input<inputs.ServiceGroupsV2UdpService>[]>;
+    udpServices?: pulumi.Input<pulumi.Input<inputs.ServiceGroupsV2UdpService>[] | undefined>;
 }

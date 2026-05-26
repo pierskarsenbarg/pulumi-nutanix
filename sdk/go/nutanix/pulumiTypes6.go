@@ -19194,7 +19194,7 @@ type GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRule struct {
 	Description string `pulumi:"description"`
 	// Globally unique identifier of the rule.
 	ExtId string `pulumi:"extId"`
-	// HATEOAS-style links (e.g. <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span>, <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+	// HATEOAS-style links (e.g. <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span>, <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
 	Links []GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleLink `pulumi:"links"`
 	// Rule specification (one of the following blocks).
 	Specs []GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpec `pulumi:"specs"`
@@ -19220,7 +19220,7 @@ type GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// Globally unique identifier of the rule.
 	ExtId pulumi.StringInput `pulumi:"extId"`
-	// HATEOAS-style links (e.g. <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span>, <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+	// HATEOAS-style links (e.g. <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span>, <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
 	Links GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleLinkArrayInput `pulumi:"links"`
 	// Rule specification (one of the following blocks).
 	Specs GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecArrayInput `pulumi:"specs"`
@@ -19291,7 +19291,7 @@ func (o GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleOutput) ExtId() 
 	return o.ApplyT(func(v GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRule) string { return v.ExtId }).(pulumi.StringOutput)
 }
 
-// HATEOAS-style links (e.g. <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span>, <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+// HATEOAS-style links (e.g. <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span>, <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
 func (o GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleOutput) Links() GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleLinkArrayOutput {
 	return o.ApplyT(func(v GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRule) []GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleLink {
 		return v.Links
@@ -19438,11 +19438,11 @@ func (o GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleLinkArrayOutput)
 type GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpec struct {
 	// Application rule (secured groups, src/dest allow, categories, subnets, address/service groups, TCP/UDP/ICMP services, etc.).
 	ApplicationRuleSpecs []GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecApplicationRuleSpec `pulumi:"applicationRuleSpecs"`
-	// Intra-entity group rule (<span pulumi-lang-nodejs="`securedGroupAction`" pulumi-lang-dotnet="`SecuredGroupAction`" pulumi-lang-go="`securedGroupAction`" pulumi-lang-python="`secured_group_action`" pulumi-lang-yaml="`securedGroupAction`" pulumi-lang-java="`securedGroupAction`">`securedGroupAction`</span>, <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`">`securedGroupCategoryReferences`</span>).
+	// Intra-entity group rule (<span pulumi-lang-nodejs="`securedGroupAction`" pulumi-lang-dotnet="`SecuredGroupAction`" pulumi-lang-go="`securedGroupAction`" pulumi-lang-python="`secured_group_action`" pulumi-lang-yaml="`securedGroupAction`" pulumi-lang-java="`securedGroupAction`" pulumi-lang-hcl="`secured_group_action`">`securedGroupAction`</span>, <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span>).
 	IntraEntityGroupRuleSpecs []GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecIntraEntityGroupRuleSpec `pulumi:"intraEntityGroupRuleSpecs"`
-	// Multi-environment isolation rule (<span pulumi-lang-nodejs="`spec`" pulumi-lang-dotnet="`Spec`" pulumi-lang-go="`spec`" pulumi-lang-python="`spec`" pulumi-lang-yaml="`spec`" pulumi-lang-java="`spec`">`spec`</span> → <span pulumi-lang-nodejs="`allToAllIsolationGroup`" pulumi-lang-dotnet="`AllToAllIsolationGroup`" pulumi-lang-go="`allToAllIsolationGroup`" pulumi-lang-python="`all_to_all_isolation_group`" pulumi-lang-yaml="`allToAllIsolationGroup`" pulumi-lang-java="`allToAllIsolationGroup`">`allToAllIsolationGroup`</span> → <span pulumi-lang-nodejs="`isolationGroup`" pulumi-lang-dotnet="`IsolationGroup`" pulumi-lang-go="`isolationGroup`" pulumi-lang-python="`isolation_group`" pulumi-lang-yaml="`isolationGroup`" pulumi-lang-java="`isolationGroup`">`isolationGroup`</span> with <span pulumi-lang-nodejs="`groupCategoryReferences`" pulumi-lang-dotnet="`GroupCategoryReferences`" pulumi-lang-go="`groupCategoryReferences`" pulumi-lang-python="`group_category_references`" pulumi-lang-yaml="`groupCategoryReferences`" pulumi-lang-java="`groupCategoryReferences`">`groupCategoryReferences`</span>).
+	// Multi-environment isolation rule (<span pulumi-lang-nodejs="`spec`" pulumi-lang-dotnet="`Spec`" pulumi-lang-go="`spec`" pulumi-lang-python="`spec`" pulumi-lang-yaml="`spec`" pulumi-lang-java="`spec`" pulumi-lang-hcl="`spec`">`spec`</span> → <span pulumi-lang-nodejs="`allToAllIsolationGroup`" pulumi-lang-dotnet="`AllToAllIsolationGroup`" pulumi-lang-go="`allToAllIsolationGroup`" pulumi-lang-python="`all_to_all_isolation_group`" pulumi-lang-yaml="`allToAllIsolationGroup`" pulumi-lang-java="`allToAllIsolationGroup`" pulumi-lang-hcl="`all_to_all_isolation_group`">`allToAllIsolationGroup`</span> → <span pulumi-lang-nodejs="`isolationGroup`" pulumi-lang-dotnet="`IsolationGroup`" pulumi-lang-go="`isolationGroup`" pulumi-lang-python="`isolation_group`" pulumi-lang-yaml="`isolationGroup`" pulumi-lang-java="`isolationGroup`" pulumi-lang-hcl="`isolation_group`">`isolationGroup`</span> with <span pulumi-lang-nodejs="`groupCategoryReferences`" pulumi-lang-dotnet="`GroupCategoryReferences`" pulumi-lang-go="`groupCategoryReferences`" pulumi-lang-python="`group_category_references`" pulumi-lang-yaml="`groupCategoryReferences`" pulumi-lang-java="`groupCategoryReferences`" pulumi-lang-hcl="`group_category_references`">`groupCategoryReferences`</span>).
 	MultiEnvIsolationRuleSpecs []GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecMultiEnvIsolationRuleSpec `pulumi:"multiEnvIsolationRuleSpecs"`
-	// Two-environment isolation rule (<span pulumi-lang-nodejs="`firstIsolationGroup`" pulumi-lang-dotnet="`FirstIsolationGroup`" pulumi-lang-go="`firstIsolationGroup`" pulumi-lang-python="`first_isolation_group`" pulumi-lang-yaml="`firstIsolationGroup`" pulumi-lang-java="`firstIsolationGroup`">`firstIsolationGroup`</span>, <span pulumi-lang-nodejs="`secondIsolationGroup`" pulumi-lang-dotnet="`SecondIsolationGroup`" pulumi-lang-go="`secondIsolationGroup`" pulumi-lang-python="`second_isolation_group`" pulumi-lang-yaml="`secondIsolationGroup`" pulumi-lang-java="`secondIsolationGroup`">`secondIsolationGroup`</span>).
+	// Two-environment isolation rule (<span pulumi-lang-nodejs="`firstIsolationGroup`" pulumi-lang-dotnet="`FirstIsolationGroup`" pulumi-lang-go="`firstIsolationGroup`" pulumi-lang-python="`first_isolation_group`" pulumi-lang-yaml="`firstIsolationGroup`" pulumi-lang-java="`firstIsolationGroup`" pulumi-lang-hcl="`first_isolation_group`">`firstIsolationGroup`</span>, <span pulumi-lang-nodejs="`secondIsolationGroup`" pulumi-lang-dotnet="`SecondIsolationGroup`" pulumi-lang-go="`secondIsolationGroup`" pulumi-lang-python="`second_isolation_group`" pulumi-lang-yaml="`secondIsolationGroup`" pulumi-lang-java="`secondIsolationGroup`" pulumi-lang-hcl="`second_isolation_group`">`secondIsolationGroup`</span>).
 	TwoEnvIsolationRuleSpecs []GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecTwoEnvIsolationRuleSpec `pulumi:"twoEnvIsolationRuleSpecs"`
 }
 
@@ -19460,11 +19460,11 @@ type GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecInput interface
 type GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecArgs struct {
 	// Application rule (secured groups, src/dest allow, categories, subnets, address/service groups, TCP/UDP/ICMP services, etc.).
 	ApplicationRuleSpecs GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecApplicationRuleSpecArrayInput `pulumi:"applicationRuleSpecs"`
-	// Intra-entity group rule (<span pulumi-lang-nodejs="`securedGroupAction`" pulumi-lang-dotnet="`SecuredGroupAction`" pulumi-lang-go="`securedGroupAction`" pulumi-lang-python="`secured_group_action`" pulumi-lang-yaml="`securedGroupAction`" pulumi-lang-java="`securedGroupAction`">`securedGroupAction`</span>, <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`">`securedGroupCategoryReferences`</span>).
+	// Intra-entity group rule (<span pulumi-lang-nodejs="`securedGroupAction`" pulumi-lang-dotnet="`SecuredGroupAction`" pulumi-lang-go="`securedGroupAction`" pulumi-lang-python="`secured_group_action`" pulumi-lang-yaml="`securedGroupAction`" pulumi-lang-java="`securedGroupAction`" pulumi-lang-hcl="`secured_group_action`">`securedGroupAction`</span>, <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span>).
 	IntraEntityGroupRuleSpecs GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecIntraEntityGroupRuleSpecArrayInput `pulumi:"intraEntityGroupRuleSpecs"`
-	// Multi-environment isolation rule (<span pulumi-lang-nodejs="`spec`" pulumi-lang-dotnet="`Spec`" pulumi-lang-go="`spec`" pulumi-lang-python="`spec`" pulumi-lang-yaml="`spec`" pulumi-lang-java="`spec`">`spec`</span> → <span pulumi-lang-nodejs="`allToAllIsolationGroup`" pulumi-lang-dotnet="`AllToAllIsolationGroup`" pulumi-lang-go="`allToAllIsolationGroup`" pulumi-lang-python="`all_to_all_isolation_group`" pulumi-lang-yaml="`allToAllIsolationGroup`" pulumi-lang-java="`allToAllIsolationGroup`">`allToAllIsolationGroup`</span> → <span pulumi-lang-nodejs="`isolationGroup`" pulumi-lang-dotnet="`IsolationGroup`" pulumi-lang-go="`isolationGroup`" pulumi-lang-python="`isolation_group`" pulumi-lang-yaml="`isolationGroup`" pulumi-lang-java="`isolationGroup`">`isolationGroup`</span> with <span pulumi-lang-nodejs="`groupCategoryReferences`" pulumi-lang-dotnet="`GroupCategoryReferences`" pulumi-lang-go="`groupCategoryReferences`" pulumi-lang-python="`group_category_references`" pulumi-lang-yaml="`groupCategoryReferences`" pulumi-lang-java="`groupCategoryReferences`">`groupCategoryReferences`</span>).
+	// Multi-environment isolation rule (<span pulumi-lang-nodejs="`spec`" pulumi-lang-dotnet="`Spec`" pulumi-lang-go="`spec`" pulumi-lang-python="`spec`" pulumi-lang-yaml="`spec`" pulumi-lang-java="`spec`" pulumi-lang-hcl="`spec`">`spec`</span> → <span pulumi-lang-nodejs="`allToAllIsolationGroup`" pulumi-lang-dotnet="`AllToAllIsolationGroup`" pulumi-lang-go="`allToAllIsolationGroup`" pulumi-lang-python="`all_to_all_isolation_group`" pulumi-lang-yaml="`allToAllIsolationGroup`" pulumi-lang-java="`allToAllIsolationGroup`" pulumi-lang-hcl="`all_to_all_isolation_group`">`allToAllIsolationGroup`</span> → <span pulumi-lang-nodejs="`isolationGroup`" pulumi-lang-dotnet="`IsolationGroup`" pulumi-lang-go="`isolationGroup`" pulumi-lang-python="`isolation_group`" pulumi-lang-yaml="`isolationGroup`" pulumi-lang-java="`isolationGroup`" pulumi-lang-hcl="`isolation_group`">`isolationGroup`</span> with <span pulumi-lang-nodejs="`groupCategoryReferences`" pulumi-lang-dotnet="`GroupCategoryReferences`" pulumi-lang-go="`groupCategoryReferences`" pulumi-lang-python="`group_category_references`" pulumi-lang-yaml="`groupCategoryReferences`" pulumi-lang-java="`groupCategoryReferences`" pulumi-lang-hcl="`group_category_references`">`groupCategoryReferences`</span>).
 	MultiEnvIsolationRuleSpecs GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecMultiEnvIsolationRuleSpecArrayInput `pulumi:"multiEnvIsolationRuleSpecs"`
-	// Two-environment isolation rule (<span pulumi-lang-nodejs="`firstIsolationGroup`" pulumi-lang-dotnet="`FirstIsolationGroup`" pulumi-lang-go="`firstIsolationGroup`" pulumi-lang-python="`first_isolation_group`" pulumi-lang-yaml="`firstIsolationGroup`" pulumi-lang-java="`firstIsolationGroup`">`firstIsolationGroup`</span>, <span pulumi-lang-nodejs="`secondIsolationGroup`" pulumi-lang-dotnet="`SecondIsolationGroup`" pulumi-lang-go="`secondIsolationGroup`" pulumi-lang-python="`second_isolation_group`" pulumi-lang-yaml="`secondIsolationGroup`" pulumi-lang-java="`secondIsolationGroup`">`secondIsolationGroup`</span>).
+	// Two-environment isolation rule (<span pulumi-lang-nodejs="`firstIsolationGroup`" pulumi-lang-dotnet="`FirstIsolationGroup`" pulumi-lang-go="`firstIsolationGroup`" pulumi-lang-python="`first_isolation_group`" pulumi-lang-yaml="`firstIsolationGroup`" pulumi-lang-java="`firstIsolationGroup`" pulumi-lang-hcl="`first_isolation_group`">`firstIsolationGroup`</span>, <span pulumi-lang-nodejs="`secondIsolationGroup`" pulumi-lang-dotnet="`SecondIsolationGroup`" pulumi-lang-go="`secondIsolationGroup`" pulumi-lang-python="`second_isolation_group`" pulumi-lang-yaml="`secondIsolationGroup`" pulumi-lang-java="`secondIsolationGroup`" pulumi-lang-hcl="`second_isolation_group`">`secondIsolationGroup`</span>).
 	TwoEnvIsolationRuleSpecs GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecTwoEnvIsolationRuleSpecArrayInput `pulumi:"twoEnvIsolationRuleSpecs"`
 }
 
@@ -19526,21 +19526,21 @@ func (o GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecOutput) Appl
 	}).(GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecApplicationRuleSpecArrayOutput)
 }
 
-// Intra-entity group rule (<span pulumi-lang-nodejs="`securedGroupAction`" pulumi-lang-dotnet="`SecuredGroupAction`" pulumi-lang-go="`securedGroupAction`" pulumi-lang-python="`secured_group_action`" pulumi-lang-yaml="`securedGroupAction`" pulumi-lang-java="`securedGroupAction`">`securedGroupAction`</span>, <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`">`securedGroupCategoryReferences`</span>).
+// Intra-entity group rule (<span pulumi-lang-nodejs="`securedGroupAction`" pulumi-lang-dotnet="`SecuredGroupAction`" pulumi-lang-go="`securedGroupAction`" pulumi-lang-python="`secured_group_action`" pulumi-lang-yaml="`securedGroupAction`" pulumi-lang-java="`securedGroupAction`" pulumi-lang-hcl="`secured_group_action`">`securedGroupAction`</span>, <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span>).
 func (o GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecOutput) IntraEntityGroupRuleSpecs() GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecIntraEntityGroupRuleSpecArrayOutput {
 	return o.ApplyT(func(v GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpec) []GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecIntraEntityGroupRuleSpec {
 		return v.IntraEntityGroupRuleSpecs
 	}).(GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecIntraEntityGroupRuleSpecArrayOutput)
 }
 
-// Multi-environment isolation rule (<span pulumi-lang-nodejs="`spec`" pulumi-lang-dotnet="`Spec`" pulumi-lang-go="`spec`" pulumi-lang-python="`spec`" pulumi-lang-yaml="`spec`" pulumi-lang-java="`spec`">`spec`</span> → <span pulumi-lang-nodejs="`allToAllIsolationGroup`" pulumi-lang-dotnet="`AllToAllIsolationGroup`" pulumi-lang-go="`allToAllIsolationGroup`" pulumi-lang-python="`all_to_all_isolation_group`" pulumi-lang-yaml="`allToAllIsolationGroup`" pulumi-lang-java="`allToAllIsolationGroup`">`allToAllIsolationGroup`</span> → <span pulumi-lang-nodejs="`isolationGroup`" pulumi-lang-dotnet="`IsolationGroup`" pulumi-lang-go="`isolationGroup`" pulumi-lang-python="`isolation_group`" pulumi-lang-yaml="`isolationGroup`" pulumi-lang-java="`isolationGroup`">`isolationGroup`</span> with <span pulumi-lang-nodejs="`groupCategoryReferences`" pulumi-lang-dotnet="`GroupCategoryReferences`" pulumi-lang-go="`groupCategoryReferences`" pulumi-lang-python="`group_category_references`" pulumi-lang-yaml="`groupCategoryReferences`" pulumi-lang-java="`groupCategoryReferences`">`groupCategoryReferences`</span>).
+// Multi-environment isolation rule (<span pulumi-lang-nodejs="`spec`" pulumi-lang-dotnet="`Spec`" pulumi-lang-go="`spec`" pulumi-lang-python="`spec`" pulumi-lang-yaml="`spec`" pulumi-lang-java="`spec`" pulumi-lang-hcl="`spec`">`spec`</span> → <span pulumi-lang-nodejs="`allToAllIsolationGroup`" pulumi-lang-dotnet="`AllToAllIsolationGroup`" pulumi-lang-go="`allToAllIsolationGroup`" pulumi-lang-python="`all_to_all_isolation_group`" pulumi-lang-yaml="`allToAllIsolationGroup`" pulumi-lang-java="`allToAllIsolationGroup`" pulumi-lang-hcl="`all_to_all_isolation_group`">`allToAllIsolationGroup`</span> → <span pulumi-lang-nodejs="`isolationGroup`" pulumi-lang-dotnet="`IsolationGroup`" pulumi-lang-go="`isolationGroup`" pulumi-lang-python="`isolation_group`" pulumi-lang-yaml="`isolationGroup`" pulumi-lang-java="`isolationGroup`" pulumi-lang-hcl="`isolation_group`">`isolationGroup`</span> with <span pulumi-lang-nodejs="`groupCategoryReferences`" pulumi-lang-dotnet="`GroupCategoryReferences`" pulumi-lang-go="`groupCategoryReferences`" pulumi-lang-python="`group_category_references`" pulumi-lang-yaml="`groupCategoryReferences`" pulumi-lang-java="`groupCategoryReferences`" pulumi-lang-hcl="`group_category_references`">`groupCategoryReferences`</span>).
 func (o GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecOutput) MultiEnvIsolationRuleSpecs() GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecMultiEnvIsolationRuleSpecArrayOutput {
 	return o.ApplyT(func(v GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpec) []GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecMultiEnvIsolationRuleSpec {
 		return v.MultiEnvIsolationRuleSpecs
 	}).(GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecMultiEnvIsolationRuleSpecArrayOutput)
 }
 
-// Two-environment isolation rule (<span pulumi-lang-nodejs="`firstIsolationGroup`" pulumi-lang-dotnet="`FirstIsolationGroup`" pulumi-lang-go="`firstIsolationGroup`" pulumi-lang-python="`first_isolation_group`" pulumi-lang-yaml="`firstIsolationGroup`" pulumi-lang-java="`firstIsolationGroup`">`firstIsolationGroup`</span>, <span pulumi-lang-nodejs="`secondIsolationGroup`" pulumi-lang-dotnet="`SecondIsolationGroup`" pulumi-lang-go="`secondIsolationGroup`" pulumi-lang-python="`second_isolation_group`" pulumi-lang-yaml="`secondIsolationGroup`" pulumi-lang-java="`secondIsolationGroup`">`secondIsolationGroup`</span>).
+// Two-environment isolation rule (<span pulumi-lang-nodejs="`firstIsolationGroup`" pulumi-lang-dotnet="`FirstIsolationGroup`" pulumi-lang-go="`firstIsolationGroup`" pulumi-lang-python="`first_isolation_group`" pulumi-lang-yaml="`firstIsolationGroup`" pulumi-lang-java="`firstIsolationGroup`" pulumi-lang-hcl="`first_isolation_group`">`firstIsolationGroup`</span>, <span pulumi-lang-nodejs="`secondIsolationGroup`" pulumi-lang-dotnet="`SecondIsolationGroup`" pulumi-lang-go="`secondIsolationGroup`" pulumi-lang-python="`second_isolation_group`" pulumi-lang-yaml="`secondIsolationGroup`" pulumi-lang-java="`secondIsolationGroup`" pulumi-lang-hcl="`second_isolation_group`">`secondIsolationGroup`</span>).
 func (o GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecOutput) TwoEnvIsolationRuleSpecs() GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecTwoEnvIsolationRuleSpecArrayOutput {
 	return o.ApplyT(func(v GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpec) []GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecTwoEnvIsolationRuleSpec {
 		return v.TwoEnvIsolationRuleSpecs
@@ -39294,7 +39294,7 @@ type GetOvaV2VmConfigGuestCustomizationConfigCloudInit struct {
 	CloudInitScripts []GetOvaV2VmConfigGuestCustomizationConfigCloudInitCloudInitScript `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType *string `pulumi:"datasourceType"`
-	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 	Metadata string `pulumi:"metadata"`
 }
 
@@ -39314,7 +39314,7 @@ type GetOvaV2VmConfigGuestCustomizationConfigCloudInitArgs struct {
 	CloudInitScripts GetOvaV2VmConfigGuestCustomizationConfigCloudInitCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
-	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 	Metadata pulumi.StringInput `pulumi:"metadata"`
 }
 
@@ -39381,7 +39381,7 @@ func (o GetOvaV2VmConfigGuestCustomizationConfigCloudInitOutput) DatasourceType(
 	return o.ApplyT(func(v GetOvaV2VmConfigGuestCustomizationConfigCloudInit) *string { return v.DatasourceType }).(pulumi.StringPtrOutput)
 }
 
-// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 func (o GetOvaV2VmConfigGuestCustomizationConfigCloudInitOutput) Metadata() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOvaV2VmConfigGuestCustomizationConfigCloudInit) string { return v.Metadata }).(pulumi.StringOutput)
 }
@@ -41097,13 +41097,13 @@ func (o GetOvaV2VmConfigHostArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConf
 type GetOvaV2VmConfigNic struct {
 	// Defines a NIC emulated by the hypervisor
 	//
-	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
 	BackingInfos []GetOvaV2VmConfigNicBackingInfo `pulumi:"backingInfos"`
 	// -(Required) The external identifier for an OVA.
 	ExtId string `pulumi:"extId"`
 	// Network information for a NIC.
 	//
-	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
 	NetworkInfos   []GetOvaV2VmConfigNicNetworkInfo  `pulumi:"networkInfos"`
 	NicBackingInfo GetOvaV2VmConfigNicNicBackingInfo `pulumi:"nicBackingInfo"`
 	NicNetworkInfo GetOvaV2VmConfigNicNicNetworkInfo `pulumi:"nicNetworkInfo"`
@@ -41123,13 +41123,13 @@ type GetOvaV2VmConfigNicInput interface {
 type GetOvaV2VmConfigNicArgs struct {
 	// Defines a NIC emulated by the hypervisor
 	//
-	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
 	BackingInfos GetOvaV2VmConfigNicBackingInfoArrayInput `pulumi:"backingInfos"`
 	// -(Required) The external identifier for an OVA.
 	ExtId pulumi.StringInput `pulumi:"extId"`
 	// Network information for a NIC.
 	//
-	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
 	NetworkInfos   GetOvaV2VmConfigNicNetworkInfoArrayInput `pulumi:"networkInfos"`
 	NicBackingInfo GetOvaV2VmConfigNicNicBackingInfoInput   `pulumi:"nicBackingInfo"`
 	NicNetworkInfo GetOvaV2VmConfigNicNicNetworkInfoInput   `pulumi:"nicNetworkInfo"`
@@ -41188,7 +41188,7 @@ func (o GetOvaV2VmConfigNicOutput) ToGetOvaV2VmConfigNicOutputWithContext(ctx co
 
 // Defines a NIC emulated by the hypervisor
 //
-// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
 func (o GetOvaV2VmConfigNicOutput) BackingInfos() GetOvaV2VmConfigNicBackingInfoArrayOutput {
 	return o.ApplyT(func(v GetOvaV2VmConfigNic) []GetOvaV2VmConfigNicBackingInfo { return v.BackingInfos }).(GetOvaV2VmConfigNicBackingInfoArrayOutput)
 }
@@ -41200,7 +41200,7 @@ func (o GetOvaV2VmConfigNicOutput) ExtId() pulumi.StringOutput {
 
 // Network information for a NIC.
 //
-// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
 func (o GetOvaV2VmConfigNicOutput) NetworkInfos() GetOvaV2VmConfigNicNetworkInfoArrayOutput {
 	return o.ApplyT(func(v GetOvaV2VmConfigNic) []GetOvaV2VmConfigNicNetworkInfo { return v.NetworkInfos }).(GetOvaV2VmConfigNicNetworkInfoArrayOutput)
 }
@@ -41362,7 +41362,7 @@ type GetOvaV2VmConfigNicNetworkInfo struct {
 	Ipv4Configs []GetOvaV2VmConfigNicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
 	// The runtime IP address information of the NIC.
 	Ipv4Infos []GetOvaV2VmConfigNicNetworkInfoIpv4Info `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains []GetOvaV2VmConfigNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.  values are: TAP, EGRESS, INGRESS.
 	NetworkFunctionNicType string `pulumi:"networkFunctionNicType"`
@@ -41370,7 +41370,7 @@ type GetOvaV2VmConfigNicNetworkInfo struct {
 	NicType string `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
 	Subnets []GetOvaV2VmConfigNicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans []int `pulumi:"trunkedVlans"`
@@ -41394,7 +41394,7 @@ type GetOvaV2VmConfigNicNetworkInfoArgs struct {
 	Ipv4Configs GetOvaV2VmConfigNicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
 	// The runtime IP address information of the NIC.
 	Ipv4Infos GetOvaV2VmConfigNicNetworkInfoIpv4InfoArrayInput `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains GetOvaV2VmConfigNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.  values are: TAP, EGRESS, INGRESS.
 	NetworkFunctionNicType pulumi.StringInput `pulumi:"networkFunctionNicType"`
@@ -41402,7 +41402,7 @@ type GetOvaV2VmConfigNicNetworkInfoArgs struct {
 	NicType pulumi.StringInput `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
 	Subnets GetOvaV2VmConfigNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans pulumi.IntArrayInput `pulumi:"trunkedVlans"`
@@ -41473,7 +41473,7 @@ func (o GetOvaV2VmConfigNicNetworkInfoOutput) Ipv4Infos() GetOvaV2VmConfigNicNet
 	return o.ApplyT(func(v GetOvaV2VmConfigNicNetworkInfo) []GetOvaV2VmConfigNicNetworkInfoIpv4Info { return v.Ipv4Infos }).(GetOvaV2VmConfigNicNetworkInfoIpv4InfoArrayOutput)
 }
 
-// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 func (o GetOvaV2VmConfigNicNetworkInfoOutput) NetworkFunctionChains() GetOvaV2VmConfigNicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v GetOvaV2VmConfigNicNetworkInfo) []GetOvaV2VmConfigNicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
@@ -41495,7 +41495,7 @@ func (o GetOvaV2VmConfigNicNetworkInfoOutput) ShouldAllowUnknownMacs() pulumi.Bo
 	return o.ApplyT(func(v GetOvaV2VmConfigNicNetworkInfo) bool { return v.ShouldAllowUnknownMacs }).(pulumi.BoolOutput)
 }
 
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
 func (o GetOvaV2VmConfigNicNetworkInfoOutput) Subnets() GetOvaV2VmConfigNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v GetOvaV2VmConfigNicNetworkInfo) []GetOvaV2VmConfigNicNetworkInfoSubnet { return v.Subnets }).(GetOvaV2VmConfigNicNetworkInfoSubnetArrayOutput)
 }
@@ -42841,7 +42841,7 @@ type GetOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo struct {
 	Ipv6Infos []GetOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info `pulumi:"ipv6Infos"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
 	Subnets []GetOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans []int `pulumi:"trunkedVlans"`
@@ -42868,7 +42868,7 @@ type GetOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoArgs struct {
 	Ipv6Infos GetOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoArrayInput `pulumi:"ipv6Infos"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
 	Subnets GetOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans pulumi.IntArrayInput `pulumi:"trunkedVlans"`
@@ -42927,7 +42927,7 @@ func (o GetOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) ShouldAl
 	return o.ApplyT(func(v GetOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) bool { return v.ShouldAllowUnknownMacs }).(pulumi.BoolOutput)
 }
 
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
 func (o GetOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) Subnets() GetOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v GetOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) []GetOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet {
 		return v.Subnets
@@ -43852,7 +43852,7 @@ type GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo struct {
 	// The runtime IP address information of the NIC.
 	Ipv4Infos []GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info `pulumi:"ipv4Infos"`
 	Ipv6Infos []GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info `pulumi:"ipv6Infos"`
-	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains []GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.  values are: TAP, EGRESS, INGRESS.
 	NetworkFunctionNicType string `pulumi:"networkFunctionNicType"`
@@ -43860,7 +43860,7 @@ type GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo struct {
 	NicType string `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
 	Subnets []GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans []int `pulumi:"trunkedVlans"`
@@ -43885,7 +43885,7 @@ type GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoArgs struct {
 	// The runtime IP address information of the NIC.
 	Ipv4Infos GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoArrayInput `pulumi:"ipv4Infos"`
 	Ipv6Infos GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoArrayInput `pulumi:"ipv6Infos"`
-	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.  values are: TAP, EGRESS, INGRESS.
 	NetworkFunctionNicType pulumi.StringInput `pulumi:"networkFunctionNicType"`
@@ -43893,7 +43893,7 @@ type GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoArgs struct {
 	NicType pulumi.StringInput `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
 	Subnets GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans pulumi.IntArrayInput `pulumi:"trunkedVlans"`
@@ -43947,7 +43947,7 @@ func (o GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoOutput) Ip
 	}).(GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoArrayOutput)
 }
 
-// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 func (o GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoOutput) NetworkFunctionChains() GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo) []GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
@@ -43973,7 +43973,7 @@ func (o GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoOutput) Sh
 	}).(pulumi.BoolOutput)
 }
 
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
 func (o GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoOutput) Subnets() GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo) []GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet {
 		return v.Subnets
@@ -55843,11 +55843,11 @@ func (o GetOvasV2OvaVmConfigHostArrayOutput) Index(i pulumi.IntInput) GetOvasV2O
 }
 
 type GetOvasV2OvaVmConfigNic struct {
-	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
 	BackingInfos []GetOvasV2OvaVmConfigNicBackingInfo `pulumi:"backingInfos"`
 	// - A globally unique identifier of an instance that is suitable for external consumption.
 	ExtId string `pulumi:"extId"`
-	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
 	NetworkInfos   []GetOvasV2OvaVmConfigNicNetworkInfo  `pulumi:"networkInfos"`
 	NicBackingInfo GetOvasV2OvaVmConfigNicNicBackingInfo `pulumi:"nicBackingInfo"`
 	NicNetworkInfo GetOvasV2OvaVmConfigNicNicNetworkInfo `pulumi:"nicNetworkInfo"`
@@ -55865,11 +55865,11 @@ type GetOvasV2OvaVmConfigNicInput interface {
 }
 
 type GetOvasV2OvaVmConfigNicArgs struct {
-	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
 	BackingInfos GetOvasV2OvaVmConfigNicBackingInfoArrayInput `pulumi:"backingInfos"`
 	// - A globally unique identifier of an instance that is suitable for external consumption.
 	ExtId pulumi.StringInput `pulumi:"extId"`
-	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
 	NetworkInfos   GetOvasV2OvaVmConfigNicNetworkInfoArrayInput `pulumi:"networkInfos"`
 	NicBackingInfo GetOvasV2OvaVmConfigNicNicBackingInfoInput   `pulumi:"nicBackingInfo"`
 	NicNetworkInfo GetOvasV2OvaVmConfigNicNicNetworkInfoInput   `pulumi:"nicNetworkInfo"`
@@ -55926,7 +55926,7 @@ func (o GetOvasV2OvaVmConfigNicOutput) ToGetOvasV2OvaVmConfigNicOutputWithContex
 	return o
 }
 
-// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
 func (o GetOvasV2OvaVmConfigNicOutput) BackingInfos() GetOvasV2OvaVmConfigNicBackingInfoArrayOutput {
 	return o.ApplyT(func(v GetOvasV2OvaVmConfigNic) []GetOvasV2OvaVmConfigNicBackingInfo { return v.BackingInfos }).(GetOvasV2OvaVmConfigNicBackingInfoArrayOutput)
 }
@@ -55936,7 +55936,7 @@ func (o GetOvasV2OvaVmConfigNicOutput) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOvasV2OvaVmConfigNic) string { return v.ExtId }).(pulumi.StringOutput)
 }
 
-// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
 func (o GetOvasV2OvaVmConfigNicOutput) NetworkInfos() GetOvasV2OvaVmConfigNicNetworkInfoArrayOutput {
 	return o.ApplyT(func(v GetOvasV2OvaVmConfigNic) []GetOvasV2OvaVmConfigNicNetworkInfo { return v.NetworkInfos }).(GetOvasV2OvaVmConfigNicNetworkInfoArrayOutput)
 }

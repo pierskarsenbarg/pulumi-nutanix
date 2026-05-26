@@ -58,9 +58,9 @@ class VmRevertV2Args:
 @pulumi.input_type
 class _VmRevertV2State:
     def __init__(__self__, *,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_recovery_point_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_recovery_point_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VmRevertV2 resources.
 
@@ -77,38 +77,38 @@ class _VmRevertV2State:
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) The globally unique identifier of a VM. It should be of type UUID.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The status of the Revert operation.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="vmRecoveryPointExtId")
-    def vm_recovery_point_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_recovery_point_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) The external identifier of the VM Recovery Point.
         """
         return pulumi.get(self, "vm_recovery_point_ext_id")
 
     @vm_recovery_point_ext_id.setter
-    def vm_recovery_point_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_recovery_point_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_recovery_point_ext_id", value)
 
 
@@ -118,8 +118,8 @@ class VmRevertV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_recovery_point_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_recovery_point_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This operation Revert VM identified by {extId}. This does an in-place VM restore from a specified VM Recovery Point.
@@ -183,8 +183,8 @@ class VmRevertV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_recovery_point_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_recovery_point_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -211,9 +211,9 @@ class VmRevertV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_recovery_point_ext_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'VmRevertV2':
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_recovery_point_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VmRevertV2':
         """
         Get an existing VmRevertV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

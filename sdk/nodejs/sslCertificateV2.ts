@@ -146,19 +146,19 @@ export interface SslCertificateV2State {
     /**
      * — Description of the certificate authority (CA) chain.
      */
-    caChain?: pulumi.Input<string>;
+    caChain?: pulumi.Input<string | undefined>;
     /**
      * — UUID of the cluster to which the host NIC belongs.
      */
-    clusterExtId?: pulumi.Input<string>;
+    clusterExtId?: pulumi.Input<string | undefined>;
     /**
      * — Passphrase used for SSL certificate.
      */
-    passphrase?: pulumi.Input<string>;
+    passphrase?: pulumi.Input<string | undefined>;
     /**
      * — Private Key used for SSL certificate.
      */
-    privateKey?: pulumi.Input<string>;
+    privateKey?: pulumi.Input<string | undefined>;
     /**
      * — Private Key Algorithm used for SSL certificate.
      *
@@ -174,11 +174,11 @@ export interface SslCertificateV2State {
      * | RSA_4096     | RSA 4096-bit encryption                                          |
      * | RSA_PUBLIC   | Public RSA key format                                            |
      */
-    privateKeyAlgorithm?: pulumi.Input<string>;
+    privateKeyAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * — Public Certificate used for SSL certificate.
      */
-    publicCertificate?: pulumi.Input<string>;
+    publicCertificate?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -188,7 +188,7 @@ export interface SslCertificateV2Args {
     /**
      * — Description of the certificate authority (CA) chain.
      */
-    caChain?: pulumi.Input<string>;
+    caChain?: pulumi.Input<string | undefined>;
     /**
      * — UUID of the cluster to which the host NIC belongs.
      */
@@ -196,11 +196,11 @@ export interface SslCertificateV2Args {
     /**
      * — Passphrase used for SSL certificate.
      */
-    passphrase?: pulumi.Input<string>;
+    passphrase?: pulumi.Input<string | undefined>;
     /**
      * — Private Key used for SSL certificate.
      */
-    privateKey?: pulumi.Input<string>;
+    privateKey?: pulumi.Input<string | undefined>;
     /**
      * — Private Key Algorithm used for SSL certificate.
      *
@@ -216,9 +216,9 @@ export interface SslCertificateV2Args {
      * | RSA_4096     | RSA 4096-bit encryption                                          |
      * | RSA_PUBLIC   | Public RSA key format                                            |
      */
-    privateKeyAlgorithm?: pulumi.Input<string>;
+    privateKeyAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * — Public Certificate used for SSL certificate.
      */
-    publicCertificate?: pulumi.Input<string>;
+    publicCertificate?: pulumi.Input<string | undefined>;
 }

@@ -13,19 +13,19 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetPbr
     {
         /// <summary>
-        /// Provides a datasource to retrieve PBR with&lt;span pulumi-lang-nodejs=" pbrUuid " pulumi-lang-dotnet=" PbrUuid " pulumi-lang-go=" pbrUuid " pulumi-lang-python=" pbr_uuid " pulumi-lang-yaml=" pbrUuid " pulumi-lang-java=" pbrUuid "&gt; pbrUuid &lt;/span&gt;.
+        /// Provides a datasource to retrieve PBR with&lt;span pulumi-lang-nodejs=" pbrUuid " pulumi-lang-dotnet=" PbrUuid " pulumi-lang-go=" pbrUuid " pulumi-lang-python=" pbr_uuid " pulumi-lang-yaml=" pbrUuid " pulumi-lang-java=" pbrUuid " pulumi-lang-hcl=" pbr_uuid "&gt; pbrUuid &lt;/span&gt;.
         /// </summary>
         public static Task<GetPbrResult> InvokeAsync(GetPbrArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPbrResult>("nutanix:index/getPbr:getPbr", args ?? new GetPbrArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve PBR with&lt;span pulumi-lang-nodejs=" pbrUuid " pulumi-lang-dotnet=" PbrUuid " pulumi-lang-go=" pbrUuid " pulumi-lang-python=" pbr_uuid " pulumi-lang-yaml=" pbrUuid " pulumi-lang-java=" pbrUuid "&gt; pbrUuid &lt;/span&gt;.
+        /// Provides a datasource to retrieve PBR with&lt;span pulumi-lang-nodejs=" pbrUuid " pulumi-lang-dotnet=" PbrUuid " pulumi-lang-go=" pbrUuid " pulumi-lang-python=" pbr_uuid " pulumi-lang-yaml=" pbrUuid " pulumi-lang-java=" pbrUuid " pulumi-lang-hcl=" pbr_uuid "&gt; pbrUuid &lt;/span&gt;.
         /// </summary>
         public static Output<GetPbrResult> Invoke(GetPbrInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPbrResult>("nutanix:index/getPbr:getPbr", args ?? new GetPbrInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve PBR with&lt;span pulumi-lang-nodejs=" pbrUuid " pulumi-lang-dotnet=" PbrUuid " pulumi-lang-go=" pbrUuid " pulumi-lang-python=" pbr_uuid " pulumi-lang-yaml=" pbrUuid " pulumi-lang-java=" pbrUuid "&gt; pbrUuid &lt;/span&gt;.
+        /// Provides a datasource to retrieve PBR with&lt;span pulumi-lang-nodejs=" pbrUuid " pulumi-lang-dotnet=" PbrUuid " pulumi-lang-go=" pbrUuid " pulumi-lang-python=" pbr_uuid " pulumi-lang-yaml=" pbrUuid " pulumi-lang-java=" pbrUuid " pulumi-lang-hcl=" pbr_uuid "&gt; pbrUuid &lt;/span&gt;.
         /// </summary>
         public static Output<GetPbrResult> Invoke(GetPbrInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetPbrResult>("nutanix:index/getPbr:getPbr", args ?? new GetPbrInvokeArgs(), options.WithDefaults());

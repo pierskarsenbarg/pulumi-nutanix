@@ -105,11 +105,11 @@ class FoundationIpmiConfigArgs:
 @pulumi.input_type
 class _FoundationIpmiConfigState:
     def __init__(__self__, *,
-                 blocks: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationIpmiConfigBlockArgs']]]] = None,
-                 ipmi_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_user: Optional[pulumi.Input[_builtins.str]] = None):
+                 blocks: pulumi.Input[Optional[Sequence[pulumi.Input['FoundationIpmiConfigBlockArgs']]]] = None,
+                 ipmi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_user: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FoundationIpmiConfig resources.
 
@@ -132,62 +132,62 @@ class _FoundationIpmiConfigState:
 
     @_builtins.property
     @pulumi.getter
-    def blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FoundationIpmiConfigBlockArgs']]]]:
+    def blocks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FoundationIpmiConfigBlockArgs']]]]:
         """
         - (Required) List of blocks.
         """
         return pulumi.get(self, "blocks")
 
     @blocks.setter
-    def blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationIpmiConfigBlockArgs']]]]):
+    def blocks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FoundationIpmiConfigBlockArgs']]]]):
         pulumi.set(self, "blocks", value)
 
     @_builtins.property
     @pulumi.getter(name="ipmiGateway")
-    def ipmi_gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipmi_gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) IPMI gateway.
         """
         return pulumi.get(self, "ipmi_gateway")
 
     @ipmi_gateway.setter
-    def ipmi_gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipmi_gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipmi_gateway", value)
 
     @_builtins.property
     @pulumi.getter(name="ipmiNetmask")
-    def ipmi_netmask(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipmi_netmask(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) IPMI netmask.
         """
         return pulumi.get(self, "ipmi_netmask")
 
     @ipmi_netmask.setter
-    def ipmi_netmask(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipmi_netmask(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipmi_netmask", value)
 
     @_builtins.property
     @pulumi.getter(name="ipmiPassword")
-    def ipmi_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipmi_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) IPMI password.
         """
         return pulumi.get(self, "ipmi_password")
 
     @ipmi_password.setter
-    def ipmi_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipmi_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipmi_password", value)
 
     @_builtins.property
     @pulumi.getter(name="ipmiUser")
-    def ipmi_user(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipmi_user(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) IPMI username.
         """
         return pulumi.get(self, "ipmi_user")
 
     @ipmi_user.setter
-    def ipmi_user(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipmi_user(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipmi_user", value)
 
 
@@ -197,11 +197,11 @@ class FoundationIpmiConfig(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 blocks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict']]]]] = None,
-                 ipmi_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_user: Optional[pulumi.Input[_builtins.str]] = None,
+                 blocks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict']]]]] = None,
+                 ipmi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_user: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Configures IPMI IP address on BMC of nodes.
@@ -322,11 +322,11 @@ class FoundationIpmiConfig(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 blocks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict']]]]] = None,
-                 ipmi_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipmi_user: Optional[pulumi.Input[_builtins.str]] = None,
+                 blocks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict']]]]] = None,
+                 ipmi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipmi_user: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -361,11 +361,11 @@ class FoundationIpmiConfig(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            blocks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict']]]]] = None,
-            ipmi_gateway: Optional[pulumi.Input[_builtins.str]] = None,
-            ipmi_netmask: Optional[pulumi.Input[_builtins.str]] = None,
-            ipmi_password: Optional[pulumi.Input[_builtins.str]] = None,
-            ipmi_user: Optional[pulumi.Input[_builtins.str]] = None) -> 'FoundationIpmiConfig':
+            blocks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict']]]]] = None,
+            ipmi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            ipmi_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+            ipmi_password: pulumi.Input[Optional[_builtins.str]] = None,
+            ipmi_user: pulumi.Input[Optional[_builtins.str]] = None) -> 'FoundationIpmiConfig':
         """
         Get an existing FoundationIpmiConfig resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

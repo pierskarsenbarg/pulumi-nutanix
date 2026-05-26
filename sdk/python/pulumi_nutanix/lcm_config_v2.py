@@ -19,13 +19,13 @@ __all__ = ['LcmConfigV2Args', 'LcmConfigV2']
 @pulumi.input_type
 class LcmConfigV2Args:
     def __init__(__self__, *,
-                 auto_inventory_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 connectivity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 has_module_auto_upgrade_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_auto_inventory_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_https_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 auto_inventory_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 connectivity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 has_module_auto_upgrade_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_auto_inventory_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_https_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a LcmConfigV2 resource.
 
@@ -56,31 +56,31 @@ class LcmConfigV2Args:
 
     @_builtins.property
     @pulumi.getter(name="autoInventorySchedule")
-    def auto_inventory_schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_inventory_schedule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
         """
         return pulumi.get(self, "auto_inventory_schedule")
 
     @auto_inventory_schedule.setter
-    def auto_inventory_schedule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_inventory_schedule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_inventory_schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="connectivityType")
-    def connectivity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connectivity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
         """
         return pulumi.get(self, "connectivity_type")
 
     @connectivity_type.setter
-    def connectivity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connectivity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connectivity_type", value)
 
     @_builtins.property
     @pulumi.getter(name="hasModuleAutoUpgradeEnabled")
-    def has_module_auto_upgrade_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def has_module_auto_upgrade_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if LCM is enabled to auto-upgrade products. The default value is False.
 
@@ -89,69 +89,69 @@ class LcmConfigV2Args:
         return pulumi.get(self, "has_module_auto_upgrade_enabled")
 
     @has_module_auto_upgrade_enabled.setter
-    def has_module_auto_upgrade_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def has_module_auto_upgrade_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "has_module_auto_upgrade_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoInventoryEnabled")
-    def is_auto_inventory_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_inventory_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the auto inventory operation is enabled. The default value is set to False.
         """
         return pulumi.get(self, "is_auto_inventory_enabled")
 
     @is_auto_inventory_enabled.setter
-    def is_auto_inventory_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_inventory_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_inventory_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isHttpsEnabled")
-    def is_https_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_https_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the LCM URL has HTTPS enabled. The default value is True.
         """
         return pulumi.get(self, "is_https_enabled")
 
     @is_https_enabled.setter
-    def is_https_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_https_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_https_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URL of the LCM repository.
         """
         return pulumi.get(self, "url")
 
     @url.setter
-    def url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url", value)
 
     @_builtins.property
     @pulumi.getter(name="xClusterId")
-    def x_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def x_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cluster uuid on which the resource is present or operation is being performed.
         """
         return pulumi.get(self, "x_cluster_id")
 
     @x_cluster_id.setter
-    def x_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def x_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "x_cluster_id", value)
 
 
 @pulumi.input_type
 class _LcmConfigV2State:
     def __init__(__self__, *,
-                 auto_inventory_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 connectivity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 has_module_auto_upgrade_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_auto_inventory_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_https_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 auto_inventory_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 connectivity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 has_module_auto_upgrade_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_auto_inventory_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_https_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LcmConfigV2 resources.
 
@@ -184,40 +184,40 @@ class _LcmConfigV2State:
 
     @_builtins.property
     @pulumi.getter(name="autoInventorySchedule")
-    def auto_inventory_schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_inventory_schedule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
         """
         return pulumi.get(self, "auto_inventory_schedule")
 
     @auto_inventory_schedule.setter
-    def auto_inventory_schedule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_inventory_schedule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_inventory_schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="connectivityType")
-    def connectivity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connectivity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
         """
         return pulumi.get(self, "connectivity_type")
 
     @connectivity_type.setter
-    def connectivity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connectivity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connectivity_type", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="hasModuleAutoUpgradeEnabled")
-    def has_module_auto_upgrade_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def has_module_auto_upgrade_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if LCM is enabled to auto-upgrade products. The default value is False.
 
@@ -226,55 +226,55 @@ class _LcmConfigV2State:
         return pulumi.get(self, "has_module_auto_upgrade_enabled")
 
     @has_module_auto_upgrade_enabled.setter
-    def has_module_auto_upgrade_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def has_module_auto_upgrade_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "has_module_auto_upgrade_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoInventoryEnabled")
-    def is_auto_inventory_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_inventory_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the auto inventory operation is enabled. The default value is set to False.
         """
         return pulumi.get(self, "is_auto_inventory_enabled")
 
     @is_auto_inventory_enabled.setter
-    def is_auto_inventory_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_inventory_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_inventory_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isHttpsEnabled")
-    def is_https_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_https_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the LCM URL has HTTPS enabled. The default value is True.
         """
         return pulumi.get(self, "is_https_enabled")
 
     @is_https_enabled.setter
-    def is_https_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_https_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_https_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URL of the LCM repository.
         """
         return pulumi.get(self, "url")
 
     @url.setter
-    def url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url", value)
 
     @_builtins.property
     @pulumi.getter(name="xClusterId")
-    def x_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def x_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cluster uuid on which the resource is present or operation is being performed.
         """
         return pulumi.get(self, "x_cluster_id")
 
     @x_cluster_id.setter
-    def x_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def x_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "x_cluster_id", value)
 
 
@@ -284,13 +284,13 @@ class LcmConfigV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_inventory_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 connectivity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 has_module_auto_upgrade_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_auto_inventory_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_https_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_inventory_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 connectivity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 has_module_auto_upgrade_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_auto_inventory_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_https_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Update LCM configuration.
@@ -375,13 +375,13 @@ class LcmConfigV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_inventory_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 connectivity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 has_module_auto_upgrade_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_auto_inventory_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_https_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_inventory_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 connectivity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 has_module_auto_upgrade_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_auto_inventory_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_https_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -409,14 +409,14 @@ class LcmConfigV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auto_inventory_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-            connectivity_type: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            has_module_auto_upgrade_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_auto_inventory_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_https_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            url: Optional[pulumi.Input[_builtins.str]] = None,
-            x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'LcmConfigV2':
+            auto_inventory_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+            connectivity_type: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            has_module_auto_upgrade_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_auto_inventory_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_https_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None,
+            x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'LcmConfigV2':
         """
         Get an existing LcmConfigV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

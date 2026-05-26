@@ -21,7 +21,7 @@ class PasswordChangeRequestV2Args:
     def __init__(__self__, *,
                  ext_id: pulumi.Input[_builtins.str],
                  new_password: pulumi.Input[_builtins.str],
-                 current_password: Optional[pulumi.Input[_builtins.str]] = None):
+                 current_password: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PasswordChangeRequestV2 resource.
 
@@ -66,23 +66,23 @@ class PasswordChangeRequestV2Args:
 
     @_builtins.property
     @pulumi.getter(name="currentPassword")
-    def current_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Existing password of a user account.
         """
         return pulumi.get(self, "current_password")
 
     @current_password.setter
-    def current_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_password", value)
 
 
 @pulumi.input_type
 class _PasswordChangeRequestV2State:
     def __init__(__self__, *,
-                 current_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 new_password: Optional[pulumi.Input[_builtins.str]] = None):
+                 current_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 new_password: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PasswordChangeRequestV2 resources.
 
@@ -102,31 +102,31 @@ class _PasswordChangeRequestV2State:
 
     @_builtins.property
     @pulumi.getter(name="currentPassword")
-    def current_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Existing password of a user account.
         """
         return pulumi.get(self, "current_password")
 
     @current_password.setter
-    def current_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_password", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) External identifier of the system user password.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="newPassword")
-    def new_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def new_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) New password for a user account.
 
@@ -136,7 +136,7 @@ class _PasswordChangeRequestV2State:
         return pulumi.get(self, "new_password")
 
     @new_password.setter
-    def new_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def new_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "new_password", value)
 
 
@@ -146,9 +146,9 @@ class PasswordChangeRequestV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 current_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 new_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 current_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 new_password: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Initiate change password request for a system user on a supported product.
@@ -216,9 +216,9 @@ class PasswordChangeRequestV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 current_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 new_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 current_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 new_password: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -245,9 +245,9 @@ class PasswordChangeRequestV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            current_password: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            new_password: Optional[pulumi.Input[_builtins.str]] = None) -> 'PasswordChangeRequestV2':
+            current_password: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            new_password: pulumi.Input[Optional[_builtins.str]] = None) -> 'PasswordChangeRequestV2':
         """
         Get an existing PasswordChangeRequestV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

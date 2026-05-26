@@ -116,8 +116,8 @@ def get_foundation_node_network_details(ipv6_addresses: Optional[Sequence[_built
         ipv6_addresses=pulumi.get(__ret__, 'ipv6_addresses'),
         nodes=pulumi.get(__ret__, 'nodes'),
         timeout=pulumi.get(__ret__, 'timeout'))
-def get_foundation_node_network_details_output(ipv6_addresses: Optional[pulumi.Input[Sequence[_builtins.str]]] = None,
-                                               timeout: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_foundation_node_network_details_output(ipv6_addresses: pulumi.Input[Optional[Sequence[_builtins.str]]] = None,
+                                               timeout: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFoundationNodeNetworkDetailsResult]:
     """
     Gets hypervisor, CVM & IPMI info of the discovered nodes using their ipv6 address.

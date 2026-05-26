@@ -218,7 +218,7 @@ def get_ngt_configuration_v2(ext_id: Optional[_builtins.str] = None,
         is_vm_mobility_drivers_installed=pulumi.get(__ret__, 'is_vm_mobility_drivers_installed'),
         is_vss_snapshot_capable=pulumi.get(__ret__, 'is_vss_snapshot_capable'),
         version=pulumi.get(__ret__, 'version'))
-def get_ngt_configuration_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_ngt_configuration_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNgtConfigurationV2Result]:
     """
     Provides Nutanix datasource to Retrieves the Nutanix Guest Tools configuration for a Virtual Machine.

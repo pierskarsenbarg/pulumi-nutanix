@@ -79,5 +79,5 @@ export interface GetUserGroupsOutputArgs {
     /**
      * - The user group kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetUserGroupsMetadataArgs>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetUserGroupsMetadataArgs>[] | undefined>;
 }

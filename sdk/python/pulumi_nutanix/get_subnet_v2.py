@@ -401,8 +401,8 @@ def get_subnet_v2(ext_id: Optional[_builtins.str] = None,
         virtual_switches=pulumi.get(__ret__, 'virtual_switches'),
         vpc_reference=pulumi.get(__ret__, 'vpc_reference'),
         vpcs=pulumi.get(__ret__, 'vpcs'))
-def get_subnet_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                         reserved_ip_addresses: Optional[pulumi.Input[Optional[Sequence[Union['GetSubnetV2ReservedIpAddressArgs', 'GetSubnetV2ReservedIpAddressArgsDict']]]]] = None,
+def get_subnet_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                         reserved_ip_addresses: pulumi.Input[Optional[Optional[Sequence[Union['GetSubnetV2ReservedIpAddressArgs', 'GetSubnetV2ReservedIpAddressArgsDict']]]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubnetV2Result]:
     """
     Get a subnet with the specified UUID.

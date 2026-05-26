@@ -414,8 +414,8 @@ def get_host(categories: Optional[Sequence[Union['GetHostCategoryArgs', 'GetHost
         rackable_unit_reference=pulumi.get(__ret__, 'rackable_unit_reference'),
         serial_number=pulumi.get(__ret__, 'serial_number'),
         windows_domain=pulumi.get(__ret__, 'windows_domain'))
-def get_host_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetHostCategoryArgs', 'GetHostCategoryArgsDict']]]]] = None,
-                    host_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_host_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetHostCategoryArgs', 'GetHostCategoryArgsDict']]]]] = None,
+                    host_id: pulumi.Input[Optional[_builtins.str]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHostResult]:
     """
     Describes a Host

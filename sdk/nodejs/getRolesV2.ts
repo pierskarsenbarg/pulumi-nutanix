@@ -187,9 +187,9 @@ export function getRolesV2Output(args?: GetRolesV2OutputArgs, opts?: pulumi.Invo
  * A collection of arguments for invoking getRolesV2.
  */
 export interface GetRolesV2OutputArgs {
-    filter?: pulumi.Input<string>;
-    limit?: pulumi.Input<number>;
-    orderBy?: pulumi.Input<string>;
-    page?: pulumi.Input<number>;
-    select?: pulumi.Input<string>;
+    filter?: pulumi.Input<string | undefined>;
+    limit?: pulumi.Input<number | undefined>;
+    orderBy?: pulumi.Input<string | undefined>;
+    page?: pulumi.Input<number | undefined>;
+    select?: pulumi.Input<string | undefined>;
 }

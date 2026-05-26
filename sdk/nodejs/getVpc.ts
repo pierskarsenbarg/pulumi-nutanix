@@ -78,9 +78,9 @@ export interface GetVpcOutputArgs {
     /**
      * vpc Name
      */
-    vpcName?: pulumi.Input<string>;
+    vpcName?: pulumi.Input<string | undefined>;
     /**
      * vpc UUID
      */
-    vpcUuid?: pulumi.Input<string>;
+    vpcUuid?: pulumi.Input<string | undefined>;
 }

@@ -55,7 +55,7 @@ type NdbDbserverVm struct {
 	SnapshotId pulumi.StringPtrOutput `pulumi:"snapshotId"`
 	// - (Optional) Soft remove. Default will be false
 	SoftRemove pulumi.BoolPtrOutput `pulumi:"softRemove"`
-	// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+	// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
 	SoftwareProfileId pulumi.StringPtrOutput `pulumi:"softwareProfileId"`
 	// SOftware Profile Version Id.
 	SoftwareProfileVersionId pulumi.StringPtrOutput      `pulumi:"softwareProfileVersionId"`
@@ -158,7 +158,7 @@ type ndbDbserverVmState struct {
 	SnapshotId *string `pulumi:"snapshotId"`
 	// - (Optional) Soft remove. Default will be false
 	SoftRemove *bool `pulumi:"softRemove"`
-	// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+	// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
 	SoftwareProfileId *string `pulumi:"softwareProfileId"`
 	// SOftware Profile Version Id.
 	SoftwareProfileVersionId *string            `pulumi:"softwareProfileVersionId"`
@@ -213,7 +213,7 @@ type NdbDbserverVmState struct {
 	SnapshotId pulumi.StringPtrInput
 	// - (Optional) Soft remove. Default will be false
 	SoftRemove pulumi.BoolPtrInput
-	// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+	// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
 	SoftwareProfileId pulumi.StringPtrInput
 	// SOftware Profile Version Id.
 	SoftwareProfileVersionId pulumi.StringPtrInput
@@ -262,7 +262,7 @@ type ndbDbserverVmArgs struct {
 	SnapshotId *string `pulumi:"snapshotId"`
 	// - (Optional) Soft remove. Default will be false
 	SoftRemove *bool `pulumi:"softRemove"`
-	// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+	// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
 	SoftwareProfileId *string `pulumi:"softwareProfileId"`
 	// SOftware Profile Version Id.
 	SoftwareProfileVersionId *string            `pulumi:"softwareProfileVersionId"`
@@ -303,7 +303,7 @@ type NdbDbserverVmArgs struct {
 	SnapshotId pulumi.StringPtrInput
 	// - (Optional) Soft remove. Default will be false
 	SoftRemove pulumi.BoolPtrInput
-	// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+	// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
 	SoftwareProfileId pulumi.StringPtrInput
 	// SOftware Profile Version Id.
 	SoftwareProfileVersionId pulumi.StringPtrInput
@@ -511,7 +511,7 @@ func (o NdbDbserverVmOutput) SoftRemove() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.BoolPtrOutput { return v.SoftRemove }).(pulumi.BoolPtrOutput)
 }
 
-// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
 func (o NdbDbserverVmOutput) SoftwareProfileId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.StringPtrOutput { return v.SoftwareProfileId }).(pulumi.StringPtrOutput)
 }

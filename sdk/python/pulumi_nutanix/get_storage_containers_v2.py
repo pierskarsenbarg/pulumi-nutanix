@@ -223,12 +223,12 @@ def get_storage_containers_v2(apply: Optional[_builtins.str] = None,
         page=pulumi.get(__ret__, 'page'),
         select=pulumi.get(__ret__, 'select'),
         storage_containers=pulumi.get(__ret__, 'storage_containers'))
-def get_storage_containers_v2_output(apply: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                     order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                     select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_storage_containers_v2_output(apply: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                     order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                     select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStorageContainersV2Result]:
     """
     Provides a datasource to Lists the Storage Containers present in the system.

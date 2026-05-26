@@ -127,7 +127,7 @@ export interface GetCategoryV2OutputArgs {
      * - associations
      * - detailedAssociations
      */
-    expand?: pulumi.Input<string>;
+    expand?: pulumi.Input<string | undefined>;
     /**
      * The extID for the category.
      */

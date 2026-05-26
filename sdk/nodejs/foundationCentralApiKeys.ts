@@ -108,23 +108,23 @@ export interface FoundationCentralApiKeysState {
     /**
      * - (Required) Alias for the api key to be created.
      */
-    alias?: pulumi.Input<string>;
+    alias?: pulumi.Input<string | undefined>;
     /**
      * Api key in string format.
      */
-    apiKey?: pulumi.Input<string>;
+    apiKey?: pulumi.Input<string | undefined>;
     /**
      * Time when the api key was created.
      */
-    createdTimestamp?: pulumi.Input<string>;
+    createdTimestamp?: pulumi.Input<string | undefined>;
     /**
      * Current time of Foundation Central.
      */
-    currentTime?: pulumi.Input<string>;
+    currentTime?: pulumi.Input<string | undefined>;
     /**
      * UUID of the api key.
      */
-    keyUuid?: pulumi.Input<string>;
+    keyUuid?: pulumi.Input<string | undefined>;
 }
 
 /**

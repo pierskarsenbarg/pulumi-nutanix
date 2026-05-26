@@ -22,7 +22,7 @@ __all__ = ['AssociateCategoryToVolumeGroupV2Args', 'AssociateCategoryToVolumeGro
 class AssociateCategoryToVolumeGroupV2Args:
     def __init__(__self__, *,
                  ext_id: pulumi.Input[_builtins.str],
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['AssociateCategoryToVolumeGroupV2CategoryArgs']]]] = None):
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['AssociateCategoryToVolumeGroupV2CategoryArgs']]]] = None):
         """
         The set of arguments for constructing a AssociateCategoryToVolumeGroupV2 resource.
 
@@ -43,22 +43,22 @@ class AssociateCategoryToVolumeGroupV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssociateCategoryToVolumeGroupV2CategoryArgs']]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssociateCategoryToVolumeGroupV2CategoryArgs']]]]:
         """
         -(Required) The category to be associated/disassociated with the Volume Group. This is a mandatory field.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssociateCategoryToVolumeGroupV2CategoryArgs']]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssociateCategoryToVolumeGroupV2CategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
 
 @pulumi.input_type
 class _AssociateCategoryToVolumeGroupV2State:
     def __init__(__self__, *,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['AssociateCategoryToVolumeGroupV2CategoryArgs']]]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['AssociateCategoryToVolumeGroupV2CategoryArgs']]]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AssociateCategoryToVolumeGroupV2 resources.
 
@@ -71,23 +71,23 @@ class _AssociateCategoryToVolumeGroupV2State:
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssociateCategoryToVolumeGroupV2CategoryArgs']]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssociateCategoryToVolumeGroupV2CategoryArgs']]]]:
         """
         -(Required) The category to be associated/disassociated with the Volume Group. This is a mandatory field.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssociateCategoryToVolumeGroupV2CategoryArgs']]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssociateCategoryToVolumeGroupV2CategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
 
@@ -97,8 +97,8 @@ class AssociateCategoryToVolumeGroupV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AssociateCategoryToVolumeGroupV2CategoryArgs', 'AssociateCategoryToVolumeGroupV2CategoryArgsDict']]]]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssociateCategoryToVolumeGroupV2CategoryArgs', 'AssociateCategoryToVolumeGroupV2CategoryArgsDict']]]]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to Creates a new Volume Disk.
@@ -181,8 +181,8 @@ class AssociateCategoryToVolumeGroupV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AssociateCategoryToVolumeGroupV2CategoryArgs', 'AssociateCategoryToVolumeGroupV2CategoryArgsDict']]]]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssociateCategoryToVolumeGroupV2CategoryArgs', 'AssociateCategoryToVolumeGroupV2CategoryArgsDict']]]]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -206,8 +206,8 @@ class AssociateCategoryToVolumeGroupV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AssociateCategoryToVolumeGroupV2CategoryArgs', 'AssociateCategoryToVolumeGroupV2CategoryArgsDict']]]]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AssociateCategoryToVolumeGroupV2':
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssociateCategoryToVolumeGroupV2CategoryArgs', 'AssociateCategoryToVolumeGroupV2CategoryArgsDict']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AssociateCategoryToVolumeGroupV2':
         """
         Get an existing AssociateCategoryToVolumeGroupV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

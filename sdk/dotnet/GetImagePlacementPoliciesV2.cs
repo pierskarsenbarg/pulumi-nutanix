@@ -91,6 +91,26 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getimageplacementpoliciesv2" "list-ipp" {
+        /// }
+        /// data "nutanix_getimageplacementpoliciesv2" "filtered-ipp" {
+        ///   filter = "startswith(name,'ipp_name')"
+        ///   page   = 0
+        ///   limit  = 10
+        /// }
+        /// 
+        /// # List all image placement policies
+        /// # List image placement policies with filter, page and limit
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -226,6 +246,26 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getimageplacementpoliciesv2" "list-ipp" {
+        /// }
+        /// data "nutanix_getimageplacementpoliciesv2" "filtered-ipp" {
+        ///   filter = "startswith(name,'ipp_name')"
+        ///   page   = 0
+        ///   limit  = 10
+        /// }
+        /// 
+        /// # List all image placement policies
+        /// # List image placement policies with filter, page and limit
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -360,6 +400,26 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getimageplacementpoliciesv2" "list-ipp" {
+        /// }
+        /// data "nutanix_getimageplacementpoliciesv2" "filtered-ipp" {
+        ///   filter = "startswith(name,'ipp_name')"
+        ///   page   = 0
+        ///   limit  = 10
+        /// }
+        /// 
+        /// # List all image placement policies
+        /// # List image placement policies with filter, page and limit
         /// ```
         /// ```java
         /// package generated_program;

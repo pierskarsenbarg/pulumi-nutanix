@@ -130,25 +130,25 @@ export interface SelfServiceAppRestoreState {
     /**
      * - (Optional) The name of the application
      */
-    appName?: pulumi.Input<string>;
+    appName?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The UUID of the application.
      */
-    appUuid?: pulumi.Input<string>;
+    appUuid?: pulumi.Input<string | undefined>;
     /**
      * - (Required) The name of the restore action to be performed.
      */
-    restoreActionName?: pulumi.Input<string>;
+    restoreActionName?: pulumi.Input<string | undefined>;
     /**
      * - (Required) The UUID of the snapshot to which the application will be restored.
      *
      * Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`">`appUuid`</span>) are optional but atleast one of them should be provided for resource to work.
      */
-    snapshotUuid?: pulumi.Input<string>;
+    snapshotUuid?: pulumi.Input<string | undefined>;
     /**
      * - (Computed) This will be set after the restore action has been processed.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -158,11 +158,11 @@ export interface SelfServiceAppRestoreArgs {
     /**
      * - (Optional) The name of the application
      */
-    appName?: pulumi.Input<string>;
+    appName?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The UUID of the application.
      */
-    appUuid?: pulumi.Input<string>;
+    appUuid?: pulumi.Input<string | undefined>;
     /**
      * - (Required) The name of the restore action to be performed.
      */

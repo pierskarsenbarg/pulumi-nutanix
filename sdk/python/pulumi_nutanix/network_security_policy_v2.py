@@ -22,14 +22,14 @@ __all__ = ['NetworkSecurityPolicyV2Args', 'NetworkSecurityPolicyV2']
 class NetworkSecurityPolicyV2Args:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_hitlog_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_ipv6_traffic_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_references: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_hitlog_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_ipv6_traffic_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a NetworkSecurityPolicyV2 resource.
 
@@ -75,121 +75,121 @@ class NetworkSecurityPolicyV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user defined annotation for a policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="isHitlogEnabled")
-    def is_hitlog_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hitlog_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If Hitlog is enabled.
         """
         return pulumi.get(self, "is_hitlog_enabled")
 
     @is_hitlog_enabled.setter
-    def is_hitlog_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hitlog_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hitlog_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isIpv6TrafficAllowed")
-    def is_ipv6_traffic_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ipv6_traffic_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If Ipv6 Traffic is allowed.
         """
         return pulumi.get(self, "is_ipv6_traffic_allowed")
 
     @is_ipv6_traffic_allowed.setter
-    def is_ipv6_traffic_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ipv6_traffic_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ipv6_traffic_allowed", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the Flow Network Security Policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]]]:
         """
         A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcReferences")
-    def vpc_references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def vpc_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
         """
         return pulumi.get(self, "vpc_references")
 
     @vpc_references.setter
-    def vpc_references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def vpc_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "vpc_references", value)
 
 
 @pulumi.input_type
 class _NetworkSecurityPolicyV2State:
     def __init__(__self__, *,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 creation_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_hitlog_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_ipv6_traffic_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_system_defined: Optional[pulumi.Input[_builtins.bool]] = None,
-                 last_update_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 links: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2LinkArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 secured_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_references: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 creation_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_hitlog_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_ipv6_traffic_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
+                 last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2LinkArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 secured_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering NetworkSecurityPolicyV2 resources.
 
@@ -248,206 +248,206 @@ class _NetworkSecurityPolicyV2State:
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         created by.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="creationTime")
-    def creation_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def creation_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         creation time of NSP
         """
         return pulumi.get(self, "creation_time")
 
     @creation_time.setter
-    def creation_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def creation_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "creation_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user defined annotation for a policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A globally unique identifier of an instance that is suitable for external consumption.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isHitlogEnabled")
-    def is_hitlog_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hitlog_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If Hitlog is enabled.
         """
         return pulumi.get(self, "is_hitlog_enabled")
 
     @is_hitlog_enabled.setter
-    def is_hitlog_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hitlog_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hitlog_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isIpv6TrafficAllowed")
-    def is_ipv6_traffic_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ipv6_traffic_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If Ipv6 Traffic is allowed.
         """
         return pulumi.get(self, "is_ipv6_traffic_allowed")
 
     @is_ipv6_traffic_allowed.setter
-    def is_ipv6_traffic_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ipv6_traffic_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ipv6_traffic_allowed", value)
 
     @_builtins.property
     @pulumi.getter(name="isSystemDefined")
-    def is_system_defined(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_system_defined(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Is system defined NSP
         """
         return pulumi.get(self, "is_system_defined")
 
     @is_system_defined.setter
-    def is_system_defined(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_system_defined(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_system_defined", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdateTime")
-    def last_update_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         last updated time
         """
         return pulumi.get(self, "last_update_time")
 
     @last_update_time.setter
-    def last_update_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_update_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_update_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2LinkArgs']]]]:
+    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2LinkArgs']]]]:
         """
         A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         """
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2LinkArgs']]]]):
+    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the Flow Network Security Policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]]]:
         """
         A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="securedGroups")
-    def secured_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def secured_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Uuids of the secured groups in the NSP.
         """
         return pulumi.get(self, "secured_groups")
 
     @secured_groups.setter
-    def secured_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def secured_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "secured_groups", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A globally unique identifier that represents the tenant that owns this entity
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcReferences")
-    def vpc_references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def vpc_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
         """
         return pulumi.get(self, "vpc_references")
 
     @vpc_references.setter
-    def vpc_references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def vpc_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "vpc_references", value)
 
 
@@ -457,15 +457,15 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_hitlog_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_ipv6_traffic_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict']]]]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_references: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_hitlog_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_ipv6_traffic_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict']]]]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a Network Security Policy
@@ -594,15 +594,15 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_hitlog_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_ipv6_traffic_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict']]]]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_references: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_hitlog_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_ipv6_traffic_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict']]]]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -641,23 +641,23 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            creation_time: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_hitlog_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_ipv6_traffic_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_system_defined: Optional[pulumi.Input[_builtins.bool]] = None,
-            last_update_time: Optional[pulumi.Input[_builtins.str]] = None,
-            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2LinkArgs', 'NetworkSecurityPolicyV2LinkArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict']]]]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            secured_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            vpc_references: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'NetworkSecurityPolicyV2':
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            creation_time: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_hitlog_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_ipv6_traffic_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2LinkArgs', 'NetworkSecurityPolicyV2LinkArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict']]]]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            secured_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'NetworkSecurityPolicyV2':
         """
         Get an existing NetworkSecurityPolicyV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

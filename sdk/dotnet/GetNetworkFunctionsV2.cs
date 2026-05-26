@@ -79,6 +79,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getnetworkfunctionsv2" "nfs" {
+        ///   page     = 0
+        ///   limit    = 50
+        ///   filter   = "name eq 'my-network-function'"
+        ///   order_by = "name"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -191,6 +207,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getnetworkfunctionsv2" "nfs" {
+        ///   page     = 0
+        ///   limit    = 50
+        ///   filter   = "name eq 'my-network-function'"
+        ///   order_by = "name"
         /// }
         /// ```
         /// ```java
@@ -307,6 +339,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getnetworkfunctionsv2" "nfs" {
+        ///   page     = 0
+        ///   limit    = 50
+        ///   filter   = "name eq 'my-network-function'"
+        ///   order_by = "name"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -374,8 +422,8 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// Order by expression. Examples:
-        /// - &lt;span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy "&gt;`orderBy &lt;/span&gt;= "name"`
-        /// - &lt;span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy "&gt;`orderBy &lt;/span&gt;= "name desc"`
+        /// - &lt;span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by "&gt;`orderBy &lt;/span&gt;= "name"`
+        /// - &lt;span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by "&gt;`orderBy &lt;/span&gt;= "name desc"`
         /// </summary>
         [Input("orderBy")]
         public string? OrderBy { get; set; }
@@ -410,8 +458,8 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// Order by expression. Examples:
-        /// - &lt;span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy "&gt;`orderBy &lt;/span&gt;= "name"`
-        /// - &lt;span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy "&gt;`orderBy &lt;/span&gt;= "name desc"`
+        /// - &lt;span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by "&gt;`orderBy &lt;/span&gt;= "name"`
+        /// - &lt;span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by "&gt;`orderBy &lt;/span&gt;= "name desc"`
         /// </summary>
         [Input("orderBy")]
         public Input<string>? OrderBy { get; set; }

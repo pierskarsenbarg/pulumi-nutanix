@@ -121,5 +121,5 @@ export interface GetAddressGroupV2OutputArgs {
     /**
      * List of CIDR blocks in the Address Group.
      */
-    ipv4Addresses?: pulumi.Input<pulumi.Input<inputs.GetAddressGroupV2Ipv4AddressArgs>[]>;
+    ipv4Addresses?: pulumi.Input<pulumi.Input<inputs.GetAddressGroupV2Ipv4AddressArgs>[] | undefined>;
 }

@@ -131,8 +131,8 @@ def get_karbon_private_registry(private_registry_id: Optional[_builtins.str] = N
         private_registry_id=pulumi.get(__ret__, 'private_registry_id'),
         private_registry_name=pulumi.get(__ret__, 'private_registry_name'),
         uuid=pulumi.get(__ret__, 'uuid'))
-def get_karbon_private_registry_output(private_registry_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       private_registry_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_karbon_private_registry_output(private_registry_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       private_registry_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKarbonPrivateRegistryResult]:
     """
     Describes Karbon private registry entry

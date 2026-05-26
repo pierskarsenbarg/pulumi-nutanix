@@ -28,7 +28,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<string>? ExtId { get; set; }
 
         /// <summary>
-        /// Default: &lt;span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`"&gt;`true`&lt;/span&gt;  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
+        /// Default: &lt;span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`"&gt;`true`&lt;/span&gt;  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
         /// </summary>
         [Input("isActiveVersion")]
         public Input<bool>? IsActiveVersion { get; set; }
@@ -65,7 +65,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<string>? VersionName { get; set; }
 
         /// <summary>
-        /// Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either &lt;span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`"&gt;`templateVmReference`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`"&gt;`templateVersionReference`&lt;/span&gt; .
+        /// Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either &lt;span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`"&gt;`templateVmReference`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`"&gt;`templateVersionReference`&lt;/span&gt; .
         /// </summary>
         [Input("versionSource", required: true)]
         public Input<Inputs.TemplateV2TemplateVersionSpecVersionSourceArgs> VersionSource { get; set; } = null!;

@@ -158,49 +158,49 @@ export interface SelfServiceAppProvisionState {
     /**
      * - (Optional) System action to trigger after provisioning. Valid values: ["start", "stop", "restart"]
      */
-    action?: pulumi.Input<string>;
-    actions?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionAction>[]>;
+    action?: pulumi.Input<string | undefined>;
+    actions?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionAction>[] | undefined>;
     /**
      * - (Computed) API version used.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The description of application.
      *
      * Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`" pulumi-lang-hcl="`bp_name`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`" pulumi-lang-hcl="`bp_uuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
      */
-    appDescription?: pulumi.Input<string>;
+    appDescription?: pulumi.Input<string | undefined>;
     /**
      * - (Required) The name of the application you want to set.
      */
-    appName?: pulumi.Input<string>;
-    appSummaries?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionAppSummary>[]>;
+    appName?: pulumi.Input<string | undefined>;
+    appSummaries?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionAppSummary>[] | undefined>;
     /**
      * - (Optional) The name of the blueprint to launch.
      */
-    bpName?: pulumi.Input<string>;
+    bpName?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The UUID of the blueprint to launch.
      */
-    bpUuid?: pulumi.Input<string>;
-    runtimeEditables?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionRuntimeEditable>[]>;
+    bpUuid?: pulumi.Input<string | undefined>;
+    runtimeEditables?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionRuntimeEditable>[] | undefined>;
     /**
      * - (Optional, Default: false) If true, the application is soft-deleted when the resource is destroyed.
      */
-    softDelete?: pulumi.Input<boolean>;
+    softDelete?: pulumi.Input<boolean | undefined>;
     /**
      * - (Computed) Application specification (JSON string).
      */
-    spec?: pulumi.Input<string>;
+    spec?: pulumi.Input<string | undefined>;
     /**
      * - (Computed) state of the application (e.g. running, stopped)
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * - (Computed) Application status coming as response from server.
      */
-    status?: pulumi.Input<string>;
-    vms?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionVm>[]>;
+    status?: pulumi.Input<string | undefined>;
+    vms?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionVm>[] | undefined>;
 }
 
 /**
@@ -210,13 +210,13 @@ export interface SelfServiceAppProvisionArgs {
     /**
      * - (Optional) System action to trigger after provisioning. Valid values: ["start", "stop", "restart"]
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The description of application.
      *
      * Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`" pulumi-lang-hcl="`bp_name`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`" pulumi-lang-hcl="`bp_uuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
      */
-    appDescription?: pulumi.Input<string>;
+    appDescription?: pulumi.Input<string | undefined>;
     /**
      * - (Required) The name of the application you want to set.
      */
@@ -224,14 +224,14 @@ export interface SelfServiceAppProvisionArgs {
     /**
      * - (Optional) The name of the blueprint to launch.
      */
-    bpName?: pulumi.Input<string>;
+    bpName?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The UUID of the blueprint to launch.
      */
-    bpUuid?: pulumi.Input<string>;
-    runtimeEditables?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionRuntimeEditable>[]>;
+    bpUuid?: pulumi.Input<string | undefined>;
+    runtimeEditables?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionRuntimeEditable>[] | undefined>;
     /**
      * - (Optional, Default: false) If true, the application is soft-deleted when the resource is destroyed.
      */
-    softDelete?: pulumi.Input<boolean>;
+    softDelete?: pulumi.Input<boolean | undefined>;
 }

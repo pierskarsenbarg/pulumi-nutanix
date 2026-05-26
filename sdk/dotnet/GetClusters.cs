@@ -60,6 +60,18 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getclusters" "clusters" {
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -96,18 +108,18 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Reference
         /// 
-        /// The &lt;span pulumi-lang-nodejs="`projectReference`" pulumi-lang-dotnet="`ProjectReference`" pulumi-lang-go="`projectReference`" pulumi-lang-python="`project_reference`" pulumi-lang-yaml="`projectReference`" pulumi-lang-java="`projectReference`"&gt;`projectReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`ownerReference`" pulumi-lang-dotnet="`OwnerReference`" pulumi-lang-go="`ownerReference`" pulumi-lang-python="`owner_reference`" pulumi-lang-yaml="`ownerReference`" pulumi-lang-java="`ownerReference`"&gt;`ownerReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`availabilityZoneReference`" pulumi-lang-dotnet="`AvailabilityZoneReference`" pulumi-lang-go="`availabilityZoneReference`" pulumi-lang-python="`availability_zone_reference`" pulumi-lang-yaml="`availabilityZoneReference`" pulumi-lang-java="`availabilityZoneReference`"&gt;`availabilityZoneReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`clusterReference`" pulumi-lang-dotnet="`ClusterReference`" pulumi-lang-go="`clusterReference`" pulumi-lang-python="`cluster_reference`" pulumi-lang-yaml="`clusterReference`" pulumi-lang-java="`clusterReference`"&gt;`clusterReference`&lt;/span&gt;, attributes supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`projectReference`" pulumi-lang-dotnet="`ProjectReference`" pulumi-lang-go="`projectReference`" pulumi-lang-python="`project_reference`" pulumi-lang-yaml="`projectReference`" pulumi-lang-java="`projectReference`" pulumi-lang-hcl="`project_reference`"&gt;`projectReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`ownerReference`" pulumi-lang-dotnet="`OwnerReference`" pulumi-lang-go="`ownerReference`" pulumi-lang-python="`owner_reference`" pulumi-lang-yaml="`ownerReference`" pulumi-lang-java="`ownerReference`" pulumi-lang-hcl="`owner_reference`"&gt;`ownerReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`availabilityZoneReference`" pulumi-lang-dotnet="`AvailabilityZoneReference`" pulumi-lang-go="`availabilityZoneReference`" pulumi-lang-python="`availability_zone_reference`" pulumi-lang-yaml="`availabilityZoneReference`" pulumi-lang-java="`availabilityZoneReference`" pulumi-lang-hcl="`availability_zone_reference`"&gt;`availabilityZoneReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`clusterReference`" pulumi-lang-dotnet="`ClusterReference`" pulumi-lang-go="`clusterReference`" pulumi-lang-python="`cluster_reference`" pulumi-lang-yaml="`clusterReference`" pulumi-lang-java="`clusterReference`" pulumi-lang-hcl="`cluster_reference`"&gt;`clusterReference`&lt;/span&gt;, attributes supports the following:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`kind`" pulumi-lang-dotnet="`Kind`" pulumi-lang-go="`kind`" pulumi-lang-python="`kind`" pulumi-lang-yaml="`kind`" pulumi-lang-java="`kind`"&gt;`kind`&lt;/span&gt;: - The kind name (Default value: project).
-        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - the name.
+        /// * &lt;span pulumi-lang-nodejs="`kind`" pulumi-lang-dotnet="`Kind`" pulumi-lang-go="`kind`" pulumi-lang-python="`kind`" pulumi-lang-yaml="`kind`" pulumi-lang-java="`kind`" pulumi-lang-hcl="`kind`"&gt;`kind`&lt;/span&gt;: - The kind name (Default value: project).
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt;: - the name.
         /// * `UUID`: - the UUID.
         /// 
         /// ### Version
         /// 
         /// The version attribute supports the following:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`productName`" pulumi-lang-dotnet="`ProductName`" pulumi-lang-go="`productName`" pulumi-lang-python="`product_name`" pulumi-lang-yaml="`productName`" pulumi-lang-java="`productName`"&gt;`productName`&lt;/span&gt;: - Name of the producer/distribution of the image. For example windows or red hat.
-        /// * &lt;span pulumi-lang-nodejs="`productVersion`" pulumi-lang-dotnet="`ProductVersion`" pulumi-lang-go="`productVersion`" pulumi-lang-python="`product_version`" pulumi-lang-yaml="`productVersion`" pulumi-lang-java="`productVersion`"&gt;`productVersion`&lt;/span&gt;: - Version string for the disk image.
+        /// * &lt;span pulumi-lang-nodejs="`productName`" pulumi-lang-dotnet="`ProductName`" pulumi-lang-go="`productName`" pulumi-lang-python="`product_name`" pulumi-lang-yaml="`productName`" pulumi-lang-java="`productName`" pulumi-lang-hcl="`product_name`"&gt;`productName`&lt;/span&gt;: - Name of the producer/distribution of the image. For example windows or red hat.
+        /// * &lt;span pulumi-lang-nodejs="`productVersion`" pulumi-lang-dotnet="`ProductVersion`" pulumi-lang-go="`productVersion`" pulumi-lang-python="`product_version`" pulumi-lang-yaml="`productVersion`" pulumi-lang-java="`productVersion`" pulumi-lang-hcl="`product_version`"&gt;`productVersion`&lt;/span&gt;: - Version string for the disk image.
         /// 
         /// See detailed information in [Nutanix Clusters](https://www.nutanix.dev/api_references/prism-central-v3/#/d93c30e04327e-get-a-list-of-existing-clusters).
         /// </summary>
@@ -162,6 +174,18 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getclusters" "clusters" {
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -198,18 +222,18 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Reference
         /// 
-        /// The &lt;span pulumi-lang-nodejs="`projectReference`" pulumi-lang-dotnet="`ProjectReference`" pulumi-lang-go="`projectReference`" pulumi-lang-python="`project_reference`" pulumi-lang-yaml="`projectReference`" pulumi-lang-java="`projectReference`"&gt;`projectReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`ownerReference`" pulumi-lang-dotnet="`OwnerReference`" pulumi-lang-go="`ownerReference`" pulumi-lang-python="`owner_reference`" pulumi-lang-yaml="`ownerReference`" pulumi-lang-java="`ownerReference`"&gt;`ownerReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`availabilityZoneReference`" pulumi-lang-dotnet="`AvailabilityZoneReference`" pulumi-lang-go="`availabilityZoneReference`" pulumi-lang-python="`availability_zone_reference`" pulumi-lang-yaml="`availabilityZoneReference`" pulumi-lang-java="`availabilityZoneReference`"&gt;`availabilityZoneReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`clusterReference`" pulumi-lang-dotnet="`ClusterReference`" pulumi-lang-go="`clusterReference`" pulumi-lang-python="`cluster_reference`" pulumi-lang-yaml="`clusterReference`" pulumi-lang-java="`clusterReference`"&gt;`clusterReference`&lt;/span&gt;, attributes supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`projectReference`" pulumi-lang-dotnet="`ProjectReference`" pulumi-lang-go="`projectReference`" pulumi-lang-python="`project_reference`" pulumi-lang-yaml="`projectReference`" pulumi-lang-java="`projectReference`" pulumi-lang-hcl="`project_reference`"&gt;`projectReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`ownerReference`" pulumi-lang-dotnet="`OwnerReference`" pulumi-lang-go="`ownerReference`" pulumi-lang-python="`owner_reference`" pulumi-lang-yaml="`ownerReference`" pulumi-lang-java="`ownerReference`" pulumi-lang-hcl="`owner_reference`"&gt;`ownerReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`availabilityZoneReference`" pulumi-lang-dotnet="`AvailabilityZoneReference`" pulumi-lang-go="`availabilityZoneReference`" pulumi-lang-python="`availability_zone_reference`" pulumi-lang-yaml="`availabilityZoneReference`" pulumi-lang-java="`availabilityZoneReference`" pulumi-lang-hcl="`availability_zone_reference`"&gt;`availabilityZoneReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`clusterReference`" pulumi-lang-dotnet="`ClusterReference`" pulumi-lang-go="`clusterReference`" pulumi-lang-python="`cluster_reference`" pulumi-lang-yaml="`clusterReference`" pulumi-lang-java="`clusterReference`" pulumi-lang-hcl="`cluster_reference`"&gt;`clusterReference`&lt;/span&gt;, attributes supports the following:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`kind`" pulumi-lang-dotnet="`Kind`" pulumi-lang-go="`kind`" pulumi-lang-python="`kind`" pulumi-lang-yaml="`kind`" pulumi-lang-java="`kind`"&gt;`kind`&lt;/span&gt;: - The kind name (Default value: project).
-        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - the name.
+        /// * &lt;span pulumi-lang-nodejs="`kind`" pulumi-lang-dotnet="`Kind`" pulumi-lang-go="`kind`" pulumi-lang-python="`kind`" pulumi-lang-yaml="`kind`" pulumi-lang-java="`kind`" pulumi-lang-hcl="`kind`"&gt;`kind`&lt;/span&gt;: - The kind name (Default value: project).
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt;: - the name.
         /// * `UUID`: - the UUID.
         /// 
         /// ### Version
         /// 
         /// The version attribute supports the following:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`productName`" pulumi-lang-dotnet="`ProductName`" pulumi-lang-go="`productName`" pulumi-lang-python="`product_name`" pulumi-lang-yaml="`productName`" pulumi-lang-java="`productName`"&gt;`productName`&lt;/span&gt;: - Name of the producer/distribution of the image. For example windows or red hat.
-        /// * &lt;span pulumi-lang-nodejs="`productVersion`" pulumi-lang-dotnet="`ProductVersion`" pulumi-lang-go="`productVersion`" pulumi-lang-python="`product_version`" pulumi-lang-yaml="`productVersion`" pulumi-lang-java="`productVersion`"&gt;`productVersion`&lt;/span&gt;: - Version string for the disk image.
+        /// * &lt;span pulumi-lang-nodejs="`productName`" pulumi-lang-dotnet="`ProductName`" pulumi-lang-go="`productName`" pulumi-lang-python="`product_name`" pulumi-lang-yaml="`productName`" pulumi-lang-java="`productName`" pulumi-lang-hcl="`product_name`"&gt;`productName`&lt;/span&gt;: - Name of the producer/distribution of the image. For example windows or red hat.
+        /// * &lt;span pulumi-lang-nodejs="`productVersion`" pulumi-lang-dotnet="`ProductVersion`" pulumi-lang-go="`productVersion`" pulumi-lang-python="`product_version`" pulumi-lang-yaml="`productVersion`" pulumi-lang-java="`productVersion`" pulumi-lang-hcl="`product_version`"&gt;`productVersion`&lt;/span&gt;: - Version string for the disk image.
         /// 
         /// See detailed information in [Nutanix Clusters](https://www.nutanix.dev/api_references/prism-central-v3/#/d93c30e04327e-get-a-list-of-existing-clusters).
         /// </summary>
@@ -264,6 +288,18 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getclusters" "clusters" {
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -300,18 +336,18 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Reference
         /// 
-        /// The &lt;span pulumi-lang-nodejs="`projectReference`" pulumi-lang-dotnet="`ProjectReference`" pulumi-lang-go="`projectReference`" pulumi-lang-python="`project_reference`" pulumi-lang-yaml="`projectReference`" pulumi-lang-java="`projectReference`"&gt;`projectReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`ownerReference`" pulumi-lang-dotnet="`OwnerReference`" pulumi-lang-go="`ownerReference`" pulumi-lang-python="`owner_reference`" pulumi-lang-yaml="`ownerReference`" pulumi-lang-java="`ownerReference`"&gt;`ownerReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`availabilityZoneReference`" pulumi-lang-dotnet="`AvailabilityZoneReference`" pulumi-lang-go="`availabilityZoneReference`" pulumi-lang-python="`availability_zone_reference`" pulumi-lang-yaml="`availabilityZoneReference`" pulumi-lang-java="`availabilityZoneReference`"&gt;`availabilityZoneReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`clusterReference`" pulumi-lang-dotnet="`ClusterReference`" pulumi-lang-go="`clusterReference`" pulumi-lang-python="`cluster_reference`" pulumi-lang-yaml="`clusterReference`" pulumi-lang-java="`clusterReference`"&gt;`clusterReference`&lt;/span&gt;, attributes supports the following:
+        /// The &lt;span pulumi-lang-nodejs="`projectReference`" pulumi-lang-dotnet="`ProjectReference`" pulumi-lang-go="`projectReference`" pulumi-lang-python="`project_reference`" pulumi-lang-yaml="`projectReference`" pulumi-lang-java="`projectReference`" pulumi-lang-hcl="`project_reference`"&gt;`projectReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`ownerReference`" pulumi-lang-dotnet="`OwnerReference`" pulumi-lang-go="`ownerReference`" pulumi-lang-python="`owner_reference`" pulumi-lang-yaml="`ownerReference`" pulumi-lang-java="`ownerReference`" pulumi-lang-hcl="`owner_reference`"&gt;`ownerReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`availabilityZoneReference`" pulumi-lang-dotnet="`AvailabilityZoneReference`" pulumi-lang-go="`availabilityZoneReference`" pulumi-lang-python="`availability_zone_reference`" pulumi-lang-yaml="`availabilityZoneReference`" pulumi-lang-java="`availabilityZoneReference`" pulumi-lang-hcl="`availability_zone_reference`"&gt;`availabilityZoneReference`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`clusterReference`" pulumi-lang-dotnet="`ClusterReference`" pulumi-lang-go="`clusterReference`" pulumi-lang-python="`cluster_reference`" pulumi-lang-yaml="`clusterReference`" pulumi-lang-java="`clusterReference`" pulumi-lang-hcl="`cluster_reference`"&gt;`clusterReference`&lt;/span&gt;, attributes supports the following:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`kind`" pulumi-lang-dotnet="`Kind`" pulumi-lang-go="`kind`" pulumi-lang-python="`kind`" pulumi-lang-yaml="`kind`" pulumi-lang-java="`kind`"&gt;`kind`&lt;/span&gt;: - The kind name (Default value: project).
-        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - the name.
+        /// * &lt;span pulumi-lang-nodejs="`kind`" pulumi-lang-dotnet="`Kind`" pulumi-lang-go="`kind`" pulumi-lang-python="`kind`" pulumi-lang-yaml="`kind`" pulumi-lang-java="`kind`" pulumi-lang-hcl="`kind`"&gt;`kind`&lt;/span&gt;: - The kind name (Default value: project).
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt;: - the name.
         /// * `UUID`: - the UUID.
         /// 
         /// ### Version
         /// 
         /// The version attribute supports the following:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`productName`" pulumi-lang-dotnet="`ProductName`" pulumi-lang-go="`productName`" pulumi-lang-python="`product_name`" pulumi-lang-yaml="`productName`" pulumi-lang-java="`productName`"&gt;`productName`&lt;/span&gt;: - Name of the producer/distribution of the image. For example windows or red hat.
-        /// * &lt;span pulumi-lang-nodejs="`productVersion`" pulumi-lang-dotnet="`ProductVersion`" pulumi-lang-go="`productVersion`" pulumi-lang-python="`product_version`" pulumi-lang-yaml="`productVersion`" pulumi-lang-java="`productVersion`"&gt;`productVersion`&lt;/span&gt;: - Version string for the disk image.
+        /// * &lt;span pulumi-lang-nodejs="`productName`" pulumi-lang-dotnet="`ProductName`" pulumi-lang-go="`productName`" pulumi-lang-python="`product_name`" pulumi-lang-yaml="`productName`" pulumi-lang-java="`productName`" pulumi-lang-hcl="`product_name`"&gt;`productName`&lt;/span&gt;: - Name of the producer/distribution of the image. For example windows or red hat.
+        /// * &lt;span pulumi-lang-nodejs="`productVersion`" pulumi-lang-dotnet="`ProductVersion`" pulumi-lang-go="`productVersion`" pulumi-lang-python="`product_version`" pulumi-lang-yaml="`productVersion`" pulumi-lang-java="`productVersion`" pulumi-lang-hcl="`product_version`"&gt;`productVersion`&lt;/span&gt;: - Version string for the disk image.
         /// 
         /// See detailed information in [Nutanix Clusters](https://www.nutanix.dev/api_references/prism-central-v3/#/d93c30e04327e-get-a-list-of-existing-clusters).
         /// </summary>

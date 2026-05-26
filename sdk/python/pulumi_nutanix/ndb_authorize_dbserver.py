@@ -19,9 +19,9 @@ __all__ = ['NdbAuthorizeDbserverArgs', 'NdbAuthorizeDbserver']
 @pulumi.input_type
 class NdbAuthorizeDbserverArgs:
     def __init__(__self__, *,
-                 dbservers_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_machine_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 dbservers_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_machine_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbAuthorizeDbserver resource.
 
@@ -36,41 +36,41 @@ class NdbAuthorizeDbserverArgs:
 
     @_builtins.property
     @pulumi.getter(name="dbserversIds")
-    def dbservers_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dbservers_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "dbservers_ids")
 
     @dbservers_ids.setter
-    def dbservers_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dbservers_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dbservers_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachineId")
-    def time_machine_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_machine_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "time_machine_id")
 
     @time_machine_id.setter
-    def time_machine_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_machine_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_machine_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachineName")
-    def time_machine_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_machine_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id ">`dbserversId </span>`: (Required)
         """
         return pulumi.get(self, "time_machine_name")
 
     @time_machine_name.setter
-    def time_machine_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_machine_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_machine_name", value)
 
 
 @pulumi.input_type
 class _NdbAuthorizeDbserverState:
     def __init__(__self__, *,
-                 dbservers_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_machine_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 dbservers_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_machine_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbAuthorizeDbserver resources.
 
@@ -85,32 +85,32 @@ class _NdbAuthorizeDbserverState:
 
     @_builtins.property
     @pulumi.getter(name="dbserversIds")
-    def dbservers_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dbservers_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "dbservers_ids")
 
     @dbservers_ids.setter
-    def dbservers_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dbservers_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dbservers_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachineId")
-    def time_machine_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_machine_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "time_machine_id")
 
     @time_machine_id.setter
-    def time_machine_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_machine_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_machine_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachineName")
-    def time_machine_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_machine_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id ">`dbserversId </span>`: (Required)
         """
         return pulumi.get(self, "time_machine_name")
 
     @time_machine_name.setter
-    def time_machine_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_machine_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_machine_name", value)
 
 
@@ -120,9 +120,9 @@ class NdbAuthorizeDbserver(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dbservers_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_machine_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 dbservers_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_machine_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to authorize db server VMs for cloning of database instance based on the input parameters.
@@ -183,9 +183,9 @@ class NdbAuthorizeDbserver(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dbservers_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_machine_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 dbservers_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_machine_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -208,9 +208,9 @@ class NdbAuthorizeDbserver(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dbservers_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_machine_name: Optional[pulumi.Input[_builtins.str]] = None) -> 'NdbAuthorizeDbserver':
+            dbservers_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_machine_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'NdbAuthorizeDbserver':
         """
         Get an existing NdbAuthorizeDbserver resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -207,79 +207,79 @@ export interface SamlIdentityProvidersV2State {
     /**
      * - User or Service who created the SAML Identity Provider.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * - Creation time of the SAML Identity Provider.
      */
-    createdTime?: pulumi.Input<string>;
-    customAttributes?: pulumi.Input<pulumi.Input<string>[]>;
-    emailAttribute?: pulumi.Input<string>;
+    createdTime?: pulumi.Input<string | undefined>;
+    customAttributes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    emailAttribute?: pulumi.Input<string | undefined>;
     /**
      * - It will be used as Issuer in SAML authnRequest.
      */
-    entityIssuer?: pulumi.Input<string>;
+    entityIssuer?: pulumi.Input<string | undefined>;
     /**
      * The External Identifier of the User Group.
      */
-    extId?: pulumi.Input<string>;
-    groupsAttribute?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
+    groupsAttribute?: pulumi.Input<string | undefined>;
     /**
      * - Delimiter is used to split the value of attribute into multiple groups.
      */
-    groupsDelim?: pulumi.Input<string>;
-    idpMetadataUrl?: pulumi.Input<string>;
-    idpMetadataXml?: pulumi.Input<string>;
+    groupsDelim?: pulumi.Input<string | undefined>;
+    idpMetadataUrl?: pulumi.Input<string | undefined>;
+    idpMetadataXml?: pulumi.Input<string | undefined>;
     /**
      * - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
      */
-    idpMetadatas?: pulumi.Input<pulumi.Input<inputs.SamlIdentityProvidersV2IdpMetadata>[]>;
+    idpMetadatas?: pulumi.Input<pulumi.Input<inputs.SamlIdentityProvidersV2IdpMetadata>[] | undefined>;
     /**
      * - Flag indicating signing of SAML authnRequests.
      */
-    isSignedAuthnReqEnabled?: pulumi.Input<boolean>;
+    isSignedAuthnReqEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * - Last updated time of the SAML Identity Provider.
      */
-    lastUpdatedTime?: pulumi.Input<string>;
+    lastUpdatedTime?: pulumi.Input<string | undefined>;
     /**
      * - Unique name of the IDP.
      */
-    name?: pulumi.Input<string>;
-    usernameAttribute?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    usernameAttribute?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a SamlIdentityProvidersV2 resource.
  */
 export interface SamlIdentityProvidersV2Args {
-    customAttributes?: pulumi.Input<pulumi.Input<string>[]>;
-    emailAttribute?: pulumi.Input<string>;
+    customAttributes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    emailAttribute?: pulumi.Input<string | undefined>;
     /**
      * - It will be used as Issuer in SAML authnRequest.
      */
-    entityIssuer?: pulumi.Input<string>;
+    entityIssuer?: pulumi.Input<string | undefined>;
     /**
      * The External Identifier of the User Group.
      */
-    extId?: pulumi.Input<string>;
-    groupsAttribute?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
+    groupsAttribute?: pulumi.Input<string | undefined>;
     /**
      * - Delimiter is used to split the value of attribute into multiple groups.
      */
-    groupsDelim?: pulumi.Input<string>;
-    idpMetadataUrl?: pulumi.Input<string>;
-    idpMetadataXml?: pulumi.Input<string>;
+    groupsDelim?: pulumi.Input<string | undefined>;
+    idpMetadataUrl?: pulumi.Input<string | undefined>;
+    idpMetadataXml?: pulumi.Input<string | undefined>;
     /**
      * - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
      */
-    idpMetadatas?: pulumi.Input<pulumi.Input<inputs.SamlIdentityProvidersV2IdpMetadata>[]>;
+    idpMetadatas?: pulumi.Input<pulumi.Input<inputs.SamlIdentityProvidersV2IdpMetadata>[] | undefined>;
     /**
      * - Flag indicating signing of SAML authnRequests.
      */
-    isSignedAuthnReqEnabled?: pulumi.Input<boolean>;
+    isSignedAuthnReqEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * - Unique name of the IDP.
      */
-    name?: pulumi.Input<string>;
-    usernameAttribute?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    usernameAttribute?: pulumi.Input<string | undefined>;
 }

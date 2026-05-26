@@ -556,11 +556,11 @@ def get_templates_v2(filter: Optional[_builtins.str] = None,
         page=pulumi.get(__ret__, 'page'),
         select=pulumi.get(__ret__, 'select'),
         templates=pulumi.get(__ret__, 'templates'))
-def get_templates_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                            order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                            select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_templates_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                            order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                            select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTemplatesV2Result]:
     """
     List Templates with details like name, description, VM configuration, etc. This operation supports filtering, sorting & pagination.

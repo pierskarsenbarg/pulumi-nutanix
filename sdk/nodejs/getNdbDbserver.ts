@@ -199,30 +199,30 @@ export function getNdbDbserverOutput(args?: GetNdbDbserverOutputArgs, opts?: pul
  * A collection of arguments for invoking getNdbDbserver.
  */
 export interface GetNdbDbserverOutputArgs {
-    dbserverClusterId?: pulumi.Input<string>;
+    dbserverClusterId?: pulumi.Input<string | undefined>;
     /**
      * id of database server vm
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * ip of database server vm
      */
-    ip?: pulumi.Input<string>;
+    ip?: pulumi.Input<string | undefined>;
     /**
      * name of database server vm
      */
-    name?: pulumi.Input<string>;
-    nxClusterId?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    nxClusterId?: pulumi.Input<string | undefined>;
     /**
      * tags for db server vm
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbDbserverTagArgs>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbDbserverTagArgs>[] | undefined>;
     /**
      * vm cluster id of database server
      */
-    vmClusterId?: pulumi.Input<string>;
+    vmClusterId?: pulumi.Input<string | undefined>;
     /**
      * vm cluster name of database server
      */
-    vmClusterName?: pulumi.Input<string>;
+    vmClusterName?: pulumi.Input<string | undefined>;
 }

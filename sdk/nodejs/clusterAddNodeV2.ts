@@ -223,27 +223,27 @@ export interface ClusterAddNodeV2State {
     /**
      * -(Required) Cluster UUID.
      */
-    clusterExtId?: pulumi.Input<string>;
+    clusterExtId?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Config parameters.
      */
-    configParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2ConfigParam>[]>;
+    configParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2ConfigParam>[] | undefined>;
     /**
      * -(Required) Parameters of the node to be added.
      */
-    nodeParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2NodeParam>[]>;
+    nodeParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2NodeParam>[] | undefined>;
     /**
      * -(Optional) configuration for node removal.
      */
-    removeNodeParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2RemoveNodeParam>[]>;
+    removeNodeParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2RemoveNodeParam>[] | undefined>;
     /**
      * -(Optional) Indicates if node addition can be skipped.
      */
-    shouldSkipAddNode?: pulumi.Input<boolean>;
+    shouldSkipAddNode?: pulumi.Input<boolean | undefined>;
     /**
      * -(Optional) Indicates if pre-expand checks can be skipped for node addition.
      */
-    shouldSkipPreExpandChecks?: pulumi.Input<boolean>;
+    shouldSkipPreExpandChecks?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -257,7 +257,7 @@ export interface ClusterAddNodeV2Args {
     /**
      * -(Optional) Config parameters.
      */
-    configParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2ConfigParam>[]>;
+    configParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2ConfigParam>[] | undefined>;
     /**
      * -(Required) Parameters of the node to be added.
      */
@@ -265,13 +265,13 @@ export interface ClusterAddNodeV2Args {
     /**
      * -(Optional) configuration for node removal.
      */
-    removeNodeParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2RemoveNodeParam>[]>;
+    removeNodeParams?: pulumi.Input<pulumi.Input<inputs.ClusterAddNodeV2RemoveNodeParam>[] | undefined>;
     /**
      * -(Optional) Indicates if node addition can be skipped.
      */
-    shouldSkipAddNode?: pulumi.Input<boolean>;
+    shouldSkipAddNode?: pulumi.Input<boolean | undefined>;
     /**
      * -(Optional) Indicates if pre-expand checks can be skipped for node addition.
      */
-    shouldSkipPreExpandChecks?: pulumi.Input<boolean>;
+    shouldSkipPreExpandChecks?: pulumi.Input<boolean | undefined>;
 }

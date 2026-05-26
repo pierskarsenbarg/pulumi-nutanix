@@ -18,6 +18,50 @@ namespace PiersKarsenbarg.Nutanix
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getclusters" "clusters" {
+        ///   metadata = {
+        ///     "length" = 2
+        ///   }
+        /// }
+        /// data "nutanix_getsubnet" "test" {
+        ///   subnet_id = nutanix_subnet.test.id
+        /// }
+        /// data "nutanix_getsubnet" "test-name" {
+        ///   subnet_name = nutanix_subnet.test.name
+        /// }
+        /// 
+        /// resource "nutanix_subnet" "test" {
+        ///   name = "example-subnet"
+        ///   cluster_reference = {
+        ///     "kind" = "cluster"
+        ///     "UUID" = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        ///   }
+        ///   vlan_id            = 201
+        ///   subnet_type        = "VLAN"
+        ///   prefix_length      = 24
+        ///   default_gateway_ip = "192.168.0.1"
+        ///   subnet_ip          = "192.168.0.0"
+        ///   dhcp_options = [{
+        ///     "bootFileName"   = "bootfile"
+        ///     "tftpServerName" = "192.168.0.252"
+        ///     "domainName"     = "nutanix"
+        ///   }]
+        ///   dhcp_domain_name_server_lists = ["8.8.8.8", "4.2.2.2"]
+        ///   dhcp_domain_search_lists      = ["nutanix.com", "calm.io"]
+        /// }
+        /// output "cluster" {
+        ///   value = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        /// }
+        /// ```
         /// ```yaml
         /// resources:
         ///   testSubnet:
@@ -74,6 +118,50 @@ namespace PiersKarsenbarg.Nutanix
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getclusters" "clusters" {
+        ///   metadata = {
+        ///     "length" = 2
+        ///   }
+        /// }
+        /// data "nutanix_getsubnet" "test" {
+        ///   subnet_id = nutanix_subnet.test.id
+        /// }
+        /// data "nutanix_getsubnet" "test-name" {
+        ///   subnet_name = nutanix_subnet.test.name
+        /// }
+        /// 
+        /// resource "nutanix_subnet" "test" {
+        ///   name = "example-subnet"
+        ///   cluster_reference = {
+        ///     "kind" = "cluster"
+        ///     "UUID" = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        ///   }
+        ///   vlan_id            = 201
+        ///   subnet_type        = "VLAN"
+        ///   prefix_length      = 24
+        ///   default_gateway_ip = "192.168.0.1"
+        ///   subnet_ip          = "192.168.0.0"
+        ///   dhcp_options = [{
+        ///     "bootFileName"   = "bootfile"
+        ///     "tftpServerName" = "192.168.0.252"
+        ///     "domainName"     = "nutanix"
+        ///   }]
+        ///   dhcp_domain_name_server_lists = ["8.8.8.8", "4.2.2.2"]
+        ///   dhcp_domain_search_lists      = ["nutanix.com", "calm.io"]
+        /// }
+        /// output "cluster" {
+        ///   value = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        /// }
+        /// ```
         /// ```yaml
         /// resources:
         ///   testSubnet:
@@ -130,6 +218,50 @@ namespace PiersKarsenbarg.Nutanix
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getclusters" "clusters" {
+        ///   metadata = {
+        ///     "length" = 2
+        ///   }
+        /// }
+        /// data "nutanix_getsubnet" "test" {
+        ///   subnet_id = nutanix_subnet.test.id
+        /// }
+        /// data "nutanix_getsubnet" "test-name" {
+        ///   subnet_name = nutanix_subnet.test.name
+        /// }
+        /// 
+        /// resource "nutanix_subnet" "test" {
+        ///   name = "example-subnet"
+        ///   cluster_reference = {
+        ///     "kind" = "cluster"
+        ///     "UUID" = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        ///   }
+        ///   vlan_id            = 201
+        ///   subnet_type        = "VLAN"
+        ///   prefix_length      = 24
+        ///   default_gateway_ip = "192.168.0.1"
+        ///   subnet_ip          = "192.168.0.0"
+        ///   dhcp_options = [{
+        ///     "bootFileName"   = "bootfile"
+        ///     "tftpServerName" = "192.168.0.252"
+        ///     "domainName"     = "nutanix"
+        ///   }]
+        ///   dhcp_domain_name_server_lists = ["8.8.8.8", "4.2.2.2"]
+        ///   dhcp_domain_search_lists      = ["nutanix.com", "calm.io"]
+        /// }
+        /// output "cluster" {
+        ///   value = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        /// }
+        /// ```
         /// ```yaml
         /// resources:
         ///   testSubnet:

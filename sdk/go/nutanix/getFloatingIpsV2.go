@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Provides a datasource to retrieve floating IP with<span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid "> floatingIpUuid </span>.
+// Provides a datasource to retrieve floating IP with<span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid " pulumi-lang-hcl=" floating_ip_uuid "> floatingIpUuid </span>.
 //
 // ## Example Usage
 //

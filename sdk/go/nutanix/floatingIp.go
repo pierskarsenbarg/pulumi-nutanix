@@ -80,11 +80,11 @@ type FloatingIp struct {
 	ExternalSubnetReferenceName pulumi.StringPtrOutput `pulumi:"externalSubnetReferenceName"`
 	// The reference to a subnet. Should not be used with {external_subnet_reference_name} .
 	ExternalSubnetReferenceUuid pulumi.StringOutput `pulumi:"externalSubnetReferenceUuid"`
-	// The<span pulumi-lang-nodejs=" floatingIps " pulumi-lang-dotnet=" FloatingIps " pulumi-lang-go=" floatingIps " pulumi-lang-python=" floating_ips " pulumi-lang-yaml=" floatingIps " pulumi-lang-java=" floatingIps "> floatingIps </span>kind metadata.
+	// The<span pulumi-lang-nodejs=" floatingIps " pulumi-lang-dotnet=" FloatingIps " pulumi-lang-go=" floatingIps " pulumi-lang-python=" floating_ips " pulumi-lang-yaml=" floatingIps " pulumi-lang-java=" floatingIps " pulumi-lang-hcl=" floating_ips "> floatingIps </span>kind metadata.
 	Metadata pulumi.StringMapOutput `pulumi:"metadata"`
-	// Private IP with which floating IP is associated. Should be used with<span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference "> vpcReference </span>.
+	// Private IP with which floating IP is associated. Should be used with<span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference " pulumi-lang-hcl=" vpc_reference "> vpcReference </span>.
 	PrivateIp pulumi.StringPtrOutput `pulumi:"privateIp"`
-	// The reference to a<span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic "> vmNic </span>.
+	// The reference to a<span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic " pulumi-lang-hcl=" vm_nic "> vmNic </span>.
 	VmNicReferenceUuid pulumi.StringPtrOutput `pulumi:"vmNicReferenceUuid"`
 	// The reference to a vpc. Should not be used with {vpc_reference_uuid}.
 	VpcReferenceName pulumi.StringPtrOutput `pulumi:"vpcReferenceName"`
@@ -129,11 +129,11 @@ type floatingIpState struct {
 	ExternalSubnetReferenceName *string `pulumi:"externalSubnetReferenceName"`
 	// The reference to a subnet. Should not be used with {external_subnet_reference_name} .
 	ExternalSubnetReferenceUuid *string `pulumi:"externalSubnetReferenceUuid"`
-	// The<span pulumi-lang-nodejs=" floatingIps " pulumi-lang-dotnet=" FloatingIps " pulumi-lang-go=" floatingIps " pulumi-lang-python=" floating_ips " pulumi-lang-yaml=" floatingIps " pulumi-lang-java=" floatingIps "> floatingIps </span>kind metadata.
+	// The<span pulumi-lang-nodejs=" floatingIps " pulumi-lang-dotnet=" FloatingIps " pulumi-lang-go=" floatingIps " pulumi-lang-python=" floating_ips " pulumi-lang-yaml=" floatingIps " pulumi-lang-java=" floatingIps " pulumi-lang-hcl=" floating_ips "> floatingIps </span>kind metadata.
 	Metadata map[string]string `pulumi:"metadata"`
-	// Private IP with which floating IP is associated. Should be used with<span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference "> vpcReference </span>.
+	// Private IP with which floating IP is associated. Should be used with<span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference " pulumi-lang-hcl=" vpc_reference "> vpcReference </span>.
 	PrivateIp *string `pulumi:"privateIp"`
-	// The reference to a<span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic "> vmNic </span>.
+	// The reference to a<span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic " pulumi-lang-hcl=" vm_nic "> vmNic </span>.
 	VmNicReferenceUuid *string `pulumi:"vmNicReferenceUuid"`
 	// The reference to a vpc. Should not be used with {vpc_reference_uuid}.
 	VpcReferenceName *string `pulumi:"vpcReferenceName"`
@@ -149,11 +149,11 @@ type FloatingIpState struct {
 	ExternalSubnetReferenceName pulumi.StringPtrInput
 	// The reference to a subnet. Should not be used with {external_subnet_reference_name} .
 	ExternalSubnetReferenceUuid pulumi.StringPtrInput
-	// The<span pulumi-lang-nodejs=" floatingIps " pulumi-lang-dotnet=" FloatingIps " pulumi-lang-go=" floatingIps " pulumi-lang-python=" floating_ips " pulumi-lang-yaml=" floatingIps " pulumi-lang-java=" floatingIps "> floatingIps </span>kind metadata.
+	// The<span pulumi-lang-nodejs=" floatingIps " pulumi-lang-dotnet=" FloatingIps " pulumi-lang-go=" floatingIps " pulumi-lang-python=" floating_ips " pulumi-lang-yaml=" floatingIps " pulumi-lang-java=" floatingIps " pulumi-lang-hcl=" floating_ips "> floatingIps </span>kind metadata.
 	Metadata pulumi.StringMapInput
-	// Private IP with which floating IP is associated. Should be used with<span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference "> vpcReference </span>.
+	// Private IP with which floating IP is associated. Should be used with<span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference " pulumi-lang-hcl=" vpc_reference "> vpcReference </span>.
 	PrivateIp pulumi.StringPtrInput
-	// The reference to a<span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic "> vmNic </span>.
+	// The reference to a<span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic " pulumi-lang-hcl=" vm_nic "> vmNic </span>.
 	VmNicReferenceUuid pulumi.StringPtrInput
 	// The reference to a vpc. Should not be used with {vpc_reference_uuid}.
 	VpcReferenceName pulumi.StringPtrInput
@@ -173,9 +173,9 @@ type floatingIpArgs struct {
 	ExternalSubnetReferenceName *string `pulumi:"externalSubnetReferenceName"`
 	// The reference to a subnet. Should not be used with {external_subnet_reference_name} .
 	ExternalSubnetReferenceUuid *string `pulumi:"externalSubnetReferenceUuid"`
-	// Private IP with which floating IP is associated. Should be used with<span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference "> vpcReference </span>.
+	// Private IP with which floating IP is associated. Should be used with<span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference " pulumi-lang-hcl=" vpc_reference "> vpcReference </span>.
 	PrivateIp *string `pulumi:"privateIp"`
-	// The reference to a<span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic "> vmNic </span>.
+	// The reference to a<span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic " pulumi-lang-hcl=" vm_nic "> vmNic </span>.
 	VmNicReferenceUuid *string `pulumi:"vmNicReferenceUuid"`
 	// The reference to a vpc. Should not be used with {vpc_reference_uuid}.
 	VpcReferenceName *string `pulumi:"vpcReferenceName"`
@@ -192,9 +192,9 @@ type FloatingIpArgs struct {
 	ExternalSubnetReferenceName pulumi.StringPtrInput
 	// The reference to a subnet. Should not be used with {external_subnet_reference_name} .
 	ExternalSubnetReferenceUuid pulumi.StringPtrInput
-	// Private IP with which floating IP is associated. Should be used with<span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference "> vpcReference </span>.
+	// Private IP with which floating IP is associated. Should be used with<span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference " pulumi-lang-hcl=" vpc_reference "> vpcReference </span>.
 	PrivateIp pulumi.StringPtrInput
-	// The reference to a<span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic "> vmNic </span>.
+	// The reference to a<span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic " pulumi-lang-hcl=" vm_nic "> vmNic </span>.
 	VmNicReferenceUuid pulumi.StringPtrInput
 	// The reference to a vpc. Should not be used with {vpc_reference_uuid}.
 	VpcReferenceName pulumi.StringPtrInput
@@ -305,17 +305,17 @@ func (o FloatingIpOutput) ExternalSubnetReferenceUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v *FloatingIp) pulumi.StringOutput { return v.ExternalSubnetReferenceUuid }).(pulumi.StringOutput)
 }
 
-// The<span pulumi-lang-nodejs=" floatingIps " pulumi-lang-dotnet=" FloatingIps " pulumi-lang-go=" floatingIps " pulumi-lang-python=" floating_ips " pulumi-lang-yaml=" floatingIps " pulumi-lang-java=" floatingIps "> floatingIps </span>kind metadata.
+// The<span pulumi-lang-nodejs=" floatingIps " pulumi-lang-dotnet=" FloatingIps " pulumi-lang-go=" floatingIps " pulumi-lang-python=" floating_ips " pulumi-lang-yaml=" floatingIps " pulumi-lang-java=" floatingIps " pulumi-lang-hcl=" floating_ips "> floatingIps </span>kind metadata.
 func (o FloatingIpOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *FloatingIp) pulumi.StringMapOutput { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
-// Private IP with which floating IP is associated. Should be used with<span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference "> vpcReference </span>.
+// Private IP with which floating IP is associated. Should be used with<span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference " pulumi-lang-hcl=" vpc_reference "> vpcReference </span>.
 func (o FloatingIpOutput) PrivateIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FloatingIp) pulumi.StringPtrOutput { return v.PrivateIp }).(pulumi.StringPtrOutput)
 }
 
-// The reference to a<span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic "> vmNic </span>.
+// The reference to a<span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic " pulumi-lang-hcl=" vm_nic "> vmNic </span>.
 func (o FloatingIpOutput) VmNicReferenceUuid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FloatingIp) pulumi.StringPtrOutput { return v.VmNicReferenceUuid }).(pulumi.StringPtrOutput)
 }

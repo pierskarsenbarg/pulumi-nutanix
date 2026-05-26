@@ -198,7 +198,7 @@ def get_self_service_app(app_uuid: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'),
         vms=pulumi.get(__ret__, 'vms'))
-def get_self_service_app_output(app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+def get_self_service_app_output(app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSelfServiceAppResult]:
     """
     Describes an Application (app) in NCM Self Service.

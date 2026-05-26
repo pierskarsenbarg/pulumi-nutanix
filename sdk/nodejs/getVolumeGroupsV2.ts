@@ -250,10 +250,10 @@ export function getVolumeGroupsV2Output(args?: GetVolumeGroupsV2OutputArgs, opts
  * A collection of arguments for invoking getVolumeGroupsV2.
  */
 export interface GetVolumeGroupsV2OutputArgs {
-    expand?: pulumi.Input<string>;
-    filter?: pulumi.Input<string>;
-    limit?: pulumi.Input<number>;
-    orderby?: pulumi.Input<string>;
-    page?: pulumi.Input<number>;
-    select?: pulumi.Input<string>;
+    expand?: pulumi.Input<string | undefined>;
+    filter?: pulumi.Input<string | undefined>;
+    limit?: pulumi.Input<number | undefined>;
+    orderby?: pulumi.Input<string | undefined>;
+    page?: pulumi.Input<number | undefined>;
+    select?: pulumi.Input<string | undefined>;
 }

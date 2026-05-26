@@ -19,7 +19,7 @@ __all__ = ['LcmPerformInventoryV2Args', 'LcmPerformInventoryV2']
 @pulumi.input_type
 class LcmPerformInventoryV2Args:
     def __init__(__self__, *,
-                 x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a LcmPerformInventoryV2 resource.
 
@@ -32,7 +32,7 @@ class LcmPerformInventoryV2Args:
 
     @_builtins.property
     @pulumi.getter(name="xClusterId")
-    def x_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def x_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cluster uuid on which the resource is present or operation is being performed.
 
@@ -41,14 +41,14 @@ class LcmPerformInventoryV2Args:
         return pulumi.get(self, "x_cluster_id")
 
     @x_cluster_id.setter
-    def x_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def x_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "x_cluster_id", value)
 
 
 @pulumi.input_type
 class _LcmPerformInventoryV2State:
     def __init__(__self__, *,
-                 x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LcmPerformInventoryV2 resources.
 
@@ -61,7 +61,7 @@ class _LcmPerformInventoryV2State:
 
     @_builtins.property
     @pulumi.getter(name="xClusterId")
-    def x_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def x_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cluster uuid on which the resource is present or operation is being performed.
 
@@ -70,7 +70,7 @@ class _LcmPerformInventoryV2State:
         return pulumi.get(self, "x_cluster_id")
 
     @x_cluster_id.setter
-    def x_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def x_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "x_cluster_id", value)
 
 
@@ -80,7 +80,7 @@ class LcmPerformInventoryV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Perform an inventory operation to identify/scan entities on the cluster that can be updated through LCM.
@@ -141,7 +141,7 @@ class LcmPerformInventoryV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -162,7 +162,7 @@ class LcmPerformInventoryV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            x_cluster_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'LcmPerformInventoryV2':
+            x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'LcmPerformInventoryV2':
         """
         Get an existing LcmPerformInventoryV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

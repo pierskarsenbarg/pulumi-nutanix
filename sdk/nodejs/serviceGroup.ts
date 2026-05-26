@@ -120,19 +120,19 @@ export interface ServiceGroupState {
     /**
      * - (Optional) Description of the service group
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - (Required) Name of the service group
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
      */
-    serviceLists?: pulumi.Input<pulumi.Input<inputs.ServiceGroupServiceList>[]>;
+    serviceLists?: pulumi.Input<pulumi.Input<inputs.ServiceGroupServiceList>[] | undefined>;
     /**
      * - (ReadOnly) boolean value to denote if the service group is system defined
      */
-    systemDefined?: pulumi.Input<boolean>;
+    systemDefined?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -142,11 +142,11 @@ export interface ServiceGroupArgs {
     /**
      * - (Optional) Description of the service group
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - (Required) Name of the service group
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
      */

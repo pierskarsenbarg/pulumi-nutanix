@@ -75,6 +75,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getselfservicesnapshotpolicylist" "test" {
+        ///   bp_name = "NAME OF BLUEPRINT"
+        ///   length  = 250
+        ///   offset  = 0
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -181,6 +196,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getselfservicesnapshotpolicylist" "test" {
+        ///   bp_name = "NAME OF BLUEPRINT"
+        ///   length  = 250
+        ///   offset  = 0
         /// }
         /// ```
         /// ```java
@@ -291,6 +321,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getselfservicesnapshotpolicylist" "test" {
+        ///   bp_name = "NAME OF BLUEPRINT"
+        ///   length  = 250
+        ///   offset  = 0
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -349,7 +394,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The name of the blueprint for which snapshot policies should be listed.
         /// 
-        /// Both (&lt;span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`"&gt;`bpName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`"&gt;`bpUuid`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`" pulumi-lang-hcl="`bp_name`"&gt;`bpName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`" pulumi-lang-hcl="`bp_uuid`"&gt;`bpUuid`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("bpUuid")]
         public string? BpUuid { get; set; }
@@ -383,7 +428,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The name of the blueprint for which snapshot policies should be listed.
         /// 
-        /// Both (&lt;span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`"&gt;`bpName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`"&gt;`bpUuid`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`" pulumi-lang-hcl="`bp_name`"&gt;`bpName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`" pulumi-lang-hcl="`bp_uuid`"&gt;`bpUuid`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("bpUuid")]
         public Input<string>? BpUuid { get; set; }

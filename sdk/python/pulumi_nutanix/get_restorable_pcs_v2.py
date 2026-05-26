@@ -118,10 +118,10 @@ def get_restorable_pcs_v2(filter: Optional[_builtins.str] = None,
         page=pulumi.get(__ret__, 'page'),
         restorable_pcs=pulumi.get(__ret__, 'restorable_pcs'),
         restore_source_ext_id=pulumi.get(__ret__, 'restore_source_ext_id'))
-def get_restorable_pcs_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 limit: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 page: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 restore_source_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_restorable_pcs_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 limit: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 page: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 restore_source_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRestorablePcsV2Result]:
     """
     Lists all the PCs (domain managers) backed up at the object store/cluster.

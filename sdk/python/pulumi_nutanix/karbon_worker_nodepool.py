@@ -23,10 +23,10 @@ class KarbonWorkerNodepoolArgs:
     def __init__(__self__, *,
                  cluster_name: pulumi.Input[_builtins.str],
                  num_instances: pulumi.Input[_builtins.int],
-                 ahv_config: Optional[pulumi.Input['KarbonWorkerNodepoolAhvConfigArgs']] = None,
-                 labels: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_os_version: Optional[pulumi.Input[_builtins.str]] = None):
+                 ahv_config: pulumi.Input[Optional['KarbonWorkerNodepoolAhvConfigArgs']] = None,
+                 labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_os_version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a KarbonWorkerNodepool resource.
 
@@ -74,63 +74,63 @@ class KarbonWorkerNodepoolArgs:
 
     @_builtins.property
     @pulumi.getter(name="ahvConfig")
-    def ahv_config(self) -> Optional[pulumi.Input['KarbonWorkerNodepoolAhvConfigArgs']]:
+    def ahv_config(self) -> pulumi.Input[Optional['KarbonWorkerNodepoolAhvConfigArgs']]:
         """
         VM configuration in AHV.
         """
         return pulumi.get(self, "ahv_config")
 
     @ahv_config.setter
-    def ahv_config(self, value: Optional[pulumi.Input['KarbonWorkerNodepoolAhvConfigArgs']]):
+    def ahv_config(self, value: pulumi.Input[Optional['KarbonWorkerNodepoolAhvConfigArgs']]):
         pulumi.set(self, "ahv_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def labels(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def labels(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         labels of node
         """
         return pulumi.get(self, "labels")
 
     @labels.setter
-    def labels(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def labels(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "labels", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         unique worker nodepool name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeOsVersion")
-    def node_os_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_os_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the node OS image
         """
         return pulumi.get(self, "node_os_version")
 
     @node_os_version.setter
-    def node_os_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_os_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_os_version", value)
 
 
 @pulumi.input_type
 class _KarbonWorkerNodepoolState:
     def __init__(__self__, *,
-                 ahv_config: Optional[pulumi.Input['KarbonWorkerNodepoolAhvConfigArgs']] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 labels: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_os_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 nodes: Optional[pulumi.Input[Sequence[pulumi.Input['KarbonWorkerNodepoolNodeArgs']]]] = None,
-                 num_instances: Optional[pulumi.Input[_builtins.int]] = None):
+                 ahv_config: pulumi.Input[Optional['KarbonWorkerNodepoolAhvConfigArgs']] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_os_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input['KarbonWorkerNodepoolNodeArgs']]]] = None,
+                 num_instances: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering KarbonWorkerNodepool resources.
 
@@ -159,86 +159,86 @@ class _KarbonWorkerNodepoolState:
 
     @_builtins.property
     @pulumi.getter(name="ahvConfig")
-    def ahv_config(self) -> Optional[pulumi.Input['KarbonWorkerNodepoolAhvConfigArgs']]:
+    def ahv_config(self) -> pulumi.Input[Optional['KarbonWorkerNodepoolAhvConfigArgs']]:
         """
         VM configuration in AHV.
         """
         return pulumi.get(self, "ahv_config")
 
     @ahv_config.setter
-    def ahv_config(self, value: Optional[pulumi.Input['KarbonWorkerNodepoolAhvConfigArgs']]):
+    def ahv_config(self, value: pulumi.Input[Optional['KarbonWorkerNodepoolAhvConfigArgs']]):
         pulumi.set(self, "ahv_config", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterName")
-    def cluster_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Kubernetes cluster name
         """
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
-    def cluster_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def labels(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def labels(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         labels of node
         """
         return pulumi.get(self, "labels")
 
     @labels.setter
-    def labels(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def labels(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "labels", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         unique worker nodepool name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeOsVersion")
-    def node_os_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_os_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the node OS image
         """
         return pulumi.get(self, "node_os_version")
 
     @node_os_version.setter
-    def node_os_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_os_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_os_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['KarbonWorkerNodepoolNodeArgs']]]]:
+    def nodes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['KarbonWorkerNodepoolNodeArgs']]]]:
         """
         List of node details of pool.
         """
         return pulumi.get(self, "nodes")
 
     @nodes.setter
-    def nodes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['KarbonWorkerNodepoolNodeArgs']]]]):
+    def nodes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['KarbonWorkerNodepoolNodeArgs']]]]):
         pulumi.set(self, "nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="numInstances")
-    def num_instances(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_instances(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         number of node instances
         """
         return pulumi.get(self, "num_instances")
 
     @num_instances.setter
-    def num_instances(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_instances(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_instances", value)
 
 
@@ -248,12 +248,12 @@ class KarbonWorkerNodepool(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ahv_config: Optional[pulumi.Input[Union['KarbonWorkerNodepoolAhvConfigArgs', 'KarbonWorkerNodepoolAhvConfigArgsDict']]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 labels: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_os_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_instances: Optional[pulumi.Input[_builtins.int]] = None,
+                 ahv_config: pulumi.Input[Optional[Union['KarbonWorkerNodepoolAhvConfigArgs', 'KarbonWorkerNodepoolAhvConfigArgsDict']]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_os_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_instances: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Provides a resource to add/remove worker nodepool in an existing Nutanix Kubernetes Engine (NKE).
@@ -377,12 +377,12 @@ class KarbonWorkerNodepool(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ahv_config: Optional[pulumi.Input[Union['KarbonWorkerNodepoolAhvConfigArgs', 'KarbonWorkerNodepoolAhvConfigArgsDict']]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 labels: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_os_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 num_instances: Optional[pulumi.Input[_builtins.int]] = None,
+                 ahv_config: pulumi.Input[Optional[Union['KarbonWorkerNodepoolAhvConfigArgs', 'KarbonWorkerNodepoolAhvConfigArgsDict']]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_os_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 num_instances: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -413,13 +413,13 @@ class KarbonWorkerNodepool(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ahv_config: Optional[pulumi.Input[Union['KarbonWorkerNodepoolAhvConfigArgs', 'KarbonWorkerNodepoolAhvConfigArgsDict']]] = None,
-            cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-            labels: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            node_os_version: Optional[pulumi.Input[_builtins.str]] = None,
-            nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KarbonWorkerNodepoolNodeArgs', 'KarbonWorkerNodepoolNodeArgsDict']]]]] = None,
-            num_instances: Optional[pulumi.Input[_builtins.int]] = None) -> 'KarbonWorkerNodepool':
+            ahv_config: pulumi.Input[Optional[Union['KarbonWorkerNodepoolAhvConfigArgs', 'KarbonWorkerNodepoolAhvConfigArgsDict']]] = None,
+            cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+            labels: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            node_os_version: pulumi.Input[Optional[_builtins.str]] = None,
+            nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KarbonWorkerNodepoolNodeArgs', 'KarbonWorkerNodepoolNodeArgsDict']]]]] = None,
+            num_instances: pulumi.Input[Optional[_builtins.int]] = None) -> 'KarbonWorkerNodepool':
         """
         Get an existing KarbonWorkerNodepool resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

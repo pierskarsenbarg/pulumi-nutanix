@@ -173,6 +173,43 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getovasv2" "example" {
+        /// }
+        /// data "nutanix_getovasv2" "exampleFilteredDiskFormat" {
+        ///   filter = "diskFormat eq Vmm.Content.OvaDiskFormat'QCOW2'"
+        /// }
+        /// data "nutanix_getovasv2" "exampleFilteredName" {
+        ///   filter = "name eq 'example-ova'"
+        /// }
+        /// data "nutanix_getovasv2" "exampleFilteredParentVm" {
+        ///   filter = "parentVm eq 'LinuxServer_VM'"
+        /// }
+        /// data "nutanix_getovasv2" "exampleFilteredSize" {
+        ///   filter = "sizeBytes eq 57"
+        /// }
+        /// data "nutanix_getovasv2" "example2" {
+        ///   filter   = "startswith(parentVm, 'Linux')"
+        ///   limit    = 10
+        ///   select   = "diskFormat,extId,name,vmConfig,checksum"
+        ///   order_by = "name desc"
+        /// }
+        /// 
+        /// // Fetch all OVAs
+        /// // filtered ovas on disk format
+        /// // filtered ovas on name
+        /// // filtered ovas on parentVm
+        /// // filtered ovas on sizeBytes
+        /// // limit, select, orderby and select example
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -436,6 +473,43 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getovasv2" "example" {
+        /// }
+        /// data "nutanix_getovasv2" "exampleFilteredDiskFormat" {
+        ///   filter = "diskFormat eq Vmm.Content.OvaDiskFormat'QCOW2'"
+        /// }
+        /// data "nutanix_getovasv2" "exampleFilteredName" {
+        ///   filter = "name eq 'example-ova'"
+        /// }
+        /// data "nutanix_getovasv2" "exampleFilteredParentVm" {
+        ///   filter = "parentVm eq 'LinuxServer_VM'"
+        /// }
+        /// data "nutanix_getovasv2" "exampleFilteredSize" {
+        ///   filter = "sizeBytes eq 57"
+        /// }
+        /// data "nutanix_getovasv2" "example2" {
+        ///   filter   = "startswith(parentVm, 'Linux')"
+        ///   limit    = 10
+        ///   select   = "diskFormat,extId,name,vmConfig,checksum"
+        ///   order_by = "name desc"
+        /// }
+        /// 
+        /// // Fetch all OVAs
+        /// // filtered ovas on disk format
+        /// // filtered ovas on name
+        /// // filtered ovas on parentVm
+        /// // filtered ovas on sizeBytes
+        /// // limit, select, orderby and select example
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -698,6 +772,43 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getovasv2" "example" {
+        /// }
+        /// data "nutanix_getovasv2" "exampleFilteredDiskFormat" {
+        ///   filter = "diskFormat eq Vmm.Content.OvaDiskFormat'QCOW2'"
+        /// }
+        /// data "nutanix_getovasv2" "exampleFilteredName" {
+        ///   filter = "name eq 'example-ova'"
+        /// }
+        /// data "nutanix_getovasv2" "exampleFilteredParentVm" {
+        ///   filter = "parentVm eq 'LinuxServer_VM'"
+        /// }
+        /// data "nutanix_getovasv2" "exampleFilteredSize" {
+        ///   filter = "sizeBytes eq 57"
+        /// }
+        /// data "nutanix_getovasv2" "example2" {
+        ///   filter   = "startswith(parentVm, 'Linux')"
+        ///   limit    = 10
+        ///   select   = "diskFormat,extId,name,vmConfig,checksum"
+        ///   order_by = "name desc"
+        /// }
+        /// 
+        /// // Fetch all OVAs
+        /// // filtered ovas on disk format
+        /// // filtered ovas on name
+        /// // filtered ovas on parentVm
+        /// // filtered ovas on sizeBytes
+        /// // limit, select, orderby and select example
         /// ```
         /// ```java
         /// package generated_program;

@@ -343,5 +343,5 @@ export interface GetPcsV2OutputArgs {
     /**
      * - URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. supported values are:
      */
-    select?: pulumi.Input<string>;
+    select?: pulumi.Input<string | undefined>;
 }

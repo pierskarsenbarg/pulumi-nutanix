@@ -87,20 +87,20 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Validation Requirements
     /// 
-    /// The following validation rules apply to &lt;span pulumi-lang-nodejs="`allowedConfig`" pulumi-lang-dotnet="`AllowedConfig`" pulumi-lang-go="`allowedConfig`" pulumi-lang-python="`allowed_config`" pulumi-lang-yaml="`allowedConfig`" pulumi-lang-java="`allowedConfig`"&gt;`allowedConfig`&lt;/span&gt; entities:
+    /// The following validation rules apply to &lt;span pulumi-lang-nodejs="`allowedConfig`" pulumi-lang-dotnet="`AllowedConfig`" pulumi-lang-go="`allowedConfig`" pulumi-lang-python="`allowed_config`" pulumi-lang-yaml="`allowedConfig`" pulumi-lang-java="`allowedConfig`" pulumi-lang-hcl="`allowed_config`"&gt;`allowedConfig`&lt;/span&gt; entities:
     /// 
     /// ### Required Fields
     /// 
-    /// * &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`"&gt;`type`&lt;/span&gt; - (Required) Must be specified for all entities in &lt;span pulumi-lang-nodejs="`allowedConfig`" pulumi-lang-dotnet="`AllowedConfig`" pulumi-lang-go="`allowedConfig`" pulumi-lang-python="`allowed_config`" pulumi-lang-yaml="`allowedConfig`" pulumi-lang-java="`allowedConfig`"&gt;`allowedConfig`&lt;/span&gt;.
+    /// * &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`"&gt;`type`&lt;/span&gt; - (Required) Must be specified for all entities in &lt;span pulumi-lang-nodejs="`allowedConfig`" pulumi-lang-dotnet="`AllowedConfig`" pulumi-lang-go="`allowedConfig`" pulumi-lang-python="`allowed_config`" pulumi-lang-yaml="`allowedConfig`" pulumi-lang-java="`allowedConfig`" pulumi-lang-hcl="`allowed_config`"&gt;`allowedConfig`&lt;/span&gt;.
     /// 
     /// ### Conditional Requirements
     /// 
-    /// * &lt;span pulumi-lang-nodejs="`kubeEntities`" pulumi-lang-dotnet="`KubeEntities`" pulumi-lang-go="`kubeEntities`" pulumi-lang-python="`kube_entities`" pulumi-lang-yaml="`kubeEntities`" pulumi-lang-java="`kubeEntities`"&gt;`kubeEntities`&lt;/span&gt; - Required when &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`"&gt;`type`&lt;/span&gt; is one of: `KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`. Must not be empty.
-    /// * &lt;span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`"&gt;`referenceExtIds`&lt;/span&gt; - Required when &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`"&gt;`selectedBy`&lt;/span&gt; is `EXT_ID`. Must not be empty.
+    /// * &lt;span pulumi-lang-nodejs="`kubeEntities`" pulumi-lang-dotnet="`KubeEntities`" pulumi-lang-go="`kubeEntities`" pulumi-lang-python="`kube_entities`" pulumi-lang-yaml="`kubeEntities`" pulumi-lang-java="`kubeEntities`" pulumi-lang-hcl="`kube_entities`"&gt;`kubeEntities`&lt;/span&gt; - Required when &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`"&gt;`type`&lt;/span&gt; is one of: `KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`. Must not be empty.
+    /// * &lt;span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`" pulumi-lang-hcl="`reference_ext_ids`"&gt;`referenceExtIds`&lt;/span&gt; - Required when &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; is `EXT_ID`. Must not be empty.
     /// 
     /// ### Valid Combinations
     /// 
-    /// The combination of &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`"&gt;`selectedBy`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`"&gt;`type`&lt;/span&gt; must be one of the following valid pairs:
+    /// The combination of &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`"&gt;`type`&lt;/span&gt; must be one of the following valid pairs:
     /// 
     /// * `(CATEGORY_EXT_ID, VM)`
     /// * `(CATEGORY_EXT_ID, SUBNET)`
@@ -116,14 +116,14 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ### Duplicate (selected_by, type) Not Allowed
     /// 
-    /// Within one entity group, you cannot have two entities with the same `(selected_by, type)` pair. For example, two entities both using `IP_VALUES` and `ADDRESS_GROUP` are invalid. Combine all addresses and&lt;span pulumi-lang-nodejs=" ipRanges " pulumi-lang-dotnet=" IpRanges " pulumi-lang-go=" ipRanges " pulumi-lang-python=" ip_ranges " pulumi-lang-yaml=" ipRanges " pulumi-lang-java=" ipRanges "&gt; ipRanges &lt;/span&gt;into a single entity block when using `(IP_VALUES, ADDRESS_GROUP)`.
+    /// Within one entity group, you cannot have two entities with the same `(selected_by, type)` pair. For example, two entities both using `IP_VALUES` and `ADDRESS_GROUP` are invalid. Combine all addresses and&lt;span pulumi-lang-nodejs=" ipRanges " pulumi-lang-dotnet=" IpRanges " pulumi-lang-go=" ipRanges " pulumi-lang-python=" ip_ranges " pulumi-lang-yaml=" ipRanges " pulumi-lang-java=" ipRanges " pulumi-lang-hcl=" ip_ranges "&gt; ipRanges &lt;/span&gt;into a single entity block when using `(IP_VALUES, ADDRESS_GROUP)`.
     /// 
     /// ## Import
     /// 
     /// Entity Group can be imported using the entity group uuid `entityGroupUUID` (ext_id in v4 terms). eg,
     /// 
     /// // create its configuration in the root module. For example:
-    /// resource &lt;span pulumi-lang-nodejs=""nutanix.EntityGroupV2"" pulumi-lang-dotnet=""nutanix.EntityGroupV2"" pulumi-lang-go=""EntityGroupV2"" pulumi-lang-python=""EntityGroupV2"" pulumi-lang-yaml=""nutanix.EntityGroupV2"" pulumi-lang-java=""nutanix.EntityGroupV2""&gt;"nutanix.EntityGroupV2"&lt;/span&gt; &lt;span pulumi-lang-nodejs=""importEntityGroup"" pulumi-lang-dotnet=""ImportEntityGroup"" pulumi-lang-go=""importEntityGroup"" pulumi-lang-python=""import_entity_group"" pulumi-lang-yaml=""importEntityGroup"" pulumi-lang-java=""importEntityGroup""&gt;"importEntityGroup"&lt;/span&gt;{}
+    /// resource &lt;span pulumi-lang-nodejs=""nutanix.EntityGroupV2"" pulumi-lang-dotnet=""nutanix.EntityGroupV2"" pulumi-lang-go=""EntityGroupV2"" pulumi-lang-python=""EntityGroupV2"" pulumi-lang-yaml=""nutanix.EntityGroupV2"" pulumi-lang-java=""nutanix.EntityGroupV2"" pulumi-lang-hcl=""nutanix_entity_group_v2""&gt;"nutanix.EntityGroupV2"&lt;/span&gt; &lt;span pulumi-lang-nodejs=""importEntityGroup"" pulumi-lang-dotnet=""ImportEntityGroup"" pulumi-lang-go=""importEntityGroup"" pulumi-lang-python=""import_entity_group"" pulumi-lang-yaml=""importEntityGroup"" pulumi-lang-java=""importEntityGroup"" pulumi-lang-hcl=""import_entity_group""&gt;"importEntityGroup"&lt;/span&gt;{}
     /// 
     /// // execute the below command.
     /// 

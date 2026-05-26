@@ -88,5 +88,5 @@ export interface GetFloatingIpsOutputArgs {
     /**
      * - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp " pulumi-lang-hcl=" floating_ip "> floatingIp </span>kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetFloatingIpsMetadataArgs>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetFloatingIpsMetadataArgs>[] | undefined>;
 }

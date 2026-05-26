@@ -24,10 +24,10 @@ class NdbScaleDatabaseArgs:
                  application_type: pulumi.Input[_builtins.str],
                  data_storage_size: pulumi.Input[_builtins.int],
                  database_uuid: pulumi.Input[_builtins.str],
-                 post_script_cmd: Optional[pulumi.Input[_builtins.str]] = None,
-                 pre_script_cmd: Optional[pulumi.Input[_builtins.str]] = None,
-                 scale_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTagArgs']]]] = None):
+                 post_script_cmd: pulumi.Input[Optional[_builtins.str]] = None,
+                 pre_script_cmd: pulumi.Input[Optional[_builtins.str]] = None,
+                 scale_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseTagArgs']]]] = None):
         """
         The set of arguments for constructing a NdbScaleDatabase resource.
 
@@ -89,87 +89,87 @@ class NdbScaleDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter(name="postScriptCmd")
-    def post_script_cmd(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def post_script_cmd(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         post script command
         """
         return pulumi.get(self, "post_script_cmd")
 
     @post_script_cmd.setter
-    def post_script_cmd(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def post_script_cmd(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "post_script_cmd", value)
 
     @_builtins.property
     @pulumi.getter(name="preScriptCmd")
-    def pre_script_cmd(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pre_script_cmd(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         pre script command
         """
         return pulumi.get(self, "pre_script_cmd")
 
     @pre_script_cmd.setter
-    def pre_script_cmd(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pre_script_cmd(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pre_script_cmd", value)
 
     @_builtins.property
     @pulumi.getter(name="scaleCount")
-    def scale_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def scale_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         scale count helps to scale the same instance with same config
         """
         return pulumi.get(self, "scale_count")
 
     @scale_count.setter
-    def scale_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def scale_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "scale_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseTagArgs']]]]:
         """
         allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
 
 @pulumi.input_type
 class _NdbScaleDatabaseState:
     def __init__(__self__, *,
-                 application_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 clone: Optional[pulumi.Input[_builtins.bool]] = None,
-                 data_storage_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_nodes: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeArgs']]]] = None,
-                 database_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 databasetype: Optional[pulumi.Input[_builtins.str]] = None,
-                 date_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 date_modified: Optional[pulumi.Input[_builtins.str]] = None,
-                 dbserver_logical_cluster: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dbserver_logical_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 infos: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseInfoArgs']]]] = None,
-                 lcm_configs: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLcmConfigArgs']]]] = None,
-                 linked_databases: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLinkedDatabaseArgs']]]] = None,
-                 metric: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_source_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 post_script_cmd: Optional[pulumi.Input[_builtins.str]] = None,
-                 pre_script_cmd: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabasePropertyArgs']]]] = None,
-                 scale_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTagArgs']]]] = None,
-                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_machines: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineArgs']]]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 application_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 clone: pulumi.Input[Optional[_builtins.bool]] = None,
+                 data_storage_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_nodes: pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeArgs']]]] = None,
+                 database_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 databasetype: pulumi.Input[Optional[_builtins.str]] = None,
+                 date_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+                 dbserver_logical_cluster: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dbserver_logical_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 infos: pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseInfoArgs']]]] = None,
+                 lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseLcmConfigArgs']]]] = None,
+                 linked_databases: pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseLinkedDatabaseArgs']]]] = None,
+                 metric: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_source_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 post_script_cmd: pulumi.Input[Optional[_builtins.str]] = None,
+                 pre_script_cmd: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabasePropertyArgs']]]] = None,
+                 scale_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseTagArgs']]]] = None,
+                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_machines: pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineArgs']]]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbScaleDatabase resources.
 
@@ -268,368 +268,368 @@ class _NdbScaleDatabaseState:
 
     @_builtins.property
     @pulumi.getter(name="applicationType")
-    def application_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         type of instance. eg: postgres_database
         """
         return pulumi.get(self, "application_type")
 
     @application_type.setter
-    def application_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def clone(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def clone(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         whether instance is cloned or not
         """
         return pulumi.get(self, "clone")
 
     @clone.setter
-    def clone(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def clone(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "clone", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStorageSize")
-    def data_storage_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_storage_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         data area (in GiB) to be added to the existing database.
         """
         return pulumi.get(self, "data_storage_size")
 
     @data_storage_size.setter
-    def data_storage_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_storage_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_storage_size", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseClusterType")
-    def database_cluster_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_cluster_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         database cluster type
         """
         return pulumi.get(self, "database_cluster_type")
 
     @database_cluster_type.setter
-    def database_cluster_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_cluster_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_cluster_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseInstanceId")
-    def database_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "database_instance_id")
 
     @database_instance_id.setter
-    def database_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseName")
-    def database_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         name of database
         """
         return pulumi.get(self, "database_name")
 
     @database_name.setter
-    def database_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_name", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseNodes")
-    def database_nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeArgs']]]]:
+    def database_nodes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeArgs']]]]:
         """
         database nodes associated with database instance
         """
         return pulumi.get(self, "database_nodes")
 
     @database_nodes.setter
-    def database_nodes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeArgs']]]]):
+    def database_nodes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeArgs']]]]):
         pulumi.set(self, "database_nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseUuid")
-    def database_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Database id
         """
         return pulumi.get(self, "database_uuid")
 
     @database_uuid.setter
-    def database_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_uuid", value)
 
     @_builtins.property
     @pulumi.getter
-    def databasetype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def databasetype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         type of database
         """
         return pulumi.get(self, "databasetype")
 
     @databasetype.setter
-    def databasetype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def databasetype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "databasetype", value)
 
     @_builtins.property
     @pulumi.getter(name="dateCreated")
-    def date_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def date_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         date created for db instance
         """
         return pulumi.get(self, "date_created")
 
     @date_created.setter
-    def date_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def date_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "date_created", value)
 
     @_builtins.property
     @pulumi.getter(name="dateModified")
-    def date_modified(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def date_modified(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         date modified for instance
         """
         return pulumi.get(self, "date_modified")
 
     @date_modified.setter
-    def date_modified(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def date_modified(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "date_modified", value)
 
     @_builtins.property
     @pulumi.getter(name="dbserverLogicalCluster")
-    def dbserver_logical_cluster(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def dbserver_logical_cluster(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         dbserver logical cluster
         """
         return pulumi.get(self, "dbserver_logical_cluster")
 
     @dbserver_logical_cluster.setter
-    def dbserver_logical_cluster(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def dbserver_logical_cluster(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dbserver_logical_cluster", value)
 
     @_builtins.property
     @pulumi.getter(name="dbserverLogicalClusterId")
-    def dbserver_logical_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dbserver_logical_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         dbserver logical cluster id
         """
         return pulumi.get(self, "dbserver_logical_cluster_id")
 
     @dbserver_logical_cluster_id.setter
-    def dbserver_logical_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dbserver_logical_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dbserver_logical_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         description of database instance
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseInfoArgs']]]]:
+    def infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseInfoArgs']]]]:
         """
         info of instance
         """
         return pulumi.get(self, "infos")
 
     @infos.setter
-    def infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseInfoArgs']]]]):
+    def infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseInfoArgs']]]]):
         pulumi.set(self, "infos", value)
 
     @_builtins.property
     @pulumi.getter(name="lcmConfigs")
-    def lcm_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLcmConfigArgs']]]]:
+    def lcm_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseLcmConfigArgs']]]]:
         """
         LCM config of instance
         """
         return pulumi.get(self, "lcm_configs")
 
     @lcm_configs.setter
-    def lcm_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLcmConfigArgs']]]]):
+    def lcm_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseLcmConfigArgs']]]]):
         pulumi.set(self, "lcm_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="linkedDatabases")
-    def linked_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLinkedDatabaseArgs']]]]:
+    def linked_databases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseLinkedDatabaseArgs']]]]:
         """
         linked databases within database instance
         """
         return pulumi.get(self, "linked_databases")
 
     @linked_databases.setter
-    def linked_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLinkedDatabaseArgs']]]]):
+    def linked_databases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseLinkedDatabaseArgs']]]]):
         pulumi.set(self, "linked_databases", value)
 
     @_builtins.property
     @pulumi.getter
-    def metric(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metric(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
         """
         return pulumi.get(self, "metric")
 
     @metric.setter
-    def metric(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metric(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metric", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of database instance
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="parentDatabaseId")
-    def parent_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         parent database id
         """
         return pulumi.get(self, "parent_database_id")
 
     @parent_database_id.setter
-    def parent_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="parentSourceDatabaseId")
-    def parent_source_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_source_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "parent_source_database_id")
 
     @parent_source_database_id.setter
-    def parent_source_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_source_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_source_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="postScriptCmd")
-    def post_script_cmd(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def post_script_cmd(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         post script command
         """
         return pulumi.get(self, "post_script_cmd")
 
     @post_script_cmd.setter
-    def post_script_cmd(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def post_script_cmd(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "post_script_cmd", value)
 
     @_builtins.property
     @pulumi.getter(name="preScriptCmd")
-    def pre_script_cmd(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pre_script_cmd(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         pre script command
         """
         return pulumi.get(self, "pre_script_cmd")
 
     @pre_script_cmd.setter
-    def pre_script_cmd(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pre_script_cmd(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pre_script_cmd", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabasePropertyArgs']]]]:
+    def properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabasePropertyArgs']]]]:
         """
         properties of database created
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabasePropertyArgs']]]]):
+    def properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabasePropertyArgs']]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter(name="scaleCount")
-    def scale_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def scale_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         scale count helps to scale the same instance with same config
         """
         return pulumi.get(self, "scale_count")
 
     @scale_count.setter
-    def scale_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def scale_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "scale_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         status of instance
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseTagArgs']]]]:
         """
         allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachineId")
-    def time_machine_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_machine_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         time machine id of instance
         """
         return pulumi.get(self, "time_machine_id")
 
     @time_machine_id.setter
-    def time_machine_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_machine_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_machine_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachines")
-    def time_machines(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineArgs']]]]:
+    def time_machines(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineArgs']]]]:
         """
         Time Machine details of instance
         """
         return pulumi.get(self, "time_machines")
 
     @time_machines.setter
-    def time_machines(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineArgs']]]]):
+    def time_machines(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineArgs']]]]):
         pulumi.set(self, "time_machines", value)
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         timezone on which instance is created xw
         """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
-    def time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         type of database
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -639,13 +639,13 @@ class NdbScaleDatabase(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_storage_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 post_script_cmd: Optional[pulumi.Input[_builtins.str]] = None,
-                 pre_script_cmd: Optional[pulumi.Input[_builtins.str]] = None,
-                 scale_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbScaleDatabaseTagArgs', 'NdbScaleDatabaseTagArgsDict']]]]] = None,
+                 application_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_storage_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 post_script_cmd: pulumi.Input[Optional[_builtins.str]] = None,
+                 pre_script_cmd: pulumi.Input[Optional[_builtins.str]] = None,
+                 scale_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbScaleDatabaseTagArgs', 'NdbScaleDatabaseTagArgsDict']]]]] = None,
                  __props__=None):
         """
         Provides a resource to scale the database instance based on the input parameters.
@@ -716,13 +716,13 @@ class NdbScaleDatabase(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_storage_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 post_script_cmd: Optional[pulumi.Input[_builtins.str]] = None,
-                 pre_script_cmd: Optional[pulumi.Input[_builtins.str]] = None,
-                 scale_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbScaleDatabaseTagArgs', 'NdbScaleDatabaseTagArgsDict']]]]] = None,
+                 application_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_storage_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 post_script_cmd: pulumi.Input[Optional[_builtins.str]] = None,
+                 pre_script_cmd: pulumi.Input[Optional[_builtins.str]] = None,
+                 scale_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbScaleDatabaseTagArgs', 'NdbScaleDatabaseTagArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -779,37 +779,37 @@ class NdbScaleDatabase(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_type: Optional[pulumi.Input[_builtins.str]] = None,
-            clone: Optional[pulumi.Input[_builtins.bool]] = None,
-            data_storage_size: Optional[pulumi.Input[_builtins.int]] = None,
-            database_cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
-            database_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            database_name: Optional[pulumi.Input[_builtins.str]] = None,
-            database_nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbScaleDatabaseDatabaseNodeArgs', 'NdbScaleDatabaseDatabaseNodeArgsDict']]]]] = None,
-            database_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            databasetype: Optional[pulumi.Input[_builtins.str]] = None,
-            date_created: Optional[pulumi.Input[_builtins.str]] = None,
-            date_modified: Optional[pulumi.Input[_builtins.str]] = None,
-            dbserver_logical_cluster: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            dbserver_logical_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbScaleDatabaseInfoArgs', 'NdbScaleDatabaseInfoArgsDict']]]]] = None,
-            lcm_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbScaleDatabaseLcmConfigArgs', 'NdbScaleDatabaseLcmConfigArgsDict']]]]] = None,
-            linked_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbScaleDatabaseLinkedDatabaseArgs', 'NdbScaleDatabaseLinkedDatabaseArgsDict']]]]] = None,
-            metric: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_source_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            post_script_cmd: Optional[pulumi.Input[_builtins.str]] = None,
-            pre_script_cmd: Optional[pulumi.Input[_builtins.str]] = None,
-            properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbScaleDatabasePropertyArgs', 'NdbScaleDatabasePropertyArgsDict']]]]] = None,
-            scale_count: Optional[pulumi.Input[_builtins.int]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbScaleDatabaseTagArgs', 'NdbScaleDatabaseTagArgsDict']]]]] = None,
-            time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_machines: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbScaleDatabaseTimeMachineArgs', 'NdbScaleDatabaseTimeMachineArgsDict']]]]] = None,
-            time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'NdbScaleDatabase':
+            application_type: pulumi.Input[Optional[_builtins.str]] = None,
+            clone: pulumi.Input[Optional[_builtins.bool]] = None,
+            data_storage_size: pulumi.Input[Optional[_builtins.int]] = None,
+            database_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
+            database_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_name: pulumi.Input[Optional[_builtins.str]] = None,
+            database_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbScaleDatabaseDatabaseNodeArgs', 'NdbScaleDatabaseDatabaseNodeArgsDict']]]]] = None,
+            database_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            databasetype: pulumi.Input[Optional[_builtins.str]] = None,
+            date_created: pulumi.Input[Optional[_builtins.str]] = None,
+            date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            dbserver_logical_cluster: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            dbserver_logical_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbScaleDatabaseInfoArgs', 'NdbScaleDatabaseInfoArgsDict']]]]] = None,
+            lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbScaleDatabaseLcmConfigArgs', 'NdbScaleDatabaseLcmConfigArgsDict']]]]] = None,
+            linked_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbScaleDatabaseLinkedDatabaseArgs', 'NdbScaleDatabaseLinkedDatabaseArgsDict']]]]] = None,
+            metric: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_source_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            post_script_cmd: pulumi.Input[Optional[_builtins.str]] = None,
+            pre_script_cmd: pulumi.Input[Optional[_builtins.str]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbScaleDatabasePropertyArgs', 'NdbScaleDatabasePropertyArgsDict']]]]] = None,
+            scale_count: pulumi.Input[Optional[_builtins.int]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbScaleDatabaseTagArgs', 'NdbScaleDatabaseTagArgsDict']]]]] = None,
+            time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_machines: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbScaleDatabaseTimeMachineArgs', 'NdbScaleDatabaseTimeMachineArgsDict']]]]] = None,
+            time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'NdbScaleDatabase':
         """
         Get an existing NdbScaleDatabase resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

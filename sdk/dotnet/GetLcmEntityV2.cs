@@ -67,6 +67,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getlcmentityv2" "entity-before-upgrade" {
+        ///   ext_id = "613no9d0-7caf-49y7-k582-1db5a5df580c"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -163,6 +176,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getlcmentityv2" "entity-before-upgrade" {
+        ///   ext_id = "613no9d0-7caf-49y7-k582-1db5a5df580c"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -257,6 +283,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getlcmentityv2" "entity-before-upgrade" {
+        ///   ext_id = "613no9d0-7caf-49y7-k582-1db5a5df580c"
         /// }
         /// ```
         /// ```java

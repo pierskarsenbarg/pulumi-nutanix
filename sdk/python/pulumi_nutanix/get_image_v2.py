@@ -245,7 +245,7 @@ def get_image_v2(ext_id: Optional[_builtins.str] = None,
         size_bytes=pulumi.get(__ret__, 'size_bytes'),
         sources=pulumi.get(__ret__, 'sources'),
         type=pulumi.get(__ret__, 'type'))
-def get_image_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_image_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImageV2Result]:
     """
     Retrieve the image details for the provided external identifier.

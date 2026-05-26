@@ -15,11 +15,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetEntityGroupV2ExceptConfigEntityResult
     {
         /// <summary>
-        /// With &lt;span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`"&gt;`ipv4Addresses`&lt;/span&gt; (value, prefix_length).
+        /// With &lt;span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`"&gt;`ipv4Addresses`&lt;/span&gt; (value, prefix_length).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetEntityGroupV2ExceptConfigEntityAddressResult> Addresses;
         /// <summary>
-        /// With &lt;span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`"&gt;`ipv4Ranges`&lt;/span&gt; (start_ip, end_ip).
+        /// With &lt;span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`"&gt;`ipv4Ranges`&lt;/span&gt; (start_ip, end_ip).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetEntityGroupV2ExceptConfigEntityIpRangeResult> IpRanges;
         /// <summary>

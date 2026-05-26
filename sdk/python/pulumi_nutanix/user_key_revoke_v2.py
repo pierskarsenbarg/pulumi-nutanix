@@ -51,14 +51,14 @@ class UserKeyRevokeV2Args:
 @pulumi.input_type
 class _UserKeyRevokeV2State:
     def __init__(__self__, *,
-                 arguments_maps: Optional[pulumi.Input[Sequence[pulumi.Input['UserKeyRevokeV2ArgumentsMapArgs']]]] = None,
-                 code: Optional[pulumi.Input[_builtins.str]] = None,
-                 error_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 locale: Optional[pulumi.Input[_builtins.str]] = None,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_ext_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 arguments_maps: pulumi.Input[Optional[Sequence[pulumi.Input['UserKeyRevokeV2ArgumentsMapArgs']]]] = None,
+                 code: pulumi.Input[Optional[_builtins.str]] = None,
+                 error_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 locale: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UserKeyRevokeV2 resources.
 
@@ -88,92 +88,92 @@ class _UserKeyRevokeV2State:
 
     @_builtins.property
     @pulumi.getter(name="argumentsMaps")
-    def arguments_maps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UserKeyRevokeV2ArgumentsMapArgs']]]]:
+    def arguments_maps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UserKeyRevokeV2ArgumentsMapArgs']]]]:
         """
         - The map of argument name to value.
         """
         return pulumi.get(self, "arguments_maps")
 
     @arguments_maps.setter
-    def arguments_maps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UserKeyRevokeV2ArgumentsMapArgs']]]]):
+    def arguments_maps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UserKeyRevokeV2ArgumentsMapArgs']]]]):
         pulumi.set(self, "arguments_maps", value)
 
     @_builtins.property
     @pulumi.getter
-    def code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The code associated with this message.This string is typically prefixed by the namespace the endpoint belongs to. For example: VMM-40000.
         """
         return pulumi.get(self, "code")
 
     @code.setter
-    def code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "code", value)
 
     @_builtins.property
     @pulumi.getter(name="errorGroup")
-    def error_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def error_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The error group associated with this message of severity ERROR.
         """
         return pulumi.get(self, "error_group")
 
     @error_group.setter
-    def error_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def error_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "error_group", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def locale(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def locale(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Locale for this message. The default locale would be 'en-US'.
         """
         return pulumi.get(self, "locale")
 
     @locale.setter
-    def locale(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def locale(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "locale", value)
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The message string.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter
-    def severity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def severity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The message severity.
         """
         return pulumi.get(self, "severity")
 
     @severity.setter
-    def severity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def severity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "severity", value)
 
     @_builtins.property
     @pulumi.getter(name="userExtId")
-    def user_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "user_ext_id")
 
     @user_ext_id.setter
-    def user_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_ext_id", value)
 
 
@@ -183,8 +183,8 @@ class UserKeyRevokeV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides Nutanix resource to Revoke the requested key for a user.
@@ -260,8 +260,8 @@ class UserKeyRevokeV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -293,14 +293,14 @@ class UserKeyRevokeV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            arguments_maps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserKeyRevokeV2ArgumentsMapArgs', 'UserKeyRevokeV2ArgumentsMapArgsDict']]]]] = None,
-            code: Optional[pulumi.Input[_builtins.str]] = None,
-            error_group: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            locale: Optional[pulumi.Input[_builtins.str]] = None,
-            message: Optional[pulumi.Input[_builtins.str]] = None,
-            severity: Optional[pulumi.Input[_builtins.str]] = None,
-            user_ext_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'UserKeyRevokeV2':
+            arguments_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserKeyRevokeV2ArgumentsMapArgs', 'UserKeyRevokeV2ArgumentsMapArgsDict']]]]] = None,
+            code: pulumi.Input[Optional[_builtins.str]] = None,
+            error_group: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            locale: pulumi.Input[Optional[_builtins.str]] = None,
+            message: pulumi.Input[Optional[_builtins.str]] = None,
+            severity: pulumi.Input[Optional[_builtins.str]] = None,
+            user_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'UserKeyRevokeV2':
         """
         Get an existing UserKeyRevokeV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

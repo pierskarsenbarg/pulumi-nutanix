@@ -116,23 +116,23 @@ export interface CategoryValueState {
     /**
      * (Optional) The version of the API.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) A description for category value.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * - Specifying whether its a system defined category.
      */
-    systemDefined?: pulumi.Input<boolean>;
+    systemDefined?: pulumi.Input<boolean | undefined>;
     /**
      * The value for the category value.
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -142,11 +142,11 @@ export interface CategoryValueArgs {
     /**
      * - (Optional) A description for category value.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The value for the category value.
      */

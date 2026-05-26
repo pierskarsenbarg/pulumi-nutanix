@@ -184,10 +184,10 @@ def get_self_service_app_snapshots(app_name: Optional[_builtins.str] = None,
         length=pulumi.get(__ret__, 'length'),
         offset=pulumi.get(__ret__, 'offset'),
         total_matches=pulumi.get(__ret__, 'total_matches'))
-def get_self_service_app_snapshots_output(app_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          app_uuid: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          length: Optional[pulumi.Input[_builtins.int]] = None,
-                                          offset: Optional[pulumi.Input[_builtins.int]] = None,
+def get_self_service_app_snapshots_output(app_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          app_uuid: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          length: pulumi.Input[Optional[_builtins.int]] = None,
+                                          offset: pulumi.Input[Optional[_builtins.int]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSelfServiceAppSnapshotsResult]:
     """
     Describes recovery points (snapshots taken) present in an NCM Self Service Application.

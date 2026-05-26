@@ -445,7 +445,7 @@ export interface FoundationImageNodesState {
     /**
      * - (Required) Terraform blocks of Block level parameters.
      */
-    blocks?: pulumi.Input<pulumi.Input<inputs.FoundationImageNodesBlock>[]>;
+    blocks?: pulumi.Input<pulumi.Input<inputs.FoundationImageNodesBlock>[] | undefined>;
     /**
      * - list containing cluster name and cluster urls for created clusters in current session
      * * `cluster_urls.#.cluster_name` :-<span pulumi-lang-nodejs=" clusterName
@@ -458,148 +458,148 @@ export interface FoundationImageNodesState {
      * "> clusterName
      * </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
      */
-    clusterUrls?: pulumi.Input<pulumi.Input<inputs.FoundationImageNodesClusterUrl>[]>;
+    clusterUrls?: pulumi.Input<pulumi.Input<inputs.FoundationImageNodesClusterUrl>[] | undefined>;
     /**
      * - Terraform blocks of clusters config
      */
-    clusters?: pulumi.Input<pulumi.Input<inputs.FoundationImageNodesCluster>[]>;
+    clusters?: pulumi.Input<pulumi.Input<inputs.FoundationImageNodesCluster>[] | undefined>;
     /**
      * - (Required) CVM gateway.
      */
-    cvmGateway?: pulumi.Input<string>;
+    cvmGateway?: pulumi.Input<string | undefined>;
     /**
      * - (Required) CVM netmask.
      */
-    cvmNetmask?: pulumi.Input<string>;
+    cvmNetmask?: pulumi.Input<string | undefined>;
     /**
      * - Contains user data from Eos portal.
      */
-    eosMetadata?: pulumi.Input<inputs.FoundationImageNodesEosMetadata>;
+    eosMetadata?: pulumi.Input<inputs.FoundationImageNodesEosMetadata | undefined>;
     /**
      * - Foundation Central specific settings.
      */
-    fcSettings?: pulumi.Input<inputs.FoundationImageNodesFcSettings>;
+    fcSettings?: pulumi.Input<inputs.FoundationImageNodesFcSettings | undefined>;
     /**
      * - Hyperv External virtual network adapter name.
      */
-    hypervExternalVnic?: pulumi.Input<string>;
+    hypervExternalVnic?: pulumi.Input<string | undefined>;
     /**
      * - Hyperv External vswitch name.
      */
-    hypervExternalVswitch?: pulumi.Input<string>;
+    hypervExternalVswitch?: pulumi.Input<string | undefined>;
     /**
      * - Hyperv product key.
      */
-    hypervProductKey?: pulumi.Input<string>;
+    hypervProductKey?: pulumi.Input<string | undefined>;
     /**
      * - Hyperv SKU.
      */
-    hypervSku?: pulumi.Input<boolean>;
+    hypervSku?: pulumi.Input<boolean | undefined>;
     /**
      * - (Required) Hypervisor gateway.
      */
-    hypervisorGateway?: pulumi.Input<string>;
+    hypervisorGateway?: pulumi.Input<string | undefined>;
     /**
      * - Hypervisor ISO.
      */
-    hypervisorIso?: pulumi.Input<inputs.FoundationImageNodesHypervisorIso>;
-    hypervisorNameserver?: pulumi.Input<string>;
+    hypervisorIso?: pulumi.Input<inputs.FoundationImageNodesHypervisorIso | undefined>;
+    hypervisorNameserver?: pulumi.Input<string | undefined>;
     /**
      * - (Required) Hypervisor netmask.
      */
-    hypervisorNetmask?: pulumi.Input<string>;
+    hypervisorNetmask?: pulumi.Input<string | undefined>;
     /**
      * - Hypervisor password.
      */
-    hypervisorPassword?: pulumi.Input<string>;
+    hypervisorPassword?: pulumi.Input<string | undefined>;
     /**
      * - install script.
      */
-    installScript?: pulumi.Input<string>;
+    installScript?: pulumi.Input<string | undefined>;
     /**
      * - (Required incase using IPMI based imaging either here or inside node spec) default IPMI gateway
      */
-    ipmiGateway?: pulumi.Input<string>;
+    ipmiGateway?: pulumi.Input<string | undefined>;
     /**
      * - (Required incase using IPMI based imaging either here or inside node spec) default IPMI netmask
      */
-    ipmiNetmask?: pulumi.Input<string>;
+    ipmiNetmask?: pulumi.Input<string | undefined>;
     /**
      * - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
      */
-    ipmiPassword?: pulumi.Input<string>;
+    ipmiPassword?: pulumi.Input<string | undefined>;
     /**
      * - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
      */
-    ipmiUser?: pulumi.Input<string>;
+    ipmiUser?: pulumi.Input<string | undefined>;
     /**
      * - Id of the custom layout which needs to be passed to imaging request.
      */
-    layoutEggUuid?: pulumi.Input<string>;
+    layoutEggUuid?: pulumi.Input<string | undefined>;
     /**
      * - (Required) NOS package.
      */
-    nosPackage?: pulumi.Input<string>;
+    nosPackage?: pulumi.Input<string | undefined>;
     /**
      * -<span pulumi-lang-nodejs=" sessionId " pulumi-lang-dotnet=" SessionId " pulumi-lang-go=" sessionId " pulumi-lang-python=" session_id " pulumi-lang-yaml=" sessionId " pulumi-lang-java=" sessionId " pulumi-lang-hcl=" session_id "> sessionId </span>of the imaging session
      */
-    sessionId?: pulumi.Input<string>;
+    sessionId?: pulumi.Input<string | undefined>;
     /**
      * - If hypervisor installation should be skipped.
      */
-    skipHypervisor?: pulumi.Input<boolean>;
+    skipHypervisor?: pulumi.Input<boolean | undefined>;
     /**
      * - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue " pulumi-lang-hcl=" svm_rescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
      */
-    svmRescueArgs?: pulumi.Input<pulumi.Input<string>[]>;
+    svmRescueArgs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * - Types of tests to be performed.
      */
-    tests?: pulumi.Input<inputs.FoundationImageNodesTests>;
+    tests?: pulumi.Input<inputs.FoundationImageNodesTests | undefined>;
     /**
      * - UCSM IP address.
      */
-    ucsmIp?: pulumi.Input<string>;
+    ucsmIp?: pulumi.Input<string | undefined>;
     /**
      * - UCSM password.
      */
-    ucsmPassword?: pulumi.Input<string>;
+    ucsmPassword?: pulumi.Input<string | undefined>;
     /**
      * - UCSM username.
      */
-    ucsmUser?: pulumi.Input<string>;
+    ucsmUser?: pulumi.Input<string | undefined>;
     /**
      * - UNC password.
      */
-    uncPassword?: pulumi.Input<string>;
+    uncPassword?: pulumi.Input<string | undefined>;
     /**
      * - UNC Path.
      */
-    uncPath?: pulumi.Input<string>;
+    uncPath?: pulumi.Input<string | undefined>;
     /**
      * - UNC username.
      */
-    uncUsername?: pulumi.Input<string>;
+    uncUsername?: pulumi.Input<string | undefined>;
     /**
      * - xen config types.
      */
-    xenConfigType?: pulumi.Input<string>;
+    xenConfigType?: pulumi.Input<string | undefined>;
     /**
      * - xen server master IP address.
      */
-    xsMasterIp?: pulumi.Input<string>;
+    xsMasterIp?: pulumi.Input<string | undefined>;
     /**
      * - xen server master label.
      */
-    xsMasterLabel?: pulumi.Input<string>;
+    xsMasterLabel?: pulumi.Input<string | undefined>;
     /**
      * - xen server master password.
      */
-    xsMasterPassword?: pulumi.Input<string>;
+    xsMasterPassword?: pulumi.Input<string | undefined>;
     /**
      * - xen server master username.
      */
-    xsMasterUsername?: pulumi.Input<string>;
+    xsMasterUsername?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -613,7 +613,7 @@ export interface FoundationImageNodesArgs {
     /**
      * - Terraform blocks of clusters config
      */
-    clusters?: pulumi.Input<pulumi.Input<inputs.FoundationImageNodesCluster>[]>;
+    clusters?: pulumi.Input<pulumi.Input<inputs.FoundationImageNodesCluster>[] | undefined>;
     /**
      * - (Required) CVM gateway.
      */
@@ -625,27 +625,27 @@ export interface FoundationImageNodesArgs {
     /**
      * - Contains user data from Eos portal.
      */
-    eosMetadata?: pulumi.Input<inputs.FoundationImageNodesEosMetadata>;
+    eosMetadata?: pulumi.Input<inputs.FoundationImageNodesEosMetadata | undefined>;
     /**
      * - Foundation Central specific settings.
      */
-    fcSettings?: pulumi.Input<inputs.FoundationImageNodesFcSettings>;
+    fcSettings?: pulumi.Input<inputs.FoundationImageNodesFcSettings | undefined>;
     /**
      * - Hyperv External virtual network adapter name.
      */
-    hypervExternalVnic?: pulumi.Input<string>;
+    hypervExternalVnic?: pulumi.Input<string | undefined>;
     /**
      * - Hyperv External vswitch name.
      */
-    hypervExternalVswitch?: pulumi.Input<string>;
+    hypervExternalVswitch?: pulumi.Input<string | undefined>;
     /**
      * - Hyperv product key.
      */
-    hypervProductKey?: pulumi.Input<string>;
+    hypervProductKey?: pulumi.Input<string | undefined>;
     /**
      * - Hyperv SKU.
      */
-    hypervSku?: pulumi.Input<boolean>;
+    hypervSku?: pulumi.Input<boolean | undefined>;
     /**
      * - (Required) Hypervisor gateway.
      */
@@ -653,8 +653,8 @@ export interface FoundationImageNodesArgs {
     /**
      * - Hypervisor ISO.
      */
-    hypervisorIso?: pulumi.Input<inputs.FoundationImageNodesHypervisorIso>;
-    hypervisorNameserver?: pulumi.Input<string>;
+    hypervisorIso?: pulumi.Input<inputs.FoundationImageNodesHypervisorIso | undefined>;
+    hypervisorNameserver?: pulumi.Input<string | undefined>;
     /**
      * - (Required) Hypervisor netmask.
      */
@@ -662,31 +662,31 @@ export interface FoundationImageNodesArgs {
     /**
      * - Hypervisor password.
      */
-    hypervisorPassword?: pulumi.Input<string>;
+    hypervisorPassword?: pulumi.Input<string | undefined>;
     /**
      * - install script.
      */
-    installScript?: pulumi.Input<string>;
+    installScript?: pulumi.Input<string | undefined>;
     /**
      * - (Required incase using IPMI based imaging either here or inside node spec) default IPMI gateway
      */
-    ipmiGateway?: pulumi.Input<string>;
+    ipmiGateway?: pulumi.Input<string | undefined>;
     /**
      * - (Required incase using IPMI based imaging either here or inside node spec) default IPMI netmask
      */
-    ipmiNetmask?: pulumi.Input<string>;
+    ipmiNetmask?: pulumi.Input<string | undefined>;
     /**
      * - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
      */
-    ipmiPassword?: pulumi.Input<string>;
+    ipmiPassword?: pulumi.Input<string | undefined>;
     /**
      * - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
      */
-    ipmiUser?: pulumi.Input<string>;
+    ipmiUser?: pulumi.Input<string | undefined>;
     /**
      * - Id of the custom layout which needs to be passed to imaging request.
      */
-    layoutEggUuid?: pulumi.Input<string>;
+    layoutEggUuid?: pulumi.Input<string | undefined>;
     /**
      * - (Required) NOS package.
      */
@@ -694,57 +694,57 @@ export interface FoundationImageNodesArgs {
     /**
      * - If hypervisor installation should be skipped.
      */
-    skipHypervisor?: pulumi.Input<boolean>;
+    skipHypervisor?: pulumi.Input<boolean | undefined>;
     /**
      * - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue " pulumi-lang-hcl=" svm_rescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
      */
-    svmRescueArgs?: pulumi.Input<pulumi.Input<string>[]>;
+    svmRescueArgs?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * - Types of tests to be performed.
      */
-    tests?: pulumi.Input<inputs.FoundationImageNodesTests>;
+    tests?: pulumi.Input<inputs.FoundationImageNodesTests | undefined>;
     /**
      * - UCSM IP address.
      */
-    ucsmIp?: pulumi.Input<string>;
+    ucsmIp?: pulumi.Input<string | undefined>;
     /**
      * - UCSM password.
      */
-    ucsmPassword?: pulumi.Input<string>;
+    ucsmPassword?: pulumi.Input<string | undefined>;
     /**
      * - UCSM username.
      */
-    ucsmUser?: pulumi.Input<string>;
+    ucsmUser?: pulumi.Input<string | undefined>;
     /**
      * - UNC password.
      */
-    uncPassword?: pulumi.Input<string>;
+    uncPassword?: pulumi.Input<string | undefined>;
     /**
      * - UNC Path.
      */
-    uncPath?: pulumi.Input<string>;
+    uncPath?: pulumi.Input<string | undefined>;
     /**
      * - UNC username.
      */
-    uncUsername?: pulumi.Input<string>;
+    uncUsername?: pulumi.Input<string | undefined>;
     /**
      * - xen config types.
      */
-    xenConfigType?: pulumi.Input<string>;
+    xenConfigType?: pulumi.Input<string | undefined>;
     /**
      * - xen server master IP address.
      */
-    xsMasterIp?: pulumi.Input<string>;
+    xsMasterIp?: pulumi.Input<string | undefined>;
     /**
      * - xen server master label.
      */
-    xsMasterLabel?: pulumi.Input<string>;
+    xsMasterLabel?: pulumi.Input<string | undefined>;
     /**
      * - xen server master password.
      */
-    xsMasterPassword?: pulumi.Input<string>;
+    xsMasterPassword?: pulumi.Input<string | undefined>;
     /**
      * - xen server master username.
      */
-    xsMasterUsername?: pulumi.Input<string>;
+    xsMasterUsername?: pulumi.Input<string | undefined>;
 }

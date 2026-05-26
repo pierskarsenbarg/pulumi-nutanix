@@ -40,7 +40,7 @@ namespace PiersKarsenbarg.Nutanix
     /// ## lifecycle
     /// 
     /// * `Create` : - Resource will trigger onboarding of the node.
-    /// * &lt;span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`"&gt;`delete`&lt;/span&gt; : - Node will be removed from FC "imaged nodes" but will still be available in the hardware manager for re-onboarding.
+    /// * &lt;span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`" pulumi-lang-hcl="`delete`"&gt;`delete`&lt;/span&gt; : - Node will be removed from FC "imaged nodes" but will still be available in the hardware manager for re-onboarding.
     /// </summary>
     [NutanixResourceType("nutanix:index/foundationCentralOnboardNodes:FoundationCentralOnboardNodes")]
     public partial class FoundationCentralOnboardNodes : global::Pulumi.CustomResource
@@ -52,7 +52,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> BlockSerial { get; private set; } = null!;
 
         /// <summary>
-        /// UUID of the&lt;span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode "&gt; imagedNode &lt;/span&gt;in FC
+        /// UUID of the&lt;span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode " pulumi-lang-hcl=" imaged_node "&gt; imagedNode &lt;/span&gt;in FC
         /// </summary>
         [Output("imagedNodeUuid")]
         public Output<string> ImagedNodeUuid { get; private set; } = null!;
@@ -149,7 +149,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? BlockSerial { get; set; }
 
         /// <summary>
-        /// UUID of the&lt;span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode "&gt; imagedNode &lt;/span&gt;in FC
+        /// UUID of the&lt;span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode " pulumi-lang-hcl=" imaged_node "&gt; imagedNode &lt;/span&gt;in FC
         /// </summary>
         [Input("imagedNodeUuid")]
         public Input<string>? ImagedNodeUuid { get; set; }

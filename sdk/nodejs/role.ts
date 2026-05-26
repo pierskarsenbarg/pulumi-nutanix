@@ -151,39 +151,39 @@ export interface RoleState {
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Categories for the role.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.RoleCategory>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.RoleCategory>[] | undefined>;
     /**
      * - (Optional) The description of the role.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - The role kind metadata.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - (Optional) Name of the role.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The reference to a user.
      */
-    ownerReference?: pulumi.Input<inputs.RoleOwnerReference>;
+    ownerReference?: pulumi.Input<inputs.RoleOwnerReference | undefined>;
     /**
      * - (Required) List of permission references.
      */
-    permissionReferenceLists?: pulumi.Input<pulumi.Input<inputs.RolePermissionReferenceList>[]>;
+    permissionReferenceLists?: pulumi.Input<pulumi.Input<inputs.RolePermissionReferenceList>[] | undefined>;
     /**
      * - (Optional) The reference to a project.
      */
-    projectReference?: pulumi.Input<inputs.RoleProjectReference>;
+    projectReference?: pulumi.Input<inputs.RoleProjectReference | undefined>;
     /**
      * - The state of the role.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -193,19 +193,19 @@ export interface RoleArgs {
     /**
      * - (Optional) Categories for the role.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.RoleCategory>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.RoleCategory>[] | undefined>;
     /**
      * - (Optional) The description of the role.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Name of the role.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The reference to a user.
      */
-    ownerReference?: pulumi.Input<inputs.RoleOwnerReference>;
+    ownerReference?: pulumi.Input<inputs.RoleOwnerReference | undefined>;
     /**
      * - (Required) List of permission references.
      */
@@ -213,5 +213,5 @@ export interface RoleArgs {
     /**
      * - (Optional) The reference to a project.
      */
-    projectReference?: pulumi.Input<inputs.RoleProjectReference>;
+    projectReference?: pulumi.Input<inputs.RoleProjectReference | undefined>;
 }

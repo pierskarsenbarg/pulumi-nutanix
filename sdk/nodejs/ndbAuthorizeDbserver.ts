@@ -87,22 +87,22 @@ export class NdbAuthorizeDbserver extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NdbAuthorizeDbserver resources.
  */
 export interface NdbAuthorizeDbserverState {
-    dbserversIds?: pulumi.Input<pulumi.Input<string>[]>;
-    timeMachineId?: pulumi.Input<string>;
+    dbserversIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    timeMachineId?: pulumi.Input<string | undefined>;
     /**
      * * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id ">`dbserversId </span>`: (Required)
      */
-    timeMachineName?: pulumi.Input<string>;
+    timeMachineName?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a NdbAuthorizeDbserver resource.
  */
 export interface NdbAuthorizeDbserverArgs {
-    dbserversIds?: pulumi.Input<pulumi.Input<string>[]>;
-    timeMachineId?: pulumi.Input<string>;
+    dbserversIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    timeMachineId?: pulumi.Input<string | undefined>;
     /**
      * * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id ">`dbserversId </span>`: (Required)
      */
-    timeMachineName?: pulumi.Input<string>;
+    timeMachineName?: pulumi.Input<string | undefined>;
 }

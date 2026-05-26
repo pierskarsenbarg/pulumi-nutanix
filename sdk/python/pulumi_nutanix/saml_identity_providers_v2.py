@@ -21,18 +21,18 @@ __all__ = ['SamlIdentityProvidersV2Args', 'SamlIdentityProvidersV2']
 @pulumi.input_type
 class SamlIdentityProvidersV2Args:
     def __init__(__self__, *,
-                 custom_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 email_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_issuer: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 groups_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 groups_delim: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_metadata_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_metadata_xml: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]] = None,
-                 is_signed_authn_req_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 username_attribute: Optional[pulumi.Input[_builtins.str]] = None):
+                 custom_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 email_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_issuer: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 groups_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 groups_delim: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_metadata_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_metadata_xml: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]] = None,
+                 is_signed_authn_req_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 username_attribute: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a SamlIdentityProvidersV2 resource.
 
@@ -70,149 +70,149 @@ class SamlIdentityProvidersV2Args:
 
     @_builtins.property
     @pulumi.getter(name="customAttributes")
-    def custom_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def custom_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "custom_attributes")
 
     @custom_attributes.setter
-    def custom_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def custom_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "custom_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="emailAttribute")
-    def email_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "email_attribute")
 
     @email_attribute.setter
-    def email_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_attribute", value)
 
     @_builtins.property
     @pulumi.getter(name="entityIssuer")
-    def entity_issuer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_issuer(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - It will be used as Issuer in SAML authnRequest.
         """
         return pulumi.get(self, "entity_issuer")
 
     @entity_issuer.setter
-    def entity_issuer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_issuer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_issuer", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The External Identifier of the User Group.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="groupsAttribute")
-    def groups_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def groups_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "groups_attribute")
 
     @groups_attribute.setter
-    def groups_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def groups_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "groups_attribute", value)
 
     @_builtins.property
     @pulumi.getter(name="groupsDelim")
-    def groups_delim(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def groups_delim(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Delimiter is used to split the value of attribute into multiple groups.
         """
         return pulumi.get(self, "groups_delim")
 
     @groups_delim.setter
-    def groups_delim(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def groups_delim(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "groups_delim", value)
 
     @_builtins.property
     @pulumi.getter(name="idpMetadataUrl")
-    def idp_metadata_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idp_metadata_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "idp_metadata_url")
 
     @idp_metadata_url.setter
-    def idp_metadata_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idp_metadata_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idp_metadata_url", value)
 
     @_builtins.property
     @pulumi.getter(name="idpMetadataXml")
-    def idp_metadata_xml(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idp_metadata_xml(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "idp_metadata_xml")
 
     @idp_metadata_xml.setter
-    def idp_metadata_xml(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idp_metadata_xml(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idp_metadata_xml", value)
 
     @_builtins.property
     @pulumi.getter(name="idpMetadatas")
-    def idp_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]:
+    def idp_metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]:
         """
         - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
         """
         return pulumi.get(self, "idp_metadatas")
 
     @idp_metadatas.setter
-    def idp_metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]):
+    def idp_metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]):
         pulumi.set(self, "idp_metadatas", value)
 
     @_builtins.property
     @pulumi.getter(name="isSignedAuthnReqEnabled")
-    def is_signed_authn_req_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_signed_authn_req_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - Flag indicating signing of SAML authnRequests.
         """
         return pulumi.get(self, "is_signed_authn_req_enabled")
 
     @is_signed_authn_req_enabled.setter
-    def is_signed_authn_req_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_signed_authn_req_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_signed_authn_req_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Unique name of the IDP.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="usernameAttribute")
-    def username_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "username_attribute")
 
     @username_attribute.setter
-    def username_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username_attribute", value)
 
 
 @pulumi.input_type
 class _SamlIdentityProvidersV2State:
     def __init__(__self__, *,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 email_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_issuer: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 groups_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 groups_delim: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_metadata_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_metadata_xml: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]] = None,
-                 is_signed_authn_req_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 last_updated_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 username_attribute: Optional[pulumi.Input[_builtins.str]] = None):
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 email_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_issuer: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 groups_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 groups_delim: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_metadata_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_metadata_xml: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]] = None,
+                 is_signed_authn_req_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 username_attribute: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SamlIdentityProvidersV2 resources.
 
@@ -259,164 +259,164 @@ class _SamlIdentityProvidersV2State:
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - User or Service who created the SAML Identity Provider.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="createdTime")
-    def created_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Creation time of the SAML Identity Provider.
         """
         return pulumi.get(self, "created_time")
 
     @created_time.setter
-    def created_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_time", value)
 
     @_builtins.property
     @pulumi.getter(name="customAttributes")
-    def custom_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def custom_attributes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "custom_attributes")
 
     @custom_attributes.setter
-    def custom_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def custom_attributes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "custom_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="emailAttribute")
-    def email_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "email_attribute")
 
     @email_attribute.setter
-    def email_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_attribute", value)
 
     @_builtins.property
     @pulumi.getter(name="entityIssuer")
-    def entity_issuer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_issuer(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - It will be used as Issuer in SAML authnRequest.
         """
         return pulumi.get(self, "entity_issuer")
 
     @entity_issuer.setter
-    def entity_issuer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_issuer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_issuer", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The External Identifier of the User Group.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="groupsAttribute")
-    def groups_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def groups_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "groups_attribute")
 
     @groups_attribute.setter
-    def groups_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def groups_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "groups_attribute", value)
 
     @_builtins.property
     @pulumi.getter(name="groupsDelim")
-    def groups_delim(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def groups_delim(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Delimiter is used to split the value of attribute into multiple groups.
         """
         return pulumi.get(self, "groups_delim")
 
     @groups_delim.setter
-    def groups_delim(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def groups_delim(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "groups_delim", value)
 
     @_builtins.property
     @pulumi.getter(name="idpMetadataUrl")
-    def idp_metadata_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idp_metadata_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "idp_metadata_url")
 
     @idp_metadata_url.setter
-    def idp_metadata_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idp_metadata_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idp_metadata_url", value)
 
     @_builtins.property
     @pulumi.getter(name="idpMetadataXml")
-    def idp_metadata_xml(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idp_metadata_xml(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "idp_metadata_xml")
 
     @idp_metadata_xml.setter
-    def idp_metadata_xml(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idp_metadata_xml(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idp_metadata_xml", value)
 
     @_builtins.property
     @pulumi.getter(name="idpMetadatas")
-    def idp_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]:
+    def idp_metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]:
         """
         - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
         """
         return pulumi.get(self, "idp_metadatas")
 
     @idp_metadatas.setter
-    def idp_metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]):
+    def idp_metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SamlIdentityProvidersV2IdpMetadataArgs']]]]):
         pulumi.set(self, "idp_metadatas", value)
 
     @_builtins.property
     @pulumi.getter(name="isSignedAuthnReqEnabled")
-    def is_signed_authn_req_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_signed_authn_req_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - Flag indicating signing of SAML authnRequests.
         """
         return pulumi.get(self, "is_signed_authn_req_enabled")
 
     @is_signed_authn_req_enabled.setter
-    def is_signed_authn_req_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_signed_authn_req_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_signed_authn_req_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedTime")
-    def last_updated_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_updated_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Last updated time of the SAML Identity Provider.
         """
         return pulumi.get(self, "last_updated_time")
 
     @last_updated_time.setter
-    def last_updated_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_updated_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_updated_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Unique name of the IDP.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="usernameAttribute")
-    def username_attribute(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username_attribute(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "username_attribute")
 
     @username_attribute.setter
-    def username_attribute(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username_attribute(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username_attribute", value)
 
 
@@ -426,18 +426,18 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 custom_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 email_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_issuer: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 groups_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 groups_delim: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_metadata_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_metadata_xml: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SamlIdentityProvidersV2IdpMetadataArgs', 'SamlIdentityProvidersV2IdpMetadataArgsDict']]]]] = None,
-                 is_signed_authn_req_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 username_attribute: Optional[pulumi.Input[_builtins.str]] = None,
+                 custom_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 email_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_issuer: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 groups_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 groups_delim: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_metadata_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_metadata_xml: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SamlIdentityProvidersV2IdpMetadataArgs', 'SamlIdentityProvidersV2IdpMetadataArgsDict']]]]] = None,
+                 is_signed_authn_req_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 username_attribute: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to Create a SAML Identity Provider.
@@ -613,18 +613,18 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 custom_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 email_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_issuer: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 groups_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-                 groups_delim: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_metadata_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_metadata_xml: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SamlIdentityProvidersV2IdpMetadataArgs', 'SamlIdentityProvidersV2IdpMetadataArgsDict']]]]] = None,
-                 is_signed_authn_req_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 username_attribute: Optional[pulumi.Input[_builtins.str]] = None,
+                 custom_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 email_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_issuer: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 groups_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+                 groups_delim: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_metadata_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_metadata_xml: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SamlIdentityProvidersV2IdpMetadataArgs', 'SamlIdentityProvidersV2IdpMetadataArgsDict']]]]] = None,
+                 is_signed_authn_req_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 username_attribute: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -659,21 +659,21 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            created_time: Optional[pulumi.Input[_builtins.str]] = None,
-            custom_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            email_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_issuer: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            groups_attribute: Optional[pulumi.Input[_builtins.str]] = None,
-            groups_delim: Optional[pulumi.Input[_builtins.str]] = None,
-            idp_metadata_url: Optional[pulumi.Input[_builtins.str]] = None,
-            idp_metadata_xml: Optional[pulumi.Input[_builtins.str]] = None,
-            idp_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SamlIdentityProvidersV2IdpMetadataArgs', 'SamlIdentityProvidersV2IdpMetadataArgsDict']]]]] = None,
-            is_signed_authn_req_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            last_updated_time: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            username_attribute: Optional[pulumi.Input[_builtins.str]] = None) -> 'SamlIdentityProvidersV2':
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_time: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            email_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_issuer: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            groups_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+            groups_delim: pulumi.Input[Optional[_builtins.str]] = None,
+            idp_metadata_url: pulumi.Input[Optional[_builtins.str]] = None,
+            idp_metadata_xml: pulumi.Input[Optional[_builtins.str]] = None,
+            idp_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SamlIdentityProvidersV2IdpMetadataArgs', 'SamlIdentityProvidersV2IdpMetadataArgsDict']]]]] = None,
+            is_signed_authn_req_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            username_attribute: pulumi.Input[Optional[_builtins.str]] = None) -> 'SamlIdentityProvidersV2':
         """
         Get an existing SamlIdentityProvidersV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

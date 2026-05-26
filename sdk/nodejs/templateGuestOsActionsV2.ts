@@ -137,11 +137,11 @@ export interface TemplateGuestOsActionsV2State {
     /**
      * Actions to be performed. Acceptable values are "initiate", "complete", "cancel" .
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * The identifier of a Template.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`" pulumi-lang-hcl="`complete`">`complete`</span> action.
      *
@@ -150,19 +150,19 @@ export interface TemplateGuestOsActionsV2State {
      * See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/completeGuestUpdate).
      * See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/cancelGuestUpdate).
      */
-    isActiveVersion?: pulumi.Input<string>;
+    isActiveVersion?: pulumi.Input<string | undefined>;
     /**
      * The user defined description of a Template Version. (Required) Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`" pulumi-lang-hcl="`complete`">`complete`</span> action.
      */
-    versionDescription?: pulumi.Input<string>;
+    versionDescription?: pulumi.Input<string | undefined>;
     /**
      * The identifier of a Template Version. Only applicable with `Initiate` action.
      */
-    versionId?: pulumi.Input<string>;
+    versionId?: pulumi.Input<string | undefined>;
     /**
      * The user defined name of a Template Version. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`" pulumi-lang-hcl="`complete`">`complete`</span> action.
      */
-    versionName?: pulumi.Input<string>;
+    versionName?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -185,17 +185,17 @@ export interface TemplateGuestOsActionsV2Args {
      * See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/completeGuestUpdate).
      * See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/cancelGuestUpdate).
      */
-    isActiveVersion?: pulumi.Input<string>;
+    isActiveVersion?: pulumi.Input<string | undefined>;
     /**
      * The user defined description of a Template Version. (Required) Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`" pulumi-lang-hcl="`complete`">`complete`</span> action.
      */
-    versionDescription?: pulumi.Input<string>;
+    versionDescription?: pulumi.Input<string | undefined>;
     /**
      * The identifier of a Template Version. Only applicable with `Initiate` action.
      */
-    versionId?: pulumi.Input<string>;
+    versionId?: pulumi.Input<string | undefined>;
     /**
      * The user defined name of a Template Version. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`" pulumi-lang-hcl="`complete`">`complete`</span> action.
      */
-    versionName?: pulumi.Input<string>;
+    versionName?: pulumi.Input<string | undefined>;
 }

@@ -48,8 +48,8 @@ import (
 //
 // The following arguments are supported:
 //
-// * <span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`">`userExtId`</span>: - ( Required ) External Identifier of the User.
-// * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - ( Required ) External identifier of the key.
+// * <span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`" pulumi-lang-hcl="`user_ext_id`">`userExtId`</span>: - ( Required ) External Identifier of the User.
+// * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>: - ( Required ) External identifier of the key.
 type UserKeyRevokeV2 struct {
 	pulumi.CustomResourceState
 

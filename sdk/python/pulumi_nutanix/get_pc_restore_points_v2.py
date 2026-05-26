@@ -351,13 +351,13 @@ def get_pc_restore_points_v2(filter: Optional[_builtins.str] = None,
         restore_points=pulumi.get(__ret__, 'restore_points'),
         restore_source_ext_id=pulumi.get(__ret__, 'restore_source_ext_id'),
         select=pulumi.get(__ret__, 'select'))
-def get_pc_restore_points_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                    order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                    restorable_domain_manager_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    restore_source_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_pc_restore_points_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                    order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                    restorable_domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    restore_source_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPcRestorePointsV2Result]:
     """
     The list restore points API allows you to retrieve a list of available restore points, which are snapshots of the domain manager taken at different times. These restore points can be used to revert the domain manager to a previous state. The list response includes the creation time and identifier ID for the configuration data.

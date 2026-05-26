@@ -63,7 +63,7 @@ type LookupLcmConfigV2Args struct {
 
 // A collection of values returned by getLcmConfigV2.
 type LookupLcmConfigV2Result struct {
-	// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+	// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
 	AutoInventorySchedule string `pulumi:"autoInventorySchedule"`
 	// This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode. Values are :
 	// - `CONNECTED_SITE`: In connected-site, LCM on the cluster has internet connectivity to reach configured portal for downloading LCM modules/bundles etc.
@@ -133,7 +133,7 @@ func (o LookupLcmConfigV2ResultOutput) ToLookupLcmConfigV2ResultOutputWithContex
 	return o
 }
 
-// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
 func (o LookupLcmConfigV2ResultOutput) AutoInventorySchedule() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLcmConfigV2Result) string { return v.AutoInventorySchedule }).(pulumi.StringOutput)
 }

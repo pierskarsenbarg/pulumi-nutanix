@@ -23,11 +23,11 @@ class NdbSoftwareVersionProfileArgs:
     def __init__(__self__, *,
                  engine_type: pulumi.Input[_builtins.str],
                  profile_id: pulumi.Input[_builtins.str],
-                 available_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input['NdbSoftwareVersionProfilePostgresDatabaseArgs']]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 available_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input['NdbSoftwareVersionProfilePostgresDatabaseArgs']]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbSoftwareVersionProfile resource.
 
@@ -78,85 +78,85 @@ class NdbSoftwareVersionProfileArgs:
 
     @_builtins.property
     @pulumi.getter(name="availableClusterIds")
-    def available_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def available_cluster_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         available cluster ids
         """
         return pulumi.get(self, "available_cluster_ids")
 
     @available_cluster_ids.setter
-    def available_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def available_cluster_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "available_cluster_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         description of profile
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of profile
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="postgresDatabases")
-    def postgres_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbSoftwareVersionProfilePostgresDatabaseArgs']]]]:
+    def postgres_databases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbSoftwareVersionProfilePostgresDatabaseArgs']]]]:
         """
         postgres database info
         """
         return pulumi.get(self, "postgres_databases")
 
     @postgres_databases.setter
-    def postgres_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbSoftwareVersionProfilePostgresDatabaseArgs']]]]):
+    def postgres_databases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbSoftwareVersionProfilePostgresDatabaseArgs']]]]):
         pulumi.set(self, "postgres_databases", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         status of profile. Allowed Values are "deprecated", "published", "unpublished"
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
 @pulumi.input_type
 class _NdbSoftwareVersionProfileState:
     def __init__(__self__, *,
-                 available_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 deprecated: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 engine_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input['NdbSoftwareVersionProfilePostgresDatabaseArgs']]]] = None,
-                 profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input['NdbSoftwareVersionProfilePropertyArgs']]]] = None,
-                 properties_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 published: Optional[pulumi.Input[_builtins.bool]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_profile: Optional[pulumi.Input[_builtins.bool]] = None,
-                 topology: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_cluster_associations: Optional[pulumi.Input[Sequence[pulumi.Input['NdbSoftwareVersionProfileVersionClusterAssociationArgs']]]] = None):
+                 available_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 deprecated: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 engine_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input['NdbSoftwareVersionProfilePostgresDatabaseArgs']]]] = None,
+                 profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input['NdbSoftwareVersionProfilePropertyArgs']]]] = None,
+                 properties_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 published: pulumi.Input[Optional[_builtins.bool]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_profile: pulumi.Input[Optional[_builtins.bool]] = None,
+                 topology: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_cluster_associations: pulumi.Input[Optional[Sequence[pulumi.Input['NdbSoftwareVersionProfileVersionClusterAssociationArgs']]]] = None):
         """
         Input properties used for looking up and filtering NdbSoftwareVersionProfile resources.
 
@@ -215,206 +215,206 @@ class _NdbSoftwareVersionProfileState:
 
     @_builtins.property
     @pulumi.getter(name="availableClusterIds")
-    def available_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def available_cluster_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         available cluster ids
         """
         return pulumi.get(self, "available_cluster_ids")
 
     @available_cluster_ids.setter
-    def available_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def available_cluster_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "available_cluster_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Db version of software profile
         """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
-    def db_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def deprecated(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def deprecated(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         deprecated or not
         """
         return pulumi.get(self, "deprecated")
 
     @deprecated.setter
-    def deprecated(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def deprecated(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "deprecated", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         description of profile
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="engineType")
-    def engine_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def engine_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         engine type of profile
         """
         return pulumi.get(self, "engine_type")
 
     @engine_type.setter
-    def engine_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def engine_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "engine_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of profile
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def owner(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         owner  of profile
         """
         return pulumi.get(self, "owner")
 
     @owner.setter
-    def owner(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner", value)
 
     @_builtins.property
     @pulumi.getter(name="postgresDatabases")
-    def postgres_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbSoftwareVersionProfilePostgresDatabaseArgs']]]]:
+    def postgres_databases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbSoftwareVersionProfilePostgresDatabaseArgs']]]]:
         """
         postgres database info
         """
         return pulumi.get(self, "postgres_databases")
 
     @postgres_databases.setter
-    def postgres_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbSoftwareVersionProfilePostgresDatabaseArgs']]]]):
+    def postgres_databases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbSoftwareVersionProfilePostgresDatabaseArgs']]]]):
         pulumi.set(self, "postgres_databases", value)
 
     @_builtins.property
     @pulumi.getter(name="profileId")
-    def profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         profile id
         """
         return pulumi.get(self, "profile_id")
 
     @profile_id.setter
-    def profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbSoftwareVersionProfilePropertyArgs']]]]:
+    def properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbSoftwareVersionProfilePropertyArgs']]]]:
         """
         properties of software profile
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbSoftwareVersionProfilePropertyArgs']]]]):
+    def properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbSoftwareVersionProfilePropertyArgs']]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter(name="propertiesMap")
-    def properties_map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def properties_map(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         properties map of profile
         """
         return pulumi.get(self, "properties_map")
 
     @properties_map.setter
-    def properties_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def properties_map(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "properties_map", value)
 
     @_builtins.property
     @pulumi.getter
-    def published(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def published(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Published or not
         """
         return pulumi.get(self, "published")
 
     @published.setter
-    def published(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def published(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "published", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         status of profile. Allowed Values are "deprecated", "published", "unpublished"
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="systemProfile")
-    def system_profile(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def system_profile(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         system profile or not.
         """
         return pulumi.get(self, "system_profile")
 
     @system_profile.setter
-    def system_profile(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def system_profile(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "system_profile", value)
 
     @_builtins.property
     @pulumi.getter
-    def topology(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def topology(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         topology of software profile
         """
         return pulumi.get(self, "topology")
 
     @topology.setter
-    def topology(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def topology(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "topology", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of software profile
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
     @_builtins.property
     @pulumi.getter(name="versionClusterAssociations")
-    def version_cluster_associations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbSoftwareVersionProfileVersionClusterAssociationArgs']]]]:
+    def version_cluster_associations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbSoftwareVersionProfileVersionClusterAssociationArgs']]]]:
         """
         version cluster association
         """
         return pulumi.get(self, "version_cluster_associations")
 
     @version_cluster_associations.setter
-    def version_cluster_associations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbSoftwareVersionProfileVersionClusterAssociationArgs']]]]):
+    def version_cluster_associations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbSoftwareVersionProfileVersionClusterAssociationArgs']]]]):
         pulumi.set(self, "version_cluster_associations", value)
 
 
@@ -424,13 +424,13 @@ class NdbSoftwareVersionProfile(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 available_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 engine_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfilePostgresDatabaseArgs', 'NdbSoftwareVersionProfilePostgresDatabaseArgsDict']]]]] = None,
-                 profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 available_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 engine_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfilePostgresDatabaseArgs', 'NdbSoftwareVersionProfilePostgresDatabaseArgsDict']]]]] = None,
+                 profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to create software profile versions based on the input parameters.
@@ -511,13 +511,13 @@ class NdbSoftwareVersionProfile(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 available_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 engine_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfilePostgresDatabaseArgs', 'NdbSoftwareVersionProfilePostgresDatabaseArgsDict']]]]] = None,
-                 profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 available_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 engine_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfilePostgresDatabaseArgs', 'NdbSoftwareVersionProfilePostgresDatabaseArgsDict']]]]] = None,
+                 profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -558,23 +558,23 @@ class NdbSoftwareVersionProfile(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            available_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            db_version: Optional[pulumi.Input[_builtins.str]] = None,
-            deprecated: Optional[pulumi.Input[_builtins.bool]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            engine_type: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            owner: Optional[pulumi.Input[_builtins.str]] = None,
-            postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfilePostgresDatabaseArgs', 'NdbSoftwareVersionProfilePostgresDatabaseArgsDict']]]]] = None,
-            profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-            properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfilePropertyArgs', 'NdbSoftwareVersionProfilePropertyArgsDict']]]]] = None,
-            properties_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            published: Optional[pulumi.Input[_builtins.bool]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            system_profile: Optional[pulumi.Input[_builtins.bool]] = None,
-            topology: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None,
-            version_cluster_associations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfileVersionClusterAssociationArgs', 'NdbSoftwareVersionProfileVersionClusterAssociationArgsDict']]]]] = None) -> 'NdbSoftwareVersionProfile':
+            available_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            db_version: pulumi.Input[Optional[_builtins.str]] = None,
+            deprecated: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            engine_type: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner: pulumi.Input[Optional[_builtins.str]] = None,
+            postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfilePostgresDatabaseArgs', 'NdbSoftwareVersionProfilePostgresDatabaseArgsDict']]]]] = None,
+            profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfilePropertyArgs', 'NdbSoftwareVersionProfilePropertyArgsDict']]]]] = None,
+            properties_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            published: pulumi.Input[Optional[_builtins.bool]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            system_profile: pulumi.Input[Optional[_builtins.bool]] = None,
+            topology: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None,
+            version_cluster_associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfileVersionClusterAssociationArgs', 'NdbSoftwareVersionProfileVersionClusterAssociationArgsDict']]]]] = None) -> 'NdbSoftwareVersionProfile':
         """
         Get an existing NdbSoftwareVersionProfile resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

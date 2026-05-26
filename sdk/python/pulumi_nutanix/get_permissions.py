@@ -116,7 +116,7 @@ def get_permissions(metadatas: Optional[Sequence[Union['GetPermissionsMetadataAr
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-def get_permissions_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetPermissionsMetadataArgs', 'GetPermissionsMetadataArgsDict']]]]] = None,
+def get_permissions_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetPermissionsMetadataArgs', 'GetPermissionsMetadataArgsDict']]]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPermissionsResult]:
     """
     Provides a datasource to retrieve all the permissions.

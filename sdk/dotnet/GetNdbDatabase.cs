@@ -74,6 +74,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbdatabase" "db1" {
+        ///   database_id = "&lt;sample-id&gt;"
+        /// }
+        /// 
+        /// output "db1Output" {
+        ///   value = data.nutanix_getndbdatabase.db1
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -180,6 +197,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbdatabase" "db1" {
+        ///   database_id = "&lt;sample-id&gt;"
+        /// }
+        /// 
+        /// output "db1Output" {
+        ///   value = data.nutanix_getndbdatabase.db1
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -284,6 +318,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 		ctx.Export("db1Output", db1)
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbdatabase" "db1" {
+        ///   database_id = "&lt;sample-id&gt;"
+        /// }
+        /// 
+        /// output "db1Output" {
+        ///   value = data.nutanix_getndbdatabase.db1
         /// }
         /// ```
         /// ```java

@@ -179,67 +179,67 @@ export interface NdbSlaState {
     /**
      * Duration in days for which transaction logs are retained in NDB.
      */
-    continuousRetention?: pulumi.Input<number>;
+    continuousRetention?: pulumi.Input<number | undefined>;
     /**
      * slas current frequency
      */
-    currentActiveFrequency?: pulumi.Input<string>;
+    currentActiveFrequency?: pulumi.Input<string | undefined>;
     /**
      * Duration in days for which a daily snapshot must be retained in NDB.
      */
-    dailyRetention?: pulumi.Input<number>;
+    dailyRetention?: pulumi.Input<number | undefined>;
     /**
      * sla created data
      */
-    dateCreated?: pulumi.Input<string>;
+    dateCreated?: pulumi.Input<string | undefined>;
     /**
      * sla last modified date
      */
-    dateModified?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string | undefined>;
     /**
      * Description of profile
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Duration in months for which a monthly snapshot must be retained in NDB
      */
-    monthlyRetention?: pulumi.Input<number>;
+    monthlyRetention?: pulumi.Input<number | undefined>;
     /**
      * Name of profile
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * owner id
      */
-    ownerId?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string | undefined>;
     /**
      * pitr enabled
      */
-    pitrEnabled?: pulumi.Input<boolean>;
+    pitrEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Duration in number of quarters for which a quarterly snapshot must be retained in NDB.
      */
-    quarterlyRetention?: pulumi.Input<number>;
+    quarterlyRetention?: pulumi.Input<number | undefined>;
     /**
      * reference count
      */
-    referenceCount?: pulumi.Input<number>;
+    referenceCount?: pulumi.Input<number | undefined>;
     /**
      * refers whether sla is custom or built-in
      */
-    systemSla?: pulumi.Input<boolean>;
+    systemSla?: pulumi.Input<boolean | undefined>;
     /**
      * name of sla
      */
-    uniqueName?: pulumi.Input<string>;
+    uniqueName?: pulumi.Input<string | undefined>;
     /**
      * Duration in weeks for which a weekly snapshot must be retained in NDB.
      */
-    weeklyRetention?: pulumi.Input<number>;
+    weeklyRetention?: pulumi.Input<number | undefined>;
     /**
      * Not supported as of now.
      */
-    yearlyRetention?: pulumi.Input<number>;
+    yearlyRetention?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -249,33 +249,33 @@ export interface NdbSlaArgs {
     /**
      * Duration in days for which transaction logs are retained in NDB.
      */
-    continuousRetention?: pulumi.Input<number>;
+    continuousRetention?: pulumi.Input<number | undefined>;
     /**
      * Duration in days for which a daily snapshot must be retained in NDB.
      */
-    dailyRetention?: pulumi.Input<number>;
+    dailyRetention?: pulumi.Input<number | undefined>;
     /**
      * Description of profile
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Duration in months for which a monthly snapshot must be retained in NDB
      */
-    monthlyRetention?: pulumi.Input<number>;
+    monthlyRetention?: pulumi.Input<number | undefined>;
     /**
      * Name of profile
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Duration in number of quarters for which a quarterly snapshot must be retained in NDB.
      */
-    quarterlyRetention?: pulumi.Input<number>;
+    quarterlyRetention?: pulumi.Input<number | undefined>;
     /**
      * Duration in weeks for which a weekly snapshot must be retained in NDB.
      */
-    weeklyRetention?: pulumi.Input<number>;
+    weeklyRetention?: pulumi.Input<number | undefined>;
     /**
      * Not supported as of now.
      */
-    yearlyRetention?: pulumi.Input<number>;
+    yearlyRetention?: pulumi.Input<number | undefined>;
 }

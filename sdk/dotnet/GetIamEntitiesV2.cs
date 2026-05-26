@@ -13,7 +13,7 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetIamEntitiesV2
     {
         /// <summary>
-        /// Provides a datasource to list IAM Entities. Entities are used in authorization policies (e.g. user, role, cluster). Supports pagination and OData &lt;span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`"&gt;`filter`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`orderBy`" pulumi-lang-dotnet="`OrderBy`" pulumi-lang-go="`orderBy`" pulumi-lang-python="`order_by`" pulumi-lang-yaml="`orderBy`" pulumi-lang-java="`orderBy`"&gt;`orderBy`&lt;/span&gt;, and &lt;span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`"&gt;`select`&lt;/span&gt;.
+        /// Provides a datasource to list IAM Entities. Entities are used in authorization policies (e.g. user, role, cluster). Supports pagination and OData &lt;span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`" pulumi-lang-hcl="`filter`"&gt;`filter`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`orderBy`" pulumi-lang-dotnet="`OrderBy`" pulumi-lang-go="`orderBy`" pulumi-lang-python="`order_by`" pulumi-lang-yaml="`orderBy`" pulumi-lang-java="`orderBy`" pulumi-lang-hcl="`order_by`"&gt;`orderBy`&lt;/span&gt;, and &lt;span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`" pulumi-lang-hcl="`select`"&gt;`select`&lt;/span&gt;.
         /// 
         /// ## Example Usage
         /// 
@@ -136,6 +136,36 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getiamentitiesv2" "all" {
+        /// }
+        /// data "nutanix_getiamentitiesv2" "filtered" {
+        ///   filter = "name eq 'user'"
+        ///   limit  = 20
+        ///   page   = 0
+        /// }
+        /// data "nutanix_getiamentitiesv2" "ordered" {
+        ///   order_by = "name asc"
+        ///   limit    = 50
+        /// }
+        /// data "nutanix_getiamentitiesv2" "selected" {
+        ///   select = "name,displayName,extId"
+        ///   limit  = 10
+        /// }
+        /// 
+        /// # List all entities (default page/limit)
+        /// # List entities with filter and pagination
+        /// # List with order_by
+        /// # List with select to specify returned fields
         /// ```
         /// ```java
         /// package generated_program;
@@ -220,7 +250,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamEntitiesV2Result>("nutanix:index/getIamEntitiesV2:getIamEntitiesV2", args ?? new GetIamEntitiesV2Args(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to list IAM Entities. Entities are used in authorization policies (e.g. user, role, cluster). Supports pagination and OData &lt;span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`"&gt;`filter`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`orderBy`" pulumi-lang-dotnet="`OrderBy`" pulumi-lang-go="`orderBy`" pulumi-lang-python="`order_by`" pulumi-lang-yaml="`orderBy`" pulumi-lang-java="`orderBy`"&gt;`orderBy`&lt;/span&gt;, and &lt;span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`"&gt;`select`&lt;/span&gt;.
+        /// Provides a datasource to list IAM Entities. Entities are used in authorization policies (e.g. user, role, cluster). Supports pagination and OData &lt;span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`" pulumi-lang-hcl="`filter`"&gt;`filter`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`orderBy`" pulumi-lang-dotnet="`OrderBy`" pulumi-lang-go="`orderBy`" pulumi-lang-python="`order_by`" pulumi-lang-yaml="`orderBy`" pulumi-lang-java="`orderBy`" pulumi-lang-hcl="`order_by`"&gt;`orderBy`&lt;/span&gt;, and &lt;span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`" pulumi-lang-hcl="`select`"&gt;`select`&lt;/span&gt;.
         /// 
         /// ## Example Usage
         /// 
@@ -343,6 +373,36 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getiamentitiesv2" "all" {
+        /// }
+        /// data "nutanix_getiamentitiesv2" "filtered" {
+        ///   filter = "name eq 'user'"
+        ///   limit  = 20
+        ///   page   = 0
+        /// }
+        /// data "nutanix_getiamentitiesv2" "ordered" {
+        ///   order_by = "name asc"
+        ///   limit    = 50
+        /// }
+        /// data "nutanix_getiamentitiesv2" "selected" {
+        ///   select = "name,displayName,extId"
+        ///   limit  = 10
+        /// }
+        /// 
+        /// # List all entities (default page/limit)
+        /// # List entities with filter and pagination
+        /// # List with order_by
+        /// # List with select to specify returned fields
         /// ```
         /// ```java
         /// package generated_program;
@@ -427,7 +487,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.Invoke<GetIamEntitiesV2Result>("nutanix:index/getIamEntitiesV2:getIamEntitiesV2", args ?? new GetIamEntitiesV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to list IAM Entities. Entities are used in authorization policies (e.g. user, role, cluster). Supports pagination and OData &lt;span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`"&gt;`filter`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`orderBy`" pulumi-lang-dotnet="`OrderBy`" pulumi-lang-go="`orderBy`" pulumi-lang-python="`order_by`" pulumi-lang-yaml="`orderBy`" pulumi-lang-java="`orderBy`"&gt;`orderBy`&lt;/span&gt;, and &lt;span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`"&gt;`select`&lt;/span&gt;.
+        /// Provides a datasource to list IAM Entities. Entities are used in authorization policies (e.g. user, role, cluster). Supports pagination and OData &lt;span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`" pulumi-lang-hcl="`filter`"&gt;`filter`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`orderBy`" pulumi-lang-dotnet="`OrderBy`" pulumi-lang-go="`orderBy`" pulumi-lang-python="`order_by`" pulumi-lang-yaml="`orderBy`" pulumi-lang-java="`orderBy`" pulumi-lang-hcl="`order_by`"&gt;`orderBy`&lt;/span&gt;, and &lt;span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`" pulumi-lang-hcl="`select`"&gt;`select`&lt;/span&gt;.
         /// 
         /// ## Example Usage
         /// 
@@ -550,6 +610,36 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getiamentitiesv2" "all" {
+        /// }
+        /// data "nutanix_getiamentitiesv2" "filtered" {
+        ///   filter = "name eq 'user'"
+        ///   limit  = 20
+        ///   page   = 0
+        /// }
+        /// data "nutanix_getiamentitiesv2" "ordered" {
+        ///   order_by = "name asc"
+        ///   limit    = 50
+        /// }
+        /// data "nutanix_getiamentitiesv2" "selected" {
+        ///   select = "name,displayName,extId"
+        ///   limit  = 10
+        /// }
+        /// 
+        /// # List all entities (default page/limit)
+        /// # List entities with filter and pagination
+        /// # List with order_by
+        /// # List with select to specify returned fields
         /// ```
         /// ```java
         /// package generated_program;

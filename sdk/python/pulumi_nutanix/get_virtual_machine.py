@@ -673,10 +673,10 @@ def get_virtual_machine(boot_device_disk_address: Optional[Mapping[str, _builtin
         state=pulumi.get(__ret__, 'state'),
         vga_console_enabled=pulumi.get(__ret__, 'vga_console_enabled'),
         vm_id=pulumi.get(__ret__, 'vm_id'))
-def get_virtual_machine_output(boot_device_disk_address: Optional[pulumi.Input[Optional[Mapping[str, _builtins.str]]]] = None,
-                               boot_device_mac_address: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               categories: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualMachineCategoryArgs', 'GetVirtualMachineCategoryArgsDict']]]]] = None,
-                               vm_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_virtual_machine_output(boot_device_disk_address: pulumi.Input[Optional[Optional[Mapping[str, _builtins.str]]]] = None,
+                               boot_device_mac_address: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               categories: pulumi.Input[Optional[Optional[Sequence[Union['GetVirtualMachineCategoryArgs', 'GetVirtualMachineCategoryArgsDict']]]]] = None,
+                               vm_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualMachineResult]:
     """
     Describes a Virtual Machine

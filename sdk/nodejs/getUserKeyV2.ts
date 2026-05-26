@@ -170,7 +170,7 @@ export interface GetUserKeyV2OutputArgs {
     /**
      * - Brief description of the key.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The External Identifier of the User Group.
      */

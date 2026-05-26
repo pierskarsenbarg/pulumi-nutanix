@@ -228,47 +228,47 @@ export interface EntityGroupV2State {
     /**
      * Configuration of the allowed entities in the Entity Group.
      */
-    allowedConfig?: pulumi.Input<inputs.EntityGroupV2AllowedConfig>;
+    allowedConfig?: pulumi.Input<inputs.EntityGroupV2AllowedConfig | undefined>;
     /**
      * The timestamp when the Entity Group was created.
      */
-    creationTime?: pulumi.Input<string>;
+    creationTime?: pulumi.Input<string | undefined>;
     /**
      * A user defined annotation for an Entity Group.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Configuration of except entities in the Entity Group.
      */
-    exceptConfig?: pulumi.Input<inputs.EntityGroupV2ExceptConfig>;
+    exceptConfig?: pulumi.Input<inputs.EntityGroupV2ExceptConfig | undefined>;
     /**
      * Entity group UUID.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * The timestamp when the Entity Group was last updated.
      */
-    lastUpdateTime?: pulumi.Input<string>;
+    lastUpdateTime?: pulumi.Input<string | undefined>;
     /**
      * A HATEOAS style link for the response.
      */
-    links?: pulumi.Input<pulumi.Input<inputs.EntityGroupV2Link>[]>;
+    links?: pulumi.Input<pulumi.Input<inputs.EntityGroupV2Link>[] | undefined>;
     /**
      * A short identifier of an Entity Group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The external identifier of the user who created the Entity Group.
      */
-    ownerExtId?: pulumi.Input<string>;
+    ownerExtId?: pulumi.Input<string | undefined>;
     /**
      * List of policy external identifiers.
      */
-    policyExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    policyExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -278,21 +278,21 @@ export interface EntityGroupV2Args {
     /**
      * Configuration of the allowed entities in the Entity Group.
      */
-    allowedConfig?: pulumi.Input<inputs.EntityGroupV2AllowedConfig>;
+    allowedConfig?: pulumi.Input<inputs.EntityGroupV2AllowedConfig | undefined>;
     /**
      * A user defined annotation for an Entity Group.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Configuration of except entities in the Entity Group.
      */
-    exceptConfig?: pulumi.Input<inputs.EntityGroupV2ExceptConfig>;
+    exceptConfig?: pulumi.Input<inputs.EntityGroupV2ExceptConfig | undefined>;
     /**
      * A short identifier of an Entity Group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * List of policy external identifiers.
      */
-    policyExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    policyExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

@@ -161,11 +161,11 @@ export interface GetIamEntitiesV2OutputArgs {
      * * `extId` - Filter by entity external identifier.
      * * `lastUpdatedTime` - Filter by last updated time (ISO 8601 format).
      */
-    filter?: pulumi.Input<string>;
+    filter?: pulumi.Input<string | undefined>;
     /**
      * Number of records to return. Must be between 1 and 100. Default is 50.
      */
-    limit?: pulumi.Input<number>;
+    limit?: pulumi.Input<number | undefined>;
     /**
      * OData orderby expression. The orderby can be applied to the following fields:
      *
@@ -174,16 +174,16 @@ export interface GetIamEntitiesV2OutputArgs {
      * * `extId` - Sort by entity external identifier.
      * * `lastUpdatedTime` - Sort by last updated time (ISO 8601 format).
      */
-    orderBy?: pulumi.Input<string>;
+    orderBy?: pulumi.Input<string | undefined>;
     /**
      * Page number of the result set (0-based). Must be between 0 and the maximum number of pages.
      */
-    page?: pulumi.Input<number>;
+    page?: pulumi.Input<number | undefined>;
     /**
      * OData select expression. The select can be applied to the following fields:
      * * `clientName` - Select by client name.
      * * `createdBy` - Select by creator (user or service ext_id).
      * * `createdTime` - Select by creation time (ISO 8601 format).
      */
-    select?: pulumi.Input<string>;
+    select?: pulumi.Input<string | undefined>;
 }

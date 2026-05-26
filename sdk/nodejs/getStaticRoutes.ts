@@ -72,9 +72,9 @@ export function getStaticRoutesOutput(args?: GetStaticRoutesOutputArgs, opts?: p
  * A collection of arguments for invoking getStaticRoutes.
  */
 export interface GetStaticRoutesOutputArgs {
-    vpcName?: pulumi.Input<string>;
+    vpcName?: pulumi.Input<string | undefined>;
     /**
      * vpc UUID
      */
-    vpcReferenceUuid?: pulumi.Input<string>;
+    vpcReferenceUuid?: pulumi.Input<string | undefined>;
 }

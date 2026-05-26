@@ -79,6 +79,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getlcmconfigv2" "lcm-configuration" {
+        /// }
+        /// data "nutanix_getlcmconfigv2" "lcm-configuration-cluster" {
+        ///   x_cluster_id = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b"
+        /// }
+        /// 
+        /// # Get LCM configuration for a specific cluster
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -195,6 +212,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getlcmconfigv2" "lcm-configuration" {
+        /// }
+        /// data "nutanix_getlcmconfigv2" "lcm-configuration-cluster" {
+        ///   x_cluster_id = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b"
+        /// }
+        /// 
+        /// # Get LCM configuration for a specific cluster
         /// ```
         /// ```java
         /// package generated_program;
@@ -313,6 +347,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getlcmconfigv2" "lcm-configuration" {
+        /// }
+        /// data "nutanix_getlcmconfigv2" "lcm-configuration-cluster" {
+        ///   x_cluster_id = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b"
+        /// }
+        /// 
+        /// # Get LCM configuration for a specific cluster
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -398,7 +449,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetLcmConfigV2Result
     {
         /// <summary>
-        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when&lt;span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "&gt; autoInventoryEnabled &lt;/span&gt;is set to True. The default schedule time is 03:00(AM).
+        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when&lt;span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "&gt; autoInventoryEnabled &lt;/span&gt;is set to True. The default schedule time is 03:00(AM).
         /// </summary>
         public readonly string AutoInventorySchedule;
         /// <summary>

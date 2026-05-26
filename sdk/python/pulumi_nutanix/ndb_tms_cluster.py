@@ -22,7 +22,7 @@ class NdbTmsClusterArgs:
                  nx_cluster_id: pulumi.Input[_builtins.str],
                  sla_id: pulumi.Input[_builtins.str],
                  time_machine_id: pulumi.Input[_builtins.str],
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbTmsCluster resource.
 
@@ -75,34 +75,34 @@ class NdbTmsClusterArgs:
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default value is "OTHER"
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 @pulumi.input_type
 class _NdbTmsClusterState:
     def __init__(__self__, *,
-                 date_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 date_modified: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_drive_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_drive_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 nx_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sla_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.bool]] = None,
-                 source_clusters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 date_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_drive_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_drive_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 sla_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.bool]] = None,
+                 source_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbTmsCluster resources.
 
@@ -152,170 +152,170 @@ class _NdbTmsClusterState:
 
     @_builtins.property
     @pulumi.getter(name="dateCreated")
-    def date_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def date_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         created date of time machine associated with cluster
         """
         return pulumi.get(self, "date_created")
 
     @date_created.setter
-    def date_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def date_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "date_created", value)
 
     @_builtins.property
     @pulumi.getter(name="dateModified")
-    def date_modified(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def date_modified(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         modified date of time machine associated with cluster
         """
         return pulumi.get(self, "date_modified")
 
     @date_modified.setter
-    def date_modified(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def date_modified(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "date_modified", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         description of nutanix cluster associated with time machine
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="logDriveId")
-    def log_drive_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_drive_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         log drive id
         """
         return pulumi.get(self, "log_drive_id")
 
     @log_drive_id.setter
-    def log_drive_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_drive_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_drive_id", value)
 
     @_builtins.property
     @pulumi.getter(name="logDriveStatus")
-    def log_drive_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_drive_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         log drive status of time machine
         """
         return pulumi.get(self, "log_drive_status")
 
     @log_drive_status.setter
-    def log_drive_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_drive_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_drive_status", value)
 
     @_builtins.property
     @pulumi.getter(name="nxClusterId")
-    def nx_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nx_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Nutanix cluster id on the associated registered clusters.
         """
         return pulumi.get(self, "nx_cluster_id")
 
     @nx_cluster_id.setter
-    def nx_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nx_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nx_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerId")
-    def owner_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         owner id
         """
         return pulumi.get(self, "owner_id")
 
     @owner_id.setter
-    def owner_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner_id", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduleId")
-    def schedule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schedule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         schedule id of the data associated with time machine
         """
         return pulumi.get(self, "schedule_id")
 
     @schedule_id.setter
-    def schedule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schedule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schedule_id", value)
 
     @_builtins.property
     @pulumi.getter(name="slaId")
-    def sla_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sla_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SLA id for the associated cluster.
         """
         return pulumi.get(self, "sla_id")
 
     @sla_id.setter
-    def sla_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sla_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sla_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         source is present or not
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceClusters")
-    def source_clusters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def source_clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         source clusters in time machines
         """
         return pulumi.get(self, "source_clusters")
 
     @source_clusters.setter
-    def source_clusters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def source_clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "source_clusters", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         status of the cluster associated with time machine
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachineId")
-    def time_machine_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_machine_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         time machine id
         """
         return pulumi.get(self, "time_machine_id")
 
     @time_machine_id.setter
-    def time_machine_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_machine_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_machine_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default value is "OTHER"
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -325,10 +325,10 @@ class NdbTmsCluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 nx_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sla_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 sla_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to manage time machine data availability across all the registered Nutanix clusters in NDB.
@@ -394,10 +394,10 @@ class NdbTmsCluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 nx_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sla_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 sla_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -437,20 +437,20 @@ class NdbTmsCluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            date_created: Optional[pulumi.Input[_builtins.str]] = None,
-            date_modified: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            log_drive_id: Optional[pulumi.Input[_builtins.str]] = None,
-            log_drive_status: Optional[pulumi.Input[_builtins.str]] = None,
-            nx_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            owner_id: Optional[pulumi.Input[_builtins.str]] = None,
-            schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
-            sla_id: Optional[pulumi.Input[_builtins.str]] = None,
-            source: Optional[pulumi.Input[_builtins.bool]] = None,
-            source_clusters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'NdbTmsCluster':
+            date_created: pulumi.Input[Optional[_builtins.str]] = None,
+            date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            log_drive_id: pulumi.Input[Optional[_builtins.str]] = None,
+            log_drive_status: pulumi.Input[Optional[_builtins.str]] = None,
+            nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_id: pulumi.Input[Optional[_builtins.str]] = None,
+            schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
+            sla_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.bool]] = None,
+            source_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'NdbTmsCluster':
         """
         Get an existing NdbTmsCluster resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -14,9 +14,9 @@ namespace PiersKarsenbarg.Nutanix
     /// Provides Nutanix resource to create storage policy
     /// 
     /// &gt; **Note**:
-    /// Once &lt;span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`"&gt;`encryptionState`&lt;/span&gt; is explicitly set to `ENABLED`, it cannot be reverted back to a system-derived value.
+    /// Once &lt;span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`" pulumi-lang-hcl="`encryption_state`"&gt;`encryptionState`&lt;/span&gt; is explicitly set to `ENABLED`, it cannot be reverted back to a system-derived value.
     /// 
-    /// If compression_state, encryption_state, or&lt;span pulumi-lang-nodejs=" replicationFactor " pulumi-lang-dotnet=" ReplicationFactor " pulumi-lang-go=" replicationFactor " pulumi-lang-python=" replication_factor " pulumi-lang-yaml=" replicationFactor " pulumi-lang-java=" replicationFactor "&gt; replicationFactor &lt;/span&gt;are intended to be system-derived, ensure that the&lt;span pulumi-lang-nodejs=" qosSpec " pulumi-lang-dotnet=" QosSpec " pulumi-lang-go=" qosSpec " pulumi-lang-python=" qos_spec " pulumi-lang-yaml=" qosSpec " pulumi-lang-java=" qosSpec "&gt; qosSpec &lt;/span&gt;block is included.
+    /// If compression_state, encryption_state, or&lt;span pulumi-lang-nodejs=" replicationFactor " pulumi-lang-dotnet=" ReplicationFactor " pulumi-lang-go=" replicationFactor " pulumi-lang-python=" replication_factor " pulumi-lang-yaml=" replicationFactor " pulumi-lang-java=" replicationFactor " pulumi-lang-hcl=" replication_factor "&gt; replicationFactor &lt;/span&gt;are intended to be system-derived, ensure that the&lt;span pulumi-lang-nodejs=" qosSpec " pulumi-lang-dotnet=" QosSpec " pulumi-lang-go=" qosSpec " pulumi-lang-python=" qos_spec " pulumi-lang-yaml=" qosSpec " pulumi-lang-java=" qosSpec " pulumi-lang-hcl=" qos_spec "&gt; qosSpec &lt;/span&gt;block is included.
     /// 
     /// ## Example
     /// 

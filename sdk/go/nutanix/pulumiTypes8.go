@@ -329,7 +329,7 @@ func (o GetRecoveryPlansEntityParameterFloatingIpAssignmentListVmIpAssignmentLis
 }
 
 type GetRecoveryPlansEntityParameterFloatingIpAssignmentListVmIpAssignmentListVmReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// (Optional) the name.
 	Name string `pulumi:"name"`
@@ -349,7 +349,7 @@ type GetRecoveryPlansEntityParameterFloatingIpAssignmentListVmIpAssignmentListVm
 }
 
 type GetRecoveryPlansEntityParameterFloatingIpAssignmentListVmIpAssignmentListVmReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Optional) the name.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -408,7 +408,7 @@ func (o GetRecoveryPlansEntityParameterFloatingIpAssignmentListVmIpAssignmentLis
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o GetRecoveryPlansEntityParameterFloatingIpAssignmentListVmIpAssignmentListVmReferenceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntityParameterFloatingIpAssignmentListVmIpAssignmentListVmReference) string {
 		return v.Kind
@@ -688,7 +688,7 @@ func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetwork
 }
 
 type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceList struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// (Optional) the name.
 	Name string `pulumi:"name"`
@@ -708,7 +708,7 @@ type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMap
 }
 
 type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceListArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Optional) the name.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -767,7 +767,7 @@ func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetwork
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceListOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceList) string {
 		return v.Kind
@@ -1009,7 +1009,7 @@ func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetwork
 }
 
 type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// (Optional) the name.
 	Name string `pulumi:"name"`
@@ -1029,7 +1029,7 @@ type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMap
 }
 
 type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Optional) the name.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -1063,7 +1063,7 @@ func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetwork
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReferenceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReference) string {
 		return v.Kind
@@ -1328,7 +1328,7 @@ func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetwork
 }
 
 type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// (Optional) the name.
 	Name string `pulumi:"name"`
@@ -1348,7 +1348,7 @@ type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMap
 }
 
 type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Optional) the name.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -1407,7 +1407,7 @@ func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetwork
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferenceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReference) string {
 		return v.Kind
@@ -1449,7 +1449,7 @@ func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetwork
 }
 
 type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// (Optional) the name.
 	Name string `pulumi:"name"`
@@ -1469,7 +1469,7 @@ type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMap
 }
 
 type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Optional) the name.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -1528,7 +1528,7 @@ func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetwork
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferenceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReference) string {
 		return v.Kind
@@ -1770,7 +1770,7 @@ func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetwork
 }
 
 type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// (Optional) the name.
 	Name string `pulumi:"name"`
@@ -1790,7 +1790,7 @@ type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMap
 }
 
 type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Optional) the name.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -1824,7 +1824,7 @@ func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetwork
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReferenceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReference) string {
 		return v.Kind
@@ -2089,7 +2089,7 @@ func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetwork
 }
 
 type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// (Optional) the name.
 	Name string `pulumi:"name"`
@@ -2109,7 +2109,7 @@ type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMap
 }
 
 type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Optional) the name.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -2168,7 +2168,7 @@ func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetwork
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReference) string {
 		return v.Kind
@@ -2210,7 +2210,7 @@ func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetwork
 }
 
 type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// (Optional) the name.
 	Name string `pulumi:"name"`
@@ -2230,7 +2230,7 @@ type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMap
 }
 
 type GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Optional) the name.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -2289,7 +2289,7 @@ func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetwork
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferenceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReference) string {
 		return v.Kind
@@ -2331,7 +2331,7 @@ func (o GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetwork
 }
 
 type GetRecoveryPlansEntityProjectReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// (Optional) the name.
 	Name string `pulumi:"name"`
@@ -2351,7 +2351,7 @@ type GetRecoveryPlansEntityProjectReferenceInput interface {
 }
 
 type GetRecoveryPlansEntityProjectReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Optional) the name.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -2410,7 +2410,7 @@ func (o GetRecoveryPlansEntityProjectReferenceOutput) ToGetRecoveryPlansEntityPr
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o GetRecoveryPlansEntityProjectReferenceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntityProjectReference) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -2662,7 +2662,7 @@ func (o GetRecoveryPlansEntityStageListStageWorkArrayOutput) Index(i pulumi.IntI
 }
 
 type GetRecoveryPlansEntityStageListStageWorkRecoverEntity struct {
-	// (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or<span pulumi-lang-nodejs=" anyEntityReference " pulumi-lang-dotnet=" AnyEntityReference " pulumi-lang-go=" anyEntityReference " pulumi-lang-python=" any_entity_reference " pulumi-lang-yaml=" anyEntityReference " pulumi-lang-java=" anyEntityReference "> anyEntityReference </span>has to be provided.
+	// (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or<span pulumi-lang-nodejs=" anyEntityReference " pulumi-lang-dotnet=" AnyEntityReference " pulumi-lang-go=" anyEntityReference " pulumi-lang-python=" any_entity_reference " pulumi-lang-yaml=" anyEntityReference " pulumi-lang-java=" anyEntityReference " pulumi-lang-hcl=" any_entity_reference "> anyEntityReference </span>has to be provided.
 	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
 	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
 	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
@@ -2682,7 +2682,7 @@ type GetRecoveryPlansEntityStageListStageWorkRecoverEntityInput interface {
 }
 
 type GetRecoveryPlansEntityStageListStageWorkRecoverEntityArgs struct {
-	// (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or<span pulumi-lang-nodejs=" anyEntityReference " pulumi-lang-dotnet=" AnyEntityReference " pulumi-lang-go=" anyEntityReference " pulumi-lang-python=" any_entity_reference " pulumi-lang-yaml=" anyEntityReference " pulumi-lang-java=" anyEntityReference "> anyEntityReference </span>has to be provided.
+	// (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or<span pulumi-lang-nodejs=" anyEntityReference " pulumi-lang-dotnet=" AnyEntityReference " pulumi-lang-go=" anyEntityReference " pulumi-lang-python=" any_entity_reference " pulumi-lang-yaml=" anyEntityReference " pulumi-lang-java=" anyEntityReference " pulumi-lang-hcl=" any_entity_reference "> anyEntityReference </span>has to be provided.
 	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
 	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
 	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
@@ -2741,7 +2741,7 @@ func (o GetRecoveryPlansEntityStageListStageWorkRecoverEntityOutput) ToGetRecove
 	return o
 }
 
-// (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or<span pulumi-lang-nodejs=" anyEntityReference " pulumi-lang-dotnet=" AnyEntityReference " pulumi-lang-go=" anyEntityReference " pulumi-lang-python=" any_entity_reference " pulumi-lang-yaml=" anyEntityReference " pulumi-lang-java=" anyEntityReference "> anyEntityReference </span>has to be provided.
+// (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or<span pulumi-lang-nodejs=" anyEntityReference " pulumi-lang-dotnet=" AnyEntityReference " pulumi-lang-go=" anyEntityReference " pulumi-lang-python=" any_entity_reference " pulumi-lang-yaml=" anyEntityReference " pulumi-lang-java=" anyEntityReference " pulumi-lang-hcl=" any_entity_reference "> anyEntityReference </span>has to be provided.
 // * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
 // * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
 // * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
@@ -13834,7 +13834,7 @@ type GetSelfServiceAppSnapshotsEntity struct {
 	LastUpdateTime string `pulumi:"lastUpdateTime"`
 	// - The name of the recovery point.
 	Name string `pulumi:"name"`
-	// - The<span pulumi-lang-nodejs=" recoveryPointInfoList " pulumi-lang-dotnet=" RecoveryPointInfoList " pulumi-lang-go=" recoveryPointInfoList " pulumi-lang-python=" recovery_point_info_list " pulumi-lang-yaml=" recoveryPointInfoList " pulumi-lang-java=" recoveryPointInfoList "> recoveryPointInfoList </span>contains information about recovery points for the snapshots. Each recovery point has the following attributes:
+	// - The<span pulumi-lang-nodejs=" recoveryPointInfoList " pulumi-lang-dotnet=" RecoveryPointInfoList " pulumi-lang-go=" recoveryPointInfoList " pulumi-lang-python=" recovery_point_info_list " pulumi-lang-yaml=" recoveryPointInfoList " pulumi-lang-java=" recoveryPointInfoList " pulumi-lang-hcl=" recovery_point_info_list "> recoveryPointInfoList </span>contains information about recovery points for the snapshots. Each recovery point has the following attributes:
 	RecoveryPointInfoLists []GetSelfServiceAppSnapshotsEntityRecoveryPointInfoList `pulumi:"recoveryPointInfoLists"`
 	// -  The spec block contains the specification details for the snapshot
 	Spec map[string]string `pulumi:"spec"`
@@ -13872,7 +13872,7 @@ type GetSelfServiceAppSnapshotsEntityArgs struct {
 	LastUpdateTime pulumi.StringInput `pulumi:"lastUpdateTime"`
 	// - The name of the recovery point.
 	Name pulumi.StringInput `pulumi:"name"`
-	// - The<span pulumi-lang-nodejs=" recoveryPointInfoList " pulumi-lang-dotnet=" RecoveryPointInfoList " pulumi-lang-go=" recoveryPointInfoList " pulumi-lang-python=" recovery_point_info_list " pulumi-lang-yaml=" recoveryPointInfoList " pulumi-lang-java=" recoveryPointInfoList "> recoveryPointInfoList </span>contains information about recovery points for the snapshots. Each recovery point has the following attributes:
+	// - The<span pulumi-lang-nodejs=" recoveryPointInfoList " pulumi-lang-dotnet=" RecoveryPointInfoList " pulumi-lang-go=" recoveryPointInfoList " pulumi-lang-python=" recovery_point_info_list " pulumi-lang-yaml=" recoveryPointInfoList " pulumi-lang-java=" recoveryPointInfoList " pulumi-lang-hcl=" recovery_point_info_list "> recoveryPointInfoList </span>contains information about recovery points for the snapshots. Each recovery point has the following attributes:
 	RecoveryPointInfoLists GetSelfServiceAppSnapshotsEntityRecoveryPointInfoListArrayInput `pulumi:"recoveryPointInfoLists"`
 	// -  The spec block contains the specification details for the snapshot
 	Spec pulumi.StringMapInput `pulumi:"spec"`
@@ -13970,7 +13970,7 @@ func (o GetSelfServiceAppSnapshotsEntityOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSelfServiceAppSnapshotsEntity) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// - The<span pulumi-lang-nodejs=" recoveryPointInfoList " pulumi-lang-dotnet=" RecoveryPointInfoList " pulumi-lang-go=" recoveryPointInfoList " pulumi-lang-python=" recovery_point_info_list " pulumi-lang-yaml=" recoveryPointInfoList " pulumi-lang-java=" recoveryPointInfoList "> recoveryPointInfoList </span>contains information about recovery points for the snapshots. Each recovery point has the following attributes:
+// - The<span pulumi-lang-nodejs=" recoveryPointInfoList " pulumi-lang-dotnet=" RecoveryPointInfoList " pulumi-lang-go=" recoveryPointInfoList " pulumi-lang-python=" recovery_point_info_list " pulumi-lang-yaml=" recoveryPointInfoList " pulumi-lang-java=" recoveryPointInfoList " pulumi-lang-hcl=" recovery_point_info_list "> recoveryPointInfoList </span>contains information about recovery points for the snapshots. Each recovery point has the following attributes:
 func (o GetSelfServiceAppSnapshotsEntityOutput) RecoveryPointInfoLists() GetSelfServiceAppSnapshotsEntityRecoveryPointInfoListArrayOutput {
 	return o.ApplyT(func(v GetSelfServiceAppSnapshotsEntity) []GetSelfServiceAppSnapshotsEntityRecoveryPointInfoList {
 		return v.RecoveryPointInfoLists
@@ -49796,7 +49796,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit str
 	CloudInitScripts []GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScript `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType string `pulumi:"datasourceType"`
-	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 	Metadata string `pulumi:"metadata"`
 }
 
@@ -49816,7 +49816,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitArgs
 	CloudInitScripts GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType pulumi.StringInput `pulumi:"datasourceType"`
-	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 	Metadata pulumi.StringInput `pulumi:"metadata"`
 }
 
@@ -49885,7 +49885,7 @@ func (o GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitO
 	}).(pulumi.StringOutput)
 }
 
-// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 func (o GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitOutput) Metadata() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit) string {
 		return v.Metadata
@@ -51701,7 +51701,7 @@ func (o GetTemplateV2TemplateVersionSpecVmSpecLinkArrayOutput) Index(i pulumi.In
 type GetTemplateV2TemplateVersionSpecVmSpecNic struct {
 	// (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
 	//
-	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
 	BackingInfos []GetTemplateV2TemplateVersionSpecVmSpecNicBackingInfo `pulumi:"backingInfos"`
 	// The identifier of a Template.
 	ExtId string `pulumi:"extId"`
@@ -51709,11 +51709,11 @@ type GetTemplateV2TemplateVersionSpecVmSpecNic struct {
 	Links []GetTemplateV2TemplateVersionSpecVmSpecNicLink `pulumi:"links"`
 	// (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
 	//
-	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
 	NetworkInfos []GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfo `pulumi:"networkInfos"`
-	// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+	// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
 	NicBackingInfo GetTemplateV2TemplateVersionSpecVmSpecNicNicBackingInfo `pulumi:"nicBackingInfo"`
-	// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+	// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
 	NicNetworkInfo GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfo `pulumi:"nicNetworkInfo"`
 	// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
 	TenantId string `pulumi:"tenantId"`
@@ -51733,7 +51733,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecNicInput interface {
 type GetTemplateV2TemplateVersionSpecVmSpecNicArgs struct {
 	// (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
 	//
-	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
 	BackingInfos GetTemplateV2TemplateVersionSpecVmSpecNicBackingInfoArrayInput `pulumi:"backingInfos"`
 	// The identifier of a Template.
 	ExtId pulumi.StringInput `pulumi:"extId"`
@@ -51741,11 +51741,11 @@ type GetTemplateV2TemplateVersionSpecVmSpecNicArgs struct {
 	Links GetTemplateV2TemplateVersionSpecVmSpecNicLinkArrayInput `pulumi:"links"`
 	// (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
 	//
-	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
 	NetworkInfos GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoArrayInput `pulumi:"networkInfos"`
-	// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+	// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
 	NicBackingInfo GetTemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoInput `pulumi:"nicBackingInfo"`
-	// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+	// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
 	NicNetworkInfo GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoInput `pulumi:"nicNetworkInfo"`
 	// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
 	TenantId pulumi.StringInput `pulumi:"tenantId"`
@@ -51804,7 +51804,7 @@ func (o GetTemplateV2TemplateVersionSpecVmSpecNicOutput) ToGetTemplateV2Template
 
 // (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
 //
-// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
 func (o GetTemplateV2TemplateVersionSpecVmSpecNicOutput) BackingInfos() GetTemplateV2TemplateVersionSpecVmSpecNicBackingInfoArrayOutput {
 	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecNic) []GetTemplateV2TemplateVersionSpecVmSpecNicBackingInfo {
 		return v.BackingInfos
@@ -51825,21 +51825,21 @@ func (o GetTemplateV2TemplateVersionSpecVmSpecNicOutput) Links() GetTemplateV2Te
 
 // (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
 //
-// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
 func (o GetTemplateV2TemplateVersionSpecVmSpecNicOutput) NetworkInfos() GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoArrayOutput {
 	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecNic) []GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfo {
 		return v.NetworkInfos
 	}).(GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoArrayOutput)
 }
 
-// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
 func (o GetTemplateV2TemplateVersionSpecVmSpecNicOutput) NicBackingInfo() GetTemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoOutput {
 	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecNic) GetTemplateV2TemplateVersionSpecVmSpecNicNicBackingInfo {
 		return v.NicBackingInfo
 	}).(GetTemplateV2TemplateVersionSpecVmSpecNicNicBackingInfoOutput)
 }
 
-// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
 func (o GetTemplateV2TemplateVersionSpecVmSpecNicOutput) NicNetworkInfo() GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoOutput {
 	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecNic) GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfo {
 		return v.NicNetworkInfo
@@ -52105,7 +52105,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfo struct {
 	// The IP address configurations.
 	Ipv4Configs []GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
 	Ipv4Infos   []GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Info   `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains []GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType string `pulumi:"networkFunctionNicType"`
@@ -52113,7 +52113,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfo struct {
 	NicType string `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	Subnets []GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans []int `pulumi:"trunkedVlans"`
@@ -52136,7 +52136,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoArgs struct {
 	// The IP address configurations.
 	Ipv4Configs GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
 	Ipv4Infos   GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4InfoArrayInput   `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType pulumi.StringInput `pulumi:"networkFunctionNicType"`
@@ -52144,7 +52144,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoArgs struct {
 	NicType pulumi.StringInput `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	Subnets GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans pulumi.IntArrayInput `pulumi:"trunkedVlans"`
@@ -52216,7 +52216,7 @@ func (o GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) Ipv4Infos() 
 	}).(GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4InfoArrayOutput)
 }
 
-// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 func (o GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) NetworkFunctionChains() GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfo) []GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
@@ -52238,7 +52238,7 @@ func (o GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) ShouldAllowU
 	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfo) bool { return v.ShouldAllowUnknownMacs }).(pulumi.BoolOutput)
 }
 
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 func (o GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoOutput) Subnets() GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfo) []GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet {
 		return v.Subnets
@@ -53587,7 +53587,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkI
 	Ipv6Infos   []GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info   `pulumi:"ipv6Infos"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	Subnets []GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans []int `pulumi:"trunkedVlans"`
@@ -53613,7 +53613,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkI
 	Ipv6Infos   GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoArrayInput   `pulumi:"ipv6Infos"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	Subnets GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans pulumi.IntArrayInput `pulumi:"trunkedVlans"`
@@ -53673,7 +53673,7 @@ func (o GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetwo
 	}).(pulumi.BoolOutput)
 }
 
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 func (o GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) Subnets() GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfo) []GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet {
 		return v.Subnets
@@ -54569,7 +54569,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNe
 	Ipv4Configs []GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
 	Ipv4Infos   []GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info   `pulumi:"ipv4Infos"`
 	Ipv6Infos   []GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info   `pulumi:"ipv6Infos"`
-	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains []GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType string `pulumi:"networkFunctionNicType"`
@@ -54577,7 +54577,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNe
 	NicType string `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	Subnets []GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans []int `pulumi:"trunkedVlans"`
@@ -54601,7 +54601,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNe
 	Ipv4Configs GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
 	Ipv4Infos   GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoArrayInput   `pulumi:"ipv4Infos"`
 	Ipv6Infos   GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoArrayInput   `pulumi:"ipv6Infos"`
-	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType pulumi.StringInput `pulumi:"networkFunctionNicType"`
@@ -54609,7 +54609,7 @@ type GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNe
 	NicType pulumi.StringInput `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	Subnets GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
 	TrunkedVlans pulumi.IntArrayInput `pulumi:"trunkedVlans"`
@@ -54662,7 +54662,7 @@ func (o GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNi
 	}).(GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoArrayOutput)
 }
 
-// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 func (o GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoOutput) NetworkFunctionChains() GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfo) []GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
@@ -54690,7 +54690,7 @@ func (o GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNi
 	}).(pulumi.BoolOutput)
 }
 
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 func (o GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoOutput) Subnets() GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfo) []GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet {
 		return v.Subnets

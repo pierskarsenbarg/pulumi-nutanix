@@ -2333,7 +2333,7 @@ func (o NdbDatabasePostgresqlInfoPtrOutput) PreCreateScript() pulumi.StringPtrOu
 type NdbDatabasePostgresqlInfoHaInstance struct {
 	// - (Optional) archive wal expire days. Default is set to -1
 	ArchiveWalExpireDays *int `pulumi:"archiveWalExpireDays"`
-	// - (Optional) backup policy for instance. Default is <span pulumi-lang-nodejs=""primaryOnly"" pulumi-lang-dotnet=""PrimaryOnly"" pulumi-lang-go=""primaryOnly"" pulumi-lang-python=""primary_only"" pulumi-lang-yaml=""primaryOnly"" pulumi-lang-java=""primaryOnly"">"primaryOnly"</span>
+	// - (Optional) backup policy for instance. Default is <span pulumi-lang-nodejs=""primaryOnly"" pulumi-lang-dotnet=""PrimaryOnly"" pulumi-lang-go=""primaryOnly"" pulumi-lang-python=""primary_only"" pulumi-lang-yaml=""primaryOnly"" pulumi-lang-java=""primaryOnly"" pulumi-lang-hcl=""primary_only"">"primaryOnly"</span>
 	BackupPolicy       *string `pulumi:"backupPolicy"`
 	ClusterDescription *string `pulumi:"clusterDescription"`
 	// - (Required) cluster name
@@ -2372,7 +2372,7 @@ type NdbDatabasePostgresqlInfoHaInstanceInput interface {
 type NdbDatabasePostgresqlInfoHaInstanceArgs struct {
 	// - (Optional) archive wal expire days. Default is set to -1
 	ArchiveWalExpireDays pulumi.IntPtrInput `pulumi:"archiveWalExpireDays"`
-	// - (Optional) backup policy for instance. Default is <span pulumi-lang-nodejs=""primaryOnly"" pulumi-lang-dotnet=""PrimaryOnly"" pulumi-lang-go=""primaryOnly"" pulumi-lang-python=""primary_only"" pulumi-lang-yaml=""primaryOnly"" pulumi-lang-java=""primaryOnly"">"primaryOnly"</span>
+	// - (Optional) backup policy for instance. Default is <span pulumi-lang-nodejs=""primaryOnly"" pulumi-lang-dotnet=""PrimaryOnly"" pulumi-lang-go=""primaryOnly"" pulumi-lang-python=""primary_only"" pulumi-lang-yaml=""primaryOnly"" pulumi-lang-java=""primaryOnly"" pulumi-lang-hcl=""primary_only"">"primaryOnly"</span>
 	BackupPolicy       pulumi.StringPtrInput `pulumi:"backupPolicy"`
 	ClusterDescription pulumi.StringPtrInput `pulumi:"clusterDescription"`
 	// - (Required) cluster name
@@ -2479,7 +2479,7 @@ func (o NdbDatabasePostgresqlInfoHaInstanceOutput) ArchiveWalExpireDays() pulumi
 	return o.ApplyT(func(v NdbDatabasePostgresqlInfoHaInstance) *int { return v.ArchiveWalExpireDays }).(pulumi.IntPtrOutput)
 }
 
-// - (Optional) backup policy for instance. Default is <span pulumi-lang-nodejs=""primaryOnly"" pulumi-lang-dotnet=""PrimaryOnly"" pulumi-lang-go=""primaryOnly"" pulumi-lang-python=""primary_only"" pulumi-lang-yaml=""primaryOnly"" pulumi-lang-java=""primaryOnly"">"primaryOnly"</span>
+// - (Optional) backup policy for instance. Default is <span pulumi-lang-nodejs=""primaryOnly"" pulumi-lang-dotnet=""PrimaryOnly"" pulumi-lang-go=""primaryOnly"" pulumi-lang-python=""primary_only"" pulumi-lang-yaml=""primaryOnly"" pulumi-lang-java=""primaryOnly"" pulumi-lang-hcl=""primary_only"">"primaryOnly"</span>
 func (o NdbDatabasePostgresqlInfoHaInstanceOutput) BackupPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabasePostgresqlInfoHaInstance) *string { return v.BackupPolicy }).(pulumi.StringPtrOutput)
 }
@@ -2572,7 +2572,7 @@ func (o NdbDatabasePostgresqlInfoHaInstancePtrOutput) ArchiveWalExpireDays() pul
 	}).(pulumi.IntPtrOutput)
 }
 
-// - (Optional) backup policy for instance. Default is <span pulumi-lang-nodejs=""primaryOnly"" pulumi-lang-dotnet=""PrimaryOnly"" pulumi-lang-go=""primaryOnly"" pulumi-lang-python=""primary_only"" pulumi-lang-yaml=""primaryOnly"" pulumi-lang-java=""primaryOnly"">"primaryOnly"</span>
+// - (Optional) backup policy for instance. Default is <span pulumi-lang-nodejs=""primaryOnly"" pulumi-lang-dotnet=""PrimaryOnly"" pulumi-lang-go=""primaryOnly"" pulumi-lang-python=""primary_only"" pulumi-lang-yaml=""primaryOnly"" pulumi-lang-java=""primaryOnly"" pulumi-lang-hcl=""primary_only"">"primaryOnly"</span>
 func (o NdbDatabasePostgresqlInfoHaInstancePtrOutput) BackupPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbDatabasePostgresqlInfoHaInstance) *string {
 		if v == nil {
@@ -19722,7 +19722,7 @@ func (o NdbProfileComputeProfileArrayOutput) Index(i pulumi.IntInput) NdbProfile
 type NdbProfileDatabaseParameterProfile struct {
 	// Database parameters suuported for postgress.
 	// * `postgres_database.max_connections`: (Optional) Determines the maximum number of concurrent connections to the database server. The default is set to 100
-	// * `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero.<span pulumi-lang-nodejs=" walLevel " pulumi-lang-dotnet=" WalLevel " pulumi-lang-go=" walLevel " pulumi-lang-python=" wal_level " pulumi-lang-yaml=" walLevel " pulumi-lang-java=" walLevel "> walLevel </span>must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
+	// * `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero.<span pulumi-lang-nodejs=" walLevel " pulumi-lang-dotnet=" WalLevel " pulumi-lang-go=" walLevel " pulumi-lang-python=" wal_level " pulumi-lang-yaml=" walLevel " pulumi-lang-java=" walLevel " pulumi-lang-hcl=" wal_level "> walLevel </span>must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
 	// * `postgres_database.effective_io_concurrency`: (Optional) Sets the number of concurrent disk I/O operations that PostgreSQL expects can be executed simultaneously. Raising this value will increase the number of I/O operations that any individual PostgreSQL session attempts to initiate in parallel.
 	// * `postgres_database.timezone`: (Optional) Sets the time zone for displaying and interpreting time stamps. Defult is UTC .
 	// * `postgres_database.max_prepared_transactions`: (Optional) Sets the maximum number of transactions that can be in the prepared state simultaneously. Setting this parameter to zero (which is the default) disables the prepared-transaction feature.
@@ -19732,7 +19732,7 @@ type NdbProfileDatabaseParameterProfile struct {
 	// * `postgres_database.min_wal_size`: (Optional) As long as WAL disk usage stays below this setting, old WAL files are always recycled for future use at a checkpoint, rather than removed. This can be used to ensure that enough WAL space is reserved to handle spikes in WAL usage, for example when running large batch jobs. The default is 80 MB.
 	// * `postgres_database.max_wal_size`: (Optional) Maximum size to let the WAL grow to between automatic WAL checkpoints. The default is 1 GB
 	// * `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
-	// * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however,<span pulumi-lang-nodejs=" trackCounts " pulumi-lang-dotnet=" TrackCounts " pulumi-lang-go=" trackCounts " pulumi-lang-python=" track_counts " pulumi-lang-yaml=" trackCounts " pulumi-lang-java=" trackCounts "> trackCounts </span>must also be enabled for autovacuum to work.
+	// * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however,<span pulumi-lang-nodejs=" trackCounts " pulumi-lang-dotnet=" TrackCounts " pulumi-lang-go=" trackCounts " pulumi-lang-python=" track_counts " pulumi-lang-yaml=" trackCounts " pulumi-lang-java=" trackCounts " pulumi-lang-hcl=" track_counts "> trackCounts </span>must also be enabled for autovacuum to work.
 	// * `postgres_database.checkpoint_completion_target`: (Optional)
 	//   Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
 	// * `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
@@ -19745,7 +19745,7 @@ type NdbProfileDatabaseParameterProfile struct {
 	//   Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
 	// * `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
 	// * `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
-	// * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the<span pulumi-lang-nodejs=" pgWal " pulumi-lang-dotnet=" PgWal " pulumi-lang-go=" pgWal " pulumi-lang-python=" pg_wal " pulumi-lang-yaml=" pgWal " pulumi-lang-java=" pgWal "> pgWal </span>directory. Default is 700 .
+	// * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the<span pulumi-lang-nodejs=" pgWal " pulumi-lang-dotnet=" PgWal " pulumi-lang-go=" pgWal " pulumi-lang-python=" pg_wal " pulumi-lang-yaml=" pgWal " pulumi-lang-java=" pgWal " pulumi-lang-hcl=" pg_wal "> pgWal </span>directory. Default is 700 .
 	PostgresDatabases []NdbProfileDatabaseParameterProfilePostgresDatabase `pulumi:"postgresDatabases"`
 }
 
@@ -19763,7 +19763,7 @@ type NdbProfileDatabaseParameterProfileInput interface {
 type NdbProfileDatabaseParameterProfileArgs struct {
 	// Database parameters suuported for postgress.
 	// * `postgres_database.max_connections`: (Optional) Determines the maximum number of concurrent connections to the database server. The default is set to 100
-	// * `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero.<span pulumi-lang-nodejs=" walLevel " pulumi-lang-dotnet=" WalLevel " pulumi-lang-go=" walLevel " pulumi-lang-python=" wal_level " pulumi-lang-yaml=" walLevel " pulumi-lang-java=" walLevel "> walLevel </span>must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
+	// * `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero.<span pulumi-lang-nodejs=" walLevel " pulumi-lang-dotnet=" WalLevel " pulumi-lang-go=" walLevel " pulumi-lang-python=" wal_level " pulumi-lang-yaml=" walLevel " pulumi-lang-java=" walLevel " pulumi-lang-hcl=" wal_level "> walLevel </span>must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
 	// * `postgres_database.effective_io_concurrency`: (Optional) Sets the number of concurrent disk I/O operations that PostgreSQL expects can be executed simultaneously. Raising this value will increase the number of I/O operations that any individual PostgreSQL session attempts to initiate in parallel.
 	// * `postgres_database.timezone`: (Optional) Sets the time zone for displaying and interpreting time stamps. Defult is UTC .
 	// * `postgres_database.max_prepared_transactions`: (Optional) Sets the maximum number of transactions that can be in the prepared state simultaneously. Setting this parameter to zero (which is the default) disables the prepared-transaction feature.
@@ -19773,7 +19773,7 @@ type NdbProfileDatabaseParameterProfileArgs struct {
 	// * `postgres_database.min_wal_size`: (Optional) As long as WAL disk usage stays below this setting, old WAL files are always recycled for future use at a checkpoint, rather than removed. This can be used to ensure that enough WAL space is reserved to handle spikes in WAL usage, for example when running large batch jobs. The default is 80 MB.
 	// * `postgres_database.max_wal_size`: (Optional) Maximum size to let the WAL grow to between automatic WAL checkpoints. The default is 1 GB
 	// * `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
-	// * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however,<span pulumi-lang-nodejs=" trackCounts " pulumi-lang-dotnet=" TrackCounts " pulumi-lang-go=" trackCounts " pulumi-lang-python=" track_counts " pulumi-lang-yaml=" trackCounts " pulumi-lang-java=" trackCounts "> trackCounts </span>must also be enabled for autovacuum to work.
+	// * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however,<span pulumi-lang-nodejs=" trackCounts " pulumi-lang-dotnet=" TrackCounts " pulumi-lang-go=" trackCounts " pulumi-lang-python=" track_counts " pulumi-lang-yaml=" trackCounts " pulumi-lang-java=" trackCounts " pulumi-lang-hcl=" track_counts "> trackCounts </span>must also be enabled for autovacuum to work.
 	// * `postgres_database.checkpoint_completion_target`: (Optional)
 	//   Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
 	// * `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
@@ -19786,7 +19786,7 @@ type NdbProfileDatabaseParameterProfileArgs struct {
 	//   Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
 	// * `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
 	// * `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
-	// * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the<span pulumi-lang-nodejs=" pgWal " pulumi-lang-dotnet=" PgWal " pulumi-lang-go=" pgWal " pulumi-lang-python=" pg_wal " pulumi-lang-yaml=" pgWal " pulumi-lang-java=" pgWal "> pgWal </span>directory. Default is 700 .
+	// * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the<span pulumi-lang-nodejs=" pgWal " pulumi-lang-dotnet=" PgWal " pulumi-lang-go=" pgWal " pulumi-lang-python=" pg_wal " pulumi-lang-yaml=" pgWal " pulumi-lang-java=" pgWal " pulumi-lang-hcl=" pg_wal "> pgWal </span>directory. Default is 700 .
 	PostgresDatabases NdbProfileDatabaseParameterProfilePostgresDatabaseArrayInput `pulumi:"postgresDatabases"`
 }
 
@@ -19843,7 +19843,7 @@ func (o NdbProfileDatabaseParameterProfileOutput) ToNdbProfileDatabaseParameterP
 
 // Database parameters suuported for postgress.
 //   - `postgres_database.max_connections`: (Optional) Determines the maximum number of concurrent connections to the database server. The default is set to 100
-//   - `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero.<span pulumi-lang-nodejs=" walLevel " pulumi-lang-dotnet=" WalLevel " pulumi-lang-go=" walLevel " pulumi-lang-python=" wal_level " pulumi-lang-yaml=" walLevel " pulumi-lang-java=" walLevel "> walLevel </span>must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
+//   - `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero.<span pulumi-lang-nodejs=" walLevel " pulumi-lang-dotnet=" WalLevel " pulumi-lang-go=" walLevel " pulumi-lang-python=" wal_level " pulumi-lang-yaml=" walLevel " pulumi-lang-java=" walLevel " pulumi-lang-hcl=" wal_level "> walLevel </span>must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
 //   - `postgres_database.effective_io_concurrency`: (Optional) Sets the number of concurrent disk I/O operations that PostgreSQL expects can be executed simultaneously. Raising this value will increase the number of I/O operations that any individual PostgreSQL session attempts to initiate in parallel.
 //   - `postgres_database.timezone`: (Optional) Sets the time zone for displaying and interpreting time stamps. Defult is UTC .
 //   - `postgres_database.max_prepared_transactions`: (Optional) Sets the maximum number of transactions that can be in the prepared state simultaneously. Setting this parameter to zero (which is the default) disables the prepared-transaction feature.
@@ -19853,7 +19853,7 @@ func (o NdbProfileDatabaseParameterProfileOutput) ToNdbProfileDatabaseParameterP
 //   - `postgres_database.min_wal_size`: (Optional) As long as WAL disk usage stays below this setting, old WAL files are always recycled for future use at a checkpoint, rather than removed. This can be used to ensure that enough WAL space is reserved to handle spikes in WAL usage, for example when running large batch jobs. The default is 80 MB.
 //   - `postgres_database.max_wal_size`: (Optional) Maximum size to let the WAL grow to between automatic WAL checkpoints. The default is 1 GB
 //   - `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
-//   - `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however,<span pulumi-lang-nodejs=" trackCounts " pulumi-lang-dotnet=" TrackCounts " pulumi-lang-go=" trackCounts " pulumi-lang-python=" track_counts " pulumi-lang-yaml=" trackCounts " pulumi-lang-java=" trackCounts "> trackCounts </span>must also be enabled for autovacuum to work.
+//   - `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however,<span pulumi-lang-nodejs=" trackCounts " pulumi-lang-dotnet=" TrackCounts " pulumi-lang-go=" trackCounts " pulumi-lang-python=" track_counts " pulumi-lang-yaml=" trackCounts " pulumi-lang-java=" trackCounts " pulumi-lang-hcl=" track_counts "> trackCounts </span>must also be enabled for autovacuum to work.
 //   - `postgres_database.checkpoint_completion_target`: (Optional)
 //     Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
 //   - `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
@@ -19866,7 +19866,7 @@ func (o NdbProfileDatabaseParameterProfileOutput) ToNdbProfileDatabaseParameterP
 //     Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
 //   - `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
 //   - `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
-//   - `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the<span pulumi-lang-nodejs=" pgWal " pulumi-lang-dotnet=" PgWal " pulumi-lang-go=" pgWal " pulumi-lang-python=" pg_wal " pulumi-lang-yaml=" pgWal " pulumi-lang-java=" pgWal "> pgWal </span>directory. Default is 700 .
+//   - `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the<span pulumi-lang-nodejs=" pgWal " pulumi-lang-dotnet=" PgWal " pulumi-lang-go=" pgWal " pulumi-lang-python=" pg_wal " pulumi-lang-yaml=" pgWal " pulumi-lang-java=" pgWal " pulumi-lang-hcl=" pg_wal "> pgWal </span>directory. Default is 700 .
 func (o NdbProfileDatabaseParameterProfileOutput) PostgresDatabases() NdbProfileDatabaseParameterProfilePostgresDatabaseArrayOutput {
 	return o.ApplyT(func(v NdbProfileDatabaseParameterProfile) []NdbProfileDatabaseParameterProfilePostgresDatabase {
 		return v.PostgresDatabases
@@ -34673,8 +34673,8 @@ type NetworkFunctionV2NicPair struct {
 	IngressNicReference string `pulumi:"ingressNicReference"`
 	// Administrative state of the NIC pair.
 	// - A boolean flag to control the administrative state of the NIC pair.
-	// - Set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span> to administratively disable this NIC pair, for instance, during a maintenance window.
-	// - If set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>, this NIC pair will not be considered for traffic redirection, even if it's healthy.
+	// - Set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span> to administratively disable this NIC pair, for instance, during a maintenance window.
+	// - If set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>, this NIC pair will not be considered for traffic redirection, even if it's healthy.
 	// - This provides a way to gracefully take a specific NFVM out of service without deleting the configuration.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// VM UUID which both ingress/egress NICs are part of.
@@ -34710,8 +34710,8 @@ type NetworkFunctionV2NicPairArgs struct {
 	IngressNicReference pulumi.StringInput `pulumi:"ingressNicReference"`
 	// Administrative state of the NIC pair.
 	// - A boolean flag to control the administrative state of the NIC pair.
-	// - Set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span> to administratively disable this NIC pair, for instance, during a maintenance window.
-	// - If set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>, this NIC pair will not be considered for traffic redirection, even if it's healthy.
+	// - Set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span> to administratively disable this NIC pair, for instance, during a maintenance window.
+	// - If set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>, this NIC pair will not be considered for traffic redirection, even if it's healthy.
 	// - This provides a way to gracefully take a specific NFVM out of service without deleting the configuration.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// VM UUID which both ingress/egress NICs are part of.
@@ -34798,8 +34798,8 @@ func (o NetworkFunctionV2NicPairOutput) IngressNicReference() pulumi.StringOutpu
 
 // Administrative state of the NIC pair.
 // - A boolean flag to control the administrative state of the NIC pair.
-// - Set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span> to administratively disable this NIC pair, for instance, during a maintenance window.
-// - If set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>, this NIC pair will not be considered for traffic redirection, even if it's healthy.
+// - Set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span> to administratively disable this NIC pair, for instance, during a maintenance window.
+// - If set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>, this NIC pair will not be considered for traffic redirection, even if it's healthy.
 // - This provides a way to gracefully take a specific NFVM out of service without deleting the configuration.
 func (o NetworkFunctionV2NicPairOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v NetworkFunctionV2NicPair) bool { return v.IsEnabled }).(pulumi.BoolOutput)
@@ -52107,7 +52107,7 @@ type OvaV2VmConfigGuestCustomizationConfigCloudInit struct {
 	CloudInitScripts []OvaV2VmConfigGuestCustomizationConfigCloudInitCloudInitScript `pulumi:"cloudInitScripts"`
 	// -(Optional) Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType *string `pulumi:"datasourceType"`
-	// -(Optional) The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	// -(Optional) The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 	Metadata *string `pulumi:"metadata"`
 }
 
@@ -52129,7 +52129,7 @@ type OvaV2VmConfigGuestCustomizationConfigCloudInitArgs struct {
 	CloudInitScripts OvaV2VmConfigGuestCustomizationConfigCloudInitCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
 	// -(Optional) Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
-	// -(Optional) The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	// -(Optional) The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
@@ -52198,7 +52198,7 @@ func (o OvaV2VmConfigGuestCustomizationConfigCloudInitOutput) DatasourceType() p
 	return o.ApplyT(func(v OvaV2VmConfigGuestCustomizationConfigCloudInit) *string { return v.DatasourceType }).(pulumi.StringPtrOutput)
 }
 
-// -(Optional) The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+// -(Optional) The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 func (o OvaV2VmConfigGuestCustomizationConfigCloudInitOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OvaV2VmConfigGuestCustomizationConfigCloudInit) *string { return v.Metadata }).(pulumi.StringPtrOutput)
 }
@@ -53873,16 +53873,16 @@ func (o OvaV2VmConfigHostArrayOutput) Index(i pulumi.IntInput) OvaV2VmConfigHost
 type OvaV2VmConfigNic struct {
 	// Use `nic_backing_info.virtual_ethernet_nic` instead.
 	//
-	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
 	BackingInfos []OvaV2VmConfigNicBackingInfo `pulumi:"backingInfos"`
 	ExtId        *string                       `pulumi:"extId"`
 	// Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
 	//
-	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
 	NetworkInfos []OvaV2VmConfigNicNetworkInfo `pulumi:"networkInfos"`
-	// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+	// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
 	NicBackingInfo *OvaV2VmConfigNicNicBackingInfo `pulumi:"nicBackingInfo"`
-	// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+	// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
 	NicNetworkInfo *OvaV2VmConfigNicNicNetworkInfo `pulumi:"nicNetworkInfo"`
 }
 
@@ -53900,16 +53900,16 @@ type OvaV2VmConfigNicInput interface {
 type OvaV2VmConfigNicArgs struct {
 	// Use `nic_backing_info.virtual_ethernet_nic` instead.
 	//
-	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
 	BackingInfos OvaV2VmConfigNicBackingInfoArrayInput `pulumi:"backingInfos"`
 	ExtId        pulumi.StringPtrInput                 `pulumi:"extId"`
 	// Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
 	//
-	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
 	NetworkInfos OvaV2VmConfigNicNetworkInfoArrayInput `pulumi:"networkInfos"`
-	// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+	// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
 	NicBackingInfo OvaV2VmConfigNicNicBackingInfoPtrInput `pulumi:"nicBackingInfo"`
-	// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+	// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
 	NicNetworkInfo OvaV2VmConfigNicNicNetworkInfoPtrInput `pulumi:"nicNetworkInfo"`
 }
 
@@ -53966,7 +53966,7 @@ func (o OvaV2VmConfigNicOutput) ToOvaV2VmConfigNicOutputWithContext(ctx context.
 
 // Use `nic_backing_info.virtual_ethernet_nic` instead.
 //
-// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
 func (o OvaV2VmConfigNicOutput) BackingInfos() OvaV2VmConfigNicBackingInfoArrayOutput {
 	return o.ApplyT(func(v OvaV2VmConfigNic) []OvaV2VmConfigNicBackingInfo { return v.BackingInfos }).(OvaV2VmConfigNicBackingInfoArrayOutput)
 }
@@ -53977,17 +53977,17 @@ func (o OvaV2VmConfigNicOutput) ExtId() pulumi.StringPtrOutput {
 
 // Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
 //
-// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
 func (o OvaV2VmConfigNicOutput) NetworkInfos() OvaV2VmConfigNicNetworkInfoArrayOutput {
 	return o.ApplyT(func(v OvaV2VmConfigNic) []OvaV2VmConfigNicNetworkInfo { return v.NetworkInfos }).(OvaV2VmConfigNicNetworkInfoArrayOutput)
 }
 
-// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
 func (o OvaV2VmConfigNicOutput) NicBackingInfo() OvaV2VmConfigNicNicBackingInfoPtrOutput {
 	return o.ApplyT(func(v OvaV2VmConfigNic) *OvaV2VmConfigNicNicBackingInfo { return v.NicBackingInfo }).(OvaV2VmConfigNicNicBackingInfoPtrOutput)
 }
 
-// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
 func (o OvaV2VmConfigNicOutput) NicNetworkInfo() OvaV2VmConfigNicNicNetworkInfoPtrOutput {
 	return o.ApplyT(func(v OvaV2VmConfigNic) *OvaV2VmConfigNicNicNetworkInfo { return v.NicNetworkInfo }).(OvaV2VmConfigNicNicNetworkInfoPtrOutput)
 }
@@ -54137,7 +54137,7 @@ type OvaV2VmConfigNicNetworkInfo struct {
 	// The IP address configurations.
 	Ipv4Configs []OvaV2VmConfigNicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
 	Ipv4Infos   []OvaV2VmConfigNicNetworkInfoIpv4Info   `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains []OvaV2VmConfigNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType *string `pulumi:"networkFunctionNicType"`
@@ -54145,7 +54145,7 @@ type OvaV2VmConfigNicNetworkInfo struct {
 	NicType *string `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs *bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	// - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 	Subnets []OvaV2VmConfigNicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
@@ -54169,7 +54169,7 @@ type OvaV2VmConfigNicNetworkInfoArgs struct {
 	// The IP address configurations.
 	Ipv4Configs OvaV2VmConfigNicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
 	Ipv4Infos   OvaV2VmConfigNicNetworkInfoIpv4InfoArrayInput   `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains OvaV2VmConfigNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType pulumi.StringPtrInput `pulumi:"networkFunctionNicType"`
@@ -54177,7 +54177,7 @@ type OvaV2VmConfigNicNetworkInfoArgs struct {
 	NicType pulumi.StringPtrInput `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolPtrInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	// - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 	Subnets OvaV2VmConfigNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
@@ -54246,7 +54246,7 @@ func (o OvaV2VmConfigNicNetworkInfoOutput) Ipv4Infos() OvaV2VmConfigNicNetworkIn
 	return o.ApplyT(func(v OvaV2VmConfigNicNetworkInfo) []OvaV2VmConfigNicNetworkInfoIpv4Info { return v.Ipv4Infos }).(OvaV2VmConfigNicNetworkInfoIpv4InfoArrayOutput)
 }
 
-// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 func (o OvaV2VmConfigNicNetworkInfoOutput) NetworkFunctionChains() OvaV2VmConfigNicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v OvaV2VmConfigNicNetworkInfo) []OvaV2VmConfigNicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
@@ -54268,7 +54268,7 @@ func (o OvaV2VmConfigNicNetworkInfoOutput) ShouldAllowUnknownMacs() pulumi.BoolP
 	return o.ApplyT(func(v OvaV2VmConfigNicNetworkInfo) *bool { return v.ShouldAllowUnknownMacs }).(pulumi.BoolPtrOutput)
 }
 
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 // - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 func (o OvaV2VmConfigNicNetworkInfoOutput) Subnets() OvaV2VmConfigNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v OvaV2VmConfigNicNetworkInfo) []OvaV2VmConfigNicNetworkInfoSubnet { return v.Subnets }).(OvaV2VmConfigNicNetworkInfoSubnetArrayOutput)
@@ -56456,7 +56456,7 @@ type OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo struct {
 	Ipv6Infos   []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info   `pulumi:"ipv6Infos"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs *bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	// - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 	Subnets []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
@@ -56483,7 +56483,7 @@ type OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoArgs struct {
 	Ipv6Infos   OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoArrayInput   `pulumi:"ipv6Infos"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolPtrInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	// - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 	Subnets OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
@@ -56593,7 +56593,7 @@ func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) ShouldAllow
 	return o.ApplyT(func(v OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) *bool { return v.ShouldAllowUnknownMacs }).(pulumi.BoolPtrOutput)
 }
 
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 // - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) Subnets() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet {
@@ -56673,7 +56673,7 @@ func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput) ShouldAl
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 // - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput) Subnets() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v *OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet {
@@ -57678,7 +57678,7 @@ type OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo struct {
 	Ipv4Configs []OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
 	Ipv4Infos   []OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info   `pulumi:"ipv4Infos"`
 	Ipv6Infos   []OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info   `pulumi:"ipv6Infos"`
-	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains []OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType *string `pulumi:"networkFunctionNicType"`
@@ -57686,7 +57686,7 @@ type OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo struct {
 	NicType *string `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs *bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	// - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 	Subnets []OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
@@ -57711,7 +57711,7 @@ type OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoArgs struct {
 	Ipv4Configs OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
 	Ipv4Infos   OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoArrayInput   `pulumi:"ipv4Infos"`
 	Ipv6Infos   OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoArrayInput   `pulumi:"ipv6Infos"`
-	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType pulumi.StringPtrInput `pulumi:"networkFunctionNicType"`
@@ -57719,7 +57719,7 @@ type OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoArgs struct {
 	NicType pulumi.StringPtrInput `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolPtrInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	// - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 	Subnets OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
@@ -57824,7 +57824,7 @@ func (o OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoOutput) Ipv6I
 	}).(OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoArrayOutput)
 }
 
-// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 func (o OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoOutput) NetworkFunctionChains() OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo) []OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
@@ -57850,7 +57850,7 @@ func (o OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoOutput) Shoul
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 // - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 func (o OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoOutput) Subnets() OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo) []OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet {
@@ -57920,7 +57920,7 @@ func (o OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoPtrOutput) Ip
 	}).(OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoArrayOutput)
 }
 
-// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 func (o OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoPtrOutput) NetworkFunctionChains() OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v *OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo) []OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain {
 		if v == nil {
@@ -57960,7 +57960,7 @@ func (o OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoPtrOutput) Sh
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 // - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 func (o OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoPtrOutput) Subnets() OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v *OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo) []OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet {
@@ -62896,17 +62896,17 @@ func (o OvaVmDeployV2OverrideVmConfigDiskDiskAddressArrayOutput) Index(i pulumi.
 type OvaVmDeployV2OverrideVmConfigNic struct {
 	// Use `nic_backing_info.virtual_ethernet_nic` instead.
 	//
-	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
 	BackingInfos []OvaVmDeployV2OverrideVmConfigNicBackingInfo `pulumi:"backingInfos"`
 	// -(Required) The external identifier for an OVA.
 	ExtId *string `pulumi:"extId"`
 	// Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
 	//
-	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
 	NetworkInfos []OvaVmDeployV2OverrideVmConfigNicNetworkInfo `pulumi:"networkInfos"`
-	// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+	// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
 	NicBackingInfo *OvaVmDeployV2OverrideVmConfigNicNicBackingInfo `pulumi:"nicBackingInfo"`
-	// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+	// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
 	NicNetworkInfo *OvaVmDeployV2OverrideVmConfigNicNicNetworkInfo `pulumi:"nicNetworkInfo"`
 }
 
@@ -62924,17 +62924,17 @@ type OvaVmDeployV2OverrideVmConfigNicInput interface {
 type OvaVmDeployV2OverrideVmConfigNicArgs struct {
 	// Use `nic_backing_info.virtual_ethernet_nic` instead.
 	//
-	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
 	BackingInfos OvaVmDeployV2OverrideVmConfigNicBackingInfoArrayInput `pulumi:"backingInfos"`
 	// -(Required) The external identifier for an OVA.
 	ExtId pulumi.StringPtrInput `pulumi:"extId"`
 	// Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
 	//
-	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+	// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
 	NetworkInfos OvaVmDeployV2OverrideVmConfigNicNetworkInfoArrayInput `pulumi:"networkInfos"`
-	// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+	// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
 	NicBackingInfo OvaVmDeployV2OverrideVmConfigNicNicBackingInfoPtrInput `pulumi:"nicBackingInfo"`
-	// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+	// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
 	NicNetworkInfo OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoPtrInput `pulumi:"nicNetworkInfo"`
 }
 
@@ -62991,7 +62991,7 @@ func (o OvaVmDeployV2OverrideVmConfigNicOutput) ToOvaVmDeployV2OverrideVmConfigN
 
 // Use `nic_backing_info.virtual_ethernet_nic` instead.
 //
-// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+// Deprecated: The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
 func (o OvaVmDeployV2OverrideVmConfigNicOutput) BackingInfos() OvaVmDeployV2OverrideVmConfigNicBackingInfoArrayOutput {
 	return o.ApplyT(func(v OvaVmDeployV2OverrideVmConfigNic) []OvaVmDeployV2OverrideVmConfigNicBackingInfo {
 		return v.BackingInfos
@@ -63005,21 +63005,21 @@ func (o OvaVmDeployV2OverrideVmConfigNicOutput) ExtId() pulumi.StringPtrOutput {
 
 // Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
 //
-// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+// Deprecated: The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
 func (o OvaVmDeployV2OverrideVmConfigNicOutput) NetworkInfos() OvaVmDeployV2OverrideVmConfigNicNetworkInfoArrayOutput {
 	return o.ApplyT(func(v OvaVmDeployV2OverrideVmConfigNic) []OvaVmDeployV2OverrideVmConfigNicNetworkInfo {
 		return v.NetworkInfos
 	}).(OvaVmDeployV2OverrideVmConfigNicNetworkInfoArrayOutput)
 }
 
-// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+// New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
 func (o OvaVmDeployV2OverrideVmConfigNicOutput) NicBackingInfo() OvaVmDeployV2OverrideVmConfigNicNicBackingInfoPtrOutput {
 	return o.ApplyT(func(v OvaVmDeployV2OverrideVmConfigNic) *OvaVmDeployV2OverrideVmConfigNicNicBackingInfo {
 		return v.NicBackingInfo
 	}).(OvaVmDeployV2OverrideVmConfigNicNicBackingInfoPtrOutput)
 }
 
-// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+// New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
 func (o OvaVmDeployV2OverrideVmConfigNicOutput) NicNetworkInfo() OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoPtrOutput {
 	return o.ApplyT(func(v OvaVmDeployV2OverrideVmConfigNic) *OvaVmDeployV2OverrideVmConfigNicNicNetworkInfo {
 		return v.NicNetworkInfo
@@ -63174,7 +63174,7 @@ type OvaVmDeployV2OverrideVmConfigNicNetworkInfo struct {
 	// The IP address configurations.
 	Ipv4Configs []OvaVmDeployV2OverrideVmConfigNicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
 	Ipv4Infos   []OvaVmDeployV2OverrideVmConfigNicNetworkInfoIpv4Info   `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains []OvaVmDeployV2OverrideVmConfigNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType *string `pulumi:"networkFunctionNicType"`
@@ -63182,7 +63182,7 @@ type OvaVmDeployV2OverrideVmConfigNicNetworkInfo struct {
 	NicType *string `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs *bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	// * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 	Subnets []OvaVmDeployV2OverrideVmConfigNicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
@@ -63206,7 +63206,7 @@ type OvaVmDeployV2OverrideVmConfigNicNetworkInfoArgs struct {
 	// The IP address configurations.
 	Ipv4Configs OvaVmDeployV2OverrideVmConfigNicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
 	Ipv4Infos   OvaVmDeployV2OverrideVmConfigNicNetworkInfoIpv4InfoArrayInput   `pulumi:"ipv4Infos"`
-	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains OvaVmDeployV2OverrideVmConfigNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType pulumi.StringPtrInput `pulumi:"networkFunctionNicType"`
@@ -63214,7 +63214,7 @@ type OvaVmDeployV2OverrideVmConfigNicNetworkInfoArgs struct {
 	NicType pulumi.StringPtrInput `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolPtrInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	// * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 	Subnets OvaVmDeployV2OverrideVmConfigNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
@@ -63287,7 +63287,7 @@ func (o OvaVmDeployV2OverrideVmConfigNicNetworkInfoOutput) Ipv4Infos() OvaVmDepl
 	}).(OvaVmDeployV2OverrideVmConfigNicNetworkInfoIpv4InfoArrayOutput)
 }
 
-// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 func (o OvaVmDeployV2OverrideVmConfigNicNetworkInfoOutput) NetworkFunctionChains() OvaVmDeployV2OverrideVmConfigNicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v OvaVmDeployV2OverrideVmConfigNicNetworkInfo) []OvaVmDeployV2OverrideVmConfigNicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
@@ -63309,7 +63309,7 @@ func (o OvaVmDeployV2OverrideVmConfigNicNetworkInfoOutput) ShouldAllowUnknownMac
 	return o.ApplyT(func(v OvaVmDeployV2OverrideVmConfigNicNetworkInfo) *bool { return v.ShouldAllowUnknownMacs }).(pulumi.BoolPtrOutput)
 }
 
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 // * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 func (o OvaVmDeployV2OverrideVmConfigNicNetworkInfoOutput) Subnets() OvaVmDeployV2OverrideVmConfigNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v OvaVmDeployV2OverrideVmConfigNicNetworkInfo) []OvaVmDeployV2OverrideVmConfigNicNetworkInfoSubnet {

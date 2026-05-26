@@ -62,8 +62,8 @@ type GetNetworkFunctionsV2Args struct {
 	// Maximum number of items per page.
 	Limit *int `pulumi:"limit"`
 	// Order by expression. Examples:
-	// - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy ">`orderBy </span>= "name"`
-	// - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy ">`orderBy </span>= "name desc"`
+	// - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by ">`orderBy </span>= "name"`
+	// - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by ">`orderBy </span>= "name desc"`
 	OrderBy *string `pulumi:"orderBy"`
 	// Page number.
 	Page *int `pulumi:"page"`
@@ -99,8 +99,8 @@ type GetNetworkFunctionsV2OutputArgs struct {
 	// Maximum number of items per page.
 	Limit pulumi.IntPtrInput `pulumi:"limit"`
 	// Order by expression. Examples:
-	// - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy ">`orderBy </span>= "name"`
-	// - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy ">`orderBy </span>= "name desc"`
+	// - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by ">`orderBy </span>= "name"`
+	// - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by ">`orderBy </span>= "name desc"`
 	OrderBy pulumi.StringPtrInput `pulumi:"orderBy"`
 	// Page number.
 	Page pulumi.IntPtrInput `pulumi:"page"`

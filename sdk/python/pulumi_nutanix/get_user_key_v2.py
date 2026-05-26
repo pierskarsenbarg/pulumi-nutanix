@@ -308,9 +308,9 @@ def get_user_key_v2(description: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         user_ext_id=pulumi.get(__ret__, 'user_ext_id'))
-def get_user_key_v2_output(description: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           user_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_user_key_v2_output(description: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           user_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserKeyV2Result]:
     """
     Fetches the requested key through the provided external identifier for the user and the key.

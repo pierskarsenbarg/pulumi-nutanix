@@ -224,6 +224,49 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getproject" "test" {
+        ///   project_id = nutanix_project.project_test.id
+        /// }
+        /// 
+        /// resource "nutanix_subnet" "subnet" {
+        ///   cluster_uuid       = "&lt;YOUR_CLUSTER_ID&gt;"
+        ///   name               = "sunet_test_name"
+        ///   description        = "Description of my unit test VLAN"
+        ///   vlan_id            = 31
+        ///   subnet_type        = "VLAN"
+        ///   subnet_ip          = "10.250.140.0"
+        ///   default_gateway_ip = "10.250.140.1"
+        ///   prefix_length      = 24
+        ///   dhcp_options = {
+        ///     "boot_file_name"   = "bootfile"
+        ///     "domain_name"      = "nutanix"
+        ///     "tftp_server_name" = "10.250.140.200"
+        ///   }
+        ///   dhcp_domain_name_server_lists = ["8.8.8.8", "4.2.2.2"]
+        ///   dhcp_domain_search_lists      = ["terraform.nutanix.com", "terraform.unit.test.com"]
+        /// }
+        /// resource "nutanix_project" "project_test" {
+        ///   name        = "my-project"
+        ///   description = "This is my project"
+        ///   categories {
+        ///     name  = "Environment"
+        ///     value = "Staging"
+        ///   }
+        ///   default_subnet_reference = {
+        ///     uuid = nutanix_subnet.subnet.metadata.uuid
+        ///   }
+        ///   api_version = "3.1"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -550,6 +593,49 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}, nil)
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getproject" "test" {
+        ///   project_id = nutanix_project.project_test.id
+        /// }
+        /// 
+        /// resource "nutanix_subnet" "subnet" {
+        ///   cluster_uuid       = "&lt;YOUR_CLUSTER_ID&gt;"
+        ///   name               = "sunet_test_name"
+        ///   description        = "Description of my unit test VLAN"
+        ///   vlan_id            = 31
+        ///   subnet_type        = "VLAN"
+        ///   subnet_ip          = "10.250.140.0"
+        ///   default_gateway_ip = "10.250.140.1"
+        ///   prefix_length      = 24
+        ///   dhcp_options = {
+        ///     "boot_file_name"   = "bootfile"
+        ///     "domain_name"      = "nutanix"
+        ///     "tftp_server_name" = "10.250.140.200"
+        ///   }
+        ///   dhcp_domain_name_server_lists = ["8.8.8.8", "4.2.2.2"]
+        ///   dhcp_domain_search_lists      = ["terraform.nutanix.com", "terraform.unit.test.com"]
+        /// }
+        /// resource "nutanix_project" "project_test" {
+        ///   name        = "my-project"
+        ///   description = "This is my project"
+        ///   categories {
+        ///     name  = "Environment"
+        ///     value = "Staging"
+        ///   }
+        ///   default_subnet_reference = {
+        ///     uuid = nutanix_subnet.subnet.metadata.uuid
+        ///   }
+        ///   api_version = "3.1"
         /// }
         /// ```
         /// ```java
@@ -880,6 +966,49 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getproject" "test" {
+        ///   project_id = nutanix_project.project_test.id
+        /// }
+        /// 
+        /// resource "nutanix_subnet" "subnet" {
+        ///   cluster_uuid       = "&lt;YOUR_CLUSTER_ID&gt;"
+        ///   name               = "sunet_test_name"
+        ///   description        = "Description of my unit test VLAN"
+        ///   vlan_id            = 31
+        ///   subnet_type        = "VLAN"
+        ///   subnet_ip          = "10.250.140.0"
+        ///   default_gateway_ip = "10.250.140.1"
+        ///   prefix_length      = 24
+        ///   dhcp_options = {
+        ///     "boot_file_name"   = "bootfile"
+        ///     "domain_name"      = "nutanix"
+        ///     "tftp_server_name" = "10.250.140.200"
+        ///   }
+        ///   dhcp_domain_name_server_lists = ["8.8.8.8", "4.2.2.2"]
+        ///   dhcp_domain_search_lists      = ["terraform.nutanix.com", "terraform.unit.test.com"]
+        /// }
+        /// resource "nutanix_project" "project_test" {
+        ///   name        = "my-project"
+        ///   description = "This is my project"
+        ///   categories {
+        ///     name  = "Environment"
+        ///     value = "Staging"
+        ///   }
+        ///   default_subnet_reference = {
+        ///     uuid = nutanix_subnet.subnet.metadata.uuid
+        ///   }
+        ///   api_version = "3.1"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -1017,13 +1146,14 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// List of directory service user groups. These groups are not managed by Nutanix.
-        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`"&gt;`userGroup`&lt;/span&gt;
+        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`" pulumi-lang-hcl="`user_group`"&gt;`userGroup`&lt;/span&gt;
         /// * `external_user_group_reference_list.#.uuid` - The UUID of a&lt;span pulumi-lang-nodejs=" userGroup
         /// " pulumi-lang-dotnet=" UserGroup
         /// " pulumi-lang-go=" userGroup
         /// " pulumi-lang-python=" user_group
         /// " pulumi-lang-yaml=" userGroup
         /// " pulumi-lang-java=" userGroup
+        /// " pulumi-lang-hcl=" user_group
         /// "&gt; userGroup
         /// &lt;/span&gt;* `external_user_group_reference_list.#.name` - The name of a user_group
         /// </summary>
@@ -1034,7 +1164,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt; of the project.
+        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`"&gt;`id`&lt;/span&gt; of the project.
         /// </summary>
         [Input("projectId")]
         public string? ProjectId { get; set; }
@@ -1047,7 +1177,7 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// List of subnets for the project.
-        /// * `subnet_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`"&gt;`subnet`&lt;/span&gt;
+        /// * `subnet_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`" pulumi-lang-hcl="`subnet`"&gt;`subnet`&lt;/span&gt;
         /// * `subnet_reference_list.#.uuid` - The UUID of a subnet
         /// * `subnet_reference_list.#.name` - The name of a subnet.
         /// </summary>
@@ -1094,13 +1224,14 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// List of directory service user groups. These groups are not managed by Nutanix.
-        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`"&gt;`userGroup`&lt;/span&gt;
+        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`" pulumi-lang-hcl="`user_group`"&gt;`userGroup`&lt;/span&gt;
         /// * `external_user_group_reference_list.#.uuid` - The UUID of a&lt;span pulumi-lang-nodejs=" userGroup
         /// " pulumi-lang-dotnet=" UserGroup
         /// " pulumi-lang-go=" userGroup
         /// " pulumi-lang-python=" user_group
         /// " pulumi-lang-yaml=" userGroup
         /// " pulumi-lang-java=" userGroup
+        /// " pulumi-lang-hcl=" user_group
         /// "&gt; userGroup
         /// &lt;/span&gt;* `external_user_group_reference_list.#.name` - The name of a user_group
         /// </summary>
@@ -1111,7 +1242,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt; of the project.
+        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`"&gt;`id`&lt;/span&gt; of the project.
         /// </summary>
         [Input("projectId")]
         public Input<string>? ProjectId { get; set; }
@@ -1124,7 +1255,7 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// List of subnets for the project.
-        /// * `subnet_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`"&gt;`subnet`&lt;/span&gt;
+        /// * `subnet_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`" pulumi-lang-hcl="`subnet`"&gt;`subnet`&lt;/span&gt;
         /// * `subnet_reference_list.#.uuid` - The UUID of a subnet
         /// * `subnet_reference_list.#.name` - The name of a subnet.
         /// </summary>
@@ -1158,7 +1289,7 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// List of accounts associated with the project.
-        /// * `account_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`account`" pulumi-lang-dotnet="`Account`" pulumi-lang-go="`account`" pulumi-lang-python="`account`" pulumi-lang-yaml="`account`" pulumi-lang-java="`account`"&gt;`account`&lt;/span&gt;
+        /// * `account_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`account`" pulumi-lang-dotnet="`Account`" pulumi-lang-go="`account`" pulumi-lang-python="`account`" pulumi-lang-yaml="`account`" pulumi-lang-java="`account`" pulumi-lang-hcl="`account`"&gt;`account`&lt;/span&gt;
         /// * `account_reference_list.#.uuid` - The UUID of an account.
         /// * `account_reference_list.#.name` - The name of an account.
         /// </summary>
@@ -1171,7 +1302,7 @@ namespace PiersKarsenbarg.Nutanix
         public readonly ImmutableArray<Outputs.GetProjectCategoryResult> Categories;
         /// <summary>
         /// (Optional/Computed) List of clusters associated with the project..
-        /// * `cluster_reference_list.#.kind` - (Optional) The kind name. Default value is &lt;span pulumi-lang-nodejs="`cluster`" pulumi-lang-dotnet="`Cluster`" pulumi-lang-go="`cluster`" pulumi-lang-python="`cluster`" pulumi-lang-yaml="`cluster`" pulumi-lang-java="`cluster`"&gt;`cluster`&lt;/span&gt;
+        /// * `cluster_reference_list.#.kind` - (Optional) The kind name. Default value is &lt;span pulumi-lang-nodejs="`cluster`" pulumi-lang-dotnet="`Cluster`" pulumi-lang-go="`cluster`" pulumi-lang-python="`cluster`" pulumi-lang-yaml="`cluster`" pulumi-lang-java="`cluster`" pulumi-lang-hcl="`cluster`"&gt;`cluster`&lt;/span&gt;
         /// * `cluster_reference_list.#.uuid` - (Required) The UUID of a cluster
         /// * `cluster_reference_list.#.name` - (Optional/Computed) The name of a cluster.
         /// </summary>
@@ -1190,7 +1321,7 @@ namespace PiersKarsenbarg.Nutanix
         public readonly string Description;
         /// <summary>
         /// List of environments associated with the project.
-        /// * `environment_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`"&gt;`environment`&lt;/span&gt;
+        /// * `environment_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`" pulumi-lang-hcl="`environment`"&gt;`environment`&lt;/span&gt;
         /// * `environment_reference_list.#.uuid` - The UUID of an environment.
         /// * `environment_reference_list.#.name` - The name of an environment.
         /// </summary>
@@ -1203,13 +1334,14 @@ namespace PiersKarsenbarg.Nutanix
         public readonly ImmutableArray<Outputs.GetProjectExternalNetworkListResult> ExternalNetworkLists;
         /// <summary>
         /// List of directory service user groups. These groups are not managed by Nutanix.
-        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`"&gt;`userGroup`&lt;/span&gt;
+        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`" pulumi-lang-hcl="`user_group`"&gt;`userGroup`&lt;/span&gt;
         /// * `external_user_group_reference_list.#.uuid` - The UUID of a&lt;span pulumi-lang-nodejs=" userGroup
         /// " pulumi-lang-dotnet=" UserGroup
         /// " pulumi-lang-go=" userGroup
         /// " pulumi-lang-python=" user_group
         /// " pulumi-lang-yaml=" userGroup
         /// " pulumi-lang-java=" userGroup
+        /// " pulumi-lang-hcl=" user_group
         /// "&gt; userGroup
         /// &lt;/span&gt;* `external_user_group_reference_list.#.name` - The name of a user_group
         /// </summary>
@@ -1235,14 +1367,14 @@ namespace PiersKarsenbarg.Nutanix
         public readonly string State;
         /// <summary>
         /// List of subnets for the project.
-        /// * `subnet_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`"&gt;`subnet`&lt;/span&gt;
+        /// * `subnet_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`" pulumi-lang-hcl="`subnet`"&gt;`subnet`&lt;/span&gt;
         /// * `subnet_reference_list.#.uuid` - The UUID of a subnet
         /// * `subnet_reference_list.#.name` - The name of a subnet.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectSubnetReferenceListResult> SubnetReferenceLists;
         /// <summary>
         /// (Optional/Computed) List of tunnels associated with the project.
-        /// * `tunnel_reference_list.#.kind` - (Optional) The kind name. Default value is &lt;span pulumi-lang-nodejs="`tunnel`" pulumi-lang-dotnet="`Tunnel`" pulumi-lang-go="`tunnel`" pulumi-lang-python="`tunnel`" pulumi-lang-yaml="`tunnel`" pulumi-lang-java="`tunnel`"&gt;`tunnel`&lt;/span&gt;
+        /// * `tunnel_reference_list.#.kind` - (Optional) The kind name. Default value is &lt;span pulumi-lang-nodejs="`tunnel`" pulumi-lang-dotnet="`Tunnel`" pulumi-lang-go="`tunnel`" pulumi-lang-python="`tunnel`" pulumi-lang-yaml="`tunnel`" pulumi-lang-java="`tunnel`" pulumi-lang-hcl="`tunnel`"&gt;`tunnel`&lt;/span&gt;
         /// * `tunnel_reference_list.#.uuid` - (Required) The UUID of a tunnel
         /// * `tunnel_reference_list.#.name` - (Optional/Computed) The name of a tunnel.
         /// </summary>
@@ -1253,7 +1385,7 @@ namespace PiersKarsenbarg.Nutanix
         public readonly ImmutableArray<Outputs.GetProjectUserReferenceListResult> UserReferenceLists;
         /// <summary>
         /// (Optional/Computed) List of VPCs associated with the project..
-        /// * `vpc_reference_list.#.kind` - (Optional) The kind name. Default value is &lt;span pulumi-lang-nodejs="`vpc`" pulumi-lang-dotnet="`Vpc`" pulumi-lang-go="`vpc`" pulumi-lang-python="`vpc`" pulumi-lang-yaml="`vpc`" pulumi-lang-java="`vpc`"&gt;`vpc`&lt;/span&gt;
+        /// * `vpc_reference_list.#.kind` - (Optional) The kind name. Default value is &lt;span pulumi-lang-nodejs="`vpc`" pulumi-lang-dotnet="`Vpc`" pulumi-lang-go="`vpc`" pulumi-lang-python="`vpc`" pulumi-lang-yaml="`vpc`" pulumi-lang-java="`vpc`" pulumi-lang-hcl="`vpc`"&gt;`vpc`&lt;/span&gt;
         /// * `vpc_reference_list.#.uuid` - (Required) The UUID of a vpc
         /// * `vpc_reference_list.#.name` - (Optional/Computed) The name of a vpc.
         /// </summary>

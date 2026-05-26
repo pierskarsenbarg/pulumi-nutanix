@@ -79,6 +79,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getpcrestorepointv2" "getRestorePoint" {
+        ///   restorable_domain_manager_ext_id = testNutanixRestorablePcsV2.restorablePcs[0].extId
+        ///   restore_source_ext_id            = cluster-location.id
+        ///   ext_id                           = test.restorePoints[0].extId
+        /// }
+        /// 
+        /// # this is PE based module, so use PE provider alias
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -193,6 +210,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getpcrestorepointv2" "getRestorePoint" {
+        ///   restorable_domain_manager_ext_id = testNutanixRestorablePcsV2.restorablePcs[0].extId
+        ///   restore_source_ext_id            = cluster-location.id
+        ///   ext_id                           = test.restorePoints[0].extId
+        /// }
+        /// 
+        /// # this is PE based module, so use PE provider alias
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -306,6 +340,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getpcrestorepointv2" "getRestorePoint" {
+        ///   restorable_domain_manager_ext_id = testNutanixRestorablePcsV2.restorablePcs[0].extId
+        ///   restore_source_ext_id            = cluster-location.id
+        ///   ext_id                           = test.restorePoints[0].extId
+        /// }
+        /// 
+        /// # this is PE based module, so use PE provider alias
         /// ```
         /// ```java
         /// package generated_program;

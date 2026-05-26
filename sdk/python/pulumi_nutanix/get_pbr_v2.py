@@ -203,7 +203,7 @@ def get_pbr_v2(ext_id: Optional[_builtins.str] = None,
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         vpc_ext_id=pulumi.get(__ret__, 'vpc_ext_id'),
         vpcs=pulumi.get(__ret__, 'vpcs'))
-def get_pbr_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pbr_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPbrV2Result]:
     """
     Get a single Routing Policy corresponding to the extId.

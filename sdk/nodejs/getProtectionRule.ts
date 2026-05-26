@@ -158,10 +158,10 @@ export function getProtectionRuleOutput(args?: GetProtectionRuleOutputArgs, opts
  * A collection of arguments for invoking getProtectionRule.
  */
 export interface GetProtectionRuleOutputArgs {
-    categories?: pulumi.Input<pulumi.Input<inputs.GetProtectionRuleCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetProtectionRuleCategoryArgs>[] | undefined>;
     /**
      * - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`">`id`</span> of the protection rule.
      */
-    protectionRuleId?: pulumi.Input<string>;
-    protectionRuleName?: pulumi.Input<string>;
+    protectionRuleId?: pulumi.Input<string | undefined>;
+    protectionRuleName?: pulumi.Input<string | undefined>;
 }

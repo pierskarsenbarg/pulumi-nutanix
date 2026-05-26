@@ -272,8 +272,8 @@ def get_route_v2(ext_id: Optional[_builtins.str] = None,
         route_type=pulumi.get(__ret__, 'route_type'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         vpc_reference=pulumi.get(__ret__, 'vpc_reference'))
-def get_route_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        route_table_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_route_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        route_table_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRouteV2Result]:
     """
     Provides Nutanix datasource Get Route for the specified {extId}.

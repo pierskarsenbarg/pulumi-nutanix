@@ -88,5 +88,5 @@ export interface GetVpcsOutputArgs {
     /**
      * - The vpc kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetVpcsMetadataArgs>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetVpcsMetadataArgs>[] | undefined>;
 }

@@ -200,44 +200,44 @@ export interface AccessControlPolicyState {
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Categories for the Access Control Policy.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyCategory>[]>;
-    contextFilterLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyContextFilterList>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyCategory>[] | undefined>;
+    contextFilterLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyContextFilterList>[] | undefined>;
     /**
      * - (Optional) The description of Access Control Policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - The Access Control Policy kind metadata.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - (Optional) Name of the Access Control Policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The reference to a user.
      */
-    ownerReference?: pulumi.Input<inputs.AccessControlPolicyOwnerReference>;
+    ownerReference?: pulumi.Input<inputs.AccessControlPolicyOwnerReference | undefined>;
     /**
      * - (Required) The reference to a role.
      */
-    roleReference?: pulumi.Input<inputs.AccessControlPolicyRoleReference>;
+    roleReference?: pulumi.Input<inputs.AccessControlPolicyRoleReference | undefined>;
     /**
      * - The state of the Access Control Policy.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The User group(s) being assigned a given role.
      */
-    userGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyUserGroupReferenceList>[]>;
+    userGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyUserGroupReferenceList>[] | undefined>;
     /**
      * - (Optional) The User(s) being assigned a given role.
      */
-    userReferenceLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyUserReferenceList>[]>;
+    userReferenceLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyUserReferenceList>[] | undefined>;
 }
 
 /**
@@ -247,20 +247,20 @@ export interface AccessControlPolicyArgs {
     /**
      * - (Optional) Categories for the Access Control Policy.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyCategory>[]>;
-    contextFilterLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyContextFilterList>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyCategory>[] | undefined>;
+    contextFilterLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyContextFilterList>[] | undefined>;
     /**
      * - (Optional) The description of Access Control Policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Name of the Access Control Policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The reference to a user.
      */
-    ownerReference?: pulumi.Input<inputs.AccessControlPolicyOwnerReference>;
+    ownerReference?: pulumi.Input<inputs.AccessControlPolicyOwnerReference | undefined>;
     /**
      * - (Required) The reference to a role.
      */
@@ -268,9 +268,9 @@ export interface AccessControlPolicyArgs {
     /**
      * - (Optional) The User group(s) being assigned a given role.
      */
-    userGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyUserGroupReferenceList>[]>;
+    userGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyUserGroupReferenceList>[] | undefined>;
     /**
      * - (Optional) The User(s) being assigned a given role.
      */
-    userReferenceLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyUserReferenceList>[]>;
+    userReferenceLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyUserReferenceList>[] | undefined>;
 }

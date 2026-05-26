@@ -93,13 +93,13 @@ export function getFoundationCentralImagedClustersListOutput(args?: GetFoundatio
  * A collection of arguments for invoking getFoundationCentralImagedClustersList.
  */
 export interface GetFoundationCentralImagedClustersListOutputArgs {
-    filters?: pulumi.Input<inputs.GetFoundationCentralImagedClustersListFiltersArgs>;
+    filters?: pulumi.Input<inputs.GetFoundationCentralImagedClustersListFiltersArgs | undefined>;
     /**
      * The number of records retrieved.
      */
-    length?: pulumi.Input<number>;
+    length?: pulumi.Input<number | undefined>;
     /**
      * Offset from the start of the object list.
      */
-    offset?: pulumi.Input<number>;
+    offset?: pulumi.Input<number | undefined>;
 }

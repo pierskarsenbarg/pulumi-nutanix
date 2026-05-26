@@ -82,9 +82,9 @@ export interface GetKarbonPrivateRegistryOutputArgs {
     /**
      * Represents karbon private registry uuid
      */
-    privateRegistryId?: pulumi.Input<string>;
+    privateRegistryId?: pulumi.Input<string | undefined>;
     /**
      * Represents the name of karbon private registry
      */
-    privateRegistryName?: pulumi.Input<string>;
+    privateRegistryName?: pulumi.Input<string | undefined>;
 }

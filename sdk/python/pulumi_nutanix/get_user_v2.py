@@ -366,7 +366,7 @@ def get_user_v2(ext_id: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'),
         user_type=pulumi.get(__ret__, 'user_type'),
         username=pulumi.get(__ret__, 'username'))
-def get_user_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_user_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserV2Result]:
     """
     Provides a datasource to View a User.

@@ -25,12 +25,12 @@ class DirectoryServicesV2Args:
                  domain_name: pulumi.Input[_builtins.str],
                  service_accounts: pulumi.Input[Sequence[pulumi.Input['DirectoryServicesV2ServiceAccountArgs']]],
                  url: pulumi.Input[_builtins.str],
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_search_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 open_ldap_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['DirectoryServicesV2OpenLdapConfigurationArgs']]]] = None,
-                 secondary_urls: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 white_listed_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_search_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['DirectoryServicesV2OpenLdapConfigurationArgs']]]] = None,
+                 secondary_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 white_listed_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DirectoryServicesV2 resource.
 
@@ -112,93 +112,93 @@ class DirectoryServicesV2Args:
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) A globally unique identifier of an instance that is suitable for external consumption.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="groupSearchType")
-    def group_search_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_search_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Group membership search type for the Directory Service. Supported values are: "NON_RECURSIVE" (Doesn't search recursively within groups.) and "RECURSIVE" (Searches recursively within groups.)
         """
         return pulumi.get(self, "group_search_type")
 
     @group_search_type.setter
-    def group_search_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_search_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_search_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Name for the Directory Service.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="openLdapConfigurations")
-    def open_ldap_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DirectoryServicesV2OpenLdapConfigurationArgs']]]]:
+    def open_ldap_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DirectoryServicesV2OpenLdapConfigurationArgs']]]]:
         """
         -(Optional) Configuration for OpenLDAP Directory Service.
         """
         return pulumi.get(self, "open_ldap_configurations")
 
     @open_ldap_configurations.setter
-    def open_ldap_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DirectoryServicesV2OpenLdapConfigurationArgs']]]]):
+    def open_ldap_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DirectoryServicesV2OpenLdapConfigurationArgs']]]]):
         pulumi.set(self, "open_ldap_configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="secondaryUrls")
-    def secondary_urls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def secondary_urls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         -(Optional) Secondary URL for the Directory Service.
         """
         return pulumi.get(self, "secondary_urls")
 
     @secondary_urls.setter
-    def secondary_urls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def secondary_urls(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "secondary_urls", value)
 
     @_builtins.property
     @pulumi.getter(name="whiteListedGroups")
-    def white_listed_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def white_listed_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         -(Optional) List of allowed User Groups for the Directory Service.
         """
         return pulumi.get(self, "white_listed_groups")
 
     @white_listed_groups.setter
-    def white_listed_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def white_listed_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "white_listed_groups", value)
 
 
 @pulumi.input_type
 class _DirectoryServicesV2State:
     def __init__(__self__, *,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 directory_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_search_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_updated_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 open_ldap_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['DirectoryServicesV2OpenLdapConfigurationArgs']]]] = None,
-                 secondary_urls: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_accounts: Optional[pulumi.Input[Sequence[pulumi.Input['DirectoryServicesV2ServiceAccountArgs']]]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 white_listed_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 directory_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_search_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['DirectoryServicesV2OpenLdapConfigurationArgs']]]] = None,
+                 secondary_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_accounts: pulumi.Input[Optional[Sequence[pulumi.Input['DirectoryServicesV2ServiceAccountArgs']]]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 white_listed_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering DirectoryServicesV2 resources.
 
@@ -245,158 +245,158 @@ class _DirectoryServicesV2State:
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - User or Service who created the Directory Service.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="createdTime")
-    def created_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Creation time of the Directory Service.
         """
         return pulumi.get(self, "created_time")
 
     @created_time.setter
-    def created_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_time", value)
 
     @_builtins.property
     @pulumi.getter(name="directoryType")
-    def directory_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def directory_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Type of Directory Service, Supported values are: "ACTIVE_DIRECTORY" (Directory Service type is Active Directory.) and "OPEN_LDAP" (Directory Service type is Open LDAP.)
         """
         return pulumi.get(self, "directory_type")
 
     @directory_type.setter
-    def directory_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def directory_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "directory_type", value)
 
     @_builtins.property
     @pulumi.getter(name="domainName")
-    def domain_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Domain name for the Directory Service.
         """
         return pulumi.get(self, "domain_name")
 
     @domain_name.setter
-    def domain_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_name", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) A globally unique identifier of an instance that is suitable for external consumption.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="groupSearchType")
-    def group_search_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_search_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Group membership search type for the Directory Service. Supported values are: "NON_RECURSIVE" (Doesn't search recursively within groups.) and "RECURSIVE" (Searches recursively within groups.)
         """
         return pulumi.get(self, "group_search_type")
 
     @group_search_type.setter
-    def group_search_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_search_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_search_type", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedTime")
-    def last_updated_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_updated_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Last updated time of the Directory Service.
         """
         return pulumi.get(self, "last_updated_time")
 
     @last_updated_time.setter
-    def last_updated_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_updated_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_updated_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Name for the Directory Service.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="openLdapConfigurations")
-    def open_ldap_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DirectoryServicesV2OpenLdapConfigurationArgs']]]]:
+    def open_ldap_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DirectoryServicesV2OpenLdapConfigurationArgs']]]]:
         """
         -(Optional) Configuration for OpenLDAP Directory Service.
         """
         return pulumi.get(self, "open_ldap_configurations")
 
     @open_ldap_configurations.setter
-    def open_ldap_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DirectoryServicesV2OpenLdapConfigurationArgs']]]]):
+    def open_ldap_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DirectoryServicesV2OpenLdapConfigurationArgs']]]]):
         pulumi.set(self, "open_ldap_configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="secondaryUrls")
-    def secondary_urls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def secondary_urls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         -(Optional) Secondary URL for the Directory Service.
         """
         return pulumi.get(self, "secondary_urls")
 
     @secondary_urls.setter
-    def secondary_urls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def secondary_urls(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "secondary_urls", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceAccounts")
-    def service_accounts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DirectoryServicesV2ServiceAccountArgs']]]]:
+    def service_accounts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DirectoryServicesV2ServiceAccountArgs']]]]:
         """
         -(Required) Information of Service account to connect to the Directory Service.
         """
         return pulumi.get(self, "service_accounts")
 
     @service_accounts.setter
-    def service_accounts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DirectoryServicesV2ServiceAccountArgs']]]]):
+    def service_accounts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DirectoryServicesV2ServiceAccountArgs']]]]):
         pulumi.set(self, "service_accounts", value)
 
     @_builtins.property
     @pulumi.getter
-    def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) URL for the Directory Service.
         """
         return pulumi.get(self, "url")
 
     @url.setter
-    def url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url", value)
 
     @_builtins.property
     @pulumi.getter(name="whiteListedGroups")
-    def white_listed_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def white_listed_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         -(Optional) List of allowed User Groups for the Directory Service.
         """
         return pulumi.get(self, "white_listed_groups")
 
     @white_listed_groups.setter
-    def white_listed_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def white_listed_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "white_listed_groups", value)
 
 
@@ -406,16 +406,16 @@ class DirectoryServicesV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 directory_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_search_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 open_ldap_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict']]]]] = None,
-                 secondary_urls: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_accounts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict']]]]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 white_listed_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 directory_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_search_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict']]]]] = None,
+                 secondary_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_accounts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict']]]]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 white_listed_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Provides a resource to Create a Directory Service.
@@ -501,16 +501,16 @@ class DirectoryServicesV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 directory_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_search_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 open_ldap_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict']]]]] = None,
-                 secondary_urls: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_accounts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict']]]]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None,
-                 white_listed_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 directory_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_search_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict']]]]] = None,
+                 secondary_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_accounts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict']]]]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 white_listed_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -551,19 +551,19 @@ class DirectoryServicesV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            created_time: Optional[pulumi.Input[_builtins.str]] = None,
-            directory_type: Optional[pulumi.Input[_builtins.str]] = None,
-            domain_name: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            group_search_type: Optional[pulumi.Input[_builtins.str]] = None,
-            last_updated_time: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            open_ldap_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict']]]]] = None,
-            secondary_urls: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            service_accounts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict']]]]] = None,
-            url: Optional[pulumi.Input[_builtins.str]] = None,
-            white_listed_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'DirectoryServicesV2':
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_time: pulumi.Input[Optional[_builtins.str]] = None,
+            directory_type: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_search_type: pulumi.Input[Optional[_builtins.str]] = None,
+            last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict']]]]] = None,
+            secondary_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            service_accounts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict']]]]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None,
+            white_listed_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'DirectoryServicesV2':
         """
         Get an existing DirectoryServicesV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

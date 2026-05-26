@@ -228,7 +228,7 @@ def get_pcs_v2(select: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         pcs=pulumi.get(__ret__, 'pcs'),
         select=pulumi.get(__ret__, 'select'))
-def get_pcs_v2_output(select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_pcs_v2_output(select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPcsV2Result]:
     """
     Returns a list of elements representing the domain manager (Prism Central) instance.

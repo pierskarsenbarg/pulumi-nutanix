@@ -92,19 +92,19 @@ export interface GetNetworkSecurityPolicyRulesV2OutputArgs {
     /**
      * Filter expression for the list. The filter can be applied to the following fields:
      */
-    filter?: pulumi.Input<string>;
+    filter?: pulumi.Input<string | undefined>;
     /**
      * Maximum number of rules to return (1–100). Default is 50 if not set.
      */
-    limit?: pulumi.Input<number>;
+    limit?: pulumi.Input<number | undefined>;
     /**
      * Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy " pulumi-lang-hcl=" order_by "> orderBy </span>can be applied to the following fields:
      */
-    orderBy?: pulumi.Input<string>;
+    orderBy?: pulumi.Input<string | undefined>;
     /**
      * Page number for pagination (0-based).
      */
-    page?: pulumi.Input<number>;
+    page?: pulumi.Input<number | undefined>;
     /**
      * ExtId of the network security policy to list rules for.
      */
@@ -112,5 +112,5 @@ export interface GetNetworkSecurityPolicyRulesV2OutputArgs {
     /**
      * Comma-separated list of fields to return. The select can be applied to the following fields:
      */
-    select?: pulumi.Input<string>;
+    select?: pulumi.Input<string | undefined>;
 }

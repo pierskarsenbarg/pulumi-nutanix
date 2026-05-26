@@ -144,17 +144,17 @@ export interface GetVmHostAffinityPoliciesV2OutputArgs {
     /**
      * A URL query parameter that allows clients to filter a collection of resources. The expression specified with $filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the $filter must conform to the OData V4.01 URL conventions. For example, `$filter=name eq 'my-policy'` would filter the result on policy name 'my-policy', `$filter=startswith(name, 'prod-')` would filter on policy names starting with 'prod-'. The filter can be applied to the following fields:
      */
-    filter?: pulumi.Input<string>;
+    filter?: pulumi.Input<string | undefined>;
     /**
      * A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
      */
-    limit?: pulumi.Input<number>;
+    limit?: pulumi.Input<number | undefined>;
     /**
      * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using <span pulumi-lang-nodejs="`asc`" pulumi-lang-dotnet="`Asc`" pulumi-lang-go="`asc`" pulumi-lang-python="`asc`" pulumi-lang-yaml="`asc`" pulumi-lang-java="`asc`" pulumi-lang-hcl="`asc`">`asc`</span> or descending order using <span pulumi-lang-nodejs="`desc`" pulumi-lang-dotnet="`Desc`" pulumi-lang-go="`desc`" pulumi-lang-python="`desc`" pulumi-lang-yaml="`desc`" pulumi-lang-java="`desc`" pulumi-lang-hcl="`desc`">`desc`</span>. If <span pulumi-lang-nodejs="`asc`" pulumi-lang-dotnet="`Asc`" pulumi-lang-go="`asc`" pulumi-lang-python="`asc`" pulumi-lang-yaml="`asc`" pulumi-lang-java="`asc`" pulumi-lang-hcl="`asc`">`asc`</span> or <span pulumi-lang-nodejs="`desc`" pulumi-lang-dotnet="`Desc`" pulumi-lang-go="`desc`" pulumi-lang-python="`desc`" pulumi-lang-yaml="`desc`" pulumi-lang-java="`desc`" pulumi-lang-hcl="`desc`">`desc`</span> are not specified, the resources will be sorted in ascending order by default. For example, `name asc` would sort policies by name in ascending order, <span pulumi-lang-nodejs="`updateTime " pulumi-lang-dotnet="`UpdateTime " pulumi-lang-go="`updateTime " pulumi-lang-python="`update_time " pulumi-lang-yaml="`updateTime " pulumi-lang-java="`updateTime " pulumi-lang-hcl="`update_time ">`updateTime </span>desc` would sort by update time in descending order. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy " pulumi-lang-hcl=" order_by "> orderBy </span>can be applied to the following fields:
      */
-    orderBy?: pulumi.Input<string>;
+    orderBy?: pulumi.Input<string | undefined>;
     /**
      * A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
      */
-    page?: pulumi.Input<number>;
+    page?: pulumi.Input<number | undefined>;
 }

@@ -22,10 +22,10 @@ __all__ = ['OvaV2Args', 'OvaV2']
 class OvaV2Args:
     def __init__(__self__, *,
                  sources: pulumi.Input[Sequence[pulumi.Input['OvaV2SourceArgs']]],
-                 checksum: Optional[pulumi.Input['OvaV2ChecksumArgs']] = None,
-                 cluster_location_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 disk_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 checksum: pulumi.Input[Optional['OvaV2ChecksumArgs']] = None,
+                 cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 disk_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a OvaV2 resource.
 
@@ -63,31 +63,31 @@ class OvaV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def checksum(self) -> Optional[pulumi.Input['OvaV2ChecksumArgs']]:
+    def checksum(self) -> pulumi.Input[Optional['OvaV2ChecksumArgs']]:
         """
         -(Optional) The checksum of an OVA.
         """
         return pulumi.get(self, "checksum")
 
     @checksum.setter
-    def checksum(self, value: Optional[pulumi.Input['OvaV2ChecksumArgs']]):
+    def checksum(self, value: pulumi.Input[Optional['OvaV2ChecksumArgs']]):
         pulumi.set(self, "checksum", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterLocationExtIds")
-    def cluster_location_ext_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cluster_location_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
         """
         return pulumi.get(self, "cluster_location_ext_ids")
 
     @cluster_location_ext_ids.setter
-    def cluster_location_ext_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cluster_location_ext_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cluster_location_ext_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="diskFormat")
-    def disk_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def disk_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Disk format of an OVA.
         |ENUM |Description |
@@ -98,39 +98,39 @@ class OvaV2Args:
         return pulumi.get(self, "disk_format")
 
     @disk_format.setter
-    def disk_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def disk_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "disk_format", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Name of the OVA.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _OvaV2State:
     def __init__(__self__, *,
-                 checksum: Optional[pulumi.Input['OvaV2ChecksumArgs']] = None,
-                 cluster_location_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 create_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['OvaV2CreatedByArgs']]]] = None,
-                 disk_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_update_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 links: Optional[pulumi.Input[Sequence[pulumi.Input['OvaV2LinkArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_vm: Optional[pulumi.Input[_builtins.str]] = None,
-                 size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 sources: Optional[pulumi.Input[Sequence[pulumi.Input['OvaV2SourceArgs']]]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_configs: Optional[pulumi.Input[Sequence[pulumi.Input['OvaV2VmConfigArgs']]]] = None):
+                 checksum: pulumi.Input[Optional['OvaV2ChecksumArgs']] = None,
+                 cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 create_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2CreatedByArgs']]]] = None,
+                 disk_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2LinkArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_vm: pulumi.Input[Optional[_builtins.str]] = None,
+                 size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2SourceArgs']]]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_configs: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigArgs']]]] = None):
         """
         Input properties used for looking up and filtering OvaV2 resources.
 
@@ -177,52 +177,52 @@ class _OvaV2State:
 
     @_builtins.property
     @pulumi.getter
-    def checksum(self) -> Optional[pulumi.Input['OvaV2ChecksumArgs']]:
+    def checksum(self) -> pulumi.Input[Optional['OvaV2ChecksumArgs']]:
         """
         -(Optional) The checksum of an OVA.
         """
         return pulumi.get(self, "checksum")
 
     @checksum.setter
-    def checksum(self, value: Optional[pulumi.Input['OvaV2ChecksumArgs']]):
+    def checksum(self, value: pulumi.Input[Optional['OvaV2ChecksumArgs']]):
         pulumi.set(self, "checksum", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterLocationExtIds")
-    def cluster_location_ext_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cluster_location_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
         """
         return pulumi.get(self, "cluster_location_ext_ids")
 
     @cluster_location_ext_ids.setter
-    def cluster_location_ext_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cluster_location_ext_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cluster_location_ext_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="createTime")
-    def create_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def create_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "create_time")
 
     @create_time.setter
-    def create_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def create_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "create_time", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBies")
-    def created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OvaV2CreatedByArgs']]]]:
+    def created_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2CreatedByArgs']]]]:
         """
         -(Optional) Information of the user.
         """
         return pulumi.get(self, "created_bies")
 
     @created_bies.setter
-    def created_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OvaV2CreatedByArgs']]]]):
+    def created_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2CreatedByArgs']]]]):
         pulumi.set(self, "created_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="diskFormat")
-    def disk_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def disk_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Disk format of an OVA.
         |ENUM |Description |
@@ -233,97 +233,97 @@ class _OvaV2State:
         return pulumi.get(self, "disk_format")
 
     @disk_format.setter
-    def disk_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def disk_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "disk_format", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdateTime")
-    def last_update_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "last_update_time")
 
     @last_update_time.setter
-    def last_update_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_update_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_update_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OvaV2LinkArgs']]]]:
+    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2LinkArgs']]]]:
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OvaV2LinkArgs']]]]):
+    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Name of the OVA.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="parentVm")
-    def parent_vm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_vm(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "parent_vm")
 
     @parent_vm.setter
-    def parent_vm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_vm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_vm", value)
 
     @_builtins.property
     @pulumi.getter(name="sizeBytes")
-    def size_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def size_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "size_bytes")
 
     @size_bytes.setter
-    def size_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def size_bytes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "size_bytes", value)
 
     @_builtins.property
     @pulumi.getter
-    def sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OvaV2SourceArgs']]]]:
+    def sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2SourceArgs']]]]:
         """
         -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
         """
         return pulumi.get(self, "sources")
 
     @sources.setter
-    def sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OvaV2SourceArgs']]]]):
+    def sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2SourceArgs']]]]):
         pulumi.set(self, "sources", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vmConfigs")
-    def vm_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OvaV2VmConfigArgs']]]]:
+    def vm_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigArgs']]]]:
         """
         -(Optional) VM configuration.
         """
         return pulumi.get(self, "vm_configs")
 
     @vm_configs.setter
-    def vm_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OvaV2VmConfigArgs']]]]):
+    def vm_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigArgs']]]]):
         pulumi.set(self, "vm_configs", value)
 
 
@@ -333,11 +333,11 @@ class OvaV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 checksum: Optional[pulumi.Input[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict']]] = None,
-                 cluster_location_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 disk_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict']]]]] = None,
+                 checksum: pulumi.Input[Optional[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict']]] = None,
+                 cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 disk_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict']]]]] = None,
                  __props__=None):
         """
         Creates an OVA using the provided request body. The name and source are mandatory fields to create an OVA.
@@ -380,11 +380,11 @@ class OvaV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 checksum: Optional[pulumi.Input[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict']]] = None,
-                 cluster_location_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 disk_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict']]]]] = None,
+                 checksum: pulumi.Input[Optional[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict']]] = None,
+                 cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 disk_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -420,20 +420,20 @@ class OvaV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            checksum: Optional[pulumi.Input[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict']]] = None,
-            cluster_location_ext_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            create_time: Optional[pulumi.Input[_builtins.str]] = None,
-            created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OvaV2CreatedByArgs', 'OvaV2CreatedByArgsDict']]]]] = None,
-            disk_format: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            last_update_time: Optional[pulumi.Input[_builtins.str]] = None,
-            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OvaV2LinkArgs', 'OvaV2LinkArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_vm: Optional[pulumi.Input[_builtins.str]] = None,
-            size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-            sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict']]]]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OvaV2VmConfigArgs', 'OvaV2VmConfigArgsDict']]]]] = None) -> 'OvaV2':
+            checksum: pulumi.Input[Optional[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict']]] = None,
+            cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            create_time: pulumi.Input[Optional[_builtins.str]] = None,
+            created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2CreatedByArgs', 'OvaV2CreatedByArgsDict']]]]] = None,
+            disk_format: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2LinkArgs', 'OvaV2LinkArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_vm: pulumi.Input[Optional[_builtins.str]] = None,
+            size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict']]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2VmConfigArgs', 'OvaV2VmConfigArgsDict']]]]] = None) -> 'OvaV2':
         """
         Get an existing OvaV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

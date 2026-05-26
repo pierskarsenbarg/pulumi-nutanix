@@ -136,16 +136,16 @@ export interface OvaV2State {
     /**
      * -(Optional) The checksum of an OVA.
      */
-    checksum?: pulumi.Input<inputs.OvaV2Checksum>;
+    checksum?: pulumi.Input<inputs.OvaV2Checksum | undefined>;
     /**
      * -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
      */
-    clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[]>;
-    createTime?: pulumi.Input<string>;
+    clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    createTime?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Information of the user.
      */
-    createdBies?: pulumi.Input<pulumi.Input<inputs.OvaV2CreatedBy>[]>;
+    createdBies?: pulumi.Input<pulumi.Input<inputs.OvaV2CreatedBy>[] | undefined>;
     /**
      * -(Optional) Disk format of an OVA.
      * |ENUM |Description |
@@ -153,25 +153,25 @@ export interface OvaV2State {
      * | VMDK | The VMDK disk format of an OVA. |
      * | QCOW2 | The QCOW2 disk format of an OVA. |
      */
-    diskFormat?: pulumi.Input<string>;
-    extId?: pulumi.Input<string>;
-    lastUpdateTime?: pulumi.Input<string>;
-    links?: pulumi.Input<pulumi.Input<inputs.OvaV2Link>[]>;
+    diskFormat?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string | undefined>;
+    lastUpdateTime?: pulumi.Input<string | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.OvaV2Link>[] | undefined>;
     /**
      * -(Required) Name of the OVA.
      */
-    name?: pulumi.Input<string>;
-    parentVm?: pulumi.Input<string>;
-    sizeBytes?: pulumi.Input<number>;
+    name?: pulumi.Input<string | undefined>;
+    parentVm?: pulumi.Input<string | undefined>;
+    sizeBytes?: pulumi.Input<number | undefined>;
     /**
      * -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
      */
-    sources?: pulumi.Input<pulumi.Input<inputs.OvaV2Source>[]>;
-    tenantId?: pulumi.Input<string>;
+    sources?: pulumi.Input<pulumi.Input<inputs.OvaV2Source>[] | undefined>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) VM configuration.
      */
-    vmConfigs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfig>[]>;
+    vmConfigs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfig>[] | undefined>;
 }
 
 /**
@@ -181,11 +181,11 @@ export interface OvaV2Args {
     /**
      * -(Optional) The checksum of an OVA.
      */
-    checksum?: pulumi.Input<inputs.OvaV2Checksum>;
+    checksum?: pulumi.Input<inputs.OvaV2Checksum | undefined>;
     /**
      * -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
      */
-    clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * -(Optional) Disk format of an OVA.
      * |ENUM |Description |
@@ -193,11 +193,11 @@ export interface OvaV2Args {
      * | VMDK | The VMDK disk format of an OVA. |
      * | QCOW2 | The QCOW2 disk format of an OVA. |
      */
-    diskFormat?: pulumi.Input<string>;
+    diskFormat?: pulumi.Input<string | undefined>;
     /**
      * -(Required) Name of the OVA.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
      */

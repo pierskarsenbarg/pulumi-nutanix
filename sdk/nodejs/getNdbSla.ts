@@ -152,9 +152,9 @@ export interface GetNdbSlaOutputArgs {
     /**
      * and <span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`" pulumi-lang-hcl="`sla_name`">`slaName`</span> are mutually exclusive.
      */
-    slaId?: pulumi.Input<string>;
+    slaId?: pulumi.Input<string | undefined>;
     /**
      * SLA Name for query
      */
-    slaName?: pulumi.Input<string>;
+    slaName?: pulumi.Input<string | undefined>;
 }

@@ -119,7 +119,7 @@ def get_subnets(metadatas: Optional[Sequence[Union['GetSubnetsMetadataArgs', 'Ge
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-def get_subnets_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetSubnetsMetadataArgs', 'GetSubnetsMetadataArgsDict']]]]] = None,
+def get_subnets_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetSubnetsMetadataArgs', 'GetSubnetsMetadataArgsDict']]]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubnetsResult]:
     """
     Describes a list of subnets

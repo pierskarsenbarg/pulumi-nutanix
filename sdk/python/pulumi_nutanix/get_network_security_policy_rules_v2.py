@@ -153,12 +153,12 @@ def get_network_security_policy_rules_v2(filter: Optional[_builtins.str] = None,
         page=pulumi.get(__ret__, 'page'),
         policy_ext_id=pulumi.get(__ret__, 'policy_ext_id'),
         select=pulumi.get(__ret__, 'select'))
-def get_network_security_policy_rules_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                                order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                                policy_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_network_security_policy_rules_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                                order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                                policy_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSecurityPolicyRulesV2Result]:
     """
     Gets the list of Network Security Policy rules for a given policy ExtID.

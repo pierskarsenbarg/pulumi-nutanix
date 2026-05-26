@@ -22,8 +22,8 @@ __all__ = ['ServiceGroupArgs', 'ServiceGroup']
 class ServiceGroupArgs:
     def __init__(__self__, *,
                  service_lists: pulumi.Input[Sequence[pulumi.Input['ServiceGroupServiceListArgs']]],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ServiceGroup resource.
 
@@ -51,36 +51,36 @@ class ServiceGroupArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Description of the service group
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) Name of the service group
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _ServiceGroupState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupServiceListArgs']]]] = None,
-                 system_defined: Optional[pulumi.Input[_builtins.bool]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupServiceListArgs']]]] = None,
+                 system_defined: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering ServiceGroup resources.
 
@@ -100,50 +100,50 @@ class _ServiceGroupState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Description of the service group
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) Name of the service group
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceLists")
-    def service_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupServiceListArgs']]]]:
+    def service_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupServiceListArgs']]]]:
         """
         - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
         """
         return pulumi.get(self, "service_lists")
 
     @service_lists.setter
-    def service_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupServiceListArgs']]]]):
+    def service_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupServiceListArgs']]]]):
         pulumi.set(self, "service_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="systemDefined")
-    def system_defined(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def system_defined(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (ReadOnly) boolean value to denote if the service group is system defined
         """
         return pulumi.get(self, "system_defined")
 
     @system_defined.setter
-    def system_defined(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def system_defined(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "system_defined", value)
 
 
@@ -153,9 +153,9 @@ class ServiceGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict']]]]] = None,
                  __props__=None):
         """
         Provides a resource to create a service group based on the input parameters.
@@ -244,9 +244,9 @@ class ServiceGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -272,10 +272,10 @@ class ServiceGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            service_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict']]]]] = None,
-            system_defined: Optional[pulumi.Input[_builtins.bool]] = None) -> 'ServiceGroup':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            service_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict']]]]] = None,
+            system_defined: pulumi.Input[Optional[_builtins.bool]] = None) -> 'ServiceGroup':
         """
         Get an existing ServiceGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

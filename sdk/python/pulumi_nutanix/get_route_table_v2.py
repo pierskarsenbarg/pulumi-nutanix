@@ -154,7 +154,7 @@ def get_route_table_v2(ext_id: Optional[_builtins.str] = None,
         metadatas=pulumi.get(__ret__, 'metadatas'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         vpc_reference=pulumi.get(__ret__, 'vpc_reference'))
-def get_route_table_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_route_table_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRouteTableV2Result]:
     """
     Provides Nutanix datasource Get the route table for the specified extId.

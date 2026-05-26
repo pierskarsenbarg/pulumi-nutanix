@@ -166,11 +166,11 @@ def get_floating_ips_v2(expand: Optional[_builtins.str] = None,
         limit=pulumi.get(__ret__, 'limit'),
         order_by=pulumi.get(__ret__, 'order_by'),
         page=pulumi.get(__ret__, 'page'))
-def get_floating_ips_v2_output(expand: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                               order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_floating_ips_v2_output(expand: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                               order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFloatingIpsV2Result]:
     """
     Provides a datasource to retrieve floating IP with<span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid " pulumi-lang-hcl=" floating_ip_uuid "> floatingIpUuid </span>.

@@ -211,19 +211,19 @@ export interface PcRestoreV2State {
     /**
      * -(Required) Domain manager (Prism Central) details.
      */
-    domainManager?: pulumi.Input<inputs.PcRestoreV2DomainManager>;
+    domainManager?: pulumi.Input<inputs.PcRestoreV2DomainManager | undefined>;
     /**
      * -(Required) Restore point ID for the backup created in cluster/object store.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) A unique identifier for the domain manager.
      */
-    restorableDomainManagerExtId?: pulumi.Input<string>;
+    restorableDomainManagerExtId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) A unique identifier obtained from the restore source API that corresponds to the details provided for the restore source.
      */
-    restoreSourceExtId?: pulumi.Input<string>;
+    restoreSourceExtId?: pulumi.Input<string | undefined>;
 }
 
 /**

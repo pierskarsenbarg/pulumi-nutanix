@@ -21,12 +21,12 @@ __all__ = ['RecoveryPointsV2Args', 'RecoveryPointsV2']
 @pulumi.input_type
 class RecoveryPointsV2Args:
     def __init__(__self__, *,
-                 expiration_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 recovery_point_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_recovery_points: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2VmRecoveryPointArgs']]]] = None,
-                 volume_group_recovery_points: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2VolumeGroupRecoveryPointArgs']]]] = None):
+                 expiration_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 recovery_point_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2VmRecoveryPointArgs']]]] = None,
+                 volume_group_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2VolumeGroupRecoveryPointArgs']]]] = None):
         """
         The set of arguments for constructing a RecoveryPointsV2 resource.
 
@@ -57,31 +57,31 @@ class RecoveryPointsV2Args:
 
     @_builtins.property
     @pulumi.getter(name="expirationTime")
-    def expiration_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expiration_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
         """
         return pulumi.get(self, "expiration_time")
 
     @expiration_time.setter
-    def expiration_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expiration_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expiration_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) The name of the Recovery point.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="recoveryPointType")
-    def recovery_point_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recovery_point_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Type of the Recovery point.
         * supported values:
@@ -91,12 +91,12 @@ class RecoveryPointsV2Args:
         return pulumi.get(self, "recovery_point_type")
 
     @recovery_point_type.setter
-    def recovery_point_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recovery_point_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recovery_point_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
         * supported values:
@@ -105,50 +105,50 @@ class RecoveryPointsV2Args:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="vmRecoveryPoints")
-    def vm_recovery_points(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2VmRecoveryPointArgs']]]]:
+    def vm_recovery_points(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2VmRecoveryPointArgs']]]]:
         """
         -(Optional) List of VM recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
         """
         return pulumi.get(self, "vm_recovery_points")
 
     @vm_recovery_points.setter
-    def vm_recovery_points(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2VmRecoveryPointArgs']]]]):
+    def vm_recovery_points(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2VmRecoveryPointArgs']]]]):
         pulumi.set(self, "vm_recovery_points", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeGroupRecoveryPoints")
-    def volume_group_recovery_points(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2VolumeGroupRecoveryPointArgs']]]]:
+    def volume_group_recovery_points(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2VolumeGroupRecoveryPointArgs']]]]:
         """
         -(Optional) List of volume group recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
         """
         return pulumi.get(self, "volume_group_recovery_points")
 
     @volume_group_recovery_points.setter
-    def volume_group_recovery_points(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2VolumeGroupRecoveryPointArgs']]]]):
+    def volume_group_recovery_points(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2VolumeGroupRecoveryPointArgs']]]]):
         pulumi.set(self, "volume_group_recovery_points", value)
 
 
 @pulumi.input_type
 class _RecoveryPointsV2State:
     def __init__(__self__, *,
-                 creation_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 expiration_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 links: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2LinkArgs']]]] = None,
-                 location_agnostic_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 location_references: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2LocationReferenceArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 recovery_point_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_recovery_points: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2VmRecoveryPointArgs']]]] = None,
-                 volume_group_recovery_points: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2VolumeGroupRecoveryPointArgs']]]] = None):
+                 creation_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiration_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2LinkArgs']]]] = None,
+                 location_agnostic_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 location_references: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2LocationReferenceArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 recovery_point_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2VmRecoveryPointArgs']]]] = None,
+                 volume_group_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2VolumeGroupRecoveryPointArgs']]]] = None):
         """
         Input properties used for looking up and filtering RecoveryPointsV2 resources.
 
@@ -200,103 +200,103 @@ class _RecoveryPointsV2State:
 
     @_builtins.property
     @pulumi.getter(name="creationTime")
-    def creation_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def creation_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The UTC date and time in ISO-8601 format when the Recovery point is created.
         """
         return pulumi.get(self, "creation_time")
 
     @creation_time.setter
-    def creation_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def creation_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "creation_time", value)
 
     @_builtins.property
     @pulumi.getter(name="expirationTime")
-    def expiration_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expiration_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
         """
         return pulumi.get(self, "expiration_time")
 
     @expiration_time.setter
-    def expiration_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expiration_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expiration_time", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         recovery point UUID
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2LinkArgs']]]]:
+    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2LinkArgs']]]]:
         """
         A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         """
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2LinkArgs']]]]):
+    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter(name="locationAgnosticId")
-    def location_agnostic_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def location_agnostic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Location agnostic identifier of the recovery point. This identifier is used to identify the same instances of a recovery point across different sites.
         """
         return pulumi.get(self, "location_agnostic_id")
 
     @location_agnostic_id.setter
-    def location_agnostic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def location_agnostic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "location_agnostic_id", value)
 
     @_builtins.property
     @pulumi.getter(name="locationReferences")
-    def location_references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2LocationReferenceArgs']]]]:
+    def location_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2LocationReferenceArgs']]]]:
         """
         List of location references where the VM or volume group recovery point are a part of the specified recovery point.
         """
         return pulumi.get(self, "location_references")
 
     @location_references.setter
-    def location_references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2LocationReferenceArgs']]]]):
+    def location_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2LocationReferenceArgs']]]]):
         pulumi.set(self, "location_references", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) The name of the Recovery point.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerExtId")
-    def owner_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
         """
         return pulumi.get(self, "owner_ext_id")
 
     @owner_ext_id.setter
-    def owner_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="recoveryPointType")
-    def recovery_point_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recovery_point_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Type of the Recovery point.
         * supported values:
@@ -306,12 +306,12 @@ class _RecoveryPointsV2State:
         return pulumi.get(self, "recovery_point_type")
 
     @recovery_point_type.setter
-    def recovery_point_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recovery_point_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recovery_point_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
         * supported values:
@@ -320,43 +320,43 @@ class _RecoveryPointsV2State:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A globally unique identifier that represents the tenant that owns this entity
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vmRecoveryPoints")
-    def vm_recovery_points(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2VmRecoveryPointArgs']]]]:
+    def vm_recovery_points(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2VmRecoveryPointArgs']]]]:
         """
         -(Optional) List of VM recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
         """
         return pulumi.get(self, "vm_recovery_points")
 
     @vm_recovery_points.setter
-    def vm_recovery_points(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2VmRecoveryPointArgs']]]]):
+    def vm_recovery_points(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2VmRecoveryPointArgs']]]]):
         pulumi.set(self, "vm_recovery_points", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeGroupRecoveryPoints")
-    def volume_group_recovery_points(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2VolumeGroupRecoveryPointArgs']]]]:
+    def volume_group_recovery_points(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2VolumeGroupRecoveryPointArgs']]]]:
         """
         -(Optional) List of volume group recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
         """
         return pulumi.get(self, "volume_group_recovery_points")
 
     @volume_group_recovery_points.setter
-    def volume_group_recovery_points(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2VolumeGroupRecoveryPointArgs']]]]):
+    def volume_group_recovery_points(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2VolumeGroupRecoveryPointArgs']]]]):
         pulumi.set(self, "volume_group_recovery_points", value)
 
 
@@ -366,12 +366,12 @@ class RecoveryPointsV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 expiration_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 recovery_point_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_recovery_points: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict']]]]] = None,
-                 volume_group_recovery_points: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2VolumeGroupRecoveryPointArgs', 'RecoveryPointsV2VolumeGroupRecoveryPointArgsDict']]]]] = None,
+                 expiration_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 recovery_point_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict']]]]] = None,
+                 volume_group_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VolumeGroupRecoveryPointArgs', 'RecoveryPointsV2VolumeGroupRecoveryPointArgsDict']]]]] = None,
                  __props__=None):
         """
         Create a new recovery point.
@@ -454,12 +454,12 @@ class RecoveryPointsV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 expiration_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 recovery_point_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_recovery_points: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict']]]]] = None,
-                 volume_group_recovery_points: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2VolumeGroupRecoveryPointArgs', 'RecoveryPointsV2VolumeGroupRecoveryPointArgsDict']]]]] = None,
+                 expiration_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 recovery_point_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict']]]]] = None,
+                 volume_group_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VolumeGroupRecoveryPointArgs', 'RecoveryPointsV2VolumeGroupRecoveryPointArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -492,19 +492,19 @@ class RecoveryPointsV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            creation_time: Optional[pulumi.Input[_builtins.str]] = None,
-            expiration_time: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2LinkArgs', 'RecoveryPointsV2LinkArgsDict']]]]] = None,
-            location_agnostic_id: Optional[pulumi.Input[_builtins.str]] = None,
-            location_references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2LocationReferenceArgs', 'RecoveryPointsV2LocationReferenceArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            owner_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            recovery_point_type: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_recovery_points: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict']]]]] = None,
-            volume_group_recovery_points: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2VolumeGroupRecoveryPointArgs', 'RecoveryPointsV2VolumeGroupRecoveryPointArgsDict']]]]] = None) -> 'RecoveryPointsV2':
+            creation_time: pulumi.Input[Optional[_builtins.str]] = None,
+            expiration_time: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2LinkArgs', 'RecoveryPointsV2LinkArgsDict']]]]] = None,
+            location_agnostic_id: pulumi.Input[Optional[_builtins.str]] = None,
+            location_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2LocationReferenceArgs', 'RecoveryPointsV2LocationReferenceArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            recovery_point_type: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict']]]]] = None,
+            volume_group_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VolumeGroupRecoveryPointArgs', 'RecoveryPointsV2VolumeGroupRecoveryPointArgsDict']]]]] = None) -> 'RecoveryPointsV2':
         """
         Get an existing RecoveryPointsV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

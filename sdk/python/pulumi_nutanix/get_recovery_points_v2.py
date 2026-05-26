@@ -303,13 +303,13 @@ def get_recovery_points_v2(apply: Optional[_builtins.str] = None,
         page=pulumi.get(__ret__, 'page'),
         recovery_points=pulumi.get(__ret__, 'recovery_points'),
         select=pulumi.get(__ret__, 'select'))
-def get_recovery_points_v2_output(apply: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                  order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                  select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_recovery_points_v2_output(apply: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                  order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                  select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecoveryPointsV2Result]:
     """
     List all the service Groups.

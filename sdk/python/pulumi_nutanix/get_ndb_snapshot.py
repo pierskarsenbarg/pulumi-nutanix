@@ -585,9 +585,9 @@ def get_ndb_snapshot(filters: Optional[Sequence[Union['GetNdbSnapshotFilterArgs'
         timezone=pulumi.get(__ret__, 'timezone'),
         to_timestamp=pulumi.get(__ret__, 'to_timestamp'),
         type=pulumi.get(__ret__, 'type'))
-def get_ndb_snapshot_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbSnapshotFilterArgs', 'GetNdbSnapshotFilterArgsDict']]]]] = None,
-                            snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbSnapshotTagArgs', 'GetNdbSnapshotTagArgsDict']]]]] = None,
+def get_ndb_snapshot_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbSnapshotFilterArgs', 'GetNdbSnapshotFilterArgsDict']]]]] = None,
+                            snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            tags: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbSnapshotTagArgs', 'GetNdbSnapshotTagArgsDict']]]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbSnapshotResult]:
     """
     Describes the snapshot present in Nutanix Database Service

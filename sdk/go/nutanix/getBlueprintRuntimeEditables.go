@@ -70,7 +70,7 @@ func GetBlueprintRuntimeEditables(ctx *pulumi.Context, args *GetBlueprintRuntime
 type GetBlueprintRuntimeEditablesArgs struct {
 	// - (Optional) The name of the blueprint for which runtime editables will be listed. If this is provided, it will return runtime editables for the specified blueprint.
 	//
-	// Both (<span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> and <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span>) are optional but atleast one of them to be provided for this data source to work.
+	// Both (<span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`" pulumi-lang-hcl="`bp_uuid`">`bpUuid`</span> and <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`" pulumi-lang-hcl="`bp_name`">`bpName`</span>) are optional but atleast one of them to be provided for this data source to work.
 	BpName *string `pulumi:"bpName"`
 	// - (Optional) The UUID of the blueprint for which runtime editables will be listed. If this is provided, it will return runtime editables for the specified blueprint.
 	BpUuid *string `pulumi:"bpUuid"`
@@ -98,7 +98,7 @@ func GetBlueprintRuntimeEditablesOutput(ctx *pulumi.Context, args GetBlueprintRu
 type GetBlueprintRuntimeEditablesOutputArgs struct {
 	// - (Optional) The name of the blueprint for which runtime editables will be listed. If this is provided, it will return runtime editables for the specified blueprint.
 	//
-	// Both (<span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> and <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span>) are optional but atleast one of them to be provided for this data source to work.
+	// Both (<span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`" pulumi-lang-hcl="`bp_uuid`">`bpUuid`</span> and <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`" pulumi-lang-hcl="`bp_name`">`bpName`</span>) are optional but atleast one of them to be provided for this data source to work.
 	BpName pulumi.StringPtrInput `pulumi:"bpName"`
 	// - (Optional) The UUID of the blueprint for which runtime editables will be listed. If this is provided, it will return runtime editables for the specified blueprint.
 	BpUuid pulumi.StringPtrInput `pulumi:"bpUuid"`

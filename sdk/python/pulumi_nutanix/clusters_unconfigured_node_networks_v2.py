@@ -23,8 +23,8 @@ class ClustersUnconfiguredNodeNetworksV2Args:
     def __init__(__self__, *,
                  ext_id: pulumi.Input[_builtins.str],
                  node_lists: pulumi.Input[Sequence[pulumi.Input['ClustersUnconfiguredNodeNetworksV2NodeListArgs']]],
-                 expand: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 expand: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ClustersUnconfiguredNodeNetworksV2 resource.
 
@@ -65,34 +65,34 @@ class ClustersUnconfiguredNodeNetworksV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def expand(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expand(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "expand")
 
     @expand.setter
-    def expand(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expand(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expand", value)
 
     @_builtins.property
     @pulumi.getter(name="requestType")
-    def request_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Request type
         """
         return pulumi.get(self, "request_type")
 
     @request_type.setter
-    def request_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_type", value)
 
 
 @pulumi.input_type
 class _ClustersUnconfiguredNodeNetworksV2State:
     def __init__(__self__, *,
-                 expand: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ClustersUnconfiguredNodeNetworksV2NodeListArgs']]]] = None,
-                 nodes_networking_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailArgs']]]] = None,
-                 request_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 expand: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClustersUnconfiguredNodeNetworksV2NodeListArgs']]]] = None,
+                 nodes_networking_details: pulumi.Input[Optional[Sequence[pulumi.Input['ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailArgs']]]] = None,
+                 request_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ClustersUnconfiguredNodeNetworksV2 resources.
 
@@ -113,56 +113,56 @@ class _ClustersUnconfiguredNodeNetworksV2State:
 
     @_builtins.property
     @pulumi.getter
-    def expand(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expand(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "expand")
 
     @expand.setter
-    def expand(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expand(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expand", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Cluster UUID.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeLists")
-    def node_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClustersUnconfiguredNodeNetworksV2NodeListArgs']]]]:
+    def node_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClustersUnconfiguredNodeNetworksV2NodeListArgs']]]]:
         """
         -(Required) List of nodes for which the network information is required.
         """
         return pulumi.get(self, "node_lists")
 
     @node_lists.setter
-    def node_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClustersUnconfiguredNodeNetworksV2NodeListArgs']]]]):
+    def node_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClustersUnconfiguredNodeNetworksV2NodeListArgs']]]]):
         pulumi.set(self, "node_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="nodesNetworkingDetails")
-    def nodes_networking_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailArgs']]]]:
+    def nodes_networking_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailArgs']]]]:
         return pulumi.get(self, "nodes_networking_details")
 
     @nodes_networking_details.setter
-    def nodes_networking_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailArgs']]]]):
+    def nodes_networking_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailArgs']]]]):
         pulumi.set(self, "nodes_networking_details", value)
 
     @_builtins.property
     @pulumi.getter(name="requestType")
-    def request_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Request type
         """
         return pulumi.get(self, "request_type")
 
     @request_type.setter
-    def request_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_type", value)
 
 
@@ -172,10 +172,10 @@ class ClustersUnconfiguredNodeNetworksV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 expand: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodeListArgs', 'ClustersUnconfiguredNodeNetworksV2NodeListArgsDict']]]]] = None,
-                 request_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 expand: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodeListArgs', 'ClustersUnconfiguredNodeNetworksV2NodeListArgsDict']]]]] = None,
+                 request_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Get a dictionary of cluster networks and available uplinks on the given nodes. This API is not supported for XEN hypervisor type.
@@ -264,10 +264,10 @@ class ClustersUnconfiguredNodeNetworksV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 expand: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodeListArgs', 'ClustersUnconfiguredNodeNetworksV2NodeListArgsDict']]]]] = None,
-                 request_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 expand: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodeListArgs', 'ClustersUnconfiguredNodeNetworksV2NodeListArgsDict']]]]] = None,
+                 request_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -296,11 +296,11 @@ class ClustersUnconfiguredNodeNetworksV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            expand: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            node_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodeListArgs', 'ClustersUnconfiguredNodeNetworksV2NodeListArgsDict']]]]] = None,
-            nodes_networking_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailArgs', 'ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailArgsDict']]]]] = None,
-            request_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'ClustersUnconfiguredNodeNetworksV2':
+            expand: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodeListArgs', 'ClustersUnconfiguredNodeNetworksV2NodeListArgsDict']]]]] = None,
+            nodes_networking_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailArgs', 'ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailArgsDict']]]]] = None,
+            request_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'ClustersUnconfiguredNodeNetworksV2':
         """
         Get an existing ClustersUnconfiguredNodeNetworksV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

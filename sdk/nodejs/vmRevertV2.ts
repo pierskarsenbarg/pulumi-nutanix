@@ -103,15 +103,15 @@ export interface VmRevertV2State {
     /**
      * -(Required) The globally unique identifier of a VM. It should be of type UUID.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * - The status of the Revert operation.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * -(Required) The external identifier of the VM Recovery Point.
      */
-    vmRecoveryPointExtId?: pulumi.Input<string>;
+    vmRecoveryPointExtId?: pulumi.Input<string | undefined>;
 }
 
 /**

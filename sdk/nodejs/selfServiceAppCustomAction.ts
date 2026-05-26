@@ -116,19 +116,19 @@ export interface SelfServiceAppCustomActionState {
      *
      * Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`">`appUuid`</span>) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
      */
-    actionName?: pulumi.Input<string>;
+    actionName?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The name of the application.
      */
-    appName?: pulumi.Input<string>;
+    appName?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The UUID of the application.
      */
-    appUuid?: pulumi.Input<string>;
+    appUuid?: pulumi.Input<string | undefined>;
     /**
      * - (Computed) The UUID of the runlog associated with the execution of the custom action. This can be used to track the progress or status of the action execution.
      */
-    runlogUuid?: pulumi.Input<string>;
+    runlogUuid?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -144,13 +144,13 @@ export interface SelfServiceAppCustomActionArgs {
     /**
      * - (Optional) The name of the application.
      */
-    appName?: pulumi.Input<string>;
+    appName?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) The UUID of the application.
      */
-    appUuid?: pulumi.Input<string>;
+    appUuid?: pulumi.Input<string | undefined>;
     /**
      * - (Computed) The UUID of the runlog associated with the execution of the custom action. This can be used to track the progress or status of the action execution.
      */
-    runlogUuid?: pulumi.Input<string>;
+    runlogUuid?: pulumi.Input<string | undefined>;
 }

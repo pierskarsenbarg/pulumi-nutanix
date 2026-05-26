@@ -117,6 +117,32 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getcategoriesv2" "categories-list" {
+        /// }
+        /// data "nutanix_getcategoriesv2" "categories-paginated" {
+        ///   page  = 1
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getcategoriesv2" "categories-sorted" {
+        ///   order_by = "key desc"
+        /// }
+        /// data "nutanix_getcategoriesv2" "categories-filtered" {
+        ///   filter = "key eq 'key_example'"
+        /// }
+        /// 
+        /// output "category" {
+        ///   value = data.nutanix_getcategoriesv2.categories-list.categories[0]
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -188,27 +214,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Categories
         /// 
-        /// The &lt;span pulumi-lang-nodejs="`categories`" pulumi-lang-dotnet="`Categories`" pulumi-lang-go="`categories`" pulumi-lang-python="`categories`" pulumi-lang-yaml="`categories`" pulumi-lang-java="`categories`"&gt;`categories`&lt;/span&gt; contains list of categories. Each category has the following attributes:
+        /// The &lt;span pulumi-lang-nodejs="`categories`" pulumi-lang-dotnet="`Categories`" pulumi-lang-go="`categories`" pulumi-lang-python="`categories`" pulumi-lang-yaml="`categories`" pulumi-lang-java="`categories`" pulumi-lang-hcl="`categories`"&gt;`categories`&lt;/span&gt; contains list of categories. Each category has the following attributes:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: The extID for the category.
-        /// * &lt;span pulumi-lang-nodejs="`key`" pulumi-lang-dotnet="`Key`" pulumi-lang-go="`key`" pulumi-lang-python="`key`" pulumi-lang-yaml="`key`" pulumi-lang-java="`key`"&gt;`key`&lt;/span&gt;: The key of a category when it is represented in key:value format.
-        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: The value of a category when it is represented in key:value format
-        /// * &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`"&gt;`type`&lt;/span&gt;: Denotes the type of a category.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: The extID for the category.
+        /// * &lt;span pulumi-lang-nodejs="`key`" pulumi-lang-dotnet="`Key`" pulumi-lang-go="`key`" pulumi-lang-python="`key`" pulumi-lang-yaml="`key`" pulumi-lang-java="`key`" pulumi-lang-hcl="`key`"&gt;`key`&lt;/span&gt;: The key of a category when it is represented in key:value format.
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: The value of a category when it is represented in key:value format
+        /// * &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`"&gt;`type`&lt;/span&gt;: Denotes the type of a category.
         /// There are three types of categories: SYSTEM, INTERNAL, and USER.
-        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: A string consisting of the description of the category as defined by the user.
-        /// * &lt;span pulumi-lang-nodejs="`ownerUuid`" pulumi-lang-dotnet="`OwnerUuid`" pulumi-lang-go="`ownerUuid`" pulumi-lang-python="`owner_uuid`" pulumi-lang-yaml="`ownerUuid`" pulumi-lang-java="`ownerUuid`"&gt;`ownerUuid`&lt;/span&gt;: This field contains the UUID of a user who owns the category.
-        /// * &lt;span pulumi-lang-nodejs="`associations`" pulumi-lang-dotnet="`Associations`" pulumi-lang-go="`associations`" pulumi-lang-python="`associations`" pulumi-lang-yaml="`associations`" pulumi-lang-java="`associations`"&gt;`associations`&lt;/span&gt;: This field gives basic information about resources that are associated to the category.
-        /// * &lt;span pulumi-lang-nodejs="`detailedAssociations`" pulumi-lang-dotnet="`DetailedAssociations`" pulumi-lang-go="`detailedAssociations`" pulumi-lang-python="`detailed_associations`" pulumi-lang-yaml="`detailedAssociations`" pulumi-lang-java="`detailedAssociations`"&gt;`detailedAssociations`&lt;/span&gt;: This field gives detailed information about resources that are associated to the category.
-        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: A globally unique identifier that represents the tenant that owns this entity.
-        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`" pulumi-lang-hcl="`description`"&gt;`description`&lt;/span&gt;: A string consisting of the description of the category as defined by the user.
+        /// * &lt;span pulumi-lang-nodejs="`ownerUuid`" pulumi-lang-dotnet="`OwnerUuid`" pulumi-lang-go="`ownerUuid`" pulumi-lang-python="`owner_uuid`" pulumi-lang-yaml="`ownerUuid`" pulumi-lang-java="`ownerUuid`" pulumi-lang-hcl="`owner_uuid`"&gt;`ownerUuid`&lt;/span&gt;: This field contains the UUID of a user who owns the category.
+        /// * &lt;span pulumi-lang-nodejs="`associations`" pulumi-lang-dotnet="`Associations`" pulumi-lang-go="`associations`" pulumi-lang-python="`associations`" pulumi-lang-yaml="`associations`" pulumi-lang-java="`associations`" pulumi-lang-hcl="`associations`"&gt;`associations`&lt;/span&gt;: This field gives basic information about resources that are associated to the category.
+        /// * &lt;span pulumi-lang-nodejs="`detailedAssociations`" pulumi-lang-dotnet="`DetailedAssociations`" pulumi-lang-go="`detailedAssociations`" pulumi-lang-python="`detailed_associations`" pulumi-lang-yaml="`detailedAssociations`" pulumi-lang-java="`detailedAssociations`" pulumi-lang-hcl="`detailed_associations`"&gt;`detailedAssociations`&lt;/span&gt;: This field gives detailed information about resources that are associated to the category.
+        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`" pulumi-lang-hcl="`tenant_id`"&gt;`tenantId`&lt;/span&gt;: A globally unique identifier that represents the tenant that owns this entity.
+        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// 
         /// 
         /// ### associations
-        /// * &lt;span pulumi-lang-nodejs="`categoryId`" pulumi-lang-dotnet="`CategoryId`" pulumi-lang-go="`categoryId`" pulumi-lang-python="`category_id`" pulumi-lang-yaml="`categoryId`" pulumi-lang-java="`categoryId`"&gt;`categoryId`&lt;/span&gt;: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
-        /// * &lt;span pulumi-lang-nodejs="`resourceType`" pulumi-lang-dotnet="`ResourceType`" pulumi-lang-go="`resourceType`" pulumi-lang-python="`resource_type`" pulumi-lang-yaml="`resourceType`" pulumi-lang-java="`resourceType`"&gt;`resourceType`&lt;/span&gt;: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
-        /// * &lt;span pulumi-lang-nodejs="`resourceGroup`" pulumi-lang-dotnet="`ResourceGroup`" pulumi-lang-go="`resourceGroup`" pulumi-lang-python="`resource_group`" pulumi-lang-yaml="`resourceGroup`" pulumi-lang-java="`resourceGroup`"&gt;`resourceGroup`&lt;/span&gt;: An enum denoting the resource group.
+        /// * &lt;span pulumi-lang-nodejs="`categoryId`" pulumi-lang-dotnet="`CategoryId`" pulumi-lang-go="`categoryId`" pulumi-lang-python="`category_id`" pulumi-lang-yaml="`categoryId`" pulumi-lang-java="`categoryId`" pulumi-lang-hcl="`category_id`"&gt;`categoryId`&lt;/span&gt;: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+        /// * &lt;span pulumi-lang-nodejs="`resourceType`" pulumi-lang-dotnet="`ResourceType`" pulumi-lang-go="`resourceType`" pulumi-lang-python="`resource_type`" pulumi-lang-yaml="`resourceType`" pulumi-lang-java="`resourceType`" pulumi-lang-hcl="`resource_type`"&gt;`resourceType`&lt;/span&gt;: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+        /// * &lt;span pulumi-lang-nodejs="`resourceGroup`" pulumi-lang-dotnet="`ResourceGroup`" pulumi-lang-go="`resourceGroup`" pulumi-lang-python="`resource_group`" pulumi-lang-yaml="`resourceGroup`" pulumi-lang-java="`resourceGroup`" pulumi-lang-hcl="`resource_group`"&gt;`resourceGroup`&lt;/span&gt;: An enum denoting the resource group.
         /// Resources can be organized into either an entity or a policy.
-        /// * &lt;span pulumi-lang-nodejs="`count`" pulumi-lang-dotnet="`Count`" pulumi-lang-go="`count`" pulumi-lang-python="`count`" pulumi-lang-yaml="`count`" pulumi-lang-java="`count`"&gt;`count`&lt;/span&gt;: Count of associations of a particular type of entity or policy
+        /// * &lt;span pulumi-lang-nodejs="`count`" pulumi-lang-dotnet="`Count`" pulumi-lang-go="`count`" pulumi-lang-python="`count`" pulumi-lang-yaml="`count`" pulumi-lang-java="`count`" pulumi-lang-hcl="`count`"&gt;`count`&lt;/span&gt;: Count of associations of a particular type of entity or policy
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" detailedAssociations
         /// " pulumi-lang-dotnet=" DetailedAssociations
@@ -216,12 +242,13 @@ namespace PiersKarsenbarg.Nutanix
         /// " pulumi-lang-python=" detailed_associations
         /// " pulumi-lang-yaml=" detailedAssociations
         /// " pulumi-lang-java=" detailedAssociations
+        /// " pulumi-lang-hcl=" detailed_associations
         /// "&gt; detailedAssociations
-        /// &lt;/span&gt;* &lt;span pulumi-lang-nodejs="`categoryId`" pulumi-lang-dotnet="`CategoryId`" pulumi-lang-go="`categoryId`" pulumi-lang-python="`category_id`" pulumi-lang-yaml="`categoryId`" pulumi-lang-java="`categoryId`"&gt;`categoryId`&lt;/span&gt;: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
-        /// * &lt;span pulumi-lang-nodejs="`resourceType`" pulumi-lang-dotnet="`ResourceType`" pulumi-lang-go="`resourceType`" pulumi-lang-python="`resource_type`" pulumi-lang-yaml="`resourceType`" pulumi-lang-java="`resourceType`"&gt;`resourceType`&lt;/span&gt;: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
-        /// * &lt;span pulumi-lang-nodejs="`resourceGroup`" pulumi-lang-dotnet="`ResourceGroup`" pulumi-lang-go="`resourceGroup`" pulumi-lang-python="`resource_group`" pulumi-lang-yaml="`resourceGroup`" pulumi-lang-java="`resourceGroup`"&gt;`resourceGroup`&lt;/span&gt;: An enum denoting the resource group.
+        /// &lt;/span&gt;* &lt;span pulumi-lang-nodejs="`categoryId`" pulumi-lang-dotnet="`CategoryId`" pulumi-lang-go="`categoryId`" pulumi-lang-python="`category_id`" pulumi-lang-yaml="`categoryId`" pulumi-lang-java="`categoryId`" pulumi-lang-hcl="`category_id`"&gt;`categoryId`&lt;/span&gt;: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+        /// * &lt;span pulumi-lang-nodejs="`resourceType`" pulumi-lang-dotnet="`ResourceType`" pulumi-lang-go="`resourceType`" pulumi-lang-python="`resource_type`" pulumi-lang-yaml="`resourceType`" pulumi-lang-java="`resourceType`" pulumi-lang-hcl="`resource_type`"&gt;`resourceType`&lt;/span&gt;: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+        /// * &lt;span pulumi-lang-nodejs="`resourceGroup`" pulumi-lang-dotnet="`ResourceGroup`" pulumi-lang-go="`resourceGroup`" pulumi-lang-python="`resource_group`" pulumi-lang-yaml="`resourceGroup`" pulumi-lang-java="`resourceGroup`" pulumi-lang-hcl="`resource_group`"&gt;`resourceGroup`&lt;/span&gt;: An enum denoting the resource group.
         /// Resources can be organized into either an entity or a policy.
-        /// * &lt;span pulumi-lang-nodejs="`resourceId`" pulumi-lang-dotnet="`ResourceId`" pulumi-lang-go="`resourceId`" pulumi-lang-python="`resource_id`" pulumi-lang-yaml="`resourceId`" pulumi-lang-java="`resourceId`"&gt;`resourceId`&lt;/span&gt;: The UUID of the entity or policy associated with the particular category.
+        /// * &lt;span pulumi-lang-nodejs="`resourceId`" pulumi-lang-dotnet="`ResourceId`" pulumi-lang-go="`resourceId`" pulumi-lang-python="`resource_id`" pulumi-lang-yaml="`resourceId`" pulumi-lang-java="`resourceId`" pulumi-lang-hcl="`resource_id`"&gt;`resourceId`&lt;/span&gt;: The UUID of the entity or policy associated with the particular category.
         /// 
         /// 
         /// See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/Categories/operation/listCategories).
@@ -334,6 +361,32 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getcategoriesv2" "categories-list" {
+        /// }
+        /// data "nutanix_getcategoriesv2" "categories-paginated" {
+        ///   page  = 1
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getcategoriesv2" "categories-sorted" {
+        ///   order_by = "key desc"
+        /// }
+        /// data "nutanix_getcategoriesv2" "categories-filtered" {
+        ///   filter = "key eq 'key_example'"
+        /// }
+        /// 
+        /// output "category" {
+        ///   value = data.nutanix_getcategoriesv2.categories-list.categories[0]
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -405,27 +458,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Categories
         /// 
-        /// The &lt;span pulumi-lang-nodejs="`categories`" pulumi-lang-dotnet="`Categories`" pulumi-lang-go="`categories`" pulumi-lang-python="`categories`" pulumi-lang-yaml="`categories`" pulumi-lang-java="`categories`"&gt;`categories`&lt;/span&gt; contains list of categories. Each category has the following attributes:
+        /// The &lt;span pulumi-lang-nodejs="`categories`" pulumi-lang-dotnet="`Categories`" pulumi-lang-go="`categories`" pulumi-lang-python="`categories`" pulumi-lang-yaml="`categories`" pulumi-lang-java="`categories`" pulumi-lang-hcl="`categories`"&gt;`categories`&lt;/span&gt; contains list of categories. Each category has the following attributes:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: The extID for the category.
-        /// * &lt;span pulumi-lang-nodejs="`key`" pulumi-lang-dotnet="`Key`" pulumi-lang-go="`key`" pulumi-lang-python="`key`" pulumi-lang-yaml="`key`" pulumi-lang-java="`key`"&gt;`key`&lt;/span&gt;: The key of a category when it is represented in key:value format.
-        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: The value of a category when it is represented in key:value format
-        /// * &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`"&gt;`type`&lt;/span&gt;: Denotes the type of a category.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: The extID for the category.
+        /// * &lt;span pulumi-lang-nodejs="`key`" pulumi-lang-dotnet="`Key`" pulumi-lang-go="`key`" pulumi-lang-python="`key`" pulumi-lang-yaml="`key`" pulumi-lang-java="`key`" pulumi-lang-hcl="`key`"&gt;`key`&lt;/span&gt;: The key of a category when it is represented in key:value format.
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: The value of a category when it is represented in key:value format
+        /// * &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`"&gt;`type`&lt;/span&gt;: Denotes the type of a category.
         /// There are three types of categories: SYSTEM, INTERNAL, and USER.
-        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: A string consisting of the description of the category as defined by the user.
-        /// * &lt;span pulumi-lang-nodejs="`ownerUuid`" pulumi-lang-dotnet="`OwnerUuid`" pulumi-lang-go="`ownerUuid`" pulumi-lang-python="`owner_uuid`" pulumi-lang-yaml="`ownerUuid`" pulumi-lang-java="`ownerUuid`"&gt;`ownerUuid`&lt;/span&gt;: This field contains the UUID of a user who owns the category.
-        /// * &lt;span pulumi-lang-nodejs="`associations`" pulumi-lang-dotnet="`Associations`" pulumi-lang-go="`associations`" pulumi-lang-python="`associations`" pulumi-lang-yaml="`associations`" pulumi-lang-java="`associations`"&gt;`associations`&lt;/span&gt;: This field gives basic information about resources that are associated to the category.
-        /// * &lt;span pulumi-lang-nodejs="`detailedAssociations`" pulumi-lang-dotnet="`DetailedAssociations`" pulumi-lang-go="`detailedAssociations`" pulumi-lang-python="`detailed_associations`" pulumi-lang-yaml="`detailedAssociations`" pulumi-lang-java="`detailedAssociations`"&gt;`detailedAssociations`&lt;/span&gt;: This field gives detailed information about resources that are associated to the category.
-        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: A globally unique identifier that represents the tenant that owns this entity.
-        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`" pulumi-lang-hcl="`description`"&gt;`description`&lt;/span&gt;: A string consisting of the description of the category as defined by the user.
+        /// * &lt;span pulumi-lang-nodejs="`ownerUuid`" pulumi-lang-dotnet="`OwnerUuid`" pulumi-lang-go="`ownerUuid`" pulumi-lang-python="`owner_uuid`" pulumi-lang-yaml="`ownerUuid`" pulumi-lang-java="`ownerUuid`" pulumi-lang-hcl="`owner_uuid`"&gt;`ownerUuid`&lt;/span&gt;: This field contains the UUID of a user who owns the category.
+        /// * &lt;span pulumi-lang-nodejs="`associations`" pulumi-lang-dotnet="`Associations`" pulumi-lang-go="`associations`" pulumi-lang-python="`associations`" pulumi-lang-yaml="`associations`" pulumi-lang-java="`associations`" pulumi-lang-hcl="`associations`"&gt;`associations`&lt;/span&gt;: This field gives basic information about resources that are associated to the category.
+        /// * &lt;span pulumi-lang-nodejs="`detailedAssociations`" pulumi-lang-dotnet="`DetailedAssociations`" pulumi-lang-go="`detailedAssociations`" pulumi-lang-python="`detailed_associations`" pulumi-lang-yaml="`detailedAssociations`" pulumi-lang-java="`detailedAssociations`" pulumi-lang-hcl="`detailed_associations`"&gt;`detailedAssociations`&lt;/span&gt;: This field gives detailed information about resources that are associated to the category.
+        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`" pulumi-lang-hcl="`tenant_id`"&gt;`tenantId`&lt;/span&gt;: A globally unique identifier that represents the tenant that owns this entity.
+        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// 
         /// 
         /// ### associations
-        /// * &lt;span pulumi-lang-nodejs="`categoryId`" pulumi-lang-dotnet="`CategoryId`" pulumi-lang-go="`categoryId`" pulumi-lang-python="`category_id`" pulumi-lang-yaml="`categoryId`" pulumi-lang-java="`categoryId`"&gt;`categoryId`&lt;/span&gt;: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
-        /// * &lt;span pulumi-lang-nodejs="`resourceType`" pulumi-lang-dotnet="`ResourceType`" pulumi-lang-go="`resourceType`" pulumi-lang-python="`resource_type`" pulumi-lang-yaml="`resourceType`" pulumi-lang-java="`resourceType`"&gt;`resourceType`&lt;/span&gt;: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
-        /// * &lt;span pulumi-lang-nodejs="`resourceGroup`" pulumi-lang-dotnet="`ResourceGroup`" pulumi-lang-go="`resourceGroup`" pulumi-lang-python="`resource_group`" pulumi-lang-yaml="`resourceGroup`" pulumi-lang-java="`resourceGroup`"&gt;`resourceGroup`&lt;/span&gt;: An enum denoting the resource group.
+        /// * &lt;span pulumi-lang-nodejs="`categoryId`" pulumi-lang-dotnet="`CategoryId`" pulumi-lang-go="`categoryId`" pulumi-lang-python="`category_id`" pulumi-lang-yaml="`categoryId`" pulumi-lang-java="`categoryId`" pulumi-lang-hcl="`category_id`"&gt;`categoryId`&lt;/span&gt;: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+        /// * &lt;span pulumi-lang-nodejs="`resourceType`" pulumi-lang-dotnet="`ResourceType`" pulumi-lang-go="`resourceType`" pulumi-lang-python="`resource_type`" pulumi-lang-yaml="`resourceType`" pulumi-lang-java="`resourceType`" pulumi-lang-hcl="`resource_type`"&gt;`resourceType`&lt;/span&gt;: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+        /// * &lt;span pulumi-lang-nodejs="`resourceGroup`" pulumi-lang-dotnet="`ResourceGroup`" pulumi-lang-go="`resourceGroup`" pulumi-lang-python="`resource_group`" pulumi-lang-yaml="`resourceGroup`" pulumi-lang-java="`resourceGroup`" pulumi-lang-hcl="`resource_group`"&gt;`resourceGroup`&lt;/span&gt;: An enum denoting the resource group.
         /// Resources can be organized into either an entity or a policy.
-        /// * &lt;span pulumi-lang-nodejs="`count`" pulumi-lang-dotnet="`Count`" pulumi-lang-go="`count`" pulumi-lang-python="`count`" pulumi-lang-yaml="`count`" pulumi-lang-java="`count`"&gt;`count`&lt;/span&gt;: Count of associations of a particular type of entity or policy
+        /// * &lt;span pulumi-lang-nodejs="`count`" pulumi-lang-dotnet="`Count`" pulumi-lang-go="`count`" pulumi-lang-python="`count`" pulumi-lang-yaml="`count`" pulumi-lang-java="`count`" pulumi-lang-hcl="`count`"&gt;`count`&lt;/span&gt;: Count of associations of a particular type of entity or policy
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" detailedAssociations
         /// " pulumi-lang-dotnet=" DetailedAssociations
@@ -433,12 +486,13 @@ namespace PiersKarsenbarg.Nutanix
         /// " pulumi-lang-python=" detailed_associations
         /// " pulumi-lang-yaml=" detailedAssociations
         /// " pulumi-lang-java=" detailedAssociations
+        /// " pulumi-lang-hcl=" detailed_associations
         /// "&gt; detailedAssociations
-        /// &lt;/span&gt;* &lt;span pulumi-lang-nodejs="`categoryId`" pulumi-lang-dotnet="`CategoryId`" pulumi-lang-go="`categoryId`" pulumi-lang-python="`category_id`" pulumi-lang-yaml="`categoryId`" pulumi-lang-java="`categoryId`"&gt;`categoryId`&lt;/span&gt;: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
-        /// * &lt;span pulumi-lang-nodejs="`resourceType`" pulumi-lang-dotnet="`ResourceType`" pulumi-lang-go="`resourceType`" pulumi-lang-python="`resource_type`" pulumi-lang-yaml="`resourceType`" pulumi-lang-java="`resourceType`"&gt;`resourceType`&lt;/span&gt;: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
-        /// * &lt;span pulumi-lang-nodejs="`resourceGroup`" pulumi-lang-dotnet="`ResourceGroup`" pulumi-lang-go="`resourceGroup`" pulumi-lang-python="`resource_group`" pulumi-lang-yaml="`resourceGroup`" pulumi-lang-java="`resourceGroup`"&gt;`resourceGroup`&lt;/span&gt;: An enum denoting the resource group.
+        /// &lt;/span&gt;* &lt;span pulumi-lang-nodejs="`categoryId`" pulumi-lang-dotnet="`CategoryId`" pulumi-lang-go="`categoryId`" pulumi-lang-python="`category_id`" pulumi-lang-yaml="`categoryId`" pulumi-lang-java="`categoryId`" pulumi-lang-hcl="`category_id`"&gt;`categoryId`&lt;/span&gt;: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+        /// * &lt;span pulumi-lang-nodejs="`resourceType`" pulumi-lang-dotnet="`ResourceType`" pulumi-lang-go="`resourceType`" pulumi-lang-python="`resource_type`" pulumi-lang-yaml="`resourceType`" pulumi-lang-java="`resourceType`" pulumi-lang-hcl="`resource_type`"&gt;`resourceType`&lt;/span&gt;: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+        /// * &lt;span pulumi-lang-nodejs="`resourceGroup`" pulumi-lang-dotnet="`ResourceGroup`" pulumi-lang-go="`resourceGroup`" pulumi-lang-python="`resource_group`" pulumi-lang-yaml="`resourceGroup`" pulumi-lang-java="`resourceGroup`" pulumi-lang-hcl="`resource_group`"&gt;`resourceGroup`&lt;/span&gt;: An enum denoting the resource group.
         /// Resources can be organized into either an entity or a policy.
-        /// * &lt;span pulumi-lang-nodejs="`resourceId`" pulumi-lang-dotnet="`ResourceId`" pulumi-lang-go="`resourceId`" pulumi-lang-python="`resource_id`" pulumi-lang-yaml="`resourceId`" pulumi-lang-java="`resourceId`"&gt;`resourceId`&lt;/span&gt;: The UUID of the entity or policy associated with the particular category.
+        /// * &lt;span pulumi-lang-nodejs="`resourceId`" pulumi-lang-dotnet="`ResourceId`" pulumi-lang-go="`resourceId`" pulumi-lang-python="`resource_id`" pulumi-lang-yaml="`resourceId`" pulumi-lang-java="`resourceId`" pulumi-lang-hcl="`resource_id`"&gt;`resourceId`&lt;/span&gt;: The UUID of the entity or policy associated with the particular category.
         /// 
         /// 
         /// See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/Categories/operation/listCategories).
@@ -551,6 +605,32 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getcategoriesv2" "categories-list" {
+        /// }
+        /// data "nutanix_getcategoriesv2" "categories-paginated" {
+        ///   page  = 1
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getcategoriesv2" "categories-sorted" {
+        ///   order_by = "key desc"
+        /// }
+        /// data "nutanix_getcategoriesv2" "categories-filtered" {
+        ///   filter = "key eq 'key_example'"
+        /// }
+        /// 
+        /// output "category" {
+        ///   value = data.nutanix_getcategoriesv2.categories-list.categories[0]
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -622,27 +702,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Categories
         /// 
-        /// The &lt;span pulumi-lang-nodejs="`categories`" pulumi-lang-dotnet="`Categories`" pulumi-lang-go="`categories`" pulumi-lang-python="`categories`" pulumi-lang-yaml="`categories`" pulumi-lang-java="`categories`"&gt;`categories`&lt;/span&gt; contains list of categories. Each category has the following attributes:
+        /// The &lt;span pulumi-lang-nodejs="`categories`" pulumi-lang-dotnet="`Categories`" pulumi-lang-go="`categories`" pulumi-lang-python="`categories`" pulumi-lang-yaml="`categories`" pulumi-lang-java="`categories`" pulumi-lang-hcl="`categories`"&gt;`categories`&lt;/span&gt; contains list of categories. Each category has the following attributes:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: The extID for the category.
-        /// * &lt;span pulumi-lang-nodejs="`key`" pulumi-lang-dotnet="`Key`" pulumi-lang-go="`key`" pulumi-lang-python="`key`" pulumi-lang-yaml="`key`" pulumi-lang-java="`key`"&gt;`key`&lt;/span&gt;: The key of a category when it is represented in key:value format.
-        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`"&gt;`value`&lt;/span&gt;: The value of a category when it is represented in key:value format
-        /// * &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`"&gt;`type`&lt;/span&gt;: Denotes the type of a category.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: The extID for the category.
+        /// * &lt;span pulumi-lang-nodejs="`key`" pulumi-lang-dotnet="`Key`" pulumi-lang-go="`key`" pulumi-lang-python="`key`" pulumi-lang-yaml="`key`" pulumi-lang-java="`key`" pulumi-lang-hcl="`key`"&gt;`key`&lt;/span&gt;: The key of a category when it is represented in key:value format.
+        /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: The value of a category when it is represented in key:value format
+        /// * &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`"&gt;`type`&lt;/span&gt;: Denotes the type of a category.
         /// There are three types of categories: SYSTEM, INTERNAL, and USER.
-        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: A string consisting of the description of the category as defined by the user.
-        /// * &lt;span pulumi-lang-nodejs="`ownerUuid`" pulumi-lang-dotnet="`OwnerUuid`" pulumi-lang-go="`ownerUuid`" pulumi-lang-python="`owner_uuid`" pulumi-lang-yaml="`ownerUuid`" pulumi-lang-java="`ownerUuid`"&gt;`ownerUuid`&lt;/span&gt;: This field contains the UUID of a user who owns the category.
-        /// * &lt;span pulumi-lang-nodejs="`associations`" pulumi-lang-dotnet="`Associations`" pulumi-lang-go="`associations`" pulumi-lang-python="`associations`" pulumi-lang-yaml="`associations`" pulumi-lang-java="`associations`"&gt;`associations`&lt;/span&gt;: This field gives basic information about resources that are associated to the category.
-        /// * &lt;span pulumi-lang-nodejs="`detailedAssociations`" pulumi-lang-dotnet="`DetailedAssociations`" pulumi-lang-go="`detailedAssociations`" pulumi-lang-python="`detailed_associations`" pulumi-lang-yaml="`detailedAssociations`" pulumi-lang-java="`detailedAssociations`"&gt;`detailedAssociations`&lt;/span&gt;: This field gives detailed information about resources that are associated to the category.
-        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;: A globally unique identifier that represents the tenant that owns this entity.
-        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`" pulumi-lang-hcl="`description`"&gt;`description`&lt;/span&gt;: A string consisting of the description of the category as defined by the user.
+        /// * &lt;span pulumi-lang-nodejs="`ownerUuid`" pulumi-lang-dotnet="`OwnerUuid`" pulumi-lang-go="`ownerUuid`" pulumi-lang-python="`owner_uuid`" pulumi-lang-yaml="`ownerUuid`" pulumi-lang-java="`ownerUuid`" pulumi-lang-hcl="`owner_uuid`"&gt;`ownerUuid`&lt;/span&gt;: This field contains the UUID of a user who owns the category.
+        /// * &lt;span pulumi-lang-nodejs="`associations`" pulumi-lang-dotnet="`Associations`" pulumi-lang-go="`associations`" pulumi-lang-python="`associations`" pulumi-lang-yaml="`associations`" pulumi-lang-java="`associations`" pulumi-lang-hcl="`associations`"&gt;`associations`&lt;/span&gt;: This field gives basic information about resources that are associated to the category.
+        /// * &lt;span pulumi-lang-nodejs="`detailedAssociations`" pulumi-lang-dotnet="`DetailedAssociations`" pulumi-lang-go="`detailedAssociations`" pulumi-lang-python="`detailed_associations`" pulumi-lang-yaml="`detailedAssociations`" pulumi-lang-java="`detailedAssociations`" pulumi-lang-hcl="`detailed_associations`"&gt;`detailedAssociations`&lt;/span&gt;: This field gives detailed information about resources that are associated to the category.
+        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`" pulumi-lang-hcl="`tenant_id`"&gt;`tenantId`&lt;/span&gt;: A globally unique identifier that represents the tenant that owns this entity.
+        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// 
         /// 
         /// ### associations
-        /// * &lt;span pulumi-lang-nodejs="`categoryId`" pulumi-lang-dotnet="`CategoryId`" pulumi-lang-go="`categoryId`" pulumi-lang-python="`category_id`" pulumi-lang-yaml="`categoryId`" pulumi-lang-java="`categoryId`"&gt;`categoryId`&lt;/span&gt;: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
-        /// * &lt;span pulumi-lang-nodejs="`resourceType`" pulumi-lang-dotnet="`ResourceType`" pulumi-lang-go="`resourceType`" pulumi-lang-python="`resource_type`" pulumi-lang-yaml="`resourceType`" pulumi-lang-java="`resourceType`"&gt;`resourceType`&lt;/span&gt;: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
-        /// * &lt;span pulumi-lang-nodejs="`resourceGroup`" pulumi-lang-dotnet="`ResourceGroup`" pulumi-lang-go="`resourceGroup`" pulumi-lang-python="`resource_group`" pulumi-lang-yaml="`resourceGroup`" pulumi-lang-java="`resourceGroup`"&gt;`resourceGroup`&lt;/span&gt;: An enum denoting the resource group.
+        /// * &lt;span pulumi-lang-nodejs="`categoryId`" pulumi-lang-dotnet="`CategoryId`" pulumi-lang-go="`categoryId`" pulumi-lang-python="`category_id`" pulumi-lang-yaml="`categoryId`" pulumi-lang-java="`categoryId`" pulumi-lang-hcl="`category_id`"&gt;`categoryId`&lt;/span&gt;: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+        /// * &lt;span pulumi-lang-nodejs="`resourceType`" pulumi-lang-dotnet="`ResourceType`" pulumi-lang-go="`resourceType`" pulumi-lang-python="`resource_type`" pulumi-lang-yaml="`resourceType`" pulumi-lang-java="`resourceType`" pulumi-lang-hcl="`resource_type`"&gt;`resourceType`&lt;/span&gt;: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+        /// * &lt;span pulumi-lang-nodejs="`resourceGroup`" pulumi-lang-dotnet="`ResourceGroup`" pulumi-lang-go="`resourceGroup`" pulumi-lang-python="`resource_group`" pulumi-lang-yaml="`resourceGroup`" pulumi-lang-java="`resourceGroup`" pulumi-lang-hcl="`resource_group`"&gt;`resourceGroup`&lt;/span&gt;: An enum denoting the resource group.
         /// Resources can be organized into either an entity or a policy.
-        /// * &lt;span pulumi-lang-nodejs="`count`" pulumi-lang-dotnet="`Count`" pulumi-lang-go="`count`" pulumi-lang-python="`count`" pulumi-lang-yaml="`count`" pulumi-lang-java="`count`"&gt;`count`&lt;/span&gt;: Count of associations of a particular type of entity or policy
+        /// * &lt;span pulumi-lang-nodejs="`count`" pulumi-lang-dotnet="`Count`" pulumi-lang-go="`count`" pulumi-lang-python="`count`" pulumi-lang-yaml="`count`" pulumi-lang-java="`count`" pulumi-lang-hcl="`count`"&gt;`count`&lt;/span&gt;: Count of associations of a particular type of entity or policy
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" detailedAssociations
         /// " pulumi-lang-dotnet=" DetailedAssociations
@@ -650,12 +730,13 @@ namespace PiersKarsenbarg.Nutanix
         /// " pulumi-lang-python=" detailed_associations
         /// " pulumi-lang-yaml=" detailedAssociations
         /// " pulumi-lang-java=" detailedAssociations
+        /// " pulumi-lang-hcl=" detailed_associations
         /// "&gt; detailedAssociations
-        /// &lt;/span&gt;* &lt;span pulumi-lang-nodejs="`categoryId`" pulumi-lang-dotnet="`CategoryId`" pulumi-lang-go="`categoryId`" pulumi-lang-python="`category_id`" pulumi-lang-yaml="`categoryId`" pulumi-lang-java="`categoryId`"&gt;`categoryId`&lt;/span&gt;: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
-        /// * &lt;span pulumi-lang-nodejs="`resourceType`" pulumi-lang-dotnet="`ResourceType`" pulumi-lang-go="`resourceType`" pulumi-lang-python="`resource_type`" pulumi-lang-yaml="`resourceType`" pulumi-lang-java="`resourceType`"&gt;`resourceType`&lt;/span&gt;: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
-        /// * &lt;span pulumi-lang-nodejs="`resourceGroup`" pulumi-lang-dotnet="`ResourceGroup`" pulumi-lang-go="`resourceGroup`" pulumi-lang-python="`resource_group`" pulumi-lang-yaml="`resourceGroup`" pulumi-lang-java="`resourceGroup`"&gt;`resourceGroup`&lt;/span&gt;: An enum denoting the resource group.
+        /// &lt;/span&gt;* &lt;span pulumi-lang-nodejs="`categoryId`" pulumi-lang-dotnet="`CategoryId`" pulumi-lang-go="`categoryId`" pulumi-lang-python="`category_id`" pulumi-lang-yaml="`categoryId`" pulumi-lang-java="`categoryId`" pulumi-lang-hcl="`category_id`"&gt;`categoryId`&lt;/span&gt;: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+        /// * &lt;span pulumi-lang-nodejs="`resourceType`" pulumi-lang-dotnet="`ResourceType`" pulumi-lang-go="`resourceType`" pulumi-lang-python="`resource_type`" pulumi-lang-yaml="`resourceType`" pulumi-lang-java="`resourceType`" pulumi-lang-hcl="`resource_type`"&gt;`resourceType`&lt;/span&gt;: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+        /// * &lt;span pulumi-lang-nodejs="`resourceGroup`" pulumi-lang-dotnet="`ResourceGroup`" pulumi-lang-go="`resourceGroup`" pulumi-lang-python="`resource_group`" pulumi-lang-yaml="`resourceGroup`" pulumi-lang-java="`resourceGroup`" pulumi-lang-hcl="`resource_group`"&gt;`resourceGroup`&lt;/span&gt;: An enum denoting the resource group.
         /// Resources can be organized into either an entity or a policy.
-        /// * &lt;span pulumi-lang-nodejs="`resourceId`" pulumi-lang-dotnet="`ResourceId`" pulumi-lang-go="`resourceId`" pulumi-lang-python="`resource_id`" pulumi-lang-yaml="`resourceId`" pulumi-lang-java="`resourceId`"&gt;`resourceId`&lt;/span&gt;: The UUID of the entity or policy associated with the particular category.
+        /// * &lt;span pulumi-lang-nodejs="`resourceId`" pulumi-lang-dotnet="`ResourceId`" pulumi-lang-go="`resourceId`" pulumi-lang-python="`resource_id`" pulumi-lang-yaml="`resourceId`" pulumi-lang-java="`resourceId`" pulumi-lang-hcl="`resource_id`"&gt;`resourceId`&lt;/span&gt;: The UUID of the entity or policy associated with the particular category.
         /// 
         /// 
         /// See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/Categories/operation/listCategories).

@@ -254,13 +254,13 @@ export interface GetClusterOutputArgs {
     /**
      * - Categories for the image.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetClusterCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetClusterCategoryArgs>[] | undefined>;
     /**
      * Represents clusters uuid
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
     /**
      * Represents the name of cluster
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

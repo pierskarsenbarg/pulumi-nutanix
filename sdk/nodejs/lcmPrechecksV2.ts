@@ -113,20 +113,20 @@ export interface LcmPrechecksV2State {
     /**
      * List of entity update objects for getting recommendations.
      */
-    entityUpdateSpecs?: pulumi.Input<pulumi.Input<inputs.LcmPrechecksV2EntityUpdateSpec>[]>;
-    extId?: pulumi.Input<string>;
+    entityUpdateSpecs?: pulumi.Input<pulumi.Input<inputs.LcmPrechecksV2EntityUpdateSpec>[] | undefined>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * Cluster management server configuration used while updating clusters with ESX or Hyper-V.
      */
-    managementServer?: pulumi.Input<inputs.LcmPrechecksV2ManagementServer>;
+    managementServer?: pulumi.Input<inputs.LcmPrechecksV2ManagementServer | undefined>;
     /**
      * List of prechecks to skip. The allowed value is 'powerOffUvms' that skips the pinned VM prechecks. Items Enum: `POWER_OFF_UVMS`
      */
-    skippedPrecheckFlags?: pulumi.Input<pulumi.Input<string>[]>;
+    skippedPrecheckFlags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Cluster uuid on which the resource is present or operation is being performed.
      */
-    xClusterId?: pulumi.Input<string>;
+    xClusterId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -140,13 +140,13 @@ export interface LcmPrechecksV2Args {
     /**
      * Cluster management server configuration used while updating clusters with ESX or Hyper-V.
      */
-    managementServer?: pulumi.Input<inputs.LcmPrechecksV2ManagementServer>;
+    managementServer?: pulumi.Input<inputs.LcmPrechecksV2ManagementServer | undefined>;
     /**
      * List of prechecks to skip. The allowed value is 'powerOffUvms' that skips the pinned VM prechecks. Items Enum: `POWER_OFF_UVMS`
      */
-    skippedPrecheckFlags?: pulumi.Input<pulumi.Input<string>[]>;
+    skippedPrecheckFlags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Cluster uuid on which the resource is present or operation is being performed.
      */
-    xClusterId?: pulumi.Input<string>;
+    xClusterId?: pulumi.Input<string | undefined>;
 }

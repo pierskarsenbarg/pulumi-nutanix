@@ -21,11 +21,11 @@ __all__ = ['ServiceGroupsV2Args', 'ServiceGroupsV2']
 @pulumi.input_type
 class ServiceGroupsV2Args:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp_services: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2IcmpServiceArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tcp_services: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]]] = None,
-                 udp_services: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp_services: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2IcmpServiceArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tcp_services: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]]] = None,
+                 udp_services: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]]] = None):
         """
         The set of arguments for constructing a ServiceGroupsV2 resource.
 
@@ -48,79 +48,79 @@ class ServiceGroupsV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the service group
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="icmpServices")
-    def icmp_services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2IcmpServiceArgs']]]]:
+    def icmp_services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2IcmpServiceArgs']]]]:
         """
         Icmp Type Code List.
         """
         return pulumi.get(self, "icmp_services")
 
     @icmp_services.setter
-    def icmp_services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2IcmpServiceArgs']]]]):
+    def icmp_services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2IcmpServiceArgs']]]]):
         pulumi.set(self, "icmp_services", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the service group
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="tcpServices")
-    def tcp_services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]]]:
+    def tcp_services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]]]:
         """
         List of TCP ports in the service.
         """
         return pulumi.get(self, "tcp_services")
 
     @tcp_services.setter
-    def tcp_services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]]]):
+    def tcp_services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]]]):
         pulumi.set(self, "tcp_services", value)
 
     @_builtins.property
     @pulumi.getter(name="udpServices")
-    def udp_services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]]]:
+    def udp_services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]]]:
         """
         List of UDP ports in the service.
         """
         return pulumi.get(self, "udp_services")
 
     @udp_services.setter
-    def udp_services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]]]):
+    def udp_services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]]]):
         pulumi.set(self, "udp_services", value)
 
 
 @pulumi.input_type
 class _ServiceGroupsV2State:
     def __init__(__self__, *,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp_services: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2IcmpServiceArgs']]]] = None,
-                 is_system_defined: Optional[pulumi.Input[_builtins.bool]] = None,
-                 links: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2LinkArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_references: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tcp_services: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 udp_services: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]]] = None):
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp_services: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2IcmpServiceArgs']]]] = None,
+                 is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2LinkArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tcp_services: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 udp_services: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]]] = None):
         """
         Input properties used for looking up and filtering ServiceGroupsV2 resources.
 
@@ -161,134 +161,134 @@ class _ServiceGroupsV2State:
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         created by.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the service group
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         address group uuid.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="icmpServices")
-    def icmp_services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2IcmpServiceArgs']]]]:
+    def icmp_services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2IcmpServiceArgs']]]]:
         """
         Icmp Type Code List.
         """
         return pulumi.get(self, "icmp_services")
 
     @icmp_services.setter
-    def icmp_services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2IcmpServiceArgs']]]]):
+    def icmp_services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2IcmpServiceArgs']]]]):
         pulumi.set(self, "icmp_services", value)
 
     @_builtins.property
     @pulumi.getter(name="isSystemDefined")
-    def is_system_defined(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_system_defined(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Service Group is system defined or not.
         """
         return pulumi.get(self, "is_system_defined")
 
     @is_system_defined.setter
-    def is_system_defined(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_system_defined(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_system_defined", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2LinkArgs']]]]:
+    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2LinkArgs']]]]:
         """
         A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         """
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2LinkArgs']]]]):
+    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the service group
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="policyReferences")
-    def policy_references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def policy_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Reference to policy associated with Address Group.
         """
         return pulumi.get(self, "policy_references")
 
     @policy_references.setter
-    def policy_references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def policy_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "policy_references", value)
 
     @_builtins.property
     @pulumi.getter(name="tcpServices")
-    def tcp_services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]]]:
+    def tcp_services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]]]:
         """
         List of TCP ports in the service.
         """
         return pulumi.get(self, "tcp_services")
 
     @tcp_services.setter
-    def tcp_services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]]]):
+    def tcp_services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]]]):
         pulumi.set(self, "tcp_services", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A globally unique identifier that represents the tenant that owns this entity.
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="udpServices")
-    def udp_services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]]]:
+    def udp_services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]]]:
         """
         List of UDP ports in the service.
         """
         return pulumi.get(self, "udp_services")
 
     @udp_services.setter
-    def udp_services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]]]):
+    def udp_services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]]]):
         pulumi.set(self, "udp_services", value)
 
 
@@ -298,11 +298,11 @@ class ServiceGroupsV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp_services: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupsV2IcmpServiceArgs', 'ServiceGroupsV2IcmpServiceArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tcp_services: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupsV2TcpServiceArgs', 'ServiceGroupsV2TcpServiceArgsDict']]]]] = None,
-                 udp_services: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupsV2UdpServiceArgs', 'ServiceGroupsV2UdpServiceArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2IcmpServiceArgs', 'ServiceGroupsV2IcmpServiceArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tcp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2TcpServiceArgs', 'ServiceGroupsV2TcpServiceArgsDict']]]]] = None,
+                 udp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2UdpServiceArgs', 'ServiceGroupsV2UdpServiceArgsDict']]]]] = None,
                  __props__=None):
         """
         Create an service Group
@@ -433,11 +433,11 @@ class ServiceGroupsV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp_services: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupsV2IcmpServiceArgs', 'ServiceGroupsV2IcmpServiceArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tcp_services: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupsV2TcpServiceArgs', 'ServiceGroupsV2TcpServiceArgsDict']]]]] = None,
-                 udp_services: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupsV2UdpServiceArgs', 'ServiceGroupsV2UdpServiceArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2IcmpServiceArgs', 'ServiceGroupsV2IcmpServiceArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tcp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2TcpServiceArgs', 'ServiceGroupsV2TcpServiceArgsDict']]]]] = None,
+                 udp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2UdpServiceArgs', 'ServiceGroupsV2UdpServiceArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -468,17 +468,17 @@ class ServiceGroupsV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            icmp_services: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupsV2IcmpServiceArgs', 'ServiceGroupsV2IcmpServiceArgsDict']]]]] = None,
-            is_system_defined: Optional[pulumi.Input[_builtins.bool]] = None,
-            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupsV2LinkArgs', 'ServiceGroupsV2LinkArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            policy_references: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tcp_services: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupsV2TcpServiceArgs', 'ServiceGroupsV2TcpServiceArgsDict']]]]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            udp_services: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupsV2UdpServiceArgs', 'ServiceGroupsV2UdpServiceArgsDict']]]]] = None) -> 'ServiceGroupsV2':
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            icmp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2IcmpServiceArgs', 'ServiceGroupsV2IcmpServiceArgsDict']]]]] = None,
+            is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2LinkArgs', 'ServiceGroupsV2LinkArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tcp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2TcpServiceArgs', 'ServiceGroupsV2TcpServiceArgsDict']]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            udp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2UdpServiceArgs', 'ServiceGroupsV2UdpServiceArgsDict']]]]] = None) -> 'ServiceGroupsV2':
         """
         Get an existing ServiceGroupsV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

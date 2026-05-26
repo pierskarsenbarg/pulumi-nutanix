@@ -116,7 +116,7 @@ def get_floating_ips(metadatas: Optional[Sequence[Union['GetFloatingIpsMetadataA
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-def get_floating_ips_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetFloatingIpsMetadataArgs', 'GetFloatingIpsMetadataArgsDict']]]]] = None,
+def get_floating_ips_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetFloatingIpsMetadataArgs', 'GetFloatingIpsMetadataArgsDict']]]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFloatingIpsResult]:
     """
     Provides a datasource to retrieve all the floating IPs .

@@ -91,6 +91,24 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getlcmentityv2" "entities" {
+        /// }
+        /// data "nutanix_getlcmentitiesv2" "lcm-entities-filtered" {
+        ///   filter = "entityModel eq 'Calm Policy Engine'"
+        /// }
+        /// data "nutanix_getlcmentitiesv2" "lcm-entities-limit" {
+        ///   limit = 5
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -228,6 +246,24 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getlcmentityv2" "entities" {
+        /// }
+        /// data "nutanix_getlcmentitiesv2" "lcm-entities-filtered" {
+        ///   filter = "entityModel eq 'Calm Policy Engine'"
+        /// }
+        /// data "nutanix_getlcmentitiesv2" "lcm-entities-limit" {
+        ///   limit = 5
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -363,6 +399,24 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getlcmentityv2" "entities" {
+        /// }
+        /// data "nutanix_getlcmentitiesv2" "lcm-entities-filtered" {
+        ///   filter = "entityModel eq 'Calm Policy Engine'"
+        /// }
+        /// data "nutanix_getlcmentitiesv2" "lcm-entities-limit" {
+        ///   limit = 5
         /// }
         /// ```
         /// ```java

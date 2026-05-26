@@ -104,6 +104,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     local = {
+        ///       source = "pulumi/local"
+        ///     }
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getblueprintruntimeeditables" "example" {
+        ///   bp_name = "NAME OF BLUEPRINT"
+        /// }
+        /// 
+        /// # dumps read value into a readable json file
+        /// resource "local_file" "dump_runtime_value" {
+        ///   content  = jsonencode(data.nutanix_getblueprintruntimeeditables.example.runtime_editables)
+        ///   filename = "runtime_value.json"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -254,6 +276,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     local = {
+        ///       source = "pulumi/local"
+        ///     }
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getblueprintruntimeeditables" "example" {
+        ///   bp_name = "NAME OF BLUEPRINT"
+        /// }
+        /// 
+        /// # dumps read value into a readable json file
+        /// resource "local_file" "dump_runtime_value" {
+        ///   content  = jsonencode(data.nutanix_getblueprintruntimeeditables.example.runtime_editables)
+        ///   filename = "runtime_value.json"
         /// }
         /// ```
         /// ```java
@@ -408,6 +452,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     local = {
+        ///       source = "pulumi/local"
+        ///     }
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getblueprintruntimeeditables" "example" {
+        ///   bp_name = "NAME OF BLUEPRINT"
+        /// }
+        /// 
+        /// # dumps read value into a readable json file
+        /// resource "local_file" "dump_runtime_value" {
+        ///   content  = jsonencode(data.nutanix_getblueprintruntimeeditables.example.runtime_editables)
+        ///   filename = "runtime_value.json"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -475,7 +541,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The name of the blueprint for which runtime editables will be listed. If this is provided, it will return runtime editables for the specified blueprint.
         /// 
-        /// Both (&lt;span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`"&gt;`bpUuid`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`"&gt;`bpName`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`" pulumi-lang-hcl="`bp_uuid`"&gt;`bpUuid`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`" pulumi-lang-hcl="`bp_name`"&gt;`bpName`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("bpName")]
         public string? BpName { get; set; }
@@ -497,7 +563,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The name of the blueprint for which runtime editables will be listed. If this is provided, it will return runtime editables for the specified blueprint.
         /// 
-        /// Both (&lt;span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`"&gt;`bpUuid`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`"&gt;`bpName`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`" pulumi-lang-hcl="`bp_uuid`"&gt;`bpUuid`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`" pulumi-lang-hcl="`bp_name`"&gt;`bpName`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("bpName")]
         public Input<string>? BpName { get; set; }

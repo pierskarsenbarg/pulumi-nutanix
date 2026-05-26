@@ -452,12 +452,12 @@ def get_project(categories: Optional[Sequence[Union['GetProjectCategoryArgs', 'G
         tunnel_reference_lists=pulumi.get(__ret__, 'tunnel_reference_lists'),
         user_reference_lists=pulumi.get(__ret__, 'user_reference_lists'),
         vpc_reference_lists=pulumi.get(__ret__, 'vpc_reference_lists'))
-def get_project_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetProjectCategoryArgs', 'GetProjectCategoryArgsDict']]]]] = None,
-                       external_user_group_reference_lists: Optional[pulumi.Input[Optional[Sequence[Union['GetProjectExternalUserGroupReferenceListArgs', 'GetProjectExternalUserGroupReferenceListArgsDict']]]]] = None,
-                       project_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       project_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       subnet_reference_lists: Optional[pulumi.Input[Optional[Sequence[Union['GetProjectSubnetReferenceListArgs', 'GetProjectSubnetReferenceListArgsDict']]]]] = None,
-                       user_reference_lists: Optional[pulumi.Input[Optional[Sequence[Union['GetProjectUserReferenceListArgs', 'GetProjectUserReferenceListArgsDict']]]]] = None,
+def get_project_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetProjectCategoryArgs', 'GetProjectCategoryArgsDict']]]]] = None,
+                       external_user_group_reference_lists: pulumi.Input[Optional[Optional[Sequence[Union['GetProjectExternalUserGroupReferenceListArgs', 'GetProjectExternalUserGroupReferenceListArgsDict']]]]] = None,
+                       project_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       project_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       subnet_reference_lists: pulumi.Input[Optional[Optional[Sequence[Union['GetProjectSubnetReferenceListArgs', 'GetProjectSubnetReferenceListArgsDict']]]]] = None,
+                       user_reference_lists: pulumi.Input[Optional[Optional[Sequence[Union['GetProjectUserReferenceListArgs', 'GetProjectUserReferenceListArgsDict']]]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProjectResult]:
     """
     Describe a Nutanix Project and its values (if it has them).

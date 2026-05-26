@@ -21,48 +21,48 @@ __all__ = ['VirtualMachineV2Args', 'VirtualMachineV2']
 @pulumi.input_type
 class VirtualMachineV2Args:
     def __init__(__self__, *,
-                 apc_configs: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ApcConfigArgs']]]] = None,
-                 availability_zones: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2AvailabilityZoneArgs']]]] = None,
-                 bios_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 boot_configs: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2BootConfigArgs']]]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2CategoryArgs']]]] = None,
-                 cd_roms: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2CdRomArgs']]]] = None,
-                 clusters: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ClusterArgs']]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2DiskArgs']]]] = None,
-                 enabled_cpu_features: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 generation_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 gpuses: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GpusArgs']]]] = None,
-                 guest_customizations: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GuestCustomizationArgs']]]] = None,
-                 guest_tools: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GuestToolArgs']]]] = None,
-                 hardware_clock_timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2HostArgs']]]] = None,
-                 is_agent_vm: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_branding_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_cpu_hotplug_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_cpu_passthrough_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_gpu_console_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_memory_overcommit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_scsi_controller_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_vcpu_hard_pinning_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_vga_console_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 machine_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory_size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nics: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2NicArgs']]]] = None,
-                 num_cores_per_socket: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_numa_nodes: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_sockets: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_threads_per_core: Optional[pulumi.Input[_builtins.int]] = None,
-                 ownership_infos: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2OwnershipInfoArgs']]]] = None,
-                 power_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 projects: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]] = None,
-                 protection_policy_states: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]]] = None,
-                 protection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 serial_ports: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2SerialPortArgs']]]] = None,
-                 sources: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2SourceArgs']]]] = None,
-                 storage_configs: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2StorageConfigArgs']]]] = None,
-                 vtpm_configs: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2VtpmConfigArgs']]]] = None):
+                 apc_configs: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ApcConfigArgs']]]] = None,
+                 availability_zones: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2AvailabilityZoneArgs']]]] = None,
+                 bios_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 boot_configs: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2BootConfigArgs']]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2CategoryArgs']]]] = None,
+                 cd_roms: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2CdRomArgs']]]] = None,
+                 clusters: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ClusterArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2DiskArgs']]]] = None,
+                 enabled_cpu_features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 generation_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 gpuses: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GpusArgs']]]] = None,
+                 guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GuestCustomizationArgs']]]] = None,
+                 guest_tools: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GuestToolArgs']]]] = None,
+                 hardware_clock_timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2HostArgs']]]] = None,
+                 is_agent_vm: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_branding_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_cpu_hotplug_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_cpu_passthrough_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_gpu_console_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_memory_overcommit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_scsi_controller_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_vcpu_hard_pinning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_vga_console_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 machine_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nics: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2NicArgs']]]] = None,
+                 num_cores_per_socket: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_numa_nodes: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_sockets: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_threads_per_core: pulumi.Input[Optional[_builtins.int]] = None,
+                 ownership_infos: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2OwnershipInfoArgs']]]] = None,
+                 power_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 projects: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]] = None,
+                 protection_policy_states: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]]] = None,
+                 protection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 serial_ports: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2SerialPortArgs']]]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2SourceArgs']]]] = None,
+                 storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2StorageConfigArgs']]]] = None,
+                 vtpm_configs: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2VtpmConfigArgs']]]] = None):
         """
         The set of arguments for constructing a VirtualMachineV2 resource.
 
@@ -194,551 +194,551 @@ class VirtualMachineV2Args:
 
     @_builtins.property
     @pulumi.getter(name="apcConfigs")
-    def apc_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ApcConfigArgs']]]]:
+    def apc_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ApcConfigArgs']]]]:
         """
         Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
         """
         return pulumi.get(self, "apc_configs")
 
     @apc_configs.setter
-    def apc_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ApcConfigArgs']]]]):
+    def apc_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ApcConfigArgs']]]]):
         pulumi.set(self, "apc_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityZones")
-    def availability_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2AvailabilityZoneArgs']]]]:
+    def availability_zones(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2AvailabilityZoneArgs']]]]:
         return pulumi.get(self, "availability_zones")
 
     @availability_zones.setter
-    def availability_zones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2AvailabilityZoneArgs']]]]):
+    def availability_zones(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2AvailabilityZoneArgs']]]]):
         pulumi.set(self, "availability_zones", value)
 
     @_builtins.property
     @pulumi.getter(name="biosUuid")
-    def bios_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bios_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         BIOS UUID of the VM. It should be of type UUID.
         """
         return pulumi.get(self, "bios_uuid")
 
     @bios_uuid.setter
-    def bios_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bios_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bios_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="bootConfigs")
-    def boot_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2BootConfigArgs']]]]:
+    def boot_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2BootConfigArgs']]]]:
         """
         Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
         """
         return pulumi.get(self, "boot_configs")
 
     @boot_configs.setter
-    def boot_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2BootConfigArgs']]]]):
+    def boot_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2BootConfigArgs']]]]):
         pulumi.set(self, "boot_configs", value)
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2CategoryArgs']]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2CategoryArgs']]]]:
         """
         Categories for the VM.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2CategoryArgs']]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2CategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter(name="cdRoms")
-    def cd_roms(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2CdRomArgs']]]]:
+    def cd_roms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2CdRomArgs']]]]:
         """
         CD-ROMs attached to the VM.
         """
         return pulumi.get(self, "cd_roms")
 
     @cd_roms.setter
-    def cd_roms(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2CdRomArgs']]]]):
+    def cd_roms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2CdRomArgs']]]]):
         pulumi.set(self, "cd_roms", value)
 
     @_builtins.property
     @pulumi.getter
-    def clusters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ClusterArgs']]]]:
+    def clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ClusterArgs']]]]:
         """
         Reference to a cluster.
         """
         return pulumi.get(self, "clusters")
 
     @clusters.setter
-    def clusters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ClusterArgs']]]]):
+    def clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ClusterArgs']]]]):
         pulumi.set(self, "clusters", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VM description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def disks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2DiskArgs']]]]:
+    def disks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2DiskArgs']]]]:
         """
         Disks attached to the VM.
         """
         return pulumi.get(self, "disks")
 
     @disks.setter
-    def disks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2DiskArgs']]]]):
+    def disks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2DiskArgs']]]]):
         pulumi.set(self, "disks", value)
 
     @_builtins.property
     @pulumi.getter(name="enabledCpuFeatures")
-    def enabled_cpu_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def enabled_cpu_features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor. Valid values are "HARDWARE_VIRTUALIZATION".
         """
         return pulumi.get(self, "enabled_cpu_features")
 
     @enabled_cpu_features.setter
-    def enabled_cpu_features(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def enabled_cpu_features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "enabled_cpu_features", value)
 
     @_builtins.property
     @pulumi.getter(name="generationUuid")
-    def generation_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def generation_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Generation UUID of the VM. It should be of type UUID.
         """
         return pulumi.get(self, "generation_uuid")
 
     @generation_uuid.setter
-    def generation_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def generation_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "generation_uuid", value)
 
     @_builtins.property
     @pulumi.getter
-    def gpuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GpusArgs']]]]:
+    def gpuses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GpusArgs']]]]:
         """
         GPUs attached to the VM.
         """
         return pulumi.get(self, "gpuses")
 
     @gpuses.setter
-    def gpuses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GpusArgs']]]]):
+    def gpuses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GpusArgs']]]]):
         pulumi.set(self, "gpuses", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizations")
-    def guest_customizations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GuestCustomizationArgs']]]]:
+    def guest_customizations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GuestCustomizationArgs']]]]:
         """
         Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
         """
         return pulumi.get(self, "guest_customizations")
 
     @guest_customizations.setter
-    def guest_customizations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GuestCustomizationArgs']]]]):
+    def guest_customizations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GuestCustomizationArgs']]]]):
         pulumi.set(self, "guest_customizations", value)
 
     @_builtins.property
     @pulumi.getter(name="guestTools")
-    def guest_tools(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GuestToolArgs']]]]:
+    def guest_tools(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GuestToolArgs']]]]:
         """
         The details about Nutanix Guest Tools for a VM.
         """
         return pulumi.get(self, "guest_tools")
 
     @guest_tools.setter
-    def guest_tools(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GuestToolArgs']]]]):
+    def guest_tools(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GuestToolArgs']]]]):
         pulumi.set(self, "guest_tools", value)
 
     @_builtins.property
     @pulumi.getter(name="hardwareClockTimezone")
-    def hardware_clock_timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hardware_clock_timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
         """
         return pulumi.get(self, "hardware_clock_timezone")
 
     @hardware_clock_timezone.setter
-    def hardware_clock_timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hardware_clock_timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hardware_clock_timezone", value)
 
     @_builtins.property
     @pulumi.getter
-    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2HostArgs']]]]:
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2HostArgs']]]]:
         """
         Reference to the host, the VM is running on.
         """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
-    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2HostArgs']]]]):
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2HostArgs']]]]):
         pulumi.set(self, "hosts", value)
 
     @_builtins.property
     @pulumi.getter(name="isAgentVm")
-    def is_agent_vm(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_agent_vm(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
         """
         return pulumi.get(self, "is_agent_vm")
 
     @is_agent_vm.setter
-    def is_agent_vm(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_agent_vm(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_agent_vm", value)
 
     @_builtins.property
     @pulumi.getter(name="isBrandingEnabled")
-    def is_branding_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_branding_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to remove AHV branding from VM firmware tables or not.
         """
         return pulumi.get(self, "is_branding_enabled")
 
     @is_branding_enabled.setter
-    def is_branding_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_branding_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_branding_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isCpuHotplugEnabled")
-    def is_cpu_hotplug_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cpu_hotplug_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the VM CPU hotplug is enabled.
         """
         return pulumi.get(self, "is_cpu_hotplug_enabled")
 
     @is_cpu_hotplug_enabled.setter
-    def is_cpu_hotplug_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cpu_hotplug_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cpu_hotplug_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isCpuPassthroughEnabled")
-    def is_cpu_passthrough_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cpu_passthrough_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
         """
         return pulumi.get(self, "is_cpu_passthrough_enabled")
 
     @is_cpu_passthrough_enabled.setter
-    def is_cpu_passthrough_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cpu_passthrough_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cpu_passthrough_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isGpuConsoleEnabled")
-    def is_gpu_console_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_gpu_console_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the vGPU console is enabled or not.
         """
         return pulumi.get(self, "is_gpu_console_enabled")
 
     @is_gpu_console_enabled.setter
-    def is_gpu_console_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_gpu_console_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_gpu_console_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isMemoryOvercommitEnabled")
-    def is_memory_overcommit_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_memory_overcommit_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
         """
         return pulumi.get(self, "is_memory_overcommit_enabled")
 
     @is_memory_overcommit_enabled.setter
-    def is_memory_overcommit_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_memory_overcommit_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_memory_overcommit_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isScsiControllerEnabled")
-    def is_scsi_controller_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_scsi_controller_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the VM SCSI controller is enabled.
         """
         return pulumi.get(self, "is_scsi_controller_enabled")
 
     @is_scsi_controller_enabled.setter
-    def is_scsi_controller_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_scsi_controller_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_scsi_controller_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isVcpuHardPinningEnabled")
-    def is_vcpu_hard_pinning_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_vcpu_hard_pinning_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
         """
         return pulumi.get(self, "is_vcpu_hard_pinning_enabled")
 
     @is_vcpu_hard_pinning_enabled.setter
-    def is_vcpu_hard_pinning_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_vcpu_hard_pinning_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_vcpu_hard_pinning_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isVgaConsoleEnabled")
-    def is_vga_console_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_vga_console_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the VGA console should be disabled or not.
         """
         return pulumi.get(self, "is_vga_console_enabled")
 
     @is_vga_console_enabled.setter
-    def is_vga_console_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_vga_console_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_vga_console_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="machineType")
-    def machine_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def machine_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks. Valid values are "PSERIES", "Q35", "PC" .
         """
         return pulumi.get(self, "machine_type")
 
     @machine_type.setter
-    def machine_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def machine_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "machine_type", value)
 
     @_builtins.property
     @pulumi.getter(name="memorySizeBytes")
-    def memory_size_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def memory_size_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Memory size in bytes.
         """
         return pulumi.get(self, "memory_size_bytes")
 
     @memory_size_bytes.setter
-    def memory_size_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def memory_size_bytes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "memory_size_bytes", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VM name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def nics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2NicArgs']]]]:
+    def nics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2NicArgs']]]]:
         """
         NICs attached to the VM.
         """
         return pulumi.get(self, "nics")
 
     @nics.setter
-    def nics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2NicArgs']]]]):
+    def nics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2NicArgs']]]]):
         pulumi.set(self, "nics", value)
 
     @_builtins.property
     @pulumi.getter(name="numCoresPerSocket")
-    def num_cores_per_socket(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_cores_per_socket(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of cores per socket. Value should be at least 1.
         """
         return pulumi.get(self, "num_cores_per_socket")
 
     @num_cores_per_socket.setter
-    def num_cores_per_socket(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_cores_per_socket(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_cores_per_socket", value)
 
     @_builtins.property
     @pulumi.getter(name="numNumaNodes")
-    def num_numa_nodes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_numa_nodes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of NUMA nodes. 0 means NUMA is disabled.
         """
         return pulumi.get(self, "num_numa_nodes")
 
     @num_numa_nodes.setter
-    def num_numa_nodes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_numa_nodes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_numa_nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="numSockets")
-    def num_sockets(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_sockets(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of vCPU sockets. Value should be at least 1.
         """
         return pulumi.get(self, "num_sockets")
 
     @num_sockets.setter
-    def num_sockets(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_sockets(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_sockets", value)
 
     @_builtins.property
     @pulumi.getter(name="numThreadsPerCore")
-    def num_threads_per_core(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_threads_per_core(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of threads per core. Value should be at least 1.
         """
         return pulumi.get(self, "num_threads_per_core")
 
     @num_threads_per_core.setter
-    def num_threads_per_core(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_threads_per_core(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_threads_per_core", value)
 
     @_builtins.property
     @pulumi.getter(name="ownershipInfos")
-    def ownership_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2OwnershipInfoArgs']]]]:
+    def ownership_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2OwnershipInfoArgs']]]]:
         """
         Ownership information for the VM.
         """
         return pulumi.get(self, "ownership_infos")
 
     @ownership_infos.setter
-    def ownership_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2OwnershipInfoArgs']]]]):
+    def ownership_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2OwnershipInfoArgs']]]]):
         pulumi.set(self, "ownership_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="powerState")
-    def power_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def power_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "power_state")
 
     @power_state.setter
-    def power_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def power_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "power_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def projects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]]:
+    def projects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]]:
         """
         Reference to a project.
         """
         return pulumi.get(self, "projects")
 
     @projects.setter
-    def projects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]]):
+    def projects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]]):
         pulumi.set(self, "projects", value)
 
     @_builtins.property
     @pulumi.getter(name="protectionPolicyStates")
-    def protection_policy_states(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]]]:
+    def protection_policy_states(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]]]:
         """
         Status of protection policy applied to this VM.
         """
         return pulumi.get(self, "protection_policy_states")
 
     @protection_policy_states.setter
-    def protection_policy_states(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]]]):
+    def protection_policy_states(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]]]):
         pulumi.set(self, "protection_policy_states", value)
 
     @_builtins.property
     @pulumi.getter(name="protectionType")
-    def protection_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protection_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
         """
         return pulumi.get(self, "protection_type")
 
     @protection_type.setter
-    def protection_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protection_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protection_type", value)
 
     @_builtins.property
     @pulumi.getter(name="serialPorts")
-    def serial_ports(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2SerialPortArgs']]]]:
+    def serial_ports(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2SerialPortArgs']]]]:
         """
         Serial ports configured on the VM.
         """
         return pulumi.get(self, "serial_ports")
 
     @serial_ports.setter
-    def serial_ports(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2SerialPortArgs']]]]):
+    def serial_ports(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2SerialPortArgs']]]]):
         pulumi.set(self, "serial_ports", value)
 
     @_builtins.property
     @pulumi.getter
-    def sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2SourceArgs']]]]:
+    def sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2SourceArgs']]]]:
         """
         Reference to an entity that the VM should be cloned or created from. Valid values are "VM", "VM_RECOVERY_POINT".
         """
         return pulumi.get(self, "sources")
 
     @sources.setter
-    def sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2SourceArgs']]]]):
+    def sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2SourceArgs']]]]):
         pulumi.set(self, "sources", value)
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
-    def storage_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2StorageConfigArgs']]]]:
+    def storage_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2StorageConfigArgs']]]]:
         """
         Storage configuration for VM.
         """
         return pulumi.get(self, "storage_configs")
 
     @storage_configs.setter
-    def storage_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2StorageConfigArgs']]]]):
+    def storage_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2StorageConfigArgs']]]]):
         pulumi.set(self, "storage_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="vtpmConfigs")
-    def vtpm_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2VtpmConfigArgs']]]]:
+    def vtpm_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2VtpmConfigArgs']]]]:
         """
         Indicates how the vTPM for the VM should be configured.
         """
         return pulumi.get(self, "vtpm_configs")
 
     @vtpm_configs.setter
-    def vtpm_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2VtpmConfigArgs']]]]):
+    def vtpm_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2VtpmConfigArgs']]]]):
         pulumi.set(self, "vtpm_configs", value)
 
 
 @pulumi.input_type
 class _VirtualMachineV2State:
     def __init__(__self__, *,
-                 apc_configs: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ApcConfigArgs']]]] = None,
-                 availability_zones: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2AvailabilityZoneArgs']]]] = None,
-                 bios_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 boot_configs: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2BootConfigArgs']]]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2CategoryArgs']]]] = None,
-                 cd_roms: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2CdRomArgs']]]] = None,
-                 clusters: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ClusterArgs']]]] = None,
-                 create_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2DiskArgs']]]] = None,
-                 enabled_cpu_features: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 generation_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 gpuses: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GpusArgs']]]] = None,
-                 guest_customizations: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GuestCustomizationArgs']]]] = None,
-                 guest_tools: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GuestToolArgs']]]] = None,
-                 hardware_clock_timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2HostArgs']]]] = None,
-                 is_agent_vm: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_branding_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_cpu_hotplug_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_cpu_passthrough_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_gpu_console_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_memory_overcommit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_scsi_controller_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_vcpu_hard_pinning_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_vga_console_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 machine_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory_size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nics: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2NicArgs']]]] = None,
-                 num_cores_per_socket: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_numa_nodes: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_sockets: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_threads_per_core: Optional[pulumi.Input[_builtins.int]] = None,
-                 ownership_infos: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2OwnershipInfoArgs']]]] = None,
-                 power_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 projects: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]] = None,
-                 protection_policy_states: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]]] = None,
-                 protection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 serial_ports: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2SerialPortArgs']]]] = None,
-                 sources: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2SourceArgs']]]] = None,
-                 storage_configs: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2StorageConfigArgs']]]] = None,
-                 update_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 vtpm_configs: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2VtpmConfigArgs']]]] = None):
+                 apc_configs: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ApcConfigArgs']]]] = None,
+                 availability_zones: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2AvailabilityZoneArgs']]]] = None,
+                 bios_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 boot_configs: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2BootConfigArgs']]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2CategoryArgs']]]] = None,
+                 cd_roms: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2CdRomArgs']]]] = None,
+                 clusters: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ClusterArgs']]]] = None,
+                 create_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2DiskArgs']]]] = None,
+                 enabled_cpu_features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 generation_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 gpuses: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GpusArgs']]]] = None,
+                 guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GuestCustomizationArgs']]]] = None,
+                 guest_tools: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GuestToolArgs']]]] = None,
+                 hardware_clock_timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2HostArgs']]]] = None,
+                 is_agent_vm: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_branding_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_cpu_hotplug_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_cpu_passthrough_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_gpu_console_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_memory_overcommit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_scsi_controller_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_vcpu_hard_pinning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_vga_console_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 machine_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nics: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2NicArgs']]]] = None,
+                 num_cores_per_socket: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_numa_nodes: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_sockets: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_threads_per_core: pulumi.Input[Optional[_builtins.int]] = None,
+                 ownership_infos: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2OwnershipInfoArgs']]]] = None,
+                 power_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 projects: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]] = None,
+                 protection_policy_states: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]]] = None,
+                 protection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 serial_ports: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2SerialPortArgs']]]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2SourceArgs']]]] = None,
+                 storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2StorageConfigArgs']]]] = None,
+                 update_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 vtpm_configs: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2VtpmConfigArgs']]]] = None):
         """
         Input properties used for looking up and filtering VirtualMachineV2 resources.
 
@@ -879,536 +879,536 @@ class _VirtualMachineV2State:
 
     @_builtins.property
     @pulumi.getter(name="apcConfigs")
-    def apc_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ApcConfigArgs']]]]:
+    def apc_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ApcConfigArgs']]]]:
         """
         Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
         """
         return pulumi.get(self, "apc_configs")
 
     @apc_configs.setter
-    def apc_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ApcConfigArgs']]]]):
+    def apc_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ApcConfigArgs']]]]):
         pulumi.set(self, "apc_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityZones")
-    def availability_zones(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2AvailabilityZoneArgs']]]]:
+    def availability_zones(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2AvailabilityZoneArgs']]]]:
         return pulumi.get(self, "availability_zones")
 
     @availability_zones.setter
-    def availability_zones(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2AvailabilityZoneArgs']]]]):
+    def availability_zones(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2AvailabilityZoneArgs']]]]):
         pulumi.set(self, "availability_zones", value)
 
     @_builtins.property
     @pulumi.getter(name="biosUuid")
-    def bios_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bios_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         BIOS UUID of the VM. It should be of type UUID.
         """
         return pulumi.get(self, "bios_uuid")
 
     @bios_uuid.setter
-    def bios_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bios_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bios_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="bootConfigs")
-    def boot_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2BootConfigArgs']]]]:
+    def boot_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2BootConfigArgs']]]]:
         """
         Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
         """
         return pulumi.get(self, "boot_configs")
 
     @boot_configs.setter
-    def boot_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2BootConfigArgs']]]]):
+    def boot_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2BootConfigArgs']]]]):
         pulumi.set(self, "boot_configs", value)
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2CategoryArgs']]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2CategoryArgs']]]]:
         """
         Categories for the VM.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2CategoryArgs']]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2CategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter(name="cdRoms")
-    def cd_roms(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2CdRomArgs']]]]:
+    def cd_roms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2CdRomArgs']]]]:
         """
         CD-ROMs attached to the VM.
         """
         return pulumi.get(self, "cd_roms")
 
     @cd_roms.setter
-    def cd_roms(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2CdRomArgs']]]]):
+    def cd_roms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2CdRomArgs']]]]):
         pulumi.set(self, "cd_roms", value)
 
     @_builtins.property
     @pulumi.getter
-    def clusters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ClusterArgs']]]]:
+    def clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ClusterArgs']]]]:
         """
         Reference to a cluster.
         """
         return pulumi.get(self, "clusters")
 
     @clusters.setter
-    def clusters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ClusterArgs']]]]):
+    def clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ClusterArgs']]]]):
         pulumi.set(self, "clusters", value)
 
     @_builtins.property
     @pulumi.getter(name="createTime")
-    def create_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def create_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VM creation time
         """
         return pulumi.get(self, "create_time")
 
     @create_time.setter
-    def create_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def create_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "create_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VM description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def disks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2DiskArgs']]]]:
+    def disks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2DiskArgs']]]]:
         """
         Disks attached to the VM.
         """
         return pulumi.get(self, "disks")
 
     @disks.setter
-    def disks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2DiskArgs']]]]):
+    def disks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2DiskArgs']]]]):
         pulumi.set(self, "disks", value)
 
     @_builtins.property
     @pulumi.getter(name="enabledCpuFeatures")
-    def enabled_cpu_features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def enabled_cpu_features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor. Valid values are "HARDWARE_VIRTUALIZATION".
         """
         return pulumi.get(self, "enabled_cpu_features")
 
     @enabled_cpu_features.setter
-    def enabled_cpu_features(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def enabled_cpu_features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "enabled_cpu_features", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A globally unique identifier of an instance that is suitable for external consumption.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="generationUuid")
-    def generation_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def generation_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Generation UUID of the VM. It should be of type UUID.
         """
         return pulumi.get(self, "generation_uuid")
 
     @generation_uuid.setter
-    def generation_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def generation_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "generation_uuid", value)
 
     @_builtins.property
     @pulumi.getter
-    def gpuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GpusArgs']]]]:
+    def gpuses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GpusArgs']]]]:
         """
         GPUs attached to the VM.
         """
         return pulumi.get(self, "gpuses")
 
     @gpuses.setter
-    def gpuses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GpusArgs']]]]):
+    def gpuses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GpusArgs']]]]):
         pulumi.set(self, "gpuses", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizations")
-    def guest_customizations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GuestCustomizationArgs']]]]:
+    def guest_customizations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GuestCustomizationArgs']]]]:
         """
         Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
         """
         return pulumi.get(self, "guest_customizations")
 
     @guest_customizations.setter
-    def guest_customizations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GuestCustomizationArgs']]]]):
+    def guest_customizations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GuestCustomizationArgs']]]]):
         pulumi.set(self, "guest_customizations", value)
 
     @_builtins.property
     @pulumi.getter(name="guestTools")
-    def guest_tools(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GuestToolArgs']]]]:
+    def guest_tools(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GuestToolArgs']]]]:
         """
         The details about Nutanix Guest Tools for a VM.
         """
         return pulumi.get(self, "guest_tools")
 
     @guest_tools.setter
-    def guest_tools(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2GuestToolArgs']]]]):
+    def guest_tools(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2GuestToolArgs']]]]):
         pulumi.set(self, "guest_tools", value)
 
     @_builtins.property
     @pulumi.getter(name="hardwareClockTimezone")
-    def hardware_clock_timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hardware_clock_timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
         """
         return pulumi.get(self, "hardware_clock_timezone")
 
     @hardware_clock_timezone.setter
-    def hardware_clock_timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hardware_clock_timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hardware_clock_timezone", value)
 
     @_builtins.property
     @pulumi.getter
-    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2HostArgs']]]]:
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2HostArgs']]]]:
         """
         Reference to the host, the VM is running on.
         """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
-    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2HostArgs']]]]):
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2HostArgs']]]]):
         pulumi.set(self, "hosts", value)
 
     @_builtins.property
     @pulumi.getter(name="isAgentVm")
-    def is_agent_vm(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_agent_vm(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
         """
         return pulumi.get(self, "is_agent_vm")
 
     @is_agent_vm.setter
-    def is_agent_vm(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_agent_vm(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_agent_vm", value)
 
     @_builtins.property
     @pulumi.getter(name="isBrandingEnabled")
-    def is_branding_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_branding_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to remove AHV branding from VM firmware tables or not.
         """
         return pulumi.get(self, "is_branding_enabled")
 
     @is_branding_enabled.setter
-    def is_branding_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_branding_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_branding_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isCpuHotplugEnabled")
-    def is_cpu_hotplug_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cpu_hotplug_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the VM CPU hotplug is enabled.
         """
         return pulumi.get(self, "is_cpu_hotplug_enabled")
 
     @is_cpu_hotplug_enabled.setter
-    def is_cpu_hotplug_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cpu_hotplug_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cpu_hotplug_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isCpuPassthroughEnabled")
-    def is_cpu_passthrough_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cpu_passthrough_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
         """
         return pulumi.get(self, "is_cpu_passthrough_enabled")
 
     @is_cpu_passthrough_enabled.setter
-    def is_cpu_passthrough_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cpu_passthrough_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cpu_passthrough_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isGpuConsoleEnabled")
-    def is_gpu_console_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_gpu_console_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the vGPU console is enabled or not.
         """
         return pulumi.get(self, "is_gpu_console_enabled")
 
     @is_gpu_console_enabled.setter
-    def is_gpu_console_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_gpu_console_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_gpu_console_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isMemoryOvercommitEnabled")
-    def is_memory_overcommit_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_memory_overcommit_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
         """
         return pulumi.get(self, "is_memory_overcommit_enabled")
 
     @is_memory_overcommit_enabled.setter
-    def is_memory_overcommit_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_memory_overcommit_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_memory_overcommit_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isScsiControllerEnabled")
-    def is_scsi_controller_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_scsi_controller_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the VM SCSI controller is enabled.
         """
         return pulumi.get(self, "is_scsi_controller_enabled")
 
     @is_scsi_controller_enabled.setter
-    def is_scsi_controller_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_scsi_controller_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_scsi_controller_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isVcpuHardPinningEnabled")
-    def is_vcpu_hard_pinning_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_vcpu_hard_pinning_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
         """
         return pulumi.get(self, "is_vcpu_hard_pinning_enabled")
 
     @is_vcpu_hard_pinning_enabled.setter
-    def is_vcpu_hard_pinning_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_vcpu_hard_pinning_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_vcpu_hard_pinning_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isVgaConsoleEnabled")
-    def is_vga_console_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_vga_console_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the VGA console should be disabled or not.
         """
         return pulumi.get(self, "is_vga_console_enabled")
 
     @is_vga_console_enabled.setter
-    def is_vga_console_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_vga_console_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_vga_console_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="machineType")
-    def machine_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def machine_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks. Valid values are "PSERIES", "Q35", "PC" .
         """
         return pulumi.get(self, "machine_type")
 
     @machine_type.setter
-    def machine_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def machine_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "machine_type", value)
 
     @_builtins.property
     @pulumi.getter(name="memorySizeBytes")
-    def memory_size_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def memory_size_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Memory size in bytes.
         """
         return pulumi.get(self, "memory_size_bytes")
 
     @memory_size_bytes.setter
-    def memory_size_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def memory_size_bytes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "memory_size_bytes", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VM name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def nics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2NicArgs']]]]:
+    def nics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2NicArgs']]]]:
         """
         NICs attached to the VM.
         """
         return pulumi.get(self, "nics")
 
     @nics.setter
-    def nics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2NicArgs']]]]):
+    def nics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2NicArgs']]]]):
         pulumi.set(self, "nics", value)
 
     @_builtins.property
     @pulumi.getter(name="numCoresPerSocket")
-    def num_cores_per_socket(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_cores_per_socket(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of cores per socket. Value should be at least 1.
         """
         return pulumi.get(self, "num_cores_per_socket")
 
     @num_cores_per_socket.setter
-    def num_cores_per_socket(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_cores_per_socket(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_cores_per_socket", value)
 
     @_builtins.property
     @pulumi.getter(name="numNumaNodes")
-    def num_numa_nodes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_numa_nodes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of NUMA nodes. 0 means NUMA is disabled.
         """
         return pulumi.get(self, "num_numa_nodes")
 
     @num_numa_nodes.setter
-    def num_numa_nodes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_numa_nodes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_numa_nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="numSockets")
-    def num_sockets(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_sockets(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of vCPU sockets. Value should be at least 1.
         """
         return pulumi.get(self, "num_sockets")
 
     @num_sockets.setter
-    def num_sockets(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_sockets(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_sockets", value)
 
     @_builtins.property
     @pulumi.getter(name="numThreadsPerCore")
-    def num_threads_per_core(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_threads_per_core(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of threads per core. Value should be at least 1.
         """
         return pulumi.get(self, "num_threads_per_core")
 
     @num_threads_per_core.setter
-    def num_threads_per_core(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_threads_per_core(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_threads_per_core", value)
 
     @_builtins.property
     @pulumi.getter(name="ownershipInfos")
-    def ownership_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2OwnershipInfoArgs']]]]:
+    def ownership_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2OwnershipInfoArgs']]]]:
         """
         Ownership information for the VM.
         """
         return pulumi.get(self, "ownership_infos")
 
     @ownership_infos.setter
-    def ownership_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2OwnershipInfoArgs']]]]):
+    def ownership_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2OwnershipInfoArgs']]]]):
         pulumi.set(self, "ownership_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="powerState")
-    def power_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def power_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "power_state")
 
     @power_state.setter
-    def power_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def power_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "power_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def projects(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]]:
+    def projects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]]:
         """
         Reference to a project.
         """
         return pulumi.get(self, "projects")
 
     @projects.setter
-    def projects(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]]):
+    def projects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ProjectArgs']]]]):
         pulumi.set(self, "projects", value)
 
     @_builtins.property
     @pulumi.getter(name="protectionPolicyStates")
-    def protection_policy_states(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]]]:
+    def protection_policy_states(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]]]:
         """
         Status of protection policy applied to this VM.
         """
         return pulumi.get(self, "protection_policy_states")
 
     @protection_policy_states.setter
-    def protection_policy_states(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]]]):
+    def protection_policy_states(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2ProtectionPolicyStateArgs']]]]):
         pulumi.set(self, "protection_policy_states", value)
 
     @_builtins.property
     @pulumi.getter(name="protectionType")
-    def protection_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protection_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
         """
         return pulumi.get(self, "protection_type")
 
     @protection_type.setter
-    def protection_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protection_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protection_type", value)
 
     @_builtins.property
     @pulumi.getter(name="serialPorts")
-    def serial_ports(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2SerialPortArgs']]]]:
+    def serial_ports(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2SerialPortArgs']]]]:
         """
         Serial ports configured on the VM.
         """
         return pulumi.get(self, "serial_ports")
 
     @serial_ports.setter
-    def serial_ports(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2SerialPortArgs']]]]):
+    def serial_ports(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2SerialPortArgs']]]]):
         pulumi.set(self, "serial_ports", value)
 
     @_builtins.property
     @pulumi.getter
-    def sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2SourceArgs']]]]:
+    def sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2SourceArgs']]]]:
         """
         Reference to an entity that the VM should be cloned or created from. Valid values are "VM", "VM_RECOVERY_POINT".
         """
         return pulumi.get(self, "sources")
 
     @sources.setter
-    def sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2SourceArgs']]]]):
+    def sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2SourceArgs']]]]):
         pulumi.set(self, "sources", value)
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
-    def storage_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2StorageConfigArgs']]]]:
+    def storage_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2StorageConfigArgs']]]]:
         """
         Storage configuration for VM.
         """
         return pulumi.get(self, "storage_configs")
 
     @storage_configs.setter
-    def storage_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2StorageConfigArgs']]]]):
+    def storage_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2StorageConfigArgs']]]]):
         pulumi.set(self, "storage_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="updateTime")
-    def update_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         VM last updated time.
         """
         return pulumi.get(self, "update_time")
 
     @update_time.setter
-    def update_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def update_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "update_time", value)
 
     @_builtins.property
     @pulumi.getter(name="vtpmConfigs")
-    def vtpm_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2VtpmConfigArgs']]]]:
+    def vtpm_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2VtpmConfigArgs']]]]:
         """
         Indicates how the vTPM for the VM should be configured.
         """
         return pulumi.get(self, "vtpm_configs")
 
     @vtpm_configs.setter
-    def vtpm_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2VtpmConfigArgs']]]]):
+    def vtpm_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2VtpmConfigArgs']]]]):
         pulumi.set(self, "vtpm_configs", value)
 
 
@@ -1418,48 +1418,48 @@ class VirtualMachineV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apc_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ApcConfigArgs', 'VirtualMachineV2ApcConfigArgsDict']]]]] = None,
-                 availability_zones: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2AvailabilityZoneArgs', 'VirtualMachineV2AvailabilityZoneArgsDict']]]]] = None,
-                 bios_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 boot_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2BootConfigArgs', 'VirtualMachineV2BootConfigArgsDict']]]]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2CategoryArgs', 'VirtualMachineV2CategoryArgsDict']]]]] = None,
-                 cd_roms: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2CdRomArgs', 'VirtualMachineV2CdRomArgsDict']]]]] = None,
-                 clusters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ClusterArgs', 'VirtualMachineV2ClusterArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2DiskArgs', 'VirtualMachineV2DiskArgsDict']]]]] = None,
-                 enabled_cpu_features: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 generation_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 gpuses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2GpusArgs', 'VirtualMachineV2GpusArgsDict']]]]] = None,
-                 guest_customizations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2GuestCustomizationArgs', 'VirtualMachineV2GuestCustomizationArgsDict']]]]] = None,
-                 guest_tools: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2GuestToolArgs', 'VirtualMachineV2GuestToolArgsDict']]]]] = None,
-                 hardware_clock_timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2HostArgs', 'VirtualMachineV2HostArgsDict']]]]] = None,
-                 is_agent_vm: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_branding_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_cpu_hotplug_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_cpu_passthrough_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_gpu_console_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_memory_overcommit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_scsi_controller_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_vcpu_hard_pinning_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_vga_console_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 machine_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory_size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2NicArgs', 'VirtualMachineV2NicArgsDict']]]]] = None,
-                 num_cores_per_socket: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_numa_nodes: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_sockets: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_threads_per_core: Optional[pulumi.Input[_builtins.int]] = None,
-                 ownership_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2OwnershipInfoArgs', 'VirtualMachineV2OwnershipInfoArgsDict']]]]] = None,
-                 power_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 projects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ProjectArgs', 'VirtualMachineV2ProjectArgsDict']]]]] = None,
-                 protection_policy_states: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ProtectionPolicyStateArgs', 'VirtualMachineV2ProtectionPolicyStateArgsDict']]]]] = None,
-                 protection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 serial_ports: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2SerialPortArgs', 'VirtualMachineV2SerialPortArgsDict']]]]] = None,
-                 sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2SourceArgs', 'VirtualMachineV2SourceArgsDict']]]]] = None,
-                 storage_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2StorageConfigArgs', 'VirtualMachineV2StorageConfigArgsDict']]]]] = None,
-                 vtpm_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2VtpmConfigArgs', 'VirtualMachineV2VtpmConfigArgsDict']]]]] = None,
+                 apc_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2ApcConfigArgs', 'VirtualMachineV2ApcConfigArgsDict']]]]] = None,
+                 availability_zones: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2AvailabilityZoneArgs', 'VirtualMachineV2AvailabilityZoneArgsDict']]]]] = None,
+                 bios_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 boot_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2BootConfigArgs', 'VirtualMachineV2BootConfigArgsDict']]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2CategoryArgs', 'VirtualMachineV2CategoryArgsDict']]]]] = None,
+                 cd_roms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2CdRomArgs', 'VirtualMachineV2CdRomArgsDict']]]]] = None,
+                 clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2ClusterArgs', 'VirtualMachineV2ClusterArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2DiskArgs', 'VirtualMachineV2DiskArgsDict']]]]] = None,
+                 enabled_cpu_features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 generation_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 gpuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2GpusArgs', 'VirtualMachineV2GpusArgsDict']]]]] = None,
+                 guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2GuestCustomizationArgs', 'VirtualMachineV2GuestCustomizationArgsDict']]]]] = None,
+                 guest_tools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2GuestToolArgs', 'VirtualMachineV2GuestToolArgsDict']]]]] = None,
+                 hardware_clock_timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2HostArgs', 'VirtualMachineV2HostArgsDict']]]]] = None,
+                 is_agent_vm: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_branding_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_cpu_hotplug_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_cpu_passthrough_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_gpu_console_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_memory_overcommit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_scsi_controller_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_vcpu_hard_pinning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_vga_console_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 machine_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2NicArgs', 'VirtualMachineV2NicArgsDict']]]]] = None,
+                 num_cores_per_socket: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_numa_nodes: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_sockets: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_threads_per_core: pulumi.Input[Optional[_builtins.int]] = None,
+                 ownership_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2OwnershipInfoArgs', 'VirtualMachineV2OwnershipInfoArgsDict']]]]] = None,
+                 power_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 projects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2ProjectArgs', 'VirtualMachineV2ProjectArgsDict']]]]] = None,
+                 protection_policy_states: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2ProtectionPolicyStateArgs', 'VirtualMachineV2ProtectionPolicyStateArgsDict']]]]] = None,
+                 protection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 serial_ports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2SerialPortArgs', 'VirtualMachineV2SerialPortArgsDict']]]]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2SourceArgs', 'VirtualMachineV2SourceArgsDict']]]]] = None,
+                 storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2StorageConfigArgs', 'VirtualMachineV2StorageConfigArgsDict']]]]] = None,
+                 vtpm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2VtpmConfigArgs', 'VirtualMachineV2VtpmConfigArgsDict']]]]] = None,
                  __props__=None):
         """
         Creates a Virtual Machine with the provided configuration.
@@ -1863,48 +1863,48 @@ class VirtualMachineV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apc_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ApcConfigArgs', 'VirtualMachineV2ApcConfigArgsDict']]]]] = None,
-                 availability_zones: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2AvailabilityZoneArgs', 'VirtualMachineV2AvailabilityZoneArgsDict']]]]] = None,
-                 bios_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 boot_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2BootConfigArgs', 'VirtualMachineV2BootConfigArgsDict']]]]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2CategoryArgs', 'VirtualMachineV2CategoryArgsDict']]]]] = None,
-                 cd_roms: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2CdRomArgs', 'VirtualMachineV2CdRomArgsDict']]]]] = None,
-                 clusters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ClusterArgs', 'VirtualMachineV2ClusterArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2DiskArgs', 'VirtualMachineV2DiskArgsDict']]]]] = None,
-                 enabled_cpu_features: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 generation_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 gpuses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2GpusArgs', 'VirtualMachineV2GpusArgsDict']]]]] = None,
-                 guest_customizations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2GuestCustomizationArgs', 'VirtualMachineV2GuestCustomizationArgsDict']]]]] = None,
-                 guest_tools: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2GuestToolArgs', 'VirtualMachineV2GuestToolArgsDict']]]]] = None,
-                 hardware_clock_timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2HostArgs', 'VirtualMachineV2HostArgsDict']]]]] = None,
-                 is_agent_vm: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_branding_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_cpu_hotplug_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_cpu_passthrough_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_gpu_console_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_memory_overcommit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_scsi_controller_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_vcpu_hard_pinning_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_vga_console_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 machine_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory_size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2NicArgs', 'VirtualMachineV2NicArgsDict']]]]] = None,
-                 num_cores_per_socket: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_numa_nodes: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_sockets: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_threads_per_core: Optional[pulumi.Input[_builtins.int]] = None,
-                 ownership_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2OwnershipInfoArgs', 'VirtualMachineV2OwnershipInfoArgsDict']]]]] = None,
-                 power_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 projects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ProjectArgs', 'VirtualMachineV2ProjectArgsDict']]]]] = None,
-                 protection_policy_states: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ProtectionPolicyStateArgs', 'VirtualMachineV2ProtectionPolicyStateArgsDict']]]]] = None,
-                 protection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 serial_ports: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2SerialPortArgs', 'VirtualMachineV2SerialPortArgsDict']]]]] = None,
-                 sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2SourceArgs', 'VirtualMachineV2SourceArgsDict']]]]] = None,
-                 storage_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2StorageConfigArgs', 'VirtualMachineV2StorageConfigArgsDict']]]]] = None,
-                 vtpm_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2VtpmConfigArgs', 'VirtualMachineV2VtpmConfigArgsDict']]]]] = None,
+                 apc_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2ApcConfigArgs', 'VirtualMachineV2ApcConfigArgsDict']]]]] = None,
+                 availability_zones: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2AvailabilityZoneArgs', 'VirtualMachineV2AvailabilityZoneArgsDict']]]]] = None,
+                 bios_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 boot_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2BootConfigArgs', 'VirtualMachineV2BootConfigArgsDict']]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2CategoryArgs', 'VirtualMachineV2CategoryArgsDict']]]]] = None,
+                 cd_roms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2CdRomArgs', 'VirtualMachineV2CdRomArgsDict']]]]] = None,
+                 clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2ClusterArgs', 'VirtualMachineV2ClusterArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2DiskArgs', 'VirtualMachineV2DiskArgsDict']]]]] = None,
+                 enabled_cpu_features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 generation_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 gpuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2GpusArgs', 'VirtualMachineV2GpusArgsDict']]]]] = None,
+                 guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2GuestCustomizationArgs', 'VirtualMachineV2GuestCustomizationArgsDict']]]]] = None,
+                 guest_tools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2GuestToolArgs', 'VirtualMachineV2GuestToolArgsDict']]]]] = None,
+                 hardware_clock_timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2HostArgs', 'VirtualMachineV2HostArgsDict']]]]] = None,
+                 is_agent_vm: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_branding_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_cpu_hotplug_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_cpu_passthrough_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_gpu_console_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_memory_overcommit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_scsi_controller_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_vcpu_hard_pinning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_vga_console_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 machine_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2NicArgs', 'VirtualMachineV2NicArgsDict']]]]] = None,
+                 num_cores_per_socket: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_numa_nodes: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_sockets: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_threads_per_core: pulumi.Input[Optional[_builtins.int]] = None,
+                 ownership_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2OwnershipInfoArgs', 'VirtualMachineV2OwnershipInfoArgsDict']]]]] = None,
+                 power_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 projects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2ProjectArgs', 'VirtualMachineV2ProjectArgsDict']]]]] = None,
+                 protection_policy_states: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2ProtectionPolicyStateArgs', 'VirtualMachineV2ProtectionPolicyStateArgsDict']]]]] = None,
+                 protection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 serial_ports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2SerialPortArgs', 'VirtualMachineV2SerialPortArgsDict']]]]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2SourceArgs', 'VirtualMachineV2SourceArgsDict']]]]] = None,
+                 storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2StorageConfigArgs', 'VirtualMachineV2StorageConfigArgsDict']]]]] = None,
+                 vtpm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2VtpmConfigArgs', 'VirtualMachineV2VtpmConfigArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1969,51 +1969,51 @@ class VirtualMachineV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            apc_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ApcConfigArgs', 'VirtualMachineV2ApcConfigArgsDict']]]]] = None,
-            availability_zones: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2AvailabilityZoneArgs', 'VirtualMachineV2AvailabilityZoneArgsDict']]]]] = None,
-            bios_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            boot_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2BootConfigArgs', 'VirtualMachineV2BootConfigArgsDict']]]]] = None,
-            categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2CategoryArgs', 'VirtualMachineV2CategoryArgsDict']]]]] = None,
-            cd_roms: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2CdRomArgs', 'VirtualMachineV2CdRomArgsDict']]]]] = None,
-            clusters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ClusterArgs', 'VirtualMachineV2ClusterArgsDict']]]]] = None,
-            create_time: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            disks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2DiskArgs', 'VirtualMachineV2DiskArgsDict']]]]] = None,
-            enabled_cpu_features: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            generation_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            gpuses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2GpusArgs', 'VirtualMachineV2GpusArgsDict']]]]] = None,
-            guest_customizations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2GuestCustomizationArgs', 'VirtualMachineV2GuestCustomizationArgsDict']]]]] = None,
-            guest_tools: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2GuestToolArgs', 'VirtualMachineV2GuestToolArgsDict']]]]] = None,
-            hardware_clock_timezone: Optional[pulumi.Input[_builtins.str]] = None,
-            hosts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2HostArgs', 'VirtualMachineV2HostArgsDict']]]]] = None,
-            is_agent_vm: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_branding_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_cpu_hotplug_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_cpu_passthrough_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_gpu_console_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_memory_overcommit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_scsi_controller_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_vcpu_hard_pinning_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_vga_console_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            machine_type: Optional[pulumi.Input[_builtins.str]] = None,
-            memory_size_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            nics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2NicArgs', 'VirtualMachineV2NicArgsDict']]]]] = None,
-            num_cores_per_socket: Optional[pulumi.Input[_builtins.int]] = None,
-            num_numa_nodes: Optional[pulumi.Input[_builtins.int]] = None,
-            num_sockets: Optional[pulumi.Input[_builtins.int]] = None,
-            num_threads_per_core: Optional[pulumi.Input[_builtins.int]] = None,
-            ownership_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2OwnershipInfoArgs', 'VirtualMachineV2OwnershipInfoArgsDict']]]]] = None,
-            power_state: Optional[pulumi.Input[_builtins.str]] = None,
-            projects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ProjectArgs', 'VirtualMachineV2ProjectArgsDict']]]]] = None,
-            protection_policy_states: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2ProtectionPolicyStateArgs', 'VirtualMachineV2ProtectionPolicyStateArgsDict']]]]] = None,
-            protection_type: Optional[pulumi.Input[_builtins.str]] = None,
-            serial_ports: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2SerialPortArgs', 'VirtualMachineV2SerialPortArgsDict']]]]] = None,
-            sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2SourceArgs', 'VirtualMachineV2SourceArgsDict']]]]] = None,
-            storage_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2StorageConfigArgs', 'VirtualMachineV2StorageConfigArgsDict']]]]] = None,
-            update_time: Optional[pulumi.Input[_builtins.str]] = None,
-            vtpm_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineV2VtpmConfigArgs', 'VirtualMachineV2VtpmConfigArgsDict']]]]] = None) -> 'VirtualMachineV2':
+            apc_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2ApcConfigArgs', 'VirtualMachineV2ApcConfigArgsDict']]]]] = None,
+            availability_zones: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2AvailabilityZoneArgs', 'VirtualMachineV2AvailabilityZoneArgsDict']]]]] = None,
+            bios_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            boot_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2BootConfigArgs', 'VirtualMachineV2BootConfigArgsDict']]]]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2CategoryArgs', 'VirtualMachineV2CategoryArgsDict']]]]] = None,
+            cd_roms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2CdRomArgs', 'VirtualMachineV2CdRomArgsDict']]]]] = None,
+            clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2ClusterArgs', 'VirtualMachineV2ClusterArgsDict']]]]] = None,
+            create_time: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2DiskArgs', 'VirtualMachineV2DiskArgsDict']]]]] = None,
+            enabled_cpu_features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            generation_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            gpuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2GpusArgs', 'VirtualMachineV2GpusArgsDict']]]]] = None,
+            guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2GuestCustomizationArgs', 'VirtualMachineV2GuestCustomizationArgsDict']]]]] = None,
+            guest_tools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2GuestToolArgs', 'VirtualMachineV2GuestToolArgsDict']]]]] = None,
+            hardware_clock_timezone: pulumi.Input[Optional[_builtins.str]] = None,
+            hosts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2HostArgs', 'VirtualMachineV2HostArgsDict']]]]] = None,
+            is_agent_vm: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_branding_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_cpu_hotplug_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_cpu_passthrough_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_gpu_console_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_memory_overcommit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_scsi_controller_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_vcpu_hard_pinning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_vga_console_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            machine_type: pulumi.Input[Optional[_builtins.str]] = None,
+            memory_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2NicArgs', 'VirtualMachineV2NicArgsDict']]]]] = None,
+            num_cores_per_socket: pulumi.Input[Optional[_builtins.int]] = None,
+            num_numa_nodes: pulumi.Input[Optional[_builtins.int]] = None,
+            num_sockets: pulumi.Input[Optional[_builtins.int]] = None,
+            num_threads_per_core: pulumi.Input[Optional[_builtins.int]] = None,
+            ownership_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2OwnershipInfoArgs', 'VirtualMachineV2OwnershipInfoArgsDict']]]]] = None,
+            power_state: pulumi.Input[Optional[_builtins.str]] = None,
+            projects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2ProjectArgs', 'VirtualMachineV2ProjectArgsDict']]]]] = None,
+            protection_policy_states: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2ProtectionPolicyStateArgs', 'VirtualMachineV2ProtectionPolicyStateArgsDict']]]]] = None,
+            protection_type: pulumi.Input[Optional[_builtins.str]] = None,
+            serial_ports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2SerialPortArgs', 'VirtualMachineV2SerialPortArgsDict']]]]] = None,
+            sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2SourceArgs', 'VirtualMachineV2SourceArgsDict']]]]] = None,
+            storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2StorageConfigArgs', 'VirtualMachineV2StorageConfigArgsDict']]]]] = None,
+            update_time: pulumi.Input[Optional[_builtins.str]] = None,
+            vtpm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualMachineV2VtpmConfigArgs', 'VirtualMachineV2VtpmConfigArgsDict']]]]] = None) -> 'VirtualMachineV2':
         """
         Get an existing VirtualMachineV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

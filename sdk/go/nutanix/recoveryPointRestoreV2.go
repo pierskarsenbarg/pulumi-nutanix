@@ -13,7 +13,7 @@ import (
 )
 
 // This operation Restore a recovery point identified by {extId}.
-// A comma separated list of the created VM and volume group external identifiers can be found in the task completion details under the keys <span pulumi-lang-nodejs="`vmExtIds`" pulumi-lang-dotnet="`VmExtIds`" pulumi-lang-go="`vmExtIds`" pulumi-lang-python="`vm_ext_ids`" pulumi-lang-yaml="`vmExtIds`" pulumi-lang-java="`vmExtIds`">`vmExtIds`</span> and <span pulumi-lang-nodejs="`volumeGroupExtIds`" pulumi-lang-dotnet="`VolumeGroupExtIds`" pulumi-lang-go="`volumeGroupExtIds`" pulumi-lang-python="`volume_group_ext_ids`" pulumi-lang-yaml="`volumeGroupExtIds`" pulumi-lang-java="`volumeGroupExtIds`">`volumeGroupExtIds`</span> respectively.
+// A comma separated list of the created VM and volume group external identifiers can be found in the task completion details under the keys <span pulumi-lang-nodejs="`vmExtIds`" pulumi-lang-dotnet="`VmExtIds`" pulumi-lang-go="`vmExtIds`" pulumi-lang-python="`vm_ext_ids`" pulumi-lang-yaml="`vmExtIds`" pulumi-lang-java="`vmExtIds`" pulumi-lang-hcl="`vm_ext_ids`">`vmExtIds`</span> and <span pulumi-lang-nodejs="`volumeGroupExtIds`" pulumi-lang-dotnet="`VolumeGroupExtIds`" pulumi-lang-go="`volumeGroupExtIds`" pulumi-lang-python="`volume_group_ext_ids`" pulumi-lang-yaml="`volumeGroupExtIds`" pulumi-lang-java="`volumeGroupExtIds`" pulumi-lang-hcl="`volume_group_ext_ids`">`volumeGroupExtIds`</span> respectively.
 //
 // ## Example Usage
 //

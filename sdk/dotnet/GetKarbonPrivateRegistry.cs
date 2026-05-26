@@ -18,6 +18,19 @@ namespace PiersKarsenbarg.Nutanix
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getkarbonprivateregistry" "registry" {
+        ///   cluster_id = "&lt;YOUR-CLUSTER-ID&gt;"
+        /// }
+        /// ```
         /// ```yaml
         /// variables:
         ///   registry:
@@ -37,6 +50,19 @@ namespace PiersKarsenbarg.Nutanix
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getkarbonprivateregistry" "registry" {
+        ///   cluster_id = "&lt;YOUR-CLUSTER-ID&gt;"
+        /// }
+        /// ```
         /// ```yaml
         /// variables:
         ///   registry:
@@ -56,6 +82,19 @@ namespace PiersKarsenbarg.Nutanix
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getkarbonprivateregistry" "registry" {
+        ///   cluster_id = "&lt;YOUR-CLUSTER-ID&gt;"
+        /// }
+        /// ```
         /// ```yaml
         /// variables:
         ///   registry:

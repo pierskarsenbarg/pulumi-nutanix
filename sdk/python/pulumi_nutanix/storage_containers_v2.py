@@ -22,26 +22,26 @@ __all__ = ['StorageContainersV2Args', 'StorageContainersV2']
 class StorageContainersV2Args:
     def __init__(__self__, *,
                  cluster_ext_id: pulumi.Input[_builtins.str],
-                 affinity_host_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cache_deduplication: Optional[pulumi.Input[_builtins.str]] = None,
-                 compression_delay_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 container_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 erasure_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 erasure_code_delay_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 has_higher_ec_fault_domain_preference: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_small_files: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_compression_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_inline_ec_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_internal: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_software_encryption_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 logical_advertised_capacity_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 logical_explicit_reserved_capacity_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nfs_whitelist_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['StorageContainersV2NfsWhitelistAddressArgs']]]] = None,
-                 on_disk_dedup: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_factor: Optional[pulumi.Input[_builtins.int]] = None):
+                 affinity_host_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cache_deduplication: pulumi.Input[Optional[_builtins.str]] = None,
+                 compression_delay_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 container_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 erasure_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 erasure_code_delay_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 has_higher_ec_fault_domain_preference: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_small_files: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_compression_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_inline_ec_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_internal: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_software_encryption_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 logical_advertised_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 logical_explicit_reserved_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nfs_whitelist_addresses: pulumi.Input[Optional[Sequence[pulumi.Input['StorageContainersV2NfsWhitelistAddressArgs']]]] = None,
+                 on_disk_dedup: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_factor: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a StorageContainersV2 resource.
 
@@ -122,274 +122,274 @@ class StorageContainersV2Args:
 
     @_builtins.property
     @pulumi.getter(name="affinityHostExtId")
-    def affinity_host_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def affinity_host_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Affinity host extId for RF 1 Storage Container.
         """
         return pulumi.get(self, "affinity_host_ext_id")
 
     @affinity_host_ext_id.setter
-    def affinity_host_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def affinity_host_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "affinity_host_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cacheDeduplication")
-    def cache_deduplication(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cache_deduplication(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Indicates the current status of Cache Deduplication for the Container. available values:  `NONE`,    `OFF`,    `ON`
         """
         return pulumi.get(self, "cache_deduplication")
 
     @cache_deduplication.setter
-    def cache_deduplication(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cache_deduplication(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cache_deduplication", value)
 
     @_builtins.property
     @pulumi.getter(name="compressionDelaySecs")
-    def compression_delay_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def compression_delay_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         -(Optional) The compression delay in seconds.
         """
         return pulumi.get(self, "compression_delay_secs")
 
     @compression_delay_secs.setter
-    def compression_delay_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def compression_delay_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "compression_delay_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="containerExtId")
-    def container_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def container_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - the storage container ext id
         """
         return pulumi.get(self, "container_ext_id")
 
     @container_ext_id.setter
-    def container_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def container_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "container_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="erasureCode")
-    def erasure_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def erasure_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Indicates the current status value for Erasure Coding for the Container. available values:  `NONE`,    `OFF`,    `ON`
         """
         return pulumi.get(self, "erasure_code")
 
     @erasure_code.setter
-    def erasure_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def erasure_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "erasure_code", value)
 
     @_builtins.property
     @pulumi.getter(name="erasureCodeDelaySecs")
-    def erasure_code_delay_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def erasure_code_delay_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         -(Optional) Delay in performing ErasureCode for the current Container instance.
         """
         return pulumi.get(self, "erasure_code_delay_secs")
 
     @erasure_code_delay_secs.setter
-    def erasure_code_delay_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def erasure_code_delay_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "erasure_code_delay_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - the storage container uuid
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="hasHigherEcFaultDomainPreference")
-    def has_higher_ec_fault_domain_preference(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def has_higher_ec_fault_domain_preference(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         -(Optional) Indicates whether to prefer a higher Erasure Code fault domain.
         """
         return pulumi.get(self, "has_higher_ec_fault_domain_preference")
 
     @has_higher_ec_fault_domain_preference.setter
-    def has_higher_ec_fault_domain_preference(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def has_higher_ec_fault_domain_preference(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "has_higher_ec_fault_domain_preference", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreSmallFiles")
-    def ignore_small_files(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ignore_small_files(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "ignore_small_files")
 
     @ignore_small_files.setter
-    def ignore_small_files(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ignore_small_files(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ignore_small_files", value)
 
     @_builtins.property
     @pulumi.getter(name="isCompressionEnabled")
-    def is_compression_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_compression_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         -(Optional) Indicates whether the compression is enabled for the Container.
         """
         return pulumi.get(self, "is_compression_enabled")
 
     @is_compression_enabled.setter
-    def is_compression_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_compression_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_compression_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isInlineEcEnabled")
-    def is_inline_ec_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_inline_ec_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         -(Optional) Indicates whether data written to this container should be inline erasure coded or not. This field is only considered when ErasureCoding is enabled.
         """
         return pulumi.get(self, "is_inline_ec_enabled")
 
     @is_inline_ec_enabled.setter
-    def is_inline_ec_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_inline_ec_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_inline_ec_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isInternal")
-    def is_internal(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_internal(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - Indicates whether the Container is internal and is managed by Nutanix.
         """
         return pulumi.get(self, "is_internal")
 
     @is_internal.setter
-    def is_internal(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_internal(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_internal", value)
 
     @_builtins.property
     @pulumi.getter(name="isSoftwareEncryptionEnabled")
-    def is_software_encryption_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_software_encryption_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         -(Optional) Indicates whether the Container instance has software encryption enabled.
         """
         return pulumi.get(self, "is_software_encryption_enabled")
 
     @is_software_encryption_enabled.setter
-    def is_software_encryption_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_software_encryption_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_software_encryption_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="logicalAdvertisedCapacityBytes")
-    def logical_advertised_capacity_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def logical_advertised_capacity_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         -(Optional) Max capacity of the Container as defined by the user.
         """
         return pulumi.get(self, "logical_advertised_capacity_bytes")
 
     @logical_advertised_capacity_bytes.setter
-    def logical_advertised_capacity_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def logical_advertised_capacity_bytes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "logical_advertised_capacity_bytes", value)
 
     @_builtins.property
     @pulumi.getter(name="logicalExplicitReservedCapacityBytes")
-    def logical_explicit_reserved_capacity_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def logical_explicit_reserved_capacity_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         -(Optional) Total reserved size (in bytes) of the container (set by Admin). This also accounts for the container's replication factor. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity.
         """
         return pulumi.get(self, "logical_explicit_reserved_capacity_bytes")
 
     @logical_explicit_reserved_capacity_bytes.setter
-    def logical_explicit_reserved_capacity_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def logical_explicit_reserved_capacity_bytes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "logical_explicit_reserved_capacity_bytes", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Name of the storage container.  Note that the name of Storage Container should be unique per cluster.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nfsWhitelistAddresses")
-    def nfs_whitelist_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['StorageContainersV2NfsWhitelistAddressArgs']]]]:
+    def nfs_whitelist_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['StorageContainersV2NfsWhitelistAddressArgs']]]]:
         """
         -(Optional) List of NFS addresses which need to be whitelisted.
         """
         return pulumi.get(self, "nfs_whitelist_addresses")
 
     @nfs_whitelist_addresses.setter
-    def nfs_whitelist_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['StorageContainersV2NfsWhitelistAddressArgs']]]]):
+    def nfs_whitelist_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['StorageContainersV2NfsWhitelistAddressArgs']]]]):
         pulumi.set(self, "nfs_whitelist_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="onDiskDedup")
-    def on_disk_dedup(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def on_disk_dedup(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Indicates the current status of Disk Deduplication for the Container. available values:  `NONE`,    `OFF`,    `POST_PROCESS`
         """
         return pulumi.get(self, "on_disk_dedup")
 
     @on_disk_dedup.setter
-    def on_disk_dedup(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def on_disk_dedup(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "on_disk_dedup", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerExtId")
-    def owner_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) owner ext id
         """
         return pulumi.get(self, "owner_ext_id")
 
     @owner_ext_id.setter
-    def owner_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationFactor")
-    def replication_factor(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def replication_factor(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         -(Optional) Replication factor of the Storage Container.
         """
         return pulumi.get(self, "replication_factor")
 
     @replication_factor.setter
-    def replication_factor(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def replication_factor(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "replication_factor", value)
 
 
 @pulumi.input_type
 class _StorageContainersV2State:
     def __init__(__self__, *,
-                 affinity_host_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cache_deduplication: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 compression_delay_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 container_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 erasure_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 erasure_code_delay_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 has_higher_ec_fault_domain_preference: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_small_files: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_compression_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_encrypted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_inline_ec_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_internal: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_marked_for_removal: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_software_encryption_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 links: Optional[pulumi.Input[Sequence[pulumi.Input['StorageContainersV2LinkArgs']]]] = None,
-                 logical_advertised_capacity_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 logical_explicit_reserved_capacity_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 logical_implicit_reserved_capacity_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_capacity_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nfs_whitelist_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['StorageContainersV2NfsWhitelistAddressArgs']]]] = None,
-                 on_disk_dedup: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_factor: Optional[pulumi.Input[_builtins.int]] = None,
-                 storage_pool_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 affinity_host_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cache_deduplication: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 compression_delay_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 container_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 erasure_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 erasure_code_delay_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 has_higher_ec_fault_domain_preference: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_small_files: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_compression_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_encrypted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_inline_ec_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_internal: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_marked_for_removal: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_software_encryption_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['StorageContainersV2LinkArgs']]]] = None,
+                 logical_advertised_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 logical_explicit_reserved_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 logical_implicit_reserved_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nfs_whitelist_addresses: pulumi.Input[Optional[Sequence[pulumi.Input['StorageContainersV2NfsWhitelistAddressArgs']]]] = None,
+                 on_disk_dedup: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_factor: pulumi.Input[Optional[_builtins.int]] = None,
+                 storage_pool_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering StorageContainersV2 resources.
 
@@ -483,347 +483,347 @@ class _StorageContainersV2State:
 
     @_builtins.property
     @pulumi.getter(name="affinityHostExtId")
-    def affinity_host_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def affinity_host_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Affinity host extId for RF 1 Storage Container.
         """
         return pulumi.get(self, "affinity_host_ext_id")
 
     @affinity_host_ext_id.setter
-    def affinity_host_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def affinity_host_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "affinity_host_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cacheDeduplication")
-    def cache_deduplication(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cache_deduplication(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Indicates the current status of Cache Deduplication for the Container. available values:  `NONE`,    `OFF`,    `ON`
         """
         return pulumi.get(self, "cache_deduplication")
 
     @cache_deduplication.setter
-    def cache_deduplication(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cache_deduplication(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cache_deduplication", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterExtId")
-    def cluster_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - ext id for the cluster owning the storage container.
         """
         return pulumi.get(self, "cluster_ext_id")
 
     @cluster_ext_id.setter
-    def cluster_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterName")
-    def cluster_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Corresponding name of the Cluster owning the Storage Container instance.
         """
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
-    def cluster_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_name", value)
 
     @_builtins.property
     @pulumi.getter(name="compressionDelaySecs")
-    def compression_delay_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def compression_delay_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         -(Optional) The compression delay in seconds.
         """
         return pulumi.get(self, "compression_delay_secs")
 
     @compression_delay_secs.setter
-    def compression_delay_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def compression_delay_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "compression_delay_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="containerExtId")
-    def container_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def container_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - the storage container ext id
         """
         return pulumi.get(self, "container_ext_id")
 
     @container_ext_id.setter
-    def container_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def container_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "container_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="erasureCode")
-    def erasure_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def erasure_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Indicates the current status value for Erasure Coding for the Container. available values:  `NONE`,    `OFF`,    `ON`
         """
         return pulumi.get(self, "erasure_code")
 
     @erasure_code.setter
-    def erasure_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def erasure_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "erasure_code", value)
 
     @_builtins.property
     @pulumi.getter(name="erasureCodeDelaySecs")
-    def erasure_code_delay_secs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def erasure_code_delay_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         -(Optional) Delay in performing ErasureCode for the current Container instance.
         """
         return pulumi.get(self, "erasure_code_delay_secs")
 
     @erasure_code_delay_secs.setter
-    def erasure_code_delay_secs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def erasure_code_delay_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "erasure_code_delay_secs", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - the storage container uuid
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="hasHigherEcFaultDomainPreference")
-    def has_higher_ec_fault_domain_preference(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def has_higher_ec_fault_domain_preference(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         -(Optional) Indicates whether to prefer a higher Erasure Code fault domain.
         """
         return pulumi.get(self, "has_higher_ec_fault_domain_preference")
 
     @has_higher_ec_fault_domain_preference.setter
-    def has_higher_ec_fault_domain_preference(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def has_higher_ec_fault_domain_preference(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "has_higher_ec_fault_domain_preference", value)
 
     @_builtins.property
     @pulumi.getter(name="ignoreSmallFiles")
-    def ignore_small_files(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def ignore_small_files(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "ignore_small_files")
 
     @ignore_small_files.setter
-    def ignore_small_files(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def ignore_small_files(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "ignore_small_files", value)
 
     @_builtins.property
     @pulumi.getter(name="isCompressionEnabled")
-    def is_compression_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_compression_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         -(Optional) Indicates whether the compression is enabled for the Container.
         """
         return pulumi.get(self, "is_compression_enabled")
 
     @is_compression_enabled.setter
-    def is_compression_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_compression_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_compression_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isEncrypted")
-    def is_encrypted(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_encrypted(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - Indicates whether the Container is encrypted or not.
         """
         return pulumi.get(self, "is_encrypted")
 
     @is_encrypted.setter
-    def is_encrypted(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_encrypted(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_encrypted", value)
 
     @_builtins.property
     @pulumi.getter(name="isInlineEcEnabled")
-    def is_inline_ec_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_inline_ec_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         -(Optional) Indicates whether data written to this container should be inline erasure coded or not. This field is only considered when ErasureCoding is enabled.
         """
         return pulumi.get(self, "is_inline_ec_enabled")
 
     @is_inline_ec_enabled.setter
-    def is_inline_ec_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_inline_ec_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_inline_ec_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isInternal")
-    def is_internal(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_internal(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - Indicates whether the Container is internal and is managed by Nutanix.
         """
         return pulumi.get(self, "is_internal")
 
     @is_internal.setter
-    def is_internal(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_internal(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_internal", value)
 
     @_builtins.property
     @pulumi.getter(name="isMarkedForRemoval")
-    def is_marked_for_removal(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_marked_for_removal(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - Indicates if the Storage Container is marked for removal. This field is set when the Storage Container is about to be destroyed.
         """
         return pulumi.get(self, "is_marked_for_removal")
 
     @is_marked_for_removal.setter
-    def is_marked_for_removal(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_marked_for_removal(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_marked_for_removal", value)
 
     @_builtins.property
     @pulumi.getter(name="isSoftwareEncryptionEnabled")
-    def is_software_encryption_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_software_encryption_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         -(Optional) Indicates whether the Container instance has software encryption enabled.
         """
         return pulumi.get(self, "is_software_encryption_enabled")
 
     @is_software_encryption_enabled.setter
-    def is_software_encryption_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_software_encryption_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_software_encryption_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['StorageContainersV2LinkArgs']]]]:
+    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['StorageContainersV2LinkArgs']]]]:
         """
         - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         """
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['StorageContainersV2LinkArgs']]]]):
+    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['StorageContainersV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter(name="logicalAdvertisedCapacityBytes")
-    def logical_advertised_capacity_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def logical_advertised_capacity_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         -(Optional) Max capacity of the Container as defined by the user.
         """
         return pulumi.get(self, "logical_advertised_capacity_bytes")
 
     @logical_advertised_capacity_bytes.setter
-    def logical_advertised_capacity_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def logical_advertised_capacity_bytes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "logical_advertised_capacity_bytes", value)
 
     @_builtins.property
     @pulumi.getter(name="logicalExplicitReservedCapacityBytes")
-    def logical_explicit_reserved_capacity_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def logical_explicit_reserved_capacity_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         -(Optional) Total reserved size (in bytes) of the container (set by Admin). This also accounts for the container's replication factor. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity.
         """
         return pulumi.get(self, "logical_explicit_reserved_capacity_bytes")
 
     @logical_explicit_reserved_capacity_bytes.setter
-    def logical_explicit_reserved_capacity_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def logical_explicit_reserved_capacity_bytes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "logical_explicit_reserved_capacity_bytes", value)
 
     @_builtins.property
     @pulumi.getter(name="logicalImplicitReservedCapacityBytes")
-    def logical_implicit_reserved_capacity_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def logical_implicit_reserved_capacity_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - This is the summation of reservations provisioned on all vdisks in the container. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity
         """
         return pulumi.get(self, "logical_implicit_reserved_capacity_bytes")
 
     @logical_implicit_reserved_capacity_bytes.setter
-    def logical_implicit_reserved_capacity_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def logical_implicit_reserved_capacity_bytes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "logical_implicit_reserved_capacity_bytes", value)
 
     @_builtins.property
     @pulumi.getter(name="maxCapacityBytes")
-    def max_capacity_bytes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_capacity_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         - Maximum physical capacity of the Storage Container in bytes.
         """
         return pulumi.get(self, "max_capacity_bytes")
 
     @max_capacity_bytes.setter
-    def max_capacity_bytes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_capacity_bytes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_capacity_bytes", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Name of the storage container.  Note that the name of Storage Container should be unique per cluster.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nfsWhitelistAddresses")
-    def nfs_whitelist_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['StorageContainersV2NfsWhitelistAddressArgs']]]]:
+    def nfs_whitelist_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['StorageContainersV2NfsWhitelistAddressArgs']]]]:
         """
         -(Optional) List of NFS addresses which need to be whitelisted.
         """
         return pulumi.get(self, "nfs_whitelist_addresses")
 
     @nfs_whitelist_addresses.setter
-    def nfs_whitelist_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['StorageContainersV2NfsWhitelistAddressArgs']]]]):
+    def nfs_whitelist_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['StorageContainersV2NfsWhitelistAddressArgs']]]]):
         pulumi.set(self, "nfs_whitelist_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="onDiskDedup")
-    def on_disk_dedup(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def on_disk_dedup(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Indicates the current status of Disk Deduplication for the Container. available values:  `NONE`,    `OFF`,    `POST_PROCESS`
         """
         return pulumi.get(self, "on_disk_dedup")
 
     @on_disk_dedup.setter
-    def on_disk_dedup(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def on_disk_dedup(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "on_disk_dedup", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerExtId")
-    def owner_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) owner ext id
         """
         return pulumi.get(self, "owner_ext_id")
 
     @owner_ext_id.setter
-    def owner_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationFactor")
-    def replication_factor(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def replication_factor(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         -(Optional) Replication factor of the Storage Container.
         """
         return pulumi.get(self, "replication_factor")
 
     @replication_factor.setter
-    def replication_factor(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def replication_factor(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "replication_factor", value)
 
     @_builtins.property
     @pulumi.getter(name="storagePoolExtId")
-    def storage_pool_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_pool_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - extId of the Storage Pool owning the Storage Container instance.
         """
         return pulumi.get(self, "storage_pool_ext_id")
 
     @storage_pool_ext_id.setter
-    def storage_pool_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_pool_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_pool_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - A globally unique identifier that represents the tenant that owns this entity.
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
 
@@ -833,27 +833,27 @@ class StorageContainersV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 affinity_host_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cache_deduplication: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compression_delay_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 container_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 erasure_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 erasure_code_delay_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 has_higher_ec_fault_domain_preference: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_small_files: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_compression_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_inline_ec_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_internal: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_software_encryption_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 logical_advertised_capacity_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 logical_explicit_reserved_capacity_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nfs_whitelist_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StorageContainersV2NfsWhitelistAddressArgs', 'StorageContainersV2NfsWhitelistAddressArgsDict']]]]] = None,
-                 on_disk_dedup: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_factor: Optional[pulumi.Input[_builtins.int]] = None,
+                 affinity_host_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cache_deduplication: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compression_delay_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 container_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 erasure_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 erasure_code_delay_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 has_higher_ec_fault_domain_preference: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_small_files: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_compression_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_inline_ec_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_internal: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_software_encryption_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 logical_advertised_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 logical_explicit_reserved_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nfs_whitelist_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StorageContainersV2NfsWhitelistAddressArgs', 'StorageContainersV2NfsWhitelistAddressArgsDict']]]]] = None,
+                 on_disk_dedup: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_factor: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         Provides Nutanix resource to create Storage Containers
@@ -965,27 +965,27 @@ class StorageContainersV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 affinity_host_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cache_deduplication: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compression_delay_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 container_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 erasure_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 erasure_code_delay_secs: Optional[pulumi.Input[_builtins.int]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 has_higher_ec_fault_domain_preference: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ignore_small_files: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_compression_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_inline_ec_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_internal: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_software_encryption_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 logical_advertised_capacity_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 logical_explicit_reserved_capacity_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nfs_whitelist_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StorageContainersV2NfsWhitelistAddressArgs', 'StorageContainersV2NfsWhitelistAddressArgsDict']]]]] = None,
-                 on_disk_dedup: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_factor: Optional[pulumi.Input[_builtins.int]] = None,
+                 affinity_host_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cache_deduplication: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compression_delay_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 container_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 erasure_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 erasure_code_delay_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 has_higher_ec_fault_domain_preference: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ignore_small_files: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_compression_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_inline_ec_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_internal: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_software_encryption_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 logical_advertised_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 logical_explicit_reserved_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nfs_whitelist_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StorageContainersV2NfsWhitelistAddressArgs', 'StorageContainersV2NfsWhitelistAddressArgsDict']]]]] = None,
+                 on_disk_dedup: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_factor: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1036,35 +1036,35 @@ class StorageContainersV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            affinity_host_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cache_deduplication: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
-            compression_delay_secs: Optional[pulumi.Input[_builtins.int]] = None,
-            container_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            erasure_code: Optional[pulumi.Input[_builtins.str]] = None,
-            erasure_code_delay_secs: Optional[pulumi.Input[_builtins.int]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            has_higher_ec_fault_domain_preference: Optional[pulumi.Input[_builtins.bool]] = None,
-            ignore_small_files: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_compression_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_encrypted: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_inline_ec_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_internal: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_marked_for_removal: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_software_encryption_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StorageContainersV2LinkArgs', 'StorageContainersV2LinkArgsDict']]]]] = None,
-            logical_advertised_capacity_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-            logical_explicit_reserved_capacity_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-            logical_implicit_reserved_capacity_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-            max_capacity_bytes: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            nfs_whitelist_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StorageContainersV2NfsWhitelistAddressArgs', 'StorageContainersV2NfsWhitelistAddressArgsDict']]]]] = None,
-            on_disk_dedup: Optional[pulumi.Input[_builtins.str]] = None,
-            owner_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_factor: Optional[pulumi.Input[_builtins.int]] = None,
-            storage_pool_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'StorageContainersV2':
+            affinity_host_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cache_deduplication: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+            compression_delay_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            container_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            erasure_code: pulumi.Input[Optional[_builtins.str]] = None,
+            erasure_code_delay_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            has_higher_ec_fault_domain_preference: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_small_files: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_compression_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_encrypted: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_inline_ec_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_internal: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_marked_for_removal: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_software_encryption_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StorageContainersV2LinkArgs', 'StorageContainersV2LinkArgsDict']]]]] = None,
+            logical_advertised_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            logical_explicit_reserved_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            logical_implicit_reserved_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            max_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            nfs_whitelist_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StorageContainersV2NfsWhitelistAddressArgs', 'StorageContainersV2NfsWhitelistAddressArgsDict']]]]] = None,
+            on_disk_dedup: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_factor: pulumi.Input[Optional[_builtins.int]] = None,
+            storage_pool_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'StorageContainersV2':
         """
         Get an existing StorageContainersV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

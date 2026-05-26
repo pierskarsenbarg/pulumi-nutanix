@@ -162,7 +162,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<Outputs.PcDeployV2Network> Network { get; private set; } = null!;
 
         /// <summary>
-        /// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`"&gt;`false`&lt;/span&gt;.
+        /// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`"&gt;`false`&lt;/span&gt;.
         /// </summary>
         [Output("shouldEnableHighAvailability")]
         public Output<bool?> ShouldEnableHighAvailability { get; private set; } = null!;
@@ -227,7 +227,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<Inputs.PcDeployV2NetworkArgs> Network { get; set; } = null!;
 
         /// <summary>
-        /// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`"&gt;`false`&lt;/span&gt;.
+        /// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`"&gt;`false`&lt;/span&gt;.
         /// </summary>
         [Input("shouldEnableHighAvailability")]
         public Input<bool>? ShouldEnableHighAvailability { get; set; }
@@ -253,7 +253,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<Inputs.PcDeployV2NetworkGetArgs>? Network { get; set; }
 
         /// <summary>
-        /// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`"&gt;`false`&lt;/span&gt;.
+        /// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`"&gt;`false`&lt;/span&gt;.
         /// </summary>
         [Input("shouldEnableHighAvailability")]
         public Input<bool>? ShouldEnableHighAvailability { get; set; }

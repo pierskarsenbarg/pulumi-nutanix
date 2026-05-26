@@ -132,9 +132,9 @@ def get_foundation_central_list_api_keys(length: Optional[_builtins.int] = None,
         length=pulumi.get(__ret__, 'length'),
         metadata=pulumi.get(__ret__, 'metadata'),
         offset=pulumi.get(__ret__, 'offset'))
-def get_foundation_central_list_api_keys_output(length: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                                metadata: Optional[pulumi.Input[Optional[Union['GetFoundationCentralListApiKeysMetadataArgs', 'GetFoundationCentralListApiKeysMetadataArgsDict']]]] = None,
-                                                offset: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_foundation_central_list_api_keys_output(length: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                                metadata: pulumi.Input[Optional[Optional[Union['GetFoundationCentralListApiKeysMetadataArgs', 'GetFoundationCentralListApiKeysMetadataArgsDict']]]] = None,
+                                                offset: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFoundationCentralListApiKeysResult]:
     """
     List all the api keys created in Foundation Central.

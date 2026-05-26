@@ -139,10 +139,10 @@ export function getRecoveryPlanOutput(args?: GetRecoveryPlanOutputArgs, opts?: p
  * A collection of arguments for invoking getRecoveryPlan.
  */
 export interface GetRecoveryPlanOutputArgs {
-    categories?: pulumi.Input<pulumi.Input<inputs.GetRecoveryPlanCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetRecoveryPlanCategoryArgs>[] | undefined>;
     /**
      * - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`">`id`</span> of the Recovery Plan.
      */
-    recoveryPlanId?: pulumi.Input<string>;
-    recoveryPlanName?: pulumi.Input<string>;
+    recoveryPlanId?: pulumi.Input<string | undefined>;
+    recoveryPlanName?: pulumi.Input<string | undefined>;
 }

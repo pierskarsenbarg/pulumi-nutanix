@@ -153,9 +153,9 @@ export function getUserGroupsV2Output(args?: GetUserGroupsV2OutputArgs, opts?: p
  * A collection of arguments for invoking getUserGroupsV2.
  */
 export interface GetUserGroupsV2OutputArgs {
-    filter?: pulumi.Input<string>;
-    limit?: pulumi.Input<number>;
-    orderBy?: pulumi.Input<string>;
-    page?: pulumi.Input<number>;
-    select?: pulumi.Input<string>;
+    filter?: pulumi.Input<string | undefined>;
+    limit?: pulumi.Input<number | undefined>;
+    orderBy?: pulumi.Input<string | undefined>;
+    page?: pulumi.Input<number | undefined>;
+    select?: pulumi.Input<string | undefined>;
 }

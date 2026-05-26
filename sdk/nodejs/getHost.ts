@@ -160,7 +160,7 @@ export interface GetHostOutputArgs {
     /**
      * - Categories for the image.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetHostCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetHostCategoryArgs>[] | undefined>;
     /**
      * Represents hosts uuid
      */

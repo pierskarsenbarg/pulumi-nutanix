@@ -157,7 +157,7 @@ export interface GetClusterV2OutputArgs {
      * - "clusterProfile".
      * - "storageSummary".
      */
-    expand?: pulumi.Input<string>;
+    expand?: pulumi.Input<string | undefined>;
     /**
      * -(Required) Represents clusters uuid
      */

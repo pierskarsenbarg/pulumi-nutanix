@@ -43,8 +43,8 @@ class OvaDownloadV2Args:
 @pulumi.input_type
 class _OvaDownloadV2State:
     def __init__(__self__, *,
-                 ova_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ova_file_path: Optional[pulumi.Input[_builtins.str]] = None):
+                 ova_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ova_file_path: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OvaDownloadV2 resources.
 
@@ -57,23 +57,23 @@ class _OvaDownloadV2State:
 
     @_builtins.property
     @pulumi.getter(name="ovaExtId")
-    def ova_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ova_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) The external identifier for an OVA.
         """
         return pulumi.get(self, "ova_ext_id")
 
     @ova_ext_id.setter
-    def ova_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ova_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ova_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ovaFilePath")
-    def ova_file_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ova_file_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ova_file_path")
 
     @ova_file_path.setter
-    def ova_file_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ova_file_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ova_file_path", value)
 
 
@@ -83,7 +83,7 @@ class OvaDownloadV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ova_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ova_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Downloads an OVA based on the given external identifier. This is a stream download of the OVA file..
@@ -118,7 +118,7 @@ class OvaDownloadV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ova_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ova_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -142,8 +142,8 @@ class OvaDownloadV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ova_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ova_file_path: Optional[pulumi.Input[_builtins.str]] = None) -> 'OvaDownloadV2':
+            ova_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ova_file_path: pulumi.Input[Optional[_builtins.str]] = None) -> 'OvaDownloadV2':
         """
         Get an existing OvaDownloadV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

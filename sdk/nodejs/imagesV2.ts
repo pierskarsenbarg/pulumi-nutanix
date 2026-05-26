@@ -189,54 +189,54 @@ export interface ImagesV2State {
     /**
      * List of category external identifiers for an image.
      */
-    categoryExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    categoryExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The checksum of an image.
      */
-    checksums?: pulumi.Input<pulumi.Input<inputs.ImagesV2Checksum>[]>;
+    checksums?: pulumi.Input<pulumi.Input<inputs.ImagesV2Checksum>[] | undefined>;
     /**
      * List of cluster external identifiers where the image is located.
      */
-    clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Create time of an image.
      */
-    createTime?: pulumi.Input<string>;
+    createTime?: pulumi.Input<string | undefined>;
     /**
      * The user defined description of an image.
      */
-    description?: pulumi.Input<string>;
-    extId?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * Last update time of an image.
      */
-    lastUpdateTime?: pulumi.Input<string>;
-    links?: pulumi.Input<pulumi.Input<inputs.ImagesV2Link>[]>;
+    lastUpdateTime?: pulumi.Input<string | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.ImagesV2Link>[] | undefined>;
     /**
      * The user defined name of an image.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * External identifier of the owner of the image
      */
-    ownerExtId?: pulumi.Input<string>;
+    ownerExtId?: pulumi.Input<string | undefined>;
     /**
      * Status of an image placement policy.
      */
-    placementPolicyStatuses?: pulumi.Input<pulumi.Input<inputs.ImagesV2PlacementPolicyStatus>[]>;
+    placementPolicyStatuses?: pulumi.Input<pulumi.Input<inputs.ImagesV2PlacementPolicyStatus>[] | undefined>;
     /**
      * The size in bytes of an image file.
      */
-    sizeBytes?: pulumi.Input<number>;
+    sizeBytes?: pulumi.Input<number | undefined>;
     /**
      * The source of an image. It can be a VM disk or a URL.
      */
-    sources?: pulumi.Input<pulumi.Input<inputs.ImagesV2Source>[]>;
-    tenantId?: pulumi.Input<string>;
+    sources?: pulumi.Input<pulumi.Input<inputs.ImagesV2Source>[] | undefined>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -246,27 +246,27 @@ export interface ImagesV2Args {
     /**
      * List of category external identifiers for an image.
      */
-    categoryExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    categoryExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The checksum of an image.
      */
-    checksums?: pulumi.Input<pulumi.Input<inputs.ImagesV2Checksum>[]>;
+    checksums?: pulumi.Input<pulumi.Input<inputs.ImagesV2Checksum>[] | undefined>;
     /**
      * List of cluster external identifiers where the image is located.
      */
-    clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The user defined description of an image.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The user defined name of an image.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The source of an image. It can be a VM disk or a URL.
      */
-    sources?: pulumi.Input<pulumi.Input<inputs.ImagesV2Source>[]>;
+    sources?: pulumi.Input<pulumi.Input<inputs.ImagesV2Source>[] | undefined>;
     /**
      * The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
      */

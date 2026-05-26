@@ -71,6 +71,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getpcv2" "example-2" {
+        ///   ext_id = "75dde184-3a0e-4f59-a185-03ca1efead17"
+        /// }
+        /// 
+        /// // Fetch a single PC (Domain Manager) by its external ID
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -173,6 +188,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getpcv2" "example-2" {
+        ///   ext_id = "75dde184-3a0e-4f59-a185-03ca1efead17"
+        /// }
+        /// 
+        /// // Fetch a single PC (Domain Manager) by its external ID
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -274,6 +304,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getpcv2" "example-2" {
+        ///   ext_id = "75dde184-3a0e-4f59-a185-03ca1efead17"
+        /// }
+        /// 
+        /// // Fetch a single PC (Domain Manager) by its external ID
         /// ```
         /// ```java
         /// package generated_program;

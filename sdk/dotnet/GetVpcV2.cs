@@ -13,7 +13,7 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetVpcV2
     {
         /// <summary>
-        /// Provides a datasource to retrieve VPC with&lt;span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "&gt; vpcUuid &lt;/span&gt;.
+        /// Provides a datasource to retrieve VPC with&lt;span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid " pulumi-lang-hcl=" vpc_uuid "&gt; vpcUuid &lt;/span&gt;.
         /// 
         /// ## Example Usage
         /// 
@@ -65,6 +65,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvpcv2" "get-vpc" {
+        ///   ext_id = "8a938cc5-282b-48c4-81be-de22de145d07"
         /// }
         /// ```
         /// ```java
@@ -109,7 +122,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVpcV2Result>("nutanix:index/getVpcV2:getVpcV2", args ?? new GetVpcV2Args(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve VPC with&lt;span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "&gt; vpcUuid &lt;/span&gt;.
+        /// Provides a datasource to retrieve VPC with&lt;span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid " pulumi-lang-hcl=" vpc_uuid "&gt; vpcUuid &lt;/span&gt;.
         /// 
         /// ## Example Usage
         /// 
@@ -161,6 +174,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvpcv2" "get-vpc" {
+        ///   ext_id = "8a938cc5-282b-48c4-81be-de22de145d07"
         /// }
         /// ```
         /// ```java
@@ -205,7 +231,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.Invoke<GetVpcV2Result>("nutanix:index/getVpcV2:getVpcV2", args ?? new GetVpcV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve VPC with&lt;span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "&gt; vpcUuid &lt;/span&gt;.
+        /// Provides a datasource to retrieve VPC with&lt;span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid " pulumi-lang-hcl=" vpc_uuid "&gt; vpcUuid &lt;/span&gt;.
         /// 
         /// ## Example Usage
         /// 
@@ -257,6 +283,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvpcv2" "get-vpc" {
+        ///   ext_id = "8a938cc5-282b-48c4-81be-de22de145d07"
         /// }
         /// ```
         /// ```java

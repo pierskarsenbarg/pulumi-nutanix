@@ -142,16 +142,16 @@ export class PcRestoreSourceV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering PcRestoreSourceV2 resources.
  */
 export interface PcRestoreSourceV2State {
-    backupPauseReason?: pulumi.Input<string>;
-    extId?: pulumi.Input<string>;
-    isBackupPaused?: pulumi.Input<boolean>;
-    lastSyncTime?: pulumi.Input<string>;
-    links?: pulumi.Input<pulumi.Input<inputs.PcRestoreSourceV2Link>[]>;
+    backupPauseReason?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string | undefined>;
+    isBackupPaused?: pulumi.Input<boolean | undefined>;
+    lastSyncTime?: pulumi.Input<string | undefined>;
+    links?: pulumi.Input<pulumi.Input<inputs.PcRestoreSourceV2Link>[] | undefined>;
     /**
      * -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
      */
-    location?: pulumi.Input<inputs.PcRestoreSourceV2Location>;
-    tenantId?: pulumi.Input<string>;
+    location?: pulumi.Input<inputs.PcRestoreSourceV2Location | undefined>;
+    tenantId?: pulumi.Input<string | undefined>;
 }
 
 /**

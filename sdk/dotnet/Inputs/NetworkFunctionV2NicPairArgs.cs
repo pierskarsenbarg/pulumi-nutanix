@@ -47,8 +47,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// <summary>
         /// Administrative state of the NIC pair.
         /// - A boolean flag to control the administrative state of the NIC pair.
-        /// - Set to &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`"&gt;`false`&lt;/span&gt; to administratively disable this NIC pair, for instance, during a maintenance window.
-        /// - If set to &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`"&gt;`false`&lt;/span&gt;, this NIC pair will not be considered for traffic redirection, even if it's healthy.
+        /// - Set to &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`"&gt;`false`&lt;/span&gt; to administratively disable this NIC pair, for instance, during a maintenance window.
+        /// - If set to &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`"&gt;`false`&lt;/span&gt;, this NIC pair will not be considered for traffic redirection, even if it's healthy.
         /// - This provides a way to gracefully take a specific NFVM out of service without deleting the configuration.
         /// </summary>
         [Input("isEnabled", required: true)]

@@ -256,7 +256,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.SelfServiceAppPatchCategory>> Categories { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as&lt;span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "&gt; patchName &lt;/span&gt;for SINGLE VM)&lt;/b&gt;
+        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as&lt;span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "&gt; patchName &lt;/span&gt;for SINGLE VM)&lt;/b&gt;
         /// </summary>
         [Output("configName")]
         public Output<string> ConfigName { get; private set; } = null!;
@@ -344,7 +344,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as&lt;span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "&gt; patchName &lt;/span&gt;for SINGLE VM)&lt;/b&gt;
+        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as&lt;span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "&gt; patchName &lt;/span&gt;for SINGLE VM)&lt;/b&gt;
         /// </summary>
         [Input("configName", required: true)]
         public Input<string> ConfigName { get; set; } = null!;
@@ -408,7 +408,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as&lt;span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "&gt; patchName &lt;/span&gt;for SINGLE VM)&lt;/b&gt;
+        /// - (Required) The name of the patch configuration. (&lt;b&gt;Same as&lt;span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "&gt; patchName &lt;/span&gt;for SINGLE VM)&lt;/b&gt;
         /// </summary>
         [Input("configName")]
         public Input<string>? ConfigName { get; set; }

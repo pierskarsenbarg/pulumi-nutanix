@@ -21,9 +21,9 @@ class UserGroupsV2Args:
     def __init__(__self__, *,
                  group_type: pulumi.Input[_builtins.str],
                  idp_id: pulumi.Input[_builtins.str],
-                 distinguished_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 distinguished_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a UserGroupsV2 resource.
 
@@ -68,52 +68,52 @@ class UserGroupsV2Args:
 
     @_builtins.property
     @pulumi.getter(name="distinguishedName")
-    def distinguished_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def distinguished_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Identifier for the User Group in the form of a distinguished name.
         """
         return pulumi.get(self, "distinguished_name")
 
     @distinguished_name.setter
-    def distinguished_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def distinguished_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "distinguished_name", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The External Identifier of the User Group.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Common Name of the User Group.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _UserGroupsV2State:
     def __init__(__self__, *,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 distinguished_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_updated_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 distinguished_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UserGroupsV2 resources.
 
@@ -145,98 +145,98 @@ class _UserGroupsV2State:
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - User or Service who created the User Group.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="createdTime")
-    def created_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Creation time of the User Group.
         """
         return pulumi.get(self, "created_time")
 
     @created_time.setter
-    def created_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_time", value)
 
     @_builtins.property
     @pulumi.getter(name="distinguishedName")
-    def distinguished_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def distinguished_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Identifier for the User Group in the form of a distinguished name.
         """
         return pulumi.get(self, "distinguished_name")
 
     @distinguished_name.setter
-    def distinguished_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def distinguished_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "distinguished_name", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The External Identifier of the User Group.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="groupType")
-    def group_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
         """
         return pulumi.get(self, "group_type")
 
     @group_type.setter
-    def group_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_type", value)
 
     @_builtins.property
     @pulumi.getter(name="idpId")
-    def idp_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idp_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Identifier of the IDP for the User Group.
         """
         return pulumi.get(self, "idp_id")
 
     @idp_id.setter
-    def idp_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idp_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idp_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedTime")
-    def last_updated_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_updated_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - Last updated time of the User Group.
         """
         return pulumi.get(self, "last_updated_time")
 
     @last_updated_time.setter
-    def last_updated_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_updated_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_updated_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) Common Name of the User Group.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
@@ -246,11 +246,11 @@ class UserGroupsV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 distinguished_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 distinguished_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to add a User group to the system..
@@ -329,11 +329,11 @@ class UserGroupsV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 distinguished_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
+                 distinguished_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -365,14 +365,14 @@ class UserGroupsV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            created_time: Optional[pulumi.Input[_builtins.str]] = None,
-            distinguished_name: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            group_type: Optional[pulumi.Input[_builtins.str]] = None,
-            idp_id: Optional[pulumi.Input[_builtins.str]] = None,
-            last_updated_time: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None) -> 'UserGroupsV2':
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_time: pulumi.Input[Optional[_builtins.str]] = None,
+            distinguished_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_type: pulumi.Input[Optional[_builtins.str]] = None,
+            idp_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> 'UserGroupsV2':
         """
         Get an existing UserGroupsV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

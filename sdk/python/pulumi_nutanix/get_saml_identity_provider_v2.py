@@ -239,7 +239,7 @@ def get_saml_identity_provider_v2(ext_id: Optional[_builtins.str] = None,
         last_updated_time=pulumi.get(__ret__, 'last_updated_time'),
         name=pulumi.get(__ret__, 'name'),
         username_attribute=pulumi.get(__ret__, 'username_attribute'))
-def get_saml_identity_provider_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_saml_identity_provider_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSamlIdentityProviderV2Result]:
     """
     Provides a datasource to View a SAML Identity Provider.

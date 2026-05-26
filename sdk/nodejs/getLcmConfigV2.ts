@@ -144,5 +144,5 @@ export interface GetLcmConfigV2OutputArgs {
     /**
      * Cluster uuid on which the resource is present or operation is being performed.
      */
-    xClusterId?: pulumi.Input<string>;
+    xClusterId?: pulumi.Input<string | undefined>;
 }

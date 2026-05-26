@@ -56,5 +56,5 @@ export interface GetNdbSnapshotsOutputArgs {
     /**
      * filters help to fetch the snapshots based on input
      */
-    filters?: pulumi.Input<pulumi.Input<inputs.GetNdbSnapshotsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GetNdbSnapshotsFilterArgs>[] | undefined>;
 }

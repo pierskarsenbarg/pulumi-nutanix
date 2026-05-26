@@ -130,5 +130,5 @@ export interface GetVolumeIscsiClientV2OutputArgs {
     /**
      * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
      */
-    iscsiInitiatorNetworkIds?: pulumi.Input<pulumi.Input<inputs.GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgs>[]>;
+    iscsiInitiatorNetworkIds?: pulumi.Input<pulumi.Input<inputs.GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgs>[] | undefined>;
 }

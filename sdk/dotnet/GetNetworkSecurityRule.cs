@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes a Network security rule
         /// 
-        /// &gt; NOTE: The use of&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "&gt; networkSecurityRule &lt;/span&gt;is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+        /// &gt; NOTE: The use of&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule " pulumi-lang-hcl=" network_security_rule "&gt; networkSecurityRule &lt;/span&gt;is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
         /// 
         /// ## Example Usage
         /// 
@@ -170,6 +170,37 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}, nil)
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getnetworksecurityrule" "test" {
+        ///   network_security_rule_id = nutanix_networksecurityrule.isolation.id
+        /// }
+        /// 
+        /// resource "nutanix_networksecurityrule" "isolation" {
+        ///   name                                          = "example-isolation-rule"
+        ///   description                                   = "Isolation Rule Example"
+        ///   isolation_rule_action                         = "APPLY"
+        ///   isolation_rule_first_entity_filter_kind_lists = ["vm"]
+        ///   isolation_rule_first_entity_filter_type       = "CATEGORIES_MATCH_ALL"
+        ///   isolation_rule_first_entity_filter_params {
+        ///     name   = "Environment"
+        ///     values = ["Dev"]
+        ///   }
+        ///   isolation_rule_second_entity_filter_kind_lists = ["vm"]
+        ///   isolation_rule_second_entity_filter_type       = "CATEGORIES_MATCH_ALL"
+        ///   isolation_rule_second_entity_filter_params {
+        ///     name   = "Environment"
+        ///     values = ["Production"]
+        ///   }
         /// }
         /// ```
         /// ```java
@@ -259,7 +290,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes a Network security rule
         /// 
-        /// &gt; NOTE: The use of&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "&gt; networkSecurityRule &lt;/span&gt;is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+        /// &gt; NOTE: The use of&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule " pulumi-lang-hcl=" network_security_rule "&gt; networkSecurityRule &lt;/span&gt;is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
         /// 
         /// ## Example Usage
         /// 
@@ -414,6 +445,37 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}, nil)
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getnetworksecurityrule" "test" {
+        ///   network_security_rule_id = nutanix_networksecurityrule.isolation.id
+        /// }
+        /// 
+        /// resource "nutanix_networksecurityrule" "isolation" {
+        ///   name                                          = "example-isolation-rule"
+        ///   description                                   = "Isolation Rule Example"
+        ///   isolation_rule_action                         = "APPLY"
+        ///   isolation_rule_first_entity_filter_kind_lists = ["vm"]
+        ///   isolation_rule_first_entity_filter_type       = "CATEGORIES_MATCH_ALL"
+        ///   isolation_rule_first_entity_filter_params {
+        ///     name   = "Environment"
+        ///     values = ["Dev"]
+        ///   }
+        ///   isolation_rule_second_entity_filter_kind_lists = ["vm"]
+        ///   isolation_rule_second_entity_filter_type       = "CATEGORIES_MATCH_ALL"
+        ///   isolation_rule_second_entity_filter_params {
+        ///     name   = "Environment"
+        ///     values = ["Production"]
+        ///   }
         /// }
         /// ```
         /// ```java
@@ -503,7 +565,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes a Network security rule
         /// 
-        /// &gt; NOTE: The use of&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "&gt; networkSecurityRule &lt;/span&gt;is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+        /// &gt; NOTE: The use of&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule " pulumi-lang-hcl=" network_security_rule "&gt; networkSecurityRule &lt;/span&gt;is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
         /// 
         /// ## Example Usage
         /// 
@@ -658,6 +720,37 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}, nil)
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getnetworksecurityrule" "test" {
+        ///   network_security_rule_id = nutanix_networksecurityrule.isolation.id
+        /// }
+        /// 
+        /// resource "nutanix_networksecurityrule" "isolation" {
+        ///   name                                          = "example-isolation-rule"
+        ///   description                                   = "Isolation Rule Example"
+        ///   isolation_rule_action                         = "APPLY"
+        ///   isolation_rule_first_entity_filter_kind_lists = ["vm"]
+        ///   isolation_rule_first_entity_filter_type       = "CATEGORIES_MATCH_ALL"
+        ///   isolation_rule_first_entity_filter_params {
+        ///     name   = "Environment"
+        ///     values = ["Dev"]
+        ///   }
+        ///   isolation_rule_second_entity_filter_kind_lists = ["vm"]
+        ///   isolation_rule_second_entity_filter_type       = "CATEGORIES_MATCH_ALL"
+        ///   isolation_rule_second_entity_filter_params {
+        ///     name   = "Environment"
+        ///     values = ["Production"]
+        ///   }
         /// }
         /// ```
         /// ```java
@@ -803,7 +896,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetNetworkSecurityRuleResult
     {
         /// <summary>
-        /// - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
+        /// - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList " pulumi-lang-hcl=" inbound_allow_list "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList " pulumi-lang-hcl=" outbound_allow_list "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         public readonly string AdRuleAction;
         /// <summary>
@@ -834,7 +927,7 @@ namespace PiersKarsenbarg.Nutanix
         public readonly bool AllowIpv6Traffic;
         public readonly string ApiVersion;
         /// <summary>
-        /// - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
+        /// - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList " pulumi-lang-hcl=" inbound_allow_list "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList " pulumi-lang-hcl=" outbound_allow_list "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         public readonly string AppRuleAction;
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleAppRuleInboundAllowListResult> AppRuleInboundAllowLists;
@@ -918,7 +1011,7 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly ImmutableDictionary<string, string> ProjectReference;
         /// <summary>
-        /// These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not allow anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
+        /// These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList " pulumi-lang-hcl=" inbound_allow_list "&gt; inboundAllowList &lt;/span&gt;will not allow anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList " pulumi-lang-hcl=" outbound_allow_list "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         public readonly string QuarantineRuleAction;
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleQuarantineRuleInboundAllowListResult> QuarantineRuleInboundAllowLists;

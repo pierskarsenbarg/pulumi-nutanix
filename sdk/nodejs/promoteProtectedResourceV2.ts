@@ -92,7 +92,7 @@ export interface PromoteProtectedResourceV2State {
      *
      * See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
 }
 
 /**

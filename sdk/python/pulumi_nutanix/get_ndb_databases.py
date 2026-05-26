@@ -134,7 +134,7 @@ def get_ndb_databases(database_type: Optional[_builtins.str] = None,
         database_instances=pulumi.get(__ret__, 'database_instances'),
         database_type=pulumi.get(__ret__, 'database_type'),
         id=pulumi.get(__ret__, 'id'))
-def get_ndb_databases_output(database_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_ndb_databases_output(database_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbDatabasesResult]:
     """
     List all database instances in Nutanix Database Service

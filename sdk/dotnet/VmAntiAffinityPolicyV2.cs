@@ -73,7 +73,7 @@ namespace PiersKarsenbarg.Nutanix
     public partial class VmAntiAffinityPolicyV2 : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// List of VM category external IDs (&lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+        /// List of VM category external IDs (&lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
         /// </summary>
         [Output("categories")]
         public Output<ImmutableArray<string>> Categories { get; private set; } = null!;
@@ -189,7 +189,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _categories;
 
         /// <summary>
-        /// List of VM category external IDs (&lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+        /// List of VM category external IDs (&lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
         /// </summary>
         public InputList<string> Categories
         {
@@ -221,7 +221,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _categories;
 
         /// <summary>
-        /// List of VM category external IDs (&lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+        /// List of VM category external IDs (&lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
         /// </summary>
         public InputList<string> Categories
         {

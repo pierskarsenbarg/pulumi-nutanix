@@ -154,7 +154,7 @@ def get_key_management_server_v2(ext_id: Optional[_builtins.str] = None,
         links=pulumi.get(__ret__, 'links'),
         name=pulumi.get(__ret__, 'name'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_key_management_server_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_key_management_server_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKeyManagementServerV2Result]:
     """
     Fetches the details of a key management server identified by its unique identifier (ext_id).

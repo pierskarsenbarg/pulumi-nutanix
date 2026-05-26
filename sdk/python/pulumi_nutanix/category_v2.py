@@ -23,9 +23,9 @@ class CategoryV2Args:
     def __init__(__self__, *,
                  key: pulumi.Input[_builtins.str],
                  value: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CategoryV2 resource.
 
@@ -112,7 +112,7 @@ class CategoryV2Args:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) A string consisting of the description of the category as defined by the user.
         Description can be optionally provided in the payload of createCategory and updateCategoryById APIs.
@@ -123,12 +123,12 @@ class CategoryV2Args:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerUuid")
-    def owner_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) This field contains the UUID of a user who owns the category.
         This field will be ignored if given in the payload of createCategory API. Hence, when a category is created, the logged-in user automatically becomes the owner of the category.
@@ -139,12 +139,12 @@ class CategoryV2Args:
         return pulumi.get(self, "owner_uuid")
 
     @owner_uuid.setter
-    def owner_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner_uuid", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Denotes the type of a category.
         Valid values are:
@@ -155,20 +155,20 @@ class CategoryV2Args:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 @pulumi.input_type
 class _CategoryV2State:
     def __init__(__self__, *,
-                 associations: Optional[pulumi.Input[Sequence[pulumi.Input['CategoryV2AssociationArgs']]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 detailed_associations: Optional[pulumi.Input[Sequence[pulumi.Input['CategoryV2DetailedAssociationArgs']]]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 associations: pulumi.Input[Optional[Sequence[pulumi.Input['CategoryV2AssociationArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 detailed_associations: pulumi.Input[Optional[Sequence[pulumi.Input['CategoryV2DetailedAssociationArgs']]]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CategoryV2 resources.
 
@@ -231,7 +231,7 @@ class _CategoryV2State:
 
     @_builtins.property
     @pulumi.getter
-    def associations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CategoryV2AssociationArgs']]]]:
+    def associations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CategoryV2AssociationArgs']]]]:
         """
         This field gives basic information about resources that are associated with the category.
         The results present under this field summarize the counts of various kinds of resources associated with the category.
@@ -242,12 +242,12 @@ class _CategoryV2State:
         return pulumi.get(self, "associations")
 
     @associations.setter
-    def associations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CategoryV2AssociationArgs']]]]):
+    def associations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CategoryV2AssociationArgs']]]]):
         pulumi.set(self, "associations", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) A string consisting of the description of the category as defined by the user.
         Description can be optionally provided in the payload of createCategory and updateCategoryById APIs.
@@ -258,12 +258,12 @@ class _CategoryV2State:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="detailedAssociations")
-    def detailed_associations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CategoryV2DetailedAssociationArgs']]]]:
+    def detailed_associations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CategoryV2DetailedAssociationArgs']]]]:
         """
         This field gives detailed information about the resources which are associated with the category.
         The results present under this field contain the UUIDs of the entities and policies of various kinds associated with the category.
@@ -273,12 +273,12 @@ class _CategoryV2State:
         return pulumi.get(self, "detailed_associations")
 
     @detailed_associations.setter
-    def detailed_associations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CategoryV2DetailedAssociationArgs']]]]):
+    def detailed_associations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CategoryV2DetailedAssociationArgs']]]]):
         pulumi.set(self, "detailed_associations", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) The key of a category when it is represented in key:value format. Constraints applicable when field is given in the payload during create and update:
 
@@ -292,12 +292,12 @@ class _CategoryV2State:
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerUuid")
-    def owner_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Optional) This field contains the UUID of a user who owns the category.
         This field will be ignored if given in the payload of createCategory API. Hence, when a category is created, the logged-in user automatically becomes the owner of the category.
@@ -308,12 +308,12 @@ class _CategoryV2State:
         return pulumi.get(self, "owner_uuid")
 
     @owner_uuid.setter
-    def owner_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner_uuid", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) Denotes the type of a category.
         Valid values are:
@@ -324,12 +324,12 @@ class _CategoryV2State:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) The value of a category when it is represented in key:value format.  Constraints applicable when field is given in the payload during create and update:
 
@@ -344,7 +344,7 @@ class _CategoryV2State:
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -354,11 +354,11 @@ class CategoryV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create, Update and Delete category (key - value pair).
@@ -480,11 +480,11 @@ class CategoryV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -515,13 +515,13 @@ class CategoryV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            associations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CategoryV2AssociationArgs', 'CategoryV2AssociationArgsDict']]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            detailed_associations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CategoryV2DetailedAssociationArgs', 'CategoryV2DetailedAssociationArgsDict']]]]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            owner_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            value: Optional[pulumi.Input[_builtins.str]] = None) -> 'CategoryV2':
+            associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CategoryV2AssociationArgs', 'CategoryV2AssociationArgsDict']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            detailed_associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CategoryV2DetailedAssociationArgs', 'CategoryV2DetailedAssociationArgsDict']]]]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            value: pulumi.Input[Optional[_builtins.str]] = None) -> 'CategoryV2':
         """
         Get an existing CategoryV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

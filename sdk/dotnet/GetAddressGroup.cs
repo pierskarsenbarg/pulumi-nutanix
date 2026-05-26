@@ -106,6 +106,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getaddressgroup" "addrGroup" {
+        ///   uuid = nutanix_addressgroup.test_address.id
+        /// }
+        /// 
+        /// resource "nutanix_addressgroup" "test_address" {
+        ///   name        = "test"
+        ///   description = "test address groups resource"
+        ///   ip_address_block_lists {
+        ///     ip            = "10.0.0.0"
+        ///     prefix_length = 24
+        ///   }
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -263,6 +285,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getaddressgroup" "addrGroup" {
+        ///   uuid = nutanix_addressgroup.test_address.id
+        /// }
+        /// 
+        /// resource "nutanix_addressgroup" "test_address" {
+        ///   name        = "test"
+        ///   description = "test address groups resource"
+        ///   ip_address_block_lists {
+        ///     ip            = "10.0.0.0"
+        ///     prefix_length = 24
+        ///   }
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -418,6 +462,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}, nil)
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getaddressgroup" "addrGroup" {
+        ///   uuid = nutanix_addressgroup.test_address.id
+        /// }
+        /// 
+        /// resource "nutanix_addressgroup" "test_address" {
+        ///   name        = "test"
+        ///   description = "test address groups resource"
+        ///   ip_address_block_lists {
+        ///     ip            = "10.0.0.0"
+        ///     prefix_length = 24
+        ///   }
         /// }
         /// ```
         /// ```java

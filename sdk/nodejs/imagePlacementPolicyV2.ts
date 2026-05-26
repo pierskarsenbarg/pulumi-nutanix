@@ -153,36 +153,36 @@ export interface ImagePlacementPolicyV2State {
     /**
      * Action to be performed on the image placement policy. Valid values "RESUME", "SUSPEND"
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * Category-based entity filter.
      */
-    clusterEntityFilters?: pulumi.Input<pulumi.Input<inputs.ImagePlacementPolicyV2ClusterEntityFilter>[]>;
-    createTime?: pulumi.Input<string>;
+    clusterEntityFilters?: pulumi.Input<pulumi.Input<inputs.ImagePlacementPolicyV2ClusterEntityFilter>[] | undefined>;
+    createTime?: pulumi.Input<string | undefined>;
     /**
      * Description of the image placement policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Enforcement status of the image placement policy. Valid values "ACTIVE", "SUSPENDED"
      */
-    enforcementState?: pulumi.Input<string>;
-    extId?: pulumi.Input<string>;
+    enforcementState?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * Category-based entity filter.
      */
-    imageEntityFilters?: pulumi.Input<pulumi.Input<inputs.ImagePlacementPolicyV2ImageEntityFilter>[]>;
-    lastUpdateTime?: pulumi.Input<string>;
+    imageEntityFilters?: pulumi.Input<pulumi.Input<inputs.ImagePlacementPolicyV2ImageEntityFilter>[] | undefined>;
+    lastUpdateTime?: pulumi.Input<string | undefined>;
     /**
      * Name of the image placement policy.
      */
-    name?: pulumi.Input<string>;
-    ownerExtId?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    ownerExtId?: pulumi.Input<string | undefined>;
     /**
      * Type of the image placement policy. Valid values "HARD", "SOFT"
      */
-    placementType?: pulumi.Input<string>;
-    shouldCancelRunningTasks?: pulumi.Input<boolean>;
+    placementType?: pulumi.Input<string | undefined>;
+    shouldCancelRunningTasks?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -192,7 +192,7 @@ export interface ImagePlacementPolicyV2Args {
     /**
      * Action to be performed on the image placement policy. Valid values "RESUME", "SUSPEND"
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * Category-based entity filter.
      */
@@ -200,12 +200,12 @@ export interface ImagePlacementPolicyV2Args {
     /**
      * Description of the image placement policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Enforcement status of the image placement policy. Valid values "ACTIVE", "SUSPENDED"
      */
-    enforcementState?: pulumi.Input<string>;
-    extId?: pulumi.Input<string>;
+    enforcementState?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * Category-based entity filter.
      */
@@ -213,10 +213,10 @@ export interface ImagePlacementPolicyV2Args {
     /**
      * Name of the image placement policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Type of the image placement policy. Valid values "HARD", "SOFT"
      */
     placementType: pulumi.Input<string>;
-    shouldCancelRunningTasks?: pulumi.Input<boolean>;
+    shouldCancelRunningTasks?: pulumi.Input<boolean | undefined>;
 }

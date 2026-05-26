@@ -116,7 +116,7 @@ def get_roles(metadatas: Optional[Sequence[Union['GetRolesMetadataArgs', 'GetRol
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-def get_roles_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetRolesMetadataArgs', 'GetRolesMetadataArgsDict']]]]] = None,
+def get_roles_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetRolesMetadataArgs', 'GetRolesMetadataArgsDict']]]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRolesResult]:
     """
     Describes a list of roles.

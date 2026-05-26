@@ -51,7 +51,7 @@ type LookupVirtualMachineResult struct {
 	BootDeviceMacAddress string `pulumi:"bootDeviceMacAddress"`
 	// - Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
 	BootDeviceOrderLists []string `pulumi:"bootDeviceOrderLists"`
-	// - Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like<span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice "> bootDevice </span>and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+	// - Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like<span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice " pulumi-lang-hcl=" boot_device "> bootDevice </span>and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
 	BootType string `pulumi:"bootType"`
 	// - Categories for the vm.
 	Categories []GetVirtualMachineCategory `pulumi:"categories"`
@@ -69,13 +69,13 @@ type LookupVirtualMachineResult struct {
 	GpuLists []GetVirtualMachineGpuList `pulumi:"gpuLists"`
 	// - Generic key value pair used for custom attributes in cloud init.
 	GuestCustomizationCloudInitCustomKeyValues map[string]string `pulumi:"guestCustomizationCloudInitCustomKeyValues"`
-	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 	GuestCustomizationCloudInitMetaData string `pulumi:"guestCustomizationCloudInitMetaData"`
-	// - The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+	// - The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData " pulumi-lang-hcl=" user_data "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
 	GuestCustomizationCloudInitUserData string `pulumi:"guestCustomizationCloudInitUserData"`
 	// - Flag to allow override of customization by deployer.
 	GuestCustomizationIsOverridable bool `pulumi:"guestCustomizationIsOverridable"`
-	// - VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+	// - VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	GuestCustomizationSysprep map[string]string `pulumi:"guestCustomizationSysprep"`
 	// - Generic key value pair used for custom attributes in sysprep.
 	GuestCustomizationSysprepCustomKeyValues map[string]string `pulumi:"guestCustomizationSysprepCustomKeyValues"`
@@ -198,7 +198,7 @@ func (o LookupVirtualMachineResultOutput) BootDeviceOrderLists() pulumi.StringAr
 	return o.ApplyT(func(v LookupVirtualMachineResult) []string { return v.BootDeviceOrderLists }).(pulumi.StringArrayOutput)
 }
 
-// - Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like<span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice "> bootDevice </span>and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+// - Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like<span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice " pulumi-lang-hcl=" boot_device "> bootDevice </span>and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
 func (o LookupVirtualMachineResultOutput) BootType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.BootType }).(pulumi.StringOutput)
 }
@@ -248,12 +248,12 @@ func (o LookupVirtualMachineResultOutput) GuestCustomizationCloudInitCustomKeyVa
 	}).(pulumi.StringMapOutput)
 }
 
-// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 func (o LookupVirtualMachineResultOutput) GuestCustomizationCloudInitMetaData() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.GuestCustomizationCloudInitMetaData }).(pulumi.StringOutput)
 }
 
-// - The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+// - The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData " pulumi-lang-hcl=" user_data "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
 func (o LookupVirtualMachineResultOutput) GuestCustomizationCloudInitUserData() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.GuestCustomizationCloudInitUserData }).(pulumi.StringOutput)
 }
@@ -263,7 +263,7 @@ func (o LookupVirtualMachineResultOutput) GuestCustomizationIsOverridable() pulu
 	return o.ApplyT(func(v LookupVirtualMachineResult) bool { return v.GuestCustomizationIsOverridable }).(pulumi.BoolOutput)
 }
 
-// - VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+// - VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 func (o LookupVirtualMachineResultOutput) GuestCustomizationSysprep() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) map[string]string { return v.GuestCustomizationSysprep }).(pulumi.StringMapOutput)
 }

@@ -139,8 +139,8 @@ def get_static_routes(vpc_name: Optional[_builtins.str] = None,
         statuses=pulumi.get(__ret__, 'statuses'),
         vpc_name=pulumi.get(__ret__, 'vpc_name'),
         vpc_reference_uuid=pulumi.get(__ret__, 'vpc_reference_uuid'))
-def get_static_routes_output(vpc_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             vpc_reference_uuid: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_static_routes_output(vpc_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             vpc_reference_uuid: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStaticRoutesResult]:
     """
     Provides a datasource to retrieve static routes within VPCs given vpc_uuid.

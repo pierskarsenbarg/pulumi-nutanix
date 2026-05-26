@@ -161,7 +161,7 @@ def get_pc_backup_targets_v2(domain_manager_ext_id: Optional[_builtins.str] = No
         backup_targets=pulumi.get(__ret__, 'backup_targets'),
         domain_manager_ext_id=pulumi.get(__ret__, 'domain_manager_ext_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_pc_backup_targets_v2_output(domain_manager_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pc_backup_targets_v2_output(domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPcBackupTargetsV2Result]:
     """
     Lists backup targets (cluster or object store) configured for a given domain manager.

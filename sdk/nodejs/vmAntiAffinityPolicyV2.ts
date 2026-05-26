@@ -170,47 +170,47 @@ export interface VmAntiAffinityPolicyV2State {
     /**
      * List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
      */
-    categories?: pulumi.Input<pulumi.Input<string>[]>;
+    categories?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The timestamp when the policy was created.
      */
-    createTime?: pulumi.Input<string>;
+    createTime?: pulumi.Input<string | undefined>;
     /**
      * Information about the entity that created the policy.
      */
-    createdBy?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    createdBy?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A description of the VM-VM Anti-Affinity policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The external identifier of the policy.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * The name of the VM-VM Anti-Affinity policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Number of compliant VMs which are part of the VM-VM anti-affinity policy.
      */
-    numCompliantVms?: pulumi.Input<number>;
+    numCompliantVms?: pulumi.Input<number | undefined>;
     /**
      * Number of non-compliant VMs which are part of the VM-VM anti-affinity policy.
      */
-    numNonCompliantVms?: pulumi.Input<number>;
+    numNonCompliantVms?: pulumi.Input<number | undefined>;
     /**
      * Number of VMs with compliance state as pending, which are part of the VM-VM anti-affinity policy.
      */
-    numPendingVms?: pulumi.Input<number>;
+    numPendingVms?: pulumi.Input<number | undefined>;
     /**
      * The timestamp when the policy was last updated.
      */
-    updateTime?: pulumi.Input<string>;
+    updateTime?: pulumi.Input<string | undefined>;
     /**
      * Information about the entity that last updated the policy.
      */
-    updatedBy?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    updatedBy?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }
 
 /**
@@ -224,9 +224,9 @@ export interface VmAntiAffinityPolicyV2Args {
     /**
      * A description of the VM-VM Anti-Affinity policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The name of the VM-VM Anti-Affinity policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

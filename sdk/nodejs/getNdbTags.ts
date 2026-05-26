@@ -84,5 +84,5 @@ export interface GetNdbTagsOutputArgs {
     /**
      * entity for the tag to be associated with.
      */
-    entityType?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string | undefined>;
 }

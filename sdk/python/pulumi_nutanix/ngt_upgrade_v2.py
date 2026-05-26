@@ -22,7 +22,7 @@ __all__ = ['NgtUpgradeV2Args', 'NgtUpgradeV2']
 class NgtUpgradeV2Args:
     def __init__(__self__, *,
                  ext_id: pulumi.Input[_builtins.str],
-                 reboot_preference: Optional[pulumi.Input['NgtUpgradeV2RebootPreferenceArgs']] = None):
+                 reboot_preference: pulumi.Input[Optional['NgtUpgradeV2RebootPreferenceArgs']] = None):
         """
         The set of arguments for constructing a NgtUpgradeV2 resource.
 
@@ -47,32 +47,32 @@ class NgtUpgradeV2Args:
 
     @_builtins.property
     @pulumi.getter(name="rebootPreference")
-    def reboot_preference(self) -> Optional[pulumi.Input['NgtUpgradeV2RebootPreferenceArgs']]:
+    def reboot_preference(self) -> pulumi.Input[Optional['NgtUpgradeV2RebootPreferenceArgs']]:
         """
         The restart schedule after installing or upgrading Nutanix Guest Tools.
         """
         return pulumi.get(self, "reboot_preference")
 
     @reboot_preference.setter
-    def reboot_preference(self, value: Optional[pulumi.Input['NgtUpgradeV2RebootPreferenceArgs']]):
+    def reboot_preference(self, value: pulumi.Input[Optional['NgtUpgradeV2RebootPreferenceArgs']]):
         pulumi.set(self, "reboot_preference", value)
 
 
 @pulumi.input_type
 class _NgtUpgradeV2State:
     def __init__(__self__, *,
-                 available_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 capablities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 guest_os_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_installed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_iso_inserted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_reachable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_vm_mobility_drivers_installed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_vss_snapshot_capable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 reboot_preference: Optional[pulumi.Input['NgtUpgradeV2RebootPreferenceArgs']] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 available_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 capablities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 guest_os_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_installed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_iso_inserted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_reachable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_vm_mobility_drivers_installed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_vss_snapshot_capable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 reboot_preference: pulumi.Input[Optional['NgtUpgradeV2RebootPreferenceArgs']] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NgtUpgradeV2 resources.
 
@@ -116,146 +116,146 @@ class _NgtUpgradeV2State:
 
     @_builtins.property
     @pulumi.getter(name="availableVersion")
-    def available_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def available_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of Nutanix Guest Tools available on the cluster.
         """
         return pulumi.get(self, "available_version")
 
     @available_version.setter
-    def available_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def available_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "available_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def capablities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def capablities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
         """
         return pulumi.get(self, "capablities")
 
     @capablities.setter
-    def capablities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def capablities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "capablities", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         uuid of the Virtual Machine.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="guestOsVersion")
-    def guest_os_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def guest_os_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of the operating system on the VM.
         """
         return pulumi.get(self, "guest_os_version")
 
     @guest_os_version.setter
-    def guest_os_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def guest_os_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "guest_os_version", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether Nutanix Guest Tools is enabled or not.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isInstalled")
-    def is_installed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_installed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether Nutanix Guest Tools is installed on the VM or not.
         """
         return pulumi.get(self, "is_installed")
 
     @is_installed.setter
-    def is_installed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_installed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_installed", value)
 
     @_builtins.property
     @pulumi.getter(name="isIsoInserted")
-    def is_iso_inserted(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_iso_inserted(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether Nutanix Guest Tools ISO is inserted or not.
         """
         return pulumi.get(self, "is_iso_inserted")
 
     @is_iso_inserted.setter
-    def is_iso_inserted(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_iso_inserted(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_iso_inserted", value)
 
     @_builtins.property
     @pulumi.getter(name="isReachable")
-    def is_reachable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_reachable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the communication from VM to CVM is active or not.
         """
         return pulumi.get(self, "is_reachable")
 
     @is_reachable.setter
-    def is_reachable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_reachable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_reachable", value)
 
     @_builtins.property
     @pulumi.getter(name="isVmMobilityDriversInstalled")
-    def is_vm_mobility_drivers_installed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_vm_mobility_drivers_installed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the VM mobility drivers are installed on the VM or not.
         """
         return pulumi.get(self, "is_vm_mobility_drivers_installed")
 
     @is_vm_mobility_drivers_installed.setter
-    def is_vm_mobility_drivers_installed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_vm_mobility_drivers_installed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_vm_mobility_drivers_installed", value)
 
     @_builtins.property
     @pulumi.getter(name="isVssSnapshotCapable")
-    def is_vss_snapshot_capable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_vss_snapshot_capable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the VM is configured to take VSS snapshots through NGT or not.
         """
         return pulumi.get(self, "is_vss_snapshot_capable")
 
     @is_vss_snapshot_capable.setter
-    def is_vss_snapshot_capable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_vss_snapshot_capable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_vss_snapshot_capable", value)
 
     @_builtins.property
     @pulumi.getter(name="rebootPreference")
-    def reboot_preference(self) -> Optional[pulumi.Input['NgtUpgradeV2RebootPreferenceArgs']]:
+    def reboot_preference(self) -> pulumi.Input[Optional['NgtUpgradeV2RebootPreferenceArgs']]:
         """
         The restart schedule after installing or upgrading Nutanix Guest Tools.
         """
         return pulumi.get(self, "reboot_preference")
 
     @reboot_preference.setter
-    def reboot_preference(self, value: Optional[pulumi.Input['NgtUpgradeV2RebootPreferenceArgs']]):
+    def reboot_preference(self, value: pulumi.Input[Optional['NgtUpgradeV2RebootPreferenceArgs']]):
         pulumi.set(self, "reboot_preference", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of Nutanix Guest Tools installed on the VM.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -265,8 +265,8 @@ class NgtUpgradeV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 reboot_preference: Optional[pulumi.Input[Union['NgtUpgradeV2RebootPreferenceArgs', 'NgtUpgradeV2RebootPreferenceArgsDict']]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 reboot_preference: pulumi.Input[Optional[Union['NgtUpgradeV2RebootPreferenceArgs', 'NgtUpgradeV2RebootPreferenceArgsDict']]] = None,
                  __props__=None):
         """
         Provides Nutanix resource to Trigger an in-guest upgrade of Nutanix Guest Tools.
@@ -332,8 +332,8 @@ class NgtUpgradeV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 reboot_preference: Optional[pulumi.Input[Union['NgtUpgradeV2RebootPreferenceArgs', 'NgtUpgradeV2RebootPreferenceArgsDict']]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 reboot_preference: pulumi.Input[Optional[Union['NgtUpgradeV2RebootPreferenceArgs', 'NgtUpgradeV2RebootPreferenceArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -367,18 +367,18 @@ class NgtUpgradeV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            available_version: Optional[pulumi.Input[_builtins.str]] = None,
-            capablities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            guest_os_version: Optional[pulumi.Input[_builtins.str]] = None,
-            is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_installed: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_iso_inserted: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_reachable: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_vm_mobility_drivers_installed: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_vss_snapshot_capable: Optional[pulumi.Input[_builtins.bool]] = None,
-            reboot_preference: Optional[pulumi.Input[Union['NgtUpgradeV2RebootPreferenceArgs', 'NgtUpgradeV2RebootPreferenceArgsDict']]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'NgtUpgradeV2':
+            available_version: pulumi.Input[Optional[_builtins.str]] = None,
+            capablities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            guest_os_version: pulumi.Input[Optional[_builtins.str]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_installed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_iso_inserted: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_reachable: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_vm_mobility_drivers_installed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_vss_snapshot_capable: pulumi.Input[Optional[_builtins.bool]] = None,
+            reboot_preference: pulumi.Input[Optional[Union['NgtUpgradeV2RebootPreferenceArgs', 'NgtUpgradeV2RebootPreferenceArgsDict']]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'NgtUpgradeV2':
         """
         Get an existing NgtUpgradeV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

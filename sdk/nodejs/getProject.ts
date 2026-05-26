@@ -289,7 +289,7 @@ export interface GetProjectOutputArgs {
     /**
      * - (Optional) The category values represented as a dictionary of key > list of values.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetProjectCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetProjectCategoryArgs>[] | undefined>;
     /**
      * List of directory service user groups. These groups are not managed by Nutanix.
      * * `external_user_group_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`" pulumi-lang-hcl="`user_group`">`userGroup`</span>
@@ -303,21 +303,21 @@ export interface GetProjectOutputArgs {
      * "> userGroup
      * </span>* `external_user_group_reference_list.#.name` - The name of a user_group
      */
-    externalUserGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.GetProjectExternalUserGroupReferenceListArgs>[]>;
+    externalUserGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.GetProjectExternalUserGroupReferenceListArgs>[] | undefined>;
     /**
      * - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`">`id`</span> of the project.
      */
-    projectId?: pulumi.Input<string>;
-    projectName?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
+    projectName?: pulumi.Input<string | undefined>;
     /**
      * List of subnets for the project.
      * * `subnet_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`" pulumi-lang-hcl="`subnet`">`subnet`</span>
      * * `subnet_reference_list.#.uuid` - The UUID of a subnet
      * * `subnet_reference_list.#.name` - The name of a subnet.
      */
-    subnetReferenceLists?: pulumi.Input<pulumi.Input<inputs.GetProjectSubnetReferenceListArgs>[]>;
+    subnetReferenceLists?: pulumi.Input<pulumi.Input<inputs.GetProjectSubnetReferenceListArgs>[] | undefined>;
     /**
      * List of Reference of users.
      */
-    userReferenceLists?: pulumi.Input<pulumi.Input<inputs.GetProjectUserReferenceListArgs>[]>;
+    userReferenceLists?: pulumi.Input<pulumi.Input<inputs.GetProjectUserReferenceListArgs>[] | undefined>;
 }

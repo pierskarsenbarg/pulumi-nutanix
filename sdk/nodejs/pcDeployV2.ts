@@ -163,15 +163,15 @@ export interface PcDeployV2State {
     /**
      * -(Required) Domain manager (Prism Central) cluster configuration details.
      */
-    config?: pulumi.Input<inputs.PcDeployV2Config>;
+    config?: pulumi.Input<inputs.PcDeployV2Config | undefined>;
     /**
      * -(Required) Domain manager (Prism Central) network configuration details.
      */
-    network?: pulumi.Input<inputs.PcDeployV2Network>;
+    network?: pulumi.Input<inputs.PcDeployV2Network | undefined>;
     /**
      * -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>.
      */
-    shouldEnableHighAvailability?: pulumi.Input<boolean>;
+    shouldEnableHighAvailability?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -189,5 +189,5 @@ export interface PcDeployV2Args {
     /**
      * -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>.
      */
-    shouldEnableHighAvailability?: pulumi.Input<boolean>;
+    shouldEnableHighAvailability?: pulumi.Input<boolean | undefined>;
 }

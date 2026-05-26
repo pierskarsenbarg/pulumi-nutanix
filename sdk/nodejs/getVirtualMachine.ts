@@ -250,15 +250,15 @@ export interface GetVirtualMachineOutputArgs {
     /**
      * - Address of disk to boot from.
      */
-    bootDeviceDiskAddress?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    bootDeviceDiskAddress?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * - MAC address of nic to boot from.
      */
-    bootDeviceMacAddress?: pulumi.Input<string>;
+    bootDeviceMacAddress?: pulumi.Input<string | undefined>;
     /**
      * - Categories for the vm.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetVirtualMachineCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetVirtualMachineCategoryArgs>[] | undefined>;
     /**
      * Represents virtual machine UUID
      */

@@ -76,8 +76,8 @@ export interface OvaDownloadV2State {
     /**
      * -(Required) The external identifier for an OVA.
      */
-    ovaExtId?: pulumi.Input<string>;
-    ovaFilePath?: pulumi.Input<string>;
+    ovaExtId?: pulumi.Input<string | undefined>;
+    ovaFilePath?: pulumi.Input<string | undefined>;
 }
 
 /**

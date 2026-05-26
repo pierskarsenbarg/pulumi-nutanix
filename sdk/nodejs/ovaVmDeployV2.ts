@@ -140,15 +140,15 @@ export interface OvaVmDeployV2State {
     /**
      * -(Required) Cluster identifier to deploy VM from OVA. This field is required when deploying an OVA and must be a part of the OVA location list.
      */
-    clusterLocationExtId?: pulumi.Input<string>;
+    clusterLocationExtId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) The external identifier for an OVA.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) VM config override spec for OVA VM deploy endpoint
      */
-    overrideVmConfig?: pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfig>;
+    overrideVmConfig?: pulumi.Input<inputs.OvaVmDeployV2OverrideVmConfig | undefined>;
 }
 
 /**

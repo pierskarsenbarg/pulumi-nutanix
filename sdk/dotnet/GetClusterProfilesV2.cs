@@ -124,6 +124,31 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getclusterprofilev2" "list-cluster-profiles" {
+        /// }
+        /// data "nutanix_getclusterprofilesv2" "filtered-cluster-profiles" {
+        ///   filter = "clusterCount eq 62"
+        /// }
+        /// data "nutanix_getclusterprofilesv2" "paged-cluster-profiles" {
+        ///   page  = 1
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getclusterprofilesv2" "ordered-cluster-profiles" {
+        ///   order_by = "name"
+        /// }
+        /// data "nutanix_getclusterprofilesv2" "selected-cluster-profiles" {
+        ///   select = "name,description"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -314,6 +339,31 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getclusterprofilev2" "list-cluster-profiles" {
+        /// }
+        /// data "nutanix_getclusterprofilesv2" "filtered-cluster-profiles" {
+        ///   filter = "clusterCount eq 62"
+        /// }
+        /// data "nutanix_getclusterprofilesv2" "paged-cluster-profiles" {
+        ///   page  = 1
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getclusterprofilesv2" "ordered-cluster-profiles" {
+        ///   order_by = "name"
+        /// }
+        /// data "nutanix_getclusterprofilesv2" "selected-cluster-profiles" {
+        ///   select = "name,description"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -502,6 +552,31 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getclusterprofilev2" "list-cluster-profiles" {
+        /// }
+        /// data "nutanix_getclusterprofilesv2" "filtered-cluster-profiles" {
+        ///   filter = "clusterCount eq 62"
+        /// }
+        /// data "nutanix_getclusterprofilesv2" "paged-cluster-profiles" {
+        ///   page  = 1
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getclusterprofilesv2" "ordered-cluster-profiles" {
+        ///   order_by = "name"
+        /// }
+        /// data "nutanix_getclusterprofilesv2" "selected-cluster-profiles" {
+        ///   select = "name,description"
         /// }
         /// ```
         /// ```java

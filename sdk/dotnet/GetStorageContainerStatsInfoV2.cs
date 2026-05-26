@@ -84,6 +84,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getstoragecontainerstatsinfov2" "example" {
+        ///   ext_id            = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd"
+        ///   start_time        = "2024-08-01T00:00:00Z"
+        ///   end_time          = "2024-08-30T00:00:00Z"
+        ///   sampling_interval = 1
+        ///   stat_type         = "SUM"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -205,6 +222,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getstoragecontainerstatsinfov2" "example" {
+        ///   ext_id            = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd"
+        ///   start_time        = "2024-08-01T00:00:00Z"
+        ///   end_time          = "2024-08-30T00:00:00Z"
+        ///   sampling_interval = 1
+        ///   stat_type         = "SUM"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -324,6 +358,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getstoragecontainerstatsinfov2" "example" {
+        ///   ext_id            = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd"
+        ///   start_time        = "2024-08-01T00:00:00Z"
+        ///   end_time          = "2024-08-30T00:00:00Z"
+        ///   sampling_interval = 1
+        ///   stat_type         = "SUM"
         /// }
         /// ```
         /// ```java

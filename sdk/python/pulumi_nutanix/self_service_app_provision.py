@@ -22,12 +22,12 @@ __all__ = ['SelfServiceAppProvisionArgs', 'SelfServiceAppProvision']
 class SelfServiceAppProvisionArgs:
     def __init__(__self__, *,
                  app_name: pulumi.Input[_builtins.str],
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 bp_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 bp_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 runtime_editables: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppProvisionRuntimeEditableArgs']]]] = None,
-                 soft_delete: Optional[pulumi.Input[_builtins.bool]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 bp_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 bp_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 runtime_editables: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppProvisionRuntimeEditableArgs']]]] = None,
+                 soft_delete: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a SelfServiceAppProvision resource.
 
@@ -68,19 +68,19 @@ class SelfServiceAppProvisionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) System action to trigger after provisioning. Valid values: ["start", "stop", "restart"]
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="appDescription")
-    def app_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The description of application.
 
@@ -89,72 +89,72 @@ class SelfServiceAppProvisionArgs:
         return pulumi.get(self, "app_description")
 
     @app_description.setter
-    def app_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_description", value)
 
     @_builtins.property
     @pulumi.getter(name="bpName")
-    def bp_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bp_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The name of the blueprint to launch.
         """
         return pulumi.get(self, "bp_name")
 
     @bp_name.setter
-    def bp_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bp_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bp_name", value)
 
     @_builtins.property
     @pulumi.getter(name="bpUuid")
-    def bp_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bp_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The UUID of the blueprint to launch.
         """
         return pulumi.get(self, "bp_uuid")
 
     @bp_uuid.setter
-    def bp_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bp_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bp_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="runtimeEditables")
-    def runtime_editables(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppProvisionRuntimeEditableArgs']]]]:
+    def runtime_editables(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppProvisionRuntimeEditableArgs']]]]:
         return pulumi.get(self, "runtime_editables")
 
     @runtime_editables.setter
-    def runtime_editables(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppProvisionRuntimeEditableArgs']]]]):
+    def runtime_editables(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppProvisionRuntimeEditableArgs']]]]):
         pulumi.set(self, "runtime_editables", value)
 
     @_builtins.property
     @pulumi.getter(name="softDelete")
-    def soft_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def soft_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional, Default: false) If true, the application is soft-deleted when the resource is destroyed.
         """
         return pulumi.get(self, "soft_delete")
 
     @soft_delete.setter
-    def soft_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def soft_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "soft_delete", value)
 
 
 @pulumi.input_type
 class _SelfServiceAppProvisionState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 actions: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppProvisionActionArgs']]]] = None,
-                 api_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppProvisionAppSummaryArgs']]]] = None,
-                 bp_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 bp_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 runtime_editables: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppProvisionRuntimeEditableArgs']]]] = None,
-                 soft_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 spec: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 vms: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppProvisionVmArgs']]]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 actions: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppProvisionActionArgs']]]] = None,
+                 api_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_summaries: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppProvisionAppSummaryArgs']]]] = None,
+                 bp_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 bp_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 runtime_editables: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppProvisionRuntimeEditableArgs']]]] = None,
+                 soft_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 spec: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 vms: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppProvisionVmArgs']]]] = None):
         """
         Input properties used for looking up and filtering SelfServiceAppProvision resources.
 
@@ -202,40 +202,40 @@ class _SelfServiceAppProvisionState:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) System action to trigger after provisioning. Valid values: ["start", "stop", "restart"]
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppProvisionActionArgs']]]]:
+    def actions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppProvisionActionArgs']]]]:
         return pulumi.get(self, "actions")
 
     @actions.setter
-    def actions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppProvisionActionArgs']]]]):
+    def actions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppProvisionActionArgs']]]]):
         pulumi.set(self, "actions", value)
 
     @_builtins.property
     @pulumi.getter(name="apiVersion")
-    def api_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def api_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Computed) API version used.
         """
         return pulumi.get(self, "api_version")
 
     @api_version.setter
-    def api_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def api_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "api_version", value)
 
     @_builtins.property
     @pulumi.getter(name="appDescription")
-    def app_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The description of application.
 
@@ -244,118 +244,118 @@ class _SelfServiceAppProvisionState:
         return pulumi.get(self, "app_description")
 
     @app_description.setter
-    def app_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_description", value)
 
     @_builtins.property
     @pulumi.getter(name="appName")
-    def app_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name of the application you want to set.
         """
         return pulumi.get(self, "app_name")
 
     @app_name.setter
-    def app_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_name", value)
 
     @_builtins.property
     @pulumi.getter(name="appSummaries")
-    def app_summaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppProvisionAppSummaryArgs']]]]:
+    def app_summaries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppProvisionAppSummaryArgs']]]]:
         return pulumi.get(self, "app_summaries")
 
     @app_summaries.setter
-    def app_summaries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppProvisionAppSummaryArgs']]]]):
+    def app_summaries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppProvisionAppSummaryArgs']]]]):
         pulumi.set(self, "app_summaries", value)
 
     @_builtins.property
     @pulumi.getter(name="bpName")
-    def bp_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bp_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The name of the blueprint to launch.
         """
         return pulumi.get(self, "bp_name")
 
     @bp_name.setter
-    def bp_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bp_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bp_name", value)
 
     @_builtins.property
     @pulumi.getter(name="bpUuid")
-    def bp_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bp_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The UUID of the blueprint to launch.
         """
         return pulumi.get(self, "bp_uuid")
 
     @bp_uuid.setter
-    def bp_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bp_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bp_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="runtimeEditables")
-    def runtime_editables(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppProvisionRuntimeEditableArgs']]]]:
+    def runtime_editables(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppProvisionRuntimeEditableArgs']]]]:
         return pulumi.get(self, "runtime_editables")
 
     @runtime_editables.setter
-    def runtime_editables(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppProvisionRuntimeEditableArgs']]]]):
+    def runtime_editables(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppProvisionRuntimeEditableArgs']]]]):
         pulumi.set(self, "runtime_editables", value)
 
     @_builtins.property
     @pulumi.getter(name="softDelete")
-    def soft_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def soft_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional, Default: false) If true, the application is soft-deleted when the resource is destroyed.
         """
         return pulumi.get(self, "soft_delete")
 
     @soft_delete.setter
-    def soft_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def soft_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "soft_delete", value)
 
     @_builtins.property
     @pulumi.getter
-    def spec(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def spec(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Computed) Application specification (JSON string).
         """
         return pulumi.get(self, "spec")
 
     @spec.setter
-    def spec(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def spec(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "spec", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Computed) state of the application (e.g. running, stopped)
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Computed) Application status coming as response from server.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def vms(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppProvisionVmArgs']]]]:
+    def vms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppProvisionVmArgs']]]]:
         return pulumi.get(self, "vms")
 
     @vms.setter
-    def vms(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SelfServiceAppProvisionVmArgs']]]]):
+    def vms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SelfServiceAppProvisionVmArgs']]]]):
         pulumi.set(self, "vms", value)
 
 
@@ -365,13 +365,13 @@ class SelfServiceAppProvision(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 bp_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 bp_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 runtime_editables: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppProvisionRuntimeEditableArgs', 'SelfServiceAppProvisionRuntimeEditableArgsDict']]]]] = None,
-                 soft_delete: Optional[pulumi.Input[_builtins.bool]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 bp_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 bp_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 runtime_editables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionRuntimeEditableArgs', 'SelfServiceAppProvisionRuntimeEditableArgsDict']]]]] = None,
+                 soft_delete: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         Launches a blueprint to create an application and perform system actions on application.
@@ -441,13 +441,13 @@ class SelfServiceAppProvision(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 bp_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 bp_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 runtime_editables: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppProvisionRuntimeEditableArgs', 'SelfServiceAppProvisionRuntimeEditableArgsDict']]]]] = None,
-                 soft_delete: Optional[pulumi.Input[_builtins.bool]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 bp_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 bp_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 runtime_editables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionRuntimeEditableArgs', 'SelfServiceAppProvisionRuntimeEditableArgsDict']]]]] = None,
+                 soft_delete: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -483,20 +483,20 @@ class SelfServiceAppProvision(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            actions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppProvisionActionArgs', 'SelfServiceAppProvisionActionArgsDict']]]]] = None,
-            api_version: Optional[pulumi.Input[_builtins.str]] = None,
-            app_description: Optional[pulumi.Input[_builtins.str]] = None,
-            app_name: Optional[pulumi.Input[_builtins.str]] = None,
-            app_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppProvisionAppSummaryArgs', 'SelfServiceAppProvisionAppSummaryArgsDict']]]]] = None,
-            bp_name: Optional[pulumi.Input[_builtins.str]] = None,
-            bp_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            runtime_editables: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppProvisionRuntimeEditableArgs', 'SelfServiceAppProvisionRuntimeEditableArgsDict']]]]] = None,
-            soft_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            spec: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            vms: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SelfServiceAppProvisionVmArgs', 'SelfServiceAppProvisionVmArgsDict']]]]] = None) -> 'SelfServiceAppProvision':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            actions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionActionArgs', 'SelfServiceAppProvisionActionArgsDict']]]]] = None,
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            app_description: pulumi.Input[Optional[_builtins.str]] = None,
+            app_name: pulumi.Input[Optional[_builtins.str]] = None,
+            app_summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionAppSummaryArgs', 'SelfServiceAppProvisionAppSummaryArgsDict']]]]] = None,
+            bp_name: pulumi.Input[Optional[_builtins.str]] = None,
+            bp_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            runtime_editables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionRuntimeEditableArgs', 'SelfServiceAppProvisionRuntimeEditableArgsDict']]]]] = None,
+            soft_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            spec: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            vms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionVmArgs', 'SelfServiceAppProvisionVmArgsDict']]]]] = None) -> 'SelfServiceAppProvision':
         """
         Get an existing SelfServiceAppProvision resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

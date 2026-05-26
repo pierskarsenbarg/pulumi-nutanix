@@ -152,29 +152,29 @@ export interface NdbStretchedVlanState {
     /**
      * Description of stretched vlan
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Update the stretched VLAN Gateway and Subnet Mask IP address
      * * `metadata.gateway`: Update the gateway of stretched vlan
      * * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask " pulumi-lang-hcl=" subnet_mask "> subnetMask </span>of stretched vlan
      */
-    metadata?: pulumi.Input<inputs.NdbStretchedVlanMetadata>;
+    metadata?: pulumi.Input<inputs.NdbStretchedVlanMetadata | undefined>;
     /**
      * name for the stretched VLAN
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * list of vlan ids to be added in NDB
      */
-    vlanIds?: pulumi.Input<pulumi.Input<string>[]>;
+    vlanIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * properties of vlans
      */
-    vlansLists?: pulumi.Input<pulumi.Input<inputs.NdbStretchedVlanVlansList>[]>;
+    vlansLists?: pulumi.Input<pulumi.Input<inputs.NdbStretchedVlanVlansList>[] | undefined>;
 }
 
 /**
@@ -184,17 +184,17 @@ export interface NdbStretchedVlanArgs {
     /**
      * Description of stretched vlan
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Update the stretched VLAN Gateway and Subnet Mask IP address
      * * `metadata.gateway`: Update the gateway of stretched vlan
      * * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask " pulumi-lang-hcl=" subnet_mask "> subnetMask </span>of stretched vlan
      */
-    metadata?: pulumi.Input<inputs.NdbStretchedVlanMetadata>;
+    metadata?: pulumi.Input<inputs.NdbStretchedVlanMetadata | undefined>;
     /**
      * name for the stretched VLAN
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
      */

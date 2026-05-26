@@ -145,7 +145,7 @@ def get_ssl_certificate_v2(cluster_ext_id: Optional[_builtins.str] = None,
         private_key=pulumi.get(__ret__, 'private_key'),
         private_key_algorithm=pulumi.get(__ret__, 'private_key_algorithm'),
         public_certificate=pulumi.get(__ret__, 'public_certificate'))
-def get_ssl_certificate_v2_output(cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_ssl_certificate_v2_output(cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSslCertificateV2Result]:
     """
     Provides detailed information about the SSL certificate in privacy-enhanced mail (.pem) format for the specified cluster.

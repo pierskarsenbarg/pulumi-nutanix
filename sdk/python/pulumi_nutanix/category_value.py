@@ -20,8 +20,8 @@ __all__ = ['CategoryValueArgs', 'CategoryValue']
 class CategoryValueArgs:
     def __init__(__self__, *,
                  value: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CategoryValue resource.
 
@@ -49,37 +49,37 @@ class CategoryValueArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) A description for category value.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _CategoryValueState:
     def __init__(__self__, *,
-                 api_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_defined: Optional[pulumi.Input[_builtins.bool]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 api_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CategoryValue resources.
 
@@ -102,62 +102,62 @@ class _CategoryValueState:
 
     @_builtins.property
     @pulumi.getter(name="apiVersion")
-    def api_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def api_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The version of the API.
         """
         return pulumi.get(self, "api_version")
 
     @api_version.setter
-    def api_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def api_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "api_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) A description for category value.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="systemDefined")
-    def system_defined(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def system_defined(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - Specifying whether its a system defined category.
         """
         return pulumi.get(self, "system_defined")
 
     @system_defined.setter
-    def system_defined(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def system_defined(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "system_defined", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The value for the category value.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -167,9 +167,9 @@ class CategoryValue(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a Nutanix Category value resource to Create a category value.
@@ -240,9 +240,9 @@ class CategoryValue(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -269,11 +269,11 @@ class CategoryValue(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            api_version: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            system_defined: Optional[pulumi.Input[_builtins.bool]] = None,
-            value: Optional[pulumi.Input[_builtins.str]] = None) -> 'CategoryValue':
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
+            value: pulumi.Input[Optional[_builtins.str]] = None) -> 'CategoryValue':
         """
         Get an existing CategoryValue resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

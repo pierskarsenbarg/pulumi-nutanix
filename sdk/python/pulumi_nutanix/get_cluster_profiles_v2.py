@@ -193,11 +193,11 @@ def get_cluster_profiles_v2(filter: Optional[_builtins.str] = None,
         order_by=pulumi.get(__ret__, 'order_by'),
         page=pulumi.get(__ret__, 'page'),
         select=pulumi.get(__ret__, 'select'))
-def get_cluster_profiles_v2_output(filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                   order_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                   select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_cluster_profiles_v2_output(filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                   order_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                   select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterProfilesV2Result]:
     """
     Fetches a list of cluster profile entities. A profile consists of different cluster settings like Network Time Protocol(NTP), Domain Name System(DNS), and so on.

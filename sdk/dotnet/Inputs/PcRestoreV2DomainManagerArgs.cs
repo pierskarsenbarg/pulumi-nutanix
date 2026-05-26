@@ -52,7 +52,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         }
 
         /// <summary>
-        /// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`"&gt;`false`&lt;/span&gt;.
+        /// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`"&gt;`false`&lt;/span&gt;.
         /// </summary>
         [Input("shouldEnableHighAvailability")]
         public Input<bool>? ShouldEnableHighAvailability { get; set; }

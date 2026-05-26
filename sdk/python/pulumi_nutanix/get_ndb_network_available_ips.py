@@ -102,7 +102,7 @@ def get_ndb_network_available_ips(profile_id: Optional[_builtins.str] = None,
         available_ips=pulumi.get(__ret__, 'available_ips'),
         id=pulumi.get(__ret__, 'id'),
         profile_id=pulumi.get(__ret__, 'profile_id'))
-def get_ndb_network_available_ips_output(profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_ndb_network_available_ips_output(profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbNetworkAvailableIpsResult]:
     """
     List of available IPs in Network

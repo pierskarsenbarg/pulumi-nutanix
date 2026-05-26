@@ -577,8 +577,8 @@ def get_host_v2(cluster_ext_id: Optional[_builtins.str] = None,
         number_of_cpu_threads=pulumi.get(__ret__, 'number_of_cpu_threads'),
         rackable_unit_uuid=pulumi.get(__ret__, 'rackable_unit_uuid'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
-def get_host_v2_output(cluster_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_host_v2_output(cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHostV2Result]:
     """
     Describes the statistics data of the host identified by {hostExtId} belonging to the cluster identified by {clusterExtId}.

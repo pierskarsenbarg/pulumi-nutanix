@@ -57,7 +57,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) The&lt;span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "&gt; categoryKey &lt;/span&gt;name for the category value.
+        /// - (Required) The&lt;span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "&gt; categoryKey &lt;/span&gt;name for the category value.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -128,7 +128,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// - (Required) The&lt;span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "&gt; categoryKey &lt;/span&gt;name for the category value.
+        /// - (Required) The&lt;span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "&gt; categoryKey &lt;/span&gt;name for the category value.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -160,7 +160,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// - (Required) The&lt;span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "&gt; categoryKey &lt;/span&gt;name for the category value.
+        /// - (Required) The&lt;span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "&gt; categoryKey &lt;/span&gt;name for the category value.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

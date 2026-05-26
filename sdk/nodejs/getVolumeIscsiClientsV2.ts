@@ -267,10 +267,10 @@ export function getVolumeIscsiClientsV2Output(args?: GetVolumeIscsiClientsV2Outp
  * A collection of arguments for invoking getVolumeIscsiClientsV2.
  */
 export interface GetVolumeIscsiClientsV2OutputArgs {
-    expand?: pulumi.Input<string>;
-    filter?: pulumi.Input<string>;
-    limit?: pulumi.Input<number>;
-    orderby?: pulumi.Input<string>;
-    page?: pulumi.Input<number>;
-    select?: pulumi.Input<string>;
+    expand?: pulumi.Input<string | undefined>;
+    filter?: pulumi.Input<string | undefined>;
+    limit?: pulumi.Input<number | undefined>;
+    orderby?: pulumi.Input<string | undefined>;
+    page?: pulumi.Input<number | undefined>;
+    select?: pulumi.Input<string | undefined>;
 }

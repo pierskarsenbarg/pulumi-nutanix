@@ -49,13 +49,13 @@ import (
 // ## lifecycle
 //
 // * `Create` : - Resource will trigger onboarding of the node.
-// * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`">`delete`</span> : - Node will be removed from FC "imaged nodes" but will still be available in the hardware manager for re-onboarding.
+// * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`" pulumi-lang-hcl="`delete`">`delete`</span> : - Node will be removed from FC "imaged nodes" but will still be available in the hardware manager for re-onboarding.
 type FoundationCentralOnboardNodes struct {
 	pulumi.CustomResourceState
 
 	// Block serial number of the node
 	BlockSerial pulumi.StringOutput `pulumi:"blockSerial"`
-	// UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode "> imagedNode </span>in FC
+	// UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode " pulumi-lang-hcl=" imaged_node "> imagedNode </span>in FC
 	ImagedNodeUuid pulumi.StringOutput `pulumi:"imagedNodeUuid"`
 	// Model of the node
 	Model pulumi.StringOutput `pulumi:"model"`
@@ -102,7 +102,7 @@ func GetFoundationCentralOnboardNodes(ctx *pulumi.Context,
 type foundationCentralOnboardNodesState struct {
 	// Block serial number of the node
 	BlockSerial *string `pulumi:"blockSerial"`
-	// UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode "> imagedNode </span>in FC
+	// UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode " pulumi-lang-hcl=" imaged_node "> imagedNode </span>in FC
 	ImagedNodeUuid *string `pulumi:"imagedNodeUuid"`
 	// Model of the node
 	Model *string `pulumi:"model"`
@@ -117,7 +117,7 @@ type foundationCentralOnboardNodesState struct {
 type FoundationCentralOnboardNodesState struct {
 	// Block serial number of the node
 	BlockSerial pulumi.StringPtrInput
-	// UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode "> imagedNode </span>in FC
+	// UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode " pulumi-lang-hcl=" imaged_node "> imagedNode </span>in FC
 	ImagedNodeUuid pulumi.StringPtrInput
 	// Model of the node
 	Model pulumi.StringPtrInput
@@ -236,7 +236,7 @@ func (o FoundationCentralOnboardNodesOutput) BlockSerial() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationCentralOnboardNodes) pulumi.StringOutput { return v.BlockSerial }).(pulumi.StringOutput)
 }
 
-// UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode "> imagedNode </span>in FC
+// UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode " pulumi-lang-hcl=" imaged_node "> imagedNode </span>in FC
 func (o FoundationCentralOnboardNodesOutput) ImagedNodeUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationCentralOnboardNodes) pulumi.StringOutput { return v.ImagedNodeUuid }).(pulumi.StringOutput)
 }

@@ -60,14 +60,14 @@ class PcBackupTargetV2Args:
 @pulumi.input_type
 class _PcBackupTargetV2State:
     def __init__(__self__, *,
-                 backup_pause_reason: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_manager_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_backup_paused: Optional[pulumi.Input[_builtins.bool]] = None,
-                 last_sync_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 links: Optional[pulumi.Input[Sequence[pulumi.Input['PcBackupTargetV2LinkArgs']]]] = None,
-                 location: Optional[pulumi.Input['PcBackupTargetV2LocationArgs']] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 backup_pause_reason: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_backup_paused: pulumi.Input[Optional[_builtins.bool]] = None,
+                 last_sync_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['PcBackupTargetV2LinkArgs']]]] = None,
+                 location: pulumi.Input[Optional['PcBackupTargetV2LocationArgs']] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PcBackupTargetV2 resources.
 
@@ -93,80 +93,80 @@ class _PcBackupTargetV2State:
 
     @_builtins.property
     @pulumi.getter(name="backupPauseReason")
-    def backup_pause_reason(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_pause_reason(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "backup_pause_reason")
 
     @backup_pause_reason.setter
-    def backup_pause_reason(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_pause_reason(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_pause_reason", value)
 
     @_builtins.property
     @pulumi.getter(name="domainManagerExtId")
-    def domain_manager_ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_manager_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         -(Required) A unique identifier for the domain manager.
         """
         return pulumi.get(self, "domain_manager_ext_id")
 
     @domain_manager_ext_id.setter
-    def domain_manager_ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_manager_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_manager_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
-    def ext_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
-    def ext_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isBackupPaused")
-    def is_backup_paused(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_backup_paused(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_backup_paused")
 
     @is_backup_paused.setter
-    def is_backup_paused(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_backup_paused(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_backup_paused", value)
 
     @_builtins.property
     @pulumi.getter(name="lastSyncTime")
-    def last_sync_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_sync_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "last_sync_time")
 
     @last_sync_time.setter
-    def last_sync_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_sync_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_sync_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def links(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PcBackupTargetV2LinkArgs']]]]:
+    def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PcBackupTargetV2LinkArgs']]]]:
         return pulumi.get(self, "links")
 
     @links.setter
-    def links(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PcBackupTargetV2LinkArgs']]]]):
+    def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PcBackupTargetV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
 
     @_builtins.property
     @pulumi.getter
-    def location(self) -> Optional[pulumi.Input['PcBackupTargetV2LocationArgs']]:
+    def location(self) -> pulumi.Input[Optional['PcBackupTargetV2LocationArgs']]:
         """
         -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
         """
         return pulumi.get(self, "location")
 
     @location.setter
-    def location(self, value: Optional[pulumi.Input['PcBackupTargetV2LocationArgs']]):
+    def location(self, value: pulumi.Input[Optional['PcBackupTargetV2LocationArgs']]):
         pulumi.set(self, "location", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
 
@@ -176,8 +176,8 @@ class PcBackupTargetV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 domain_manager_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 location: Optional[pulumi.Input[Union['PcBackupTargetV2LocationArgs', 'PcBackupTargetV2LocationArgsDict']]] = None,
+                 domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 location: pulumi.Input[Optional[Union['PcBackupTargetV2LocationArgs', 'PcBackupTargetV2LocationArgsDict']]] = None,
                  __props__=None):
         """
         Create a cluster or object store as the backup target. For a given Prism Central, there can be up to 3 clusters as backup targets and 1 object store as backup target. If any cluster or object store is not eligible for backup or lacks appropriate permissions, the API request will fail. For object store backup targets, specifying backup policy is mandatory along with the location of the object store.
@@ -311,8 +311,8 @@ class PcBackupTargetV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 domain_manager_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 location: Optional[pulumi.Input[Union['PcBackupTargetV2LocationArgs', 'PcBackupTargetV2LocationArgsDict']]] = None,
+                 domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 location: pulumi.Input[Optional[Union['PcBackupTargetV2LocationArgs', 'PcBackupTargetV2LocationArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -344,14 +344,14 @@ class PcBackupTargetV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            backup_pause_reason: Optional[pulumi.Input[_builtins.str]] = None,
-            domain_manager_ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ext_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_backup_paused: Optional[pulumi.Input[_builtins.bool]] = None,
-            last_sync_time: Optional[pulumi.Input[_builtins.str]] = None,
-            links: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PcBackupTargetV2LinkArgs', 'PcBackupTargetV2LinkArgsDict']]]]] = None,
-            location: Optional[pulumi.Input[Union['PcBackupTargetV2LocationArgs', 'PcBackupTargetV2LocationArgsDict']]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'PcBackupTargetV2':
+            backup_pause_reason: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_backup_paused: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_sync_time: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcBackupTargetV2LinkArgs', 'PcBackupTargetV2LinkArgsDict']]]]] = None,
+            location: pulumi.Input[Optional[Union['PcBackupTargetV2LocationArgs', 'PcBackupTargetV2LocationArgsDict']]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PcBackupTargetV2':
         """
         Get an existing PcBackupTargetV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

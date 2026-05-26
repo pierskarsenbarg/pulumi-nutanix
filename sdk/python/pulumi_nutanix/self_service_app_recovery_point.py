@@ -20,9 +20,9 @@ __all__ = ['SelfServiceAppRecoveryPointArgs', 'SelfServiceAppRecoveryPoint']
 class SelfServiceAppRecoveryPointArgs:
     def __init__(__self__, *,
                  action_name: pulumi.Input[_builtins.str],
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 recovery_point_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 recovery_point_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a SelfServiceAppRecoveryPoint resource.
 
@@ -55,19 +55,19 @@ class SelfServiceAppRecoveryPointArgs:
 
     @_builtins.property
     @pulumi.getter(name="appName")
-    def app_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The name of the application
         """
         return pulumi.get(self, "app_name")
 
     @app_name.setter
-    def app_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_name", value)
 
     @_builtins.property
     @pulumi.getter(name="appUuid")
-    def app_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The UUID of the application.
 
@@ -76,29 +76,29 @@ class SelfServiceAppRecoveryPointArgs:
         return pulumi.get(self, "app_uuid")
 
     @app_uuid.setter
-    def app_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="recoveryPointName")
-    def recovery_point_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recovery_point_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name of recovery point.
         """
         return pulumi.get(self, "recovery_point_name")
 
     @recovery_point_name.setter
-    def recovery_point_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recovery_point_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recovery_point_name", value)
 
 
 @pulumi.input_type
 class _SelfServiceAppRecoveryPointState:
     def __init__(__self__, *,
-                 action_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 recovery_point_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 action_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 recovery_point_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SelfServiceAppRecoveryPoint resources.
 
@@ -120,31 +120,31 @@ class _SelfServiceAppRecoveryPointState:
 
     @_builtins.property
     @pulumi.getter(name="actionName")
-    def action_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name of the snapshot action to trigger.
         """
         return pulumi.get(self, "action_name")
 
     @action_name.setter
-    def action_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_name", value)
 
     @_builtins.property
     @pulumi.getter(name="appName")
-    def app_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The name of the application
         """
         return pulumi.get(self, "app_name")
 
     @app_name.setter
-    def app_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_name", value)
 
     @_builtins.property
     @pulumi.getter(name="appUuid")
-    def app_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def app_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The UUID of the application.
 
@@ -153,19 +153,19 @@ class _SelfServiceAppRecoveryPointState:
         return pulumi.get(self, "app_uuid")
 
     @app_uuid.setter
-    def app_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def app_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "app_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="recoveryPointName")
-    def recovery_point_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recovery_point_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The name of recovery point.
         """
         return pulumi.get(self, "recovery_point_name")
 
     @recovery_point_name.setter
-    def recovery_point_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recovery_point_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recovery_point_name", value)
 
 
@@ -175,10 +175,10 @@ class SelfServiceAppRecoveryPoint(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 recovery_point_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 recovery_point_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Run snapshot action in application to create recovery point.
@@ -246,10 +246,10 @@ class SelfServiceAppRecoveryPoint(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 recovery_point_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 recovery_point_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -275,10 +275,10 @@ class SelfServiceAppRecoveryPoint(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action_name: Optional[pulumi.Input[_builtins.str]] = None,
-            app_name: Optional[pulumi.Input[_builtins.str]] = None,
-            app_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            recovery_point_name: Optional[pulumi.Input[_builtins.str]] = None) -> 'SelfServiceAppRecoveryPoint':
+            action_name: pulumi.Input[Optional[_builtins.str]] = None,
+            app_name: pulumi.Input[Optional[_builtins.str]] = None,
+            app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            recovery_point_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'SelfServiceAppRecoveryPoint':
         """
         Get an existing SelfServiceAppRecoveryPoint resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

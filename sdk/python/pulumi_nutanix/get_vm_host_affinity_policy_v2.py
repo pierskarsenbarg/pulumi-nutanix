@@ -242,7 +242,7 @@ def get_vm_host_affinity_policy_v2(ext_id: Optional[_builtins.str] = None,
         num_vms=pulumi.get(__ret__, 'num_vms'),
         update_time=pulumi.get(__ret__, 'update_time'),
         vm_categories=pulumi.get(__ret__, 'vm_categories'))
-def get_vm_host_affinity_policy_v2_output(ext_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_vm_host_affinity_policy_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmHostAffinityPolicyV2Result]:
     """
     Retrieve the VM-Host Affinity policy details for the provided external identifier (ext_id).

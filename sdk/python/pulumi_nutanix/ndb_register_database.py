@@ -24,28 +24,28 @@ class NdbRegisterDatabaseArgs:
                  database_name: pulumi.Input[_builtins.str],
                  database_type: pulumi.Input[_builtins.str],
                  vm_ip: pulumi.Input[_builtins.str],
-                 actionarguments: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseActionargumentArgs']]]] = None,
-                 auto_tune_staging_drive: Optional[pulumi.Input[_builtins.bool]] = None,
-                 category: Optional[pulumi.Input[_builtins.str]] = None,
-                 clustered: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_logical_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_time_machine: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 forced: Optional[pulumi.Input[_builtins.bool]] = None,
-                 forced_install: Optional[pulumi.Input[_builtins.bool]] = None,
-                 nx_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 postgress_infos: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabasePostgressInfoArgs']]]] = None,
-                 remove: Optional[pulumi.Input[_builtins.bool]] = None,
-                 reset_description_in_nx_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
-                 soft_remove: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTagArgs']]]] = None,
-                 time_machine_info: Optional[pulumi.Input['NdbRegisterDatabaseTimeMachineInfoArgs']] = None,
-                 vm_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_sshkey: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 working_directory: Optional[pulumi.Input[_builtins.str]] = None):
+                 actionarguments: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseActionargumentArgs']]]] = None,
+                 auto_tune_staging_drive: pulumi.Input[Optional[_builtins.bool]] = None,
+                 category: pulumi.Input[Optional[_builtins.str]] = None,
+                 clustered: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_logical_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_time_machine: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 forced: pulumi.Input[Optional[_builtins.bool]] = None,
+                 forced_install: pulumi.Input[Optional[_builtins.bool]] = None,
+                 nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 postgress_infos: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabasePostgressInfoArgs']]]] = None,
+                 remove: pulumi.Input[Optional[_builtins.bool]] = None,
+                 reset_description_in_nx_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+                 soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseTagArgs']]]] = None,
+                 time_machine_info: pulumi.Input[Optional['NdbRegisterDatabaseTimeMachineInfoArgs']] = None,
+                 vm_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_sshkey: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 working_directory: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbRegisterDatabase resource.
 
@@ -161,320 +161,320 @@ class NdbRegisterDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter
-    def actionarguments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseActionargumentArgs']]]]:
+    def actionarguments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseActionargumentArgs']]]]:
         """
         action arguments
         """
         return pulumi.get(self, "actionarguments")
 
     @actionarguments.setter
-    def actionarguments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseActionargumentArgs']]]]):
+    def actionarguments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseActionargumentArgs']]]]):
         pulumi.set(self, "actionarguments", value)
 
     @_builtins.property
     @pulumi.getter(name="autoTuneStagingDrive")
-    def auto_tune_staging_drive(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_tune_staging_drive(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         auto tune staging drive. Default is true
         """
         return pulumi.get(self, "auto_tune_staging_drive")
 
     @auto_tune_staging_drive.setter
-    def auto_tune_staging_drive(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_tune_staging_drive(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_tune_staging_drive", value)
 
     @_builtins.property
     @pulumi.getter
-    def category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         category of database. Default is "DEFAULT"
         """
         return pulumi.get(self, "category")
 
     @category.setter
-    def category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "category", value)
 
     @_builtins.property
     @pulumi.getter
-    def clustered(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def clustered(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         clustered or not. Default is false
         """
         return pulumi.get(self, "clustered")
 
     @clustered.setter
-    def clustered(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def clustered(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "clustered", value)
 
     @_builtins.property
     @pulumi.getter
-    def delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Delete the database from the VM. Default value is false
         """
         return pulumi.get(self, "delete")
 
     @delete.setter
-    def delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteLogicalCluster")
-    def delete_logical_cluster(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_logical_cluster(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Delete the logical cluster. Default is true
         """
         return pulumi.get(self, "delete_logical_cluster")
 
     @delete_logical_cluster.setter
-    def delete_logical_cluster(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_logical_cluster(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_logical_cluster", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteTimeMachine")
-    def delete_time_machine(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_time_machine(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Delete the database's Time Machine (snapshots/logs) from the NDB. Default value is true
         """
         return pulumi.get(self, "delete_time_machine")
 
     @delete_time_machine.setter
-    def delete_time_machine(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_time_machine(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_time_machine", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def forced(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def forced(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Force delete of instance. Default is false
         """
         return pulumi.get(self, "forced")
 
     @forced.setter
-    def forced(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def forced(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "forced", value)
 
     @_builtins.property
     @pulumi.getter(name="forcedInstall")
-    def forced_install(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def forced_install(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         forced install. Default:  true
         """
         return pulumi.get(self, "forced_install")
 
     @forced_install.setter
-    def forced_install(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def forced_install(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "forced_install", value)
 
     @_builtins.property
     @pulumi.getter(name="nxClusterId")
-    def nx_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nx_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         cluster on which NDB is present
         """
         return pulumi.get(self, "nx_cluster_id")
 
     @nx_cluster_id.setter
-    def nx_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nx_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nx_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="postgressInfos")
-    def postgress_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabasePostgressInfoArgs']]]]:
+    def postgress_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabasePostgressInfoArgs']]]]:
         """
         Postgress_Info for registering.
         """
         return pulumi.get(self, "postgress_infos")
 
     @postgress_infos.setter
-    def postgress_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabasePostgressInfoArgs']]]]):
+    def postgress_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabasePostgressInfoArgs']]]]):
         pulumi.set(self, "postgress_infos", value)
 
     @_builtins.property
     @pulumi.getter
-    def remove(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def remove(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Unregister the database from NDB. Default value is true
         """
         return pulumi.get(self, "remove")
 
     @remove.setter
-    def remove(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def remove(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "remove", value)
 
     @_builtins.property
     @pulumi.getter(name="resetDescriptionInNxCluster")
-    def reset_description_in_nx_cluster(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def reset_description_in_nx_cluster(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Reset description in cluster
         """
         return pulumi.get(self, "reset_description_in_nx_cluster")
 
     @reset_description_in_nx_cluster.setter
-    def reset_description_in_nx_cluster(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def reset_description_in_nx_cluster(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "reset_description_in_nx_cluster", value)
 
     @_builtins.property
     @pulumi.getter(name="softRemove")
-    def soft_remove(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def soft_remove(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Soft remove. Default will be false
         """
         return pulumi.get(self, "soft_remove")
 
     @soft_remove.setter
-    def soft_remove(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def soft_remove(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "soft_remove", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseTagArgs']]]]:
         """
         tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachineInfo")
-    def time_machine_info(self) -> Optional[pulumi.Input['NdbRegisterDatabaseTimeMachineInfoArgs']]:
+    def time_machine_info(self) -> pulumi.Input[Optional['NdbRegisterDatabaseTimeMachineInfoArgs']]:
         """
         Time Machine info
         """
         return pulumi.get(self, "time_machine_info")
 
     @time_machine_info.setter
-    def time_machine_info(self, value: Optional[pulumi.Input['NdbRegisterDatabaseTimeMachineInfoArgs']]):
+    def time_machine_info(self, value: pulumi.Input[Optional['NdbRegisterDatabaseTimeMachineInfoArgs']]):
         pulumi.set(self, "time_machine_info", value)
 
     @_builtins.property
     @pulumi.getter(name="vmDescription")
-    def vm_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         description for VM
         """
         return pulumi.get(self, "vm_description")
 
     @vm_description.setter
-    def vm_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_description", value)
 
     @_builtins.property
     @pulumi.getter(name="vmPassword")
-    def vm_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         password of the NDB drive user account.
         """
         return pulumi.get(self, "vm_password")
 
     @vm_password.setter
-    def vm_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_password", value)
 
     @_builtins.property
     @pulumi.getter(name="vmSshkey")
-    def vm_sshkey(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_sshkey(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ssh key for vm
         """
         return pulumi.get(self, "vm_sshkey")
 
     @vm_sshkey.setter
-    def vm_sshkey(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_sshkey(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_sshkey", value)
 
     @_builtins.property
     @pulumi.getter(name="vmUsername")
-    def vm_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         username of the NDB drive user account that has sudo access.
         """
         return pulumi.get(self, "vm_username")
 
     @vm_username.setter
-    def vm_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_username", value)
 
     @_builtins.property
     @pulumi.getter(name="workingDirectory")
-    def working_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def working_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         working directory. Default is /tmp
         """
         return pulumi.get(self, "working_directory")
 
     @working_directory.setter
-    def working_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def working_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "working_directory", value)
 
 
 @pulumi.input_type
 class _NdbRegisterDatabaseState:
     def __init__(__self__, *,
-                 actionarguments: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseActionargumentArgs']]]] = None,
-                 auto_tune_staging_drive: Optional[pulumi.Input[_builtins.bool]] = None,
-                 category: Optional[pulumi.Input[_builtins.str]] = None,
-                 clone: Optional[pulumi.Input[_builtins.bool]] = None,
-                 clustered: Optional[pulumi.Input[_builtins.bool]] = None,
-                 database_cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_nodes: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseDatabaseNodeArgs']]]] = None,
-                 database_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 date_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 date_modified: Optional[pulumi.Input[_builtins.str]] = None,
-                 dbserver_logical_cluster: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dbserver_logical_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_logical_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_time_machine: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 forced: Optional[pulumi.Input[_builtins.bool]] = None,
-                 forced_install: Optional[pulumi.Input[_builtins.bool]] = None,
-                 group_info: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 infos: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseInfoArgs']]]] = None,
-                 lcm_configs: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseLcmConfigArgs']]]] = None,
-                 linked_databases: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseLinkedDatabaseArgs']]]] = None,
-                 metric: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nx_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_source_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 postgress_infos: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabasePostgressInfoArgs']]]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabasePropertyArgs']]]] = None,
-                 remove: Optional[pulumi.Input[_builtins.bool]] = None,
-                 reset_description_in_nx_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
-                 soft_remove: Optional[pulumi.Input[_builtins.bool]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTagArgs']]]] = None,
-                 time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_machine_info: Optional[pulumi.Input['NdbRegisterDatabaseTimeMachineInfoArgs']] = None,
-                 time_machines: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineArgs']]]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_sshkey: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 working_directory: Optional[pulumi.Input[_builtins.str]] = None):
+                 actionarguments: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseActionargumentArgs']]]] = None,
+                 auto_tune_staging_drive: pulumi.Input[Optional[_builtins.bool]] = None,
+                 category: pulumi.Input[Optional[_builtins.str]] = None,
+                 clone: pulumi.Input[Optional[_builtins.bool]] = None,
+                 clustered: pulumi.Input[Optional[_builtins.bool]] = None,
+                 database_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_nodes: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseDatabaseNodeArgs']]]] = None,
+                 database_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 date_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+                 dbserver_logical_cluster: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dbserver_logical_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_logical_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_time_machine: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 forced: pulumi.Input[Optional[_builtins.bool]] = None,
+                 forced_install: pulumi.Input[Optional[_builtins.bool]] = None,
+                 group_info: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 infos: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseInfoArgs']]]] = None,
+                 lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseLcmConfigArgs']]]] = None,
+                 linked_databases: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseLinkedDatabaseArgs']]]] = None,
+                 metric: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_source_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 postgress_infos: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabasePostgressInfoArgs']]]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabasePropertyArgs']]]] = None,
+                 remove: pulumi.Input[Optional[_builtins.bool]] = None,
+                 reset_description_in_nx_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+                 soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseTagArgs']]]] = None,
+                 time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_machine_info: pulumi.Input[Optional['NdbRegisterDatabaseTimeMachineInfoArgs']] = None,
+                 time_machines: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineArgs']]]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_sshkey: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 working_directory: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NdbRegisterDatabase resources.
 
@@ -625,575 +625,575 @@ class _NdbRegisterDatabaseState:
 
     @_builtins.property
     @pulumi.getter
-    def actionarguments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseActionargumentArgs']]]]:
+    def actionarguments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseActionargumentArgs']]]]:
         """
         action arguments
         """
         return pulumi.get(self, "actionarguments")
 
     @actionarguments.setter
-    def actionarguments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseActionargumentArgs']]]]):
+    def actionarguments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseActionargumentArgs']]]]):
         pulumi.set(self, "actionarguments", value)
 
     @_builtins.property
     @pulumi.getter(name="autoTuneStagingDrive")
-    def auto_tune_staging_drive(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_tune_staging_drive(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         auto tune staging drive. Default is true
         """
         return pulumi.get(self, "auto_tune_staging_drive")
 
     @auto_tune_staging_drive.setter
-    def auto_tune_staging_drive(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_tune_staging_drive(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_tune_staging_drive", value)
 
     @_builtins.property
     @pulumi.getter
-    def category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         category of database. Default is "DEFAULT"
         """
         return pulumi.get(self, "category")
 
     @category.setter
-    def category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "category", value)
 
     @_builtins.property
     @pulumi.getter
-    def clone(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def clone(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         whether instance is cloned or not
         """
         return pulumi.get(self, "clone")
 
     @clone.setter
-    def clone(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def clone(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "clone", value)
 
     @_builtins.property
     @pulumi.getter
-    def clustered(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def clustered(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         clustered or not. Default is false
         """
         return pulumi.get(self, "clustered")
 
     @clustered.setter
-    def clustered(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def clustered(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "clustered", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseClusterType")
-    def database_cluster_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_cluster_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         database cluster type
         """
         return pulumi.get(self, "database_cluster_type")
 
     @database_cluster_type.setter
-    def database_cluster_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_cluster_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_cluster_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseName")
-    def database_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         name of database
         """
         return pulumi.get(self, "database_name")
 
     @database_name.setter
-    def database_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_name", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseNodes")
-    def database_nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseDatabaseNodeArgs']]]]:
+    def database_nodes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseDatabaseNodeArgs']]]]:
         """
         database nodes associated with database instance
         """
         return pulumi.get(self, "database_nodes")
 
     @database_nodes.setter
-    def database_nodes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseDatabaseNodeArgs']]]]):
+    def database_nodes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseDatabaseNodeArgs']]]]):
         pulumi.set(self, "database_nodes", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseStatus")
-    def database_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         status of database
         """
         return pulumi.get(self, "database_status")
 
     @database_status.setter
-    def database_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_status", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseType")
-    def database_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         type of database. Required value: postgres_database
         """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
-    def database_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dateCreated")
-    def date_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def date_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         date created for db instance
         """
         return pulumi.get(self, "date_created")
 
     @date_created.setter
-    def date_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def date_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "date_created", value)
 
     @_builtins.property
     @pulumi.getter(name="dateModified")
-    def date_modified(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def date_modified(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         date modified for instance
         """
         return pulumi.get(self, "date_modified")
 
     @date_modified.setter
-    def date_modified(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def date_modified(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "date_modified", value)
 
     @_builtins.property
     @pulumi.getter(name="dbserverLogicalCluster")
-    def dbserver_logical_cluster(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def dbserver_logical_cluster(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         dbserver logical cluster
         """
         return pulumi.get(self, "dbserver_logical_cluster")
 
     @dbserver_logical_cluster.setter
-    def dbserver_logical_cluster(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def dbserver_logical_cluster(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dbserver_logical_cluster", value)
 
     @_builtins.property
     @pulumi.getter(name="dbserverLogicalClusterId")
-    def dbserver_logical_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dbserver_logical_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         dbserver logical cluster id
         """
         return pulumi.get(self, "dbserver_logical_cluster_id")
 
     @dbserver_logical_cluster_id.setter
-    def dbserver_logical_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dbserver_logical_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dbserver_logical_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Delete the database from the VM. Default value is false
         """
         return pulumi.get(self, "delete")
 
     @delete.setter
-    def delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteLogicalCluster")
-    def delete_logical_cluster(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_logical_cluster(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Delete the logical cluster. Default is true
         """
         return pulumi.get(self, "delete_logical_cluster")
 
     @delete_logical_cluster.setter
-    def delete_logical_cluster(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_logical_cluster(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_logical_cluster", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteTimeMachine")
-    def delete_time_machine(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_time_machine(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Delete the database's Time Machine (snapshots/logs) from the NDB. Default value is true
         """
         return pulumi.get(self, "delete_time_machine")
 
     @delete_time_machine.setter
-    def delete_time_machine(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_time_machine(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_time_machine", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def forced(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def forced(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Force delete of instance. Default is false
         """
         return pulumi.get(self, "forced")
 
     @forced.setter
-    def forced(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def forced(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "forced", value)
 
     @_builtins.property
     @pulumi.getter(name="forcedInstall")
-    def forced_install(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def forced_install(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         forced install. Default:  true
         """
         return pulumi.get(self, "forced_install")
 
     @forced_install.setter
-    def forced_install(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def forced_install(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "forced_install", value)
 
     @_builtins.property
     @pulumi.getter(name="groupInfo")
-    def group_info(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def group_info(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "group_info")
 
     @group_info.setter
-    def group_info(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def group_info(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "group_info", value)
 
     @_builtins.property
     @pulumi.getter
-    def infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseInfoArgs']]]]:
+    def infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseInfoArgs']]]]:
         """
         info of instance
         """
         return pulumi.get(self, "infos")
 
     @infos.setter
-    def infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseInfoArgs']]]]):
+    def infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseInfoArgs']]]]):
         pulumi.set(self, "infos", value)
 
     @_builtins.property
     @pulumi.getter(name="lcmConfigs")
-    def lcm_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseLcmConfigArgs']]]]:
+    def lcm_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseLcmConfigArgs']]]]:
         """
         LCM config of instance
         """
         return pulumi.get(self, "lcm_configs")
 
     @lcm_configs.setter
-    def lcm_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseLcmConfigArgs']]]]):
+    def lcm_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseLcmConfigArgs']]]]):
         pulumi.set(self, "lcm_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="linkedDatabases")
-    def linked_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseLinkedDatabaseArgs']]]]:
+    def linked_databases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseLinkedDatabaseArgs']]]]:
         """
         linked databases within database instance
         """
         return pulumi.get(self, "linked_databases")
 
     @linked_databases.setter
-    def linked_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseLinkedDatabaseArgs']]]]):
+    def linked_databases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseLinkedDatabaseArgs']]]]):
         pulumi.set(self, "linked_databases", value)
 
     @_builtins.property
     @pulumi.getter
-    def metric(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metric(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
         """
         return pulumi.get(self, "metric")
 
     @metric.setter
-    def metric(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metric(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metric", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of database instance
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nxClusterId")
-    def nx_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nx_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         cluster on which NDB is present
         """
         return pulumi.get(self, "nx_cluster_id")
 
     @nx_cluster_id.setter
-    def nx_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nx_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nx_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="parentDatabaseId")
-    def parent_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         parent database id
         """
         return pulumi.get(self, "parent_database_id")
 
     @parent_database_id.setter
-    def parent_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="parentSourceDatabaseId")
-    def parent_source_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_source_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         parent source database id
         """
         return pulumi.get(self, "parent_source_database_id")
 
     @parent_source_database_id.setter
-    def parent_source_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_source_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_source_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="parentTimeMachineId")
-    def parent_time_machine_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_time_machine_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         parent time machine id
         """
         return pulumi.get(self, "parent_time_machine_id")
 
     @parent_time_machine_id.setter
-    def parent_time_machine_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_time_machine_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_time_machine_id", value)
 
     @_builtins.property
     @pulumi.getter(name="postgressInfos")
-    def postgress_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabasePostgressInfoArgs']]]]:
+    def postgress_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabasePostgressInfoArgs']]]]:
         """
         Postgress_Info for registering.
         """
         return pulumi.get(self, "postgress_infos")
 
     @postgress_infos.setter
-    def postgress_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabasePostgressInfoArgs']]]]):
+    def postgress_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabasePostgressInfoArgs']]]]):
         pulumi.set(self, "postgress_infos", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabasePropertyArgs']]]]:
+    def properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabasePropertyArgs']]]]:
         """
         properties of database created
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabasePropertyArgs']]]]):
+    def properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabasePropertyArgs']]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter
-    def remove(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def remove(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Unregister the database from NDB. Default value is true
         """
         return pulumi.get(self, "remove")
 
     @remove.setter
-    def remove(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def remove(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "remove", value)
 
     @_builtins.property
     @pulumi.getter(name="resetDescriptionInNxCluster")
-    def reset_description_in_nx_cluster(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def reset_description_in_nx_cluster(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Reset description in cluster
         """
         return pulumi.get(self, "reset_description_in_nx_cluster")
 
     @reset_description_in_nx_cluster.setter
-    def reset_description_in_nx_cluster(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def reset_description_in_nx_cluster(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "reset_description_in_nx_cluster", value)
 
     @_builtins.property
     @pulumi.getter(name="softRemove")
-    def soft_remove(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def soft_remove(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) Soft remove. Default will be false
         """
         return pulumi.get(self, "soft_remove")
 
     @soft_remove.setter
-    def soft_remove(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def soft_remove(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "soft_remove", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         status of instance
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseTagArgs']]]]:
         """
         tags
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachineId")
-    def time_machine_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_machine_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         time machine id of instance
         """
         return pulumi.get(self, "time_machine_id")
 
     @time_machine_id.setter
-    def time_machine_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_machine_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_machine_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachineInfo")
-    def time_machine_info(self) -> Optional[pulumi.Input['NdbRegisterDatabaseTimeMachineInfoArgs']]:
+    def time_machine_info(self) -> pulumi.Input[Optional['NdbRegisterDatabaseTimeMachineInfoArgs']]:
         """
         Time Machine info
         """
         return pulumi.get(self, "time_machine_info")
 
     @time_machine_info.setter
-    def time_machine_info(self, value: Optional[pulumi.Input['NdbRegisterDatabaseTimeMachineInfoArgs']]):
+    def time_machine_info(self, value: pulumi.Input[Optional['NdbRegisterDatabaseTimeMachineInfoArgs']]):
         pulumi.set(self, "time_machine_info", value)
 
     @_builtins.property
     @pulumi.getter(name="timeMachines")
-    def time_machines(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineArgs']]]]:
+    def time_machines(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineArgs']]]]:
         """
         Time Machine details of instance
         """
         return pulumi.get(self, "time_machines")
 
     @time_machines.setter
-    def time_machines(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineArgs']]]]):
+    def time_machines(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineArgs']]]]):
         pulumi.set(self, "time_machines", value)
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         timezone on which instance is created xw
         """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
-    def time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         type of database
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="vmDescription")
-    def vm_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         description for VM
         """
         return pulumi.get(self, "vm_description")
 
     @vm_description.setter
-    def vm_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_description", value)
 
     @_builtins.property
     @pulumi.getter(name="vmIp")
-    def vm_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IP address of dbserver VM
         """
         return pulumi.get(self, "vm_ip")
 
     @vm_ip.setter
-    def vm_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="vmPassword")
-    def vm_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         password of the NDB drive user account.
         """
         return pulumi.get(self, "vm_password")
 
     @vm_password.setter
-    def vm_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_password", value)
 
     @_builtins.property
     @pulumi.getter(name="vmSshkey")
-    def vm_sshkey(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_sshkey(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ssh key for vm
         """
         return pulumi.get(self, "vm_sshkey")
 
     @vm_sshkey.setter
-    def vm_sshkey(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_sshkey(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_sshkey", value)
 
     @_builtins.property
     @pulumi.getter(name="vmUsername")
-    def vm_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         username of the NDB drive user account that has sudo access.
         """
         return pulumi.get(self, "vm_username")
 
     @vm_username.setter
-    def vm_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_username", value)
 
     @_builtins.property
     @pulumi.getter(name="workingDirectory")
-    def working_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def working_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         working directory. Default is /tmp
         """
         return pulumi.get(self, "working_directory")
 
     @working_directory.setter
-    def working_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def working_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "working_directory", value)
 
 
@@ -1203,31 +1203,31 @@ class NdbRegisterDatabase(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actionarguments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict']]]]] = None,
-                 auto_tune_staging_drive: Optional[pulumi.Input[_builtins.bool]] = None,
-                 category: Optional[pulumi.Input[_builtins.str]] = None,
-                 clustered: Optional[pulumi.Input[_builtins.bool]] = None,
-                 database_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_logical_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_time_machine: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 forced: Optional[pulumi.Input[_builtins.bool]] = None,
-                 forced_install: Optional[pulumi.Input[_builtins.bool]] = None,
-                 nx_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 postgress_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabasePostgressInfoArgs', 'NdbRegisterDatabasePostgressInfoArgsDict']]]]] = None,
-                 remove: Optional[pulumi.Input[_builtins.bool]] = None,
-                 reset_description_in_nx_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
-                 soft_remove: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTagArgs', 'NdbRegisterDatabaseTagArgsDict']]]]] = None,
-                 time_machine_info: Optional[pulumi.Input[Union['NdbRegisterDatabaseTimeMachineInfoArgs', 'NdbRegisterDatabaseTimeMachineInfoArgsDict']]] = None,
-                 vm_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_sshkey: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 working_directory: Optional[pulumi.Input[_builtins.str]] = None,
+                 actionarguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict']]]]] = None,
+                 auto_tune_staging_drive: pulumi.Input[Optional[_builtins.bool]] = None,
+                 category: pulumi.Input[Optional[_builtins.str]] = None,
+                 clustered: pulumi.Input[Optional[_builtins.bool]] = None,
+                 database_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_logical_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_time_machine: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 forced: pulumi.Input[Optional[_builtins.bool]] = None,
+                 forced_install: pulumi.Input[Optional[_builtins.bool]] = None,
+                 nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 postgress_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabasePostgressInfoArgs', 'NdbRegisterDatabasePostgressInfoArgsDict']]]]] = None,
+                 remove: pulumi.Input[Optional[_builtins.bool]] = None,
+                 reset_description_in_nx_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+                 soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTagArgs', 'NdbRegisterDatabaseTagArgsDict']]]]] = None,
+                 time_machine_info: pulumi.Input[Optional[Union['NdbRegisterDatabaseTimeMachineInfoArgs', 'NdbRegisterDatabaseTimeMachineInfoArgsDict']]] = None,
+                 vm_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_sshkey: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 working_directory: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to register the database based on the input parameters.
@@ -1286,31 +1286,31 @@ class NdbRegisterDatabase(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actionarguments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict']]]]] = None,
-                 auto_tune_staging_drive: Optional[pulumi.Input[_builtins.bool]] = None,
-                 category: Optional[pulumi.Input[_builtins.str]] = None,
-                 clustered: Optional[pulumi.Input[_builtins.bool]] = None,
-                 database_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_logical_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
-                 delete_time_machine: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 forced: Optional[pulumi.Input[_builtins.bool]] = None,
-                 forced_install: Optional[pulumi.Input[_builtins.bool]] = None,
-                 nx_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 postgress_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabasePostgressInfoArgs', 'NdbRegisterDatabasePostgressInfoArgsDict']]]]] = None,
-                 remove: Optional[pulumi.Input[_builtins.bool]] = None,
-                 reset_description_in_nx_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
-                 soft_remove: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTagArgs', 'NdbRegisterDatabaseTagArgsDict']]]]] = None,
-                 time_machine_info: Optional[pulumi.Input[Union['NdbRegisterDatabaseTimeMachineInfoArgs', 'NdbRegisterDatabaseTimeMachineInfoArgsDict']]] = None,
-                 vm_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_sshkey: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 working_directory: Optional[pulumi.Input[_builtins.str]] = None,
+                 actionarguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict']]]]] = None,
+                 auto_tune_staging_drive: pulumi.Input[Optional[_builtins.bool]] = None,
+                 category: pulumi.Input[Optional[_builtins.str]] = None,
+                 clustered: pulumi.Input[Optional[_builtins.bool]] = None,
+                 database_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_logical_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+                 delete_time_machine: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 forced: pulumi.Input[Optional[_builtins.bool]] = None,
+                 forced_install: pulumi.Input[Optional[_builtins.bool]] = None,
+                 nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 postgress_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabasePostgressInfoArgs', 'NdbRegisterDatabasePostgressInfoArgsDict']]]]] = None,
+                 remove: pulumi.Input[Optional[_builtins.bool]] = None,
+                 reset_description_in_nx_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+                 soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTagArgs', 'NdbRegisterDatabaseTagArgsDict']]]]] = None,
+                 time_machine_info: pulumi.Input[Optional[Union['NdbRegisterDatabaseTimeMachineInfoArgs', 'NdbRegisterDatabaseTimeMachineInfoArgsDict']]] = None,
+                 vm_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_sshkey: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 working_directory: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1386,54 +1386,54 @@ class NdbRegisterDatabase(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actionarguments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict']]]]] = None,
-            auto_tune_staging_drive: Optional[pulumi.Input[_builtins.bool]] = None,
-            category: Optional[pulumi.Input[_builtins.str]] = None,
-            clone: Optional[pulumi.Input[_builtins.bool]] = None,
-            clustered: Optional[pulumi.Input[_builtins.bool]] = None,
-            database_cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
-            database_name: Optional[pulumi.Input[_builtins.str]] = None,
-            database_nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseDatabaseNodeArgs', 'NdbRegisterDatabaseDatabaseNodeArgsDict']]]]] = None,
-            database_status: Optional[pulumi.Input[_builtins.str]] = None,
-            database_type: Optional[pulumi.Input[_builtins.str]] = None,
-            date_created: Optional[pulumi.Input[_builtins.str]] = None,
-            date_modified: Optional[pulumi.Input[_builtins.str]] = None,
-            dbserver_logical_cluster: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            dbserver_logical_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            delete_logical_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
-            delete_time_machine: Optional[pulumi.Input[_builtins.bool]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            forced: Optional[pulumi.Input[_builtins.bool]] = None,
-            forced_install: Optional[pulumi.Input[_builtins.bool]] = None,
-            group_info: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseInfoArgs', 'NdbRegisterDatabaseInfoArgsDict']]]]] = None,
-            lcm_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseLcmConfigArgs', 'NdbRegisterDatabaseLcmConfigArgsDict']]]]] = None,
-            linked_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseLinkedDatabaseArgs', 'NdbRegisterDatabaseLinkedDatabaseArgsDict']]]]] = None,
-            metric: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            nx_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_source_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-            postgress_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabasePostgressInfoArgs', 'NdbRegisterDatabasePostgressInfoArgsDict']]]]] = None,
-            properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabasePropertyArgs', 'NdbRegisterDatabasePropertyArgsDict']]]]] = None,
-            remove: Optional[pulumi.Input[_builtins.bool]] = None,
-            reset_description_in_nx_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
-            soft_remove: Optional[pulumi.Input[_builtins.bool]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTagArgs', 'NdbRegisterDatabaseTagArgsDict']]]]] = None,
-            time_machine_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_machine_info: Optional[pulumi.Input[Union['NdbRegisterDatabaseTimeMachineInfoArgs', 'NdbRegisterDatabaseTimeMachineInfoArgsDict']]] = None,
-            time_machines: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTimeMachineArgs', 'NdbRegisterDatabaseTimeMachineArgsDict']]]]] = None,
-            time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_description: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_password: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_sshkey: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_username: Optional[pulumi.Input[_builtins.str]] = None,
-            working_directory: Optional[pulumi.Input[_builtins.str]] = None) -> 'NdbRegisterDatabase':
+            actionarguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict']]]]] = None,
+            auto_tune_staging_drive: pulumi.Input[Optional[_builtins.bool]] = None,
+            category: pulumi.Input[Optional[_builtins.str]] = None,
+            clone: pulumi.Input[Optional[_builtins.bool]] = None,
+            clustered: pulumi.Input[Optional[_builtins.bool]] = None,
+            database_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
+            database_name: pulumi.Input[Optional[_builtins.str]] = None,
+            database_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseDatabaseNodeArgs', 'NdbRegisterDatabaseDatabaseNodeArgsDict']]]]] = None,
+            database_status: pulumi.Input[Optional[_builtins.str]] = None,
+            database_type: pulumi.Input[Optional[_builtins.str]] = None,
+            date_created: pulumi.Input[Optional[_builtins.str]] = None,
+            date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            dbserver_logical_cluster: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            dbserver_logical_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            delete_logical_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+            delete_time_machine: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            forced: pulumi.Input[Optional[_builtins.bool]] = None,
+            forced_install: pulumi.Input[Optional[_builtins.bool]] = None,
+            group_info: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseInfoArgs', 'NdbRegisterDatabaseInfoArgsDict']]]]] = None,
+            lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseLcmConfigArgs', 'NdbRegisterDatabaseLcmConfigArgsDict']]]]] = None,
+            linked_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseLinkedDatabaseArgs', 'NdbRegisterDatabaseLinkedDatabaseArgsDict']]]]] = None,
+            metric: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_source_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+            postgress_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabasePostgressInfoArgs', 'NdbRegisterDatabasePostgressInfoArgsDict']]]]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabasePropertyArgs', 'NdbRegisterDatabasePropertyArgsDict']]]]] = None,
+            remove: pulumi.Input[Optional[_builtins.bool]] = None,
+            reset_description_in_nx_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+            soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTagArgs', 'NdbRegisterDatabaseTagArgsDict']]]]] = None,
+            time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_machine_info: pulumi.Input[Optional[Union['NdbRegisterDatabaseTimeMachineInfoArgs', 'NdbRegisterDatabaseTimeMachineInfoArgsDict']]] = None,
+            time_machines: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTimeMachineArgs', 'NdbRegisterDatabaseTimeMachineArgsDict']]]]] = None,
+            time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_description: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_password: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_sshkey: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_username: pulumi.Input[Optional[_builtins.str]] = None,
+            working_directory: pulumi.Input[Optional[_builtins.str]] = None) -> 'NdbRegisterDatabase':
         """
         Get an existing NdbRegisterDatabase resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

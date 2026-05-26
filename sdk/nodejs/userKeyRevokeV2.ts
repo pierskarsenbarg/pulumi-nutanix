@@ -136,29 +136,29 @@ export interface UserKeyRevokeV2State {
     /**
      * - The map of argument name to value.
      */
-    argumentsMaps?: pulumi.Input<pulumi.Input<inputs.UserKeyRevokeV2ArgumentsMap>[]>;
+    argumentsMaps?: pulumi.Input<pulumi.Input<inputs.UserKeyRevokeV2ArgumentsMap>[] | undefined>;
     /**
      * - The code associated with this message.This string is typically prefixed by the namespace the endpoint belongs to. For example: VMM-40000.
      */
-    code?: pulumi.Input<string>;
+    code?: pulumi.Input<string | undefined>;
     /**
      * - The error group associated with this message of severity ERROR.
      */
-    errorGroup?: pulumi.Input<string>;
-    extId?: pulumi.Input<string>;
+    errorGroup?: pulumi.Input<string | undefined>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * - Locale for this message. The default locale would be 'en-US'.
      */
-    locale?: pulumi.Input<string>;
+    locale?: pulumi.Input<string | undefined>;
     /**
      * - The message string.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * - The message severity.
      */
-    severity?: pulumi.Input<string>;
-    userExtId?: pulumi.Input<string>;
+    severity?: pulumi.Input<string | undefined>;
+    userExtId?: pulumi.Input<string | undefined>;
 }
 
 /**

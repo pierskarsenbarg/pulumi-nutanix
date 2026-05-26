@@ -100,5 +100,5 @@ export interface GetUsersOutputArgs {
     /**
      * - The user kind metadata.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.GetUsersMetadataArgs>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.GetUsersMetadataArgs>[] | undefined>;
 }

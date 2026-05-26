@@ -141,27 +141,27 @@ export interface StaticRoutesState {
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * Default Route
      */
-    defaultRouteNexthops?: pulumi.Input<pulumi.Input<inputs.StaticRoutesDefaultRouteNexthop>[]>;
+    defaultRouteNexthops?: pulumi.Input<pulumi.Input<inputs.StaticRoutesDefaultRouteNexthop>[] | undefined>;
     /**
      * The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable " pulumi-lang-hcl=" vpc_route_table "> vpcRouteTable </span>kind metadata.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Static Routes.
      */
-    staticRoutesLists?: pulumi.Input<pulumi.Input<inputs.StaticRoutesStaticRoutesList>[]>;
+    staticRoutesLists?: pulumi.Input<pulumi.Input<inputs.StaticRoutesStaticRoutesList>[] | undefined>;
     /**
      * vpc Name. Should not be used with vpc_uuid.
      */
-    vpcName?: pulumi.Input<string>;
+    vpcName?: pulumi.Input<string | undefined>;
     /**
      * Reference to a VPC UUID. Should not be used with vpc_name.
      */
-    vpcUuid?: pulumi.Input<string>;
+    vpcUuid?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -171,21 +171,21 @@ export interface StaticRoutesArgs {
     /**
      * The version of the API.
      */
-    apiVersion?: pulumi.Input<string>;
+    apiVersion?: pulumi.Input<string | undefined>;
     /**
      * Default Route
      */
-    defaultRouteNexthops?: pulumi.Input<pulumi.Input<inputs.StaticRoutesDefaultRouteNexthop>[]>;
+    defaultRouteNexthops?: pulumi.Input<pulumi.Input<inputs.StaticRoutesDefaultRouteNexthop>[] | undefined>;
     /**
      * Static Routes.
      */
-    staticRoutesLists?: pulumi.Input<pulumi.Input<inputs.StaticRoutesStaticRoutesList>[]>;
+    staticRoutesLists?: pulumi.Input<pulumi.Input<inputs.StaticRoutesStaticRoutesList>[] | undefined>;
     /**
      * vpc Name. Should not be used with vpc_uuid.
      */
-    vpcName?: pulumi.Input<string>;
+    vpcName?: pulumi.Input<string | undefined>;
     /**
      * Reference to a VPC UUID. Should not be used with vpc_name.
      */
-    vpcUuid?: pulumi.Input<string>;
+    vpcUuid?: pulumi.Input<string | undefined>;
 }

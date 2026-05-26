@@ -210,74 +210,74 @@ export interface VolumeGroupV2State {
      * - NONE : Volume Group has no attachment.
      * - DIRECT : Volume Group has a VM attachment.
      */
-    attachmentType?: pulumi.Input<string>;
+    attachmentType?: pulumi.Input<string | undefined>;
     /**
      * -(Required) The UUID of the cluster that will host the Volume Group.
      */
-    clusterReference?: pulumi.Input<string>;
+    clusterReference?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Service/user who created this Volume Group.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Volume Group description. This is an optional field.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) A list of Volume Disks to be attached to the Volume Group.
      */
-    disks?: pulumi.Input<pulumi.Input<inputs.VolumeGroupV2Disk>[]>;
+    disks?: pulumi.Input<pulumi.Input<inputs.VolumeGroupV2Disk>[] | undefined>;
     /**
      * -(Optional) The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
      */
-    enabledAuthentications?: pulumi.Input<string>;
+    enabledAuthentications?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) A globally unique identifier of an instance that is suitable for external consumption.
      */
-    extId?: pulumi.Input<string>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Indicates whether the Volume Group is meant to be hidden or not.
      */
-    isHidden?: pulumi.Input<boolean>;
+    isHidden?: pulumi.Input<boolean | undefined>;
     /**
      * -(Optional) iSCSI specific settings for the Volume Group.
      */
-    iscsiFeatures?: pulumi.Input<pulumi.Input<inputs.VolumeGroupV2IscsiFeature>[]>;
+    iscsiFeatures?: pulumi.Input<pulumi.Input<inputs.VolumeGroupV2IscsiFeature>[] | undefined>;
     /**
      * -(Required) Volume Group name. This is an optional field.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Type of protocol to be used for Volume Group. Valid values are :
      * - NOT_ASSIGNED : Volume Group does not use any protocol.
      * - ISCSI : Volume Group uses iSCSI protocol.
      * - NVMF : Volume Group uses NVMf protocol.
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
      */
-    sharingStatus?: pulumi.Input<string>;
+    sharingStatus?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
      */
-    shouldLoadBalanceVmAttachments?: pulumi.Input<boolean>;
+    shouldLoadBalanceVmAttachments?: pulumi.Input<boolean | undefined>;
     /**
      * -(Optional) Storage optimization features which must be enabled on the Volume Group.
      */
-    storageFeatures?: pulumi.Input<pulumi.Input<inputs.VolumeGroupV2StorageFeature>[]>;
+    storageFeatures?: pulumi.Input<pulumi.Input<inputs.VolumeGroupV2StorageFeature>[] | undefined>;
     /**
      * -(Optional) Name of the external client target that will be visible and accessible to the client.
      */
-    targetName?: pulumi.Input<string>;
+    targetName?: pulumi.Input<string | undefined>;
     /**
      * The specifications contain the target prefix for external clients as the value. This is an optional field.
      */
-    targetPrefix?: pulumi.Input<string>;
+    targetPrefix?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
      */
-    usageType?: pulumi.Input<string>;
+    usageType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -290,7 +290,7 @@ export interface VolumeGroupV2Args {
      * - NONE : Volume Group has no attachment.
      * - DIRECT : Volume Group has a VM attachment.
      */
-    attachmentType?: pulumi.Input<string>;
+    attachmentType?: pulumi.Input<string | undefined>;
     /**
      * -(Required) The UUID of the cluster that will host the Volume Group.
      */
@@ -298,60 +298,60 @@ export interface VolumeGroupV2Args {
     /**
      * -(Optional) Service/user who created this Volume Group.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Volume Group description. This is an optional field.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) A list of Volume Disks to be attached to the Volume Group.
      */
-    disks?: pulumi.Input<pulumi.Input<inputs.VolumeGroupV2Disk>[]>;
+    disks?: pulumi.Input<pulumi.Input<inputs.VolumeGroupV2Disk>[] | undefined>;
     /**
      * -(Optional) The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
      */
-    enabledAuthentications?: pulumi.Input<string>;
+    enabledAuthentications?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Indicates whether the Volume Group is meant to be hidden or not.
      */
-    isHidden?: pulumi.Input<boolean>;
+    isHidden?: pulumi.Input<boolean | undefined>;
     /**
      * -(Optional) iSCSI specific settings for the Volume Group.
      */
-    iscsiFeatures?: pulumi.Input<pulumi.Input<inputs.VolumeGroupV2IscsiFeature>[]>;
+    iscsiFeatures?: pulumi.Input<pulumi.Input<inputs.VolumeGroupV2IscsiFeature>[] | undefined>;
     /**
      * -(Required) Volume Group name. This is an optional field.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Type of protocol to be used for Volume Group. Valid values are :
      * - NOT_ASSIGNED : Volume Group does not use any protocol.
      * - ISCSI : Volume Group uses iSCSI protocol.
      * - NVMF : Volume Group uses NVMf protocol.
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
      */
-    sharingStatus?: pulumi.Input<string>;
+    sharingStatus?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
      */
-    shouldLoadBalanceVmAttachments?: pulumi.Input<boolean>;
+    shouldLoadBalanceVmAttachments?: pulumi.Input<boolean | undefined>;
     /**
      * -(Optional) Storage optimization features which must be enabled on the Volume Group.
      */
-    storageFeatures?: pulumi.Input<pulumi.Input<inputs.VolumeGroupV2StorageFeature>[]>;
+    storageFeatures?: pulumi.Input<pulumi.Input<inputs.VolumeGroupV2StorageFeature>[] | undefined>;
     /**
      * -(Optional) Name of the external client target that will be visible and accessible to the client.
      */
-    targetName?: pulumi.Input<string>;
+    targetName?: pulumi.Input<string | undefined>;
     /**
      * The specifications contain the target prefix for external clients as the value. This is an optional field.
      */
-    targetPrefix?: pulumi.Input<string>;
+    targetPrefix?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
      */
-    usageType?: pulumi.Input<string>;
+    usageType?: pulumi.Input<string | undefined>;
 }

@@ -263,7 +263,7 @@ export interface GetNetworkSecurityRuleOutputArgs {
     /**
      * Categories for the network_security_rule.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.GetNetworkSecurityRuleCategoryArgs>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.GetNetworkSecurityRuleCategoryArgs>[] | undefined>;
     /**
      * Represents network security rule UUID
      */

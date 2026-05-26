@@ -182,5 +182,5 @@ export interface GetNdbDatabaseOutputArgs {
     /**
      * - tags attached
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbDatabaseTagArgs>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbDatabaseTagArgs>[] | undefined>;
 }

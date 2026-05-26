@@ -606,8 +606,8 @@ def get_network_security_rule(categories: Optional[Sequence[Union['GetNetworkSec
         quarantine_rule_target_group_filter_params=pulumi.get(__ret__, 'quarantine_rule_target_group_filter_params'),
         quarantine_rule_target_group_filter_type=pulumi.get(__ret__, 'quarantine_rule_target_group_filter_type'),
         quarantine_rule_target_group_peer_specification_type=pulumi.get(__ret__, 'quarantine_rule_target_group_peer_specification_type'))
-def get_network_security_rule_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict']]]]] = None,
-                                     network_security_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_security_rule_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict']]]]] = None,
+                                     network_security_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSecurityRuleResult]:
     """
     Describes a Network security rule

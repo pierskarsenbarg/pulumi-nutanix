@@ -238,12 +238,12 @@ def get_volume_iscsi_clients_v2(expand: Optional[_builtins.str] = None,
         orderby=pulumi.get(__ret__, 'orderby'),
         page=pulumi.get(__ret__, 'page'),
         select=pulumi.get(__ret__, 'select'))
-def get_volume_iscsi_clients_v2_output(expand: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                       orderby: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       page: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                       select: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_volume_iscsi_clients_v2_output(expand: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                       orderby: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       page: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                       select: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeIscsiClientsV2Result]:
     """
     Fetches the list of iSCSI clients.

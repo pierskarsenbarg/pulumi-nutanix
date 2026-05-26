@@ -201,8 +201,8 @@ def get_karbon_cluster(karbon_cluster_id: Optional[_builtins.str] = None,
         uuid=pulumi.get(__ret__, 'uuid'),
         version=pulumi.get(__ret__, 'version'),
         worker_node_pools=pulumi.get(__ret__, 'worker_node_pools'))
-def get_karbon_cluster_output(karbon_cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              karbon_cluster_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_karbon_cluster_output(karbon_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              karbon_cluster_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKarbonClusterResult]:
     """
     Describes a Karbon Cluster

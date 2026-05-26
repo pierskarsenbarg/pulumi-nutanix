@@ -93,7 +93,7 @@ namespace PiersKarsenbarg.Nutanix
 
         private static readonly __Value<bool?> _insecure = new __Value<bool?>(() => __config.GetBoolean("insecure"));
         /// <summary>
-        /// Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`"&gt;`false`&lt;/span&gt;
+        /// Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`"&gt;`false`&lt;/span&gt;
         /// </summary>
         public static bool? Insecure
         {

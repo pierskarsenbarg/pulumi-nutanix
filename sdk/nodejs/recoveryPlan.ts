@@ -134,39 +134,39 @@ export class RecoveryPlan extends pulumi.CustomResource {
  * Input properties used for looking up and filtering RecoveryPlan resources.
  */
 export interface RecoveryPlanState {
-    apiVersion?: pulumi.Input<string>;
-    categories?: pulumi.Input<pulumi.Input<inputs.RecoveryPlanCategory>[]>;
+    apiVersion?: pulumi.Input<string | undefined>;
+    categories?: pulumi.Input<pulumi.Input<inputs.RecoveryPlanCategory>[] | undefined>;
     /**
      * A description for Recovery Plan.
      */
-    description?: pulumi.Input<string>;
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    description?: pulumi.Input<string | undefined>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name for the Recovery Plan.
      */
-    name?: pulumi.Input<string>;
-    ownerReference?: pulumi.Input<inputs.RecoveryPlanOwnerReference>;
-    parameters?: pulumi.Input<inputs.RecoveryPlanParameters>;
-    projectReference?: pulumi.Input<inputs.RecoveryPlanProjectReference>;
-    stageLists?: pulumi.Input<pulumi.Input<inputs.RecoveryPlanStageList>[]>;
-    state?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    ownerReference?: pulumi.Input<inputs.RecoveryPlanOwnerReference | undefined>;
+    parameters?: pulumi.Input<inputs.RecoveryPlanParameters | undefined>;
+    projectReference?: pulumi.Input<inputs.RecoveryPlanProjectReference | undefined>;
+    stageLists?: pulumi.Input<pulumi.Input<inputs.RecoveryPlanStageList>[] | undefined>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a RecoveryPlan resource.
  */
 export interface RecoveryPlanArgs {
-    categories?: pulumi.Input<pulumi.Input<inputs.RecoveryPlanCategory>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.RecoveryPlanCategory>[] | undefined>;
     /**
      * A description for Recovery Plan.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The name for the Recovery Plan.
      */
-    name?: pulumi.Input<string>;
-    ownerReference?: pulumi.Input<inputs.RecoveryPlanOwnerReference>;
+    name?: pulumi.Input<string | undefined>;
+    ownerReference?: pulumi.Input<inputs.RecoveryPlanOwnerReference | undefined>;
     parameters: pulumi.Input<inputs.RecoveryPlanParameters>;
-    projectReference?: pulumi.Input<inputs.RecoveryPlanProjectReference>;
+    projectReference?: pulumi.Input<inputs.RecoveryPlanProjectReference | undefined>;
     stageLists: pulumi.Input<pulumi.Input<inputs.RecoveryPlanStageList>[]>;
 }

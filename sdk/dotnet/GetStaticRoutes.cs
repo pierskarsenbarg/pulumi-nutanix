@@ -79,15 +79,15 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The&lt;span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "&gt; vpcRouteTable &lt;/span&gt;kind metadata
+        /// The&lt;span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable " pulumi-lang-hcl=" vpc_route_table "&gt; vpcRouteTable &lt;/span&gt;kind metadata
         /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
-        /// An intentful representation of a&lt;span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "&gt; vpcRouteTable &lt;/span&gt;spec
+        /// An intentful representation of a&lt;span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable " pulumi-lang-hcl=" vpc_route_table "&gt; vpcRouteTable &lt;/span&gt;spec
         /// </summary>
         public readonly ImmutableArray<Outputs.GetStaticRoutesSpecResult> Specs;
         /// <summary>
-        /// An intentful representation of a&lt;span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "&gt; vpcRouteTable &lt;/span&gt;status
+        /// An intentful representation of a&lt;span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable " pulumi-lang-hcl=" vpc_route_table "&gt; vpcRouteTable &lt;/span&gt;status
         /// </summary>
         public readonly ImmutableArray<Outputs.GetStaticRoutesStatusResult> Statuses;
         public readonly string? VpcName;

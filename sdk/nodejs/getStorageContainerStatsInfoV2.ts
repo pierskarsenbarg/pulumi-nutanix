@@ -273,7 +273,7 @@ export interface GetStorageContainerStatsInfoV2OutputArgs {
     /**
      * storage container UUID
      */
-    samplingInterval?: pulumi.Input<number>;
+    samplingInterval?: pulumi.Input<number | undefined>;
     /**
      * storage container UUID
      */
@@ -288,5 +288,5 @@ export interface GetStorageContainerStatsInfoV2OutputArgs {
      * * `SUM`: - Aggregation with sum of all values.
      * * `COUNT`: - Aggregation containing total count of values.
      */
-    statType?: pulumi.Input<string>;
+    statType?: pulumi.Input<string | undefined>;
 }

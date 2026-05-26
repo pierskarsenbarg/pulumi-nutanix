@@ -65,7 +65,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<int>? CvmNumVcpus { get; set; }
 
         /// <summary>
-        /// - use &lt;span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller""&gt;"vmInstaller"&lt;/span&gt; to enable CVM imaging from standalone.
+        /// - use &lt;span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"" pulumi-lang-hcl=""vm_installer""&gt;"vmInstaller"&lt;/span&gt; to enable CVM imaging from standalone.
         /// </summary>
         [Input("deviceHint")]
         public Input<string>? DeviceHint { get; set; }
@@ -149,13 +149,13 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<string>? IpmiUser { get; set; }
 
         /// <summary>
-        /// - (Required when&lt;span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint "&gt; deviceHint &lt;/span&gt;= &lt;span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller""&gt;"vmInstaller"&lt;/span&gt; for imaging using node's existing cvm for imaging) IPV6 address.
+        /// - (Required when&lt;span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint " pulumi-lang-hcl=" device_hint "&gt; deviceHint &lt;/span&gt;= &lt;span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"" pulumi-lang-hcl=""vm_installer""&gt;"vmInstaller"&lt;/span&gt; for imaging using node's existing cvm for imaging) IPV6 address.
         /// </summary>
         [Input("ipv6Address")]
         public Input<string>? Ipv6Address { get; set; }
 
         /// <summary>
-        /// - (Required when&lt;span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint "&gt; deviceHint &lt;/span&gt;= &lt;span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller""&gt;"vmInstaller"&lt;/span&gt; for imaging using node's existing cvm for imaging) ipv6 interface.
+        /// - (Required when&lt;span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint " pulumi-lang-hcl=" device_hint "&gt; deviceHint &lt;/span&gt;= &lt;span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"" pulumi-lang-hcl=""vm_installer""&gt;"vmInstaller"&lt;/span&gt; for imaging using node's existing cvm for imaging) ipv6 interface.
         /// </summary>
         [Input("ipv6Interface")]
         public Input<string>? Ipv6Interface { get; set; }
@@ -218,7 +218,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// <summary>
         /// - Terraform blocks of vswitch configuration. Foundation will auto-calculate this in most cases. Provide it only if you want to override foundation's defaults.
         /// * `vswitches.lacp` :- Status of LACP.
-        /// * `vswitches.bond_mode` :-&lt;span pulumi-lang-nodejs=" bondMode " pulumi-lang-dotnet=" BondMode " pulumi-lang-go=" bondMode " pulumi-lang-python=" bond_mode " pulumi-lang-yaml=" bondMode " pulumi-lang-java=" bondMode "&gt; bondMode &lt;/span&gt;such as balance-tcp, active-backup, etc.
+        /// * `vswitches.bond_mode` :-&lt;span pulumi-lang-nodejs=" bondMode " pulumi-lang-dotnet=" BondMode " pulumi-lang-go=" bondMode " pulumi-lang-python=" bond_mode " pulumi-lang-yaml=" bondMode " pulumi-lang-java=" bondMode " pulumi-lang-hcl=" bond_mode "&gt; bondMode &lt;/span&gt;such as balance-tcp, active-backup, etc.
         /// * `vswitches.name` :- Name of the vswitch.
         /// * `vswitches.uplinks` :- Terraform blocks of MAC Addresses of NICs in a team/bond.
         /// * `vswitches.other_config` :- Terraform blocks of Auxiliary lacp configurations. Applicable only for AHV.

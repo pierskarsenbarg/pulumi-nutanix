@@ -132,7 +132,7 @@ export interface GetVmRecoveryPointInfoV2OutputArgs {
     /**
      * array of disk recovery points.
      */
-    diskRecoveryPoints?: pulumi.Input<pulumi.Input<inputs.GetVmRecoveryPointInfoV2DiskRecoveryPointArgs>[]>;
+    diskRecoveryPoints?: pulumi.Input<pulumi.Input<inputs.GetVmRecoveryPointInfoV2DiskRecoveryPointArgs>[] | undefined>;
     /**
      * The external identifier that can be used to identify a VM recovery point.
      */

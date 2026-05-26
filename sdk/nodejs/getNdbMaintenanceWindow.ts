@@ -137,5 +137,5 @@ export interface GetNdbMaintenanceWindowOutputArgs {
     /**
      * tags of maintenance window
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbMaintenanceWindowTagArgs>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.GetNdbMaintenanceWindowTagArgs>[] | undefined>;
 }

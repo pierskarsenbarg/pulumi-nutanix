@@ -47,7 +47,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string?> TimeMachineId { get; private set; } = null!;
 
         /// <summary>
-        /// * &lt;span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId "&gt;`dbserversId &lt;/span&gt;`: (Required)
+        /// * &lt;span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id "&gt;`dbserversId &lt;/span&gt;`: (Required)
         /// </summary>
         [Output("timeMachineName")]
         public Output<string?> TimeMachineName { get; private set; } = null!;
@@ -111,7 +111,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? TimeMachineId { get; set; }
 
         /// <summary>
-        /// * &lt;span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId "&gt;`dbserversId &lt;/span&gt;`: (Required)
+        /// * &lt;span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id "&gt;`dbserversId &lt;/span&gt;`: (Required)
         /// </summary>
         [Input("timeMachineName")]
         public Input<string>? TimeMachineName { get; set; }
@@ -136,7 +136,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? TimeMachineId { get; set; }
 
         /// <summary>
-        /// * &lt;span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId "&gt;`dbserversId &lt;/span&gt;`: (Required)
+        /// * &lt;span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id "&gt;`dbserversId &lt;/span&gt;`: (Required)
         /// </summary>
         [Input("timeMachineName")]
         public Input<string>? TimeMachineName { get; set; }

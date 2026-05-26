@@ -23,9 +23,9 @@ class NdbStretchedVlanArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
                  vlan_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input['NdbStretchedVlanMetadataArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional['NdbStretchedVlanMetadataArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NdbStretchedVlan resource.
 
@@ -72,19 +72,19 @@ class NdbStretchedVlanArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of stretched vlan
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['NdbStretchedVlanMetadataArgs']]:
+    def metadata(self) -> pulumi.Input[Optional['NdbStretchedVlanMetadataArgs']]:
         """
         Update the stretched VLAN Gateway and Subnet Mask IP address
         * `metadata.gateway`: Update the gateway of stretched vlan
@@ -93,31 +93,31 @@ class NdbStretchedVlanArgs:
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['NdbStretchedVlanMetadataArgs']]):
+    def metadata(self, value: pulumi.Input[Optional['NdbStretchedVlanMetadataArgs']]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         name for the stretched VLAN
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _NdbStretchedVlanState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input['NdbStretchedVlanMetadataArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vlan_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vlans_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NdbStretchedVlanVlansListArgs']]]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional['NdbStretchedVlanMetadataArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vlan_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vlans_lists: pulumi.Input[Optional[Sequence[pulumi.Input['NdbStretchedVlanVlansListArgs']]]] = None):
         """
         Input properties used for looking up and filtering NdbStretchedVlan resources.
 
@@ -145,19 +145,19 @@ class _NdbStretchedVlanState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of stretched vlan
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input['NdbStretchedVlanMetadataArgs']]:
+    def metadata(self) -> pulumi.Input[Optional['NdbStretchedVlanMetadataArgs']]:
         """
         Update the stretched VLAN Gateway and Subnet Mask IP address
         * `metadata.gateway`: Update the gateway of stretched vlan
@@ -166,55 +166,55 @@ class _NdbStretchedVlanState:
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input['NdbStretchedVlanMetadataArgs']]):
+    def metadata(self, value: pulumi.Input[Optional['NdbStretchedVlanMetadataArgs']]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         name for the stretched VLAN
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="vlanIds")
-    def vlan_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def vlan_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         list of vlan ids to be added in NDB
         """
         return pulumi.get(self, "vlan_ids")
 
     @vlan_ids.setter
-    def vlan_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def vlan_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "vlan_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="vlansLists")
-    def vlans_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbStretchedVlanVlansListArgs']]]]:
+    def vlans_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NdbStretchedVlanVlansListArgs']]]]:
         """
         properties of vlans
         """
         return pulumi.get(self, "vlans_lists")
 
     @vlans_lists.setter
-    def vlans_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbStretchedVlanVlansListArgs']]]]):
+    def vlans_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NdbStretchedVlanVlansListArgs']]]]):
         pulumi.set(self, "vlans_lists", value)
 
 
@@ -224,11 +224,11 @@ class NdbStretchedVlan(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vlan_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vlan_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Provides a resource to create stretched vlans based on the input parameters.
@@ -349,11 +349,11 @@ class NdbStretchedVlan(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict']]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vlan_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict']]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vlan_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -383,12 +383,12 @@ class NdbStretchedVlan(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            metadata: Optional[pulumi.Input[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict']]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            vlan_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            vlans_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbStretchedVlanVlansListArgs', 'NdbStretchedVlanVlansListArgsDict']]]]] = None) -> 'NdbStretchedVlan':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            vlan_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            vlans_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbStretchedVlanVlansListArgs', 'NdbStretchedVlanVlansListArgsDict']]]]] = None) -> 'NdbStretchedVlan':
         """
         Get an existing NdbStretchedVlan resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

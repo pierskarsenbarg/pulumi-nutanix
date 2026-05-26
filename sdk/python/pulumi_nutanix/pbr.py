@@ -26,13 +26,13 @@ class PbrArgs:
                  priority: pulumi.Input[_builtins.int],
                  protocol_type: pulumi.Input[_builtins.str],
                  source: pulumi.Input['PbrSourceArgs'],
-                 api_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_bidirectional: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol_parameters: Optional[pulumi.Input['PbrProtocolParametersArgs']] = None,
-                 service_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vpc_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_reference_uuid: Optional[pulumi.Input[_builtins.str]] = None):
+                 api_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_bidirectional: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol_parameters: pulumi.Input[Optional['PbrProtocolParametersArgs']] = None,
+                 service_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vpc_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_reference_uuid: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Pbr resource.
 
@@ -122,102 +122,102 @@ class PbrArgs:
 
     @_builtins.property
     @pulumi.getter(name="apiVersion")
-    def api_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def api_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the API.
         """
         return pulumi.get(self, "api_version")
 
     @api_version.setter
-    def api_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def api_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "api_version", value)
 
     @_builtins.property
     @pulumi.getter(name="isBidirectional")
-    def is_bidirectional(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_bidirectional(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Additionally create Policy in reverse direction. Should be used with {TCP, UDP with start and end port ranges and ICMP with icmp code and type}. Supported with 2022.x.
         """
         return pulumi.get(self, "is_bidirectional")
 
     @is_bidirectional.setter
-    def is_bidirectional(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_bidirectional(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_bidirectional", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         name of policy
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="protocolParameters")
-    def protocol_parameters(self) -> Optional[pulumi.Input['PbrProtocolParametersArgs']]:
+    def protocol_parameters(self) -> pulumi.Input[Optional['PbrProtocolParametersArgs']]:
         return pulumi.get(self, "protocol_parameters")
 
     @protocol_parameters.setter
-    def protocol_parameters(self, value: Optional[pulumi.Input['PbrProtocolParametersArgs']]):
+    def protocol_parameters(self, value: pulumi.Input[Optional['PbrProtocolParametersArgs']]):
         pulumi.set(self, "protocol_parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceIpLists")
-    def service_ip_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def service_ip_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         IP addresses of network services. This field is valid only when action is REROUTE.
         """
         return pulumi.get(self, "service_ip_lists")
 
     @service_ip_lists.setter
-    def service_ip_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def service_ip_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "service_ip_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcName")
-    def vpc_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The reference to a vpc. Should not be used with {vpc_reference_uuid}
         """
         return pulumi.get(self, "vpc_name")
 
     @vpc_name.setter
-    def vpc_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_name", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcReferenceUuid")
-    def vpc_reference_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_reference_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The reference to a vpc . Should not be used with {vpc_name} .
         """
         return pulumi.get(self, "vpc_reference_uuid")
 
     @vpc_reference_uuid.setter
-    def vpc_reference_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_reference_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_reference_uuid", value)
 
 
 @pulumi.input_type
 class _PbrState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 api_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination: Optional[pulumi.Input['PbrDestinationArgs']] = None,
-                 is_bidirectional: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol_parameters: Optional[pulumi.Input['PbrProtocolParametersArgs']] = None,
-                 protocol_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 source: Optional[pulumi.Input['PbrSourceArgs']] = None,
-                 vpc_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_reference_uuid: Optional[pulumi.Input[_builtins.str]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 api_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination: pulumi.Input[Optional['PbrDestinationArgs']] = None,
+                 is_bidirectional: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol_parameters: pulumi.Input[Optional['PbrProtocolParametersArgs']] = None,
+                 protocol_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 source: pulumi.Input[Optional['PbrSourceArgs']] = None,
+                 vpc_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_reference_uuid: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Pbr resources.
 
@@ -261,149 +261,149 @@ class _PbrState:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Routing policy action. Must be one of {DENY, PERMIT, REROUTE} .
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="apiVersion")
-    def api_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def api_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the API.
         """
         return pulumi.get(self, "api_version")
 
     @api_version.setter
-    def api_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def api_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "api_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def destination(self) -> Optional[pulumi.Input['PbrDestinationArgs']]:
+    def destination(self) -> pulumi.Input[Optional['PbrDestinationArgs']]:
         return pulumi.get(self, "destination")
 
     @destination.setter
-    def destination(self, value: Optional[pulumi.Input['PbrDestinationArgs']]):
+    def destination(self, value: pulumi.Input[Optional['PbrDestinationArgs']]):
         pulumi.set(self, "destination", value)
 
     @_builtins.property
     @pulumi.getter(name="isBidirectional")
-    def is_bidirectional(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_bidirectional(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Additionally create Policy in reverse direction. Should be used with {TCP, UDP with start and end port ranges and ICMP with icmp code and type}. Supported with 2022.x.
         """
         return pulumi.get(self, "is_bidirectional")
 
     @is_bidirectional.setter
-    def is_bidirectional(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_bidirectional(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_bidirectional", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The routing policies kind metadata.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         name of policy
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def priority(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         priority of policy
         """
         return pulumi.get(self, "priority")
 
     @priority.setter
-    def priority(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
 
     @_builtins.property
     @pulumi.getter(name="protocolParameters")
-    def protocol_parameters(self) -> Optional[pulumi.Input['PbrProtocolParametersArgs']]:
+    def protocol_parameters(self) -> pulumi.Input[Optional['PbrProtocolParametersArgs']]:
         return pulumi.get(self, "protocol_parameters")
 
     @protocol_parameters.setter
-    def protocol_parameters(self, value: Optional[pulumi.Input['PbrProtocolParametersArgs']]):
+    def protocol_parameters(self, value: pulumi.Input[Optional['PbrProtocolParametersArgs']]):
         pulumi.set(self, "protocol_parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="protocolType")
-    def protocol_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Protocol type of policy based routing. Must be one of {TCP, UDP, ICMP, PROTOCOL_NUMBER, ALL} .
         """
         return pulumi.get(self, "protocol_type")
 
     @protocol_type.setter
-    def protocol_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol_type", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceIpLists")
-    def service_ip_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def service_ip_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         IP addresses of network services. This field is valid only when action is REROUTE.
         """
         return pulumi.get(self, "service_ip_lists")
 
     @service_ip_lists.setter
-    def service_ip_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def service_ip_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "service_ip_lists", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input['PbrSourceArgs']]:
+    def source(self) -> pulumi.Input[Optional['PbrSourceArgs']]:
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input['PbrSourceArgs']]):
+    def source(self, value: pulumi.Input[Optional['PbrSourceArgs']]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcName")
-    def vpc_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The reference to a vpc. Should not be used with {vpc_reference_uuid}
         """
         return pulumi.get(self, "vpc_name")
 
     @vpc_name.setter
-    def vpc_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_name", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcReferenceUuid")
-    def vpc_reference_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_reference_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The reference to a vpc . Should not be used with {vpc_name} .
         """
         return pulumi.get(self, "vpc_reference_uuid")
 
     @vpc_reference_uuid.setter
-    def vpc_reference_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_reference_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_reference_uuid", value)
 
 
@@ -413,18 +413,18 @@ class Pbr(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 api_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination: Optional[pulumi.Input[Union['PbrDestinationArgs', 'PbrDestinationArgsDict']]] = None,
-                 is_bidirectional: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol_parameters: Optional[pulumi.Input[Union['PbrProtocolParametersArgs', 'PbrProtocolParametersArgsDict']]] = None,
-                 protocol_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 source: Optional[pulumi.Input[Union['PbrSourceArgs', 'PbrSourceArgsDict']]] = None,
-                 vpc_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_reference_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 api_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination: pulumi.Input[Optional[Union['PbrDestinationArgs', 'PbrDestinationArgsDict']]] = None,
+                 is_bidirectional: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol_parameters: pulumi.Input[Optional[Union['PbrProtocolParametersArgs', 'PbrProtocolParametersArgsDict']]] = None,
+                 protocol_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 source: pulumi.Input[Optional[Union['PbrSourceArgs', 'PbrSourceArgsDict']]] = None,
+                 vpc_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_reference_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides Nutanix resource to create Policy Based Routing inside VPCs.
@@ -515,18 +515,18 @@ class Pbr(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 api_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination: Optional[pulumi.Input[Union['PbrDestinationArgs', 'PbrDestinationArgsDict']]] = None,
-                 is_bidirectional: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 priority: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol_parameters: Optional[pulumi.Input[Union['PbrProtocolParametersArgs', 'PbrProtocolParametersArgsDict']]] = None,
-                 protocol_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 source: Optional[pulumi.Input[Union['PbrSourceArgs', 'PbrSourceArgsDict']]] = None,
-                 vpc_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_reference_uuid: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 api_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination: pulumi.Input[Optional[Union['PbrDestinationArgs', 'PbrDestinationArgsDict']]] = None,
+                 is_bidirectional: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol_parameters: pulumi.Input[Optional[Union['PbrProtocolParametersArgs', 'PbrProtocolParametersArgsDict']]] = None,
+                 protocol_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 source: pulumi.Input[Optional[Union['PbrSourceArgs', 'PbrSourceArgsDict']]] = None,
+                 vpc_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_reference_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -569,19 +569,19 @@ class Pbr(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            api_version: Optional[pulumi.Input[_builtins.str]] = None,
-            destination: Optional[pulumi.Input[Union['PbrDestinationArgs', 'PbrDestinationArgsDict']]] = None,
-            is_bidirectional: Optional[pulumi.Input[_builtins.bool]] = None,
-            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            priority: Optional[pulumi.Input[_builtins.int]] = None,
-            protocol_parameters: Optional[pulumi.Input[Union['PbrProtocolParametersArgs', 'PbrProtocolParametersArgsDict']]] = None,
-            protocol_type: Optional[pulumi.Input[_builtins.str]] = None,
-            service_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            source: Optional[pulumi.Input[Union['PbrSourceArgs', 'PbrSourceArgsDict']]] = None,
-            vpc_name: Optional[pulumi.Input[_builtins.str]] = None,
-            vpc_reference_uuid: Optional[pulumi.Input[_builtins.str]] = None) -> 'Pbr':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            destination: pulumi.Input[Optional[Union['PbrDestinationArgs', 'PbrDestinationArgsDict']]] = None,
+            is_bidirectional: pulumi.Input[Optional[_builtins.bool]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None,
+            protocol_parameters: pulumi.Input[Optional[Union['PbrProtocolParametersArgs', 'PbrProtocolParametersArgsDict']]] = None,
+            protocol_type: pulumi.Input[Optional[_builtins.str]] = None,
+            service_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            source: pulumi.Input[Optional[Union['PbrSourceArgs', 'PbrSourceArgsDict']]] = None,
+            vpc_name: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc_reference_uuid: pulumi.Input[Optional[_builtins.str]] = None) -> 'Pbr':
         """
         Get an existing Pbr resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

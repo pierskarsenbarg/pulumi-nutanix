@@ -45,7 +45,7 @@ import (
 //
 // The following arguments are supported:
 //
-// * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - External identifier of the SAML Identity Provider.
+// * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>: - External identifier of the SAML Identity Provider.
 func GetSamlIdentityProviderV2(ctx *pulumi.Context, args *GetSamlIdentityProviderV2Args, opts ...pulumi.InvokeOption) (*GetSamlIdentityProviderV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSamlIdentityProviderV2Result
