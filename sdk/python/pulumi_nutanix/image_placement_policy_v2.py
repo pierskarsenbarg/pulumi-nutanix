@@ -358,7 +358,7 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
                  should_cancel_running_tasks: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
-        Create an image placement policy using the provided request body. Name, placement_type,<span pulumi-lang-nodejs=" imageEntityFilter " pulumi-lang-dotnet=" ImageEntityFilter " pulumi-lang-go=" imageEntityFilter " pulumi-lang-python=" image_entity_filter " pulumi-lang-yaml=" imageEntityFilter " pulumi-lang-java=" imageEntityFilter "> imageEntityFilter </span>and source are mandatory fields to create an policy.
+        Create an image placement policy using the provided request body. Name, placement_type,<span pulumi-lang-nodejs=" imageEntityFilter " pulumi-lang-dotnet=" ImageEntityFilter " pulumi-lang-go=" imageEntityFilter " pulumi-lang-python=" image_entity_filter " pulumi-lang-yaml=" imageEntityFilter " pulumi-lang-java=" imageEntityFilter " pulumi-lang-hcl=" image_entity_filter "> imageEntityFilter </span>and source are mandatory fields to create an policy.
 
         <!--Start PulumiCodeChooser -->
         ```python
@@ -398,7 +398,7 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
                  args: ImagePlacementPolicyV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create an image placement policy using the provided request body. Name, placement_type,<span pulumi-lang-nodejs=" imageEntityFilter " pulumi-lang-dotnet=" ImageEntityFilter " pulumi-lang-go=" imageEntityFilter " pulumi-lang-python=" image_entity_filter " pulumi-lang-yaml=" imageEntityFilter " pulumi-lang-java=" imageEntityFilter "> imageEntityFilter </span>and source are mandatory fields to create an policy.
+        Create an image placement policy using the provided request body. Name, placement_type,<span pulumi-lang-nodejs=" imageEntityFilter " pulumi-lang-dotnet=" ImageEntityFilter " pulumi-lang-go=" imageEntityFilter " pulumi-lang-python=" image_entity_filter " pulumi-lang-yaml=" imageEntityFilter " pulumi-lang-java=" imageEntityFilter " pulumi-lang-hcl=" image_entity_filter "> imageEntityFilter </span>and source are mandatory fields to create an policy.
 
         <!--Start PulumiCodeChooser -->
         ```python

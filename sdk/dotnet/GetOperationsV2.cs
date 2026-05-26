@@ -106,6 +106,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getoperationsv2" "operation-list" {
+        /// }
+        /// data "nutanix_getoperationsv2" "operation-list-filtered" {
+        ///   filter = "displayName eq 'Create_Role'"
+        /// }
+        /// data "nutanix_getoperationsv2" "operation-list-paginated" {
+        ///   page  = 1
+        ///   limit = 10
+        /// }
+        /// 
+        /// #list operations
+        /// # filtered list operation
+        /// # list operations withe page and limit
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -265,6 +288,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getoperationsv2" "operation-list" {
+        /// }
+        /// data "nutanix_getoperationsv2" "operation-list-filtered" {
+        ///   filter = "displayName eq 'Create_Role'"
+        /// }
+        /// data "nutanix_getoperationsv2" "operation-list-paginated" {
+        ///   page  = 1
+        ///   limit = 10
+        /// }
+        /// 
+        /// #list operations
+        /// # filtered list operation
+        /// # list operations withe page and limit
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -423,6 +469,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getoperationsv2" "operation-list" {
+        /// }
+        /// data "nutanix_getoperationsv2" "operation-list-filtered" {
+        ///   filter = "displayName eq 'Create_Role'"
+        /// }
+        /// data "nutanix_getoperationsv2" "operation-list-paginated" {
+        ///   page  = 1
+        ///   limit = 10
+        /// }
+        /// 
+        /// #list operations
+        /// # filtered list operation
+        /// # list operations withe page and limit
         /// ```
         /// ```java
         /// package generated_program;

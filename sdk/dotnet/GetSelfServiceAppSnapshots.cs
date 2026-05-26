@@ -75,6 +75,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getselfserviceappsnapshots" "test" {
+        ///   app_name = "NAME OF APPLICATION"
+        ///   length   = 250
+        ///   offset   = 0
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -181,6 +196,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getselfserviceappsnapshots" "test" {
+        ///   app_name = "NAME OF APPLICATION"
+        ///   length   = 250
+        ///   offset   = 0
         /// }
         /// ```
         /// ```java
@@ -291,6 +321,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getselfserviceappsnapshots" "test" {
+        ///   app_name = "NAME OF APPLICATION"
+        ///   length   = 250
+        ///   offset   = 0
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -349,7 +394,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The UUID of the application.
         /// 
-        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`"&gt;`appUuid`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`"&gt;`appUuid`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("appUuid")]
         public string? AppUuid { get; set; }
@@ -383,7 +428,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) The UUID of the application.
         /// 
-        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`"&gt;`appUuid`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`"&gt;`appUuid`&lt;/span&gt;) are optional but atleast one of them to be provided for this data source to work.
         /// </summary>
         [Input("appUuid")]
         public Input<string>? AppUuid { get; set; }

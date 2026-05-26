@@ -73,7 +73,7 @@ export class VmAntiAffinityPolicyV2 extends pulumi.CustomResource {
     }
 
     /**
-     * List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+     * List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
      */
     declare public readonly categories: pulumi.Output<string[]>;
     /**
@@ -168,7 +168,7 @@ export class VmAntiAffinityPolicyV2 extends pulumi.CustomResource {
  */
 export interface VmAntiAffinityPolicyV2State {
     /**
-     * List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+     * List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
      */
     categories?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
@@ -218,7 +218,7 @@ export interface VmAntiAffinityPolicyV2State {
  */
 export interface VmAntiAffinityPolicyV2Args {
     /**
-     * List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+     * List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
      */
     categories: pulumi.Input<pulumi.Input<string>[]>;
     /**

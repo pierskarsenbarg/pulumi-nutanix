@@ -28,7 +28,7 @@ type GetNetworkSecurityPolicyRulesV2Args struct {
 	Filter *string `pulumi:"filter"`
 	// Maximum number of rules to return (1–100). Default is 50 if not set.
 	Limit *int `pulumi:"limit"`
-	// Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy "> orderBy </span>can be applied to the following fields:
+	// Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy " pulumi-lang-hcl=" order_by "> orderBy </span>can be applied to the following fields:
 	OrderBy *string `pulumi:"orderBy"`
 	// Page number for pagination (0-based).
 	Page *int `pulumi:"page"`
@@ -67,7 +67,7 @@ type GetNetworkSecurityPolicyRulesV2OutputArgs struct {
 	Filter pulumi.StringPtrInput `pulumi:"filter"`
 	// Maximum number of rules to return (1–100). Default is 50 if not set.
 	Limit pulumi.IntPtrInput `pulumi:"limit"`
-	// Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy "> orderBy </span>can be applied to the following fields:
+	// Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy " pulumi-lang-hcl=" order_by "> orderBy </span>can be applied to the following fields:
 	OrderBy pulumi.StringPtrInput `pulumi:"orderBy"`
 	// Page number for pagination (0-based).
 	Page pulumi.IntPtrInput `pulumi:"page"`

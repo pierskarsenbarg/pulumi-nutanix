@@ -35,7 +35,7 @@ class SelfServiceAppProvisionArgs:
         :param pulumi.Input[_builtins.str] action: - (Optional) System action to trigger after provisioning. Valid values: ["start", "stop", "restart"]
         :param pulumi.Input[_builtins.str] app_description: - (Optional) The description of application.
                
-               Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
+               Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`" pulumi-lang-hcl="`bp_name`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`" pulumi-lang-hcl="`bp_uuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
         :param pulumi.Input[_builtins.str] bp_name: - (Optional) The name of the blueprint to launch.
         :param pulumi.Input[_builtins.str] bp_uuid: - (Optional) The UUID of the blueprint to launch.
         :param pulumi.Input[_builtins.bool] soft_delete: - (Optional, Default: false) If true, the application is soft-deleted when the resource is destroyed.
@@ -84,7 +84,7 @@ class SelfServiceAppProvisionArgs:
         """
         - (Optional) The description of application.
 
-        Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
+        Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`" pulumi-lang-hcl="`bp_name`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`" pulumi-lang-hcl="`bp_uuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
         """
         return pulumi.get(self, "app_description")
 
@@ -162,7 +162,7 @@ class _SelfServiceAppProvisionState:
         :param pulumi.Input[_builtins.str] api_version: - (Computed) API version used.
         :param pulumi.Input[_builtins.str] app_description: - (Optional) The description of application.
                
-               Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
+               Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`" pulumi-lang-hcl="`bp_name`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`" pulumi-lang-hcl="`bp_uuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
         :param pulumi.Input[_builtins.str] app_name: - (Required) The name of the application you want to set.
         :param pulumi.Input[_builtins.str] bp_name: - (Optional) The name of the blueprint to launch.
         :param pulumi.Input[_builtins.str] bp_uuid: - (Optional) The UUID of the blueprint to launch.
@@ -239,7 +239,7 @@ class _SelfServiceAppProvisionState:
         """
         - (Optional) The description of application.
 
-        Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
+        Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`" pulumi-lang-hcl="`bp_name`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`" pulumi-lang-hcl="`bp_uuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
         """
         return pulumi.get(self, "app_description")
 
@@ -396,7 +396,7 @@ class SelfServiceAppProvision(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action: - (Optional) System action to trigger after provisioning. Valid values: ["start", "stop", "restart"]
         :param pulumi.Input[_builtins.str] app_description: - (Optional) The description of application.
                
-               Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
+               Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`" pulumi-lang-hcl="`bp_name`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`" pulumi-lang-hcl="`bp_uuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
         :param pulumi.Input[_builtins.str] app_name: - (Required) The name of the application you want to set.
         :param pulumi.Input[_builtins.str] bp_name: - (Optional) The name of the blueprint to launch.
         :param pulumi.Input[_builtins.str] bp_uuid: - (Optional) The UUID of the blueprint to launch.
@@ -508,7 +508,7 @@ class SelfServiceAppProvision(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] api_version: - (Computed) API version used.
         :param pulumi.Input[_builtins.str] app_description: - (Optional) The description of application.
                
-               Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
+               Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`" pulumi-lang-hcl="`bp_name`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`" pulumi-lang-hcl="`bp_uuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
         :param pulumi.Input[_builtins.str] app_name: - (Required) The name of the application you want to set.
         :param pulumi.Input[_builtins.str] bp_name: - (Optional) The name of the blueprint to launch.
         :param pulumi.Input[_builtins.str] bp_uuid: - (Optional) The UUID of the blueprint to launch.
@@ -564,7 +564,7 @@ class SelfServiceAppProvision(pulumi.CustomResource):
         """
         - (Optional) The description of application.
 
-        Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
+        Both are <span pulumi-lang-nodejs="`bpName`" pulumi-lang-dotnet="`BpName`" pulumi-lang-go="`bpName`" pulumi-lang-python="`bp_name`" pulumi-lang-yaml="`bpName`" pulumi-lang-java="`bpName`" pulumi-lang-hcl="`bp_name`">`bpName`</span> and <span pulumi-lang-nodejs="`bpUuid`" pulumi-lang-dotnet="`BpUuid`" pulumi-lang-go="`bpUuid`" pulumi-lang-python="`bp_uuid`" pulumi-lang-yaml="`bpUuid`" pulumi-lang-java="`bpUuid`" pulumi-lang-hcl="`bp_uuid`">`bpUuid`</span> are optional but atleast one of them to be provided for this resource to work.
         """
         return pulumi.get(self, "app_description")
 

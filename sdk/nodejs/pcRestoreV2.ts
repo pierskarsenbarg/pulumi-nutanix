@@ -37,15 +37,15 @@ import * as utilities from "./utilities";
  *     restoreSourceExtId: cluster_location.extId,
  * });
  * const restorablePcExtId = restorable_pcs.apply(restorable_pcs => restorable_pcs.restorablePcs?.[0]?.extId);
- * const restore_points = pulumi.all([restorablePcExtId, cluster_location.id]).apply(([restorablePcExtId, id]) => nutanix.getPcRestorePointsV2Output({
+ * const restore_points = nutanix.getPcRestorePointsV2Output({
  *     restorableDomainManagerExtId: restorablePcExtId,
- *     restoreSourceExtId: id,
- * }));
- * const restore_point = pulumi.all([cluster_location.id, restorablePcExtId, restore_points]).apply(([id, restorablePcExtId, restore_points]) => nutanix.getPcRestorePointV2Output({
- *     restoreSourceExtId: id,
+ *     restoreSourceExtId: cluster_location.id,
+ * });
+ * const restore_point = nutanix.getPcRestorePointV2Output({
+ *     restoreSourceExtId: cluster_location.id,
  *     restorableDomainManagerExtId: restorablePcExtId,
- *     extId: restore_points.restorePoints?.[0]?.extId,
- * }));
+ *     extId: restore_points.apply(restore_points => restore_points.restorePoints?.[0]?.extId),
+ * });
  * const restorePoint = restore_point;
  * // define the restore pc resource
  * // you can get these values from the data source nutanix_pc_v2, this data source is on PC provider

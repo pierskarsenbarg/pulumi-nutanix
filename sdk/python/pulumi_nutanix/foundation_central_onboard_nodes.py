@@ -53,7 +53,7 @@ class _FoundationCentralOnboardNodesState:
         Input properties used for looking up and filtering FoundationCentralOnboardNodes resources.
 
         :param pulumi.Input[_builtins.str] block_serial: Block serial number of the node
-        :param pulumi.Input[_builtins.str] imaged_node_uuid: UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode "> imagedNode </span>in FC
+        :param pulumi.Input[_builtins.str] imaged_node_uuid: UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode " pulumi-lang-hcl=" imaged_node "> imagedNode </span>in FC
         :param pulumi.Input[_builtins.str] model: Model of the node
         :param pulumi.Input[_builtins.str] node_serial: Serial number of the node to onboard
         :param pulumi.Input[_builtins.str] node_state: State of the node (e.g. STATE_ONBOARDED)
@@ -88,7 +88,7 @@ class _FoundationCentralOnboardNodesState:
     @pulumi.getter(name="imagedNodeUuid")
     def imaged_node_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode "> imagedNode </span>in FC
+        UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode " pulumi-lang-hcl=" imaged_node "> imagedNode </span>in FC
         """
         return pulumi.get(self, "imaged_node_uuid")
 
@@ -174,7 +174,7 @@ class FoundationCentralOnboardNodes(pulumi.CustomResource):
         ## lifecycle
 
         * `Create` : - Resource will trigger onboarding of the node.
-        * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`">`delete`</span> : - Node will be removed from FC "imaged nodes" but will still be available in the hardware manager for re-onboarding.
+        * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`" pulumi-lang-hcl="`delete`">`delete`</span> : - Node will be removed from FC "imaged nodes" but will still be available in the hardware manager for re-onboarding.
 
 
         :param str resource_name: The name of the resource.
@@ -208,7 +208,7 @@ class FoundationCentralOnboardNodes(pulumi.CustomResource):
         ## lifecycle
 
         * `Create` : - Resource will trigger onboarding of the node.
-        * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`">`delete`</span> : - Node will be removed from FC "imaged nodes" but will still be available in the hardware manager for re-onboarding.
+        * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`" pulumi-lang-hcl="`delete`">`delete`</span> : - Node will be removed from FC "imaged nodes" but will still be available in the hardware manager for re-onboarding.
 
 
         :param str resource_name: The name of the resource.
@@ -268,7 +268,7 @@ class FoundationCentralOnboardNodes(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] block_serial: Block serial number of the node
-        :param pulumi.Input[_builtins.str] imaged_node_uuid: UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode "> imagedNode </span>in FC
+        :param pulumi.Input[_builtins.str] imaged_node_uuid: UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode " pulumi-lang-hcl=" imaged_node "> imagedNode </span>in FC
         :param pulumi.Input[_builtins.str] model: Model of the node
         :param pulumi.Input[_builtins.str] node_serial: Serial number of the node to onboard
         :param pulumi.Input[_builtins.str] node_state: State of the node (e.g. STATE_ONBOARDED)
@@ -298,7 +298,7 @@ class FoundationCentralOnboardNodes(pulumi.CustomResource):
     @pulumi.getter(name="imagedNodeUuid")
     def imaged_node_uuid(self) -> pulumi.Output[_builtins.str]:
         """
-        UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode "> imagedNode </span>in FC
+        UUID of the<span pulumi-lang-nodejs=" imagedNode " pulumi-lang-dotnet=" ImagedNode " pulumi-lang-go=" imagedNode " pulumi-lang-python=" imaged_node " pulumi-lang-yaml=" imagedNode " pulumi-lang-java=" imagedNode " pulumi-lang-hcl=" imaged_node "> imagedNode </span>in FC
         """
         return pulumi.get(self, "imaged_node_uuid")
 

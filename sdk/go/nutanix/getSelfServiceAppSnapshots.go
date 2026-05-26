@@ -58,7 +58,7 @@ type GetSelfServiceAppSnapshotsArgs struct {
 	AppName *string `pulumi:"appName"`
 	// - (Optional) The UUID of the application.
 	//
-	// Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them to be provided for this data source to work.
+	// Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`">`appUuid`</span>) are optional but atleast one of them to be provided for this data source to work.
 	AppUuid *string `pulumi:"appUuid"`
 	// - (Required) The number of snapshots to retrieve.
 	Length int `pulumi:"length"`
@@ -100,7 +100,7 @@ type GetSelfServiceAppSnapshotsOutputArgs struct {
 	AppName pulumi.StringPtrInput `pulumi:"appName"`
 	// - (Optional) The UUID of the application.
 	//
-	// Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`">`appUuid`</span>) are optional but atleast one of them to be provided for this data source to work.
+	// Both (<span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`">`appName`</span> and <span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`">`appUuid`</span>) are optional but atleast one of them to be provided for this data source to work.
 	AppUuid pulumi.StringPtrInput `pulumi:"appUuid"`
 	// - (Required) The number of snapshots to retrieve.
 	Length pulumi.IntInput `pulumi:"length"`

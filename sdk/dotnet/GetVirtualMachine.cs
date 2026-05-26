@@ -18,6 +18,36 @@ namespace PiersKarsenbarg.Nutanix
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getclusters" "clusters" {
+        ///   metadata = {
+        ///     "length" = 2
+        ///   }
+        /// }
+        /// data "nutanix_getvirtualmachine" "nutanixVirtualMachine" {
+        ///   vm_id = nutanix_virtualmachine.vm1.id
+        /// }
+        /// 
+        /// resource "nutanix_virtualmachine" "vm1" {
+        ///   name                 = "test-dou-%d"
+        ///   cluster_uuid         = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        ///   num_vcpus_per_socket = 1
+        ///   num_sockets          = 1
+        ///   memory_size_mib      = 2048
+        ///   power_state          = "ON"
+        /// }
+        /// output "cluster" {
+        ///   value = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        /// }
+        /// ```
         /// ```yaml
         /// resources:
         ///   vm1:
@@ -55,6 +85,36 @@ namespace PiersKarsenbarg.Nutanix
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getclusters" "clusters" {
+        ///   metadata = {
+        ///     "length" = 2
+        ///   }
+        /// }
+        /// data "nutanix_getvirtualmachine" "nutanixVirtualMachine" {
+        ///   vm_id = nutanix_virtualmachine.vm1.id
+        /// }
+        /// 
+        /// resource "nutanix_virtualmachine" "vm1" {
+        ///   name                 = "test-dou-%d"
+        ///   cluster_uuid         = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        ///   num_vcpus_per_socket = 1
+        ///   num_sockets          = 1
+        ///   memory_size_mib      = 2048
+        ///   power_state          = "ON"
+        /// }
+        /// output "cluster" {
+        ///   value = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        /// }
+        /// ```
         /// ```yaml
         /// resources:
         ///   vm1:
@@ -92,6 +152,36 @@ namespace PiersKarsenbarg.Nutanix
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getclusters" "clusters" {
+        ///   metadata = {
+        ///     "length" = 2
+        ///   }
+        /// }
+        /// data "nutanix_getvirtualmachine" "nutanixVirtualMachine" {
+        ///   vm_id = nutanix_virtualmachine.vm1.id
+        /// }
+        /// 
+        /// resource "nutanix_virtualmachine" "vm1" {
+        ///   name                 = "test-dou-%d"
+        ///   cluster_uuid         = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        ///   num_vcpus_per_socket = 1
+        ///   num_sockets          = 1
+        ///   memory_size_mib      = 2048
+        ///   power_state          = "ON"
+        /// }
+        /// output "cluster" {
+        ///   value = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        /// }
+        /// ```
         /// ```yaml
         /// resources:
         ///   vm1:
@@ -238,7 +328,7 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly ImmutableArray<string> BootDeviceOrderLists;
         /// <summary>
-        /// - Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like&lt;span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice "&gt; bootDevice &lt;/span&gt;and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+        /// - Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like&lt;span pulumi-lang-nodejs=" bootDevice " pulumi-lang-dotnet=" BootDevice " pulumi-lang-go=" bootDevice " pulumi-lang-python=" boot_device " pulumi-lang-yaml=" bootDevice " pulumi-lang-java=" bootDevice " pulumi-lang-hcl=" boot_device "&gt; bootDevice &lt;/span&gt;and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
         /// </summary>
         public readonly string BootType;
         /// <summary>
@@ -272,11 +362,11 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly ImmutableDictionary<string, string> GuestCustomizationCloudInitCustomKeyValues;
         /// <summary>
-        /// The contents of the&lt;span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "&gt; metaData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+        /// The contents of the&lt;span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "&gt; metaData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
         /// </summary>
         public readonly string GuestCustomizationCloudInitMetaData;
         /// <summary>
-        /// - The contents of the&lt;span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "&gt; userData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+        /// - The contents of the&lt;span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData " pulumi-lang-hcl=" user_data "&gt; userData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         /// </summary>
         public readonly string GuestCustomizationCloudInitUserData;
         /// <summary>
@@ -284,7 +374,7 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly bool GuestCustomizationIsOverridable;
         /// <summary>
-        /// - VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or&lt;span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "&gt; cloudInit &lt;/span&gt;should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+        /// - VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or&lt;span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "&gt; cloudInit &lt;/span&gt;should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
         /// </summary>
         public readonly ImmutableDictionary<string, string> GuestCustomizationSysprep;
         /// <summary>

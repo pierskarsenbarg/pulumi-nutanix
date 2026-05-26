@@ -78,6 +78,24 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbprofile" "profile1" {
+        ///   profile_type = "Network"
+        ///   profile_name = "TEST_NETWORK_PROFILE"
+        /// }
+        /// 
+        /// output "profile" {
+        ///   value = data.nutanix_getndbprofile.profile1
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -190,6 +208,24 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbprofile" "profile1" {
+        ///   profile_type = "Network"
+        ///   profile_name = "TEST_NETWORK_PROFILE"
+        /// }
+        /// 
+        /// output "profile" {
+        ///   value = data.nutanix_getndbprofile.profile1
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -300,6 +336,24 @@ namespace PiersKarsenbarg.Nutanix
         /// 		ctx.Export("profile", profile1)
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbprofile" "profile1" {
+        ///   profile_type = "Network"
+        ///   profile_name = "TEST_NETWORK_PROFILE"
+        /// }
+        /// 
+        /// output "profile" {
+        ///   value = data.nutanix_getndbprofile.profile1
         /// }
         /// ```
         /// ```java

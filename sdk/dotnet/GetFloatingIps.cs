@@ -60,6 +60,18 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getfloatingips" "test" {
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -145,6 +157,18 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getfloatingips" "test" {
         /// }
         /// ```
         /// ```java
@@ -234,6 +258,18 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getfloatingips" "test" {
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -281,7 +317,7 @@ namespace PiersKarsenbarg.Nutanix
         private List<Inputs.GetFloatingIpsMetadataArgs>? _metadatas;
 
         /// <summary>
-        /// - The&lt;span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "&gt; floatingIp &lt;/span&gt;kind metadata.
+        /// - The&lt;span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp " pulumi-lang-hcl=" floating_ip "&gt; floatingIp &lt;/span&gt;kind metadata.
         /// </summary>
         public List<Inputs.GetFloatingIpsMetadataArgs> Metadatas
         {
@@ -301,7 +337,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<Inputs.GetFloatingIpsMetadataInputArgs>? _metadatas;
 
         /// <summary>
-        /// - The&lt;span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "&gt; floatingIp &lt;/span&gt;kind metadata.
+        /// - The&lt;span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp " pulumi-lang-hcl=" floating_ip "&gt; floatingIp &lt;/span&gt;kind metadata.
         /// </summary>
         public InputList<Inputs.GetFloatingIpsMetadataInputArgs> Metadatas
         {
@@ -332,7 +368,7 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// - The&lt;span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "&gt; floatingIp &lt;/span&gt;kind metadata.
+        /// - The&lt;span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp " pulumi-lang-hcl=" floating_ip "&gt; floatingIp &lt;/span&gt;kind metadata.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFloatingIpsMetadataResult> Metadatas;
 

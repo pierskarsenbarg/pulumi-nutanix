@@ -90,6 +90,24 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getobjectstoresv2" "list" {
+        /// }
+        /// data "nutanix_getobjectstoresv2" "filter" {
+        ///   filter = "name eq 'object_store_example'"
+        /// }
+        /// data "nutanix_getobjectstoresv2" "limit" {
+        ///   limit = 10
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -225,6 +243,24 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getobjectstoresv2" "list" {
+        /// }
+        /// data "nutanix_getobjectstoresv2" "filter" {
+        ///   filter = "name eq 'object_store_example'"
+        /// }
+        /// data "nutanix_getobjectstoresv2" "limit" {
+        ///   limit = 10
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -358,6 +394,24 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getobjectstoresv2" "list" {
+        /// }
+        /// data "nutanix_getobjectstoresv2" "filter" {
+        ///   filter = "name eq 'object_store_example'"
+        /// }
+        /// data "nutanix_getobjectstoresv2" "limit" {
+        ///   limit = 10
         /// }
         /// ```
         /// ```java

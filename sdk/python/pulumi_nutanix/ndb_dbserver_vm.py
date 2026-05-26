@@ -57,7 +57,7 @@ class NdbDbserverVmArgs:
         :param pulumi.Input[_builtins.bool] remove: - (Optional) Unregister the database from NDB. Default value is false
         :param pulumi.Input[_builtins.str] snapshot_id: Snapshot id. If not given, it will use latest snapshot to provision db server vm.
         :param pulumi.Input[_builtins.bool] soft_remove: - (Optional) Soft remove. Default will be false
-        :param pulumi.Input[_builtins.str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+        :param pulumi.Input[_builtins.str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
         :param pulumi.Input[_builtins.str] software_profile_version_id: SOftware Profile Version Id.
         :param pulumi.Input[_builtins.str] time_machine_id: Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
         :param pulumi.Input[_builtins.str] vm_password: password of the NDB drive user account.
@@ -276,7 +276,7 @@ class NdbDbserverVmArgs:
     @pulumi.getter(name="softwareProfileId")
     def software_profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+        software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
         """
         return pulumi.get(self, "software_profile_id")
 
@@ -393,7 +393,7 @@ class _NdbDbserverVmState:
         :param pulumi.Input[_builtins.bool] remove: - (Optional) Unregister the database from NDB. Default value is false
         :param pulumi.Input[_builtins.str] snapshot_id: Snapshot id. If not given, it will use latest snapshot to provision db server vm.
         :param pulumi.Input[_builtins.bool] soft_remove: - (Optional) Soft remove. Default will be false
-        :param pulumi.Input[_builtins.str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+        :param pulumi.Input[_builtins.str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
         :param pulumi.Input[_builtins.str] software_profile_version_id: SOftware Profile Version Id.
         :param pulumi.Input[_builtins.str] time_machine_id: Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
         :param pulumi.Input[_builtins.str] vm_password: password of the NDB drive user account.
@@ -728,7 +728,7 @@ class _NdbDbserverVmState:
     @pulumi.getter(name="softwareProfileId")
     def software_profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+        software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
         """
         return pulumi.get(self, "software_profile_id")
 
@@ -884,7 +884,7 @@ class NdbDbserverVm(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] remove: - (Optional) Unregister the database from NDB. Default value is false
         :param pulumi.Input[_builtins.str] snapshot_id: Snapshot id. If not given, it will use latest snapshot to provision db server vm.
         :param pulumi.Input[_builtins.bool] soft_remove: - (Optional) Soft remove. Default will be false
-        :param pulumi.Input[_builtins.str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+        :param pulumi.Input[_builtins.str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
         :param pulumi.Input[_builtins.str] software_profile_version_id: SOftware Profile Version Id.
         :param pulumi.Input[_builtins.str] time_machine_id: Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
         :param pulumi.Input[_builtins.str] vm_password: password of the NDB drive user account.
@@ -1056,7 +1056,7 @@ class NdbDbserverVm(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] remove: - (Optional) Unregister the database from NDB. Default value is false
         :param pulumi.Input[_builtins.str] snapshot_id: Snapshot id. If not given, it will use latest snapshot to provision db server vm.
         :param pulumi.Input[_builtins.bool] soft_remove: - (Optional) Soft remove. Default will be false
-        :param pulumi.Input[_builtins.str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+        :param pulumi.Input[_builtins.str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
         :param pulumi.Input[_builtins.str] software_profile_version_id: SOftware Profile Version Id.
         :param pulumi.Input[_builtins.str] time_machine_id: Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
         :param pulumi.Input[_builtins.str] vm_password: password of the NDB drive user account.
@@ -1265,7 +1265,7 @@ class NdbDbserverVm(pulumi.CustomResource):
     @pulumi.getter(name="softwareProfileId")
     def software_profile_id(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+        software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
         """
         return pulumi.get(self, "software_profile_id")
 

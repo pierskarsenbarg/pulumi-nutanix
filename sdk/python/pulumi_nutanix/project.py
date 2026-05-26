@@ -50,8 +50,8 @@ class ProjectArgs:
 
         :param pulumi.Input[_builtins.str] description: A description for project.
         :param pulumi.Input[Sequence[pulumi.Input['ProjectCategoryArgs']]] categories: - (Optional) The category values represented as a dictionary of key > list of values.
-        :param pulumi.Input[_builtins.str] cluster_uuid: The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag).
-        :param pulumi.Input[_builtins.bool] enable_collab: flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag)
+        :param pulumi.Input[_builtins.str] cluster_uuid: The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag).
+        :param pulumi.Input[_builtins.bool] enable_collab: flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
         :param pulumi.Input[_builtins.str] name: The name for the project.
         :param pulumi.Input[_builtins.bool] use_project_internal: flag to use project internal for user role mapping
         :param pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]] user_reference_lists: List of Reference of users.
@@ -87,8 +87,8 @@ class ProjectArgs:
         if project_reference is not None:
             pulumi.set(__self__, "project_reference", project_reference)
         if resource_domain is not None:
-            warnings.warn("""Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs=\"`resourceDomain`\" pulumi-lang-dotnet=\"`ResourceDomain`\" pulumi-lang-go=\"`resourceDomain`\" pulumi-lang-python=\"`resource_domain`\" pulumi-lang-yaml=\"`resourceDomain`\" pulumi-lang-java=\"`resourceDomain`\">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.""", DeprecationWarning)
-            pulumi.log.warn("""resource_domain is deprecated: Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs=\"`resourceDomain`\" pulumi-lang-dotnet=\"`ResourceDomain`\" pulumi-lang-go=\"`resourceDomain`\" pulumi-lang-python=\"`resource_domain`\" pulumi-lang-yaml=\"`resourceDomain`\" pulumi-lang-java=\"`resourceDomain`\">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.""")
+            warnings.warn("""Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs=\"`resourceDomain`\" pulumi-lang-dotnet=\"`ResourceDomain`\" pulumi-lang-go=\"`resourceDomain`\" pulumi-lang-python=\"`resource_domain`\" pulumi-lang-yaml=\"`resourceDomain`\" pulumi-lang-java=\"`resourceDomain`\" pulumi-lang-hcl=\"`resource_domain`\">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.""", DeprecationWarning)
+            pulumi.log.warn("""resource_domain is deprecated: Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs=\"`resourceDomain`\" pulumi-lang-dotnet=\"`ResourceDomain`\" pulumi-lang-go=\"`resourceDomain`\" pulumi-lang-python=\"`resource_domain`\" pulumi-lang-yaml=\"`resourceDomain`\" pulumi-lang-java=\"`resourceDomain`\" pulumi-lang-hcl=\"`resource_domain`\">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.""")
         if resource_domain is not None:
             pulumi.set(__self__, "resource_domain", resource_domain)
         if subnet_reference_lists is not None:
@@ -179,7 +179,7 @@ class ProjectArgs:
     @pulumi.getter(name="clusterUuid")
     def cluster_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag).
+        The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag).
         """
         return pulumi.get(self, "cluster_uuid")
 
@@ -200,7 +200,7 @@ class ProjectArgs:
     @pulumi.getter(name="enableCollab")
     def enable_collab(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag)
+        flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
         """
         return pulumi.get(self, "enable_collab")
 
@@ -267,7 +267,7 @@ class ProjectArgs:
 
     @_builtins.property
     @pulumi.getter(name="resourceDomain")
-    @_utilities.deprecated("""Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs=\"`resourceDomain`\" pulumi-lang-dotnet=\"`ResourceDomain`\" pulumi-lang-go=\"`resourceDomain`\" pulumi-lang-python=\"`resource_domain`\" pulumi-lang-yaml=\"`resourceDomain`\" pulumi-lang-java=\"`resourceDomain`\">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.""")
+    @_utilities.deprecated("""Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs=\"`resourceDomain`\" pulumi-lang-dotnet=\"`ResourceDomain`\" pulumi-lang-go=\"`resourceDomain`\" pulumi-lang-python=\"`resource_domain`\" pulumi-lang-yaml=\"`resourceDomain`\" pulumi-lang-java=\"`resourceDomain`\" pulumi-lang-hcl=\"`resource_domain`\">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.""")
     def resource_domain(self) -> pulumi.Input[Optional['ProjectResourceDomainArgs']]:
         return pulumi.get(self, "resource_domain")
 
@@ -379,9 +379,9 @@ class _ProjectState:
         Input properties used for looking up and filtering Project resources.
 
         :param pulumi.Input[Sequence[pulumi.Input['ProjectCategoryArgs']]] categories: - (Optional) The category values represented as a dictionary of key > list of values.
-        :param pulumi.Input[_builtins.str] cluster_uuid: The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag).
+        :param pulumi.Input[_builtins.str] cluster_uuid: The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag).
         :param pulumi.Input[_builtins.str] description: A description for project.
-        :param pulumi.Input[_builtins.bool] enable_collab: flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag)
+        :param pulumi.Input[_builtins.bool] enable_collab: flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
         :param pulumi.Input[_builtins.str] name: The name for the project.
         :param pulumi.Input[_builtins.bool] use_project_internal: flag to use project internal for user role mapping
         :param pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]] user_reference_lists: List of Reference of users.
@@ -423,8 +423,8 @@ class _ProjectState:
         if project_reference is not None:
             pulumi.set(__self__, "project_reference", project_reference)
         if resource_domain is not None:
-            warnings.warn("""Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs=\"`resourceDomain`\" pulumi-lang-dotnet=\"`ResourceDomain`\" pulumi-lang-go=\"`resourceDomain`\" pulumi-lang-python=\"`resource_domain`\" pulumi-lang-yaml=\"`resourceDomain`\" pulumi-lang-java=\"`resourceDomain`\">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.""", DeprecationWarning)
-            pulumi.log.warn("""resource_domain is deprecated: Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs=\"`resourceDomain`\" pulumi-lang-dotnet=\"`ResourceDomain`\" pulumi-lang-go=\"`resourceDomain`\" pulumi-lang-python=\"`resource_domain`\" pulumi-lang-yaml=\"`resourceDomain`\" pulumi-lang-java=\"`resourceDomain`\">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.""")
+            warnings.warn("""Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs=\"`resourceDomain`\" pulumi-lang-dotnet=\"`ResourceDomain`\" pulumi-lang-go=\"`resourceDomain`\" pulumi-lang-python=\"`resource_domain`\" pulumi-lang-yaml=\"`resourceDomain`\" pulumi-lang-java=\"`resourceDomain`\" pulumi-lang-hcl=\"`resource_domain`\">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.""", DeprecationWarning)
+            pulumi.log.warn("""resource_domain is deprecated: Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs=\"`resourceDomain`\" pulumi-lang-dotnet=\"`ResourceDomain`\" pulumi-lang-go=\"`resourceDomain`\" pulumi-lang-python=\"`resource_domain`\" pulumi-lang-yaml=\"`resourceDomain`\" pulumi-lang-java=\"`resourceDomain`\" pulumi-lang-hcl=\"`resource_domain`\">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.""")
         if resource_domain is not None:
             pulumi.set(__self__, "resource_domain", resource_domain)
         if state is not None:
@@ -496,7 +496,7 @@ class _ProjectState:
     @pulumi.getter(name="clusterUuid")
     def cluster_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag).
+        The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag).
         """
         return pulumi.get(self, "cluster_uuid")
 
@@ -538,7 +538,7 @@ class _ProjectState:
     @pulumi.getter(name="enableCollab")
     def enable_collab(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag)
+        flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
         """
         return pulumi.get(self, "enable_collab")
 
@@ -623,7 +623,7 @@ class _ProjectState:
 
     @_builtins.property
     @pulumi.getter(name="resourceDomain")
-    @_utilities.deprecated("""Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs=\"`resourceDomain`\" pulumi-lang-dotnet=\"`ResourceDomain`\" pulumi-lang-go=\"`resourceDomain`\" pulumi-lang-python=\"`resource_domain`\" pulumi-lang-yaml=\"`resourceDomain`\" pulumi-lang-java=\"`resourceDomain`\">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.""")
+    @_utilities.deprecated("""Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs=\"`resourceDomain`\" pulumi-lang-dotnet=\"`ResourceDomain`\" pulumi-lang-go=\"`resourceDomain`\" pulumi-lang-python=\"`resource_domain`\" pulumi-lang-yaml=\"`resourceDomain`\" pulumi-lang-java=\"`resourceDomain`\" pulumi-lang-hcl=\"`resource_domain`\">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.""")
     def resource_domain(self) -> pulumi.Input[Optional['ProjectResourceDomainArgs']]:
         return pulumi.get(self, "resource_domain")
 
@@ -750,9 +750,9 @@ class Project(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ProjectCategoryArgs', 'ProjectCategoryArgsDict']]]] categories: - (Optional) The category values represented as a dictionary of key > list of values.
-        :param pulumi.Input[_builtins.str] cluster_uuid: The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag).
+        :param pulumi.Input[_builtins.str] cluster_uuid: The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag).
         :param pulumi.Input[_builtins.str] description: A description for project.
-        :param pulumi.Input[_builtins.bool] enable_collab: flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag)
+        :param pulumi.Input[_builtins.bool] enable_collab: flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
         :param pulumi.Input[_builtins.str] name: The name for the project.
         :param pulumi.Input[_builtins.bool] use_project_internal: flag to use project internal for user role mapping
         :param pulumi.Input[Sequence[pulumi.Input[Union['ProjectUserReferenceListArgs', 'ProjectUserReferenceListArgsDict']]]] user_reference_lists: List of Reference of users.
@@ -893,9 +893,9 @@ class Project(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ProjectCategoryArgs', 'ProjectCategoryArgsDict']]]] categories: - (Optional) The category values represented as a dictionary of key > list of values.
-        :param pulumi.Input[_builtins.str] cluster_uuid: The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag).
+        :param pulumi.Input[_builtins.str] cluster_uuid: The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag).
         :param pulumi.Input[_builtins.str] description: A description for project.
-        :param pulumi.Input[_builtins.bool] enable_collab: flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag)
+        :param pulumi.Input[_builtins.bool] enable_collab: flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
         :param pulumi.Input[_builtins.str] name: The name for the project.
         :param pulumi.Input[_builtins.bool] use_project_internal: flag to use project internal for user role mapping
         :param pulumi.Input[Sequence[pulumi.Input[Union['ProjectUserReferenceListArgs', 'ProjectUserReferenceListArgsDict']]]] user_reference_lists: List of Reference of users.
@@ -965,7 +965,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="clusterUuid")
     def cluster_uuid(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag).
+        The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag).
         """
         return pulumi.get(self, "cluster_uuid")
 
@@ -991,7 +991,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="enableCollab")
     def enable_collab(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
-        flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag)
+        flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
         """
         return pulumi.get(self, "enable_collab")
 
@@ -1040,7 +1040,7 @@ class Project(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="resourceDomain")
-    @_utilities.deprecated("""Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs=\"`resourceDomain`\" pulumi-lang-dotnet=\"`ResourceDomain`\" pulumi-lang-go=\"`resourceDomain`\" pulumi-lang-python=\"`resource_domain`\" pulumi-lang-yaml=\"`resourceDomain`\" pulumi-lang-java=\"`resourceDomain`\">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.""")
+    @_utilities.deprecated("""Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs=\"`resourceDomain`\" pulumi-lang-dotnet=\"`ResourceDomain`\" pulumi-lang-go=\"`resourceDomain`\" pulumi-lang-python=\"`resource_domain`\" pulumi-lang-yaml=\"`resourceDomain`\" pulumi-lang-java=\"`resourceDomain`\" pulumi-lang-hcl=\"`resource_domain`\">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.""")
     def resource_domain(self) -> pulumi.Output[Optional['outputs.ProjectResourceDomain']]:
         return pulumi.get(self, "resource_domain")
 

@@ -68,6 +68,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getcategoryv2" "get-category" {
+        ///   ext_id = "85e68112-5b2b-4220-bc8d-e529e4bf420e"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -165,6 +178,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getcategoryv2" "get-category" {
+        ///   ext_id = "85e68112-5b2b-4220-bc8d-e529e4bf420e"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -260,6 +286,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getcategoryv2" "get-category" {
+        ///   ext_id = "85e68112-5b2b-4220-bc8d-e529e4bf420e"
         /// }
         /// ```
         /// ```java

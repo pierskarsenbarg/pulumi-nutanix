@@ -51,7 +51,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string LastUpdatedTime;
         /// <summary>
-        /// HATEOAS links for the attribute (each with &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`"&gt;`href`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`"&gt;`rel`&lt;/span&gt;).
+        /// HATEOAS links for the attribute (each with &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`"&gt;`href`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`"&gt;`rel`&lt;/span&gt;).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIamEntitiesV2EntityLinkResult> Links;
         /// <summary>

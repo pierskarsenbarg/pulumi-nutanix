@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<Outputs.OvaV2Checksum> Checksum { get; private set; } = null!;
 
         /// <summary>
-        /// -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its &lt;span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`"&gt;`mandatory`&lt;/span&gt; when creating an OVA from URL or object lite source .
+        /// -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its &lt;span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`"&gt;`mandatory`&lt;/span&gt; when creating an OVA from URL or object lite source .
         /// </summary>
         [Output("clusterLocationExtIds")]
         public Output<ImmutableArray<string>> ClusterLocationExtIds { get; private set; } = null!;
@@ -140,7 +140,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _clusterLocationExtIds;
 
         /// <summary>
-        /// -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its &lt;span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`"&gt;`mandatory`&lt;/span&gt; when creating an OVA from URL or object lite source .
+        /// -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its &lt;span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`"&gt;`mandatory`&lt;/span&gt; when creating an OVA from URL or object lite source .
         /// </summary>
         public InputList<string> ClusterLocationExtIds
         {
@@ -194,7 +194,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _clusterLocationExtIds;
 
         /// <summary>
-        /// -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its &lt;span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`"&gt;`mandatory`&lt;/span&gt; when creating an OVA from URL or object lite source .
+        /// -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its &lt;span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`"&gt;`mandatory`&lt;/span&gt; when creating an OVA from URL or object lite source .
         /// </summary>
         public InputList<string> ClusterLocationExtIds
         {

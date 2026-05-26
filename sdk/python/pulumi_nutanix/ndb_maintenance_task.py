@@ -29,8 +29,8 @@ class NdbMaintenanceTaskArgs:
         The set of arguments for constructing a NdbMaintenanceTask resource.
 
         :param pulumi.Input[_builtins.str] maintenance_window_id: maintenance window id which has to be associated
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_clusters: dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"">"dbserverId"</span>
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_ids: dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"">"dbserverCluster"</span>
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_clusters: dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"" pulumi-lang-hcl=""dbserver_id"">"dbserverId"</span>
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_ids: dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"" pulumi-lang-hcl=""dbserver_cluster"">"dbserverCluster"</span>
         :param pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceTaskTaskArgs']]] tasks: task input for Operating System Patching or Database Patching or both
         """
         pulumi.set(__self__, "maintenance_window_id", maintenance_window_id)
@@ -57,7 +57,7 @@ class NdbMaintenanceTaskArgs:
     @pulumi.getter(name="dbserverClusters")
     def dbserver_clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"">"dbserverId"</span>
+        dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"" pulumi-lang-hcl=""dbserver_id"">"dbserverId"</span>
         """
         return pulumi.get(self, "dbserver_clusters")
 
@@ -69,7 +69,7 @@ class NdbMaintenanceTaskArgs:
     @pulumi.getter(name="dbserverIds")
     def dbserver_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"">"dbserverCluster"</span>
+        dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"" pulumi-lang-hcl=""dbserver_cluster"">"dbserverCluster"</span>
         """
         return pulumi.get(self, "dbserver_ids")
 
@@ -101,8 +101,8 @@ class _NdbMaintenanceTaskState:
         """
         Input properties used for looking up and filtering NdbMaintenanceTask resources.
 
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_clusters: dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"">"dbserverId"</span>
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_ids: dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"">"dbserverCluster"</span>
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_clusters: dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"" pulumi-lang-hcl=""dbserver_id"">"dbserverId"</span>
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_ids: dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"" pulumi-lang-hcl=""dbserver_cluster"">"dbserverCluster"</span>
         :param pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceTaskEntityTaskAssociationArgs']]] entity_task_associations: Entity Task Association  List.
         :param pulumi.Input[_builtins.str] maintenance_window_id: maintenance window id which has to be associated
         :param pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceTaskTaskArgs']]] tasks: task input for Operating System Patching or Database Patching or both
@@ -122,7 +122,7 @@ class _NdbMaintenanceTaskState:
     @pulumi.getter(name="dbserverClusters")
     def dbserver_clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"">"dbserverId"</span>
+        dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"" pulumi-lang-hcl=""dbserver_id"">"dbserverId"</span>
         """
         return pulumi.get(self, "dbserver_clusters")
 
@@ -134,7 +134,7 @@ class _NdbMaintenanceTaskState:
     @pulumi.getter(name="dbserverIds")
     def dbserver_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"">"dbserverCluster"</span>
+        dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"" pulumi-lang-hcl=""dbserver_cluster"">"dbserverCluster"</span>
         """
         return pulumi.get(self, "dbserver_ids")
 
@@ -252,8 +252,8 @@ class NdbMaintenanceTask(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_clusters: dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"">"dbserverId"</span>
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_ids: dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"">"dbserverCluster"</span>
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_clusters: dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"" pulumi-lang-hcl=""dbserver_id"">"dbserverId"</span>
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_ids: dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"" pulumi-lang-hcl=""dbserver_cluster"">"dbserverCluster"</span>
         :param pulumi.Input[_builtins.str] maintenance_window_id: maintenance window id which has to be associated
         :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict']]]] tasks: task input for Operating System Patching or Database Patching or both
         """
@@ -380,8 +380,8 @@ class NdbMaintenanceTask(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_clusters: dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"">"dbserverId"</span>
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_ids: dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"">"dbserverCluster"</span>
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_clusters: dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"" pulumi-lang-hcl=""dbserver_id"">"dbserverId"</span>
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_ids: dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"" pulumi-lang-hcl=""dbserver_cluster"">"dbserverCluster"</span>
         :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceTaskEntityTaskAssociationArgs', 'NdbMaintenanceTaskEntityTaskAssociationArgsDict']]]] entity_task_associations: Entity Task Association  List.
         :param pulumi.Input[_builtins.str] maintenance_window_id: maintenance window id which has to be associated
         :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict']]]] tasks: task input for Operating System Patching or Database Patching or both
@@ -401,7 +401,7 @@ class NdbMaintenanceTask(pulumi.CustomResource):
     @pulumi.getter(name="dbserverClusters")
     def dbserver_clusters(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
         """
-        dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"">"dbserverId"</span>
+        dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"" pulumi-lang-hcl=""dbserver_id"">"dbserverId"</span>
         """
         return pulumi.get(self, "dbserver_clusters")
 
@@ -409,7 +409,7 @@ class NdbMaintenanceTask(pulumi.CustomResource):
     @pulumi.getter(name="dbserverIds")
     def dbserver_ids(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
         """
-        dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"">"dbserverCluster"</span>
+        dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"" pulumi-lang-hcl=""dbserver_cluster"">"dbserverCluster"</span>
         """
         return pulumi.get(self, "dbserver_ids")
 

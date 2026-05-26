@@ -60,6 +60,18 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getstoragepoliciesv2" "storage-policies" {
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -98,22 +110,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Storage Policies
         /// 
-        /// The &lt;span pulumi-lang-nodejs="`storagePolicies`" pulumi-lang-dotnet="`StoragePolicies`" pulumi-lang-go="`storagePolicies`" pulumi-lang-python="`storage_policies`" pulumi-lang-yaml="`storagePolicies`" pulumi-lang-java="`storagePolicies`"&gt;`storagePolicies`&lt;/span&gt; contains list of Storage Policy objects. Each Storage Policy object contains the following attributes:
+        /// The &lt;span pulumi-lang-nodejs="`storagePolicies`" pulumi-lang-dotnet="`StoragePolicies`" pulumi-lang-go="`storagePolicies`" pulumi-lang-python="`storage_policies`" pulumi-lang-yaml="`storagePolicies`" pulumi-lang-java="`storagePolicies`" pulumi-lang-hcl="`storage_policies`"&gt;`storagePolicies`&lt;/span&gt; contains list of Storage Policy objects. Each Storage Policy object contains the following attributes:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;:- External identifier of the Storage Policy.
-        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;:- A globally unique identifier that represents the tenant that owns this entity.
-        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;:- A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;:- Storage Policy name.
-        /// * &lt;span pulumi-lang-nodejs="`categoryExtIds`" pulumi-lang-dotnet="`CategoryExtIds`" pulumi-lang-go="`categoryExtIds`" pulumi-lang-python="`category_ext_ids`" pulumi-lang-yaml="`categoryExtIds`" pulumi-lang-java="`categoryExtIds`"&gt;`categoryExtIds`&lt;/span&gt;:- List of external identifiers for Categories included in the Storage Policy.
-        /// * &lt;span pulumi-lang-nodejs="`compressionSpec`" pulumi-lang-dotnet="`CompressionSpec`" pulumi-lang-go="`compressionSpec`" pulumi-lang-python="`compression_spec`" pulumi-lang-yaml="`compressionSpec`" pulumi-lang-java="`compressionSpec`"&gt;`compressionSpec`&lt;/span&gt;:- Compression parameters for entities governed by the Storage Policy.
-        ///   * &lt;span pulumi-lang-nodejs="`compressionState`" pulumi-lang-dotnet="`CompressionState`" pulumi-lang-go="`compressionState`" pulumi-lang-python="`compression_state`" pulumi-lang-yaml="`compressionState`" pulumi-lang-java="`compressionState`"&gt;`compressionState`&lt;/span&gt;:- Compression state value.
-        /// * &lt;span pulumi-lang-nodejs="`encryptionSpec`" pulumi-lang-dotnet="`EncryptionSpec`" pulumi-lang-go="`encryptionSpec`" pulumi-lang-python="`encryption_spec`" pulumi-lang-yaml="`encryptionSpec`" pulumi-lang-java="`encryptionSpec`"&gt;`encryptionSpec`&lt;/span&gt;:- Encryption parameters for entities governed by the Storage Policy.
-        ///   * &lt;span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`"&gt;`encryptionState`&lt;/span&gt;:- Encryption state value.
-        /// * &lt;span pulumi-lang-nodejs="`qosSpec`" pulumi-lang-dotnet="`QosSpec`" pulumi-lang-go="`qosSpec`" pulumi-lang-python="`qos_spec`" pulumi-lang-yaml="`qosSpec`" pulumi-lang-java="`qosSpec`"&gt;`qosSpec`&lt;/span&gt;:- Storage Quality of Service (QOS) parameters for the entities.
-        ///   * &lt;span pulumi-lang-nodejs="`throttledIops`" pulumi-lang-dotnet="`ThrottledIops`" pulumi-lang-go="`throttledIops`" pulumi-lang-python="`throttled_iops`" pulumi-lang-yaml="`throttledIops`" pulumi-lang-java="`throttledIops`"&gt;`throttledIops`&lt;/span&gt;:- Throttled IOPS value.
-        /// * &lt;span pulumi-lang-nodejs="`faultToleranceSpec`" pulumi-lang-dotnet="`FaultToleranceSpec`" pulumi-lang-go="`faultToleranceSpec`" pulumi-lang-python="`fault_tolerance_spec`" pulumi-lang-yaml="`faultToleranceSpec`" pulumi-lang-java="`faultToleranceSpec`"&gt;`faultToleranceSpec`&lt;/span&gt;:- Fault Tolerance parameters for the entities.
-        ///   * &lt;span pulumi-lang-nodejs="`replicationFactor`" pulumi-lang-dotnet="`ReplicationFactor`" pulumi-lang-go="`replicationFactor`" pulumi-lang-python="`replication_factor`" pulumi-lang-yaml="`replicationFactor`" pulumi-lang-java="`replicationFactor`"&gt;`replicationFactor`&lt;/span&gt;:- Replication factor value.
-        /// * &lt;span pulumi-lang-nodejs="`policyType`" pulumi-lang-dotnet="`PolicyType`" pulumi-lang-go="`policyType`" pulumi-lang-python="`policy_type`" pulumi-lang-yaml="`policyType`" pulumi-lang-java="`policyType`"&gt;`policyType`&lt;/span&gt;:- Indicates whether the policy is user-created or system-created. Valid values: `"USER"`, `"SYSTEM"`.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;:- External identifier of the Storage Policy.
+        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`" pulumi-lang-hcl="`tenant_id`"&gt;`tenantId`&lt;/span&gt;:- A globally unique identifier that represents the tenant that owns this entity.
+        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`"&gt;`links`&lt;/span&gt;:- A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt;:- Storage Policy name.
+        /// * &lt;span pulumi-lang-nodejs="`categoryExtIds`" pulumi-lang-dotnet="`CategoryExtIds`" pulumi-lang-go="`categoryExtIds`" pulumi-lang-python="`category_ext_ids`" pulumi-lang-yaml="`categoryExtIds`" pulumi-lang-java="`categoryExtIds`" pulumi-lang-hcl="`category_ext_ids`"&gt;`categoryExtIds`&lt;/span&gt;:- List of external identifiers for Categories included in the Storage Policy.
+        /// * &lt;span pulumi-lang-nodejs="`compressionSpec`" pulumi-lang-dotnet="`CompressionSpec`" pulumi-lang-go="`compressionSpec`" pulumi-lang-python="`compression_spec`" pulumi-lang-yaml="`compressionSpec`" pulumi-lang-java="`compressionSpec`" pulumi-lang-hcl="`compression_spec`"&gt;`compressionSpec`&lt;/span&gt;:- Compression parameters for entities governed by the Storage Policy.
+        ///   * &lt;span pulumi-lang-nodejs="`compressionState`" pulumi-lang-dotnet="`CompressionState`" pulumi-lang-go="`compressionState`" pulumi-lang-python="`compression_state`" pulumi-lang-yaml="`compressionState`" pulumi-lang-java="`compressionState`" pulumi-lang-hcl="`compression_state`"&gt;`compressionState`&lt;/span&gt;:- Compression state value.
+        /// * &lt;span pulumi-lang-nodejs="`encryptionSpec`" pulumi-lang-dotnet="`EncryptionSpec`" pulumi-lang-go="`encryptionSpec`" pulumi-lang-python="`encryption_spec`" pulumi-lang-yaml="`encryptionSpec`" pulumi-lang-java="`encryptionSpec`" pulumi-lang-hcl="`encryption_spec`"&gt;`encryptionSpec`&lt;/span&gt;:- Encryption parameters for entities governed by the Storage Policy.
+        ///   * &lt;span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`" pulumi-lang-hcl="`encryption_state`"&gt;`encryptionState`&lt;/span&gt;:- Encryption state value.
+        /// * &lt;span pulumi-lang-nodejs="`qosSpec`" pulumi-lang-dotnet="`QosSpec`" pulumi-lang-go="`qosSpec`" pulumi-lang-python="`qos_spec`" pulumi-lang-yaml="`qosSpec`" pulumi-lang-java="`qosSpec`" pulumi-lang-hcl="`qos_spec`"&gt;`qosSpec`&lt;/span&gt;:- Storage Quality of Service (QOS) parameters for the entities.
+        ///   * &lt;span pulumi-lang-nodejs="`throttledIops`" pulumi-lang-dotnet="`ThrottledIops`" pulumi-lang-go="`throttledIops`" pulumi-lang-python="`throttled_iops`" pulumi-lang-yaml="`throttledIops`" pulumi-lang-java="`throttledIops`" pulumi-lang-hcl="`throttled_iops`"&gt;`throttledIops`&lt;/span&gt;:- Throttled IOPS value.
+        /// * &lt;span pulumi-lang-nodejs="`faultToleranceSpec`" pulumi-lang-dotnet="`FaultToleranceSpec`" pulumi-lang-go="`faultToleranceSpec`" pulumi-lang-python="`fault_tolerance_spec`" pulumi-lang-yaml="`faultToleranceSpec`" pulumi-lang-java="`faultToleranceSpec`" pulumi-lang-hcl="`fault_tolerance_spec`"&gt;`faultToleranceSpec`&lt;/span&gt;:- Fault Tolerance parameters for the entities.
+        ///   * &lt;span pulumi-lang-nodejs="`replicationFactor`" pulumi-lang-dotnet="`ReplicationFactor`" pulumi-lang-go="`replicationFactor`" pulumi-lang-python="`replication_factor`" pulumi-lang-yaml="`replicationFactor`" pulumi-lang-java="`replicationFactor`" pulumi-lang-hcl="`replication_factor`"&gt;`replicationFactor`&lt;/span&gt;:- Replication factor value.
+        /// * &lt;span pulumi-lang-nodejs="`policyType`" pulumi-lang-dotnet="`PolicyType`" pulumi-lang-go="`policyType`" pulumi-lang-python="`policy_type`" pulumi-lang-yaml="`policyType`" pulumi-lang-java="`policyType`" pulumi-lang-hcl="`policy_type`"&gt;`policyType`&lt;/span&gt;:- Indicates whether the policy is user-created or system-created. Valid values: `"USER"`, `"SYSTEM"`.
         /// 
         /// 
         /// See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.2#tag/StoragePolicies/operation/listStoragePolicies).
@@ -169,6 +181,18 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getstoragepoliciesv2" "storage-policies" {
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -207,22 +231,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Storage Policies
         /// 
-        /// The &lt;span pulumi-lang-nodejs="`storagePolicies`" pulumi-lang-dotnet="`StoragePolicies`" pulumi-lang-go="`storagePolicies`" pulumi-lang-python="`storage_policies`" pulumi-lang-yaml="`storagePolicies`" pulumi-lang-java="`storagePolicies`"&gt;`storagePolicies`&lt;/span&gt; contains list of Storage Policy objects. Each Storage Policy object contains the following attributes:
+        /// The &lt;span pulumi-lang-nodejs="`storagePolicies`" pulumi-lang-dotnet="`StoragePolicies`" pulumi-lang-go="`storagePolicies`" pulumi-lang-python="`storage_policies`" pulumi-lang-yaml="`storagePolicies`" pulumi-lang-java="`storagePolicies`" pulumi-lang-hcl="`storage_policies`"&gt;`storagePolicies`&lt;/span&gt; contains list of Storage Policy objects. Each Storage Policy object contains the following attributes:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;:- External identifier of the Storage Policy.
-        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;:- A globally unique identifier that represents the tenant that owns this entity.
-        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;:- A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;:- Storage Policy name.
-        /// * &lt;span pulumi-lang-nodejs="`categoryExtIds`" pulumi-lang-dotnet="`CategoryExtIds`" pulumi-lang-go="`categoryExtIds`" pulumi-lang-python="`category_ext_ids`" pulumi-lang-yaml="`categoryExtIds`" pulumi-lang-java="`categoryExtIds`"&gt;`categoryExtIds`&lt;/span&gt;:- List of external identifiers for Categories included in the Storage Policy.
-        /// * &lt;span pulumi-lang-nodejs="`compressionSpec`" pulumi-lang-dotnet="`CompressionSpec`" pulumi-lang-go="`compressionSpec`" pulumi-lang-python="`compression_spec`" pulumi-lang-yaml="`compressionSpec`" pulumi-lang-java="`compressionSpec`"&gt;`compressionSpec`&lt;/span&gt;:- Compression parameters for entities governed by the Storage Policy.
-        ///   * &lt;span pulumi-lang-nodejs="`compressionState`" pulumi-lang-dotnet="`CompressionState`" pulumi-lang-go="`compressionState`" pulumi-lang-python="`compression_state`" pulumi-lang-yaml="`compressionState`" pulumi-lang-java="`compressionState`"&gt;`compressionState`&lt;/span&gt;:- Compression state value.
-        /// * &lt;span pulumi-lang-nodejs="`encryptionSpec`" pulumi-lang-dotnet="`EncryptionSpec`" pulumi-lang-go="`encryptionSpec`" pulumi-lang-python="`encryption_spec`" pulumi-lang-yaml="`encryptionSpec`" pulumi-lang-java="`encryptionSpec`"&gt;`encryptionSpec`&lt;/span&gt;:- Encryption parameters for entities governed by the Storage Policy.
-        ///   * &lt;span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`"&gt;`encryptionState`&lt;/span&gt;:- Encryption state value.
-        /// * &lt;span pulumi-lang-nodejs="`qosSpec`" pulumi-lang-dotnet="`QosSpec`" pulumi-lang-go="`qosSpec`" pulumi-lang-python="`qos_spec`" pulumi-lang-yaml="`qosSpec`" pulumi-lang-java="`qosSpec`"&gt;`qosSpec`&lt;/span&gt;:- Storage Quality of Service (QOS) parameters for the entities.
-        ///   * &lt;span pulumi-lang-nodejs="`throttledIops`" pulumi-lang-dotnet="`ThrottledIops`" pulumi-lang-go="`throttledIops`" pulumi-lang-python="`throttled_iops`" pulumi-lang-yaml="`throttledIops`" pulumi-lang-java="`throttledIops`"&gt;`throttledIops`&lt;/span&gt;:- Throttled IOPS value.
-        /// * &lt;span pulumi-lang-nodejs="`faultToleranceSpec`" pulumi-lang-dotnet="`FaultToleranceSpec`" pulumi-lang-go="`faultToleranceSpec`" pulumi-lang-python="`fault_tolerance_spec`" pulumi-lang-yaml="`faultToleranceSpec`" pulumi-lang-java="`faultToleranceSpec`"&gt;`faultToleranceSpec`&lt;/span&gt;:- Fault Tolerance parameters for the entities.
-        ///   * &lt;span pulumi-lang-nodejs="`replicationFactor`" pulumi-lang-dotnet="`ReplicationFactor`" pulumi-lang-go="`replicationFactor`" pulumi-lang-python="`replication_factor`" pulumi-lang-yaml="`replicationFactor`" pulumi-lang-java="`replicationFactor`"&gt;`replicationFactor`&lt;/span&gt;:- Replication factor value.
-        /// * &lt;span pulumi-lang-nodejs="`policyType`" pulumi-lang-dotnet="`PolicyType`" pulumi-lang-go="`policyType`" pulumi-lang-python="`policy_type`" pulumi-lang-yaml="`policyType`" pulumi-lang-java="`policyType`"&gt;`policyType`&lt;/span&gt;:- Indicates whether the policy is user-created or system-created. Valid values: `"USER"`, `"SYSTEM"`.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;:- External identifier of the Storage Policy.
+        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`" pulumi-lang-hcl="`tenant_id`"&gt;`tenantId`&lt;/span&gt;:- A globally unique identifier that represents the tenant that owns this entity.
+        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`"&gt;`links`&lt;/span&gt;:- A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt;:- Storage Policy name.
+        /// * &lt;span pulumi-lang-nodejs="`categoryExtIds`" pulumi-lang-dotnet="`CategoryExtIds`" pulumi-lang-go="`categoryExtIds`" pulumi-lang-python="`category_ext_ids`" pulumi-lang-yaml="`categoryExtIds`" pulumi-lang-java="`categoryExtIds`" pulumi-lang-hcl="`category_ext_ids`"&gt;`categoryExtIds`&lt;/span&gt;:- List of external identifiers for Categories included in the Storage Policy.
+        /// * &lt;span pulumi-lang-nodejs="`compressionSpec`" pulumi-lang-dotnet="`CompressionSpec`" pulumi-lang-go="`compressionSpec`" pulumi-lang-python="`compression_spec`" pulumi-lang-yaml="`compressionSpec`" pulumi-lang-java="`compressionSpec`" pulumi-lang-hcl="`compression_spec`"&gt;`compressionSpec`&lt;/span&gt;:- Compression parameters for entities governed by the Storage Policy.
+        ///   * &lt;span pulumi-lang-nodejs="`compressionState`" pulumi-lang-dotnet="`CompressionState`" pulumi-lang-go="`compressionState`" pulumi-lang-python="`compression_state`" pulumi-lang-yaml="`compressionState`" pulumi-lang-java="`compressionState`" pulumi-lang-hcl="`compression_state`"&gt;`compressionState`&lt;/span&gt;:- Compression state value.
+        /// * &lt;span pulumi-lang-nodejs="`encryptionSpec`" pulumi-lang-dotnet="`EncryptionSpec`" pulumi-lang-go="`encryptionSpec`" pulumi-lang-python="`encryption_spec`" pulumi-lang-yaml="`encryptionSpec`" pulumi-lang-java="`encryptionSpec`" pulumi-lang-hcl="`encryption_spec`"&gt;`encryptionSpec`&lt;/span&gt;:- Encryption parameters for entities governed by the Storage Policy.
+        ///   * &lt;span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`" pulumi-lang-hcl="`encryption_state`"&gt;`encryptionState`&lt;/span&gt;:- Encryption state value.
+        /// * &lt;span pulumi-lang-nodejs="`qosSpec`" pulumi-lang-dotnet="`QosSpec`" pulumi-lang-go="`qosSpec`" pulumi-lang-python="`qos_spec`" pulumi-lang-yaml="`qosSpec`" pulumi-lang-java="`qosSpec`" pulumi-lang-hcl="`qos_spec`"&gt;`qosSpec`&lt;/span&gt;:- Storage Quality of Service (QOS) parameters for the entities.
+        ///   * &lt;span pulumi-lang-nodejs="`throttledIops`" pulumi-lang-dotnet="`ThrottledIops`" pulumi-lang-go="`throttledIops`" pulumi-lang-python="`throttled_iops`" pulumi-lang-yaml="`throttledIops`" pulumi-lang-java="`throttledIops`" pulumi-lang-hcl="`throttled_iops`"&gt;`throttledIops`&lt;/span&gt;:- Throttled IOPS value.
+        /// * &lt;span pulumi-lang-nodejs="`faultToleranceSpec`" pulumi-lang-dotnet="`FaultToleranceSpec`" pulumi-lang-go="`faultToleranceSpec`" pulumi-lang-python="`fault_tolerance_spec`" pulumi-lang-yaml="`faultToleranceSpec`" pulumi-lang-java="`faultToleranceSpec`" pulumi-lang-hcl="`fault_tolerance_spec`"&gt;`faultToleranceSpec`&lt;/span&gt;:- Fault Tolerance parameters for the entities.
+        ///   * &lt;span pulumi-lang-nodejs="`replicationFactor`" pulumi-lang-dotnet="`ReplicationFactor`" pulumi-lang-go="`replicationFactor`" pulumi-lang-python="`replication_factor`" pulumi-lang-yaml="`replicationFactor`" pulumi-lang-java="`replicationFactor`" pulumi-lang-hcl="`replication_factor`"&gt;`replicationFactor`&lt;/span&gt;:- Replication factor value.
+        /// * &lt;span pulumi-lang-nodejs="`policyType`" pulumi-lang-dotnet="`PolicyType`" pulumi-lang-go="`policyType`" pulumi-lang-python="`policy_type`" pulumi-lang-yaml="`policyType`" pulumi-lang-java="`policyType`" pulumi-lang-hcl="`policy_type`"&gt;`policyType`&lt;/span&gt;:- Indicates whether the policy is user-created or system-created. Valid values: `"USER"`, `"SYSTEM"`.
         /// 
         /// 
         /// See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.2#tag/StoragePolicies/operation/listStoragePolicies).
@@ -278,6 +302,18 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getstoragepoliciesv2" "storage-policies" {
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -316,22 +352,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Storage Policies
         /// 
-        /// The &lt;span pulumi-lang-nodejs="`storagePolicies`" pulumi-lang-dotnet="`StoragePolicies`" pulumi-lang-go="`storagePolicies`" pulumi-lang-python="`storage_policies`" pulumi-lang-yaml="`storagePolicies`" pulumi-lang-java="`storagePolicies`"&gt;`storagePolicies`&lt;/span&gt; contains list of Storage Policy objects. Each Storage Policy object contains the following attributes:
+        /// The &lt;span pulumi-lang-nodejs="`storagePolicies`" pulumi-lang-dotnet="`StoragePolicies`" pulumi-lang-go="`storagePolicies`" pulumi-lang-python="`storage_policies`" pulumi-lang-yaml="`storagePolicies`" pulumi-lang-java="`storagePolicies`" pulumi-lang-hcl="`storage_policies`"&gt;`storagePolicies`&lt;/span&gt; contains list of Storage Policy objects. Each Storage Policy object contains the following attributes:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;:- External identifier of the Storage Policy.
-        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`"&gt;`tenantId`&lt;/span&gt;:- A globally unique identifier that represents the tenant that owns this entity.
-        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;:- A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;:- Storage Policy name.
-        /// * &lt;span pulumi-lang-nodejs="`categoryExtIds`" pulumi-lang-dotnet="`CategoryExtIds`" pulumi-lang-go="`categoryExtIds`" pulumi-lang-python="`category_ext_ids`" pulumi-lang-yaml="`categoryExtIds`" pulumi-lang-java="`categoryExtIds`"&gt;`categoryExtIds`&lt;/span&gt;:- List of external identifiers for Categories included in the Storage Policy.
-        /// * &lt;span pulumi-lang-nodejs="`compressionSpec`" pulumi-lang-dotnet="`CompressionSpec`" pulumi-lang-go="`compressionSpec`" pulumi-lang-python="`compression_spec`" pulumi-lang-yaml="`compressionSpec`" pulumi-lang-java="`compressionSpec`"&gt;`compressionSpec`&lt;/span&gt;:- Compression parameters for entities governed by the Storage Policy.
-        ///   * &lt;span pulumi-lang-nodejs="`compressionState`" pulumi-lang-dotnet="`CompressionState`" pulumi-lang-go="`compressionState`" pulumi-lang-python="`compression_state`" pulumi-lang-yaml="`compressionState`" pulumi-lang-java="`compressionState`"&gt;`compressionState`&lt;/span&gt;:- Compression state value.
-        /// * &lt;span pulumi-lang-nodejs="`encryptionSpec`" pulumi-lang-dotnet="`EncryptionSpec`" pulumi-lang-go="`encryptionSpec`" pulumi-lang-python="`encryption_spec`" pulumi-lang-yaml="`encryptionSpec`" pulumi-lang-java="`encryptionSpec`"&gt;`encryptionSpec`&lt;/span&gt;:- Encryption parameters for entities governed by the Storage Policy.
-        ///   * &lt;span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`"&gt;`encryptionState`&lt;/span&gt;:- Encryption state value.
-        /// * &lt;span pulumi-lang-nodejs="`qosSpec`" pulumi-lang-dotnet="`QosSpec`" pulumi-lang-go="`qosSpec`" pulumi-lang-python="`qos_spec`" pulumi-lang-yaml="`qosSpec`" pulumi-lang-java="`qosSpec`"&gt;`qosSpec`&lt;/span&gt;:- Storage Quality of Service (QOS) parameters for the entities.
-        ///   * &lt;span pulumi-lang-nodejs="`throttledIops`" pulumi-lang-dotnet="`ThrottledIops`" pulumi-lang-go="`throttledIops`" pulumi-lang-python="`throttled_iops`" pulumi-lang-yaml="`throttledIops`" pulumi-lang-java="`throttledIops`"&gt;`throttledIops`&lt;/span&gt;:- Throttled IOPS value.
-        /// * &lt;span pulumi-lang-nodejs="`faultToleranceSpec`" pulumi-lang-dotnet="`FaultToleranceSpec`" pulumi-lang-go="`faultToleranceSpec`" pulumi-lang-python="`fault_tolerance_spec`" pulumi-lang-yaml="`faultToleranceSpec`" pulumi-lang-java="`faultToleranceSpec`"&gt;`faultToleranceSpec`&lt;/span&gt;:- Fault Tolerance parameters for the entities.
-        ///   * &lt;span pulumi-lang-nodejs="`replicationFactor`" pulumi-lang-dotnet="`ReplicationFactor`" pulumi-lang-go="`replicationFactor`" pulumi-lang-python="`replication_factor`" pulumi-lang-yaml="`replicationFactor`" pulumi-lang-java="`replicationFactor`"&gt;`replicationFactor`&lt;/span&gt;:- Replication factor value.
-        /// * &lt;span pulumi-lang-nodejs="`policyType`" pulumi-lang-dotnet="`PolicyType`" pulumi-lang-go="`policyType`" pulumi-lang-python="`policy_type`" pulumi-lang-yaml="`policyType`" pulumi-lang-java="`policyType`"&gt;`policyType`&lt;/span&gt;:- Indicates whether the policy is user-created or system-created. Valid values: `"USER"`, `"SYSTEM"`.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;:- External identifier of the Storage Policy.
+        /// * &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`" pulumi-lang-hcl="`tenant_id`"&gt;`tenantId`&lt;/span&gt;:- A globally unique identifier that represents the tenant that owns this entity.
+        /// * &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`"&gt;`links`&lt;/span&gt;:- A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt;:- Storage Policy name.
+        /// * &lt;span pulumi-lang-nodejs="`categoryExtIds`" pulumi-lang-dotnet="`CategoryExtIds`" pulumi-lang-go="`categoryExtIds`" pulumi-lang-python="`category_ext_ids`" pulumi-lang-yaml="`categoryExtIds`" pulumi-lang-java="`categoryExtIds`" pulumi-lang-hcl="`category_ext_ids`"&gt;`categoryExtIds`&lt;/span&gt;:- List of external identifiers for Categories included in the Storage Policy.
+        /// * &lt;span pulumi-lang-nodejs="`compressionSpec`" pulumi-lang-dotnet="`CompressionSpec`" pulumi-lang-go="`compressionSpec`" pulumi-lang-python="`compression_spec`" pulumi-lang-yaml="`compressionSpec`" pulumi-lang-java="`compressionSpec`" pulumi-lang-hcl="`compression_spec`"&gt;`compressionSpec`&lt;/span&gt;:- Compression parameters for entities governed by the Storage Policy.
+        ///   * &lt;span pulumi-lang-nodejs="`compressionState`" pulumi-lang-dotnet="`CompressionState`" pulumi-lang-go="`compressionState`" pulumi-lang-python="`compression_state`" pulumi-lang-yaml="`compressionState`" pulumi-lang-java="`compressionState`" pulumi-lang-hcl="`compression_state`"&gt;`compressionState`&lt;/span&gt;:- Compression state value.
+        /// * &lt;span pulumi-lang-nodejs="`encryptionSpec`" pulumi-lang-dotnet="`EncryptionSpec`" pulumi-lang-go="`encryptionSpec`" pulumi-lang-python="`encryption_spec`" pulumi-lang-yaml="`encryptionSpec`" pulumi-lang-java="`encryptionSpec`" pulumi-lang-hcl="`encryption_spec`"&gt;`encryptionSpec`&lt;/span&gt;:- Encryption parameters for entities governed by the Storage Policy.
+        ///   * &lt;span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`" pulumi-lang-hcl="`encryption_state`"&gt;`encryptionState`&lt;/span&gt;:- Encryption state value.
+        /// * &lt;span pulumi-lang-nodejs="`qosSpec`" pulumi-lang-dotnet="`QosSpec`" pulumi-lang-go="`qosSpec`" pulumi-lang-python="`qos_spec`" pulumi-lang-yaml="`qosSpec`" pulumi-lang-java="`qosSpec`" pulumi-lang-hcl="`qos_spec`"&gt;`qosSpec`&lt;/span&gt;:- Storage Quality of Service (QOS) parameters for the entities.
+        ///   * &lt;span pulumi-lang-nodejs="`throttledIops`" pulumi-lang-dotnet="`ThrottledIops`" pulumi-lang-go="`throttledIops`" pulumi-lang-python="`throttled_iops`" pulumi-lang-yaml="`throttledIops`" pulumi-lang-java="`throttledIops`" pulumi-lang-hcl="`throttled_iops`"&gt;`throttledIops`&lt;/span&gt;:- Throttled IOPS value.
+        /// * &lt;span pulumi-lang-nodejs="`faultToleranceSpec`" pulumi-lang-dotnet="`FaultToleranceSpec`" pulumi-lang-go="`faultToleranceSpec`" pulumi-lang-python="`fault_tolerance_spec`" pulumi-lang-yaml="`faultToleranceSpec`" pulumi-lang-java="`faultToleranceSpec`" pulumi-lang-hcl="`fault_tolerance_spec`"&gt;`faultToleranceSpec`&lt;/span&gt;:- Fault Tolerance parameters for the entities.
+        ///   * &lt;span pulumi-lang-nodejs="`replicationFactor`" pulumi-lang-dotnet="`ReplicationFactor`" pulumi-lang-go="`replicationFactor`" pulumi-lang-python="`replication_factor`" pulumi-lang-yaml="`replicationFactor`" pulumi-lang-java="`replicationFactor`" pulumi-lang-hcl="`replication_factor`"&gt;`replicationFactor`&lt;/span&gt;:- Replication factor value.
+        /// * &lt;span pulumi-lang-nodejs="`policyType`" pulumi-lang-dotnet="`PolicyType`" pulumi-lang-go="`policyType`" pulumi-lang-python="`policy_type`" pulumi-lang-yaml="`policyType`" pulumi-lang-java="`policyType`" pulumi-lang-hcl="`policy_type`"&gt;`policyType`&lt;/span&gt;:- Indicates whether the policy is user-created or system-created. Valid values: `"USER"`, `"SYSTEM"`.
         /// 
         /// 
         /// See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.2#tag/StoragePolicies/operation/listStoragePolicies).

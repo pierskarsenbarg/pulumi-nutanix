@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Provides a datasource to retrieve floating IPs with<span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid "> floatingIpUuid </span>.
+// Provides a datasource to retrieve floating IPs with<span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid " pulumi-lang-hcl=" floating_ip_uuid "> floatingIpUuid </span>.
 func LookupFloatingIp(ctx *pulumi.Context, args *LookupFloatingIpArgs, opts ...pulumi.InvokeOption) (*LookupFloatingIpResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupFloatingIpResult
@@ -35,7 +35,7 @@ type LookupFloatingIpResult struct {
 	FloatingIpUuid string `pulumi:"floatingIpUuid"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
+	// - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp " pulumi-lang-hcl=" floating_ip "> floatingIp </span>kind metadata.
 	Metadata map[string]string `pulumi:"metadata"`
 	// Floating IP spec
 	Specs []GetFloatingIpSpec `pulumi:"specs"`
@@ -91,7 +91,7 @@ func (o LookupFloatingIpResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFloatingIpResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
+// - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp " pulumi-lang-hcl=" floating_ip "> floatingIp </span>kind metadata.
 func (o LookupFloatingIpResultOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupFloatingIpResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }

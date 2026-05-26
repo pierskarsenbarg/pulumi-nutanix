@@ -13,7 +13,7 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetEntityGroupsV2
     {
         /// <summary>
-        /// Retrieves a list of entity groups. Use this data source when you need to list or filter entity groups rather than fetch a single group by &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt; (use the &lt;span pulumi-lang-nodejs="`nutanix.EntityGroupV2`" pulumi-lang-dotnet="`nutanix.EntityGroupV2`" pulumi-lang-go="`EntityGroupV2`" pulumi-lang-python="`EntityGroupV2`" pulumi-lang-yaml="`nutanix.EntityGroupV2`" pulumi-lang-java="`nutanix.EntityGroupV2`"&gt;`nutanix.EntityGroupV2`&lt;/span&gt; data source for that).
+        /// Retrieves a list of entity groups. Use this data source when you need to list or filter entity groups rather than fetch a single group by &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt; (use the &lt;span pulumi-lang-nodejs="`nutanix.EntityGroupV2`" pulumi-lang-dotnet="`nutanix.EntityGroupV2`" pulumi-lang-go="`EntityGroupV2`" pulumi-lang-python="`EntityGroupV2`" pulumi-lang-yaml="`nutanix.EntityGroupV2`" pulumi-lang-java="`nutanix.EntityGroupV2`" pulumi-lang-hcl="`nutanix_entity_group_v2`"&gt;`nutanix.EntityGroupV2`&lt;/span&gt; data source for that).
         /// 
         /// ## Example Usage
         /// 
@@ -124,6 +124,33 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getentitygroupsv2" "list" {
+        /// }
+        /// data "nutanix_getentitygroupsv2" "filtered" {
+        ///   filter = "name eq 'my-entity-group'"
+        /// }
+        /// data "nutanix_getentitygroupsv2" "withLimit" {
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getentitygroupsv2" "filteredLimit" {
+        ///   filter = "name eq 'my-entity-group'"
+        ///   limit  = 1
+        /// }
+        /// 
+        /// # List all entity groups
+        /// # List entity groups with filter
+        /// # List entity groups with limit
+        /// # List entity groups with filter and limit
         /// ```
         /// ```java
         /// package generated_program;
@@ -202,7 +229,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEntityGroupsV2Result>("nutanix:index/getEntityGroupsV2:getEntityGroupsV2", args ?? new GetEntityGroupsV2Args(), options.WithDefaults());
 
         /// <summary>
-        /// Retrieves a list of entity groups. Use this data source when you need to list or filter entity groups rather than fetch a single group by &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt; (use the &lt;span pulumi-lang-nodejs="`nutanix.EntityGroupV2`" pulumi-lang-dotnet="`nutanix.EntityGroupV2`" pulumi-lang-go="`EntityGroupV2`" pulumi-lang-python="`EntityGroupV2`" pulumi-lang-yaml="`nutanix.EntityGroupV2`" pulumi-lang-java="`nutanix.EntityGroupV2`"&gt;`nutanix.EntityGroupV2`&lt;/span&gt; data source for that).
+        /// Retrieves a list of entity groups. Use this data source when you need to list or filter entity groups rather than fetch a single group by &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt; (use the &lt;span pulumi-lang-nodejs="`nutanix.EntityGroupV2`" pulumi-lang-dotnet="`nutanix.EntityGroupV2`" pulumi-lang-go="`EntityGroupV2`" pulumi-lang-python="`EntityGroupV2`" pulumi-lang-yaml="`nutanix.EntityGroupV2`" pulumi-lang-java="`nutanix.EntityGroupV2`" pulumi-lang-hcl="`nutanix_entity_group_v2`"&gt;`nutanix.EntityGroupV2`&lt;/span&gt; data source for that).
         /// 
         /// ## Example Usage
         /// 
@@ -313,6 +340,33 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getentitygroupsv2" "list" {
+        /// }
+        /// data "nutanix_getentitygroupsv2" "filtered" {
+        ///   filter = "name eq 'my-entity-group'"
+        /// }
+        /// data "nutanix_getentitygroupsv2" "withLimit" {
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getentitygroupsv2" "filteredLimit" {
+        ///   filter = "name eq 'my-entity-group'"
+        ///   limit  = 1
+        /// }
+        /// 
+        /// # List all entity groups
+        /// # List entity groups with filter
+        /// # List entity groups with limit
+        /// # List entity groups with filter and limit
         /// ```
         /// ```java
         /// package generated_program;
@@ -391,7 +445,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.Invoke<GetEntityGroupsV2Result>("nutanix:index/getEntityGroupsV2:getEntityGroupsV2", args ?? new GetEntityGroupsV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Retrieves a list of entity groups. Use this data source when you need to list or filter entity groups rather than fetch a single group by &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt; (use the &lt;span pulumi-lang-nodejs="`nutanix.EntityGroupV2`" pulumi-lang-dotnet="`nutanix.EntityGroupV2`" pulumi-lang-go="`EntityGroupV2`" pulumi-lang-python="`EntityGroupV2`" pulumi-lang-yaml="`nutanix.EntityGroupV2`" pulumi-lang-java="`nutanix.EntityGroupV2`"&gt;`nutanix.EntityGroupV2`&lt;/span&gt; data source for that).
+        /// Retrieves a list of entity groups. Use this data source when you need to list or filter entity groups rather than fetch a single group by &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt; (use the &lt;span pulumi-lang-nodejs="`nutanix.EntityGroupV2`" pulumi-lang-dotnet="`nutanix.EntityGroupV2`" pulumi-lang-go="`EntityGroupV2`" pulumi-lang-python="`EntityGroupV2`" pulumi-lang-yaml="`nutanix.EntityGroupV2`" pulumi-lang-java="`nutanix.EntityGroupV2`" pulumi-lang-hcl="`nutanix_entity_group_v2`"&gt;`nutanix.EntityGroupV2`&lt;/span&gt; data source for that).
         /// 
         /// ## Example Usage
         /// 
@@ -502,6 +556,33 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getentitygroupsv2" "list" {
+        /// }
+        /// data "nutanix_getentitygroupsv2" "filtered" {
+        ///   filter = "name eq 'my-entity-group'"
+        /// }
+        /// data "nutanix_getentitygroupsv2" "withLimit" {
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getentitygroupsv2" "filteredLimit" {
+        ///   filter = "name eq 'my-entity-group'"
+        ///   limit  = 1
+        /// }
+        /// 
+        /// # List all entity groups
+        /// # List entity groups with filter
+        /// # List entity groups with limit
+        /// # List entity groups with filter and limit
         /// ```
         /// ```java
         /// package generated_program;

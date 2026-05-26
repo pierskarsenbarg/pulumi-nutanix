@@ -42,7 +42,7 @@ export class OvaV2 extends pulumi.CustomResource {
      */
     declare public readonly checksum: pulumi.Output<outputs.OvaV2Checksum>;
     /**
-     * -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
+     * -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
      */
     declare public readonly clusterLocationExtIds: pulumi.Output<string[]>;
     declare public /*out*/ readonly createTime: pulumi.Output<string>;
@@ -138,7 +138,7 @@ export interface OvaV2State {
      */
     checksum?: pulumi.Input<inputs.OvaV2Checksum | undefined>;
     /**
-     * -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
+     * -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
      */
     clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     createTime?: pulumi.Input<string | undefined>;
@@ -183,7 +183,7 @@ export interface OvaV2Args {
      */
     checksum?: pulumi.Input<inputs.OvaV2Checksum | undefined>;
     /**
-     * -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
+     * -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
      */
     clusterLocationExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**

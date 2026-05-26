@@ -91,7 +91,7 @@ import (
 type VmAntiAffinityPolicyV2 struct {
 	pulumi.CustomResourceState
 
-	// List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+	// List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
 	Categories pulumi.StringArrayOutput `pulumi:"categories"`
 	// The timestamp when the policy was created.
 	CreateTime pulumi.StringOutput `pulumi:"createTime"`
@@ -148,7 +148,7 @@ func GetVmAntiAffinityPolicyV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering VmAntiAffinityPolicyV2 resources.
 type vmAntiAffinityPolicyV2State struct {
-	// List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+	// List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
 	Categories []string `pulumi:"categories"`
 	// The timestamp when the policy was created.
 	CreateTime *string `pulumi:"createTime"`
@@ -173,7 +173,7 @@ type vmAntiAffinityPolicyV2State struct {
 }
 
 type VmAntiAffinityPolicyV2State struct {
-	// List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+	// List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
 	Categories pulumi.StringArrayInput
 	// The timestamp when the policy was created.
 	CreateTime pulumi.StringPtrInput
@@ -202,7 +202,7 @@ func (VmAntiAffinityPolicyV2State) ElementType() reflect.Type {
 }
 
 type vmAntiAffinityPolicyV2Args struct {
-	// List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+	// List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
 	Categories []string `pulumi:"categories"`
 	// A description of the VM-VM Anti-Affinity policy.
 	Description *string `pulumi:"description"`
@@ -212,7 +212,7 @@ type vmAntiAffinityPolicyV2Args struct {
 
 // The set of arguments for constructing a VmAntiAffinityPolicyV2 resource.
 type VmAntiAffinityPolicyV2Args struct {
-	// List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+	// List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
 	Categories pulumi.StringArrayInput
 	// A description of the VM-VM Anti-Affinity policy.
 	Description pulumi.StringPtrInput
@@ -307,7 +307,7 @@ func (o VmAntiAffinityPolicyV2Output) ToVmAntiAffinityPolicyV2OutputWithContext(
 	return o
 }
 
-// List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
+// List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
 func (o VmAntiAffinityPolicyV2Output) Categories() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *VmAntiAffinityPolicyV2) pulumi.StringArrayOutput { return v.Categories }).(pulumi.StringArrayOutput)
 }

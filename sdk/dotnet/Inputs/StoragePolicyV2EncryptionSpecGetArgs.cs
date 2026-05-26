@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// * `"SYSTEM_DERIVED"`:- User is not interested in encryption; system decides.
         /// * `"ENABLED"`:- User wants data encrypted.
         /// 
-        /// &gt; **Note**: Once &lt;span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`"&gt;`encryptionState`&lt;/span&gt; is explicitly set to `ENABLED`, it cannot be reverted back to a system-derived value.
+        /// &gt; **Note**: Once &lt;span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`" pulumi-lang-hcl="`encryption_state`"&gt;`encryptionState`&lt;/span&gt; is explicitly set to `ENABLED`, it cannot be reverted back to a system-derived value.
         /// </summary>
         [Input("encryptionState", required: true)]
         public Input<string> EncryptionState { get; set; } = null!;

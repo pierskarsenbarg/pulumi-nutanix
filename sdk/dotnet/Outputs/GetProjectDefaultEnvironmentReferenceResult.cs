@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetProjectDefaultEnvironmentReferenceResult
     {
         /// <summary>
-        /// (Optional) The kind name. Default value is &lt;span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`"&gt;`environment`&lt;/span&gt;
+        /// (Optional) The kind name. Default value is &lt;span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`" pulumi-lang-hcl="`environment`"&gt;`environment`&lt;/span&gt;
         /// </summary>
         public readonly string Kind;
         /// <summary>

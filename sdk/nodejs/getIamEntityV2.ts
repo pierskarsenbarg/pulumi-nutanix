@@ -86,7 +86,7 @@ export interface GetIamEntityV2Result {
      */
     readonly lastUpdatedTime: string;
     /**
-     * HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+     * HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
      */
     readonly links: outputs.GetIamEntityV2Link[];
     /**

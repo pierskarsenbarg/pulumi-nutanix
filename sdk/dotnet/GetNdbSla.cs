@@ -74,6 +74,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbsla" "sla1" {
+        ///   sla_name = "test-sla"
+        /// }
+        /// 
+        /// output "sla" {
+        ///   value = data.nutanix_getndbsla.sla1
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -178,6 +195,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 		ctx.Export("sla", sla1)
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbsla" "sla1" {
+        ///   sla_name = "test-sla"
+        /// }
+        /// 
+        /// output "sla" {
+        ///   value = data.nutanix_getndbsla.sla1
         /// }
         /// ```
         /// ```java
@@ -286,6 +320,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbsla" "sla1" {
+        ///   sla_name = "test-sla"
+        /// }
+        /// 
+        /// output "sla" {
+        ///   value = data.nutanix_getndbsla.sla1
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -335,7 +386,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetNdbSlaArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// and &lt;span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`"&gt;`slaName`&lt;/span&gt; are mutually exclusive.
+        /// and &lt;span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`" pulumi-lang-hcl="`sla_name`"&gt;`slaName`&lt;/span&gt; are mutually exclusive.
         /// </summary>
         [Input("slaId")]
         public string? SlaId { get; set; }
@@ -355,7 +406,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetNdbSlaInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// and &lt;span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`"&gt;`slaName`&lt;/span&gt; are mutually exclusive.
+        /// and &lt;span pulumi-lang-nodejs="`slaName`" pulumi-lang-dotnet="`SlaName`" pulumi-lang-go="`slaName`" pulumi-lang-python="`sla_name`" pulumi-lang-yaml="`slaName`" pulumi-lang-java="`slaName`" pulumi-lang-hcl="`sla_name`"&gt;`slaName`&lt;/span&gt; are mutually exclusive.
         /// </summary>
         [Input("slaId")]
         public Input<string>? SlaId { get; set; }

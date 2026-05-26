@@ -17,7 +17,7 @@ namespace PiersKarsenbarg.Nutanix
     public partial class VmShutdownActionV2 : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// It supports "shutdown", &lt;span pulumi-lang-nodejs=""guestShutdown"" pulumi-lang-dotnet=""GuestShutdown"" pulumi-lang-go=""guestShutdown"" pulumi-lang-python=""guest_shutdown"" pulumi-lang-yaml=""guestShutdown"" pulumi-lang-java=""guestShutdown""&gt;"guestShutdown"&lt;/span&gt;, "reboot", &lt;span pulumi-lang-nodejs=""guestReboot"" pulumi-lang-dotnet=""GuestReboot"" pulumi-lang-go=""guestReboot"" pulumi-lang-python=""guest_reboot"" pulumi-lang-yaml=""guestReboot"" pulumi-lang-java=""guestReboot""&gt;"guestReboot"&lt;/span&gt;.
+        /// It supports "shutdown", &lt;span pulumi-lang-nodejs=""guestShutdown"" pulumi-lang-dotnet=""GuestShutdown"" pulumi-lang-go=""guestShutdown"" pulumi-lang-python=""guest_shutdown"" pulumi-lang-yaml=""guestShutdown"" pulumi-lang-java=""guestShutdown"" pulumi-lang-hcl=""guest_shutdown""&gt;"guestShutdown"&lt;/span&gt;, "reboot", &lt;span pulumi-lang-nodejs=""guestReboot"" pulumi-lang-dotnet=""GuestReboot"" pulumi-lang-go=""guestReboot"" pulumi-lang-python=""guest_reboot"" pulumi-lang-yaml=""guestReboot"" pulumi-lang-java=""guestReboot"" pulumi-lang-hcl=""guest_reboot""&gt;"guestReboot"&lt;/span&gt;.
         /// </summary>
         [Output("action")]
         public Output<string> Action { get; private set; } = null!;
@@ -29,7 +29,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> ExtId { get; private set; } = null!;
 
         /// <summary>
-        /// Additional configuration for Nutanix Gust Tools power state transition. It should be only used with &lt;span pulumi-lang-nodejs="`guestShutdown`" pulumi-lang-dotnet="`GuestShutdown`" pulumi-lang-go="`guestShutdown`" pulumi-lang-python="`guest_shutdown`" pulumi-lang-yaml="`guestShutdown`" pulumi-lang-java="`guestShutdown`"&gt;`guestShutdown`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`guestReboot`" pulumi-lang-dotnet="`GuestReboot`" pulumi-lang-go="`guestReboot`" pulumi-lang-python="`guest_reboot`" pulumi-lang-yaml="`guestReboot`" pulumi-lang-java="`guestReboot`"&gt;`guestReboot`&lt;/span&gt;.
+        /// Additional configuration for Nutanix Gust Tools power state transition. It should be only used with &lt;span pulumi-lang-nodejs="`guestShutdown`" pulumi-lang-dotnet="`GuestShutdown`" pulumi-lang-go="`guestShutdown`" pulumi-lang-python="`guest_shutdown`" pulumi-lang-yaml="`guestShutdown`" pulumi-lang-java="`guestShutdown`" pulumi-lang-hcl="`guest_shutdown`"&gt;`guestShutdown`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`guestReboot`" pulumi-lang-dotnet="`GuestReboot`" pulumi-lang-go="`guestReboot`" pulumi-lang-python="`guest_reboot`" pulumi-lang-yaml="`guestReboot`" pulumi-lang-java="`guestReboot`" pulumi-lang-hcl="`guest_reboot`"&gt;`guestReboot`&lt;/span&gt;.
         /// </summary>
         [Output("guestPowerStateTransitionConfigs")]
         public Output<ImmutableArray<Outputs.VmShutdownActionV2GuestPowerStateTransitionConfig>> GuestPowerStateTransitionConfigs { get; private set; } = null!;
@@ -82,7 +82,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class VmShutdownActionV2Args : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// It supports "shutdown", &lt;span pulumi-lang-nodejs=""guestShutdown"" pulumi-lang-dotnet=""GuestShutdown"" pulumi-lang-go=""guestShutdown"" pulumi-lang-python=""guest_shutdown"" pulumi-lang-yaml=""guestShutdown"" pulumi-lang-java=""guestShutdown""&gt;"guestShutdown"&lt;/span&gt;, "reboot", &lt;span pulumi-lang-nodejs=""guestReboot"" pulumi-lang-dotnet=""GuestReboot"" pulumi-lang-go=""guestReboot"" pulumi-lang-python=""guest_reboot"" pulumi-lang-yaml=""guestReboot"" pulumi-lang-java=""guestReboot""&gt;"guestReboot"&lt;/span&gt;.
+        /// It supports "shutdown", &lt;span pulumi-lang-nodejs=""guestShutdown"" pulumi-lang-dotnet=""GuestShutdown"" pulumi-lang-go=""guestShutdown"" pulumi-lang-python=""guest_shutdown"" pulumi-lang-yaml=""guestShutdown"" pulumi-lang-java=""guestShutdown"" pulumi-lang-hcl=""guest_shutdown""&gt;"guestShutdown"&lt;/span&gt;, "reboot", &lt;span pulumi-lang-nodejs=""guestReboot"" pulumi-lang-dotnet=""GuestReboot"" pulumi-lang-go=""guestReboot"" pulumi-lang-python=""guest_reboot"" pulumi-lang-yaml=""guestReboot"" pulumi-lang-java=""guestReboot"" pulumi-lang-hcl=""guest_reboot""&gt;"guestReboot"&lt;/span&gt;.
         /// </summary>
         [Input("action", required: true)]
         public Input<string> Action { get; set; } = null!;
@@ -97,7 +97,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<Inputs.VmShutdownActionV2GuestPowerStateTransitionConfigArgs>? _guestPowerStateTransitionConfigs;
 
         /// <summary>
-        /// Additional configuration for Nutanix Gust Tools power state transition. It should be only used with &lt;span pulumi-lang-nodejs="`guestShutdown`" pulumi-lang-dotnet="`GuestShutdown`" pulumi-lang-go="`guestShutdown`" pulumi-lang-python="`guest_shutdown`" pulumi-lang-yaml="`guestShutdown`" pulumi-lang-java="`guestShutdown`"&gt;`guestShutdown`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`guestReboot`" pulumi-lang-dotnet="`GuestReboot`" pulumi-lang-go="`guestReboot`" pulumi-lang-python="`guest_reboot`" pulumi-lang-yaml="`guestReboot`" pulumi-lang-java="`guestReboot`"&gt;`guestReboot`&lt;/span&gt;.
+        /// Additional configuration for Nutanix Gust Tools power state transition. It should be only used with &lt;span pulumi-lang-nodejs="`guestShutdown`" pulumi-lang-dotnet="`GuestShutdown`" pulumi-lang-go="`guestShutdown`" pulumi-lang-python="`guest_shutdown`" pulumi-lang-yaml="`guestShutdown`" pulumi-lang-java="`guestShutdown`" pulumi-lang-hcl="`guest_shutdown`"&gt;`guestShutdown`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`guestReboot`" pulumi-lang-dotnet="`GuestReboot`" pulumi-lang-go="`guestReboot`" pulumi-lang-python="`guest_reboot`" pulumi-lang-yaml="`guestReboot`" pulumi-lang-java="`guestReboot`" pulumi-lang-hcl="`guest_reboot`"&gt;`guestReboot`&lt;/span&gt;.
         /// </summary>
         public InputList<Inputs.VmShutdownActionV2GuestPowerStateTransitionConfigArgs> GuestPowerStateTransitionConfigs
         {
@@ -114,7 +114,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class VmShutdownActionV2State : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// It supports "shutdown", &lt;span pulumi-lang-nodejs=""guestShutdown"" pulumi-lang-dotnet=""GuestShutdown"" pulumi-lang-go=""guestShutdown"" pulumi-lang-python=""guest_shutdown"" pulumi-lang-yaml=""guestShutdown"" pulumi-lang-java=""guestShutdown""&gt;"guestShutdown"&lt;/span&gt;, "reboot", &lt;span pulumi-lang-nodejs=""guestReboot"" pulumi-lang-dotnet=""GuestReboot"" pulumi-lang-go=""guestReboot"" pulumi-lang-python=""guest_reboot"" pulumi-lang-yaml=""guestReboot"" pulumi-lang-java=""guestReboot""&gt;"guestReboot"&lt;/span&gt;.
+        /// It supports "shutdown", &lt;span pulumi-lang-nodejs=""guestShutdown"" pulumi-lang-dotnet=""GuestShutdown"" pulumi-lang-go=""guestShutdown"" pulumi-lang-python=""guest_shutdown"" pulumi-lang-yaml=""guestShutdown"" pulumi-lang-java=""guestShutdown"" pulumi-lang-hcl=""guest_shutdown""&gt;"guestShutdown"&lt;/span&gt;, "reboot", &lt;span pulumi-lang-nodejs=""guestReboot"" pulumi-lang-dotnet=""GuestReboot"" pulumi-lang-go=""guestReboot"" pulumi-lang-python=""guest_reboot"" pulumi-lang-yaml=""guestReboot"" pulumi-lang-java=""guestReboot"" pulumi-lang-hcl=""guest_reboot""&gt;"guestReboot"&lt;/span&gt;.
         /// </summary>
         [Input("action")]
         public Input<string>? Action { get; set; }
@@ -129,7 +129,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<Inputs.VmShutdownActionV2GuestPowerStateTransitionConfigGetArgs>? _guestPowerStateTransitionConfigs;
 
         /// <summary>
-        /// Additional configuration for Nutanix Gust Tools power state transition. It should be only used with &lt;span pulumi-lang-nodejs="`guestShutdown`" pulumi-lang-dotnet="`GuestShutdown`" pulumi-lang-go="`guestShutdown`" pulumi-lang-python="`guest_shutdown`" pulumi-lang-yaml="`guestShutdown`" pulumi-lang-java="`guestShutdown`"&gt;`guestShutdown`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`guestReboot`" pulumi-lang-dotnet="`GuestReboot`" pulumi-lang-go="`guestReboot`" pulumi-lang-python="`guest_reboot`" pulumi-lang-yaml="`guestReboot`" pulumi-lang-java="`guestReboot`"&gt;`guestReboot`&lt;/span&gt;.
+        /// Additional configuration for Nutanix Gust Tools power state transition. It should be only used with &lt;span pulumi-lang-nodejs="`guestShutdown`" pulumi-lang-dotnet="`GuestShutdown`" pulumi-lang-go="`guestShutdown`" pulumi-lang-python="`guest_shutdown`" pulumi-lang-yaml="`guestShutdown`" pulumi-lang-java="`guestShutdown`" pulumi-lang-hcl="`guest_shutdown`"&gt;`guestShutdown`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`guestReboot`" pulumi-lang-dotnet="`GuestReboot`" pulumi-lang-go="`guestReboot`" pulumi-lang-python="`guest_reboot`" pulumi-lang-yaml="`guestReboot`" pulumi-lang-java="`guestReboot`" pulumi-lang-hcl="`guest_reboot`"&gt;`guestReboot`&lt;/span&gt;.
         /// </summary>
         public InputList<Inputs.VmShutdownActionV2GuestPowerStateTransitionConfigGetArgs> GuestPowerStateTransitionConfigs
         {

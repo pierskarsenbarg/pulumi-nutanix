@@ -2102,7 +2102,7 @@ type OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo struc
 	Ipv6Infos   []OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info   `pulumi:"ipv6Infos"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs *bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	// * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 	Subnets []OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
@@ -2129,7 +2129,7 @@ type OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoArgs s
 	Ipv6Infos   OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoArrayInput   `pulumi:"ipv6Infos"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolPtrInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	// * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 	Subnets OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
@@ -2241,7 +2241,7 @@ func (o OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOut
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 // * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 func (o OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) Subnets() OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) []OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet {
@@ -2325,7 +2325,7 @@ func (o OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtr
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 // * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 func (o OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput) Subnets() OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v *OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) []OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet {
@@ -3346,7 +3346,7 @@ type OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo
 	Ipv4Configs []OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
 	Ipv4Infos   []OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info   `pulumi:"ipv4Infos"`
 	Ipv6Infos   []OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info   `pulumi:"ipv6Infos"`
-	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains []OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType *string `pulumi:"networkFunctionNicType"`
@@ -3354,7 +3354,7 @@ type OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo
 	NicType *string `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs *bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	// * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 	Subnets []OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
@@ -3379,7 +3379,7 @@ type OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo
 	Ipv4Configs OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
 	Ipv4Infos   OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoArrayInput   `pulumi:"ipv4Infos"`
 	Ipv6Infos   OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoArrayInput   `pulumi:"ipv6Infos"`
-	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+	// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 	NetworkFunctionChains OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChainArrayInput `pulumi:"networkFunctionChains"`
 	// The type of this Network function NIC. Defaults to INGRESS.
 	NetworkFunctionNicType pulumi.StringPtrInput `pulumi:"networkFunctionNicType"`
@@ -3387,7 +3387,7 @@ type OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo
 	NicType pulumi.StringPtrInput `pulumi:"nicType"`
 	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
 	ShouldAllowUnknownMacs pulumi.BoolPtrInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 	// * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 	Subnets OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
 	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
@@ -3492,7 +3492,7 @@ func (o OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkI
 	}).(OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoArrayOutput)
 }
 
-// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 func (o OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoOutput) NetworkFunctionChains() OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo) []OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain {
 		return v.NetworkFunctionChains
@@ -3520,7 +3520,7 @@ func (o OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkI
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 // * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 func (o OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoOutput) Subnets() OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo) []OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet {
@@ -3594,7 +3594,7 @@ func (o OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkI
 	}).(OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoArrayOutput)
 }
 
-// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+// The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
 func (o OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoPtrOutput) NetworkFunctionChains() OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChainArrayOutput {
 	return o.ApplyT(func(v *OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo) []OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain {
 		if v == nil {
@@ -3634,7 +3634,7 @@ func (o OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkI
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
 // * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
 func (o OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoPtrOutput) Subnets() OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnetArrayOutput {
 	return o.ApplyT(func(v *OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo) []OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet {
@@ -11353,7 +11353,7 @@ type PcDeployV2ConfigBootstrapConfigCloudInitConfig struct {
 	CloudInitScripts []PcDeployV2ConfigBootstrapConfigCloudInitConfigCloudInitScript `pulumi:"cloudInitScripts"`
 	// -(Optional) Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType *string `pulumi:"datasourceType"`
-	// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata *string `pulumi:"metadata"`
 }
 
@@ -11375,7 +11375,7 @@ type PcDeployV2ConfigBootstrapConfigCloudInitConfigArgs struct {
 	CloudInitScripts PcDeployV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
 	// -(Optional) Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
-	// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
@@ -11444,7 +11444,7 @@ func (o PcDeployV2ConfigBootstrapConfigCloudInitConfigOutput) DatasourceType() p
 	return o.ApplyT(func(v PcDeployV2ConfigBootstrapConfigCloudInitConfig) *string { return v.DatasourceType }).(pulumi.StringPtrOutput)
 }
 
-// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 func (o PcDeployV2ConfigBootstrapConfigCloudInitConfigOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PcDeployV2ConfigBootstrapConfigCloudInitConfig) *string { return v.Metadata }).(pulumi.StringPtrOutput)
 }
@@ -27935,7 +27935,7 @@ type PcRestoreV2DomainManager struct {
 	// -(Required) Domain manager (Prism Central) network configuration details.
 	Networks   []PcRestoreV2DomainManagerNetwork `pulumi:"networks"`
 	NodeExtIds []string                          `pulumi:"nodeExtIds"`
-	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>.
 	ShouldEnableHighAvailability *bool `pulumi:"shouldEnableHighAvailability"`
 }
 
@@ -27958,7 +27958,7 @@ type PcRestoreV2DomainManagerArgs struct {
 	// -(Required) Domain manager (Prism Central) network configuration details.
 	Networks   PcRestoreV2DomainManagerNetworkArrayInput `pulumi:"networks"`
 	NodeExtIds pulumi.StringArrayInput                   `pulumi:"nodeExtIds"`
-	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+	// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>.
 	ShouldEnableHighAvailability pulumi.BoolPtrInput `pulumi:"shouldEnableHighAvailability"`
 }
 
@@ -28061,7 +28061,7 @@ func (o PcRestoreV2DomainManagerOutput) NodeExtIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v PcRestoreV2DomainManager) []string { return v.NodeExtIds }).(pulumi.StringArrayOutput)
 }
 
-// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>.
 func (o PcRestoreV2DomainManagerOutput) ShouldEnableHighAvailability() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v PcRestoreV2DomainManager) *bool { return v.ShouldEnableHighAvailability }).(pulumi.BoolPtrOutput)
 }
@@ -28137,7 +28137,7 @@ func (o PcRestoreV2DomainManagerPtrOutput) NodeExtIds() pulumi.StringArrayOutput
 	}).(pulumi.StringArrayOutput)
 }
 
-// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+// -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>.
 func (o PcRestoreV2DomainManagerPtrOutput) ShouldEnableHighAvailability() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *PcRestoreV2DomainManager) *bool {
 		if v == nil {
@@ -28483,7 +28483,7 @@ type PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfig struct {
 	CloudInitScripts []PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScript `pulumi:"cloudInitScripts"`
 	// -(Optional) Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType *string `pulumi:"datasourceType"`
-	// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata *string `pulumi:"metadata"`
 }
 
@@ -28505,7 +28505,7 @@ type PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigArgs struct {
 	CloudInitScripts PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
 	// -(Optional) Type of datasource. Default: CONFIG_DRIVE_V2
 	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
-	// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+	// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
@@ -28574,7 +28574,7 @@ func (o PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigOutput) Data
 	return o.ApplyT(func(v PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfig) *string { return v.DatasourceType }).(pulumi.StringPtrOutput)
 }
 
-// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+// -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
 func (o PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfig) *string { return v.Metadata }).(pulumi.StringPtrOutput)
 }
@@ -34923,7 +34923,7 @@ func (o PcRestoreV2DomainManagerNetworkNtpServerIpv6ArrayOutput) Index(i pulumi.
 }
 
 type ProjectAccountReferenceList struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -34943,7 +34943,7 @@ type ProjectAccountReferenceListInput interface {
 }
 
 type ProjectAccountReferenceListArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -35002,7 +35002,7 @@ func (o ProjectAccountReferenceListOutput) ToProjectAccountReferenceListOutputWi
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectAccountReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectAccountReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -35998,7 +35998,7 @@ func (o ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategor
 }
 
 type ProjectAcpRoleReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -36018,7 +36018,7 @@ type ProjectAcpRoleReferenceInput interface {
 }
 
 type ProjectAcpRoleReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -36052,7 +36052,7 @@ func (o ProjectAcpRoleReferenceOutput) ToProjectAcpRoleReferenceOutputWithContex
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectAcpRoleReferenceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v ProjectAcpRoleReference) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -36068,7 +36068,7 @@ func (o ProjectAcpRoleReferenceOutput) Uuid() pulumi.StringOutput {
 }
 
 type ProjectAcpUserGroupReferenceList struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -36088,7 +36088,7 @@ type ProjectAcpUserGroupReferenceListInput interface {
 }
 
 type ProjectAcpUserGroupReferenceListArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -36147,7 +36147,7 @@ func (o ProjectAcpUserGroupReferenceListOutput) ToProjectAcpUserGroupReferenceLi
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectAcpUserGroupReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectAcpUserGroupReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -36183,7 +36183,7 @@ func (o ProjectAcpUserGroupReferenceListArrayOutput) Index(i pulumi.IntInput) Pr
 }
 
 type ProjectAcpUserReferenceList struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -36203,7 +36203,7 @@ type ProjectAcpUserReferenceListInput interface {
 }
 
 type ProjectAcpUserReferenceListArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -36262,7 +36262,7 @@ func (o ProjectAcpUserReferenceListOutput) ToProjectAcpUserReferenceListOutputWi
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectAcpUserReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectAcpUserReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -36404,7 +36404,7 @@ func (o ProjectCategoryArrayOutput) Index(i pulumi.IntInput) ProjectCategoryOutp
 }
 
 type ProjectClusterReferenceList struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -36424,7 +36424,7 @@ type ProjectClusterReferenceListInput interface {
 }
 
 type ProjectClusterReferenceListArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -36483,7 +36483,7 @@ func (o ProjectClusterReferenceListOutput) ToProjectClusterReferenceListOutputWi
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectClusterReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectClusterReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -36519,7 +36519,7 @@ func (o ProjectClusterReferenceListArrayOutput) Index(i pulumi.IntInput) Project
 }
 
 type ProjectDefaultEnvironmentReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -36539,7 +36539,7 @@ type ProjectDefaultEnvironmentReferenceInput interface {
 }
 
 type ProjectDefaultEnvironmentReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -36624,7 +36624,7 @@ func (o ProjectDefaultEnvironmentReferenceOutput) ToProjectDefaultEnvironmentRef
 	}).(ProjectDefaultEnvironmentReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectDefaultEnvironmentReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectDefaultEnvironmentReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -36663,7 +36663,7 @@ func (o ProjectDefaultEnvironmentReferencePtrOutput) Elem() ProjectDefaultEnviro
 	}).(ProjectDefaultEnvironmentReferenceOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectDefaultEnvironmentReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ProjectDefaultEnvironmentReference) *string {
 		if v == nil {
@@ -36694,7 +36694,7 @@ func (o ProjectDefaultEnvironmentReferencePtrOutput) Uuid() pulumi.StringPtrOutp
 }
 
 type ProjectDefaultSubnetReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -36714,7 +36714,7 @@ type ProjectDefaultSubnetReferenceInput interface {
 }
 
 type ProjectDefaultSubnetReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -36799,7 +36799,7 @@ func (o ProjectDefaultSubnetReferenceOutput) ToProjectDefaultSubnetReferencePtrO
 	}).(ProjectDefaultSubnetReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectDefaultSubnetReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectDefaultSubnetReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -36838,7 +36838,7 @@ func (o ProjectDefaultSubnetReferencePtrOutput) Elem() ProjectDefaultSubnetRefer
 	}).(ProjectDefaultSubnetReferenceOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectDefaultSubnetReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ProjectDefaultSubnetReference) *string {
 		if v == nil {
@@ -36869,7 +36869,7 @@ func (o ProjectDefaultSubnetReferencePtrOutput) Uuid() pulumi.StringPtrOutput {
 }
 
 type ProjectEnvironmentReferenceList struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -36889,7 +36889,7 @@ type ProjectEnvironmentReferenceListInput interface {
 }
 
 type ProjectEnvironmentReferenceListArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -36948,7 +36948,7 @@ func (o ProjectEnvironmentReferenceListOutput) ToProjectEnvironmentReferenceList
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectEnvironmentReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectEnvironmentReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -37090,7 +37090,7 @@ func (o ProjectExternalNetworkListArrayOutput) Index(i pulumi.IntInput) ProjectE
 }
 
 type ProjectExternalUserGroupReferenceList struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -37110,7 +37110,7 @@ type ProjectExternalUserGroupReferenceListInput interface {
 }
 
 type ProjectExternalUserGroupReferenceListArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -37169,7 +37169,7 @@ func (o ProjectExternalUserGroupReferenceListOutput) ToProjectExternalUserGroupR
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectExternalUserGroupReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectExternalUserGroupReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -37453,7 +37453,7 @@ func (o ProjectResourceDomainResourceArrayOutput) Index(i pulumi.IntInput) Proje
 }
 
 type ProjectSubnetReferenceList struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -37473,7 +37473,7 @@ type ProjectSubnetReferenceListInput interface {
 }
 
 type ProjectSubnetReferenceListArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -37532,7 +37532,7 @@ func (o ProjectSubnetReferenceListOutput) ToProjectSubnetReferenceListOutputWith
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectSubnetReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectSubnetReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -37568,7 +37568,7 @@ func (o ProjectSubnetReferenceListArrayOutput) Index(i pulumi.IntInput) ProjectS
 }
 
 type ProjectTunnelReferenceList struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -37588,7 +37588,7 @@ type ProjectTunnelReferenceListInput interface {
 }
 
 type ProjectTunnelReferenceListArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -37647,7 +37647,7 @@ func (o ProjectTunnelReferenceListOutput) ToProjectTunnelReferenceListOutputWith
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectTunnelReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectTunnelReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -38359,7 +38359,7 @@ func (o ProjectUserListDirectoryServiceUserPtrOutput) UserPrincipalName() pulumi
 }
 
 type ProjectUserListDirectoryServiceUserDirectoryServiceReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -38379,7 +38379,7 @@ type ProjectUserListDirectoryServiceUserDirectoryServiceReferenceInput interface
 }
 
 type ProjectUserListDirectoryServiceUserDirectoryServiceReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -38464,7 +38464,7 @@ func (o ProjectUserListDirectoryServiceUserDirectoryServiceReferenceOutput) ToPr
 	}).(ProjectUserListDirectoryServiceUserDirectoryServiceReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectUserListDirectoryServiceUserDirectoryServiceReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectUserListDirectoryServiceUserDirectoryServiceReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -38503,7 +38503,7 @@ func (o ProjectUserListDirectoryServiceUserDirectoryServiceReferencePtrOutput) E
 	}).(ProjectUserListDirectoryServiceUserDirectoryServiceReferenceOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectUserListDirectoryServiceUserDirectoryServiceReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ProjectUserListDirectoryServiceUserDirectoryServiceReference) *string {
 		if v == nil {
@@ -38684,7 +38684,7 @@ func (o ProjectUserListIdentityProviderUserPtrOutput) Username() pulumi.StringPt
 }
 
 type ProjectUserListIdentityProviderUserIdentityProviderReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -38704,7 +38704,7 @@ type ProjectUserListIdentityProviderUserIdentityProviderReferenceInput interface
 }
 
 type ProjectUserListIdentityProviderUserIdentityProviderReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -38789,7 +38789,7 @@ func (o ProjectUserListIdentityProviderUserIdentityProviderReferenceOutput) ToPr
 	}).(ProjectUserListIdentityProviderUserIdentityProviderReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectUserListIdentityProviderUserIdentityProviderReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectUserListIdentityProviderUserIdentityProviderReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -38828,7 +38828,7 @@ func (o ProjectUserListIdentityProviderUserIdentityProviderReferencePtrOutput) E
 	}).(ProjectUserListIdentityProviderUserIdentityProviderReferenceOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectUserListIdentityProviderUserIdentityProviderReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ProjectUserListIdentityProviderUserIdentityProviderReference) *string {
 		if v == nil {
@@ -38859,7 +38859,7 @@ func (o ProjectUserListIdentityProviderUserIdentityProviderReferencePtrOutput) U
 }
 
 type ProjectUserReferenceList struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -38879,7 +38879,7 @@ type ProjectUserReferenceListInput interface {
 }
 
 type ProjectUserReferenceListArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -38938,7 +38938,7 @@ func (o ProjectUserReferenceListOutput) ToProjectUserReferenceListOutputWithCont
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectUserReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectUserReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -38974,7 +38974,7 @@ func (o ProjectUserReferenceListArrayOutput) Index(i pulumi.IntInput) ProjectUse
 }
 
 type ProjectVpcReferenceList struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the project.
 	Name *string `pulumi:"name"`
@@ -38994,7 +38994,7 @@ type ProjectVpcReferenceListInput interface {
 }
 
 type ProjectVpcReferenceListArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the project.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -39053,7 +39053,7 @@ func (o ProjectVpcReferenceListOutput) ToProjectVpcReferenceListOutputWithContex
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProjectVpcReferenceListOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProjectVpcReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -41706,7 +41706,7 @@ func (o ProtectionRuleOrderedAvailabilityZoneListArrayOutput) Index(i pulumi.Int
 }
 
 type ProtectionRuleOwnerReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the protection rule.
 	Name *string `pulumi:"name"`
@@ -41726,7 +41726,7 @@ type ProtectionRuleOwnerReferenceInput interface {
 }
 
 type ProtectionRuleOwnerReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the protection rule.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -41811,7 +41811,7 @@ func (o ProtectionRuleOwnerReferenceOutput) ToProtectionRuleOwnerReferencePtrOut
 	}).(ProtectionRuleOwnerReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProtectionRuleOwnerReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProtectionRuleOwnerReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -41850,7 +41850,7 @@ func (o ProtectionRuleOwnerReferencePtrOutput) Elem() ProtectionRuleOwnerReferen
 	}).(ProtectionRuleOwnerReferenceOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProtectionRuleOwnerReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ProtectionRuleOwnerReference) *string {
 		if v == nil {
@@ -41881,7 +41881,7 @@ func (o ProtectionRuleOwnerReferencePtrOutput) Uuid() pulumi.StringPtrOutput {
 }
 
 type ProtectionRuleProjectReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the protection rule.
 	Name *string `pulumi:"name"`
@@ -41901,7 +41901,7 @@ type ProtectionRuleProjectReferenceInput interface {
 }
 
 type ProtectionRuleProjectReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the protection rule.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -41986,7 +41986,7 @@ func (o ProtectionRuleProjectReferenceOutput) ToProtectionRuleProjectReferencePt
 	}).(ProtectionRuleProjectReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProtectionRuleProjectReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProtectionRuleProjectReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -42025,7 +42025,7 @@ func (o ProtectionRuleProjectReferencePtrOutput) Elem() ProtectionRuleProjectRef
 	}).(ProtectionRuleProjectReferenceOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o ProtectionRuleProjectReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ProtectionRuleProjectReference) *string {
 		if v == nil {
@@ -42162,7 +42162,7 @@ func (o RecoveryPlanCategoryArrayOutput) Index(i pulumi.IntInput) RecoveryPlanCa
 }
 
 type RecoveryPlanOwnerReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -42182,7 +42182,7 @@ type RecoveryPlanOwnerReferenceInput interface {
 }
 
 type RecoveryPlanOwnerReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -42267,7 +42267,7 @@ func (o RecoveryPlanOwnerReferenceOutput) ToRecoveryPlanOwnerReferencePtrOutputW
 	}).(RecoveryPlanOwnerReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o RecoveryPlanOwnerReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RecoveryPlanOwnerReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -42306,7 +42306,7 @@ func (o RecoveryPlanOwnerReferencePtrOutput) Elem() RecoveryPlanOwnerReferenceOu
 	}).(RecoveryPlanOwnerReferenceOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o RecoveryPlanOwnerReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RecoveryPlanOwnerReference) *string {
 		if v == nil {
@@ -43077,7 +43077,7 @@ func (o RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmNicInf
 }
 
 type RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -43097,7 +43097,7 @@ type RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReference
 }
 
 type RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -43131,7 +43131,7 @@ func (o RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmRefere
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReferenceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReference) string {
 		return v.Kind
@@ -43391,7 +43391,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceList struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -43411,7 +43411,7 @@ type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListC
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceListArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -43470,7 +43470,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceListOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceList) string {
 		return v.Kind
@@ -43712,7 +43712,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -43732,7 +43732,7 @@ type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListR
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -43766,7 +43766,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReferenceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReference) string {
 		return v.Kind
@@ -44107,7 +44107,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -44127,7 +44127,7 @@ type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListR
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -44212,7 +44212,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	}).(RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReference) *string {
 		return v.Kind
@@ -44257,7 +44257,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	}).(RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferenceOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReference) *string {
 		if v == nil {
@@ -44288,7 +44288,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -44308,7 +44308,7 @@ type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListR
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -44393,7 +44393,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	}).(RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReference) *string {
 		return v.Kind
@@ -44438,7 +44438,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	}).(RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferenceOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReference) *string {
 		if v == nil {
@@ -44669,7 +44669,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -44689,7 +44689,7 @@ type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListT
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -44723,7 +44723,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	return o
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReferenceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReference) string {
 		return v.Kind
@@ -45064,7 +45064,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -45084,7 +45084,7 @@ type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListT
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -45169,7 +45169,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	}).(RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReference) *string {
 		return v.Kind
@@ -45214,7 +45214,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	}).(RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReference) *string {
 		if v == nil {
@@ -45245,7 +45245,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -45265,7 +45265,7 @@ type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListT
 }
 
 type RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -45350,7 +45350,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	}).(RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReference) *string {
 		return v.Kind
@@ -45395,7 +45395,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 	}).(RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferenceOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReference) *string {
 		if v == nil {
@@ -45426,7 +45426,7 @@ func (o RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingLi
 }
 
 type RecoveryPlanProjectReference struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind *string `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name *string `pulumi:"name"`
@@ -45446,7 +45446,7 @@ type RecoveryPlanProjectReferenceInput interface {
 }
 
 type RecoveryPlanProjectReferenceArgs struct {
-	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+	// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 	// The name for the Recovery Plan.
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -45531,7 +45531,7 @@ func (o RecoveryPlanProjectReferenceOutput) ToRecoveryPlanProjectReferencePtrOut
 	}).(RecoveryPlanProjectReferencePtrOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o RecoveryPlanProjectReferenceOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RecoveryPlanProjectReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -45570,7 +45570,7 @@ func (o RecoveryPlanProjectReferencePtrOutput) Elem() RecoveryPlanProjectReferen
 	}).(RecoveryPlanProjectReferenceOutput)
 }
 
-// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+// (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
 func (o RecoveryPlanProjectReferencePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RecoveryPlanProjectReference) *string {
 		if v == nil {
@@ -54835,7 +54835,7 @@ type StoragePolicyV2EncryptionSpec struct {
 	// * `"SYSTEM_DERIVED"`:- User is not interested in encryption; system decides.
 	// * `"ENABLED"`:- User wants data encrypted.
 	//
-	// > **Note**: Once <span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`">`encryptionState`</span> is explicitly set to `ENABLED`, it cannot be reverted back to a system-derived value.
+	// > **Note**: Once <span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`" pulumi-lang-hcl="`encryption_state`">`encryptionState`</span> is explicitly set to `ENABLED`, it cannot be reverted back to a system-derived value.
 	EncryptionState string `pulumi:"encryptionState"`
 }
 
@@ -54856,7 +54856,7 @@ type StoragePolicyV2EncryptionSpecArgs struct {
 	// * `"SYSTEM_DERIVED"`:- User is not interested in encryption; system decides.
 	// * `"ENABLED"`:- User wants data encrypted.
 	//
-	// > **Note**: Once <span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`">`encryptionState`</span> is explicitly set to `ENABLED`, it cannot be reverted back to a system-derived value.
+	// > **Note**: Once <span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`" pulumi-lang-hcl="`encryption_state`">`encryptionState`</span> is explicitly set to `ENABLED`, it cannot be reverted back to a system-derived value.
 	EncryptionState pulumi.StringInput `pulumi:"encryptionState"`
 }
 
@@ -54916,7 +54916,7 @@ func (o StoragePolicyV2EncryptionSpecOutput) ToStoragePolicyV2EncryptionSpecOutp
 //   - `"SYSTEM_DERIVED"`:- User is not interested in encryption; system decides.
 //   - `"ENABLED"`:- User wants data encrypted.
 //
-// > **Note**: Once <span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`">`encryptionState`</span> is explicitly set to `ENABLED`, it cannot be reverted back to a system-derived value.
+// > **Note**: Once <span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`" pulumi-lang-hcl="`encryption_state`">`encryptionState`</span> is explicitly set to `ENABLED`, it cannot be reverted back to a system-derived value.
 func (o StoragePolicyV2EncryptionSpecOutput) EncryptionState() pulumi.StringOutput {
 	return o.ApplyT(func(v StoragePolicyV2EncryptionSpec) string { return v.EncryptionState }).(pulumi.StringOutput)
 }

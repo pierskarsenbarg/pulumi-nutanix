@@ -15,19 +15,19 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class EntityGroupV2AllowedConfigEntity
     {
         /// <summary>
-        /// With &lt;span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`"&gt;`ipv4Addresses`&lt;/span&gt; block(s):
+        /// With &lt;span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`"&gt;`ipv4Addresses`&lt;/span&gt; block(s):
         /// </summary>
         public readonly Outputs.EntityGroupV2AllowedConfigEntityAddresses? Addresses;
         /// <summary>
-        /// With &lt;span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`"&gt;`ipv4Ranges`&lt;/span&gt; block(s):
+        /// With &lt;span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`"&gt;`ipv4Ranges`&lt;/span&gt; block(s):
         /// </summary>
         public readonly Outputs.EntityGroupV2AllowedConfigEntityIpRanges? IpRanges;
         /// <summary>
-        /// List of kube entity identifiers. Required when &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`"&gt;`type`&lt;/span&gt; is a kube type (`KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`).
+        /// List of kube entity identifiers. Required when &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`"&gt;`type`&lt;/span&gt; is a kube type (`KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`).
         /// </summary>
         public readonly ImmutableArray<string> KubeEntities;
         /// <summary>
-        /// List of reference external identifiers. Required when &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`"&gt;`selectedBy`&lt;/span&gt; is `EXT_ID`.
+        /// List of reference external identifiers. Required when &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; is `EXT_ID`.
         /// </summary>
         public readonly ImmutableArray<string> ReferenceExtIds;
         /// <summary>

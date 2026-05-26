@@ -71,6 +71,20 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_gethostv2" "host" {
+        ///   cluster_ext_id = "021151dc-3ed1-4fec-a81d-39606451750c"
+        ///   ext_id         = "919c9488-0b50-4fc8-9159-923e56a3abca"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -173,6 +187,20 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_gethostv2" "host" {
+        ///   cluster_ext_id = "021151dc-3ed1-4fec-a81d-39606451750c"
+        ///   ext_id         = "919c9488-0b50-4fc8-9159-923e56a3abca"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -273,6 +301,20 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_gethostv2" "host" {
+        ///   cluster_ext_id = "021151dc-3ed1-4fec-a81d-39606451750c"
+        ///   ext_id         = "919c9488-0b50-4fc8-9159-923e56a3abca"
         /// }
         /// ```
         /// ```java

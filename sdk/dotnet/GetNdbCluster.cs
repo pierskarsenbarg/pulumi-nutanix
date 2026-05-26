@@ -74,6 +74,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbcluster" "c1" {
+        ///   cluster_name = "&lt;era-cluster-name&gt;"
+        /// }
+        /// 
+        /// output "cluster" {
+        ///   value = data.nutanix_getndbcluster.c1
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -178,6 +195,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 		ctx.Export("cluster", c1)
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbcluster" "c1" {
+        ///   cluster_name = "&lt;era-cluster-name&gt;"
+        /// }
+        /// 
+        /// output "cluster" {
+        ///   value = data.nutanix_getndbcluster.c1
         /// }
         /// ```
         /// ```java
@@ -286,6 +320,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbcluster" "c1" {
+        ///   cluster_name = "&lt;era-cluster-name&gt;"
+        /// }
+        /// 
+        /// output "cluster" {
+        ///   value = data.nutanix_getndbcluster.c1
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -341,7 +392,7 @@ namespace PiersKarsenbarg.Nutanix
         public string? ClusterId { get; set; }
 
         /// <summary>
-        /// and &lt;span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`"&gt;`clusterId`&lt;/span&gt; are mutually exclusive.
+        /// and &lt;span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`" pulumi-lang-hcl="`cluster_id`"&gt;`clusterId`&lt;/span&gt; are mutually exclusive.
         /// </summary>
         [Input("clusterName")]
         public string? ClusterName { get; set; }
@@ -361,7 +412,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? ClusterId { get; set; }
 
         /// <summary>
-        /// and &lt;span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`"&gt;`clusterId`&lt;/span&gt; are mutually exclusive.
+        /// and &lt;span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`" pulumi-lang-hcl="`cluster_id`"&gt;`clusterId`&lt;/span&gt; are mutually exclusive.
         /// </summary>
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }

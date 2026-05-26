@@ -75,7 +75,7 @@ export class VmNetworkDeviceMigrateV2 extends pulumi.CustomResource {
      */
     declare public readonly migrateType: pulumi.Output<string>;
     /**
-     * - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+     * - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
      */
     declare public readonly subnets: pulumi.Output<outputs.VmNetworkDeviceMigrateV2Subnet[]>;
     /**
@@ -146,7 +146,7 @@ export interface VmNetworkDeviceMigrateV2State {
      */
     migrateType?: pulumi.Input<string | undefined>;
     /**
-     * - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+     * - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
      */
     subnets?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceMigrateV2Subnet>[] | undefined>;
     /**
@@ -175,7 +175,7 @@ export interface VmNetworkDeviceMigrateV2Args {
      */
     migrateType: pulumi.Input<string>;
     /**
-     * - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+     * - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
      */
     subnets: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceMigrateV2Subnet>[]>;
     /**

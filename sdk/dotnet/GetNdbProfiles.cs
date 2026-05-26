@@ -67,6 +67,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbprofiles" "profiles" {
+        /// }
+        /// 
+        /// output "profilesList" {
+        ///   value = data.nutanix_getndbprofiles.profiles
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -110,22 +126,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following attributes are exported for each profile:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt;: - id of profile
-        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - profile name
-        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: - description of profile
-        /// * &lt;span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`"&gt;`status`&lt;/span&gt;: - status of profile
-        /// * &lt;span pulumi-lang-nodejs="`owner`" pulumi-lang-dotnet="`Owner`" pulumi-lang-go="`owner`" pulumi-lang-python="`owner`" pulumi-lang-yaml="`owner`" pulumi-lang-java="`owner`"&gt;`owner`&lt;/span&gt;: - owner name
-        /// * &lt;span pulumi-lang-nodejs="`engineType`" pulumi-lang-dotnet="`EngineType`" pulumi-lang-go="`engineType`" pulumi-lang-python="`engine_type`" pulumi-lang-yaml="`engineType`" pulumi-lang-java="`engineType`"&gt;`engineType`&lt;/span&gt;: - database engine type
-        /// * &lt;span pulumi-lang-nodejs="`dbVersion`" pulumi-lang-dotnet="`DbVersion`" pulumi-lang-go="`dbVersion`" pulumi-lang-python="`db_version`" pulumi-lang-yaml="`dbVersion`" pulumi-lang-java="`dbVersion`"&gt;`dbVersion`&lt;/span&gt;: - database version
-        /// * &lt;span pulumi-lang-nodejs="`topology`" pulumi-lang-dotnet="`Topology`" pulumi-lang-go="`topology`" pulumi-lang-python="`topology`" pulumi-lang-yaml="`topology`" pulumi-lang-java="`topology`"&gt;`topology`&lt;/span&gt;: - topology
-        /// * &lt;span pulumi-lang-nodejs="`systemProfile`" pulumi-lang-dotnet="`SystemProfile`" pulumi-lang-go="`systemProfile`" pulumi-lang-python="`system_profile`" pulumi-lang-yaml="`systemProfile`" pulumi-lang-java="`systemProfile`"&gt;`systemProfile`&lt;/span&gt;: - if system profile or not
-        /// * &lt;span pulumi-lang-nodejs="`assocDbServers`" pulumi-lang-dotnet="`AssocDbServers`" pulumi-lang-go="`assocDbServers`" pulumi-lang-python="`assoc_db_servers`" pulumi-lang-yaml="`assocDbServers`" pulumi-lang-java="`assocDbServers`"&gt;`assocDbServers`&lt;/span&gt;: - associated DB servers
-        /// * &lt;span pulumi-lang-nodejs="`assocDatabases`" pulumi-lang-dotnet="`AssocDatabases`" pulumi-lang-go="`assocDatabases`" pulumi-lang-python="`assoc_databases`" pulumi-lang-yaml="`assocDatabases`" pulumi-lang-java="`assocDatabases`"&gt;`assocDatabases`&lt;/span&gt;: - associated databases
-        /// * &lt;span pulumi-lang-nodejs="`latestVersion`" pulumi-lang-dotnet="`LatestVersion`" pulumi-lang-go="`latestVersion`" pulumi-lang-python="`latest_version`" pulumi-lang-yaml="`latestVersion`" pulumi-lang-java="`latestVersion`"&gt;`latestVersion`&lt;/span&gt;: - latest version for engine software
-        /// * &lt;span pulumi-lang-nodejs="`latestVersionId`" pulumi-lang-dotnet="`LatestVersionId`" pulumi-lang-go="`latestVersionId`" pulumi-lang-python="`latest_version_id`" pulumi-lang-yaml="`latestVersionId`" pulumi-lang-java="`latestVersionId`"&gt;`latestVersionId`&lt;/span&gt;: - ID of latest version for engine software
-        /// * &lt;span pulumi-lang-nodejs="`versions`" pulumi-lang-dotnet="`Versions`" pulumi-lang-go="`versions`" pulumi-lang-python="`versions`" pulumi-lang-yaml="`versions`" pulumi-lang-java="`versions`"&gt;`versions`&lt;/span&gt;: - profile's different version config
-        /// * &lt;span pulumi-lang-nodejs="`clusterAvailability`" pulumi-lang-dotnet="`ClusterAvailability`" pulumi-lang-go="`clusterAvailability`" pulumi-lang-python="`cluster_availability`" pulumi-lang-yaml="`clusterAvailability`" pulumi-lang-java="`clusterAvailability`"&gt;`clusterAvailability`&lt;/span&gt;: - list of clusters availability
-        /// * &lt;span pulumi-lang-nodejs="`nxClusterId`" pulumi-lang-dotnet="`NxClusterId`" pulumi-lang-go="`nxClusterId`" pulumi-lang-python="`nx_cluster_id`" pulumi-lang-yaml="`nxClusterId`" pulumi-lang-java="`nxClusterId`"&gt;`nxClusterId`&lt;/span&gt;: - era cluster ID
+        /// * &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`"&gt;`id`&lt;/span&gt;: - id of profile
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt;: - profile name
+        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`" pulumi-lang-hcl="`description`"&gt;`description`&lt;/span&gt;: - description of profile
+        /// * &lt;span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`" pulumi-lang-hcl="`status`"&gt;`status`&lt;/span&gt;: - status of profile
+        /// * &lt;span pulumi-lang-nodejs="`owner`" pulumi-lang-dotnet="`Owner`" pulumi-lang-go="`owner`" pulumi-lang-python="`owner`" pulumi-lang-yaml="`owner`" pulumi-lang-java="`owner`" pulumi-lang-hcl="`owner`"&gt;`owner`&lt;/span&gt;: - owner name
+        /// * &lt;span pulumi-lang-nodejs="`engineType`" pulumi-lang-dotnet="`EngineType`" pulumi-lang-go="`engineType`" pulumi-lang-python="`engine_type`" pulumi-lang-yaml="`engineType`" pulumi-lang-java="`engineType`" pulumi-lang-hcl="`engine_type`"&gt;`engineType`&lt;/span&gt;: - database engine type
+        /// * &lt;span pulumi-lang-nodejs="`dbVersion`" pulumi-lang-dotnet="`DbVersion`" pulumi-lang-go="`dbVersion`" pulumi-lang-python="`db_version`" pulumi-lang-yaml="`dbVersion`" pulumi-lang-java="`dbVersion`" pulumi-lang-hcl="`db_version`"&gt;`dbVersion`&lt;/span&gt;: - database version
+        /// * &lt;span pulumi-lang-nodejs="`topology`" pulumi-lang-dotnet="`Topology`" pulumi-lang-go="`topology`" pulumi-lang-python="`topology`" pulumi-lang-yaml="`topology`" pulumi-lang-java="`topology`" pulumi-lang-hcl="`topology`"&gt;`topology`&lt;/span&gt;: - topology
+        /// * &lt;span pulumi-lang-nodejs="`systemProfile`" pulumi-lang-dotnet="`SystemProfile`" pulumi-lang-go="`systemProfile`" pulumi-lang-python="`system_profile`" pulumi-lang-yaml="`systemProfile`" pulumi-lang-java="`systemProfile`" pulumi-lang-hcl="`system_profile`"&gt;`systemProfile`&lt;/span&gt;: - if system profile or not
+        /// * &lt;span pulumi-lang-nodejs="`assocDbServers`" pulumi-lang-dotnet="`AssocDbServers`" pulumi-lang-go="`assocDbServers`" pulumi-lang-python="`assoc_db_servers`" pulumi-lang-yaml="`assocDbServers`" pulumi-lang-java="`assocDbServers`" pulumi-lang-hcl="`assoc_db_servers`"&gt;`assocDbServers`&lt;/span&gt;: - associated DB servers
+        /// * &lt;span pulumi-lang-nodejs="`assocDatabases`" pulumi-lang-dotnet="`AssocDatabases`" pulumi-lang-go="`assocDatabases`" pulumi-lang-python="`assoc_databases`" pulumi-lang-yaml="`assocDatabases`" pulumi-lang-java="`assocDatabases`" pulumi-lang-hcl="`assoc_databases`"&gt;`assocDatabases`&lt;/span&gt;: - associated databases
+        /// * &lt;span pulumi-lang-nodejs="`latestVersion`" pulumi-lang-dotnet="`LatestVersion`" pulumi-lang-go="`latestVersion`" pulumi-lang-python="`latest_version`" pulumi-lang-yaml="`latestVersion`" pulumi-lang-java="`latestVersion`" pulumi-lang-hcl="`latest_version`"&gt;`latestVersion`&lt;/span&gt;: - latest version for engine software
+        /// * &lt;span pulumi-lang-nodejs="`latestVersionId`" pulumi-lang-dotnet="`LatestVersionId`" pulumi-lang-go="`latestVersionId`" pulumi-lang-python="`latest_version_id`" pulumi-lang-yaml="`latestVersionId`" pulumi-lang-java="`latestVersionId`" pulumi-lang-hcl="`latest_version_id`"&gt;`latestVersionId`&lt;/span&gt;: - ID of latest version for engine software
+        /// * &lt;span pulumi-lang-nodejs="`versions`" pulumi-lang-dotnet="`Versions`" pulumi-lang-go="`versions`" pulumi-lang-python="`versions`" pulumi-lang-yaml="`versions`" pulumi-lang-java="`versions`" pulumi-lang-hcl="`versions`"&gt;`versions`&lt;/span&gt;: - profile's different version config
+        /// * &lt;span pulumi-lang-nodejs="`clusterAvailability`" pulumi-lang-dotnet="`ClusterAvailability`" pulumi-lang-go="`clusterAvailability`" pulumi-lang-python="`cluster_availability`" pulumi-lang-yaml="`clusterAvailability`" pulumi-lang-java="`clusterAvailability`" pulumi-lang-hcl="`cluster_availability`"&gt;`clusterAvailability`&lt;/span&gt;: - list of clusters availability
+        /// * &lt;span pulumi-lang-nodejs="`nxClusterId`" pulumi-lang-dotnet="`NxClusterId`" pulumi-lang-go="`nxClusterId`" pulumi-lang-python="`nx_cluster_id`" pulumi-lang-yaml="`nxClusterId`" pulumi-lang-java="`nxClusterId`" pulumi-lang-hcl="`nx_cluster_id`"&gt;`nxClusterId`&lt;/span&gt;: - era cluster ID
         /// 
         /// See detailed information in [Nutanix Database Service Profiles](https://www.nutanix.dev/api_references/ndb/#/74ae456d63b24-get-all-profiles).
         /// </summary>
@@ -187,6 +203,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbprofiles" "profiles" {
+        /// }
+        /// 
+        /// output "profilesList" {
+        ///   value = data.nutanix_getndbprofiles.profiles
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -230,22 +262,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following attributes are exported for each profile:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt;: - id of profile
-        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - profile name
-        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: - description of profile
-        /// * &lt;span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`"&gt;`status`&lt;/span&gt;: - status of profile
-        /// * &lt;span pulumi-lang-nodejs="`owner`" pulumi-lang-dotnet="`Owner`" pulumi-lang-go="`owner`" pulumi-lang-python="`owner`" pulumi-lang-yaml="`owner`" pulumi-lang-java="`owner`"&gt;`owner`&lt;/span&gt;: - owner name
-        /// * &lt;span pulumi-lang-nodejs="`engineType`" pulumi-lang-dotnet="`EngineType`" pulumi-lang-go="`engineType`" pulumi-lang-python="`engine_type`" pulumi-lang-yaml="`engineType`" pulumi-lang-java="`engineType`"&gt;`engineType`&lt;/span&gt;: - database engine type
-        /// * &lt;span pulumi-lang-nodejs="`dbVersion`" pulumi-lang-dotnet="`DbVersion`" pulumi-lang-go="`dbVersion`" pulumi-lang-python="`db_version`" pulumi-lang-yaml="`dbVersion`" pulumi-lang-java="`dbVersion`"&gt;`dbVersion`&lt;/span&gt;: - database version
-        /// * &lt;span pulumi-lang-nodejs="`topology`" pulumi-lang-dotnet="`Topology`" pulumi-lang-go="`topology`" pulumi-lang-python="`topology`" pulumi-lang-yaml="`topology`" pulumi-lang-java="`topology`"&gt;`topology`&lt;/span&gt;: - topology
-        /// * &lt;span pulumi-lang-nodejs="`systemProfile`" pulumi-lang-dotnet="`SystemProfile`" pulumi-lang-go="`systemProfile`" pulumi-lang-python="`system_profile`" pulumi-lang-yaml="`systemProfile`" pulumi-lang-java="`systemProfile`"&gt;`systemProfile`&lt;/span&gt;: - if system profile or not
-        /// * &lt;span pulumi-lang-nodejs="`assocDbServers`" pulumi-lang-dotnet="`AssocDbServers`" pulumi-lang-go="`assocDbServers`" pulumi-lang-python="`assoc_db_servers`" pulumi-lang-yaml="`assocDbServers`" pulumi-lang-java="`assocDbServers`"&gt;`assocDbServers`&lt;/span&gt;: - associated DB servers
-        /// * &lt;span pulumi-lang-nodejs="`assocDatabases`" pulumi-lang-dotnet="`AssocDatabases`" pulumi-lang-go="`assocDatabases`" pulumi-lang-python="`assoc_databases`" pulumi-lang-yaml="`assocDatabases`" pulumi-lang-java="`assocDatabases`"&gt;`assocDatabases`&lt;/span&gt;: - associated databases
-        /// * &lt;span pulumi-lang-nodejs="`latestVersion`" pulumi-lang-dotnet="`LatestVersion`" pulumi-lang-go="`latestVersion`" pulumi-lang-python="`latest_version`" pulumi-lang-yaml="`latestVersion`" pulumi-lang-java="`latestVersion`"&gt;`latestVersion`&lt;/span&gt;: - latest version for engine software
-        /// * &lt;span pulumi-lang-nodejs="`latestVersionId`" pulumi-lang-dotnet="`LatestVersionId`" pulumi-lang-go="`latestVersionId`" pulumi-lang-python="`latest_version_id`" pulumi-lang-yaml="`latestVersionId`" pulumi-lang-java="`latestVersionId`"&gt;`latestVersionId`&lt;/span&gt;: - ID of latest version for engine software
-        /// * &lt;span pulumi-lang-nodejs="`versions`" pulumi-lang-dotnet="`Versions`" pulumi-lang-go="`versions`" pulumi-lang-python="`versions`" pulumi-lang-yaml="`versions`" pulumi-lang-java="`versions`"&gt;`versions`&lt;/span&gt;: - profile's different version config
-        /// * &lt;span pulumi-lang-nodejs="`clusterAvailability`" pulumi-lang-dotnet="`ClusterAvailability`" pulumi-lang-go="`clusterAvailability`" pulumi-lang-python="`cluster_availability`" pulumi-lang-yaml="`clusterAvailability`" pulumi-lang-java="`clusterAvailability`"&gt;`clusterAvailability`&lt;/span&gt;: - list of clusters availability
-        /// * &lt;span pulumi-lang-nodejs="`nxClusterId`" pulumi-lang-dotnet="`NxClusterId`" pulumi-lang-go="`nxClusterId`" pulumi-lang-python="`nx_cluster_id`" pulumi-lang-yaml="`nxClusterId`" pulumi-lang-java="`nxClusterId`"&gt;`nxClusterId`&lt;/span&gt;: - era cluster ID
+        /// * &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`"&gt;`id`&lt;/span&gt;: - id of profile
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt;: - profile name
+        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`" pulumi-lang-hcl="`description`"&gt;`description`&lt;/span&gt;: - description of profile
+        /// * &lt;span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`" pulumi-lang-hcl="`status`"&gt;`status`&lt;/span&gt;: - status of profile
+        /// * &lt;span pulumi-lang-nodejs="`owner`" pulumi-lang-dotnet="`Owner`" pulumi-lang-go="`owner`" pulumi-lang-python="`owner`" pulumi-lang-yaml="`owner`" pulumi-lang-java="`owner`" pulumi-lang-hcl="`owner`"&gt;`owner`&lt;/span&gt;: - owner name
+        /// * &lt;span pulumi-lang-nodejs="`engineType`" pulumi-lang-dotnet="`EngineType`" pulumi-lang-go="`engineType`" pulumi-lang-python="`engine_type`" pulumi-lang-yaml="`engineType`" pulumi-lang-java="`engineType`" pulumi-lang-hcl="`engine_type`"&gt;`engineType`&lt;/span&gt;: - database engine type
+        /// * &lt;span pulumi-lang-nodejs="`dbVersion`" pulumi-lang-dotnet="`DbVersion`" pulumi-lang-go="`dbVersion`" pulumi-lang-python="`db_version`" pulumi-lang-yaml="`dbVersion`" pulumi-lang-java="`dbVersion`" pulumi-lang-hcl="`db_version`"&gt;`dbVersion`&lt;/span&gt;: - database version
+        /// * &lt;span pulumi-lang-nodejs="`topology`" pulumi-lang-dotnet="`Topology`" pulumi-lang-go="`topology`" pulumi-lang-python="`topology`" pulumi-lang-yaml="`topology`" pulumi-lang-java="`topology`" pulumi-lang-hcl="`topology`"&gt;`topology`&lt;/span&gt;: - topology
+        /// * &lt;span pulumi-lang-nodejs="`systemProfile`" pulumi-lang-dotnet="`SystemProfile`" pulumi-lang-go="`systemProfile`" pulumi-lang-python="`system_profile`" pulumi-lang-yaml="`systemProfile`" pulumi-lang-java="`systemProfile`" pulumi-lang-hcl="`system_profile`"&gt;`systemProfile`&lt;/span&gt;: - if system profile or not
+        /// * &lt;span pulumi-lang-nodejs="`assocDbServers`" pulumi-lang-dotnet="`AssocDbServers`" pulumi-lang-go="`assocDbServers`" pulumi-lang-python="`assoc_db_servers`" pulumi-lang-yaml="`assocDbServers`" pulumi-lang-java="`assocDbServers`" pulumi-lang-hcl="`assoc_db_servers`"&gt;`assocDbServers`&lt;/span&gt;: - associated DB servers
+        /// * &lt;span pulumi-lang-nodejs="`assocDatabases`" pulumi-lang-dotnet="`AssocDatabases`" pulumi-lang-go="`assocDatabases`" pulumi-lang-python="`assoc_databases`" pulumi-lang-yaml="`assocDatabases`" pulumi-lang-java="`assocDatabases`" pulumi-lang-hcl="`assoc_databases`"&gt;`assocDatabases`&lt;/span&gt;: - associated databases
+        /// * &lt;span pulumi-lang-nodejs="`latestVersion`" pulumi-lang-dotnet="`LatestVersion`" pulumi-lang-go="`latestVersion`" pulumi-lang-python="`latest_version`" pulumi-lang-yaml="`latestVersion`" pulumi-lang-java="`latestVersion`" pulumi-lang-hcl="`latest_version`"&gt;`latestVersion`&lt;/span&gt;: - latest version for engine software
+        /// * &lt;span pulumi-lang-nodejs="`latestVersionId`" pulumi-lang-dotnet="`LatestVersionId`" pulumi-lang-go="`latestVersionId`" pulumi-lang-python="`latest_version_id`" pulumi-lang-yaml="`latestVersionId`" pulumi-lang-java="`latestVersionId`" pulumi-lang-hcl="`latest_version_id`"&gt;`latestVersionId`&lt;/span&gt;: - ID of latest version for engine software
+        /// * &lt;span pulumi-lang-nodejs="`versions`" pulumi-lang-dotnet="`Versions`" pulumi-lang-go="`versions`" pulumi-lang-python="`versions`" pulumi-lang-yaml="`versions`" pulumi-lang-java="`versions`" pulumi-lang-hcl="`versions`"&gt;`versions`&lt;/span&gt;: - profile's different version config
+        /// * &lt;span pulumi-lang-nodejs="`clusterAvailability`" pulumi-lang-dotnet="`ClusterAvailability`" pulumi-lang-go="`clusterAvailability`" pulumi-lang-python="`cluster_availability`" pulumi-lang-yaml="`clusterAvailability`" pulumi-lang-java="`clusterAvailability`" pulumi-lang-hcl="`cluster_availability`"&gt;`clusterAvailability`&lt;/span&gt;: - list of clusters availability
+        /// * &lt;span pulumi-lang-nodejs="`nxClusterId`" pulumi-lang-dotnet="`NxClusterId`" pulumi-lang-go="`nxClusterId`" pulumi-lang-python="`nx_cluster_id`" pulumi-lang-yaml="`nxClusterId`" pulumi-lang-java="`nxClusterId`" pulumi-lang-hcl="`nx_cluster_id`"&gt;`nxClusterId`&lt;/span&gt;: - era cluster ID
         /// 
         /// See detailed information in [Nutanix Database Service Profiles](https://www.nutanix.dev/api_references/ndb/#/74ae456d63b24-get-all-profiles).
         /// </summary>
@@ -307,6 +339,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbprofiles" "profiles" {
+        /// }
+        /// 
+        /// output "profilesList" {
+        ///   value = data.nutanix_getndbprofiles.profiles
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -350,22 +398,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following attributes are exported for each profile:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt;: - id of profile
-        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt;: - profile name
-        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: - description of profile
-        /// * &lt;span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`"&gt;`status`&lt;/span&gt;: - status of profile
-        /// * &lt;span pulumi-lang-nodejs="`owner`" pulumi-lang-dotnet="`Owner`" pulumi-lang-go="`owner`" pulumi-lang-python="`owner`" pulumi-lang-yaml="`owner`" pulumi-lang-java="`owner`"&gt;`owner`&lt;/span&gt;: - owner name
-        /// * &lt;span pulumi-lang-nodejs="`engineType`" pulumi-lang-dotnet="`EngineType`" pulumi-lang-go="`engineType`" pulumi-lang-python="`engine_type`" pulumi-lang-yaml="`engineType`" pulumi-lang-java="`engineType`"&gt;`engineType`&lt;/span&gt;: - database engine type
-        /// * &lt;span pulumi-lang-nodejs="`dbVersion`" pulumi-lang-dotnet="`DbVersion`" pulumi-lang-go="`dbVersion`" pulumi-lang-python="`db_version`" pulumi-lang-yaml="`dbVersion`" pulumi-lang-java="`dbVersion`"&gt;`dbVersion`&lt;/span&gt;: - database version
-        /// * &lt;span pulumi-lang-nodejs="`topology`" pulumi-lang-dotnet="`Topology`" pulumi-lang-go="`topology`" pulumi-lang-python="`topology`" pulumi-lang-yaml="`topology`" pulumi-lang-java="`topology`"&gt;`topology`&lt;/span&gt;: - topology
-        /// * &lt;span pulumi-lang-nodejs="`systemProfile`" pulumi-lang-dotnet="`SystemProfile`" pulumi-lang-go="`systemProfile`" pulumi-lang-python="`system_profile`" pulumi-lang-yaml="`systemProfile`" pulumi-lang-java="`systemProfile`"&gt;`systemProfile`&lt;/span&gt;: - if system profile or not
-        /// * &lt;span pulumi-lang-nodejs="`assocDbServers`" pulumi-lang-dotnet="`AssocDbServers`" pulumi-lang-go="`assocDbServers`" pulumi-lang-python="`assoc_db_servers`" pulumi-lang-yaml="`assocDbServers`" pulumi-lang-java="`assocDbServers`"&gt;`assocDbServers`&lt;/span&gt;: - associated DB servers
-        /// * &lt;span pulumi-lang-nodejs="`assocDatabases`" pulumi-lang-dotnet="`AssocDatabases`" pulumi-lang-go="`assocDatabases`" pulumi-lang-python="`assoc_databases`" pulumi-lang-yaml="`assocDatabases`" pulumi-lang-java="`assocDatabases`"&gt;`assocDatabases`&lt;/span&gt;: - associated databases
-        /// * &lt;span pulumi-lang-nodejs="`latestVersion`" pulumi-lang-dotnet="`LatestVersion`" pulumi-lang-go="`latestVersion`" pulumi-lang-python="`latest_version`" pulumi-lang-yaml="`latestVersion`" pulumi-lang-java="`latestVersion`"&gt;`latestVersion`&lt;/span&gt;: - latest version for engine software
-        /// * &lt;span pulumi-lang-nodejs="`latestVersionId`" pulumi-lang-dotnet="`LatestVersionId`" pulumi-lang-go="`latestVersionId`" pulumi-lang-python="`latest_version_id`" pulumi-lang-yaml="`latestVersionId`" pulumi-lang-java="`latestVersionId`"&gt;`latestVersionId`&lt;/span&gt;: - ID of latest version for engine software
-        /// * &lt;span pulumi-lang-nodejs="`versions`" pulumi-lang-dotnet="`Versions`" pulumi-lang-go="`versions`" pulumi-lang-python="`versions`" pulumi-lang-yaml="`versions`" pulumi-lang-java="`versions`"&gt;`versions`&lt;/span&gt;: - profile's different version config
-        /// * &lt;span pulumi-lang-nodejs="`clusterAvailability`" pulumi-lang-dotnet="`ClusterAvailability`" pulumi-lang-go="`clusterAvailability`" pulumi-lang-python="`cluster_availability`" pulumi-lang-yaml="`clusterAvailability`" pulumi-lang-java="`clusterAvailability`"&gt;`clusterAvailability`&lt;/span&gt;: - list of clusters availability
-        /// * &lt;span pulumi-lang-nodejs="`nxClusterId`" pulumi-lang-dotnet="`NxClusterId`" pulumi-lang-go="`nxClusterId`" pulumi-lang-python="`nx_cluster_id`" pulumi-lang-yaml="`nxClusterId`" pulumi-lang-java="`nxClusterId`"&gt;`nxClusterId`&lt;/span&gt;: - era cluster ID
+        /// * &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`"&gt;`id`&lt;/span&gt;: - id of profile
+        /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt;: - profile name
+        /// * &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`" pulumi-lang-hcl="`description`"&gt;`description`&lt;/span&gt;: - description of profile
+        /// * &lt;span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`" pulumi-lang-hcl="`status`"&gt;`status`&lt;/span&gt;: - status of profile
+        /// * &lt;span pulumi-lang-nodejs="`owner`" pulumi-lang-dotnet="`Owner`" pulumi-lang-go="`owner`" pulumi-lang-python="`owner`" pulumi-lang-yaml="`owner`" pulumi-lang-java="`owner`" pulumi-lang-hcl="`owner`"&gt;`owner`&lt;/span&gt;: - owner name
+        /// * &lt;span pulumi-lang-nodejs="`engineType`" pulumi-lang-dotnet="`EngineType`" pulumi-lang-go="`engineType`" pulumi-lang-python="`engine_type`" pulumi-lang-yaml="`engineType`" pulumi-lang-java="`engineType`" pulumi-lang-hcl="`engine_type`"&gt;`engineType`&lt;/span&gt;: - database engine type
+        /// * &lt;span pulumi-lang-nodejs="`dbVersion`" pulumi-lang-dotnet="`DbVersion`" pulumi-lang-go="`dbVersion`" pulumi-lang-python="`db_version`" pulumi-lang-yaml="`dbVersion`" pulumi-lang-java="`dbVersion`" pulumi-lang-hcl="`db_version`"&gt;`dbVersion`&lt;/span&gt;: - database version
+        /// * &lt;span pulumi-lang-nodejs="`topology`" pulumi-lang-dotnet="`Topology`" pulumi-lang-go="`topology`" pulumi-lang-python="`topology`" pulumi-lang-yaml="`topology`" pulumi-lang-java="`topology`" pulumi-lang-hcl="`topology`"&gt;`topology`&lt;/span&gt;: - topology
+        /// * &lt;span pulumi-lang-nodejs="`systemProfile`" pulumi-lang-dotnet="`SystemProfile`" pulumi-lang-go="`systemProfile`" pulumi-lang-python="`system_profile`" pulumi-lang-yaml="`systemProfile`" pulumi-lang-java="`systemProfile`" pulumi-lang-hcl="`system_profile`"&gt;`systemProfile`&lt;/span&gt;: - if system profile or not
+        /// * &lt;span pulumi-lang-nodejs="`assocDbServers`" pulumi-lang-dotnet="`AssocDbServers`" pulumi-lang-go="`assocDbServers`" pulumi-lang-python="`assoc_db_servers`" pulumi-lang-yaml="`assocDbServers`" pulumi-lang-java="`assocDbServers`" pulumi-lang-hcl="`assoc_db_servers`"&gt;`assocDbServers`&lt;/span&gt;: - associated DB servers
+        /// * &lt;span pulumi-lang-nodejs="`assocDatabases`" pulumi-lang-dotnet="`AssocDatabases`" pulumi-lang-go="`assocDatabases`" pulumi-lang-python="`assoc_databases`" pulumi-lang-yaml="`assocDatabases`" pulumi-lang-java="`assocDatabases`" pulumi-lang-hcl="`assoc_databases`"&gt;`assocDatabases`&lt;/span&gt;: - associated databases
+        /// * &lt;span pulumi-lang-nodejs="`latestVersion`" pulumi-lang-dotnet="`LatestVersion`" pulumi-lang-go="`latestVersion`" pulumi-lang-python="`latest_version`" pulumi-lang-yaml="`latestVersion`" pulumi-lang-java="`latestVersion`" pulumi-lang-hcl="`latest_version`"&gt;`latestVersion`&lt;/span&gt;: - latest version for engine software
+        /// * &lt;span pulumi-lang-nodejs="`latestVersionId`" pulumi-lang-dotnet="`LatestVersionId`" pulumi-lang-go="`latestVersionId`" pulumi-lang-python="`latest_version_id`" pulumi-lang-yaml="`latestVersionId`" pulumi-lang-java="`latestVersionId`" pulumi-lang-hcl="`latest_version_id`"&gt;`latestVersionId`&lt;/span&gt;: - ID of latest version for engine software
+        /// * &lt;span pulumi-lang-nodejs="`versions`" pulumi-lang-dotnet="`Versions`" pulumi-lang-go="`versions`" pulumi-lang-python="`versions`" pulumi-lang-yaml="`versions`" pulumi-lang-java="`versions`" pulumi-lang-hcl="`versions`"&gt;`versions`&lt;/span&gt;: - profile's different version config
+        /// * &lt;span pulumi-lang-nodejs="`clusterAvailability`" pulumi-lang-dotnet="`ClusterAvailability`" pulumi-lang-go="`clusterAvailability`" pulumi-lang-python="`cluster_availability`" pulumi-lang-yaml="`clusterAvailability`" pulumi-lang-java="`clusterAvailability`" pulumi-lang-hcl="`cluster_availability`"&gt;`clusterAvailability`&lt;/span&gt;: - list of clusters availability
+        /// * &lt;span pulumi-lang-nodejs="`nxClusterId`" pulumi-lang-dotnet="`NxClusterId`" pulumi-lang-go="`nxClusterId`" pulumi-lang-python="`nx_cluster_id`" pulumi-lang-yaml="`nxClusterId`" pulumi-lang-java="`nxClusterId`" pulumi-lang-hcl="`nx_cluster_id`"&gt;`nxClusterId`&lt;/span&gt;: - era cluster ID
         /// 
         /// See detailed information in [Nutanix Database Service Profiles](https://www.nutanix.dev/api_references/ndb/#/74ae456d63b24-get-all-profiles).
         /// </summary>

@@ -70,7 +70,7 @@ class GetStaticRoutesResult:
     @pulumi.getter
     def metadata(self) -> Mapping[str, _builtins.str]:
         """
-        The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata
+        The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable " pulumi-lang-hcl=" vpc_route_table "> vpcRouteTable </span>kind metadata
         """
         return pulumi.get(self, "metadata")
 
@@ -78,7 +78,7 @@ class GetStaticRoutesResult:
     @pulumi.getter
     def specs(self) -> Sequence['outputs.GetStaticRoutesSpecResult']:
         """
-        An intentful representation of a<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>spec
+        An intentful representation of a<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable " pulumi-lang-hcl=" vpc_route_table "> vpcRouteTable </span>spec
         """
         return pulumi.get(self, "specs")
 
@@ -86,7 +86,7 @@ class GetStaticRoutesResult:
     @pulumi.getter
     def statuses(self) -> Sequence['outputs.GetStaticRoutesStatusResult']:
         """
-        An intentful representation of a<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>status
+        An intentful representation of a<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable " pulumi-lang-hcl=" vpc_route_table "> vpcRouteTable </span>status
         """
         return pulumi.get(self, "statuses")
 

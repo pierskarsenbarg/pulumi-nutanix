@@ -48,7 +48,7 @@ export class Project extends pulumi.CustomResource {
     declare public readonly categories: pulumi.Output<outputs.ProjectCategory[]>;
     declare public readonly clusterReferenceLists: pulumi.Output<outputs.ProjectClusterReferenceList[]>;
     /**
-     * The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag).
+     * The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag).
      */
     declare public readonly clusterUuid: pulumi.Output<string | undefined>;
     declare public readonly defaultEnvironmentReference: pulumi.Output<outputs.ProjectDefaultEnvironmentReference>;
@@ -58,7 +58,7 @@ export class Project extends pulumi.CustomResource {
      */
     declare public readonly description: pulumi.Output<string>;
     /**
-     * flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag)
+     * flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
      */
     declare public readonly enableCollab: pulumi.Output<boolean | undefined>;
     declare public readonly environmentReferenceLists: pulumi.Output<outputs.ProjectEnvironmentReferenceList[]>;
@@ -73,7 +73,7 @@ export class Project extends pulumi.CustomResource {
     declare public readonly ownerReference: pulumi.Output<{[key: string]: string}>;
     declare public readonly projectReference: pulumi.Output<{[key: string]: string}>;
     /**
-     * @deprecated Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
+     * @deprecated Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`" pulumi-lang-hcl="`resource_domain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
      */
     declare public readonly resourceDomain: pulumi.Output<outputs.ProjectResourceDomain | undefined>;
     declare public /*out*/ readonly state: pulumi.Output<string>;
@@ -185,7 +185,7 @@ export interface ProjectState {
     categories?: pulumi.Input<pulumi.Input<inputs.ProjectCategory>[] | undefined>;
     clusterReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectClusterReferenceList>[] | undefined>;
     /**
-     * The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag).
+     * The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag).
      */
     clusterUuid?: pulumi.Input<string | undefined>;
     defaultEnvironmentReference?: pulumi.Input<inputs.ProjectDefaultEnvironmentReference | undefined>;
@@ -195,7 +195,7 @@ export interface ProjectState {
      */
     description?: pulumi.Input<string | undefined>;
     /**
-     * flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag)
+     * flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
      */
     enableCollab?: pulumi.Input<boolean | undefined>;
     environmentReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectEnvironmentReferenceList>[] | undefined>;
@@ -210,7 +210,7 @@ export interface ProjectState {
     ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * @deprecated Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
+     * @deprecated Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`" pulumi-lang-hcl="`resource_domain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
      */
     resourceDomain?: pulumi.Input<inputs.ProjectResourceDomain | undefined>;
     state?: pulumi.Input<string | undefined>;
@@ -242,7 +242,7 @@ export interface ProjectArgs {
     categories?: pulumi.Input<pulumi.Input<inputs.ProjectCategory>[] | undefined>;
     clusterReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectClusterReferenceList>[] | undefined>;
     /**
-     * The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag).
+     * The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag).
      */
     clusterUuid?: pulumi.Input<string | undefined>;
     defaultEnvironmentReference?: pulumi.Input<inputs.ProjectDefaultEnvironmentReference | undefined>;
@@ -252,7 +252,7 @@ export interface ProjectArgs {
      */
     description: pulumi.Input<string>;
     /**
-     * flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "> projectInternal </span>flag)
+     * flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
      */
     enableCollab?: pulumi.Input<boolean | undefined>;
     environmentReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectEnvironmentReferenceList>[] | undefined>;
@@ -265,7 +265,7 @@ export interface ProjectArgs {
     ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * @deprecated Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
+     * @deprecated Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs="`resourceDomain`" pulumi-lang-dotnet="`ResourceDomain`" pulumi-lang-go="`resourceDomain`" pulumi-lang-python="`resource_domain`" pulumi-lang-yaml="`resourceDomain`" pulumi-lang-java="`resourceDomain`" pulumi-lang-hcl="`resource_domain`">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.
      */
     resourceDomain?: pulumi.Input<inputs.ProjectResourceDomain | undefined>;
     subnetReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectSubnetReferenceList>[] | undefined>;

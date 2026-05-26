@@ -48,7 +48,7 @@ type NdbAuthorizeDbserver struct {
 
 	DbserversIds  pulumi.StringArrayOutput `pulumi:"dbserversIds"`
 	TimeMachineId pulumi.StringPtrOutput   `pulumi:"timeMachineId"`
-	// * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId ">`dbserversId </span>`: (Required)
+	// * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id ">`dbserversId </span>`: (Required)
 	TimeMachineName pulumi.StringPtrOutput `pulumi:"timeMachineName"`
 }
 
@@ -84,14 +84,14 @@ func GetNdbAuthorizeDbserver(ctx *pulumi.Context,
 type ndbAuthorizeDbserverState struct {
 	DbserversIds  []string `pulumi:"dbserversIds"`
 	TimeMachineId *string  `pulumi:"timeMachineId"`
-	// * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId ">`dbserversId </span>`: (Required)
+	// * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id ">`dbserversId </span>`: (Required)
 	TimeMachineName *string `pulumi:"timeMachineName"`
 }
 
 type NdbAuthorizeDbserverState struct {
 	DbserversIds  pulumi.StringArrayInput
 	TimeMachineId pulumi.StringPtrInput
-	// * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId ">`dbserversId </span>`: (Required)
+	// * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id ">`dbserversId </span>`: (Required)
 	TimeMachineName pulumi.StringPtrInput
 }
 
@@ -102,7 +102,7 @@ func (NdbAuthorizeDbserverState) ElementType() reflect.Type {
 type ndbAuthorizeDbserverArgs struct {
 	DbserversIds  []string `pulumi:"dbserversIds"`
 	TimeMachineId *string  `pulumi:"timeMachineId"`
-	// * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId ">`dbserversId </span>`: (Required)
+	// * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id ">`dbserversId </span>`: (Required)
 	TimeMachineName *string `pulumi:"timeMachineName"`
 }
 
@@ -110,7 +110,7 @@ type ndbAuthorizeDbserverArgs struct {
 type NdbAuthorizeDbserverArgs struct {
 	DbserversIds  pulumi.StringArrayInput
 	TimeMachineId pulumi.StringPtrInput
-	// * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId ">`dbserversId </span>`: (Required)
+	// * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id ">`dbserversId </span>`: (Required)
 	TimeMachineName pulumi.StringPtrInput
 }
 
@@ -209,7 +209,7 @@ func (o NdbAuthorizeDbserverOutput) TimeMachineId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbAuthorizeDbserver) pulumi.StringPtrOutput { return v.TimeMachineId }).(pulumi.StringPtrOutput)
 }
 
-// * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId ">`dbserversId </span>`: (Required)
+// * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id ">`dbserversId </span>`: (Required)
 func (o NdbAuthorizeDbserverOutput) TimeMachineName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbAuthorizeDbserver) pulumi.StringPtrOutput { return v.TimeMachineName }).(pulumi.StringPtrOutput)
 }

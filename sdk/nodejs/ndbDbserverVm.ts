@@ -103,7 +103,7 @@ export class NdbDbserverVm extends pulumi.CustomResource {
      */
     declare public readonly softRemove: pulumi.Output<boolean | undefined>;
     /**
-     * software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+     * software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
      */
     declare public readonly softwareProfileId: pulumi.Output<string | undefined>;
     /**
@@ -299,7 +299,7 @@ export interface NdbDbserverVmState {
      */
     softRemove?: pulumi.Input<boolean | undefined>;
     /**
-     * software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+     * software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
      */
     softwareProfileId?: pulumi.Input<string | undefined>;
     /**
@@ -379,7 +379,7 @@ export interface NdbDbserverVmArgs {
      */
     softRemove?: pulumi.Input<boolean | undefined>;
     /**
-     * software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "> timeMachineId </span>.
+     * software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with<span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "> timeMachineId </span>.
      */
     softwareProfileId?: pulumi.Input<string | undefined>;
     /**

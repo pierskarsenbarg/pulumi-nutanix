@@ -75,6 +75,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvolumegroupdiskv2" "example" {
+        ///   volume_group_ext_id = "3770be9d-06be-4e25-b85d-3457d9b0ceb1"
+        ///   ext_id              = "1d92110d-26b5-46c0-8c93-20b8171373e0"
+        /// }
+        /// 
+        /// # Get the details of a Volume Disk attached to the Volume Group.
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -183,6 +199,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvolumegroupdiskv2" "example" {
+        ///   volume_group_ext_id = "3770be9d-06be-4e25-b85d-3457d9b0ceb1"
+        ///   ext_id              = "1d92110d-26b5-46c0-8c93-20b8171373e0"
+        /// }
+        /// 
+        /// # Get the details of a Volume Disk attached to the Volume Group.
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -290,6 +322,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvolumegroupdiskv2" "example" {
+        ///   volume_group_ext_id = "3770be9d-06be-4e25-b85d-3457d9b0ceb1"
+        ///   ext_id              = "1d92110d-26b5-46c0-8c93-20b8171373e0"
+        /// }
+        /// 
+        /// # Get the details of a Volume Disk attached to the Volume Group.
         /// ```
         /// ```java
         /// package generated_program;

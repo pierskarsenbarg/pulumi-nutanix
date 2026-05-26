@@ -10,9 +10,9 @@ import * as utilities from "./utilities";
  * Provides Nutanix resource to create storage policy
  *
  * > **Note**:
- * Once <span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`">`encryptionState`</span> is explicitly set to `ENABLED`, it cannot be reverted back to a system-derived value.
+ * Once <span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`" pulumi-lang-hcl="`encryption_state`">`encryptionState`</span> is explicitly set to `ENABLED`, it cannot be reverted back to a system-derived value.
  *
- * If compression_state, encryption_state, or<span pulumi-lang-nodejs=" replicationFactor " pulumi-lang-dotnet=" ReplicationFactor " pulumi-lang-go=" replicationFactor " pulumi-lang-python=" replication_factor " pulumi-lang-yaml=" replicationFactor " pulumi-lang-java=" replicationFactor "> replicationFactor </span>are intended to be system-derived, ensure that the<span pulumi-lang-nodejs=" qosSpec " pulumi-lang-dotnet=" QosSpec " pulumi-lang-go=" qosSpec " pulumi-lang-python=" qos_spec " pulumi-lang-yaml=" qosSpec " pulumi-lang-java=" qosSpec "> qosSpec </span>block is included.
+ * If compression_state, encryption_state, or<span pulumi-lang-nodejs=" replicationFactor " pulumi-lang-dotnet=" ReplicationFactor " pulumi-lang-go=" replicationFactor " pulumi-lang-python=" replication_factor " pulumi-lang-yaml=" replicationFactor " pulumi-lang-java=" replicationFactor " pulumi-lang-hcl=" replication_factor "> replicationFactor </span>are intended to be system-derived, ensure that the<span pulumi-lang-nodejs=" qosSpec " pulumi-lang-dotnet=" QosSpec " pulumi-lang-go=" qosSpec " pulumi-lang-python=" qos_spec " pulumi-lang-yaml=" qosSpec " pulumi-lang-java=" qosSpec " pulumi-lang-hcl=" qos_spec "> qosSpec </span>block is included.
  *
  * ## Example
  *

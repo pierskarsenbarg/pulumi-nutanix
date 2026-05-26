@@ -75,6 +75,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getuserkeyv2" "getKey" {
+        ///   user_ext_id = "&lt;SERVICE_ACCOUNT_UUID&gt;"
+        ///   ext_id      = "&lt;USER_KEY_UUID&gt;"
+        /// }
+        /// 
+        /// # Get key
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -121,8 +137,8 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following arguments are supported:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`"&gt;`userExtId`&lt;/span&gt;: - ( Required ) External Identifier of the User.
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - ( Required ) External identifier of the key.
+        /// * &lt;span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`" pulumi-lang-hcl="`user_ext_id`"&gt;`userExtId`&lt;/span&gt;: - ( Required ) External Identifier of the User.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: - ( Required ) External identifier of the key.
         /// </summary>
         public static Task<GetUserKeyV2Result> InvokeAsync(GetUserKeyV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserKeyV2Result>("nutanix:index/getUserKeyV2:getUserKeyV2", args ?? new GetUserKeyV2Args(), options.WithDefaults());
@@ -190,6 +206,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getuserkeyv2" "getKey" {
+        ///   user_ext_id = "&lt;SERVICE_ACCOUNT_UUID&gt;"
+        ///   ext_id      = "&lt;USER_KEY_UUID&gt;"
+        /// }
+        /// 
+        /// # Get key
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -236,8 +268,8 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following arguments are supported:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`"&gt;`userExtId`&lt;/span&gt;: - ( Required ) External Identifier of the User.
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - ( Required ) External identifier of the key.
+        /// * &lt;span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`" pulumi-lang-hcl="`user_ext_id`"&gt;`userExtId`&lt;/span&gt;: - ( Required ) External Identifier of the User.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: - ( Required ) External identifier of the key.
         /// </summary>
         public static Output<GetUserKeyV2Result> Invoke(GetUserKeyV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserKeyV2Result>("nutanix:index/getUserKeyV2:getUserKeyV2", args ?? new GetUserKeyV2InvokeArgs(), options.WithDefaults());
@@ -305,6 +337,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getuserkeyv2" "getKey" {
+        ///   user_ext_id = "&lt;SERVICE_ACCOUNT_UUID&gt;"
+        ///   ext_id      = "&lt;USER_KEY_UUID&gt;"
+        /// }
+        /// 
+        /// # Get key
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -351,8 +399,8 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following arguments are supported:
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`"&gt;`userExtId`&lt;/span&gt;: - ( Required ) External Identifier of the User.
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - ( Required ) External identifier of the key.
+        /// * &lt;span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`" pulumi-lang-hcl="`user_ext_id`"&gt;`userExtId`&lt;/span&gt;: - ( Required ) External Identifier of the User.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: - ( Required ) External identifier of the key.
         /// </summary>
         public static Output<GetUserKeyV2Result> Invoke(GetUserKeyV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserKeyV2Result>("nutanix:index/getUserKeyV2:getUserKeyV2", args ?? new GetUserKeyV2InvokeArgs(), options.WithDefaults());

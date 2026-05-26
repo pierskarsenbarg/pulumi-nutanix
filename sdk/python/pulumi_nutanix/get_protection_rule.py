@@ -234,7 +234,7 @@ def get_protection_rule(categories: Optional[Sequence[Union['GetProtectionRuleCa
     <!--End PulumiCodeChooser -->
 
 
-    :param _builtins.str protection_rule_id: - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the protection rule.
+    :param _builtins.str protection_rule_id: - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`">`id`</span> of the protection rule.
     """
     __args__ = dict()
     __args__['categories'] = categories
@@ -299,7 +299,7 @@ def get_protection_rule_output(categories: pulumi.Input[Optional[Optional[Sequen
     <!--End PulumiCodeChooser -->
 
 
-    :param _builtins.str protection_rule_id: - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the protection rule.
+    :param _builtins.str protection_rule_id: - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`">`id`</span> of the protection rule.
     """
     __args__ = dict()
     __args__['categories'] = categories

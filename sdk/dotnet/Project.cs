@@ -37,7 +37,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.ProjectClusterReferenceList>> ClusterReferenceLists { get; private set; } = null!;
 
         /// <summary>
-        /// The UUID of cluster. (Required when using&lt;span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "&gt; projectInternal &lt;/span&gt;flag).
+        /// The UUID of cluster. (Required when using&lt;span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "&gt; projectInternal &lt;/span&gt;flag).
         /// </summary>
         [Output("clusterUuid")]
         public Output<string?> ClusterUuid { get; private set; } = null!;
@@ -55,7 +55,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// flag to allow collaboration of projects. (Use with&lt;span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "&gt; projectInternal &lt;/span&gt;flag)
+        /// flag to allow collaboration of projects. (Use with&lt;span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "&gt; projectInternal &lt;/span&gt;flag)
         /// </summary>
         [Output("enableCollab")]
         public Output<bool?> EnableCollab { get; private set; } = null!;
@@ -207,7 +207,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// The UUID of cluster. (Required when using&lt;span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "&gt; projectInternal &lt;/span&gt;flag).
+        /// The UUID of cluster. (Required when using&lt;span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "&gt; projectInternal &lt;/span&gt;flag).
         /// </summary>
         [Input("clusterUuid")]
         public Input<string>? ClusterUuid { get; set; }
@@ -225,7 +225,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string> Description { get; set; } = null!;
 
         /// <summary>
-        /// flag to allow collaboration of projects. (Use with&lt;span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "&gt; projectInternal &lt;/span&gt;flag)
+        /// flag to allow collaboration of projects. (Use with&lt;span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "&gt; projectInternal &lt;/span&gt;flag)
         /// </summary>
         [Input("enableCollab")]
         public Input<bool>? EnableCollab { get; set; }
@@ -385,7 +385,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// The UUID of cluster. (Required when using&lt;span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "&gt; projectInternal &lt;/span&gt;flag).
+        /// The UUID of cluster. (Required when using&lt;span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "&gt; projectInternal &lt;/span&gt;flag).
         /// </summary>
         [Input("clusterUuid")]
         public Input<string>? ClusterUuid { get; set; }
@@ -403,7 +403,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// flag to allow collaboration of projects. (Use with&lt;span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal "&gt; projectInternal &lt;/span&gt;flag)
+        /// flag to allow collaboration of projects. (Use with&lt;span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "&gt; projectInternal &lt;/span&gt;flag)
         /// </summary>
         [Input("enableCollab")]
         public Input<bool>? EnableCollab { get; set; }

@@ -180,6 +180,99 @@ class PcRestoreV2(pulumi.CustomResource):
         ## Example Usage
 
         <!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        import pulumi_command as command
+        import pulumi_nutanix as nutanix
+
+        # Fetch Cluster Ext ID from PC
+        clusters = nutanix.get_clusters_v2()
+        domain_manager_ext_id = cls["clusterEntities"][0]["extId"]
+        cluster_ext_id = [cluster.ext_id for cluster in clusters.cluster_entities if cluster.config[0]["clusterFunction"][0] != "PRISM_CENTRAL"][0]
+        # Create a restore source, before make sure to get the cluster ext_id from PC and create backup target
+        # wait until backup target is synced, you can check the last_sync_time from the backup target data source
+        cluster_location = nutanix.PcRestoreSourceV2("cluster-location", location={
+            "cluster_locations": [{
+                "configs": [{
+                    "ext_id": cluster_ext_id,
+                }],
+            }],
+        })
+        restorable_pcs = nutanix.get_restorable_pcs_v2_output(restore_source_ext_id=cluster_location.ext_id)
+        restorable_pc_ext_id = restorable_pcs.restorable_pcs[0].ext_id
+        restore_points = nutanix.get_pc_restore_points_v2_output(restorable_domain_manager_ext_id=restorable_pc_ext_id,
+            restore_source_ext_id=cluster_location.id)
+        restore_point = nutanix.get_pc_restore_point_v2_output(restore_source_ext_id=cluster_location.id,
+            restorable_domain_manager_ext_id=restorable_pc_ext_id,
+            ext_id=restore_points.restore_points[0].ext_id)
+        restore_point_1 = restore_point
+        # define the restore pc resource
+        # you can get these values from the data source nutanix_pc_v2, this data source is on PC provider
+        test = nutanix.PcRestoreV2("test",
+            ext_id=restore_point_1.ext_id,
+            restore_source_ext_id=cluster_location.id,
+            restorable_domain_manager_ext_id=restorable_pc_ext_id,
+            domain_manager={
+                "networks": [{
+                    "name_servers": [{
+                        "ipv4s": [{
+                            "value": entry["value"]["ipv4"][0]["value"],
+                        }],
+                    } for entry in restore_point_1.apply(lambda restore_point: [{"key": k, "value": v} for k, v in sorted(restore_point.domain_manager[0]["network"][0]["nameServers"].items())])],
+                    "ntp_servers": [{
+                        "fqdns": [{
+                            "value": entry2["value"]["fqdn"][0]["value"],
+                        }],
+                    } for entry2 in restore_point_1.apply(lambda restore_point: [{"key": k, "value": v} for k, v in sorted(restore_point.domain_manager[0]["network"][0]["ntpServers"].items())])],
+                    "external_address": {
+                        "ipv4s": [{
+                            "value": restore_point_1.domain_manager[0]["network"][0]["externalAddress"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                        }],
+                    },
+                    "external_networks": [{
+                        "network_ext_id": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["networkExtId"].apply(lambda x: str(x)),
+                        "default_gateway": {
+                            "ipv4s": [{
+                                "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["defaultGateway"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                            }],
+                        },
+                        "subnet_mask": {
+                            "ipv4s": [{
+                                "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["subnetMask"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                            }],
+                        },
+                        "ip_ranges": [{
+                            "begin": {
+                                "ipv4s": [{
+                                    "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["ipRanges"][0]["begin"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                                }],
+                            },
+                            "end": {
+                                "ipv4s": [{
+                                    "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["ipRanges"][0]["end"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                                }],
+                            },
+                        }],
+                    }],
+                }],
+                "configs": [{
+                    "should_enable_lockdown_mode": restore_point_1.domain_manager[0]["config"][0]["shouldEnableLockdownMode"].apply(lambda x: x == "true"),
+                    "build_info": {
+                        "version": restore_point_1.domain_manager[0]["config"][0]["buildInfo"][0]["version"].apply(lambda x: str(x)),
+                    },
+                    "name": restore_point_1.domain_manager[0]["config"][0]["name"].apply(lambda x: str(x)),
+                    "size": restore_point_1.domain_manager[0]["config"][0]["size"].apply(lambda x: str(x)),
+                    "resource_configs": [{
+                        "container_ext_ids": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["containerExtIds"],
+                        "data_disk_size_bytes": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["dataDiskSizeBytes"].apply(lambda x: int(x)),
+                        "memory_size_bytes": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["memorySizeBytes"].apply(lambda x: int(x)),
+                        "num_vcpus": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["numVcpus"].apply(lambda x: int(x)),
+                    }],
+                }],
+            })
+        test_provisioner0 = command.local.Command("testProvisioner0", create="sshpass -p 'nutanix/4u' ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null nutanix@10.44.76.16 '/home/nutanix/prism/cli/ncli user reset-password user-name=admin password=o.P.5.#.s.U.Z.f ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=n.L.9.@.P.Y ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=g.B.1.$.U.$.2.@ ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=r.B.7.$.V.9.W ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=l.H.2.$.2.a.a.P ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=q.F.4.#.u.t ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=n.T.0.#.r ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=s.K.0.$.w ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=o.K.7.@.j ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=Nutanix.123'",
+        opts = pulumi.ResourceOptions(depends_on=[test]))
+        ```
         <!--End PulumiCodeChooser -->
 
 
@@ -205,6 +298,99 @@ class PcRestoreV2(pulumi.CustomResource):
         ## Example Usage
 
         <!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        import pulumi_command as command
+        import pulumi_nutanix as nutanix
+
+        # Fetch Cluster Ext ID from PC
+        clusters = nutanix.get_clusters_v2()
+        domain_manager_ext_id = cls["clusterEntities"][0]["extId"]
+        cluster_ext_id = [cluster.ext_id for cluster in clusters.cluster_entities if cluster.config[0]["clusterFunction"][0] != "PRISM_CENTRAL"][0]
+        # Create a restore source, before make sure to get the cluster ext_id from PC and create backup target
+        # wait until backup target is synced, you can check the last_sync_time from the backup target data source
+        cluster_location = nutanix.PcRestoreSourceV2("cluster-location", location={
+            "cluster_locations": [{
+                "configs": [{
+                    "ext_id": cluster_ext_id,
+                }],
+            }],
+        })
+        restorable_pcs = nutanix.get_restorable_pcs_v2_output(restore_source_ext_id=cluster_location.ext_id)
+        restorable_pc_ext_id = restorable_pcs.restorable_pcs[0].ext_id
+        restore_points = nutanix.get_pc_restore_points_v2_output(restorable_domain_manager_ext_id=restorable_pc_ext_id,
+            restore_source_ext_id=cluster_location.id)
+        restore_point = nutanix.get_pc_restore_point_v2_output(restore_source_ext_id=cluster_location.id,
+            restorable_domain_manager_ext_id=restorable_pc_ext_id,
+            ext_id=restore_points.restore_points[0].ext_id)
+        restore_point_1 = restore_point
+        # define the restore pc resource
+        # you can get these values from the data source nutanix_pc_v2, this data source is on PC provider
+        test = nutanix.PcRestoreV2("test",
+            ext_id=restore_point_1.ext_id,
+            restore_source_ext_id=cluster_location.id,
+            restorable_domain_manager_ext_id=restorable_pc_ext_id,
+            domain_manager={
+                "networks": [{
+                    "name_servers": [{
+                        "ipv4s": [{
+                            "value": entry["value"]["ipv4"][0]["value"],
+                        }],
+                    } for entry in restore_point_1.apply(lambda restore_point: [{"key": k, "value": v} for k, v in sorted(restore_point.domain_manager[0]["network"][0]["nameServers"].items())])],
+                    "ntp_servers": [{
+                        "fqdns": [{
+                            "value": entry2["value"]["fqdn"][0]["value"],
+                        }],
+                    } for entry2 in restore_point_1.apply(lambda restore_point: [{"key": k, "value": v} for k, v in sorted(restore_point.domain_manager[0]["network"][0]["ntpServers"].items())])],
+                    "external_address": {
+                        "ipv4s": [{
+                            "value": restore_point_1.domain_manager[0]["network"][0]["externalAddress"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                        }],
+                    },
+                    "external_networks": [{
+                        "network_ext_id": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["networkExtId"].apply(lambda x: str(x)),
+                        "default_gateway": {
+                            "ipv4s": [{
+                                "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["defaultGateway"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                            }],
+                        },
+                        "subnet_mask": {
+                            "ipv4s": [{
+                                "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["subnetMask"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                            }],
+                        },
+                        "ip_ranges": [{
+                            "begin": {
+                                "ipv4s": [{
+                                    "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["ipRanges"][0]["begin"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                                }],
+                            },
+                            "end": {
+                                "ipv4s": [{
+                                    "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["ipRanges"][0]["end"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                                }],
+                            },
+                        }],
+                    }],
+                }],
+                "configs": [{
+                    "should_enable_lockdown_mode": restore_point_1.domain_manager[0]["config"][0]["shouldEnableLockdownMode"].apply(lambda x: x == "true"),
+                    "build_info": {
+                        "version": restore_point_1.domain_manager[0]["config"][0]["buildInfo"][0]["version"].apply(lambda x: str(x)),
+                    },
+                    "name": restore_point_1.domain_manager[0]["config"][0]["name"].apply(lambda x: str(x)),
+                    "size": restore_point_1.domain_manager[0]["config"][0]["size"].apply(lambda x: str(x)),
+                    "resource_configs": [{
+                        "container_ext_ids": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["containerExtIds"],
+                        "data_disk_size_bytes": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["dataDiskSizeBytes"].apply(lambda x: int(x)),
+                        "memory_size_bytes": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["memorySizeBytes"].apply(lambda x: int(x)),
+                        "num_vcpus": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["numVcpus"].apply(lambda x: int(x)),
+                    }],
+                }],
+            })
+        test_provisioner0 = command.local.Command("testProvisioner0", create="sshpass -p 'nutanix/4u' ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null nutanix@10.44.76.16 '/home/nutanix/prism/cli/ncli user reset-password user-name=admin password=o.P.5.#.s.U.Z.f ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=n.L.9.@.P.Y ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=g.B.1.$.U.$.2.@ ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=r.B.7.$.V.9.W ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=l.H.2.$.2.a.a.P ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=q.F.4.#.u.t ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=n.T.0.#.r ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=s.K.0.$.w ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=o.K.7.@.j ; /home/nutanix/prism/cli/ncli user reset-password user-name=admin password=Nutanix.123'",
+        opts = pulumi.ResourceOptions(depends_on=[test]))
+        ```
         <!--End PulumiCodeChooser -->
 
 

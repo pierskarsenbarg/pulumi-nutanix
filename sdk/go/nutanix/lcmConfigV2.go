@@ -56,7 +56,7 @@ import (
 type LcmConfigV2 struct {
 	pulumi.CustomResourceState
 
-	// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+	// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
 	AutoInventorySchedule pulumi.StringPtrOutput `pulumi:"autoInventorySchedule"`
 	// This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
 	ConnectivityType pulumi.StringPtrOutput `pulumi:"connectivityType"`
@@ -105,7 +105,7 @@ func GetLcmConfigV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering LcmConfigV2 resources.
 type lcmConfigV2State struct {
-	// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+	// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
 	AutoInventorySchedule *string `pulumi:"autoInventorySchedule"`
 	// This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
 	ConnectivityType *string `pulumi:"connectivityType"`
@@ -125,7 +125,7 @@ type lcmConfigV2State struct {
 }
 
 type LcmConfigV2State struct {
-	// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+	// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
 	AutoInventorySchedule pulumi.StringPtrInput
 	// This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
 	ConnectivityType pulumi.StringPtrInput
@@ -149,7 +149,7 @@ func (LcmConfigV2State) ElementType() reflect.Type {
 }
 
 type lcmConfigV2Args struct {
-	// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+	// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
 	AutoInventorySchedule *string `pulumi:"autoInventorySchedule"`
 	// This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
 	ConnectivityType *string `pulumi:"connectivityType"`
@@ -169,7 +169,7 @@ type lcmConfigV2Args struct {
 
 // The set of arguments for constructing a LcmConfigV2 resource.
 type LcmConfigV2Args struct {
-	// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+	// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
 	AutoInventorySchedule pulumi.StringPtrInput
 	// This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
 	ConnectivityType pulumi.StringPtrInput
@@ -274,7 +274,7 @@ func (o LcmConfigV2Output) ToLcmConfigV2OutputWithContext(ctx context.Context) L
 	return o
 }
 
-// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
 func (o LcmConfigV2Output) AutoInventorySchedule() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *LcmConfigV2) pulumi.StringPtrOutput { return v.AutoInventorySchedule }).(pulumi.StringPtrOutput)
 }

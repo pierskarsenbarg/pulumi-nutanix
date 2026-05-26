@@ -108,6 +108,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getcategorykey" "testKeyValue" {
+        ///   name = nutanix_categorykey.test_key_value.name
+        /// }
+        /// 
+        /// resource "nutanix_categorykey" "test_key_value" {
+        ///   name        = "data_source_category_key_test_values"
+        ///   description = "Data Source CategoryKey Test with Values"
+        /// }
+        /// resource "nutanix_categoryvalue" "test_value" {
+        ///   name        = nutanix_categorykey.test_key_value.name
+        ///   value       = "test_category_value_data_source"
+        ///   description = "Data Source CategoryValue Test with Values"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -274,6 +297,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getcategorykey" "testKeyValue" {
+        ///   name = nutanix_categorykey.test_key_value.name
+        /// }
+        /// 
+        /// resource "nutanix_categorykey" "test_key_value" {
+        ///   name        = "data_source_category_key_test_values"
+        ///   description = "Data Source CategoryKey Test with Values"
+        /// }
+        /// resource "nutanix_categoryvalue" "test_value" {
+        ///   name        = nutanix_categorykey.test_key_value.name
+        ///   value       = "test_category_value_data_source"
+        ///   description = "Data Source CategoryValue Test with Values"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -438,6 +484,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}, nil)
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getcategorykey" "testKeyValue" {
+        ///   name = nutanix_categorykey.test_key_value.name
+        /// }
+        /// 
+        /// resource "nutanix_categorykey" "test_key_value" {
+        ///   name        = "data_source_category_key_test_values"
+        ///   description = "Data Source CategoryKey Test with Values"
+        /// }
+        /// resource "nutanix_categoryvalue" "test_value" {
+        ///   name        = nutanix_categorykey.test_key_value.name
+        ///   value       = "test_category_value_data_source"
+        ///   description = "Data Source CategoryValue Test with Values"
         /// }
         /// ```
         /// ```java

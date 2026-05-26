@@ -74,6 +74,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvmantiaffinitypolicyv2" "policy" {
+        ///   ext_id = "12345678-1234-1234-1234-123456789012"
+        /// }
+        /// 
+        /// output "policyName" {
+        ///   value = data.nutanix_getvmantiaffinitypolicyv2.policy.name
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -180,6 +197,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvmantiaffinitypolicyv2" "policy" {
+        ///   ext_id = "12345678-1234-1234-1234-123456789012"
+        /// }
+        /// 
+        /// output "policyName" {
+        ///   value = data.nutanix_getvmantiaffinitypolicyv2.policy.name
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -284,6 +318,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 		ctx.Export("policyName", policy.Name)
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvmantiaffinitypolicyv2" "policy" {
+        ///   ext_id = "12345678-1234-1234-1234-123456789012"
+        /// }
+        /// 
+        /// output "policyName" {
+        ///   value = data.nutanix_getvmantiaffinitypolicyv2.policy.name
         /// }
         /// ```
         /// ```java

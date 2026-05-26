@@ -83,7 +83,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.UserGroupsDirectoryServiceUserGroup>> DirectoryServiceUserGroups { get; private set; } = null!;
 
         /// <summary>
-        /// The&lt;span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup "&gt; userGroup &lt;/span&gt;kind metadata.
+        /// The&lt;span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup " pulumi-lang-hcl=" user_group "&gt; userGroup &lt;/span&gt;kind metadata.
         /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
@@ -251,7 +251,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputMap<string>? _metadata;
 
         /// <summary>
-        /// The&lt;span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup "&gt; userGroup &lt;/span&gt;kind metadata.
+        /// The&lt;span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup " pulumi-lang-hcl=" user_group "&gt; userGroup &lt;/span&gt;kind metadata.
         /// </summary>
         public InputMap<string> Metadata
         {

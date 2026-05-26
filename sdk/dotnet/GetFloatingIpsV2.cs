@@ -13,7 +13,7 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetFloatingIpsV2
     {
         /// <summary>
-        /// Provides a datasource to retrieve floating IP with&lt;span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid "&gt; floatingIpUuid &lt;/span&gt;.
+        /// Provides a datasource to retrieve floating IP with&lt;span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid " pulumi-lang-hcl=" floating_ip_uuid "&gt; floatingIpUuid &lt;/span&gt;.
         /// 
         /// ## Example Usage
         /// 
@@ -107,6 +107,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getfloatingipsv2" "floating-ips" {
+        /// }
+        /// data "nutanix_getfloatingipsv2" "floating-ips-filter" {
+        ///   filter = "name eq 'floating_ip_example'"
+        /// }
+        /// data "nutanix_getfloatingipsv2" "floating-ips-limit" {
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getfloatingipsv2" "floating-ips-filter-limit" {
+        ///   filter = "name eq 'floating_ip_example'"
+        ///   limit  = 10
         /// }
         /// ```
         /// ```java
@@ -178,7 +200,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFloatingIpsV2Result>("nutanix:index/getFloatingIpsV2:getFloatingIpsV2", args ?? new GetFloatingIpsV2Args(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve floating IP with&lt;span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid "&gt; floatingIpUuid &lt;/span&gt;.
+        /// Provides a datasource to retrieve floating IP with&lt;span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid " pulumi-lang-hcl=" floating_ip_uuid "&gt; floatingIpUuid &lt;/span&gt;.
         /// 
         /// ## Example Usage
         /// 
@@ -272,6 +294,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getfloatingipsv2" "floating-ips" {
+        /// }
+        /// data "nutanix_getfloatingipsv2" "floating-ips-filter" {
+        ///   filter = "name eq 'floating_ip_example'"
+        /// }
+        /// data "nutanix_getfloatingipsv2" "floating-ips-limit" {
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getfloatingipsv2" "floating-ips-filter-limit" {
+        ///   filter = "name eq 'floating_ip_example'"
+        ///   limit  = 10
         /// }
         /// ```
         /// ```java
@@ -343,7 +387,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.Invoke<GetFloatingIpsV2Result>("nutanix:index/getFloatingIpsV2:getFloatingIpsV2", args ?? new GetFloatingIpsV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve floating IP with&lt;span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid "&gt; floatingIpUuid &lt;/span&gt;.
+        /// Provides a datasource to retrieve floating IP with&lt;span pulumi-lang-nodejs=" floatingIpUuid " pulumi-lang-dotnet=" FloatingIpUuid " pulumi-lang-go=" floatingIpUuid " pulumi-lang-python=" floating_ip_uuid " pulumi-lang-yaml=" floatingIpUuid " pulumi-lang-java=" floatingIpUuid " pulumi-lang-hcl=" floating_ip_uuid "&gt; floatingIpUuid &lt;/span&gt;.
         /// 
         /// ## Example Usage
         /// 
@@ -437,6 +481,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getfloatingipsv2" "floating-ips" {
+        /// }
+        /// data "nutanix_getfloatingipsv2" "floating-ips-filter" {
+        ///   filter = "name eq 'floating_ip_example'"
+        /// }
+        /// data "nutanix_getfloatingipsv2" "floating-ips-limit" {
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getfloatingipsv2" "floating-ips-filter-limit" {
+        ///   filter = "name eq 'floating_ip_example'"
+        ///   limit  = 10
         /// }
         /// ```
         /// ```java

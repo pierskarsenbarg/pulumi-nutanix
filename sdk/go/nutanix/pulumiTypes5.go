@@ -21593,7 +21593,7 @@ type GetIamEntitiesV2Entity struct {
 	IsLogicalAndSupportedForAttributes bool `pulumi:"isLogicalAndSupportedForAttributes"`
 	// Last updated time of the Entity.
 	LastUpdatedTime string `pulumi:"lastUpdatedTime"`
-	// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+	// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
 	Links []GetIamEntitiesV2EntityLink `pulumi:"links"`
 	// Name of the entity's attribute used in Authorization Policy filters.
 	Name string `pulumi:"name"`
@@ -21633,7 +21633,7 @@ type GetIamEntitiesV2EntityArgs struct {
 	IsLogicalAndSupportedForAttributes pulumi.BoolInput `pulumi:"isLogicalAndSupportedForAttributes"`
 	// Last updated time of the Entity.
 	LastUpdatedTime pulumi.StringInput `pulumi:"lastUpdatedTime"`
-	// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+	// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
 	Links GetIamEntitiesV2EntityLinkArrayInput `pulumi:"links"`
 	// Name of the entity's attribute used in Authorization Policy filters.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -21739,7 +21739,7 @@ func (o GetIamEntitiesV2EntityOutput) LastUpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIamEntitiesV2Entity) string { return v.LastUpdatedTime }).(pulumi.StringOutput)
 }
 
-// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
 func (o GetIamEntitiesV2EntityOutput) Links() GetIamEntitiesV2EntityLinkArrayOutput {
 	return o.ApplyT(func(v GetIamEntitiesV2Entity) []GetIamEntitiesV2EntityLink { return v.Links }).(GetIamEntitiesV2EntityLinkArrayOutput)
 }
@@ -21786,7 +21786,7 @@ type GetIamEntitiesV2EntityAttributeList struct {
 	DisplayName string `pulumi:"displayName"`
 	// External identifier of the attribute.
 	ExtId string `pulumi:"extId"`
-	// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+	// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
 	Links []GetIamEntitiesV2EntityAttributeListLink `pulumi:"links"`
 	// Name of the entity's attribute used in Authorization Policy filters.
 	Name string `pulumi:"name"`
@@ -21814,7 +21814,7 @@ type GetIamEntitiesV2EntityAttributeListArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// External identifier of the attribute.
 	ExtId pulumi.StringInput `pulumi:"extId"`
-	// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+	// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
 	Links GetIamEntitiesV2EntityAttributeListLinkArrayInput `pulumi:"links"`
 	// Name of the entity's attribute used in Authorization Policy filters.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -21890,7 +21890,7 @@ func (o GetIamEntitiesV2EntityAttributeListOutput) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIamEntitiesV2EntityAttributeList) string { return v.ExtId }).(pulumi.StringOutput)
 }
 
-// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
 func (o GetIamEntitiesV2EntityAttributeListOutput) Links() GetIamEntitiesV2EntityAttributeListLinkArrayOutput {
 	return o.ApplyT(func(v GetIamEntitiesV2EntityAttributeList) []GetIamEntitiesV2EntityAttributeListLink { return v.Links }).(GetIamEntitiesV2EntityAttributeListLinkArrayOutput)
 }
@@ -22149,7 +22149,7 @@ type GetIamEntityV2AttributeList struct {
 	DisplayName string `pulumi:"displayName"`
 	// External identifier of the IAM Entity.
 	ExtId string `pulumi:"extId"`
-	// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+	// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
 	Links []GetIamEntityV2AttributeListLink `pulumi:"links"`
 	// Name of the entity's attribute used in Authorization Policy filters.
 	Name string `pulumi:"name"`
@@ -22177,7 +22177,7 @@ type GetIamEntityV2AttributeListArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// External identifier of the IAM Entity.
 	ExtId pulumi.StringInput `pulumi:"extId"`
-	// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+	// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
 	Links GetIamEntityV2AttributeListLinkArrayInput `pulumi:"links"`
 	// Name of the entity's attribute used in Authorization Policy filters.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -22253,7 +22253,7 @@ func (o GetIamEntityV2AttributeListOutput) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIamEntityV2AttributeList) string { return v.ExtId }).(pulumi.StringOutput)
 }
 
-// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
 func (o GetIamEntityV2AttributeListOutput) Links() GetIamEntityV2AttributeListLinkArrayOutput {
 	return o.ApplyT(func(v GetIamEntityV2AttributeList) []GetIamEntityV2AttributeListLink { return v.Links }).(GetIamEntityV2AttributeListLinkArrayOutput)
 }

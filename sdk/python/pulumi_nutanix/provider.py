@@ -51,7 +51,7 @@ class ProviderArgs:
                cluster lifecycle management operations, such as AOS upgrades.
         :param pulumi.Input[_builtins.str] foundation_endpoint: endpoint for foundation VM (eg. Foundation VM IP)
         :param pulumi.Input[_builtins.str] foundation_port: Port for foundation VM
-        :param pulumi.Input[_builtins.bool] insecure: Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>
+        :param pulumi.Input[_builtins.bool] insecure: Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>
         :param pulumi.Input[_builtins.str] ndb_endpoint: endpoint for Era VM (era ip)
         :param pulumi.Input[_builtins.str] password: Password for provided user name.
         :param pulumi.Input[_builtins.str] port: Port for Nutanix Prism.
@@ -164,7 +164,7 @@ class ProviderArgs:
     @pulumi.getter
     def insecure(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>
+        Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>
         """
         return pulumi.get(self, "insecure")
 
@@ -318,7 +318,7 @@ class Provider(pulumi.ProviderResource):
                cluster lifecycle management operations, such as AOS upgrades.
         :param pulumi.Input[_builtins.str] foundation_endpoint: endpoint for foundation VM (eg. Foundation VM IP)
         :param pulumi.Input[_builtins.str] foundation_port: Port for foundation VM
-        :param pulumi.Input[_builtins.bool] insecure: Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>
+        :param pulumi.Input[_builtins.bool] insecure: Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>
         :param pulumi.Input[_builtins.str] ndb_endpoint: endpoint for Era VM (era ip)
         :param pulumi.Input[_builtins.str] password: Password for provided user name.
         :param pulumi.Input[_builtins.str] port: Port for Nutanix Prism.

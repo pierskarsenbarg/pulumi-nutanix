@@ -25,7 +25,7 @@ class NdbAuthorizeDbserverArgs:
         """
         The set of arguments for constructing a NdbAuthorizeDbserver resource.
 
-        :param pulumi.Input[_builtins.str] time_machine_name: * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId ">`dbserversId </span>`: (Required)
+        :param pulumi.Input[_builtins.str] time_machine_name: * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id ">`dbserversId </span>`: (Required)
         """
         if dbservers_ids is not None:
             pulumi.set(__self__, "dbservers_ids", dbservers_ids)
@@ -56,7 +56,7 @@ class NdbAuthorizeDbserverArgs:
     @pulumi.getter(name="timeMachineName")
     def time_machine_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId ">`dbserversId </span>`: (Required)
+        * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id ">`dbserversId </span>`: (Required)
         """
         return pulumi.get(self, "time_machine_name")
 
@@ -74,7 +74,7 @@ class _NdbAuthorizeDbserverState:
         """
         Input properties used for looking up and filtering NdbAuthorizeDbserver resources.
 
-        :param pulumi.Input[_builtins.str] time_machine_name: * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId ">`dbserversId </span>`: (Required)
+        :param pulumi.Input[_builtins.str] time_machine_name: * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id ">`dbserversId </span>`: (Required)
         """
         if dbservers_ids is not None:
             pulumi.set(__self__, "dbservers_ids", dbservers_ids)
@@ -105,7 +105,7 @@ class _NdbAuthorizeDbserverState:
     @pulumi.getter(name="timeMachineName")
     def time_machine_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId ">`dbserversId </span>`: (Required)
+        * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id ">`dbserversId </span>`: (Required)
         """
         return pulumi.get(self, "time_machine_name")
 
@@ -143,7 +143,7 @@ class NdbAuthorizeDbserver(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] time_machine_name: * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId ">`dbserversId </span>`: (Required)
+        :param pulumi.Input[_builtins.str] time_machine_name: * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id ">`dbserversId </span>`: (Required)
         """
         ...
     @overload
@@ -218,7 +218,7 @@ class NdbAuthorizeDbserver(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] time_machine_name: * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId ">`dbserversId </span>`: (Required)
+        :param pulumi.Input[_builtins.str] time_machine_name: * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id ">`dbserversId </span>`: (Required)
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -243,7 +243,7 @@ class NdbAuthorizeDbserver(pulumi.CustomResource):
     @pulumi.getter(name="timeMachineName")
     def time_machine_name(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId ">`dbserversId </span>`: (Required)
+        * <span pulumi-lang-nodejs="`dbserversId " pulumi-lang-dotnet="`DbserversId " pulumi-lang-go="`dbserversId " pulumi-lang-python="`dbservers_id " pulumi-lang-yaml="`dbserversId " pulumi-lang-java="`dbserversId " pulumi-lang-hcl="`dbservers_id ">`dbserversId </span>`: (Required)
         """
         return pulumi.get(self, "time_machine_name")
 

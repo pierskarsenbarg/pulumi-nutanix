@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
-    /// Create an image placement policy using the provided request body. Name, placement_type,&lt;span pulumi-lang-nodejs=" imageEntityFilter " pulumi-lang-dotnet=" ImageEntityFilter " pulumi-lang-go=" imageEntityFilter " pulumi-lang-python=" image_entity_filter " pulumi-lang-yaml=" imageEntityFilter " pulumi-lang-java=" imageEntityFilter "&gt; imageEntityFilter &lt;/span&gt;and source are mandatory fields to create an policy.
+    /// Create an image placement policy using the provided request body. Name, placement_type,&lt;span pulumi-lang-nodejs=" imageEntityFilter " pulumi-lang-dotnet=" ImageEntityFilter " pulumi-lang-go=" imageEntityFilter " pulumi-lang-python=" image_entity_filter " pulumi-lang-yaml=" imageEntityFilter " pulumi-lang-java=" imageEntityFilter " pulumi-lang-hcl=" image_entity_filter "&gt; imageEntityFilter &lt;/span&gt;and source are mandatory fields to create an policy.
     /// 
     /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp

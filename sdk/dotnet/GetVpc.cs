@@ -13,19 +13,19 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetVpc
     {
         /// <summary>
-        /// Provides a datasource to retrieve VPC with&lt;span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "&gt; vpcUuid &lt;/span&gt;or&lt;span pulumi-lang-nodejs=" vpcName " pulumi-lang-dotnet=" VpcName " pulumi-lang-go=" vpcName " pulumi-lang-python=" vpc_name " pulumi-lang-yaml=" vpcName " pulumi-lang-java=" vpcName "&gt; vpcName &lt;/span&gt;.
+        /// Provides a datasource to retrieve VPC with&lt;span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid " pulumi-lang-hcl=" vpc_uuid "&gt; vpcUuid &lt;/span&gt;or&lt;span pulumi-lang-nodejs=" vpcName " pulumi-lang-dotnet=" VpcName " pulumi-lang-go=" vpcName " pulumi-lang-python=" vpc_name " pulumi-lang-yaml=" vpcName " pulumi-lang-java=" vpcName " pulumi-lang-hcl=" vpc_name "&gt; vpcName &lt;/span&gt;.
         /// </summary>
         public static Task<GetVpcResult> InvokeAsync(GetVpcArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVpcResult>("nutanix:index/getVpc:getVpc", args ?? new GetVpcArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve VPC with&lt;span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "&gt; vpcUuid &lt;/span&gt;or&lt;span pulumi-lang-nodejs=" vpcName " pulumi-lang-dotnet=" VpcName " pulumi-lang-go=" vpcName " pulumi-lang-python=" vpc_name " pulumi-lang-yaml=" vpcName " pulumi-lang-java=" vpcName "&gt; vpcName &lt;/span&gt;.
+        /// Provides a datasource to retrieve VPC with&lt;span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid " pulumi-lang-hcl=" vpc_uuid "&gt; vpcUuid &lt;/span&gt;or&lt;span pulumi-lang-nodejs=" vpcName " pulumi-lang-dotnet=" VpcName " pulumi-lang-go=" vpcName " pulumi-lang-python=" vpc_name " pulumi-lang-yaml=" vpcName " pulumi-lang-java=" vpcName " pulumi-lang-hcl=" vpc_name "&gt; vpcName &lt;/span&gt;.
         /// </summary>
         public static Output<GetVpcResult> Invoke(GetVpcInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVpcResult>("nutanix:index/getVpc:getVpc", args ?? new GetVpcInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve VPC with&lt;span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "&gt; vpcUuid &lt;/span&gt;or&lt;span pulumi-lang-nodejs=" vpcName " pulumi-lang-dotnet=" VpcName " pulumi-lang-go=" vpcName " pulumi-lang-python=" vpc_name " pulumi-lang-yaml=" vpcName " pulumi-lang-java=" vpcName "&gt; vpcName &lt;/span&gt;.
+        /// Provides a datasource to retrieve VPC with&lt;span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid " pulumi-lang-hcl=" vpc_uuid "&gt; vpcUuid &lt;/span&gt;or&lt;span pulumi-lang-nodejs=" vpcName " pulumi-lang-dotnet=" VpcName " pulumi-lang-go=" vpcName " pulumi-lang-python=" vpc_name " pulumi-lang-yaml=" vpcName " pulumi-lang-java=" vpcName " pulumi-lang-hcl=" vpc_name "&gt; vpcName &lt;/span&gt;.
         /// </summary>
         public static Output<GetVpcResult> Invoke(GetVpcInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVpcResult>("nutanix:index/getVpc:getVpc", args ?? new GetVpcInvokeArgs(), options.WithDefaults());

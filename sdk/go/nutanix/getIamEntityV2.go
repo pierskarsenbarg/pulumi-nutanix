@@ -80,7 +80,7 @@ type GetIamEntityV2Result struct {
 	IsLogicalAndSupportedForAttributes bool `pulumi:"isLogicalAndSupportedForAttributes"`
 	// Last updated time of the Entity.
 	LastUpdatedTime string `pulumi:"lastUpdatedTime"`
-	// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+	// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
 	Links []GetIamEntityV2Link `pulumi:"links"`
 	// Name of the entity's attribute used in Authorization Policy filters.
 	Name string `pulumi:"name"`
@@ -174,7 +174,7 @@ func (o GetIamEntityV2ResultOutput) LastUpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIamEntityV2Result) string { return v.LastUpdatedTime }).(pulumi.StringOutput)
 }
 
-// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+// HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
 func (o GetIamEntityV2ResultOutput) Links() GetIamEntityV2LinkArrayOutput {
 	return o.ApplyT(func(v GetIamEntityV2Result) []GetIamEntityV2Link { return v.Links }).(GetIamEntityV2LinkArrayOutput)
 }

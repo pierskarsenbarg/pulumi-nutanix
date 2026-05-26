@@ -41,7 +41,7 @@ export interface GetNdbClusterArgs {
      */
     clusterId?: string;
     /**
-     * and <span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`">`clusterId`</span> are mutually exclusive.
+     * and <span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`" pulumi-lang-hcl="`cluster_id`">`clusterId`</span> are mutually exclusive.
      */
     clusterName?: string;
 }
@@ -184,7 +184,7 @@ export interface GetNdbClusterOutputArgs {
      */
     clusterId?: pulumi.Input<string | undefined>;
     /**
-     * and <span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`">`clusterId`</span> are mutually exclusive.
+     * and <span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`" pulumi-lang-hcl="`cluster_id`">`clusterId`</span> are mutually exclusive.
      */
     clusterName?: pulumi.Input<string | undefined>;
 }

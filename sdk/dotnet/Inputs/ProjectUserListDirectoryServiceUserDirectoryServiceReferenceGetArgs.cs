@@ -14,7 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class ProjectUserListDirectoryServiceUserDirectoryServiceReferenceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Required) The kind name (Default value: &lt;span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`"&gt;`project`&lt;/span&gt;).
+        /// (Required) The kind name (Default value: &lt;span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`"&gt;`project`&lt;/span&gt;).
         /// </summary>
         [Input("kind")]
         public Input<string>? Kind { get; set; }

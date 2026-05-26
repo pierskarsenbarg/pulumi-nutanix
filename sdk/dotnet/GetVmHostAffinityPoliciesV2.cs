@@ -156,6 +156,40 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvmhostaffinitypoliciesv2" "allPolicies" {
+        /// }
+        /// data "nutanix_getvmhostaffinitypoliciesv2" "paginatedPolicies" {
+        ///   page  = 0
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getvmhostaffinitypoliciesv2" "filteredPolicies" {
+        ///   filter = "name eq 'my-policy'"
+        /// }
+        /// data "nutanix_getvmhostaffinitypoliciesv2" "sortedPolicies" {
+        ///   order_by = "name asc"
+        /// }
+        /// data "nutanix_getvmhostaffinitypoliciesv2" "complexPolicies" {
+        ///   filter   = "startswith(name, 'prod-')"
+        ///   order_by = "create_time desc"
+        ///   page     = 0
+        ///   limit    = 20
+        /// }
+        /// 
+        /// # List all VM-Host Affinity policies
+        /// # List with pagination
+        /// # List with filtering
+        /// # List with ordering
+        /// # List with multiple filters
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -392,6 +426,40 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvmhostaffinitypoliciesv2" "allPolicies" {
+        /// }
+        /// data "nutanix_getvmhostaffinitypoliciesv2" "paginatedPolicies" {
+        ///   page  = 0
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getvmhostaffinitypoliciesv2" "filteredPolicies" {
+        ///   filter = "name eq 'my-policy'"
+        /// }
+        /// data "nutanix_getvmhostaffinitypoliciesv2" "sortedPolicies" {
+        ///   order_by = "name asc"
+        /// }
+        /// data "nutanix_getvmhostaffinitypoliciesv2" "complexPolicies" {
+        ///   filter   = "startswith(name, 'prod-')"
+        ///   order_by = "create_time desc"
+        ///   page     = 0
+        ///   limit    = 20
+        /// }
+        /// 
+        /// # List all VM-Host Affinity policies
+        /// # List with pagination
+        /// # List with filtering
+        /// # List with ordering
+        /// # List with multiple filters
         /// ```
         /// ```java
         /// package generated_program;
@@ -630,6 +698,40 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvmhostaffinitypoliciesv2" "allPolicies" {
+        /// }
+        /// data "nutanix_getvmhostaffinitypoliciesv2" "paginatedPolicies" {
+        ///   page  = 0
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getvmhostaffinitypoliciesv2" "filteredPolicies" {
+        ///   filter = "name eq 'my-policy'"
+        /// }
+        /// data "nutanix_getvmhostaffinitypoliciesv2" "sortedPolicies" {
+        ///   order_by = "name asc"
+        /// }
+        /// data "nutanix_getvmhostaffinitypoliciesv2" "complexPolicies" {
+        ///   filter   = "startswith(name, 'prod-')"
+        ///   order_by = "create_time desc"
+        ///   page     = 0
+        ///   limit    = 20
+        /// }
+        /// 
+        /// # List all VM-Host Affinity policies
+        /// # List with pagination
+        /// # List with filtering
+        /// # List with ordering
+        /// # List with multiple filters
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -740,7 +842,7 @@ namespace PiersKarsenbarg.Nutanix
         public int? Limit { get; set; }
 
         /// <summary>
-        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using &lt;span pulumi-lang-nodejs="`asc`" pulumi-lang-dotnet="`Asc`" pulumi-lang-go="`asc`" pulumi-lang-python="`asc`" pulumi-lang-yaml="`asc`" pulumi-lang-java="`asc`"&gt;`asc`&lt;/span&gt; or descending order using &lt;span pulumi-lang-nodejs="`desc`" pulumi-lang-dotnet="`Desc`" pulumi-lang-go="`desc`" pulumi-lang-python="`desc`" pulumi-lang-yaml="`desc`" pulumi-lang-java="`desc`"&gt;`desc`&lt;/span&gt;. If &lt;span pulumi-lang-nodejs="`asc`" pulumi-lang-dotnet="`Asc`" pulumi-lang-go="`asc`" pulumi-lang-python="`asc`" pulumi-lang-yaml="`asc`" pulumi-lang-java="`asc`"&gt;`asc`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`desc`" pulumi-lang-dotnet="`Desc`" pulumi-lang-go="`desc`" pulumi-lang-python="`desc`" pulumi-lang-yaml="`desc`" pulumi-lang-java="`desc`"&gt;`desc`&lt;/span&gt; are not specified, the resources will be sorted in ascending order by default. For example, `name asc` would sort policies by name in ascending order, &lt;span pulumi-lang-nodejs="`updateTime " pulumi-lang-dotnet="`UpdateTime " pulumi-lang-go="`updateTime " pulumi-lang-python="`update_time " pulumi-lang-yaml="`updateTime " pulumi-lang-java="`updateTime "&gt;`updateTime &lt;/span&gt;desc` would sort by update time in descending order. The&lt;span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy "&gt; orderBy &lt;/span&gt;can be applied to the following fields:
+        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using &lt;span pulumi-lang-nodejs="`asc`" pulumi-lang-dotnet="`Asc`" pulumi-lang-go="`asc`" pulumi-lang-python="`asc`" pulumi-lang-yaml="`asc`" pulumi-lang-java="`asc`" pulumi-lang-hcl="`asc`"&gt;`asc`&lt;/span&gt; or descending order using &lt;span pulumi-lang-nodejs="`desc`" pulumi-lang-dotnet="`Desc`" pulumi-lang-go="`desc`" pulumi-lang-python="`desc`" pulumi-lang-yaml="`desc`" pulumi-lang-java="`desc`" pulumi-lang-hcl="`desc`"&gt;`desc`&lt;/span&gt;. If &lt;span pulumi-lang-nodejs="`asc`" pulumi-lang-dotnet="`Asc`" pulumi-lang-go="`asc`" pulumi-lang-python="`asc`" pulumi-lang-yaml="`asc`" pulumi-lang-java="`asc`" pulumi-lang-hcl="`asc`"&gt;`asc`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`desc`" pulumi-lang-dotnet="`Desc`" pulumi-lang-go="`desc`" pulumi-lang-python="`desc`" pulumi-lang-yaml="`desc`" pulumi-lang-java="`desc`" pulumi-lang-hcl="`desc`"&gt;`desc`&lt;/span&gt; are not specified, the resources will be sorted in ascending order by default. For example, `name asc` would sort policies by name in ascending order, &lt;span pulumi-lang-nodejs="`updateTime " pulumi-lang-dotnet="`UpdateTime " pulumi-lang-go="`updateTime " pulumi-lang-python="`update_time " pulumi-lang-yaml="`updateTime " pulumi-lang-java="`updateTime " pulumi-lang-hcl="`update_time "&gt;`updateTime &lt;/span&gt;desc` would sort by update time in descending order. The&lt;span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy " pulumi-lang-hcl=" order_by "&gt; orderBy &lt;/span&gt;can be applied to the following fields:
         /// </summary>
         [Input("orderBy")]
         public string? OrderBy { get; set; }
@@ -772,7 +874,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<int>? Limit { get; set; }
 
         /// <summary>
-        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using &lt;span pulumi-lang-nodejs="`asc`" pulumi-lang-dotnet="`Asc`" pulumi-lang-go="`asc`" pulumi-lang-python="`asc`" pulumi-lang-yaml="`asc`" pulumi-lang-java="`asc`"&gt;`asc`&lt;/span&gt; or descending order using &lt;span pulumi-lang-nodejs="`desc`" pulumi-lang-dotnet="`Desc`" pulumi-lang-go="`desc`" pulumi-lang-python="`desc`" pulumi-lang-yaml="`desc`" pulumi-lang-java="`desc`"&gt;`desc`&lt;/span&gt;. If &lt;span pulumi-lang-nodejs="`asc`" pulumi-lang-dotnet="`Asc`" pulumi-lang-go="`asc`" pulumi-lang-python="`asc`" pulumi-lang-yaml="`asc`" pulumi-lang-java="`asc`"&gt;`asc`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`desc`" pulumi-lang-dotnet="`Desc`" pulumi-lang-go="`desc`" pulumi-lang-python="`desc`" pulumi-lang-yaml="`desc`" pulumi-lang-java="`desc`"&gt;`desc`&lt;/span&gt; are not specified, the resources will be sorted in ascending order by default. For example, `name asc` would sort policies by name in ascending order, &lt;span pulumi-lang-nodejs="`updateTime " pulumi-lang-dotnet="`UpdateTime " pulumi-lang-go="`updateTime " pulumi-lang-python="`update_time " pulumi-lang-yaml="`updateTime " pulumi-lang-java="`updateTime "&gt;`updateTime &lt;/span&gt;desc` would sort by update time in descending order. The&lt;span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy "&gt; orderBy &lt;/span&gt;can be applied to the following fields:
+        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using &lt;span pulumi-lang-nodejs="`asc`" pulumi-lang-dotnet="`Asc`" pulumi-lang-go="`asc`" pulumi-lang-python="`asc`" pulumi-lang-yaml="`asc`" pulumi-lang-java="`asc`" pulumi-lang-hcl="`asc`"&gt;`asc`&lt;/span&gt; or descending order using &lt;span pulumi-lang-nodejs="`desc`" pulumi-lang-dotnet="`Desc`" pulumi-lang-go="`desc`" pulumi-lang-python="`desc`" pulumi-lang-yaml="`desc`" pulumi-lang-java="`desc`" pulumi-lang-hcl="`desc`"&gt;`desc`&lt;/span&gt;. If &lt;span pulumi-lang-nodejs="`asc`" pulumi-lang-dotnet="`Asc`" pulumi-lang-go="`asc`" pulumi-lang-python="`asc`" pulumi-lang-yaml="`asc`" pulumi-lang-java="`asc`" pulumi-lang-hcl="`asc`"&gt;`asc`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`desc`" pulumi-lang-dotnet="`Desc`" pulumi-lang-go="`desc`" pulumi-lang-python="`desc`" pulumi-lang-yaml="`desc`" pulumi-lang-java="`desc`" pulumi-lang-hcl="`desc`"&gt;`desc`&lt;/span&gt; are not specified, the resources will be sorted in ascending order by default. For example, `name asc` would sort policies by name in ascending order, &lt;span pulumi-lang-nodejs="`updateTime " pulumi-lang-dotnet="`UpdateTime " pulumi-lang-go="`updateTime " pulumi-lang-python="`update_time " pulumi-lang-yaml="`updateTime " pulumi-lang-java="`updateTime " pulumi-lang-hcl="`update_time "&gt;`updateTime &lt;/span&gt;desc` would sort by update time in descending order. The&lt;span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy " pulumi-lang-hcl=" order_by "&gt; orderBy &lt;/span&gt;can be applied to the following fields:
         /// </summary>
         [Input("orderBy")]
         public Input<string>? OrderBy { get; set; }

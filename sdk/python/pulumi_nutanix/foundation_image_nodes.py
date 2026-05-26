@@ -82,7 +82,7 @@ class FoundationImageNodesArgs:
         :param pulumi.Input[_builtins.str] ipmi_user: - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
         :param pulumi.Input[_builtins.str] layout_egg_uuid: - Id of the custom layout which needs to be passed to imaging request.
         :param pulumi.Input[_builtins.bool] skip_hypervisor: - If hypervisor installation should be skipped.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] svm_rescue_args: - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] svm_rescue_args: - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue " pulumi-lang-hcl=" svm_rescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         :param pulumi.Input['FoundationImageNodesTestsArgs'] tests: - Types of tests to be performed.
         :param pulumi.Input[_builtins.str] ucsm_ip: - UCSM IP address.
         :param pulumi.Input[_builtins.str] ucsm_password: - UCSM password.
@@ -440,7 +440,7 @@ class FoundationImageNodesArgs:
     @pulumi.getter(name="svmRescueArgs")
     def svm_rescue_args(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+        - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue " pulumi-lang-hcl=" svm_rescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         """
         return pulumi.get(self, "svm_rescue_args")
 
@@ -645,6 +645,7 @@ class _FoundationImageNodesState:
                " pulumi-lang-python=" cluster_name
                " pulumi-lang-yaml=" clusterName
                " pulumi-lang-java=" clusterName
+               " pulumi-lang-hcl=" cluster_name
                "> clusterName
                </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
         :param pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]] clusters: - Terraform blocks of clusters config
@@ -667,9 +668,9 @@ class _FoundationImageNodesState:
         :param pulumi.Input[_builtins.str] ipmi_user: - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
         :param pulumi.Input[_builtins.str] layout_egg_uuid: - Id of the custom layout which needs to be passed to imaging request.
         :param pulumi.Input[_builtins.str] nos_package: - (Required) NOS package.
-        :param pulumi.Input[_builtins.str] session_id: -<span pulumi-lang-nodejs=" sessionId " pulumi-lang-dotnet=" SessionId " pulumi-lang-go=" sessionId " pulumi-lang-python=" session_id " pulumi-lang-yaml=" sessionId " pulumi-lang-java=" sessionId "> sessionId </span>of the imaging session
+        :param pulumi.Input[_builtins.str] session_id: -<span pulumi-lang-nodejs=" sessionId " pulumi-lang-dotnet=" SessionId " pulumi-lang-go=" sessionId " pulumi-lang-python=" session_id " pulumi-lang-yaml=" sessionId " pulumi-lang-java=" sessionId " pulumi-lang-hcl=" session_id "> sessionId </span>of the imaging session
         :param pulumi.Input[_builtins.bool] skip_hypervisor: - If hypervisor installation should be skipped.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] svm_rescue_args: - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] svm_rescue_args: - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue " pulumi-lang-hcl=" svm_rescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         :param pulumi.Input['FoundationImageNodesTestsArgs'] tests: - Types of tests to be performed.
         :param pulumi.Input[_builtins.str] ucsm_ip: - UCSM IP address.
         :param pulumi.Input[_builtins.str] ucsm_password: - UCSM password.
@@ -783,6 +784,7 @@ class _FoundationImageNodesState:
         " pulumi-lang-python=" cluster_name
         " pulumi-lang-yaml=" clusterName
         " pulumi-lang-java=" clusterName
+        " pulumi-lang-hcl=" cluster_name
         "> clusterName
         </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
         """
@@ -1045,7 +1047,7 @@ class _FoundationImageNodesState:
     @pulumi.getter(name="sessionId")
     def session_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        -<span pulumi-lang-nodejs=" sessionId " pulumi-lang-dotnet=" SessionId " pulumi-lang-go=" sessionId " pulumi-lang-python=" session_id " pulumi-lang-yaml=" sessionId " pulumi-lang-java=" sessionId "> sessionId </span>of the imaging session
+        -<span pulumi-lang-nodejs=" sessionId " pulumi-lang-dotnet=" SessionId " pulumi-lang-go=" sessionId " pulumi-lang-python=" session_id " pulumi-lang-yaml=" sessionId " pulumi-lang-java=" sessionId " pulumi-lang-hcl=" session_id "> sessionId </span>of the imaging session
         """
         return pulumi.get(self, "session_id")
 
@@ -1069,7 +1071,7 @@ class _FoundationImageNodesState:
     @pulumi.getter(name="svmRescueArgs")
     def svm_rescue_args(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+        - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue " pulumi-lang-hcl=" svm_rescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         """
         return pulumi.get(self, "svm_rescue_args")
 
@@ -1381,7 +1383,7 @@ class FoundationImageNodes(pulumi.CustomResource):
 
         ## Defaults
 
-        The attributes like <span pulumi-lang-nodejs="`ipmiNetmask`" pulumi-lang-dotnet="`IpmiNetmask`" pulumi-lang-go="`ipmiNetmask`" pulumi-lang-python="`ipmi_netmask`" pulumi-lang-yaml="`ipmiNetmask`" pulumi-lang-java="`ipmiNetmask`">`ipmiNetmask`</span>, <span pulumi-lang-nodejs="`ipmiGateway`" pulumi-lang-dotnet="`IpmiGateway`" pulumi-lang-go="`ipmiGateway`" pulumi-lang-python="`ipmi_gateway`" pulumi-lang-yaml="`ipmiGateway`" pulumi-lang-java="`ipmiGateway`">`ipmiGateway`</span>, <span pulumi-lang-nodejs="`ipmiUser`" pulumi-lang-dotnet="`IpmiUser`" pulumi-lang-go="`ipmiUser`" pulumi-lang-python="`ipmi_user`" pulumi-lang-yaml="`ipmiUser`" pulumi-lang-java="`ipmiUser`">`ipmiUser`</span> & <span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`">`ipmiPassword`</span> can be mentioned for a node as well as for all nodes outside blocks. This attributes if mentioned in node will be used for that particular node.
+        The attributes like <span pulumi-lang-nodejs="`ipmiNetmask`" pulumi-lang-dotnet="`IpmiNetmask`" pulumi-lang-go="`ipmiNetmask`" pulumi-lang-python="`ipmi_netmask`" pulumi-lang-yaml="`ipmiNetmask`" pulumi-lang-java="`ipmiNetmask`" pulumi-lang-hcl="`ipmi_netmask`">`ipmiNetmask`</span>, <span pulumi-lang-nodejs="`ipmiGateway`" pulumi-lang-dotnet="`IpmiGateway`" pulumi-lang-go="`ipmiGateway`" pulumi-lang-python="`ipmi_gateway`" pulumi-lang-yaml="`ipmiGateway`" pulumi-lang-java="`ipmiGateway`" pulumi-lang-hcl="`ipmi_gateway`">`ipmiGateway`</span>, <span pulumi-lang-nodejs="`ipmiUser`" pulumi-lang-dotnet="`IpmiUser`" pulumi-lang-go="`ipmiUser`" pulumi-lang-python="`ipmi_user`" pulumi-lang-yaml="`ipmiUser`" pulumi-lang-java="`ipmiUser`" pulumi-lang-hcl="`ipmi_user`">`ipmiUser`</span> & <span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`" pulumi-lang-hcl="`ipmi_password`">`ipmiPassword`</span> can be mentioned for a node as well as for all nodes outside blocks. This attributes if mentioned in node will be used for that particular node.
 
         ## Error
 
@@ -1390,7 +1392,7 @@ class FoundationImageNodes(pulumi.CustomResource):
         ## lifecycle
 
         * `Update` : - Resource will trigger new resource create call for any kind of update in resource config.
-        * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`">`delete`</span> : - Delete will be a soft delete.
+        * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`" pulumi-lang-hcl="`delete`">`delete`</span> : - Delete will be a soft delete.
 
         See detailed information in [Nutanix Foundation Image Nodes](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzOTQ-image-a-given-set-of-nodes).
 
@@ -1419,7 +1421,7 @@ class FoundationImageNodes(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] layout_egg_uuid: - Id of the custom layout which needs to be passed to imaging request.
         :param pulumi.Input[_builtins.str] nos_package: - (Required) NOS package.
         :param pulumi.Input[_builtins.bool] skip_hypervisor: - If hypervisor installation should be skipped.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] svm_rescue_args: - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] svm_rescue_args: - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue " pulumi-lang-hcl=" svm_rescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         :param pulumi.Input[Union['FoundationImageNodesTestsArgs', 'FoundationImageNodesTestsArgsDict']] tests: - Types of tests to be performed.
         :param pulumi.Input[_builtins.str] ucsm_ip: - UCSM IP address.
         :param pulumi.Input[_builtins.str] ucsm_password: - UCSM password.
@@ -1555,7 +1557,7 @@ class FoundationImageNodes(pulumi.CustomResource):
 
         ## Defaults
 
-        The attributes like <span pulumi-lang-nodejs="`ipmiNetmask`" pulumi-lang-dotnet="`IpmiNetmask`" pulumi-lang-go="`ipmiNetmask`" pulumi-lang-python="`ipmi_netmask`" pulumi-lang-yaml="`ipmiNetmask`" pulumi-lang-java="`ipmiNetmask`">`ipmiNetmask`</span>, <span pulumi-lang-nodejs="`ipmiGateway`" pulumi-lang-dotnet="`IpmiGateway`" pulumi-lang-go="`ipmiGateway`" pulumi-lang-python="`ipmi_gateway`" pulumi-lang-yaml="`ipmiGateway`" pulumi-lang-java="`ipmiGateway`">`ipmiGateway`</span>, <span pulumi-lang-nodejs="`ipmiUser`" pulumi-lang-dotnet="`IpmiUser`" pulumi-lang-go="`ipmiUser`" pulumi-lang-python="`ipmi_user`" pulumi-lang-yaml="`ipmiUser`" pulumi-lang-java="`ipmiUser`">`ipmiUser`</span> & <span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`">`ipmiPassword`</span> can be mentioned for a node as well as for all nodes outside blocks. This attributes if mentioned in node will be used for that particular node.
+        The attributes like <span pulumi-lang-nodejs="`ipmiNetmask`" pulumi-lang-dotnet="`IpmiNetmask`" pulumi-lang-go="`ipmiNetmask`" pulumi-lang-python="`ipmi_netmask`" pulumi-lang-yaml="`ipmiNetmask`" pulumi-lang-java="`ipmiNetmask`" pulumi-lang-hcl="`ipmi_netmask`">`ipmiNetmask`</span>, <span pulumi-lang-nodejs="`ipmiGateway`" pulumi-lang-dotnet="`IpmiGateway`" pulumi-lang-go="`ipmiGateway`" pulumi-lang-python="`ipmi_gateway`" pulumi-lang-yaml="`ipmiGateway`" pulumi-lang-java="`ipmiGateway`" pulumi-lang-hcl="`ipmi_gateway`">`ipmiGateway`</span>, <span pulumi-lang-nodejs="`ipmiUser`" pulumi-lang-dotnet="`IpmiUser`" pulumi-lang-go="`ipmiUser`" pulumi-lang-python="`ipmi_user`" pulumi-lang-yaml="`ipmiUser`" pulumi-lang-java="`ipmiUser`" pulumi-lang-hcl="`ipmi_user`">`ipmiUser`</span> & <span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`" pulumi-lang-hcl="`ipmi_password`">`ipmiPassword`</span> can be mentioned for a node as well as for all nodes outside blocks. This attributes if mentioned in node will be used for that particular node.
 
         ## Error
 
@@ -1564,7 +1566,7 @@ class FoundationImageNodes(pulumi.CustomResource):
         ## lifecycle
 
         * `Update` : - Resource will trigger new resource create call for any kind of update in resource config.
-        * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`">`delete`</span> : - Delete will be a soft delete.
+        * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`" pulumi-lang-hcl="`delete`">`delete`</span> : - Delete will be a soft delete.
 
         See detailed information in [Nutanix Foundation Image Nodes](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzOTQ-image-a-given-set-of-nodes).
 
@@ -1742,6 +1744,7 @@ class FoundationImageNodes(pulumi.CustomResource):
                " pulumi-lang-python=" cluster_name
                " pulumi-lang-yaml=" clusterName
                " pulumi-lang-java=" clusterName
+               " pulumi-lang-hcl=" cluster_name
                "> clusterName
                </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
         :param pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesClusterArgs', 'FoundationImageNodesClusterArgsDict']]]] clusters: - Terraform blocks of clusters config
@@ -1764,9 +1767,9 @@ class FoundationImageNodes(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ipmi_user: - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
         :param pulumi.Input[_builtins.str] layout_egg_uuid: - Id of the custom layout which needs to be passed to imaging request.
         :param pulumi.Input[_builtins.str] nos_package: - (Required) NOS package.
-        :param pulumi.Input[_builtins.str] session_id: -<span pulumi-lang-nodejs=" sessionId " pulumi-lang-dotnet=" SessionId " pulumi-lang-go=" sessionId " pulumi-lang-python=" session_id " pulumi-lang-yaml=" sessionId " pulumi-lang-java=" sessionId "> sessionId </span>of the imaging session
+        :param pulumi.Input[_builtins.str] session_id: -<span pulumi-lang-nodejs=" sessionId " pulumi-lang-dotnet=" SessionId " pulumi-lang-go=" sessionId " pulumi-lang-python=" session_id " pulumi-lang-yaml=" sessionId " pulumi-lang-java=" sessionId " pulumi-lang-hcl=" session_id "> sessionId </span>of the imaging session
         :param pulumi.Input[_builtins.bool] skip_hypervisor: - If hypervisor installation should be skipped.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] svm_rescue_args: - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] svm_rescue_args: - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue " pulumi-lang-hcl=" svm_rescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         :param pulumi.Input[Union['FoundationImageNodesTestsArgs', 'FoundationImageNodesTestsArgsDict']] tests: - Types of tests to be performed.
         :param pulumi.Input[_builtins.str] ucsm_ip: - UCSM IP address.
         :param pulumi.Input[_builtins.str] ucsm_password: - UCSM password.
@@ -1843,6 +1846,7 @@ class FoundationImageNodes(pulumi.CustomResource):
         " pulumi-lang-python=" cluster_name
         " pulumi-lang-yaml=" clusterName
         " pulumi-lang-java=" clusterName
+        " pulumi-lang-hcl=" cluster_name
         "> clusterName
         </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
         """
@@ -2017,7 +2021,7 @@ class FoundationImageNodes(pulumi.CustomResource):
     @pulumi.getter(name="sessionId")
     def session_id(self) -> pulumi.Output[_builtins.str]:
         """
-        -<span pulumi-lang-nodejs=" sessionId " pulumi-lang-dotnet=" SessionId " pulumi-lang-go=" sessionId " pulumi-lang-python=" session_id " pulumi-lang-yaml=" sessionId " pulumi-lang-java=" sessionId "> sessionId </span>of the imaging session
+        -<span pulumi-lang-nodejs=" sessionId " pulumi-lang-dotnet=" SessionId " pulumi-lang-go=" sessionId " pulumi-lang-python=" session_id " pulumi-lang-yaml=" sessionId " pulumi-lang-java=" sessionId " pulumi-lang-hcl=" session_id "> sessionId </span>of the imaging session
         """
         return pulumi.get(self, "session_id")
 
@@ -2033,7 +2037,7 @@ class FoundationImageNodes(pulumi.CustomResource):
     @pulumi.getter(name="svmRescueArgs")
     def svm_rescue_args(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
         """
-        - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+        - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue " pulumi-lang-hcl=" svm_rescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         """
         return pulumi.get(self, "svm_rescue_args")
 

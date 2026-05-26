@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Provides a datasource to retrieve VPC with<span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid "> vpcUuid </span>or<span pulumi-lang-nodejs=" vpcName " pulumi-lang-dotnet=" VpcName " pulumi-lang-go=" vpcName " pulumi-lang-python=" vpc_name " pulumi-lang-yaml=" vpcName " pulumi-lang-java=" vpcName "> vpcName </span>.
+// Provides a datasource to retrieve VPC with<span pulumi-lang-nodejs=" vpcUuid " pulumi-lang-dotnet=" VpcUuid " pulumi-lang-go=" vpcUuid " pulumi-lang-python=" vpc_uuid " pulumi-lang-yaml=" vpcUuid " pulumi-lang-java=" vpcUuid " pulumi-lang-hcl=" vpc_uuid "> vpcUuid </span>or<span pulumi-lang-nodejs=" vpcName " pulumi-lang-dotnet=" VpcName " pulumi-lang-go=" vpcName " pulumi-lang-python=" vpc_name " pulumi-lang-yaml=" vpcName " pulumi-lang-java=" vpcName " pulumi-lang-hcl=" vpc_name "> vpcName </span>.
 func LookupVpc(ctx *pulumi.Context, args *LookupVpcArgs, opts ...pulumi.InvokeOption) (*LookupVpcResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupVpcResult

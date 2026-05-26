@@ -34,7 +34,7 @@ class NdbStretchedVlanArgs:
         :param pulumi.Input[_builtins.str] description: Description of stretched vlan
         :param pulumi.Input['NdbStretchedVlanMetadataArgs'] metadata: Update the stretched VLAN Gateway and Subnet Mask IP address
                * `metadata.gateway`: Update the gateway of stretched vlan
-               * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "> subnetMask </span>of stretched vlan
+               * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask " pulumi-lang-hcl=" subnet_mask "> subnetMask </span>of stretched vlan
         :param pulumi.Input[_builtins.str] name: name for the stretched VLAN
         """
         pulumi.set(__self__, "type", type)
@@ -88,7 +88,7 @@ class NdbStretchedVlanArgs:
         """
         Update the stretched VLAN Gateway and Subnet Mask IP address
         * `metadata.gateway`: Update the gateway of stretched vlan
-        * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "> subnetMask </span>of stretched vlan
+        * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask " pulumi-lang-hcl=" subnet_mask "> subnetMask </span>of stretched vlan
         """
         return pulumi.get(self, "metadata")
 
@@ -124,7 +124,7 @@ class _NdbStretchedVlanState:
         :param pulumi.Input[_builtins.str] description: Description of stretched vlan
         :param pulumi.Input['NdbStretchedVlanMetadataArgs'] metadata: Update the stretched VLAN Gateway and Subnet Mask IP address
                * `metadata.gateway`: Update the gateway of stretched vlan
-               * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "> subnetMask </span>of stretched vlan
+               * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask " pulumi-lang-hcl=" subnet_mask "> subnetMask </span>of stretched vlan
         :param pulumi.Input[_builtins.str] name: name for the stretched VLAN
         :param pulumi.Input[_builtins.str] type: type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vlan_ids: list of vlan ids to be added in NDB
@@ -161,7 +161,7 @@ class _NdbStretchedVlanState:
         """
         Update the stretched VLAN Gateway and Subnet Mask IP address
         * `metadata.gateway`: Update the gateway of stretched vlan
-        * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "> subnetMask </span>of stretched vlan
+        * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask " pulumi-lang-hcl=" subnet_mask "> subnetMask </span>of stretched vlan
         """
         return pulumi.get(self, "metadata")
 
@@ -279,7 +279,7 @@ class NdbStretchedVlan(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: Description of stretched vlan
         :param pulumi.Input[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict']] metadata: Update the stretched VLAN Gateway and Subnet Mask IP address
                * `metadata.gateway`: Update the gateway of stretched vlan
-               * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "> subnetMask </span>of stretched vlan
+               * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask " pulumi-lang-hcl=" subnet_mask "> subnetMask </span>of stretched vlan
         :param pulumi.Input[_builtins.str] name: name for the stretched VLAN
         :param pulumi.Input[_builtins.str] type: type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vlan_ids: list of vlan ids to be added in NDB
@@ -399,7 +399,7 @@ class NdbStretchedVlan(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: Description of stretched vlan
         :param pulumi.Input[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict']] metadata: Update the stretched VLAN Gateway and Subnet Mask IP address
                * `metadata.gateway`: Update the gateway of stretched vlan
-               * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "> subnetMask </span>of stretched vlan
+               * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask " pulumi-lang-hcl=" subnet_mask "> subnetMask </span>of stretched vlan
         :param pulumi.Input[_builtins.str] name: name for the stretched VLAN
         :param pulumi.Input[_builtins.str] type: type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vlan_ids: list of vlan ids to be added in NDB
@@ -431,7 +431,7 @@ class NdbStretchedVlan(pulumi.CustomResource):
         """
         Update the stretched VLAN Gateway and Subnet Mask IP address
         * `metadata.gateway`: Update the gateway of stretched vlan
-        * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask "> subnetMask </span>of stretched vlan
+        * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask " pulumi-lang-hcl=" subnet_mask "> subnetMask </span>of stretched vlan
         """
         return pulumi.get(self, "metadata")
 

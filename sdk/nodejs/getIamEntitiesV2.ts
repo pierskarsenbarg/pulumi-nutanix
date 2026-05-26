@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Provides a datasource to list IAM Entities. Entities are used in authorization policies (e.g. user, role, cluster). Supports pagination and OData <span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`">`filter`</span>, <span pulumi-lang-nodejs="`orderBy`" pulumi-lang-dotnet="`OrderBy`" pulumi-lang-go="`orderBy`" pulumi-lang-python="`order_by`" pulumi-lang-yaml="`orderBy`" pulumi-lang-java="`orderBy`">`orderBy`</span>, and <span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`">`select`</span>.
+ * Provides a datasource to list IAM Entities. Entities are used in authorization policies (e.g. user, role, cluster). Supports pagination and OData <span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`" pulumi-lang-hcl="`filter`">`filter`</span>, <span pulumi-lang-nodejs="`orderBy`" pulumi-lang-dotnet="`OrderBy`" pulumi-lang-go="`orderBy`" pulumi-lang-python="`order_by`" pulumi-lang-yaml="`orderBy`" pulumi-lang-java="`orderBy`" pulumi-lang-hcl="`order_by`">`orderBy`</span>, and <span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`" pulumi-lang-hcl="`select`">`select`</span>.
  *
  * ## Example Usage
  *
@@ -107,7 +107,7 @@ export interface GetIamEntitiesV2Result {
     readonly select?: string;
 }
 /**
- * Provides a datasource to list IAM Entities. Entities are used in authorization policies (e.g. user, role, cluster). Supports pagination and OData <span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`">`filter`</span>, <span pulumi-lang-nodejs="`orderBy`" pulumi-lang-dotnet="`OrderBy`" pulumi-lang-go="`orderBy`" pulumi-lang-python="`order_by`" pulumi-lang-yaml="`orderBy`" pulumi-lang-java="`orderBy`">`orderBy`</span>, and <span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`">`select`</span>.
+ * Provides a datasource to list IAM Entities. Entities are used in authorization policies (e.g. user, role, cluster). Supports pagination and OData <span pulumi-lang-nodejs="`filter`" pulumi-lang-dotnet="`Filter`" pulumi-lang-go="`filter`" pulumi-lang-python="`filter`" pulumi-lang-yaml="`filter`" pulumi-lang-java="`filter`" pulumi-lang-hcl="`filter`">`filter`</span>, <span pulumi-lang-nodejs="`orderBy`" pulumi-lang-dotnet="`OrderBy`" pulumi-lang-go="`orderBy`" pulumi-lang-python="`order_by`" pulumi-lang-yaml="`orderBy`" pulumi-lang-java="`orderBy`" pulumi-lang-hcl="`order_by`">`orderBy`</span>, and <span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`" pulumi-lang-hcl="`select`">`select`</span>.
  *
  * ## Example Usage
  *

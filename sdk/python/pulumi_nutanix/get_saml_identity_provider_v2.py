@@ -214,7 +214,7 @@ def get_saml_identity_provider_v2(ext_id: Optional[_builtins.str] = None,
 
     The following arguments are supported:
 
-    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - External identifier of the SAML Identity Provider.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>: - External identifier of the SAML Identity Provider.
 
 
     :param _builtins.str ext_id: The External Identifier of the User Group.
@@ -259,7 +259,7 @@ def get_saml_identity_provider_v2_output(ext_id: pulumi.Input[Optional[_builtins
 
     The following arguments are supported:
 
-    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - External identifier of the SAML Identity Provider.
+    * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>: - External identifier of the SAML Identity Provider.
 
 
     :param _builtins.str ext_id: The External Identifier of the User Group.

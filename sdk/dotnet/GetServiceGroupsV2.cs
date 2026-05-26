@@ -75,6 +75,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getservicegroupsv2" "serviceGroup" {
+        /// }
+        /// data "nutanix_getservicegroupsv2" "serviceGroupFiltered" {
+        ///   filter = "name eq 'service_group_name'"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -186,6 +201,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getservicegroupsv2" "serviceGroup" {
+        /// }
+        /// data "nutanix_getservicegroupsv2" "serviceGroupFiltered" {
+        ///   filter = "name eq 'service_group_name'"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -295,6 +325,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getservicegroupsv2" "serviceGroup" {
+        /// }
+        /// data "nutanix_getservicegroupsv2" "serviceGroupFiltered" {
+        ///   filter = "name eq 'service_group_name'"
         /// }
         /// ```
         /// ```java

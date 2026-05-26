@@ -106,6 +106,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getrole" "test" {
+        ///   role_id = nutanix_role.test.id
+        /// }
+        /// 
+        /// resource "nutanix_role" "test" {
+        ///   name        = "NAME"
+        ///   description = "DESCRIPTION"
+        ///   permission_reference_lists {
+        ///     kind = "permission"
+        ///     uuid = "ID OF PERMISSION"
+        ///   }
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -263,6 +285,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getrole" "test" {
+        ///   role_id = nutanix_role.test.id
+        /// }
+        /// 
+        /// resource "nutanix_role" "test" {
+        ///   name        = "NAME"
+        ///   description = "DESCRIPTION"
+        ///   permission_reference_lists {
+        ///     kind = "permission"
+        ///     uuid = "ID OF PERMISSION"
+        ///   }
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -418,6 +462,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}, nil)
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getrole" "test" {
+        ///   role_id = nutanix_role.test.id
+        /// }
+        /// 
+        /// resource "nutanix_role" "test" {
+        ///   name        = "NAME"
+        ///   description = "DESCRIPTION"
+        ///   permission_reference_lists {
+        ///     kind = "permission"
+        ///     uuid = "ID OF PERMISSION"
+        ///   }
         /// }
         /// ```
         /// ```java

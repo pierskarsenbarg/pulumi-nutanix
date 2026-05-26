@@ -69,6 +69,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvolumeiscsiclientv2" "example" {
+        ///   ext_id = "be0e4630-23da-4b9c-a76b-f24fd64b46b6"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -112,7 +125,7 @@ namespace PiersKarsenbarg.Nutanix
         /// The following arguments are supported:
         /// 
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
         /// </summary>
         public static Task<GetVolumeIscsiClientV2Result> InvokeAsync(GetVolumeIscsiClientV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVolumeIscsiClientV2Result>("nutanix:index/getVolumeIscsiClientV2:getVolumeIscsiClientV2", args ?? new GetVolumeIscsiClientV2Args(), options.WithDefaults());
@@ -174,6 +187,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvolumeiscsiclientv2" "example" {
+        ///   ext_id = "be0e4630-23da-4b9c-a76b-f24fd64b46b6"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -217,7 +243,7 @@ namespace PiersKarsenbarg.Nutanix
         /// The following arguments are supported:
         /// 
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
         /// </summary>
         public static Output<GetVolumeIscsiClientV2Result> Invoke(GetVolumeIscsiClientV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeIscsiClientV2Result>("nutanix:index/getVolumeIscsiClientV2:getVolumeIscsiClientV2", args ?? new GetVolumeIscsiClientV2InvokeArgs(), options.WithDefaults());
@@ -279,6 +305,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getvolumeiscsiclientv2" "example" {
+        ///   ext_id = "be0e4630-23da-4b9c-a76b-f24fd64b46b6"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -322,7 +361,7 @@ namespace PiersKarsenbarg.Nutanix
         /// The following arguments are supported:
         /// 
         /// 
-        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
+        /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: -(Required) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
         /// </summary>
         public static Output<GetVolumeIscsiClientV2Result> Invoke(GetVolumeIscsiClientV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeIscsiClientV2Result>("nutanix:index/getVolumeIscsiClientV2:getVolumeIscsiClientV2", args ?? new GetVolumeIscsiClientV2InvokeArgs(), options.WithDefaults());

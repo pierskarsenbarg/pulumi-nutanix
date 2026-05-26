@@ -85,7 +85,7 @@ export class StaticRoutes extends pulumi.CustomResource {
      */
     declare public readonly defaultRouteNexthops: pulumi.Output<outputs.StaticRoutesDefaultRouteNexthop[] | undefined>;
     /**
-     * The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata.
+     * The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable " pulumi-lang-hcl=" vpc_route_table "> vpcRouteTable </span>kind metadata.
      */
     declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
@@ -147,7 +147,7 @@ export interface StaticRoutesState {
      */
     defaultRouteNexthops?: pulumi.Input<pulumi.Input<inputs.StaticRoutesDefaultRouteNexthop>[] | undefined>;
     /**
-     * The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata.
+     * The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable " pulumi-lang-hcl=" vpc_route_table "> vpcRouteTable </span>kind metadata.
      */
     metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**

@@ -90,6 +90,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getpermission" "byuuid" {
+        ///   permission_id = "26b81a55-2bca-48c6-9fab-4f82c6bb4284"
+        /// }
+        /// data "nutanix_getpermission" "byname" {
+        ///   permission_name = "Access_Console_Virtual_Machine"
+        /// }
+        /// 
+        /// #Get permission by UUID
+        /// #Get permission by name
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -221,6 +240,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getpermission" "byuuid" {
+        ///   permission_id = "26b81a55-2bca-48c6-9fab-4f82c6bb4284"
+        /// }
+        /// data "nutanix_getpermission" "byname" {
+        ///   permission_name = "Access_Console_Virtual_Machine"
+        /// }
+        /// 
+        /// #Get permission by UUID
+        /// #Get permission by name
         /// ```
         /// ```java
         /// package generated_program;
@@ -354,6 +392,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getpermission" "byuuid" {
+        ///   permission_id = "26b81a55-2bca-48c6-9fab-4f82c6bb4284"
+        /// }
+        /// data "nutanix_getpermission" "byname" {
+        ///   permission_name = "Access_Console_Virtual_Machine"
+        /// }
+        /// 
+        /// #Get permission by UUID
+        /// #Get permission by name
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -425,13 +482,13 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt; of the permission.
+        /// The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`"&gt;`id`&lt;/span&gt; of the permission.
         /// </summary>
         [Input("permissionId")]
         public string? PermissionId { get; set; }
 
         /// <summary>
-        /// The &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt; of the permission.
+        /// The &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt; of the permission.
         /// </summary>
         [Input("permissionName")]
         public string? PermissionName { get; set; }
@@ -457,13 +514,13 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt; of the permission.
+        /// The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`"&gt;`id`&lt;/span&gt; of the permission.
         /// </summary>
         [Input("permissionId")]
         public Input<string>? PermissionId { get; set; }
 
         /// <summary>
-        /// The &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`"&gt;`name`&lt;/span&gt; of the permission.
+        /// The &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt; of the permission.
         /// </summary>
         [Input("permissionName")]
         public Input<string>? PermissionName { get; set; }
@@ -488,7 +545,7 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// . The fields that can/cannot be accessed during the specified operation.&lt;span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList "&gt; fieldNameList &lt;/span&gt;will be a list of fields. e.g. if&lt;span pulumi-lang-nodejs=" fieldMode " pulumi-lang-dotnet=" FieldMode " pulumi-lang-go=" fieldMode " pulumi-lang-python=" field_mode " pulumi-lang-yaml=" fieldMode " pulumi-lang-java=" fieldMode "&gt; fieldMode &lt;/span&gt;= disallowed,&lt;span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList "&gt; fieldNameList &lt;/span&gt;= [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
+        /// . The fields that can/cannot be accessed during the specified operation.&lt;span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList " pulumi-lang-hcl=" field_name_list "&gt; fieldNameList &lt;/span&gt;will be a list of fields. e.g. if&lt;span pulumi-lang-nodejs=" fieldMode " pulumi-lang-dotnet=" FieldMode " pulumi-lang-go=" fieldMode " pulumi-lang-python=" field_mode " pulumi-lang-yaml=" fieldMode " pulumi-lang-java=" fieldMode " pulumi-lang-hcl=" field_mode "&gt; fieldMode &lt;/span&gt;= disallowed,&lt;span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList " pulumi-lang-hcl=" field_name_list "&gt; fieldNameList &lt;/span&gt;= [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPermissionFieldResult> Fields;
         /// <summary>
@@ -496,7 +553,7 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// (Required) The kind name (Default value: &lt;span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`"&gt;`project`&lt;/span&gt;).
+        /// (Required) The kind name (Default value: &lt;span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`"&gt;`project`&lt;/span&gt;).
         /// </summary>
         public readonly string Kind;
         /// <summary>

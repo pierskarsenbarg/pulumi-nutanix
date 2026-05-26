@@ -34,7 +34,7 @@ export interface GetNetworkSecurityPolicyRulesV2Args {
      */
     limit?: number;
     /**
-     * Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy "> orderBy </span>can be applied to the following fields:
+     * Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy " pulumi-lang-hcl=" order_by "> orderBy </span>can be applied to the following fields:
      */
     orderBy?: string;
     /**
@@ -98,7 +98,7 @@ export interface GetNetworkSecurityPolicyRulesV2OutputArgs {
      */
     limit?: pulumi.Input<number | undefined>;
     /**
-     * Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy "> orderBy </span>can be applied to the following fields:
+     * Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy " pulumi-lang-hcl=" order_by "> orderBy </span>can be applied to the following fields:
      */
     orderBy?: pulumi.Input<string | undefined>;
     /**

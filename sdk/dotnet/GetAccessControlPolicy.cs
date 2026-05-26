@@ -101,6 +101,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getaccesscontrolpolicy" "test" {
+        ///   access_control_policy_id = nutanix_accesscontrolpolicy.test.id
+        /// }
+        /// 
+        /// resource "nutanix_accesscontrolpolicy" "test" {
+        ///   name        = "NAME OF ACCESS CONTROL POLICY"
+        ///   description = "DESCRIPTION OF THE ACCESS CONTROL POLICY"
+        ///   role_reference = {
+        ///     kind = "role"
+        ///     uuid = "UUID of role"
+        ///   }
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -253,6 +275,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getaccesscontrolpolicy" "test" {
+        ///   access_control_policy_id = nutanix_accesscontrolpolicy.test.id
+        /// }
+        /// 
+        /// resource "nutanix_accesscontrolpolicy" "test" {
+        ///   name        = "NAME OF ACCESS CONTROL POLICY"
+        ///   description = "DESCRIPTION OF THE ACCESS CONTROL POLICY"
+        ///   role_reference = {
+        ///     kind = "role"
+        ///     uuid = "UUID of role"
+        ///   }
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -403,6 +447,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}, nil)
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getaccesscontrolpolicy" "test" {
+        ///   access_control_policy_id = nutanix_accesscontrolpolicy.test.id
+        /// }
+        /// 
+        /// resource "nutanix_accesscontrolpolicy" "test" {
+        ///   name        = "NAME OF ACCESS CONTROL POLICY"
+        ///   description = "DESCRIPTION OF THE ACCESS CONTROL POLICY"
+        ///   role_reference = {
+        ///     kind = "role"
+        ///     uuid = "UUID of role"
+        ///   }
         /// }
         /// ```
         /// ```java

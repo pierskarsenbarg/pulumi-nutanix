@@ -100,6 +100,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getimage" "test" {
+        ///   image_id = nutanix_image.test.id
+        /// }
+        /// data "nutanix_getimage" "testname" {
+        ///   image_name = nutanix_image.test.name
+        /// }
+        /// 
+        /// resource "nutanix_image" "test" {
+        ///   name        = "Ubuntu"
+        ///   description = "Ubuntu"
+        ///   source_uri  = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -254,6 +276,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getimage" "test" {
+        ///   image_id = nutanix_image.test.id
+        /// }
+        /// data "nutanix_getimage" "testname" {
+        ///   image_name = nutanix_image.test.name
+        /// }
+        /// 
+        /// resource "nutanix_image" "test" {
+        ///   name        = "Ubuntu"
+        ///   description = "Ubuntu"
+        ///   source_uri  = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -406,6 +450,28 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}, nil)
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getimage" "test" {
+        ///   image_id = nutanix_image.test.id
+        /// }
+        /// data "nutanix_getimage" "testname" {
+        ///   image_name = nutanix_image.test.name
+        /// }
+        /// 
+        /// resource "nutanix_image" "test" {
+        ///   name        = "Ubuntu"
+        ///   description = "Ubuntu"
+        ///   source_uri  = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso"
         /// }
         /// ```
         /// ```java

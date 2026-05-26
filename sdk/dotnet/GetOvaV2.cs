@@ -71,6 +71,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getovav2" "example" {
+        ///   ext_id = "7034016e-f3d4-472a-8c7b-cd13658b7315"
+        /// }
+        /// 
+        /// // Fetch a single OVA by its external ID
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -173,6 +188,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getovav2" "example" {
+        ///   ext_id = "7034016e-f3d4-472a-8c7b-cd13658b7315"
+        /// }
+        /// 
+        /// // Fetch a single OVA by its external ID
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -274,6 +304,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getovav2" "example" {
+        ///   ext_id = "7034016e-f3d4-472a-8c7b-cd13658b7315"
+        /// }
+        /// 
+        /// // Fetch a single OVA by its external ID
         /// ```
         /// ```java
         /// package generated_program;

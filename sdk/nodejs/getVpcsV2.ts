@@ -33,20 +33,20 @@ import * as utilities from "./utilities";
  *
  * ## vpcs
  *
- * The <span pulumi-lang-nodejs="`vpcs`" pulumi-lang-dotnet="`Vpcs`" pulumi-lang-go="`vpcs`" pulumi-lang-python="`vpcs`" pulumi-lang-yaml="`vpcs`" pulumi-lang-java="`vpcs`">`vpcs`</span> object contains the following attributes:
+ * The <span pulumi-lang-nodejs="`vpcs`" pulumi-lang-dotnet="`Vpcs`" pulumi-lang-go="`vpcs`" pulumi-lang-python="`vpcs`" pulumi-lang-yaml="`vpcs`" pulumi-lang-java="`vpcs`" pulumi-lang-hcl="`vpcs`">`vpcs`</span> object contains the following attributes:
  *
- * - <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>:<span pulumi-lang-nodejs=" extId " pulumi-lang-dotnet=" ExtId " pulumi-lang-go=" extId " pulumi-lang-python=" ext_id " pulumi-lang-yaml=" extId " pulumi-lang-java=" extId "> extId </span>of VPC.
- * - <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: Name of the VPC.
- * - <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>: Description of the VPC.
- * - <span pulumi-lang-nodejs="`commonDhcpOptions`" pulumi-lang-dotnet="`CommonDhcpOptions`" pulumi-lang-go="`commonDhcpOptions`" pulumi-lang-python="`common_dhcp_options`" pulumi-lang-yaml="`commonDhcpOptions`" pulumi-lang-java="`commonDhcpOptions`">`commonDhcpOptions`</span>: List of DHCP options to be configured.
- * - <span pulumi-lang-nodejs="`vpcType`" pulumi-lang-dotnet="`VpcType`" pulumi-lang-go="`vpcType`" pulumi-lang-python="`vpc_type`" pulumi-lang-yaml="`vpcType`" pulumi-lang-java="`vpcType`">`vpcType`</span>: Type of VPC.
- * - <span pulumi-lang-nodejs="`snatIps`" pulumi-lang-dotnet="`SnatIps`" pulumi-lang-go="`snatIps`" pulumi-lang-python="`snat_ips`" pulumi-lang-yaml="`snatIps`" pulumi-lang-java="`snatIps`">`snatIps`</span>: List of IP Addresses used for SNAT.
- * - <span pulumi-lang-nodejs="`externalSubnets`" pulumi-lang-dotnet="`ExternalSubnets`" pulumi-lang-go="`externalSubnets`" pulumi-lang-python="`external_subnets`" pulumi-lang-yaml="`externalSubnets`" pulumi-lang-java="`externalSubnets`">`externalSubnets`</span>: List of external subnets that the VPC is attached to.
- * - <span pulumi-lang-nodejs="`externalRoutingDomainReference`" pulumi-lang-dotnet="`ExternalRoutingDomainReference`" pulumi-lang-go="`externalRoutingDomainReference`" pulumi-lang-python="`external_routing_domain_reference`" pulumi-lang-yaml="`externalRoutingDomainReference`" pulumi-lang-java="`externalRoutingDomainReference`">`externalRoutingDomainReference`</span>: External routing domain associated with this route table
- * - <span pulumi-lang-nodejs="`externallyRoutablePrefixes`" pulumi-lang-dotnet="`ExternallyRoutablePrefixes`" pulumi-lang-go="`externallyRoutablePrefixes`" pulumi-lang-python="`externally_routable_prefixes`" pulumi-lang-yaml="`externallyRoutablePrefixes`" pulumi-lang-java="`externallyRoutablePrefixes`">`externallyRoutablePrefixes`</span>: CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
- * - <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`">`tenantId`</span>: A globally unique identifier that represents the tenant that owns this entity.
- * - <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
- * - <span pulumi-lang-nodejs="`metadata`" pulumi-lang-dotnet="`Metadata`" pulumi-lang-go="`metadata`" pulumi-lang-python="`metadata`" pulumi-lang-yaml="`metadata`" pulumi-lang-java="`metadata`">`metadata`</span>: Metadata associated with this resource.
+ * - <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>:<span pulumi-lang-nodejs=" extId " pulumi-lang-dotnet=" ExtId " pulumi-lang-go=" extId " pulumi-lang-python=" ext_id " pulumi-lang-yaml=" extId " pulumi-lang-java=" extId " pulumi-lang-hcl=" ext_id "> extId </span>of VPC.
+ * - <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`">`name`</span>: Name of the VPC.
+ * - <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`" pulumi-lang-hcl="`description`">`description`</span>: Description of the VPC.
+ * - <span pulumi-lang-nodejs="`commonDhcpOptions`" pulumi-lang-dotnet="`CommonDhcpOptions`" pulumi-lang-go="`commonDhcpOptions`" pulumi-lang-python="`common_dhcp_options`" pulumi-lang-yaml="`commonDhcpOptions`" pulumi-lang-java="`commonDhcpOptions`" pulumi-lang-hcl="`common_dhcp_options`">`commonDhcpOptions`</span>: List of DHCP options to be configured.
+ * - <span pulumi-lang-nodejs="`vpcType`" pulumi-lang-dotnet="`VpcType`" pulumi-lang-go="`vpcType`" pulumi-lang-python="`vpc_type`" pulumi-lang-yaml="`vpcType`" pulumi-lang-java="`vpcType`" pulumi-lang-hcl="`vpc_type`">`vpcType`</span>: Type of VPC.
+ * - <span pulumi-lang-nodejs="`snatIps`" pulumi-lang-dotnet="`SnatIps`" pulumi-lang-go="`snatIps`" pulumi-lang-python="`snat_ips`" pulumi-lang-yaml="`snatIps`" pulumi-lang-java="`snatIps`" pulumi-lang-hcl="`snat_ips`">`snatIps`</span>: List of IP Addresses used for SNAT.
+ * - <span pulumi-lang-nodejs="`externalSubnets`" pulumi-lang-dotnet="`ExternalSubnets`" pulumi-lang-go="`externalSubnets`" pulumi-lang-python="`external_subnets`" pulumi-lang-yaml="`externalSubnets`" pulumi-lang-java="`externalSubnets`" pulumi-lang-hcl="`external_subnets`">`externalSubnets`</span>: List of external subnets that the VPC is attached to.
+ * - <span pulumi-lang-nodejs="`externalRoutingDomainReference`" pulumi-lang-dotnet="`ExternalRoutingDomainReference`" pulumi-lang-go="`externalRoutingDomainReference`" pulumi-lang-python="`external_routing_domain_reference`" pulumi-lang-yaml="`externalRoutingDomainReference`" pulumi-lang-java="`externalRoutingDomainReference`" pulumi-lang-hcl="`external_routing_domain_reference`">`externalRoutingDomainReference`</span>: External routing domain associated with this route table
+ * - <span pulumi-lang-nodejs="`externallyRoutablePrefixes`" pulumi-lang-dotnet="`ExternallyRoutablePrefixes`" pulumi-lang-go="`externallyRoutablePrefixes`" pulumi-lang-python="`externally_routable_prefixes`" pulumi-lang-yaml="`externallyRoutablePrefixes`" pulumi-lang-java="`externallyRoutablePrefixes`" pulumi-lang-hcl="`externally_routable_prefixes`">`externallyRoutablePrefixes`</span>: CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
+ * - <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`" pulumi-lang-hcl="`tenant_id`">`tenantId`</span>: A globally unique identifier that represents the tenant that owns this entity.
+ * - <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`">`links`</span>: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+ * - <span pulumi-lang-nodejs="`metadata`" pulumi-lang-dotnet="`Metadata`" pulumi-lang-go="`metadata`" pulumi-lang-python="`metadata`" pulumi-lang-yaml="`metadata`" pulumi-lang-java="`metadata`" pulumi-lang-hcl="`metadata`">`metadata`</span>: Metadata associated with this resource.
  *
  * ###<span pulumi-lang-nodejs=" commonDhcpOptions
  * " pulumi-lang-dotnet=" CommonDhcpOptions
@@ -54,9 +54,10 @@ import * as utilities from "./utilities";
  * " pulumi-lang-python=" common_dhcp_options
  * " pulumi-lang-yaml=" commonDhcpOptions
  * " pulumi-lang-java=" commonDhcpOptions
+ * " pulumi-lang-hcl=" common_dhcp_options
  * "> commonDhcpOptions
  * </span>
- * - <span pulumi-lang-nodejs="`domainNameServers`" pulumi-lang-dotnet="`DomainNameServers`" pulumi-lang-go="`domainNameServers`" pulumi-lang-python="`domain_name_servers`" pulumi-lang-yaml="`domainNameServers`" pulumi-lang-java="`domainNameServers`">`domainNameServers`</span>: List of Domain Name Server addresses
+ * - <span pulumi-lang-nodejs="`domainNameServers`" pulumi-lang-dotnet="`DomainNameServers`" pulumi-lang-go="`domainNameServers`" pulumi-lang-python="`domain_name_servers`" pulumi-lang-yaml="`domainNameServers`" pulumi-lang-java="`domainNameServers`" pulumi-lang-hcl="`domain_name_servers`">`domainNameServers`</span>: List of Domain Name Server addresses
  * - `domain_name_servers.ipv4`: Reference to address configuration
  * - `domain_name_servers.ipv6`: Reference to address configuration
  *
@@ -66,13 +67,14 @@ import * as utilities from "./utilities";
  * " pulumi-lang-python=" external_subnets
  * " pulumi-lang-yaml=" externalSubnets
  * " pulumi-lang-java=" externalSubnets
+ * " pulumi-lang-hcl=" external_subnets
  * "> externalSubnets
  * </span>
- * - <span pulumi-lang-nodejs="`subnetReference`" pulumi-lang-dotnet="`SubnetReference`" pulumi-lang-go="`subnetReference`" pulumi-lang-python="`subnet_reference`" pulumi-lang-yaml="`subnetReference`" pulumi-lang-java="`subnetReference`">`subnetReference`</span>: External subnet reference.
- * - <span pulumi-lang-nodejs="`externalIps`" pulumi-lang-dotnet="`ExternalIps`" pulumi-lang-go="`externalIps`" pulumi-lang-python="`external_ips`" pulumi-lang-yaml="`externalIps`" pulumi-lang-java="`externalIps`">`externalIps`</span>: List of IP Addresses used for SNAT, if NAT is enabled on the external subnet. If NAT is not enabled, this specifies the IP address of the VPC port connected to the external gateway.
- * - <span pulumi-lang-nodejs="`gatewayNodes`" pulumi-lang-dotnet="`GatewayNodes`" pulumi-lang-go="`gatewayNodes`" pulumi-lang-python="`gateway_nodes`" pulumi-lang-yaml="`gatewayNodes`" pulumi-lang-java="`gatewayNodes`">`gatewayNodes`</span>: List of gateway nodes that can be used for external connectivity.
- * - <span pulumi-lang-nodejs="`activeGatewayNode`" pulumi-lang-dotnet="`ActiveGatewayNode`" pulumi-lang-go="`activeGatewayNode`" pulumi-lang-python="`active_gateway_node`" pulumi-lang-yaml="`activeGatewayNode`" pulumi-lang-java="`activeGatewayNode`">`activeGatewayNode`</span>: Reference of gateway nodes
- * - <span pulumi-lang-nodejs="`activeGatewayCount`" pulumi-lang-dotnet="`ActiveGatewayCount`" pulumi-lang-go="`activeGatewayCount`" pulumi-lang-python="`active_gateway_count`" pulumi-lang-yaml="`activeGatewayCount`" pulumi-lang-java="`activeGatewayCount`">`activeGatewayCount`</span>: Maximum number of active gateway nodes for the VPC external subnet association.
+ * - <span pulumi-lang-nodejs="`subnetReference`" pulumi-lang-dotnet="`SubnetReference`" pulumi-lang-go="`subnetReference`" pulumi-lang-python="`subnet_reference`" pulumi-lang-yaml="`subnetReference`" pulumi-lang-java="`subnetReference`" pulumi-lang-hcl="`subnet_reference`">`subnetReference`</span>: External subnet reference.
+ * - <span pulumi-lang-nodejs="`externalIps`" pulumi-lang-dotnet="`ExternalIps`" pulumi-lang-go="`externalIps`" pulumi-lang-python="`external_ips`" pulumi-lang-yaml="`externalIps`" pulumi-lang-java="`externalIps`" pulumi-lang-hcl="`external_ips`">`externalIps`</span>: List of IP Addresses used for SNAT, if NAT is enabled on the external subnet. If NAT is not enabled, this specifies the IP address of the VPC port connected to the external gateway.
+ * - <span pulumi-lang-nodejs="`gatewayNodes`" pulumi-lang-dotnet="`GatewayNodes`" pulumi-lang-go="`gatewayNodes`" pulumi-lang-python="`gateway_nodes`" pulumi-lang-yaml="`gatewayNodes`" pulumi-lang-java="`gatewayNodes`" pulumi-lang-hcl="`gateway_nodes`">`gatewayNodes`</span>: List of gateway nodes that can be used for external connectivity.
+ * - <span pulumi-lang-nodejs="`activeGatewayNode`" pulumi-lang-dotnet="`ActiveGatewayNode`" pulumi-lang-go="`activeGatewayNode`" pulumi-lang-python="`active_gateway_node`" pulumi-lang-yaml="`activeGatewayNode`" pulumi-lang-java="`activeGatewayNode`" pulumi-lang-hcl="`active_gateway_node`">`activeGatewayNode`</span>: Reference of gateway nodes
+ * - <span pulumi-lang-nodejs="`activeGatewayCount`" pulumi-lang-dotnet="`ActiveGatewayCount`" pulumi-lang-go="`activeGatewayCount`" pulumi-lang-python="`active_gateway_count`" pulumi-lang-yaml="`activeGatewayCount`" pulumi-lang-java="`activeGatewayCount`" pulumi-lang-hcl="`active_gateway_count`">`activeGatewayCount`</span>: Maximum number of active gateway nodes for the VPC external subnet association.
  *
  * ### snat_ips,<span pulumi-lang-nodejs=" externalIps
  * " pulumi-lang-dotnet=" ExternalIps
@@ -80,10 +82,11 @@ import * as utilities from "./utilities";
  * " pulumi-lang-python=" external_ips
  * " pulumi-lang-yaml=" externalIps
  * " pulumi-lang-java=" externalIps
+ * " pulumi-lang-hcl=" external_ips
  * "> externalIps
  * </span>
- * - <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`">`ipv4`</span>: Reference to address configuration
- * - <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`">`ipv6`</span>: Reference to address configuration
+ * - <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`">`ipv4`</span>: Reference to address configuration
+ * - <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`">`ipv6`</span>: Reference to address configuration
  *
  * ###<span pulumi-lang-nodejs=" externallyRoutablePrefixes
  * " pulumi-lang-dotnet=" ExternallyRoutablePrefixes
@@ -91,20 +94,21 @@ import * as utilities from "./utilities";
  * " pulumi-lang-python=" externally_routable_prefixes
  * " pulumi-lang-yaml=" externallyRoutablePrefixes
  * " pulumi-lang-java=" externallyRoutablePrefixes
+ * " pulumi-lang-hcl=" externally_routable_prefixes
  * "> externallyRoutablePrefixes
  * </span>
- * - <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`">`ipv4`</span>: IP V4 Configuration
+ * - <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`">`ipv4`</span>: IP V4 Configuration
  * - `ipv4.ip`: Reference to address configuration
  * - `ipv4.prefix_length`: The prefix length of the network
  *
- * - <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`">`ipv6`</span>: IP V6 Configuration
+ * - <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`">`ipv6`</span>: IP V6 Configuration
  * - `ipv6.ip`: Reference to address configuration
  * - `ipv6.prefix_length`: The prefix length of the network
  *
  * ### ipv4, ipv6 (Reference to address configuration)
  *
- * - <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: value of address
- * - <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`">`prefixLength`</span>: The prefix length of the network to which this host IPv4/IPv6 address belongs.
+ * - <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span>: value of address
+ * - <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span>: The prefix length of the network to which this host IPv4/IPv6 address belongs.
  *
  * See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/Vpcs/operation/listVpcs).
  */
@@ -192,20 +196,20 @@ export interface GetVpcsV2Result {
  *
  * ## vpcs
  *
- * The <span pulumi-lang-nodejs="`vpcs`" pulumi-lang-dotnet="`Vpcs`" pulumi-lang-go="`vpcs`" pulumi-lang-python="`vpcs`" pulumi-lang-yaml="`vpcs`" pulumi-lang-java="`vpcs`">`vpcs`</span> object contains the following attributes:
+ * The <span pulumi-lang-nodejs="`vpcs`" pulumi-lang-dotnet="`Vpcs`" pulumi-lang-go="`vpcs`" pulumi-lang-python="`vpcs`" pulumi-lang-yaml="`vpcs`" pulumi-lang-java="`vpcs`" pulumi-lang-hcl="`vpcs`">`vpcs`</span> object contains the following attributes:
  *
- * - <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>:<span pulumi-lang-nodejs=" extId " pulumi-lang-dotnet=" ExtId " pulumi-lang-go=" extId " pulumi-lang-python=" ext_id " pulumi-lang-yaml=" extId " pulumi-lang-java=" extId "> extId </span>of VPC.
- * - <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: Name of the VPC.
- * - <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>: Description of the VPC.
- * - <span pulumi-lang-nodejs="`commonDhcpOptions`" pulumi-lang-dotnet="`CommonDhcpOptions`" pulumi-lang-go="`commonDhcpOptions`" pulumi-lang-python="`common_dhcp_options`" pulumi-lang-yaml="`commonDhcpOptions`" pulumi-lang-java="`commonDhcpOptions`">`commonDhcpOptions`</span>: List of DHCP options to be configured.
- * - <span pulumi-lang-nodejs="`vpcType`" pulumi-lang-dotnet="`VpcType`" pulumi-lang-go="`vpcType`" pulumi-lang-python="`vpc_type`" pulumi-lang-yaml="`vpcType`" pulumi-lang-java="`vpcType`">`vpcType`</span>: Type of VPC.
- * - <span pulumi-lang-nodejs="`snatIps`" pulumi-lang-dotnet="`SnatIps`" pulumi-lang-go="`snatIps`" pulumi-lang-python="`snat_ips`" pulumi-lang-yaml="`snatIps`" pulumi-lang-java="`snatIps`">`snatIps`</span>: List of IP Addresses used for SNAT.
- * - <span pulumi-lang-nodejs="`externalSubnets`" pulumi-lang-dotnet="`ExternalSubnets`" pulumi-lang-go="`externalSubnets`" pulumi-lang-python="`external_subnets`" pulumi-lang-yaml="`externalSubnets`" pulumi-lang-java="`externalSubnets`">`externalSubnets`</span>: List of external subnets that the VPC is attached to.
- * - <span pulumi-lang-nodejs="`externalRoutingDomainReference`" pulumi-lang-dotnet="`ExternalRoutingDomainReference`" pulumi-lang-go="`externalRoutingDomainReference`" pulumi-lang-python="`external_routing_domain_reference`" pulumi-lang-yaml="`externalRoutingDomainReference`" pulumi-lang-java="`externalRoutingDomainReference`">`externalRoutingDomainReference`</span>: External routing domain associated with this route table
- * - <span pulumi-lang-nodejs="`externallyRoutablePrefixes`" pulumi-lang-dotnet="`ExternallyRoutablePrefixes`" pulumi-lang-go="`externallyRoutablePrefixes`" pulumi-lang-python="`externally_routable_prefixes`" pulumi-lang-yaml="`externallyRoutablePrefixes`" pulumi-lang-java="`externallyRoutablePrefixes`">`externallyRoutablePrefixes`</span>: CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
- * - <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`">`tenantId`</span>: A globally unique identifier that represents the tenant that owns this entity.
- * - <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
- * - <span pulumi-lang-nodejs="`metadata`" pulumi-lang-dotnet="`Metadata`" pulumi-lang-go="`metadata`" pulumi-lang-python="`metadata`" pulumi-lang-yaml="`metadata`" pulumi-lang-java="`metadata`">`metadata`</span>: Metadata associated with this resource.
+ * - <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>:<span pulumi-lang-nodejs=" extId " pulumi-lang-dotnet=" ExtId " pulumi-lang-go=" extId " pulumi-lang-python=" ext_id " pulumi-lang-yaml=" extId " pulumi-lang-java=" extId " pulumi-lang-hcl=" ext_id "> extId </span>of VPC.
+ * - <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`">`name`</span>: Name of the VPC.
+ * - <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`" pulumi-lang-hcl="`description`">`description`</span>: Description of the VPC.
+ * - <span pulumi-lang-nodejs="`commonDhcpOptions`" pulumi-lang-dotnet="`CommonDhcpOptions`" pulumi-lang-go="`commonDhcpOptions`" pulumi-lang-python="`common_dhcp_options`" pulumi-lang-yaml="`commonDhcpOptions`" pulumi-lang-java="`commonDhcpOptions`" pulumi-lang-hcl="`common_dhcp_options`">`commonDhcpOptions`</span>: List of DHCP options to be configured.
+ * - <span pulumi-lang-nodejs="`vpcType`" pulumi-lang-dotnet="`VpcType`" pulumi-lang-go="`vpcType`" pulumi-lang-python="`vpc_type`" pulumi-lang-yaml="`vpcType`" pulumi-lang-java="`vpcType`" pulumi-lang-hcl="`vpc_type`">`vpcType`</span>: Type of VPC.
+ * - <span pulumi-lang-nodejs="`snatIps`" pulumi-lang-dotnet="`SnatIps`" pulumi-lang-go="`snatIps`" pulumi-lang-python="`snat_ips`" pulumi-lang-yaml="`snatIps`" pulumi-lang-java="`snatIps`" pulumi-lang-hcl="`snat_ips`">`snatIps`</span>: List of IP Addresses used for SNAT.
+ * - <span pulumi-lang-nodejs="`externalSubnets`" pulumi-lang-dotnet="`ExternalSubnets`" pulumi-lang-go="`externalSubnets`" pulumi-lang-python="`external_subnets`" pulumi-lang-yaml="`externalSubnets`" pulumi-lang-java="`externalSubnets`" pulumi-lang-hcl="`external_subnets`">`externalSubnets`</span>: List of external subnets that the VPC is attached to.
+ * - <span pulumi-lang-nodejs="`externalRoutingDomainReference`" pulumi-lang-dotnet="`ExternalRoutingDomainReference`" pulumi-lang-go="`externalRoutingDomainReference`" pulumi-lang-python="`external_routing_domain_reference`" pulumi-lang-yaml="`externalRoutingDomainReference`" pulumi-lang-java="`externalRoutingDomainReference`" pulumi-lang-hcl="`external_routing_domain_reference`">`externalRoutingDomainReference`</span>: External routing domain associated with this route table
+ * - <span pulumi-lang-nodejs="`externallyRoutablePrefixes`" pulumi-lang-dotnet="`ExternallyRoutablePrefixes`" pulumi-lang-go="`externallyRoutablePrefixes`" pulumi-lang-python="`externally_routable_prefixes`" pulumi-lang-yaml="`externallyRoutablePrefixes`" pulumi-lang-java="`externallyRoutablePrefixes`" pulumi-lang-hcl="`externally_routable_prefixes`">`externallyRoutablePrefixes`</span>: CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
+ * - <span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`" pulumi-lang-hcl="`tenant_id`">`tenantId`</span>: A globally unique identifier that represents the tenant that owns this entity.
+ * - <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`">`links`</span>: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+ * - <span pulumi-lang-nodejs="`metadata`" pulumi-lang-dotnet="`Metadata`" pulumi-lang-go="`metadata`" pulumi-lang-python="`metadata`" pulumi-lang-yaml="`metadata`" pulumi-lang-java="`metadata`" pulumi-lang-hcl="`metadata`">`metadata`</span>: Metadata associated with this resource.
  *
  * ###<span pulumi-lang-nodejs=" commonDhcpOptions
  * " pulumi-lang-dotnet=" CommonDhcpOptions
@@ -213,9 +217,10 @@ export interface GetVpcsV2Result {
  * " pulumi-lang-python=" common_dhcp_options
  * " pulumi-lang-yaml=" commonDhcpOptions
  * " pulumi-lang-java=" commonDhcpOptions
+ * " pulumi-lang-hcl=" common_dhcp_options
  * "> commonDhcpOptions
  * </span>
- * - <span pulumi-lang-nodejs="`domainNameServers`" pulumi-lang-dotnet="`DomainNameServers`" pulumi-lang-go="`domainNameServers`" pulumi-lang-python="`domain_name_servers`" pulumi-lang-yaml="`domainNameServers`" pulumi-lang-java="`domainNameServers`">`domainNameServers`</span>: List of Domain Name Server addresses
+ * - <span pulumi-lang-nodejs="`domainNameServers`" pulumi-lang-dotnet="`DomainNameServers`" pulumi-lang-go="`domainNameServers`" pulumi-lang-python="`domain_name_servers`" pulumi-lang-yaml="`domainNameServers`" pulumi-lang-java="`domainNameServers`" pulumi-lang-hcl="`domain_name_servers`">`domainNameServers`</span>: List of Domain Name Server addresses
  * - `domain_name_servers.ipv4`: Reference to address configuration
  * - `domain_name_servers.ipv6`: Reference to address configuration
  *
@@ -225,13 +230,14 @@ export interface GetVpcsV2Result {
  * " pulumi-lang-python=" external_subnets
  * " pulumi-lang-yaml=" externalSubnets
  * " pulumi-lang-java=" externalSubnets
+ * " pulumi-lang-hcl=" external_subnets
  * "> externalSubnets
  * </span>
- * - <span pulumi-lang-nodejs="`subnetReference`" pulumi-lang-dotnet="`SubnetReference`" pulumi-lang-go="`subnetReference`" pulumi-lang-python="`subnet_reference`" pulumi-lang-yaml="`subnetReference`" pulumi-lang-java="`subnetReference`">`subnetReference`</span>: External subnet reference.
- * - <span pulumi-lang-nodejs="`externalIps`" pulumi-lang-dotnet="`ExternalIps`" pulumi-lang-go="`externalIps`" pulumi-lang-python="`external_ips`" pulumi-lang-yaml="`externalIps`" pulumi-lang-java="`externalIps`">`externalIps`</span>: List of IP Addresses used for SNAT, if NAT is enabled on the external subnet. If NAT is not enabled, this specifies the IP address of the VPC port connected to the external gateway.
- * - <span pulumi-lang-nodejs="`gatewayNodes`" pulumi-lang-dotnet="`GatewayNodes`" pulumi-lang-go="`gatewayNodes`" pulumi-lang-python="`gateway_nodes`" pulumi-lang-yaml="`gatewayNodes`" pulumi-lang-java="`gatewayNodes`">`gatewayNodes`</span>: List of gateway nodes that can be used for external connectivity.
- * - <span pulumi-lang-nodejs="`activeGatewayNode`" pulumi-lang-dotnet="`ActiveGatewayNode`" pulumi-lang-go="`activeGatewayNode`" pulumi-lang-python="`active_gateway_node`" pulumi-lang-yaml="`activeGatewayNode`" pulumi-lang-java="`activeGatewayNode`">`activeGatewayNode`</span>: Reference of gateway nodes
- * - <span pulumi-lang-nodejs="`activeGatewayCount`" pulumi-lang-dotnet="`ActiveGatewayCount`" pulumi-lang-go="`activeGatewayCount`" pulumi-lang-python="`active_gateway_count`" pulumi-lang-yaml="`activeGatewayCount`" pulumi-lang-java="`activeGatewayCount`">`activeGatewayCount`</span>: Maximum number of active gateway nodes for the VPC external subnet association.
+ * - <span pulumi-lang-nodejs="`subnetReference`" pulumi-lang-dotnet="`SubnetReference`" pulumi-lang-go="`subnetReference`" pulumi-lang-python="`subnet_reference`" pulumi-lang-yaml="`subnetReference`" pulumi-lang-java="`subnetReference`" pulumi-lang-hcl="`subnet_reference`">`subnetReference`</span>: External subnet reference.
+ * - <span pulumi-lang-nodejs="`externalIps`" pulumi-lang-dotnet="`ExternalIps`" pulumi-lang-go="`externalIps`" pulumi-lang-python="`external_ips`" pulumi-lang-yaml="`externalIps`" pulumi-lang-java="`externalIps`" pulumi-lang-hcl="`external_ips`">`externalIps`</span>: List of IP Addresses used for SNAT, if NAT is enabled on the external subnet. If NAT is not enabled, this specifies the IP address of the VPC port connected to the external gateway.
+ * - <span pulumi-lang-nodejs="`gatewayNodes`" pulumi-lang-dotnet="`GatewayNodes`" pulumi-lang-go="`gatewayNodes`" pulumi-lang-python="`gateway_nodes`" pulumi-lang-yaml="`gatewayNodes`" pulumi-lang-java="`gatewayNodes`" pulumi-lang-hcl="`gateway_nodes`">`gatewayNodes`</span>: List of gateway nodes that can be used for external connectivity.
+ * - <span pulumi-lang-nodejs="`activeGatewayNode`" pulumi-lang-dotnet="`ActiveGatewayNode`" pulumi-lang-go="`activeGatewayNode`" pulumi-lang-python="`active_gateway_node`" pulumi-lang-yaml="`activeGatewayNode`" pulumi-lang-java="`activeGatewayNode`" pulumi-lang-hcl="`active_gateway_node`">`activeGatewayNode`</span>: Reference of gateway nodes
+ * - <span pulumi-lang-nodejs="`activeGatewayCount`" pulumi-lang-dotnet="`ActiveGatewayCount`" pulumi-lang-go="`activeGatewayCount`" pulumi-lang-python="`active_gateway_count`" pulumi-lang-yaml="`activeGatewayCount`" pulumi-lang-java="`activeGatewayCount`" pulumi-lang-hcl="`active_gateway_count`">`activeGatewayCount`</span>: Maximum number of active gateway nodes for the VPC external subnet association.
  *
  * ### snat_ips,<span pulumi-lang-nodejs=" externalIps
  * " pulumi-lang-dotnet=" ExternalIps
@@ -239,10 +245,11 @@ export interface GetVpcsV2Result {
  * " pulumi-lang-python=" external_ips
  * " pulumi-lang-yaml=" externalIps
  * " pulumi-lang-java=" externalIps
+ * " pulumi-lang-hcl=" external_ips
  * "> externalIps
  * </span>
- * - <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`">`ipv4`</span>: Reference to address configuration
- * - <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`">`ipv6`</span>: Reference to address configuration
+ * - <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`">`ipv4`</span>: Reference to address configuration
+ * - <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`">`ipv6`</span>: Reference to address configuration
  *
  * ###<span pulumi-lang-nodejs=" externallyRoutablePrefixes
  * " pulumi-lang-dotnet=" ExternallyRoutablePrefixes
@@ -250,20 +257,21 @@ export interface GetVpcsV2Result {
  * " pulumi-lang-python=" externally_routable_prefixes
  * " pulumi-lang-yaml=" externallyRoutablePrefixes
  * " pulumi-lang-java=" externallyRoutablePrefixes
+ * " pulumi-lang-hcl=" externally_routable_prefixes
  * "> externallyRoutablePrefixes
  * </span>
- * - <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`">`ipv4`</span>: IP V4 Configuration
+ * - <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`">`ipv4`</span>: IP V4 Configuration
  * - `ipv4.ip`: Reference to address configuration
  * - `ipv4.prefix_length`: The prefix length of the network
  *
- * - <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`">`ipv6`</span>: IP V6 Configuration
+ * - <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`">`ipv6`</span>: IP V6 Configuration
  * - `ipv6.ip`: Reference to address configuration
  * - `ipv6.prefix_length`: The prefix length of the network
  *
  * ### ipv4, ipv6 (Reference to address configuration)
  *
- * - <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: value of address
- * - <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`">`prefixLength`</span>: The prefix length of the network to which this host IPv4/IPv6 address belongs.
+ * - <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span>: value of address
+ * - <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span>: The prefix length of the network to which this host IPv4/IPv6 address belongs.
  *
  * See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/Vpcs/operation/listVpcs).
  */

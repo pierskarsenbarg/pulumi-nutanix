@@ -78,19 +78,19 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> ExternalSubnetReferenceUuid { get; private set; } = null!;
 
         /// <summary>
-        /// The&lt;span pulumi-lang-nodejs=" floatingIps " pulumi-lang-dotnet=" FloatingIps " pulumi-lang-go=" floatingIps " pulumi-lang-python=" floating_ips " pulumi-lang-yaml=" floatingIps " pulumi-lang-java=" floatingIps "&gt; floatingIps &lt;/span&gt;kind metadata.
+        /// The&lt;span pulumi-lang-nodejs=" floatingIps " pulumi-lang-dotnet=" FloatingIps " pulumi-lang-go=" floatingIps " pulumi-lang-python=" floating_ips " pulumi-lang-yaml=" floatingIps " pulumi-lang-java=" floatingIps " pulumi-lang-hcl=" floating_ips "&gt; floatingIps &lt;/span&gt;kind metadata.
         /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
 
         /// <summary>
-        /// Private IP with which floating IP is associated. Should be used with&lt;span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference "&gt; vpcReference &lt;/span&gt;.
+        /// Private IP with which floating IP is associated. Should be used with&lt;span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference " pulumi-lang-hcl=" vpc_reference "&gt; vpcReference &lt;/span&gt;.
         /// </summary>
         [Output("privateIp")]
         public Output<string?> PrivateIp { get; private set; } = null!;
 
         /// <summary>
-        /// The reference to a&lt;span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic "&gt; vmNic &lt;/span&gt;.
+        /// The reference to a&lt;span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic " pulumi-lang-hcl=" vm_nic "&gt; vmNic &lt;/span&gt;.
         /// </summary>
         [Output("vmNicReferenceUuid")]
         public Output<string?> VmNicReferenceUuid { get; private set; } = null!;
@@ -174,13 +174,13 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? ExternalSubnetReferenceUuid { get; set; }
 
         /// <summary>
-        /// Private IP with which floating IP is associated. Should be used with&lt;span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference "&gt; vpcReference &lt;/span&gt;.
+        /// Private IP with which floating IP is associated. Should be used with&lt;span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference " pulumi-lang-hcl=" vpc_reference "&gt; vpcReference &lt;/span&gt;.
         /// </summary>
         [Input("privateIp")]
         public Input<string>? PrivateIp { get; set; }
 
         /// <summary>
-        /// The reference to a&lt;span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic "&gt; vmNic &lt;/span&gt;.
+        /// The reference to a&lt;span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic " pulumi-lang-hcl=" vm_nic "&gt; vmNic &lt;/span&gt;.
         /// </summary>
         [Input("vmNicReferenceUuid")]
         public Input<string>? VmNicReferenceUuid { get; set; }
@@ -228,7 +228,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputMap<string>? _metadata;
 
         /// <summary>
-        /// The&lt;span pulumi-lang-nodejs=" floatingIps " pulumi-lang-dotnet=" FloatingIps " pulumi-lang-go=" floatingIps " pulumi-lang-python=" floating_ips " pulumi-lang-yaml=" floatingIps " pulumi-lang-java=" floatingIps "&gt; floatingIps &lt;/span&gt;kind metadata.
+        /// The&lt;span pulumi-lang-nodejs=" floatingIps " pulumi-lang-dotnet=" FloatingIps " pulumi-lang-go=" floatingIps " pulumi-lang-python=" floating_ips " pulumi-lang-yaml=" floatingIps " pulumi-lang-java=" floatingIps " pulumi-lang-hcl=" floating_ips "&gt; floatingIps &lt;/span&gt;kind metadata.
         /// </summary>
         public InputMap<string> Metadata
         {
@@ -237,13 +237,13 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// Private IP with which floating IP is associated. Should be used with&lt;span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference "&gt; vpcReference &lt;/span&gt;.
+        /// Private IP with which floating IP is associated. Should be used with&lt;span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference " pulumi-lang-hcl=" vpc_reference "&gt; vpcReference &lt;/span&gt;.
         /// </summary>
         [Input("privateIp")]
         public Input<string>? PrivateIp { get; set; }
 
         /// <summary>
-        /// The reference to a&lt;span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic "&gt; vmNic &lt;/span&gt;.
+        /// The reference to a&lt;span pulumi-lang-nodejs=" vmNic " pulumi-lang-dotnet=" VmNic " pulumi-lang-go=" vmNic " pulumi-lang-python=" vm_nic " pulumi-lang-yaml=" vmNic " pulumi-lang-java=" vmNic " pulumi-lang-hcl=" vm_nic "&gt; vmNic &lt;/span&gt;.
         /// </summary>
         [Input("vmNicReferenceUuid")]
         public Input<string>? VmNicReferenceUuid { get; set; }

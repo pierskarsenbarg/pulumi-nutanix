@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetRecoveryPlanStageListStageWorkRecoverEntityResult
     {
         /// <summary>
-        /// (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or&lt;span pulumi-lang-nodejs=" anyEntityReference " pulumi-lang-dotnet=" AnyEntityReference " pulumi-lang-go=" anyEntityReference " pulumi-lang-python=" any_entity_reference " pulumi-lang-yaml=" anyEntityReference " pulumi-lang-java=" anyEntityReference "&gt; anyEntityReference &lt;/span&gt;has to be provided.
+        /// (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or&lt;span pulumi-lang-nodejs=" anyEntityReference " pulumi-lang-dotnet=" AnyEntityReference " pulumi-lang-go=" anyEntityReference " pulumi-lang-python=" any_entity_reference " pulumi-lang-yaml=" anyEntityReference " pulumi-lang-java=" anyEntityReference " pulumi-lang-hcl=" any_entity_reference "&gt; anyEntityReference &lt;/span&gt;has to be provided.
         /// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
         /// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
         /// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.

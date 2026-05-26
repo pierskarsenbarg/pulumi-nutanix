@@ -90,6 +90,24 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getroutetablesv2" "all-tables" {
+        /// }
+        /// data "nutanix_getroutetablesv2" "route-tables-with-filter" {
+        ///   filter = "vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'"
+        /// }
+        /// data "nutanix_getroutetablesv2" "route-tables-with-orderby" {
+        ///   order_by = "vpcReference"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -225,6 +243,24 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getroutetablesv2" "all-tables" {
+        /// }
+        /// data "nutanix_getroutetablesv2" "route-tables-with-filter" {
+        ///   filter = "vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'"
+        /// }
+        /// data "nutanix_getroutetablesv2" "route-tables-with-orderby" {
+        ///   order_by = "vpcReference"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -358,6 +394,24 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getroutetablesv2" "all-tables" {
+        /// }
+        /// data "nutanix_getroutetablesv2" "route-tables-with-filter" {
+        ///   filter = "vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'"
+        /// }
+        /// data "nutanix_getroutetablesv2" "route-tables-with-orderby" {
+        ///   order_by = "vpcReference"
         /// }
         /// ```
         /// ```java

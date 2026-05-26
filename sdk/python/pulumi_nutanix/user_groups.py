@@ -126,7 +126,7 @@ class _UserGroupsState:
 
         :param pulumi.Input[Sequence[pulumi.Input['UserGroupsDirectoryServiceOusArgs']]] directory_service_ous: - (Optional) A Directory Service organizational unit.
         :param pulumi.Input[Sequence[pulumi.Input['UserGroupsDirectoryServiceUserGroupArgs']]] directory_service_user_groups: - (Optional) A Directory Service user group.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: The<span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup "> userGroup </span>kind metadata.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: The<span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup " pulumi-lang-hcl=" user_group "> userGroup </span>kind metadata.
         :param pulumi.Input[Sequence[pulumi.Input['UserGroupsSamlUserGroupArgs']]] saml_user_groups: - (Optional) A SAML Service user group.
         """
         if categories is not None:
@@ -181,7 +181,7 @@ class _UserGroupsState:
     @pulumi.getter
     def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        The<span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup "> userGroup </span>kind metadata.
+        The<span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup " pulumi-lang-hcl=" user_group "> userGroup </span>kind metadata.
         """
         return pulumi.get(self, "metadata")
 
@@ -366,7 +366,7 @@ class UserGroups(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceOusArgs', 'UserGroupsDirectoryServiceOusArgsDict']]]] directory_service_ous: - (Optional) A Directory Service organizational unit.
         :param pulumi.Input[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceUserGroupArgs', 'UserGroupsDirectoryServiceUserGroupArgsDict']]]] directory_service_user_groups: - (Optional) A Directory Service user group.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: The<span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup "> userGroup </span>kind metadata.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: The<span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup " pulumi-lang-hcl=" user_group "> userGroup </span>kind metadata.
         :param pulumi.Input[Sequence[pulumi.Input[Union['UserGroupsSamlUserGroupArgs', 'UserGroupsSamlUserGroupArgsDict']]]] saml_user_groups: - (Optional) A SAML Service user group.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -407,7 +407,7 @@ class UserGroups(pulumi.CustomResource):
     @pulumi.getter
     def metadata(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        The<span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup "> userGroup </span>kind metadata.
+        The<span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup " pulumi-lang-hcl=" user_group "> userGroup </span>kind metadata.
         """
         return pulumi.get(self, "metadata")
 

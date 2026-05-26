@@ -49,7 +49,7 @@ namespace PiersKarsenbarg.Nutanix
     public partial class LcmConfigV2 : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when&lt;span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "&gt; autoInventoryEnabled &lt;/span&gt;is set to True. The default schedule time is 03:00(AM).
+        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when&lt;span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "&gt; autoInventoryEnabled &lt;/span&gt;is set to True. The default schedule time is 03:00(AM).
         /// </summary>
         [Output("autoInventorySchedule")]
         public Output<string?> AutoInventorySchedule { get; private set; } = null!;
@@ -143,7 +143,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class LcmConfigV2Args : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when&lt;span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "&gt; autoInventoryEnabled &lt;/span&gt;is set to True. The default schedule time is 03:00(AM).
+        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when&lt;span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "&gt; autoInventoryEnabled &lt;/span&gt;is set to True. The default schedule time is 03:00(AM).
         /// </summary>
         [Input("autoInventorySchedule")]
         public Input<string>? AutoInventorySchedule { get; set; }
@@ -195,7 +195,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class LcmConfigV2State : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when&lt;span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "&gt; autoInventoryEnabled &lt;/span&gt;is set to True. The default schedule time is 03:00(AM).
+        /// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when&lt;span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "&gt; autoInventoryEnabled &lt;/span&gt;is set to True. The default schedule time is 03:00(AM).
         /// </summary>
         [Input("autoInventorySchedule")]
         public Input<string>? AutoInventorySchedule { get; set; }

@@ -140,7 +140,7 @@ export interface GetClusterResult {
      */
     readonly masqueradingIp: string;
     /**
-     * - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp "> masqueradingIp </span>to connect to the cluster.
+     * - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp " pulumi-lang-hcl=" masquerading_ip "> masqueradingIp </span>to connect to the cluster.
      */
     readonly masqueradingPort: number;
     /**

@@ -389,7 +389,7 @@ class GetClusterResult:
     @pulumi.getter(name="masqueradingPort")
     def masquerading_port(self) -> _builtins.int:
         """
-        - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp "> masqueradingIp </span>to connect to the cluster.
+        - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp " pulumi-lang-hcl=" masquerading_ip "> masqueradingIp </span>to connect to the cluster.
         """
         return pulumi.get(self, "masquerading_port")
 

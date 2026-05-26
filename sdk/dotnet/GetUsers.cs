@@ -95,6 +95,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getuser" "users" {
+        /// }
+        /// 
+        /// resource "nutanix_user" "user" {
+        ///   directory_service_user = {
+        ///     user_principal_name = "test-user@ntnxlab.local"
+        ///     directory_service_reference = {
+        ///       uuid = "&lt;directory-service-uuid&gt;"
+        ///     }
+        ///   }
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -238,6 +259,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getuser" "users" {
+        /// }
+        /// 
+        /// resource "nutanix_user" "user" {
+        ///   directory_service_user = {
+        ///     user_principal_name = "test-user@ntnxlab.local"
+        ///     directory_service_reference = {
+        ///       uuid = "&lt;directory-service-uuid&gt;"
+        ///     }
+        ///   }
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -379,6 +421,27 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getuser" "users" {
+        /// }
+        /// 
+        /// resource "nutanix_user" "user" {
+        ///   directory_service_user = {
+        ///     user_principal_name = "test-user@ntnxlab.local"
+        ///     directory_service_reference = {
+        ///       uuid = "&lt;directory-service-uuid&gt;"
+        ///     }
+        ///   }
         /// }
         /// ```
         /// ```java

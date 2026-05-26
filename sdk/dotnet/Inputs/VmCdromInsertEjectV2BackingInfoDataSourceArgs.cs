@@ -17,7 +17,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<Inputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs>? _references;
 
         /// <summary>
-        /// Reference to image or vm disk. Either &lt;span pulumi-lang-nodejs="`imageReference`" pulumi-lang-dotnet="`ImageReference`" pulumi-lang-go="`imageReference`" pulumi-lang-python="`image_reference`" pulumi-lang-yaml="`imageReference`" pulumi-lang-java="`imageReference`"&gt;`imageReference`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`vmDiskReference`" pulumi-lang-dotnet="`VmDiskReference`" pulumi-lang-go="`vmDiskReference`" pulumi-lang-python="`vm_disk_reference`" pulumi-lang-yaml="`vmDiskReference`" pulumi-lang-java="`vmDiskReference`"&gt;`vmDiskReference`&lt;/span&gt;.
+        /// Reference to image or vm disk. Either &lt;span pulumi-lang-nodejs="`imageReference`" pulumi-lang-dotnet="`ImageReference`" pulumi-lang-go="`imageReference`" pulumi-lang-python="`image_reference`" pulumi-lang-yaml="`imageReference`" pulumi-lang-java="`imageReference`" pulumi-lang-hcl="`image_reference`"&gt;`imageReference`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`vmDiskReference`" pulumi-lang-dotnet="`VmDiskReference`" pulumi-lang-go="`vmDiskReference`" pulumi-lang-python="`vm_disk_reference`" pulumi-lang-yaml="`vmDiskReference`" pulumi-lang-java="`vmDiskReference`" pulumi-lang-hcl="`vm_disk_reference`"&gt;`vmDiskReference`&lt;/span&gt;.
         /// </summary>
         public InputList<Inputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs> References
         {

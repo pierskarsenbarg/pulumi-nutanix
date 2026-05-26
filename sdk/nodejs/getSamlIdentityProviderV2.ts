@@ -26,7 +26,7 @@ import * as utilities from "./utilities";
  *
  * The following arguments are supported:
  *
- * * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - External identifier of the SAML Identity Provider.
+ * * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>: - External identifier of the SAML Identity Provider.
  */
 export function getSamlIdentityProviderV2(args: GetSamlIdentityProviderV2Args, opts?: pulumi.InvokeOptions): Promise<GetSamlIdentityProviderV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -114,7 +114,7 @@ export interface GetSamlIdentityProviderV2Result {
  *
  * The following arguments are supported:
  *
- * * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: - External identifier of the SAML Identity Provider.
+ * * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>: - External identifier of the SAML Identity Provider.
  */
 export function getSamlIdentityProviderV2Output(args: GetSamlIdentityProviderV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSamlIdentityProviderV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

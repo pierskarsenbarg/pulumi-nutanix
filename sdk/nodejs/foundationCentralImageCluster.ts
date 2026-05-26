@@ -100,7 +100,7 @@ import * as utilities from "./utilities";
  * ## lifecycle
  *
  * * `Update` : - Resource will trigger new resource create call for any kind of update in resource config.
- * * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`">`delete`</span> : - Resource will be deleted from Foundation Central deployment history. For Actual Cluster delete , manually destroy the cluster.
+ * * <span pulumi-lang-nodejs="`delete`" pulumi-lang-dotnet="`Delete`" pulumi-lang-go="`delete`" pulumi-lang-python="`delete`" pulumi-lang-yaml="`delete`" pulumi-lang-java="`delete`" pulumi-lang-hcl="`delete`">`delete`</span> : - Resource will be deleted from Foundation Central deployment history. For Actual Cluster delete , manually destroy the cluster.
  *
  * See detailed information in [Nutanix Foundation Central Create a Cluster](https://www.nutanix.dev/api_references/foundation-central/#/cba507f282927-request-to-create-a-cluster).
  */

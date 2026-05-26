@@ -11,33 +11,33 @@ import * as utilities from "./utilities";
  *
  * ## Subnets
  *
- * The <span pulumi-lang-nodejs="`subnets`" pulumi-lang-dotnet="`Subnets`" pulumi-lang-go="`subnets`" pulumi-lang-python="`subnets`" pulumi-lang-yaml="`subnets`" pulumi-lang-java="`subnets`">`subnets`</span> object contains the following attributes:
+ * The <span pulumi-lang-nodejs="`subnets`" pulumi-lang-dotnet="`Subnets`" pulumi-lang-go="`subnets`" pulumi-lang-python="`subnets`" pulumi-lang-yaml="`subnets`" pulumi-lang-java="`subnets`" pulumi-lang-hcl="`subnets`">`subnets`</span> object contains the following attributes:
  *
- * - <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption.
- * - <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: Name of the subnet.
- * - <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>: Description of the subnet.
- * - <span pulumi-lang-nodejs="`subnetType`" pulumi-lang-dotnet="`SubnetType`" pulumi-lang-go="`subnetType`" pulumi-lang-python="`subnet_type`" pulumi-lang-yaml="`subnetType`" pulumi-lang-java="`subnetType`">`subnetType`</span>: Type of subnet.
- * - <span pulumi-lang-nodejs="`networkId`" pulumi-lang-dotnet="`NetworkId`" pulumi-lang-go="`networkId`" pulumi-lang-python="`network_id`" pulumi-lang-yaml="`networkId`" pulumi-lang-java="`networkId`">`networkId`</span>: or VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
- * - <span pulumi-lang-nodejs="`dhcpOptions`" pulumi-lang-dotnet="`DhcpOptions`" pulumi-lang-go="`dhcpOptions`" pulumi-lang-python="`dhcp_options`" pulumi-lang-yaml="`dhcpOptions`" pulumi-lang-java="`dhcpOptions`">`dhcpOptions`</span>: List of DHCP options to be configured.
- * - <span pulumi-lang-nodejs="`ipConfig`" pulumi-lang-dotnet="`IpConfig`" pulumi-lang-go="`ipConfig`" pulumi-lang-python="`ip_config`" pulumi-lang-yaml="`ipConfig`" pulumi-lang-java="`ipConfig`">`ipConfig`</span>: IP configuration for the subnet.
- * - <span pulumi-lang-nodejs="`clusterReference`" pulumi-lang-dotnet="`ClusterReference`" pulumi-lang-go="`clusterReference`" pulumi-lang-python="`cluster_reference`" pulumi-lang-yaml="`clusterReference`" pulumi-lang-java="`clusterReference`">`clusterReference`</span>: UUID of the cluster this subnet belongs to.
- * - <span pulumi-lang-nodejs="`virtualSwitchReference`" pulumi-lang-dotnet="`VirtualSwitchReference`" pulumi-lang-go="`virtualSwitchReference`" pulumi-lang-python="`virtual_switch_reference`" pulumi-lang-yaml="`virtualSwitchReference`" pulumi-lang-java="`virtualSwitchReference`">`virtualSwitchReference`</span>: UUID of the virtual switch this subnet belongs to (type VLAN only).
- * - <span pulumi-lang-nodejs="`vpcReference`" pulumi-lang-dotnet="`VpcReference`" pulumi-lang-go="`vpcReference`" pulumi-lang-python="`vpc_reference`" pulumi-lang-yaml="`vpcReference`" pulumi-lang-java="`vpcReference`">`vpcReference`</span>: UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
- * - <span pulumi-lang-nodejs="`isNatEnabled`" pulumi-lang-dotnet="`IsNatEnabled`" pulumi-lang-go="`isNatEnabled`" pulumi-lang-python="`is_nat_enabled`" pulumi-lang-yaml="`isNatEnabled`" pulumi-lang-java="`isNatEnabled`">`isNatEnabled`</span>: Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
- * - <span pulumi-lang-nodejs="`isExternal`" pulumi-lang-dotnet="`IsExternal`" pulumi-lang-go="`isExternal`" pulumi-lang-python="`is_external`" pulumi-lang-yaml="`isExternal`" pulumi-lang-java="`isExternal`">`isExternal`</span>: Indicates whether the subnet is used for external connectivity.
- * - <span pulumi-lang-nodejs="`reservedIpAddresses`" pulumi-lang-dotnet="`ReservedIpAddresses`" pulumi-lang-go="`reservedIpAddresses`" pulumi-lang-python="`reserved_ip_addresses`" pulumi-lang-yaml="`reservedIpAddresses`" pulumi-lang-java="`reservedIpAddresses`">`reservedIpAddresses`</span>: List of IPs that are excluded while allocating IP addresses to VM ports.
- * - <span pulumi-lang-nodejs="`dynamicIpAddresses`" pulumi-lang-dotnet="`DynamicIpAddresses`" pulumi-lang-go="`dynamicIpAddresses`" pulumi-lang-python="`dynamic_ip_addresses`" pulumi-lang-yaml="`dynamicIpAddresses`" pulumi-lang-java="`dynamicIpAddresses`">`dynamicIpAddresses`</span>: List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
- * - <span pulumi-lang-nodejs="`networkFunctionChainReference`" pulumi-lang-dotnet="`NetworkFunctionChainReference`" pulumi-lang-go="`networkFunctionChainReference`" pulumi-lang-python="`network_function_chain_reference`" pulumi-lang-yaml="`networkFunctionChainReference`" pulumi-lang-java="`networkFunctionChainReference`">`networkFunctionChainReference`</span>: UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
- * - <span pulumi-lang-nodejs="`bridgeName`" pulumi-lang-dotnet="`BridgeName`" pulumi-lang-go="`bridgeName`" pulumi-lang-python="`bridge_name`" pulumi-lang-yaml="`bridgeName`" pulumi-lang-java="`bridgeName`">`bridgeName`</span>: Name of the bridge on the host for the subnet.
- * - <span pulumi-lang-nodejs="`isAdvancedNetworking`" pulumi-lang-dotnet="`IsAdvancedNetworking`" pulumi-lang-go="`isAdvancedNetworking`" pulumi-lang-python="`is_advanced_networking`" pulumi-lang-yaml="`isAdvancedNetworking`" pulumi-lang-java="`isAdvancedNetworking`">`isAdvancedNetworking`</span>: Indicates whether the subnet is used for advanced networking.
- * - <span pulumi-lang-nodejs="`clusterName`" pulumi-lang-dotnet="`ClusterName`" pulumi-lang-go="`clusterName`" pulumi-lang-python="`cluster_name`" pulumi-lang-yaml="`clusterName`" pulumi-lang-java="`clusterName`">`clusterName`</span>: Cluster Name
- * - <span pulumi-lang-nodejs="`hypervisorType`" pulumi-lang-dotnet="`HypervisorType`" pulumi-lang-go="`hypervisorType`" pulumi-lang-python="`hypervisor_type`" pulumi-lang-yaml="`hypervisorType`" pulumi-lang-java="`hypervisorType`">`hypervisorType`</span>: Hypervisor Type
- * - <span pulumi-lang-nodejs="`virtualSwitch`" pulumi-lang-dotnet="`VirtualSwitch`" pulumi-lang-go="`virtualSwitch`" pulumi-lang-python="`virtual_switch`" pulumi-lang-yaml="`virtualSwitch`" pulumi-lang-java="`virtualSwitch`">`virtualSwitch`</span>: Schema to configure a virtual switch
- * - <span pulumi-lang-nodejs="`vpc`" pulumi-lang-dotnet="`Vpc`" pulumi-lang-go="`vpc`" pulumi-lang-python="`vpc`" pulumi-lang-yaml="`vpc`" pulumi-lang-java="`vpc`">`vpc`</span>: Networking common base object
- * - <span pulumi-lang-nodejs="`ipPrefix`" pulumi-lang-dotnet="`IpPrefix`" pulumi-lang-go="`ipPrefix`" pulumi-lang-python="`ip_prefix`" pulumi-lang-yaml="`ipPrefix`" pulumi-lang-java="`ipPrefix`">`ipPrefix`</span>: IP Prefix in CIDR format.
- * - <span pulumi-lang-nodejs="`ipUsage`" pulumi-lang-dotnet="`IpUsage`" pulumi-lang-go="`ipUsage`" pulumi-lang-python="`ip_usage`" pulumi-lang-yaml="`ipUsage`" pulumi-lang-java="`ipUsage`">`ipUsage`</span>: IP usage statistics.
- * - <span pulumi-lang-nodejs="`migrationState`" pulumi-lang-dotnet="`MigrationState`" pulumi-lang-go="`migrationState`" pulumi-lang-python="`migration_state`" pulumi-lang-yaml="`migrationState`" pulumi-lang-java="`migrationState`">`migrationState`</span>: Migration state of the subnet. This field is read-only.
- * - <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+ * - <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption.
+ * - <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`">`name`</span>: Name of the subnet.
+ * - <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`" pulumi-lang-hcl="`description`">`description`</span>: Description of the subnet.
+ * - <span pulumi-lang-nodejs="`subnetType`" pulumi-lang-dotnet="`SubnetType`" pulumi-lang-go="`subnetType`" pulumi-lang-python="`subnet_type`" pulumi-lang-yaml="`subnetType`" pulumi-lang-java="`subnetType`" pulumi-lang-hcl="`subnet_type`">`subnetType`</span>: Type of subnet.
+ * - <span pulumi-lang-nodejs="`networkId`" pulumi-lang-dotnet="`NetworkId`" pulumi-lang-go="`networkId`" pulumi-lang-python="`network_id`" pulumi-lang-yaml="`networkId`" pulumi-lang-java="`networkId`" pulumi-lang-hcl="`network_id`">`networkId`</span>: or VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
+ * - <span pulumi-lang-nodejs="`dhcpOptions`" pulumi-lang-dotnet="`DhcpOptions`" pulumi-lang-go="`dhcpOptions`" pulumi-lang-python="`dhcp_options`" pulumi-lang-yaml="`dhcpOptions`" pulumi-lang-java="`dhcpOptions`" pulumi-lang-hcl="`dhcp_options`">`dhcpOptions`</span>: List of DHCP options to be configured.
+ * - <span pulumi-lang-nodejs="`ipConfig`" pulumi-lang-dotnet="`IpConfig`" pulumi-lang-go="`ipConfig`" pulumi-lang-python="`ip_config`" pulumi-lang-yaml="`ipConfig`" pulumi-lang-java="`ipConfig`" pulumi-lang-hcl="`ip_config`">`ipConfig`</span>: IP configuration for the subnet.
+ * - <span pulumi-lang-nodejs="`clusterReference`" pulumi-lang-dotnet="`ClusterReference`" pulumi-lang-go="`clusterReference`" pulumi-lang-python="`cluster_reference`" pulumi-lang-yaml="`clusterReference`" pulumi-lang-java="`clusterReference`" pulumi-lang-hcl="`cluster_reference`">`clusterReference`</span>: UUID of the cluster this subnet belongs to.
+ * - <span pulumi-lang-nodejs="`virtualSwitchReference`" pulumi-lang-dotnet="`VirtualSwitchReference`" pulumi-lang-go="`virtualSwitchReference`" pulumi-lang-python="`virtual_switch_reference`" pulumi-lang-yaml="`virtualSwitchReference`" pulumi-lang-java="`virtualSwitchReference`" pulumi-lang-hcl="`virtual_switch_reference`">`virtualSwitchReference`</span>: UUID of the virtual switch this subnet belongs to (type VLAN only).
+ * - <span pulumi-lang-nodejs="`vpcReference`" pulumi-lang-dotnet="`VpcReference`" pulumi-lang-go="`vpcReference`" pulumi-lang-python="`vpc_reference`" pulumi-lang-yaml="`vpcReference`" pulumi-lang-java="`vpcReference`" pulumi-lang-hcl="`vpc_reference`">`vpcReference`</span>: UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
+ * - <span pulumi-lang-nodejs="`isNatEnabled`" pulumi-lang-dotnet="`IsNatEnabled`" pulumi-lang-go="`isNatEnabled`" pulumi-lang-python="`is_nat_enabled`" pulumi-lang-yaml="`isNatEnabled`" pulumi-lang-java="`isNatEnabled`" pulumi-lang-hcl="`is_nat_enabled`">`isNatEnabled`</span>: Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
+ * - <span pulumi-lang-nodejs="`isExternal`" pulumi-lang-dotnet="`IsExternal`" pulumi-lang-go="`isExternal`" pulumi-lang-python="`is_external`" pulumi-lang-yaml="`isExternal`" pulumi-lang-java="`isExternal`" pulumi-lang-hcl="`is_external`">`isExternal`</span>: Indicates whether the subnet is used for external connectivity.
+ * - <span pulumi-lang-nodejs="`reservedIpAddresses`" pulumi-lang-dotnet="`ReservedIpAddresses`" pulumi-lang-go="`reservedIpAddresses`" pulumi-lang-python="`reserved_ip_addresses`" pulumi-lang-yaml="`reservedIpAddresses`" pulumi-lang-java="`reservedIpAddresses`" pulumi-lang-hcl="`reserved_ip_addresses`">`reservedIpAddresses`</span>: List of IPs that are excluded while allocating IP addresses to VM ports.
+ * - <span pulumi-lang-nodejs="`dynamicIpAddresses`" pulumi-lang-dotnet="`DynamicIpAddresses`" pulumi-lang-go="`dynamicIpAddresses`" pulumi-lang-python="`dynamic_ip_addresses`" pulumi-lang-yaml="`dynamicIpAddresses`" pulumi-lang-java="`dynamicIpAddresses`" pulumi-lang-hcl="`dynamic_ip_addresses`">`dynamicIpAddresses`</span>: List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
+ * - <span pulumi-lang-nodejs="`networkFunctionChainReference`" pulumi-lang-dotnet="`NetworkFunctionChainReference`" pulumi-lang-go="`networkFunctionChainReference`" pulumi-lang-python="`network_function_chain_reference`" pulumi-lang-yaml="`networkFunctionChainReference`" pulumi-lang-java="`networkFunctionChainReference`" pulumi-lang-hcl="`network_function_chain_reference`">`networkFunctionChainReference`</span>: UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
+ * - <span pulumi-lang-nodejs="`bridgeName`" pulumi-lang-dotnet="`BridgeName`" pulumi-lang-go="`bridgeName`" pulumi-lang-python="`bridge_name`" pulumi-lang-yaml="`bridgeName`" pulumi-lang-java="`bridgeName`" pulumi-lang-hcl="`bridge_name`">`bridgeName`</span>: Name of the bridge on the host for the subnet.
+ * - <span pulumi-lang-nodejs="`isAdvancedNetworking`" pulumi-lang-dotnet="`IsAdvancedNetworking`" pulumi-lang-go="`isAdvancedNetworking`" pulumi-lang-python="`is_advanced_networking`" pulumi-lang-yaml="`isAdvancedNetworking`" pulumi-lang-java="`isAdvancedNetworking`" pulumi-lang-hcl="`is_advanced_networking`">`isAdvancedNetworking`</span>: Indicates whether the subnet is used for advanced networking.
+ * - <span pulumi-lang-nodejs="`clusterName`" pulumi-lang-dotnet="`ClusterName`" pulumi-lang-go="`clusterName`" pulumi-lang-python="`cluster_name`" pulumi-lang-yaml="`clusterName`" pulumi-lang-java="`clusterName`" pulumi-lang-hcl="`cluster_name`">`clusterName`</span>: Cluster Name
+ * - <span pulumi-lang-nodejs="`hypervisorType`" pulumi-lang-dotnet="`HypervisorType`" pulumi-lang-go="`hypervisorType`" pulumi-lang-python="`hypervisor_type`" pulumi-lang-yaml="`hypervisorType`" pulumi-lang-java="`hypervisorType`" pulumi-lang-hcl="`hypervisor_type`">`hypervisorType`</span>: Hypervisor Type
+ * - <span pulumi-lang-nodejs="`virtualSwitch`" pulumi-lang-dotnet="`VirtualSwitch`" pulumi-lang-go="`virtualSwitch`" pulumi-lang-python="`virtual_switch`" pulumi-lang-yaml="`virtualSwitch`" pulumi-lang-java="`virtualSwitch`" pulumi-lang-hcl="`virtual_switch`">`virtualSwitch`</span>: Schema to configure a virtual switch
+ * - <span pulumi-lang-nodejs="`vpc`" pulumi-lang-dotnet="`Vpc`" pulumi-lang-go="`vpc`" pulumi-lang-python="`vpc`" pulumi-lang-yaml="`vpc`" pulumi-lang-java="`vpc`" pulumi-lang-hcl="`vpc`">`vpc`</span>: Networking common base object
+ * - <span pulumi-lang-nodejs="`ipPrefix`" pulumi-lang-dotnet="`IpPrefix`" pulumi-lang-go="`ipPrefix`" pulumi-lang-python="`ip_prefix`" pulumi-lang-yaml="`ipPrefix`" pulumi-lang-java="`ipPrefix`" pulumi-lang-hcl="`ip_prefix`">`ipPrefix`</span>: IP Prefix in CIDR format.
+ * - <span pulumi-lang-nodejs="`ipUsage`" pulumi-lang-dotnet="`IpUsage`" pulumi-lang-go="`ipUsage`" pulumi-lang-python="`ip_usage`" pulumi-lang-yaml="`ipUsage`" pulumi-lang-java="`ipUsage`" pulumi-lang-hcl="`ip_usage`">`ipUsage`</span>: IP usage statistics.
+ * - <span pulumi-lang-nodejs="`migrationState`" pulumi-lang-dotnet="`MigrationState`" pulumi-lang-go="`migrationState`" pulumi-lang-python="`migration_state`" pulumi-lang-yaml="`migrationState`" pulumi-lang-java="`migrationState`" pulumi-lang-hcl="`migration_state`">`migrationState`</span>: Migration state of the subnet. This field is read-only.
+ * - <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`">`links`</span>: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
  *
  * ###<span pulumi-lang-nodejs=" dhcpOptions
  * " pulumi-lang-dotnet=" DhcpOptions
@@ -45,14 +45,15 @@ import * as utilities from "./utilities";
  * " pulumi-lang-python=" dhcp_options
  * " pulumi-lang-yaml=" dhcpOptions
  * " pulumi-lang-java=" dhcpOptions
+ * " pulumi-lang-hcl=" dhcp_options
  * "> dhcpOptions
  * </span>
- * - <span pulumi-lang-nodejs="`domainNameServers`" pulumi-lang-dotnet="`DomainNameServers`" pulumi-lang-go="`domainNameServers`" pulumi-lang-python="`domain_name_servers`" pulumi-lang-yaml="`domainNameServers`" pulumi-lang-java="`domainNameServers`">`domainNameServers`</span>: List of Domain Name Server addresses.
- * - <span pulumi-lang-nodejs="`domainName`" pulumi-lang-dotnet="`DomainName`" pulumi-lang-go="`domainName`" pulumi-lang-python="`domain_name`" pulumi-lang-yaml="`domainName`" pulumi-lang-java="`domainName`">`domainName`</span>: The DNS domain name of the client.
- * - <span pulumi-lang-nodejs="`searchDomains`" pulumi-lang-dotnet="`SearchDomains`" pulumi-lang-go="`searchDomains`" pulumi-lang-python="`search_domains`" pulumi-lang-yaml="`searchDomains`" pulumi-lang-java="`searchDomains`">`searchDomains`</span>: The DNS domain search list.
- * - <span pulumi-lang-nodejs="`tftpServerName`" pulumi-lang-dotnet="`TftpServerName`" pulumi-lang-go="`tftpServerName`" pulumi-lang-python="`tftp_server_name`" pulumi-lang-yaml="`tftpServerName`" pulumi-lang-java="`tftpServerName`">`tftpServerName`</span>: TFTP server name
- * - <span pulumi-lang-nodejs="`bootFileName`" pulumi-lang-dotnet="`BootFileName`" pulumi-lang-go="`bootFileName`" pulumi-lang-python="`boot_file_name`" pulumi-lang-yaml="`bootFileName`" pulumi-lang-java="`bootFileName`">`bootFileName`</span>: Boot file name
- * - <span pulumi-lang-nodejs="`ntpServers`" pulumi-lang-dotnet="`NtpServers`" pulumi-lang-go="`ntpServers`" pulumi-lang-python="`ntp_servers`" pulumi-lang-yaml="`ntpServers`" pulumi-lang-java="`ntpServers`">`ntpServers`</span>: List of NTP server addresses
+ * - <span pulumi-lang-nodejs="`domainNameServers`" pulumi-lang-dotnet="`DomainNameServers`" pulumi-lang-go="`domainNameServers`" pulumi-lang-python="`domain_name_servers`" pulumi-lang-yaml="`domainNameServers`" pulumi-lang-java="`domainNameServers`" pulumi-lang-hcl="`domain_name_servers`">`domainNameServers`</span>: List of Domain Name Server addresses.
+ * - <span pulumi-lang-nodejs="`domainName`" pulumi-lang-dotnet="`DomainName`" pulumi-lang-go="`domainName`" pulumi-lang-python="`domain_name`" pulumi-lang-yaml="`domainName`" pulumi-lang-java="`domainName`" pulumi-lang-hcl="`domain_name`">`domainName`</span>: The DNS domain name of the client.
+ * - <span pulumi-lang-nodejs="`searchDomains`" pulumi-lang-dotnet="`SearchDomains`" pulumi-lang-go="`searchDomains`" pulumi-lang-python="`search_domains`" pulumi-lang-yaml="`searchDomains`" pulumi-lang-java="`searchDomains`" pulumi-lang-hcl="`search_domains`">`searchDomains`</span>: The DNS domain search list.
+ * - <span pulumi-lang-nodejs="`tftpServerName`" pulumi-lang-dotnet="`TftpServerName`" pulumi-lang-go="`tftpServerName`" pulumi-lang-python="`tftp_server_name`" pulumi-lang-yaml="`tftpServerName`" pulumi-lang-java="`tftpServerName`" pulumi-lang-hcl="`tftp_server_name`">`tftpServerName`</span>: TFTP server name
+ * - <span pulumi-lang-nodejs="`bootFileName`" pulumi-lang-dotnet="`BootFileName`" pulumi-lang-go="`bootFileName`" pulumi-lang-python="`boot_file_name`" pulumi-lang-yaml="`bootFileName`" pulumi-lang-java="`bootFileName`" pulumi-lang-hcl="`boot_file_name`">`bootFileName`</span>: Boot file name
+ * - <span pulumi-lang-nodejs="`ntpServers`" pulumi-lang-dotnet="`NtpServers`" pulumi-lang-go="`ntpServers`" pulumi-lang-python="`ntp_servers`" pulumi-lang-yaml="`ntpServers`" pulumi-lang-java="`ntpServers`" pulumi-lang-hcl="`ntp_servers`">`ntpServers`</span>: List of NTP server addresses
  *
  * ### domain_name_servers,<span pulumi-lang-nodejs=" ntpServers
  * " pulumi-lang-dotnet=" NtpServers
@@ -60,10 +61,11 @@ import * as utilities from "./utilities";
  * " pulumi-lang-python=" ntp_servers
  * " pulumi-lang-yaml=" ntpServers
  * " pulumi-lang-java=" ntpServers
+ * " pulumi-lang-hcl=" ntp_servers
  * "> ntpServers
  * </span>
- * - <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`">`ipv4`</span>: IPv4 Object
- * - <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`">`ipv6`</span>: IPv6 Object
+ * - <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`">`ipv4`</span>: IPv4 Object
+ * - <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`">`ipv6`</span>: IPv6 Object
  *
  * ###<span pulumi-lang-nodejs=" ipConfig
  * " pulumi-lang-dotnet=" IpConfig
@@ -71,17 +73,18 @@ import * as utilities from "./utilities";
  * " pulumi-lang-python=" ip_config
  * " pulumi-lang-yaml=" ipConfig
  * " pulumi-lang-java=" ipConfig
+ * " pulumi-lang-hcl=" ip_config
  * "> ipConfig
  * </span>
- * - <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`">`ipv4`</span>: IP V4 configuration.
- * - <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`">`ipv6`</span>: IP V6 configuration
+ * - <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`">`ipv4`</span>: IP V4 configuration.
+ * - <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`">`ipv6`</span>: IP V6 configuration
  *
  * ### ip_config.ipv4, ip_config.ipv6
  *
- * - <span pulumi-lang-nodejs="`ipSubnet`" pulumi-lang-dotnet="`IpSubnet`" pulumi-lang-go="`ipSubnet`" pulumi-lang-python="`ip_subnet`" pulumi-lang-yaml="`ipSubnet`" pulumi-lang-java="`ipSubnet`">`ipSubnet`</span>: subnet ip
- * - <span pulumi-lang-nodejs="`defaultGatewayIp`" pulumi-lang-dotnet="`DefaultGatewayIp`" pulumi-lang-go="`defaultGatewayIp`" pulumi-lang-python="`default_gateway_ip`" pulumi-lang-yaml="`defaultGatewayIp`" pulumi-lang-java="`defaultGatewayIp`">`defaultGatewayIp`</span>: Reference to address configuration
- * - <span pulumi-lang-nodejs="`dhcpServerAddress`" pulumi-lang-dotnet="`DhcpServerAddress`" pulumi-lang-go="`dhcpServerAddress`" pulumi-lang-python="`dhcp_server_address`" pulumi-lang-yaml="`dhcpServerAddress`" pulumi-lang-java="`dhcpServerAddress`">`dhcpServerAddress`</span>: Reference to address configuration
- * - <span pulumi-lang-nodejs="`poolList`" pulumi-lang-dotnet="`PoolList`" pulumi-lang-go="`poolList`" pulumi-lang-python="`pool_list`" pulumi-lang-yaml="`poolList`" pulumi-lang-java="`poolList`">`poolList`</span>: Pool of IP addresses from where IPs are allocated.
+ * - <span pulumi-lang-nodejs="`ipSubnet`" pulumi-lang-dotnet="`IpSubnet`" pulumi-lang-go="`ipSubnet`" pulumi-lang-python="`ip_subnet`" pulumi-lang-yaml="`ipSubnet`" pulumi-lang-java="`ipSubnet`" pulumi-lang-hcl="`ip_subnet`">`ipSubnet`</span>: subnet ip
+ * - <span pulumi-lang-nodejs="`defaultGatewayIp`" pulumi-lang-dotnet="`DefaultGatewayIp`" pulumi-lang-go="`defaultGatewayIp`" pulumi-lang-python="`default_gateway_ip`" pulumi-lang-yaml="`defaultGatewayIp`" pulumi-lang-java="`defaultGatewayIp`" pulumi-lang-hcl="`default_gateway_ip`">`defaultGatewayIp`</span>: Reference to address configuration
+ * - <span pulumi-lang-nodejs="`dhcpServerAddress`" pulumi-lang-dotnet="`DhcpServerAddress`" pulumi-lang-go="`dhcpServerAddress`" pulumi-lang-python="`dhcp_server_address`" pulumi-lang-yaml="`dhcpServerAddress`" pulumi-lang-java="`dhcpServerAddress`" pulumi-lang-hcl="`dhcp_server_address`">`dhcpServerAddress`</span>: Reference to address configuration
+ * - <span pulumi-lang-nodejs="`poolList`" pulumi-lang-dotnet="`PoolList`" pulumi-lang-go="`poolList`" pulumi-lang-python="`pool_list`" pulumi-lang-yaml="`poolList`" pulumi-lang-java="`poolList`" pulumi-lang-hcl="`pool_list`">`poolList`</span>: Pool of IP addresses from where IPs are allocated.
  *
  * ###<span pulumi-lang-nodejs=" ipSubnet
  * " pulumi-lang-dotnet=" IpSubnet
@@ -89,10 +92,11 @@ import * as utilities from "./utilities";
  * " pulumi-lang-python=" ip_subnet
  * " pulumi-lang-yaml=" ipSubnet
  * " pulumi-lang-java=" ipSubnet
+ * " pulumi-lang-hcl=" ip_subnet
  * "> ipSubnet
  * </span>
- * - <span pulumi-lang-nodejs="`ip`" pulumi-lang-dotnet="`Ip`" pulumi-lang-go="`ip`" pulumi-lang-python="`ip`" pulumi-lang-yaml="`ip`" pulumi-lang-java="`ip`">`ip`</span>: Reference to address configuration
- * - <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`">`prefixLength`</span>: The prefix length of the network to which this host IPv4 address belongs.
+ * - <span pulumi-lang-nodejs="`ip`" pulumi-lang-dotnet="`Ip`" pulumi-lang-go="`ip`" pulumi-lang-python="`ip`" pulumi-lang-yaml="`ip`" pulumi-lang-java="`ip`" pulumi-lang-hcl="`ip`">`ip`</span>: Reference to address configuration
+ * - <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span>: The prefix length of the network to which this host IPv4 address belongs.
  *
  * ###<span pulumi-lang-nodejs=" poolList
  * " pulumi-lang-dotnet=" PoolList
@@ -100,10 +104,11 @@ import * as utilities from "./utilities";
  * " pulumi-lang-python=" pool_list
  * " pulumi-lang-yaml=" poolList
  * " pulumi-lang-java=" poolList
+ * " pulumi-lang-hcl=" pool_list
  * "> poolList
  * </span>
- * - <span pulumi-lang-nodejs="`startIp`" pulumi-lang-dotnet="`StartIp`" pulumi-lang-go="`startIp`" pulumi-lang-python="`start_ip`" pulumi-lang-yaml="`startIp`" pulumi-lang-java="`startIp`">`startIp`</span>: Reference to address configuration
- * - <span pulumi-lang-nodejs="`endIp`" pulumi-lang-dotnet="`EndIp`" pulumi-lang-go="`endIp`" pulumi-lang-python="`end_ip`" pulumi-lang-yaml="`endIp`" pulumi-lang-java="`endIp`">`endIp`</span>: Reference to address configuration
+ * - <span pulumi-lang-nodejs="`startIp`" pulumi-lang-dotnet="`StartIp`" pulumi-lang-go="`startIp`" pulumi-lang-python="`start_ip`" pulumi-lang-yaml="`startIp`" pulumi-lang-java="`startIp`" pulumi-lang-hcl="`start_ip`">`startIp`</span>: Reference to address configuration
+ * - <span pulumi-lang-nodejs="`endIp`" pulumi-lang-dotnet="`EndIp`" pulumi-lang-go="`endIp`" pulumi-lang-python="`end_ip`" pulumi-lang-yaml="`endIp`" pulumi-lang-java="`endIp`" pulumi-lang-hcl="`end_ip`">`endIp`</span>: Reference to address configuration
  *
  * ###<span pulumi-lang-nodejs=" ipUsage
  * " pulumi-lang-dotnet=" IpUsage
@@ -111,12 +116,13 @@ import * as utilities from "./utilities";
  * " pulumi-lang-python=" ip_usage
  * " pulumi-lang-yaml=" ipUsage
  * " pulumi-lang-java=" ipUsage
+ * " pulumi-lang-hcl=" ip_usage
  * "> ipUsage
  * </span>
- * - <span pulumi-lang-nodejs="`numMacs`" pulumi-lang-dotnet="`NumMacs`" pulumi-lang-go="`numMacs`" pulumi-lang-python="`num_macs`" pulumi-lang-yaml="`numMacs`" pulumi-lang-java="`numMacs`">`numMacs`</span>: Number of MAC addresses.
- * - <span pulumi-lang-nodejs="`numFreeIps`" pulumi-lang-dotnet="`NumFreeIps`" pulumi-lang-go="`numFreeIps`" pulumi-lang-python="`num_free_ips`" pulumi-lang-yaml="`numFreeIps`" pulumi-lang-java="`numFreeIps`">`numFreeIps`</span>: Number of free IPs.
- * - <span pulumi-lang-nodejs="`numAssignedIps`" pulumi-lang-dotnet="`NumAssignedIps`" pulumi-lang-go="`numAssignedIps`" pulumi-lang-python="`num_assigned_ips`" pulumi-lang-yaml="`numAssignedIps`" pulumi-lang-java="`numAssignedIps`">`numAssignedIps`</span>: Number of assigned IPs.
- * - <span pulumi-lang-nodejs="`ipPoolUsages`" pulumi-lang-dotnet="`IpPoolUsages`" pulumi-lang-go="`ipPoolUsages`" pulumi-lang-python="`ip_pool_usages`" pulumi-lang-yaml="`ipPoolUsages`" pulumi-lang-java="`ipPoolUsages`">`ipPoolUsages`</span>: IP Pool usages
+ * - <span pulumi-lang-nodejs="`numMacs`" pulumi-lang-dotnet="`NumMacs`" pulumi-lang-go="`numMacs`" pulumi-lang-python="`num_macs`" pulumi-lang-yaml="`numMacs`" pulumi-lang-java="`numMacs`" pulumi-lang-hcl="`num_macs`">`numMacs`</span>: Number of MAC addresses.
+ * - <span pulumi-lang-nodejs="`numFreeIps`" pulumi-lang-dotnet="`NumFreeIps`" pulumi-lang-go="`numFreeIps`" pulumi-lang-python="`num_free_ips`" pulumi-lang-yaml="`numFreeIps`" pulumi-lang-java="`numFreeIps`" pulumi-lang-hcl="`num_free_ips`">`numFreeIps`</span>: Number of free IPs.
+ * - <span pulumi-lang-nodejs="`numAssignedIps`" pulumi-lang-dotnet="`NumAssignedIps`" pulumi-lang-go="`numAssignedIps`" pulumi-lang-python="`num_assigned_ips`" pulumi-lang-yaml="`numAssignedIps`" pulumi-lang-java="`numAssignedIps`" pulumi-lang-hcl="`num_assigned_ips`">`numAssignedIps`</span>: Number of assigned IPs.
+ * - <span pulumi-lang-nodejs="`ipPoolUsages`" pulumi-lang-dotnet="`IpPoolUsages`" pulumi-lang-go="`ipPoolUsages`" pulumi-lang-python="`ip_pool_usages`" pulumi-lang-yaml="`ipPoolUsages`" pulumi-lang-java="`ipPoolUsages`" pulumi-lang-hcl="`ip_pool_usages`">`ipPoolUsages`</span>: IP Pool usages
  *
  * ###<span pulumi-lang-nodejs=" ipPoolUsages
  * " pulumi-lang-dotnet=" IpPoolUsages
@@ -124,16 +130,17 @@ import * as utilities from "./utilities";
  * " pulumi-lang-python=" ip_pool_usages
  * " pulumi-lang-yaml=" ipPoolUsages
  * " pulumi-lang-java=" ipPoolUsages
+ * " pulumi-lang-hcl=" ip_pool_usages
  * "> ipPoolUsages
  * </span>
- * - <span pulumi-lang-nodejs="`numFreeIps`" pulumi-lang-dotnet="`NumFreeIps`" pulumi-lang-go="`numFreeIps`" pulumi-lang-python="`num_free_ips`" pulumi-lang-yaml="`numFreeIps`" pulumi-lang-java="`numFreeIps`">`numFreeIps`</span>: Number of free IPs
- * - <span pulumi-lang-nodejs="`numTotalIps`" pulumi-lang-dotnet="`NumTotalIps`" pulumi-lang-go="`numTotalIps`" pulumi-lang-python="`num_total_ips`" pulumi-lang-yaml="`numTotalIps`" pulumi-lang-java="`numTotalIps`">`numTotalIps`</span>: Total number of IPs in this pool.
- * - <span pulumi-lang-nodejs="`range`" pulumi-lang-dotnet="`Range`" pulumi-lang-go="`range`" pulumi-lang-python="`range`" pulumi-lang-yaml="`range`" pulumi-lang-java="`range`">`range`</span>: Start/end IP address range.
+ * - <span pulumi-lang-nodejs="`numFreeIps`" pulumi-lang-dotnet="`NumFreeIps`" pulumi-lang-go="`numFreeIps`" pulumi-lang-python="`num_free_ips`" pulumi-lang-yaml="`numFreeIps`" pulumi-lang-java="`numFreeIps`" pulumi-lang-hcl="`num_free_ips`">`numFreeIps`</span>: Number of free IPs
+ * - <span pulumi-lang-nodejs="`numTotalIps`" pulumi-lang-dotnet="`NumTotalIps`" pulumi-lang-go="`numTotalIps`" pulumi-lang-python="`num_total_ips`" pulumi-lang-yaml="`numTotalIps`" pulumi-lang-java="`numTotalIps`" pulumi-lang-hcl="`num_total_ips`">`numTotalIps`</span>: Total number of IPs in this pool.
+ * - <span pulumi-lang-nodejs="`range`" pulumi-lang-dotnet="`Range`" pulumi-lang-go="`range`" pulumi-lang-python="`range`" pulumi-lang-yaml="`range`" pulumi-lang-java="`range`" pulumi-lang-hcl="`range`">`range`</span>: Start/end IP address range.
  *
  * ### ipv4, ipv6 (Reference to address configuration)
  *
- * - <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: value of address
- * - <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`">`prefixLength`</span>: The prefix length of the network to which this host IPv4/IPv6 address belongs.
+ * - <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span>: value of address
+ * - <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span>: The prefix length of the network to which this host IPv4/IPv6 address belongs.
  *
  * See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/Subnets/operation/listSubnets).
  */
@@ -217,33 +224,33 @@ export interface GetSubnetsV2Result {
  *
  * ## Subnets
  *
- * The <span pulumi-lang-nodejs="`subnets`" pulumi-lang-dotnet="`Subnets`" pulumi-lang-go="`subnets`" pulumi-lang-python="`subnets`" pulumi-lang-yaml="`subnets`" pulumi-lang-java="`subnets`">`subnets`</span> object contains the following attributes:
+ * The <span pulumi-lang-nodejs="`subnets`" pulumi-lang-dotnet="`Subnets`" pulumi-lang-go="`subnets`" pulumi-lang-python="`subnets`" pulumi-lang-yaml="`subnets`" pulumi-lang-java="`subnets`" pulumi-lang-hcl="`subnets`">`subnets`</span> object contains the following attributes:
  *
- * - <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption.
- * - <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`">`name`</span>: Name of the subnet.
- * - <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`">`description`</span>: Description of the subnet.
- * - <span pulumi-lang-nodejs="`subnetType`" pulumi-lang-dotnet="`SubnetType`" pulumi-lang-go="`subnetType`" pulumi-lang-python="`subnet_type`" pulumi-lang-yaml="`subnetType`" pulumi-lang-java="`subnetType`">`subnetType`</span>: Type of subnet.
- * - <span pulumi-lang-nodejs="`networkId`" pulumi-lang-dotnet="`NetworkId`" pulumi-lang-go="`networkId`" pulumi-lang-python="`network_id`" pulumi-lang-yaml="`networkId`" pulumi-lang-java="`networkId`">`networkId`</span>: or VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
- * - <span pulumi-lang-nodejs="`dhcpOptions`" pulumi-lang-dotnet="`DhcpOptions`" pulumi-lang-go="`dhcpOptions`" pulumi-lang-python="`dhcp_options`" pulumi-lang-yaml="`dhcpOptions`" pulumi-lang-java="`dhcpOptions`">`dhcpOptions`</span>: List of DHCP options to be configured.
- * - <span pulumi-lang-nodejs="`ipConfig`" pulumi-lang-dotnet="`IpConfig`" pulumi-lang-go="`ipConfig`" pulumi-lang-python="`ip_config`" pulumi-lang-yaml="`ipConfig`" pulumi-lang-java="`ipConfig`">`ipConfig`</span>: IP configuration for the subnet.
- * - <span pulumi-lang-nodejs="`clusterReference`" pulumi-lang-dotnet="`ClusterReference`" pulumi-lang-go="`clusterReference`" pulumi-lang-python="`cluster_reference`" pulumi-lang-yaml="`clusterReference`" pulumi-lang-java="`clusterReference`">`clusterReference`</span>: UUID of the cluster this subnet belongs to.
- * - <span pulumi-lang-nodejs="`virtualSwitchReference`" pulumi-lang-dotnet="`VirtualSwitchReference`" pulumi-lang-go="`virtualSwitchReference`" pulumi-lang-python="`virtual_switch_reference`" pulumi-lang-yaml="`virtualSwitchReference`" pulumi-lang-java="`virtualSwitchReference`">`virtualSwitchReference`</span>: UUID of the virtual switch this subnet belongs to (type VLAN only).
- * - <span pulumi-lang-nodejs="`vpcReference`" pulumi-lang-dotnet="`VpcReference`" pulumi-lang-go="`vpcReference`" pulumi-lang-python="`vpc_reference`" pulumi-lang-yaml="`vpcReference`" pulumi-lang-java="`vpcReference`">`vpcReference`</span>: UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
- * - <span pulumi-lang-nodejs="`isNatEnabled`" pulumi-lang-dotnet="`IsNatEnabled`" pulumi-lang-go="`isNatEnabled`" pulumi-lang-python="`is_nat_enabled`" pulumi-lang-yaml="`isNatEnabled`" pulumi-lang-java="`isNatEnabled`">`isNatEnabled`</span>: Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
- * - <span pulumi-lang-nodejs="`isExternal`" pulumi-lang-dotnet="`IsExternal`" pulumi-lang-go="`isExternal`" pulumi-lang-python="`is_external`" pulumi-lang-yaml="`isExternal`" pulumi-lang-java="`isExternal`">`isExternal`</span>: Indicates whether the subnet is used for external connectivity.
- * - <span pulumi-lang-nodejs="`reservedIpAddresses`" pulumi-lang-dotnet="`ReservedIpAddresses`" pulumi-lang-go="`reservedIpAddresses`" pulumi-lang-python="`reserved_ip_addresses`" pulumi-lang-yaml="`reservedIpAddresses`" pulumi-lang-java="`reservedIpAddresses`">`reservedIpAddresses`</span>: List of IPs that are excluded while allocating IP addresses to VM ports.
- * - <span pulumi-lang-nodejs="`dynamicIpAddresses`" pulumi-lang-dotnet="`DynamicIpAddresses`" pulumi-lang-go="`dynamicIpAddresses`" pulumi-lang-python="`dynamic_ip_addresses`" pulumi-lang-yaml="`dynamicIpAddresses`" pulumi-lang-java="`dynamicIpAddresses`">`dynamicIpAddresses`</span>: List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
- * - <span pulumi-lang-nodejs="`networkFunctionChainReference`" pulumi-lang-dotnet="`NetworkFunctionChainReference`" pulumi-lang-go="`networkFunctionChainReference`" pulumi-lang-python="`network_function_chain_reference`" pulumi-lang-yaml="`networkFunctionChainReference`" pulumi-lang-java="`networkFunctionChainReference`">`networkFunctionChainReference`</span>: UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
- * - <span pulumi-lang-nodejs="`bridgeName`" pulumi-lang-dotnet="`BridgeName`" pulumi-lang-go="`bridgeName`" pulumi-lang-python="`bridge_name`" pulumi-lang-yaml="`bridgeName`" pulumi-lang-java="`bridgeName`">`bridgeName`</span>: Name of the bridge on the host for the subnet.
- * - <span pulumi-lang-nodejs="`isAdvancedNetworking`" pulumi-lang-dotnet="`IsAdvancedNetworking`" pulumi-lang-go="`isAdvancedNetworking`" pulumi-lang-python="`is_advanced_networking`" pulumi-lang-yaml="`isAdvancedNetworking`" pulumi-lang-java="`isAdvancedNetworking`">`isAdvancedNetworking`</span>: Indicates whether the subnet is used for advanced networking.
- * - <span pulumi-lang-nodejs="`clusterName`" pulumi-lang-dotnet="`ClusterName`" pulumi-lang-go="`clusterName`" pulumi-lang-python="`cluster_name`" pulumi-lang-yaml="`clusterName`" pulumi-lang-java="`clusterName`">`clusterName`</span>: Cluster Name
- * - <span pulumi-lang-nodejs="`hypervisorType`" pulumi-lang-dotnet="`HypervisorType`" pulumi-lang-go="`hypervisorType`" pulumi-lang-python="`hypervisor_type`" pulumi-lang-yaml="`hypervisorType`" pulumi-lang-java="`hypervisorType`">`hypervisorType`</span>: Hypervisor Type
- * - <span pulumi-lang-nodejs="`virtualSwitch`" pulumi-lang-dotnet="`VirtualSwitch`" pulumi-lang-go="`virtualSwitch`" pulumi-lang-python="`virtual_switch`" pulumi-lang-yaml="`virtualSwitch`" pulumi-lang-java="`virtualSwitch`">`virtualSwitch`</span>: Schema to configure a virtual switch
- * - <span pulumi-lang-nodejs="`vpc`" pulumi-lang-dotnet="`Vpc`" pulumi-lang-go="`vpc`" pulumi-lang-python="`vpc`" pulumi-lang-yaml="`vpc`" pulumi-lang-java="`vpc`">`vpc`</span>: Networking common base object
- * - <span pulumi-lang-nodejs="`ipPrefix`" pulumi-lang-dotnet="`IpPrefix`" pulumi-lang-go="`ipPrefix`" pulumi-lang-python="`ip_prefix`" pulumi-lang-yaml="`ipPrefix`" pulumi-lang-java="`ipPrefix`">`ipPrefix`</span>: IP Prefix in CIDR format.
- * - <span pulumi-lang-nodejs="`ipUsage`" pulumi-lang-dotnet="`IpUsage`" pulumi-lang-go="`ipUsage`" pulumi-lang-python="`ip_usage`" pulumi-lang-yaml="`ipUsage`" pulumi-lang-java="`ipUsage`">`ipUsage`</span>: IP usage statistics.
- * - <span pulumi-lang-nodejs="`migrationState`" pulumi-lang-dotnet="`MigrationState`" pulumi-lang-go="`migrationState`" pulumi-lang-python="`migration_state`" pulumi-lang-yaml="`migrationState`" pulumi-lang-java="`migrationState`">`migrationState`</span>: Migration state of the subnet. This field is read-only.
- * - <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`">`links`</span>: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+ * - <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>: A globally unique identifier of an instance that is suitable for external consumption.
+ * - <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`">`name`</span>: Name of the subnet.
+ * - <span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`" pulumi-lang-hcl="`description`">`description`</span>: Description of the subnet.
+ * - <span pulumi-lang-nodejs="`subnetType`" pulumi-lang-dotnet="`SubnetType`" pulumi-lang-go="`subnetType`" pulumi-lang-python="`subnet_type`" pulumi-lang-yaml="`subnetType`" pulumi-lang-java="`subnetType`" pulumi-lang-hcl="`subnet_type`">`subnetType`</span>: Type of subnet.
+ * - <span pulumi-lang-nodejs="`networkId`" pulumi-lang-dotnet="`NetworkId`" pulumi-lang-go="`networkId`" pulumi-lang-python="`network_id`" pulumi-lang-yaml="`networkId`" pulumi-lang-java="`networkId`" pulumi-lang-hcl="`network_id`">`networkId`</span>: or VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
+ * - <span pulumi-lang-nodejs="`dhcpOptions`" pulumi-lang-dotnet="`DhcpOptions`" pulumi-lang-go="`dhcpOptions`" pulumi-lang-python="`dhcp_options`" pulumi-lang-yaml="`dhcpOptions`" pulumi-lang-java="`dhcpOptions`" pulumi-lang-hcl="`dhcp_options`">`dhcpOptions`</span>: List of DHCP options to be configured.
+ * - <span pulumi-lang-nodejs="`ipConfig`" pulumi-lang-dotnet="`IpConfig`" pulumi-lang-go="`ipConfig`" pulumi-lang-python="`ip_config`" pulumi-lang-yaml="`ipConfig`" pulumi-lang-java="`ipConfig`" pulumi-lang-hcl="`ip_config`">`ipConfig`</span>: IP configuration for the subnet.
+ * - <span pulumi-lang-nodejs="`clusterReference`" pulumi-lang-dotnet="`ClusterReference`" pulumi-lang-go="`clusterReference`" pulumi-lang-python="`cluster_reference`" pulumi-lang-yaml="`clusterReference`" pulumi-lang-java="`clusterReference`" pulumi-lang-hcl="`cluster_reference`">`clusterReference`</span>: UUID of the cluster this subnet belongs to.
+ * - <span pulumi-lang-nodejs="`virtualSwitchReference`" pulumi-lang-dotnet="`VirtualSwitchReference`" pulumi-lang-go="`virtualSwitchReference`" pulumi-lang-python="`virtual_switch_reference`" pulumi-lang-yaml="`virtualSwitchReference`" pulumi-lang-java="`virtualSwitchReference`" pulumi-lang-hcl="`virtual_switch_reference`">`virtualSwitchReference`</span>: UUID of the virtual switch this subnet belongs to (type VLAN only).
+ * - <span pulumi-lang-nodejs="`vpcReference`" pulumi-lang-dotnet="`VpcReference`" pulumi-lang-go="`vpcReference`" pulumi-lang-python="`vpc_reference`" pulumi-lang-yaml="`vpcReference`" pulumi-lang-java="`vpcReference`" pulumi-lang-hcl="`vpc_reference`">`vpcReference`</span>: UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
+ * - <span pulumi-lang-nodejs="`isNatEnabled`" pulumi-lang-dotnet="`IsNatEnabled`" pulumi-lang-go="`isNatEnabled`" pulumi-lang-python="`is_nat_enabled`" pulumi-lang-yaml="`isNatEnabled`" pulumi-lang-java="`isNatEnabled`" pulumi-lang-hcl="`is_nat_enabled`">`isNatEnabled`</span>: Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
+ * - <span pulumi-lang-nodejs="`isExternal`" pulumi-lang-dotnet="`IsExternal`" pulumi-lang-go="`isExternal`" pulumi-lang-python="`is_external`" pulumi-lang-yaml="`isExternal`" pulumi-lang-java="`isExternal`" pulumi-lang-hcl="`is_external`">`isExternal`</span>: Indicates whether the subnet is used for external connectivity.
+ * - <span pulumi-lang-nodejs="`reservedIpAddresses`" pulumi-lang-dotnet="`ReservedIpAddresses`" pulumi-lang-go="`reservedIpAddresses`" pulumi-lang-python="`reserved_ip_addresses`" pulumi-lang-yaml="`reservedIpAddresses`" pulumi-lang-java="`reservedIpAddresses`" pulumi-lang-hcl="`reserved_ip_addresses`">`reservedIpAddresses`</span>: List of IPs that are excluded while allocating IP addresses to VM ports.
+ * - <span pulumi-lang-nodejs="`dynamicIpAddresses`" pulumi-lang-dotnet="`DynamicIpAddresses`" pulumi-lang-go="`dynamicIpAddresses`" pulumi-lang-python="`dynamic_ip_addresses`" pulumi-lang-yaml="`dynamicIpAddresses`" pulumi-lang-java="`dynamicIpAddresses`" pulumi-lang-hcl="`dynamic_ip_addresses`">`dynamicIpAddresses`</span>: List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
+ * - <span pulumi-lang-nodejs="`networkFunctionChainReference`" pulumi-lang-dotnet="`NetworkFunctionChainReference`" pulumi-lang-go="`networkFunctionChainReference`" pulumi-lang-python="`network_function_chain_reference`" pulumi-lang-yaml="`networkFunctionChainReference`" pulumi-lang-java="`networkFunctionChainReference`" pulumi-lang-hcl="`network_function_chain_reference`">`networkFunctionChainReference`</span>: UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
+ * - <span pulumi-lang-nodejs="`bridgeName`" pulumi-lang-dotnet="`BridgeName`" pulumi-lang-go="`bridgeName`" pulumi-lang-python="`bridge_name`" pulumi-lang-yaml="`bridgeName`" pulumi-lang-java="`bridgeName`" pulumi-lang-hcl="`bridge_name`">`bridgeName`</span>: Name of the bridge on the host for the subnet.
+ * - <span pulumi-lang-nodejs="`isAdvancedNetworking`" pulumi-lang-dotnet="`IsAdvancedNetworking`" pulumi-lang-go="`isAdvancedNetworking`" pulumi-lang-python="`is_advanced_networking`" pulumi-lang-yaml="`isAdvancedNetworking`" pulumi-lang-java="`isAdvancedNetworking`" pulumi-lang-hcl="`is_advanced_networking`">`isAdvancedNetworking`</span>: Indicates whether the subnet is used for advanced networking.
+ * - <span pulumi-lang-nodejs="`clusterName`" pulumi-lang-dotnet="`ClusterName`" pulumi-lang-go="`clusterName`" pulumi-lang-python="`cluster_name`" pulumi-lang-yaml="`clusterName`" pulumi-lang-java="`clusterName`" pulumi-lang-hcl="`cluster_name`">`clusterName`</span>: Cluster Name
+ * - <span pulumi-lang-nodejs="`hypervisorType`" pulumi-lang-dotnet="`HypervisorType`" pulumi-lang-go="`hypervisorType`" pulumi-lang-python="`hypervisor_type`" pulumi-lang-yaml="`hypervisorType`" pulumi-lang-java="`hypervisorType`" pulumi-lang-hcl="`hypervisor_type`">`hypervisorType`</span>: Hypervisor Type
+ * - <span pulumi-lang-nodejs="`virtualSwitch`" pulumi-lang-dotnet="`VirtualSwitch`" pulumi-lang-go="`virtualSwitch`" pulumi-lang-python="`virtual_switch`" pulumi-lang-yaml="`virtualSwitch`" pulumi-lang-java="`virtualSwitch`" pulumi-lang-hcl="`virtual_switch`">`virtualSwitch`</span>: Schema to configure a virtual switch
+ * - <span pulumi-lang-nodejs="`vpc`" pulumi-lang-dotnet="`Vpc`" pulumi-lang-go="`vpc`" pulumi-lang-python="`vpc`" pulumi-lang-yaml="`vpc`" pulumi-lang-java="`vpc`" pulumi-lang-hcl="`vpc`">`vpc`</span>: Networking common base object
+ * - <span pulumi-lang-nodejs="`ipPrefix`" pulumi-lang-dotnet="`IpPrefix`" pulumi-lang-go="`ipPrefix`" pulumi-lang-python="`ip_prefix`" pulumi-lang-yaml="`ipPrefix`" pulumi-lang-java="`ipPrefix`" pulumi-lang-hcl="`ip_prefix`">`ipPrefix`</span>: IP Prefix in CIDR format.
+ * - <span pulumi-lang-nodejs="`ipUsage`" pulumi-lang-dotnet="`IpUsage`" pulumi-lang-go="`ipUsage`" pulumi-lang-python="`ip_usage`" pulumi-lang-yaml="`ipUsage`" pulumi-lang-java="`ipUsage`" pulumi-lang-hcl="`ip_usage`">`ipUsage`</span>: IP usage statistics.
+ * - <span pulumi-lang-nodejs="`migrationState`" pulumi-lang-dotnet="`MigrationState`" pulumi-lang-go="`migrationState`" pulumi-lang-python="`migration_state`" pulumi-lang-yaml="`migrationState`" pulumi-lang-java="`migrationState`" pulumi-lang-hcl="`migration_state`">`migrationState`</span>: Migration state of the subnet. This field is read-only.
+ * - <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`">`links`</span>: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
  *
  * ###<span pulumi-lang-nodejs=" dhcpOptions
  * " pulumi-lang-dotnet=" DhcpOptions
@@ -251,14 +258,15 @@ export interface GetSubnetsV2Result {
  * " pulumi-lang-python=" dhcp_options
  * " pulumi-lang-yaml=" dhcpOptions
  * " pulumi-lang-java=" dhcpOptions
+ * " pulumi-lang-hcl=" dhcp_options
  * "> dhcpOptions
  * </span>
- * - <span pulumi-lang-nodejs="`domainNameServers`" pulumi-lang-dotnet="`DomainNameServers`" pulumi-lang-go="`domainNameServers`" pulumi-lang-python="`domain_name_servers`" pulumi-lang-yaml="`domainNameServers`" pulumi-lang-java="`domainNameServers`">`domainNameServers`</span>: List of Domain Name Server addresses.
- * - <span pulumi-lang-nodejs="`domainName`" pulumi-lang-dotnet="`DomainName`" pulumi-lang-go="`domainName`" pulumi-lang-python="`domain_name`" pulumi-lang-yaml="`domainName`" pulumi-lang-java="`domainName`">`domainName`</span>: The DNS domain name of the client.
- * - <span pulumi-lang-nodejs="`searchDomains`" pulumi-lang-dotnet="`SearchDomains`" pulumi-lang-go="`searchDomains`" pulumi-lang-python="`search_domains`" pulumi-lang-yaml="`searchDomains`" pulumi-lang-java="`searchDomains`">`searchDomains`</span>: The DNS domain search list.
- * - <span pulumi-lang-nodejs="`tftpServerName`" pulumi-lang-dotnet="`TftpServerName`" pulumi-lang-go="`tftpServerName`" pulumi-lang-python="`tftp_server_name`" pulumi-lang-yaml="`tftpServerName`" pulumi-lang-java="`tftpServerName`">`tftpServerName`</span>: TFTP server name
- * - <span pulumi-lang-nodejs="`bootFileName`" pulumi-lang-dotnet="`BootFileName`" pulumi-lang-go="`bootFileName`" pulumi-lang-python="`boot_file_name`" pulumi-lang-yaml="`bootFileName`" pulumi-lang-java="`bootFileName`">`bootFileName`</span>: Boot file name
- * - <span pulumi-lang-nodejs="`ntpServers`" pulumi-lang-dotnet="`NtpServers`" pulumi-lang-go="`ntpServers`" pulumi-lang-python="`ntp_servers`" pulumi-lang-yaml="`ntpServers`" pulumi-lang-java="`ntpServers`">`ntpServers`</span>: List of NTP server addresses
+ * - <span pulumi-lang-nodejs="`domainNameServers`" pulumi-lang-dotnet="`DomainNameServers`" pulumi-lang-go="`domainNameServers`" pulumi-lang-python="`domain_name_servers`" pulumi-lang-yaml="`domainNameServers`" pulumi-lang-java="`domainNameServers`" pulumi-lang-hcl="`domain_name_servers`">`domainNameServers`</span>: List of Domain Name Server addresses.
+ * - <span pulumi-lang-nodejs="`domainName`" pulumi-lang-dotnet="`DomainName`" pulumi-lang-go="`domainName`" pulumi-lang-python="`domain_name`" pulumi-lang-yaml="`domainName`" pulumi-lang-java="`domainName`" pulumi-lang-hcl="`domain_name`">`domainName`</span>: The DNS domain name of the client.
+ * - <span pulumi-lang-nodejs="`searchDomains`" pulumi-lang-dotnet="`SearchDomains`" pulumi-lang-go="`searchDomains`" pulumi-lang-python="`search_domains`" pulumi-lang-yaml="`searchDomains`" pulumi-lang-java="`searchDomains`" pulumi-lang-hcl="`search_domains`">`searchDomains`</span>: The DNS domain search list.
+ * - <span pulumi-lang-nodejs="`tftpServerName`" pulumi-lang-dotnet="`TftpServerName`" pulumi-lang-go="`tftpServerName`" pulumi-lang-python="`tftp_server_name`" pulumi-lang-yaml="`tftpServerName`" pulumi-lang-java="`tftpServerName`" pulumi-lang-hcl="`tftp_server_name`">`tftpServerName`</span>: TFTP server name
+ * - <span pulumi-lang-nodejs="`bootFileName`" pulumi-lang-dotnet="`BootFileName`" pulumi-lang-go="`bootFileName`" pulumi-lang-python="`boot_file_name`" pulumi-lang-yaml="`bootFileName`" pulumi-lang-java="`bootFileName`" pulumi-lang-hcl="`boot_file_name`">`bootFileName`</span>: Boot file name
+ * - <span pulumi-lang-nodejs="`ntpServers`" pulumi-lang-dotnet="`NtpServers`" pulumi-lang-go="`ntpServers`" pulumi-lang-python="`ntp_servers`" pulumi-lang-yaml="`ntpServers`" pulumi-lang-java="`ntpServers`" pulumi-lang-hcl="`ntp_servers`">`ntpServers`</span>: List of NTP server addresses
  *
  * ### domain_name_servers,<span pulumi-lang-nodejs=" ntpServers
  * " pulumi-lang-dotnet=" NtpServers
@@ -266,10 +274,11 @@ export interface GetSubnetsV2Result {
  * " pulumi-lang-python=" ntp_servers
  * " pulumi-lang-yaml=" ntpServers
  * " pulumi-lang-java=" ntpServers
+ * " pulumi-lang-hcl=" ntp_servers
  * "> ntpServers
  * </span>
- * - <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`">`ipv4`</span>: IPv4 Object
- * - <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`">`ipv6`</span>: IPv6 Object
+ * - <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`">`ipv4`</span>: IPv4 Object
+ * - <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`">`ipv6`</span>: IPv6 Object
  *
  * ###<span pulumi-lang-nodejs=" ipConfig
  * " pulumi-lang-dotnet=" IpConfig
@@ -277,17 +286,18 @@ export interface GetSubnetsV2Result {
  * " pulumi-lang-python=" ip_config
  * " pulumi-lang-yaml=" ipConfig
  * " pulumi-lang-java=" ipConfig
+ * " pulumi-lang-hcl=" ip_config
  * "> ipConfig
  * </span>
- * - <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`">`ipv4`</span>: IP V4 configuration.
- * - <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`">`ipv6`</span>: IP V6 configuration
+ * - <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`">`ipv4`</span>: IP V4 configuration.
+ * - <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`">`ipv6`</span>: IP V6 configuration
  *
  * ### ip_config.ipv4, ip_config.ipv6
  *
- * - <span pulumi-lang-nodejs="`ipSubnet`" pulumi-lang-dotnet="`IpSubnet`" pulumi-lang-go="`ipSubnet`" pulumi-lang-python="`ip_subnet`" pulumi-lang-yaml="`ipSubnet`" pulumi-lang-java="`ipSubnet`">`ipSubnet`</span>: subnet ip
- * - <span pulumi-lang-nodejs="`defaultGatewayIp`" pulumi-lang-dotnet="`DefaultGatewayIp`" pulumi-lang-go="`defaultGatewayIp`" pulumi-lang-python="`default_gateway_ip`" pulumi-lang-yaml="`defaultGatewayIp`" pulumi-lang-java="`defaultGatewayIp`">`defaultGatewayIp`</span>: Reference to address configuration
- * - <span pulumi-lang-nodejs="`dhcpServerAddress`" pulumi-lang-dotnet="`DhcpServerAddress`" pulumi-lang-go="`dhcpServerAddress`" pulumi-lang-python="`dhcp_server_address`" pulumi-lang-yaml="`dhcpServerAddress`" pulumi-lang-java="`dhcpServerAddress`">`dhcpServerAddress`</span>: Reference to address configuration
- * - <span pulumi-lang-nodejs="`poolList`" pulumi-lang-dotnet="`PoolList`" pulumi-lang-go="`poolList`" pulumi-lang-python="`pool_list`" pulumi-lang-yaml="`poolList`" pulumi-lang-java="`poolList`">`poolList`</span>: Pool of IP addresses from where IPs are allocated.
+ * - <span pulumi-lang-nodejs="`ipSubnet`" pulumi-lang-dotnet="`IpSubnet`" pulumi-lang-go="`ipSubnet`" pulumi-lang-python="`ip_subnet`" pulumi-lang-yaml="`ipSubnet`" pulumi-lang-java="`ipSubnet`" pulumi-lang-hcl="`ip_subnet`">`ipSubnet`</span>: subnet ip
+ * - <span pulumi-lang-nodejs="`defaultGatewayIp`" pulumi-lang-dotnet="`DefaultGatewayIp`" pulumi-lang-go="`defaultGatewayIp`" pulumi-lang-python="`default_gateway_ip`" pulumi-lang-yaml="`defaultGatewayIp`" pulumi-lang-java="`defaultGatewayIp`" pulumi-lang-hcl="`default_gateway_ip`">`defaultGatewayIp`</span>: Reference to address configuration
+ * - <span pulumi-lang-nodejs="`dhcpServerAddress`" pulumi-lang-dotnet="`DhcpServerAddress`" pulumi-lang-go="`dhcpServerAddress`" pulumi-lang-python="`dhcp_server_address`" pulumi-lang-yaml="`dhcpServerAddress`" pulumi-lang-java="`dhcpServerAddress`" pulumi-lang-hcl="`dhcp_server_address`">`dhcpServerAddress`</span>: Reference to address configuration
+ * - <span pulumi-lang-nodejs="`poolList`" pulumi-lang-dotnet="`PoolList`" pulumi-lang-go="`poolList`" pulumi-lang-python="`pool_list`" pulumi-lang-yaml="`poolList`" pulumi-lang-java="`poolList`" pulumi-lang-hcl="`pool_list`">`poolList`</span>: Pool of IP addresses from where IPs are allocated.
  *
  * ###<span pulumi-lang-nodejs=" ipSubnet
  * " pulumi-lang-dotnet=" IpSubnet
@@ -295,10 +305,11 @@ export interface GetSubnetsV2Result {
  * " pulumi-lang-python=" ip_subnet
  * " pulumi-lang-yaml=" ipSubnet
  * " pulumi-lang-java=" ipSubnet
+ * " pulumi-lang-hcl=" ip_subnet
  * "> ipSubnet
  * </span>
- * - <span pulumi-lang-nodejs="`ip`" pulumi-lang-dotnet="`Ip`" pulumi-lang-go="`ip`" pulumi-lang-python="`ip`" pulumi-lang-yaml="`ip`" pulumi-lang-java="`ip`">`ip`</span>: Reference to address configuration
- * - <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`">`prefixLength`</span>: The prefix length of the network to which this host IPv4 address belongs.
+ * - <span pulumi-lang-nodejs="`ip`" pulumi-lang-dotnet="`Ip`" pulumi-lang-go="`ip`" pulumi-lang-python="`ip`" pulumi-lang-yaml="`ip`" pulumi-lang-java="`ip`" pulumi-lang-hcl="`ip`">`ip`</span>: Reference to address configuration
+ * - <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span>: The prefix length of the network to which this host IPv4 address belongs.
  *
  * ###<span pulumi-lang-nodejs=" poolList
  * " pulumi-lang-dotnet=" PoolList
@@ -306,10 +317,11 @@ export interface GetSubnetsV2Result {
  * " pulumi-lang-python=" pool_list
  * " pulumi-lang-yaml=" poolList
  * " pulumi-lang-java=" poolList
+ * " pulumi-lang-hcl=" pool_list
  * "> poolList
  * </span>
- * - <span pulumi-lang-nodejs="`startIp`" pulumi-lang-dotnet="`StartIp`" pulumi-lang-go="`startIp`" pulumi-lang-python="`start_ip`" pulumi-lang-yaml="`startIp`" pulumi-lang-java="`startIp`">`startIp`</span>: Reference to address configuration
- * - <span pulumi-lang-nodejs="`endIp`" pulumi-lang-dotnet="`EndIp`" pulumi-lang-go="`endIp`" pulumi-lang-python="`end_ip`" pulumi-lang-yaml="`endIp`" pulumi-lang-java="`endIp`">`endIp`</span>: Reference to address configuration
+ * - <span pulumi-lang-nodejs="`startIp`" pulumi-lang-dotnet="`StartIp`" pulumi-lang-go="`startIp`" pulumi-lang-python="`start_ip`" pulumi-lang-yaml="`startIp`" pulumi-lang-java="`startIp`" pulumi-lang-hcl="`start_ip`">`startIp`</span>: Reference to address configuration
+ * - <span pulumi-lang-nodejs="`endIp`" pulumi-lang-dotnet="`EndIp`" pulumi-lang-go="`endIp`" pulumi-lang-python="`end_ip`" pulumi-lang-yaml="`endIp`" pulumi-lang-java="`endIp`" pulumi-lang-hcl="`end_ip`">`endIp`</span>: Reference to address configuration
  *
  * ###<span pulumi-lang-nodejs=" ipUsage
  * " pulumi-lang-dotnet=" IpUsage
@@ -317,12 +329,13 @@ export interface GetSubnetsV2Result {
  * " pulumi-lang-python=" ip_usage
  * " pulumi-lang-yaml=" ipUsage
  * " pulumi-lang-java=" ipUsage
+ * " pulumi-lang-hcl=" ip_usage
  * "> ipUsage
  * </span>
- * - <span pulumi-lang-nodejs="`numMacs`" pulumi-lang-dotnet="`NumMacs`" pulumi-lang-go="`numMacs`" pulumi-lang-python="`num_macs`" pulumi-lang-yaml="`numMacs`" pulumi-lang-java="`numMacs`">`numMacs`</span>: Number of MAC addresses.
- * - <span pulumi-lang-nodejs="`numFreeIps`" pulumi-lang-dotnet="`NumFreeIps`" pulumi-lang-go="`numFreeIps`" pulumi-lang-python="`num_free_ips`" pulumi-lang-yaml="`numFreeIps`" pulumi-lang-java="`numFreeIps`">`numFreeIps`</span>: Number of free IPs.
- * - <span pulumi-lang-nodejs="`numAssignedIps`" pulumi-lang-dotnet="`NumAssignedIps`" pulumi-lang-go="`numAssignedIps`" pulumi-lang-python="`num_assigned_ips`" pulumi-lang-yaml="`numAssignedIps`" pulumi-lang-java="`numAssignedIps`">`numAssignedIps`</span>: Number of assigned IPs.
- * - <span pulumi-lang-nodejs="`ipPoolUsages`" pulumi-lang-dotnet="`IpPoolUsages`" pulumi-lang-go="`ipPoolUsages`" pulumi-lang-python="`ip_pool_usages`" pulumi-lang-yaml="`ipPoolUsages`" pulumi-lang-java="`ipPoolUsages`">`ipPoolUsages`</span>: IP Pool usages
+ * - <span pulumi-lang-nodejs="`numMacs`" pulumi-lang-dotnet="`NumMacs`" pulumi-lang-go="`numMacs`" pulumi-lang-python="`num_macs`" pulumi-lang-yaml="`numMacs`" pulumi-lang-java="`numMacs`" pulumi-lang-hcl="`num_macs`">`numMacs`</span>: Number of MAC addresses.
+ * - <span pulumi-lang-nodejs="`numFreeIps`" pulumi-lang-dotnet="`NumFreeIps`" pulumi-lang-go="`numFreeIps`" pulumi-lang-python="`num_free_ips`" pulumi-lang-yaml="`numFreeIps`" pulumi-lang-java="`numFreeIps`" pulumi-lang-hcl="`num_free_ips`">`numFreeIps`</span>: Number of free IPs.
+ * - <span pulumi-lang-nodejs="`numAssignedIps`" pulumi-lang-dotnet="`NumAssignedIps`" pulumi-lang-go="`numAssignedIps`" pulumi-lang-python="`num_assigned_ips`" pulumi-lang-yaml="`numAssignedIps`" pulumi-lang-java="`numAssignedIps`" pulumi-lang-hcl="`num_assigned_ips`">`numAssignedIps`</span>: Number of assigned IPs.
+ * - <span pulumi-lang-nodejs="`ipPoolUsages`" pulumi-lang-dotnet="`IpPoolUsages`" pulumi-lang-go="`ipPoolUsages`" pulumi-lang-python="`ip_pool_usages`" pulumi-lang-yaml="`ipPoolUsages`" pulumi-lang-java="`ipPoolUsages`" pulumi-lang-hcl="`ip_pool_usages`">`ipPoolUsages`</span>: IP Pool usages
  *
  * ###<span pulumi-lang-nodejs=" ipPoolUsages
  * " pulumi-lang-dotnet=" IpPoolUsages
@@ -330,16 +343,17 @@ export interface GetSubnetsV2Result {
  * " pulumi-lang-python=" ip_pool_usages
  * " pulumi-lang-yaml=" ipPoolUsages
  * " pulumi-lang-java=" ipPoolUsages
+ * " pulumi-lang-hcl=" ip_pool_usages
  * "> ipPoolUsages
  * </span>
- * - <span pulumi-lang-nodejs="`numFreeIps`" pulumi-lang-dotnet="`NumFreeIps`" pulumi-lang-go="`numFreeIps`" pulumi-lang-python="`num_free_ips`" pulumi-lang-yaml="`numFreeIps`" pulumi-lang-java="`numFreeIps`">`numFreeIps`</span>: Number of free IPs
- * - <span pulumi-lang-nodejs="`numTotalIps`" pulumi-lang-dotnet="`NumTotalIps`" pulumi-lang-go="`numTotalIps`" pulumi-lang-python="`num_total_ips`" pulumi-lang-yaml="`numTotalIps`" pulumi-lang-java="`numTotalIps`">`numTotalIps`</span>: Total number of IPs in this pool.
- * - <span pulumi-lang-nodejs="`range`" pulumi-lang-dotnet="`Range`" pulumi-lang-go="`range`" pulumi-lang-python="`range`" pulumi-lang-yaml="`range`" pulumi-lang-java="`range`">`range`</span>: Start/end IP address range.
+ * - <span pulumi-lang-nodejs="`numFreeIps`" pulumi-lang-dotnet="`NumFreeIps`" pulumi-lang-go="`numFreeIps`" pulumi-lang-python="`num_free_ips`" pulumi-lang-yaml="`numFreeIps`" pulumi-lang-java="`numFreeIps`" pulumi-lang-hcl="`num_free_ips`">`numFreeIps`</span>: Number of free IPs
+ * - <span pulumi-lang-nodejs="`numTotalIps`" pulumi-lang-dotnet="`NumTotalIps`" pulumi-lang-go="`numTotalIps`" pulumi-lang-python="`num_total_ips`" pulumi-lang-yaml="`numTotalIps`" pulumi-lang-java="`numTotalIps`" pulumi-lang-hcl="`num_total_ips`">`numTotalIps`</span>: Total number of IPs in this pool.
+ * - <span pulumi-lang-nodejs="`range`" pulumi-lang-dotnet="`Range`" pulumi-lang-go="`range`" pulumi-lang-python="`range`" pulumi-lang-yaml="`range`" pulumi-lang-java="`range`" pulumi-lang-hcl="`range`">`range`</span>: Start/end IP address range.
  *
  * ### ipv4, ipv6 (Reference to address configuration)
  *
- * - <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`">`value`</span>: value of address
- * - <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`">`prefixLength`</span>: The prefix length of the network to which this host IPv4/IPv6 address belongs.
+ * - <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span>: value of address
+ * - <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span>: The prefix length of the network to which this host IPv4/IPv6 address belongs.
  *
  * See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/Subnets/operation/listSubnets).
  */

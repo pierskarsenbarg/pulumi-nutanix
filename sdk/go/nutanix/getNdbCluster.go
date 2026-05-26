@@ -55,7 +55,7 @@ func LookupNdbCluster(ctx *pulumi.Context, args *LookupNdbClusterArgs, opts ...p
 type LookupNdbClusterArgs struct {
 	// ID of cluster
 	ClusterId *string `pulumi:"clusterId"`
-	// and <span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`">`clusterId`</span> are mutually exclusive.
+	// and <span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`" pulumi-lang-hcl="`cluster_id`">`clusterId`</span> are mutually exclusive.
 	ClusterName *string `pulumi:"clusterName"`
 }
 
@@ -126,7 +126,7 @@ func LookupNdbClusterOutput(ctx *pulumi.Context, args LookupNdbClusterOutputArgs
 type LookupNdbClusterOutputArgs struct {
 	// ID of cluster
 	ClusterId pulumi.StringPtrInput `pulumi:"clusterId"`
-	// and <span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`">`clusterId`</span> are mutually exclusive.
+	// and <span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`" pulumi-lang-hcl="`cluster_id`">`clusterId`</span> are mutually exclusive.
 	ClusterName pulumi.StringPtrInput `pulumi:"clusterName"`
 }
 

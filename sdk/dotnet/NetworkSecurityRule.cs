@@ -13,7 +13,7 @@ namespace PiersKarsenbarg.Nutanix
     /// <summary>
     /// Provides a Nutanix network security rule resource to Create a network security rule.
     /// 
-    /// &gt; NOTE: The use of&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "&gt; networkSecurityRule &lt;/span&gt;is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+    /// &gt; NOTE: The use of&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule " pulumi-lang-hcl=" network_security_rule "&gt; networkSecurityRule &lt;/span&gt;is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
     /// 
     /// ## Example Usage
     /// 
@@ -516,7 +516,7 @@ namespace PiersKarsenbarg.Nutanix
     public partial class NetworkSecurityRule : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList " pulumi-lang-hcl=" inbound_allow_list "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList " pulumi-lang-hcl=" outbound_allow_list "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         [Output("adRuleAction")]
         public Output<string> AdRuleAction { get; private set; } = null!;
@@ -573,7 +573,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> ApiVersion { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList " pulumi-lang-hcl=" inbound_allow_list "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList " pulumi-lang-hcl=" outbound_allow_list "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         [Output("appRuleAction")]
         public Output<string> AppRuleAction { get; private set; } = null!;
@@ -678,7 +678,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> IsolationRuleSecondEntityFilterType { get; private set; } = null!;
 
         /// <summary>
-        /// - The&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "&gt; networkSecurityRule &lt;/span&gt;kind metadata.
+        /// - The&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule " pulumi-lang-hcl=" network_security_rule "&gt; networkSecurityRule &lt;/span&gt;kind metadata.
         /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
@@ -749,7 +749,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class NetworkSecurityRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList " pulumi-lang-hcl=" inbound_allow_list "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList " pulumi-lang-hcl=" outbound_allow_list "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         [Input("adRuleAction")]
         public Input<string>? AdRuleAction { get; set; }
@@ -824,7 +824,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<bool>? AllowIpv6Traffic { get; set; }
 
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList " pulumi-lang-hcl=" inbound_allow_list "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList " pulumi-lang-hcl=" outbound_allow_list "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         [Input("appRuleAction")]
         public Input<string>? AppRuleAction { get; set; }
@@ -1021,7 +1021,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class NetworkSecurityRuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList " pulumi-lang-hcl=" inbound_allow_list "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList " pulumi-lang-hcl=" outbound_allow_list "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         [Input("adRuleAction")]
         public Input<string>? AdRuleAction { get; set; }
@@ -1102,7 +1102,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? ApiVersion { get; set; }
 
         /// <summary>
-        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty&lt;span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList " pulumi-lang-hcl=" inbound_allow_list "&gt; inboundAllowList &lt;/span&gt;will not anything into target group. Empty&lt;span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList " pulumi-lang-hcl=" outbound_allow_list "&gt; outboundAllowList &lt;/span&gt;will allow everything from target group.
         /// </summary>
         [Input("appRuleAction")]
         public Input<string>? AppRuleAction { get; set; }
@@ -1264,7 +1264,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputMap<string>? _metadata;
 
         /// <summary>
-        /// - The&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule "&gt; networkSecurityRule &lt;/span&gt;kind metadata.
+        /// - The&lt;span pulumi-lang-nodejs=" networkSecurityRule " pulumi-lang-dotnet=" NetworkSecurityRule " pulumi-lang-go=" networkSecurityRule " pulumi-lang-python=" network_security_rule " pulumi-lang-yaml=" networkSecurityRule " pulumi-lang-java=" networkSecurityRule " pulumi-lang-hcl=" network_security_rule "&gt; networkSecurityRule &lt;/span&gt;kind metadata.
         /// </summary>
         public InputMap<string> Metadata
         {

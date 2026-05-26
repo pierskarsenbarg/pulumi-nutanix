@@ -39,8 +39,8 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// The following arguments are supported:
     /// 
-    /// * &lt;span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`"&gt;`userExtId`&lt;/span&gt;: - ( Required ) External Identifier of the User.
-    /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;: - ( Required ) External identifier of the key.
+    /// * &lt;span pulumi-lang-nodejs="`userExtId`" pulumi-lang-dotnet="`UserExtId`" pulumi-lang-go="`userExtId`" pulumi-lang-python="`user_ext_id`" pulumi-lang-yaml="`userExtId`" pulumi-lang-java="`userExtId`" pulumi-lang-hcl="`user_ext_id`"&gt;`userExtId`&lt;/span&gt;: - ( Required ) External Identifier of the User.
+    /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: - ( Required ) External identifier of the key.
     /// </summary>
     [NutanixResourceType("nutanix:index/userKeyRevokeV2:UserKeyRevokeV2")]
     public partial class UserKeyRevokeV2 : global::Pulumi.CustomResource

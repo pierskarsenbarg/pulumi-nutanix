@@ -80,7 +80,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The UUID of the snapshot to which the application will be restored.
         /// 
-        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`"&gt;`appUuid`&lt;/span&gt;) are optional but atleast one of them should be provided for resource to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`"&gt;`appUuid`&lt;/span&gt;) are optional but atleast one of them should be provided for resource to work.
         /// </summary>
         [Output("snapshotUuid")]
         public Output<string> SnapshotUuid { get; private set; } = null!;
@@ -159,7 +159,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The UUID of the snapshot to which the application will be restored.
         /// 
-        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`"&gt;`appUuid`&lt;/span&gt;) are optional but atleast one of them should be provided for resource to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`"&gt;`appUuid`&lt;/span&gt;) are optional but atleast one of them should be provided for resource to work.
         /// </summary>
         [Input("snapshotUuid", required: true)]
         public Input<string> SnapshotUuid { get; set; } = null!;
@@ -193,7 +193,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Required) The UUID of the snapshot to which the application will be restored.
         /// 
-        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`"&gt;`appUuid`&lt;/span&gt;) are optional but atleast one of them should be provided for resource to work.
+        /// Both (&lt;span pulumi-lang-nodejs="`appName`" pulumi-lang-dotnet="`AppName`" pulumi-lang-go="`appName`" pulumi-lang-python="`app_name`" pulumi-lang-yaml="`appName`" pulumi-lang-java="`appName`" pulumi-lang-hcl="`app_name`"&gt;`appName`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`appUuid`" pulumi-lang-dotnet="`AppUuid`" pulumi-lang-go="`appUuid`" pulumi-lang-python="`app_uuid`" pulumi-lang-yaml="`appUuid`" pulumi-lang-java="`appUuid`" pulumi-lang-hcl="`app_uuid`"&gt;`appUuid`&lt;/span&gt;) are optional but atleast one of them should be provided for resource to work.
         /// </summary>
         [Input("snapshotUuid")]
         public Input<string>? SnapshotUuid { get; set; }

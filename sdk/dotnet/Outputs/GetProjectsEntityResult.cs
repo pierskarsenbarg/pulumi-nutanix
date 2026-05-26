@@ -16,7 +16,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         /// <summary>
         /// List of accounts associated with the project.
-        /// * `account_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`account`" pulumi-lang-dotnet="`Account`" pulumi-lang-go="`account`" pulumi-lang-python="`account`" pulumi-lang-yaml="`account`" pulumi-lang-java="`account`"&gt;`account`&lt;/span&gt;
+        /// * `account_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`account`" pulumi-lang-dotnet="`Account`" pulumi-lang-go="`account`" pulumi-lang-python="`account`" pulumi-lang-yaml="`account`" pulumi-lang-java="`account`" pulumi-lang-hcl="`account`"&gt;`account`&lt;/span&gt;
         /// * `account_reference_list.#.uuid` - The UUID of an account.
         /// * `account_reference_list.#.name` - The name of an account.
         /// </summary>
@@ -36,7 +36,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string Description;
         /// <summary>
         /// List of environments associated with the project.
-        /// * `environment_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`"&gt;`environment`&lt;/span&gt;
+        /// * `environment_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`" pulumi-lang-hcl="`environment`"&gt;`environment`&lt;/span&gt;
         /// * `environment_reference_list.#.uuid` - The UUID of an environment.
         /// * `environment_reference_list.#.name` - The name of an environment.
         /// </summary>
@@ -49,13 +49,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.GetProjectsEntityExternalNetworkListResult> ExternalNetworkLists;
         /// <summary>
         /// List of directory service user groups. These groups are not managed by Nutanix.
-        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`"&gt;`userGroup`&lt;/span&gt;
+        /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`" pulumi-lang-hcl="`user_group`"&gt;`userGroup`&lt;/span&gt;
         /// * `external_user_group_reference_list.#.uuid` - The UUID of a&lt;span pulumi-lang-nodejs=" userGroup
         /// " pulumi-lang-dotnet=" UserGroup
         /// " pulumi-lang-go=" userGroup
         /// " pulumi-lang-python=" user_group
         /// " pulumi-lang-yaml=" userGroup
         /// " pulumi-lang-java=" userGroup
+        /// " pulumi-lang-hcl=" user_group
         /// "&gt; userGroup
         /// &lt;/span&gt;* `external_user_group_reference_list.#.name` - The name of a user_group
         /// </summary>
@@ -75,14 +76,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string State;
         /// <summary>
         /// List of subnets for the project.
-        /// * `subnet_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`"&gt;`subnet`&lt;/span&gt;
+        /// * `subnet_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`" pulumi-lang-hcl="`subnet`"&gt;`subnet`&lt;/span&gt;
         /// * `subnet_reference_list.#.uuid` - The UUID of a subnet
         /// * `subnet_reference_list.#.name` - The name of a subnet.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectsEntitySubnetReferenceListResult> SubnetReferenceLists;
         /// <summary>
         /// List of users in the project.
-        /// * `user_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`user`" pulumi-lang-dotnet="`User`" pulumi-lang-go="`user`" pulumi-lang-python="`user`" pulumi-lang-yaml="`user`" pulumi-lang-java="`user`"&gt;`user`&lt;/span&gt;
+        /// * `user_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`user`" pulumi-lang-dotnet="`User`" pulumi-lang-go="`user`" pulumi-lang-python="`user`" pulumi-lang-yaml="`user`" pulumi-lang-java="`user`" pulumi-lang-hcl="`user`"&gt;`user`&lt;/span&gt;
         /// * `user_reference_list.#.uuid` - The UUID of a user
         /// * `user_reference_list.#.name` - The name of a user.
         /// </summary>

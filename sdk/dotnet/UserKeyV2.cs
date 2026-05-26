@@ -40,7 +40,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## Lifecycle Behavior
     /// 
-    /// &gt; Important: The&lt;span pulumi-lang-nodejs=" nutanix.UserKeyV2 " pulumi-lang-dotnet=" nutanix.UserKeyV2 " pulumi-lang-go=" UserKeyV2 " pulumi-lang-python=" UserKeyV2 " pulumi-lang-yaml=" nutanix.UserKeyV2 " pulumi-lang-java=" nutanix.UserKeyV2 "&gt; nutanix.UserKeyV2 &lt;/span&gt;resource does not support in-place updates.
+    /// &gt; Important: The&lt;span pulumi-lang-nodejs=" nutanix.UserKeyV2 " pulumi-lang-dotnet=" nutanix.UserKeyV2 " pulumi-lang-go=" UserKeyV2 " pulumi-lang-python=" UserKeyV2 " pulumi-lang-yaml=" nutanix.UserKeyV2 " pulumi-lang-java=" nutanix.UserKeyV2 " pulumi-lang-hcl=" nutanix_user_key_v2 "&gt; nutanix.UserKeyV2 &lt;/span&gt;resource does not support in-place updates.
     /// 
     /// Changes to the following arguments will force the resource to be replaced:
     /// 
@@ -54,6 +54,7 @@ namespace PiersKarsenbarg.Nutanix
     /// " pulumi-lang-python=" key_type
     /// " pulumi-lang-yaml=" keyType
     /// " pulumi-lang-java=" keyType
+    /// " pulumi-lang-hcl=" key_type
     /// "&gt; keyType
     /// &lt;/span&gt;
     /// -&lt;span pulumi-lang-nodejs=" expiryTime
@@ -62,6 +63,7 @@ namespace PiersKarsenbarg.Nutanix
     /// " pulumi-lang-python=" expiry_time
     /// " pulumi-lang-yaml=" expiryTime
     /// " pulumi-lang-java=" expiryTime
+    /// " pulumi-lang-hcl=" expiry_time
     /// "&gt; expiryTime
     /// &lt;/span&gt;
     /// -&lt;span pulumi-lang-nodejs=" assignedTo
@@ -70,6 +72,7 @@ namespace PiersKarsenbarg.Nutanix
     /// " pulumi-lang-python=" assigned_to
     /// " pulumi-lang-yaml=" assignedTo
     /// " pulumi-lang-java=" assignedTo
+    /// " pulumi-lang-hcl=" assigned_to
     /// "&gt; assignedTo
     /// &lt;/span&gt;
     /// When any of these arguments are modified, Terraform will destroy the existing user key and create a new one. This results in a new key being generated.

@@ -94,6 +94,26 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getauthorizationpoliciesv2" "filtered-ap" {
+        ///   filter = "displayName eq 'auth_policy_example'"
+        ///   limit  = 2
+        /// }
+        /// data "nutanix_getauthorizationpoliciesv2" "select-ap" {
+        ///   select = "extId,displayName,description,authorizationPolicyType"
+        /// }
+        /// 
+        /// #list of authorization policies, with limit and filter
+        /// # list of authorization policies, with select
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -151,19 +171,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following attributes are exported for each Authorization Policy:
         /// 
-        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;:&lt;span pulumi-lang-nodejs=" extId " pulumi-lang-dotnet=" ExtId " pulumi-lang-go=" extId " pulumi-lang-python=" ext_id " pulumi-lang-yaml=" extId " pulumi-lang-java=" extId "&gt; extId &lt;/span&gt;of Authorization policy.
-        /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// - &lt;span pulumi-lang-nodejs="`displayName`" pulumi-lang-dotnet="`DisplayName`" pulumi-lang-go="`displayName`" pulumi-lang-python="`display_name`" pulumi-lang-yaml="`displayName`" pulumi-lang-java="`displayName`"&gt;`displayName`&lt;/span&gt;: Name of the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: Description of the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`clientName`" pulumi-lang-dotnet="`ClientName`" pulumi-lang-go="`clientName`" pulumi-lang-python="`client_name`" pulumi-lang-yaml="`clientName`" pulumi-lang-java="`clientName`"&gt;`clientName`&lt;/span&gt;: Client that created the entity.
-        /// - &lt;span pulumi-lang-nodejs="`identities`" pulumi-lang-dotnet="`Identities`" pulumi-lang-go="`identities`" pulumi-lang-python="`identities`" pulumi-lang-yaml="`identities`" pulumi-lang-java="`identities`"&gt;`identities`&lt;/span&gt;: The identities for which the Authorization Policy is created.
-        /// - &lt;span pulumi-lang-nodejs="`entities`" pulumi-lang-dotnet="`Entities`" pulumi-lang-go="`entities`" pulumi-lang-python="`entities`" pulumi-lang-yaml="`entities`" pulumi-lang-java="`entities`"&gt;`entities`&lt;/span&gt;: The entities being qualified by the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`role`" pulumi-lang-dotnet="`Role`" pulumi-lang-go="`role`" pulumi-lang-python="`role`" pulumi-lang-yaml="`role`" pulumi-lang-java="`role`"&gt;`role`&lt;/span&gt;: The Role associated with the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`createdTime`" pulumi-lang-dotnet="`CreatedTime`" pulumi-lang-go="`createdTime`" pulumi-lang-python="`created_time`" pulumi-lang-yaml="`createdTime`" pulumi-lang-java="`createdTime`"&gt;`createdTime`&lt;/span&gt;: The creation time of the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`lastUpdatedTime`" pulumi-lang-dotnet="`LastUpdatedTime`" pulumi-lang-go="`lastUpdatedTime`" pulumi-lang-python="`last_updated_time`" pulumi-lang-yaml="`lastUpdatedTime`" pulumi-lang-java="`lastUpdatedTime`"&gt;`lastUpdatedTime`&lt;/span&gt;: The time when the Authorization Policy was last updated.
-        /// - &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`"&gt;`createdBy`&lt;/span&gt;: User or Service Name that created the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`isSystemDefined`" pulumi-lang-dotnet="`IsSystemDefined`" pulumi-lang-go="`isSystemDefined`" pulumi-lang-python="`is_system_defined`" pulumi-lang-yaml="`isSystemDefined`" pulumi-lang-java="`isSystemDefined`"&gt;`isSystemDefined`&lt;/span&gt;: Flag identifying if the Authorization Policy is system defined or not.
-        /// - &lt;span pulumi-lang-nodejs="`authorizationPolicyType`" pulumi-lang-dotnet="`AuthorizationPolicyType`" pulumi-lang-go="`authorizationPolicyType`" pulumi-lang-python="`authorization_policy_type`" pulumi-lang-yaml="`authorizationPolicyType`" pulumi-lang-java="`authorizationPolicyType`"&gt;`authorizationPolicyType`&lt;/span&gt;: Type of Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;:&lt;span pulumi-lang-nodejs=" extId " pulumi-lang-dotnet=" ExtId " pulumi-lang-go=" extId " pulumi-lang-python=" ext_id " pulumi-lang-yaml=" extId " pulumi-lang-java=" extId " pulumi-lang-hcl=" ext_id "&gt; extId &lt;/span&gt;of Authorization policy.
+        /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// - &lt;span pulumi-lang-nodejs="`displayName`" pulumi-lang-dotnet="`DisplayName`" pulumi-lang-go="`displayName`" pulumi-lang-python="`display_name`" pulumi-lang-yaml="`displayName`" pulumi-lang-java="`displayName`" pulumi-lang-hcl="`display_name`"&gt;`displayName`&lt;/span&gt;: Name of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`" pulumi-lang-hcl="`description`"&gt;`description`&lt;/span&gt;: Description of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`clientName`" pulumi-lang-dotnet="`ClientName`" pulumi-lang-go="`clientName`" pulumi-lang-python="`client_name`" pulumi-lang-yaml="`clientName`" pulumi-lang-java="`clientName`" pulumi-lang-hcl="`client_name`"&gt;`clientName`&lt;/span&gt;: Client that created the entity.
+        /// - &lt;span pulumi-lang-nodejs="`identities`" pulumi-lang-dotnet="`Identities`" pulumi-lang-go="`identities`" pulumi-lang-python="`identities`" pulumi-lang-yaml="`identities`" pulumi-lang-java="`identities`" pulumi-lang-hcl="`identities`"&gt;`identities`&lt;/span&gt;: The identities for which the Authorization Policy is created.
+        /// - &lt;span pulumi-lang-nodejs="`entities`" pulumi-lang-dotnet="`Entities`" pulumi-lang-go="`entities`" pulumi-lang-python="`entities`" pulumi-lang-yaml="`entities`" pulumi-lang-java="`entities`" pulumi-lang-hcl="`entities`"&gt;`entities`&lt;/span&gt;: The entities being qualified by the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`role`" pulumi-lang-dotnet="`Role`" pulumi-lang-go="`role`" pulumi-lang-python="`role`" pulumi-lang-yaml="`role`" pulumi-lang-java="`role`" pulumi-lang-hcl="`role`"&gt;`role`&lt;/span&gt;: The Role associated with the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`createdTime`" pulumi-lang-dotnet="`CreatedTime`" pulumi-lang-go="`createdTime`" pulumi-lang-python="`created_time`" pulumi-lang-yaml="`createdTime`" pulumi-lang-java="`createdTime`" pulumi-lang-hcl="`created_time`"&gt;`createdTime`&lt;/span&gt;: The creation time of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`lastUpdatedTime`" pulumi-lang-dotnet="`LastUpdatedTime`" pulumi-lang-go="`lastUpdatedTime`" pulumi-lang-python="`last_updated_time`" pulumi-lang-yaml="`lastUpdatedTime`" pulumi-lang-java="`lastUpdatedTime`" pulumi-lang-hcl="`last_updated_time`"&gt;`lastUpdatedTime`&lt;/span&gt;: The time when the Authorization Policy was last updated.
+        /// - &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`" pulumi-lang-hcl="`created_by`"&gt;`createdBy`&lt;/span&gt;: User or Service Name that created the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`isSystemDefined`" pulumi-lang-dotnet="`IsSystemDefined`" pulumi-lang-go="`isSystemDefined`" pulumi-lang-python="`is_system_defined`" pulumi-lang-yaml="`isSystemDefined`" pulumi-lang-java="`isSystemDefined`" pulumi-lang-hcl="`is_system_defined`"&gt;`isSystemDefined`&lt;/span&gt;: Flag identifying if the Authorization Policy is system defined or not.
+        /// - &lt;span pulumi-lang-nodejs="`authorizationPolicyType`" pulumi-lang-dotnet="`AuthorizationPolicyType`" pulumi-lang-go="`authorizationPolicyType`" pulumi-lang-python="`authorization_policy_type`" pulumi-lang-yaml="`authorizationPolicyType`" pulumi-lang-java="`authorizationPolicyType`" pulumi-lang-hcl="`authorization_policy_type`"&gt;`authorizationPolicyType`&lt;/span&gt;: Type of Authorization Policy.
         ///   - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
         ///   - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
         ///   - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
@@ -174,8 +194,8 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The links attribute supports the following:
         /// 
-        /// - &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
-        /// - &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object
+        /// - &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
+        /// - &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object
         /// 
         /// See detailed information in [Nutanix List Authorization Policies v4](https://developers.nutanix.com/api-reference?namespace=iam&amp;version=v4.0#tag/AuthorizationPolicies/operation/listAuthorizationPolicies).
         /// </summary>
@@ -264,6 +284,26 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getauthorizationpoliciesv2" "filtered-ap" {
+        ///   filter = "displayName eq 'auth_policy_example'"
+        ///   limit  = 2
+        /// }
+        /// data "nutanix_getauthorizationpoliciesv2" "select-ap" {
+        ///   select = "extId,displayName,description,authorizationPolicyType"
+        /// }
+        /// 
+        /// #list of authorization policies, with limit and filter
+        /// # list of authorization policies, with select
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -321,19 +361,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following attributes are exported for each Authorization Policy:
         /// 
-        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;:&lt;span pulumi-lang-nodejs=" extId " pulumi-lang-dotnet=" ExtId " pulumi-lang-go=" extId " pulumi-lang-python=" ext_id " pulumi-lang-yaml=" extId " pulumi-lang-java=" extId "&gt; extId &lt;/span&gt;of Authorization policy.
-        /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// - &lt;span pulumi-lang-nodejs="`displayName`" pulumi-lang-dotnet="`DisplayName`" pulumi-lang-go="`displayName`" pulumi-lang-python="`display_name`" pulumi-lang-yaml="`displayName`" pulumi-lang-java="`displayName`"&gt;`displayName`&lt;/span&gt;: Name of the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: Description of the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`clientName`" pulumi-lang-dotnet="`ClientName`" pulumi-lang-go="`clientName`" pulumi-lang-python="`client_name`" pulumi-lang-yaml="`clientName`" pulumi-lang-java="`clientName`"&gt;`clientName`&lt;/span&gt;: Client that created the entity.
-        /// - &lt;span pulumi-lang-nodejs="`identities`" pulumi-lang-dotnet="`Identities`" pulumi-lang-go="`identities`" pulumi-lang-python="`identities`" pulumi-lang-yaml="`identities`" pulumi-lang-java="`identities`"&gt;`identities`&lt;/span&gt;: The identities for which the Authorization Policy is created.
-        /// - &lt;span pulumi-lang-nodejs="`entities`" pulumi-lang-dotnet="`Entities`" pulumi-lang-go="`entities`" pulumi-lang-python="`entities`" pulumi-lang-yaml="`entities`" pulumi-lang-java="`entities`"&gt;`entities`&lt;/span&gt;: The entities being qualified by the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`role`" pulumi-lang-dotnet="`Role`" pulumi-lang-go="`role`" pulumi-lang-python="`role`" pulumi-lang-yaml="`role`" pulumi-lang-java="`role`"&gt;`role`&lt;/span&gt;: The Role associated with the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`createdTime`" pulumi-lang-dotnet="`CreatedTime`" pulumi-lang-go="`createdTime`" pulumi-lang-python="`created_time`" pulumi-lang-yaml="`createdTime`" pulumi-lang-java="`createdTime`"&gt;`createdTime`&lt;/span&gt;: The creation time of the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`lastUpdatedTime`" pulumi-lang-dotnet="`LastUpdatedTime`" pulumi-lang-go="`lastUpdatedTime`" pulumi-lang-python="`last_updated_time`" pulumi-lang-yaml="`lastUpdatedTime`" pulumi-lang-java="`lastUpdatedTime`"&gt;`lastUpdatedTime`&lt;/span&gt;: The time when the Authorization Policy was last updated.
-        /// - &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`"&gt;`createdBy`&lt;/span&gt;: User or Service Name that created the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`isSystemDefined`" pulumi-lang-dotnet="`IsSystemDefined`" pulumi-lang-go="`isSystemDefined`" pulumi-lang-python="`is_system_defined`" pulumi-lang-yaml="`isSystemDefined`" pulumi-lang-java="`isSystemDefined`"&gt;`isSystemDefined`&lt;/span&gt;: Flag identifying if the Authorization Policy is system defined or not.
-        /// - &lt;span pulumi-lang-nodejs="`authorizationPolicyType`" pulumi-lang-dotnet="`AuthorizationPolicyType`" pulumi-lang-go="`authorizationPolicyType`" pulumi-lang-python="`authorization_policy_type`" pulumi-lang-yaml="`authorizationPolicyType`" pulumi-lang-java="`authorizationPolicyType`"&gt;`authorizationPolicyType`&lt;/span&gt;: Type of Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;:&lt;span pulumi-lang-nodejs=" extId " pulumi-lang-dotnet=" ExtId " pulumi-lang-go=" extId " pulumi-lang-python=" ext_id " pulumi-lang-yaml=" extId " pulumi-lang-java=" extId " pulumi-lang-hcl=" ext_id "&gt; extId &lt;/span&gt;of Authorization policy.
+        /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// - &lt;span pulumi-lang-nodejs="`displayName`" pulumi-lang-dotnet="`DisplayName`" pulumi-lang-go="`displayName`" pulumi-lang-python="`display_name`" pulumi-lang-yaml="`displayName`" pulumi-lang-java="`displayName`" pulumi-lang-hcl="`display_name`"&gt;`displayName`&lt;/span&gt;: Name of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`" pulumi-lang-hcl="`description`"&gt;`description`&lt;/span&gt;: Description of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`clientName`" pulumi-lang-dotnet="`ClientName`" pulumi-lang-go="`clientName`" pulumi-lang-python="`client_name`" pulumi-lang-yaml="`clientName`" pulumi-lang-java="`clientName`" pulumi-lang-hcl="`client_name`"&gt;`clientName`&lt;/span&gt;: Client that created the entity.
+        /// - &lt;span pulumi-lang-nodejs="`identities`" pulumi-lang-dotnet="`Identities`" pulumi-lang-go="`identities`" pulumi-lang-python="`identities`" pulumi-lang-yaml="`identities`" pulumi-lang-java="`identities`" pulumi-lang-hcl="`identities`"&gt;`identities`&lt;/span&gt;: The identities for which the Authorization Policy is created.
+        /// - &lt;span pulumi-lang-nodejs="`entities`" pulumi-lang-dotnet="`Entities`" pulumi-lang-go="`entities`" pulumi-lang-python="`entities`" pulumi-lang-yaml="`entities`" pulumi-lang-java="`entities`" pulumi-lang-hcl="`entities`"&gt;`entities`&lt;/span&gt;: The entities being qualified by the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`role`" pulumi-lang-dotnet="`Role`" pulumi-lang-go="`role`" pulumi-lang-python="`role`" pulumi-lang-yaml="`role`" pulumi-lang-java="`role`" pulumi-lang-hcl="`role`"&gt;`role`&lt;/span&gt;: The Role associated with the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`createdTime`" pulumi-lang-dotnet="`CreatedTime`" pulumi-lang-go="`createdTime`" pulumi-lang-python="`created_time`" pulumi-lang-yaml="`createdTime`" pulumi-lang-java="`createdTime`" pulumi-lang-hcl="`created_time`"&gt;`createdTime`&lt;/span&gt;: The creation time of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`lastUpdatedTime`" pulumi-lang-dotnet="`LastUpdatedTime`" pulumi-lang-go="`lastUpdatedTime`" pulumi-lang-python="`last_updated_time`" pulumi-lang-yaml="`lastUpdatedTime`" pulumi-lang-java="`lastUpdatedTime`" pulumi-lang-hcl="`last_updated_time`"&gt;`lastUpdatedTime`&lt;/span&gt;: The time when the Authorization Policy was last updated.
+        /// - &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`" pulumi-lang-hcl="`created_by`"&gt;`createdBy`&lt;/span&gt;: User or Service Name that created the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`isSystemDefined`" pulumi-lang-dotnet="`IsSystemDefined`" pulumi-lang-go="`isSystemDefined`" pulumi-lang-python="`is_system_defined`" pulumi-lang-yaml="`isSystemDefined`" pulumi-lang-java="`isSystemDefined`" pulumi-lang-hcl="`is_system_defined`"&gt;`isSystemDefined`&lt;/span&gt;: Flag identifying if the Authorization Policy is system defined or not.
+        /// - &lt;span pulumi-lang-nodejs="`authorizationPolicyType`" pulumi-lang-dotnet="`AuthorizationPolicyType`" pulumi-lang-go="`authorizationPolicyType`" pulumi-lang-python="`authorization_policy_type`" pulumi-lang-yaml="`authorizationPolicyType`" pulumi-lang-java="`authorizationPolicyType`" pulumi-lang-hcl="`authorization_policy_type`"&gt;`authorizationPolicyType`&lt;/span&gt;: Type of Authorization Policy.
         ///   - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
         ///   - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
         ///   - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
@@ -344,8 +384,8 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The links attribute supports the following:
         /// 
-        /// - &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
-        /// - &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object
+        /// - &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
+        /// - &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object
         /// 
         /// See detailed information in [Nutanix List Authorization Policies v4](https://developers.nutanix.com/api-reference?namespace=iam&amp;version=v4.0#tag/AuthorizationPolicies/operation/listAuthorizationPolicies).
         /// </summary>
@@ -434,6 +474,26 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getauthorizationpoliciesv2" "filtered-ap" {
+        ///   filter = "displayName eq 'auth_policy_example'"
+        ///   limit  = 2
+        /// }
+        /// data "nutanix_getauthorizationpoliciesv2" "select-ap" {
+        ///   select = "extId,displayName,description,authorizationPolicyType"
+        /// }
+        /// 
+        /// #list of authorization policies, with limit and filter
+        /// # list of authorization policies, with select
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -491,19 +551,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The following attributes are exported for each Authorization Policy:
         /// 
-        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`"&gt;`extId`&lt;/span&gt;:&lt;span pulumi-lang-nodejs=" extId " pulumi-lang-dotnet=" ExtId " pulumi-lang-go=" extId " pulumi-lang-python=" ext_id " pulumi-lang-yaml=" extId " pulumi-lang-java=" extId "&gt; extId &lt;/span&gt;of Authorization policy.
-        /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// - &lt;span pulumi-lang-nodejs="`displayName`" pulumi-lang-dotnet="`DisplayName`" pulumi-lang-go="`displayName`" pulumi-lang-python="`display_name`" pulumi-lang-yaml="`displayName`" pulumi-lang-java="`displayName`"&gt;`displayName`&lt;/span&gt;: Name of the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`"&gt;`description`&lt;/span&gt;: Description of the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`clientName`" pulumi-lang-dotnet="`ClientName`" pulumi-lang-go="`clientName`" pulumi-lang-python="`client_name`" pulumi-lang-yaml="`clientName`" pulumi-lang-java="`clientName`"&gt;`clientName`&lt;/span&gt;: Client that created the entity.
-        /// - &lt;span pulumi-lang-nodejs="`identities`" pulumi-lang-dotnet="`Identities`" pulumi-lang-go="`identities`" pulumi-lang-python="`identities`" pulumi-lang-yaml="`identities`" pulumi-lang-java="`identities`"&gt;`identities`&lt;/span&gt;: The identities for which the Authorization Policy is created.
-        /// - &lt;span pulumi-lang-nodejs="`entities`" pulumi-lang-dotnet="`Entities`" pulumi-lang-go="`entities`" pulumi-lang-python="`entities`" pulumi-lang-yaml="`entities`" pulumi-lang-java="`entities`"&gt;`entities`&lt;/span&gt;: The entities being qualified by the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`role`" pulumi-lang-dotnet="`Role`" pulumi-lang-go="`role`" pulumi-lang-python="`role`" pulumi-lang-yaml="`role`" pulumi-lang-java="`role`"&gt;`role`&lt;/span&gt;: The Role associated with the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`createdTime`" pulumi-lang-dotnet="`CreatedTime`" pulumi-lang-go="`createdTime`" pulumi-lang-python="`created_time`" pulumi-lang-yaml="`createdTime`" pulumi-lang-java="`createdTime`"&gt;`createdTime`&lt;/span&gt;: The creation time of the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`lastUpdatedTime`" pulumi-lang-dotnet="`LastUpdatedTime`" pulumi-lang-go="`lastUpdatedTime`" pulumi-lang-python="`last_updated_time`" pulumi-lang-yaml="`lastUpdatedTime`" pulumi-lang-java="`lastUpdatedTime`"&gt;`lastUpdatedTime`&lt;/span&gt;: The time when the Authorization Policy was last updated.
-        /// - &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`"&gt;`createdBy`&lt;/span&gt;: User or Service Name that created the Authorization Policy.
-        /// - &lt;span pulumi-lang-nodejs="`isSystemDefined`" pulumi-lang-dotnet="`IsSystemDefined`" pulumi-lang-go="`isSystemDefined`" pulumi-lang-python="`is_system_defined`" pulumi-lang-yaml="`isSystemDefined`" pulumi-lang-java="`isSystemDefined`"&gt;`isSystemDefined`&lt;/span&gt;: Flag identifying if the Authorization Policy is system defined or not.
-        /// - &lt;span pulumi-lang-nodejs="`authorizationPolicyType`" pulumi-lang-dotnet="`AuthorizationPolicyType`" pulumi-lang-go="`authorizationPolicyType`" pulumi-lang-python="`authorization_policy_type`" pulumi-lang-yaml="`authorizationPolicyType`" pulumi-lang-java="`authorizationPolicyType`"&gt;`authorizationPolicyType`&lt;/span&gt;: Type of Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;:&lt;span pulumi-lang-nodejs=" extId " pulumi-lang-dotnet=" ExtId " pulumi-lang-go=" extId " pulumi-lang-python=" ext_id " pulumi-lang-yaml=" extId " pulumi-lang-java=" extId " pulumi-lang-hcl=" ext_id "&gt; extId &lt;/span&gt;of Authorization policy.
+        /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// - &lt;span pulumi-lang-nodejs="`displayName`" pulumi-lang-dotnet="`DisplayName`" pulumi-lang-go="`displayName`" pulumi-lang-python="`display_name`" pulumi-lang-yaml="`displayName`" pulumi-lang-java="`displayName`" pulumi-lang-hcl="`display_name`"&gt;`displayName`&lt;/span&gt;: Name of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`" pulumi-lang-hcl="`description`"&gt;`description`&lt;/span&gt;: Description of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`clientName`" pulumi-lang-dotnet="`ClientName`" pulumi-lang-go="`clientName`" pulumi-lang-python="`client_name`" pulumi-lang-yaml="`clientName`" pulumi-lang-java="`clientName`" pulumi-lang-hcl="`client_name`"&gt;`clientName`&lt;/span&gt;: Client that created the entity.
+        /// - &lt;span pulumi-lang-nodejs="`identities`" pulumi-lang-dotnet="`Identities`" pulumi-lang-go="`identities`" pulumi-lang-python="`identities`" pulumi-lang-yaml="`identities`" pulumi-lang-java="`identities`" pulumi-lang-hcl="`identities`"&gt;`identities`&lt;/span&gt;: The identities for which the Authorization Policy is created.
+        /// - &lt;span pulumi-lang-nodejs="`entities`" pulumi-lang-dotnet="`Entities`" pulumi-lang-go="`entities`" pulumi-lang-python="`entities`" pulumi-lang-yaml="`entities`" pulumi-lang-java="`entities`" pulumi-lang-hcl="`entities`"&gt;`entities`&lt;/span&gt;: The entities being qualified by the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`role`" pulumi-lang-dotnet="`Role`" pulumi-lang-go="`role`" pulumi-lang-python="`role`" pulumi-lang-yaml="`role`" pulumi-lang-java="`role`" pulumi-lang-hcl="`role`"&gt;`role`&lt;/span&gt;: The Role associated with the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`createdTime`" pulumi-lang-dotnet="`CreatedTime`" pulumi-lang-go="`createdTime`" pulumi-lang-python="`created_time`" pulumi-lang-yaml="`createdTime`" pulumi-lang-java="`createdTime`" pulumi-lang-hcl="`created_time`"&gt;`createdTime`&lt;/span&gt;: The creation time of the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`lastUpdatedTime`" pulumi-lang-dotnet="`LastUpdatedTime`" pulumi-lang-go="`lastUpdatedTime`" pulumi-lang-python="`last_updated_time`" pulumi-lang-yaml="`lastUpdatedTime`" pulumi-lang-java="`lastUpdatedTime`" pulumi-lang-hcl="`last_updated_time`"&gt;`lastUpdatedTime`&lt;/span&gt;: The time when the Authorization Policy was last updated.
+        /// - &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`" pulumi-lang-hcl="`created_by`"&gt;`createdBy`&lt;/span&gt;: User or Service Name that created the Authorization Policy.
+        /// - &lt;span pulumi-lang-nodejs="`isSystemDefined`" pulumi-lang-dotnet="`IsSystemDefined`" pulumi-lang-go="`isSystemDefined`" pulumi-lang-python="`is_system_defined`" pulumi-lang-yaml="`isSystemDefined`" pulumi-lang-java="`isSystemDefined`" pulumi-lang-hcl="`is_system_defined`"&gt;`isSystemDefined`&lt;/span&gt;: Flag identifying if the Authorization Policy is system defined or not.
+        /// - &lt;span pulumi-lang-nodejs="`authorizationPolicyType`" pulumi-lang-dotnet="`AuthorizationPolicyType`" pulumi-lang-go="`authorizationPolicyType`" pulumi-lang-python="`authorization_policy_type`" pulumi-lang-yaml="`authorizationPolicyType`" pulumi-lang-java="`authorizationPolicyType`" pulumi-lang-hcl="`authorization_policy_type`"&gt;`authorizationPolicyType`&lt;/span&gt;: Type of Authorization Policy.
         ///   - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.
         ///   - `SERVICE_DEFINED_READ_ONLY` : Read-only ACP defined by a service.
         ///   - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
@@ -514,8 +574,8 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// The links attribute supports the following:
         /// 
-        /// - &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
-        /// - &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object
+        /// - &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
+        /// - &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object
         /// 
         /// See detailed information in [Nutanix List Authorization Policies v4](https://developers.nutanix.com/api-reference?namespace=iam&amp;version=v4.0#tag/AuthorizationPolicies/operation/listAuthorizationPolicies).
         /// </summary>

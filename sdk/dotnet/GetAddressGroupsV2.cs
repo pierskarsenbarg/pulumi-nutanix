@@ -106,6 +106,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getaddressgroupsv2" "list-addr-groups" {
+        /// }
+        /// data "nutanix_getaddressgroupsv2" "list-addr-group-filtered" {
+        ///   filter = "name eq 'td-addr-group'"
+        /// }
+        /// data "nutanix_getaddressgroupsv2" "list-addr-groups-filter-limit" {
+        ///   filter = "name eq 'td-addr-group'"
+        ///   limit  = 1
+        /// }
+        /// 
+        /// # list all address groups
+        /// # filtered the address groups
+        /// # filtered and limit the number of address groups
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -265,6 +288,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getaddressgroupsv2" "list-addr-groups" {
+        /// }
+        /// data "nutanix_getaddressgroupsv2" "list-addr-group-filtered" {
+        ///   filter = "name eq 'td-addr-group'"
+        /// }
+        /// data "nutanix_getaddressgroupsv2" "list-addr-groups-filter-limit" {
+        ///   filter = "name eq 'td-addr-group'"
+        ///   limit  = 1
+        /// }
+        /// 
+        /// # list all address groups
+        /// # filtered the address groups
+        /// # filtered and limit the number of address groups
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -423,6 +469,29 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getaddressgroupsv2" "list-addr-groups" {
+        /// }
+        /// data "nutanix_getaddressgroupsv2" "list-addr-group-filtered" {
+        ///   filter = "name eq 'td-addr-group'"
+        /// }
+        /// data "nutanix_getaddressgroupsv2" "list-addr-groups-filter-limit" {
+        ///   filter = "name eq 'td-addr-group'"
+        ///   limit  = 1
+        /// }
+        /// 
+        /// # list all address groups
+        /// # filtered the address groups
+        /// # filtered and limit the number of address groups
         /// ```
         /// ```java
         /// package generated_program;

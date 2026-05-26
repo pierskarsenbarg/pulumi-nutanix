@@ -33,7 +33,7 @@ class SelfServiceAppPatchArgs:
         The set of arguments for constructing a SelfServiceAppPatch resource.
 
         :param pulumi.Input[_builtins.str] app_uuid: - (Required) The UUID of the application.
-        :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
+        :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "> patchName </span>for SINGLE VM)</b>
         :param pulumi.Input[_builtins.str] patch_name: - (Required) The name of the patch to be applied. This is used to identify the action name which needs to be executed to update an application.
         :param pulumi.Input[_builtins.str] runlog_uuid: - (Computed) The UUID of the runlog that records the patch operation's execution details.
         """
@@ -67,7 +67,7 @@ class SelfServiceAppPatchArgs:
     @pulumi.getter(name="configName")
     def config_name(self) -> pulumi.Input[_builtins.str]:
         """
-        - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
+        - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "> patchName </span>for SINGLE VM)</b>
         """
         return pulumi.get(self, "config_name")
 
@@ -151,7 +151,7 @@ class _SelfServiceAppPatchState:
         Input properties used for looking up and filtering SelfServiceAppPatch resources.
 
         :param pulumi.Input[_builtins.str] app_uuid: - (Required) The UUID of the application.
-        :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
+        :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "> patchName </span>for SINGLE VM)</b>
         :param pulumi.Input[_builtins.str] patch_name: - (Required) The name of the patch to be applied. This is used to identify the action name which needs to be executed to update an application.
         :param pulumi.Input[_builtins.str] runlog_uuid: - (Computed) The UUID of the runlog that records the patch operation's execution details.
         """
@@ -197,7 +197,7 @@ class _SelfServiceAppPatchState:
     @pulumi.getter(name="configName")
     def config_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
+        - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "> patchName </span>for SINGLE VM)</b>
         """
         return pulumi.get(self, "config_name")
 
@@ -423,7 +423,7 @@ class SelfServiceAppPatch(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] app_uuid: - (Required) The UUID of the application.
-        :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
+        :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "> patchName </span>for SINGLE VM)</b>
         :param pulumi.Input[_builtins.str] patch_name: - (Required) The name of the patch to be applied. This is used to identify the action name which needs to be executed to update an application.
         :param pulumi.Input[_builtins.str] runlog_uuid: - (Computed) The UUID of the runlog that records the patch operation's execution details.
         """
@@ -653,7 +653,7 @@ class SelfServiceAppPatch(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] app_uuid: - (Required) The UUID of the application.
-        :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
+        :param pulumi.Input[_builtins.str] config_name: - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "> patchName </span>for SINGLE VM)</b>
         :param pulumi.Input[_builtins.str] patch_name: - (Required) The name of the patch to be applied. This is used to identify the action name which needs to be executed to update an application.
         :param pulumi.Input[_builtins.str] runlog_uuid: - (Computed) The UUID of the runlog that records the patch operation's execution details.
         """
@@ -688,7 +688,7 @@ class SelfServiceAppPatch(pulumi.CustomResource):
     @pulumi.getter(name="configName")
     def config_name(self) -> pulumi.Output[_builtins.str]:
         """
-        - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
+        - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "> patchName </span>for SINGLE VM)</b>
         """
         return pulumi.get(self, "config_name")
 

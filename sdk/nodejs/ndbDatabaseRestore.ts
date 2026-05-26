@@ -139,7 +139,7 @@ export class NdbDatabaseRestore extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly timeZone: pulumi.Output<string>;
     /**
-     * timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
+     * timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`" pulumi-lang-hcl="`user_pitr_timestamp`">`userPitrTimestamp`</span>
      */
     declare public readonly timeZonePitr: pulumi.Output<string | undefined>;
     /**
@@ -339,7 +339,7 @@ export interface NdbDatabaseRestoreState {
      */
     timeZone?: pulumi.Input<string | undefined>;
     /**
-     * timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
+     * timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`" pulumi-lang-hcl="`user_pitr_timestamp`">`userPitrTimestamp`</span>
      */
     timeZonePitr?: pulumi.Input<string | undefined>;
     /**
@@ -377,7 +377,7 @@ export interface NdbDatabaseRestoreArgs {
      */
     tags?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTag>[] | undefined>;
     /**
-     * timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
+     * timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`" pulumi-lang-hcl="`user_pitr_timestamp`">`userPitrTimestamp`</span>
      */
     timeZonePitr?: pulumi.Input<string | undefined>;
     /**

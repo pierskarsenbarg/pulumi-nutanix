@@ -29,7 +29,7 @@ class LcmConfigV2Args:
         """
         The set of arguments for constructing a LcmConfigV2 resource.
 
-        :param pulumi.Input[_builtins.str] auto_inventory_schedule: The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+        :param pulumi.Input[_builtins.str] auto_inventory_schedule: The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
         :param pulumi.Input[_builtins.str] connectivity_type: This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
         :param pulumi.Input[_builtins.bool] has_module_auto_upgrade_enabled: Indicates if LCM is enabled to auto-upgrade products. The default value is False.
                
@@ -58,7 +58,7 @@ class LcmConfigV2Args:
     @pulumi.getter(name="autoInventorySchedule")
     def auto_inventory_schedule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+        The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
         """
         return pulumi.get(self, "auto_inventory_schedule")
 
@@ -155,7 +155,7 @@ class _LcmConfigV2State:
         """
         Input properties used for looking up and filtering LcmConfigV2 resources.
 
-        :param pulumi.Input[_builtins.str] auto_inventory_schedule: The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+        :param pulumi.Input[_builtins.str] auto_inventory_schedule: The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
         :param pulumi.Input[_builtins.str] connectivity_type: This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
         :param pulumi.Input[_builtins.bool] has_module_auto_upgrade_enabled: Indicates if LCM is enabled to auto-upgrade products. The default value is False.
                
@@ -186,7 +186,7 @@ class _LcmConfigV2State:
     @pulumi.getter(name="autoInventorySchedule")
     def auto_inventory_schedule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+        The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
         """
         return pulumi.get(self, "auto_inventory_schedule")
 
@@ -319,7 +319,7 @@ class LcmConfigV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] auto_inventory_schedule: The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+        :param pulumi.Input[_builtins.str] auto_inventory_schedule: The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
         :param pulumi.Input[_builtins.str] connectivity_type: This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
         :param pulumi.Input[_builtins.bool] has_module_auto_upgrade_enabled: Indicates if LCM is enabled to auto-upgrade products. The default value is False.
                
@@ -424,7 +424,7 @@ class LcmConfigV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] auto_inventory_schedule: The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+        :param pulumi.Input[_builtins.str] auto_inventory_schedule: The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
         :param pulumi.Input[_builtins.str] connectivity_type: This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
         :param pulumi.Input[_builtins.bool] has_module_auto_upgrade_enabled: Indicates if LCM is enabled to auto-upgrade products. The default value is False.
                
@@ -452,7 +452,7 @@ class LcmConfigV2(pulumi.CustomResource):
     @pulumi.getter(name="autoInventorySchedule")
     def auto_inventory_schedule(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
+        The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
         """
         return pulumi.get(self, "auto_inventory_schedule")
 

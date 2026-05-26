@@ -199,7 +199,7 @@ export class SelfServiceAppPatch extends pulumi.CustomResource {
     declare public readonly appUuid: pulumi.Output<string>;
     declare public readonly categories: pulumi.Output<outputs.SelfServiceAppPatchCategory[] | undefined>;
     /**
-     * - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
+     * - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "> patchName </span>for SINGLE VM)</b>
      */
     declare public readonly configName: pulumi.Output<string>;
     declare public readonly disks: pulumi.Output<outputs.SelfServiceAppPatchDisk[] | undefined>;
@@ -270,7 +270,7 @@ export interface SelfServiceAppPatchState {
     appUuid?: pulumi.Input<string | undefined>;
     categories?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchCategory>[] | undefined>;
     /**
-     * - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
+     * - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "> patchName </span>for SINGLE VM)</b>
      */
     configName?: pulumi.Input<string | undefined>;
     disks?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchDisk>[] | undefined>;
@@ -296,7 +296,7 @@ export interface SelfServiceAppPatchArgs {
     appUuid: pulumi.Input<string>;
     categories?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchCategory>[] | undefined>;
     /**
-     * - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName "> patchName </span>for SINGLE VM)</b>
+     * - (Required) The name of the patch configuration. (<b>Same as<span pulumi-lang-nodejs=" patchName " pulumi-lang-dotnet=" PatchName " pulumi-lang-go=" patchName " pulumi-lang-python=" patch_name " pulumi-lang-yaml=" patchName " pulumi-lang-java=" patchName " pulumi-lang-hcl=" patch_name "> patchName </span>for SINGLE VM)</b>
      */
     configName: pulumi.Input<string>;
     disks?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppPatchDisk>[] | undefined>;

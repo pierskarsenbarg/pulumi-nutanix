@@ -36,7 +36,7 @@ class NdbDatabaseRestoreArgs:
         :param pulumi.Input[_builtins.int] restore_version: helps to restore the database with same config.
         :param pulumi.Input[_builtins.str] snapshot_id: snapshot id from you want to use for restoring the instance
         :param pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreTagArgs']]] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
-        :param pulumi.Input[_builtins.str] time_zone_pitr: timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
+        :param pulumi.Input[_builtins.str] time_zone_pitr: timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`" pulumi-lang-hcl="`user_pitr_timestamp`">`userPitrTimestamp`</span>
         :param pulumi.Input[_builtins.str] user_pitr_timestamp: the time to which you want to restore your instance.
         """
         pulumi.set(__self__, "database_id", database_id)
@@ -117,7 +117,7 @@ class NdbDatabaseRestoreArgs:
     @pulumi.getter(name="timeZonePitr")
     def time_zone_pitr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
+        timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`" pulumi-lang-hcl="`user_pitr_timestamp`">`userPitrTimestamp`</span>
         """
         return pulumi.get(self, "time_zone_pitr")
 
@@ -198,7 +198,7 @@ class _NdbDatabaseRestoreState:
         :param pulumi.Input[_builtins.str] time_machine_id: time machine id of instance
         :param pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreTimeMachineArgs']]] time_machines: Time Machine details of instance
         :param pulumi.Input[_builtins.str] time_zone: timezone on which instance is created xw
-        :param pulumi.Input[_builtins.str] time_zone_pitr: timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
+        :param pulumi.Input[_builtins.str] time_zone_pitr: timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`" pulumi-lang-hcl="`user_pitr_timestamp`">`userPitrTimestamp`</span>
         :param pulumi.Input[_builtins.str] type: type of database
         :param pulumi.Input[_builtins.str] user_pitr_timestamp: the time to which you want to restore your instance.
         """
@@ -574,7 +574,7 @@ class _NdbDatabaseRestoreState:
     @pulumi.getter(name="timeZonePitr")
     def time_zone_pitr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
+        timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`" pulumi-lang-hcl="`user_pitr_timestamp`">`userPitrTimestamp`</span>
         """
         return pulumi.get(self, "time_zone_pitr")
 
@@ -632,7 +632,7 @@ class NdbDatabaseRestore(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] restore_version: helps to restore the database with same config.
         :param pulumi.Input[_builtins.str] snapshot_id: snapshot id from you want to use for restoring the instance
         :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTagArgs', 'NdbDatabaseRestoreTagArgsDict']]]] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
-        :param pulumi.Input[_builtins.str] time_zone_pitr: timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
+        :param pulumi.Input[_builtins.str] time_zone_pitr: timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`" pulumi-lang-hcl="`user_pitr_timestamp`">`userPitrTimestamp`</span>
         :param pulumi.Input[_builtins.str] user_pitr_timestamp: the time to which you want to restore your instance.
         """
         ...
@@ -778,7 +778,7 @@ class NdbDatabaseRestore(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_machine_id: time machine id of instance
         :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTimeMachineArgs', 'NdbDatabaseRestoreTimeMachineArgsDict']]]] time_machines: Time Machine details of instance
         :param pulumi.Input[_builtins.str] time_zone: timezone on which instance is created xw
-        :param pulumi.Input[_builtins.str] time_zone_pitr: timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
+        :param pulumi.Input[_builtins.str] time_zone_pitr: timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`" pulumi-lang-hcl="`user_pitr_timestamp`">`userPitrTimestamp`</span>
         :param pulumi.Input[_builtins.str] type: type of database
         :param pulumi.Input[_builtins.str] user_pitr_timestamp: the time to which you want to restore your instance.
         """
@@ -1026,7 +1026,7 @@ class NdbDatabaseRestore(pulumi.CustomResource):
     @pulumi.getter(name="timeZonePitr")
     def time_zone_pitr(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`">`userPitrTimestamp`</span>
+        timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`" pulumi-lang-hcl="`user_pitr_timestamp`">`userPitrTimestamp`</span>
         """
         return pulumi.get(self, "time_zone_pitr")
 

@@ -57,7 +57,7 @@ type CategoryValue struct {
 	ApiVersion pulumi.StringOutput `pulumi:"apiVersion"`
 	// - (Optional) A description for category value.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
+	// - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// - Specifying whether its a system defined category.
 	SystemDefined pulumi.BoolOutput `pulumi:"systemDefined"`
@@ -102,7 +102,7 @@ type categoryValueState struct {
 	ApiVersion *string `pulumi:"apiVersion"`
 	// - (Optional) A description for category value.
 	Description *string `pulumi:"description"`
-	// - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
+	// - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
 	Name *string `pulumi:"name"`
 	// - Specifying whether its a system defined category.
 	SystemDefined *bool `pulumi:"systemDefined"`
@@ -115,7 +115,7 @@ type CategoryValueState struct {
 	ApiVersion pulumi.StringPtrInput
 	// - (Optional) A description for category value.
 	Description pulumi.StringPtrInput
-	// - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
+	// - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
 	Name pulumi.StringPtrInput
 	// - Specifying whether its a system defined category.
 	SystemDefined pulumi.BoolPtrInput
@@ -130,7 +130,7 @@ func (CategoryValueState) ElementType() reflect.Type {
 type categoryValueArgs struct {
 	// - (Optional) A description for category value.
 	Description *string `pulumi:"description"`
-	// - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
+	// - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
 	Name *string `pulumi:"name"`
 	// The value for the category value.
 	Value string `pulumi:"value"`
@@ -140,7 +140,7 @@ type categoryValueArgs struct {
 type CategoryValueArgs struct {
 	// - (Optional) A description for category value.
 	Description pulumi.StringPtrInput
-	// - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
+	// - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
 	Name pulumi.StringPtrInput
 	// The value for the category value.
 	Value pulumi.StringInput
@@ -243,7 +243,7 @@ func (o CategoryValueOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *CategoryValue) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
+// - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
 func (o CategoryValueOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *CategoryValue) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

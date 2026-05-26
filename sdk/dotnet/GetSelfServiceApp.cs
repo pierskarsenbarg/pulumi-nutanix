@@ -88,6 +88,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getselfserviceapp" "test" {
+        ///   app_uuid = nutanix_selfserviceappprovision.test.id
+        /// }
+        /// 
+        /// resource "nutanix_selfserviceappprovision" "test" {
+        ///   bp_name         = "NAME OF BLUEPRINT IN SERVER"
+        ///   app_name        = "NAME OF APP YOU WANT TO SET"
+        ///   app_description = "DESCRIPTION OF APP"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -221,6 +240,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getselfserviceapp" "test" {
+        ///   app_uuid = nutanix_selfserviceappprovision.test.id
+        /// }
+        /// 
+        /// resource "nutanix_selfserviceappprovision" "test" {
+        ///   bp_name         = "NAME OF BLUEPRINT IN SERVER"
+        ///   app_name        = "NAME OF APP YOU WANT TO SET"
+        ///   app_description = "DESCRIPTION OF APP"
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -352,6 +390,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}, nil)
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getselfserviceapp" "test" {
+        ///   app_uuid = nutanix_selfserviceappprovision.test.id
+        /// }
+        /// 
+        /// resource "nutanix_selfserviceappprovision" "test" {
+        ///   bp_name         = "NAME OF BLUEPRINT IN SERVER"
+        ///   app_name        = "NAME OF APP YOU WANT TO SET"
+        ///   app_description = "DESCRIPTION OF APP"
         /// }
         /// ```
         /// ```java

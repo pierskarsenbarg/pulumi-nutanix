@@ -130,7 +130,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<bool?> SoftRemove { get; private set; } = null!;
 
         /// <summary>
-        /// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with&lt;span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "&gt; timeMachineId &lt;/span&gt;.
+        /// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with&lt;span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "&gt; timeMachineId &lt;/span&gt;.
         /// </summary>
         [Output("softwareProfileId")]
         public Output<string?> SoftwareProfileId { get; private set; } = null!;
@@ -318,7 +318,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<bool>? SoftRemove { get; set; }
 
         /// <summary>
-        /// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with&lt;span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "&gt; timeMachineId &lt;/span&gt;.
+        /// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with&lt;span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "&gt; timeMachineId &lt;/span&gt;.
         /// </summary>
         [Input("softwareProfileId")]
         public Input<string>? SoftwareProfileId { get; set; }
@@ -509,7 +509,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<bool>? SoftRemove { get; set; }
 
         /// <summary>
-        /// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with&lt;span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId "&gt; timeMachineId &lt;/span&gt;.
+        /// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with&lt;span pulumi-lang-nodejs=" timeMachineId " pulumi-lang-dotnet=" TimeMachineId " pulumi-lang-go=" timeMachineId " pulumi-lang-python=" time_machine_id " pulumi-lang-yaml=" timeMachineId " pulumi-lang-java=" timeMachineId " pulumi-lang-hcl=" time_machine_id "&gt; timeMachineId &lt;/span&gt;.
         /// </summary>
         [Input("softwareProfileId")]
         public Input<string>? SoftwareProfileId { get; set; }

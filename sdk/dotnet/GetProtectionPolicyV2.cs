@@ -13,7 +13,7 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetProtectionPolicyV2
     {
         /// <summary>
-        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`"&gt;`username`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`"&gt;`password`&lt;/span&gt; in the provider configuration.
+        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`" pulumi-lang-hcl="`username`"&gt;`username`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`" pulumi-lang-hcl="`password`"&gt;`password`&lt;/span&gt; in the provider configuration.
         /// 
         /// Fetches the protection policy identified by an external identifier.
         /// 
@@ -67,6 +67,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getprotectionpolicyv2" "example" {
+        ///   ext_id = "00000000-0000-0000-0000-000000000000"
         /// }
         /// ```
         /// ```java
@@ -111,7 +124,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectionPolicyV2Result>("nutanix:index/getProtectionPolicyV2:getProtectionPolicyV2", args ?? new GetProtectionPolicyV2Args(), options.WithDefaults());
 
         /// <summary>
-        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`"&gt;`username`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`"&gt;`password`&lt;/span&gt; in the provider configuration.
+        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`" pulumi-lang-hcl="`username`"&gt;`username`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`" pulumi-lang-hcl="`password`"&gt;`password`&lt;/span&gt; in the provider configuration.
         /// 
         /// Fetches the protection policy identified by an external identifier.
         /// 
@@ -165,6 +178,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getprotectionpolicyv2" "example" {
+        ///   ext_id = "00000000-0000-0000-0000-000000000000"
         /// }
         /// ```
         /// ```java
@@ -209,7 +235,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionPolicyV2Result>("nutanix:index/getProtectionPolicyV2:getProtectionPolicyV2", args ?? new GetProtectionPolicyV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`"&gt;`username`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`"&gt;`password`&lt;/span&gt; in the provider configuration.
+        /// &gt; **Authentication:** Protection policy operations do **not** support API key authentication. Use &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`" pulumi-lang-hcl="`username`"&gt;`username`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`" pulumi-lang-hcl="`password`"&gt;`password`&lt;/span&gt; in the provider configuration.
         /// 
         /// Fetches the protection policy identified by an external identifier.
         /// 
@@ -263,6 +289,19 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getprotectionpolicyv2" "example" {
+        ///   ext_id = "00000000-0000-0000-0000-000000000000"
         /// }
         /// ```
         /// ```java

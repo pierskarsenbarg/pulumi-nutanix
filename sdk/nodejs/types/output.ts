@@ -476,7 +476,7 @@ export interface ClusterAddNodeV2NodeParamComputeNodeList {
 
 export interface ClusterAddNodeV2NodeParamComputeNodeListDigitalCertificateMapList {
     /**
-     * -(Optional) Field containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid "> keyManagementServerUuid </span>for key management server.
+     * -(Optional) Field containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 " pulumi-lang-hcl=" digital_certificate_base64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid " pulumi-lang-hcl=" key_management_server_uuid "> keyManagementServerUuid </span>for key management server.
      */
     key: string;
     value: string;
@@ -552,7 +552,7 @@ export interface ClusterAddNodeV2NodeParamNodeList {
      */
     cvmIps: outputs.ClusterAddNodeV2NodeParamNodeListCvmIp[];
     /**
-     * -(Optional) List of objects containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid "> keyManagementServerUuid </span>fields for key management server.
+     * -(Optional) List of objects containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 " pulumi-lang-hcl=" digital_certificate_base64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid " pulumi-lang-hcl=" key_management_server_uuid "> keyManagementServerUuid </span>fields for key management server.
      */
     digitalCertificateMapLists: outputs.ClusterAddNodeV2NodeParamNodeListDigitalCertificateMapList[];
     /**
@@ -631,7 +631,7 @@ export interface ClusterAddNodeV2NodeParamNodeListCvmIpIpv6 {
 
 export interface ClusterAddNodeV2NodeParamNodeListDigitalCertificateMapList {
     /**
-     * -(Optional) Field containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid "> keyManagementServerUuid </span>for key management server.
+     * -(Optional) Field containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 " pulumi-lang-hcl=" digital_certificate_base64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid " pulumi-lang-hcl=" key_management_server_uuid "> keyManagementServerUuid </span>for key management server.
      */
     key: string;
     value: string;
@@ -2374,7 +2374,7 @@ export interface ClustersUnconfiguredNodeNetworksV2NodeListCvmIpIpv6 {
 
 export interface ClustersUnconfiguredNodeNetworksV2NodeListDigitalCertificateMapList {
     /**
-     * -(Optional) Field containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid "> keyManagementServerUuid </span>for key management server.
+     * -(Optional) Field containing<span pulumi-lang-nodejs=" digitalCertificateBase64 " pulumi-lang-dotnet=" DigitalCertificateBase64 " pulumi-lang-go=" digitalCertificateBase64 " pulumi-lang-python=" digital_certificate_base64 " pulumi-lang-yaml=" digitalCertificateBase64 " pulumi-lang-java=" digitalCertificateBase64 " pulumi-lang-hcl=" digital_certificate_base64 "> digitalCertificateBase64 </span>and<span pulumi-lang-nodejs=" keyManagementServerUuid " pulumi-lang-dotnet=" KeyManagementServerUuid " pulumi-lang-go=" keyManagementServerUuid " pulumi-lang-python=" key_management_server_uuid " pulumi-lang-yaml=" keyManagementServerUuid " pulumi-lang-java=" keyManagementServerUuid " pulumi-lang-hcl=" key_management_server_uuid "> keyManagementServerUuid </span>for key management server.
      */
     key: string;
     value: string;
@@ -2619,7 +2619,7 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigClo
      */
     datasourceType?: string;
     /**
-     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
      */
     metadata: string;
 }
@@ -2711,7 +2711,7 @@ export interface DeployTemplatesV2OverrideVmConfigMapNic {
     /**
      * Use `nic_backing_info.virtual_ethernet_nic` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos: outputs.DeployTemplatesV2OverrideVmConfigMapNicBackingInfo[];
     /**
@@ -2721,15 +2721,15 @@ export interface DeployTemplatesV2OverrideVmConfigMapNic {
     /**
      * Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo[];
     /**
-     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
      */
     nicBackingInfo: outputs.DeployTemplatesV2OverrideVmConfigMapNicNicBackingInfo;
     /**
-     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
      */
     nicNetworkInfo: outputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfo;
 }
@@ -2760,7 +2760,7 @@ export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo {
     ipv4Configs: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4Config[];
     ipv4Infos: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChain[];
     /**
@@ -2776,7 +2776,7 @@ export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo {
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      */
     subnets: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnet[];
     /**
@@ -2925,7 +2925,7 @@ export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadN
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      */
     subnets: outputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet[];
     /**
@@ -2991,7 +2991,7 @@ export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEth
     ipv4Infos: outputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info[];
     ipv6Infos: outputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain[];
     /**
@@ -3007,7 +3007,7 @@ export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEth
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      */
     subnets: outputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet[];
     /**
@@ -3133,19 +3133,19 @@ export interface EntityGroupV2AllowedConfig {
 
 export interface EntityGroupV2AllowedConfigEntity {
     /**
-     * With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`">`ipv4Addresses`</span> block(s):
+     * With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> block(s):
      */
     addresses: outputs.EntityGroupV2AllowedConfigEntityAddresses;
     /**
-     * With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`">`ipv4Ranges`</span> block(s):
+     * With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> block(s):
      */
     ipRanges: outputs.EntityGroupV2AllowedConfigEntityIpRanges;
     /**
-     * List of kube entity identifiers. Required when <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`">`type`</span> is a kube type (`KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`).
+     * List of kube entity identifiers. Required when <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> is a kube type (`KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`).
      */
     kubeEntities: string[];
     /**
-     * List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`">`selectedBy`</span> is `EXT_ID`.
+     * List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
      */
     referenceExtIds: string[];
     /**
@@ -3197,15 +3197,15 @@ export interface EntityGroupV2ExceptConfig {
 
 export interface EntityGroupV2ExceptConfigEntity {
     /**
-     * With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`">`ipv4Addresses`</span> block(s).
+     * With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> block(s).
      */
     addresses: outputs.EntityGroupV2ExceptConfigEntityAddresses;
     /**
-     * With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`">`ipv4Ranges`</span> block(s).
+     * With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> block(s).
      */
     ipRanges: outputs.EntityGroupV2ExceptConfigEntityIpRanges;
     /**
-     * List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`">`selectedBy`</span> is `EXT_ID`.
+     * List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
      */
     referenceExtIds: string[];
     /**
@@ -4387,7 +4387,7 @@ export interface FoundationCentralImageClusterFoundationInitConfig {
      */
     hypervProductKey: string;
     /**
-     * SKU of hyperv to be installed if<span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType "> hypervisorType </span>is hyperv.
+     * SKU of hyperv to be installed if<span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType " pulumi-lang-hcl=" hypervisor_type "> hypervisorType </span>is hyperv.
      */
     hypervSku: string;
     /**
@@ -4514,7 +4514,7 @@ export interface FoundationCentralImageClusterHypervisorIsoDetails {
      */
     hypervProductKey: string;
     /**
-     * SKU of hyperv to be installed if<span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType "> hypervisorType </span>is hyperv.
+     * SKU of hyperv to be installed if<span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType " pulumi-lang-hcl=" hypervisor_type "> hypervisorType </span>is hyperv.
      */
     hypervSku: string;
     /**
@@ -4533,7 +4533,7 @@ export interface FoundationCentralImageClusterHypervisorIsos {
      */
     hypervProductKey?: string;
     /**
-     * SKU of hyperv to be installed if<span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType "> hypervisorType </span>is hyperv.
+     * SKU of hyperv to be installed if<span pulumi-lang-nodejs=" hypervisorType " pulumi-lang-dotnet=" HypervisorType " pulumi-lang-go=" hypervisorType " pulumi-lang-python=" hypervisor_type " pulumi-lang-yaml=" hypervisorType " pulumi-lang-java=" hypervisorType " pulumi-lang-hcl=" hypervisor_type "> hypervisorType </span>is hyperv.
      */
     hypervSku?: string;
     hypervisorType?: string;
@@ -4676,7 +4676,7 @@ export interface FoundationImageNodesBlockNode {
      */
     cvmNumVcpus?: number;
     /**
-     * - use <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"">"vmInstaller"</span> to enable CVM imaging from standalone.
+     * - use <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"" pulumi-lang-hcl=""vm_installer"">"vmInstaller"</span> to enable CVM imaging from standalone.
      */
     deviceHint?: string;
     /**
@@ -4730,11 +4730,11 @@ export interface FoundationImageNodesBlockNode {
      */
     ipmiUser?: string;
     /**
-     * - (Required when<span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint "> deviceHint </span>= <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"">"vmInstaller"</span> for imaging using node's existing cvm for imaging) IPV6 address.
+     * - (Required when<span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint " pulumi-lang-hcl=" device_hint "> deviceHint </span>= <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"" pulumi-lang-hcl=""vm_installer"">"vmInstaller"</span> for imaging using node's existing cvm for imaging) IPV6 address.
      */
     ipv6Address?: string;
     /**
-     * - (Required when<span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint "> deviceHint </span>= <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"">"vmInstaller"</span> for imaging using node's existing cvm for imaging) ipv6 interface.
+     * - (Required when<span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint " pulumi-lang-hcl=" device_hint "> deviceHint </span>= <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"" pulumi-lang-hcl=""vm_installer"">"vmInstaller"</span> for imaging using node's existing cvm for imaging) ipv6 interface.
      */
     ipv6Interface?: string;
     /**
@@ -4776,7 +4776,7 @@ export interface FoundationImageNodesBlockNode {
     /**
      * - Terraform blocks of vswitch configuration. Foundation will auto-calculate this in most cases. Provide it only if you want to override foundation's defaults.
      * * `vswitches.lacp` :- Status of LACP.
-     * * `vswitches.bond_mode` :-<span pulumi-lang-nodejs=" bondMode " pulumi-lang-dotnet=" BondMode " pulumi-lang-go=" bondMode " pulumi-lang-python=" bond_mode " pulumi-lang-yaml=" bondMode " pulumi-lang-java=" bondMode "> bondMode </span>such as balance-tcp, active-backup, etc.
+     * * `vswitches.bond_mode` :-<span pulumi-lang-nodejs=" bondMode " pulumi-lang-dotnet=" BondMode " pulumi-lang-go=" bondMode " pulumi-lang-python=" bond_mode " pulumi-lang-yaml=" bondMode " pulumi-lang-java=" bondMode " pulumi-lang-hcl=" bond_mode "> bondMode </span>such as balance-tcp, active-backup, etc.
      * * `vswitches.name` :- Name of the vswitch.
      * * `vswitches.uplinks` :- Terraform blocks of MAC Addresses of NICs in a team/bond.
      * * `vswitches.other_config` :- Terraform blocks of Auxiliary lacp configurations. Applicable only for AHV.
@@ -4894,7 +4894,7 @@ export interface FoundationImageNodesFcSettings {
     /**
      * - Foundation Central metadata which will be transferred to the newly imaged node.
      * * `fc_metadata.fc_ip` :- IP address of foundation central.
-     * * `fc_metadata.api_key` :-<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey "> apiKey </span>which the node uses to register itself with foundation central.
+     * * `fc_metadata.api_key` :-<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
      */
     fcMetadata: outputs.FoundationImageNodesFcSettingsFcMetadata;
     /**
@@ -8132,7 +8132,7 @@ export interface GetClustersEntity {
      */
     masqueradingIp: string;
     /**
-     * - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp "> masqueradingIp </span>to connect to the cluster.
+     * - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp " pulumi-lang-hcl=" masquerading_ip "> masqueradingIp </span>to connect to the cluster.
      */
     masqueradingPort: number;
     /**
@@ -8298,7 +8298,7 @@ export interface GetClustersV2ClusterEntity {
     containerName: string;
     /**
      * -(Optional) A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby.
-     * The <span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`">`expand`</span> can be applied on the following fields:
+     * The <span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`" pulumi-lang-hcl="`expand`">`expand`</span> can be applied on the following fields:
      * - clusterProfile
      * - storageSummary
      */
@@ -9359,11 +9359,11 @@ export interface GetEntityGroupV2AllowedConfig {
 
 export interface GetEntityGroupV2AllowedConfigEntity {
     /**
-     * With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`">`ipv4Addresses`</span> (value, prefix_length).
+     * With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> (value, prefix_length).
      */
     addresses: outputs.GetEntityGroupV2AllowedConfigEntityAddress[];
     /**
-     * With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
+     * With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
      */
     ipRanges: outputs.GetEntityGroupV2AllowedConfigEntityIpRange[];
     /**
@@ -9411,11 +9411,11 @@ export interface GetEntityGroupV2ExceptConfig {
 
 export interface GetEntityGroupV2ExceptConfigEntity {
     /**
-     * With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`">`ipv4Addresses`</span> (value, prefix_length).
+     * With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> (value, prefix_length).
      */
     addresses: outputs.GetEntityGroupV2ExceptConfigEntityAddress[];
     /**
-     * With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
+     * With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
      */
     ipRanges: outputs.GetEntityGroupV2ExceptConfigEntityIpRange[];
     /**
@@ -9504,7 +9504,7 @@ export interface GetEntityGroupsV2EntityGroup {
 
 export interface GetEntityGroupsV2EntityGroupAllowedConfig {
     /**
-     * List of except entities. Each entity may contain <span pulumi-lang-nodejs="`addresses`" pulumi-lang-dotnet="`Addresses`" pulumi-lang-go="`addresses`" pulumi-lang-python="`addresses`" pulumi-lang-yaml="`addresses`" pulumi-lang-java="`addresses`">`addresses`</span>, <span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`">`ipRanges`</span>, <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`">`referenceExtIds`</span>.
+     * List of except entities. Each entity may contain <span pulumi-lang-nodejs="`addresses`" pulumi-lang-dotnet="`Addresses`" pulumi-lang-go="`addresses`" pulumi-lang-python="`addresses`" pulumi-lang-yaml="`addresses`" pulumi-lang-java="`addresses`" pulumi-lang-hcl="`addresses`">`addresses`</span>, <span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`" pulumi-lang-hcl="`ip_ranges`">`ipRanges`</span>, <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`" pulumi-lang-hcl="`reference_ext_ids`">`referenceExtIds`</span>.
      */
     entities: outputs.GetEntityGroupsV2EntityGroupAllowedConfigEntity[];
 }
@@ -9538,7 +9538,7 @@ export interface GetEntityGroupsV2EntityGroupAllowedConfigEntityIpRangeIpv4Range
 
 export interface GetEntityGroupsV2EntityGroupExceptConfig {
     /**
-     * List of except entities. Each entity may contain <span pulumi-lang-nodejs="`addresses`" pulumi-lang-dotnet="`Addresses`" pulumi-lang-go="`addresses`" pulumi-lang-python="`addresses`" pulumi-lang-yaml="`addresses`" pulumi-lang-java="`addresses`">`addresses`</span>, <span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`">`ipRanges`</span>, <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`">`referenceExtIds`</span>.
+     * List of except entities. Each entity may contain <span pulumi-lang-nodejs="`addresses`" pulumi-lang-dotnet="`Addresses`" pulumi-lang-go="`addresses`" pulumi-lang-python="`addresses`" pulumi-lang-yaml="`addresses`" pulumi-lang-java="`addresses`" pulumi-lang-hcl="`addresses`">`addresses`</span>, <span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`" pulumi-lang-hcl="`ip_ranges`">`ipRanges`</span>, <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`" pulumi-lang-hcl="`reference_ext_ids`">`referenceExtIds`</span>.
      */
     entities: outputs.GetEntityGroupsV2EntityGroupExceptConfigEntity[];
 }
@@ -10830,7 +10830,7 @@ export interface GetFloatingIpV2VpcSnatIpIpv6 {
 
 export interface GetFloatingIpsEntity {
     /**
-     * - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
+     * - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp " pulumi-lang-hcl=" floating_ip "> floatingIp </span>kind metadata.
      */
     metadata: {[key: string]: string};
     /**
@@ -13804,7 +13804,7 @@ export interface GetIamEntitiesV2Entity {
      */
     lastUpdatedTime: string;
     /**
-     * HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+     * HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
      */
     links: outputs.GetIamEntitiesV2EntityLink[];
     /**
@@ -13835,7 +13835,7 @@ export interface GetIamEntitiesV2EntityAttributeList {
      */
     extId: string;
     /**
-     * HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+     * HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
      */
     links: outputs.GetIamEntitiesV2EntityAttributeListLink[];
     /**
@@ -13888,7 +13888,7 @@ export interface GetIamEntityV2AttributeList {
      */
     extId: string;
     /**
-     * HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+     * HATEOAS links for the attribute (each with <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span> and <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
      */
     links: outputs.GetIamEntityV2AttributeListLink[];
     /**
@@ -20428,7 +20428,7 @@ export interface GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRule {
      */
     extId: string;
     /**
-     * HATEOAS-style links (e.g. <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`">`href`</span>, <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`">`rel`</span>).
+     * HATEOAS-style links (e.g. <span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`">`href`</span>, <span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`">`rel`</span>).
      */
     links: outputs.GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleLink[];
     /**
@@ -20456,15 +20456,15 @@ export interface GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpec {
      */
     applicationRuleSpecs: outputs.GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecApplicationRuleSpec[];
     /**
-     * Intra-entity group rule (<span pulumi-lang-nodejs="`securedGroupAction`" pulumi-lang-dotnet="`SecuredGroupAction`" pulumi-lang-go="`securedGroupAction`" pulumi-lang-python="`secured_group_action`" pulumi-lang-yaml="`securedGroupAction`" pulumi-lang-java="`securedGroupAction`">`securedGroupAction`</span>, <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`">`securedGroupCategoryReferences`</span>).
+     * Intra-entity group rule (<span pulumi-lang-nodejs="`securedGroupAction`" pulumi-lang-dotnet="`SecuredGroupAction`" pulumi-lang-go="`securedGroupAction`" pulumi-lang-python="`secured_group_action`" pulumi-lang-yaml="`securedGroupAction`" pulumi-lang-java="`securedGroupAction`" pulumi-lang-hcl="`secured_group_action`">`securedGroupAction`</span>, <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span>).
      */
     intraEntityGroupRuleSpecs: outputs.GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecIntraEntityGroupRuleSpec[];
     /**
-     * Multi-environment isolation rule (<span pulumi-lang-nodejs="`spec`" pulumi-lang-dotnet="`Spec`" pulumi-lang-go="`spec`" pulumi-lang-python="`spec`" pulumi-lang-yaml="`spec`" pulumi-lang-java="`spec`">`spec`</span> → <span pulumi-lang-nodejs="`allToAllIsolationGroup`" pulumi-lang-dotnet="`AllToAllIsolationGroup`" pulumi-lang-go="`allToAllIsolationGroup`" pulumi-lang-python="`all_to_all_isolation_group`" pulumi-lang-yaml="`allToAllIsolationGroup`" pulumi-lang-java="`allToAllIsolationGroup`">`allToAllIsolationGroup`</span> → <span pulumi-lang-nodejs="`isolationGroup`" pulumi-lang-dotnet="`IsolationGroup`" pulumi-lang-go="`isolationGroup`" pulumi-lang-python="`isolation_group`" pulumi-lang-yaml="`isolationGroup`" pulumi-lang-java="`isolationGroup`">`isolationGroup`</span> with <span pulumi-lang-nodejs="`groupCategoryReferences`" pulumi-lang-dotnet="`GroupCategoryReferences`" pulumi-lang-go="`groupCategoryReferences`" pulumi-lang-python="`group_category_references`" pulumi-lang-yaml="`groupCategoryReferences`" pulumi-lang-java="`groupCategoryReferences`">`groupCategoryReferences`</span>).
+     * Multi-environment isolation rule (<span pulumi-lang-nodejs="`spec`" pulumi-lang-dotnet="`Spec`" pulumi-lang-go="`spec`" pulumi-lang-python="`spec`" pulumi-lang-yaml="`spec`" pulumi-lang-java="`spec`" pulumi-lang-hcl="`spec`">`spec`</span> → <span pulumi-lang-nodejs="`allToAllIsolationGroup`" pulumi-lang-dotnet="`AllToAllIsolationGroup`" pulumi-lang-go="`allToAllIsolationGroup`" pulumi-lang-python="`all_to_all_isolation_group`" pulumi-lang-yaml="`allToAllIsolationGroup`" pulumi-lang-java="`allToAllIsolationGroup`" pulumi-lang-hcl="`all_to_all_isolation_group`">`allToAllIsolationGroup`</span> → <span pulumi-lang-nodejs="`isolationGroup`" pulumi-lang-dotnet="`IsolationGroup`" pulumi-lang-go="`isolationGroup`" pulumi-lang-python="`isolation_group`" pulumi-lang-yaml="`isolationGroup`" pulumi-lang-java="`isolationGroup`" pulumi-lang-hcl="`isolation_group`">`isolationGroup`</span> with <span pulumi-lang-nodejs="`groupCategoryReferences`" pulumi-lang-dotnet="`GroupCategoryReferences`" pulumi-lang-go="`groupCategoryReferences`" pulumi-lang-python="`group_category_references`" pulumi-lang-yaml="`groupCategoryReferences`" pulumi-lang-java="`groupCategoryReferences`" pulumi-lang-hcl="`group_category_references`">`groupCategoryReferences`</span>).
      */
     multiEnvIsolationRuleSpecs: outputs.GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecMultiEnvIsolationRuleSpec[];
     /**
-     * Two-environment isolation rule (<span pulumi-lang-nodejs="`firstIsolationGroup`" pulumi-lang-dotnet="`FirstIsolationGroup`" pulumi-lang-go="`firstIsolationGroup`" pulumi-lang-python="`first_isolation_group`" pulumi-lang-yaml="`firstIsolationGroup`" pulumi-lang-java="`firstIsolationGroup`">`firstIsolationGroup`</span>, <span pulumi-lang-nodejs="`secondIsolationGroup`" pulumi-lang-dotnet="`SecondIsolationGroup`" pulumi-lang-go="`secondIsolationGroup`" pulumi-lang-python="`second_isolation_group`" pulumi-lang-yaml="`secondIsolationGroup`" pulumi-lang-java="`secondIsolationGroup`">`secondIsolationGroup`</span>).
+     * Two-environment isolation rule (<span pulumi-lang-nodejs="`firstIsolationGroup`" pulumi-lang-dotnet="`FirstIsolationGroup`" pulumi-lang-go="`firstIsolationGroup`" pulumi-lang-python="`first_isolation_group`" pulumi-lang-yaml="`firstIsolationGroup`" pulumi-lang-java="`firstIsolationGroup`" pulumi-lang-hcl="`first_isolation_group`">`firstIsolationGroup`</span>, <span pulumi-lang-nodejs="`secondIsolationGroup`" pulumi-lang-dotnet="`SecondIsolationGroup`" pulumi-lang-go="`secondIsolationGroup`" pulumi-lang-python="`second_isolation_group`" pulumi-lang-yaml="`secondIsolationGroup`" pulumi-lang-java="`secondIsolationGroup`" pulumi-lang-hcl="`second_isolation_group`">`secondIsolationGroup`</span>).
      */
     twoEnvIsolationRuleSpecs: outputs.GetNetworkSecurityPolicyRulesV2NetworkSecurityPolicyRuleSpecTwoEnvIsolationRuleSpec[];
 }
@@ -22764,7 +22764,7 @@ export interface GetOvaV2VmConfigGuestCustomizationConfigCloudInit {
      */
     datasourceType?: string;
     /**
-     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
      */
     metadata: string;
 }
@@ -22925,7 +22925,7 @@ export interface GetOvaV2VmConfigNic {
     /**
      * Defines a NIC emulated by the hypervisor
      *
-     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos: outputs.GetOvaV2VmConfigNicBackingInfo[];
     /**
@@ -22935,7 +22935,7 @@ export interface GetOvaV2VmConfigNic {
     /**
      * Network information for a NIC.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos: outputs.GetOvaV2VmConfigNicNetworkInfo[];
     nicBackingInfo: outputs.GetOvaV2VmConfigNicNicBackingInfo;
@@ -22971,7 +22971,7 @@ export interface GetOvaV2VmConfigNicNetworkInfo {
      */
     ipv4Infos: outputs.GetOvaV2VmConfigNicNetworkInfoIpv4Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.GetOvaV2VmConfigNicNetworkInfoNetworkFunctionChain[];
     /**
@@ -22987,7 +22987,7 @@ export interface GetOvaV2VmConfigNicNetworkInfo {
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
      */
     subnets: outputs.GetOvaV2VmConfigNicNetworkInfoSubnet[];
     /**
@@ -23169,7 +23169,7 @@ export interface GetOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo {
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
      */
     subnets: outputs.GetOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet[];
     /**
@@ -23274,7 +23274,7 @@ export interface GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo 
     ipv4Infos: outputs.GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info[];
     ipv6Infos: outputs.GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain[];
     /**
@@ -23290,7 +23290,7 @@ export interface GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo 
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
      */
     subnets: outputs.GetOvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet[];
     /**
@@ -24191,7 +24191,7 @@ export interface GetOvasV2OvaVmConfigHost {
 
 export interface GetOvasV2OvaVmConfigNic {
     /**
-     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos: outputs.GetOvasV2OvaVmConfigNicBackingInfo[];
     /**
@@ -24199,7 +24199,7 @@ export interface GetOvasV2OvaVmConfigNic {
      */
     extId: string;
     /**
-     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos: outputs.GetOvasV2OvaVmConfigNicNetworkInfo[];
     nicBackingInfo: outputs.GetOvasV2OvaVmConfigNicNicBackingInfo;
@@ -27809,11 +27809,11 @@ export interface GetPermissionsEntity {
      */
     description: string;
     /**
-     * . The fields that can/cannot be accessed during the specified operation.<span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList "> fieldNameList </span>will be a list of fields. e.g. if<span pulumi-lang-nodejs=" fieldMode " pulumi-lang-dotnet=" FieldMode " pulumi-lang-go=" fieldMode " pulumi-lang-python=" field_mode " pulumi-lang-yaml=" fieldMode " pulumi-lang-java=" fieldMode "> fieldMode </span>= disallowed,<span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList "> fieldNameList </span>= [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
+     * . The fields that can/cannot be accessed during the specified operation.<span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList " pulumi-lang-hcl=" field_name_list "> fieldNameList </span>will be a list of fields. e.g. if<span pulumi-lang-nodejs=" fieldMode " pulumi-lang-dotnet=" FieldMode " pulumi-lang-go=" fieldMode " pulumi-lang-python=" field_mode " pulumi-lang-yaml=" fieldMode " pulumi-lang-java=" fieldMode " pulumi-lang-hcl=" field_mode "> fieldMode </span>= disallowed,<span pulumi-lang-nodejs=" fieldNameList " pulumi-lang-dotnet=" FieldNameList " pulumi-lang-go=" fieldNameList " pulumi-lang-python=" field_name_list " pulumi-lang-yaml=" fieldNameList " pulumi-lang-java=" fieldNameList " pulumi-lang-hcl=" field_name_list "> fieldNameList </span>= [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
      */
     fields: outputs.GetPermissionsEntityField[];
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -27867,7 +27867,7 @@ export interface GetPermissionsEntityField {
 export interface GetPermissionsMetadata {
     filter: string;
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     length: number;
@@ -27878,7 +27878,7 @@ export interface GetPermissionsMetadata {
 
 export interface GetProjectAccountReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28014,7 +28014,7 @@ export interface GetProjectAcpContextFilterListScopeFilterExpressionListRightHan
 
 export interface GetProjectAcpRoleReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28029,7 +28029,7 @@ export interface GetProjectAcpRoleReference {
 
 export interface GetProjectAcpUserGroupReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28044,7 +28044,7 @@ export interface GetProjectAcpUserGroupReferenceList {
 
 export interface GetProjectAcpUserReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28070,7 +28070,7 @@ export interface GetProjectCategory {
 
 export interface GetProjectClusterReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28085,7 +28085,7 @@ export interface GetProjectClusterReferenceList {
 
 export interface GetProjectDefaultEnvironmentReference {
     /**
-     * (Optional) The kind name. Default value is <span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`">`environment`</span>
+     * (Optional) The kind name. Default value is <span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`" pulumi-lang-hcl="`environment`">`environment`</span>
      */
     kind: string;
     /**
@@ -28100,7 +28100,7 @@ export interface GetProjectDefaultEnvironmentReference {
 
 export interface GetProjectEnvironmentReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28126,7 +28126,7 @@ export interface GetProjectExternalNetworkList {
 
 export interface GetProjectExternalUserGroupReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28155,7 +28155,7 @@ export interface GetProjectResourceDomainResource {
 
 export interface GetProjectSubnetReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28170,7 +28170,7 @@ export interface GetProjectSubnetReferenceList {
 
 export interface GetProjectTunnelReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28185,7 +28185,7 @@ export interface GetProjectTunnelReferenceList {
 
 export interface GetProjectUserReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28200,7 +28200,7 @@ export interface GetProjectUserReferenceList {
 
 export interface GetProjectVpcReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28216,7 +28216,7 @@ export interface GetProjectVpcReferenceList {
 export interface GetProjectsEntity {
     /**
      * List of accounts associated with the project.
-     * * `account_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`account`" pulumi-lang-dotnet="`Account`" pulumi-lang-go="`account`" pulumi-lang-python="`account`" pulumi-lang-yaml="`account`" pulumi-lang-java="`account`">`account`</span>
+     * * `account_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`account`" pulumi-lang-dotnet="`Account`" pulumi-lang-go="`account`" pulumi-lang-python="`account`" pulumi-lang-yaml="`account`" pulumi-lang-java="`account`" pulumi-lang-hcl="`account`">`account`</span>
      * * `account_reference_list.#.uuid` - The UUID of an account.
      * * `account_reference_list.#.name` - The name of an account.
      */
@@ -28236,7 +28236,7 @@ export interface GetProjectsEntity {
     description: string;
     /**
      * List of environments associated with the project.
-     * * `environment_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`">`environment`</span>
+     * * `environment_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`" pulumi-lang-hcl="`environment`">`environment`</span>
      * * `environment_reference_list.#.uuid` - The UUID of an environment.
      * * `environment_reference_list.#.name` - The name of an environment.
      */
@@ -28249,13 +28249,14 @@ export interface GetProjectsEntity {
     externalNetworkLists: outputs.GetProjectsEntityExternalNetworkList[];
     /**
      * List of directory service user groups. These groups are not managed by Nutanix.
-     * * `external_user_group_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`">`userGroup`</span>
+     * * `external_user_group_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`" pulumi-lang-hcl="`user_group`">`userGroup`</span>
      * * `external_user_group_reference_list.#.uuid` - The UUID of a<span pulumi-lang-nodejs=" userGroup
      * " pulumi-lang-dotnet=" UserGroup
      * " pulumi-lang-go=" userGroup
      * " pulumi-lang-python=" user_group
      * " pulumi-lang-yaml=" userGroup
      * " pulumi-lang-java=" userGroup
+     * " pulumi-lang-hcl=" user_group
      * "> userGroup
      * </span>* `external_user_group_reference_list.#.name` - The name of a user_group
      */
@@ -28275,14 +28276,14 @@ export interface GetProjectsEntity {
     state: string;
     /**
      * List of subnets for the project.
-     * * `subnet_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`">`subnet`</span>
+     * * `subnet_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`" pulumi-lang-hcl="`subnet`">`subnet`</span>
      * * `subnet_reference_list.#.uuid` - The UUID of a subnet
      * * `subnet_reference_list.#.name` - The name of a subnet.
      */
     subnetReferenceLists: outputs.GetProjectsEntitySubnetReferenceList[];
     /**
      * List of users in the project.
-     * * `user_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`user`" pulumi-lang-dotnet="`User`" pulumi-lang-go="`user`" pulumi-lang-python="`user`" pulumi-lang-yaml="`user`" pulumi-lang-java="`user`">`user`</span>
+     * * `user_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`user`" pulumi-lang-dotnet="`User`" pulumi-lang-go="`user`" pulumi-lang-python="`user`" pulumi-lang-yaml="`user`" pulumi-lang-java="`user`" pulumi-lang-hcl="`user`">`user`</span>
      * * `user_reference_list.#.uuid` - The UUID of a user
      * * `user_reference_list.#.name` - The name of a user.
      */
@@ -28291,7 +28292,7 @@ export interface GetProjectsEntity {
 
 export interface GetProjectsEntityAccountReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28317,7 +28318,7 @@ export interface GetProjectsEntityCategory {
 
 export interface GetProjectsEntityEnvironmentReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28343,7 +28344,7 @@ export interface GetProjectsEntityExternalNetworkList {
 
 export interface GetProjectsEntityExternalUserGroupReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28372,7 +28373,7 @@ export interface GetProjectsEntityResourceDomainResource {
 
 export interface GetProjectsEntitySubnetReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28387,7 +28388,7 @@ export interface GetProjectsEntitySubnetReferenceList {
 
 export interface GetProjectsEntityUserReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28812,7 +28813,7 @@ export interface GetProtectionRuleOrderedAvailabilityZoneList {
 
 export interface GetProtectionRuleOwnerReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28827,7 +28828,7 @@ export interface GetProtectionRuleOwnerReference {
 
 export interface GetProtectionRuleProjectReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28959,7 +28960,7 @@ export interface GetProtectionRulesEntityOrderedAvailabilityZoneList {
 
 export interface GetProtectionRulesEntityOwnerReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -28974,7 +28975,7 @@ export interface GetProtectionRulesEntityOwnerReference {
 
 export interface GetProtectionRulesEntityProjectReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29000,7 +29001,7 @@ export interface GetRecoveryPlanCategory {
 
 export interface GetRecoveryPlanOwnerReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29116,7 +29117,7 @@ export interface GetRecoveryPlanParameterFloatingIpAssignmentListVmIpAssignmentL
 
 export interface GetRecoveryPlanParameterFloatingIpAssignmentListVmIpAssignmentListVmReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29145,7 +29146,7 @@ export interface GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetwo
 
 export interface GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29169,7 +29170,7 @@ export interface GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetwo
 
 export interface GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29201,7 +29202,7 @@ export interface GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetwo
 
 export interface GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29216,7 +29217,7 @@ export interface GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetwo
 
 export interface GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29240,7 +29241,7 @@ export interface GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetwo
 
 export interface GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29272,7 +29273,7 @@ export interface GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetwo
 
 export interface GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29287,7 +29288,7 @@ export interface GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetwo
 
 export interface GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29302,7 +29303,7 @@ export interface GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetwo
 
 export interface GetRecoveryPlanProjectReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29339,7 +29340,7 @@ export interface GetRecoveryPlanStageListStageWork {
 
 export interface GetRecoveryPlanStageListStageWorkRecoverEntity {
     /**
-     * (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or<span pulumi-lang-nodejs=" anyEntityReference " pulumi-lang-dotnet=" AnyEntityReference " pulumi-lang-go=" anyEntityReference " pulumi-lang-python=" any_entity_reference " pulumi-lang-yaml=" anyEntityReference " pulumi-lang-java=" anyEntityReference "> anyEntityReference </span>has to be provided.
+     * (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or<span pulumi-lang-nodejs=" anyEntityReference " pulumi-lang-dotnet=" AnyEntityReference " pulumi-lang-go=" anyEntityReference " pulumi-lang-python=" any_entity_reference " pulumi-lang-yaml=" anyEntityReference " pulumi-lang-java=" anyEntityReference " pulumi-lang-hcl=" any_entity_reference "> anyEntityReference </span>has to be provided.
      * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
      * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
      * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
@@ -29413,7 +29414,7 @@ export interface GetRecoveryPlansEntityCategory {
 
 export interface GetRecoveryPlansEntityOwnerReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29529,7 +29530,7 @@ export interface GetRecoveryPlansEntityParameterFloatingIpAssignmentListVmIpAssi
 
 export interface GetRecoveryPlansEntityParameterFloatingIpAssignmentListVmIpAssignmentListVmReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29558,7 +29559,7 @@ export interface GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZo
 
 export interface GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29582,7 +29583,7 @@ export interface GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZo
 
 export interface GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29614,7 +29615,7 @@ export interface GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZo
 
 export interface GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29629,7 +29630,7 @@ export interface GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZo
 
 export interface GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29653,7 +29654,7 @@ export interface GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZo
 
 export interface GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29685,7 +29686,7 @@ export interface GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZo
 
 export interface GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29700,7 +29701,7 @@ export interface GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZo
 
 export interface GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29715,7 +29716,7 @@ export interface GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZo
 
 export interface GetRecoveryPlansEntityProjectReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -29752,7 +29753,7 @@ export interface GetRecoveryPlansEntityStageListStageWork {
 
 export interface GetRecoveryPlansEntityStageListStageWorkRecoverEntity {
     /**
-     * (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or<span pulumi-lang-nodejs=" anyEntityReference " pulumi-lang-dotnet=" AnyEntityReference " pulumi-lang-go=" anyEntityReference " pulumi-lang-python=" any_entity_reference " pulumi-lang-yaml=" anyEntityReference " pulumi-lang-java=" anyEntityReference "> anyEntityReference </span>has to be provided.
+     * (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or<span pulumi-lang-nodejs=" anyEntityReference " pulumi-lang-dotnet=" AnyEntityReference " pulumi-lang-go=" anyEntityReference " pulumi-lang-python=" any_entity_reference " pulumi-lang-yaml=" anyEntityReference " pulumi-lang-java=" anyEntityReference " pulumi-lang-hcl=" any_entity_reference "> anyEntityReference </span>has to be provided.
      * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
      * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
      * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
@@ -31017,7 +31018,7 @@ export interface GetSelfServiceAppSnapshotsEntity {
      */
     name: string;
     /**
-     * - The<span pulumi-lang-nodejs=" recoveryPointInfoList " pulumi-lang-dotnet=" RecoveryPointInfoList " pulumi-lang-go=" recoveryPointInfoList " pulumi-lang-python=" recovery_point_info_list " pulumi-lang-yaml=" recoveryPointInfoList " pulumi-lang-java=" recoveryPointInfoList "> recoveryPointInfoList </span>contains information about recovery points for the snapshots. Each recovery point has the following attributes:
+     * - The<span pulumi-lang-nodejs=" recoveryPointInfoList " pulumi-lang-dotnet=" RecoveryPointInfoList " pulumi-lang-go=" recoveryPointInfoList " pulumi-lang-python=" recovery_point_info_list " pulumi-lang-yaml=" recoveryPointInfoList " pulumi-lang-java=" recoveryPointInfoList " pulumi-lang-hcl=" recovery_point_info_list "> recoveryPointInfoList </span>contains information about recovery points for the snapshots. Each recovery point has the following attributes:
      */
     recoveryPointInfoLists: outputs.GetSelfServiceAppSnapshotsEntityRecoveryPointInfoList[];
     /**
@@ -34740,7 +34741,7 @@ export interface GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigC
      */
     datasourceType: string;
     /**
-     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
      */
     metadata: string;
 }
@@ -34900,7 +34901,7 @@ export interface GetTemplateV2TemplateVersionSpecVmSpecNic {
     /**
      * (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicBackingInfo[];
     /**
@@ -34914,15 +34915,15 @@ export interface GetTemplateV2TemplateVersionSpecVmSpecNic {
     /**
      * (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfo[];
     /**
-     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
      */
     nicBackingInfo: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNicBackingInfo;
     /**
-     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
      */
     nicNetworkInfo: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfo;
     /**
@@ -34968,7 +34969,7 @@ export interface GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfo {
     ipv4Configs: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Config[];
     ipv4Infos: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain[];
     /**
@@ -34984,7 +34985,7 @@ export interface GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfo {
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      */
     subnets: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet[];
     /**
@@ -35133,7 +35134,7 @@ export interface GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloa
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      */
     subnets: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet[];
     /**
@@ -35199,7 +35200,7 @@ export interface GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualE
     ipv4Infos: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info[];
     ipv6Infos: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain[];
     /**
@@ -35215,7 +35216,7 @@ export interface GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualE
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      */
     subnets: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet[];
     /**
@@ -36079,13 +36080,13 @@ export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecLink {
 
 export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecNic {
     /**
-     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicBackingInfo[];
     extId: string;
     links: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicLink[];
     /**
-     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfo[];
     nicBackingInfo: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNicBackingInfo;
@@ -36642,7 +36643,7 @@ export interface GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceRef
     /**
      * - the UUID(Required).
      *
-     * For <span pulumi-lang-nodejs="`accessControlPolicyReferenceList`" pulumi-lang-dotnet="`AccessControlPolicyReferenceList`" pulumi-lang-go="`accessControlPolicyReferenceList`" pulumi-lang-python="`access_control_policy_reference_list`" pulumi-lang-yaml="`accessControlPolicyReferenceList`" pulumi-lang-java="`accessControlPolicyReferenceList`">`accessControlPolicyReferenceList`</span> and <span pulumi-lang-nodejs="`projectReferenceList`" pulumi-lang-dotnet="`ProjectReferenceList`" pulumi-lang-go="`projectReferenceList`" pulumi-lang-python="`project_reference_list`" pulumi-lang-yaml="`projectReferenceList`" pulumi-lang-java="`projectReferenceList`">`projectReferenceList`</span> are the same as reference but used as list.
+     * For <span pulumi-lang-nodejs="`accessControlPolicyReferenceList`" pulumi-lang-dotnet="`AccessControlPolicyReferenceList`" pulumi-lang-go="`accessControlPolicyReferenceList`" pulumi-lang-python="`access_control_policy_reference_list`" pulumi-lang-yaml="`accessControlPolicyReferenceList`" pulumi-lang-java="`accessControlPolicyReferenceList`" pulumi-lang-hcl="`access_control_policy_reference_list`">`accessControlPolicyReferenceList`</span> and <span pulumi-lang-nodejs="`projectReferenceList`" pulumi-lang-dotnet="`ProjectReferenceList`" pulumi-lang-go="`projectReferenceList`" pulumi-lang-python="`project_reference_list`" pulumi-lang-yaml="`projectReferenceList`" pulumi-lang-java="`projectReferenceList`" pulumi-lang-hcl="`project_reference_list`">`projectReferenceList`</span> are the same as reference but used as list.
      *
      * See detailed information in [Nutanix Users](https://www.nutanix.dev/api_references/prism-central-v3/#/6016c890e9122-get-a-list-of-existing-user-groups).
      */
@@ -37383,7 +37384,7 @@ export interface GetVirtualMachineNicList {
      */
     ipEndpointLists: outputs.GetVirtualMachineNicListIpEndpointList[];
     /**
-     * - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
+     * - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>).
      */
     isConnected: string;
     /**
@@ -37441,7 +37442,7 @@ export interface GetVirtualMachineSerialPortList {
      */
     index: number;
     /**
-     * - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
+     * - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>).
      */
     isConnected: boolean;
 }
@@ -38077,7 +38078,7 @@ export interface GetVirtualMachineV2GuestCustomizationConfigCloudInit {
      */
     datasourceType: string;
     /**
-     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
      */
     metadata: string;
 }
@@ -38213,7 +38214,7 @@ export interface GetVirtualMachineV2Nic {
     /**
      * (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos: outputs.GetVirtualMachineV2NicBackingInfo[];
     /**
@@ -38227,15 +38228,15 @@ export interface GetVirtualMachineV2Nic {
     /**
      * (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos: outputs.GetVirtualMachineV2NicNetworkInfo[];
     /**
-     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
      */
     nicBackingInfo: outputs.GetVirtualMachineV2NicNicBackingInfo;
     /**
-     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
      */
     nicNetworkInfo: outputs.GetVirtualMachineV2NicNicNetworkInfo;
     /**
@@ -38284,7 +38285,7 @@ export interface GetVirtualMachineV2NicNetworkInfo {
      */
     ipv4Infos: outputs.GetVirtualMachineV2NicNetworkInfoIpv4Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.GetVirtualMachineV2NicNetworkInfoNetworkFunctionChain[];
     /**
@@ -38300,7 +38301,7 @@ export interface GetVirtualMachineV2NicNetworkInfo {
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
      */
     subnets: outputs.GetVirtualMachineV2NicNetworkInfoSubnet[];
     /**
@@ -38482,7 +38483,7 @@ export interface GetVirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfo {
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
      */
     subnets: outputs.GetVirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoSubnet[];
     /**
@@ -38587,7 +38588,7 @@ export interface GetVirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkIn
     ipv4Infos: outputs.GetVirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info[];
     ipv6Infos: outputs.GetVirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.GetVirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain[];
     /**
@@ -38603,7 +38604,7 @@ export interface GetVirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkIn
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
      */
     subnets: outputs.GetVirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet[];
     /**
@@ -39188,13 +39189,13 @@ export interface GetVirtualMachinesV2VmHost {
 
 export interface GetVirtualMachinesV2VmNic {
     /**
-     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos: outputs.GetVirtualMachinesV2VmNicBackingInfo[];
     extId: string;
     links: outputs.GetVirtualMachinesV2VmNicLink[];
     /**
-     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos: outputs.GetVirtualMachinesV2VmNicNetworkInfo[];
     nicBackingInfo: outputs.GetVirtualMachinesV2VmNicNicBackingInfo;
@@ -40880,7 +40881,7 @@ export interface KarbonClusterCniConfig {
      */
     flannelConfigs?: outputs.KarbonClusterCniConfigFlannelConfig[];
     /**
-     * - (Optional) The size of the subnet from the<span pulumi-lang-nodejs=" podIpv4Cidr " pulumi-lang-dotnet=" PodIpv4Cidr " pulumi-lang-go=" podIpv4Cidr " pulumi-lang-python=" pod_ipv4_cidr " pulumi-lang-yaml=" podIpv4Cidr " pulumi-lang-java=" podIpv4Cidr "> podIpv4Cidr </span>assigned to each host. A value of 24 would allow up to 255 pods per node.
+     * - (Optional) The size of the subnet from the<span pulumi-lang-nodejs=" podIpv4Cidr " pulumi-lang-dotnet=" PodIpv4Cidr " pulumi-lang-go=" podIpv4Cidr " pulumi-lang-python=" pod_ipv4_cidr " pulumi-lang-yaml=" podIpv4Cidr " pulumi-lang-java=" podIpv4Cidr " pulumi-lang-hcl=" pod_ipv4_cidr "> podIpv4Cidr </span>assigned to each host. A value of 24 would allow up to 255 pods per node.
      */
     nodeCidrMaskSize?: number;
     /**
@@ -41015,7 +41016,7 @@ export interface KarbonClusterStorageClassConfig {
     /**
      * Reclaim policy for persistent volumes provisioned using the specified storage class.
      * * `volumes_config.#.file_system` - (Optional) Karbon uses either the ext4 or xfs file-system on the volume disk.
-     * * `volumes_config.#.flash_mode` - (Optional) Pins the persistent volumes to the flash tier in case of a <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> value.
+     * * `volumes_config.#.flash_mode` - (Optional) Pins the persistent volumes to the flash tier in case of a <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span> value.
      * * `volumes_config.#.password` - (Required) The password of the Prism Element user that the API calls use to provision volumes.
      * * `volumes_config.#.prism_element_cluster_uuid` - (Required) The universally unique identifier (UUID) of the Prism Element cluster.
      * * `volumes_config.#.storage_container` - (Required) Name of the storage container the storage container uses to provision volumes.
@@ -42400,7 +42401,7 @@ export interface NdbDatabasePostgresqlInfoHaInstance {
      */
     archiveWalExpireDays?: number;
     /**
-     * - (Optional) backup policy for instance. Default is <span pulumi-lang-nodejs=""primaryOnly"" pulumi-lang-dotnet=""PrimaryOnly"" pulumi-lang-go=""primaryOnly"" pulumi-lang-python=""primary_only"" pulumi-lang-yaml=""primaryOnly"" pulumi-lang-java=""primaryOnly"">"primaryOnly"</span>
+     * - (Optional) backup policy for instance. Default is <span pulumi-lang-nodejs=""primaryOnly"" pulumi-lang-dotnet=""PrimaryOnly"" pulumi-lang-go=""primaryOnly"" pulumi-lang-python=""primary_only"" pulumi-lang-yaml=""primaryOnly"" pulumi-lang-java=""primaryOnly"" pulumi-lang-hcl=""primary_only"">"primaryOnly"</span>
      */
     backupPolicy?: string;
     clusterDescription?: string;
@@ -44203,7 +44204,7 @@ export interface NdbProfileDatabaseParameterProfile {
     /**
      * Database parameters suuported for postgress.
      * * `postgres_database.max_connections`: (Optional) Determines the maximum number of concurrent connections to the database server. The default is set to 100
-     * * `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero.<span pulumi-lang-nodejs=" walLevel " pulumi-lang-dotnet=" WalLevel " pulumi-lang-go=" walLevel " pulumi-lang-python=" wal_level " pulumi-lang-yaml=" walLevel " pulumi-lang-java=" walLevel "> walLevel </span>must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
+     * * `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero.<span pulumi-lang-nodejs=" walLevel " pulumi-lang-dotnet=" WalLevel " pulumi-lang-go=" walLevel " pulumi-lang-python=" wal_level " pulumi-lang-yaml=" walLevel " pulumi-lang-java=" walLevel " pulumi-lang-hcl=" wal_level "> walLevel </span>must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
      * * `postgres_database.effective_io_concurrency`: (Optional) Sets the number of concurrent disk I/O operations that PostgreSQL expects can be executed simultaneously. Raising this value will increase the number of I/O operations that any individual PostgreSQL session attempts to initiate in parallel.
      * * `postgres_database.timezone`: (Optional) Sets the time zone for displaying and interpreting time stamps. Defult is UTC .
      * * `postgres_database.max_prepared_transactions`: (Optional) Sets the maximum number of transactions that can be in the prepared state simultaneously. Setting this parameter to zero (which is the default) disables the prepared-transaction feature.
@@ -44213,7 +44214,7 @@ export interface NdbProfileDatabaseParameterProfile {
      * * `postgres_database.min_wal_size`: (Optional) As long as WAL disk usage stays below this setting, old WAL files are always recycled for future use at a checkpoint, rather than removed. This can be used to ensure that enough WAL space is reserved to handle spikes in WAL usage, for example when running large batch jobs. The default is 80 MB.
      * * `postgres_database.max_wal_size`: (Optional) Maximum size to let the WAL grow to between automatic WAL checkpoints. The default is 1 GB
      * * `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
-     * * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however,<span pulumi-lang-nodejs=" trackCounts " pulumi-lang-dotnet=" TrackCounts " pulumi-lang-go=" trackCounts " pulumi-lang-python=" track_counts " pulumi-lang-yaml=" trackCounts " pulumi-lang-java=" trackCounts "> trackCounts </span>must also be enabled for autovacuum to work.
+     * * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however,<span pulumi-lang-nodejs=" trackCounts " pulumi-lang-dotnet=" TrackCounts " pulumi-lang-go=" trackCounts " pulumi-lang-python=" track_counts " pulumi-lang-yaml=" trackCounts " pulumi-lang-java=" trackCounts " pulumi-lang-hcl=" track_counts "> trackCounts </span>must also be enabled for autovacuum to work.
      * * `postgres_database.checkpoint_completion_target`: (Optional)
      * Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
      * * `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
@@ -44226,7 +44227,7 @@ export interface NdbProfileDatabaseParameterProfile {
      * Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
      * * `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
      * * `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
-     * * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the<span pulumi-lang-nodejs=" pgWal " pulumi-lang-dotnet=" PgWal " pulumi-lang-go=" pgWal " pulumi-lang-python=" pg_wal " pulumi-lang-yaml=" pgWal " pulumi-lang-java=" pgWal "> pgWal </span>directory. Default is 700 .
+     * * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the<span pulumi-lang-nodejs=" pgWal " pulumi-lang-dotnet=" PgWal " pulumi-lang-go=" pgWal " pulumi-lang-python=" pg_wal " pulumi-lang-yaml=" pgWal " pulumi-lang-java=" pgWal " pulumi-lang-hcl=" pg_wal "> pgWal </span>directory. Default is 700 .
      */
     postgresDatabases?: outputs.NdbProfileDatabaseParameterProfilePostgresDatabase[];
 }
@@ -45831,8 +45832,8 @@ export interface NetworkFunctionV2NicPair {
     /**
      * Administrative state of the NIC pair.
      * - A boolean flag to control the administrative state of the NIC pair.
-     * - Set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span> to administratively disable this NIC pair, for instance, during a maintenance window.
-     * - If set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>, this NIC pair will not be considered for traffic redirection, even if it's healthy.
+     * - Set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span> to administratively disable this NIC pair, for instance, during a maintenance window.
+     * - If set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>, this NIC pair will not be considered for traffic redirection, even if it's healthy.
      * - This provides a way to gracefully take a specific NFVM out of service without deleting the configuration.
      */
     isEnabled: boolean;
@@ -47540,7 +47541,7 @@ export interface OvaV2VmConfigGuestCustomizationConfigCloudInit {
      */
     datasourceType?: string;
     /**
-     * -(Optional) The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     * -(Optional) The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
      */
     metadata: string;
 }
@@ -47658,22 +47659,22 @@ export interface OvaV2VmConfigNic {
     /**
      * Use `nic_backing_info.virtual_ethernet_nic` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos: outputs.OvaV2VmConfigNicBackingInfo[];
     extId: string;
     /**
      * Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos: outputs.OvaV2VmConfigNicNetworkInfo[];
     /**
-     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
      */
     nicBackingInfo: outputs.OvaV2VmConfigNicNicBackingInfo;
     /**
-     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
      */
     nicNetworkInfo: outputs.OvaV2VmConfigNicNicNetworkInfo;
 }
@@ -47701,7 +47702,7 @@ export interface OvaV2VmConfigNicNetworkInfo {
     ipv4Configs: outputs.OvaV2VmConfigNicNetworkInfoIpv4Config[];
     ipv4Infos: outputs.OvaV2VmConfigNicNetworkInfoIpv4Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.OvaV2VmConfigNicNetworkInfoNetworkFunctionChain[];
     /**
@@ -47717,7 +47718,7 @@ export interface OvaV2VmConfigNicNetworkInfo {
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      * - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
      */
     subnets: outputs.OvaV2VmConfigNicNetworkInfoSubnet[];
@@ -47861,7 +47862,7 @@ export interface OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo {
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      * - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
      */
     subnets: outputs.OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet[];
@@ -47949,7 +47950,7 @@ export interface OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo {
     ipv4Infos: outputs.OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info[];
     ipv6Infos: outputs.OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain[];
     /**
@@ -47965,7 +47966,7 @@ export interface OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo {
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      * - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
      */
     subnets: outputs.OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet[];
@@ -48374,7 +48375,7 @@ export interface OvaVmDeployV2OverrideVmConfigNic {
     /**
      * Use `nic_backing_info.virtual_ethernet_nic` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos: outputs.OvaVmDeployV2OverrideVmConfigNicBackingInfo[];
     /**
@@ -48384,15 +48385,15 @@ export interface OvaVmDeployV2OverrideVmConfigNic {
     /**
      * Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos: outputs.OvaVmDeployV2OverrideVmConfigNicNetworkInfo[];
     /**
-     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
      */
     nicBackingInfo: outputs.OvaVmDeployV2OverrideVmConfigNicNicBackingInfo;
     /**
-     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
      */
     nicNetworkInfo: outputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfo;
 }
@@ -48423,7 +48424,7 @@ export interface OvaVmDeployV2OverrideVmConfigNicNetworkInfo {
     ipv4Configs: outputs.OvaVmDeployV2OverrideVmConfigNicNetworkInfoIpv4Config[];
     ipv4Infos: outputs.OvaVmDeployV2OverrideVmConfigNicNetworkInfoIpv4Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.OvaVmDeployV2OverrideVmConfigNicNetworkInfoNetworkFunctionChain[];
     /**
@@ -48439,7 +48440,7 @@ export interface OvaVmDeployV2OverrideVmConfigNicNetworkInfo {
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      * * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
      */
     subnets: outputs.OvaVmDeployV2OverrideVmConfigNicNetworkInfoSubnet[];
@@ -48616,7 +48617,7 @@ export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetwo
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      * * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
      */
     subnets: outputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet[];
@@ -48716,7 +48717,7 @@ export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNi
     ipv4Infos: outputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info[];
     ipv6Infos: outputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain[];
     /**
@@ -48732,7 +48733,7 @@ export interface OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNi
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      * * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
      */
     subnets: outputs.OvaVmDeployV2OverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet[];
@@ -49402,7 +49403,7 @@ export interface PcDeployV2ConfigBootstrapConfigCloudInitConfig {
      */
     datasourceType?: string;
     /**
-     * -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     * -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
      */
     metadata: string;
 }
@@ -50813,7 +50814,7 @@ export interface PcRestoreV2DomainManager {
     networks: outputs.PcRestoreV2DomainManagerNetwork[];
     nodeExtIds: string[];
     /**
-     * -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>.
+     * -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>.
      */
     shouldEnableHighAvailability: boolean;
 }
@@ -50876,7 +50877,7 @@ export interface PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfig {
      */
     datasourceType?: string;
     /**
-     * -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     * -(Optional)The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
      */
     metadata: string;
 }
@@ -51493,7 +51494,7 @@ export interface PcRestoreV2DomainManagerNetworkNtpServerIpv6 {
 
 export interface ProjectAccountReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -51629,7 +51630,7 @@ export interface ProjectAcpContextFilterListScopeFilterExpressionListRightHandSi
 
 export interface ProjectAcpRoleReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -51644,7 +51645,7 @@ export interface ProjectAcpRoleReference {
 
 export interface ProjectAcpUserGroupReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -51659,7 +51660,7 @@ export interface ProjectAcpUserGroupReferenceList {
 
 export interface ProjectAcpUserReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -51685,7 +51686,7 @@ export interface ProjectCategory {
 
 export interface ProjectClusterReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -51700,7 +51701,7 @@ export interface ProjectClusterReferenceList {
 
 export interface ProjectDefaultEnvironmentReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -51715,7 +51716,7 @@ export interface ProjectDefaultEnvironmentReference {
 
 export interface ProjectDefaultSubnetReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -51730,7 +51731,7 @@ export interface ProjectDefaultSubnetReference {
 
 export interface ProjectEnvironmentReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -51756,7 +51757,7 @@ export interface ProjectExternalNetworkList {
 
 export interface ProjectExternalUserGroupReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -51785,7 +51786,7 @@ export interface ProjectResourceDomainResource {
 
 export interface ProjectSubnetReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -51800,7 +51801,7 @@ export interface ProjectSubnetReferenceList {
 
 export interface ProjectTunnelReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -51850,7 +51851,7 @@ export interface ProjectUserListDirectoryServiceUser {
 
 export interface ProjectUserListDirectoryServiceUserDirectoryServiceReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -51870,7 +51871,7 @@ export interface ProjectUserListIdentityProviderUser {
 
 export interface ProjectUserListIdentityProviderUserIdentityProviderReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -51885,7 +51886,7 @@ export interface ProjectUserListIdentityProviderUserIdentityProviderReference {
 
 export interface ProjectUserReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -51900,7 +51901,7 @@ export interface ProjectUserReferenceList {
 
 export interface ProjectVpcReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -52118,7 +52119,7 @@ export interface ProtectionRuleOrderedAvailabilityZoneList {
 
 export interface ProtectionRuleOwnerReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -52133,7 +52134,7 @@ export interface ProtectionRuleOwnerReference {
 
 export interface ProtectionRuleProjectReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -52159,7 +52160,7 @@ export interface RecoveryPlanCategory {
 
 export interface RecoveryPlanOwnerReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -52209,7 +52210,7 @@ export interface RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentLis
 
 export interface RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -52238,7 +52239,7 @@ export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetwork
 
 export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceList {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -52262,7 +52263,7 @@ export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetwork
 
 export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -52294,7 +52295,7 @@ export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetwork
 
 export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -52309,7 +52310,7 @@ export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetwork
 
 export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -52333,7 +52334,7 @@ export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetwork
 
 export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -52365,7 +52366,7 @@ export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetwork
 
 export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -52380,7 +52381,7 @@ export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetwork
 
 export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind: string;
     /**
@@ -52395,7 +52396,7 @@ export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetwork
 
 export interface RecoveryPlanProjectReference {
     /**
-     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`">`project`</span>).
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
      */
     kind?: string;
     /**
@@ -53572,7 +53573,7 @@ export interface StoragePolicyV2EncryptionSpec {
      * * `"SYSTEM_DERIVED"`:- User is not interested in encryption; system decides.
      * * `"ENABLED"`:- User wants data encrypted.
      *
-     * > **Note**: Once <span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`">`encryptionState`</span> is explicitly set to `ENABLED`, it cannot be reverted back to a system-derived value.
+     * > **Note**: Once <span pulumi-lang-nodejs="`encryptionState`" pulumi-lang-dotnet="`EncryptionState`" pulumi-lang-go="`encryptionState`" pulumi-lang-python="`encryption_state`" pulumi-lang-yaml="`encryptionState`" pulumi-lang-java="`encryptionState`" pulumi-lang-hcl="`encryption_state`">`encryptionState`</span> is explicitly set to `ENABLED`, it cannot be reverted back to a system-derived value.
      */
     encryptionState: string;
 }
@@ -54364,7 +54365,7 @@ export interface TemplateV2TemplateVersionSpec {
     createdBies: outputs.TemplateV2TemplateVersionSpecCreatedBy[];
     extId: string;
     /**
-     * Default: <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span>  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
+     * Default: <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
      */
     isActiveVersion?: boolean;
     /**
@@ -54384,7 +54385,7 @@ export interface TemplateV2TemplateVersionSpec {
      */
     versionName: string;
     /**
-     * Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`">`templateVmReference`</span> or <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`">`templateVersionReference`</span> .
+     * Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span> or <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span> .
      */
     versionSource: outputs.TemplateV2TemplateVersionSpecVersionSource;
     /**
@@ -54518,7 +54519,7 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
      */
     datasourceType: string;
     /**
-     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
      */
     metadata: string;
 }
@@ -54604,7 +54605,7 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
     /**
      * Use `nic_backing_info.virtual_ethernet_nic` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo[];
     extId: string;
@@ -54612,15 +54613,15 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
     /**
      * Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo[];
     /**
-     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
      */
     nicBackingInfo: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfo;
     /**
-     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
      */
     nicNetworkInfo: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfo;
     tenantId: string;
@@ -54654,7 +54655,7 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
     ipv4Configs: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Config[];
     ipv4Infos: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChain[];
     /**
@@ -54670,7 +54671,7 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      */
     subnets: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnet[];
     /**
@@ -54792,7 +54793,7 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      */
     subnets: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet[];
     /**
@@ -54855,7 +54856,7 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
     ipv4Infos: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info[];
     ipv6Infos: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain[];
     /**
@@ -54871,7 +54872,7 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      */
     subnets: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet[];
     /**
@@ -54958,7 +54959,7 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGu
      */
     datasourceType: string;
     /**
-     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
      */
     metadata: string;
 }
@@ -55690,7 +55691,7 @@ export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigClou
      */
     datasourceType: string;
     /**
-     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
      */
     metadata: string;
 }
@@ -55804,7 +55805,7 @@ export interface TemplateV2TemplateVersionSpecVmSpecNic {
     /**
      * Use `nic_backing_info.virtual_ethernet_nic` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos: outputs.TemplateV2TemplateVersionSpecVmSpecNicBackingInfo[];
     extId: string;
@@ -55812,15 +55813,15 @@ export interface TemplateV2TemplateVersionSpecVmSpecNic {
     /**
      * Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo[];
     /**
-     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
      */
     nicBackingInfo: outputs.TemplateV2TemplateVersionSpecVmSpecNicNicBackingInfo;
     /**
-     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
      */
     nicNetworkInfo: outputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfo;
     tenantId: string;
@@ -55854,7 +55855,7 @@ export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo {
     ipv4Configs: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Config[];
     ipv4Infos: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain[];
     /**
@@ -55870,7 +55871,7 @@ export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo {
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      */
     subnets: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet[];
     /**
@@ -55992,7 +55993,7 @@ export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNi
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      */
     subnets: outputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet[];
     /**
@@ -56055,7 +56056,7 @@ export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthe
     ipv4Infos: outputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info[];
     ipv6Infos: outputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain[];
     /**
@@ -56071,7 +56072,7 @@ export interface TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthe
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      */
     subnets: outputs.TemplateV2TemplateVersionSpecVmSpecNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet[];
     /**
@@ -56504,7 +56505,7 @@ export interface VirtualMachineDiskList {
     /**
      * Reference to a data source.
      *
-     * The<span pulumi-lang-nodejs=" diskSize " pulumi-lang-dotnet=" DiskSize " pulumi-lang-go=" diskSize " pulumi-lang-python=" disk_size " pulumi-lang-yaml=" diskSize " pulumi-lang-java=" diskSize "> diskSize </span>(the disk<span pulumi-lang-nodejs=" sizeMib " pulumi-lang-dotnet=" SizeMib " pulumi-lang-go=" sizeMib " pulumi-lang-python=" size_mib " pulumi-lang-yaml=" sizeMib " pulumi-lang-java=" sizeMib "> sizeMib </span>and the<span pulumi-lang-nodejs=" diskSizeBytes " pulumi-lang-dotnet=" DiskSizeBytes " pulumi-lang-go=" diskSizeBytes " pulumi-lang-python=" disk_size_bytes " pulumi-lang-yaml=" diskSizeBytes " pulumi-lang-java=" diskSizeBytes "> diskSizeBytes </span>attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk<span pulumi-lang-nodejs=" sizeMib " pulumi-lang-dotnet=" SizeMib " pulumi-lang-go=" sizeMib " pulumi-lang-python=" size_mib " pulumi-lang-yaml=" sizeMib " pulumi-lang-java=" sizeMib "> sizeMib </span>or<span pulumi-lang-nodejs=" diskSizeBytes " pulumi-lang-dotnet=" DiskSizeBytes " pulumi-lang-go=" diskSizeBytes " pulumi-lang-python=" disk_size_bytes " pulumi-lang-yaml=" diskSizeBytes " pulumi-lang-java=" diskSizeBytes "> diskSizeBytes </span>when you set<span pulumi-lang-nodejs=" dataSourceReference " pulumi-lang-dotnet=" DataSourceReference " pulumi-lang-go=" dataSourceReference " pulumi-lang-python=" data_source_reference " pulumi-lang-yaml=" dataSourceReference " pulumi-lang-java=" dataSourceReference "> dataSourceReference </span>but, you can update the<span pulumi-lang-nodejs=" diskSize " pulumi-lang-dotnet=" DiskSize " pulumi-lang-go=" diskSize " pulumi-lang-python=" disk_size " pulumi-lang-yaml=" diskSize " pulumi-lang-java=" diskSize "> diskSize </span>after creation (second apply).
+     * The<span pulumi-lang-nodejs=" diskSize " pulumi-lang-dotnet=" DiskSize " pulumi-lang-go=" diskSize " pulumi-lang-python=" disk_size " pulumi-lang-yaml=" diskSize " pulumi-lang-java=" diskSize " pulumi-lang-hcl=" disk_size "> diskSize </span>(the disk<span pulumi-lang-nodejs=" sizeMib " pulumi-lang-dotnet=" SizeMib " pulumi-lang-go=" sizeMib " pulumi-lang-python=" size_mib " pulumi-lang-yaml=" sizeMib " pulumi-lang-java=" sizeMib " pulumi-lang-hcl=" size_mib "> sizeMib </span>and the<span pulumi-lang-nodejs=" diskSizeBytes " pulumi-lang-dotnet=" DiskSizeBytes " pulumi-lang-go=" diskSizeBytes " pulumi-lang-python=" disk_size_bytes " pulumi-lang-yaml=" diskSizeBytes " pulumi-lang-java=" diskSizeBytes " pulumi-lang-hcl=" disk_size_bytes "> diskSizeBytes </span>attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk<span pulumi-lang-nodejs=" sizeMib " pulumi-lang-dotnet=" SizeMib " pulumi-lang-go=" sizeMib " pulumi-lang-python=" size_mib " pulumi-lang-yaml=" sizeMib " pulumi-lang-java=" sizeMib " pulumi-lang-hcl=" size_mib "> sizeMib </span>or<span pulumi-lang-nodejs=" diskSizeBytes " pulumi-lang-dotnet=" DiskSizeBytes " pulumi-lang-go=" diskSizeBytes " pulumi-lang-python=" disk_size_bytes " pulumi-lang-yaml=" diskSizeBytes " pulumi-lang-java=" diskSizeBytes " pulumi-lang-hcl=" disk_size_bytes "> diskSizeBytes </span>when you set<span pulumi-lang-nodejs=" dataSourceReference " pulumi-lang-dotnet=" DataSourceReference " pulumi-lang-go=" dataSourceReference " pulumi-lang-python=" data_source_reference " pulumi-lang-yaml=" dataSourceReference " pulumi-lang-java=" dataSourceReference " pulumi-lang-hcl=" data_source_reference "> dataSourceReference </span>but, you can update the<span pulumi-lang-nodejs=" diskSize " pulumi-lang-dotnet=" DiskSize " pulumi-lang-go=" diskSize " pulumi-lang-python=" disk_size " pulumi-lang-yaml=" diskSize " pulumi-lang-java=" diskSize " pulumi-lang-hcl=" disk_size "> diskSize </span>after creation (second apply).
      */
     dataSourceReference: {[key: string]: string};
     /**
@@ -56618,7 +56619,7 @@ export interface VirtualMachineNicList {
      */
     ipEndpointLists: outputs.VirtualMachineNicListIpEndpointList[];
     /**
-     * - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
+     * - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>).
      */
     isConnected?: string;
     /**
@@ -56672,7 +56673,7 @@ export interface VirtualMachineNicListIpEndpointList {
 
 export interface VirtualMachineNicListStatus {
     /**
-     * -  The Floating IP associated with the vnic. (Only in <span pulumi-lang-nodejs="`nicListStatus`" pulumi-lang-dotnet="`NicListStatus`" pulumi-lang-go="`nicListStatus`" pulumi-lang-python="`nic_list_status`" pulumi-lang-yaml="`nicListStatus`" pulumi-lang-java="`nicListStatus`">`nicListStatus`</span>)
+     * -  The Floating IP associated with the vnic. (Only in <span pulumi-lang-nodejs="`nicListStatus`" pulumi-lang-dotnet="`NicListStatus`" pulumi-lang-go="`nicListStatus`" pulumi-lang-python="`nic_list_status`" pulumi-lang-yaml="`nicListStatus`" pulumi-lang-java="`nicListStatus`" pulumi-lang-hcl="`nic_list_status`">`nicListStatus`</span>)
      */
     floatingIp: string;
     /**
@@ -56680,7 +56681,7 @@ export interface VirtualMachineNicListStatus {
      */
     ipEndpointLists: outputs.VirtualMachineNicListStatusIpEndpointList[];
     /**
-     * - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
+     * - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>).
      */
     isConnected: string;
     /**
@@ -56738,7 +56739,7 @@ export interface VirtualMachineSerialPortList {
      */
     index: number;
     /**
-     * - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>).
+     * - Indicates whether the serial port connection is connected or not (<span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span> or <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>).
      */
     isConnected: boolean;
 }
@@ -57259,7 +57260,7 @@ export interface VirtualMachineV2GuestCustomizationConfigCloudInit {
      */
     datasourceType?: string;
     /**
-     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
      */
     metadata: string;
 }
@@ -57378,7 +57379,7 @@ export interface VirtualMachineV2Nic {
     /**
      * Use `nic_backing_info.virtual_ethernet_nic` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos: outputs.VirtualMachineV2NicBackingInfo[];
     /**
@@ -57388,15 +57389,15 @@ export interface VirtualMachineV2Nic {
     /**
      * Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos: outputs.VirtualMachineV2NicNetworkInfo[];
     /**
-     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
      */
     nicBackingInfo: outputs.VirtualMachineV2NicNicBackingInfo;
     /**
-     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
      */
     nicNetworkInfo: outputs.VirtualMachineV2NicNicNetworkInfo;
 }
@@ -57424,7 +57425,7 @@ export interface VirtualMachineV2NicNetworkInfo {
     ipv4Configs: outputs.VirtualMachineV2NicNetworkInfoIpv4Config[];
     ipv4Infos: outputs.VirtualMachineV2NicNetworkInfoIpv4Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.VirtualMachineV2NicNetworkInfoNetworkFunctionChain[];
     /**
@@ -57440,7 +57441,7 @@ export interface VirtualMachineV2NicNetworkInfo {
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      * * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
      */
     subnets: outputs.VirtualMachineV2NicNetworkInfoSubnet[];
@@ -57614,7 +57615,7 @@ export interface VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfo {
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      * * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
      */
     subnets: outputs.VirtualMachineV2NicNicNetworkInfoDpOffloadNicNetworkInfoSubnet[];
@@ -57708,7 +57709,7 @@ export interface VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfo 
     ipv4Infos: outputs.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info[];
     ipv6Infos: outputs.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info[];
     /**
-     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain[];
     /**
@@ -57724,7 +57725,7 @@ export interface VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfo 
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
      * * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
      */
     subnets: outputs.VirtualMachineV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet[];
@@ -57923,7 +57924,7 @@ export interface VmCdromInsertEjectV2BackingInfo {
 
 export interface VmCdromInsertEjectV2BackingInfoDataSource {
     /**
-     * Reference to image or vm disk. Either <span pulumi-lang-nodejs="`imageReference`" pulumi-lang-dotnet="`ImageReference`" pulumi-lang-go="`imageReference`" pulumi-lang-python="`image_reference`" pulumi-lang-yaml="`imageReference`" pulumi-lang-java="`imageReference`">`imageReference`</span> or <span pulumi-lang-nodejs="`vmDiskReference`" pulumi-lang-dotnet="`VmDiskReference`" pulumi-lang-go="`vmDiskReference`" pulumi-lang-python="`vm_disk_reference`" pulumi-lang-yaml="`vmDiskReference`" pulumi-lang-java="`vmDiskReference`">`vmDiskReference`</span>.
+     * Reference to image or vm disk. Either <span pulumi-lang-nodejs="`imageReference`" pulumi-lang-dotnet="`ImageReference`" pulumi-lang-go="`imageReference`" pulumi-lang-python="`image_reference`" pulumi-lang-yaml="`imageReference`" pulumi-lang-java="`imageReference`" pulumi-lang-hcl="`image_reference`">`imageReference`</span> or <span pulumi-lang-nodejs="`vmDiskReference`" pulumi-lang-dotnet="`VmDiskReference`" pulumi-lang-go="`vmDiskReference`" pulumi-lang-python="`vm_disk_reference`" pulumi-lang-yaml="`vmDiskReference`" pulumi-lang-java="`vmDiskReference`" pulumi-lang-hcl="`vm_disk_reference`">`vmDiskReference`</span>.
      */
     references?: outputs.VmCdromInsertEjectV2BackingInfoDataSourceReference[];
 }
@@ -58527,11 +58528,11 @@ export interface VmCloneV2GuestCustomization {
 
 export interface VmCloneV2GuestCustomizationConfig {
     /**
-     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
      */
     cloudInits: outputs.VmCloneV2GuestCustomizationConfigCloudInit[];
     /**
-     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
      */
     syspreps: outputs.VmCloneV2GuestCustomizationConfigSysprep[];
 }
@@ -58549,7 +58550,7 @@ export interface VmCloneV2GuestCustomizationConfigCloudInit {
      */
     datasourceType?: string;
     /**
-     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
      */
     metadata: string;
 }
@@ -58557,7 +58558,7 @@ export interface VmCloneV2GuestCustomizationConfigCloudInit {
 export interface VmCloneV2GuestCustomizationConfigCloudInitCloudInitScript {
     customKeys: outputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKey[];
     /**
-     * - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+     * - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData " pulumi-lang-hcl=" user_data "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
      */
     userDatas: outputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserData[];
 }
@@ -58593,8 +58594,8 @@ export interface VmCloneV2GuestCustomizationConfigSysprep {
     /**
      * - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
      * Valid values are:
-     * - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
-     * - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
+     * - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
+     * - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
      */
     installType: string;
     sysprepScripts: outputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScript[];
@@ -58661,7 +58662,7 @@ export interface VmCloneV2Nic {
     /**
      * - (Optional, Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
      */
     backingInfos: outputs.VmCloneV2NicBackingInfo[];
     /**
@@ -58671,15 +58672,15 @@ export interface VmCloneV2Nic {
     /**
      * - (Optional, Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
      *
-     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
      */
     networkInfos: outputs.VmCloneV2NicNetworkInfo[];
     /**
-     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`">`dpOffloadNic`</span>.
+     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
      */
     nicBackingInfo: outputs.VmCloneV2NicNicBackingInfo;
     /**
-     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`">`dpOffloadNicNetworkInfo`</span>.
+     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
      */
     nicNetworkInfo: outputs.VmCloneV2NicNicNetworkInfo;
 }
@@ -58713,7 +58714,7 @@ export interface VmCloneV2NicNetworkInfo {
     ipv4Configs: outputs.VmCloneV2NicNetworkInfoIpv4Config[];
     ipv4Infos: outputs.VmCloneV2NicNetworkInfoIpv4Info[];
     /**
-     * - (Optional)The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * - (Optional)The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.VmCloneV2NicNetworkInfoNetworkFunctionChain[];
     /**
@@ -58740,7 +58741,7 @@ export interface VmCloneV2NicNetworkInfo {
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * - (Optional) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+     * - (Optional) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
      */
     subnets: outputs.VmCloneV2NicNetworkInfoSubnet[];
     /**
@@ -58761,8 +58762,8 @@ export interface VmCloneV2NicNetworkInfoIpv4Config {
     secondaryIpAddressLists: outputs.VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
     /**
      * - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-     * <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`">`ipAddress`</span>: - (Optional) Ip config settings.
-     * <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+     * <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+     * <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
      */
     shouldAssignIp: boolean;
 }
@@ -58891,7 +58892,7 @@ export interface VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfo {
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * - (Optional) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+     * - (Optional) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
      */
     subnets: outputs.VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoSubnet[];
     /**
@@ -58912,8 +58913,8 @@ export interface VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config {
     secondaryIpAddressLists: outputs.VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
     /**
      * - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-     * <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`">`ipAddress`</span>: - (Optional) Ip config settings.
-     * <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+     * <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+     * <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
      */
     shouldAssignIp: boolean;
 }
@@ -58977,7 +58978,7 @@ export interface VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfo {
     ipv4Infos: outputs.VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info[];
     ipv6Infos: outputs.VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info[];
     /**
-     * - (Optional)The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC.
+     * - (Optional)The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
      */
     networkFunctionChains: outputs.VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain[];
     /**
@@ -59004,7 +59005,7 @@ export interface VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfo {
      */
     shouldAllowUnknownMacs: boolean;
     /**
-     * - (Optional) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+     * - (Optional) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
      */
     subnets: outputs.VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet[];
     /**
@@ -59025,8 +59026,8 @@ export interface VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Conf
     secondaryIpAddressLists: outputs.VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
     /**
      * - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-     * <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`">`ipAddress`</span>: - (Optional) Ip config settings.
-     * <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+     * <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+     * <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
      */
     shouldAssignIp: boolean;
 }
@@ -59137,11 +59138,11 @@ export interface VmCloneV2VtpmConfig {
 
 export interface VmGcUpdateV2Config {
     /**
-     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
      */
     cloudInits: outputs.VmGcUpdateV2ConfigCloudInit[];
     /**
-     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
      */
     syspreps: outputs.VmGcUpdateV2ConfigSysprep[];
 }
@@ -59159,7 +59160,7 @@ export interface VmGcUpdateV2ConfigCloudInit {
      */
     datasourceType?: string;
     /**
-     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
      */
     metadata: string;
 }
@@ -59167,7 +59168,7 @@ export interface VmGcUpdateV2ConfigCloudInit {
 export interface VmGcUpdateV2ConfigCloudInitCloudInitScript {
     customKeys: outputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKey[];
     /**
-     * - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+     * - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData " pulumi-lang-hcl=" user_data "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
      */
     userDatas: outputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptUserData[];
 }
@@ -59203,8 +59204,8 @@ export interface VmGcUpdateV2ConfigSysprep {
     /**
      * - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
      * Valid values are:
-     * - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
-     * - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
+     * - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
+     * - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
      */
     installType: string;
     sysprepScripts: outputs.VmGcUpdateV2ConfigSysprepSysprepScript[];

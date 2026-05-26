@@ -21,7 +21,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info> Ipv4Infos;
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info> Ipv6Infos;
         /// <summary>
-        /// The network function chain associates with the NIC. Only valid if&lt;span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "&gt; nicType &lt;/span&gt;is NORMAL_NIC.
+        /// The network function chain associates with the NIC. Only valid if&lt;span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "&gt; nicType &lt;/span&gt;is NORMAL_NIC.
         /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain> NetworkFunctionChains;
         /// <summary>
@@ -37,7 +37,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly bool? ShouldAllowUnknownMacs;
         /// <summary>
-        /// Network identifier for this adapter. Only valid if&lt;span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "&gt; nicType &lt;/span&gt;is NORMAL_NIC or DIRECT_NIC
+        /// Network identifier for this adapter. Only valid if&lt;span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "&gt; nicType &lt;/span&gt;is NORMAL_NIC or DIRECT_NIC
         /// </summary>
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet> Subnets;
         /// <summary>

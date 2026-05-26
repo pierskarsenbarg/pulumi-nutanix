@@ -90,6 +90,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getkarbonclusterssh" "sshbyid" {
+        ///   karbon_cluster_id = "&lt;YOUR-CLUSTER-ID&gt;"
+        /// }
+        /// data "nutanix_getkarbonclusterssh" "sshbyname" {
+        ///   karbon_cluster_name = "&lt;YOUR-CLUSTER-NAME&gt;"
+        /// }
+        /// 
+        /// # Get ssh credentials by cluster UUID
+        /// # Get ssh credentials by cluster name
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -222,6 +241,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getkarbonclusterssh" "sshbyid" {
+        ///   karbon_cluster_id = "&lt;YOUR-CLUSTER-ID&gt;"
+        /// }
+        /// data "nutanix_getkarbonclusterssh" "sshbyname" {
+        ///   karbon_cluster_name = "&lt;YOUR-CLUSTER-NAME&gt;"
+        /// }
+        /// 
+        /// # Get ssh credentials by cluster UUID
+        /// # Get ssh credentials by cluster name
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -353,6 +391,25 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getkarbonclusterssh" "sshbyid" {
+        ///   karbon_cluster_id = "&lt;YOUR-CLUSTER-ID&gt;"
+        /// }
+        /// data "nutanix_getkarbonclusterssh" "sshbyname" {
+        ///   karbon_cluster_name = "&lt;YOUR-CLUSTER-NAME&gt;"
+        /// }
+        /// 
+        /// # Get ssh credentials by cluster UUID
+        /// # Get ssh credentials by cluster name
         /// ```
         /// ```java
         /// package generated_program;

@@ -70,7 +70,7 @@ export class TemplateGuestOsActionsV2 extends pulumi.CustomResource {
      */
     declare public readonly extId: pulumi.Output<string>;
     /**
-     * Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
+     * Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`" pulumi-lang-hcl="`complete`">`complete`</span> action.
      *
      *
      * See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/initiateGuestUpdate).
@@ -79,7 +79,7 @@ export class TemplateGuestOsActionsV2 extends pulumi.CustomResource {
      */
     declare public readonly isActiveVersion: pulumi.Output<string | undefined>;
     /**
-     * The user defined description of a Template Version. (Required) Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
+     * The user defined description of a Template Version. (Required) Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`" pulumi-lang-hcl="`complete`">`complete`</span> action.
      */
     declare public readonly versionDescription: pulumi.Output<string | undefined>;
     /**
@@ -87,7 +87,7 @@ export class TemplateGuestOsActionsV2 extends pulumi.CustomResource {
      */
     declare public readonly versionId: pulumi.Output<string | undefined>;
     /**
-     * The user defined name of a Template Version. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
+     * The user defined name of a Template Version. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`" pulumi-lang-hcl="`complete`">`complete`</span> action.
      */
     declare public readonly versionName: pulumi.Output<string | undefined>;
 
@@ -143,7 +143,7 @@ export interface TemplateGuestOsActionsV2State {
      */
     extId?: pulumi.Input<string | undefined>;
     /**
-     * Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
+     * Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`" pulumi-lang-hcl="`complete`">`complete`</span> action.
      *
      *
      * See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/initiateGuestUpdate).
@@ -152,7 +152,7 @@ export interface TemplateGuestOsActionsV2State {
      */
     isActiveVersion?: pulumi.Input<string | undefined>;
     /**
-     * The user defined description of a Template Version. (Required) Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
+     * The user defined description of a Template Version. (Required) Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`" pulumi-lang-hcl="`complete`">`complete`</span> action.
      */
     versionDescription?: pulumi.Input<string | undefined>;
     /**
@@ -160,7 +160,7 @@ export interface TemplateGuestOsActionsV2State {
      */
     versionId?: pulumi.Input<string | undefined>;
     /**
-     * The user defined name of a Template Version. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
+     * The user defined name of a Template Version. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`" pulumi-lang-hcl="`complete`">`complete`</span> action.
      */
     versionName?: pulumi.Input<string | undefined>;
 }
@@ -178,7 +178,7 @@ export interface TemplateGuestOsActionsV2Args {
      */
     extId: pulumi.Input<string>;
     /**
-     * Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
+     * Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`" pulumi-lang-hcl="`complete`">`complete`</span> action.
      *
      *
      * See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/initiateGuestUpdate).
@@ -187,7 +187,7 @@ export interface TemplateGuestOsActionsV2Args {
      */
     isActiveVersion?: pulumi.Input<string | undefined>;
     /**
-     * The user defined description of a Template Version. (Required) Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
+     * The user defined description of a Template Version. (Required) Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`" pulumi-lang-hcl="`complete`">`complete`</span> action.
      */
     versionDescription?: pulumi.Input<string | undefined>;
     /**
@@ -195,7 +195,7 @@ export interface TemplateGuestOsActionsV2Args {
      */
     versionId?: pulumi.Input<string | undefined>;
     /**
-     * The user defined name of a Template Version. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`">`complete`</span> action.
+     * The user defined name of a Template Version. Only applicable with <span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`" pulumi-lang-hcl="`complete`">`complete`</span> action.
      */
     versionName?: pulumi.Input<string | undefined>;
 }

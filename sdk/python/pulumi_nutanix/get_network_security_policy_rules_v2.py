@@ -129,7 +129,7 @@ def get_network_security_policy_rules_v2(filter: Optional[_builtins.str] = None,
 
     :param _builtins.str filter: Filter expression for the list. The filter can be applied to the following fields:
     :param _builtins.int limit: Maximum number of rules to return (1–100). Default is 50 if not set.
-    :param _builtins.str order_by: Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy "> orderBy </span>can be applied to the following fields:
+    :param _builtins.str order_by: Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy " pulumi-lang-hcl=" order_by "> orderBy </span>can be applied to the following fields:
     :param _builtins.int page: Page number for pagination (0-based).
     :param _builtins.str policy_ext_id: ExtId of the network security policy to list rules for.
     :param _builtins.str select: Comma-separated list of fields to return. The select can be applied to the following fields:
@@ -166,7 +166,7 @@ def get_network_security_policy_rules_v2_output(filter: pulumi.Input[Optional[Op
 
     :param _builtins.str filter: Filter expression for the list. The filter can be applied to the following fields:
     :param _builtins.int limit: Maximum number of rules to return (1–100). Default is 50 if not set.
-    :param _builtins.str order_by: Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy "> orderBy </span>can be applied to the following fields:
+    :param _builtins.str order_by: Order by clause. The<span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy " pulumi-lang-hcl=" order_by "> orderBy </span>can be applied to the following fields:
     :param _builtins.int page: Page number for pagination (0-based).
     :param _builtins.str policy_ext_id: ExtId of the network security policy to list rules for.
     :param _builtins.str select: Comma-separated list of fields to return. The select can be applied to the following fields:

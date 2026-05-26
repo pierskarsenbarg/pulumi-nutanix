@@ -126,8 +126,8 @@ def get_network_functions_v2(filter: Optional[_builtins.str] = None,
            - `filter = "name eq 'samplenf'"`
     :param _builtins.int limit: Maximum number of items per page.
     :param _builtins.str order_by: Order by expression. Examples:
-           - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy ">`orderBy </span>= "name"`
-           - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy ">`orderBy </span>= "name desc"`
+           - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by ">`orderBy </span>= "name"`
+           - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by ">`orderBy </span>= "name desc"`
     :param _builtins.int page: Page number.
     """
     __args__ = dict()
@@ -173,8 +173,8 @@ def get_network_functions_v2_output(filter: pulumi.Input[Optional[Optional[_buil
            - `filter = "name eq 'samplenf'"`
     :param _builtins.int limit: Maximum number of items per page.
     :param _builtins.str order_by: Order by expression. Examples:
-           - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy ">`orderBy </span>= "name"`
-           - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy ">`orderBy </span>= "name desc"`
+           - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by ">`orderBy </span>= "name"`
+           - <span pulumi-lang-nodejs="`orderBy " pulumi-lang-dotnet="`OrderBy " pulumi-lang-go="`orderBy " pulumi-lang-python="`order_by " pulumi-lang-yaml="`orderBy " pulumi-lang-java="`orderBy " pulumi-lang-hcl="`order_by ">`orderBy </span>= "name desc"`
     :param _builtins.int page: Page number.
     """
     __args__ = dict()

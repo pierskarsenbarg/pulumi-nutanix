@@ -31,7 +31,7 @@ class OvaV2Args:
 
         :param pulumi.Input[Sequence[pulumi.Input['OvaV2SourceArgs']]] sources: -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
         :param pulumi.Input['OvaV2ChecksumArgs'] checksum: -(Optional) The checksum of an OVA.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
         :param pulumi.Input[_builtins.str] disk_format: -(Optional) Disk format of an OVA.
                |ENUM |Description |
                |---|---|
@@ -77,7 +77,7 @@ class OvaV2Args:
     @pulumi.getter(name="clusterLocationExtIds")
     def cluster_location_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
+        -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
         """
         return pulumi.get(self, "cluster_location_ext_ids")
 
@@ -135,7 +135,7 @@ class _OvaV2State:
         Input properties used for looking up and filtering OvaV2 resources.
 
         :param pulumi.Input['OvaV2ChecksumArgs'] checksum: -(Optional) The checksum of an OVA.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
         :param pulumi.Input[Sequence[pulumi.Input['OvaV2CreatedByArgs']]] created_bies: -(Optional) Information of the user.
         :param pulumi.Input[_builtins.str] disk_format: -(Optional) Disk format of an OVA.
                |ENUM |Description |
@@ -191,7 +191,7 @@ class _OvaV2State:
     @pulumi.getter(name="clusterLocationExtIds")
     def cluster_location_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
+        -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
         """
         return pulumi.get(self, "cluster_location_ext_ids")
 
@@ -346,7 +346,7 @@ class OvaV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict']] checksum: -(Optional) The checksum of an OVA.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
         :param pulumi.Input[_builtins.str] disk_format: -(Optional) Disk format of an OVA.
                |ENUM |Description |
                |---|---|
@@ -442,7 +442,7 @@ class OvaV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict']] checksum: -(Optional) The checksum of an OVA.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
         :param pulumi.Input[Sequence[pulumi.Input[Union['OvaV2CreatedByArgs', 'OvaV2CreatedByArgsDict']]]] created_bies: -(Optional) Information of the user.
         :param pulumi.Input[_builtins.str] disk_format: -(Optional) Disk format of an OVA.
                |ENUM |Description |
@@ -485,7 +485,7 @@ class OvaV2(pulumi.CustomResource):
     @pulumi.getter(name="clusterLocationExtIds")
     def cluster_location_ext_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
+        -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
         """
         return pulumi.get(self, "cluster_location_ext_ids")
 

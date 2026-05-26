@@ -31,8 +31,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         /// <summary>
         /// - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-        /// &lt;span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`"&gt;`ipAddress`&lt;/span&gt;: - (Optional) Ip config settings.
-        /// &lt;span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`"&gt;`secondaryIpAddressList`&lt;/span&gt;: - (Optional) Secondary IP addresses for the NIC.
+        /// &lt;span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`"&gt;`ipAddress`&lt;/span&gt;: - (Optional) Ip config settings.
+        /// &lt;span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`"&gt;`secondaryIpAddressList`&lt;/span&gt;: - (Optional) Secondary IP addresses for the NIC.
         /// </summary>
         [Input("shouldAssignIp")]
         public Input<bool>? ShouldAssignIp { get; set; }

@@ -1295,9 +1295,9 @@ func (o VmCloneV2VtpmConfigArrayOutput) Index(i pulumi.IntInput) VmCloneV2VtpmCo
 }
 
 type VmGcUpdateV2Config struct {
-	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	CloudInits []VmGcUpdateV2ConfigCloudInit `pulumi:"cloudInits"`
-	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	Syspreps []VmGcUpdateV2ConfigSysprep `pulumi:"syspreps"`
 }
 
@@ -1313,9 +1313,9 @@ type VmGcUpdateV2ConfigInput interface {
 }
 
 type VmGcUpdateV2ConfigArgs struct {
-	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	CloudInits VmGcUpdateV2ConfigCloudInitArrayInput `pulumi:"cloudInits"`
-	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	Syspreps VmGcUpdateV2ConfigSysprepArrayInput `pulumi:"syspreps"`
 }
 
@@ -1370,12 +1370,12 @@ func (o VmGcUpdateV2ConfigOutput) ToVmGcUpdateV2ConfigOutputWithContext(ctx cont
 	return o
 }
 
-// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 func (o VmGcUpdateV2ConfigOutput) CloudInits() VmGcUpdateV2ConfigCloudInitArrayOutput {
 	return o.ApplyT(func(v VmGcUpdateV2Config) []VmGcUpdateV2ConfigCloudInit { return v.CloudInits }).(VmGcUpdateV2ConfigCloudInitArrayOutput)
 }
 
-// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or<span pulumi-lang-nodejs=" cloudInit " pulumi-lang-dotnet=" CloudInit " pulumi-lang-go=" cloudInit " pulumi-lang-python=" cloud_init " pulumi-lang-yaml=" cloudInit " pulumi-lang-java=" cloudInit " pulumi-lang-hcl=" cloud_init "> cloudInit </span>should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 func (o VmGcUpdateV2ConfigOutput) Syspreps() VmGcUpdateV2ConfigSysprepArrayOutput {
 	return o.ApplyT(func(v VmGcUpdateV2Config) []VmGcUpdateV2ConfigSysprep { return v.Syspreps }).(VmGcUpdateV2ConfigSysprepArrayOutput)
 }
@@ -1408,7 +1408,7 @@ type VmGcUpdateV2ConfigCloudInit struct {
 	//   Valid values are:
 	// - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
 	DatasourceType *string `pulumi:"datasourceType"`
-	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 	Metadata *string `pulumi:"metadata"`
 }
 
@@ -1431,7 +1431,7 @@ type VmGcUpdateV2ConfigCloudInitArgs struct {
 	//   Valid values are:
 	// - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
 	DatasourceType pulumi.StringPtrInput `pulumi:"datasourceType"`
-	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+	// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 	Metadata pulumi.StringPtrInput `pulumi:"metadata"`
 }
 
@@ -1501,7 +1501,7 @@ func (o VmGcUpdateV2ConfigCloudInitOutput) DatasourceType() pulumi.StringPtrOutp
 	return o.ApplyT(func(v VmGcUpdateV2ConfigCloudInit) *string { return v.DatasourceType }).(pulumi.StringPtrOutput)
 }
 
-// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+// The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
 func (o VmGcUpdateV2ConfigCloudInitOutput) Metadata() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigCloudInit) *string { return v.Metadata }).(pulumi.StringPtrOutput)
 }
@@ -1528,7 +1528,7 @@ func (o VmGcUpdateV2ConfigCloudInitArrayOutput) Index(i pulumi.IntInput) VmGcUpd
 
 type VmGcUpdateV2ConfigCloudInitCloudInitScript struct {
 	CustomKeys []VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKey `pulumi:"customKeys"`
-	// - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+	// - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData " pulumi-lang-hcl=" user_data "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
 	UserDatas []VmGcUpdateV2ConfigCloudInitCloudInitScriptUserData `pulumi:"userDatas"`
 }
 
@@ -1545,7 +1545,7 @@ type VmGcUpdateV2ConfigCloudInitCloudInitScriptInput interface {
 
 type VmGcUpdateV2ConfigCloudInitCloudInitScriptArgs struct {
 	CustomKeys VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyArrayInput `pulumi:"customKeys"`
-	// - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+	// - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData " pulumi-lang-hcl=" user_data "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
 	UserDatas VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataArrayInput `pulumi:"userDatas"`
 }
 
@@ -1606,7 +1606,7 @@ func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptOutput) CustomKeys() VmGcUpdat
 	}).(VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyArrayOutput)
 }
 
-// - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+// - (Optional) The contents of the<span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData " pulumi-lang-hcl=" user_data "> userData </span>configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
 func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptOutput) UserDatas() VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataArrayOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigCloudInitCloudInitScript) []VmGcUpdateV2ConfigCloudInitCloudInitScriptUserData {
 		return v.UserDatas
@@ -1944,8 +1944,8 @@ func (o VmGcUpdateV2ConfigCloudInitCloudInitScriptUserDataArrayOutput) Index(i p
 type VmGcUpdateV2ConfigSysprep struct {
 	// - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
 	//   Valid values are:
-	// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
-	// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
+	// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
+	// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
 	InstallType    *string                                  `pulumi:"installType"`
 	SysprepScripts []VmGcUpdateV2ConfigSysprepSysprepScript `pulumi:"sysprepScripts"`
 }
@@ -1964,8 +1964,8 @@ type VmGcUpdateV2ConfigSysprepInput interface {
 type VmGcUpdateV2ConfigSysprepArgs struct {
 	// - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
 	//   Valid values are:
-	// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
-	// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
+	// - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
+	// - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
 	InstallType    pulumi.StringPtrInput                            `pulumi:"installType"`
 	SysprepScripts VmGcUpdateV2ConfigSysprepSysprepScriptArrayInput `pulumi:"sysprepScripts"`
 }
@@ -2023,8 +2023,8 @@ func (o VmGcUpdateV2ConfigSysprepOutput) ToVmGcUpdateV2ConfigSysprepOutputWithCo
 
 //   - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
 //     Valid values are:
-//   - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
-//   - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`">`unattendXml`</span> parameter
+//   - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
+//   - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
 func (o VmGcUpdateV2ConfigSysprepOutput) InstallType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VmGcUpdateV2ConfigSysprep) *string { return v.InstallType }).(pulumi.StringPtrOutput)
 }
@@ -30688,7 +30688,7 @@ type GetClustersEntity struct {
 	ManagementServerLists []GetClustersEntityManagementServerList `pulumi:"managementServerLists"`
 	// - The cluster NAT'd or proxy IP which maps to the cluster local IP.
 	MasqueradingIp string `pulumi:"masqueradingIp"`
-	// - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp "> masqueradingIp </span>to connect to the cluster.
+	// - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp " pulumi-lang-hcl=" masquerading_ip "> masqueradingIp </span>to connect to the cluster.
 	MasqueradingPort int `pulumi:"masqueradingPort"`
 	// - The image kind metadata.
 	Metadata map[string]string `pulumi:"metadata"`
@@ -30797,7 +30797,7 @@ type GetClustersEntityArgs struct {
 	ManagementServerLists GetClustersEntityManagementServerListArrayInput `pulumi:"managementServerLists"`
 	// - The cluster NAT'd or proxy IP which maps to the cluster local IP.
 	MasqueradingIp pulumi.StringInput `pulumi:"masqueradingIp"`
-	// - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp "> masqueradingIp </span>to connect to the cluster.
+	// - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp " pulumi-lang-hcl=" masquerading_ip "> masqueradingIp </span>to connect to the cluster.
 	MasqueradingPort pulumi.IntInput `pulumi:"masqueradingPort"`
 	// - The image kind metadata.
 	Metadata pulumi.StringMapInput `pulumi:"metadata"`
@@ -31019,7 +31019,7 @@ func (o GetClustersEntityOutput) MasqueradingIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersEntity) string { return v.MasqueradingIp }).(pulumi.StringOutput)
 }
 
-// - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp "> masqueradingIp </span>to connect to the cluster.
+// - Port used together with<span pulumi-lang-nodejs=" masqueradingIp " pulumi-lang-dotnet=" MasqueradingIp " pulumi-lang-go=" masqueradingIp " pulumi-lang-python=" masquerading_ip " pulumi-lang-yaml=" masqueradingIp " pulumi-lang-java=" masqueradingIp " pulumi-lang-hcl=" masquerading_ip "> masqueradingIp </span>to connect to the cluster.
 func (o GetClustersEntityOutput) MasqueradingPort() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClustersEntity) int { return v.MasqueradingPort }).(pulumi.IntOutput)
 }
@@ -31907,7 +31907,7 @@ type GetClustersV2ClusterEntity struct {
 	// -  The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
 	ContainerName string `pulumi:"containerName"`
 	// -(Optional) A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby.
-	// The <span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`">`expand`</span> can be applied on the following fields:
+	// The <span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`" pulumi-lang-hcl="`expand`">`expand`</span> can be applied on the following fields:
 	// - clusterProfile
 	// - storageSummary
 	Expand *string `pulumi:"expand"`
@@ -31964,7 +31964,7 @@ type GetClustersV2ClusterEntityArgs struct {
 	// -  The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
 	ContainerName pulumi.StringInput `pulumi:"containerName"`
 	// -(Optional) A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby.
-	// The <span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`">`expand`</span> can be applied on the following fields:
+	// The <span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`" pulumi-lang-hcl="`expand`">`expand`</span> can be applied on the following fields:
 	// - clusterProfile
 	// - storageSummary
 	Expand pulumi.StringPtrInput `pulumi:"expand"`
@@ -32075,7 +32075,7 @@ func (o GetClustersV2ClusterEntityOutput) ContainerName() pulumi.StringOutput {
 }
 
 // -(Optional) A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby.
-// The <span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`">`expand`</span> can be applied on the following fields:
+// The <span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`" pulumi-lang-hcl="`expand`">`expand`</span> can be applied on the following fields:
 // - clusterProfile
 // - storageSummary
 func (o GetClustersV2ClusterEntityOutput) Expand() pulumi.StringPtrOutput {
@@ -39667,9 +39667,9 @@ func (o GetEntityGroupV2AllowedConfigArrayOutput) Index(i pulumi.IntInput) GetEn
 }
 
 type GetEntityGroupV2AllowedConfigEntity struct {
-	// With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`">`ipv4Addresses`</span> (value, prefix_length).
+	// With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> (value, prefix_length).
 	Addresses []GetEntityGroupV2AllowedConfigEntityAddress `pulumi:"addresses"`
-	// With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
+	// With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
 	IpRanges []GetEntityGroupV2AllowedConfigEntityIpRange `pulumi:"ipRanges"`
 	// List of kube entities.
 	KubeEntities []string `pulumi:"kubeEntities"`
@@ -39693,9 +39693,9 @@ type GetEntityGroupV2AllowedConfigEntityInput interface {
 }
 
 type GetEntityGroupV2AllowedConfigEntityArgs struct {
-	// With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`">`ipv4Addresses`</span> (value, prefix_length).
+	// With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> (value, prefix_length).
 	Addresses GetEntityGroupV2AllowedConfigEntityAddressArrayInput `pulumi:"addresses"`
-	// With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
+	// With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
 	IpRanges GetEntityGroupV2AllowedConfigEntityIpRangeArrayInput `pulumi:"ipRanges"`
 	// List of kube entities.
 	KubeEntities pulumi.StringArrayInput `pulumi:"kubeEntities"`
@@ -39758,14 +39758,14 @@ func (o GetEntityGroupV2AllowedConfigEntityOutput) ToGetEntityGroupV2AllowedConf
 	return o
 }
 
-// With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`">`ipv4Addresses`</span> (value, prefix_length).
+// With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> (value, prefix_length).
 func (o GetEntityGroupV2AllowedConfigEntityOutput) Addresses() GetEntityGroupV2AllowedConfigEntityAddressArrayOutput {
 	return o.ApplyT(func(v GetEntityGroupV2AllowedConfigEntity) []GetEntityGroupV2AllowedConfigEntityAddress {
 		return v.Addresses
 	}).(GetEntityGroupV2AllowedConfigEntityAddressArrayOutput)
 }
 
-// With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
+// With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
 func (o GetEntityGroupV2AllowedConfigEntityOutput) IpRanges() GetEntityGroupV2AllowedConfigEntityIpRangeArrayOutput {
 	return o.ApplyT(func(v GetEntityGroupV2AllowedConfigEntity) []GetEntityGroupV2AllowedConfigEntityIpRange {
 		return v.IpRanges
@@ -40302,9 +40302,9 @@ func (o GetEntityGroupV2ExceptConfigArrayOutput) Index(i pulumi.IntInput) GetEnt
 }
 
 type GetEntityGroupV2ExceptConfigEntity struct {
-	// With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`">`ipv4Addresses`</span> (value, prefix_length).
+	// With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> (value, prefix_length).
 	Addresses []GetEntityGroupV2ExceptConfigEntityAddress `pulumi:"addresses"`
-	// With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
+	// With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
 	IpRanges []GetEntityGroupV2ExceptConfigEntityIpRange `pulumi:"ipRanges"`
 	// List of reference external identifiers.
 	ReferenceExtIds []string `pulumi:"referenceExtIds"`
@@ -40326,9 +40326,9 @@ type GetEntityGroupV2ExceptConfigEntityInput interface {
 }
 
 type GetEntityGroupV2ExceptConfigEntityArgs struct {
-	// With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`">`ipv4Addresses`</span> (value, prefix_length).
+	// With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> (value, prefix_length).
 	Addresses GetEntityGroupV2ExceptConfigEntityAddressArrayInput `pulumi:"addresses"`
-	// With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
+	// With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
 	IpRanges GetEntityGroupV2ExceptConfigEntityIpRangeArrayInput `pulumi:"ipRanges"`
 	// List of reference external identifiers.
 	ReferenceExtIds pulumi.StringArrayInput `pulumi:"referenceExtIds"`
@@ -40389,14 +40389,14 @@ func (o GetEntityGroupV2ExceptConfigEntityOutput) ToGetEntityGroupV2ExceptConfig
 	return o
 }
 
-// With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`">`ipv4Addresses`</span> (value, prefix_length).
+// With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> (value, prefix_length).
 func (o GetEntityGroupV2ExceptConfigEntityOutput) Addresses() GetEntityGroupV2ExceptConfigEntityAddressArrayOutput {
 	return o.ApplyT(func(v GetEntityGroupV2ExceptConfigEntity) []GetEntityGroupV2ExceptConfigEntityAddress {
 		return v.Addresses
 	}).(GetEntityGroupV2ExceptConfigEntityAddressArrayOutput)
 }
 
-// With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
+// With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
 func (o GetEntityGroupV2ExceptConfigEntityOutput) IpRanges() GetEntityGroupV2ExceptConfigEntityIpRangeArrayOutput {
 	return o.ApplyT(func(v GetEntityGroupV2ExceptConfigEntity) []GetEntityGroupV2ExceptConfigEntityIpRange {
 		return v.IpRanges
@@ -41122,7 +41122,7 @@ func (o GetEntityGroupsV2EntityGroupArrayOutput) Index(i pulumi.IntInput) GetEnt
 }
 
 type GetEntityGroupsV2EntityGroupAllowedConfig struct {
-	// List of except entities. Each entity may contain <span pulumi-lang-nodejs="`addresses`" pulumi-lang-dotnet="`Addresses`" pulumi-lang-go="`addresses`" pulumi-lang-python="`addresses`" pulumi-lang-yaml="`addresses`" pulumi-lang-java="`addresses`">`addresses`</span>, <span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`">`ipRanges`</span>, <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`">`referenceExtIds`</span>.
+	// List of except entities. Each entity may contain <span pulumi-lang-nodejs="`addresses`" pulumi-lang-dotnet="`Addresses`" pulumi-lang-go="`addresses`" pulumi-lang-python="`addresses`" pulumi-lang-yaml="`addresses`" pulumi-lang-java="`addresses`" pulumi-lang-hcl="`addresses`">`addresses`</span>, <span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`" pulumi-lang-hcl="`ip_ranges`">`ipRanges`</span>, <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`" pulumi-lang-hcl="`reference_ext_ids`">`referenceExtIds`</span>.
 	Entities []GetEntityGroupsV2EntityGroupAllowedConfigEntity `pulumi:"entities"`
 }
 
@@ -41138,7 +41138,7 @@ type GetEntityGroupsV2EntityGroupAllowedConfigInput interface {
 }
 
 type GetEntityGroupsV2EntityGroupAllowedConfigArgs struct {
-	// List of except entities. Each entity may contain <span pulumi-lang-nodejs="`addresses`" pulumi-lang-dotnet="`Addresses`" pulumi-lang-go="`addresses`" pulumi-lang-python="`addresses`" pulumi-lang-yaml="`addresses`" pulumi-lang-java="`addresses`">`addresses`</span>, <span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`">`ipRanges`</span>, <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`">`referenceExtIds`</span>.
+	// List of except entities. Each entity may contain <span pulumi-lang-nodejs="`addresses`" pulumi-lang-dotnet="`Addresses`" pulumi-lang-go="`addresses`" pulumi-lang-python="`addresses`" pulumi-lang-yaml="`addresses`" pulumi-lang-java="`addresses`" pulumi-lang-hcl="`addresses`">`addresses`</span>, <span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`" pulumi-lang-hcl="`ip_ranges`">`ipRanges`</span>, <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`" pulumi-lang-hcl="`reference_ext_ids`">`referenceExtIds`</span>.
 	Entities GetEntityGroupsV2EntityGroupAllowedConfigEntityArrayInput `pulumi:"entities"`
 }
 
@@ -41193,7 +41193,7 @@ func (o GetEntityGroupsV2EntityGroupAllowedConfigOutput) ToGetEntityGroupsV2Enti
 	return o
 }
 
-// List of except entities. Each entity may contain <span pulumi-lang-nodejs="`addresses`" pulumi-lang-dotnet="`Addresses`" pulumi-lang-go="`addresses`" pulumi-lang-python="`addresses`" pulumi-lang-yaml="`addresses`" pulumi-lang-java="`addresses`">`addresses`</span>, <span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`">`ipRanges`</span>, <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`">`referenceExtIds`</span>.
+// List of except entities. Each entity may contain <span pulumi-lang-nodejs="`addresses`" pulumi-lang-dotnet="`Addresses`" pulumi-lang-go="`addresses`" pulumi-lang-python="`addresses`" pulumi-lang-yaml="`addresses`" pulumi-lang-java="`addresses`" pulumi-lang-hcl="`addresses`">`addresses`</span>, <span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`" pulumi-lang-hcl="`ip_ranges`">`ipRanges`</span>, <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`" pulumi-lang-hcl="`reference_ext_ids`">`referenceExtIds`</span>.
 func (o GetEntityGroupsV2EntityGroupAllowedConfigOutput) Entities() GetEntityGroupsV2EntityGroupAllowedConfigEntityArrayOutput {
 	return o.ApplyT(func(v GetEntityGroupsV2EntityGroupAllowedConfig) []GetEntityGroupsV2EntityGroupAllowedConfigEntity {
 		return v.Entities
@@ -41741,7 +41741,7 @@ func (o GetEntityGroupsV2EntityGroupAllowedConfigEntityIpRangeIpv4RangeArrayOutp
 }
 
 type GetEntityGroupsV2EntityGroupExceptConfig struct {
-	// List of except entities. Each entity may contain <span pulumi-lang-nodejs="`addresses`" pulumi-lang-dotnet="`Addresses`" pulumi-lang-go="`addresses`" pulumi-lang-python="`addresses`" pulumi-lang-yaml="`addresses`" pulumi-lang-java="`addresses`">`addresses`</span>, <span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`">`ipRanges`</span>, <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`">`referenceExtIds`</span>.
+	// List of except entities. Each entity may contain <span pulumi-lang-nodejs="`addresses`" pulumi-lang-dotnet="`Addresses`" pulumi-lang-go="`addresses`" pulumi-lang-python="`addresses`" pulumi-lang-yaml="`addresses`" pulumi-lang-java="`addresses`" pulumi-lang-hcl="`addresses`">`addresses`</span>, <span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`" pulumi-lang-hcl="`ip_ranges`">`ipRanges`</span>, <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`" pulumi-lang-hcl="`reference_ext_ids`">`referenceExtIds`</span>.
 	Entities []GetEntityGroupsV2EntityGroupExceptConfigEntity `pulumi:"entities"`
 }
 
@@ -41757,7 +41757,7 @@ type GetEntityGroupsV2EntityGroupExceptConfigInput interface {
 }
 
 type GetEntityGroupsV2EntityGroupExceptConfigArgs struct {
-	// List of except entities. Each entity may contain <span pulumi-lang-nodejs="`addresses`" pulumi-lang-dotnet="`Addresses`" pulumi-lang-go="`addresses`" pulumi-lang-python="`addresses`" pulumi-lang-yaml="`addresses`" pulumi-lang-java="`addresses`">`addresses`</span>, <span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`">`ipRanges`</span>, <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`">`referenceExtIds`</span>.
+	// List of except entities. Each entity may contain <span pulumi-lang-nodejs="`addresses`" pulumi-lang-dotnet="`Addresses`" pulumi-lang-go="`addresses`" pulumi-lang-python="`addresses`" pulumi-lang-yaml="`addresses`" pulumi-lang-java="`addresses`" pulumi-lang-hcl="`addresses`">`addresses`</span>, <span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`" pulumi-lang-hcl="`ip_ranges`">`ipRanges`</span>, <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`" pulumi-lang-hcl="`reference_ext_ids`">`referenceExtIds`</span>.
 	Entities GetEntityGroupsV2EntityGroupExceptConfigEntityArrayInput `pulumi:"entities"`
 }
 
@@ -41812,7 +41812,7 @@ func (o GetEntityGroupsV2EntityGroupExceptConfigOutput) ToGetEntityGroupsV2Entit
 	return o
 }
 
-// List of except entities. Each entity may contain <span pulumi-lang-nodejs="`addresses`" pulumi-lang-dotnet="`Addresses`" pulumi-lang-go="`addresses`" pulumi-lang-python="`addresses`" pulumi-lang-yaml="`addresses`" pulumi-lang-java="`addresses`">`addresses`</span>, <span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`">`ipRanges`</span>, <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`">`referenceExtIds`</span>.
+// List of except entities. Each entity may contain <span pulumi-lang-nodejs="`addresses`" pulumi-lang-dotnet="`Addresses`" pulumi-lang-go="`addresses`" pulumi-lang-python="`addresses`" pulumi-lang-yaml="`addresses`" pulumi-lang-java="`addresses`" pulumi-lang-hcl="`addresses`">`addresses`</span>, <span pulumi-lang-nodejs="`ipRanges`" pulumi-lang-dotnet="`IpRanges`" pulumi-lang-go="`ipRanges`" pulumi-lang-python="`ip_ranges`" pulumi-lang-yaml="`ipRanges`" pulumi-lang-java="`ipRanges`" pulumi-lang-hcl="`ip_ranges`">`ipRanges`</span>, <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`" pulumi-lang-hcl="`reference_ext_ids`">`referenceExtIds`</span>.
 func (o GetEntityGroupsV2EntityGroupExceptConfigOutput) Entities() GetEntityGroupsV2EntityGroupExceptConfigEntityArrayOutput {
 	return o.ApplyT(func(v GetEntityGroupsV2EntityGroupExceptConfig) []GetEntityGroupsV2EntityGroupExceptConfigEntity {
 		return v.Entities
@@ -54486,7 +54486,7 @@ func (o GetFloatingIpV2VpcSnatIpIpv6ArrayOutput) Index(i pulumi.IntInput) GetFlo
 }
 
 type GetFloatingIpsEntity struct {
-	// - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
+	// - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp " pulumi-lang-hcl=" floating_ip "> floatingIp </span>kind metadata.
 	Metadata map[string]string `pulumi:"metadata"`
 	// Floating IP spec
 	Specs []GetFloatingIpsEntitySpec `pulumi:"specs"`
@@ -54506,7 +54506,7 @@ type GetFloatingIpsEntityInput interface {
 }
 
 type GetFloatingIpsEntityArgs struct {
-	// - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
+	// - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp " pulumi-lang-hcl=" floating_ip "> floatingIp </span>kind metadata.
 	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 	// Floating IP spec
 	Specs GetFloatingIpsEntitySpecArrayInput `pulumi:"specs"`
@@ -54565,7 +54565,7 @@ func (o GetFloatingIpsEntityOutput) ToGetFloatingIpsEntityOutputWithContext(ctx 
 	return o
 }
 
-// - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp "> floatingIp </span>kind metadata.
+// - The<span pulumi-lang-nodejs=" floatingIp " pulumi-lang-dotnet=" FloatingIp " pulumi-lang-go=" floatingIp " pulumi-lang-python=" floating_ip " pulumi-lang-yaml=" floatingIp " pulumi-lang-java=" floatingIp " pulumi-lang-hcl=" floating_ip "> floatingIp </span>kind metadata.
 func (o GetFloatingIpsEntityOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetFloatingIpsEntity) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }

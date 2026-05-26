@@ -85,6 +85,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbsnapshot" "snaps" {
+        ///   snapshot_id = "{{ snapshot_id }}"
+        ///   filters {
+        ///     load_replicated_child_snapshots = true
+        ///   }
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -204,6 +220,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbsnapshot" "snaps" {
+        ///   snapshot_id = "{{ snapshot_id }}"
+        ///   filters {
+        ///     load_replicated_child_snapshots = true
+        ///   }
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -321,6 +353,22 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getndbsnapshot" "snaps" {
+        ///   snapshot_id = "{{ snapshot_id }}"
+        ///   filters {
+        ///     load_replicated_child_snapshots = true
+        ///   }
         /// }
         /// ```
         /// ```java

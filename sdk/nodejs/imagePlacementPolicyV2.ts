@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Create an image placement policy using the provided request body. Name, placement_type,<span pulumi-lang-nodejs=" imageEntityFilter " pulumi-lang-dotnet=" ImageEntityFilter " pulumi-lang-go=" imageEntityFilter " pulumi-lang-python=" image_entity_filter " pulumi-lang-yaml=" imageEntityFilter " pulumi-lang-java=" imageEntityFilter "> imageEntityFilter </span>and source are mandatory fields to create an policy.
+ * Create an image placement policy using the provided request body. Name, placement_type,<span pulumi-lang-nodejs=" imageEntityFilter " pulumi-lang-dotnet=" ImageEntityFilter " pulumi-lang-go=" imageEntityFilter " pulumi-lang-python=" image_entity_filter " pulumi-lang-yaml=" imageEntityFilter " pulumi-lang-java=" imageEntityFilter " pulumi-lang-hcl=" image_entity_filter "> imageEntityFilter </span>and source are mandatory fields to create an policy.
  *
  * <!--Start PulumiCodeChooser -->
  * ```typescript

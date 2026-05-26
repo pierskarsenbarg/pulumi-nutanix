@@ -364,7 +364,7 @@ def get_ndb_cluster(cluster_id: Optional[_builtins.str] = None,
 
 
     :param _builtins.str cluster_id: ID of cluster
-    :param _builtins.str cluster_name: and <span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`">`clusterId`</span> are mutually exclusive.
+    :param _builtins.str cluster_name: and <span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`" pulumi-lang-hcl="`cluster_id`">`clusterId`</span> are mutually exclusive.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
@@ -419,7 +419,7 @@ def get_ndb_cluster_output(cluster_id: pulumi.Input[Optional[Optional[_builtins.
 
 
     :param _builtins.str cluster_id: ID of cluster
-    :param _builtins.str cluster_name: and <span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`">`clusterId`</span> are mutually exclusive.
+    :param _builtins.str cluster_name: and <span pulumi-lang-nodejs="`clusterId`" pulumi-lang-dotnet="`ClusterId`" pulumi-lang-go="`clusterId`" pulumi-lang-python="`cluster_id`" pulumi-lang-yaml="`clusterId`" pulumi-lang-java="`clusterId`" pulumi-lang-hcl="`cluster_id`">`clusterId`</span> are mutually exclusive.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id

@@ -50,7 +50,7 @@ Port for foundation VM
 
 insecure: Optional[bool]
 """
-Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`">`false`</span>
+Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>
 """
 
 ndbEndpoint: Optional[str]

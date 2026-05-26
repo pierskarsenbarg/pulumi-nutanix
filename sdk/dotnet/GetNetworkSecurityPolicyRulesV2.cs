@@ -47,7 +47,7 @@ namespace PiersKarsenbarg.Nutanix
         public int? Limit { get; set; }
 
         /// <summary>
-        /// Order by clause. The&lt;span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy "&gt; orderBy &lt;/span&gt;can be applied to the following fields:
+        /// Order by clause. The&lt;span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy " pulumi-lang-hcl=" order_by "&gt; orderBy &lt;/span&gt;can be applied to the following fields:
         /// </summary>
         [Input("orderBy")]
         public string? OrderBy { get; set; }
@@ -91,7 +91,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<int>? Limit { get; set; }
 
         /// <summary>
-        /// Order by clause. The&lt;span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy "&gt; orderBy &lt;/span&gt;can be applied to the following fields:
+        /// Order by clause. The&lt;span pulumi-lang-nodejs=" orderBy " pulumi-lang-dotnet=" OrderBy " pulumi-lang-go=" orderBy " pulumi-lang-python=" order_by " pulumi-lang-yaml=" orderBy " pulumi-lang-java=" orderBy " pulumi-lang-hcl=" order_by "&gt; orderBy &lt;/span&gt;can be applied to the following fields:
         /// </summary>
         [Input("orderBy")]
         public Input<string>? OrderBy { get; set; }

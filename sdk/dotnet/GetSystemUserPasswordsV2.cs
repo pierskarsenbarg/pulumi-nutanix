@@ -123,6 +123,32 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getsystemuserpasswordsv2" "passwords" {
+        /// }
+        /// data "nutanix_getsystemuserpasswordsv2" "limitedPasswords" {
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getsystemuserpasswordsv2" "filteredPasswords" {
+        ///   filter = "systemType eq Clustermgmt.Config.SystemType'PC'"
+        /// }
+        /// data "nutanix_getsystemuserpasswordsv2" "adminPcPasswords" {
+        ///   filter = "username eq 'admin' and systemType eq Clustermgmt.Config.SystemType'PC'"
+        /// }
+        /// 
+        /// # List Password Status Of All System Users
+        /// # List Password Status Of All System Users With Limit
+        /// # List Password Status Of All System Users With Filter
+        /// # List Password Status Of Admin PC User
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -308,6 +334,32 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getsystemuserpasswordsv2" "passwords" {
+        /// }
+        /// data "nutanix_getsystemuserpasswordsv2" "limitedPasswords" {
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getsystemuserpasswordsv2" "filteredPasswords" {
+        ///   filter = "systemType eq Clustermgmt.Config.SystemType'PC'"
+        /// }
+        /// data "nutanix_getsystemuserpasswordsv2" "adminPcPasswords" {
+        ///   filter = "username eq 'admin' and systemType eq Clustermgmt.Config.SystemType'PC'"
+        /// }
+        /// 
+        /// # List Password Status Of All System Users
+        /// # List Password Status Of All System Users With Limit
+        /// # List Password Status Of All System Users With Filter
+        /// # List Password Status Of Admin PC User
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -492,6 +544,32 @@ namespace PiersKarsenbarg.Nutanix
         /// 		return nil
         /// 	})
         /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getsystemuserpasswordsv2" "passwords" {
+        /// }
+        /// data "nutanix_getsystemuserpasswordsv2" "limitedPasswords" {
+        ///   limit = 10
+        /// }
+        /// data "nutanix_getsystemuserpasswordsv2" "filteredPasswords" {
+        ///   filter = "systemType eq Clustermgmt.Config.SystemType'PC'"
+        /// }
+        /// data "nutanix_getsystemuserpasswordsv2" "adminPcPasswords" {
+        ///   filter = "username eq 'admin' and systemType eq Clustermgmt.Config.SystemType'PC'"
+        /// }
+        /// 
+        /// # List Password Status Of All System Users
+        /// # List Password Status Of All System Users With Limit
+        /// # List Password Status Of All System Users With Filter
+        /// # List Password Status Of Admin PC User
         /// ```
         /// ```java
         /// package generated_program;

@@ -121,7 +121,7 @@ class _StaticRoutesState:
 
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
         :param pulumi.Input[Sequence[pulumi.Input['StaticRoutesDefaultRouteNexthopArgs']]] default_route_nexthops: Default Route
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable " pulumi-lang-hcl=" vpc_route_table "> vpcRouteTable </span>kind metadata.
         :param pulumi.Input[Sequence[pulumi.Input['StaticRoutesStaticRoutesListArgs']]] static_routes_lists: Static Routes.
         :param pulumi.Input[_builtins.str] vpc_name: vpc Name. Should not be used with vpc_uuid.
         :param pulumi.Input[_builtins.str] vpc_uuid: Reference to a VPC UUID. Should not be used with vpc_name.
@@ -167,7 +167,7 @@ class _StaticRoutesState:
     @pulumi.getter
     def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata.
+        The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable " pulumi-lang-hcl=" vpc_route_table "> vpcRouteTable </span>kind metadata.
         """
         return pulumi.get(self, "metadata")
 
@@ -380,7 +380,7 @@ class StaticRoutes(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
         :param pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesDefaultRouteNexthopArgs', 'StaticRoutesDefaultRouteNexthopArgsDict']]]] default_route_nexthops: Default Route
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable " pulumi-lang-hcl=" vpc_route_table "> vpcRouteTable </span>kind metadata.
         :param pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesStaticRoutesListArgs', 'StaticRoutesStaticRoutesListArgsDict']]]] static_routes_lists: Static Routes.
         :param pulumi.Input[_builtins.str] vpc_name: vpc Name. Should not be used with vpc_uuid.
         :param pulumi.Input[_builtins.str] vpc_uuid: Reference to a VPC UUID. Should not be used with vpc_name.
@@ -417,7 +417,7 @@ class StaticRoutes(pulumi.CustomResource):
     @pulumi.getter
     def metadata(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable "> vpcRouteTable </span>kind metadata.
+        The<span pulumi-lang-nodejs=" vpcRouteTable " pulumi-lang-dotnet=" VpcRouteTable " pulumi-lang-go=" vpcRouteTable " pulumi-lang-python=" vpc_route_table " pulumi-lang-yaml=" vpcRouteTable " pulumi-lang-java=" vpcRouteTable " pulumi-lang-hcl=" vpc_route_table "> vpcRouteTable </span>kind metadata.
         """
         return pulumi.get(self, "metadata")
 

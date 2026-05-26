@@ -181,7 +181,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? FoundationPort { get; set; }
 
         /// <summary>
-        /// Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`"&gt;`false`&lt;/span&gt;
+        /// Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`"&gt;`false`&lt;/span&gt;
         /// </summary>
         [Input("insecure", json: true)]
         public Input<bool>? Insecure { get; set; }

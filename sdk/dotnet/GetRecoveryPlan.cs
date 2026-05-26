@@ -152,6 +152,35 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// resource "nutanix_recoveryplan" "recovery_plan_test" {
+        ///   name        = "%s"
+        ///   description = "%s"
+        ///   stage_lists {
+        ///     stage_work = {
+        ///       recover_entities = {
+        ///         entity_info_lists = [{
+        ///           "categories" = [{
+        ///             "name"  = "Environment"
+        ///             "value" = "Dev"
+        ///           }]
+        ///         }]
+        ///       }
+        ///     }
+        ///     stage_uuid      = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd"
+        ///     delay_time_secs = 0
+        ///   }
+        ///   parameters = {}
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -363,6 +392,35 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// resource "nutanix_recoveryplan" "recovery_plan_test" {
+        ///   name        = "%s"
+        ///   description = "%s"
+        ///   stage_lists {
+        ///     stage_work = {
+        ///       recover_entities = {
+        ///         entity_info_lists = [{
+        ///           "categories" = [{
+        ///             "name"  = "Environment"
+        ///             "value" = "Dev"
+        ///           }]
+        ///         }]
+        ///       }
+        ///     }
+        ///     stage_uuid      = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd"
+        ///     delay_time_secs = 0
+        ///   }
+        ///   parameters = {}
         /// }
         /// ```
         /// ```java
@@ -578,6 +636,35 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// resource "nutanix_recoveryplan" "recovery_plan_test" {
+        ///   name        = "%s"
+        ///   description = "%s"
+        ///   stage_lists {
+        ///     stage_work = {
+        ///       recover_entities = {
+        ///         entity_info_lists = [{
+        ///           "categories" = [{
+        ///             "name"  = "Environment"
+        ///             "value" = "Dev"
+        ///           }]
+        ///         }]
+        ///       }
+        ///     }
+        ///     stage_uuid      = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd"
+        ///     delay_time_secs = 0
+        ///   }
+        ///   parameters = {}
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -664,7 +751,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt; of the Recovery Plan.
+        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`"&gt;`id`&lt;/span&gt; of the Recovery Plan.
         /// </summary>
         [Input("recoveryPlanId")]
         public string? RecoveryPlanId { get; set; }
@@ -689,7 +776,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`"&gt;`id`&lt;/span&gt; of the Recovery Plan.
+        /// - (Required) The &lt;span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`"&gt;`id`&lt;/span&gt; of the Recovery Plan.
         /// </summary>
         [Input("recoveryPlanId")]
         public Input<string>? RecoveryPlanId { get; set; }

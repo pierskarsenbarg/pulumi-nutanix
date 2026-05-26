@@ -25,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<Inputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserDataArgs>? _userDatas;
 
         /// <summary>
-        /// - (Optional) The contents of the&lt;span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData "&gt; userData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+        /// - (Optional) The contents of the&lt;span pulumi-lang-nodejs=" userData " pulumi-lang-dotnet=" UserData " pulumi-lang-go=" userData " pulumi-lang-python=" user_data " pulumi-lang-yaml=" userData " pulumi-lang-java=" userData " pulumi-lang-hcl=" user_data "&gt; userData &lt;/span&gt;configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         /// </summary>
         public InputList<Inputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserDataArgs> UserDatas
         {

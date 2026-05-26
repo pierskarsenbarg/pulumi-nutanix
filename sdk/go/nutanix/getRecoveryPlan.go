@@ -75,7 +75,7 @@ func LookupRecoveryPlan(ctx *pulumi.Context, args *LookupRecoveryPlanArgs, opts 
 // A collection of arguments for invoking getRecoveryPlan.
 type LookupRecoveryPlanArgs struct {
 	Categories []GetRecoveryPlanCategory `pulumi:"categories"`
-	// - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the Recovery Plan.
+	// - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`">`id`</span> of the Recovery Plan.
 	RecoveryPlanId   *string `pulumi:"recoveryPlanId"`
 	RecoveryPlanName *string `pulumi:"recoveryPlanName"`
 }
@@ -114,7 +114,7 @@ func LookupRecoveryPlanOutput(ctx *pulumi.Context, args LookupRecoveryPlanOutput
 // A collection of arguments for invoking getRecoveryPlan.
 type LookupRecoveryPlanOutputArgs struct {
 	Categories GetRecoveryPlanCategoryArrayInput `pulumi:"categories"`
-	// - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the Recovery Plan.
+	// - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`">`id`</span> of the Recovery Plan.
 	RecoveryPlanId   pulumi.StringPtrInput `pulumi:"recoveryPlanId"`
 	RecoveryPlanName pulumi.StringPtrInput `pulumi:"recoveryPlanName"`
 }

@@ -63,7 +63,7 @@ export class CategoryValue extends pulumi.CustomResource {
      */
     declare public readonly description: pulumi.Output<string>;
     /**
-     * - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
+     * - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
      */
     declare public readonly name: pulumi.Output<string>;
     /**
@@ -122,7 +122,7 @@ export interface CategoryValueState {
      */
     description?: pulumi.Input<string | undefined>;
     /**
-     * - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
+     * - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
      */
     name?: pulumi.Input<string | undefined>;
     /**
@@ -144,7 +144,7 @@ export interface CategoryValueArgs {
      */
     description?: pulumi.Input<string | undefined>;
     /**
-     * - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
+     * - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
      */
     name?: pulumi.Input<string | undefined>;
     /**

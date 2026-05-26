@@ -27,7 +27,7 @@ class CategoryValueArgs:
 
         :param pulumi.Input[_builtins.str] value: The value for the category value.
         :param pulumi.Input[_builtins.str] description: - (Optional) A description for category value.
-        :param pulumi.Input[_builtins.str] name: - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
+        :param pulumi.Input[_builtins.str] name: - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
         """
         pulumi.set(__self__, "value", value)
         if description is not None:
@@ -63,7 +63,7 @@ class CategoryValueArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
+        - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
         """
         return pulumi.get(self, "name")
 
@@ -85,7 +85,7 @@ class _CategoryValueState:
 
         :param pulumi.Input[_builtins.str] api_version: (Optional) The version of the API.
         :param pulumi.Input[_builtins.str] description: - (Optional) A description for category value.
-        :param pulumi.Input[_builtins.str] name: - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
+        :param pulumi.Input[_builtins.str] name: - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
         :param pulumi.Input[_builtins.bool] system_defined: - Specifying whether its a system defined category.
         :param pulumi.Input[_builtins.str] value: The value for the category value.
         """
@@ -128,7 +128,7 @@ class _CategoryValueState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
+        - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
         """
         return pulumi.get(self, "name")
 
@@ -195,7 +195,7 @@ class CategoryValue(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: - (Optional) A description for category value.
-        :param pulumi.Input[_builtins.str] name: - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
+        :param pulumi.Input[_builtins.str] name: - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
         :param pulumi.Input[_builtins.str] value: The value for the category value.
         """
         ...
@@ -283,7 +283,7 @@ class CategoryValue(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] api_version: (Optional) The version of the API.
         :param pulumi.Input[_builtins.str] description: - (Optional) A description for category value.
-        :param pulumi.Input[_builtins.str] name: - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
+        :param pulumi.Input[_builtins.str] name: - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
         :param pulumi.Input[_builtins.bool] system_defined: - Specifying whether its a system defined category.
         :param pulumi.Input[_builtins.str] value: The value for the category value.
         """
@@ -318,7 +318,7 @@ class CategoryValue(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey "> categoryKey </span>name for the category value.
+        - (Required) The<span pulumi-lang-nodejs=" categoryKey " pulumi-lang-dotnet=" CategoryKey " pulumi-lang-go=" categoryKey " pulumi-lang-python=" category_key " pulumi-lang-yaml=" categoryKey " pulumi-lang-java=" categoryKey " pulumi-lang-hcl=" category_key "> categoryKey </span>name for the category value.
         """
         return pulumi.get(self, "name")
 

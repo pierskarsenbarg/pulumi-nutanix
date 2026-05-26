@@ -51,7 +51,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArgs>? _subnets;
 
         /// <summary>
-        /// Network identifier for this adapter. Only valid if&lt;span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType "&gt; nicType &lt;/span&gt;is NORMAL_NIC or DIRECT_NIC
+        /// Network identifier for this adapter. Only valid if&lt;span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "&gt; nicType &lt;/span&gt;is NORMAL_NIC or DIRECT_NIC
         /// </summary>
         public InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArgs> Subnets
         {

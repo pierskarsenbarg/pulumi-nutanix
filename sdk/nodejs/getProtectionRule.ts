@@ -60,7 +60,7 @@ export function getProtectionRule(args?: GetProtectionRuleArgs, opts?: pulumi.In
 export interface GetProtectionRuleArgs {
     categories?: inputs.GetProtectionRuleCategory[];
     /**
-     * - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the protection rule.
+     * - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`">`id`</span> of the protection rule.
      */
     protectionRuleId?: string;
     protectionRuleName?: string;
@@ -160,7 +160,7 @@ export function getProtectionRuleOutput(args?: GetProtectionRuleOutputArgs, opts
 export interface GetProtectionRuleOutputArgs {
     categories?: pulumi.Input<pulumi.Input<inputs.GetProtectionRuleCategoryArgs>[] | undefined>;
     /**
-     * - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`">`id`</span> of the protection rule.
+     * - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`">`id`</span> of the protection rule.
      */
     protectionRuleId?: pulumi.Input<string | undefined>;
     protectionRuleName?: pulumi.Input<string | undefined>;

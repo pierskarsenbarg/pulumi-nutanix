@@ -89,6 +89,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getsubnets" "subnets" {
+        /// }
+        /// data "nutanix_getsubnets" "test" {
+        ///   metadatas {
+        ///     filter = "name==vlan0_test_2"
+        ///   }
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -217,6 +234,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 	})
         /// }
         /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getsubnets" "subnets" {
+        /// }
+        /// data "nutanix_getsubnets" "test" {
+        ///   metadatas {
+        ///     filter = "name==vlan0_test_2"
+        ///   }
+        /// }
+        /// ```
         /// ```java
         /// package generated_program;
         /// 
@@ -343,6 +377,23 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		return nil
         /// 	})
+        /// }
+        /// ```
+        /// ```hcl
+        /// pulumi {
+        ///   required_providers {
+        ///     nutanix = {
+        ///       source = "pulumi/nutanix"
+        ///     }
+        ///   }
+        /// }
+        /// 
+        /// data "nutanix_getsubnets" "subnets" {
+        /// }
+        /// data "nutanix_getsubnets" "test" {
+        ///   metadatas {
+        ///     filter = "name==vlan0_test_2"
+        ///   }
         /// }
         /// ```
         /// ```java
