@@ -192,6 +192,8 @@ namespace PiersKarsenbarg.Nutanix
         /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListArgs;
         /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkArgs;
         /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkRecoverEntitiesArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgs;
         /// import com.pulumi.nutanix.inputs.RecoveryPlanParametersArgs;
         /// import java.util.ArrayList;
         /// import java.util.Arrays;
@@ -434,6 +436,8 @@ namespace PiersKarsenbarg.Nutanix
         /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListArgs;
         /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkArgs;
         /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkRecoverEntitiesArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgs;
         /// import com.pulumi.nutanix.inputs.RecoveryPlanParametersArgs;
         /// import java.util.ArrayList;
         /// import java.util.Arrays;
@@ -676,6 +680,8 @@ namespace PiersKarsenbarg.Nutanix
         /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListArgs;
         /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkArgs;
         /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkRecoverEntitiesArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs;
+        /// import com.pulumi.nutanix.inputs.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgs;
         /// import com.pulumi.nutanix.inputs.RecoveryPlanParametersArgs;
         /// import java.util.ArrayList;
         /// import java.util.Arrays;

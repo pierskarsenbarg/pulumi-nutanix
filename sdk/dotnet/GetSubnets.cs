@@ -114,6 +114,7 @@ namespace PiersKarsenbarg.Nutanix
         /// import com.pulumi.core.Output;
         /// import com.pulumi.nutanix.NutanixFunctions;
         /// import com.pulumi.nutanix.inputs.GetSubnetsArgs;
+        /// import com.pulumi.nutanix.inputs.GetSubnetsMetadataArgs;
         /// import java.util.ArrayList;
         /// import java.util.Arrays;
         /// import java.util.Map;
@@ -259,6 +260,7 @@ namespace PiersKarsenbarg.Nutanix
         /// import com.pulumi.core.Output;
         /// import com.pulumi.nutanix.NutanixFunctions;
         /// import com.pulumi.nutanix.inputs.GetSubnetsArgs;
+        /// import com.pulumi.nutanix.inputs.GetSubnetsMetadataArgs;
         /// import java.util.ArrayList;
         /// import java.util.Arrays;
         /// import java.util.Map;
@@ -404,6 +406,7 @@ namespace PiersKarsenbarg.Nutanix
         /// import com.pulumi.core.Output;
         /// import com.pulumi.nutanix.NutanixFunctions;
         /// import com.pulumi.nutanix.inputs.GetSubnetsArgs;
+        /// import com.pulumi.nutanix.inputs.GetSubnetsMetadataArgs;
         /// import java.util.ArrayList;
         /// import java.util.Arrays;
         /// import java.util.Map;
