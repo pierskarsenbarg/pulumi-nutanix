@@ -233,7 +233,10 @@ namespace PiersKarsenbarg.Nutanix
         /// import com.pulumi.nutanix.ProtectionRuleArgs;
         /// import com.pulumi.nutanix.inputs.ProtectionRuleOrderedAvailabilityZoneListArgs;
         /// import com.pulumi.nutanix.inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs;
         /// import com.pulumi.nutanix.inputs.ProtectionRuleCategoryFilterArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleCategoryFilterParamArgs;
         /// import com.pulumi.nutanix.NutanixFunctions;
         /// import com.pulumi.nutanix.inputs.GetProtectionRuleArgs;
         /// import java.util.ArrayList;
@@ -533,7 +536,10 @@ namespace PiersKarsenbarg.Nutanix
         /// import com.pulumi.nutanix.ProtectionRuleArgs;
         /// import com.pulumi.nutanix.inputs.ProtectionRuleOrderedAvailabilityZoneListArgs;
         /// import com.pulumi.nutanix.inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs;
         /// import com.pulumi.nutanix.inputs.ProtectionRuleCategoryFilterArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleCategoryFilterParamArgs;
         /// import com.pulumi.nutanix.NutanixFunctions;
         /// import com.pulumi.nutanix.inputs.GetProtectionRuleArgs;
         /// import java.util.ArrayList;
@@ -833,7 +839,10 @@ namespace PiersKarsenbarg.Nutanix
         /// import com.pulumi.nutanix.ProtectionRuleArgs;
         /// import com.pulumi.nutanix.inputs.ProtectionRuleOrderedAvailabilityZoneListArgs;
         /// import com.pulumi.nutanix.inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs;
         /// import com.pulumi.nutanix.inputs.ProtectionRuleCategoryFilterArgs;
+        /// import com.pulumi.nutanix.inputs.ProtectionRuleCategoryFilterParamArgs;
         /// import com.pulumi.nutanix.NutanixFunctions;
         /// import com.pulumi.nutanix.inputs.GetProtectionRuleArgs;
         /// import java.util.ArrayList;
