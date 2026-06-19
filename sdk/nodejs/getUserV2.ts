@@ -132,7 +132,7 @@ export interface GetUserV2Result {
     readonly status: string;
     /**
      * - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
-     * Type of the User.
+     *   Type of the User.
      */
     readonly userType: string;
     /**

@@ -43,7 +43,6 @@ export class NdbLogCatchups extends pulumi.CustomResource {
     /**
      * it helps to perform same operation with same config.
      *
-     *
      * See detailed information in [NDB Log Catchups](https://www.nutanix.dev/api_references/ndb/#/6100cd9959e52-start-log-catchup-for-given-time-machine) .
      */
     declare public readonly logCatchupVersion: pulumi.Output<number | undefined>;
@@ -93,7 +92,6 @@ export interface NdbLogCatchupsState {
     /**
      * it helps to perform same operation with same config.
      *
-     *
      * See detailed information in [NDB Log Catchups](https://www.nutanix.dev/api_references/ndb/#/6100cd9959e52-start-log-catchup-for-given-time-machine) .
      */
     logCatchupVersion?: pulumi.Input<number | undefined>;
@@ -114,7 +112,6 @@ export interface NdbLogCatchupsArgs {
     forRestore?: pulumi.Input<boolean | undefined>;
     /**
      * it helps to perform same operation with same config.
-     *
      *
      * See detailed information in [NDB Log Catchups](https://www.nutanix.dev/api_references/ndb/#/6100cd9959e52-start-log-catchup-for-given-time-machine) .
      */

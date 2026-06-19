@@ -268,7 +268,7 @@ class GetUserV2Result:
     def user_type(self) -> _builtins.str:
         """
         - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
-        Type of the User.
+          Type of the User.
         """
         return pulumi.get(self, "user_type")
 

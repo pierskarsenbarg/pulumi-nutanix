@@ -39,7 +39,7 @@ export class ClustersDiscoverUnconfiguredNodesV2 extends pulumi.CustomResource {
 
     /**
      * - (Optional) Address type.
-     * Valid values are:
+     *   Valid values are:
      * - "IPV4"	IPV4 address type.
      * - "IPV6"	IPV6 address type.
      */
@@ -116,7 +116,7 @@ export class ClustersDiscoverUnconfiguredNodesV2 extends pulumi.CustomResource {
 export interface ClustersDiscoverUnconfiguredNodesV2State {
     /**
      * - (Optional) Address type.
-     * Valid values are:
+     *   Valid values are:
      * - "IPV4"	IPV4 address type.
      * - "IPV6"	IPV6 address type.
      */
@@ -154,7 +154,7 @@ export interface ClustersDiscoverUnconfiguredNodesV2State {
 export interface ClustersDiscoverUnconfiguredNodesV2Args {
     /**
      * - (Optional) Address type.
-     * Valid values are:
+     *   Valid values are:
      * - "IPV4"	IPV4 address type.
      * - "IPV6"	IPV6 address type.
      */

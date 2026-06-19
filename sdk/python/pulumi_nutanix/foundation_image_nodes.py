@@ -640,14 +640,14 @@ class _FoundationImageNodesState:
         :param pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesBlockArgs']]] blocks: - (Required) Terraform blocks of Block level parameters.
         :param pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesClusterUrlArgs']]] cluster_urls: - list containing cluster name and cluster urls for created clusters in current session
                * `cluster_urls.#.cluster_name` :-<span pulumi-lang-nodejs=" clusterName
-               " pulumi-lang-dotnet=" ClusterName
-               " pulumi-lang-go=" clusterName
-               " pulumi-lang-python=" cluster_name
-               " pulumi-lang-yaml=" clusterName
-               " pulumi-lang-java=" clusterName
-               " pulumi-lang-hcl=" cluster_name
-               "> clusterName
-               </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
+                 " pulumi-lang-dotnet=" ClusterName
+                 " pulumi-lang-go=" clusterName
+                 " pulumi-lang-python=" cluster_name
+                 " pulumi-lang-yaml=" clusterName
+                 " pulumi-lang-java=" clusterName
+                 " pulumi-lang-hcl=" cluster_name
+                 "> clusterName
+                 </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
         :param pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesClusterArgs']]] clusters: - Terraform blocks of clusters config
         :param pulumi.Input[_builtins.str] cvm_gateway: - (Required) CVM gateway.
         :param pulumi.Input[_builtins.str] cvm_netmask: - (Required) CVM netmask.
@@ -779,14 +779,14 @@ class _FoundationImageNodesState:
         """
         - list containing cluster name and cluster urls for created clusters in current session
         * `cluster_urls.#.cluster_name` :-<span pulumi-lang-nodejs=" clusterName
-        " pulumi-lang-dotnet=" ClusterName
-        " pulumi-lang-go=" clusterName
-        " pulumi-lang-python=" cluster_name
-        " pulumi-lang-yaml=" clusterName
-        " pulumi-lang-java=" clusterName
-        " pulumi-lang-hcl=" cluster_name
-        "> clusterName
-        </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
+          " pulumi-lang-dotnet=" ClusterName
+          " pulumi-lang-go=" clusterName
+          " pulumi-lang-python=" cluster_name
+          " pulumi-lang-yaml=" clusterName
+          " pulumi-lang-java=" clusterName
+          " pulumi-lang-hcl=" cluster_name
+          "> clusterName
+          </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
         """
         return pulumi.get(self, "cluster_urls")
 
@@ -1739,14 +1739,14 @@ class FoundationImageNodes(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesBlockArgs', 'FoundationImageNodesBlockArgsDict']]]] blocks: - (Required) Terraform blocks of Block level parameters.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesClusterUrlArgs', 'FoundationImageNodesClusterUrlArgsDict']]]] cluster_urls: - list containing cluster name and cluster urls for created clusters in current session
                * `cluster_urls.#.cluster_name` :-<span pulumi-lang-nodejs=" clusterName
-               " pulumi-lang-dotnet=" ClusterName
-               " pulumi-lang-go=" clusterName
-               " pulumi-lang-python=" cluster_name
-               " pulumi-lang-yaml=" clusterName
-               " pulumi-lang-java=" clusterName
-               " pulumi-lang-hcl=" cluster_name
-               "> clusterName
-               </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
+                 " pulumi-lang-dotnet=" ClusterName
+                 " pulumi-lang-go=" clusterName
+                 " pulumi-lang-python=" cluster_name
+                 " pulumi-lang-yaml=" clusterName
+                 " pulumi-lang-java=" clusterName
+                 " pulumi-lang-hcl=" cluster_name
+                 "> clusterName
+                 </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
         :param pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesClusterArgs', 'FoundationImageNodesClusterArgsDict']]]] clusters: - Terraform blocks of clusters config
         :param pulumi.Input[_builtins.str] cvm_gateway: - (Required) CVM gateway.
         :param pulumi.Input[_builtins.str] cvm_netmask: - (Required) CVM netmask.
@@ -1841,14 +1841,14 @@ class FoundationImageNodes(pulumi.CustomResource):
         """
         - list containing cluster name and cluster urls for created clusters in current session
         * `cluster_urls.#.cluster_name` :-<span pulumi-lang-nodejs=" clusterName
-        " pulumi-lang-dotnet=" ClusterName
-        " pulumi-lang-go=" clusterName
-        " pulumi-lang-python=" cluster_name
-        " pulumi-lang-yaml=" clusterName
-        " pulumi-lang-java=" clusterName
-        " pulumi-lang-hcl=" cluster_name
-        "> clusterName
-        </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
+          " pulumi-lang-dotnet=" ClusterName
+          " pulumi-lang-go=" clusterName
+          " pulumi-lang-python=" cluster_name
+          " pulumi-lang-yaml=" clusterName
+          " pulumi-lang-java=" clusterName
+          " pulumi-lang-hcl=" cluster_name
+          "> clusterName
+          </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
         """
         return pulumi.get(self, "cluster_urls")
 

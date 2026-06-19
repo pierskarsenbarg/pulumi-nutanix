@@ -228,18 +228,18 @@ class GetObjectStoreV2Result:
     def state(self) -> _builtins.str:
         """
         - Enum for the state of the Object store.
-        | Enum                                   | Description                                                     |
-        |----------------------------------------|-----------------------------------------------------------------|
-        | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
-        | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
-        | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
-        | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
-        | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
-        | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
-        | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
-        | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
-        | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
-        | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+          | Enum                                   | Description                                                     |
+          |----------------------------------------|-----------------------------------------------------------------|
+          | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
+          | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
+          | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
+          | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
+          | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
+          | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
+          | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
+          | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
+          | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
+          | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
         """
         return pulumi.get(self, "state")
 

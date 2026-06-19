@@ -110,9 +110,9 @@ export class UserKeyV2 extends pulumi.CustomResource {
     declare public readonly createdTime: pulumi.Output<string>;
     /**
      * - ( Optional ) The creation mechanism of this entity. Enum Values:
-     * _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
-     * _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
-     * _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
+     *   _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+     *   _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+     *   _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
      */
     declare public readonly creationType: pulumi.Output<string>;
     /**
@@ -133,8 +133,8 @@ export class UserKeyV2 extends pulumi.CustomResource {
     declare public /*out*/ readonly keyDetails: pulumi.Output<outputs.UserKeyV2KeyDetail[]>;
     /**
      * - ( Required ) The type of key. Enum Values:
-     * _ "API_KEY": A key type that is used to identify a service.
-     * _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
+     *   _ "API_KEY": A key type that is used to identify a service.
+     *   _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
      */
     declare public readonly keyType: pulumi.Output<string>;
     /**
@@ -159,9 +159,9 @@ export class UserKeyV2 extends pulumi.CustomResource {
     declare public readonly name: pulumi.Output<string>;
     /**
      * - ( Optional ) The status of the key. Enum Values:
-     * _ "REVOKED": Key is revoked.
-     * _ "VALID": Key is valid.
-     * _ "EXPIRED": Key is expired.
+     *   _ "REVOKED": Key is revoked.
+     *   _ "VALID": Key is valid.
+     *   _ "EXPIRED": Key is expired.
      */
     declare public readonly status: pulumi.Output<string>;
     /**
@@ -252,9 +252,9 @@ export interface UserKeyV2State {
     createdTime?: pulumi.Input<string | undefined>;
     /**
      * - ( Optional ) The creation mechanism of this entity. Enum Values:
-     * _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
-     * _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
-     * _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
+     *   _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+     *   _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+     *   _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
      */
     creationType?: pulumi.Input<string | undefined>;
     /**
@@ -275,8 +275,8 @@ export interface UserKeyV2State {
     keyDetails?: pulumi.Input<pulumi.Input<inputs.UserKeyV2KeyDetail>[] | undefined>;
     /**
      * - ( Required ) The type of key. Enum Values:
-     * _ "API_KEY": A key type that is used to identify a service.
-     * _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
+     *   _ "API_KEY": A key type that is used to identify a service.
+     *   _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
      */
     keyType?: pulumi.Input<string | undefined>;
     /**
@@ -301,9 +301,9 @@ export interface UserKeyV2State {
     name?: pulumi.Input<string | undefined>;
     /**
      * - ( Optional ) The status of the key. Enum Values:
-     * _ "REVOKED": Key is revoked.
-     * _ "VALID": Key is valid.
-     * _ "EXPIRED": Key is expired.
+     *   _ "REVOKED": Key is revoked.
+     *   _ "VALID": Key is valid.
+     *   _ "EXPIRED": Key is expired.
      */
     status?: pulumi.Input<string | undefined>;
     /**
@@ -334,9 +334,9 @@ export interface UserKeyV2Args {
     createdTime?: pulumi.Input<string | undefined>;
     /**
      * - ( Optional ) The creation mechanism of this entity. Enum Values:
-     * _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
-     * _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
-     * _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
+     *   _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+     *   _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+     *   _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
      */
     creationType?: pulumi.Input<string | undefined>;
     /**
@@ -349,8 +349,8 @@ export interface UserKeyV2Args {
     expiryTime?: pulumi.Input<string | undefined>;
     /**
      * - ( Required ) The type of key. Enum Values:
-     * _ "API_KEY": A key type that is used to identify a service.
-     * _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
+     *   _ "API_KEY": A key type that is used to identify a service.
+     *   _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
      */
     keyType: pulumi.Input<string>;
     /**
@@ -371,9 +371,9 @@ export interface UserKeyV2Args {
     name?: pulumi.Input<string | undefined>;
     /**
      * - ( Optional ) The status of the key. Enum Values:
-     * _ "REVOKED": Key is revoked.
-     * _ "VALID": Key is valid.
-     * _ "EXPIRED": Key is expired.
+     *   _ "REVOKED": Key is revoked.
+     *   _ "VALID": Key is valid.
+     *   _ "EXPIRED": Key is expired.
      */
     status?: pulumi.Input<string | undefined>;
     /**

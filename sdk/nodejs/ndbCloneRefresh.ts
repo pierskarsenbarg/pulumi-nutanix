@@ -76,7 +76,7 @@ export class NdbCloneRefresh extends pulumi.CustomResource {
      */
     declare public readonly snapshotId: pulumi.Output<string | undefined>;
     /**
-     * timezone. Default is Asia/Calcutta. 
+     * timezone. Default is Asia/Calcutta.
      *
      * See detailed information in [NDB Clone Refresh](https://www.nutanix.dev/api_references/ndb/#/d4e53fff274fa-start-refresh-operation-for-the-given-clone).
      */
@@ -128,7 +128,7 @@ export interface NdbCloneRefreshState {
      */
     snapshotId?: pulumi.Input<string | undefined>;
     /**
-     * timezone. Default is Asia/Calcutta. 
+     * timezone. Default is Asia/Calcutta.
      *
      * See detailed information in [NDB Clone Refresh](https://www.nutanix.dev/api_references/ndb/#/d4e53fff274fa-start-refresh-operation-for-the-given-clone).
      */
@@ -149,7 +149,7 @@ export interface NdbCloneRefreshArgs {
      */
     snapshotId?: pulumi.Input<string | undefined>;
     /**
-     * timezone. Default is Asia/Calcutta. 
+     * timezone. Default is Asia/Calcutta.
      *
      * See detailed information in [NDB Clone Refresh](https://www.nutanix.dev/api_references/ndb/#/d4e53fff274fa-start-refresh-operation-for-the-given-clone).
      */

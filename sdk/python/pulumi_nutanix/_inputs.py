@@ -7755,9 +7755,6 @@ class ClusterAddNodeV2RemoveNodeParamExtraParamArgsDict(TypedDict):
     """
     -(Optional) Indicates if add check needs to be skipped or not.
 
-
-
-
     See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/expandCluster).
     """
     should_skip_upgrade_check: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
@@ -7778,9 +7775,6 @@ class ClusterAddNodeV2RemoveNodeParamExtraParamArgs:
         """
         :param pulumi.Input[_builtins.bool] should_skip_add_check: -(Optional) Indicates if add check needs to be skipped or not.
                
-               
-               
-               
                See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/expandCluster).
         :param pulumi.Input[_builtins.bool] should_skip_upgrade_check: -(Optional) Indicates if upgrade check needs to be skipped or not.
         :param pulumi.Input[_builtins.bool] skip_space_check: -(Optional) Indicates if space check needs to be skipped or not.
@@ -7797,9 +7791,6 @@ class ClusterAddNodeV2RemoveNodeParamExtraParamArgs:
     def should_skip_add_check(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         -(Optional) Indicates if add check needs to be skipped or not.
-
-
-
 
         See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/expandCluster).
         """
@@ -10097,15 +10088,15 @@ class ClusterV2ConfigArgsDict(TypedDict):
     cluster_arch: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) Cluster arch.
-    Valid values are:
+      Valid values are:
     - "PPC64LE" PPC64LE cluster architecture type.
     - "X86_64" X86_64 cluster architecture type.
     """
     cluster_functions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     - (Optional) Cluster function. This is part of payload for cluster
-    create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
-    Valid values are:
+      create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
+      Valid values are:
     - "AOS"
     - "PRISM_CENTRAL"
     - "CLOUD_DATA_GATEWAY"
@@ -10118,7 +10109,7 @@ class ClusterV2ConfigArgsDict(TypedDict):
     encryption_in_transit_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) Encryption in transit Status.
-    Valid values are:
+      Valid values are:
     - "DISABLED"	Disabled encryption status.
     - "ENABLED"	Enabled encryption status.
     """
@@ -10137,8 +10128,8 @@ class ClusterV2ConfigArgsDict(TypedDict):
     operation_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) Cluster operation mode. This is part of payload for cluster
-    update operation only.
-    Valid values are:
+      update operation only.
+      Valid values are:
     - "OVERRIDE"	Override operation mode.
     - "STAND_ALONE"	Stand-alone operation mode.
     - "SWITCH_TO_TWO_NODE"	Switch to two-node operation mode.
@@ -10181,12 +10172,12 @@ class ClusterV2ConfigArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ClusterV2ConfigAuthorizedPublicKeyListArgs']]] authorized_public_key_lists: - (Optional) Public ssh key details. This is part of payload for cluster update operation only.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterV2ConfigBuildInfoArgs']]] build_infos: - (Optional) Build information details.
         :param pulumi.Input[_builtins.str] cluster_arch: - (Optional) Cluster arch.
-               Valid values are:
+                 Valid values are:
                - "PPC64LE" PPC64LE cluster architecture type.
                - "X86_64" X86_64 cluster architecture type.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_functions: - (Optional) Cluster function. This is part of payload for cluster
-               create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
-               Valid values are:
+                 create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
+                 Valid values are:
                - "AOS"
                - "PRISM_CENTRAL"
                - "CLOUD_DATA_GATEWAY"
@@ -10195,13 +10186,13 @@ class ClusterV2ConfigArgs:
                - "TWO_NODE"
                - "ANALYTICS_PLATFORM"
         :param pulumi.Input[_builtins.str] encryption_in_transit_status: - (Optional) Encryption in transit Status.
-               Valid values are:
+                 Valid values are:
                - "DISABLED"	Disabled encryption status.
                - "ENABLED"	Enabled encryption status.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterV2ConfigFaultToleranceStateArgs']]] fault_tolerance_states: - (Optional) Fault tolerant state of cluster.
         :param pulumi.Input[_builtins.str] operation_mode: - (Optional) Cluster operation mode. This is part of payload for cluster
-               update operation only.
-               Valid values are:
+                 update operation only.
+                 Valid values are:
                - "OVERRIDE"	Override operation mode.
                - "STAND_ALONE"	Stand-alone operation mode.
                - "SWITCH_TO_TWO_NODE"	Switch to two-node operation mode.
@@ -10278,7 +10269,7 @@ class ClusterV2ConfigArgs:
     def cluster_arch(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Cluster arch.
-        Valid values are:
+          Valid values are:
         - "PPC64LE" PPC64LE cluster architecture type.
         - "X86_64" X86_64 cluster architecture type.
         """
@@ -10293,8 +10284,8 @@ class ClusterV2ConfigArgs:
     def cluster_functions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         - (Optional) Cluster function. This is part of payload for cluster
-        create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
-        Valid values are:
+          create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
+          Valid values are:
         - "AOS"
         - "PRISM_CENTRAL"
         - "CLOUD_DATA_GATEWAY"
@@ -10323,7 +10314,7 @@ class ClusterV2ConfigArgs:
     def encryption_in_transit_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Encryption in transit Status.
-        Valid values are:
+          Valid values are:
         - "DISABLED"	Disabled encryption status.
         - "ENABLED"	Enabled encryption status.
         """
@@ -10422,8 +10413,8 @@ class ClusterV2ConfigArgs:
     def operation_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Cluster operation mode. This is part of payload for cluster
-        update operation only.
-        Valid values are:
+          update operation only.
+          Valid values are:
         - "OVERRIDE"	Override operation mode.
         - "STAND_ALONE"	Stand-alone operation mode.
         - "SWITCH_TO_TWO_NODE"	Switch to two-node operation mode.
@@ -10820,7 +10811,7 @@ class ClusterV2ConfigPulseStatusArgsDict(TypedDict):
     pii_scrubbing_level: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) PII scrubbing level.
-    Valid values are:
+      Valid values are:
     - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
     - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
     """
@@ -10833,7 +10824,7 @@ class ClusterV2ConfigPulseStatusArgs:
         """
         :param pulumi.Input[_builtins.bool] is_enabled: - (Optional) Flag to indicate if pulse is enabled or not.
         :param pulumi.Input[_builtins.str] pii_scrubbing_level: - (Optional) PII scrubbing level.
-               Valid values are:
+                 Valid values are:
                - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
                - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
         """
@@ -10859,7 +10850,7 @@ class ClusterV2ConfigPulseStatusArgs:
     def pii_scrubbing_level(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) PII scrubbing level.
-        Valid values are:
+          Valid values are:
         - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
         - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
         """
@@ -11965,7 +11956,7 @@ class ClusterV2NetworkHttpProxyWhiteListArgsDict(TypedDict):
     target_type: pulumi.Input[_builtins.str]
     """
     - (Optional) Target type.
-    Valid values are:
+      Valid values are:
     - "IPV6_ADDRESS"	IPV6 address.
     - "HOST_NAME"	Name of the host.
     - "IPV4_ADDRESS"	IPV4 address.
@@ -11981,7 +11972,7 @@ class ClusterV2NetworkHttpProxyWhiteListArgs:
         """
         :param pulumi.Input[_builtins.str] target: - (Required) Target's identifier which is exempted from going through the configured HTTP Proxy.
         :param pulumi.Input[_builtins.str] target_type: - (Optional) Target type.
-               Valid values are:
+                 Valid values are:
                - "IPV6_ADDRESS"	IPV6 address.
                - "HOST_NAME"	Name of the host.
                - "IPV4_ADDRESS"	IPV4 address.
@@ -12008,7 +11999,7 @@ class ClusterV2NetworkHttpProxyWhiteListArgs:
     def target_type(self) -> pulumi.Input[_builtins.str]:
         """
         - (Optional) Target type.
-        Valid values are:
+          Valid values are:
         - "IPV6_ADDRESS"	IPV6 address.
         - "HOST_NAME"	Name of the host.
         - "IPV4_ADDRESS"	IPV4 address.
@@ -16476,8 +16467,6 @@ class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitArgsD
     * `cloud_init_script.user_data`: (Optional) user data object
     * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
 
-
-
     See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/deployTemplate).
     """
     datasource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
@@ -16500,8 +16489,6 @@ class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitArgs:
                * `cloud_init_script.user_data`: (Optional) user data object
                * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
                
-               
-               
                See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/deployTemplate).
         :param pulumi.Input[_builtins.str] datasource_type: Type of datasource. Default: CONFIG_DRIVE_V2
         :param pulumi.Input[_builtins.str] metadata: The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
@@ -16520,8 +16507,6 @@ class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitArgs:
         The script to use for cloud-init.
         * `cloud_init_script.user_data`: (Optional) user data object
         * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
-
-
 
         See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/deployTemplate).
         """
@@ -31954,7 +31939,6 @@ class LcmUpgradeV2EntityUpdateSpecArgsDict(TypedDict):
     """
     Version to upgrade to.
 
-
     See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Upgrades/operation/performUpgrade).
     """
 
@@ -31966,7 +31950,6 @@ class LcmUpgradeV2EntityUpdateSpecArgs:
         """
         :param pulumi.Input[_builtins.str] entity_uuid: UUID of the LCM entity.
         :param pulumi.Input[_builtins.str] to_version: Version to upgrade to.
-               
                
                See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Upgrades/operation/performUpgrade).
         """
@@ -31990,7 +31973,6 @@ class LcmUpgradeV2EntityUpdateSpecArgs:
     def to_version(self) -> pulumi.Input[_builtins.str]:
         """
         Version to upgrade to.
-
 
         See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Upgrades/operation/performUpgrade).
         """
@@ -36711,7 +36693,7 @@ class NdbClusterEntityCountEngineCountSqlserverDatabaseProfileArgs:
 class NdbClusterNetworksInfoArgsDict(TypedDict):
     access_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
-    VLAN access types for which you want to configure network segmentation. Supports [PRISM, DSIP, DBSERVER ]. 
+    VLAN access types for which you want to configure network segmentation. Supports [PRISM, DSIP, DBSERVER ].
     Prism Element: Select this VLAN access type to configure a VLAN that the NDB agent VM can use to communicate with Prism.
     Prism iSCSI Data Service. Select this VLAN access type to configure a VLAN that the agent VM can use to make connection requests to the iSCSI data services IP.
     DBServer Access from NDB server. Select this VLAN access type to configure a VLAN that is used for communications between the NDB agent VM and the database server VM on the newly registered NDB server cluster.
@@ -36732,7 +36714,7 @@ class NdbClusterNetworksInfoArgs:
                  network_infos: pulumi.Input[Optional[Sequence[pulumi.Input['NdbClusterNetworksInfoNetworkInfoArgs']]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_types: VLAN access types for which you want to configure network segmentation. Supports [PRISM, DSIP, DBSERVER ]. 
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] access_types: VLAN access types for which you want to configure network segmentation. Supports [PRISM, DSIP, DBSERVER ].
                Prism Element: Select this VLAN access type to configure a VLAN that the NDB agent VM can use to communicate with Prism.
                Prism iSCSI Data Service. Select this VLAN access type to configure a VLAN that the agent VM can use to make connection requests to the iSCSI data services IP.
                DBServer Access from NDB server. Select this VLAN access type to configure a VLAN that is used for communications between the NDB agent VM and the database server VM on the newly registered NDB server cluster.
@@ -36750,7 +36732,7 @@ class NdbClusterNetworksInfoArgs:
     @pulumi.getter(name="accessTypes")
     def access_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        VLAN access types for which you want to configure network segmentation. Supports [PRISM, DSIP, DBSERVER ]. 
+        VLAN access types for which you want to configure network segmentation. Supports [PRISM, DSIP, DBSERVER ].
         Prism Element: Select this VLAN access type to configure a VLAN that the NDB agent VM can use to communicate with Prism.
         Prism iSCSI Data Service. Select this VLAN access type to configure a VLAN that the agent VM can use to make connection requests to the iSCSI data services IP.
         DBServer Access from NDB server. Select this VLAN access type to configure a VLAN that is used for communications between the NDB agent VM and the database server VM on the newly registered NDB server cluster.
@@ -51380,7 +51362,7 @@ class NdbProfileDatabaseParameterProfileArgsDict(TypedDict):
     * `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
     * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however,<span pulumi-lang-nodejs=" trackCounts " pulumi-lang-dotnet=" TrackCounts " pulumi-lang-go=" trackCounts " pulumi-lang-python=" track_counts " pulumi-lang-yaml=" trackCounts " pulumi-lang-java=" trackCounts " pulumi-lang-hcl=" track_counts "> trackCounts </span>must also be enabled for autovacuum to work.
     * `postgres_database.checkpoint_completion_target`: (Optional)
-    Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
+      Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
     * `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
     * `postgres_database.autovacuum_vacuum_threshold`: (Optional) Min number of row updates before vacuum. Minimum number of tuple updates or deletes prior to vacuum. Take value in KB. Default is 50 .
     * `postgres_database.autovacuum_vacuum_scale_factor`: (Optional) Number of tuple updates or deletes prior to vacuum as a fraction of reltuples. Default is 0.2
@@ -51388,7 +51370,7 @@ class NdbProfileDatabaseParameterProfileArgsDict(TypedDict):
     * `postgres_database.autovacuum_max_workers`: (Optional) Sets the maximum number of simultaneously running autovacuum worker processes. Default is 3
     * `postgres_database.autovacuum_vacuum_cost_delay`: (Optional) Vacuum cost delay in milliseconds, for autovacuum. Specifies the cost delay value that will be used in automatic VACUUM operation. Default is 2ms
     * `postgres_database.wal_buffers`: (Optional)
-    Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
+      Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
     * `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
     * `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
     * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the<span pulumi-lang-nodejs=" pgWal " pulumi-lang-dotnet=" PgWal " pulumi-lang-go=" pgWal " pulumi-lang-python=" pg_wal " pulumi-lang-yaml=" pgWal " pulumi-lang-java=" pgWal " pulumi-lang-hcl=" pg_wal "> pgWal </span>directory. Default is 700 .
@@ -51413,7 +51395,7 @@ class NdbProfileDatabaseParameterProfileArgs:
                * `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
                * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however,<span pulumi-lang-nodejs=" trackCounts " pulumi-lang-dotnet=" TrackCounts " pulumi-lang-go=" trackCounts " pulumi-lang-python=" track_counts " pulumi-lang-yaml=" trackCounts " pulumi-lang-java=" trackCounts " pulumi-lang-hcl=" track_counts "> trackCounts </span>must also be enabled for autovacuum to work.
                * `postgres_database.checkpoint_completion_target`: (Optional)
-               Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
+                 Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
                * `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
                * `postgres_database.autovacuum_vacuum_threshold`: (Optional) Min number of row updates before vacuum. Minimum number of tuple updates or deletes prior to vacuum. Take value in KB. Default is 50 .
                * `postgres_database.autovacuum_vacuum_scale_factor`: (Optional) Number of tuple updates or deletes prior to vacuum as a fraction of reltuples. Default is 0.2
@@ -51421,7 +51403,7 @@ class NdbProfileDatabaseParameterProfileArgs:
                * `postgres_database.autovacuum_max_workers`: (Optional) Sets the maximum number of simultaneously running autovacuum worker processes. Default is 3
                * `postgres_database.autovacuum_vacuum_cost_delay`: (Optional) Vacuum cost delay in milliseconds, for autovacuum. Specifies the cost delay value that will be used in automatic VACUUM operation. Default is 2ms
                * `postgres_database.wal_buffers`: (Optional)
-               Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
+                 Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
                * `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
                * `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
                * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the<span pulumi-lang-nodejs=" pgWal " pulumi-lang-dotnet=" PgWal " pulumi-lang-go=" pgWal " pulumi-lang-python=" pg_wal " pulumi-lang-yaml=" pgWal " pulumi-lang-java=" pgWal " pulumi-lang-hcl=" pg_wal "> pgWal </span>directory. Default is 700 .
@@ -51447,7 +51429,7 @@ class NdbProfileDatabaseParameterProfileArgs:
         * `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
         * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however,<span pulumi-lang-nodejs=" trackCounts " pulumi-lang-dotnet=" TrackCounts " pulumi-lang-go=" trackCounts " pulumi-lang-python=" track_counts " pulumi-lang-yaml=" trackCounts " pulumi-lang-java=" trackCounts " pulumi-lang-hcl=" track_counts "> trackCounts </span>must also be enabled for autovacuum to work.
         * `postgres_database.checkpoint_completion_target`: (Optional)
-        Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
+          Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
         * `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
         * `postgres_database.autovacuum_vacuum_threshold`: (Optional) Min number of row updates before vacuum. Minimum number of tuple updates or deletes prior to vacuum. Take value in KB. Default is 50 .
         * `postgres_database.autovacuum_vacuum_scale_factor`: (Optional) Number of tuple updates or deletes prior to vacuum as a fraction of reltuples. Default is 0.2
@@ -51455,7 +51437,7 @@ class NdbProfileDatabaseParameterProfileArgs:
         * `postgres_database.autovacuum_max_workers`: (Optional) Sets the maximum number of simultaneously running autovacuum worker processes. Default is 3
         * `postgres_database.autovacuum_vacuum_cost_delay`: (Optional) Vacuum cost delay in milliseconds, for autovacuum. Specifies the cost delay value that will be used in automatic VACUUM operation. Default is 2ms
         * `postgres_database.wal_buffers`: (Optional)
-        Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
+          Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
         * `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
         * `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
         * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the<span pulumi-lang-nodejs=" pgWal " pulumi-lang-dotnet=" PgWal " pulumi-lang-go=" pgWal " pulumi-lang-python=" pg_wal " pulumi-lang-yaml=" pgWal " pulumi-lang-java=" pgWal " pulumi-lang-hcl=" pg_wal "> pgWal </span>directory. Default is 700 .
@@ -74001,7 +73983,6 @@ class OvaVmDeployV2OverrideVmConfigCategoryArgsDict(TypedDict):
     """
     A globally unique identifier of a VM category of type UUID.
 
-
     See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Ovas/operation/deployOva).
     """
 
@@ -74011,7 +73992,6 @@ class OvaVmDeployV2OverrideVmConfigCategoryArgs:
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] ext_id: A globally unique identifier of a VM category of type UUID.
-               
                
                See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Ovas/operation/deployOva).
         """
@@ -74023,7 +74003,6 @@ class OvaVmDeployV2OverrideVmConfigCategoryArgs:
     def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A globally unique identifier of a VM category of type UUID.
-
 
         See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Ovas/operation/deployOva).
         """
@@ -99832,7 +99811,7 @@ class StoragePolicyV2CompressionSpecArgsDict(TypedDict):
     compression_state: pulumi.Input[_builtins.str]
     """
     - (Required) Controls enabling or disabling compression. If no explicit preference is set, the system chooses a value.
-    Valid values:
+      Valid values:
     * `"DISABLED"`:- User wants data not compressed.
     * `"POSTPROCESS"`:- User wants data compressed later.
     * `"INLINE"`:- User wants data compressed inline.
@@ -99845,7 +99824,7 @@ class StoragePolicyV2CompressionSpecArgs:
                  compression_state: pulumi.Input[_builtins.str]):
         """
         :param pulumi.Input[_builtins.str] compression_state: - (Required) Controls enabling or disabling compression. If no explicit preference is set, the system chooses a value.
-               Valid values:
+                 Valid values:
                * `"DISABLED"`:- User wants data not compressed.
                * `"POSTPROCESS"`:- User wants data compressed later.
                * `"INLINE"`:- User wants data compressed inline.
@@ -99858,7 +99837,7 @@ class StoragePolicyV2CompressionSpecArgs:
     def compression_state(self) -> pulumi.Input[_builtins.str]:
         """
         - (Required) Controls enabling or disabling compression. If no explicit preference is set, the system chooses a value.
-        Valid values:
+          Valid values:
         * `"DISABLED"`:- User wants data not compressed.
         * `"POSTPROCESS"`:- User wants data compressed later.
         * `"INLINE"`:- User wants data compressed inline.
@@ -99875,7 +99854,7 @@ class StoragePolicyV2EncryptionSpecArgsDict(TypedDict):
     encryption_state: pulumi.Input[_builtins.str]
     """
     - (Required) Controls enabling encryption. Once enabled, it cannot be disabled. If no explicit preference is set, the system decides.
-    Valid values:
+      Valid values:
     * `"SYSTEM_DERIVED"`:- User is not interested in encryption; system decides.
     * `"ENABLED"`:- User wants data encrypted.
 
@@ -99888,7 +99867,7 @@ class StoragePolicyV2EncryptionSpecArgs:
                  encryption_state: pulumi.Input[_builtins.str]):
         """
         :param pulumi.Input[_builtins.str] encryption_state: - (Required) Controls enabling encryption. Once enabled, it cannot be disabled. If no explicit preference is set, the system decides.
-               Valid values:
+                 Valid values:
                * `"SYSTEM_DERIVED"`:- User is not interested in encryption; system decides.
                * `"ENABLED"`:- User wants data encrypted.
                
@@ -99901,7 +99880,7 @@ class StoragePolicyV2EncryptionSpecArgs:
     def encryption_state(self) -> pulumi.Input[_builtins.str]:
         """
         - (Required) Controls enabling encryption. Once enabled, it cannot be disabled. If no explicit preference is set, the system decides.
-        Valid values:
+          Valid values:
         * `"SYSTEM_DERIVED"`:- User is not interested in encryption; system decides.
         * `"ENABLED"`:- User wants data encrypted.
 
@@ -99918,7 +99897,7 @@ class StoragePolicyV2FaultToleranceSpecArgsDict(TypedDict):
     replication_factor: pulumi.Input[_builtins.str]
     """
     - (Required) Specifies the number of data copies for entities governed by the Storage Policy.
-    Valid values:
+      Valid values:
     * `"SYSTEM_DERIVED"`:- User has not provided the number of copies; system decides.
     * `"TWO"`:- Two data copies (Original + 1 copy).
     * `"THREE"`:- Three data copies (Original + 2 copies).
@@ -99930,7 +99909,7 @@ class StoragePolicyV2FaultToleranceSpecArgs:
                  replication_factor: pulumi.Input[_builtins.str]):
         """
         :param pulumi.Input[_builtins.str] replication_factor: - (Required) Specifies the number of data copies for entities governed by the Storage Policy.
-               Valid values:
+                 Valid values:
                * `"SYSTEM_DERIVED"`:- User has not provided the number of copies; system decides.
                * `"TWO"`:- Two data copies (Original + 1 copy).
                * `"THREE"`:- Three data copies (Original + 2 copies).
@@ -99942,7 +99921,7 @@ class StoragePolicyV2FaultToleranceSpecArgs:
     def replication_factor(self) -> pulumi.Input[_builtins.str]:
         """
         - (Required) Specifies the number of data copies for entities governed by the Storage Policy.
-        Valid values:
+          Valid values:
         * `"SYSTEM_DERIVED"`:- User has not provided the number of copies; system decides.
         * `"TWO"`:- Two data copies (Original + 1 copy).
         * `"THREE"`:- Three data copies (Original + 2 copies).
@@ -123925,7 +123904,7 @@ class VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgsDict(T
     bus_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-    Valid values are:
+      Valid values are:
     - `SCSI` The type of disk bus is SCSI.
     - `SPAPR` The type of disk bus is SPAPR.
     - `PCI` The type of disk bus is PCI.
@@ -123944,7 +123923,7 @@ class VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs:
                  index: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] bus_type: - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-               Valid values are:
+                 Valid values are:
                - `SCSI` The type of disk bus is SCSI.
                - `SPAPR` The type of disk bus is SPAPR.
                - `PCI` The type of disk bus is PCI.
@@ -123962,7 +123941,7 @@ class VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs:
     def bus_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-        Valid values are:
+          Valid values are:
         - `SCSI` The type of disk bus is SCSI.
         - `SPAPR` The type of disk bus is SPAPR.
         - `PCI` The type of disk bus is PCI.
@@ -124188,7 +124167,7 @@ class VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgsDict(Typ
     bus_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-    Valid values are:
+      Valid values are:
     - `SCSI` The type of disk bus is SCSI.
     - `SPAPR` The type of disk bus is SPAPR.
     - `PCI` The type of disk bus is PCI.
@@ -124207,7 +124186,7 @@ class VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs:
                  index: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] bus_type: - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-               Valid values are:
+                 Valid values are:
                - `SCSI` The type of disk bus is SCSI.
                - `SPAPR` The type of disk bus is SPAPR.
                - `PCI` The type of disk bus is PCI.
@@ -124225,7 +124204,7 @@ class VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs:
     def bus_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-        Valid values are:
+          Valid values are:
         - `SCSI` The type of disk bus is SCSI.
         - `SPAPR` The type of disk bus is SPAPR.
         - `PCI` The type of disk bus is PCI.
@@ -124611,7 +124590,7 @@ class VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenc
     bus_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-    Valid values are:
+      Valid values are:
     - `SCSI` The type of disk bus is SCSI.
     - `SPAPR` The type of disk bus is SPAPR.
     - `PCI` The type of disk bus is PCI.
@@ -124630,7 +124609,7 @@ class VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenc
                  index: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] bus_type: - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-               Valid values are:
+                 Valid values are:
                - `SCSI` The type of disk bus is SCSI.
                - `SPAPR` The type of disk bus is SPAPR.
                - `PCI` The type of disk bus is PCI.
@@ -124648,7 +124627,7 @@ class VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenc
     def bus_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-        Valid values are:
+          Valid values are:
         - `SCSI` The type of disk bus is SCSI.
         - `SPAPR` The type of disk bus is SPAPR.
         - `PCI` The type of disk bus is PCI.
@@ -125151,7 +125130,7 @@ class VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs
     bus_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-    Valid values are:
+      Valid values are:
     - `SCSI` The type of disk bus is SCSI.
     - `SPAPR` The type of disk bus is SPAPR.
     - `PCI` The type of disk bus is PCI.
@@ -125170,7 +125149,7 @@ class VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs
                  index: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] bus_type: - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-               Valid values are:
+                 Valid values are:
                - `SCSI` The type of disk bus is SCSI.
                - `SPAPR` The type of disk bus is SPAPR.
                - `PCI` The type of disk bus is PCI.
@@ -125188,7 +125167,7 @@ class VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs
     def bus_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-        Valid values are:
+          Valid values are:
         - `SCSI` The type of disk bus is SCSI.
         - `SPAPR` The type of disk bus is SPAPR.
         - `PCI` The type of disk bus is PCI.
@@ -125305,7 +125284,7 @@ class VmCloneV2CdRomDiskAddressArgsDict(TypedDict):
     bus_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-    Valid values are:
+      Valid values are:
     - `SCSI` The type of disk bus is SCSI.
     - `SPAPR` The type of disk bus is SPAPR.
     - `PCI` The type of disk bus is PCI.
@@ -125324,7 +125303,7 @@ class VmCloneV2CdRomDiskAddressArgs:
                  index: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] bus_type: - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-               Valid values are:
+                 Valid values are:
                - `SCSI` The type of disk bus is SCSI.
                - `SPAPR` The type of disk bus is SPAPR.
                - `PCI` The type of disk bus is PCI.
@@ -125342,7 +125321,7 @@ class VmCloneV2CdRomDiskAddressArgs:
     def bus_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-        Valid values are:
+          Valid values are:
         - `SCSI` The type of disk bus is SCSI.
         - `SPAPR` The type of disk bus is SPAPR.
         - `PCI` The type of disk bus is PCI.
@@ -125798,7 +125777,7 @@ class VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddres
     bus_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-    Valid values are:
+      Valid values are:
     - `SCSI` The type of disk bus is SCSI.
     - `SPAPR` The type of disk bus is SPAPR.
     - `PCI` The type of disk bus is PCI.
@@ -125817,7 +125796,7 @@ class VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddres
                  index: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] bus_type: - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-               Valid values are:
+                 Valid values are:
                - `SCSI` The type of disk bus is SCSI.
                - `SPAPR` The type of disk bus is SPAPR.
                - `PCI` The type of disk bus is PCI.
@@ -125835,7 +125814,7 @@ class VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddres
     def bus_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-        Valid values are:
+          Valid values are:
         - `SCSI` The type of disk bus is SCSI.
         - `SPAPR` The type of disk bus is SPAPR.
         - `PCI` The type of disk bus is PCI.
@@ -125952,7 +125931,7 @@ class VmCloneV2DiskDiskAddressArgsDict(TypedDict):
     bus_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-    Valid values are:
+      Valid values are:
     - `SCSI` The type of disk bus is SCSI.
     - `SPAPR` The type of disk bus is SPAPR.
     - `PCI` The type of disk bus is PCI.
@@ -125971,7 +125950,7 @@ class VmCloneV2DiskDiskAddressArgs:
                  index: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] bus_type: - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-               Valid values are:
+                 Valid values are:
                - `SCSI` The type of disk bus is SCSI.
                - `SPAPR` The type of disk bus is SPAPR.
                - `PCI` The type of disk bus is PCI.
@@ -125989,7 +125968,7 @@ class VmCloneV2DiskDiskAddressArgs:
     def bus_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-        Valid values are:
+          Valid values are:
         - `SCSI` The type of disk bus is SCSI.
         - `SPAPR` The type of disk bus is SPAPR.
         - `PCI` The type of disk bus is PCI.
@@ -126306,8 +126285,8 @@ class VmCloneV2GuestCustomizationConfigCloudInitArgsDict(TypedDict):
     datasource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) Type of datasource.
-    Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
-    Valid values are:
+      Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+      Valid values are:
     - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
     """
     metadata: NotRequired[pulumi.Input[Optional[_builtins.str]]]
@@ -126324,8 +126303,8 @@ class VmCloneV2GuestCustomizationConfigCloudInitArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input['VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptArgs']]] cloud_init_scripts: - (Optional) The script to use for cloud-init.
         :param pulumi.Input[_builtins.str] datasource_type: - (Optional) Type of datasource.
-               Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
-               Valid values are:
+                 Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+                 Valid values are:
                - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
         :param pulumi.Input[_builtins.str] metadata: The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
         """
@@ -126353,8 +126332,8 @@ class VmCloneV2GuestCustomizationConfigCloudInitArgs:
     def datasource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Type of datasource.
-        Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
-        Valid values are:
+          Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+          Valid values are:
         - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
         """
         return pulumi.get(self, "datasource_type")
@@ -126535,7 +126514,7 @@ class VmCloneV2GuestCustomizationConfigSysprepArgsDict(TypedDict):
     install_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
-    Valid values are:
+      Valid values are:
     - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
     - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
     """
@@ -126548,7 +126527,7 @@ class VmCloneV2GuestCustomizationConfigSysprepArgs:
                  sysprep_scripts: pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2GuestCustomizationConfigSysprepSysprepScriptArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] install_type: - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
-               Valid values are:
+                 Valid values are:
                - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
                - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
         """
@@ -126562,7 +126541,7 @@ class VmCloneV2GuestCustomizationConfigSysprepArgs:
     def install_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
-        Valid values are:
+          Valid values are:
         - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
         - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
         """
@@ -127054,7 +127033,7 @@ class VmCloneV2NicBackingInfoArgsDict(TypedDict):
     model: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) Options for the NIC emulation.
-    Valid values are:
+      Valid values are:
     - `VIRTIO` The NIC emulation model is Virtio.
     - `E1000` The NIC emulation model is E1000.
     """
@@ -127074,7 +127053,7 @@ class VmCloneV2NicBackingInfoArgs:
         :param pulumi.Input[_builtins.bool] is_connected: - (Optional) Indicates whether the NIC is connected or not. Default is True.
         :param pulumi.Input[_builtins.str] mac_address: - (Optional) MAC address of the emulated NIC.
         :param pulumi.Input[_builtins.str] model: - (Optional) Options for the NIC emulation.
-               Valid values are:
+                 Valid values are:
                - `VIRTIO` The NIC emulation model is Virtio.
                - `E1000` The NIC emulation model is E1000.
         :param pulumi.Input[_builtins.int] num_queues: - (Optional) The number of Tx/Rx queue pairs for this NIC.
@@ -127117,7 +127096,7 @@ class VmCloneV2NicBackingInfoArgs:
     def model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Options for the NIC emulation.
-        Valid values are:
+          Valid values are:
         - `VIRTIO` The NIC emulation model is Virtio.
         - `E1000` The NIC emulation model is E1000.
         """
@@ -127153,8 +127132,8 @@ class VmCloneV2NicNetworkInfoArgsDict(TypedDict):
     network_function_nic_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) The type of this Network function NIC.
-    Defaults to INGRESS.
-    Valid values are:
+      Defaults to INGRESS.
+      Valid values are:
     - `TAP` The type of Network-Function NIC is Tap.
     - `EGRESS` The type of Network-Function NIC is Egress.
     - `INGRESS` The type of Network-Function NIC is Ingress.
@@ -127162,8 +127141,8 @@ class VmCloneV2NicNetworkInfoArgsDict(TypedDict):
     nic_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) NIC type.
-    Defaults to NORMAL_NIC.
-    Valid values are:
+      Defaults to NORMAL_NIC.
+      Valid values are:
     - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
     - `NORMAL_NIC` The type of NIC is Normal.
     - `DIRECT_NIC` The type of NIC is Direct.
@@ -127184,7 +127163,7 @@ class VmCloneV2NicNetworkInfoArgsDict(TypedDict):
     vlan_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-    Valid values are:
+      Valid values are:
     - `TRUNK` The virtual NIC is created in TRUNKED mode.
     - `ACCESS` The virtual NIC is created in ACCESS mode.
     """
@@ -127205,14 +127184,14 @@ class VmCloneV2NicNetworkInfoArgs:
         :param pulumi.Input[Sequence[pulumi.Input['VmCloneV2NicNetworkInfoIpv4ConfigArgs']]] ipv4_configs: - (Optional) The IP address configurations.
         :param pulumi.Input[Sequence[pulumi.Input['VmCloneV2NicNetworkInfoNetworkFunctionChainArgs']]] network_function_chains: - (Optional)The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
         :param pulumi.Input[_builtins.str] network_function_nic_type: - (Optional) The type of this Network function NIC.
-               Defaults to INGRESS.
-               Valid values are:
+                 Defaults to INGRESS.
+                 Valid values are:
                - `TAP` The type of Network-Function NIC is Tap.
                - `EGRESS` The type of Network-Function NIC is Egress.
                - `INGRESS` The type of Network-Function NIC is Ingress.
         :param pulumi.Input[_builtins.str] nic_type: - (Optional) NIC type.
-               Defaults to NORMAL_NIC.
-               Valid values are:
+                 Defaults to NORMAL_NIC.
+                 Valid values are:
                - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
                - `NORMAL_NIC` The type of NIC is Normal.
                - `DIRECT_NIC` The type of NIC is Direct.
@@ -127221,7 +127200,7 @@ class VmCloneV2NicNetworkInfoArgs:
         :param pulumi.Input[Sequence[pulumi.Input['VmCloneV2NicNetworkInfoSubnetArgs']]] subnets: - (Optional) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] trunked_vlans: - (Optional) List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
         :param pulumi.Input[_builtins.str] vlan_mode: - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-               Valid values are:
+                 Valid values are:
                - `TRUNK` The virtual NIC is created in TRUNKED mode.
                - `ACCESS` The virtual NIC is created in ACCESS mode.
         """
@@ -127282,8 +127261,8 @@ class VmCloneV2NicNetworkInfoArgs:
     def network_function_nic_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The type of this Network function NIC.
-        Defaults to INGRESS.
-        Valid values are:
+          Defaults to INGRESS.
+          Valid values are:
         - `TAP` The type of Network-Function NIC is Tap.
         - `EGRESS` The type of Network-Function NIC is Egress.
         - `INGRESS` The type of Network-Function NIC is Ingress.
@@ -127299,8 +127278,8 @@ class VmCloneV2NicNetworkInfoArgs:
     def nic_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) NIC type.
-        Defaults to NORMAL_NIC.
-        Valid values are:
+          Defaults to NORMAL_NIC.
+          Valid values are:
         - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
         - `NORMAL_NIC` The type of NIC is Normal.
         - `DIRECT_NIC` The type of NIC is Direct.
@@ -127353,7 +127332,7 @@ class VmCloneV2NicNetworkInfoArgs:
     def vlan_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-        Valid values are:
+          Valid values are:
         - `TRUNK` The virtual NIC is created in TRUNKED mode.
         - `ACCESS` The virtual NIC is created in ACCESS mode.
         """
@@ -127370,8 +127349,8 @@ class VmCloneV2NicNetworkInfoIpv4ConfigArgsDict(TypedDict):
     should_assign_ip: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-    <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-    <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+      <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+      <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
     """
 
 @pulumi.input_type
@@ -127382,8 +127361,8 @@ class VmCloneV2NicNetworkInfoIpv4ConfigArgs:
                  should_assign_ip: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.bool] should_assign_ip: - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-               <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-               <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+                 <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+                 <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
         """
         if ip_addresses is not None:
             pulumi.set(__self__, "ip_addresses", ip_addresses)
@@ -127415,8 +127394,8 @@ class VmCloneV2NicNetworkInfoIpv4ConfigArgs:
     def should_assign_ip(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-        <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-        <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+          <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+          <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
         """
         return pulumi.get(self, "should_assign_ip")
 
@@ -127900,7 +127879,7 @@ class VmCloneV2NicNicBackingInfoVirtualEthernetNicArgsDict(TypedDict):
     model: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) Options for the NIC emulation.
-    Valid values are:
+      Valid values are:
     - `VIRTIO` The NIC emulation model is Virtio.
     - `E1000` The NIC emulation model is E1000.
     """
@@ -127919,7 +127898,7 @@ class VmCloneV2NicNicBackingInfoVirtualEthernetNicArgs:
         """
         :param pulumi.Input[_builtins.bool] is_connected: - (Optional) Indicates whether the NIC is connected or not. Default is True.
         :param pulumi.Input[_builtins.str] model: - (Optional) Options for the NIC emulation.
-               Valid values are:
+                 Valid values are:
                - `VIRTIO` The NIC emulation model is Virtio.
                - `E1000` The NIC emulation model is E1000.
         :param pulumi.Input[_builtins.int] num_queues: - (Optional) The number of Tx/Rx queue pairs for this NIC.
@@ -127959,7 +127938,7 @@ class VmCloneV2NicNicBackingInfoVirtualEthernetNicArgs:
     def model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Options for the NIC emulation.
-        Valid values are:
+          Valid values are:
         - `VIRTIO` The NIC emulation model is Virtio.
         - `E1000` The NIC emulation model is E1000.
         """
@@ -128050,7 +128029,7 @@ class VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoArgsDict(TypedDict):
     vlan_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-    Valid values are:
+      Valid values are:
     - `TRUNK` The virtual NIC is created in TRUNKED mode.
     - `ACCESS` The virtual NIC is created in ACCESS mode.
     """
@@ -128071,7 +128050,7 @@ class VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoArgs:
         :param pulumi.Input[Sequence[pulumi.Input['VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArgs']]] subnets: - (Optional) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] trunked_vlans: - (Optional) List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
         :param pulumi.Input[_builtins.str] vlan_mode: - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-               Valid values are:
+                 Valid values are:
                - `TRUNK` The virtual NIC is created in TRUNKED mode.
                - `ACCESS` The virtual NIC is created in ACCESS mode.
         """
@@ -128161,7 +128140,7 @@ class VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoArgs:
     def vlan_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-        Valid values are:
+          Valid values are:
         - `TRUNK` The virtual NIC is created in TRUNKED mode.
         - `ACCESS` The virtual NIC is created in ACCESS mode.
         """
@@ -128178,8 +128157,8 @@ class VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArgsDict(TypedD
     should_assign_ip: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-    <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-    <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+      <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+      <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
     """
 
 @pulumi.input_type
@@ -128190,8 +128169,8 @@ class VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArgs:
                  should_assign_ip: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.bool] should_assign_ip: - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-               <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-               <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+                 <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+                 <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
         """
         if ip_addresses is not None:
             pulumi.set(__self__, "ip_addresses", ip_addresses)
@@ -128223,8 +128202,8 @@ class VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArgs:
     def should_assign_ip(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-        <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-        <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+          <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+          <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
         """
         return pulumi.get(self, "should_assign_ip")
 
@@ -128498,8 +128477,8 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoArgsDict(TypedDict)
     network_function_nic_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) The type of this Network function NIC.
-    Defaults to INGRESS.
-    Valid values are:
+      Defaults to INGRESS.
+      Valid values are:
     - `TAP` The type of Network-Function NIC is Tap.
     - `EGRESS` The type of Network-Function NIC is Egress.
     - `INGRESS` The type of Network-Function NIC is Ingress.
@@ -128507,8 +128486,8 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoArgsDict(TypedDict)
     nic_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) NIC type.
-    Defaults to NORMAL_NIC.
-    Valid values are:
+      Defaults to NORMAL_NIC.
+      Valid values are:
     - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
     - `NORMAL_NIC` The type of NIC is Normal.
     - `DIRECT_NIC` The type of NIC is Direct.
@@ -128529,7 +128508,7 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoArgsDict(TypedDict)
     vlan_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-    Valid values are:
+      Valid values are:
     - `TRUNK` The virtual NIC is created in TRUNKED mode.
     - `ACCESS` The virtual NIC is created in ACCESS mode.
     """
@@ -128551,14 +128530,14 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoArgs:
         :param pulumi.Input[Sequence[pulumi.Input['VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigArgs']]] ipv4_configs: - (Optional) The IP address configurations.
         :param pulumi.Input[Sequence[pulumi.Input['VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChainArgs']]] network_function_chains: - (Optional)The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
         :param pulumi.Input[_builtins.str] network_function_nic_type: - (Optional) The type of this Network function NIC.
-               Defaults to INGRESS.
-               Valid values are:
+                 Defaults to INGRESS.
+                 Valid values are:
                - `TAP` The type of Network-Function NIC is Tap.
                - `EGRESS` The type of Network-Function NIC is Egress.
                - `INGRESS` The type of Network-Function NIC is Ingress.
         :param pulumi.Input[_builtins.str] nic_type: - (Optional) NIC type.
-               Defaults to NORMAL_NIC.
-               Valid values are:
+                 Defaults to NORMAL_NIC.
+                 Valid values are:
                - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
                - `NORMAL_NIC` The type of NIC is Normal.
                - `DIRECT_NIC` The type of NIC is Direct.
@@ -128567,7 +128546,7 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoArgs:
         :param pulumi.Input[Sequence[pulumi.Input['VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnetArgs']]] subnets: - (Optional) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] trunked_vlans: - (Optional) List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
         :param pulumi.Input[_builtins.str] vlan_mode: - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-               Valid values are:
+                 Valid values are:
                - `TRUNK` The virtual NIC is created in TRUNKED mode.
                - `ACCESS` The virtual NIC is created in ACCESS mode.
         """
@@ -128639,8 +128618,8 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoArgs:
     def network_function_nic_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) The type of this Network function NIC.
-        Defaults to INGRESS.
-        Valid values are:
+          Defaults to INGRESS.
+          Valid values are:
         - `TAP` The type of Network-Function NIC is Tap.
         - `EGRESS` The type of Network-Function NIC is Egress.
         - `INGRESS` The type of Network-Function NIC is Ingress.
@@ -128656,8 +128635,8 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoArgs:
     def nic_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) NIC type.
-        Defaults to NORMAL_NIC.
-        Valid values are:
+          Defaults to NORMAL_NIC.
+          Valid values are:
         - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
         - `NORMAL_NIC` The type of NIC is Normal.
         - `DIRECT_NIC` The type of NIC is Direct.
@@ -128710,7 +128689,7 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoArgs:
     def vlan_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-        Valid values are:
+          Valid values are:
         - `TRUNK` The virtual NIC is created in TRUNKED mode.
         - `ACCESS` The virtual NIC is created in ACCESS mode.
         """
@@ -128727,8 +128706,8 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigArgsDict(
     should_assign_ip: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-    <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-    <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+      <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+      <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
     """
 
 @pulumi.input_type
@@ -128739,8 +128718,8 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigArgs:
                  should_assign_ip: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.bool] should_assign_ip: - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-               <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-               <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+                 <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+                 <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
         """
         if ip_addresses is not None:
             pulumi.set(__self__, "ip_addresses", ip_addresses)
@@ -128772,8 +128751,8 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigArgs:
     def should_assign_ip(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-        <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-        <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+          <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+          <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
         """
         return pulumi.get(self, "should_assign_ip")
 
@@ -129369,8 +129348,8 @@ class VmGcUpdateV2ConfigCloudInitArgsDict(TypedDict):
     datasource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) Type of datasource.
-    Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
-    Valid values are:
+      Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+      Valid values are:
     - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
     """
     metadata: NotRequired[pulumi.Input[Optional[_builtins.str]]]
@@ -129387,8 +129366,8 @@ class VmGcUpdateV2ConfigCloudInitArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input['VmGcUpdateV2ConfigCloudInitCloudInitScriptArgs']]] cloud_init_scripts: - (Optional) The script to use for cloud-init.
         :param pulumi.Input[_builtins.str] datasource_type: - (Optional) Type of datasource.
-               Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
-               Valid values are:
+                 Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+                 Valid values are:
                - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
         :param pulumi.Input[_builtins.str] metadata: The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
         """
@@ -129416,8 +129395,8 @@ class VmGcUpdateV2ConfigCloudInitArgs:
     def datasource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Type of datasource.
-        Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
-        Valid values are:
+          Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+          Valid values are:
         - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
         """
         return pulumi.get(self, "datasource_type")
@@ -129598,7 +129577,7 @@ class VmGcUpdateV2ConfigSysprepArgsDict(TypedDict):
     install_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
-    Valid values are:
+      Valid values are:
     - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
     - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
     """
@@ -129611,7 +129590,7 @@ class VmGcUpdateV2ConfigSysprepArgs:
                  sysprep_scripts: pulumi.Input[Optional[Sequence[pulumi.Input['VmGcUpdateV2ConfigSysprepSysprepScriptArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] install_type: - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
-               Valid values are:
+                 Valid values are:
                - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
                - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
         """
@@ -129625,7 +129604,7 @@ class VmGcUpdateV2ConfigSysprepArgs:
     def install_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
-        Valid values are:
+          Valid values are:
         - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
         - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
         """
@@ -129944,7 +129923,6 @@ class VmShutdownActionV2GuestPowerStateTransitionConfigArgsDict(TypedDict):
     """
     Indicates whether to abort VM shutdown/restart if the script fails.
 
-
     See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownVm).
     See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownGuestVm).
     See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/rebootVm).
@@ -129959,7 +129937,6 @@ class VmShutdownActionV2GuestPowerStateTransitionConfigArgs:
         """
         :param pulumi.Input[_builtins.bool] should_enable_script_exec: Indicates whether to run the set script before the VM shutdowns/restarts.
         :param pulumi.Input[_builtins.bool] should_fail_on_script_failure: Indicates whether to abort VM shutdown/restart if the script fails.
-               
                
                See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownVm).
                See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownGuestVm).
@@ -129988,7 +129965,6 @@ class VmShutdownActionV2GuestPowerStateTransitionConfigArgs:
     def should_fail_on_script_failure(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to abort VM shutdown/restart if the script fails.
-
 
         See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownVm).
         See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownGuestVm).
@@ -130234,7 +130210,6 @@ class VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdFqdnArgsDict(TypedDict):
     """
     - The fully qualified domain name.
 
-
     See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachIscsiClient).
     """
 
@@ -130244,7 +130219,6 @@ class VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdFqdnArgs:
                  value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] value: - The fully qualified domain name.
-               
                
                See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachIscsiClient).
         """
@@ -130256,7 +130230,6 @@ class VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdFqdnArgs:
     def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - The fully qualified domain name.
-
 
         See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachIscsiClient).
         """

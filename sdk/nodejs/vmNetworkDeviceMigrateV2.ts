@@ -69,7 +69,7 @@ export class VmNetworkDeviceMigrateV2 extends pulumi.CustomResource {
     declare public readonly ipAddresses: pulumi.Output<outputs.VmNetworkDeviceMigrateV2IpAddress[]>;
     /**
      * - (Required) The type of IP address management for NIC migration.
-     * Valid values are:
+     *   Valid values are:
      * - `ASSIGN_IP` The type of NIC is Span-Destination.
      * - `RELEASE_IP` The type of NIC is Normal.
      */
@@ -140,7 +140,7 @@ export interface VmNetworkDeviceMigrateV2State {
     ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceMigrateV2IpAddress>[] | undefined>;
     /**
      * - (Required) The type of IP address management for NIC migration.
-     * Valid values are:
+     *   Valid values are:
      * - `ASSIGN_IP` The type of NIC is Span-Destination.
      * - `RELEASE_IP` The type of NIC is Normal.
      */
@@ -169,7 +169,7 @@ export interface VmNetworkDeviceMigrateV2Args {
     ipAddresses?: pulumi.Input<pulumi.Input<inputs.VmNetworkDeviceMigrateV2IpAddress>[] | undefined>;
     /**
      * - (Required) The type of IP address management for NIC migration.
-     * Valid values are:
+     *   Valid values are:
      * - `ASSIGN_IP` The type of NIC is Span-Destination.
      * - `RELEASE_IP` The type of NIC is Normal.
      */

@@ -171,14 +171,14 @@ export class FoundationImageNodes extends pulumi.CustomResource {
     /**
      * - list containing cluster name and cluster urls for created clusters in current session
      * * `cluster_urls.#.cluster_name` :-<span pulumi-lang-nodejs=" clusterName
-     * " pulumi-lang-dotnet=" ClusterName
-     * " pulumi-lang-go=" clusterName
-     * " pulumi-lang-python=" cluster_name
-     * " pulumi-lang-yaml=" clusterName
-     * " pulumi-lang-java=" clusterName
-     * " pulumi-lang-hcl=" cluster_name
-     * "> clusterName
-     * </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
+     *   " pulumi-lang-dotnet=" ClusterName
+     *   " pulumi-lang-go=" clusterName
+     *   " pulumi-lang-python=" cluster_name
+     *   " pulumi-lang-yaml=" clusterName
+     *   " pulumi-lang-java=" clusterName
+     *   " pulumi-lang-hcl=" cluster_name
+     *   "> clusterName
+     *   </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
      */
     declare public /*out*/ readonly clusterUrls: pulumi.Output<outputs.FoundationImageNodesClusterUrl[]>;
     /**
@@ -449,14 +449,14 @@ export interface FoundationImageNodesState {
     /**
      * - list containing cluster name and cluster urls for created clusters in current session
      * * `cluster_urls.#.cluster_name` :-<span pulumi-lang-nodejs=" clusterName
-     * " pulumi-lang-dotnet=" ClusterName
-     * " pulumi-lang-go=" clusterName
-     * " pulumi-lang-python=" cluster_name
-     * " pulumi-lang-yaml=" clusterName
-     * " pulumi-lang-java=" clusterName
-     * " pulumi-lang-hcl=" cluster_name
-     * "> clusterName
-     * </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
+     *   " pulumi-lang-dotnet=" ClusterName
+     *   " pulumi-lang-go=" clusterName
+     *   " pulumi-lang-python=" cluster_name
+     *   " pulumi-lang-yaml=" clusterName
+     *   " pulumi-lang-java=" clusterName
+     *   " pulumi-lang-hcl=" cluster_name
+     *   "> clusterName
+     *   </span>* `cluster_urls.#.cluster_url` :- url to access the cluster login
      */
     clusterUrls?: pulumi.Input<pulumi.Input<inputs.FoundationImageNodesClusterUrl>[] | undefined>;
     /**

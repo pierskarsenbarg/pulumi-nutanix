@@ -31,7 +31,7 @@ class VmNetworkDeviceMigrateV2Args:
 
         :param pulumi.Input[_builtins.str] ext_id: - (Required) The globally unique identifier of a Nic. It should be of type UUID.
         :param pulumi.Input[_builtins.str] migrate_type: - (Required) The type of IP address management for NIC migration.
-               Valid values are:
+                 Valid values are:
                - `ASSIGN_IP` The type of NIC is Span-Destination.
                - `RELEASE_IP` The type of NIC is Normal.
         :param pulumi.Input[Sequence[pulumi.Input['VmNetworkDeviceMigrateV2SubnetArgs']]] subnets: - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
@@ -62,7 +62,7 @@ class VmNetworkDeviceMigrateV2Args:
     def migrate_type(self) -> pulumi.Input[_builtins.str]:
         """
         - (Required) The type of IP address management for NIC migration.
-        Valid values are:
+          Valid values are:
         - `ASSIGN_IP` The type of NIC is Span-Destination.
         - `RELEASE_IP` The type of NIC is Normal.
         """
@@ -123,7 +123,7 @@ class _VmNetworkDeviceMigrateV2State:
         :param pulumi.Input[_builtins.str] ext_id: - (Required) The globally unique identifier of a Nic. It should be of type UUID.
         :param pulumi.Input[Sequence[pulumi.Input['VmNetworkDeviceMigrateV2IpAddressArgs']]] ip_addresses: - (Optional) Ip config settings.
         :param pulumi.Input[_builtins.str] migrate_type: - (Required) The type of IP address management for NIC migration.
-               Valid values are:
+                 Valid values are:
                - `ASSIGN_IP` The type of NIC is Span-Destination.
                - `RELEASE_IP` The type of NIC is Normal.
         :param pulumi.Input[Sequence[pulumi.Input['VmNetworkDeviceMigrateV2SubnetArgs']]] subnets: - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
@@ -169,7 +169,7 @@ class _VmNetworkDeviceMigrateV2State:
     def migrate_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Required) The type of IP address management for NIC migration.
-        Valid values are:
+          Valid values are:
         - `ASSIGN_IP` The type of NIC is Span-Destination.
         - `RELEASE_IP` The type of NIC is Normal.
         """
@@ -246,7 +246,7 @@ class VmNetworkDeviceMigrateV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ext_id: - (Required) The globally unique identifier of a Nic. It should be of type UUID.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2IpAddressArgs', 'VmNetworkDeviceMigrateV2IpAddressArgsDict']]]] ip_addresses: - (Optional) Ip config settings.
         :param pulumi.Input[_builtins.str] migrate_type: - (Required) The type of IP address management for NIC migration.
-               Valid values are:
+                 Valid values are:
                - `ASSIGN_IP` The type of NIC is Span-Destination.
                - `RELEASE_IP` The type of NIC is Normal.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2SubnetArgs', 'VmNetworkDeviceMigrateV2SubnetArgsDict']]]] subnets: - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
@@ -350,7 +350,7 @@ class VmNetworkDeviceMigrateV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ext_id: - (Required) The globally unique identifier of a Nic. It should be of type UUID.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2IpAddressArgs', 'VmNetworkDeviceMigrateV2IpAddressArgsDict']]]] ip_addresses: - (Optional) Ip config settings.
         :param pulumi.Input[_builtins.str] migrate_type: - (Required) The type of IP address management for NIC migration.
-               Valid values are:
+                 Valid values are:
                - `ASSIGN_IP` The type of NIC is Span-Destination.
                - `RELEASE_IP` The type of NIC is Normal.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2SubnetArgs', 'VmNetworkDeviceMigrateV2SubnetArgsDict']]]] subnets: - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
@@ -388,7 +388,7 @@ class VmNetworkDeviceMigrateV2(pulumi.CustomResource):
     def migrate_type(self) -> pulumi.Output[_builtins.str]:
         """
         - (Required) The type of IP address management for NIC migration.
-        Valid values are:
+          Valid values are:
         - `ASSIGN_IP` The type of NIC is Span-Destination.
         - `RELEASE_IP` The type of NIC is Normal.
         """

@@ -28,7 +28,7 @@ class NdbCloneRefreshArgs:
 
         :param pulumi.Input[_builtins.str] clone_id: clone id
         :param pulumi.Input[_builtins.str] snapshot_id: snapshot id where clone has to be refreshed
-        :param pulumi.Input[_builtins.str] timezone: timezone. Default is Asia/Calcutta. 
+        :param pulumi.Input[_builtins.str] timezone: timezone. Default is Asia/Calcutta.
                
                See detailed information in [NDB Clone Refresh](https://www.nutanix.dev/api_references/ndb/#/d4e53fff274fa-start-refresh-operation-for-the-given-clone).
         """
@@ -68,7 +68,7 @@ class NdbCloneRefreshArgs:
     @pulumi.getter
     def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        timezone. Default is Asia/Calcutta. 
+        timezone. Default is Asia/Calcutta.
 
         See detailed information in [NDB Clone Refresh](https://www.nutanix.dev/api_references/ndb/#/d4e53fff274fa-start-refresh-operation-for-the-given-clone).
         """
@@ -100,7 +100,7 @@ class _NdbCloneRefreshState:
 
         :param pulumi.Input[_builtins.str] clone_id: clone id
         :param pulumi.Input[_builtins.str] snapshot_id: snapshot id where clone has to be refreshed
-        :param pulumi.Input[_builtins.str] timezone: timezone. Default is Asia/Calcutta. 
+        :param pulumi.Input[_builtins.str] timezone: timezone. Default is Asia/Calcutta.
                
                See detailed information in [NDB Clone Refresh](https://www.nutanix.dev/api_references/ndb/#/d4e53fff274fa-start-refresh-operation-for-the-given-clone).
         """
@@ -141,7 +141,7 @@ class _NdbCloneRefreshState:
     @pulumi.getter
     def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        timezone. Default is Asia/Calcutta. 
+        timezone. Default is Asia/Calcutta.
 
         See detailed information in [NDB Clone Refresh](https://www.nutanix.dev/api_references/ndb/#/d4e53fff274fa-start-refresh-operation-for-the-given-clone).
         """
@@ -210,7 +210,7 @@ class NdbCloneRefresh(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] clone_id: clone id
         :param pulumi.Input[_builtins.str] snapshot_id: snapshot id where clone has to be refreshed
-        :param pulumi.Input[_builtins.str] timezone: timezone. Default is Asia/Calcutta. 
+        :param pulumi.Input[_builtins.str] timezone: timezone. Default is Asia/Calcutta.
                
                See detailed information in [NDB Clone Refresh](https://www.nutanix.dev/api_references/ndb/#/d4e53fff274fa-start-refresh-operation-for-the-given-clone).
         """
@@ -311,7 +311,7 @@ class NdbCloneRefresh(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] clone_id: clone id
         :param pulumi.Input[_builtins.str] snapshot_id: snapshot id where clone has to be refreshed
-        :param pulumi.Input[_builtins.str] timezone: timezone. Default is Asia/Calcutta. 
+        :param pulumi.Input[_builtins.str] timezone: timezone. Default is Asia/Calcutta.
                
                See detailed information in [NDB Clone Refresh](https://www.nutanix.dev/api_references/ndb/#/d4e53fff274fa-start-refresh-operation-for-the-given-clone).
         """
@@ -345,7 +345,7 @@ class NdbCloneRefresh(pulumi.CustomResource):
     @pulumi.getter
     def timezone(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        timezone. Default is Asia/Calcutta. 
+        timezone. Default is Asia/Calcutta.
 
         See detailed information in [NDB Clone Refresh](https://www.nutanix.dev/api_references/ndb/#/d4e53fff274fa-start-refresh-operation-for-the-given-clone).
         """

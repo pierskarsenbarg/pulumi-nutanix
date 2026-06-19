@@ -106,7 +106,7 @@ export interface GetClusterV2Result {
     readonly tenantId: string;
     /**
      * -  Upgrade status of a cluster.
-     * Valid values are:
+     *    Valid values are:
      * - "CANCELLED"	The cluster upgrade is cancelled.
      * - "FAILED"	The cluster upgrade failed.
      * - "QUEUED"	The cluster upgrade is in the queue.

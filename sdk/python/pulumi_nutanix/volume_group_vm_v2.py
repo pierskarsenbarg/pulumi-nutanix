@@ -29,7 +29,6 @@ class VolumeGroupVmV2Args:
         :param pulumi.Input[_builtins.str] volume_group_ext_id: -(Required) The external identifier of the volume group.
         :param pulumi.Input[_builtins.int] index: -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
                
-               
                See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
         """
         pulumi.set(__self__, "vm_ext_id", vm_ext_id)
@@ -67,7 +66,6 @@ class VolumeGroupVmV2Args:
         """
         -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
 
-
         See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
         """
         return pulumi.get(self, "index")
@@ -89,7 +87,6 @@ class _VolumeGroupVmV2State:
 
         :param pulumi.Input[_builtins.str] ext_id: A globally unique identifier of a task.
         :param pulumi.Input[_builtins.int] index: -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
-               
                
                See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
         :param pulumi.Input[_builtins.str] vm_ext_id: -(Required) A globally unique identifier of an instance that is suitable for external consumption.
@@ -121,7 +118,6 @@ class _VolumeGroupVmV2State:
     def index(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
-
 
         See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
         """
@@ -186,7 +182,6 @@ class VolumeGroupVmV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] index: -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
-               
                
                See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
         :param pulumi.Input[_builtins.str] vm_ext_id: -(Required) A globally unique identifier of an instance that is suitable for external consumption.
@@ -274,7 +269,6 @@ class VolumeGroupVmV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ext_id: A globally unique identifier of a task.
         :param pulumi.Input[_builtins.int] index: -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
                
-               
                See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
         :param pulumi.Input[_builtins.str] vm_ext_id: -(Required) A globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[_builtins.str] volume_group_ext_id: -(Required) The external identifier of the volume group.
@@ -302,7 +296,6 @@ class VolumeGroupVmV2(pulumi.CustomResource):
     def index(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
         -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
-
 
         See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
         """

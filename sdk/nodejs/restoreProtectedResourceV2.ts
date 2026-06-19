@@ -78,7 +78,6 @@ export class RestoreProtectedResourceV2 extends pulumi.CustomResource {
     /**
      * -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
      *
-     *
      * See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
      */
     declare public readonly restoreTime: pulumi.Output<string | undefined>;
@@ -131,7 +130,6 @@ export interface RestoreProtectedResourceV2State {
     /**
      * -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
      *
-     *
      * See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
      */
     restoreTime?: pulumi.Input<string | undefined>;
@@ -151,7 +149,6 @@ export interface RestoreProtectedResourceV2Args {
     extId: pulumi.Input<string>;
     /**
      * -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
-     *
      *
      * See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
      */

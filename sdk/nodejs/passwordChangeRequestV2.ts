@@ -61,7 +61,6 @@ export class PasswordChangeRequestV2 extends pulumi.CustomResource {
     /**
      * -(Required) New password for a user account.
      *
-     *
      * See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
      */
     declare public readonly newPassword: pulumi.Output<string>;
@@ -114,7 +113,6 @@ export interface PasswordChangeRequestV2State {
     /**
      * -(Required) New password for a user account.
      *
-     *
      * See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
      */
     newPassword?: pulumi.Input<string | undefined>;
@@ -134,7 +132,6 @@ export interface PasswordChangeRequestV2Args {
     extId: pulumi.Input<string>;
     /**
      * -(Required) New password for a user account.
-     *
      *
      * See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
      */

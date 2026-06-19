@@ -29,7 +29,6 @@ class NdbLogCatchupsArgs:
         :param pulumi.Input[_builtins.bool] for_restore: Logs to Backup. The database may contain additional logs. Backup any remaining logs before restore or they will be lost.
         :param pulumi.Input[_builtins.int] log_catchup_version: it helps to perform same operation with same config.
                
-               
                See detailed information in [NDB Log Catchups](https://www.nutanix.dev/api_references/ndb/#/6100cd9959e52-start-log-catchup-for-given-time-machine) .
         :param pulumi.Input[_builtins.str] time_machine_id: Time machine id of
         """
@@ -68,7 +67,6 @@ class NdbLogCatchupsArgs:
     def log_catchup_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         it helps to perform same operation with same config.
-
 
         See detailed information in [NDB Log Catchups](https://www.nutanix.dev/api_references/ndb/#/6100cd9959e52-start-log-catchup-for-given-time-machine) .
         """
@@ -104,7 +102,6 @@ class _NdbLogCatchupsState:
         :param pulumi.Input[_builtins.bool] for_restore: Logs to Backup. The database may contain additional logs. Backup any remaining logs before restore or they will be lost.
         :param pulumi.Input[_builtins.int] log_catchup_version: it helps to perform same operation with same config.
                
-               
                See detailed information in [NDB Log Catchups](https://www.nutanix.dev/api_references/ndb/#/6100cd9959e52-start-log-catchup-for-given-time-machine) .
         :param pulumi.Input[_builtins.str] time_machine_id: Time machine id of
         """
@@ -143,7 +140,6 @@ class _NdbLogCatchupsState:
     def log_catchup_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         it helps to perform same operation with same config.
-
 
         See detailed information in [NDB Log Catchups](https://www.nutanix.dev/api_references/ndb/#/6100cd9959e52-start-log-catchup-for-given-time-machine) .
         """
@@ -185,7 +181,6 @@ class NdbLogCatchups(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] for_restore: Logs to Backup. The database may contain additional logs. Backup any remaining logs before restore or they will be lost.
         :param pulumi.Input[_builtins.int] log_catchup_version: it helps to perform same operation with same config.
-               
                
                See detailed information in [NDB Log Catchups](https://www.nutanix.dev/api_references/ndb/#/6100cd9959e52-start-log-catchup-for-given-time-machine) .
         :param pulumi.Input[_builtins.str] time_machine_id: Time machine id of
@@ -256,7 +251,6 @@ class NdbLogCatchups(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] for_restore: Logs to Backup. The database may contain additional logs. Backup any remaining logs before restore or they will be lost.
         :param pulumi.Input[_builtins.int] log_catchup_version: it helps to perform same operation with same config.
                
-               
                See detailed information in [NDB Log Catchups](https://www.nutanix.dev/api_references/ndb/#/6100cd9959e52-start-log-catchup-for-given-time-machine) .
         :param pulumi.Input[_builtins.str] time_machine_id: Time machine id of
         """
@@ -288,7 +282,6 @@ class NdbLogCatchups(pulumi.CustomResource):
     def log_catchup_version(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
         it helps to perform same operation with same config.
-
 
         See detailed information in [NDB Log Catchups](https://www.nutanix.dev/api_references/ndb/#/6100cd9959e52-start-log-catchup-for-given-time-machine) .
         """
