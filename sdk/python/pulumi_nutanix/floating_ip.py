@@ -30,7 +30,7 @@ class FloatingIpArgs:
         The set of arguments for constructing a FloatingIp resource.
 
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
-        :param pulumi.Input[_builtins.str] external_subnet_reference_name: The reference to a subnet. Should not be used with 
+        :param pulumi.Input[_builtins.str] external_subnet_reference_name: The reference to a subnet. Should not be used with
                {external_subnet_reference_uuid} .
         :param pulumi.Input[_builtins.str] external_subnet_reference_uuid: The reference to a subnet. Should not be used with {external_subnet_reference_name} .
         :param pulumi.Input[_builtins.str] private_ip: Private IP with which floating IP is associated. Should be used with<span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference " pulumi-lang-hcl=" vpc_reference "> vpcReference </span>.
@@ -69,7 +69,7 @@ class FloatingIpArgs:
     @pulumi.getter(name="externalSubnetReferenceName")
     def external_subnet_reference_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The reference to a subnet. Should not be used with 
+        The reference to a subnet. Should not be used with
         {external_subnet_reference_uuid} .
         """
         return pulumi.get(self, "external_subnet_reference_name")
@@ -154,7 +154,7 @@ class _FloatingIpState:
         Input properties used for looking up and filtering FloatingIp resources.
 
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
-        :param pulumi.Input[_builtins.str] external_subnet_reference_name: The reference to a subnet. Should not be used with 
+        :param pulumi.Input[_builtins.str] external_subnet_reference_name: The reference to a subnet. Should not be used with
                {external_subnet_reference_uuid} .
         :param pulumi.Input[_builtins.str] external_subnet_reference_uuid: The reference to a subnet. Should not be used with {external_subnet_reference_name} .
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: The<span pulumi-lang-nodejs=" floatingIps " pulumi-lang-dotnet=" FloatingIps " pulumi-lang-go=" floatingIps " pulumi-lang-python=" floating_ips " pulumi-lang-yaml=" floatingIps " pulumi-lang-java=" floatingIps " pulumi-lang-hcl=" floating_ips "> floatingIps </span>kind metadata.
@@ -196,7 +196,7 @@ class _FloatingIpState:
     @pulumi.getter(name="externalSubnetReferenceName")
     def external_subnet_reference_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The reference to a subnet. Should not be used with 
+        The reference to a subnet. Should not be used with
         {external_subnet_reference_uuid} .
         """
         return pulumi.get(self, "external_subnet_reference_name")
@@ -324,7 +324,7 @@ class FloatingIp(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
-        :param pulumi.Input[_builtins.str] external_subnet_reference_name: The reference to a subnet. Should not be used with 
+        :param pulumi.Input[_builtins.str] external_subnet_reference_name: The reference to a subnet. Should not be used with
                {external_subnet_reference_uuid} .
         :param pulumi.Input[_builtins.str] external_subnet_reference_uuid: The reference to a subnet. Should not be used with {external_subnet_reference_name} .
         :param pulumi.Input[_builtins.str] private_ip: Private IP with which floating IP is associated. Should be used with<span pulumi-lang-nodejs=" vpcReference " pulumi-lang-dotnet=" VpcReference " pulumi-lang-go=" vpcReference " pulumi-lang-python=" vpc_reference " pulumi-lang-yaml=" vpcReference " pulumi-lang-java=" vpcReference " pulumi-lang-hcl=" vpc_reference "> vpcReference </span>.
@@ -432,7 +432,7 @@ class FloatingIp(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
-        :param pulumi.Input[_builtins.str] external_subnet_reference_name: The reference to a subnet. Should not be used with 
+        :param pulumi.Input[_builtins.str] external_subnet_reference_name: The reference to a subnet. Should not be used with
                {external_subnet_reference_uuid} .
         :param pulumi.Input[_builtins.str] external_subnet_reference_uuid: The reference to a subnet. Should not be used with {external_subnet_reference_name} .
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: The<span pulumi-lang-nodejs=" floatingIps " pulumi-lang-dotnet=" FloatingIps " pulumi-lang-go=" floatingIps " pulumi-lang-python=" floating_ips " pulumi-lang-yaml=" floatingIps " pulumi-lang-java=" floatingIps " pulumi-lang-hcl=" floating_ips "> floatingIps </span>kind metadata.
@@ -467,7 +467,7 @@ class FloatingIp(pulumi.CustomResource):
     @pulumi.getter(name="externalSubnetReferenceName")
     def external_subnet_reference_name(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The reference to a subnet. Should not be used with 
+        The reference to a subnet. Should not be used with
         {external_subnet_reference_uuid} .
         """
         return pulumi.get(self, "external_subnet_reference_name")

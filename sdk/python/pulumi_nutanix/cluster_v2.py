@@ -210,7 +210,7 @@ class _ClusterV2State:
         :param pulumi.Input[Sequence[pulumi.Input['ClusterV2NetworkArgs']]] networks: - (Optional) Network details of a cluster.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterV2NodeArgs']]] nodes: - (Optional) The reference to a node and remove node parameters.
         :param pulumi.Input[_builtins.str] upgrade_status: - (Optional) Upgrade status of a cluster.
-               Valid values are:
+                 Valid values are:
                - "CANCELLED"	The cluster upgrade is cancelled.
                - "FAILED"	The cluster upgrade failed.
                - "QUEUED"	The cluster upgrade is in the queue.
@@ -409,7 +409,7 @@ class _ClusterV2State:
     def upgrade_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Upgrade status of a cluster.
-        Valid values are:
+          Valid values are:
         - "CANCELLED"	The cluster upgrade is cancelled.
         - "FAILED"	The cluster upgrade failed.
         - "QUEUED"	The cluster upgrade is in the queue.
@@ -960,7 +960,7 @@ class ClusterV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict']]]] networks: - (Optional) Network details of a cluster.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict']]]] nodes: - (Optional) The reference to a node and remove node parameters.
         :param pulumi.Input[_builtins.str] upgrade_status: - (Optional) Upgrade status of a cluster.
-               Valid values are:
+                 Valid values are:
                - "CANCELLED"	The cluster upgrade is cancelled.
                - "FAILED"	The cluster upgrade failed.
                - "QUEUED"	The cluster upgrade is in the queue.
@@ -1092,7 +1092,7 @@ class ClusterV2(pulumi.CustomResource):
     def upgrade_status(self) -> pulumi.Output[_builtins.str]:
         """
         - (Optional) Upgrade status of a cluster.
-        Valid values are:
+          Valid values are:
         - "CANCELLED"	The cluster upgrade is cancelled.
         - "FAILED"	The cluster upgrade failed.
         - "QUEUED"	The cluster upgrade is in the queue.

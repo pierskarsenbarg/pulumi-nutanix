@@ -33,7 +33,7 @@ class ClustersDiscoverUnconfiguredNodesV2Args:
 
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID.
         :param pulumi.Input[_builtins.str] address_type: - (Optional) Address type.
-               Valid values are:
+                 Valid values are:
                - "IPV4"	IPV4 address type.
                - "IPV6"	IPV6 address type.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] interface_filter_lists: - (Optional) Interface name that is used for packet broadcasting.
@@ -73,7 +73,7 @@ class ClustersDiscoverUnconfiguredNodesV2Args:
     def address_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Address type.
-        Valid values are:
+          Valid values are:
         - "IPV4"	IPV4 address type.
         - "IPV6"	IPV6 address type.
         """
@@ -159,7 +159,7 @@ class _ClustersDiscoverUnconfiguredNodesV2State:
         Input properties used for looking up and filtering ClustersDiscoverUnconfiguredNodesV2 resources.
 
         :param pulumi.Input[_builtins.str] address_type: - (Optional) Address type.
-               Valid values are:
+                 Valid values are:
                - "IPV4"	IPV4 address type.
                - "IPV6"	IPV6 address type.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID.
@@ -191,7 +191,7 @@ class _ClustersDiscoverUnconfiguredNodesV2State:
     def address_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - (Optional) Address type.
-        Valid values are:
+          Valid values are:
         - "IPV4"	IPV4 address type.
         - "IPV6"	IPV6 address type.
         """
@@ -304,7 +304,7 @@ class ClustersDiscoverUnconfiguredNodesV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] address_type: - (Optional) Address type.
-               Valid values are:
+                 Valid values are:
                - "IPV4"	IPV4 address type.
                - "IPV6"	IPV6 address type.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID.
@@ -391,7 +391,7 @@ class ClustersDiscoverUnconfiguredNodesV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] address_type: - (Optional) Address type.
-               Valid values are:
+                 Valid values are:
                - "IPV4"	IPV4 address type.
                - "IPV6"	IPV6 address type.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID.
@@ -420,7 +420,7 @@ class ClustersDiscoverUnconfiguredNodesV2(pulumi.CustomResource):
     def address_type(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         - (Optional) Address type.
-        Valid values are:
+          Valid values are:
         - "IPV4"	IPV4 address type.
         - "IPV6"	IPV6 address type.
         """

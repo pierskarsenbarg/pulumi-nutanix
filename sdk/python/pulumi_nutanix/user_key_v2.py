@@ -38,16 +38,16 @@ class UserKeyV2Args:
         The set of arguments for constructing a UserKeyV2 resource.
 
         :param pulumi.Input[_builtins.str] key_type: - ( Required ) The type of key. Enum Values:
-               _ "API_KEY": A key type that is used to identify a service.
-               _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
+                 _ "API_KEY": A key type that is used to identify a service.
+                 _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
         :param pulumi.Input[_builtins.str] user_ext_id: - ( Required ) External Identifier of the User.
         :param pulumi.Input[_builtins.str] assigned_to: - ( Optional ) External client to whom the given key is allocated.
         :param pulumi.Input[_builtins.str] created_by: - User or service who created the key.
         :param pulumi.Input[_builtins.str] created_time: - The creation time of the key.
         :param pulumi.Input[_builtins.str] creation_type: - ( Optional ) The creation mechanism of this entity. Enum Values:
-               _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
-               _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
-               _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
+                 _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+                 _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+                 _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
         :param pulumi.Input[_builtins.str] description: - ( Optional ) Brief description of the key.
         :param pulumi.Input[_builtins.str] expiry_time: - ( Optional ) The time when the key will expire.
         :param pulumi.Input[_builtins.str] last_updated_by: - User who updated the key.
@@ -55,9 +55,9 @@ class UserKeyV2Args:
         :param pulumi.Input[_builtins.str] last_used_time: - The time when the key was last used.
         :param pulumi.Input[_builtins.str] name: - ( Required ) Identifier for the key in the form of a name.
         :param pulumi.Input[_builtins.str] status: - ( Optional ) The status of the key. Enum Values:
-               _ "REVOKED": Key is revoked.
-               _ "VALID": Key is valid.
-               _ "EXPIRED": Key is expired.
+                 _ "REVOKED": Key is revoked.
+                 _ "VALID": Key is valid.
+                 _ "EXPIRED": Key is expired.
         """
         pulumi.set(__self__, "key_type", key_type)
         pulumi.set(__self__, "user_ext_id", user_ext_id)
@@ -89,8 +89,8 @@ class UserKeyV2Args:
     def key_type(self) -> pulumi.Input[_builtins.str]:
         """
         - ( Required ) The type of key. Enum Values:
-        _ "API_KEY": A key type that is used to identify a service.
-        _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
+          _ "API_KEY": A key type that is used to identify a service.
+          _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
         """
         return pulumi.get(self, "key_type")
 
@@ -151,9 +151,9 @@ class UserKeyV2Args:
     def creation_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - ( Optional ) The creation mechanism of this entity. Enum Values:
-        _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
-        _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
-        _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
+          _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+          _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+          _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
         """
         return pulumi.get(self, "creation_type")
 
@@ -238,9 +238,9 @@ class UserKeyV2Args:
     def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - ( Optional ) The status of the key. Enum Values:
-        _ "REVOKED": Key is revoked.
-        _ "VALID": Key is valid.
-        _ "EXPIRED": Key is expired.
+          _ "REVOKED": Key is revoked.
+          _ "VALID": Key is valid.
+          _ "EXPIRED": Key is expired.
         """
         return pulumi.get(self, "status")
 
@@ -276,25 +276,25 @@ class _UserKeyV2State:
         :param pulumi.Input[_builtins.str] created_by: - User or service who created the key.
         :param pulumi.Input[_builtins.str] created_time: - The creation time of the key.
         :param pulumi.Input[_builtins.str] creation_type: - ( Optional ) The creation mechanism of this entity. Enum Values:
-               _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
-               _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
-               _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
+                 _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+                 _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+                 _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
         :param pulumi.Input[_builtins.str] description: - ( Optional ) Brief description of the key.
         :param pulumi.Input[_builtins.str] expiry_time: - ( Optional ) The time when the key will expire.
         :param pulumi.Input[_builtins.str] ext_id: - The External Identifier of the User Group.
         :param pulumi.Input[Sequence[pulumi.Input['UserKeyV2KeyDetailArgs']]] key_details: - Details specific to type of the key.
         :param pulumi.Input[_builtins.str] key_type: - ( Required ) The type of key. Enum Values:
-               _ "API_KEY": A key type that is used to identify a service.
-               _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
+                 _ "API_KEY": A key type that is used to identify a service.
+                 _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
         :param pulumi.Input[_builtins.str] last_updated_by: - User who updated the key.
         :param pulumi.Input[_builtins.str] last_updated_time: - The time when the key was updated.
         :param pulumi.Input[_builtins.str] last_used_time: - The time when the key was last used.
         :param pulumi.Input[Sequence[pulumi.Input['UserKeyV2LinkArgs']]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[_builtins.str] name: - ( Required ) Identifier for the key in the form of a name.
         :param pulumi.Input[_builtins.str] status: - ( Optional ) The status of the key. Enum Values:
-               _ "REVOKED": Key is revoked.
-               _ "VALID": Key is valid.
-               _ "EXPIRED": Key is expired.
+                 _ "REVOKED": Key is revoked.
+                 _ "VALID": Key is valid.
+                 _ "EXPIRED": Key is expired.
         :param pulumi.Input[_builtins.str] tenant_id: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
         :param pulumi.Input[_builtins.str] user_ext_id: - ( Required ) External Identifier of the User.
         """
@@ -374,9 +374,9 @@ class _UserKeyV2State:
     def creation_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - ( Optional ) The creation mechanism of this entity. Enum Values:
-        _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
-        _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
-        _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
+          _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+          _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+          _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
         """
         return pulumi.get(self, "creation_type")
 
@@ -437,8 +437,8 @@ class _UserKeyV2State:
     def key_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - ( Required ) The type of key. Enum Values:
-        _ "API_KEY": A key type that is used to identify a service.
-        _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
+          _ "API_KEY": A key type that is used to identify a service.
+          _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
         """
         return pulumi.get(self, "key_type")
 
@@ -511,9 +511,9 @@ class _UserKeyV2State:
     def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - ( Optional ) The status of the key. Enum Values:
-        _ "REVOKED": Key is revoked.
-        _ "VALID": Key is valid.
-        _ "EXPIRED": Key is expired.
+          _ "REVOKED": Key is revoked.
+          _ "VALID": Key is valid.
+          _ "EXPIRED": Key is expired.
         """
         return pulumi.get(self, "status")
 
@@ -634,22 +634,22 @@ class UserKeyV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] created_by: - User or service who created the key.
         :param pulumi.Input[_builtins.str] created_time: - The creation time of the key.
         :param pulumi.Input[_builtins.str] creation_type: - ( Optional ) The creation mechanism of this entity. Enum Values:
-               _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
-               _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
-               _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
+                 _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+                 _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+                 _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
         :param pulumi.Input[_builtins.str] description: - ( Optional ) Brief description of the key.
         :param pulumi.Input[_builtins.str] expiry_time: - ( Optional ) The time when the key will expire.
         :param pulumi.Input[_builtins.str] key_type: - ( Required ) The type of key. Enum Values:
-               _ "API_KEY": A key type that is used to identify a service.
-               _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
+                 _ "API_KEY": A key type that is used to identify a service.
+                 _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
         :param pulumi.Input[_builtins.str] last_updated_by: - User who updated the key.
         :param pulumi.Input[_builtins.str] last_updated_time: - The time when the key was updated.
         :param pulumi.Input[_builtins.str] last_used_time: - The time when the key was last used.
         :param pulumi.Input[_builtins.str] name: - ( Required ) Identifier for the key in the form of a name.
         :param pulumi.Input[_builtins.str] status: - ( Optional ) The status of the key. Enum Values:
-               _ "REVOKED": Key is revoked.
-               _ "VALID": Key is valid.
-               _ "EXPIRED": Key is expired.
+                 _ "REVOKED": Key is revoked.
+                 _ "VALID": Key is valid.
+                 _ "EXPIRED": Key is expired.
         :param pulumi.Input[_builtins.str] user_ext_id: - ( Required ) External Identifier of the User.
         """
         ...
@@ -816,25 +816,25 @@ class UserKeyV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] created_by: - User or service who created the key.
         :param pulumi.Input[_builtins.str] created_time: - The creation time of the key.
         :param pulumi.Input[_builtins.str] creation_type: - ( Optional ) The creation mechanism of this entity. Enum Values:
-               _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
-               _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
-               _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
+                 _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+                 _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+                 _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
         :param pulumi.Input[_builtins.str] description: - ( Optional ) Brief description of the key.
         :param pulumi.Input[_builtins.str] expiry_time: - ( Optional ) The time when the key will expire.
         :param pulumi.Input[_builtins.str] ext_id: - The External Identifier of the User Group.
         :param pulumi.Input[Sequence[pulumi.Input[Union['UserKeyV2KeyDetailArgs', 'UserKeyV2KeyDetailArgsDict']]]] key_details: - Details specific to type of the key.
         :param pulumi.Input[_builtins.str] key_type: - ( Required ) The type of key. Enum Values:
-               _ "API_KEY": A key type that is used to identify a service.
-               _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
+                 _ "API_KEY": A key type that is used to identify a service.
+                 _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
         :param pulumi.Input[_builtins.str] last_updated_by: - User who updated the key.
         :param pulumi.Input[_builtins.str] last_updated_time: - The time when the key was updated.
         :param pulumi.Input[_builtins.str] last_used_time: - The time when the key was last used.
         :param pulumi.Input[Sequence[pulumi.Input[Union['UserKeyV2LinkArgs', 'UserKeyV2LinkArgsDict']]]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[_builtins.str] name: - ( Required ) Identifier for the key in the form of a name.
         :param pulumi.Input[_builtins.str] status: - ( Optional ) The status of the key. Enum Values:
-               _ "REVOKED": Key is revoked.
-               _ "VALID": Key is valid.
-               _ "EXPIRED": Key is expired.
+                 _ "REVOKED": Key is revoked.
+                 _ "VALID": Key is valid.
+                 _ "EXPIRED": Key is expired.
         :param pulumi.Input[_builtins.str] tenant_id: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
         :param pulumi.Input[_builtins.str] user_ext_id: - ( Required ) External Identifier of the User.
         """
@@ -890,9 +890,9 @@ class UserKeyV2(pulumi.CustomResource):
     def creation_type(self) -> pulumi.Output[_builtins.str]:
         """
         - ( Optional ) The creation mechanism of this entity. Enum Values:
-        _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
-        _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
-        _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
+          _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+          _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+          _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
         """
         return pulumi.get(self, "creation_type")
 
@@ -933,8 +933,8 @@ class UserKeyV2(pulumi.CustomResource):
     def key_type(self) -> pulumi.Output[_builtins.str]:
         """
         - ( Required ) The type of key. Enum Values:
-        _ "API_KEY": A key type that is used to identify a service.
-        _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
+          _ "API_KEY": A key type that is used to identify a service.
+          _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
         """
         return pulumi.get(self, "key_type")
 
@@ -983,9 +983,9 @@ class UserKeyV2(pulumi.CustomResource):
     def status(self) -> pulumi.Output[_builtins.str]:
         """
         - ( Optional ) The status of the key. Enum Values:
-        _ "REVOKED": Key is revoked.
-        _ "VALID": Key is valid.
-        _ "EXPIRED": Key is expired.
+          _ "REVOKED": Key is revoked.
+          _ "VALID": Key is valid.
+          _ "EXPIRED": Key is expired.
         """
         return pulumi.get(self, "status")
 

@@ -66,7 +66,7 @@ export class FloatingIp extends pulumi.CustomResource {
      */
     declare public readonly apiVersion: pulumi.Output<string>;
     /**
-     * The reference to a subnet. Should not be used with 
+     * The reference to a subnet. Should not be used with
      * {external_subnet_reference_uuid} .
      */
     declare public readonly externalSubnetReferenceName: pulumi.Output<string | undefined>;
@@ -141,7 +141,7 @@ export interface FloatingIpState {
      */
     apiVersion?: pulumi.Input<string | undefined>;
     /**
-     * The reference to a subnet. Should not be used with 
+     * The reference to a subnet. Should not be used with
      * {external_subnet_reference_uuid} .
      */
     externalSubnetReferenceName?: pulumi.Input<string | undefined>;
@@ -180,7 +180,7 @@ export interface FloatingIpArgs {
      */
     apiVersion?: pulumi.Input<string | undefined>;
     /**
-     * The reference to a subnet. Should not be used with 
+     * The reference to a subnet. Should not be used with
      * {external_subnet_reference_uuid} .
      */
     externalSubnetReferenceName?: pulumi.Input<string | undefined>;

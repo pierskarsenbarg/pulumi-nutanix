@@ -7910,9 +7910,6 @@ class ClusterAddNodeV2RemoveNodeParamExtraParam(dict):
         """
         :param _builtins.bool should_skip_add_check: -(Optional) Indicates if add check needs to be skipped or not.
                
-               
-               
-               
                See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/expandCluster).
         :param _builtins.bool should_skip_upgrade_check: -(Optional) Indicates if upgrade check needs to be skipped or not.
         :param _builtins.bool skip_space_check: -(Optional) Indicates if space check needs to be skipped or not.
@@ -7929,9 +7926,6 @@ class ClusterAddNodeV2RemoveNodeParamExtraParam(dict):
     def should_skip_add_check(self) -> Optional[_builtins.bool]:
         """
         -(Optional) Indicates if add check needs to be skipped or not.
-
-
-
 
         See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/expandCluster).
         """
@@ -9804,12 +9798,12 @@ class ClusterV2Config(dict):
         :param Sequence['ClusterV2ConfigAuthorizedPublicKeyListArgs'] authorized_public_key_lists: - (Optional) Public ssh key details. This is part of payload for cluster update operation only.
         :param Sequence['ClusterV2ConfigBuildInfoArgs'] build_infos: - (Optional) Build information details.
         :param _builtins.str cluster_arch: - (Optional) Cluster arch.
-               Valid values are:
+                 Valid values are:
                - "PPC64LE" PPC64LE cluster architecture type.
                - "X86_64" X86_64 cluster architecture type.
         :param Sequence[_builtins.str] cluster_functions: - (Optional) Cluster function. This is part of payload for cluster
-               create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
-               Valid values are:
+                 create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
+                 Valid values are:
                - "AOS"
                - "PRISM_CENTRAL"
                - "CLOUD_DATA_GATEWAY"
@@ -9818,13 +9812,13 @@ class ClusterV2Config(dict):
                - "TWO_NODE"
                - "ANALYTICS_PLATFORM"
         :param _builtins.str encryption_in_transit_status: - (Optional) Encryption in transit Status.
-               Valid values are:
+                 Valid values are:
                - "DISABLED"	Disabled encryption status.
                - "ENABLED"	Enabled encryption status.
         :param Sequence['ClusterV2ConfigFaultToleranceStateArgs'] fault_tolerance_states: - (Optional) Fault tolerant state of cluster.
         :param _builtins.str operation_mode: - (Optional) Cluster operation mode. This is part of payload for cluster
-               update operation only.
-               Valid values are:
+                 update operation only.
+                 Valid values are:
                - "OVERRIDE"	Override operation mode.
                - "STAND_ALONE"	Stand-alone operation mode.
                - "SWITCH_TO_TWO_NODE"	Switch to two-node operation mode.
@@ -9893,7 +9887,7 @@ class ClusterV2Config(dict):
     def cluster_arch(self) -> Optional[_builtins.str]:
         """
         - (Optional) Cluster arch.
-        Valid values are:
+          Valid values are:
         - "PPC64LE" PPC64LE cluster architecture type.
         - "X86_64" X86_64 cluster architecture type.
         """
@@ -9904,8 +9898,8 @@ class ClusterV2Config(dict):
     def cluster_functions(self) -> Optional[Sequence[_builtins.str]]:
         """
         - (Optional) Cluster function. This is part of payload for cluster
-        create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
-        Valid values are:
+          create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
+          Valid values are:
         - "AOS"
         - "PRISM_CENTRAL"
         - "CLOUD_DATA_GATEWAY"
@@ -9926,7 +9920,7 @@ class ClusterV2Config(dict):
     def encryption_in_transit_status(self) -> Optional[_builtins.str]:
         """
         - (Optional) Encryption in transit Status.
-        Valid values are:
+          Valid values are:
         - "DISABLED"	Disabled encryption status.
         - "ENABLED"	Enabled encryption status.
         """
@@ -9985,8 +9979,8 @@ class ClusterV2Config(dict):
     def operation_mode(self) -> Optional[_builtins.str]:
         """
         - (Optional) Cluster operation mode. This is part of payload for cluster
-        update operation only.
-        Valid values are:
+          update operation only.
+          Valid values are:
         - "OVERRIDE"	Override operation mode.
         - "STAND_ALONE"	Stand-alone operation mode.
         - "SWITCH_TO_TWO_NODE"	Switch to two-node operation mode.
@@ -10345,7 +10339,7 @@ class ClusterV2ConfigPulseStatus(dict):
         """
         :param _builtins.bool is_enabled: - (Optional) Flag to indicate if pulse is enabled or not.
         :param _builtins.str pii_scrubbing_level: - (Optional) PII scrubbing level.
-               Valid values are:
+                 Valid values are:
                - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
                - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
         """
@@ -10367,7 +10361,7 @@ class ClusterV2ConfigPulseStatus(dict):
     def pii_scrubbing_level(self) -> Optional[_builtins.str]:
         """
         - (Optional) PII scrubbing level.
-        Valid values are:
+          Valid values are:
         - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
         - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
         """
@@ -11290,7 +11284,7 @@ class ClusterV2NetworkHttpProxyWhiteList(dict):
         """
         :param _builtins.str target: - (Required) Target's identifier which is exempted from going through the configured HTTP Proxy.
         :param _builtins.str target_type: - (Optional) Target type.
-               Valid values are:
+                 Valid values are:
                - "IPV6_ADDRESS"	IPV6 address.
                - "HOST_NAME"	Name of the host.
                - "IPV4_ADDRESS"	IPV4 address.
@@ -11313,7 +11307,7 @@ class ClusterV2NetworkHttpProxyWhiteList(dict):
     def target_type(self) -> _builtins.str:
         """
         - (Optional) Target type.
-        Valid values are:
+          Valid values are:
         - "IPV6_ADDRESS"	IPV6 address.
         - "HOST_NAME"	Name of the host.
         - "IPV4_ADDRESS"	IPV4 address.
@@ -15024,8 +15018,6 @@ class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInit(dict
                * `cloud_init_script.user_data`: (Optional) user data object
                * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
                
-               
-               
                See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/deployTemplate).
         :param _builtins.str datasource_type: Type of datasource. Default: CONFIG_DRIVE_V2
         :param _builtins.str metadata: The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
@@ -15044,8 +15036,6 @@ class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInit(dict
         The script to use for cloud-init.
         * `cloud_init_script.user_data`: (Optional) user data object
         * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
-
-
 
         See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/deployTemplate).
         """
@@ -28713,7 +28703,6 @@ class LcmUpgradeV2EntityUpdateSpec(dict):
         :param _builtins.str entity_uuid: UUID of the LCM entity.
         :param _builtins.str to_version: Version to upgrade to.
                
-               
                See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Upgrades/operation/performUpgrade).
         """
         pulumi.set(__self__, "entity_uuid", entity_uuid)
@@ -28732,7 +28721,6 @@ class LcmUpgradeV2EntityUpdateSpec(dict):
     def to_version(self) -> _builtins.str:
         """
         Version to upgrade to.
-
 
         See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Upgrades/operation/performUpgrade).
         """
@@ -32713,7 +32701,7 @@ class NdbClusterNetworksInfo(dict):
                  network_infos: Optional[Sequence['outputs.NdbClusterNetworksInfoNetworkInfo']] = None,
                  type: Optional[_builtins.str] = None):
         """
-        :param Sequence[_builtins.str] access_types: VLAN access types for which you want to configure network segmentation. Supports [PRISM, DSIP, DBSERVER ]. 
+        :param Sequence[_builtins.str] access_types: VLAN access types for which you want to configure network segmentation. Supports [PRISM, DSIP, DBSERVER ].
                Prism Element: Select this VLAN access type to configure a VLAN that the NDB agent VM can use to communicate with Prism.
                Prism iSCSI Data Service. Select this VLAN access type to configure a VLAN that the agent VM can use to make connection requests to the iSCSI data services IP.
                DBServer Access from NDB server. Select this VLAN access type to configure a VLAN that is used for communications between the NDB agent VM and the database server VM on the newly registered NDB server cluster.
@@ -32731,7 +32719,7 @@ class NdbClusterNetworksInfo(dict):
     @pulumi.getter(name="accessTypes")
     def access_types(self) -> Optional[Sequence[_builtins.str]]:
         """
-        VLAN access types for which you want to configure network segmentation. Supports [PRISM, DSIP, DBSERVER ]. 
+        VLAN access types for which you want to configure network segmentation. Supports [PRISM, DSIP, DBSERVER ].
         Prism Element: Select this VLAN access type to configure a VLAN that the NDB agent VM can use to communicate with Prism.
         Prism iSCSI Data Service. Select this VLAN access type to configure a VLAN that the agent VM can use to make connection requests to the iSCSI data services IP.
         DBServer Access from NDB server. Select this VLAN access type to configure a VLAN that is used for communications between the NDB agent VM and the database server VM on the newly registered NDB server cluster.
@@ -44744,7 +44732,7 @@ class NdbProfileDatabaseParameterProfile(dict):
                * `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
                * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however,<span pulumi-lang-nodejs=" trackCounts " pulumi-lang-dotnet=" TrackCounts " pulumi-lang-go=" trackCounts " pulumi-lang-python=" track_counts " pulumi-lang-yaml=" trackCounts " pulumi-lang-java=" trackCounts " pulumi-lang-hcl=" track_counts "> trackCounts </span>must also be enabled for autovacuum to work.
                * `postgres_database.checkpoint_completion_target`: (Optional)
-               Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
+                 Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
                * `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
                * `postgres_database.autovacuum_vacuum_threshold`: (Optional) Min number of row updates before vacuum. Minimum number of tuple updates or deletes prior to vacuum. Take value in KB. Default is 50 .
                * `postgres_database.autovacuum_vacuum_scale_factor`: (Optional) Number of tuple updates or deletes prior to vacuum as a fraction of reltuples. Default is 0.2
@@ -44752,7 +44740,7 @@ class NdbProfileDatabaseParameterProfile(dict):
                * `postgres_database.autovacuum_max_workers`: (Optional) Sets the maximum number of simultaneously running autovacuum worker processes. Default is 3
                * `postgres_database.autovacuum_vacuum_cost_delay`: (Optional) Vacuum cost delay in milliseconds, for autovacuum. Specifies the cost delay value that will be used in automatic VACUUM operation. Default is 2ms
                * `postgres_database.wal_buffers`: (Optional)
-               Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
+                 Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
                * `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
                * `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
                * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the<span pulumi-lang-nodejs=" pgWal " pulumi-lang-dotnet=" PgWal " pulumi-lang-go=" pgWal " pulumi-lang-python=" pg_wal " pulumi-lang-yaml=" pgWal " pulumi-lang-java=" pgWal " pulumi-lang-hcl=" pg_wal "> pgWal </span>directory. Default is 700 .
@@ -44778,7 +44766,7 @@ class NdbProfileDatabaseParameterProfile(dict):
         * `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
         * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however,<span pulumi-lang-nodejs=" trackCounts " pulumi-lang-dotnet=" TrackCounts " pulumi-lang-go=" trackCounts " pulumi-lang-python=" track_counts " pulumi-lang-yaml=" trackCounts " pulumi-lang-java=" trackCounts " pulumi-lang-hcl=" track_counts "> trackCounts </span>must also be enabled for autovacuum to work.
         * `postgres_database.checkpoint_completion_target`: (Optional)
-        Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
+          Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
         * `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
         * `postgres_database.autovacuum_vacuum_threshold`: (Optional) Min number of row updates before vacuum. Minimum number of tuple updates or deletes prior to vacuum. Take value in KB. Default is 50 .
         * `postgres_database.autovacuum_vacuum_scale_factor`: (Optional) Number of tuple updates or deletes prior to vacuum as a fraction of reltuples. Default is 0.2
@@ -44786,7 +44774,7 @@ class NdbProfileDatabaseParameterProfile(dict):
         * `postgres_database.autovacuum_max_workers`: (Optional) Sets the maximum number of simultaneously running autovacuum worker processes. Default is 3
         * `postgres_database.autovacuum_vacuum_cost_delay`: (Optional) Vacuum cost delay in milliseconds, for autovacuum. Specifies the cost delay value that will be used in automatic VACUUM operation. Default is 2ms
         * `postgres_database.wal_buffers`: (Optional)
-        Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
+          Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
         * `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
         * `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
         * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the<span pulumi-lang-nodejs=" pgWal " pulumi-lang-dotnet=" PgWal " pulumi-lang-go=" pgWal " pulumi-lang-python=" pg_wal " pulumi-lang-yaml=" pgWal " pulumi-lang-java=" pgWal " pulumi-lang-hcl=" pg_wal "> pgWal </span>directory. Default is 700 .
@@ -63978,7 +63966,6 @@ class OvaVmDeployV2OverrideVmConfigCategory(dict):
         """
         :param _builtins.str ext_id: A globally unique identifier of a VM category of type UUID.
                
-               
                See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Ovas/operation/deployOva).
         """
         if ext_id is not None:
@@ -63989,7 +63976,6 @@ class OvaVmDeployV2OverrideVmConfigCategory(dict):
     def ext_id(self) -> Optional[_builtins.str]:
         """
         A globally unique identifier of a VM category of type UUID.
-
 
         See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Ovas/operation/deployOva).
         """
@@ -85873,7 +85859,7 @@ class StoragePolicyV2CompressionSpec(dict):
                  compression_state: _builtins.str):
         """
         :param _builtins.str compression_state: - (Required) Controls enabling or disabling compression. If no explicit preference is set, the system chooses a value.
-               Valid values:
+                 Valid values:
                * `"DISABLED"`:- User wants data not compressed.
                * `"POSTPROCESS"`:- User wants data compressed later.
                * `"INLINE"`:- User wants data compressed inline.
@@ -85886,7 +85872,7 @@ class StoragePolicyV2CompressionSpec(dict):
     def compression_state(self) -> _builtins.str:
         """
         - (Required) Controls enabling or disabling compression. If no explicit preference is set, the system chooses a value.
-        Valid values:
+          Valid values:
         * `"DISABLED"`:- User wants data not compressed.
         * `"POSTPROCESS"`:- User wants data compressed later.
         * `"INLINE"`:- User wants data compressed inline.
@@ -85918,7 +85904,7 @@ class StoragePolicyV2EncryptionSpec(dict):
                  encryption_state: _builtins.str):
         """
         :param _builtins.str encryption_state: - (Required) Controls enabling encryption. Once enabled, it cannot be disabled. If no explicit preference is set, the system decides.
-               Valid values:
+                 Valid values:
                * `"SYSTEM_DERIVED"`:- User is not interested in encryption; system decides.
                * `"ENABLED"`:- User wants data encrypted.
                
@@ -85931,7 +85917,7 @@ class StoragePolicyV2EncryptionSpec(dict):
     def encryption_state(self) -> _builtins.str:
         """
         - (Required) Controls enabling encryption. Once enabled, it cannot be disabled. If no explicit preference is set, the system decides.
-        Valid values:
+          Valid values:
         * `"SYSTEM_DERIVED"`:- User is not interested in encryption; system decides.
         * `"ENABLED"`:- User wants data encrypted.
 
@@ -85963,7 +85949,7 @@ class StoragePolicyV2FaultToleranceSpec(dict):
                  replication_factor: _builtins.str):
         """
         :param _builtins.str replication_factor: - (Required) Specifies the number of data copies for entities governed by the Storage Policy.
-               Valid values:
+                 Valid values:
                * `"SYSTEM_DERIVED"`:- User has not provided the number of copies; system decides.
                * `"TWO"`:- Two data copies (Original + 1 copy).
                * `"THREE"`:- Three data copies (Original + 2 copies).
@@ -85975,7 +85961,7 @@ class StoragePolicyV2FaultToleranceSpec(dict):
     def replication_factor(self) -> _builtins.str:
         """
         - (Required) Specifies the number of data copies for entities governed by the Storage Policy.
-        Valid values:
+          Valid values:
         * `"SYSTEM_DERIVED"`:- User has not provided the number of copies; system decides.
         * `"TWO"`:- Two data copies (Original + 1 copy).
         * `"THREE"`:- Three data copies (Original + 2 copies).
@@ -108344,7 +108330,7 @@ class VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress(dict):
                  index: Optional[_builtins.int] = None):
         """
         :param _builtins.str bus_type: - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-               Valid values are:
+                 Valid values are:
                - `SCSI` The type of disk bus is SCSI.
                - `SPAPR` The type of disk bus is SPAPR.
                - `PCI` The type of disk bus is PCI.
@@ -108362,7 +108348,7 @@ class VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress(dict):
     def bus_type(self) -> Optional[_builtins.str]:
         """
         - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-        Valid values are:
+          Valid values are:
         - `SCSI` The type of disk bus is SCSI.
         - `SPAPR` The type of disk bus is SPAPR.
         - `PCI` The type of disk bus is PCI.
@@ -108604,7 +108590,7 @@ class VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress(dict):
                  index: Optional[_builtins.int] = None):
         """
         :param _builtins.str bus_type: - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-               Valid values are:
+                 Valid values are:
                - `SCSI` The type of disk bus is SCSI.
                - `SPAPR` The type of disk bus is SPAPR.
                - `PCI` The type of disk bus is PCI.
@@ -108622,7 +108608,7 @@ class VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress(dict):
     def bus_type(self) -> Optional[_builtins.str]:
         """
         - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-        Valid values are:
+          Valid values are:
         - `SCSI` The type of disk bus is SCSI.
         - `SPAPR` The type of disk bus is SPAPR.
         - `PCI` The type of disk bus is PCI.
@@ -109007,7 +108993,7 @@ class VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenc
                  index: Optional[_builtins.int] = None):
         """
         :param _builtins.str bus_type: - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-               Valid values are:
+                 Valid values are:
                - `SCSI` The type of disk bus is SCSI.
                - `SPAPR` The type of disk bus is SPAPR.
                - `PCI` The type of disk bus is PCI.
@@ -109025,7 +109011,7 @@ class VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenc
     def bus_type(self) -> Optional[_builtins.str]:
         """
         - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-        Valid values are:
+          Valid values are:
         - `SCSI` The type of disk bus is SCSI.
         - `SPAPR` The type of disk bus is SPAPR.
         - `PCI` The type of disk bus is PCI.
@@ -109542,7 +109528,7 @@ class VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress(dic
                  index: Optional[_builtins.int] = None):
         """
         :param _builtins.str bus_type: - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-               Valid values are:
+                 Valid values are:
                - `SCSI` The type of disk bus is SCSI.
                - `SPAPR` The type of disk bus is SPAPR.
                - `PCI` The type of disk bus is PCI.
@@ -109560,7 +109546,7 @@ class VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress(dic
     def bus_type(self) -> Optional[_builtins.str]:
         """
         - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-        Valid values are:
+          Valid values are:
         - `SCSI` The type of disk bus is SCSI.
         - `SPAPR` The type of disk bus is SPAPR.
         - `PCI` The type of disk bus is PCI.
@@ -109710,7 +109696,7 @@ class VmCloneV2CdRomDiskAddress(dict):
                  index: Optional[_builtins.int] = None):
         """
         :param _builtins.str bus_type: - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-               Valid values are:
+                 Valid values are:
                - `SCSI` The type of disk bus is SCSI.
                - `SPAPR` The type of disk bus is SPAPR.
                - `PCI` The type of disk bus is PCI.
@@ -109728,7 +109714,7 @@ class VmCloneV2CdRomDiskAddress(dict):
     def bus_type(self) -> Optional[_builtins.str]:
         """
         - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-        Valid values are:
+          Valid values are:
         - `SCSI` The type of disk bus is SCSI.
         - `SPAPR` The type of disk bus is SPAPR.
         - `PCI` The type of disk bus is PCI.
@@ -110197,7 +110183,7 @@ class VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddres
                  index: Optional[_builtins.int] = None):
         """
         :param _builtins.str bus_type: - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-               Valid values are:
+                 Valid values are:
                - `SCSI` The type of disk bus is SCSI.
                - `SPAPR` The type of disk bus is SPAPR.
                - `PCI` The type of disk bus is PCI.
@@ -110215,7 +110201,7 @@ class VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddres
     def bus_type(self) -> Optional[_builtins.str]:
         """
         - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-        Valid values are:
+          Valid values are:
         - `SCSI` The type of disk bus is SCSI.
         - `SPAPR` The type of disk bus is SPAPR.
         - `PCI` The type of disk bus is PCI.
@@ -110365,7 +110351,7 @@ class VmCloneV2DiskDiskAddress(dict):
                  index: Optional[_builtins.int] = None):
         """
         :param _builtins.str bus_type: - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-               Valid values are:
+                 Valid values are:
                - `SCSI` The type of disk bus is SCSI.
                - `SPAPR` The type of disk bus is SPAPR.
                - `PCI` The type of disk bus is PCI.
@@ -110383,7 +110369,7 @@ class VmCloneV2DiskDiskAddress(dict):
     def bus_type(self) -> Optional[_builtins.str]:
         """
         - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-        Valid values are:
+          Valid values are:
         - `SCSI` The type of disk bus is SCSI.
         - `SPAPR` The type of disk bus is SPAPR.
         - `PCI` The type of disk bus is PCI.
@@ -110651,8 +110637,8 @@ class VmCloneV2GuestCustomizationConfigCloudInit(dict):
         """
         :param Sequence['VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptArgs'] cloud_init_scripts: - (Optional) The script to use for cloud-init.
         :param _builtins.str datasource_type: - (Optional) Type of datasource.
-               Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
-               Valid values are:
+                 Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+                 Valid values are:
                - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
         :param _builtins.str metadata: The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
         """
@@ -110676,8 +110662,8 @@ class VmCloneV2GuestCustomizationConfigCloudInit(dict):
     def datasource_type(self) -> Optional[_builtins.str]:
         """
         - (Optional) Type of datasource.
-        Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
-        Valid values are:
+          Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+          Valid values are:
         - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
         """
         return pulumi.get(self, "datasource_type")
@@ -110853,7 +110839,7 @@ class VmCloneV2GuestCustomizationConfigSysprep(dict):
                  sysprep_scripts: Optional[Sequence['outputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScript']] = None):
         """
         :param _builtins.str install_type: - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
-               Valid values are:
+                 Valid values are:
                - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
                - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
         """
@@ -110867,7 +110853,7 @@ class VmCloneV2GuestCustomizationConfigSysprep(dict):
     def install_type(self) -> Optional[_builtins.str]:
         """
         - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
-        Valid values are:
+          Valid values are:
         - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
         - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
         """
@@ -111306,7 +111292,7 @@ class VmCloneV2NicBackingInfo(dict):
         :param _builtins.bool is_connected: - (Optional) Indicates whether the NIC is connected or not. Default is True.
         :param _builtins.str mac_address: - (Optional) MAC address of the emulated NIC.
         :param _builtins.str model: - (Optional) Options for the NIC emulation.
-               Valid values are:
+                 Valid values are:
                - `VIRTIO` The NIC emulation model is Virtio.
                - `E1000` The NIC emulation model is E1000.
         :param _builtins.int num_queues: - (Optional) The number of Tx/Rx queue pairs for this NIC.
@@ -111341,7 +111327,7 @@ class VmCloneV2NicBackingInfo(dict):
     def model(self) -> Optional[_builtins.str]:
         """
         - (Optional) Options for the NIC emulation.
-        Valid values are:
+          Valid values are:
         - `VIRTIO` The NIC emulation model is Virtio.
         - `E1000` The NIC emulation model is E1000.
         """
@@ -111403,14 +111389,14 @@ class VmCloneV2NicNetworkInfo(dict):
         :param Sequence['VmCloneV2NicNetworkInfoIpv4ConfigArgs'] ipv4_configs: - (Optional) The IP address configurations.
         :param Sequence['VmCloneV2NicNetworkInfoNetworkFunctionChainArgs'] network_function_chains: - (Optional)The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
         :param _builtins.str network_function_nic_type: - (Optional) The type of this Network function NIC.
-               Defaults to INGRESS.
-               Valid values are:
+                 Defaults to INGRESS.
+                 Valid values are:
                - `TAP` The type of Network-Function NIC is Tap.
                - `EGRESS` The type of Network-Function NIC is Egress.
                - `INGRESS` The type of Network-Function NIC is Ingress.
         :param _builtins.str nic_type: - (Optional) NIC type.
-               Defaults to NORMAL_NIC.
-               Valid values are:
+                 Defaults to NORMAL_NIC.
+                 Valid values are:
                - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
                - `NORMAL_NIC` The type of NIC is Normal.
                - `DIRECT_NIC` The type of NIC is Direct.
@@ -111419,7 +111405,7 @@ class VmCloneV2NicNetworkInfo(dict):
         :param Sequence['VmCloneV2NicNetworkInfoSubnetArgs'] subnets: - (Optional) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
         :param Sequence[_builtins.int] trunked_vlans: - (Optional) List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
         :param _builtins.str vlan_mode: - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-               Valid values are:
+                 Valid values are:
                - `TRUNK` The virtual NIC is created in TRUNKED mode.
                - `ACCESS` The virtual NIC is created in ACCESS mode.
         """
@@ -111468,8 +111454,8 @@ class VmCloneV2NicNetworkInfo(dict):
     def network_function_nic_type(self) -> Optional[_builtins.str]:
         """
         - (Optional) The type of this Network function NIC.
-        Defaults to INGRESS.
-        Valid values are:
+          Defaults to INGRESS.
+          Valid values are:
         - `TAP` The type of Network-Function NIC is Tap.
         - `EGRESS` The type of Network-Function NIC is Egress.
         - `INGRESS` The type of Network-Function NIC is Ingress.
@@ -111481,8 +111467,8 @@ class VmCloneV2NicNetworkInfo(dict):
     def nic_type(self) -> Optional[_builtins.str]:
         """
         - (Optional) NIC type.
-        Defaults to NORMAL_NIC.
-        Valid values are:
+          Defaults to NORMAL_NIC.
+          Valid values are:
         - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
         - `NORMAL_NIC` The type of NIC is Normal.
         - `DIRECT_NIC` The type of NIC is Direct.
@@ -111519,7 +111505,7 @@ class VmCloneV2NicNetworkInfo(dict):
     def vlan_mode(self) -> Optional[_builtins.str]:
         """
         - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-        Valid values are:
+          Valid values are:
         - `TRUNK` The virtual NIC is created in TRUNKED mode.
         - `ACCESS` The virtual NIC is created in ACCESS mode.
         """
@@ -111555,8 +111541,8 @@ class VmCloneV2NicNetworkInfoIpv4Config(dict):
                  should_assign_ip: Optional[_builtins.bool] = None):
         """
         :param _builtins.bool should_assign_ip: - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-               <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-               <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+                 <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+                 <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
         """
         if ip_addresses is not None:
             pulumi.set(__self__, "ip_addresses", ip_addresses)
@@ -111580,8 +111566,8 @@ class VmCloneV2NicNetworkInfoIpv4Config(dict):
     def should_assign_ip(self) -> Optional[_builtins.bool]:
         """
         - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-        <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-        <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+          <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+          <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
         """
         return pulumi.get(self, "should_assign_ip")
 
@@ -112150,7 +112136,7 @@ class VmCloneV2NicNicBackingInfoVirtualEthernetNic(dict):
         """
         :param _builtins.bool is_connected: - (Optional) Indicates whether the NIC is connected or not. Default is True.
         :param _builtins.str model: - (Optional) Options for the NIC emulation.
-               Valid values are:
+                 Valid values are:
                - `VIRTIO` The NIC emulation model is Virtio.
                - `E1000` The NIC emulation model is E1000.
         :param _builtins.int num_queues: - (Optional) The number of Tx/Rx queue pairs for this NIC.
@@ -112182,7 +112168,7 @@ class VmCloneV2NicNicBackingInfoVirtualEthernetNic(dict):
     def model(self) -> Optional[_builtins.str]:
         """
         - (Optional) Options for the NIC emulation.
-        Valid values are:
+          Valid values are:
         - `VIRTIO` The NIC emulation model is Virtio.
         - `E1000` The NIC emulation model is E1000.
         """
@@ -112290,7 +112276,7 @@ class VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfo(dict):
         :param Sequence['VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArgs'] subnets: - (Optional) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
         :param Sequence[_builtins.int] trunked_vlans: - (Optional) List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
         :param _builtins.str vlan_mode: - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-               Valid values are:
+                 Valid values are:
                - `TRUNK` The virtual NIC is created in TRUNKED mode.
                - `ACCESS` The virtual NIC is created in ACCESS mode.
         """
@@ -112356,7 +112342,7 @@ class VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfo(dict):
     def vlan_mode(self) -> Optional[_builtins.str]:
         """
         - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-        Valid values are:
+          Valid values are:
         - `TRUNK` The virtual NIC is created in TRUNKED mode.
         - `ACCESS` The virtual NIC is created in ACCESS mode.
         """
@@ -112392,8 +112378,8 @@ class VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config(dict):
                  should_assign_ip: Optional[_builtins.bool] = None):
         """
         :param _builtins.bool should_assign_ip: - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-               <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-               <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+                 <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+                 <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
         """
         if ip_addresses is not None:
             pulumi.set(__self__, "ip_addresses", ip_addresses)
@@ -112417,8 +112403,8 @@ class VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config(dict):
     def should_assign_ip(self) -> Optional[_builtins.bool]:
         """
         - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-        <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-        <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+          <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+          <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
         """
         return pulumi.get(self, "should_assign_ip")
 
@@ -112769,14 +112755,14 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfo(dict):
         :param Sequence['VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigArgs'] ipv4_configs: - (Optional) The IP address configurations.
         :param Sequence['VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChainArgs'] network_function_chains: - (Optional)The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
         :param _builtins.str network_function_nic_type: - (Optional) The type of this Network function NIC.
-               Defaults to INGRESS.
-               Valid values are:
+                 Defaults to INGRESS.
+                 Valid values are:
                - `TAP` The type of Network-Function NIC is Tap.
                - `EGRESS` The type of Network-Function NIC is Egress.
                - `INGRESS` The type of Network-Function NIC is Ingress.
         :param _builtins.str nic_type: - (Optional) NIC type.
-               Defaults to NORMAL_NIC.
-               Valid values are:
+                 Defaults to NORMAL_NIC.
+                 Valid values are:
                - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
                - `NORMAL_NIC` The type of NIC is Normal.
                - `DIRECT_NIC` The type of NIC is Direct.
@@ -112785,7 +112771,7 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfo(dict):
         :param Sequence['VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnetArgs'] subnets: - (Optional) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
         :param Sequence[_builtins.int] trunked_vlans: - (Optional) List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
         :param _builtins.str vlan_mode: - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-               Valid values are:
+                 Valid values are:
                - `TRUNK` The virtual NIC is created in TRUNKED mode.
                - `ACCESS` The virtual NIC is created in ACCESS mode.
         """
@@ -112841,8 +112827,8 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfo(dict):
     def network_function_nic_type(self) -> Optional[_builtins.str]:
         """
         - (Optional) The type of this Network function NIC.
-        Defaults to INGRESS.
-        Valid values are:
+          Defaults to INGRESS.
+          Valid values are:
         - `TAP` The type of Network-Function NIC is Tap.
         - `EGRESS` The type of Network-Function NIC is Egress.
         - `INGRESS` The type of Network-Function NIC is Ingress.
@@ -112854,8 +112840,8 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfo(dict):
     def nic_type(self) -> Optional[_builtins.str]:
         """
         - (Optional) NIC type.
-        Defaults to NORMAL_NIC.
-        Valid values are:
+          Defaults to NORMAL_NIC.
+          Valid values are:
         - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
         - `NORMAL_NIC` The type of NIC is Normal.
         - `DIRECT_NIC` The type of NIC is Direct.
@@ -112892,7 +112878,7 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfo(dict):
     def vlan_mode(self) -> Optional[_builtins.str]:
         """
         - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-        Valid values are:
+          Valid values are:
         - `TRUNK` The virtual NIC is created in TRUNKED mode.
         - `ACCESS` The virtual NIC is created in ACCESS mode.
         """
@@ -112928,8 +112914,8 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config(dict):
                  should_assign_ip: Optional[_builtins.bool] = None):
         """
         :param _builtins.bool should_assign_ip: - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-               <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-               <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+                 <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+                 <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
         """
         if ip_addresses is not None:
             pulumi.set(__self__, "ip_addresses", ip_addresses)
@@ -112953,8 +112939,8 @@ class VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config(dict):
     def should_assign_ip(self) -> Optional[_builtins.bool]:
         """
         - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-        <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-        <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+          <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+          <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
         """
         return pulumi.get(self, "should_assign_ip")
 
@@ -113635,8 +113621,8 @@ class VmGcUpdateV2ConfigCloudInit(dict):
         """
         :param Sequence['VmGcUpdateV2ConfigCloudInitCloudInitScriptArgs'] cloud_init_scripts: - (Optional) The script to use for cloud-init.
         :param _builtins.str datasource_type: - (Optional) Type of datasource.
-               Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
-               Valid values are:
+                 Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+                 Valid values are:
                - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
         :param _builtins.str metadata: The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
         """
@@ -113660,8 +113646,8 @@ class VmGcUpdateV2ConfigCloudInit(dict):
     def datasource_type(self) -> Optional[_builtins.str]:
         """
         - (Optional) Type of datasource.
-        Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
-        Valid values are:
+          Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+          Valid values are:
         - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
         """
         return pulumi.get(self, "datasource_type")
@@ -113837,7 +113823,7 @@ class VmGcUpdateV2ConfigSysprep(dict):
                  sysprep_scripts: Optional[Sequence['outputs.VmGcUpdateV2ConfigSysprepSysprepScript']] = None):
         """
         :param _builtins.str install_type: - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
-               Valid values are:
+                 Valid values are:
                - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
                - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
         """
@@ -113851,7 +113837,7 @@ class VmGcUpdateV2ConfigSysprep(dict):
     def install_type(self) -> Optional[_builtins.str]:
         """
         - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
-        Valid values are:
+          Valid values are:
         - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
         - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
         """
@@ -114163,7 +114149,6 @@ class VmShutdownActionV2GuestPowerStateTransitionConfig(dict):
         :param _builtins.bool should_enable_script_exec: Indicates whether to run the set script before the VM shutdowns/restarts.
         :param _builtins.bool should_fail_on_script_failure: Indicates whether to abort VM shutdown/restart if the script fails.
                
-               
                See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownVm).
                See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownGuestVm).
                See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/rebootVm).
@@ -114187,7 +114172,6 @@ class VmShutdownActionV2GuestPowerStateTransitionConfig(dict):
     def should_fail_on_script_failure(self) -> Optional[_builtins.bool]:
         """
         Indicates whether to abort VM shutdown/restart if the script fails.
-
 
         See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownVm).
         See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownGuestVm).
@@ -114400,7 +114384,6 @@ class VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdFqdn(dict):
         """
         :param _builtins.str value: - The fully qualified domain name.
                
-               
                See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachIscsiClient).
         """
         if value is not None:
@@ -114411,7 +114394,6 @@ class VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdFqdn(dict):
     def value(self) -> Optional[_builtins.str]:
         """
         - The fully qualified domain name.
-
 
         See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachIscsiClient).
         """
@@ -122110,12 +122092,12 @@ class GetClusterV2ConfigResult(dict):
         :param Sequence['GetClusterV2ConfigAuthorizedPublicKeyListArgs'] authorized_public_key_lists: - Public ssh key details. This is part of payload for cluster update operation only.
         :param Sequence['GetClusterV2ConfigBuildInfoArgs'] build_infos: - Build information details.
         :param _builtins.str cluster_arch: - Cluster arch.
-               Valid values are:
+                 Valid values are:
                - "PPC64LE" PPC64LE cluster architecture type.
                - "X86_64" X86_64 cluster architecture type.
         :param Sequence[_builtins.str] cluster_functions: - Cluster function. This is part of payload for cluster
-               create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
-               Valid values are:
+                 create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
+                 Valid values are:
                - "AOS"
                - "PRISM_CENTRAL"
                - "CLOUD_DATA_GATEWAY"
@@ -122125,21 +122107,21 @@ class GetClusterV2ConfigResult(dict):
                - "ANALYTICS_PLATFORM"
         :param Sequence['GetClusterV2ConfigClusterSoftwareMapArgs'] cluster_software_maps: - Cluster software version details.
         :param _builtins.str encryption_in_transit_status: - Encryption in transit Status.
-               Valid values are:
+                 Valid values are:
                - "DISABLED"	Disabled encryption status.
                - "ENABLED" 	Enabled encryption status.
         :param Sequence[_builtins.str] encryption_options: - Encryption option.
-               Valid values are:
+                 Valid values are:
                - "SOFTWARE".
                - "HARDWARE".
                - "SOFTWARE_AND_HARDWARE"
         :param Sequence[_builtins.str] encryption_scopes: - Encryption scope.
-               Valid values are:
+                 Valid values are:
                - "CLUSTER".
                - "CONTAINER".
         :param Sequence['GetClusterV2ConfigFaultToleranceStateArgs'] fault_tolerance_states: - Fault tolerance state of a cluster.
         :param Sequence[_builtins.str] hypervisor_types: - Hypervisor types.
-               Valid values are:
+                 Valid values are:
                - "AHV".
                - "ESX".
                - "HYPERV".
@@ -122151,8 +122133,8 @@ class GetClusterV2ConfigResult(dict):
         :param _builtins.bool is_password_remote_login_enabled: - Indicates whether the password ssh into the cluster is enabled or not.
         :param _builtins.bool is_remote_support_enabled: - Remote support status.
         :param _builtins.str operation_mode: - Cluster operation mode. This is part of payload for cluster
-               update operation only.
-               Valid values are:
+                 update operation only.
+                 Valid values are:
                - "OVERRIDE"	Override operation mode.
                - "STAND_ALONE"	Stand-alone operation mode.
                - "SWITCH_TO_TWO_NODE"	Switch to two-node operation mode.
@@ -122203,7 +122185,7 @@ class GetClusterV2ConfigResult(dict):
     def cluster_arch(self) -> _builtins.str:
         """
         - Cluster arch.
-        Valid values are:
+          Valid values are:
         - "PPC64LE" PPC64LE cluster architecture type.
         - "X86_64" X86_64 cluster architecture type.
         """
@@ -122214,8 +122196,8 @@ class GetClusterV2ConfigResult(dict):
     def cluster_functions(self) -> Sequence[_builtins.str]:
         """
         - Cluster function. This is part of payload for cluster
-        create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
-        Valid values are:
+          create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
+          Valid values are:
         - "AOS"
         - "PRISM_CENTRAL"
         - "CLOUD_DATA_GATEWAY"
@@ -122239,7 +122221,7 @@ class GetClusterV2ConfigResult(dict):
     def encryption_in_transit_status(self) -> _builtins.str:
         """
         - Encryption in transit Status.
-        Valid values are:
+          Valid values are:
         - "DISABLED"	Disabled encryption status.
         - "ENABLED" 	Enabled encryption status.
         """
@@ -122250,7 +122232,7 @@ class GetClusterV2ConfigResult(dict):
     def encryption_options(self) -> Sequence[_builtins.str]:
         """
         - Encryption option.
-        Valid values are:
+          Valid values are:
         - "SOFTWARE".
         - "HARDWARE".
         - "SOFTWARE_AND_HARDWARE"
@@ -122262,7 +122244,7 @@ class GetClusterV2ConfigResult(dict):
     def encryption_scopes(self) -> Sequence[_builtins.str]:
         """
         - Encryption scope.
-        Valid values are:
+          Valid values are:
         - "CLUSTER".
         - "CONTAINER".
         """
@@ -122281,7 +122263,7 @@ class GetClusterV2ConfigResult(dict):
     def hypervisor_types(self) -> Sequence[_builtins.str]:
         """
         - Hypervisor types.
-        Valid values are:
+          Valid values are:
         - "AHV".
         - "ESX".
         - "HYPERV".
@@ -122335,8 +122317,8 @@ class GetClusterV2ConfigResult(dict):
     def operation_mode(self) -> _builtins.str:
         """
         - Cluster operation mode. This is part of payload for cluster
-        update operation only.
-        Valid values are:
+          update operation only.
+          Valid values are:
         - "OVERRIDE"	Override operation mode.
         - "STAND_ALONE"	Stand-alone operation mode.
         - "SWITCH_TO_TWO_NODE"	Switch to two-node operation mode.
@@ -122468,7 +122450,7 @@ class GetClusterV2ConfigClusterSoftwareMapResult(dict):
                  version: _builtins.str):
         """
         :param _builtins.str software_type: - Software type. This is part of payload for cluster create operation only.
-               Valid values are:
+                 Valid values are:
                - "PRISM_CENTRAL": Prism Central software type.
                - "NOS": NOS software.
                - "NCC": NCC software.
@@ -122482,7 +122464,7 @@ class GetClusterV2ConfigClusterSoftwareMapResult(dict):
     def software_type(self) -> _builtins.str:
         """
         - Software type. This is part of payload for cluster create operation only.
-        Valid values are:
+          Valid values are:
         - "PRISM_CENTRAL": Prism Central software type.
         - "NOS": NOS software.
         - "NCC": NCC software.
@@ -122509,21 +122491,21 @@ class GetClusterV2ConfigFaultToleranceStateResult(dict):
                  redundancy_statuses: Sequence['outputs.GetClusterV2ConfigFaultToleranceStateRedundancyStatusResult']):
         """
         :param _builtins.str current_cluster_fault_tolerance: - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
-               Valid values are:
+                 Valid values are:
                - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
                - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
                - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
                - "CFT_0N_AND_0D":    - System can not handle any fault with a node or a disk.
         :param _builtins.int current_max_fault_tolerance: - Maximum fault tolerance that is supported currently.
         :param _builtins.str desired_cluster_fault_tolerance: - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
-               Valid values are:
+                 Valid values are:
                - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
                - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
                - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
                - "CFT_0N_AND_0D":    - System can not handle any fault with a node or a disk.
         :param _builtins.int desired_max_fault_tolerance: - Maximum fault tolerance desired.
         :param _builtins.str domain_awareness_level: - Domain awareness level corresponds to unit of cluster group. This is part of payload for both cluster create & update operations.
-               Valid values are:
+                 Valid values are:
                - "RACK"	Rack level awareness.
                - "NODE"	Node level awareness.
                - "BLOCK"	Block level awareness.
@@ -122542,7 +122524,7 @@ class GetClusterV2ConfigFaultToleranceStateResult(dict):
     def current_cluster_fault_tolerance(self) -> _builtins.str:
         """
         - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
-        Valid values are:
+          Valid values are:
         - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
         - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
         - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
@@ -122563,7 +122545,7 @@ class GetClusterV2ConfigFaultToleranceStateResult(dict):
     def desired_cluster_fault_tolerance(self) -> _builtins.str:
         """
         - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
-        Valid values are:
+          Valid values are:
         - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
         - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
         - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
@@ -122584,7 +122566,7 @@ class GetClusterV2ConfigFaultToleranceStateResult(dict):
     def domain_awareness_level(self) -> _builtins.str:
         """
         - Domain awareness level corresponds to unit of cluster group. This is part of payload for both cluster create & update operations.
-        Valid values are:
+          Valid values are:
         - "RACK"	Rack level awareness.
         - "NODE"	Node level awareness.
         - "BLOCK"	Block level awareness.
@@ -122638,7 +122620,7 @@ class GetClusterV2ConfigPulseStatusResult(dict):
         """
         :param _builtins.bool is_enabled: - (Optional) Flag to indicate if pulse is enabled or not.
         :param _builtins.str pii_scrubbing_level: - (Optional) PII scrubbing level.
-               Valid values are:
+                 Valid values are:
                - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
                - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
         """
@@ -122658,7 +122640,7 @@ class GetClusterV2ConfigPulseStatusResult(dict):
     def pii_scrubbing_level(self) -> _builtins.str:
         """
         - (Optional) PII scrubbing level.
-        Valid values are:
+          Valid values are:
         - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
         - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
         """
@@ -122712,7 +122694,7 @@ class GetClusterV2NetworkResult(dict):
         :param Sequence['GetClusterV2NetworkHttpProxyListArgs'] http_proxy_lists: - List of HTTP Proxy server configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
         :param _builtins.str internal_subnet: - Cluster internal subnet address.
         :param _builtins.str key_management_server_type: - Key management server type.
-               Valid values are:
+                 Valid values are:
                - "PRISM_CENTRAL"	Prism Central management server.
                - "EXTERNAL"	External management server.
                - "LOCAL"	Local management server.
@@ -122806,7 +122788,7 @@ class GetClusterV2NetworkResult(dict):
     def key_management_server_type(self) -> _builtins.str:
         """
         - Key management server type.
-        Valid values are:
+          Valid values are:
         - "PRISM_CENTRAL"	Prism Central management server.
         - "EXTERNAL"	External management server.
         - "LOCAL"	Local management server.
@@ -123320,7 +123302,7 @@ class GetClusterV2NetworkHttpProxyWhiteListResult(dict):
         """
         :param _builtins.str target: - Target's identifier which is exempted from going through the configured HTTP Proxy.
         :param _builtins.str target_type: - Type of the target which is exempted from going through the configured HTTP Proxy.
-               Valid values are:
+                 Valid values are:
                - "IPV6_ADDRESS"	IPV6 address.
                - "HOST_NAME"	Name of the host.
                - "DOMAIN_NAME_SUFFIX" Domain Name Suffix required for http proxy whitelist.
@@ -123343,7 +123325,7 @@ class GetClusterV2NetworkHttpProxyWhiteListResult(dict):
     def target_type(self) -> _builtins.str:
         """
         - Type of the target which is exempted from going through the configured HTTP Proxy.
-        Valid values are:
+          Valid values are:
         - "IPV6_ADDRESS"	IPV6 address.
         - "HOST_NAME"	Name of the host.
         - "DOMAIN_NAME_SUFFIX" Domain Name Suffix required for http proxy whitelist.
@@ -123367,7 +123349,7 @@ class GetClusterV2NetworkManagementServerResult(dict):
         :param _builtins.bool is_in_use: - Indicates whether the host is managed by an entity or not.
         :param _builtins.bool is_registered: - Indicates whether it is registered or not.
         :param _builtins.bool type: - Type of management server.
-               Valid values are:
+                 Valid values are:
                - "VCENTER"   	Vcenter management server.
         """
         pulumi.set(__self__, "ips", ips)
@@ -123413,7 +123395,7 @@ class GetClusterV2NetworkManagementServerResult(dict):
     def type(self) -> _builtins.bool:
         """
         - Type of management server.
-        Valid values are:
+          Valid values are:
         - "VCENTER"   	Vcenter management server.
         """
         return pulumi.get(self, "type")
@@ -123843,7 +123825,7 @@ class GetClusterV2NetworkSmtpServerResult(dict):
         :param _builtins.str email_address: - SMTP email address.
         :param Sequence['GetClusterV2NetworkSmtpServerServerArgs'] servers: - SMTP network details.
         :param _builtins.str type: - Type of management server.
-               Valid values are:
+                 Valid values are:
                - "VCENTER"   	Vcenter management server.
         """
         pulumi.set(__self__, "email_address", email_address)
@@ -123871,7 +123853,7 @@ class GetClusterV2NetworkSmtpServerResult(dict):
     def type(self) -> _builtins.str:
         """
         - Type of management server.
-        Valid values are:
+          Valid values are:
         - "VCENTER"   	Vcenter management server.
         """
         return pulumi.get(self, "type")
@@ -125036,7 +125018,7 @@ class GetClustersV2ClusterEntityResult(dict):
         :param Sequence['GetClustersV2ClusterEntityNodeArgs'] nodes: -  Node reference for a cluster.
         :param _builtins.str tenant_id: -  globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
         :param _builtins.str upgrade_status: -  Upgrade status of a cluster.
-               Valid values are:
+                  Valid values are:
                - "CANCELLED"	The cluster upgrade is cancelled.
                - "FAILED"	The cluster upgrade failed.
                - "QUEUED"	The cluster upgrade is in the queue.
@@ -125170,7 +125152,7 @@ class GetClustersV2ClusterEntityResult(dict):
     def upgrade_status(self) -> _builtins.str:
         """
         -  Upgrade status of a cluster.
-        Valid values are:
+           Valid values are:
         - "CANCELLED"	The cluster upgrade is cancelled.
         - "FAILED"	The cluster upgrade failed.
         - "QUEUED"	The cluster upgrade is in the queue.
@@ -125229,12 +125211,12 @@ class GetClustersV2ClusterEntityConfigResult(dict):
         :param Sequence['GetClustersV2ClusterEntityConfigAuthorizedPublicKeyListArgs'] authorized_public_key_lists: - Public ssh key details. This is part of payload for cluster update operation only.
         :param Sequence['GetClustersV2ClusterEntityConfigBuildInfoArgs'] build_infos: - Build information details.
         :param _builtins.str cluster_arch: - Cluster arch.
-               Valid values are:
+                 Valid values are:
                - "PPC64LE" PPC64LE cluster architecture type.
                - "X86_64" X86_64 cluster architecture type.
         :param Sequence[_builtins.str] cluster_functions: - Cluster function. This is part of payload for cluster
-               create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
-               Valid values are:
+                 create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
+                 Valid values are:
                - "AOS"
                - "PRISM_CENTRAL"
                - "CLOUD_DATA_GATEWAY"
@@ -125244,21 +125226,21 @@ class GetClustersV2ClusterEntityConfigResult(dict):
                - "ANALYTICS_PLATFORM"
         :param Sequence['GetClustersV2ClusterEntityConfigClusterSoftwareMapArgs'] cluster_software_maps: - Cluster software version details.
         :param _builtins.str encryption_in_transit_status: - Encryption in transit Status.
-               Valid values are:
+                 Valid values are:
                - "DISABLED"	Disabled encryption status.
                - "ENABLED" 	Enabled encryption status.
         :param Sequence[_builtins.str] encryption_options: - Encryption option.
-               Valid values are:
+                 Valid values are:
                - "SOFTWARE".
                - "HARDWARE".
                - "SOFTWARE_AND_HARDWARE"
         :param Sequence[_builtins.str] encryption_scopes: - Encryption scope.
-               Valid values are:
+                 Valid values are:
                - "CLUSTER".
                - "CONTAINER".
         :param Sequence['GetClustersV2ClusterEntityConfigFaultToleranceStateArgs'] fault_tolerance_states: - Fault tolerance state of a cluster.
         :param Sequence[_builtins.str] hypervisor_types: - Hypervisor types.
-               Valid values are:
+                 Valid values are:
                - "AHV".
                - "ESX".
                - "HYPERV".
@@ -125270,8 +125252,8 @@ class GetClustersV2ClusterEntityConfigResult(dict):
         :param _builtins.bool is_password_remote_login_enabled: - Indicates whether the password ssh into the cluster is enabled or not.
         :param _builtins.bool is_remote_support_enabled: - Remote support status.
         :param _builtins.str operation_mode: - Cluster operation mode. This is part of payload for cluster
-               update operation only.
-               Valid values are:
+                 update operation only.
+                 Valid values are:
                - "OVERRIDE"	Override operation mode.
                - "STAND_ALONE"	Stand-alone operation mode.
                - "SWITCH_TO_TWO_NODE"	Switch to two-node operation mode.
@@ -125322,7 +125304,7 @@ class GetClustersV2ClusterEntityConfigResult(dict):
     def cluster_arch(self) -> _builtins.str:
         """
         - Cluster arch.
-        Valid values are:
+          Valid values are:
         - "PPC64LE" PPC64LE cluster architecture type.
         - "X86_64" X86_64 cluster architecture type.
         """
@@ -125333,8 +125315,8 @@ class GetClustersV2ClusterEntityConfigResult(dict):
     def cluster_functions(self) -> Sequence[_builtins.str]:
         """
         - Cluster function. This is part of payload for cluster
-        create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
-        Valid values are:
+          create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
+          Valid values are:
         - "AOS"
         - "PRISM_CENTRAL"
         - "CLOUD_DATA_GATEWAY"
@@ -125358,7 +125340,7 @@ class GetClustersV2ClusterEntityConfigResult(dict):
     def encryption_in_transit_status(self) -> _builtins.str:
         """
         - Encryption in transit Status.
-        Valid values are:
+          Valid values are:
         - "DISABLED"	Disabled encryption status.
         - "ENABLED" 	Enabled encryption status.
         """
@@ -125369,7 +125351,7 @@ class GetClustersV2ClusterEntityConfigResult(dict):
     def encryption_options(self) -> Sequence[_builtins.str]:
         """
         - Encryption option.
-        Valid values are:
+          Valid values are:
         - "SOFTWARE".
         - "HARDWARE".
         - "SOFTWARE_AND_HARDWARE"
@@ -125381,7 +125363,7 @@ class GetClustersV2ClusterEntityConfigResult(dict):
     def encryption_scopes(self) -> Sequence[_builtins.str]:
         """
         - Encryption scope.
-        Valid values are:
+          Valid values are:
         - "CLUSTER".
         - "CONTAINER".
         """
@@ -125400,7 +125382,7 @@ class GetClustersV2ClusterEntityConfigResult(dict):
     def hypervisor_types(self) -> Sequence[_builtins.str]:
         """
         - Hypervisor types.
-        Valid values are:
+          Valid values are:
         - "AHV".
         - "ESX".
         - "HYPERV".
@@ -125454,8 +125436,8 @@ class GetClustersV2ClusterEntityConfigResult(dict):
     def operation_mode(self) -> _builtins.str:
         """
         - Cluster operation mode. This is part of payload for cluster
-        update operation only.
-        Valid values are:
+          update operation only.
+          Valid values are:
         - "OVERRIDE"	Override operation mode.
         - "STAND_ALONE"	Stand-alone operation mode.
         - "SWITCH_TO_TWO_NODE"	Switch to two-node operation mode.
@@ -125587,7 +125569,7 @@ class GetClustersV2ClusterEntityConfigClusterSoftwareMapResult(dict):
                  version: _builtins.str):
         """
         :param _builtins.str software_type: - Software type. This is part of payload for cluster create operation only.
-               Valid values are:
+                 Valid values are:
                - "PRISM_CENTRAL": Prism Central software type.
                - "NOS": NOS software.
                - "NCC": NCC software.
@@ -125601,7 +125583,7 @@ class GetClustersV2ClusterEntityConfigClusterSoftwareMapResult(dict):
     def software_type(self) -> _builtins.str:
         """
         - Software type. This is part of payload for cluster create operation only.
-        Valid values are:
+          Valid values are:
         - "PRISM_CENTRAL": Prism Central software type.
         - "NOS": NOS software.
         - "NCC": NCC software.
@@ -125628,21 +125610,21 @@ class GetClustersV2ClusterEntityConfigFaultToleranceStateResult(dict):
                  redundancy_statuses: Sequence['outputs.GetClustersV2ClusterEntityConfigFaultToleranceStateRedundancyStatusResult']):
         """
         :param _builtins.str current_cluster_fault_tolerance: - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
-               Valid values are:
+                 Valid values are:
                - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
                - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
                - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
                - "CFT_0N_AND_0D":    - System can not handle any fault with a node or a disk.
         :param _builtins.int current_max_fault_tolerance: - Maximum fault tolerance that is supported currently.
         :param _builtins.str desired_cluster_fault_tolerance: - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
-               Valid values are:
+                 Valid values are:
                - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
                - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
                - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
                - "CFT_0N_AND_0D":    - System can not handle any fault with a node or a disk.
         :param _builtins.int desired_max_fault_tolerance: - Maximum fault tolerance desired.
         :param _builtins.str domain_awareness_level: - Domain awareness level corresponds to unit of cluster group. This is part of payload for both cluster create & update operations.
-               Valid values are:
+                 Valid values are:
                - "RACK"	Rack level awareness.
                - "NODE"	Node level awareness.
                - "BLOCK"	Block level awareness.
@@ -125661,7 +125643,7 @@ class GetClustersV2ClusterEntityConfigFaultToleranceStateResult(dict):
     def current_cluster_fault_tolerance(self) -> _builtins.str:
         """
         - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
-        Valid values are:
+          Valid values are:
         - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
         - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
         - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
@@ -125682,7 +125664,7 @@ class GetClustersV2ClusterEntityConfigFaultToleranceStateResult(dict):
     def desired_cluster_fault_tolerance(self) -> _builtins.str:
         """
         - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
-        Valid values are:
+          Valid values are:
         - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
         - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
         - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
@@ -125703,7 +125685,7 @@ class GetClustersV2ClusterEntityConfigFaultToleranceStateResult(dict):
     def domain_awareness_level(self) -> _builtins.str:
         """
         - Domain awareness level corresponds to unit of cluster group. This is part of payload for both cluster create & update operations.
-        Valid values are:
+          Valid values are:
         - "RACK"	Rack level awareness.
         - "NODE"	Node level awareness.
         - "BLOCK"	Block level awareness.
@@ -125757,7 +125739,7 @@ class GetClustersV2ClusterEntityConfigPulseStatusResult(dict):
         """
         :param _builtins.bool is_enabled: - (Optional) Flag to indicate if pulse is enabled or not.
         :param _builtins.str pii_scrubbing_level: - (Optional) PII scrubbing level.
-               Valid values are:
+                 Valid values are:
                - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
                - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
         """
@@ -125777,7 +125759,7 @@ class GetClustersV2ClusterEntityConfigPulseStatusResult(dict):
     def pii_scrubbing_level(self) -> _builtins.str:
         """
         - (Optional) PII scrubbing level.
-        Valid values are:
+          Valid values are:
         - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
         - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
         """
@@ -125831,7 +125813,7 @@ class GetClustersV2ClusterEntityNetworkResult(dict):
         :param Sequence['GetClustersV2ClusterEntityNetworkHttpProxyListArgs'] http_proxy_lists: - List of HTTP Proxy server configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
         :param _builtins.str internal_subnet: - Cluster internal subnet address.
         :param _builtins.str key_management_server_type: - Key management server type.
-               Valid values are:
+                 Valid values are:
                - "PRISM_CENTRAL"	Prism Central management server.
                - "EXTERNAL"	External management server.
                - "LOCAL"	Local management server.
@@ -125925,7 +125907,7 @@ class GetClustersV2ClusterEntityNetworkResult(dict):
     def key_management_server_type(self) -> _builtins.str:
         """
         - Key management server type.
-        Valid values are:
+          Valid values are:
         - "PRISM_CENTRAL"	Prism Central management server.
         - "EXTERNAL"	External management server.
         - "LOCAL"	Local management server.
@@ -126439,7 +126421,7 @@ class GetClustersV2ClusterEntityNetworkHttpProxyWhiteListResult(dict):
         """
         :param _builtins.str target: - Target's identifier which is exempted from going through the configured HTTP Proxy.
         :param _builtins.str target_type: - Type of the target which is exempted from going through the configured HTTP Proxy.
-               Valid values are:
+                 Valid values are:
                - "IPV6_ADDRESS"	IPV6 address.
                - "HOST_NAME"	Name of the host.
                - "DOMAIN_NAME_SUFFIX" Domain Name Suffix required for http proxy whitelist.
@@ -126462,7 +126444,7 @@ class GetClustersV2ClusterEntityNetworkHttpProxyWhiteListResult(dict):
     def target_type(self) -> _builtins.str:
         """
         - Type of the target which is exempted from going through the configured HTTP Proxy.
-        Valid values are:
+          Valid values are:
         - "IPV6_ADDRESS"	IPV6 address.
         - "HOST_NAME"	Name of the host.
         - "DOMAIN_NAME_SUFFIX" Domain Name Suffix required for http proxy whitelist.
@@ -126486,7 +126468,7 @@ class GetClustersV2ClusterEntityNetworkManagementServerResult(dict):
         :param _builtins.bool is_in_use: - Indicates whether the host is managed by an entity or not.
         :param _builtins.bool is_registered: - Indicates whether it is registered or not.
         :param _builtins.bool type: - Type of management server.
-               Valid values are:
+                 Valid values are:
                - "VCENTER"   	Vcenter management server.
         """
         pulumi.set(__self__, "ips", ips)
@@ -126532,7 +126514,7 @@ class GetClustersV2ClusterEntityNetworkManagementServerResult(dict):
     def type(self) -> _builtins.bool:
         """
         - Type of management server.
-        Valid values are:
+          Valid values are:
         - "VCENTER"   	Vcenter management server.
         """
         return pulumi.get(self, "type")
@@ -126962,7 +126944,7 @@ class GetClustersV2ClusterEntityNetworkSmtpServerResult(dict):
         :param _builtins.str email_address: - SMTP email address.
         :param Sequence['GetClustersV2ClusterEntityNetworkSmtpServerServerArgs'] servers: - SMTP network details.
         :param _builtins.str type: - Type of management server.
-               Valid values are:
+                 Valid values are:
                - "VCENTER"   	Vcenter management server.
         """
         pulumi.set(__self__, "email_address", email_address)
@@ -126990,7 +126972,7 @@ class GetClustersV2ClusterEntityNetworkSmtpServerResult(dict):
     def type(self) -> _builtins.str:
         """
         - Type of management server.
-        Valid values are:
+          Valid values are:
         - "VCENTER"   	Vcenter management server.
         """
         return pulumi.get(self, "type")
@@ -161041,7 +161023,6 @@ class GetNdbTimeMachinesTimeMachineResult(dict):
         :param _builtins.str schedule_id: schedule id
         :param Sequence['GetNdbTimeMachinesTimeMachineScheduleArgs'] schedules: schedule info
                
-               
                See detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).
         :param _builtins.str scope: scope
         :param _builtins.str sla_id: sla id
@@ -161204,7 +161185,6 @@ class GetNdbTimeMachinesTimeMachineResult(dict):
     def schedules(self) -> Sequence['outputs.GetNdbTimeMachinesTimeMachineScheduleResult']:
         """
         schedule info
-
 
         See detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).
         """
@@ -169089,18 +169069,18 @@ class GetObjectStoresV2ObjectStoreResult(dict):
         :param _builtins.str public_network_reference: - Public network reference of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
         :param _builtins.str region: - The region in which the Object store is deployed.
         :param _builtins.str state: - Enum for the state of the Object store.
-               | Enum                                   | Description                                                     |
-               |----------------------------------------|-----------------------------------------------------------------|
-               | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
-               | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
-               | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
-               | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
-               | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
-               | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
-               | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
-               | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
-               | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
-               | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+                 | Enum                                   | Description                                                     |
+                 |----------------------------------------|-----------------------------------------------------------------|
+                 | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
+                 | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
+                 | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
+                 | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
+                 | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
+                 | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
+                 | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
+                 | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
+                 | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
+                 | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
         :param Sequence['GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs'] storage_network_dns_ips: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
         :param _builtins.str storage_network_reference: - Reference to the Storage Network of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
         :param Sequence['GetObjectStoresV2ObjectStoreStorageNetworkVipArgs'] storage_network_vips: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
@@ -169254,18 +169234,18 @@ class GetObjectStoresV2ObjectStoreResult(dict):
     def state(self) -> _builtins.str:
         """
         - Enum for the state of the Object store.
-        | Enum                                   | Description                                                     |
-        |----------------------------------------|-----------------------------------------------------------------|
-        | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
-        | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
-        | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
-        | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
-        | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
-        | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
-        | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
-        | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
-        | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
-        | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+          | Enum                                   | Description                                                     |
+          |----------------------------------------|-----------------------------------------------------------------|
+          | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
+          | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
+          | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
+          | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
+          | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
+          | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
+          | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
+          | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
+          | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
+          | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
         """
         return pulumi.get(self, "state")
 
@@ -174802,10 +174782,10 @@ class GetOvasV2OvaResult(dict):
         :param _builtins.str create_time: - Time when the OVA was created time.
         :param Sequence['GetOvasV2OvaCreatedByArgs'] created_bies: - Information of the user.
         :param _builtins.str disk_format: - Disk format of an OVA.
-               |ENUM |Description |
-               |---|---|
-               | VMDK | The VMDK disk format of an OVA. |
-               | QCOW2 | The QCOW2 disk format of an OVA. |
+                 |ENUM |Description |
+                 |---|---|
+                 | VMDK | The VMDK disk format of an OVA. |
+                 | QCOW2 | The QCOW2 disk format of an OVA. |
         :param _builtins.str ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
         :param _builtins.str last_update_time: - Time when the OVA was last updated time.
         :param Sequence['GetOvasV2OvaLinkArgs'] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
@@ -174863,10 +174843,10 @@ class GetOvasV2OvaResult(dict):
     def disk_format(self) -> _builtins.str:
         """
         - Disk format of an OVA.
-        |ENUM |Description |
-        |---|---|
-        | VMDK | The VMDK disk format of an OVA. |
-        | QCOW2 | The QCOW2 disk format of an OVA. |
+          |ENUM |Description |
+          |---|---|
+          | VMDK | The VMDK disk format of an OVA. |
+          | QCOW2 | The QCOW2 disk format of an OVA. |
         """
         return pulumi.get(self, "disk_format")
 
@@ -183550,7 +183530,7 @@ class GetPcRestorePointV2DomainManagerConfigBootstrapConfigEnvironmentInfoResult
                  type: _builtins.str):
         """
         :param _builtins.str provider_type: - Enums denoting the provider type of the PC, that is, AHV or ESXi.
-               Following are the supported provider types:
+                 Following are the supported provider types:
                - `VSPHERE` : Vsphere cloud provider.
                - `AZURE` : Azure cloud provider.
                - `NTNX` : Nutanix cloud provider.
@@ -183560,7 +183540,7 @@ class GetPcRestorePointV2DomainManagerConfigBootstrapConfigEnvironmentInfoResult
                - `NTNX` : Nutanix instance.
                - `NATIVE` : Native instance.
         :param _builtins.str type: - Enums denoting the environment type of the PC, that is, on-prem PC or cloud PC.
-               Following are the supported entity types:
+                 Following are the supported entity types:
                - `ONPREM` : On-prem environment.
                - `NTNX_CLOUD` : Nutanix cloud environment.
         """
@@ -183573,7 +183553,7 @@ class GetPcRestorePointV2DomainManagerConfigBootstrapConfigEnvironmentInfoResult
     def provider_type(self) -> _builtins.str:
         """
         - Enums denoting the provider type of the PC, that is, AHV or ESXi.
-        Following are the supported provider types:
+          Following are the supported provider types:
         - `VSPHERE` : Vsphere cloud provider.
         - `AZURE` : Azure cloud provider.
         - `NTNX` : Nutanix cloud provider.
@@ -183597,7 +183577,7 @@ class GetPcRestorePointV2DomainManagerConfigBootstrapConfigEnvironmentInfoResult
     def type(self) -> _builtins.str:
         """
         - Enums denoting the environment type of the PC, that is, on-prem PC or cloud PC.
-        Following are the supported entity types:
+          Following are the supported entity types:
         - `ONPREM` : On-prem environment.
         - `NTNX_CLOUD` : Nutanix cloud environment.
         """
@@ -186776,7 +186756,7 @@ class GetPcV2ConfigBootstrapConfigEnvironmentInfoResult(dict):
                  type: _builtins.str):
         """
         :param _builtins.str provider_type: - Enums denoting the provider type of the PC, that is, AHV or ESXi.
-               Following are the supported provider types:
+                 Following are the supported provider types:
                * `VSPHERE` : Vsphere cloud provider.
                * `AZURE` : Azure cloud provider.
                * `NTNX` : Nutanix cloud provider.
@@ -186786,7 +186766,7 @@ class GetPcV2ConfigBootstrapConfigEnvironmentInfoResult(dict):
                * `NTNX` : Nutanix instance.
                * `NATIVE` : Native instance.
         :param _builtins.str type: - Enums denoting the environment type of the PC, that is, on-prem PC or cloud PC.
-               Following are the supported entity types:
+                 Following are the supported entity types:
                * `ONPREM` : On-prem environment.
                * `NTNX_CLOUD` : Nutanix cloud environment.
         """
@@ -186799,7 +186779,7 @@ class GetPcV2ConfigBootstrapConfigEnvironmentInfoResult(dict):
     def provider_type(self) -> _builtins.str:
         """
         - Enums denoting the provider type of the PC, that is, AHV or ESXi.
-        Following are the supported provider types:
+          Following are the supported provider types:
         * `VSPHERE` : Vsphere cloud provider.
         * `AZURE` : Azure cloud provider.
         * `NTNX` : Nutanix cloud provider.
@@ -186823,7 +186803,7 @@ class GetPcV2ConfigBootstrapConfigEnvironmentInfoResult(dict):
     def type(self) -> _builtins.str:
         """
         - Enums denoting the environment type of the PC, that is, on-prem PC or cloud PC.
-        Following are the supported entity types:
+          Following are the supported entity types:
         * `ONPREM` : On-prem environment.
         * `NTNX_CLOUD` : Nutanix cloud environment.
         """
@@ -189856,14 +189836,14 @@ class GetProjectsEntityResult(dict):
         :param Sequence['GetProjectsEntityExternalUserGroupReferenceListArgs'] external_user_group_reference_lists: List of directory service user groups. These groups are not managed by Nutanix.
                * `external_user_group_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`" pulumi-lang-hcl="`user_group`">`userGroup`</span>
                * `external_user_group_reference_list.#.uuid` - The UUID of a<span pulumi-lang-nodejs=" userGroup
-               " pulumi-lang-dotnet=" UserGroup
-               " pulumi-lang-go=" userGroup
-               " pulumi-lang-python=" user_group
-               " pulumi-lang-yaml=" userGroup
-               " pulumi-lang-java=" userGroup
-               " pulumi-lang-hcl=" user_group
-               "> userGroup
-               </span>* `external_user_group_reference_list.#.name` - The name of a user_group
+                 " pulumi-lang-dotnet=" UserGroup
+                 " pulumi-lang-go=" userGroup
+                 " pulumi-lang-python=" user_group
+                 " pulumi-lang-yaml=" userGroup
+                 " pulumi-lang-java=" userGroup
+                 " pulumi-lang-hcl=" user_group
+                 "> userGroup
+                 </span>* `external_user_group_reference_list.#.name` - The name of a user_group
         :param _builtins.str name: (Optional) the name.
         :param Sequence['GetProjectsEntityResourceDomainArgs'] resource_domains: (Deprecated) Not supported starting from provider version `2.4.0` and expected to be empty.
         :param Sequence['GetProjectsEntitySubnetReferenceListArgs'] subnet_reference_lists: List of subnets for the project.
@@ -189961,14 +189941,14 @@ class GetProjectsEntityResult(dict):
         List of directory service user groups. These groups are not managed by Nutanix.
         * `external_user_group_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`" pulumi-lang-hcl="`user_group`">`userGroup`</span>
         * `external_user_group_reference_list.#.uuid` - The UUID of a<span pulumi-lang-nodejs=" userGroup
-        " pulumi-lang-dotnet=" UserGroup
-        " pulumi-lang-go=" userGroup
-        " pulumi-lang-python=" user_group
-        " pulumi-lang-yaml=" userGroup
-        " pulumi-lang-java=" userGroup
-        " pulumi-lang-hcl=" user_group
-        "> userGroup
-        </span>* `external_user_group_reference_list.#.name` - The name of a user_group
+          " pulumi-lang-dotnet=" UserGroup
+          " pulumi-lang-go=" userGroup
+          " pulumi-lang-python=" user_group
+          " pulumi-lang-yaml=" userGroup
+          " pulumi-lang-java=" userGroup
+          " pulumi-lang-hcl=" user_group
+          "> userGroup
+          </span>* `external_user_group_reference_list.#.name` - The name of a user_group
         """
         return pulumi.get(self, "external_user_group_reference_lists")
 
@@ -200248,22 +200228,22 @@ class GetStigsV2StigResult(dict):
         :param Sequence['GetStigsV2StigLinkArgs'] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param _builtins.str rule_id: - Rule ID of the STIG control.
         :param _builtins.str severity: - Contains possible values for the severity level of a vulnerability.
-               | Enum | Description |
-               |--------------|--------------------|
-               | `HIGH` | Severity level high. |
-               | `MEDIUM` | Severity level medium. |
-               | `LOW` | Severity level low. |
-               | `UNKNOWN` | Unknown value. |
-               | `CRITICAL` | Severity level critical. |
-               | `REDACTED` | Redacted value. |
+                 | Enum | Description |
+                 |--------------|--------------------|
+                 | `HIGH` | Severity level high. |
+                 | `MEDIUM` | Severity level medium. |
+                 | `LOW` | Severity level low. |
+                 | `UNKNOWN` | Unknown value. |
+                 | `CRITICAL` | Severity level critical. |
+                 | `REDACTED` | Redacted value. |
         :param _builtins.str status: - Current status of the STIG rule.
-               | Enum | Description |
-               |--------------|--------------------|
-               | `NOT_APPLICABLE` | STIG is not applicable. |
-               | `NEEDS_REVIEW` | STIG application needs a review. |
-               | `APPLICABLE` | STIG is applicable. |
-               | `UNKNOWN` | Unknown value. |
-               | `REDACTED` | Redacted value. |
+                 | Enum | Description |
+                 |--------------|--------------------|
+                 | `NOT_APPLICABLE` | STIG is not applicable. |
+                 | `NEEDS_REVIEW` | STIG application needs a review. |
+                 | `APPLICABLE` | STIG is applicable. |
+                 | `UNKNOWN` | Unknown value. |
+                 | `REDACTED` | Redacted value. |
         :param _builtins.str stig_version: - STIG ID of the control.
         :param _builtins.str title: - Title of the STIG control.
         """
@@ -200350,14 +200330,14 @@ class GetStigsV2StigResult(dict):
     def severity(self) -> _builtins.str:
         """
         - Contains possible values for the severity level of a vulnerability.
-        | Enum | Description |
-        |--------------|--------------------|
-        | `HIGH` | Severity level high. |
-        | `MEDIUM` | Severity level medium. |
-        | `LOW` | Severity level low. |
-        | `UNKNOWN` | Unknown value. |
-        | `CRITICAL` | Severity level critical. |
-        | `REDACTED` | Redacted value. |
+          | Enum | Description |
+          |--------------|--------------------|
+          | `HIGH` | Severity level high. |
+          | `MEDIUM` | Severity level medium. |
+          | `LOW` | Severity level low. |
+          | `UNKNOWN` | Unknown value. |
+          | `CRITICAL` | Severity level critical. |
+          | `REDACTED` | Redacted value. |
         """
         return pulumi.get(self, "severity")
 
@@ -200366,13 +200346,13 @@ class GetStigsV2StigResult(dict):
     def status(self) -> _builtins.str:
         """
         - Current status of the STIG rule.
-        | Enum | Description |
-        |--------------|--------------------|
-        | `NOT_APPLICABLE` | STIG is not applicable. |
-        | `NEEDS_REVIEW` | STIG application needs a review. |
-        | `APPLICABLE` | STIG is applicable. |
-        | `UNKNOWN` | Unknown value. |
-        | `REDACTED` | Redacted value. |
+          | Enum | Description |
+          |--------------|--------------------|
+          | `NOT_APPLICABLE` | STIG is not applicable. |
+          | `NEEDS_REVIEW` | STIG application needs a review. |
+          | `APPLICABLE` | STIG is applicable. |
+          | `UNKNOWN` | Unknown value. |
+          | `REDACTED` | Redacted value. |
         """
         return pulumi.get(self, "status")
 
@@ -218010,7 +217990,7 @@ class GetUsersV2UserResult(dict):
         :param _builtins.str status: - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
         :param _builtins.str tenant_id: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
         :param _builtins.str user_type: - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
-               Type of the User.
+                 Type of the User.
         :param _builtins.str username: - Identifier for the User in the form an email address.
         """
         pulumi.set(__self__, "additional_attributes", additional_attributes)
@@ -218210,7 +218190,7 @@ class GetUsersV2UserResult(dict):
     def user_type(self) -> _builtins.str:
         """
         - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
-        Type of the User.
+          Type of the User.
         """
         return pulumi.get(self, "user_type")
 

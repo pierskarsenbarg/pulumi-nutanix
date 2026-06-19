@@ -67,10 +67,10 @@ export interface GetOvaV2Result {
     readonly createdBies: outputs.GetOvaV2CreatedBy[];
     /**
      * - Disk format of an OVA.
-     * |ENUM |Description |
-     * |---|---|
-     * | VMDK | The VMDK disk format of an OVA. |
-     * | QCOW2 | The QCOW2 disk format of an OVA. |
+     *   |ENUM |Description |
+     *   |---|---|
+     *   | VMDK | The VMDK disk format of an OVA. |
+     *   | QCOW2 | The QCOW2 disk format of an OVA. |
      */
     readonly diskFormat: string;
     /**

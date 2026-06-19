@@ -754,9 +754,6 @@ export interface ClusterAddNodeV2RemoveNodeParamExtraParam {
     /**
      * -(Optional) Indicates if add check needs to be skipped or not.
      *
-     *
-     *
-     *
      * See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/expandCluster).
      */
     shouldSkipAddCheck?: boolean;
@@ -1268,15 +1265,15 @@ export interface ClusterV2Config {
     buildInfos: outputs.ClusterV2ConfigBuildInfo[];
     /**
      * - (Optional) Cluster arch.
-     * Valid values are:
+     *   Valid values are:
      * - "PPC64LE" PPC64LE cluster architecture type.
      * - "X86_64" X86_64 cluster architecture type.
      */
     clusterArch: string;
     /**
      * - (Optional) Cluster function. This is part of payload for cluster
-     * create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
-     * Valid values are:
+     *   create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
+     *   Valid values are:
      * - "AOS"
      * - "PRISM_CENTRAL"
      * - "CLOUD_DATA_GATEWAY"
@@ -1289,7 +1286,7 @@ export interface ClusterV2Config {
     clusterSoftwareMaps: outputs.ClusterV2ConfigClusterSoftwareMap[];
     /**
      * - (Optional) Encryption in transit Status.
-     * Valid values are:
+     *   Valid values are:
      * - "DISABLED"	Disabled encryption status.
      * - "ENABLED"	Enabled encryption status.
      */
@@ -1308,8 +1305,8 @@ export interface ClusterV2Config {
     isRemoteSupportEnabled: boolean;
     /**
      * - (Optional) Cluster operation mode. This is part of payload for cluster
-     * update operation only.
-     * Valid values are:
+     *   update operation only.
+     *   Valid values are:
      * - "OVERRIDE"	Override operation mode.
      * - "STAND_ALONE"	Stand-alone operation mode.
      * - "SWITCH_TO_TWO_NODE"	Switch to two-node operation mode.
@@ -1399,7 +1396,7 @@ export interface ClusterV2ConfigPulseStatus {
     isEnabled: boolean;
     /**
      * - (Optional) PII scrubbing level.
-     * Valid values are:
+     *   Valid values are:
      * - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
      * - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
      */
@@ -1641,7 +1638,7 @@ export interface ClusterV2NetworkHttpProxyWhiteList {
     target: string;
     /**
      * - (Optional) Target type.
-     * Valid values are:
+     *   Valid values are:
      * - "IPV6_ADDRESS"	IPV6 address.
      * - "HOST_NAME"	Name of the host.
      * - "IPV4_ADDRESS"	IPV4 address.
@@ -2608,8 +2605,6 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigClo
      * The script to use for cloud-init.
      * * `cloud_init_script.user_data`: (Optional) user data object
      * * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
-     *
-     *
      *
      * See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/deployTemplate).
      */
@@ -7216,15 +7211,15 @@ export interface GetClusterV2Config {
     buildInfos: outputs.GetClusterV2ConfigBuildInfo[];
     /**
      * - Cluster arch.
-     * Valid values are:
+     *   Valid values are:
      * - "PPC64LE" PPC64LE cluster architecture type.
      * - "X86_64" X86_64 cluster architecture type.
      */
     clusterArch: string;
     /**
      * - Cluster function. This is part of payload for cluster
-     * create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
-     * Valid values are:
+     *   create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
+     *   Valid values are:
      * - "AOS"
      * - "PRISM_CENTRAL"
      * - "CLOUD_DATA_GATEWAY"
@@ -7240,14 +7235,14 @@ export interface GetClusterV2Config {
     clusterSoftwareMaps: outputs.GetClusterV2ConfigClusterSoftwareMap[];
     /**
      * - Encryption in transit Status.
-     * Valid values are:
+     *   Valid values are:
      * - "DISABLED"	Disabled encryption status.
      * - "ENABLED" 	Enabled encryption status.
      */
     encryptionInTransitStatus: string;
     /**
      * - Encryption option.
-     * Valid values are:
+     *   Valid values are:
      * - "SOFTWARE".
      * - "HARDWARE".
      * - "SOFTWARE_AND_HARDWARE"
@@ -7255,7 +7250,7 @@ export interface GetClusterV2Config {
     encryptionOptions: string[];
     /**
      * - Encryption scope.
-     * Valid values are:
+     *   Valid values are:
      * - "CLUSTER".
      * - "CONTAINER".
      */
@@ -7266,7 +7261,7 @@ export interface GetClusterV2Config {
     faultToleranceStates: outputs.GetClusterV2ConfigFaultToleranceState[];
     /**
      * - Hypervisor types.
-     * Valid values are:
+     *   Valid values are:
      * - "AHV".
      * - "ESX".
      * - "HYPERV".
@@ -7296,8 +7291,8 @@ export interface GetClusterV2Config {
     isRemoteSupportEnabled: boolean;
     /**
      * - Cluster operation mode. This is part of payload for cluster
-     * update operation only.
-     * Valid values are:
+     *   update operation only.
+     *   Valid values are:
      * - "OVERRIDE"	Override operation mode.
      * - "STAND_ALONE"	Stand-alone operation mode.
      * - "SWITCH_TO_TWO_NODE"	Switch to two-node operation mode.
@@ -7356,7 +7351,7 @@ export interface GetClusterV2ConfigBuildInfo {
 export interface GetClusterV2ConfigClusterSoftwareMap {
     /**
      * - Software type. This is part of payload for cluster create operation only.
-     * Valid values are:
+     *   Valid values are:
      * - "PRISM_CENTRAL": Prism Central software type.
      * - "NOS": NOS software.
      * - "NCC": NCC software.
@@ -7371,7 +7366,7 @@ export interface GetClusterV2ConfigClusterSoftwareMap {
 export interface GetClusterV2ConfigFaultToleranceState {
     /**
      * - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
-     * Valid values are:
+     *   Valid values are:
      * - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
      * - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
      * - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
@@ -7384,7 +7379,7 @@ export interface GetClusterV2ConfigFaultToleranceState {
     currentMaxFaultTolerance: number;
     /**
      * - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
-     * Valid values are:
+     *   Valid values are:
      * - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
      * - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
      * - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
@@ -7397,7 +7392,7 @@ export interface GetClusterV2ConfigFaultToleranceState {
     desiredMaxFaultTolerance: number;
     /**
      * - Domain awareness level corresponds to unit of cluster group. This is part of payload for both cluster create & update operations.
-     * Valid values are:
+     *   Valid values are:
      * - "RACK"	Rack level awareness.
      * - "NODE"	Node level awareness.
      * - "BLOCK"	Block level awareness.
@@ -7428,7 +7423,7 @@ export interface GetClusterV2ConfigPulseStatus {
     isEnabled: boolean;
     /**
      * - (Optional) PII scrubbing level.
-     * Valid values are:
+     *   Valid values are:
      * - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
      * - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
      */
@@ -7472,7 +7467,7 @@ export interface GetClusterV2Network {
     internalSubnet: string;
     /**
      * - Key management server type.
-     * Valid values are:
+     *   Valid values are:
      * - "PRISM_CENTRAL"	Prism Central management server.
      * - "EXTERNAL"	External management server.
      * - "LOCAL"	Local management server.
@@ -7676,7 +7671,7 @@ export interface GetClusterV2NetworkHttpProxyWhiteList {
     target: string;
     /**
      * - Type of the target which is exempted from going through the configured HTTP Proxy.
-     * Valid values are:
+     *   Valid values are:
      * - "IPV6_ADDRESS"	IPV6 address.
      * - "HOST_NAME"	Name of the host.
      * - "DOMAIN_NAME_SUFFIX" Domain Name Suffix required for http proxy whitelist.
@@ -7705,7 +7700,7 @@ export interface GetClusterV2NetworkManagementServer {
     isRegistered: boolean;
     /**
      * - Type of management server.
-     * Valid values are:
+     *   Valid values are:
      * - "VCENTER"   	Vcenter management server.
      */
     type: boolean;
@@ -7876,7 +7871,7 @@ export interface GetClusterV2NetworkSmtpServer {
     servers: outputs.GetClusterV2NetworkSmtpServerServer[];
     /**
      * - Type of management server.
-     * Valid values are:
+     *   Valid values are:
      * - "VCENTER"   	Vcenter management server.
      */
     type: string;
@@ -8333,7 +8328,7 @@ export interface GetClustersV2ClusterEntity {
     tenantId: string;
     /**
      * -  Upgrade status of a cluster.
-     * Valid values are:
+     *    Valid values are:
      * - "CANCELLED"	The cluster upgrade is cancelled.
      * - "FAILED"	The cluster upgrade failed.
      * - "QUEUED"	The cluster upgrade is in the queue.
@@ -8362,15 +8357,15 @@ export interface GetClustersV2ClusterEntityConfig {
     buildInfos: outputs.GetClustersV2ClusterEntityConfigBuildInfo[];
     /**
      * - Cluster arch.
-     * Valid values are:
+     *   Valid values are:
      * - "PPC64LE" PPC64LE cluster architecture type.
      * - "X86_64" X86_64 cluster architecture type.
      */
     clusterArch: string;
     /**
      * - Cluster function. This is part of payload for cluster
-     * create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
-     * Valid values are:
+     *   create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
+     *   Valid values are:
      * - "AOS"
      * - "PRISM_CENTRAL"
      * - "CLOUD_DATA_GATEWAY"
@@ -8386,14 +8381,14 @@ export interface GetClustersV2ClusterEntityConfig {
     clusterSoftwareMaps: outputs.GetClustersV2ClusterEntityConfigClusterSoftwareMap[];
     /**
      * - Encryption in transit Status.
-     * Valid values are:
+     *   Valid values are:
      * - "DISABLED"	Disabled encryption status.
      * - "ENABLED" 	Enabled encryption status.
      */
     encryptionInTransitStatus: string;
     /**
      * - Encryption option.
-     * Valid values are:
+     *   Valid values are:
      * - "SOFTWARE".
      * - "HARDWARE".
      * - "SOFTWARE_AND_HARDWARE"
@@ -8401,7 +8396,7 @@ export interface GetClustersV2ClusterEntityConfig {
     encryptionOptions: string[];
     /**
      * - Encryption scope.
-     * Valid values are:
+     *   Valid values are:
      * - "CLUSTER".
      * - "CONTAINER".
      */
@@ -8412,7 +8407,7 @@ export interface GetClustersV2ClusterEntityConfig {
     faultToleranceStates: outputs.GetClustersV2ClusterEntityConfigFaultToleranceState[];
     /**
      * - Hypervisor types.
-     * Valid values are:
+     *   Valid values are:
      * - "AHV".
      * - "ESX".
      * - "HYPERV".
@@ -8442,8 +8437,8 @@ export interface GetClustersV2ClusterEntityConfig {
     isRemoteSupportEnabled: boolean;
     /**
      * - Cluster operation mode. This is part of payload for cluster
-     * update operation only.
-     * Valid values are:
+     *   update operation only.
+     *   Valid values are:
      * - "OVERRIDE"	Override operation mode.
      * - "STAND_ALONE"	Stand-alone operation mode.
      * - "SWITCH_TO_TWO_NODE"	Switch to two-node operation mode.
@@ -8502,7 +8497,7 @@ export interface GetClustersV2ClusterEntityConfigBuildInfo {
 export interface GetClustersV2ClusterEntityConfigClusterSoftwareMap {
     /**
      * - Software type. This is part of payload for cluster create operation only.
-     * Valid values are:
+     *   Valid values are:
      * - "PRISM_CENTRAL": Prism Central software type.
      * - "NOS": NOS software.
      * - "NCC": NCC software.
@@ -8517,7 +8512,7 @@ export interface GetClustersV2ClusterEntityConfigClusterSoftwareMap {
 export interface GetClustersV2ClusterEntityConfigFaultToleranceState {
     /**
      * - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
-     * Valid values are:
+     *   Valid values are:
      * - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
      * - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
      * - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
@@ -8530,7 +8525,7 @@ export interface GetClustersV2ClusterEntityConfigFaultToleranceState {
     currentMaxFaultTolerance: number;
     /**
      * - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
-     * Valid values are:
+     *   Valid values are:
      * - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
      * - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
      * - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
@@ -8543,7 +8538,7 @@ export interface GetClustersV2ClusterEntityConfigFaultToleranceState {
     desiredMaxFaultTolerance: number;
     /**
      * - Domain awareness level corresponds to unit of cluster group. This is part of payload for both cluster create & update operations.
-     * Valid values are:
+     *   Valid values are:
      * - "RACK"	Rack level awareness.
      * - "NODE"	Node level awareness.
      * - "BLOCK"	Block level awareness.
@@ -8574,7 +8569,7 @@ export interface GetClustersV2ClusterEntityConfigPulseStatus {
     isEnabled: boolean;
     /**
      * - (Optional) PII scrubbing level.
-     * Valid values are:
+     *   Valid values are:
      * - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
      * - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
      */
@@ -8618,7 +8613,7 @@ export interface GetClustersV2ClusterEntityNetwork {
     internalSubnet: string;
     /**
      * - Key management server type.
-     * Valid values are:
+     *   Valid values are:
      * - "PRISM_CENTRAL"	Prism Central management server.
      * - "EXTERNAL"	External management server.
      * - "LOCAL"	Local management server.
@@ -8822,7 +8817,7 @@ export interface GetClustersV2ClusterEntityNetworkHttpProxyWhiteList {
     target: string;
     /**
      * - Type of the target which is exempted from going through the configured HTTP Proxy.
-     * Valid values are:
+     *   Valid values are:
      * - "IPV6_ADDRESS"	IPV6 address.
      * - "HOST_NAME"	Name of the host.
      * - "DOMAIN_NAME_SUFFIX" Domain Name Suffix required for http proxy whitelist.
@@ -8851,7 +8846,7 @@ export interface GetClustersV2ClusterEntityNetworkManagementServer {
     isRegistered: boolean;
     /**
      * - Type of management server.
-     * Valid values are:
+     *   Valid values are:
      * - "VCENTER"   	Vcenter management server.
      */
     type: boolean;
@@ -9022,7 +9017,7 @@ export interface GetClustersV2ClusterEntityNetworkSmtpServer {
     servers: outputs.GetClustersV2ClusterEntityNetworkSmtpServerServer[];
     /**
      * - Type of management server.
-     * Valid values are:
+     *   Valid values are:
      * - "VCENTER"   	Vcenter management server.
      */
     type: string;
@@ -19199,7 +19194,6 @@ export interface GetNdbTimeMachinesTimeMachine {
     /**
      * schedule info
      *
-     *
      * See detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).
      */
     schedules: outputs.GetNdbTimeMachinesTimeMachineSchedule[];
@@ -21469,18 +21463,18 @@ export interface GetObjectStoresV2ObjectStore {
     region: string;
     /**
      * - Enum for the state of the Object store.
-     * | Enum                                   | Description                                                     |
-     * |----------------------------------------|-----------------------------------------------------------------|
-     * | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
-     * | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
-     * | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
-     * | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
-     * | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
-     * | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
-     * | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
-     * | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
-     * | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
-     * | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
+     *   | Enum                                   | Description                                                     |
+     *   |----------------------------------------|-----------------------------------------------------------------|
+     *   | `DEPLOYING_OBJECT_STORE`             | The Object store is being deployed.                             |
+     *   | `OBJECT_STORE_DEPLOYMENT_FAILED`     | The Object store deployment has failed.                         |
+     *   | `DELETING_OBJECT_STORE`              | A deployed Object store is being deleted.                       |
+     *   | `OBJECT_STORE_OPERATION_FAILED`      | There was an error while performing an operation on the Object store. |
+     *   | `UNDEPLOYED_OBJECT_STORE`            | The Object store is not deployed.                               |
+     *   | `OBJECT_STORE_OPERATION_PENDING`     | There is an ongoing operation on the Object store.              |
+     *   | `OBJECT_STORE_AVAILABLE`            | There are no ongoing operations on the deployed Object store.   |
+     *   | `OBJECT_STORE_CERT_CREATION_FAILED`  | Creating the Object store certificate has failed.               |
+     *   | `CREATING_OBJECT_STORE_CERT`         | A certificate is being created for the Object store.            |
+     *   | `OBJECT_STORE_DELETION_FAILED`       | There was an error deleting the Object store.                   |
      */
     state: string;
     /**
@@ -23495,10 +23489,10 @@ export interface GetOvasV2Ova {
     createdBies: outputs.GetOvasV2OvaCreatedBy[];
     /**
      * - Disk format of an OVA.
-     * |ENUM |Description |
-     * |---|---|
-     * | VMDK | The VMDK disk format of an OVA. |
-     * | QCOW2 | The QCOW2 disk format of an OVA. |
+     *   |ENUM |Description |
+     *   |---|---|
+     *   | VMDK | The VMDK disk format of an OVA. |
+     *   | QCOW2 | The QCOW2 disk format of an OVA. |
      */
     diskFormat: string;
     /**
@@ -26170,7 +26164,7 @@ export interface GetPcRestorePointV2DomainManagerConfigBootstrapConfigCloudInitC
 export interface GetPcRestorePointV2DomainManagerConfigBootstrapConfigEnvironmentInfo {
     /**
      * - Enums denoting the provider type of the PC, that is, AHV or ESXi.
-     * Following are the supported provider types:
+     *   Following are the supported provider types:
      * - `VSPHERE` : Vsphere cloud provider.
      * - `AZURE` : Azure cloud provider.
      * - `NTNX` : Nutanix cloud provider.
@@ -26186,7 +26180,7 @@ export interface GetPcRestorePointV2DomainManagerConfigBootstrapConfigEnvironmen
     provisioningType: string;
     /**
      * - Enums denoting the environment type of the PC, that is, on-prem PC or cloud PC.
-     * Following are the supported entity types:
+     *   Following are the supported entity types:
      * - `ONPREM` : On-prem environment.
      * - `NTNX_CLOUD` : Nutanix cloud environment.
      */
@@ -27196,7 +27190,7 @@ export interface GetPcV2ConfigBootstrapConfig {
 export interface GetPcV2ConfigBootstrapConfigEnvironmentInfo {
     /**
      * - Enums denoting the provider type of the PC, that is, AHV or ESXi.
-     * Following are the supported provider types:
+     *   Following are the supported provider types:
      * * `VSPHERE` : Vsphere cloud provider.
      * * `AZURE` : Azure cloud provider.
      * * `NTNX` : Nutanix cloud provider.
@@ -27212,7 +27206,7 @@ export interface GetPcV2ConfigBootstrapConfigEnvironmentInfo {
     provisioningType: string;
     /**
      * - Enums denoting the environment type of the PC, that is, on-prem PC or cloud PC.
-     * Following are the supported entity types:
+     *   Following are the supported entity types:
      * * `ONPREM` : On-prem environment.
      * * `NTNX_CLOUD` : Nutanix cloud environment.
      */
@@ -28251,14 +28245,14 @@ export interface GetProjectsEntity {
      * List of directory service user groups. These groups are not managed by Nutanix.
      * * `external_user_group_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`" pulumi-lang-hcl="`user_group`">`userGroup`</span>
      * * `external_user_group_reference_list.#.uuid` - The UUID of a<span pulumi-lang-nodejs=" userGroup
-     * " pulumi-lang-dotnet=" UserGroup
-     * " pulumi-lang-go=" userGroup
-     * " pulumi-lang-python=" user_group
-     * " pulumi-lang-yaml=" userGroup
-     * " pulumi-lang-java=" userGroup
-     * " pulumi-lang-hcl=" user_group
-     * "> userGroup
-     * </span>* `external_user_group_reference_list.#.name` - The name of a user_group
+     *   " pulumi-lang-dotnet=" UserGroup
+     *   " pulumi-lang-go=" userGroup
+     *   " pulumi-lang-python=" user_group
+     *   " pulumi-lang-yaml=" userGroup
+     *   " pulumi-lang-java=" userGroup
+     *   " pulumi-lang-hcl=" user_group
+     *   "> userGroup
+     *   </span>* `external_user_group_reference_list.#.name` - The name of a user_group
      */
     externalUserGroupReferenceLists: outputs.GetProjectsEntityExternalUserGroupReferenceList[];
     isDefault: boolean;
@@ -31687,25 +31681,25 @@ export interface GetStigsV2Stig {
     ruleId: string;
     /**
      * - Contains possible values for the severity level of a vulnerability.
-     * | Enum | Description |
-     * |--------------|--------------------|
-     * | `HIGH` | Severity level high. |
-     * | `MEDIUM` | Severity level medium. |
-     * | `LOW` | Severity level low. |
-     * | `UNKNOWN` | Unknown value. |
-     * | `CRITICAL` | Severity level critical. |
-     * | `REDACTED` | Redacted value. |
+     *   | Enum | Description |
+     *   |--------------|--------------------|
+     *   | `HIGH` | Severity level high. |
+     *   | `MEDIUM` | Severity level medium. |
+     *   | `LOW` | Severity level low. |
+     *   | `UNKNOWN` | Unknown value. |
+     *   | `CRITICAL` | Severity level critical. |
+     *   | `REDACTED` | Redacted value. |
      */
     severity: string;
     /**
      * - Current status of the STIG rule.
-     * | Enum | Description |
-     * |--------------|--------------------|
-     * | `NOT_APPLICABLE` | STIG is not applicable. |
-     * | `NEEDS_REVIEW` | STIG application needs a review. |
-     * | `APPLICABLE` | STIG is applicable. |
-     * | `UNKNOWN` | Unknown value. |
-     * | `REDACTED` | Redacted value. |
+     *   | Enum | Description |
+     *   |--------------|--------------------|
+     *   | `NOT_APPLICABLE` | STIG is not applicable. |
+     *   | `NEEDS_REVIEW` | STIG application needs a review. |
+     *   | `APPLICABLE` | STIG is applicable. |
+     *   | `UNKNOWN` | Unknown value. |
+     *   | `REDACTED` | Redacted value. |
      */
     status: string;
     /**
@@ -37174,7 +37168,7 @@ export interface GetUsersV2User {
     tenantId: string;
     /**
      * - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
-     * Type of the User.
+     *   Type of the User.
      */
     userType: string;
     /**
@@ -41268,7 +41262,6 @@ export interface LcmUpgradeV2EntityUpdateSpec {
     /**
      * Version to upgrade to.
      *
-     *
      * See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Upgrades/operation/performUpgrade).
      */
     toVersion: string;
@@ -41980,7 +41973,7 @@ export interface NdbClusterEntityCountEngineCountSqlserverDatabaseProfile {
 
 export interface NdbClusterNetworksInfo {
     /**
-     * VLAN access types for which you want to configure network segmentation. Supports [PRISM, DSIP, DBSERVER ]. 
+     * VLAN access types for which you want to configure network segmentation. Supports [PRISM, DSIP, DBSERVER ].
      * Prism Element: Select this VLAN access type to configure a VLAN that the NDB agent VM can use to communicate with Prism.
      * Prism iSCSI Data Service. Select this VLAN access type to configure a VLAN that the agent VM can use to make connection requests to the iSCSI data services IP.
      * DBServer Access from NDB server. Select this VLAN access type to configure a VLAN that is used for communications between the NDB agent VM and the database server VM on the newly registered NDB server cluster.
@@ -44216,7 +44209,7 @@ export interface NdbProfileDatabaseParameterProfile {
      * * `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
      * * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however,<span pulumi-lang-nodejs=" trackCounts " pulumi-lang-dotnet=" TrackCounts " pulumi-lang-go=" trackCounts " pulumi-lang-python=" track_counts " pulumi-lang-yaml=" trackCounts " pulumi-lang-java=" trackCounts " pulumi-lang-hcl=" track_counts "> trackCounts </span>must also be enabled for autovacuum to work.
      * * `postgres_database.checkpoint_completion_target`: (Optional)
-     * Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
+     *   Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
      * * `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
      * * `postgres_database.autovacuum_vacuum_threshold`: (Optional) Min number of row updates before vacuum. Minimum number of tuple updates or deletes prior to vacuum. Take value in KB. Default is 50 .
      * * `postgres_database.autovacuum_vacuum_scale_factor`: (Optional) Number of tuple updates or deletes prior to vacuum as a fraction of reltuples. Default is 0.2
@@ -44224,7 +44217,7 @@ export interface NdbProfileDatabaseParameterProfile {
      * * `postgres_database.autovacuum_max_workers`: (Optional) Sets the maximum number of simultaneously running autovacuum worker processes. Default is 3
      * * `postgres_database.autovacuum_vacuum_cost_delay`: (Optional) Vacuum cost delay in milliseconds, for autovacuum. Specifies the cost delay value that will be used in automatic VACUUM operation. Default is 2ms
      * * `postgres_database.wal_buffers`: (Optional)
-     * Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
+     *   Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
      * * `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
      * * `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
      * * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the<span pulumi-lang-nodejs=" pgWal " pulumi-lang-dotnet=" PgWal " pulumi-lang-go=" pgWal " pulumi-lang-python=" pg_wal " pulumi-lang-yaml=" pgWal " pulumi-lang-java=" pgWal " pulumi-lang-hcl=" pg_wal "> pgWal </span>directory. Default is 700 .
@@ -48166,7 +48159,6 @@ export interface OvaVmDeployV2OverrideVmConfig {
 export interface OvaVmDeployV2OverrideVmConfigCategory {
     /**
      * A globally unique identifier of a VM category of type UUID.
-     *
      *
      * See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Ovas/operation/deployOva).
      */
@@ -53557,7 +53549,7 @@ export interface StorageContainersV2NfsWhitelistAddressIpv6 {
 export interface StoragePolicyV2CompressionSpec {
     /**
      * - (Required) Controls enabling or disabling compression. If no explicit preference is set, the system chooses a value.
-     * Valid values:
+     *   Valid values:
      * * `"DISABLED"`:- User wants data not compressed.
      * * `"POSTPROCESS"`:- User wants data compressed later.
      * * `"INLINE"`:- User wants data compressed inline.
@@ -53569,7 +53561,7 @@ export interface StoragePolicyV2CompressionSpec {
 export interface StoragePolicyV2EncryptionSpec {
     /**
      * - (Required) Controls enabling encryption. Once enabled, it cannot be disabled. If no explicit preference is set, the system decides.
-     * Valid values:
+     *   Valid values:
      * * `"SYSTEM_DERIVED"`:- User is not interested in encryption; system decides.
      * * `"ENABLED"`:- User wants data encrypted.
      *
@@ -53581,7 +53573,7 @@ export interface StoragePolicyV2EncryptionSpec {
 export interface StoragePolicyV2FaultToleranceSpec {
     /**
      * - (Required) Specifies the number of data copies for entities governed by the Storage Policy.
-     * Valid values:
+     *   Valid values:
      * * `"SYSTEM_DERIVED"`:- User has not provided the number of copies; system decides.
      * * `"TWO"`:- Two data copies (Original + 1 copy).
      * * `"THREE"`:- Three data copies (Original + 2 copies).
@@ -58031,7 +58023,7 @@ export interface VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk {
 export interface VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
     /**
      * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-     * Valid values are:
+     *   Valid values are:
      * - `SCSI` The type of disk bus is SCSI.
      * - `SPAPR` The type of disk bus is SPAPR.
      * - `PCI` The type of disk bus is PCI.
@@ -58092,7 +58084,7 @@ export interface VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk {
 export interface VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
     /**
      * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-     * Valid values are:
+     *   Valid values are:
      * - `SCSI` The type of disk bus is SCSI.
      * - `SPAPR` The type of disk bus is SPAPR.
      * - `PCI` The type of disk bus is PCI.
@@ -58187,7 +58179,7 @@ export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSou
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress {
     /**
      * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-     * Valid values are:
+     *   Valid values are:
      * - `SCSI` The type of disk bus is SCSI.
      * - `SPAPR` The type of disk bus is SPAPR.
      * - `PCI` The type of disk bus is PCI.
@@ -58303,7 +58295,7 @@ export interface VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReference {
 export interface VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
     /**
      * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-     * Valid values are:
+     *   Valid values are:
      * - `SCSI` The type of disk bus is SCSI.
      * - `SPAPR` The type of disk bus is SPAPR.
      * - `PCI` The type of disk bus is PCI.
@@ -58341,7 +58333,7 @@ export interface VmCloneV2CdRomBackingInfoStorageContainer {
 export interface VmCloneV2CdRomDiskAddress {
     /**
      * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-     * Valid values are:
+     *   Valid values are:
      * - `SCSI` The type of disk bus is SCSI.
      * - `SPAPR` The type of disk bus is SPAPR.
      * - `PCI` The type of disk bus is PCI.
@@ -58444,7 +58436,7 @@ export interface VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenc
 export interface VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress {
     /**
      * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-     * Valid values are:
+     *   Valid values are:
      * - `SCSI` The type of disk bus is SCSI.
      * - `SPAPR` The type of disk bus is SPAPR.
      * - `PCI` The type of disk bus is PCI.
@@ -58482,7 +58474,7 @@ export interface VmCloneV2DiskBackingInfoVmDiskStorageContainer {
 export interface VmCloneV2DiskDiskAddress {
     /**
      * - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-     * Valid values are:
+     *   Valid values are:
      * - `SCSI` The type of disk bus is SCSI.
      * - `SPAPR` The type of disk bus is SPAPR.
      * - `PCI` The type of disk bus is PCI.
@@ -58544,8 +58536,8 @@ export interface VmCloneV2GuestCustomizationConfigCloudInit {
     cloudInitScripts: outputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScript[];
     /**
      * - (Optional) Type of datasource.
-     * Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
-     * Valid values are:
+     *   Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+     *   Valid values are:
      * - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
      */
     datasourceType?: string;
@@ -58593,7 +58585,7 @@ export interface VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserDa
 export interface VmCloneV2GuestCustomizationConfigSysprep {
     /**
      * - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
-     * Valid values are:
+     *   Valid values are:
      * - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
      * - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
      */
@@ -58696,7 +58688,7 @@ export interface VmCloneV2NicBackingInfo {
     macAddress: string;
     /**
      * - (Optional) Options for the NIC emulation.
-     * Valid values are:
+     *   Valid values are:
      * - `VIRTIO` The NIC emulation model is Virtio.
      * - `E1000` The NIC emulation model is E1000.
      */
@@ -58719,8 +58711,8 @@ export interface VmCloneV2NicNetworkInfo {
     networkFunctionChains: outputs.VmCloneV2NicNetworkInfoNetworkFunctionChain[];
     /**
      * - (Optional) The type of this Network function NIC.
-     * Defaults to INGRESS.
-     * Valid values are:
+     *   Defaults to INGRESS.
+     *   Valid values are:
      * - `TAP` The type of Network-Function NIC is Tap.
      * - `EGRESS` The type of Network-Function NIC is Egress.
      * - `INGRESS` The type of Network-Function NIC is Ingress.
@@ -58728,8 +58720,8 @@ export interface VmCloneV2NicNetworkInfo {
     networkFunctionNicType: string;
     /**
      * - (Optional) NIC type.
-     * Defaults to NORMAL_NIC.
-     * Valid values are:
+     *   Defaults to NORMAL_NIC.
+     *   Valid values are:
      * - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
      * - `NORMAL_NIC` The type of NIC is Normal.
      * - `DIRECT_NIC` The type of NIC is Direct.
@@ -58750,7 +58742,7 @@ export interface VmCloneV2NicNetworkInfo {
     trunkedVlans: number[];
     /**
      * - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-     * Valid values are:
+     *   Valid values are:
      * - `TRUNK` The virtual NIC is created in TRUNKED mode.
      * - `ACCESS` The virtual NIC is created in ACCESS mode.
      */
@@ -58762,8 +58754,8 @@ export interface VmCloneV2NicNetworkInfoIpv4Config {
     secondaryIpAddressLists: outputs.VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
     /**
      * - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-     * <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-     * <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+     *   <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+     *   <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
      */
     shouldAssignIp: boolean;
 }
@@ -58863,7 +58855,7 @@ export interface VmCloneV2NicNicBackingInfoVirtualEthernetNic {
     macAddress: string;
     /**
      * - (Optional) Options for the NIC emulation.
-     * Valid values are:
+     *   Valid values are:
      * - `VIRTIO` The NIC emulation model is Virtio.
      * - `E1000` The NIC emulation model is E1000.
      */
@@ -58901,7 +58893,7 @@ export interface VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfo {
     trunkedVlans: number[];
     /**
      * - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-     * Valid values are:
+     *   Valid values are:
      * - `TRUNK` The virtual NIC is created in TRUNKED mode.
      * - `ACCESS` The virtual NIC is created in ACCESS mode.
      */
@@ -58913,8 +58905,8 @@ export interface VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config {
     secondaryIpAddressLists: outputs.VmCloneV2NicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
     /**
      * - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-     * <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-     * <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+     *   <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+     *   <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
      */
     shouldAssignIp: boolean;
 }
@@ -58983,8 +58975,8 @@ export interface VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfo {
     networkFunctionChains: outputs.VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain[];
     /**
      * - (Optional) The type of this Network function NIC.
-     * Defaults to INGRESS.
-     * Valid values are:
+     *   Defaults to INGRESS.
+     *   Valid values are:
      * - `TAP` The type of Network-Function NIC is Tap.
      * - `EGRESS` The type of Network-Function NIC is Egress.
      * - `INGRESS` The type of Network-Function NIC is Ingress.
@@ -58992,8 +58984,8 @@ export interface VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfo {
     networkFunctionNicType: string;
     /**
      * - (Optional) NIC type.
-     * Defaults to NORMAL_NIC.
-     * Valid values are:
+     *   Defaults to NORMAL_NIC.
+     *   Valid values are:
      * - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
      * - `NORMAL_NIC` The type of NIC is Normal.
      * - `DIRECT_NIC` The type of NIC is Direct.
@@ -59014,7 +59006,7 @@ export interface VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfo {
     trunkedVlans: number[];
     /**
      * - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-     * Valid values are:
+     *   Valid values are:
      * - `TRUNK` The virtual NIC is created in TRUNKED mode.
      * - `ACCESS` The virtual NIC is created in ACCESS mode.
      */
@@ -59026,8 +59018,8 @@ export interface VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Conf
     secondaryIpAddressLists: outputs.VmCloneV2NicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
     /**
      * - (Optional) If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-     * <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
-     * <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
+     *   <span pulumi-lang-nodejs="`ipAddress`" pulumi-lang-dotnet="`IpAddress`" pulumi-lang-go="`ipAddress`" pulumi-lang-python="`ip_address`" pulumi-lang-yaml="`ipAddress`" pulumi-lang-java="`ipAddress`" pulumi-lang-hcl="`ip_address`">`ipAddress`</span>: - (Optional) Ip config settings.
+     *   <span pulumi-lang-nodejs="`secondaryIpAddressList`" pulumi-lang-dotnet="`SecondaryIpAddressList`" pulumi-lang-go="`secondaryIpAddressList`" pulumi-lang-python="`secondary_ip_address_list`" pulumi-lang-yaml="`secondaryIpAddressList`" pulumi-lang-java="`secondaryIpAddressList`" pulumi-lang-hcl="`secondary_ip_address_list`">`secondaryIpAddressList`</span>: - (Optional) Secondary IP addresses for the NIC.
      */
     shouldAssignIp: boolean;
 }
@@ -59154,8 +59146,8 @@ export interface VmGcUpdateV2ConfigCloudInit {
     cloudInitScripts: outputs.VmGcUpdateV2ConfigCloudInitCloudInitScript[];
     /**
      * - (Optional) Type of datasource.
-     * Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
-     * Valid values are:
+     *   Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+     *   Valid values are:
      * - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
      */
     datasourceType?: string;
@@ -59203,7 +59195,7 @@ export interface VmGcUpdateV2ConfigCloudInitCloudInitScriptUserData {
 export interface VmGcUpdateV2ConfigSysprep {
     /**
      * - (Optional) Whether the guest will be freshly installed using this unattend configuration, or whether this unattend configuration will be applied to a pre-prepared image. Default is `PREPARED`.
-     * Valid values are:
+     *   Valid values are:
      * - `PREPARED` is done when sysprep is used to finalize Windows installation from an installed Windows and file name it is searching `unattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
      * - `FRESH` is done when sysprep is used to install Windows from ISO and file name it is searching `autounattend.xml` for <span pulumi-lang-nodejs="`unattendXml`" pulumi-lang-dotnet="`UnattendXml`" pulumi-lang-go="`unattendXml`" pulumi-lang-python="`unattend_xml`" pulumi-lang-yaml="`unattendXml`" pulumi-lang-java="`unattendXml`" pulumi-lang-hcl="`unattend_xml`">`unattendXml`</span> parameter
      */
@@ -59287,7 +59279,6 @@ export interface VmShutdownActionV2GuestPowerStateTransitionConfig {
     /**
      * Indicates whether to abort VM shutdown/restart if the script fails.
      *
-     *
      * See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownVm).
      * See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownGuestVm).
      * See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/rebootVm).
@@ -59351,7 +59342,6 @@ export interface VolumeGroupIscsiClientV2IscsiInitiatorNetworkId {
 export interface VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdFqdn {
     /**
      * - The fully qualified domain name.
-     *
      *
      * See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachIscsiClient).
      */
