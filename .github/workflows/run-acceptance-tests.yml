@@ -46,7 +46,7 @@ jobs:
         with:
           node-version: ${{matrix.nodeversion}}
       - name: Setup DotNet
-        uses: actions/setup-dotnet@v5
+        uses: actions/setup-dotnet@v6
         with:
           dotnet-version: ${{matrix.dotnetversion}}
       - name: Setup Python
@@ -228,7 +228,7 @@ jobs:
   #       node-version: ${{matrix.nodeversion}}
   #       registry-url: https://registry.npmjs.org
   #   - name: Setup DotNet
-  #     uses: actions/setup-dotnet@v5
+  #     uses: actions/setup-dotnet@v6
   #     with:
   #       dotnet-version: ${{matrix.dotnetversion}}
   #   - name: Setup Python
