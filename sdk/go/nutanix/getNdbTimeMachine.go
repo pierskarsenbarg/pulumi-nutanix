@@ -93,12 +93,8 @@ type GetNdbTimeMachineResult struct {
 }
 
 func GetNdbTimeMachineOutput(ctx *pulumi.Context, args GetNdbTimeMachineOutputArgs, opts ...pulumi.InvokeOption) GetNdbTimeMachineResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNdbTimeMachineResultOutput, error) {
-			args := v.(GetNdbTimeMachineArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getNdbTimeMachine:getNdbTimeMachine", args, GetNdbTimeMachineResultOutput{}, options).(GetNdbTimeMachineResultOutput), nil
-		}).(GetNdbTimeMachineResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getNdbTimeMachine:getNdbTimeMachine", args, GetNdbTimeMachineResultOutput{}, options).(GetNdbTimeMachineResultOutput)
 }
 
 // A collection of arguments for invoking getNdbTimeMachine.

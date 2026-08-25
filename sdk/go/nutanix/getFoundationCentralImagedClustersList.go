@@ -71,12 +71,8 @@ type GetFoundationCentralImagedClustersListResult struct {
 }
 
 func GetFoundationCentralImagedClustersListOutput(ctx *pulumi.Context, args GetFoundationCentralImagedClustersListOutputArgs, opts ...pulumi.InvokeOption) GetFoundationCentralImagedClustersListResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFoundationCentralImagedClustersListResultOutput, error) {
-			args := v.(GetFoundationCentralImagedClustersListArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getFoundationCentralImagedClustersList:getFoundationCentralImagedClustersList", args, GetFoundationCentralImagedClustersListResultOutput{}, options).(GetFoundationCentralImagedClustersListResultOutput), nil
-		}).(GetFoundationCentralImagedClustersListResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getFoundationCentralImagedClustersList:getFoundationCentralImagedClustersList", args, GetFoundationCentralImagedClustersListResultOutput{}, options).(GetFoundationCentralImagedClustersListResultOutput)
 }
 
 // A collection of arguments for invoking getFoundationCentralImagedClustersList.

@@ -96,12 +96,8 @@ type LookupFloatingIpV2Result struct {
 }
 
 func LookupFloatingIpV2Output(ctx *pulumi.Context, args LookupFloatingIpV2OutputArgs, opts ...pulumi.InvokeOption) LookupFloatingIpV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupFloatingIpV2ResultOutput, error) {
-			args := v.(LookupFloatingIpV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getFloatingIpV2:getFloatingIpV2", args, LookupFloatingIpV2ResultOutput{}, options).(LookupFloatingIpV2ResultOutput), nil
-		}).(LookupFloatingIpV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getFloatingIpV2:getFloatingIpV2", args, LookupFloatingIpV2ResultOutput{}, options).(LookupFloatingIpV2ResultOutput)
 }
 
 // A collection of arguments for invoking getFloatingIpV2.

@@ -113,12 +113,8 @@ type GetUserGroupResult struct {
 }
 
 func GetUserGroupOutput(ctx *pulumi.Context, args GetUserGroupOutputArgs, opts ...pulumi.InvokeOption) GetUserGroupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetUserGroupResultOutput, error) {
-			args := v.(GetUserGroupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getUserGroup:getUserGroup", args, GetUserGroupResultOutput{}, options).(GetUserGroupResultOutput), nil
-		}).(GetUserGroupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getUserGroup:getUserGroup", args, GetUserGroupResultOutput{}, options).(GetUserGroupResultOutput)
 }
 
 // A collection of arguments for invoking getUserGroup.

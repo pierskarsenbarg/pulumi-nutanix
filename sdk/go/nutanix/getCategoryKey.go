@@ -84,12 +84,8 @@ type LookupCategoryKeyResult struct {
 }
 
 func LookupCategoryKeyOutput(ctx *pulumi.Context, args LookupCategoryKeyOutputArgs, opts ...pulumi.InvokeOption) LookupCategoryKeyResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCategoryKeyResultOutput, error) {
-			args := v.(LookupCategoryKeyArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getCategoryKey:getCategoryKey", args, LookupCategoryKeyResultOutput{}, options).(LookupCategoryKeyResultOutput), nil
-		}).(LookupCategoryKeyResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getCategoryKey:getCategoryKey", args, LookupCategoryKeyResultOutput{}, options).(LookupCategoryKeyResultOutput)
 }
 
 // A collection of arguments for invoking getCategoryKey.

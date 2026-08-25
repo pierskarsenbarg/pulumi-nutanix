@@ -149,12 +149,8 @@ type LookupImagesV2Result struct {
 }
 
 func LookupImagesV2Output(ctx *pulumi.Context, args LookupImagesV2OutputArgs, opts ...pulumi.InvokeOption) LookupImagesV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupImagesV2ResultOutput, error) {
-			args := v.(LookupImagesV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getImagesV2:getImagesV2", args, LookupImagesV2ResultOutput{}, options).(LookupImagesV2ResultOutput), nil
-		}).(LookupImagesV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getImagesV2:getImagesV2", args, LookupImagesV2ResultOutput{}, options).(LookupImagesV2ResultOutput)
 }
 
 // A collection of arguments for invoking getImagesV2.

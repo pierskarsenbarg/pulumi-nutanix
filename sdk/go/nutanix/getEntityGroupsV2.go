@@ -99,12 +99,8 @@ type GetEntityGroupsV2Result struct {
 }
 
 func GetEntityGroupsV2Output(ctx *pulumi.Context, args GetEntityGroupsV2OutputArgs, opts ...pulumi.InvokeOption) GetEntityGroupsV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetEntityGroupsV2ResultOutput, error) {
-			args := v.(GetEntityGroupsV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getEntityGroupsV2:getEntityGroupsV2", args, GetEntityGroupsV2ResultOutput{}, options).(GetEntityGroupsV2ResultOutput), nil
-		}).(GetEntityGroupsV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getEntityGroupsV2:getEntityGroupsV2", args, GetEntityGroupsV2ResultOutput{}, options).(GetEntityGroupsV2ResultOutput)
 }
 
 // A collection of arguments for invoking getEntityGroupsV2.

@@ -59,10 +59,8 @@ type GetProjectsResult struct {
 }
 
 func GetProjectsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetProjectsResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetProjectsResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("nutanix:index/getProjects:getProjects", nil, GetProjectsResultOutput{}, options).(GetProjectsResultOutput), nil
-	}).(GetProjectsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getProjects:getProjects", nil, GetProjectsResultOutput{}, options).(GetProjectsResultOutput)
 }
 
 // A collection of values returned by getProjects.

@@ -112,12 +112,8 @@ type GetSystemUserPasswordsV2Result struct {
 }
 
 func GetSystemUserPasswordsV2Output(ctx *pulumi.Context, args GetSystemUserPasswordsV2OutputArgs, opts ...pulumi.InvokeOption) GetSystemUserPasswordsV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSystemUserPasswordsV2ResultOutput, error) {
-			args := v.(GetSystemUserPasswordsV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getSystemUserPasswordsV2:getSystemUserPasswordsV2", args, GetSystemUserPasswordsV2ResultOutput{}, options).(GetSystemUserPasswordsV2ResultOutput), nil
-		}).(GetSystemUserPasswordsV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getSystemUserPasswordsV2:getSystemUserPasswordsV2", args, GetSystemUserPasswordsV2ResultOutput{}, options).(GetSystemUserPasswordsV2ResultOutput)
 }
 
 // A collection of arguments for invoking getSystemUserPasswordsV2.

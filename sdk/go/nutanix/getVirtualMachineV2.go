@@ -151,12 +151,8 @@ type LookupVirtualMachineV2Result struct {
 }
 
 func LookupVirtualMachineV2Output(ctx *pulumi.Context, args LookupVirtualMachineV2OutputArgs, opts ...pulumi.InvokeOption) LookupVirtualMachineV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupVirtualMachineV2ResultOutput, error) {
-			args := v.(LookupVirtualMachineV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getVirtualMachineV2:getVirtualMachineV2", args, LookupVirtualMachineV2ResultOutput{}, options).(LookupVirtualMachineV2ResultOutput), nil
-		}).(LookupVirtualMachineV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getVirtualMachineV2:getVirtualMachineV2", args, LookupVirtualMachineV2ResultOutput{}, options).(LookupVirtualMachineV2ResultOutput)
 }
 
 // A collection of arguments for invoking getVirtualMachineV2.

@@ -87,12 +87,8 @@ type LookupSubnetV2Result struct {
 }
 
 func LookupSubnetV2Output(ctx *pulumi.Context, args LookupSubnetV2OutputArgs, opts ...pulumi.InvokeOption) LookupSubnetV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSubnetV2ResultOutput, error) {
-			args := v.(LookupSubnetV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getSubnetV2:getSubnetV2", args, LookupSubnetV2ResultOutput{}, options).(LookupSubnetV2ResultOutput), nil
-		}).(LookupSubnetV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getSubnetV2:getSubnetV2", args, LookupSubnetV2ResultOutput{}, options).(LookupSubnetV2ResultOutput)
 }
 
 // A collection of arguments for invoking getSubnetV2.
