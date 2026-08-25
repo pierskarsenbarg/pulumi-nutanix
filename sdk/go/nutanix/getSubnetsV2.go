@@ -201,12 +201,8 @@ type GetSubnetsV2Result struct {
 }
 
 func GetSubnetsV2Output(ctx *pulumi.Context, args GetSubnetsV2OutputArgs, opts ...pulumi.InvokeOption) GetSubnetsV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSubnetsV2ResultOutput, error) {
-			args := v.(GetSubnetsV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getSubnetsV2:getSubnetsV2", args, GetSubnetsV2ResultOutput{}, options).(GetSubnetsV2ResultOutput), nil
-		}).(GetSubnetsV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getSubnetsV2:getSubnetsV2", args, GetSubnetsV2ResultOutput{}, options).(GetSubnetsV2ResultOutput)
 }
 
 // A collection of arguments for invoking getSubnetsV2.

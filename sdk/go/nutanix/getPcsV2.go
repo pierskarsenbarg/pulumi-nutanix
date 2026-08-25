@@ -199,12 +199,8 @@ type GetPcsV2Result struct {
 }
 
 func GetPcsV2Output(ctx *pulumi.Context, args GetPcsV2OutputArgs, opts ...pulumi.InvokeOption) GetPcsV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPcsV2ResultOutput, error) {
-			args := v.(GetPcsV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getPcsV2:getPcsV2", args, GetPcsV2ResultOutput{}, options).(GetPcsV2ResultOutput), nil
-		}).(GetPcsV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getPcsV2:getPcsV2", args, GetPcsV2ResultOutput{}, options).(GetPcsV2ResultOutput)
 }
 
 // A collection of arguments for invoking getPcsV2.

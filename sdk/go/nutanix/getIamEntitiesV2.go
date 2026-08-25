@@ -115,12 +115,8 @@ type GetIamEntitiesV2Result struct {
 }
 
 func GetIamEntitiesV2Output(ctx *pulumi.Context, args GetIamEntitiesV2OutputArgs, opts ...pulumi.InvokeOption) GetIamEntitiesV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetIamEntitiesV2ResultOutput, error) {
-			args := v.(GetIamEntitiesV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getIamEntitiesV2:getIamEntitiesV2", args, GetIamEntitiesV2ResultOutput{}, options).(GetIamEntitiesV2ResultOutput), nil
-		}).(GetIamEntitiesV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getIamEntitiesV2:getIamEntitiesV2", args, GetIamEntitiesV2ResultOutput{}, options).(GetIamEntitiesV2ResultOutput)
 }
 
 // A collection of arguments for invoking getIamEntitiesV2.

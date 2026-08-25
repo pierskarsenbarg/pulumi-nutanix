@@ -87,12 +87,8 @@ type GetVolumeIscsiClientV2Result struct {
 }
 
 func GetVolumeIscsiClientV2Output(ctx *pulumi.Context, args GetVolumeIscsiClientV2OutputArgs, opts ...pulumi.InvokeOption) GetVolumeIscsiClientV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVolumeIscsiClientV2ResultOutput, error) {
-			args := v.(GetVolumeIscsiClientV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getVolumeIscsiClientV2:getVolumeIscsiClientV2", args, GetVolumeIscsiClientV2ResultOutput{}, options).(GetVolumeIscsiClientV2ResultOutput), nil
-		}).(GetVolumeIscsiClientV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getVolumeIscsiClientV2:getVolumeIscsiClientV2", args, GetVolumeIscsiClientV2ResultOutput{}, options).(GetVolumeIscsiClientV2ResultOutput)
 }
 
 // A collection of arguments for invoking getVolumeIscsiClientV2.

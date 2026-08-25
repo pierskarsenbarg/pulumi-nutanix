@@ -111,12 +111,8 @@ type GetProtectedResourceV2Result struct {
 }
 
 func GetProtectedResourceV2Output(ctx *pulumi.Context, args GetProtectedResourceV2OutputArgs, opts ...pulumi.InvokeOption) GetProtectedResourceV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetProtectedResourceV2ResultOutput, error) {
-			args := v.(GetProtectedResourceV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getProtectedResourceV2:getProtectedResourceV2", args, GetProtectedResourceV2ResultOutput{}, options).(GetProtectedResourceV2ResultOutput), nil
-		}).(GetProtectedResourceV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getProtectedResourceV2:getProtectedResourceV2", args, GetProtectedResourceV2ResultOutput{}, options).(GetProtectedResourceV2ResultOutput)
 }
 
 // A collection of arguments for invoking getProtectedResourceV2.

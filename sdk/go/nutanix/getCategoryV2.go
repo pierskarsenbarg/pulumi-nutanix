@@ -88,12 +88,8 @@ type LookupCategoryV2Result struct {
 }
 
 func LookupCategoryV2Output(ctx *pulumi.Context, args LookupCategoryV2OutputArgs, opts ...pulumi.InvokeOption) LookupCategoryV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupCategoryV2ResultOutput, error) {
-			args := v.(LookupCategoryV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getCategoryV2:getCategoryV2", args, LookupCategoryV2ResultOutput{}, options).(LookupCategoryV2ResultOutput), nil
-		}).(LookupCategoryV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getCategoryV2:getCategoryV2", args, LookupCategoryV2ResultOutput{}, options).(LookupCategoryV2ResultOutput)
 }
 
 // A collection of arguments for invoking getCategoryV2.

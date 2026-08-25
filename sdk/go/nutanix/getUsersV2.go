@@ -140,12 +140,8 @@ type LookupUsersV2Result struct {
 }
 
 func LookupUsersV2Output(ctx *pulumi.Context, args LookupUsersV2OutputArgs, opts ...pulumi.InvokeOption) LookupUsersV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupUsersV2ResultOutput, error) {
-			args := v.(LookupUsersV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getUsersV2:getUsersV2", args, LookupUsersV2ResultOutput{}, options).(LookupUsersV2ResultOutput), nil
-		}).(LookupUsersV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getUsersV2:getUsersV2", args, LookupUsersV2ResultOutput{}, options).(LookupUsersV2ResultOutput)
 }
 
 // A collection of arguments for invoking getUsersV2.

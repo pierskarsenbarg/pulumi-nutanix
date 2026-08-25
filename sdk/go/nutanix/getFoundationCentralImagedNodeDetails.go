@@ -135,12 +135,8 @@ type GetFoundationCentralImagedNodeDetailsResult struct {
 }
 
 func GetFoundationCentralImagedNodeDetailsOutput(ctx *pulumi.Context, args GetFoundationCentralImagedNodeDetailsOutputArgs, opts ...pulumi.InvokeOption) GetFoundationCentralImagedNodeDetailsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFoundationCentralImagedNodeDetailsResultOutput, error) {
-			args := v.(GetFoundationCentralImagedNodeDetailsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails", args, GetFoundationCentralImagedNodeDetailsResultOutput{}, options).(GetFoundationCentralImagedNodeDetailsResultOutput), nil
-		}).(GetFoundationCentralImagedNodeDetailsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails", args, GetFoundationCentralImagedNodeDetailsResultOutput{}, options).(GetFoundationCentralImagedNodeDetailsResultOutput)
 }
 
 // A collection of arguments for invoking getFoundationCentralImagedNodeDetails.

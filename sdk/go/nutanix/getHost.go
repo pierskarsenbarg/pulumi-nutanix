@@ -89,12 +89,8 @@ type GetHostResult struct {
 }
 
 func GetHostOutput(ctx *pulumi.Context, args GetHostOutputArgs, opts ...pulumi.InvokeOption) GetHostResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetHostResultOutput, error) {
-			args := v.(GetHostArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getHost:getHost", args, GetHostResultOutput{}, options).(GetHostResultOutput), nil
-		}).(GetHostResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getHost:getHost", args, GetHostResultOutput{}, options).(GetHostResultOutput)
 }
 
 // A collection of arguments for invoking getHost.

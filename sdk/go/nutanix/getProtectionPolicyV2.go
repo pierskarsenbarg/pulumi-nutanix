@@ -85,12 +85,8 @@ type LookupProtectionPolicyV2Result struct {
 }
 
 func LookupProtectionPolicyV2Output(ctx *pulumi.Context, args LookupProtectionPolicyV2OutputArgs, opts ...pulumi.InvokeOption) LookupProtectionPolicyV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupProtectionPolicyV2ResultOutput, error) {
-			args := v.(LookupProtectionPolicyV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getProtectionPolicyV2:getProtectionPolicyV2", args, LookupProtectionPolicyV2ResultOutput{}, options).(LookupProtectionPolicyV2ResultOutput), nil
-		}).(LookupProtectionPolicyV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getProtectionPolicyV2:getProtectionPolicyV2", args, LookupProtectionPolicyV2ResultOutput{}, options).(LookupProtectionPolicyV2ResultOutput)
 }
 
 // A collection of arguments for invoking getProtectionPolicyV2.

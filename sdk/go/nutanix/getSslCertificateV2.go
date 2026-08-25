@@ -75,12 +75,8 @@ type LookupSslCertificateV2Result struct {
 }
 
 func LookupSslCertificateV2Output(ctx *pulumi.Context, args LookupSslCertificateV2OutputArgs, opts ...pulumi.InvokeOption) LookupSslCertificateV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupSslCertificateV2ResultOutput, error) {
-			args := v.(LookupSslCertificateV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getSslCertificateV2:getSslCertificateV2", args, LookupSslCertificateV2ResultOutput{}, options).(LookupSslCertificateV2ResultOutput), nil
-		}).(LookupSslCertificateV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getSslCertificateV2:getSslCertificateV2", args, LookupSslCertificateV2ResultOutput{}, options).(LookupSslCertificateV2ResultOutput)
 }
 
 // A collection of arguments for invoking getSslCertificateV2.

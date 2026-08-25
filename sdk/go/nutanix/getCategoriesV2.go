@@ -153,12 +153,8 @@ type GetCategoriesV2Result struct {
 }
 
 func GetCategoriesV2Output(ctx *pulumi.Context, args GetCategoriesV2OutputArgs, opts ...pulumi.InvokeOption) GetCategoriesV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCategoriesV2ResultOutput, error) {
-			args := v.(GetCategoriesV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getCategoriesV2:getCategoriesV2", args, GetCategoriesV2ResultOutput{}, options).(GetCategoriesV2ResultOutput), nil
-		}).(GetCategoriesV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getCategoriesV2:getCategoriesV2", args, GetCategoriesV2ResultOutput{}, options).(GetCategoriesV2ResultOutput)
 }
 
 // A collection of arguments for invoking getCategoriesV2.

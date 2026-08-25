@@ -103,12 +103,8 @@ type LookupRecoveryPlanResult struct {
 }
 
 func LookupRecoveryPlanOutput(ctx *pulumi.Context, args LookupRecoveryPlanOutputArgs, opts ...pulumi.InvokeOption) LookupRecoveryPlanResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupRecoveryPlanResultOutput, error) {
-			args := v.(LookupRecoveryPlanArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getRecoveryPlan:getRecoveryPlan", args, LookupRecoveryPlanResultOutput{}, options).(LookupRecoveryPlanResultOutput), nil
-		}).(LookupRecoveryPlanResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getRecoveryPlan:getRecoveryPlan", args, LookupRecoveryPlanResultOutput{}, options).(LookupRecoveryPlanResultOutput)
 }
 
 // A collection of arguments for invoking getRecoveryPlan.
