@@ -100,12 +100,8 @@ type LookupLcmConfigV2Result struct {
 }
 
 func LookupLcmConfigV2Output(ctx *pulumi.Context, args LookupLcmConfigV2OutputArgs, opts ...pulumi.InvokeOption) LookupLcmConfigV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupLcmConfigV2ResultOutput, error) {
-			args := v.(LookupLcmConfigV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getLcmConfigV2:getLcmConfigV2", args, LookupLcmConfigV2ResultOutput{}, options).(LookupLcmConfigV2ResultOutput), nil
-		}).(LookupLcmConfigV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getLcmConfigV2:getLcmConfigV2", args, LookupLcmConfigV2ResultOutput{}, options).(LookupLcmConfigV2ResultOutput)
 }
 
 // A collection of arguments for invoking getLcmConfigV2.

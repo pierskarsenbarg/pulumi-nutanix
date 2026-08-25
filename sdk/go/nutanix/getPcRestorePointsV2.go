@@ -264,12 +264,8 @@ type GetPcRestorePointsV2Result struct {
 }
 
 func GetPcRestorePointsV2Output(ctx *pulumi.Context, args GetPcRestorePointsV2OutputArgs, opts ...pulumi.InvokeOption) GetPcRestorePointsV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPcRestorePointsV2ResultOutput, error) {
-			args := v.(GetPcRestorePointsV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getPcRestorePointsV2:getPcRestorePointsV2", args, GetPcRestorePointsV2ResultOutput{}, options).(GetPcRestorePointsV2ResultOutput), nil
-		}).(GetPcRestorePointsV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getPcRestorePointsV2:getPcRestorePointsV2", args, GetPcRestorePointsV2ResultOutput{}, options).(GetPcRestorePointsV2ResultOutput)
 }
 
 // A collection of arguments for invoking getPcRestorePointsV2.

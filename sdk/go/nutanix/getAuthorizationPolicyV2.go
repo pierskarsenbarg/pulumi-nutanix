@@ -92,12 +92,8 @@ type LookupAuthorizationPolicyV2Result struct {
 }
 
 func LookupAuthorizationPolicyV2Output(ctx *pulumi.Context, args LookupAuthorizationPolicyV2OutputArgs, opts ...pulumi.InvokeOption) LookupAuthorizationPolicyV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupAuthorizationPolicyV2ResultOutput, error) {
-			args := v.(LookupAuthorizationPolicyV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getAuthorizationPolicyV2:getAuthorizationPolicyV2", args, LookupAuthorizationPolicyV2ResultOutput{}, options).(LookupAuthorizationPolicyV2ResultOutput), nil
-		}).(LookupAuthorizationPolicyV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getAuthorizationPolicyV2:getAuthorizationPolicyV2", args, LookupAuthorizationPolicyV2ResultOutput{}, options).(LookupAuthorizationPolicyV2ResultOutput)
 }
 
 // A collection of arguments for invoking getAuthorizationPolicyV2.

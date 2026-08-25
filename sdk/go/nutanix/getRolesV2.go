@@ -127,12 +127,8 @@ type LookupRolesV2Result struct {
 }
 
 func LookupRolesV2Output(ctx *pulumi.Context, args LookupRolesV2OutputArgs, opts ...pulumi.InvokeOption) LookupRolesV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupRolesV2ResultOutput, error) {
-			args := v.(LookupRolesV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getRolesV2:getRolesV2", args, LookupRolesV2ResultOutput{}, options).(LookupRolesV2ResultOutput), nil
-		}).(LookupRolesV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getRolesV2:getRolesV2", args, LookupRolesV2ResultOutput{}, options).(LookupRolesV2ResultOutput)
 }
 
 // A collection of arguments for invoking getRolesV2.

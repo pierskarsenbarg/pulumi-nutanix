@@ -46,12 +46,8 @@ type LookupStaticRoutesResult struct {
 }
 
 func LookupStaticRoutesOutput(ctx *pulumi.Context, args LookupStaticRoutesOutputArgs, opts ...pulumi.InvokeOption) LookupStaticRoutesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupStaticRoutesResultOutput, error) {
-			args := v.(LookupStaticRoutesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getStaticRoutes:getStaticRoutes", args, LookupStaticRoutesResultOutput{}, options).(LookupStaticRoutesResultOutput), nil
-		}).(LookupStaticRoutesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getStaticRoutes:getStaticRoutes", args, LookupStaticRoutesResultOutput{}, options).(LookupStaticRoutesResultOutput)
 }
 
 // A collection of arguments for invoking getStaticRoutes.

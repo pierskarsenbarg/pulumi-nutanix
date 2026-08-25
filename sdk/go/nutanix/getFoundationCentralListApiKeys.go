@@ -72,12 +72,8 @@ type GetFoundationCentralListApiKeysResult struct {
 }
 
 func GetFoundationCentralListApiKeysOutput(ctx *pulumi.Context, args GetFoundationCentralListApiKeysOutputArgs, opts ...pulumi.InvokeOption) GetFoundationCentralListApiKeysResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFoundationCentralListApiKeysResultOutput, error) {
-			args := v.(GetFoundationCentralListApiKeysArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getFoundationCentralListApiKeys:getFoundationCentralListApiKeys", args, GetFoundationCentralListApiKeysResultOutput{}, options).(GetFoundationCentralListApiKeysResultOutput), nil
-		}).(GetFoundationCentralListApiKeysResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getFoundationCentralListApiKeys:getFoundationCentralListApiKeys", args, GetFoundationCentralListApiKeysResultOutput{}, options).(GetFoundationCentralListApiKeysResultOutput)
 }
 
 // A collection of arguments for invoking getFoundationCentralListApiKeys.

@@ -56,10 +56,8 @@ type GetKarbonClustersResult struct {
 }
 
 func GetKarbonClustersOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetKarbonClustersResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetKarbonClustersResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("nutanix:index/getKarbonClusters:getKarbonClusters", nil, GetKarbonClustersResultOutput{}, options).(GetKarbonClustersResultOutput), nil
-	}).(GetKarbonClustersResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getKarbonClusters:getKarbonClusters", nil, GetKarbonClustersResultOutput{}, options).(GetKarbonClustersResultOutput)
 }
 
 // A collection of values returned by getKarbonClusters.

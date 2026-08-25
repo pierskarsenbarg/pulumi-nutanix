@@ -67,12 +67,8 @@ type GetNdbNetworkAvailableIpsResult struct {
 }
 
 func GetNdbNetworkAvailableIpsOutput(ctx *pulumi.Context, args GetNdbNetworkAvailableIpsOutputArgs, opts ...pulumi.InvokeOption) GetNdbNetworkAvailableIpsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNdbNetworkAvailableIpsResultOutput, error) {
-			args := v.(GetNdbNetworkAvailableIpsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getNdbNetworkAvailableIps:getNdbNetworkAvailableIps", args, GetNdbNetworkAvailableIpsResultOutput{}, options).(GetNdbNetworkAvailableIpsResultOutput), nil
-		}).(GetNdbNetworkAvailableIpsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getNdbNetworkAvailableIps:getNdbNetworkAvailableIps", args, GetNdbNetworkAvailableIpsResultOutput{}, options).(GetNdbNetworkAvailableIpsResultOutput)
 }
 
 // A collection of arguments for invoking getNdbNetworkAvailableIps.

@@ -105,12 +105,8 @@ type GetLcmEntityV2Result struct {
 }
 
 func GetLcmEntityV2Output(ctx *pulumi.Context, args GetLcmEntityV2OutputArgs, opts ...pulumi.InvokeOption) GetLcmEntityV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLcmEntityV2ResultOutput, error) {
-			args := v.(GetLcmEntityV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getLcmEntityV2:getLcmEntityV2", args, GetLcmEntityV2ResultOutput{}, options).(GetLcmEntityV2ResultOutput), nil
-		}).(GetLcmEntityV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getLcmEntityV2:getLcmEntityV2", args, GetLcmEntityV2ResultOutput{}, options).(GetLcmEntityV2ResultOutput)
 }
 
 // A collection of arguments for invoking getLcmEntityV2.

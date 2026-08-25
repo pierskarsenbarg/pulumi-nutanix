@@ -57,10 +57,8 @@ type GetFoundationDiscoverNodesResult struct {
 }
 
 func GetFoundationDiscoverNodesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetFoundationDiscoverNodesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetFoundationDiscoverNodesResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("nutanix:index/getFoundationDiscoverNodes:getFoundationDiscoverNodes", nil, GetFoundationDiscoverNodesResultOutput{}, options).(GetFoundationDiscoverNodesResultOutput), nil
-	}).(GetFoundationDiscoverNodesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getFoundationDiscoverNodes:getFoundationDiscoverNodes", nil, GetFoundationDiscoverNodesResultOutput{}, options).(GetFoundationDiscoverNodesResultOutput)
 }
 
 // A collection of values returned by getFoundationDiscoverNodes.

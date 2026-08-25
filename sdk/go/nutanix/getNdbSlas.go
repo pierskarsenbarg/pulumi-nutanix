@@ -58,10 +58,8 @@ type GetNdbSlasResult struct {
 }
 
 func GetNdbSlasOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetNdbSlasResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetNdbSlasResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("nutanix:index/getNdbSlas:getNdbSlas", nil, GetNdbSlasResultOutput{}, options).(GetNdbSlasResultOutput), nil
-	}).(GetNdbSlasResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getNdbSlas:getNdbSlas", nil, GetNdbSlasResultOutput{}, options).(GetNdbSlasResultOutput)
 }
 
 // A collection of values returned by getNdbSlas.

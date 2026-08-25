@@ -75,12 +75,8 @@ type LookupKeyManagementServerV2Result struct {
 }
 
 func LookupKeyManagementServerV2Output(ctx *pulumi.Context, args LookupKeyManagementServerV2OutputArgs, opts ...pulumi.InvokeOption) LookupKeyManagementServerV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupKeyManagementServerV2ResultOutput, error) {
-			args := v.(LookupKeyManagementServerV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getKeyManagementServerV2:getKeyManagementServerV2", args, LookupKeyManagementServerV2ResultOutput{}, options).(LookupKeyManagementServerV2ResultOutput), nil
-		}).(LookupKeyManagementServerV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getKeyManagementServerV2:getKeyManagementServerV2", args, LookupKeyManagementServerV2ResultOutput{}, options).(LookupKeyManagementServerV2ResultOutput)
 }
 
 // A collection of arguments for invoking getKeyManagementServerV2.

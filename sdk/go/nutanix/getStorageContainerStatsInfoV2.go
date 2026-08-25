@@ -158,12 +158,8 @@ type GetStorageContainerStatsInfoV2Result struct {
 }
 
 func GetStorageContainerStatsInfoV2Output(ctx *pulumi.Context, args GetStorageContainerStatsInfoV2OutputArgs, opts ...pulumi.InvokeOption) GetStorageContainerStatsInfoV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetStorageContainerStatsInfoV2ResultOutput, error) {
-			args := v.(GetStorageContainerStatsInfoV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getStorageContainerStatsInfoV2:getStorageContainerStatsInfoV2", args, GetStorageContainerStatsInfoV2ResultOutput{}, options).(GetStorageContainerStatsInfoV2ResultOutput), nil
-		}).(GetStorageContainerStatsInfoV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getStorageContainerStatsInfoV2:getStorageContainerStatsInfoV2", args, GetStorageContainerStatsInfoV2ResultOutput{}, options).(GetStorageContainerStatsInfoV2ResultOutput)
 }
 
 // A collection of arguments for invoking getStorageContainerStatsInfoV2.

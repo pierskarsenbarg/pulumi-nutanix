@@ -106,12 +106,8 @@ type GetVmAntiAffinityPoliciesV2Result struct {
 }
 
 func GetVmAntiAffinityPoliciesV2Output(ctx *pulumi.Context, args GetVmAntiAffinityPoliciesV2OutputArgs, opts ...pulumi.InvokeOption) GetVmAntiAffinityPoliciesV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVmAntiAffinityPoliciesV2ResultOutput, error) {
-			args := v.(GetVmAntiAffinityPoliciesV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getVmAntiAffinityPoliciesV2:getVmAntiAffinityPoliciesV2", args, GetVmAntiAffinityPoliciesV2ResultOutput{}, options).(GetVmAntiAffinityPoliciesV2ResultOutput), nil
-		}).(GetVmAntiAffinityPoliciesV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getVmAntiAffinityPoliciesV2:getVmAntiAffinityPoliciesV2", args, GetVmAntiAffinityPoliciesV2ResultOutput{}, options).(GetVmAntiAffinityPoliciesV2ResultOutput)
 }
 
 // A collection of arguments for invoking getVmAntiAffinityPoliciesV2.

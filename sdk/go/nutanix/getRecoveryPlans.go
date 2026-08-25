@@ -59,10 +59,8 @@ type GetRecoveryPlansResult struct {
 }
 
 func GetRecoveryPlansOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetRecoveryPlansResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetRecoveryPlansResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("nutanix:index/getRecoveryPlans:getRecoveryPlans", nil, GetRecoveryPlansResultOutput{}, options).(GetRecoveryPlansResultOutput), nil
-	}).(GetRecoveryPlansResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getRecoveryPlans:getRecoveryPlans", nil, GetRecoveryPlansResultOutput{}, options).(GetRecoveryPlansResultOutput)
 }
 
 // A collection of values returned by getRecoveryPlans.

@@ -114,12 +114,8 @@ type LookupNdbDatabaseResult struct {
 }
 
 func LookupNdbDatabaseOutput(ctx *pulumi.Context, args LookupNdbDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupNdbDatabaseResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNdbDatabaseResultOutput, error) {
-			args := v.(LookupNdbDatabaseArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getNdbDatabase:getNdbDatabase", args, LookupNdbDatabaseResultOutput{}, options).(LookupNdbDatabaseResultOutput), nil
-		}).(LookupNdbDatabaseResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getNdbDatabase:getNdbDatabase", args, LookupNdbDatabaseResultOutput{}, options).(LookupNdbDatabaseResultOutput)
 }
 
 // A collection of arguments for invoking getNdbDatabase.

@@ -85,12 +85,8 @@ type LookupNetworkFunctionV2Result struct {
 }
 
 func LookupNetworkFunctionV2Output(ctx *pulumi.Context, args LookupNetworkFunctionV2OutputArgs, opts ...pulumi.InvokeOption) LookupNetworkFunctionV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNetworkFunctionV2ResultOutput, error) {
-			args := v.(LookupNetworkFunctionV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getNetworkFunctionV2:getNetworkFunctionV2", args, LookupNetworkFunctionV2ResultOutput{}, options).(LookupNetworkFunctionV2ResultOutput), nil
-		}).(LookupNetworkFunctionV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getNetworkFunctionV2:getNetworkFunctionV2", args, LookupNetworkFunctionV2ResultOutput{}, options).(LookupNetworkFunctionV2ResultOutput)
 }
 
 // A collection of arguments for invoking getNetworkFunctionV2.
