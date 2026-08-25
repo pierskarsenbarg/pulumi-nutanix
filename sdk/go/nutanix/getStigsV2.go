@@ -208,12 +208,8 @@ type GetStigsV2Result struct {
 }
 
 func GetStigsV2Output(ctx *pulumi.Context, args GetStigsV2OutputArgs, opts ...pulumi.InvokeOption) GetStigsV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetStigsV2ResultOutput, error) {
-			args := v.(GetStigsV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getStigsV2:getStigsV2", args, GetStigsV2ResultOutput{}, options).(GetStigsV2ResultOutput), nil
-		}).(GetStigsV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getStigsV2:getStigsV2", args, GetStigsV2ResultOutput{}, options).(GetStigsV2ResultOutput)
 }
 
 // A collection of arguments for invoking getStigsV2.

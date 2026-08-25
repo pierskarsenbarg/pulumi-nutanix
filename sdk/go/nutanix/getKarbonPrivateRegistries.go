@@ -35,10 +35,8 @@ type GetKarbonPrivateRegistriesResult struct {
 }
 
 func GetKarbonPrivateRegistriesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetKarbonPrivateRegistriesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetKarbonPrivateRegistriesResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("nutanix:index/getKarbonPrivateRegistries:getKarbonPrivateRegistries", nil, GetKarbonPrivateRegistriesResultOutput{}, options).(GetKarbonPrivateRegistriesResultOutput), nil
-	}).(GetKarbonPrivateRegistriesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getKarbonPrivateRegistries:getKarbonPrivateRegistries", nil, GetKarbonPrivateRegistriesResultOutput{}, options).(GetKarbonPrivateRegistriesResultOutput)
 }
 
 // A collection of values returned by getKarbonPrivateRegistries.

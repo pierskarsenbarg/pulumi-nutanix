@@ -487,12 +487,8 @@ type GetTemplatesV2Result struct {
 }
 
 func GetTemplatesV2Output(ctx *pulumi.Context, args GetTemplatesV2OutputArgs, opts ...pulumi.InvokeOption) GetTemplatesV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetTemplatesV2ResultOutput, error) {
-			args := v.(GetTemplatesV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getTemplatesV2:getTemplatesV2", args, GetTemplatesV2ResultOutput{}, options).(GetTemplatesV2ResultOutput), nil
-		}).(GetTemplatesV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getTemplatesV2:getTemplatesV2", args, GetTemplatesV2ResultOutput{}, options).(GetTemplatesV2ResultOutput)
 }
 
 // A collection of arguments for invoking getTemplatesV2.

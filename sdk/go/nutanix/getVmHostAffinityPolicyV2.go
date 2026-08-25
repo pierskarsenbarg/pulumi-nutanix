@@ -89,12 +89,8 @@ type LookupVmHostAffinityPolicyV2Result struct {
 }
 
 func LookupVmHostAffinityPolicyV2Output(ctx *pulumi.Context, args LookupVmHostAffinityPolicyV2OutputArgs, opts ...pulumi.InvokeOption) LookupVmHostAffinityPolicyV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupVmHostAffinityPolicyV2ResultOutput, error) {
-			args := v.(LookupVmHostAffinityPolicyV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getVmHostAffinityPolicyV2:getVmHostAffinityPolicyV2", args, LookupVmHostAffinityPolicyV2ResultOutput{}, options).(LookupVmHostAffinityPolicyV2ResultOutput), nil
-		}).(LookupVmHostAffinityPolicyV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getVmHostAffinityPolicyV2:getVmHostAffinityPolicyV2", args, LookupVmHostAffinityPolicyV2ResultOutput{}, options).(LookupVmHostAffinityPolicyV2ResultOutput)
 }
 
 // A collection of arguments for invoking getVmHostAffinityPolicyV2.

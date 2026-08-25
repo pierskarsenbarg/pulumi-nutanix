@@ -72,12 +72,8 @@ type LookupPcRestoreSourceV2Result struct {
 }
 
 func LookupPcRestoreSourceV2Output(ctx *pulumi.Context, args LookupPcRestoreSourceV2OutputArgs, opts ...pulumi.InvokeOption) LookupPcRestoreSourceV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupPcRestoreSourceV2ResultOutput, error) {
-			args := v.(LookupPcRestoreSourceV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getPcRestoreSourceV2:getPcRestoreSourceV2", args, LookupPcRestoreSourceV2ResultOutput{}, options).(LookupPcRestoreSourceV2ResultOutput), nil
-		}).(LookupPcRestoreSourceV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getPcRestoreSourceV2:getPcRestoreSourceV2", args, LookupPcRestoreSourceV2ResultOutput{}, options).(LookupPcRestoreSourceV2ResultOutput)
 }
 
 // A collection of arguments for invoking getPcRestoreSourceV2.

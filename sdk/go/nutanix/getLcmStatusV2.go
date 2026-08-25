@@ -78,12 +78,8 @@ type GetLcmStatusV2Result struct {
 }
 
 func GetLcmStatusV2Output(ctx *pulumi.Context, args GetLcmStatusV2OutputArgs, opts ...pulumi.InvokeOption) GetLcmStatusV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetLcmStatusV2ResultOutput, error) {
-			args := v.(GetLcmStatusV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getLcmStatusV2:getLcmStatusV2", args, GetLcmStatusV2ResultOutput{}, options).(GetLcmStatusV2ResultOutput), nil
-		}).(GetLcmStatusV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getLcmStatusV2:getLcmStatusV2", args, GetLcmStatusV2ResultOutput{}, options).(GetLcmStatusV2ResultOutput)
 }
 
 // A collection of arguments for invoking getLcmStatusV2.

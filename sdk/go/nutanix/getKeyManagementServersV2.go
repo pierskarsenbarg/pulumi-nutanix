@@ -59,10 +59,8 @@ type GetKeyManagementServersV2Result struct {
 }
 
 func GetKeyManagementServersV2Output(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetKeyManagementServersV2ResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetKeyManagementServersV2ResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("nutanix:index/getKeyManagementServersV2:getKeyManagementServersV2", nil, GetKeyManagementServersV2ResultOutput{}, options).(GetKeyManagementServersV2ResultOutput), nil
-	}).(GetKeyManagementServersV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getKeyManagementServersV2:getKeyManagementServersV2", nil, GetKeyManagementServersV2ResultOutput{}, options).(GetKeyManagementServersV2ResultOutput)
 }
 
 // A collection of values returned by getKeyManagementServersV2.

@@ -83,12 +83,8 @@ type GetKarbonClusterSshResult struct {
 }
 
 func GetKarbonClusterSshOutput(ctx *pulumi.Context, args GetKarbonClusterSshOutputArgs, opts ...pulumi.InvokeOption) GetKarbonClusterSshResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetKarbonClusterSshResultOutput, error) {
-			args := v.(GetKarbonClusterSshArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", args, GetKarbonClusterSshResultOutput{}, options).(GetKarbonClusterSshResultOutput), nil
-		}).(GetKarbonClusterSshResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", args, GetKarbonClusterSshResultOutput{}, options).(GetKarbonClusterSshResultOutput)
 }
 
 // A collection of arguments for invoking getKarbonClusterSsh.

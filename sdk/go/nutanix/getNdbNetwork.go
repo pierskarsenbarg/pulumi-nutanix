@@ -55,12 +55,8 @@ type LookupNdbNetworkResult struct {
 }
 
 func LookupNdbNetworkOutput(ctx *pulumi.Context, args LookupNdbNetworkOutputArgs, opts ...pulumi.InvokeOption) LookupNdbNetworkResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNdbNetworkResultOutput, error) {
-			args := v.(LookupNdbNetworkArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getNdbNetwork:getNdbNetwork", args, LookupNdbNetworkResultOutput{}, options).(LookupNdbNetworkResultOutput), nil
-		}).(LookupNdbNetworkResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getNdbNetwork:getNdbNetwork", args, LookupNdbNetworkResultOutput{}, options).(LookupNdbNetworkResultOutput)
 }
 
 // A collection of arguments for invoking getNdbNetwork.

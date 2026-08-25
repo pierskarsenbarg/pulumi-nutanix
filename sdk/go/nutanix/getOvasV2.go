@@ -160,12 +160,8 @@ type GetOvasV2Result struct {
 }
 
 func GetOvasV2Output(ctx *pulumi.Context, args GetOvasV2OutputArgs, opts ...pulumi.InvokeOption) GetOvasV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOvasV2ResultOutput, error) {
-			args := v.(GetOvasV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getOvasV2:getOvasV2", args, GetOvasV2ResultOutput{}, options).(GetOvasV2ResultOutput), nil
-		}).(GetOvasV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getOvasV2:getOvasV2", args, GetOvasV2ResultOutput{}, options).(GetOvasV2ResultOutput)
 }
 
 // A collection of arguments for invoking getOvasV2.

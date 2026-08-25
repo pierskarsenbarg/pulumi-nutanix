@@ -80,12 +80,8 @@ type GetSelfServiceSnapshotPolicyListResult struct {
 }
 
 func GetSelfServiceSnapshotPolicyListOutput(ctx *pulumi.Context, args GetSelfServiceSnapshotPolicyListOutputArgs, opts ...pulumi.InvokeOption) GetSelfServiceSnapshotPolicyListResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSelfServiceSnapshotPolicyListResultOutput, error) {
-			args := v.(GetSelfServiceSnapshotPolicyListArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getSelfServiceSnapshotPolicyList:getSelfServiceSnapshotPolicyList", args, GetSelfServiceSnapshotPolicyListResultOutput{}, options).(GetSelfServiceSnapshotPolicyListResultOutput), nil
-		}).(GetSelfServiceSnapshotPolicyListResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getSelfServiceSnapshotPolicyList:getSelfServiceSnapshotPolicyList", args, GetSelfServiceSnapshotPolicyListResultOutput{}, options).(GetSelfServiceSnapshotPolicyListResultOutput)
 }
 
 // A collection of arguments for invoking getSelfServiceSnapshotPolicyList.
