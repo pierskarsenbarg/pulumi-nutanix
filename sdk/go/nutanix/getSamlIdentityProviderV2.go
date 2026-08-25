@@ -91,12 +91,8 @@ type GetSamlIdentityProviderV2Result struct {
 }
 
 func GetSamlIdentityProviderV2Output(ctx *pulumi.Context, args GetSamlIdentityProviderV2OutputArgs, opts ...pulumi.InvokeOption) GetSamlIdentityProviderV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSamlIdentityProviderV2ResultOutput, error) {
-			args := v.(GetSamlIdentityProviderV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getSamlIdentityProviderV2:getSamlIdentityProviderV2", args, GetSamlIdentityProviderV2ResultOutput{}, options).(GetSamlIdentityProviderV2ResultOutput), nil
-		}).(GetSamlIdentityProviderV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getSamlIdentityProviderV2:getSamlIdentityProviderV2", args, GetSamlIdentityProviderV2ResultOutput{}, options).(GetSamlIdentityProviderV2ResultOutput)
 }
 
 // A collection of arguments for invoking getSamlIdentityProviderV2.

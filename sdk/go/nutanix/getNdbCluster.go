@@ -114,12 +114,8 @@ type LookupNdbClusterResult struct {
 }
 
 func LookupNdbClusterOutput(ctx *pulumi.Context, args LookupNdbClusterOutputArgs, opts ...pulumi.InvokeOption) LookupNdbClusterResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNdbClusterResultOutput, error) {
-			args := v.(LookupNdbClusterArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getNdbCluster:getNdbCluster", args, LookupNdbClusterResultOutput{}, options).(LookupNdbClusterResultOutput), nil
-		}).(LookupNdbClusterResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getNdbCluster:getNdbCluster", args, LookupNdbClusterResultOutput{}, options).(LookupNdbClusterResultOutput)
 }
 
 // A collection of arguments for invoking getNdbCluster.

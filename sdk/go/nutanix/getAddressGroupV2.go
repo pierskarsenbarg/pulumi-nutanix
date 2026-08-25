@@ -82,12 +82,8 @@ type GetAddressGroupV2Result struct {
 }
 
 func GetAddressGroupV2Output(ctx *pulumi.Context, args GetAddressGroupV2OutputArgs, opts ...pulumi.InvokeOption) GetAddressGroupV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetAddressGroupV2ResultOutput, error) {
-			args := v.(GetAddressGroupV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getAddressGroupV2:getAddressGroupV2", args, GetAddressGroupV2ResultOutput{}, options).(GetAddressGroupV2ResultOutput), nil
-		}).(GetAddressGroupV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getAddressGroupV2:getAddressGroupV2", args, GetAddressGroupV2ResultOutput{}, options).(GetAddressGroupV2ResultOutput)
 }
 
 // A collection of arguments for invoking getAddressGroupV2.

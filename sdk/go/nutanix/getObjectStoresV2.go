@@ -143,12 +143,8 @@ type GetObjectStoresV2Result struct {
 }
 
 func GetObjectStoresV2Output(ctx *pulumi.Context, args GetObjectStoresV2OutputArgs, opts ...pulumi.InvokeOption) GetObjectStoresV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetObjectStoresV2ResultOutput, error) {
-			args := v.(GetObjectStoresV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getObjectStoresV2:getObjectStoresV2", args, GetObjectStoresV2ResultOutput{}, options).(GetObjectStoresV2ResultOutput), nil
-		}).(GetObjectStoresV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getObjectStoresV2:getObjectStoresV2", args, GetObjectStoresV2ResultOutput{}, options).(GetObjectStoresV2ResultOutput)
 }
 
 // A collection of arguments for invoking getObjectStoresV2.

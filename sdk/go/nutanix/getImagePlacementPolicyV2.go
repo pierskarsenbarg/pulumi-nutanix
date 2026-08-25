@@ -83,12 +83,8 @@ type LookupImagePlacementPolicyV2Result struct {
 }
 
 func LookupImagePlacementPolicyV2Output(ctx *pulumi.Context, args LookupImagePlacementPolicyV2OutputArgs, opts ...pulumi.InvokeOption) LookupImagePlacementPolicyV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupImagePlacementPolicyV2ResultOutput, error) {
-			args := v.(LookupImagePlacementPolicyV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getImagePlacementPolicyV2:getImagePlacementPolicyV2", args, LookupImagePlacementPolicyV2ResultOutput{}, options).(LookupImagePlacementPolicyV2ResultOutput), nil
-		}).(LookupImagePlacementPolicyV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getImagePlacementPolicyV2:getImagePlacementPolicyV2", args, LookupImagePlacementPolicyV2ResultOutput{}, options).(LookupImagePlacementPolicyV2ResultOutput)
 }
 
 // A collection of arguments for invoking getImagePlacementPolicyV2.

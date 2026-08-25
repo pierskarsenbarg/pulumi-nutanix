@@ -109,12 +109,8 @@ type GetFoundationCentralClusterDetailsResult struct {
 }
 
 func GetFoundationCentralClusterDetailsOutput(ctx *pulumi.Context, args GetFoundationCentralClusterDetailsOutputArgs, opts ...pulumi.InvokeOption) GetFoundationCentralClusterDetailsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFoundationCentralClusterDetailsResultOutput, error) {
-			args := v.(GetFoundationCentralClusterDetailsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", args, GetFoundationCentralClusterDetailsResultOutput{}, options).(GetFoundationCentralClusterDetailsResultOutput), nil
-		}).(GetFoundationCentralClusterDetailsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", args, GetFoundationCentralClusterDetailsResultOutput{}, options).(GetFoundationCentralClusterDetailsResultOutput)
 }
 
 // A collection of arguments for invoking getFoundationCentralClusterDetails.

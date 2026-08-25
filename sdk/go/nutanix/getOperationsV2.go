@@ -145,12 +145,8 @@ type GetOperationsV2Result struct {
 }
 
 func GetOperationsV2Output(ctx *pulumi.Context, args GetOperationsV2OutputArgs, opts ...pulumi.InvokeOption) GetOperationsV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetOperationsV2ResultOutput, error) {
-			args := v.(GetOperationsV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getOperationsV2:getOperationsV2", args, GetOperationsV2ResultOutput{}, options).(GetOperationsV2ResultOutput), nil
-		}).(GetOperationsV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getOperationsV2:getOperationsV2", args, GetOperationsV2ResultOutput{}, options).(GetOperationsV2ResultOutput)
 }
 
 // A collection of arguments for invoking getOperationsV2.

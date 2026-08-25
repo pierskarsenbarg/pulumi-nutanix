@@ -83,12 +83,8 @@ type LookupStoragePolicyV2Result struct {
 }
 
 func LookupStoragePolicyV2Output(ctx *pulumi.Context, args LookupStoragePolicyV2OutputArgs, opts ...pulumi.InvokeOption) LookupStoragePolicyV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupStoragePolicyV2ResultOutput, error) {
-			args := v.(LookupStoragePolicyV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getStoragePolicyV2:getStoragePolicyV2", args, LookupStoragePolicyV2ResultOutput{}, options).(LookupStoragePolicyV2ResultOutput), nil
-		}).(LookupStoragePolicyV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getStoragePolicyV2:getStoragePolicyV2", args, LookupStoragePolicyV2ResultOutput{}, options).(LookupStoragePolicyV2ResultOutput)
 }
 
 // A collection of arguments for invoking getStoragePolicyV2.

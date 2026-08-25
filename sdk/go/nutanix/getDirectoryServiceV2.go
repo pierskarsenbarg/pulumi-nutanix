@@ -90,12 +90,8 @@ type GetDirectoryServiceV2Result struct {
 }
 
 func GetDirectoryServiceV2Output(ctx *pulumi.Context, args GetDirectoryServiceV2OutputArgs, opts ...pulumi.InvokeOption) GetDirectoryServiceV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetDirectoryServiceV2ResultOutput, error) {
-			args := v.(GetDirectoryServiceV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getDirectoryServiceV2:getDirectoryServiceV2", args, GetDirectoryServiceV2ResultOutput{}, options).(GetDirectoryServiceV2ResultOutput), nil
-		}).(GetDirectoryServiceV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getDirectoryServiceV2:getDirectoryServiceV2", args, GetDirectoryServiceV2ResultOutput{}, options).(GetDirectoryServiceV2ResultOutput)
 }
 
 // A collection of arguments for invoking getDirectoryServiceV2.

@@ -82,12 +82,8 @@ type LookupPbrV2Result struct {
 }
 
 func LookupPbrV2Output(ctx *pulumi.Context, args LookupPbrV2OutputArgs, opts ...pulumi.InvokeOption) LookupPbrV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupPbrV2ResultOutput, error) {
-			args := v.(LookupPbrV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getPbrV2:getPbrV2", args, LookupPbrV2ResultOutput{}, options).(LookupPbrV2ResultOutput), nil
-		}).(LookupPbrV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getPbrV2:getPbrV2", args, LookupPbrV2ResultOutput{}, options).(LookupPbrV2ResultOutput)
 }
 
 // A collection of arguments for invoking getPbrV2.

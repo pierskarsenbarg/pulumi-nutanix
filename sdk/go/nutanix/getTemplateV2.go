@@ -86,12 +86,8 @@ type LookupTemplateV2Result struct {
 }
 
 func LookupTemplateV2Output(ctx *pulumi.Context, args LookupTemplateV2OutputArgs, opts ...pulumi.InvokeOption) LookupTemplateV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupTemplateV2ResultOutput, error) {
-			args := v.(LookupTemplateV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getTemplateV2:getTemplateV2", args, LookupTemplateV2ResultOutput{}, options).(LookupTemplateV2ResultOutput), nil
-		}).(LookupTemplateV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getTemplateV2:getTemplateV2", args, LookupTemplateV2ResultOutput{}, options).(LookupTemplateV2ResultOutput)
 }
 
 // A collection of arguments for invoking getTemplateV2.

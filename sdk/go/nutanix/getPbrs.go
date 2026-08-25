@@ -67,12 +67,8 @@ type GetPbrsResult struct {
 }
 
 func GetPbrsOutput(ctx *pulumi.Context, args GetPbrsOutputArgs, opts ...pulumi.InvokeOption) GetPbrsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPbrsResultOutput, error) {
-			args := v.(GetPbrsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getPbrs:getPbrs", args, GetPbrsResultOutput{}, options).(GetPbrsResultOutput), nil
-		}).(GetPbrsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getPbrs:getPbrs", args, GetPbrsResultOutput{}, options).(GetPbrsResultOutput)
 }
 
 // A collection of arguments for invoking getPbrs.

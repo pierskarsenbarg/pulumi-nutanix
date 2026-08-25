@@ -84,12 +84,8 @@ type GetCertificatesV2Result struct {
 }
 
 func GetCertificatesV2Output(ctx *pulumi.Context, args GetCertificatesV2OutputArgs, opts ...pulumi.InvokeOption) GetCertificatesV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetCertificatesV2ResultOutput, error) {
-			args := v.(GetCertificatesV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getCertificatesV2:getCertificatesV2", args, GetCertificatesV2ResultOutput{}, options).(GetCertificatesV2ResultOutput), nil
-		}).(GetCertificatesV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getCertificatesV2:getCertificatesV2", args, GetCertificatesV2ResultOutput{}, options).(GetCertificatesV2ResultOutput)
 }
 
 // A collection of arguments for invoking getCertificatesV2.

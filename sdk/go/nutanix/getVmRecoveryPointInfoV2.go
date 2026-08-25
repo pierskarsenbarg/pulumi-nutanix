@@ -89,12 +89,8 @@ type GetVmRecoveryPointInfoV2Result struct {
 }
 
 func GetVmRecoveryPointInfoV2Output(ctx *pulumi.Context, args GetVmRecoveryPointInfoV2OutputArgs, opts ...pulumi.InvokeOption) GetVmRecoveryPointInfoV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVmRecoveryPointInfoV2ResultOutput, error) {
-			args := v.(GetVmRecoveryPointInfoV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getVmRecoveryPointInfoV2:getVmRecoveryPointInfoV2", args, GetVmRecoveryPointInfoV2ResultOutput{}, options).(GetVmRecoveryPointInfoV2ResultOutput), nil
-		}).(GetVmRecoveryPointInfoV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getVmRecoveryPointInfoV2:getVmRecoveryPointInfoV2", args, GetVmRecoveryPointInfoV2ResultOutput{}, options).(GetVmRecoveryPointInfoV2ResultOutput)
 }
 
 // A collection of arguments for invoking getVmRecoveryPointInfoV2.

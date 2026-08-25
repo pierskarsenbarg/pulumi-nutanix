@@ -69,12 +69,8 @@ type LookupNetworkSecurityPolicyV2Result struct {
 }
 
 func LookupNetworkSecurityPolicyV2Output(ctx *pulumi.Context, args LookupNetworkSecurityPolicyV2OutputArgs, opts ...pulumi.InvokeOption) LookupNetworkSecurityPolicyV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNetworkSecurityPolicyV2ResultOutput, error) {
-			args := v.(LookupNetworkSecurityPolicyV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getNetworkSecurityPolicyV2:getNetworkSecurityPolicyV2", args, LookupNetworkSecurityPolicyV2ResultOutput{}, options).(LookupNetworkSecurityPolicyV2ResultOutput), nil
-		}).(LookupNetworkSecurityPolicyV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getNetworkSecurityPolicyV2:getNetworkSecurityPolicyV2", args, LookupNetworkSecurityPolicyV2ResultOutput{}, options).(LookupNetworkSecurityPolicyV2ResultOutput)
 }
 
 // A collection of arguments for invoking getNetworkSecurityPolicyV2.

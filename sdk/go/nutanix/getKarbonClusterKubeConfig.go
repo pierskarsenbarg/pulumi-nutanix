@@ -79,12 +79,8 @@ type GetKarbonClusterKubeConfigResult struct {
 }
 
 func GetKarbonClusterKubeConfigOutput(ctx *pulumi.Context, args GetKarbonClusterKubeConfigOutputArgs, opts ...pulumi.InvokeOption) GetKarbonClusterKubeConfigResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetKarbonClusterKubeConfigResultOutput, error) {
-			args := v.(GetKarbonClusterKubeConfigArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig", args, GetKarbonClusterKubeConfigResultOutput{}, options).(GetKarbonClusterKubeConfigResultOutput), nil
-		}).(GetKarbonClusterKubeConfigResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig", args, GetKarbonClusterKubeConfigResultOutput{}, options).(GetKarbonClusterKubeConfigResultOutput)
 }
 
 // A collection of arguments for invoking getKarbonClusterKubeConfig.

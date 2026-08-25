@@ -138,12 +138,8 @@ type GetClusterProfilesV2Result struct {
 }
 
 func GetClusterProfilesV2Output(ctx *pulumi.Context, args GetClusterProfilesV2OutputArgs, opts ...pulumi.InvokeOption) GetClusterProfilesV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetClusterProfilesV2ResultOutput, error) {
-			args := v.(GetClusterProfilesV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getClusterProfilesV2:getClusterProfilesV2", args, GetClusterProfilesV2ResultOutput{}, options).(GetClusterProfilesV2ResultOutput), nil
-		}).(GetClusterProfilesV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getClusterProfilesV2:getClusterProfilesV2", args, GetClusterProfilesV2ResultOutput{}, options).(GetClusterProfilesV2ResultOutput)
 }
 
 // A collection of arguments for invoking getClusterProfilesV2.

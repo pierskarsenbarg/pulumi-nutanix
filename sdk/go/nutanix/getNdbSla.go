@@ -100,12 +100,8 @@ type LookupNdbSlaResult struct {
 }
 
 func LookupNdbSlaOutput(ctx *pulumi.Context, args LookupNdbSlaOutputArgs, opts ...pulumi.InvokeOption) LookupNdbSlaResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNdbSlaResultOutput, error) {
-			args := v.(LookupNdbSlaArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getNdbSla:getNdbSla", args, LookupNdbSlaResultOutput{}, options).(LookupNdbSlaResultOutput), nil
-		}).(LookupNdbSlaResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getNdbSla:getNdbSla", args, LookupNdbSlaResultOutput{}, options).(LookupNdbSlaResultOutput)
 }
 
 // A collection of arguments for invoking getNdbSla.

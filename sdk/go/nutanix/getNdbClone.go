@@ -98,12 +98,8 @@ type LookupNdbCloneResult struct {
 }
 
 func LookupNdbCloneOutput(ctx *pulumi.Context, args LookupNdbCloneOutputArgs, opts ...pulumi.InvokeOption) LookupNdbCloneResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNdbCloneResultOutput, error) {
-			args := v.(LookupNdbCloneArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getNdbClone:getNdbClone", args, LookupNdbCloneResultOutput{}, options).(LookupNdbCloneResultOutput), nil
-		}).(LookupNdbCloneResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getNdbClone:getNdbClone", args, LookupNdbCloneResultOutput{}, options).(LookupNdbCloneResultOutput)
 }
 
 // A collection of arguments for invoking getNdbClone.

@@ -217,12 +217,8 @@ type LookupRecoveryPointsV2Result struct {
 }
 
 func LookupRecoveryPointsV2Output(ctx *pulumi.Context, args LookupRecoveryPointsV2OutputArgs, opts ...pulumi.InvokeOption) LookupRecoveryPointsV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupRecoveryPointsV2ResultOutput, error) {
-			args := v.(LookupRecoveryPointsV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getRecoveryPointsV2:getRecoveryPointsV2", args, LookupRecoveryPointsV2ResultOutput{}, options).(LookupRecoveryPointsV2ResultOutput), nil
-		}).(LookupRecoveryPointsV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getRecoveryPointsV2:getRecoveryPointsV2", args, LookupRecoveryPointsV2ResultOutput{}, options).(LookupRecoveryPointsV2ResultOutput)
 }
 
 // A collection of arguments for invoking getRecoveryPointsV2.

@@ -75,12 +75,8 @@ type GetRouteTableV2Result struct {
 }
 
 func GetRouteTableV2Output(ctx *pulumi.Context, args GetRouteTableV2OutputArgs, opts ...pulumi.InvokeOption) GetRouteTableV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRouteTableV2ResultOutput, error) {
-			args := v.(GetRouteTableV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getRouteTableV2:getRouteTableV2", args, GetRouteTableV2ResultOutput{}, options).(GetRouteTableV2ResultOutput), nil
-		}).(GetRouteTableV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getRouteTableV2:getRouteTableV2", args, GetRouteTableV2ResultOutput{}, options).(GetRouteTableV2ResultOutput)
 }
 
 // A collection of arguments for invoking getRouteTableV2.
