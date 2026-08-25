@@ -80,12 +80,8 @@ type LookupKarbonClusterResult struct {
 }
 
 func LookupKarbonClusterOutput(ctx *pulumi.Context, args LookupKarbonClusterOutputArgs, opts ...pulumi.InvokeOption) LookupKarbonClusterResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupKarbonClusterResultOutput, error) {
-			args := v.(LookupKarbonClusterArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getKarbonCluster:getKarbonCluster", args, LookupKarbonClusterResultOutput{}, options).(LookupKarbonClusterResultOutput), nil
-		}).(LookupKarbonClusterResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getKarbonCluster:getKarbonCluster", args, LookupKarbonClusterResultOutput{}, options).(LookupKarbonClusterResultOutput)
 }
 
 // A collection of arguments for invoking getKarbonCluster.

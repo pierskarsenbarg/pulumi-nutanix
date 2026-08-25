@@ -108,12 +108,8 @@ type LookupUserKeyV2Result struct {
 }
 
 func LookupUserKeyV2Output(ctx *pulumi.Context, args LookupUserKeyV2OutputArgs, opts ...pulumi.InvokeOption) LookupUserKeyV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupUserKeyV2ResultOutput, error) {
-			args := v.(LookupUserKeyV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getUserKeyV2:getUserKeyV2", args, LookupUserKeyV2ResultOutput{}, options).(LookupUserKeyV2ResultOutput), nil
-		}).(LookupUserKeyV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getUserKeyV2:getUserKeyV2", args, LookupUserKeyV2ResultOutput{}, options).(LookupUserKeyV2ResultOutput)
 }
 
 // A collection of arguments for invoking getUserKeyV2.

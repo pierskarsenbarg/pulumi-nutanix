@@ -52,12 +52,8 @@ type LookupRoutesV2Result struct {
 }
 
 func LookupRoutesV2Output(ctx *pulumi.Context, args LookupRoutesV2OutputArgs, opts ...pulumi.InvokeOption) LookupRoutesV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupRoutesV2ResultOutput, error) {
-			args := v.(LookupRoutesV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getRoutesV2:getRoutesV2", args, LookupRoutesV2ResultOutput{}, options).(LookupRoutesV2ResultOutput), nil
-		}).(LookupRoutesV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getRoutesV2:getRoutesV2", args, LookupRoutesV2ResultOutput{}, options).(LookupRoutesV2ResultOutput)
 }
 
 // A collection of arguments for invoking getRoutesV2.

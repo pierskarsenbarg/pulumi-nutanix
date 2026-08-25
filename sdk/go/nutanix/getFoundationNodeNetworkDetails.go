@@ -73,12 +73,8 @@ type GetFoundationNodeNetworkDetailsResult struct {
 }
 
 func GetFoundationNodeNetworkDetailsOutput(ctx *pulumi.Context, args GetFoundationNodeNetworkDetailsOutputArgs, opts ...pulumi.InvokeOption) GetFoundationNodeNetworkDetailsResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetFoundationNodeNetworkDetailsResultOutput, error) {
-			args := v.(GetFoundationNodeNetworkDetailsArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", args, GetFoundationNodeNetworkDetailsResultOutput{}, options).(GetFoundationNodeNetworkDetailsResultOutput), nil
-		}).(GetFoundationNodeNetworkDetailsResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", args, GetFoundationNodeNetworkDetailsResultOutput{}, options).(GetFoundationNodeNetworkDetailsResultOutput)
 }
 
 // A collection of arguments for invoking getFoundationNodeNetworkDetails.

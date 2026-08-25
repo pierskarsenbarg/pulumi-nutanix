@@ -85,12 +85,8 @@ type GetNgtConfigurationV2Result struct {
 }
 
 func GetNgtConfigurationV2Output(ctx *pulumi.Context, args GetNgtConfigurationV2OutputArgs, opts ...pulumi.InvokeOption) GetNgtConfigurationV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNgtConfigurationV2ResultOutput, error) {
-			args := v.(GetNgtConfigurationV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getNgtConfigurationV2:getNgtConfigurationV2", args, GetNgtConfigurationV2ResultOutput{}, options).(GetNgtConfigurationV2ResultOutput), nil
-		}).(GetNgtConfigurationV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getNgtConfigurationV2:getNgtConfigurationV2", args, GetNgtConfigurationV2ResultOutput{}, options).(GetNgtConfigurationV2ResultOutput)
 }
 
 // A collection of arguments for invoking getNgtConfigurationV2.

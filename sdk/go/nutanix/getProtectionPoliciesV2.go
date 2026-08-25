@@ -198,12 +198,8 @@ type GetProtectionPoliciesV2Result struct {
 }
 
 func GetProtectionPoliciesV2Output(ctx *pulumi.Context, args GetProtectionPoliciesV2OutputArgs, opts ...pulumi.InvokeOption) GetProtectionPoliciesV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetProtectionPoliciesV2ResultOutput, error) {
-			args := v.(GetProtectionPoliciesV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getProtectionPoliciesV2:getProtectionPoliciesV2", args, GetProtectionPoliciesV2ResultOutput{}, options).(GetProtectionPoliciesV2ResultOutput), nil
-		}).(GetProtectionPoliciesV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getProtectionPoliciesV2:getProtectionPoliciesV2", args, GetProtectionPoliciesV2ResultOutput{}, options).(GetProtectionPoliciesV2ResultOutput)
 }
 
 // A collection of arguments for invoking getProtectionPoliciesV2.

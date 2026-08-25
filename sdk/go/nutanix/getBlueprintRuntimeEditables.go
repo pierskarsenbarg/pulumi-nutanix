@@ -86,12 +86,8 @@ type GetBlueprintRuntimeEditablesResult struct {
 }
 
 func GetBlueprintRuntimeEditablesOutput(ctx *pulumi.Context, args GetBlueprintRuntimeEditablesOutputArgs, opts ...pulumi.InvokeOption) GetBlueprintRuntimeEditablesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetBlueprintRuntimeEditablesResultOutput, error) {
-			args := v.(GetBlueprintRuntimeEditablesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getBlueprintRuntimeEditables:getBlueprintRuntimeEditables", args, GetBlueprintRuntimeEditablesResultOutput{}, options).(GetBlueprintRuntimeEditablesResultOutput), nil
-		}).(GetBlueprintRuntimeEditablesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getBlueprintRuntimeEditables:getBlueprintRuntimeEditables", args, GetBlueprintRuntimeEditablesResultOutput{}, options).(GetBlueprintRuntimeEditablesResultOutput)
 }
 
 // A collection of arguments for invoking getBlueprintRuntimeEditables.

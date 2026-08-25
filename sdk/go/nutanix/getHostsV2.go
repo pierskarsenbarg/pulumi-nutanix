@@ -257,12 +257,8 @@ type GetHostsV2Result struct {
 }
 
 func GetHostsV2Output(ctx *pulumi.Context, args GetHostsV2OutputArgs, opts ...pulumi.InvokeOption) GetHostsV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetHostsV2ResultOutput, error) {
-			args := v.(GetHostsV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getHostsV2:getHostsV2", args, GetHostsV2ResultOutput{}, options).(GetHostsV2ResultOutput), nil
-		}).(GetHostsV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getHostsV2:getHostsV2", args, GetHostsV2ResultOutput{}, options).(GetHostsV2ResultOutput)
 }
 
 // A collection of arguments for invoking getHostsV2.

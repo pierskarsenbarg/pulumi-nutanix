@@ -47,12 +47,8 @@ type GetVolumeGroupDisksV2Result struct {
 }
 
 func GetVolumeGroupDisksV2Output(ctx *pulumi.Context, args GetVolumeGroupDisksV2OutputArgs, opts ...pulumi.InvokeOption) GetVolumeGroupDisksV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetVolumeGroupDisksV2ResultOutput, error) {
-			args := v.(GetVolumeGroupDisksV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getVolumeGroupDisksV2:getVolumeGroupDisksV2", args, GetVolumeGroupDisksV2ResultOutput{}, options).(GetVolumeGroupDisksV2ResultOutput), nil
-		}).(GetVolumeGroupDisksV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getVolumeGroupDisksV2:getVolumeGroupDisksV2", args, GetVolumeGroupDisksV2ResultOutput{}, options).(GetVolumeGroupDisksV2ResultOutput)
 }
 
 // A collection of arguments for invoking getVolumeGroupDisksV2.

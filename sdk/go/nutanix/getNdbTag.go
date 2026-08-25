@@ -82,12 +82,8 @@ type LookupNdbTagResult struct {
 }
 
 func LookupNdbTagOutput(ctx *pulumi.Context, args LookupNdbTagOutputArgs, opts ...pulumi.InvokeOption) LookupNdbTagResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupNdbTagResultOutput, error) {
-			args := v.(LookupNdbTagArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getNdbTag:getNdbTag", args, LookupNdbTagResultOutput{}, options).(LookupNdbTagResultOutput), nil
-		}).(LookupNdbTagResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getNdbTag:getNdbTag", args, LookupNdbTagResultOutput{}, options).(LookupNdbTagResultOutput)
 }
 
 // A collection of arguments for invoking getNdbTag.

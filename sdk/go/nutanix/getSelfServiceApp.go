@@ -84,12 +84,8 @@ type GetSelfServiceAppResult struct {
 }
 
 func GetSelfServiceAppOutput(ctx *pulumi.Context, args GetSelfServiceAppOutputArgs, opts ...pulumi.InvokeOption) GetSelfServiceAppResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetSelfServiceAppResultOutput, error) {
-			args := v.(GetSelfServiceAppArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getSelfServiceApp:getSelfServiceApp", args, GetSelfServiceAppResultOutput{}, options).(GetSelfServiceAppResultOutput), nil
-		}).(GetSelfServiceAppResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getSelfServiceApp:getSelfServiceApp", args, GetSelfServiceAppResultOutput{}, options).(GetSelfServiceAppResultOutput)
 }
 
 // A collection of arguments for invoking getSelfServiceApp.

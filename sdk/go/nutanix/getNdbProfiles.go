@@ -91,12 +91,8 @@ type GetNdbProfilesResult struct {
 }
 
 func GetNdbProfilesOutput(ctx *pulumi.Context, args GetNdbProfilesOutputArgs, opts ...pulumi.InvokeOption) GetNdbProfilesResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetNdbProfilesResultOutput, error) {
-			args := v.(GetNdbProfilesArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getNdbProfiles:getNdbProfiles", args, GetNdbProfilesResultOutput{}, options).(GetNdbProfilesResultOutput), nil
-		}).(GetNdbProfilesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getNdbProfiles:getNdbProfiles", args, GetNdbProfilesResultOutput{}, options).(GetNdbProfilesResultOutput)
 }
 
 // A collection of arguments for invoking getNdbProfiles.

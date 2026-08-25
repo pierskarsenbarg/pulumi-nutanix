@@ -63,10 +63,8 @@ type GetFoundationNosPackagesResult struct {
 }
 
 func GetFoundationNosPackagesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetFoundationNosPackagesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetFoundationNosPackagesResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("nutanix:index/getFoundationNosPackages:getFoundationNosPackages", nil, GetFoundationNosPackagesResultOutput{}, options).(GetFoundationNosPackagesResultOutput), nil
-	}).(GetFoundationNosPackagesResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getFoundationNosPackages:getFoundationNosPackages", nil, GetFoundationNosPackagesResultOutput{}, options).(GetFoundationNosPackagesResultOutput)
 }
 
 // A collection of values returned by getFoundationNosPackages.

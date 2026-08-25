@@ -93,12 +93,8 @@ type LookupVolumeGroupV2Result struct {
 }
 
 func LookupVolumeGroupV2Output(ctx *pulumi.Context, args LookupVolumeGroupV2OutputArgs, opts ...pulumi.InvokeOption) LookupVolumeGroupV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupVolumeGroupV2ResultOutput, error) {
-			args := v.(LookupVolumeGroupV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getVolumeGroupV2:getVolumeGroupV2", args, LookupVolumeGroupV2ResultOutput{}, options).(LookupVolumeGroupV2ResultOutput), nil
-		}).(LookupVolumeGroupV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getVolumeGroupV2:getVolumeGroupV2", args, LookupVolumeGroupV2ResultOutput{}, options).(LookupVolumeGroupV2ResultOutput)
 }
 
 // A collection of arguments for invoking getVolumeGroupV2.

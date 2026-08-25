@@ -132,12 +132,8 @@ type GetClustersV2Result struct {
 }
 
 func GetClustersV2Output(ctx *pulumi.Context, args GetClustersV2OutputArgs, opts ...pulumi.InvokeOption) GetClustersV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetClustersV2ResultOutput, error) {
-			args := v.(GetClustersV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getClustersV2:getClustersV2", args, GetClustersV2ResultOutput{}, options).(GetClustersV2ResultOutput), nil
-		}).(GetClustersV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getClustersV2:getClustersV2", args, GetClustersV2ResultOutput{}, options).(GetClustersV2ResultOutput)
 }
 
 // A collection of arguments for invoking getClustersV2.

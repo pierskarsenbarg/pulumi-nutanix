@@ -56,10 +56,8 @@ type GetNdbDbserversResult struct {
 }
 
 func GetNdbDbserversOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetNdbDbserversResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetNdbDbserversResultOutput, error) {
-		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-		return ctx.InvokeOutput("nutanix:index/getNdbDbservers:getNdbDbservers", nil, GetNdbDbserversResultOutput{}, options).(GetNdbDbserversResultOutput), nil
-	}).(GetNdbDbserversResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getNdbDbservers:getNdbDbservers", nil, GetNdbDbserversResultOutput{}, options).(GetNdbDbserversResultOutput)
 }
 
 // A collection of values returned by getNdbDbservers.

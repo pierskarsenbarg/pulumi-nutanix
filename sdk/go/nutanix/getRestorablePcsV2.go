@@ -42,12 +42,8 @@ type GetRestorablePcsV2Result struct {
 }
 
 func GetRestorablePcsV2Output(ctx *pulumi.Context, args GetRestorablePcsV2OutputArgs, opts ...pulumi.InvokeOption) GetRestorablePcsV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetRestorablePcsV2ResultOutput, error) {
-			args := v.(GetRestorablePcsV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getRestorablePcsV2:getRestorablePcsV2", args, GetRestorablePcsV2ResultOutput{}, options).(GetRestorablePcsV2ResultOutput), nil
-		}).(GetRestorablePcsV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getRestorablePcsV2:getRestorablePcsV2", args, GetRestorablePcsV2ResultOutput{}, options).(GetRestorablePcsV2ResultOutput)
 }
 
 // A collection of arguments for invoking getRestorablePcsV2.

@@ -128,12 +128,8 @@ type GetPcBackupTargetsV2Result struct {
 }
 
 func GetPcBackupTargetsV2Output(ctx *pulumi.Context, args GetPcBackupTargetsV2OutputArgs, opts ...pulumi.InvokeOption) GetPcBackupTargetsV2ResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetPcBackupTargetsV2ResultOutput, error) {
-			args := v.(GetPcBackupTargetsV2Args)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("nutanix:index/getPcBackupTargetsV2:getPcBackupTargetsV2", args, GetPcBackupTargetsV2ResultOutput{}, options).(GetPcBackupTargetsV2ResultOutput), nil
-		}).(GetPcBackupTargetsV2ResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("nutanix:index/getPcBackupTargetsV2:getPcBackupTargetsV2", args, GetPcBackupTargetsV2ResultOutput{}, options).(GetPcBackupTargetsV2ResultOutput)
 }
 
 // A collection of arguments for invoking getPcBackupTargetsV2.
