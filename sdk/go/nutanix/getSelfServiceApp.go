@@ -37,7 +37,7 @@ import (
 //				return err
 //			}
 //			_ = nutanix.GetSelfServiceAppOutput(ctx, nutanix.GetSelfServiceAppOutputArgs{
-//				AppUuid: testSelfServiceAppProvision.ID(),
+//				AppUuid: testSelfServiceAppProvision.ID().ToIDOutput().ToStringOutput(),
 //			}, nil)
 //			return nil
 //		})

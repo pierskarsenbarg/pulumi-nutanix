@@ -50,10 +50,10 @@ import (
 //				Name:        pulumi.String("vm-host-affinity-policy"),
 //				Description: pulumi.String("Policy to place VMs on specific hosts"),
 //				VmCategories: pulumi.StringArray{
-//					vmAffinityCategory.ID(),
+//					vmAffinityCategory.ID().ToIDOutput().ToStringOutput(),
 //				},
 //				HostCategories: pulumi.StringArray{
-//					hostAffinityCategory.ID(),
+//					hostAffinityCategory.ID().ToIDOutput().ToStringOutput(),
 //				},
 //			})
 //			if err != nil {

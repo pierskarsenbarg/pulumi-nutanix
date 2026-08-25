@@ -36,8 +36,8 @@ import (
 //				Username:         "{{ username of cluster }}",
 //				Password:         "{{ password of cluster }}",
 //				StorageContainer: "{{ storage_container }}",
-//				AgentNetworkInfo: []map[string]interface{}{
-//					map[string]interface{}{
+//				AgentNetworkInfo: []map[string]string{
+//					{
 //						"dns": "{{ DNS servers available in the }}",
 //						"ntp": "{{ NTP servers available }}",
 //					},
@@ -45,8 +45,8 @@ import (
 //				NetworksInfo: []map[string]interface{}{
 //					map[string]interface{}{
 //						"type": "DHCP",
-//						"networkInfo": []map[string]interface{}{
-//							map[string]interface{}{
+//						"networkInfo": []map[string]string{
+//							{
 //								"vlanName":   "vlan_static",
 //								"staticIp":   "{{ static_ip }}",
 //								"gateway":    "{{ gateway }}",

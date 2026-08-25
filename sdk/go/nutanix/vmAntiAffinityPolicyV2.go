@@ -42,7 +42,7 @@ import (
 //				Name:        pulumi.String("vm-anti-affinity-policy"),
 //				Description: pulumi.String("Policy to spread VMs across different hosts for high availability"),
 //				Categories: pulumi.StringArray{
-//					antiAffinityCategory.ID(),
+//					antiAffinityCategory.ID().ToIDOutput().ToStringOutput(),
 //				},
 //			})
 //			if err != nil {

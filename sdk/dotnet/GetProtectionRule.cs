@@ -181,7 +181,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetProtectionRuleOutput(ctx, nutanix.GetProtectionRuleOutputArgs{
-        /// 			ProtectionRuleId: protectionRuleTest.ID(),
+        /// 			ProtectionRuleId: protectionRuleTest.ID().ToIDOutput().ToStringOutput(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
@@ -484,7 +484,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetProtectionRuleOutput(ctx, nutanix.GetProtectionRuleOutputArgs{
-        /// 			ProtectionRuleId: protectionRuleTest.ID(),
+        /// 			ProtectionRuleId: protectionRuleTest.ID().ToIDOutput().ToStringOutput(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
@@ -787,7 +787,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetProtectionRuleOutput(ctx, nutanix.GetProtectionRuleOutputArgs{
-        /// 			ProtectionRuleId: protectionRuleTest.ID(),
+        /// 			ProtectionRuleId: protectionRuleTest.ID().ToIDOutput().ToStringOutput(),
         /// 		}, nil)
         /// 		return nil
         /// 	})

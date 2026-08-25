@@ -109,7 +109,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		// Retrieve by UUID
         /// 		_ = nutanix.GetUserOutput(ctx, nutanix.GetUserOutputArgs{
-        /// 			UserId: userUser.ID(),
+        /// 			UserId: userUser.ID().ToIDOutput().ToStringOutput(),
         /// 		}, nil)
         /// 		// Retrieve by Name
         /// 		_ = nutanix.GetUserOutput(ctx, nutanix.GetUserOutputArgs{
@@ -319,7 +319,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		// Retrieve by UUID
         /// 		_ = nutanix.GetUserOutput(ctx, nutanix.GetUserOutputArgs{
-        /// 			UserId: userUser.ID(),
+        /// 			UserId: userUser.ID().ToIDOutput().ToStringOutput(),
         /// 		}, nil)
         /// 		// Retrieve by Name
         /// 		_ = nutanix.GetUserOutput(ctx, nutanix.GetUserOutputArgs{
@@ -529,7 +529,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 		}
         /// 		// Retrieve by UUID
         /// 		_ = nutanix.GetUserOutput(ctx, nutanix.GetUserOutputArgs{
-        /// 			UserId: userUser.ID(),
+        /// 			UserId: userUser.ID().ToIDOutput().ToStringOutput(),
         /// 		}, nil)
         /// 		// Retrieve by Name
         /// 		_ = nutanix.GetUserOutput(ctx, nutanix.GetUserOutputArgs{

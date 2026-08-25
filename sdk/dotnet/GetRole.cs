@@ -100,7 +100,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetRoleOutput(ctx, nutanix.GetRoleOutputArgs{
-        /// 			RoleId: testRole.ID(),
+        /// 			RoleId: testRole.ID().ToIDOutput().ToStringOutput(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
@@ -279,7 +279,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetRoleOutput(ctx, nutanix.GetRoleOutputArgs{
-        /// 			RoleId: testRole.ID(),
+        /// 			RoleId: testRole.ID().ToIDOutput().ToStringOutput(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
@@ -458,7 +458,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetRoleOutput(ctx, nutanix.GetRoleOutputArgs{
-        /// 			RoleId: testRole.ID(),
+        /// 			RoleId: testRole.ID().ToIDOutput().ToStringOutput(),
         /// 		}, nil)
         /// 		return nil
         /// 	})

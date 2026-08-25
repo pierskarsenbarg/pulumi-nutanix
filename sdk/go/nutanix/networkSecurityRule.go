@@ -164,13 +164,13 @@ import (
 //						ServiceGroupLists: nutanix.NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupListArray{
 //							&nutanix.NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupListArgs{
 //								Kind: pulumi.String("service_group"),
-//								Uuid: service1.ID(),
+//								Uuid: service1.ID().ToIDOutput().ToStringOutput(),
 //							},
 //						},
 //						AddressGroupInclusionLists: nutanix.NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionListArray{
 //							&nutanix.NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionListArgs{
 //								Kind: pulumi.String("address_group"),
-//								Uuid: address1.ID(),
+//								Uuid: address1.ID().ToIDOutput().ToStringOutput(),
 //							},
 //						},
 //					},

@@ -42,7 +42,7 @@ import (
 //			}
 //			// Run patch config (update config)
 //			_, err = nutanix.NewSelfServiceAppPatch(ctx, "test", &nutanix.SelfServiceAppPatchArgs{
-//				AppUuid:    test.ID(),
+//				AppUuid:    test.ID().ToIDOutput().ToStringOutput(),
 //				PatchName:  pulumi.String("NAME OF PATCH ACTION"),
 //				ConfigName: pulumi.String("NAME OF PATCH CONFIG"),
 //			})
@@ -82,7 +82,7 @@ import (
 //			}
 //			// Run patch config (update config)
 //			_, err = nutanix.NewSelfServiceAppPatch(ctx, "test", &nutanix.SelfServiceAppPatchArgs{
-//				AppUuid:    test.ID(),
+//				AppUuid:    test.ID().ToIDOutput().ToStringOutput(),
 //				PatchName:  pulumi.String("NAME OF PATCH ACTION"),
 //				ConfigName: pulumi.String("NAME OF PATCH CONFIG"),
 //				VmConfigs: nutanix.SelfServiceAppPatchVmConfigArray{
@@ -129,7 +129,7 @@ import (
 //			}
 //			// Run patch config (update config)
 //			_, err = nutanix.NewSelfServiceAppPatch(ctx, "test", &nutanix.SelfServiceAppPatchArgs{
-//				AppUuid:    test.ID(),
+//				AppUuid:    test.ID().ToIDOutput().ToStringOutput(),
 //				PatchName:  pulumi.String("NAME OF PATCH ACTION"),
 //				ConfigName: pulumi.String("NAME OF PATCH CONFIG"),
 //				Categories: nutanix.SelfServiceAppPatchCategoryArray{
@@ -175,7 +175,7 @@ import (
 //			}
 //			// Run patch config (update config)
 //			_, err = nutanix.NewSelfServiceAppPatch(ctx, "test", &nutanix.SelfServiceAppPatchArgs{
-//				AppUuid:    test.ID(),
+//				AppUuid:    test.ID().ToIDOutput().ToStringOutput(),
 //				PatchName:  pulumi.String("NAME OF PATCH ACTION"),
 //				ConfigName: pulumi.String("NAME OF PATCH CONFIG"),
 //				Categories: nutanix.SelfServiceAppPatchCategoryArray{
@@ -221,7 +221,7 @@ import (
 //			}
 //			// Run patch config (update config)
 //			_, err = nutanix.NewSelfServiceAppPatch(ctx, "test", &nutanix.SelfServiceAppPatchArgs{
-//				AppUuid:    test.ID(),
+//				AppUuid:    test.ID().ToIDOutput().ToStringOutput(),
 //				PatchName:  pulumi.String("NAME OF PATCH ACTION"),
 //				ConfigName: pulumi.String("NAME OF PATCH CONFIG"),
 //				Disks: nutanix.SelfServiceAppPatchDiskArray{
@@ -267,7 +267,7 @@ import (
 //			}
 //			// Run patch config (update config)
 //			_, err = nutanix.NewSelfServiceAppPatch(ctx, "test", &nutanix.SelfServiceAppPatchArgs{
-//				AppUuid:    test.ID(),
+//				AppUuid:    test.ID().ToIDOutput().ToStringOutput(),
 //				PatchName:  pulumi.String("NAME OF PATCH ACTION"),
 //				ConfigName: pulumi.String("NAME OF PATCH CONFIG"),
 //				Nics: nutanix.SelfServiceAppPatchNicArray{
