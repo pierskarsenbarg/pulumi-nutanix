@@ -166,7 +166,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetNetworkSecurityRuleOutput(ctx, nutanix.GetNetworkSecurityRuleOutputArgs{
-        /// 			NetworkSecurityRuleId: isolation.ID(),
+        /// 			NetworkSecurityRuleId: isolation.ID().ToIDOutput().ToStringOutput(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
@@ -441,7 +441,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetNetworkSecurityRuleOutput(ctx, nutanix.GetNetworkSecurityRuleOutputArgs{
-        /// 			NetworkSecurityRuleId: isolation.ID(),
+        /// 			NetworkSecurityRuleId: isolation.ID().ToIDOutput().ToStringOutput(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
@@ -716,7 +716,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetNetworkSecurityRuleOutput(ctx, nutanix.GetNetworkSecurityRuleOutputArgs{
-        /// 			NetworkSecurityRuleId: isolation.ID(),
+        /// 			NetworkSecurityRuleId: isolation.ID().ToIDOutput().ToStringOutput(),
         /// 		}, nil)
         /// 		return nil
         /// 	})

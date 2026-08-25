@@ -59,16 +59,16 @@ import * as utilities from "./utilities";
  *     nodeParams: [{
  *         shouldSkipHostNetworking: false,
  *         hypervisorIsos: [{
- *             type: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].hypervisorType),
+ *             type: cluster_node.unconfiguredNodes[0].hypervisorType,
  *         }],
  *         nodeLists: [{
- *             nodeUuid: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].nodeUuid),
- *             model: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].rackableUnitModel),
- *             blockId: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].rackableUnitSerial),
- *             hypervisorType: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].hypervisorType),
- *             hypervisorVersion: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].hypervisorVersion),
- *             nodePosition: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].nodePosition),
- *             nosVersion: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].nosVersion),
+ *             nodeUuid: cluster_node.unconfiguredNodes[0].nodeUuid,
+ *             model: cluster_node.unconfiguredNodes[0].rackableUnitModel,
+ *             blockId: cluster_node.unconfiguredNodes[0].rackableUnitSerial,
+ *             hypervisorType: cluster_node.unconfiguredNodes[0].hypervisorType,
+ *             hypervisorVersion: cluster_node.unconfiguredNodes[0].hypervisorVersion,
+ *             nodePosition: cluster_node.unconfiguredNodes[0].nodePosition,
+ *             nosVersion: cluster_node.unconfiguredNodes[0].nosVersion,
  *             hypervisorHostname: "example",
  *             currentNetworkInterface: node_network_info.nodesNetworkingDetails.apply(nodesNetworkingDetails => nodesNetworkingDetails[0].uplinks?.[0]?.uplinkLists?.[0]?.name),
  *             hypervisorIps: [{
@@ -107,7 +107,7 @@ import * as utilities from "./utilities";
  *     }],
  *     configParams: [{
  *         shouldSkipImaging: true,
- *         targetHypervisor: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].hypervisorType),
+ *         targetHypervisor: cluster_node.unconfiguredNodes[0].hypervisorType,
  *     }],
  *     removeNodeParams: [{
  *         extraParams: [{

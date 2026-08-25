@@ -74,7 +74,7 @@ import (
 //				return err
 //			}
 //			_ = nutanix.GetProjectOutput(ctx, nutanix.GetProjectOutputArgs{
-//				ProjectId: projectTest.ID(),
+//				ProjectId: projectTest.ID().ToIDOutput().ToStringOutput(),
 //			}, nil)
 //			return nil
 //		})

@@ -91,7 +91,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
-        /// 			ImageId: testImage.ID(),
+        /// 			ImageId: testImage.ID().ToIDOutput().ToStringOutput(),
         /// 		}, nil)
         /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
         /// 			ImageName: testImage.Name,
@@ -267,7 +267,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
-        /// 			ImageId: testImage.ID(),
+        /// 			ImageId: testImage.ID().ToIDOutput().ToStringOutput(),
         /// 		}, nil)
         /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
         /// 			ImageName: testImage.Name,
@@ -443,7 +443,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
-        /// 			ImageId: testImage.ID(),
+        /// 			ImageId: testImage.ID().ToIDOutput().ToStringOutput(),
         /// 		}, nil)
         /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
         /// 			ImageName: testImage.Name,
