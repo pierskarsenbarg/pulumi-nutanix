@@ -171,7 +171,7 @@ class AwaitableGetRecoveryPlanResult(GetRecoveryPlanResult):
             state=self.state)
 
 
-def get_recovery_plan(categories: Optional[Sequence[Union['GetRecoveryPlanCategoryArgs', 'GetRecoveryPlanCategoryArgsDict']]] = None,
+def get_recovery_plan(categories: Optional[Sequence[Union['GetRecoveryPlanCategoryArgs', 'GetRecoveryPlanCategoryArgsDict', 'outputs.GetRecoveryPlanCategoryResult']]] = None,
                       recovery_plan_id: Optional[_builtins.str] = None,
                       recovery_plan_name: Optional[_builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRecoveryPlanResult:
@@ -230,7 +230,7 @@ def get_recovery_plan(categories: Optional[Sequence[Union['GetRecoveryPlanCatego
         recovery_plan_name=pulumi.get(__ret__, 'recovery_plan_name'),
         stage_lists=pulumi.get(__ret__, 'stage_lists'),
         state=pulumi.get(__ret__, 'state'))
-def get_recovery_plan_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetRecoveryPlanCategoryArgs', 'GetRecoveryPlanCategoryArgsDict']]]]] = None,
+def get_recovery_plan_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetRecoveryPlanCategoryArgs', 'GetRecoveryPlanCategoryArgsDict', 'outputs.GetRecoveryPlanCategoryResult']]]]] = None,
                              recovery_plan_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              recovery_plan_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecoveryPlanResult]:

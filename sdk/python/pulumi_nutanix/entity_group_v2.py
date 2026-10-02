@@ -298,9 +298,9 @@ class EntityGroupV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_config: pulumi.Input[Optional[Union['EntityGroupV2AllowedConfigArgs', 'EntityGroupV2AllowedConfigArgsDict']]] = None,
+                 allowed_config: pulumi.Input[Optional[Union['EntityGroupV2AllowedConfigArgs', 'EntityGroupV2AllowedConfigArgsDict', 'outputs.EntityGroupV2AllowedConfig']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 except_config: pulumi.Input[Optional[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict']]] = None,
+                 except_config: pulumi.Input[Optional[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict', 'outputs.EntityGroupV2ExceptConfig']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  policy_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -404,9 +404,9 @@ class EntityGroupV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['EntityGroupV2AllowedConfigArgs', 'EntityGroupV2AllowedConfigArgsDict']] allowed_config: Configuration of the allowed entities in the Entity Group.
+        :param pulumi.Input[Union['EntityGroupV2AllowedConfigArgs', 'EntityGroupV2AllowedConfigArgsDict', 'outputs.EntityGroupV2AllowedConfig']] allowed_config: Configuration of the allowed entities in the Entity Group.
         :param pulumi.Input[_builtins.str] description: A user defined annotation for an Entity Group.
-        :param pulumi.Input[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict']] except_config: Configuration of except entities in the Entity Group.
+        :param pulumi.Input[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict', 'outputs.EntityGroupV2ExceptConfig']] except_config: Configuration of except entities in the Entity Group.
         :param pulumi.Input[_builtins.str] name: A short identifier of an Entity Group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policy_ext_ids: List of policy external identifiers.
         """
@@ -529,9 +529,9 @@ class EntityGroupV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_config: pulumi.Input[Optional[Union['EntityGroupV2AllowedConfigArgs', 'EntityGroupV2AllowedConfigArgsDict']]] = None,
+                 allowed_config: pulumi.Input[Optional[Union['EntityGroupV2AllowedConfigArgs', 'EntityGroupV2AllowedConfigArgsDict', 'outputs.EntityGroupV2AllowedConfig']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 except_config: pulumi.Input[Optional[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict']]] = None,
+                 except_config: pulumi.Input[Optional[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict', 'outputs.EntityGroupV2ExceptConfig']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  policy_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -564,13 +564,13 @@ class EntityGroupV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allowed_config: pulumi.Input[Optional[Union['EntityGroupV2AllowedConfigArgs', 'EntityGroupV2AllowedConfigArgsDict']]] = None,
+            allowed_config: pulumi.Input[Optional[Union['EntityGroupV2AllowedConfigArgs', 'EntityGroupV2AllowedConfigArgsDict', 'outputs.EntityGroupV2AllowedConfig']]] = None,
             creation_time: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            except_config: pulumi.Input[Optional[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict']]] = None,
+            except_config: pulumi.Input[Optional[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict', 'outputs.EntityGroupV2ExceptConfig']]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EntityGroupV2LinkArgs', 'EntityGroupV2LinkArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EntityGroupV2LinkArgs', 'EntityGroupV2LinkArgsDict', 'outputs.EntityGroupV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             policy_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -582,13 +582,13 @@ class EntityGroupV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['EntityGroupV2AllowedConfigArgs', 'EntityGroupV2AllowedConfigArgsDict']] allowed_config: Configuration of the allowed entities in the Entity Group.
+        :param pulumi.Input[Union['EntityGroupV2AllowedConfigArgs', 'EntityGroupV2AllowedConfigArgsDict', 'outputs.EntityGroupV2AllowedConfig']] allowed_config: Configuration of the allowed entities in the Entity Group.
         :param pulumi.Input[_builtins.str] creation_time: The timestamp when the Entity Group was created.
         :param pulumi.Input[_builtins.str] description: A user defined annotation for an Entity Group.
-        :param pulumi.Input[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict']] except_config: Configuration of except entities in the Entity Group.
+        :param pulumi.Input[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict', 'outputs.EntityGroupV2ExceptConfig']] except_config: Configuration of except entities in the Entity Group.
         :param pulumi.Input[_builtins.str] ext_id: Entity group UUID.
         :param pulumi.Input[_builtins.str] last_update_time: The timestamp when the Entity Group was last updated.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['EntityGroupV2LinkArgs', 'EntityGroupV2LinkArgsDict']]]] links: A HATEOAS style link for the response.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['EntityGroupV2LinkArgs', 'EntityGroupV2LinkArgsDict', 'outputs.EntityGroupV2Link']]]] links: A HATEOAS style link for the response.
         :param pulumi.Input[_builtins.str] name: A short identifier of an Entity Group.
         :param pulumi.Input[_builtins.str] owner_ext_id: The external identifier of the user who created the Entity Group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policy_ext_ids: List of policy external identifiers.

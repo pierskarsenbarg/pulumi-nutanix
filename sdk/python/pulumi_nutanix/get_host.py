@@ -369,14 +369,14 @@ class AwaitableGetHostResult(GetHostResult):
             windows_domain=self.windows_domain)
 
 
-def get_host(categories: Optional[Sequence[Union['GetHostCategoryArgs', 'GetHostCategoryArgsDict']]] = None,
+def get_host(categories: Optional[Sequence[Union['GetHostCategoryArgs', 'GetHostCategoryArgsDict', 'outputs.GetHostCategoryResult']]] = None,
              host_id: Optional[_builtins.str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetHostResult:
     """
     Describes a Host
 
 
-    :param Sequence[Union['GetHostCategoryArgs', 'GetHostCategoryArgsDict']] categories: - Categories for the image.
+    :param Sequence[Union['GetHostCategoryArgs', 'GetHostCategoryArgsDict', 'outputs.GetHostCategoryResult']] categories: - Categories for the image.
     :param _builtins.str host_id: Represents hosts uuid
     """
     __args__ = dict()
@@ -414,14 +414,14 @@ def get_host(categories: Optional[Sequence[Union['GetHostCategoryArgs', 'GetHost
         rackable_unit_reference=pulumi.get(__ret__, 'rackable_unit_reference'),
         serial_number=pulumi.get(__ret__, 'serial_number'),
         windows_domain=pulumi.get(__ret__, 'windows_domain'))
-def get_host_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetHostCategoryArgs', 'GetHostCategoryArgsDict']]]]] = None,
+def get_host_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetHostCategoryArgs', 'GetHostCategoryArgsDict', 'outputs.GetHostCategoryResult']]]]] = None,
                     host_id: pulumi.Input[Optional[_builtins.str]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHostResult]:
     """
     Describes a Host
 
 
-    :param Sequence[Union['GetHostCategoryArgs', 'GetHostCategoryArgsDict']] categories: - Categories for the image.
+    :param Sequence[Union['GetHostCategoryArgs', 'GetHostCategoryArgsDict', 'outputs.GetHostCategoryResult']] categories: - Categories for the image.
     :param _builtins.str host_id: Represents hosts uuid
     """
     __args__ = dict()

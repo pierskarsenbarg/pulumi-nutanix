@@ -333,11 +333,11 @@ class OvaV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 checksum: pulumi.Input[Optional[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict']]] = None,
+                 checksum: pulumi.Input[Optional[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict', 'outputs.OvaV2Checksum']]] = None,
                  cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  disk_format: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict']]]]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict', 'outputs.OvaV2Source']]]]] = None,
                  __props__=None):
         """
         Creates an OVA using the provided request body. The name and source are mandatory fields to create an OVA.
@@ -345,7 +345,7 @@ class OvaV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict']] checksum: -(Optional) The checksum of an OVA.
+        :param pulumi.Input[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict', 'outputs.OvaV2Checksum']] checksum: -(Optional) The checksum of an OVA.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
         :param pulumi.Input[_builtins.str] disk_format: -(Optional) Disk format of an OVA.
                |ENUM |Description |
@@ -353,7 +353,7 @@ class OvaV2(pulumi.CustomResource):
                | VMDK | The VMDK disk format of an OVA. |
                | QCOW2 | The QCOW2 disk format of an OVA. |
         :param pulumi.Input[_builtins.str] name: -(Required) Name of the OVA.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict']]]] sources: -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict', 'outputs.OvaV2Source']]]] sources: -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
         """
         ...
     @overload
@@ -380,11 +380,11 @@ class OvaV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 checksum: pulumi.Input[Optional[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict']]] = None,
+                 checksum: pulumi.Input[Optional[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict', 'outputs.OvaV2Checksum']]] = None,
                  cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  disk_format: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict']]]]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict', 'outputs.OvaV2Source']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -420,20 +420,20 @@ class OvaV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            checksum: pulumi.Input[Optional[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict']]] = None,
+            checksum: pulumi.Input[Optional[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict', 'outputs.OvaV2Checksum']]] = None,
             cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             create_time: pulumi.Input[Optional[_builtins.str]] = None,
-            created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2CreatedByArgs', 'OvaV2CreatedByArgsDict']]]]] = None,
+            created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2CreatedByArgs', 'OvaV2CreatedByArgsDict', 'outputs.OvaV2CreatedBy']]]]] = None,
             disk_format: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2LinkArgs', 'OvaV2LinkArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2LinkArgs', 'OvaV2LinkArgsDict', 'outputs.OvaV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_vm: pulumi.Input[Optional[_builtins.str]] = None,
             size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
-            sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict']]]]] = None,
+            sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict', 'outputs.OvaV2Source']]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
-            vm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2VmConfigArgs', 'OvaV2VmConfigArgsDict']]]]] = None) -> 'OvaV2':
+            vm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2VmConfigArgs', 'OvaV2VmConfigArgsDict', 'outputs.OvaV2VmConfig']]]]] = None) -> 'OvaV2':
         """
         Get an existing OvaV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -441,17 +441,17 @@ class OvaV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict']] checksum: -(Optional) The checksum of an OVA.
+        :param pulumi.Input[Union['OvaV2ChecksumArgs', 'OvaV2ChecksumArgsDict', 'outputs.OvaV2Checksum']] checksum: -(Optional) The checksum of an OVA.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: -(Optional) List of cluster identifiers where the OVA is located. This field is required when creating an OVA from URL or Objects lite upload. its <span pulumi-lang-nodejs="`mandatory`" pulumi-lang-dotnet="`Mandatory`" pulumi-lang-go="`mandatory`" pulumi-lang-python="`mandatory`" pulumi-lang-yaml="`mandatory`" pulumi-lang-java="`mandatory`" pulumi-lang-hcl="`mandatory`">`mandatory`</span> when creating an OVA from URL or object lite source .
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OvaV2CreatedByArgs', 'OvaV2CreatedByArgsDict']]]] created_bies: -(Optional) Information of the user.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OvaV2CreatedByArgs', 'OvaV2CreatedByArgsDict', 'outputs.OvaV2CreatedBy']]]] created_bies: -(Optional) Information of the user.
         :param pulumi.Input[_builtins.str] disk_format: -(Optional) Disk format of an OVA.
                |ENUM |Description |
                |---|---|
                | VMDK | The VMDK disk format of an OVA. |
                | QCOW2 | The QCOW2 disk format of an OVA. |
         :param pulumi.Input[_builtins.str] name: -(Required) Name of the OVA.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict']]]] sources: -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['OvaV2VmConfigArgs', 'OvaV2VmConfigArgsDict']]]] vm_configs: -(Optional) VM configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict', 'outputs.OvaV2Source']]]] sources: -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['OvaV2VmConfigArgs', 'OvaV2VmConfigArgsDict', 'outputs.OvaV2VmConfig']]]] vm_configs: -(Optional) VM configuration.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

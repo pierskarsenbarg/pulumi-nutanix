@@ -205,7 +205,7 @@ class VmCdromInsertEjectV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
-                 backing_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict']]]]] = None,
+                 backing_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict', 'outputs.VmCdromInsertEjectV2BackingInfo']]]]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -249,7 +249,7 @@ class VmCdromInsertEjectV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict']]]] backing_infos: Storage provided by Nutanix ADSF
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict', 'outputs.VmCdromInsertEjectV2BackingInfo']]]] backing_infos: Storage provided by Nutanix ADSF
         :param pulumi.Input[_builtins.str] ext_id: The globally unique identifier of a CD-ROM. It should be of type UUID.
         :param pulumi.Input[_builtins.str] vm_ext_id: The globally unique identifier of a VM. It should be of type UUID
         """
@@ -312,7 +312,7 @@ class VmCdromInsertEjectV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
-                 backing_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict']]]]] = None,
+                 backing_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict', 'outputs.VmCdromInsertEjectV2BackingInfo']]]]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -346,9 +346,9 @@ class VmCdromInsertEjectV2(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             action: pulumi.Input[Optional[_builtins.str]] = None,
-            backing_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict']]]]] = None,
+            backing_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict', 'outputs.VmCdromInsertEjectV2BackingInfo']]]]] = None,
             cdrom_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            disk_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2DiskAddressArgs', 'VmCdromInsertEjectV2DiskAddressArgsDict']]]]] = None,
+            disk_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2DiskAddressArgs', 'VmCdromInsertEjectV2DiskAddressArgsDict', 'outputs.VmCdromInsertEjectV2DiskAddress']]]]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             iso_type: pulumi.Input[Optional[_builtins.str]] = None,
             vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VmCdromInsertEjectV2':
@@ -360,7 +360,7 @@ class VmCdromInsertEjectV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict']]]] backing_infos: Storage provided by Nutanix ADSF
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict', 'outputs.VmCdromInsertEjectV2BackingInfo']]]] backing_infos: Storage provided by Nutanix ADSF
         :param pulumi.Input[_builtins.str] ext_id: The globally unique identifier of a CD-ROM. It should be of type UUID.
         :param pulumi.Input[_builtins.str] vm_ext_id: The globally unique identifier of a VM. It should be of type UUID
         """

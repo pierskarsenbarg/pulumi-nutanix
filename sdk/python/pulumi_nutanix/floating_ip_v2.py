@@ -498,18 +498,18 @@ class FloatingIpV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2AssociationArgs', 'FloatingIpV2AssociationArgsDict']]]]] = None,
+                 associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2AssociationArgs', 'FloatingIpV2AssociationArgsDict', 'outputs.FloatingIpV2Association']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  external_subnet_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2ExternalSubnetArgs', 'FloatingIpV2ExternalSubnetArgsDict']]]]] = None,
-                 floating_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2FloatingIpArgs', 'FloatingIpV2FloatingIpArgsDict']]]]] = None,
+                 external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2ExternalSubnetArgs', 'FloatingIpV2ExternalSubnetArgsDict', 'outputs.FloatingIpV2ExternalSubnet']]]]] = None,
+                 floating_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2FloatingIpArgs', 'FloatingIpV2FloatingIpArgsDict', 'outputs.FloatingIpV2FloatingIp']]]]] = None,
                  load_balancer_session_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_nic_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VmNicArgs', 'FloatingIpV2VmNicArgsDict']]]]] = None,
+                 vm_nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VmNicArgs', 'FloatingIpV2VmNicArgsDict', 'outputs.FloatingIpV2VmNic']]]]] = None,
                  vpc_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VpcArgs', 'FloatingIpV2VpcArgsDict']]]]] = None,
+                 vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VpcArgs', 'FloatingIpV2VpcArgsDict', 'outputs.FloatingIpV2Vpc']]]]] = None,
                  __props__=None):
         """
         Provides Nutanix resource to create Floating IPs.
@@ -551,16 +551,16 @@ class FloatingIpV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2AssociationArgs', 'FloatingIpV2AssociationArgsDict']]]] associations: Association of the Floating IP with either NIC or Private IP
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2AssociationArgs', 'FloatingIpV2AssociationArgsDict', 'outputs.FloatingIpV2Association']]]] associations: Association of the Floating IP with either NIC or Private IP
         :param pulumi.Input[_builtins.str] description: Description for the Floating IP.
         :param pulumi.Input[_builtins.str] external_subnet_reference: External subnet reference for the Floating IP to be allocated in on-prem only.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2ExternalSubnetArgs', 'FloatingIpV2ExternalSubnetArgsDict']]]] external_subnets: Networking common base object
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2FloatingIpArgs', 'FloatingIpV2FloatingIpArgsDict']]]] floating_ips: Floating IP address.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2ExternalSubnetArgs', 'FloatingIpV2ExternalSubnetArgsDict', 'outputs.FloatingIpV2ExternalSubnet']]]] external_subnets: Networking common base object
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2FloatingIpArgs', 'FloatingIpV2FloatingIpArgsDict', 'outputs.FloatingIpV2FloatingIp']]]] floating_ips: Floating IP address.
         :param pulumi.Input[_builtins.str] name: Name of the floating IP.
         :param pulumi.Input[_builtins.str] vm_nic_reference: VM NIC reference.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2VmNicArgs', 'FloatingIpV2VmNicArgsDict']]]] vm_nics: Virtual NIC for projections
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2VmNicArgs', 'FloatingIpV2VmNicArgsDict', 'outputs.FloatingIpV2VmNic']]]] vm_nics: Virtual NIC for projections
         :param pulumi.Input[_builtins.str] vpc_reference: VPC reference UUID
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2VpcArgs', 'FloatingIpV2VpcArgsDict']]]] vpcs: Networking common base object
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2VpcArgs', 'FloatingIpV2VpcArgsDict', 'outputs.FloatingIpV2Vpc']]]] vpcs: Networking common base object
         """
         ...
     @overload
@@ -621,18 +621,18 @@ class FloatingIpV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2AssociationArgs', 'FloatingIpV2AssociationArgsDict']]]]] = None,
+                 associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2AssociationArgs', 'FloatingIpV2AssociationArgsDict', 'outputs.FloatingIpV2Association']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  external_subnet_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2ExternalSubnetArgs', 'FloatingIpV2ExternalSubnetArgsDict']]]]] = None,
-                 floating_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2FloatingIpArgs', 'FloatingIpV2FloatingIpArgsDict']]]]] = None,
+                 external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2ExternalSubnetArgs', 'FloatingIpV2ExternalSubnetArgsDict', 'outputs.FloatingIpV2ExternalSubnet']]]]] = None,
+                 floating_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2FloatingIpArgs', 'FloatingIpV2FloatingIpArgsDict', 'outputs.FloatingIpV2FloatingIp']]]]] = None,
                  load_balancer_session_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_nic_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VmNicArgs', 'FloatingIpV2VmNicArgsDict']]]]] = None,
+                 vm_nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VmNicArgs', 'FloatingIpV2VmNicArgsDict', 'outputs.FloatingIpV2VmNic']]]]] = None,
                  vpc_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VpcArgs', 'FloatingIpV2VpcArgsDict']]]]] = None,
+                 vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VpcArgs', 'FloatingIpV2VpcArgsDict', 'outputs.FloatingIpV2Vpc']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -671,23 +671,23 @@ class FloatingIpV2(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             association_status: pulumi.Input[Optional[_builtins.str]] = None,
-            associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2AssociationArgs', 'FloatingIpV2AssociationArgsDict']]]]] = None,
+            associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2AssociationArgs', 'FloatingIpV2AssociationArgsDict', 'outputs.FloatingIpV2Association']]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             external_subnet_reference: pulumi.Input[Optional[_builtins.str]] = None,
-            external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2ExternalSubnetArgs', 'FloatingIpV2ExternalSubnetArgsDict']]]]] = None,
+            external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2ExternalSubnetArgs', 'FloatingIpV2ExternalSubnetArgsDict', 'outputs.FloatingIpV2ExternalSubnet']]]]] = None,
             floating_ip_value: pulumi.Input[Optional[_builtins.str]] = None,
-            floating_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2FloatingIpArgs', 'FloatingIpV2FloatingIpArgsDict']]]]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2LinkArgs', 'FloatingIpV2LinkArgsDict']]]]] = None,
+            floating_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2FloatingIpArgs', 'FloatingIpV2FloatingIpArgsDict', 'outputs.FloatingIpV2FloatingIp']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2LinkArgs', 'FloatingIpV2LinkArgsDict', 'outputs.FloatingIpV2Link']]]]] = None,
             load_balancer_session_reference: pulumi.Input[Optional[_builtins.str]] = None,
-            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2MetadataArgs', 'FloatingIpV2MetadataArgsDict']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2MetadataArgs', 'FloatingIpV2MetadataArgsDict', 'outputs.FloatingIpV2Metadata']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             private_ip: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             vm_nic_reference: pulumi.Input[Optional[_builtins.str]] = None,
-            vm_nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VmNicArgs', 'FloatingIpV2VmNicArgsDict']]]]] = None,
+            vm_nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VmNicArgs', 'FloatingIpV2VmNicArgsDict', 'outputs.FloatingIpV2VmNic']]]]] = None,
             vpc_reference: pulumi.Input[Optional[_builtins.str]] = None,
-            vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VpcArgs', 'FloatingIpV2VpcArgsDict']]]]] = None) -> 'FloatingIpV2':
+            vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VpcArgs', 'FloatingIpV2VpcArgsDict', 'outputs.FloatingIpV2Vpc']]]]] = None) -> 'FloatingIpV2':
         """
         Get an existing FloatingIpV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -696,19 +696,19 @@ class FloatingIpV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] association_status: Association status of floating IP.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2AssociationArgs', 'FloatingIpV2AssociationArgsDict']]]] associations: Association of the Floating IP with either NIC or Private IP
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2AssociationArgs', 'FloatingIpV2AssociationArgsDict', 'outputs.FloatingIpV2Association']]]] associations: Association of the Floating IP with either NIC or Private IP
         :param pulumi.Input[_builtins.str] description: Description for the Floating IP.
         :param pulumi.Input[_builtins.str] external_subnet_reference: External subnet reference for the Floating IP to be allocated in on-prem only.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2ExternalSubnetArgs', 'FloatingIpV2ExternalSubnetArgsDict']]]] external_subnets: Networking common base object
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2FloatingIpArgs', 'FloatingIpV2FloatingIpArgsDict']]]] floating_ips: Floating IP address.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2LinkArgs', 'FloatingIpV2LinkArgsDict']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2MetadataArgs', 'FloatingIpV2MetadataArgsDict']]]] metadatas: Metadata associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2ExternalSubnetArgs', 'FloatingIpV2ExternalSubnetArgsDict', 'outputs.FloatingIpV2ExternalSubnet']]]] external_subnets: Networking common base object
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2FloatingIpArgs', 'FloatingIpV2FloatingIpArgsDict', 'outputs.FloatingIpV2FloatingIp']]]] floating_ips: Floating IP address.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2LinkArgs', 'FloatingIpV2LinkArgsDict', 'outputs.FloatingIpV2Link']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2MetadataArgs', 'FloatingIpV2MetadataArgsDict', 'outputs.FloatingIpV2Metadata']]]] metadatas: Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: Name of the floating IP.
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.
         :param pulumi.Input[_builtins.str] vm_nic_reference: VM NIC reference.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2VmNicArgs', 'FloatingIpV2VmNicArgsDict']]]] vm_nics: Virtual NIC for projections
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2VmNicArgs', 'FloatingIpV2VmNicArgsDict', 'outputs.FloatingIpV2VmNic']]]] vm_nics: Virtual NIC for projections
         :param pulumi.Input[_builtins.str] vpc_reference: VPC reference UUID
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2VpcArgs', 'FloatingIpV2VpcArgsDict']]]] vpcs: Networking common base object
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2VpcArgs', 'FloatingIpV2VpcArgsDict', 'outputs.FloatingIpV2Vpc']]]] vpcs: Networking common base object
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

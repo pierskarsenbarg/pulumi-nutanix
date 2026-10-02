@@ -292,7 +292,7 @@ class ClustersDiscoverUnconfiguredNodesV2(pulumi.CustomResource):
                  address_type: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  interface_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ip_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs', 'ClustersDiscoverUnconfiguredNodesV2IpFilterListArgsDict']]]]] = None,
+                 ip_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs', 'ClustersDiscoverUnconfiguredNodesV2IpFilterListArgsDict', 'outputs.ClustersDiscoverUnconfiguredNodesV2IpFilterList']]]]] = None,
                  is_manual_discovery: pulumi.Input[Optional[_builtins.bool]] = None,
                  timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  uuid_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -309,7 +309,7 @@ class ClustersDiscoverUnconfiguredNodesV2(pulumi.CustomResource):
                - "IPV6"	IPV6 address type.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] interface_filter_lists: - (Optional) Interface name that is used for packet broadcasting.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs', 'ClustersDiscoverUnconfiguredNodesV2IpFilterListArgsDict']]]] ip_filter_lists: - (Optional) IP addresses of the unconfigured nodes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs', 'ClustersDiscoverUnconfiguredNodesV2IpFilterListArgsDict', 'outputs.ClustersDiscoverUnconfiguredNodesV2IpFilterList']]]] ip_filter_lists: - (Optional) IP addresses of the unconfigured nodes.
         :param pulumi.Input[_builtins.bool] is_manual_discovery: - (Optional) Indicates if the discovery is manual or not.
         :param pulumi.Input[_builtins.int] timeout: - (Optional) Timeout for the workflow in seconds.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] uuid_filter_lists: - (Optional) Unconfigured node UUIDs.
@@ -342,7 +342,7 @@ class ClustersDiscoverUnconfiguredNodesV2(pulumi.CustomResource):
                  address_type: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  interface_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ip_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs', 'ClustersDiscoverUnconfiguredNodesV2IpFilterListArgsDict']]]]] = None,
+                 ip_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs', 'ClustersDiscoverUnconfiguredNodesV2IpFilterListArgsDict', 'outputs.ClustersDiscoverUnconfiguredNodesV2IpFilterList']]]]] = None,
                  is_manual_discovery: pulumi.Input[Optional[_builtins.bool]] = None,
                  timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  uuid_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -378,10 +378,10 @@ class ClustersDiscoverUnconfiguredNodesV2(pulumi.CustomResource):
             address_type: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             interface_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ip_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs', 'ClustersDiscoverUnconfiguredNodesV2IpFilterListArgsDict']]]]] = None,
+            ip_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs', 'ClustersDiscoverUnconfiguredNodesV2IpFilterListArgsDict', 'outputs.ClustersDiscoverUnconfiguredNodesV2IpFilterList']]]]] = None,
             is_manual_discovery: pulumi.Input[Optional[_builtins.bool]] = None,
             timeout: pulumi.Input[Optional[_builtins.int]] = None,
-            unconfigured_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeArgs', 'ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeArgsDict']]]]] = None,
+            unconfigured_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeArgs', 'ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeArgsDict', 'outputs.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode']]]]] = None,
             uuid_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'ClustersDiscoverUnconfiguredNodesV2':
         """
         Get an existing ClustersDiscoverUnconfiguredNodesV2 resource's state with the given name, id, and optional extra
@@ -396,7 +396,7 @@ class ClustersDiscoverUnconfiguredNodesV2(pulumi.CustomResource):
                - "IPV6"	IPV6 address type.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] interface_filter_lists: - (Optional) Interface name that is used for packet broadcasting.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs', 'ClustersDiscoverUnconfiguredNodesV2IpFilterListArgsDict']]]] ip_filter_lists: - (Optional) IP addresses of the unconfigured nodes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs', 'ClustersDiscoverUnconfiguredNodesV2IpFilterListArgsDict', 'outputs.ClustersDiscoverUnconfiguredNodesV2IpFilterList']]]] ip_filter_lists: - (Optional) IP addresses of the unconfigured nodes.
         :param pulumi.Input[_builtins.bool] is_manual_discovery: - (Optional) Indicates if the discovery is manual or not.
         :param pulumi.Input[_builtins.int] timeout: - (Optional) Timeout for the workflow in seconds.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] uuid_filter_lists: - (Optional) Unconfigured node UUIDs.

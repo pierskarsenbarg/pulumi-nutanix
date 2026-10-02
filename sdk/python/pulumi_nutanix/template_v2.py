@@ -301,12 +301,12 @@ class TemplateV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict']]]]] = None,
-                 guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict']]]]] = None,
+                 created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict', 'outputs.TemplateV2CreatedBy']]]]] = None,
+                 guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict', 'outputs.TemplateV2GuestUpdateStatus']]]]] = None,
                  template_description: pulumi.Input[Optional[_builtins.str]] = None,
                  template_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 template_version_spec: pulumi.Input[Optional[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict']]] = None,
-                 updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2UpdatedByArgs', 'TemplateV2UpdatedByArgsDict']]]]] = None,
+                 template_version_spec: pulumi.Input[Optional[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict', 'outputs.TemplateV2TemplateVersionSpec']]] = None,
+                 updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2UpdatedByArgs', 'TemplateV2UpdatedByArgsDict', 'outputs.TemplateV2UpdatedBy']]]]] = None,
                  __props__=None):
         """
         Create a Template from the given VM identifier. A Template stores the VM configuration and disks from the source VM.
@@ -314,10 +314,10 @@ class TemplateV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict']]]] guest_update_statuses: Status of a guest update.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict', 'outputs.TemplateV2GuestUpdateStatus']]]] guest_update_statuses: Status of a guest update.
         :param pulumi.Input[_builtins.str] template_description: The user defined description of a Template.
         :param pulumi.Input[_builtins.str] template_name: The user defined name of a Template.
-        :param pulumi.Input[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict']] template_version_spec: A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
+        :param pulumi.Input[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict', 'outputs.TemplateV2TemplateVersionSpec']] template_version_spec: A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
         """
         ...
     @overload
@@ -345,12 +345,12 @@ class TemplateV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict']]]]] = None,
-                 guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict']]]]] = None,
+                 created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict', 'outputs.TemplateV2CreatedBy']]]]] = None,
+                 guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict', 'outputs.TemplateV2GuestUpdateStatus']]]]] = None,
                  template_description: pulumi.Input[Optional[_builtins.str]] = None,
                  template_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 template_version_spec: pulumi.Input[Optional[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict']]] = None,
-                 updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2UpdatedByArgs', 'TemplateV2UpdatedByArgsDict']]]]] = None,
+                 template_version_spec: pulumi.Input[Optional[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict', 'outputs.TemplateV2TemplateVersionSpec']]] = None,
+                 updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2UpdatedByArgs', 'TemplateV2UpdatedByArgsDict', 'outputs.TemplateV2UpdatedBy']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -388,16 +388,16 @@ class TemplateV2(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             create_time: pulumi.Input[Optional[_builtins.str]] = None,
-            created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict']]]]] = None,
+            created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict', 'outputs.TemplateV2CreatedBy']]]]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict']]]]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2LinkArgs', 'TemplateV2LinkArgsDict']]]]] = None,
+            guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict', 'outputs.TemplateV2GuestUpdateStatus']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2LinkArgs', 'TemplateV2LinkArgsDict', 'outputs.TemplateV2Link']]]]] = None,
             template_description: pulumi.Input[Optional[_builtins.str]] = None,
             template_name: pulumi.Input[Optional[_builtins.str]] = None,
-            template_version_spec: pulumi.Input[Optional[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict']]] = None,
+            template_version_spec: pulumi.Input[Optional[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict', 'outputs.TemplateV2TemplateVersionSpec']]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             update_time: pulumi.Input[Optional[_builtins.str]] = None,
-            updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2UpdatedByArgs', 'TemplateV2UpdatedByArgsDict']]]]] = None) -> 'TemplateV2':
+            updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2UpdatedByArgs', 'TemplateV2UpdatedByArgsDict', 'outputs.TemplateV2UpdatedBy']]]]] = None) -> 'TemplateV2':
         """
         Get an existing TemplateV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -405,10 +405,10 @@ class TemplateV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict']]]] guest_update_statuses: Status of a guest update.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict', 'outputs.TemplateV2GuestUpdateStatus']]]] guest_update_statuses: Status of a guest update.
         :param pulumi.Input[_builtins.str] template_description: The user defined description of a Template.
         :param pulumi.Input[_builtins.str] template_name: The user defined name of a Template.
-        :param pulumi.Input[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict']] template_version_spec: A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
+        :param pulumi.Input[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict', 'outputs.TemplateV2TemplateVersionSpec']] template_version_spec: A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

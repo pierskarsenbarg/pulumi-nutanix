@@ -370,7 +370,7 @@ class SelfServiceAppProvision(pulumi.CustomResource):
                  app_name: pulumi.Input[Optional[_builtins.str]] = None,
                  bp_name: pulumi.Input[Optional[_builtins.str]] = None,
                  bp_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 runtime_editables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionRuntimeEditableArgs', 'SelfServiceAppProvisionRuntimeEditableArgsDict']]]]] = None,
+                 runtime_editables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionRuntimeEditableArgs', 'SelfServiceAppProvisionRuntimeEditableArgsDict', 'outputs.SelfServiceAppProvisionRuntimeEditable']]]]] = None,
                  soft_delete: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
@@ -446,7 +446,7 @@ class SelfServiceAppProvision(pulumi.CustomResource):
                  app_name: pulumi.Input[Optional[_builtins.str]] = None,
                  bp_name: pulumi.Input[Optional[_builtins.str]] = None,
                  bp_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 runtime_editables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionRuntimeEditableArgs', 'SelfServiceAppProvisionRuntimeEditableArgsDict']]]]] = None,
+                 runtime_editables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionRuntimeEditableArgs', 'SelfServiceAppProvisionRuntimeEditableArgsDict', 'outputs.SelfServiceAppProvisionRuntimeEditable']]]]] = None,
                  soft_delete: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -484,19 +484,19 @@ class SelfServiceAppProvision(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             action: pulumi.Input[Optional[_builtins.str]] = None,
-            actions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionActionArgs', 'SelfServiceAppProvisionActionArgsDict']]]]] = None,
+            actions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionActionArgs', 'SelfServiceAppProvisionActionArgsDict', 'outputs.SelfServiceAppProvisionAction']]]]] = None,
             api_version: pulumi.Input[Optional[_builtins.str]] = None,
             app_description: pulumi.Input[Optional[_builtins.str]] = None,
             app_name: pulumi.Input[Optional[_builtins.str]] = None,
-            app_summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionAppSummaryArgs', 'SelfServiceAppProvisionAppSummaryArgsDict']]]]] = None,
+            app_summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionAppSummaryArgs', 'SelfServiceAppProvisionAppSummaryArgsDict', 'outputs.SelfServiceAppProvisionAppSummary']]]]] = None,
             bp_name: pulumi.Input[Optional[_builtins.str]] = None,
             bp_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-            runtime_editables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionRuntimeEditableArgs', 'SelfServiceAppProvisionRuntimeEditableArgsDict']]]]] = None,
+            runtime_editables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionRuntimeEditableArgs', 'SelfServiceAppProvisionRuntimeEditableArgsDict', 'outputs.SelfServiceAppProvisionRuntimeEditable']]]]] = None,
             soft_delete: pulumi.Input[Optional[_builtins.bool]] = None,
             spec: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            vms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionVmArgs', 'SelfServiceAppProvisionVmArgsDict']]]]] = None) -> 'SelfServiceAppProvision':
+            vms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionVmArgs', 'SelfServiceAppProvisionVmArgsDict', 'outputs.SelfServiceAppProvisionVm']]]]] = None) -> 'SelfServiceAppProvision':
         """
         Get an existing SelfServiceAppProvision resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

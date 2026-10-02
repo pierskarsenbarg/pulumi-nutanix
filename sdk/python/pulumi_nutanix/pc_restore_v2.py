@@ -166,7 +166,7 @@ class PcRestoreV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 domain_manager: pulumi.Input[Optional[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict']]] = None,
+                 domain_manager: pulumi.Input[Optional[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict', 'outputs.PcRestoreV2DomainManager']]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  restorable_domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  restore_source_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -278,7 +278,7 @@ class PcRestoreV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict']] domain_manager: -(Required) Domain manager (Prism Central) details.
+        :param pulumi.Input[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict', 'outputs.PcRestoreV2DomainManager']] domain_manager: -(Required) Domain manager (Prism Central) details.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Restore point ID for the backup created in cluster/object store.
         :param pulumi.Input[_builtins.str] restorable_domain_manager_ext_id: -(Required) A unique identifier for the domain manager.
         :param pulumi.Input[_builtins.str] restore_source_ext_id: -(Required) A unique identifier obtained from the restore source API that corresponds to the details provided for the restore source.
@@ -409,7 +409,7 @@ class PcRestoreV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 domain_manager: pulumi.Input[Optional[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict']]] = None,
+                 domain_manager: pulumi.Input[Optional[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict', 'outputs.PcRestoreV2DomainManager']]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  restorable_domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  restore_source_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -444,7 +444,7 @@ class PcRestoreV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            domain_manager: pulumi.Input[Optional[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict']]] = None,
+            domain_manager: pulumi.Input[Optional[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict', 'outputs.PcRestoreV2DomainManager']]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             restorable_domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             restore_source_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PcRestoreV2':
@@ -455,7 +455,7 @@ class PcRestoreV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict']] domain_manager: -(Required) Domain manager (Prism Central) details.
+        :param pulumi.Input[Union['PcRestoreV2DomainManagerArgs', 'PcRestoreV2DomainManagerArgsDict', 'outputs.PcRestoreV2DomainManager']] domain_manager: -(Required) Domain manager (Prism Central) details.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Restore point ID for the backup created in cluster/object store.
         :param pulumi.Input[_builtins.str] restorable_domain_manager_ext_id: -(Required) A unique identifier for the domain manager.
         :param pulumi.Input[_builtins.str] restore_source_ext_id: -(Required) A unique identifier obtained from the restore source API that corresponds to the details provided for the restore source.

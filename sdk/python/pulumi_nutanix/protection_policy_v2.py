@@ -262,8 +262,8 @@ class ProtectionPolicyV2(pulumi.CustomResource):
                  category_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 replication_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationConfigurationArgs', 'ProtectionPolicyV2ReplicationConfigurationArgsDict']]]]] = None,
-                 replication_locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict']]]]] = None,
+                 replication_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationConfigurationArgs', 'ProtectionPolicyV2ReplicationConfigurationArgsDict', 'outputs.ProtectionPolicyV2ReplicationConfiguration']]]]] = None,
+                 replication_locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict', 'outputs.ProtectionPolicyV2ReplicationLocation']]]]] = None,
                  __props__=None):
         """
         > **Authentication:** The <span pulumi-lang-nodejs="`nutanix.ProtectionPolicyV2`" pulumi-lang-dotnet="`nutanix.ProtectionPolicyV2`" pulumi-lang-go="`ProtectionPolicyV2`" pulumi-lang-python="`ProtectionPolicyV2`" pulumi-lang-yaml="`nutanix.ProtectionPolicyV2`" pulumi-lang-java="`nutanix.ProtectionPolicyV2`" pulumi-lang-hcl="`nutanix_protection_policy_v2`">`nutanix.ProtectionPolicyV2`</span> resource does **not** support API key authentication for multi-site protection policy operations. Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`" pulumi-lang-hcl="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`" pulumi-lang-hcl="`password`">`password`</span> in the provider configuration—do not use <span pulumi-lang-nodejs="`apiKey`" pulumi-lang-dotnet="`ApiKey`" pulumi-lang-go="`apiKey`" pulumi-lang-python="`api_key`" pulumi-lang-yaml="`apiKey`" pulumi-lang-java="`apiKey`" pulumi-lang-hcl="`api_key`">`apiKey`</span>. Using API key will result in authorization errors (DPO-10600).
@@ -453,8 +453,8 @@ class ProtectionPolicyV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ids: -(Optional) Host entity with its attributes.
         :param pulumi.Input[_builtins.str] description: -(Optional) Description of the protection policy.
         :param pulumi.Input[_builtins.str] name: -(Required) Name of the protection policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationConfigurationArgs', 'ProtectionPolicyV2ReplicationConfigurationArgsDict']]]] replication_configurations: -(Required) Cluster reference for an entity.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict']]]] replication_locations: -(Required) Hypervisor details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationConfigurationArgs', 'ProtectionPolicyV2ReplicationConfigurationArgsDict', 'outputs.ProtectionPolicyV2ReplicationConfiguration']]]] replication_configurations: -(Required) Cluster reference for an entity.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict', 'outputs.ProtectionPolicyV2ReplicationLocation']]]] replication_locations: -(Required) Hypervisor details.
         """
         ...
     @overload
@@ -663,8 +663,8 @@ class ProtectionPolicyV2(pulumi.CustomResource):
                  category_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 replication_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationConfigurationArgs', 'ProtectionPolicyV2ReplicationConfigurationArgsDict']]]]] = None,
-                 replication_locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict']]]]] = None,
+                 replication_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationConfigurationArgs', 'ProtectionPolicyV2ReplicationConfigurationArgsDict', 'outputs.ProtectionPolicyV2ReplicationConfiguration']]]]] = None,
+                 replication_locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict', 'outputs.ProtectionPolicyV2ReplicationLocation']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -704,11 +704,11 @@ class ProtectionPolicyV2(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             is_approval_policy_needed: pulumi.Input[Optional[_builtins.bool]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2LinkArgs', 'ProtectionPolicyV2LinkArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2LinkArgs', 'ProtectionPolicyV2LinkArgsDict', 'outputs.ProtectionPolicyV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            replication_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationConfigurationArgs', 'ProtectionPolicyV2ReplicationConfigurationArgsDict']]]]] = None,
-            replication_locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict']]]]] = None,
+            replication_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationConfigurationArgs', 'ProtectionPolicyV2ReplicationConfigurationArgsDict', 'outputs.ProtectionPolicyV2ReplicationConfiguration']]]]] = None,
+            replication_locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict', 'outputs.ProtectionPolicyV2ReplicationLocation']]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProtectionPolicyV2':
         """
         Get an existing ProtectionPolicyV2 resource's state with the given name, id, and optional extra
@@ -720,8 +720,8 @@ class ProtectionPolicyV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ids: -(Optional) Host entity with its attributes.
         :param pulumi.Input[_builtins.str] description: -(Optional) Description of the protection policy.
         :param pulumi.Input[_builtins.str] name: -(Required) Name of the protection policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationConfigurationArgs', 'ProtectionPolicyV2ReplicationConfigurationArgsDict']]]] replication_configurations: -(Required) Cluster reference for an entity.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict']]]] replication_locations: -(Required) Hypervisor details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationConfigurationArgs', 'ProtectionPolicyV2ReplicationConfigurationArgsDict', 'outputs.ProtectionPolicyV2ReplicationConfiguration']]]] replication_configurations: -(Required) Cluster reference for an entity.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict', 'outputs.ProtectionPolicyV2ReplicationLocation']]]] replication_locations: -(Required) Hypervisor details.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

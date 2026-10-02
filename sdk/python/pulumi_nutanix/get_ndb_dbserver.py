@@ -440,7 +440,7 @@ def get_ndb_dbserver(dbserver_cluster_id: Optional[_builtins.str] = None,
                      ip: Optional[_builtins.str] = None,
                      name: Optional[_builtins.str] = None,
                      nx_cluster_id: Optional[_builtins.str] = None,
-                     tags: Optional[Sequence[Union['GetNdbDbserverTagArgs', 'GetNdbDbserverTagArgsDict']]] = None,
+                     tags: Optional[Sequence[Union['GetNdbDbserverTagArgs', 'GetNdbDbserverTagArgsDict', 'outputs.GetNdbDbserverTagResult']]] = None,
                      vm_cluster_id: Optional[_builtins.str] = None,
                      vm_cluster_name: Optional[_builtins.str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNdbDbserverResult:
@@ -451,7 +451,7 @@ def get_ndb_dbserver(dbserver_cluster_id: Optional[_builtins.str] = None,
     :param _builtins.str id: id of database server vm
     :param _builtins.str ip: ip of database server vm
     :param _builtins.str name: name of database server vm
-    :param Sequence[Union['GetNdbDbserverTagArgs', 'GetNdbDbserverTagArgsDict']] tags: tags for db server vm
+    :param Sequence[Union['GetNdbDbserverTagArgs', 'GetNdbDbserverTagArgsDict', 'outputs.GetNdbDbserverTagResult']] tags: tags for db server vm
     :param _builtins.str vm_cluster_id: vm cluster id of database server
     :param _builtins.str vm_cluster_name: vm cluster name of database server
     """
@@ -508,7 +508,7 @@ def get_ndb_dbserver_output(dbserver_cluster_id: pulumi.Input[Optional[Optional[
                             ip: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             nx_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                            tags: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbDbserverTagArgs', 'GetNdbDbserverTagArgsDict']]]]] = None,
+                            tags: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbDbserverTagArgs', 'GetNdbDbserverTagArgsDict', 'outputs.GetNdbDbserverTagResult']]]]] = None,
                             vm_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             vm_cluster_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbDbserverResult]:
@@ -519,7 +519,7 @@ def get_ndb_dbserver_output(dbserver_cluster_id: pulumi.Input[Optional[Optional[
     :param _builtins.str id: id of database server vm
     :param _builtins.str ip: ip of database server vm
     :param _builtins.str name: name of database server vm
-    :param Sequence[Union['GetNdbDbserverTagArgs', 'GetNdbDbserverTagArgsDict']] tags: tags for db server vm
+    :param Sequence[Union['GetNdbDbserverTagArgs', 'GetNdbDbserverTagArgsDict', 'outputs.GetNdbDbserverTagResult']] tags: tags for db server vm
     :param _builtins.str vm_cluster_id: vm cluster id of database server
     :param _builtins.str vm_cluster_name: vm cluster name of database server
     """

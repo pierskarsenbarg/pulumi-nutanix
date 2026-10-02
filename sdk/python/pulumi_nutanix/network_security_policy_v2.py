@@ -461,7 +461,7 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
                  is_hitlog_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_ipv6_traffic_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict']]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict', 'outputs.NetworkSecurityPolicyV2Rule']]]]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -520,7 +520,7 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_hitlog_enabled: If Hitlog is enabled.
         :param pulumi.Input[_builtins.bool] is_ipv6_traffic_allowed: If Ipv6 Traffic is allowed.
         :param pulumi.Input[_builtins.str] name: Name of the Flow Network Security Policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict']]]] rules: A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict', 'outputs.NetworkSecurityPolicyV2Rule']]]] rules: A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
         :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
         :param pulumi.Input[_builtins.str] state: Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
         :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
@@ -598,7 +598,7 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
                  is_hitlog_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_ipv6_traffic_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict']]]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict', 'outputs.NetworkSecurityPolicyV2Rule']]]]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -649,9 +649,9 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
             is_ipv6_traffic_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
             is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
             last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2LinkArgs', 'NetworkSecurityPolicyV2LinkArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2LinkArgs', 'NetworkSecurityPolicyV2LinkArgsDict', 'outputs.NetworkSecurityPolicyV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict']]]]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict', 'outputs.NetworkSecurityPolicyV2Rule']]]]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None,
             secured_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -673,9 +673,9 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_ipv6_traffic_allowed: If Ipv6 Traffic is allowed.
         :param pulumi.Input[_builtins.bool] is_system_defined: Is system defined NSP
         :param pulumi.Input[_builtins.str] last_update_time: last updated time
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2LinkArgs', 'NetworkSecurityPolicyV2LinkArgsDict']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2LinkArgs', 'NetworkSecurityPolicyV2LinkArgsDict', 'outputs.NetworkSecurityPolicyV2Link']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[_builtins.str] name: Name of the Flow Network Security Policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict']]]] rules: A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict', 'outputs.NetworkSecurityPolicyV2Rule']]]] rules: A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
         :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secured_groups: Uuids of the secured groups in the NSP.
         :param pulumi.Input[_builtins.str] state: Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".

@@ -370,8 +370,8 @@ class RecoveryPointsV2(pulumi.CustomResource):
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  recovery_point_type: pulumi.Input[Optional[_builtins.str]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict']]]]] = None,
-                 volume_group_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VolumeGroupRecoveryPointArgs', 'RecoveryPointsV2VolumeGroupRecoveryPointArgsDict']]]]] = None,
+                 vm_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict', 'outputs.RecoveryPointsV2VmRecoveryPoint']]]]] = None,
+                 volume_group_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VolumeGroupRecoveryPointArgs', 'RecoveryPointsV2VolumeGroupRecoveryPointArgsDict', 'outputs.RecoveryPointsV2VolumeGroupRecoveryPoint']]]]] = None,
                  __props__=None):
         """
         Create a new recovery point.
@@ -407,8 +407,8 @@ class RecoveryPointsV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] status: -(Optional) The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
                * supported values:
                * `COMPLETE`: -  The Recovery point is in a complete state and ready to be consumed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict']]]] vm_recovery_points: -(Optional) List of VM recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2VolumeGroupRecoveryPointArgs', 'RecoveryPointsV2VolumeGroupRecoveryPointArgsDict']]]] volume_group_recovery_points: -(Optional) List of volume group recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict', 'outputs.RecoveryPointsV2VmRecoveryPoint']]]] vm_recovery_points: -(Optional) List of VM recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2VolumeGroupRecoveryPointArgs', 'RecoveryPointsV2VolumeGroupRecoveryPointArgsDict', 'outputs.RecoveryPointsV2VolumeGroupRecoveryPoint']]]] volume_group_recovery_points: -(Optional) List of volume group recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
         """
         ...
     @overload
@@ -458,8 +458,8 @@ class RecoveryPointsV2(pulumi.CustomResource):
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  recovery_point_type: pulumi.Input[Optional[_builtins.str]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict']]]]] = None,
-                 volume_group_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VolumeGroupRecoveryPointArgs', 'RecoveryPointsV2VolumeGroupRecoveryPointArgsDict']]]]] = None,
+                 vm_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict', 'outputs.RecoveryPointsV2VmRecoveryPoint']]]]] = None,
+                 volume_group_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VolumeGroupRecoveryPointArgs', 'RecoveryPointsV2VolumeGroupRecoveryPointArgsDict', 'outputs.RecoveryPointsV2VolumeGroupRecoveryPoint']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -495,16 +495,16 @@ class RecoveryPointsV2(pulumi.CustomResource):
             creation_time: pulumi.Input[Optional[_builtins.str]] = None,
             expiration_time: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2LinkArgs', 'RecoveryPointsV2LinkArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2LinkArgs', 'RecoveryPointsV2LinkArgsDict', 'outputs.RecoveryPointsV2Link']]]]] = None,
             location_agnostic_id: pulumi.Input[Optional[_builtins.str]] = None,
-            location_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2LocationReferenceArgs', 'RecoveryPointsV2LocationReferenceArgsDict']]]]] = None,
+            location_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2LocationReferenceArgs', 'RecoveryPointsV2LocationReferenceArgsDict', 'outputs.RecoveryPointsV2LocationReference']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             recovery_point_type: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
-            vm_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict']]]]] = None,
-            volume_group_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VolumeGroupRecoveryPointArgs', 'RecoveryPointsV2VolumeGroupRecoveryPointArgsDict']]]]] = None) -> 'RecoveryPointsV2':
+            vm_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict', 'outputs.RecoveryPointsV2VmRecoveryPoint']]]]] = None,
+            volume_group_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VolumeGroupRecoveryPointArgs', 'RecoveryPointsV2VolumeGroupRecoveryPointArgsDict', 'outputs.RecoveryPointsV2VolumeGroupRecoveryPoint']]]]] = None) -> 'RecoveryPointsV2':
         """
         Get an existing RecoveryPointsV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -515,9 +515,9 @@ class RecoveryPointsV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] creation_time: The UTC date and time in ISO-8601 format when the Recovery point is created.
         :param pulumi.Input[_builtins.str] expiration_time: -(Optional) The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
         :param pulumi.Input[_builtins.str] ext_id: recovery point UUID
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2LinkArgs', 'RecoveryPointsV2LinkArgsDict']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2LinkArgs', 'RecoveryPointsV2LinkArgsDict', 'outputs.RecoveryPointsV2Link']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[_builtins.str] location_agnostic_id: Location agnostic identifier of the recovery point. This identifier is used to identify the same instances of a recovery point across different sites.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2LocationReferenceArgs', 'RecoveryPointsV2LocationReferenceArgsDict']]]] location_references: List of location references where the VM or volume group recovery point are a part of the specified recovery point.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2LocationReferenceArgs', 'RecoveryPointsV2LocationReferenceArgsDict', 'outputs.RecoveryPointsV2LocationReference']]]] location_references: List of location references where the VM or volume group recovery point are a part of the specified recovery point.
         :param pulumi.Input[_builtins.str] name: -(Optional) The name of the Recovery point.
         :param pulumi.Input[_builtins.str] owner_ext_id: A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
         :param pulumi.Input[_builtins.str] recovery_point_type: -(Optional) Type of the Recovery point.
@@ -528,8 +528,8 @@ class RecoveryPointsV2(pulumi.CustomResource):
                * supported values:
                * `COMPLETE`: -  The Recovery point is in a complete state and ready to be consumed.
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict']]]] vm_recovery_points: -(Optional) List of VM recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2VolumeGroupRecoveryPointArgs', 'RecoveryPointsV2VolumeGroupRecoveryPointArgsDict']]]] volume_group_recovery_points: -(Optional) List of volume group recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict', 'outputs.RecoveryPointsV2VmRecoveryPoint']]]] vm_recovery_points: -(Optional) List of VM recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2VolumeGroupRecoveryPointArgs', 'RecoveryPointsV2VolumeGroupRecoveryPointArgsDict', 'outputs.RecoveryPointsV2VolumeGroupRecoveryPoint']]]] volume_group_recovery_points: -(Optional) List of volume group recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

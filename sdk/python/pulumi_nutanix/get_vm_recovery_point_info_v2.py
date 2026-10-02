@@ -169,7 +169,7 @@ class AwaitableGetVmRecoveryPointInfoV2Result(GetVmRecoveryPointInfoV2Result):
             vm_ext_id=self.vm_ext_id)
 
 
-def get_vm_recovery_point_info_v2(disk_recovery_points: Optional[Sequence[Union['GetVmRecoveryPointInfoV2DiskRecoveryPointArgs', 'GetVmRecoveryPointInfoV2DiskRecoveryPointArgsDict']]] = None,
+def get_vm_recovery_point_info_v2(disk_recovery_points: Optional[Sequence[Union['GetVmRecoveryPointInfoV2DiskRecoveryPointArgs', 'GetVmRecoveryPointInfoV2DiskRecoveryPointArgsDict', 'outputs.GetVmRecoveryPointInfoV2DiskRecoveryPointResult']]] = None,
                                   ext_id: Optional[_builtins.str] = None,
                                   recovery_point_ext_id: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVmRecoveryPointInfoV2Result:
@@ -190,7 +190,7 @@ def get_vm_recovery_point_info_v2(disk_recovery_points: Optional[Sequence[Union[
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetVmRecoveryPointInfoV2DiskRecoveryPointArgs', 'GetVmRecoveryPointInfoV2DiskRecoveryPointArgsDict']] disk_recovery_points: array of disk recovery points.
+    :param Sequence[Union['GetVmRecoveryPointInfoV2DiskRecoveryPointArgs', 'GetVmRecoveryPointInfoV2DiskRecoveryPointArgsDict', 'outputs.GetVmRecoveryPointInfoV2DiskRecoveryPointResult']] disk_recovery_points: array of disk recovery points.
     :param _builtins.str ext_id: The external identifier that can be used to identify a VM recovery point.
     :param _builtins.str recovery_point_ext_id: The external identifier that can be used to retrieve the recovery point using its URL.
     """
@@ -213,7 +213,7 @@ def get_vm_recovery_point_info_v2(disk_recovery_points: Optional[Sequence[Union[
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         vm_categories=pulumi.get(__ret__, 'vm_categories'),
         vm_ext_id=pulumi.get(__ret__, 'vm_ext_id'))
-def get_vm_recovery_point_info_v2_output(disk_recovery_points: pulumi.Input[Optional[Optional[Sequence[Union['GetVmRecoveryPointInfoV2DiskRecoveryPointArgs', 'GetVmRecoveryPointInfoV2DiskRecoveryPointArgsDict']]]]] = None,
+def get_vm_recovery_point_info_v2_output(disk_recovery_points: pulumi.Input[Optional[Optional[Sequence[Union['GetVmRecoveryPointInfoV2DiskRecoveryPointArgs', 'GetVmRecoveryPointInfoV2DiskRecoveryPointArgsDict', 'outputs.GetVmRecoveryPointInfoV2DiskRecoveryPointResult']]]]] = None,
                                          ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          recovery_point_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmRecoveryPointInfoV2Result]:
@@ -234,7 +234,7 @@ def get_vm_recovery_point_info_v2_output(disk_recovery_points: pulumi.Input[Opti
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetVmRecoveryPointInfoV2DiskRecoveryPointArgs', 'GetVmRecoveryPointInfoV2DiskRecoveryPointArgsDict']] disk_recovery_points: array of disk recovery points.
+    :param Sequence[Union['GetVmRecoveryPointInfoV2DiskRecoveryPointArgs', 'GetVmRecoveryPointInfoV2DiskRecoveryPointArgsDict', 'outputs.GetVmRecoveryPointInfoV2DiskRecoveryPointResult']] disk_recovery_points: array of disk recovery points.
     :param _builtins.str ext_id: The external identifier that can be used to identify a VM recovery point.
     :param _builtins.str recovery_point_ext_id: The external identifier that can be used to retrieve the recovery point using its URL.
     """

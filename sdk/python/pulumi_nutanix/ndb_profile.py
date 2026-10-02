@@ -442,14 +442,14 @@ class NdbProfile(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compute_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict']]]]] = None,
-                 database_parameter_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileDatabaseParameterProfileArgs', 'NdbProfileDatabaseParameterProfileArgsDict']]]]] = None,
+                 compute_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict', 'outputs.NdbProfileComputeProfile']]]]] = None,
+                 database_parameter_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileDatabaseParameterProfileArgs', 'NdbProfileDatabaseParameterProfileArgsDict', 'outputs.NdbProfileDatabaseParameterProfile']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  engine_type: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 network_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileNetworkProfileArgs', 'NdbProfileNetworkProfileArgsDict']]]]] = None,
+                 network_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileNetworkProfileArgs', 'NdbProfileNetworkProfileArgsDict', 'outputs.NdbProfileNetworkProfile']]]]] = None,
                  published: pulumi.Input[Optional[_builtins.bool]] = None,
-                 software_profile: pulumi.Input[Optional[Union['NdbProfileSoftwareProfileArgs', 'NdbProfileSoftwareProfileArgsDict']]] = None,
+                 software_profile: pulumi.Input[Optional[Union['NdbProfileSoftwareProfileArgs', 'NdbProfileSoftwareProfileArgsDict', 'outputs.NdbProfileSoftwareProfile']]] = None,
                  __props__=None):
         """
         Provides a resource to create profiles (Software, Network, Database Parameter, Compute) based on the input parameters.
@@ -457,14 +457,14 @@ class NdbProfile(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict']]]] compute_profiles: Compute Profile
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileDatabaseParameterProfileArgs', 'NdbProfileDatabaseParameterProfileArgsDict']]]] database_parameter_profiles: Database Parameter Profile
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict', 'outputs.NdbProfileComputeProfile']]]] compute_profiles: Compute Profile
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileDatabaseParameterProfileArgs', 'NdbProfileDatabaseParameterProfileArgsDict', 'outputs.NdbProfileDatabaseParameterProfile']]]] database_parameter_profiles: Database Parameter Profile
         :param pulumi.Input[_builtins.str] description: Description of profile
         :param pulumi.Input[_builtins.str] engine_type: Engine Type of database
         :param pulumi.Input[_builtins.str] name: Name of profile
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileNetworkProfileArgs', 'NdbProfileNetworkProfileArgsDict']]]] network_profiles: Network Profile
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileNetworkProfileArgs', 'NdbProfileNetworkProfileArgsDict', 'outputs.NdbProfileNetworkProfile']]]] network_profiles: Network Profile
         :param pulumi.Input[_builtins.bool] published: Publish for all users
-        :param pulumi.Input[Union['NdbProfileSoftwareProfileArgs', 'NdbProfileSoftwareProfileArgsDict']] software_profile: Software Profile
+        :param pulumi.Input[Union['NdbProfileSoftwareProfileArgs', 'NdbProfileSoftwareProfileArgsDict', 'outputs.NdbProfileSoftwareProfile']] software_profile: Software Profile
         """
         ...
     @overload
@@ -491,14 +491,14 @@ class NdbProfile(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compute_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict']]]]] = None,
-                 database_parameter_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileDatabaseParameterProfileArgs', 'NdbProfileDatabaseParameterProfileArgsDict']]]]] = None,
+                 compute_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict', 'outputs.NdbProfileComputeProfile']]]]] = None,
+                 database_parameter_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileDatabaseParameterProfileArgs', 'NdbProfileDatabaseParameterProfileArgsDict', 'outputs.NdbProfileDatabaseParameterProfile']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  engine_type: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 network_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileNetworkProfileArgs', 'NdbProfileNetworkProfileArgsDict']]]]] = None,
+                 network_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileNetworkProfileArgs', 'NdbProfileNetworkProfileArgsDict', 'outputs.NdbProfileNetworkProfile']]]]] = None,
                  published: pulumi.Input[Optional[_builtins.bool]] = None,
-                 software_profile: pulumi.Input[Optional[Union['NdbProfileSoftwareProfileArgs', 'NdbProfileSoftwareProfileArgsDict']]] = None,
+                 software_profile: pulumi.Input[Optional[Union['NdbProfileSoftwareProfileArgs', 'NdbProfileSoftwareProfileArgsDict', 'outputs.NdbProfileSoftwareProfile']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -537,21 +537,21 @@ class NdbProfile(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             assoc_databases: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             assoc_db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            cluster_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileClusterAvailabilityArgs', 'NdbProfileClusterAvailabilityArgsDict']]]]] = None,
-            compute_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict']]]]] = None,
-            database_parameter_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileDatabaseParameterProfileArgs', 'NdbProfileDatabaseParameterProfileArgsDict']]]]] = None,
+            cluster_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileClusterAvailabilityArgs', 'NdbProfileClusterAvailabilityArgsDict', 'outputs.NdbProfileClusterAvailability']]]]] = None,
+            compute_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict', 'outputs.NdbProfileComputeProfile']]]]] = None,
+            database_parameter_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileDatabaseParameterProfileArgs', 'NdbProfileDatabaseParameterProfileArgsDict', 'outputs.NdbProfileDatabaseParameterProfile']]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             engine_type: pulumi.Input[Optional[_builtins.str]] = None,
             latest_version: pulumi.Input[Optional[_builtins.str]] = None,
             latest_version_id: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            network_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileNetworkProfileArgs', 'NdbProfileNetworkProfileArgsDict']]]]] = None,
+            network_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileNetworkProfileArgs', 'NdbProfileNetworkProfileArgsDict', 'outputs.NdbProfileNetworkProfile']]]]] = None,
             nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
             owner: pulumi.Input[Optional[_builtins.str]] = None,
             published: pulumi.Input[Optional[_builtins.bool]] = None,
-            software_profile: pulumi.Input[Optional[Union['NdbProfileSoftwareProfileArgs', 'NdbProfileSoftwareProfileArgsDict']]] = None,
+            software_profile: pulumi.Input[Optional[Union['NdbProfileSoftwareProfileArgs', 'NdbProfileSoftwareProfileArgsDict', 'outputs.NdbProfileSoftwareProfile']]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileVersionArgs', 'NdbProfileVersionArgsDict']]]]] = None) -> 'NdbProfile':
+            versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileVersionArgs', 'NdbProfileVersionArgsDict', 'outputs.NdbProfileVersion']]]]] = None) -> 'NdbProfile':
         """
         Get an existing NdbProfile resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -561,21 +561,21 @@ class NdbProfile(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] assoc_databases: associated databases of profiles
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] assoc_db_servers: associated database servers for associated profiles
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileClusterAvailabilityArgs', 'NdbProfileClusterAvailabilityArgsDict']]]] cluster_availabilities: cluster availability of profile
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict']]]] compute_profiles: Compute Profile
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileDatabaseParameterProfileArgs', 'NdbProfileDatabaseParameterProfileArgsDict']]]] database_parameter_profiles: Database Parameter Profile
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileClusterAvailabilityArgs', 'NdbProfileClusterAvailabilityArgsDict', 'outputs.NdbProfileClusterAvailability']]]] cluster_availabilities: cluster availability of profile
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict', 'outputs.NdbProfileComputeProfile']]]] compute_profiles: Compute Profile
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileDatabaseParameterProfileArgs', 'NdbProfileDatabaseParameterProfileArgsDict', 'outputs.NdbProfileDatabaseParameterProfile']]]] database_parameter_profiles: Database Parameter Profile
         :param pulumi.Input[_builtins.str] description: Description of profile
         :param pulumi.Input[_builtins.str] engine_type: Engine Type of database
         :param pulumi.Input[_builtins.str] latest_version: latest version of profile
         :param pulumi.Input[_builtins.str] latest_version_id: latest version id of profile
         :param pulumi.Input[_builtins.str] name: Name of profile
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileNetworkProfileArgs', 'NdbProfileNetworkProfileArgsDict']]]] network_profiles: Network Profile
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileNetworkProfileArgs', 'NdbProfileNetworkProfileArgsDict', 'outputs.NdbProfileNetworkProfile']]]] network_profiles: Network Profile
         :param pulumi.Input[_builtins.str] nx_cluster_id: cluster on which profile created
         :param pulumi.Input[_builtins.str] owner: owner  of profile
         :param pulumi.Input[_builtins.bool] published: Publish for all users
-        :param pulumi.Input[Union['NdbProfileSoftwareProfileArgs', 'NdbProfileSoftwareProfileArgsDict']] software_profile: Software Profile
+        :param pulumi.Input[Union['NdbProfileSoftwareProfileArgs', 'NdbProfileSoftwareProfileArgsDict', 'outputs.NdbProfileSoftwareProfile']] software_profile: Software Profile
         :param pulumi.Input[_builtins.str] status: status of profile
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileVersionArgs', 'NdbProfileVersionArgsDict']]]] versions: versions of associated profiles
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbProfileVersionArgs', 'NdbProfileVersionArgsDict', 'outputs.NdbProfileVersion']]]] versions: versions of associated profiles
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

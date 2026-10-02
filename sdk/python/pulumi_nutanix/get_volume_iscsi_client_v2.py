@@ -154,7 +154,7 @@ class AwaitableGetVolumeIscsiClientV2Result(GetVolumeIscsiClientV2Result):
 
 
 def get_volume_iscsi_client_v2(ext_id: Optional[_builtins.str] = None,
-                               iscsi_initiator_network_ids: Optional[Sequence[Union['GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgs', 'GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgsDict']]] = None,
+                               iscsi_initiator_network_ids: Optional[Sequence[Union['GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgs', 'GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgsDict', 'outputs.GetVolumeIscsiClientV2IscsiInitiatorNetworkIdResult']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVolumeIscsiClientV2Result:
     """
     Fetches the iSCSI client details identified by {extId}.
@@ -178,7 +178,7 @@ def get_volume_iscsi_client_v2(ext_id: Optional[_builtins.str] = None,
 
 
     :param _builtins.str ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
-    :param Sequence[Union['GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgs', 'GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgsDict']] iscsi_initiator_network_ids: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+    :param Sequence[Union['GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgs', 'GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgsDict', 'outputs.GetVolumeIscsiClientV2IscsiInitiatorNetworkIdResult']] iscsi_initiator_network_ids: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
     """
     __args__ = dict()
     __args__['extId'] = ext_id
@@ -198,7 +198,7 @@ def get_volume_iscsi_client_v2(ext_id: Optional[_builtins.str] = None,
         links=pulumi.get(__ret__, 'links'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
 def get_volume_iscsi_client_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                      iscsi_initiator_network_ids: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgs', 'GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgsDict']]]]] = None,
+                                      iscsi_initiator_network_ids: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgs', 'GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgsDict', 'outputs.GetVolumeIscsiClientV2IscsiInitiatorNetworkIdResult']]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeIscsiClientV2Result]:
     """
     Fetches the iSCSI client details identified by {extId}.
@@ -222,7 +222,7 @@ def get_volume_iscsi_client_v2_output(ext_id: pulumi.Input[Optional[_builtins.st
 
 
     :param _builtins.str ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
-    :param Sequence[Union['GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgs', 'GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgsDict']] iscsi_initiator_network_ids: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+    :param Sequence[Union['GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgs', 'GetVolumeIscsiClientV2IscsiInitiatorNetworkIdArgsDict', 'outputs.GetVolumeIscsiClientV2IscsiInitiatorNetworkIdResult']] iscsi_initiator_network_ids: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
     """
     __args__ = dict()
     __args__['extId'] = ext_id

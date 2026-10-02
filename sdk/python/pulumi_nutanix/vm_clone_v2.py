@@ -765,11 +765,11 @@ class VmCloneV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 boot_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2BootConfigArgs', 'VmCloneV2BootConfigArgsDict']]]]] = None,
-                 guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GuestCustomizationArgs', 'VmCloneV2GuestCustomizationArgsDict']]]]] = None,
+                 boot_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2BootConfigArgs', 'VmCloneV2BootConfigArgsDict', 'outputs.VmCloneV2BootConfig']]]]] = None,
+                 guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GuestCustomizationArgs', 'VmCloneV2GuestCustomizationArgsDict', 'outputs.VmCloneV2GuestCustomization']]]]] = None,
                  memory_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2NicArgs', 'VmCloneV2NicArgsDict']]]]] = None,
+                 nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2NicArgs', 'VmCloneV2NicArgsDict', 'outputs.VmCloneV2Nic']]]]] = None,
                  num_cores_per_socket: pulumi.Input[Optional[_builtins.int]] = None,
                  num_sockets: pulumi.Input[Optional[_builtins.int]] = None,
                  num_threads_per_core: pulumi.Input[Optional[_builtins.int]] = None,
@@ -798,10 +798,10 @@ class VmCloneV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2BootConfigArgs', 'VmCloneV2BootConfigArgsDict']]]] boot_configs: - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2GuestCustomizationArgs', 'VmCloneV2GuestCustomizationArgsDict']]]] guest_customizations: - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2BootConfigArgs', 'VmCloneV2BootConfigArgsDict', 'outputs.VmCloneV2BootConfig']]]] boot_configs: - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2GuestCustomizationArgs', 'VmCloneV2GuestCustomizationArgsDict', 'outputs.VmCloneV2GuestCustomization']]]] guest_customizations: - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
         :param pulumi.Input[_builtins.str] name: - (Optional) The name for the vm.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2NicArgs', 'VmCloneV2NicArgsDict']]]] nics: - (Optional) NICs attached to the VM.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2NicArgs', 'VmCloneV2NicArgsDict', 'outputs.VmCloneV2Nic']]]] nics: - (Optional) NICs attached to the VM.
         :param pulumi.Input[_builtins.int] num_cores_per_socket: - (Optional) Number of cores per socket.
         :param pulumi.Input[_builtins.int] num_sockets: - (Optional) Number of vCPU sockets.
         :param pulumi.Input[_builtins.int] num_threads_per_core: - (Optional) Number of threads per core.
@@ -849,11 +849,11 @@ class VmCloneV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 boot_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2BootConfigArgs', 'VmCloneV2BootConfigArgsDict']]]]] = None,
-                 guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GuestCustomizationArgs', 'VmCloneV2GuestCustomizationArgsDict']]]]] = None,
+                 boot_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2BootConfigArgs', 'VmCloneV2BootConfigArgsDict', 'outputs.VmCloneV2BootConfig']]]]] = None,
+                 guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GuestCustomizationArgs', 'VmCloneV2GuestCustomizationArgsDict', 'outputs.VmCloneV2GuestCustomization']]]]] = None,
                  memory_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2NicArgs', 'VmCloneV2NicArgsDict']]]]] = None,
+                 nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2NicArgs', 'VmCloneV2NicArgsDict', 'outputs.VmCloneV2Nic']]]]] = None,
                  num_cores_per_socket: pulumi.Input[Optional[_builtins.int]] = None,
                  num_sockets: pulumi.Input[Optional[_builtins.int]] = None,
                  num_threads_per_core: pulumi.Input[Optional[_builtins.int]] = None,
@@ -925,23 +925,23 @@ class VmCloneV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            apc_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2ApcConfigArgs', 'VmCloneV2ApcConfigArgsDict']]]]] = None,
+            apc_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2ApcConfigArgs', 'VmCloneV2ApcConfigArgsDict', 'outputs.VmCloneV2ApcConfig']]]]] = None,
             bios_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-            boot_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2BootConfigArgs', 'VmCloneV2BootConfigArgsDict']]]]] = None,
-            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2CategoryArgs', 'VmCloneV2CategoryArgsDict']]]]] = None,
-            cd_roms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2CdRomArgs', 'VmCloneV2CdRomArgsDict']]]]] = None,
-            clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2ClusterArgs', 'VmCloneV2ClusterArgsDict']]]]] = None,
+            boot_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2BootConfigArgs', 'VmCloneV2BootConfigArgsDict', 'outputs.VmCloneV2BootConfig']]]]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2CategoryArgs', 'VmCloneV2CategoryArgsDict', 'outputs.VmCloneV2Category']]]]] = None,
+            cd_roms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2CdRomArgs', 'VmCloneV2CdRomArgsDict', 'outputs.VmCloneV2CdRom']]]]] = None,
+            clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2ClusterArgs', 'VmCloneV2ClusterArgsDict', 'outputs.VmCloneV2Cluster']]]]] = None,
             create_time: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2DiskArgs', 'VmCloneV2DiskArgsDict']]]]] = None,
+            disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2DiskArgs', 'VmCloneV2DiskArgsDict', 'outputs.VmCloneV2Disk']]]]] = None,
             enabled_cpu_features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             generation_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-            gpuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GpusArgs', 'VmCloneV2GpusArgsDict']]]]] = None,
-            guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GuestCustomizationArgs', 'VmCloneV2GuestCustomizationArgsDict']]]]] = None,
-            guest_tools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GuestToolArgs', 'VmCloneV2GuestToolArgsDict']]]]] = None,
+            gpuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GpusArgs', 'VmCloneV2GpusArgsDict', 'outputs.VmCloneV2Gpus']]]]] = None,
+            guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GuestCustomizationArgs', 'VmCloneV2GuestCustomizationArgsDict', 'outputs.VmCloneV2GuestCustomization']]]]] = None,
+            guest_tools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GuestToolArgs', 'VmCloneV2GuestToolArgsDict', 'outputs.VmCloneV2GuestTool']]]]] = None,
             hardware_clock_timezone: pulumi.Input[Optional[_builtins.str]] = None,
-            hosts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2HostArgs', 'VmCloneV2HostArgsDict']]]]] = None,
+            hosts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2HostArgs', 'VmCloneV2HostArgsDict', 'outputs.VmCloneV2Host']]]]] = None,
             is_agent_vm: pulumi.Input[Optional[_builtins.bool]] = None,
             is_branding_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_cpu_hotplug_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -951,26 +951,26 @@ class VmCloneV2(pulumi.CustomResource):
             is_scsi_controller_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_vcpu_hard_pinning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_vga_console_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2LinkArgs', 'VmCloneV2LinkArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2LinkArgs', 'VmCloneV2LinkArgsDict', 'outputs.VmCloneV2Link']]]]] = None,
             machine_type: pulumi.Input[Optional[_builtins.str]] = None,
             memory_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2NicArgs', 'VmCloneV2NicArgsDict']]]]] = None,
+            nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2NicArgs', 'VmCloneV2NicArgsDict', 'outputs.VmCloneV2Nic']]]]] = None,
             num_cores_per_socket: pulumi.Input[Optional[_builtins.int]] = None,
             num_numa_nodes: pulumi.Input[Optional[_builtins.int]] = None,
             num_sockets: pulumi.Input[Optional[_builtins.int]] = None,
             num_threads_per_core: pulumi.Input[Optional[_builtins.int]] = None,
-            ownership_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2OwnershipInfoArgs', 'VmCloneV2OwnershipInfoArgsDict']]]]] = None,
+            ownership_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2OwnershipInfoArgs', 'VmCloneV2OwnershipInfoArgsDict', 'outputs.VmCloneV2OwnershipInfo']]]]] = None,
             power_state: pulumi.Input[Optional[_builtins.str]] = None,
-            protection_policy_states: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2ProtectionPolicyStateArgs', 'VmCloneV2ProtectionPolicyStateArgsDict']]]]] = None,
+            protection_policy_states: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2ProtectionPolicyStateArgs', 'VmCloneV2ProtectionPolicyStateArgsDict', 'outputs.VmCloneV2ProtectionPolicyState']]]]] = None,
             protection_type: pulumi.Input[Optional[_builtins.str]] = None,
-            serial_ports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2SerialPortArgs', 'VmCloneV2SerialPortArgsDict']]]]] = None,
-            sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2SourceArgs', 'VmCloneV2SourceArgsDict']]]]] = None,
-            storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2StorageConfigArgs', 'VmCloneV2StorageConfigArgsDict']]]]] = None,
+            serial_ports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2SerialPortArgs', 'VmCloneV2SerialPortArgsDict', 'outputs.VmCloneV2SerialPort']]]]] = None,
+            sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2SourceArgs', 'VmCloneV2SourceArgsDict', 'outputs.VmCloneV2Source']]]]] = None,
+            storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2StorageConfigArgs', 'VmCloneV2StorageConfigArgsDict', 'outputs.VmCloneV2StorageConfig']]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             update_time: pulumi.Input[Optional[_builtins.str]] = None,
             vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            vtpm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2VtpmConfigArgs', 'VmCloneV2VtpmConfigArgsDict']]]]] = None) -> 'VmCloneV2':
+            vtpm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2VtpmConfigArgs', 'VmCloneV2VtpmConfigArgsDict', 'outputs.VmCloneV2VtpmConfig']]]]] = None) -> 'VmCloneV2':
         """
         Get an existing VmCloneV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -978,10 +978,10 @@ class VmCloneV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2BootConfigArgs', 'VmCloneV2BootConfigArgsDict']]]] boot_configs: - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2GuestCustomizationArgs', 'VmCloneV2GuestCustomizationArgsDict']]]] guest_customizations: - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2BootConfigArgs', 'VmCloneV2BootConfigArgsDict', 'outputs.VmCloneV2BootConfig']]]] boot_configs: - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2GuestCustomizationArgs', 'VmCloneV2GuestCustomizationArgsDict', 'outputs.VmCloneV2GuestCustomization']]]] guest_customizations: - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
         :param pulumi.Input[_builtins.str] name: - (Optional) The name for the vm.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2NicArgs', 'VmCloneV2NicArgsDict']]]] nics: - (Optional) NICs attached to the VM.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmCloneV2NicArgs', 'VmCloneV2NicArgsDict', 'outputs.VmCloneV2Nic']]]] nics: - (Optional) NICs attached to the VM.
         :param pulumi.Input[_builtins.int] num_cores_per_socket: - (Optional) Number of cores per socket.
         :param pulumi.Input[_builtins.int] num_sockets: - (Optional) Number of vCPU sockets.
         :param pulumi.Input[_builtins.int] num_threads_per_core: - (Optional) Number of threads per core.

@@ -281,12 +281,12 @@ class Role(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict']]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict', 'outputs.RoleCategory']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 owner_reference: pulumi.Input[Optional[Union['RoleOwnerReferenceArgs', 'RoleOwnerReferenceArgsDict']]] = None,
-                 permission_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RolePermissionReferenceListArgs', 'RolePermissionReferenceListArgsDict']]]]] = None,
-                 project_reference: pulumi.Input[Optional[Union['RoleProjectReferenceArgs', 'RoleProjectReferenceArgsDict']]] = None,
+                 owner_reference: pulumi.Input[Optional[Union['RoleOwnerReferenceArgs', 'RoleOwnerReferenceArgsDict', 'outputs.RoleOwnerReference']]] = None,
+                 permission_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RolePermissionReferenceListArgs', 'RolePermissionReferenceListArgsDict', 'outputs.RolePermissionReferenceList']]]]] = None,
+                 project_reference: pulumi.Input[Optional[Union['RoleProjectReferenceArgs', 'RoleProjectReferenceArgsDict', 'outputs.RoleProjectReference']]] = None,
                  __props__=None):
         """
         Provides a resource to create a role based on the input parameters.
@@ -321,12 +321,12 @@ class Role(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict']]]] categories: - (Optional) Categories for the role.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict', 'outputs.RoleCategory']]]] categories: - (Optional) Categories for the role.
         :param pulumi.Input[_builtins.str] description: - (Optional) The description of the role.
         :param pulumi.Input[_builtins.str] name: - (Optional) Name of the role.
-        :param pulumi.Input[Union['RoleOwnerReferenceArgs', 'RoleOwnerReferenceArgsDict']] owner_reference: - (Optional) The reference to a user.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RolePermissionReferenceListArgs', 'RolePermissionReferenceListArgsDict']]]] permission_reference_lists: - (Required) List of permission references.
-        :param pulumi.Input[Union['RoleProjectReferenceArgs', 'RoleProjectReferenceArgsDict']] project_reference: - (Optional) The reference to a project.
+        :param pulumi.Input[Union['RoleOwnerReferenceArgs', 'RoleOwnerReferenceArgsDict', 'outputs.RoleOwnerReference']] owner_reference: - (Optional) The reference to a user.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RolePermissionReferenceListArgs', 'RolePermissionReferenceListArgsDict', 'outputs.RolePermissionReferenceList']]]] permission_reference_lists: - (Required) List of permission references.
+        :param pulumi.Input[Union['RoleProjectReferenceArgs', 'RoleProjectReferenceArgsDict', 'outputs.RoleProjectReference']] project_reference: - (Optional) The reference to a project.
         """
         ...
     @overload
@@ -380,12 +380,12 @@ class Role(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict']]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict', 'outputs.RoleCategory']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 owner_reference: pulumi.Input[Optional[Union['RoleOwnerReferenceArgs', 'RoleOwnerReferenceArgsDict']]] = None,
-                 permission_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RolePermissionReferenceListArgs', 'RolePermissionReferenceListArgsDict']]]]] = None,
-                 project_reference: pulumi.Input[Optional[Union['RoleProjectReferenceArgs', 'RoleProjectReferenceArgsDict']]] = None,
+                 owner_reference: pulumi.Input[Optional[Union['RoleOwnerReferenceArgs', 'RoleOwnerReferenceArgsDict', 'outputs.RoleOwnerReference']]] = None,
+                 permission_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RolePermissionReferenceListArgs', 'RolePermissionReferenceListArgsDict', 'outputs.RolePermissionReferenceList']]]]] = None,
+                 project_reference: pulumi.Input[Optional[Union['RoleProjectReferenceArgs', 'RoleProjectReferenceArgsDict', 'outputs.RoleProjectReference']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -417,13 +417,13 @@ class Role(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             api_version: pulumi.Input[Optional[_builtins.str]] = None,
-            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict']]]]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict', 'outputs.RoleCategory']]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            owner_reference: pulumi.Input[Optional[Union['RoleOwnerReferenceArgs', 'RoleOwnerReferenceArgsDict']]] = None,
-            permission_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RolePermissionReferenceListArgs', 'RolePermissionReferenceListArgsDict']]]]] = None,
-            project_reference: pulumi.Input[Optional[Union['RoleProjectReferenceArgs', 'RoleProjectReferenceArgsDict']]] = None,
+            owner_reference: pulumi.Input[Optional[Union['RoleOwnerReferenceArgs', 'RoleOwnerReferenceArgsDict', 'outputs.RoleOwnerReference']]] = None,
+            permission_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RolePermissionReferenceListArgs', 'RolePermissionReferenceListArgsDict', 'outputs.RolePermissionReferenceList']]]]] = None,
+            project_reference: pulumi.Input[Optional[Union['RoleProjectReferenceArgs', 'RoleProjectReferenceArgsDict', 'outputs.RoleProjectReference']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None) -> 'Role':
         """
         Get an existing Role resource's state with the given name, id, and optional extra
@@ -433,13 +433,13 @@ class Role(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict']]]] categories: - (Optional) Categories for the role.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict', 'outputs.RoleCategory']]]] categories: - (Optional) Categories for the role.
         :param pulumi.Input[_builtins.str] description: - (Optional) The description of the role.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: - The role kind metadata.
         :param pulumi.Input[_builtins.str] name: - (Optional) Name of the role.
-        :param pulumi.Input[Union['RoleOwnerReferenceArgs', 'RoleOwnerReferenceArgsDict']] owner_reference: - (Optional) The reference to a user.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RolePermissionReferenceListArgs', 'RolePermissionReferenceListArgsDict']]]] permission_reference_lists: - (Required) List of permission references.
-        :param pulumi.Input[Union['RoleProjectReferenceArgs', 'RoleProjectReferenceArgsDict']] project_reference: - (Optional) The reference to a project.
+        :param pulumi.Input[Union['RoleOwnerReferenceArgs', 'RoleOwnerReferenceArgsDict', 'outputs.RoleOwnerReference']] owner_reference: - (Optional) The reference to a user.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RolePermissionReferenceListArgs', 'RolePermissionReferenceListArgsDict', 'outputs.RolePermissionReferenceList']]]] permission_reference_lists: - (Required) List of permission references.
+        :param pulumi.Input[Union['RoleProjectReferenceArgs', 'RoleProjectReferenceArgsDict', 'outputs.RoleProjectReference']] project_reference: - (Optional) The reference to a project.
         :param pulumi.Input[_builtins.str] state: - The state of the role.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
