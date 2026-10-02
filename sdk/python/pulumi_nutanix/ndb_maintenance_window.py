@@ -478,7 +478,7 @@ class NdbMaintenanceWindow(pulumi.CustomResource):
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  recurrence: pulumi.Input[Optional[_builtins.str]] = None,
                  start_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowTagArgs', 'NdbMaintenanceWindowTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowTagArgs', 'NdbMaintenanceWindowTagArgsDict', 'outputs.NdbMaintenanceWindowTag']]]]] = None,
                  timezone: pulumi.Input[Optional[_builtins.str]] = None,
                  week_of_month: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
@@ -529,7 +529,7 @@ class NdbMaintenanceWindow(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: Name for the maintenance window.
         :param pulumi.Input[_builtins.str] recurrence: Supported values [ MONTHLY, WEEKLY ]
         :param pulumi.Input[_builtins.str] start_time: start time for maintenance window to trigger
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceWindowTagArgs', 'NdbMaintenanceWindowTagArgsDict']]]] tags: tags of maintenance window
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceWindowTagArgs', 'NdbMaintenanceWindowTagArgsDict', 'outputs.NdbMaintenanceWindowTag']]]] tags: tags of maintenance window
         :param pulumi.Input[_builtins.str] timezone: timezone . Default is Asia/Calcutta .
         :param pulumi.Input[_builtins.int] week_of_month: week of the month. Supports [1, 2, 3, 4] .
         """
@@ -599,7 +599,7 @@ class NdbMaintenanceWindow(pulumi.CustomResource):
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  recurrence: pulumi.Input[Optional[_builtins.str]] = None,
                  start_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowTagArgs', 'NdbMaintenanceWindowTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowTagArgs', 'NdbMaintenanceWindowTagArgsDict', 'outputs.NdbMaintenanceWindowTag']]]]] = None,
                  timezone: pulumi.Input[Optional[_builtins.str]] = None,
                  week_of_month: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
@@ -649,16 +649,16 @@ class NdbMaintenanceWindow(pulumi.CustomResource):
             day_of_week: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             duration: pulumi.Input[Optional[_builtins.int]] = None,
-            entity_task_assocs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowEntityTaskAssocArgs', 'NdbMaintenanceWindowEntityTaskAssocArgsDict']]]]] = None,
+            entity_task_assocs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowEntityTaskAssocArgs', 'NdbMaintenanceWindowEntityTaskAssocArgsDict', 'outputs.NdbMaintenanceWindowEntityTaskAssoc']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             next_run_time: pulumi.Input[Optional[_builtins.str]] = None,
             owner_id: pulumi.Input[Optional[_builtins.str]] = None,
-            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowPropertyArgs', 'NdbMaintenanceWindowPropertyArgsDict']]]]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowPropertyArgs', 'NdbMaintenanceWindowPropertyArgsDict', 'outputs.NdbMaintenanceWindowProperty']]]]] = None,
             recurrence: pulumi.Input[Optional[_builtins.str]] = None,
-            schedules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowScheduleArgs', 'NdbMaintenanceWindowScheduleArgsDict']]]]] = None,
+            schedules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowScheduleArgs', 'NdbMaintenanceWindowScheduleArgsDict', 'outputs.NdbMaintenanceWindowSchedule']]]]] = None,
             start_time: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowTagArgs', 'NdbMaintenanceWindowTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowTagArgs', 'NdbMaintenanceWindowTagArgsDict', 'outputs.NdbMaintenanceWindowTag']]]]] = None,
             timezone: pulumi.Input[Optional[_builtins.str]] = None,
             week_of_month: pulumi.Input[Optional[_builtins.int]] = None) -> 'NdbMaintenanceWindow':
         """
@@ -674,16 +674,16 @@ class NdbMaintenanceWindow(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] day_of_week: Day of the week to trigger maintenance window. Supports [ MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
         :param pulumi.Input[_builtins.str] description: Description for maintenance window
         :param pulumi.Input[_builtins.int] duration: duration in hours. Default is 2
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceWindowEntityTaskAssocArgs', 'NdbMaintenanceWindowEntityTaskAssocArgsDict']]]] entity_task_assocs: entity task association for maintenance window
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceWindowEntityTaskAssocArgs', 'NdbMaintenanceWindowEntityTaskAssocArgsDict', 'outputs.NdbMaintenanceWindowEntityTaskAssoc']]]] entity_task_assocs: entity task association for maintenance window
         :param pulumi.Input[_builtins.str] name: Name for the maintenance window.
         :param pulumi.Input[_builtins.str] next_run_time: next run time for maintenance window to trigger
         :param pulumi.Input[_builtins.str] owner_id: owner id of maintenance window
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceWindowPropertyArgs', 'NdbMaintenanceWindowPropertyArgsDict']]]] properties: properties of maintenance window
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceWindowPropertyArgs', 'NdbMaintenanceWindowPropertyArgsDict', 'outputs.NdbMaintenanceWindowProperty']]]] properties: properties of maintenance window
         :param pulumi.Input[_builtins.str] recurrence: Supported values [ MONTHLY, WEEKLY ]
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceWindowScheduleArgs', 'NdbMaintenanceWindowScheduleArgsDict']]]] schedules: schedule of maintenance window
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceWindowScheduleArgs', 'NdbMaintenanceWindowScheduleArgsDict', 'outputs.NdbMaintenanceWindowSchedule']]]] schedules: schedule of maintenance window
         :param pulumi.Input[_builtins.str] start_time: start time for maintenance window to trigger
         :param pulumi.Input[_builtins.str] status: status of maintennace window
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceWindowTagArgs', 'NdbMaintenanceWindowTagArgsDict']]]] tags: tags of maintenance window
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceWindowTagArgs', 'NdbMaintenanceWindowTagArgsDict', 'outputs.NdbMaintenanceWindowTag']]]] tags: tags of maintenance window
         :param pulumi.Input[_builtins.str] timezone: timezone . Default is Asia/Calcutta .
         :param pulumi.Input[_builtins.int] week_of_month: week of the month. Supports [1, 2, 3, 4] .
         """

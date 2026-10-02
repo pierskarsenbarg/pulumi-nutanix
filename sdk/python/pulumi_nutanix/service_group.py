@@ -155,7 +155,7 @@ class ServiceGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 service_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict']]]]] = None,
+                 service_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict', 'outputs.ServiceGroupServiceList']]]]] = None,
                  __props__=None):
         """
         Provides a resource to create a service group based on the input parameters.
@@ -191,7 +191,7 @@ class ServiceGroup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: - (Optional) Description of the service group
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the service group
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict']]]] service_lists: - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict', 'outputs.ServiceGroupServiceList']]]] service_lists: - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
         """
         ...
     @overload
@@ -246,7 +246,7 @@ class ServiceGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 service_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict']]]]] = None,
+                 service_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict', 'outputs.ServiceGroupServiceList']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -274,7 +274,7 @@ class ServiceGroup(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            service_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict']]]]] = None,
+            service_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict', 'outputs.ServiceGroupServiceList']]]]] = None,
             system_defined: pulumi.Input[Optional[_builtins.bool]] = None) -> 'ServiceGroup':
         """
         Get an existing ServiceGroup resource's state with the given name, id, and optional extra
@@ -285,7 +285,7 @@ class ServiceGroup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: - (Optional) Description of the service group
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the service group
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict']]]] service_lists: - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict', 'outputs.ServiceGroupServiceList']]]] service_lists: - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
         :param pulumi.Input[_builtins.bool] system_defined: - (ReadOnly) boolean value to denote if the service group is system defined
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

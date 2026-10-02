@@ -197,7 +197,7 @@ class FoundationIpmiConfig(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 blocks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict']]]]] = None,
+                 blocks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict', 'outputs.FoundationIpmiConfigBlock']]]]] = None,
                  ipmi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
                  ipmi_netmask: pulumi.Input[Optional[_builtins.str]] = None,
                  ipmi_password: pulumi.Input[Optional[_builtins.str]] = None,
@@ -250,7 +250,7 @@ class FoundationIpmiConfig(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict']]]] blocks: - (Required) List of blocks.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict', 'outputs.FoundationIpmiConfigBlock']]]] blocks: - (Required) List of blocks.
         :param pulumi.Input[_builtins.str] ipmi_gateway: - (Required) IPMI gateway.
         :param pulumi.Input[_builtins.str] ipmi_netmask: - (Required) IPMI netmask.
         :param pulumi.Input[_builtins.str] ipmi_password: - (Required) IPMI password.
@@ -322,7 +322,7 @@ class FoundationIpmiConfig(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 blocks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict']]]]] = None,
+                 blocks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict', 'outputs.FoundationIpmiConfigBlock']]]]] = None,
                  ipmi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
                  ipmi_netmask: pulumi.Input[Optional[_builtins.str]] = None,
                  ipmi_password: pulumi.Input[Optional[_builtins.str]] = None,
@@ -361,7 +361,7 @@ class FoundationIpmiConfig(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            blocks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict']]]]] = None,
+            blocks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict', 'outputs.FoundationIpmiConfigBlock']]]]] = None,
             ipmi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
             ipmi_netmask: pulumi.Input[Optional[_builtins.str]] = None,
             ipmi_password: pulumi.Input[Optional[_builtins.str]] = None,
@@ -373,7 +373,7 @@ class FoundationIpmiConfig(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict']]]] blocks: - (Required) List of blocks.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict', 'outputs.FoundationIpmiConfigBlock']]]] blocks: - (Required) List of blocks.
         :param pulumi.Input[_builtins.str] ipmi_gateway: - (Required) IPMI gateway.
         :param pulumi.Input[_builtins.str] ipmi_netmask: - (Required) IPMI netmask.
         :param pulumi.Input[_builtins.str] ipmi_password: - (Required) IPMI password.

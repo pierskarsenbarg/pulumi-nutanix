@@ -157,7 +157,7 @@ class AwaitableGetAddressGroupV2Result(GetAddressGroupV2Result):
 
 
 def get_address_group_v2(ext_id: Optional[_builtins.str] = None,
-                         ipv4_addresses: Optional[Sequence[Union['GetAddressGroupV2Ipv4AddressArgs', 'GetAddressGroupV2Ipv4AddressArgsDict']]] = None,
+                         ipv4_addresses: Optional[Sequence[Union['GetAddressGroupV2Ipv4AddressArgs', 'GetAddressGroupV2Ipv4AddressArgsDict', 'outputs.GetAddressGroupV2Ipv4AddressResult']]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAddressGroupV2Result:
     """
     Get an Address Group by ExtID
@@ -175,7 +175,7 @@ def get_address_group_v2(ext_id: Optional[_builtins.str] = None,
 
 
     :param _builtins.str ext_id: Address group UUID.
-    :param Sequence[Union['GetAddressGroupV2Ipv4AddressArgs', 'GetAddressGroupV2Ipv4AddressArgsDict']] ipv4_addresses: List of CIDR blocks in the Address Group.
+    :param Sequence[Union['GetAddressGroupV2Ipv4AddressArgs', 'GetAddressGroupV2Ipv4AddressArgsDict', 'outputs.GetAddressGroupV2Ipv4AddressResult']] ipv4_addresses: List of CIDR blocks in the Address Group.
     """
     __args__ = dict()
     __args__['extId'] = ext_id
@@ -195,7 +195,7 @@ def get_address_group_v2(ext_id: Optional[_builtins.str] = None,
         policy_references=pulumi.get(__ret__, 'policy_references'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
 def get_address_group_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                                ipv4_addresses: pulumi.Input[Optional[Optional[Sequence[Union['GetAddressGroupV2Ipv4AddressArgs', 'GetAddressGroupV2Ipv4AddressArgsDict']]]]] = None,
+                                ipv4_addresses: pulumi.Input[Optional[Optional[Sequence[Union['GetAddressGroupV2Ipv4AddressArgs', 'GetAddressGroupV2Ipv4AddressArgsDict', 'outputs.GetAddressGroupV2Ipv4AddressResult']]]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAddressGroupV2Result]:
     """
     Get an Address Group by ExtID
@@ -213,7 +213,7 @@ def get_address_group_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = 
 
 
     :param _builtins.str ext_id: Address group UUID.
-    :param Sequence[Union['GetAddressGroupV2Ipv4AddressArgs', 'GetAddressGroupV2Ipv4AddressArgsDict']] ipv4_addresses: List of CIDR blocks in the Address Group.
+    :param Sequence[Union['GetAddressGroupV2Ipv4AddressArgs', 'GetAddressGroupV2Ipv4AddressArgsDict', 'outputs.GetAddressGroupV2Ipv4AddressResult']] ipv4_addresses: List of CIDR blocks in the Address Group.
     """
     __args__ = dict()
     __args__['extId'] = ext_id

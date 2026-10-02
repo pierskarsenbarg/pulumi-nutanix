@@ -138,7 +138,7 @@ class VmShutdownActionV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 guest_power_state_transition_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmShutdownActionV2GuestPowerStateTransitionConfigArgs', 'VmShutdownActionV2GuestPowerStateTransitionConfigArgsDict']]]]] = None,
+                 guest_power_state_transition_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmShutdownActionV2GuestPowerStateTransitionConfigArgs', 'VmShutdownActionV2GuestPowerStateTransitionConfigArgsDict', 'outputs.VmShutdownActionV2GuestPowerStateTransitionConfig']]]]] = None,
                  __props__=None):
         """
         Collaborative reboot or shutdown of a Virtual Machine through the ACPI support in the operating system. Also, Collaborative reboot or shutdown of a Virtual Machine, requesting Nutanix Guest Tools to trigger a reboot or shutdown from within the VM.
@@ -148,7 +148,7 @@ class VmShutdownActionV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: It supports "shutdown", <span pulumi-lang-nodejs=""guestShutdown"" pulumi-lang-dotnet=""GuestShutdown"" pulumi-lang-go=""guestShutdown"" pulumi-lang-python=""guest_shutdown"" pulumi-lang-yaml=""guestShutdown"" pulumi-lang-java=""guestShutdown"" pulumi-lang-hcl=""guest_shutdown"">"guestShutdown"</span>, "reboot", <span pulumi-lang-nodejs=""guestReboot"" pulumi-lang-dotnet=""GuestReboot"" pulumi-lang-go=""guestReboot"" pulumi-lang-python=""guest_reboot"" pulumi-lang-yaml=""guestReboot"" pulumi-lang-java=""guestReboot"" pulumi-lang-hcl=""guest_reboot"">"guestReboot"</span>.
         :param pulumi.Input[_builtins.str] ext_id: The globally unique identifier of a VM. It should be of type UUID.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmShutdownActionV2GuestPowerStateTransitionConfigArgs', 'VmShutdownActionV2GuestPowerStateTransitionConfigArgsDict']]]] guest_power_state_transition_configs: Additional configuration for Nutanix Gust Tools power state transition. It should be only used with <span pulumi-lang-nodejs="`guestShutdown`" pulumi-lang-dotnet="`GuestShutdown`" pulumi-lang-go="`guestShutdown`" pulumi-lang-python="`guest_shutdown`" pulumi-lang-yaml="`guestShutdown`" pulumi-lang-java="`guestShutdown`" pulumi-lang-hcl="`guest_shutdown`">`guestShutdown`</span> or <span pulumi-lang-nodejs="`guestReboot`" pulumi-lang-dotnet="`GuestReboot`" pulumi-lang-go="`guestReboot`" pulumi-lang-python="`guest_reboot`" pulumi-lang-yaml="`guestReboot`" pulumi-lang-java="`guestReboot`" pulumi-lang-hcl="`guest_reboot`">`guestReboot`</span>.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmShutdownActionV2GuestPowerStateTransitionConfigArgs', 'VmShutdownActionV2GuestPowerStateTransitionConfigArgsDict', 'outputs.VmShutdownActionV2GuestPowerStateTransitionConfig']]]] guest_power_state_transition_configs: Additional configuration for Nutanix Gust Tools power state transition. It should be only used with <span pulumi-lang-nodejs="`guestShutdown`" pulumi-lang-dotnet="`GuestShutdown`" pulumi-lang-go="`guestShutdown`" pulumi-lang-python="`guest_shutdown`" pulumi-lang-yaml="`guestShutdown`" pulumi-lang-java="`guestShutdown`" pulumi-lang-hcl="`guest_shutdown`">`guestShutdown`</span> or <span pulumi-lang-nodejs="`guestReboot`" pulumi-lang-dotnet="`GuestReboot`" pulumi-lang-go="`guestReboot`" pulumi-lang-python="`guest_reboot`" pulumi-lang-yaml="`guestReboot`" pulumi-lang-java="`guestReboot`" pulumi-lang-hcl="`guest_reboot`">`guestReboot`</span>.
         """
         ...
     @overload
@@ -177,7 +177,7 @@ class VmShutdownActionV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 guest_power_state_transition_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmShutdownActionV2GuestPowerStateTransitionConfigArgs', 'VmShutdownActionV2GuestPowerStateTransitionConfigArgsDict']]]]] = None,
+                 guest_power_state_transition_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmShutdownActionV2GuestPowerStateTransitionConfigArgs', 'VmShutdownActionV2GuestPowerStateTransitionConfigArgsDict', 'outputs.VmShutdownActionV2GuestPowerStateTransitionConfig']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -206,7 +206,7 @@ class VmShutdownActionV2(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             action: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            guest_power_state_transition_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmShutdownActionV2GuestPowerStateTransitionConfigArgs', 'VmShutdownActionV2GuestPowerStateTransitionConfigArgsDict']]]]] = None) -> 'VmShutdownActionV2':
+            guest_power_state_transition_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmShutdownActionV2GuestPowerStateTransitionConfigArgs', 'VmShutdownActionV2GuestPowerStateTransitionConfigArgsDict', 'outputs.VmShutdownActionV2GuestPowerStateTransitionConfig']]]]] = None) -> 'VmShutdownActionV2':
         """
         Get an existing VmShutdownActionV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -216,7 +216,7 @@ class VmShutdownActionV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: It supports "shutdown", <span pulumi-lang-nodejs=""guestShutdown"" pulumi-lang-dotnet=""GuestShutdown"" pulumi-lang-go=""guestShutdown"" pulumi-lang-python=""guest_shutdown"" pulumi-lang-yaml=""guestShutdown"" pulumi-lang-java=""guestShutdown"" pulumi-lang-hcl=""guest_shutdown"">"guestShutdown"</span>, "reboot", <span pulumi-lang-nodejs=""guestReboot"" pulumi-lang-dotnet=""GuestReboot"" pulumi-lang-go=""guestReboot"" pulumi-lang-python=""guest_reboot"" pulumi-lang-yaml=""guestReboot"" pulumi-lang-java=""guestReboot"" pulumi-lang-hcl=""guest_reboot"">"guestReboot"</span>.
         :param pulumi.Input[_builtins.str] ext_id: The globally unique identifier of a VM. It should be of type UUID.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmShutdownActionV2GuestPowerStateTransitionConfigArgs', 'VmShutdownActionV2GuestPowerStateTransitionConfigArgsDict']]]] guest_power_state_transition_configs: Additional configuration for Nutanix Gust Tools power state transition. It should be only used with <span pulumi-lang-nodejs="`guestShutdown`" pulumi-lang-dotnet="`GuestShutdown`" pulumi-lang-go="`guestShutdown`" pulumi-lang-python="`guest_shutdown`" pulumi-lang-yaml="`guestShutdown`" pulumi-lang-java="`guestShutdown`" pulumi-lang-hcl="`guest_shutdown`">`guestShutdown`</span> or <span pulumi-lang-nodejs="`guestReboot`" pulumi-lang-dotnet="`GuestReboot`" pulumi-lang-go="`guestReboot`" pulumi-lang-python="`guest_reboot`" pulumi-lang-yaml="`guestReboot`" pulumi-lang-java="`guestReboot`" pulumi-lang-hcl="`guest_reboot`">`guestReboot`</span>.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmShutdownActionV2GuestPowerStateTransitionConfigArgs', 'VmShutdownActionV2GuestPowerStateTransitionConfigArgsDict', 'outputs.VmShutdownActionV2GuestPowerStateTransitionConfig']]]] guest_power_state_transition_configs: Additional configuration for Nutanix Gust Tools power state transition. It should be only used with <span pulumi-lang-nodejs="`guestShutdown`" pulumi-lang-dotnet="`GuestShutdown`" pulumi-lang-go="`guestShutdown`" pulumi-lang-python="`guest_shutdown`" pulumi-lang-yaml="`guestShutdown`" pulumi-lang-java="`guestShutdown`" pulumi-lang-hcl="`guest_shutdown`">`guestShutdown`</span> or <span pulumi-lang-nodejs="`guestReboot`" pulumi-lang-dotnet="`GuestReboot`" pulumi-lang-go="`guestReboot`" pulumi-lang-python="`guest_reboot`" pulumi-lang-yaml="`guestReboot`" pulumi-lang-java="`guestReboot`" pulumi-lang-hcl="`guest_reboot`">`guestReboot`</span>.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

@@ -816,7 +816,7 @@ class NdbRegisterDbserver(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverCredentialArgs', 'NdbRegisterDbserverCredentialArgsDict']]]]] = None,
+                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverCredentialArgs', 'NdbRegisterDbserverCredentialArgsDict', 'outputs.NdbRegisterDbserverCredential']]]]] = None,
                  database_type: pulumi.Input[Optional[_builtins.str]] = None,
                  delete: pulumi.Input[Optional[_builtins.bool]] = None,
                  delete_vgs: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -826,11 +826,11 @@ class NdbRegisterDbserver(pulumi.CustomResource):
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  nxcluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  password: pulumi.Input[Optional[_builtins.str]] = None,
-                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverPostgresDatabaseArgs', 'NdbRegisterDbserverPostgresDatabaseArgsDict']]]]] = None,
+                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverPostgresDatabaseArgs', 'NdbRegisterDbserverPostgresDatabaseArgsDict', 'outputs.NdbRegisterDbserverPostgresDatabase']]]]] = None,
                  remove: pulumi.Input[Optional[_builtins.bool]] = None,
                  soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
                  ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverTagArgs', 'NdbRegisterDbserverTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverTagArgs', 'NdbRegisterDbserverTagArgsDict', 'outputs.NdbRegisterDbserverTag']]]]] = None,
                  update_name_description_in_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
                  username: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_ip: pulumi.Input[Optional[_builtins.str]] = None,
@@ -851,7 +851,7 @@ class NdbRegisterDbserver(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: Name of db server vm. Should be used in Update Method only.
         :param pulumi.Input[_builtins.str] nxcluster_id: cluster on which you want to register the database server VM.
         :param pulumi.Input[_builtins.str] password: password of the NDB drive user account. Conflicts with ssh_key.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDbserverPostgresDatabaseArgs', 'NdbRegisterDbserverPostgresDatabaseArgsDict']]]] postgres_databases: postgres info for dbserver
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDbserverPostgresDatabaseArgs', 'NdbRegisterDbserverPostgresDatabaseArgsDict', 'outputs.NdbRegisterDbserverPostgresDatabase']]]] postgres_databases: postgres info for dbserver
         :param pulumi.Input[_builtins.bool] remove: - (Optional) Unregister the database from NDB. Default value is true
         :param pulumi.Input[_builtins.bool] soft_remove: - (Optional) Soft remove. Default will be false
         :param pulumi.Input[_builtins.str] ssh_key: the private key. Conflicts with password.
@@ -885,7 +885,7 @@ class NdbRegisterDbserver(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverCredentialArgs', 'NdbRegisterDbserverCredentialArgsDict']]]]] = None,
+                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverCredentialArgs', 'NdbRegisterDbserverCredentialArgsDict', 'outputs.NdbRegisterDbserverCredential']]]]] = None,
                  database_type: pulumi.Input[Optional[_builtins.str]] = None,
                  delete: pulumi.Input[Optional[_builtins.bool]] = None,
                  delete_vgs: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -895,11 +895,11 @@ class NdbRegisterDbserver(pulumi.CustomResource):
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  nxcluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  password: pulumi.Input[Optional[_builtins.str]] = None,
-                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverPostgresDatabaseArgs', 'NdbRegisterDbserverPostgresDatabaseArgsDict']]]]] = None,
+                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverPostgresDatabaseArgs', 'NdbRegisterDbserverPostgresDatabaseArgsDict', 'outputs.NdbRegisterDbserverPostgresDatabase']]]]] = None,
                  remove: pulumi.Input[Optional[_builtins.bool]] = None,
                  soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
                  ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverTagArgs', 'NdbRegisterDbserverTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverTagArgs', 'NdbRegisterDbserverTagArgsDict', 'outputs.NdbRegisterDbserverTag']]]]] = None,
                  update_name_description_in_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
                  username: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_ip: pulumi.Input[Optional[_builtins.str]] = None,
@@ -964,7 +964,7 @@ class NdbRegisterDbserver(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             client_id: pulumi.Input[Optional[_builtins.str]] = None,
-            credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverCredentialArgs', 'NdbRegisterDbserverCredentialArgsDict']]]]] = None,
+            credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverCredentialArgs', 'NdbRegisterDbserverCredentialArgsDict', 'outputs.NdbRegisterDbserverCredential']]]]] = None,
             database_type: pulumi.Input[Optional[_builtins.str]] = None,
             dbserver_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
             delete: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -982,13 +982,13 @@ class NdbRegisterDbserver(pulumi.CustomResource):
             name: pulumi.Input[Optional[_builtins.str]] = None,
             nxcluster_id: pulumi.Input[Optional[_builtins.str]] = None,
             password: pulumi.Input[Optional[_builtins.str]] = None,
-            postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverPostgresDatabaseArgs', 'NdbRegisterDbserverPostgresDatabaseArgsDict']]]]] = None,
-            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverPropertyArgs', 'NdbRegisterDbserverPropertyArgsDict']]]]] = None,
+            postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverPostgresDatabaseArgs', 'NdbRegisterDbserverPostgresDatabaseArgsDict', 'outputs.NdbRegisterDbserverPostgresDatabase']]]]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverPropertyArgs', 'NdbRegisterDbserverPropertyArgsDict', 'outputs.NdbRegisterDbserverProperty']]]]] = None,
             remove: pulumi.Input[Optional[_builtins.bool]] = None,
             soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
             ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverTagArgs', 'NdbRegisterDbserverTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDbserverTagArgs', 'NdbRegisterDbserverTagArgsDict', 'outputs.NdbRegisterDbserverTag']]]]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             update_name_description_in_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
             username: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1013,8 +1013,8 @@ class NdbRegisterDbserver(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: Name of db server vm. Should be used in Update Method only.
         :param pulumi.Input[_builtins.str] nxcluster_id: cluster on which you want to register the database server VM.
         :param pulumi.Input[_builtins.str] password: password of the NDB drive user account. Conflicts with ssh_key.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDbserverPostgresDatabaseArgs', 'NdbRegisterDbserverPostgresDatabaseArgsDict']]]] postgres_databases: postgres info for dbserver
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDbserverPropertyArgs', 'NdbRegisterDbserverPropertyArgsDict']]]] properties: List of all the properties
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDbserverPostgresDatabaseArgs', 'NdbRegisterDbserverPostgresDatabaseArgsDict', 'outputs.NdbRegisterDbserverPostgresDatabase']]]] postgres_databases: postgres info for dbserver
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDbserverPropertyArgs', 'NdbRegisterDbserverPropertyArgsDict', 'outputs.NdbRegisterDbserverProperty']]]] properties: List of all the properties
         :param pulumi.Input[_builtins.bool] remove: - (Optional) Unregister the database from NDB. Default value is true
         :param pulumi.Input[_builtins.bool] soft_remove: - (Optional) Soft remove. Default will be false
         :param pulumi.Input[_builtins.str] ssh_key: the private key. Conflicts with password.

@@ -843,23 +843,23 @@ class NdbDbserverVm(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compute_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmCredentialArgs', 'NdbDbserverVmCredentialArgsDict']]]]] = None,
+                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmCredentialArgs', 'NdbDbserverVmCredentialArgsDict', 'outputs.NdbDbserverVmCredential']]]]] = None,
                  database_type: pulumi.Input[Optional[_builtins.str]] = None,
                  delete: pulumi.Input[Optional[_builtins.bool]] = None,
                  delete_vgs: pulumi.Input[Optional[_builtins.bool]] = None,
                  delete_vm_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  latest_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
-                 maintenance_tasks: pulumi.Input[Optional[Union['NdbDbserverVmMaintenanceTasksArgs', 'NdbDbserverVmMaintenanceTasksArgsDict']]] = None,
+                 maintenance_tasks: pulumi.Input[Optional[Union['NdbDbserverVmMaintenanceTasksArgs', 'NdbDbserverVmMaintenanceTasksArgsDict', 'outputs.NdbDbserverVmMaintenanceTasks']]] = None,
                  network_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                  nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmPostgresDatabaseArgs', 'NdbDbserverVmPostgresDatabaseArgsDict']]]]] = None,
+                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmPostgresDatabaseArgs', 'NdbDbserverVmPostgresDatabaseArgsDict', 'outputs.NdbDbserverVmPostgresDatabase']]]]] = None,
                  remove: pulumi.Input[Optional[_builtins.bool]] = None,
                  snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
                  soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
                  software_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                  software_profile_version_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmTagArgs', 'NdbDbserverVmTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmTagArgs', 'NdbDbserverVmTagArgsDict', 'outputs.NdbDbserverVmTag']]]]] = None,
                  time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
                  timezone: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_password: pulumi.Input[Optional[_builtins.str]] = None,
@@ -878,9 +878,9 @@ class NdbDbserverVm(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] delete_vgs: - (Optional) Delete volume grous. Default value is true
         :param pulumi.Input[_builtins.bool] delete_vm_snapshots: - (Optional) Delete the vm snapshots. Default is true
         :param pulumi.Input[_builtins.str] description: Type a description for the database server VM.
-        :param pulumi.Input[Union['NdbDbserverVmMaintenanceTasksArgs', 'NdbDbserverVmMaintenanceTasksArgsDict']] maintenance_tasks: maintenance window configured to enable automated patching.
+        :param pulumi.Input[Union['NdbDbserverVmMaintenanceTasksArgs', 'NdbDbserverVmMaintenanceTasksArgsDict', 'outputs.NdbDbserverVmMaintenanceTasks']] maintenance_tasks: maintenance window configured to enable automated patching.
         :param pulumi.Input[_builtins.str] network_profile_id: Network profile id.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDbserverVmPostgresDatabaseArgs', 'NdbDbserverVmPostgresDatabaseArgsDict']]]] postgres_databases: Postgres database server vm
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDbserverVmPostgresDatabaseArgs', 'NdbDbserverVmPostgresDatabaseArgsDict', 'outputs.NdbDbserverVmPostgresDatabase']]]] postgres_databases: Postgres database server vm
         :param pulumi.Input[_builtins.bool] remove: - (Optional) Unregister the database from NDB. Default value is false
         :param pulumi.Input[_builtins.str] snapshot_id: Snapshot id. If not given, it will use latest snapshot to provision db server vm.
         :param pulumi.Input[_builtins.bool] soft_remove: - (Optional) Soft remove. Default will be false
@@ -917,23 +917,23 @@ class NdbDbserverVm(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compute_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmCredentialArgs', 'NdbDbserverVmCredentialArgsDict']]]]] = None,
+                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmCredentialArgs', 'NdbDbserverVmCredentialArgsDict', 'outputs.NdbDbserverVmCredential']]]]] = None,
                  database_type: pulumi.Input[Optional[_builtins.str]] = None,
                  delete: pulumi.Input[Optional[_builtins.bool]] = None,
                  delete_vgs: pulumi.Input[Optional[_builtins.bool]] = None,
                  delete_vm_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  latest_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
-                 maintenance_tasks: pulumi.Input[Optional[Union['NdbDbserverVmMaintenanceTasksArgs', 'NdbDbserverVmMaintenanceTasksArgsDict']]] = None,
+                 maintenance_tasks: pulumi.Input[Optional[Union['NdbDbserverVmMaintenanceTasksArgs', 'NdbDbserverVmMaintenanceTasksArgsDict', 'outputs.NdbDbserverVmMaintenanceTasks']]] = None,
                  network_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                  nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmPostgresDatabaseArgs', 'NdbDbserverVmPostgresDatabaseArgsDict']]]]] = None,
+                 postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmPostgresDatabaseArgs', 'NdbDbserverVmPostgresDatabaseArgsDict', 'outputs.NdbDbserverVmPostgresDatabase']]]]] = None,
                  remove: pulumi.Input[Optional[_builtins.bool]] = None,
                  snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
                  soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
                  software_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                  software_profile_version_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmTagArgs', 'NdbDbserverVmTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmTagArgs', 'NdbDbserverVmTagArgsDict', 'outputs.NdbDbserverVmTag']]]]] = None,
                  time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
                  timezone: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_password: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1003,7 +1003,7 @@ class NdbDbserverVm(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             client_id: pulumi.Input[Optional[_builtins.str]] = None,
             compute_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
-            credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmCredentialArgs', 'NdbDbserverVmCredentialArgsDict']]]]] = None,
+            credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmCredentialArgs', 'NdbDbserverVmCredentialArgsDict', 'outputs.NdbDbserverVmCredential']]]]] = None,
             database_type: pulumi.Input[Optional[_builtins.str]] = None,
             dbserver_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
             delete: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1016,19 +1016,19 @@ class NdbDbserverVm(pulumi.CustomResource):
             ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             latest_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
             mac_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            maintenance_tasks: pulumi.Input[Optional[Union['NdbDbserverVmMaintenanceTasksArgs', 'NdbDbserverVmMaintenanceTasksArgsDict']]] = None,
+            maintenance_tasks: pulumi.Input[Optional[Union['NdbDbserverVmMaintenanceTasksArgs', 'NdbDbserverVmMaintenanceTasksArgsDict', 'outputs.NdbDbserverVmMaintenanceTasks']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             network_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
             nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-            postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmPostgresDatabaseArgs', 'NdbDbserverVmPostgresDatabaseArgsDict']]]]] = None,
-            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmPropertyArgs', 'NdbDbserverVmPropertyArgsDict']]]]] = None,
+            postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmPostgresDatabaseArgs', 'NdbDbserverVmPostgresDatabaseArgsDict', 'outputs.NdbDbserverVmPostgresDatabase']]]]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmPropertyArgs', 'NdbDbserverVmPropertyArgsDict', 'outputs.NdbDbserverVmProperty']]]]] = None,
             remove: pulumi.Input[Optional[_builtins.bool]] = None,
             snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
             soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
             software_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
             software_profile_version_id: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmTagArgs', 'NdbDbserverVmTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmTagArgs', 'NdbDbserverVmTagArgsDict', 'outputs.NdbDbserverVmTag']]]]] = None,
             time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
             timezone: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1049,10 +1049,10 @@ class NdbDbserverVm(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] delete_vgs: - (Optional) Delete volume grous. Default value is true
         :param pulumi.Input[_builtins.bool] delete_vm_snapshots: - (Optional) Delete the vm snapshots. Default is true
         :param pulumi.Input[_builtins.str] description: Type a description for the database server VM.
-        :param pulumi.Input[Union['NdbDbserverVmMaintenanceTasksArgs', 'NdbDbserverVmMaintenanceTasksArgsDict']] maintenance_tasks: maintenance window configured to enable automated patching.
+        :param pulumi.Input[Union['NdbDbserverVmMaintenanceTasksArgs', 'NdbDbserverVmMaintenanceTasksArgsDict', 'outputs.NdbDbserverVmMaintenanceTasks']] maintenance_tasks: maintenance window configured to enable automated patching.
         :param pulumi.Input[_builtins.str] network_profile_id: Network profile id.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDbserverVmPostgresDatabaseArgs', 'NdbDbserverVmPostgresDatabaseArgsDict']]]] postgres_databases: Postgres database server vm
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDbserverVmPropertyArgs', 'NdbDbserverVmPropertyArgsDict']]]] properties: List of all the properties
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDbserverVmPostgresDatabaseArgs', 'NdbDbserverVmPostgresDatabaseArgsDict', 'outputs.NdbDbserverVmPostgresDatabase']]]] postgres_databases: Postgres database server vm
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDbserverVmPropertyArgs', 'NdbDbserverVmPropertyArgsDict', 'outputs.NdbDbserverVmProperty']]]] properties: List of all the properties
         :param pulumi.Input[_builtins.bool] remove: - (Optional) Unregister the database from NDB. Default value is false
         :param pulumi.Input[_builtins.str] snapshot_id: Snapshot id. If not given, it will use latest snapshot to provision db server vm.
         :param pulumi.Input[_builtins.bool] soft_remove: - (Optional) Soft remove. Default will be false

@@ -687,16 +687,16 @@ class ObjectStoreV2(pulumi.CustomResource):
                  deployment_version: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2MetadataArgs', 'ObjectStoreV2MetadataArgsDict']]]]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2MetadataArgs', 'ObjectStoreV2MetadataArgsDict', 'outputs.ObjectStoreV2Metadata']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  num_worker_nodes: pulumi.Input[Optional[_builtins.int]] = None,
-                 public_network_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2PublicNetworkIpArgs', 'ObjectStoreV2PublicNetworkIpArgsDict']]]]] = None,
+                 public_network_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2PublicNetworkIpArgs', 'ObjectStoreV2PublicNetworkIpArgsDict', 'outputs.ObjectStoreV2PublicNetworkIp']]]]] = None,
                  public_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage_network_dns_ip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict']]] = None,
+                 storage_network_dns_ip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict', 'outputs.ObjectStoreV2StorageNetworkDnsIp']]] = None,
                  storage_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage_network_vip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict']]] = None,
+                 storage_network_vip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict', 'outputs.ObjectStoreV2StorageNetworkVip']]] = None,
                  total_capacity_gib: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
@@ -782,10 +782,10 @@ class ObjectStoreV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] deployment_version: -(Optional) The deployment version of the Object store.
         :param pulumi.Input[_builtins.str] description: -(Optional) A brief description of the Object store.
         :param pulumi.Input[_builtins.str] domain: -(Optional) The DNS domain/subdomain the Object store belongs to. All the Object stores under one Prism Central must have the same domain name. The domain name must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens, or underscores. Each part can be up to 63 characters long. The domain must begin and end with an alphanumeric character. For example - 'objects-0.pc_nutanix.com'.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreV2MetadataArgs', 'ObjectStoreV2MetadataArgsDict']]]] metadatas: -(Optional) Metadata associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreV2MetadataArgs', 'ObjectStoreV2MetadataArgsDict', 'outputs.ObjectStoreV2Metadata']]]] metadatas: -(Optional) Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: -(Required) The name of the Object store.
         :param pulumi.Input[_builtins.int] num_worker_nodes: -(Optional) The number of worker nodes (VMs) to be created for the Object store. Each worker node requires 10 vCPUs and 32 GiB of memory.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreV2PublicNetworkIpArgs', 'ObjectStoreV2PublicNetworkIpArgsDict']]]] public_network_ips: -(Optional) A list of static IP addresses used as public IPs to access the Object store.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreV2PublicNetworkIpArgs', 'ObjectStoreV2PublicNetworkIpArgsDict', 'outputs.ObjectStoreV2PublicNetworkIp']]]] public_network_ips: -(Optional) A list of static IP addresses used as public IPs to access the Object store.
         :param pulumi.Input[_builtins.str] public_network_reference: -(Optional) Public network reference of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
         :param pulumi.Input[_builtins.str] region: -(Optional) The region in which the Object store is deployed.
         :param pulumi.Input[_builtins.str] state: -(Optional) Enum for the state of the Object store.
@@ -801,9 +801,9 @@ class ObjectStoreV2(pulumi.CustomResource):
                | `OBJECT_STORE_CERT_CREATION_FAILED` | Creating the Object store certificate has failed. |
                | `CREATING_OBJECT_STORE_CERT` | A certificate is being created for the Object store. |
                | `OBJECT_STORE_DELETION_FAILED` | There was an error deleting the Object store. |
-        :param pulumi.Input[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict']] storage_network_dns_ip: -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        :param pulumi.Input[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict', 'outputs.ObjectStoreV2StorageNetworkDnsIp']] storage_network_dns_ip: -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
         :param pulumi.Input[_builtins.str] storage_network_reference: -(Optional) Reference to the Storage Network of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
-        :param pulumi.Input[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict']] storage_network_vip: -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        :param pulumi.Input[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict', 'outputs.ObjectStoreV2StorageNetworkVip']] storage_network_vip: -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
         :param pulumi.Input[_builtins.int] total_capacity_gib: -(Optional) Size of the Object store in GiB.
         """
         ...
@@ -908,16 +908,16 @@ class ObjectStoreV2(pulumi.CustomResource):
                  deployment_version: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2MetadataArgs', 'ObjectStoreV2MetadataArgsDict']]]]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2MetadataArgs', 'ObjectStoreV2MetadataArgsDict', 'outputs.ObjectStoreV2Metadata']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  num_worker_nodes: pulumi.Input[Optional[_builtins.int]] = None,
-                 public_network_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2PublicNetworkIpArgs', 'ObjectStoreV2PublicNetworkIpArgsDict']]]]] = None,
+                 public_network_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2PublicNetworkIpArgs', 'ObjectStoreV2PublicNetworkIpArgsDict', 'outputs.ObjectStoreV2PublicNetworkIp']]]]] = None,
                  public_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage_network_dns_ip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict']]] = None,
+                 storage_network_dns_ip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict', 'outputs.ObjectStoreV2StorageNetworkDnsIp']]] = None,
                  storage_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 storage_network_vip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict']]] = None,
+                 storage_network_vip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict', 'outputs.ObjectStoreV2StorageNetworkVip']]] = None,
                  total_capacity_gib: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -967,17 +967,17 @@ class ObjectStoreV2(pulumi.CustomResource):
             domain: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2LinkArgs', 'ObjectStoreV2LinkArgsDict']]]]] = None,
-            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2MetadataArgs', 'ObjectStoreV2MetadataArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2LinkArgs', 'ObjectStoreV2LinkArgsDict', 'outputs.ObjectStoreV2Link']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2MetadataArgs', 'ObjectStoreV2MetadataArgsDict', 'outputs.ObjectStoreV2Metadata']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             num_worker_nodes: pulumi.Input[Optional[_builtins.int]] = None,
-            public_network_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2PublicNetworkIpArgs', 'ObjectStoreV2PublicNetworkIpArgsDict']]]]] = None,
+            public_network_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2PublicNetworkIpArgs', 'ObjectStoreV2PublicNetworkIpArgsDict', 'outputs.ObjectStoreV2PublicNetworkIp']]]]] = None,
             public_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
             region: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            storage_network_dns_ip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict']]] = None,
+            storage_network_dns_ip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict', 'outputs.ObjectStoreV2StorageNetworkDnsIp']]] = None,
             storage_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
-            storage_network_vip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict']]] = None,
+            storage_network_vip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict', 'outputs.ObjectStoreV2StorageNetworkVip']]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             total_capacity_gib: pulumi.Input[Optional[_builtins.int]] = None) -> 'ObjectStoreV2':
         """
@@ -995,11 +995,11 @@ class ObjectStoreV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] domain: -(Optional) The DNS domain/subdomain the Object store belongs to. All the Object stores under one Prism Central must have the same domain name. The domain name must consist of at least 2 parts separated by a '.'. Each part can contain upper and lower case letters, digits, hyphens, or underscores. Each part can be up to 63 characters long. The domain must begin and end with an alphanumeric character. For example - 'objects-0.pc_nutanix.com'.
         :param pulumi.Input[_builtins.str] ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[_builtins.str] last_update_time: - The time when the Object store was last updated.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreV2LinkArgs', 'ObjectStoreV2LinkArgsDict']]]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreV2MetadataArgs', 'ObjectStoreV2MetadataArgsDict']]]] metadatas: -(Optional) Metadata associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreV2LinkArgs', 'ObjectStoreV2LinkArgsDict', 'outputs.ObjectStoreV2Link']]]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreV2MetadataArgs', 'ObjectStoreV2MetadataArgsDict', 'outputs.ObjectStoreV2Metadata']]]] metadatas: -(Optional) Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: -(Required) The name of the Object store.
         :param pulumi.Input[_builtins.int] num_worker_nodes: -(Optional) The number of worker nodes (VMs) to be created for the Object store. Each worker node requires 10 vCPUs and 32 GiB of memory.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreV2PublicNetworkIpArgs', 'ObjectStoreV2PublicNetworkIpArgsDict']]]] public_network_ips: -(Optional) A list of static IP addresses used as public IPs to access the Object store.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ObjectStoreV2PublicNetworkIpArgs', 'ObjectStoreV2PublicNetworkIpArgsDict', 'outputs.ObjectStoreV2PublicNetworkIp']]]] public_network_ips: -(Optional) A list of static IP addresses used as public IPs to access the Object store.
         :param pulumi.Input[_builtins.str] public_network_reference: -(Optional) Public network reference of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
         :param pulumi.Input[_builtins.str] region: -(Optional) The region in which the Object store is deployed.
         :param pulumi.Input[_builtins.str] state: -(Optional) Enum for the state of the Object store.
@@ -1015,9 +1015,9 @@ class ObjectStoreV2(pulumi.CustomResource):
                | `OBJECT_STORE_CERT_CREATION_FAILED` | Creating the Object store certificate has failed. |
                | `CREATING_OBJECT_STORE_CERT` | A certificate is being created for the Object store. |
                | `OBJECT_STORE_DELETION_FAILED` | There was an error deleting the Object store. |
-        :param pulumi.Input[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict']] storage_network_dns_ip: -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        :param pulumi.Input[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict', 'outputs.ObjectStoreV2StorageNetworkDnsIp']] storage_network_dns_ip: -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
         :param pulumi.Input[_builtins.str] storage_network_reference: -(Optional) Reference to the Storage Network of the Object store. This is the subnet UUID for an AHV cluster or the IPAM name for an ESXi cluster.
-        :param pulumi.Input[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict']] storage_network_vip: -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+        :param pulumi.Input[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict', 'outputs.ObjectStoreV2StorageNetworkVip']] storage_network_vip: -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
         :param pulumi.Input[_builtins.str] tenant_id: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
         :param pulumi.Input[_builtins.int] total_capacity_gib: -(Optional) Size of the Object store in GiB.
         """

@@ -515,9 +515,9 @@ class CategoryV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CategoryV2AssociationArgs', 'CategoryV2AssociationArgsDict']]]]] = None,
+            associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CategoryV2AssociationArgs', 'CategoryV2AssociationArgsDict', 'outputs.CategoryV2Association']]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            detailed_associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CategoryV2DetailedAssociationArgs', 'CategoryV2DetailedAssociationArgsDict']]]]] = None,
+            detailed_associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CategoryV2DetailedAssociationArgs', 'CategoryV2DetailedAssociationArgsDict', 'outputs.CategoryV2DetailedAssociation']]]]] = None,
             key: pulumi.Input[Optional[_builtins.str]] = None,
             owner_uuid: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -529,7 +529,7 @@ class CategoryV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CategoryV2AssociationArgs', 'CategoryV2AssociationArgsDict']]]] associations: This field gives basic information about resources that are associated with the category.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CategoryV2AssociationArgs', 'CategoryV2AssociationArgsDict', 'outputs.CategoryV2Association']]]] associations: This field gives basic information about resources that are associated with the category.
                The results present under this field summarize the counts of various kinds of resources associated with the category.
                For more detailed information about the UUIDs of the resources, please look into the field detailedAssociations.
                This field will be ignored, if given in the payload of updateCategoryById or createCategory APIs.
@@ -539,7 +539,7 @@ class CategoryV2(pulumi.CustomResource):
                Description field can be updated through updateCategoryById API.
                The server does not validate this value nor does it enforce the uniqueness or any other constraints.
                It is the responsibility of the user to ensure that any semantic or syntactic constraints are retained when mutating this field.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['CategoryV2DetailedAssociationArgs', 'CategoryV2DetailedAssociationArgsDict']]]] detailed_associations: This field gives detailed information about the resources which are associated with the category.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CategoryV2DetailedAssociationArgs', 'CategoryV2DetailedAssociationArgsDict', 'outputs.CategoryV2DetailedAssociation']]]] detailed_associations: This field gives detailed information about the resources which are associated with the category.
                The results present under this field contain the UUIDs of the entities and policies of various kinds associated with the category.
                This field will be ignored, if given in the payload of updateCategoryById or createCategory APIs.
                This field will not be present by default in listCategories or getCategoryById APIs, unless the parameter $expand=detailedAssociations is present in the URL.

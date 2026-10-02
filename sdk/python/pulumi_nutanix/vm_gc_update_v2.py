@@ -105,7 +105,7 @@ class VmGcUpdateV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmGcUpdateV2ConfigArgs', 'VmGcUpdateV2ConfigArgsDict']]]]] = None,
+                 configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmGcUpdateV2ConfigArgs', 'VmGcUpdateV2ConfigArgsDict', 'outputs.VmGcUpdateV2Config']]]]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -136,7 +136,7 @@ class VmGcUpdateV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmGcUpdateV2ConfigArgs', 'VmGcUpdateV2ConfigArgsDict']]]] configs: - (Optional) The Nutanix Guest Tools customization settings.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmGcUpdateV2ConfigArgs', 'VmGcUpdateV2ConfigArgsDict', 'outputs.VmGcUpdateV2Config']]]] configs: - (Optional) The Nutanix Guest Tools customization settings.
         :param pulumi.Input[_builtins.str] ext_id: - (Required) The globally unique identifier of a VM. It should be of type UUID.
         """
         ...
@@ -186,7 +186,7 @@ class VmGcUpdateV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmGcUpdateV2ConfigArgs', 'VmGcUpdateV2ConfigArgsDict']]]]] = None,
+                 configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmGcUpdateV2ConfigArgs', 'VmGcUpdateV2ConfigArgsDict', 'outputs.VmGcUpdateV2Config']]]]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -211,7 +211,7 @@ class VmGcUpdateV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmGcUpdateV2ConfigArgs', 'VmGcUpdateV2ConfigArgsDict']]]]] = None,
+            configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmGcUpdateV2ConfigArgs', 'VmGcUpdateV2ConfigArgsDict', 'outputs.VmGcUpdateV2Config']]]]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VmGcUpdateV2':
         """
         Get an existing VmGcUpdateV2 resource's state with the given name, id, and optional extra
@@ -220,7 +220,7 @@ class VmGcUpdateV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmGcUpdateV2ConfigArgs', 'VmGcUpdateV2ConfigArgsDict']]]] configs: - (Optional) The Nutanix Guest Tools customization settings.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmGcUpdateV2ConfigArgs', 'VmGcUpdateV2ConfigArgsDict', 'outputs.VmGcUpdateV2Config']]]] configs: - (Optional) The Nutanix Guest Tools customization settings.
         :param pulumi.Input[_builtins.str] ext_id: - (Required) The globally unique identifier of a VM. It should be of type UUID.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

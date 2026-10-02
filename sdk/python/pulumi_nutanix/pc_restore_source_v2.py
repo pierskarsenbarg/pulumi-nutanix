@@ -145,7 +145,7 @@ class PcRestoreSourceV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 location: pulumi.Input[Optional[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict']]] = None,
+                 location: pulumi.Input[Optional[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict', 'outputs.PcRestoreSourceV2Location']]] = None,
                  __props__=None):
         """
         > **Authentication:** The <span pulumi-lang-nodejs="`nutanix.PcRestoreSourceV2`" pulumi-lang-dotnet="`nutanix.PcRestoreSourceV2`" pulumi-lang-go="`PcRestoreSourceV2`" pulumi-lang-python="`PcRestoreSourceV2`" pulumi-lang-yaml="`nutanix.PcRestoreSourceV2`" pulumi-lang-java="`nutanix.PcRestoreSourceV2`" pulumi-lang-hcl="`nutanix_pc_restore_source_v2`">`nutanix.PcRestoreSourceV2`</span> resource does **not** support API key authentication. The CreateRestoreSource API routes requests to the target cluster (Prism Element), which only supports basic auth (username/password). Use <span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`" pulumi-lang-hcl="`username`">`username`</span> and <span pulumi-lang-nodejs="`password`" pulumi-lang-dotnet="`Password`" pulumi-lang-go="`password`" pulumi-lang-python="`password`" pulumi-lang-yaml="`password`" pulumi-lang-java="`password`" pulumi-lang-hcl="`password`">`password`</span> in the provider configuration—do not use <span pulumi-lang-nodejs="`apiKey`" pulumi-lang-dotnet="`ApiKey`" pulumi-lang-go="`apiKey`" pulumi-lang-python="`api_key`" pulumi-lang-yaml="`apiKey`" pulumi-lang-java="`apiKey`" pulumi-lang-hcl="`api_key`">`apiKey`</span>. Using API key will result in "Invalid cookies present in the request" errors.
@@ -205,7 +205,7 @@ class PcRestoreSourceV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict']] location: -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
+        :param pulumi.Input[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict', 'outputs.PcRestoreSourceV2Location']] location: -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
         """
         ...
     @overload
@@ -284,7 +284,7 @@ class PcRestoreSourceV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 location: pulumi.Input[Optional[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict']]] = None,
+                 location: pulumi.Input[Optional[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict', 'outputs.PcRestoreSourceV2Location']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -317,8 +317,8 @@ class PcRestoreSourceV2(pulumi.CustomResource):
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             is_backup_paused: pulumi.Input[Optional[_builtins.bool]] = None,
             last_sync_time: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcRestoreSourceV2LinkArgs', 'PcRestoreSourceV2LinkArgsDict']]]]] = None,
-            location: pulumi.Input[Optional[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict']]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcRestoreSourceV2LinkArgs', 'PcRestoreSourceV2LinkArgsDict', 'outputs.PcRestoreSourceV2Link']]]]] = None,
+            location: pulumi.Input[Optional[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict', 'outputs.PcRestoreSourceV2Location']]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PcRestoreSourceV2':
         """
         Get an existing PcRestoreSourceV2 resource's state with the given name, id, and optional extra
@@ -327,7 +327,7 @@ class PcRestoreSourceV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict']] location: -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
+        :param pulumi.Input[Union['PcRestoreSourceV2LocationArgs', 'PcRestoreSourceV2LocationArgsDict', 'outputs.PcRestoreSourceV2Location']] location: -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

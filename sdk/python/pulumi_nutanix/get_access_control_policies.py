@@ -87,7 +87,7 @@ class AwaitableGetAccessControlPoliciesResult(GetAccessControlPoliciesResult):
             metadatas=self.metadatas)
 
 
-def get_access_control_policies(metadatas: Optional[Sequence[Union['GetAccessControlPoliciesMetadataArgs', 'GetAccessControlPoliciesMetadataArgsDict']]] = None,
+def get_access_control_policies(metadatas: Optional[Sequence[Union['GetAccessControlPoliciesMetadataArgs', 'GetAccessControlPoliciesMetadataArgsDict', 'outputs.GetAccessControlPoliciesMetadataResult']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAccessControlPoliciesResult:
     """
     Describes a list of access control policies.
@@ -104,7 +104,7 @@ def get_access_control_policies(metadatas: Optional[Sequence[Union['GetAccessCon
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetAccessControlPoliciesMetadataArgs', 'GetAccessControlPoliciesMetadataArgsDict']] metadatas: - The Access Control Policy kind metadata.
+    :param Sequence[Union['GetAccessControlPoliciesMetadataArgs', 'GetAccessControlPoliciesMetadataArgsDict', 'outputs.GetAccessControlPoliciesMetadataResult']] metadatas: - The Access Control Policy kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
@@ -116,7 +116,7 @@ def get_access_control_policies(metadatas: Optional[Sequence[Union['GetAccessCon
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-def get_access_control_policies_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetAccessControlPoliciesMetadataArgs', 'GetAccessControlPoliciesMetadataArgsDict']]]]] = None,
+def get_access_control_policies_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetAccessControlPoliciesMetadataArgs', 'GetAccessControlPoliciesMetadataArgsDict', 'outputs.GetAccessControlPoliciesMetadataResult']]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAccessControlPoliciesResult]:
     """
     Describes a list of access control policies.
@@ -133,7 +133,7 @@ def get_access_control_policies_output(metadatas: pulumi.Input[Optional[Optional
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetAccessControlPoliciesMetadataArgs', 'GetAccessControlPoliciesMetadataArgsDict']] metadatas: - The Access Control Policy kind metadata.
+    :param Sequence[Union['GetAccessControlPoliciesMetadataArgs', 'GetAccessControlPoliciesMetadataArgsDict', 'outputs.GetAccessControlPoliciesMetadataResult']] metadatas: - The Access Control Policy kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas

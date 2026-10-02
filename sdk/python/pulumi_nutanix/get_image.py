@@ -306,7 +306,7 @@ class AwaitableGetImageResult(GetImageResult):
             version=self.version)
 
 
-def get_image(categories: Optional[Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict']]] = None,
+def get_image(categories: Optional[Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict', 'outputs.GetImageCategoryResult']]] = None,
               image_id: Optional[_builtins.str] = None,
               image_name: Optional[_builtins.str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetImageResult:
@@ -330,7 +330,7 @@ def get_image(categories: Optional[Sequence[Union['GetImageCategoryArgs', 'GetIm
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict']] categories: - Categories for the image.
+    :param Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict', 'outputs.GetImageCategoryResult']] categories: - Categories for the image.
     :param _builtins.str image_id: Represents image UUID
     :param _builtins.str image_name: Represents image name
     """
@@ -366,7 +366,7 @@ def get_image(categories: Optional[Sequence[Union['GetImageCategoryArgs', 'GetIm
         source_uri=pulumi.get(__ret__, 'source_uri'),
         state=pulumi.get(__ret__, 'state'),
         version=pulumi.get(__ret__, 'version'))
-def get_image_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict']]]]] = None,
+def get_image_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict', 'outputs.GetImageCategoryResult']]]]] = None,
                      image_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      image_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImageResult]:
@@ -390,7 +390,7 @@ def get_image_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict']] categories: - Categories for the image.
+    :param Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict', 'outputs.GetImageCategoryResult']] categories: - Categories for the image.
     :param _builtins.str image_id: Represents image UUID
     :param _builtins.str image_name: Represents image name
     """

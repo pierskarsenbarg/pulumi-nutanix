@@ -617,7 +617,7 @@ class NdbDatabaseRestore(pulumi.CustomResource):
                  latest_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
                  restore_version: pulumi.Input[Optional[_builtins.int]] = None,
                  snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTagArgs', 'NdbDatabaseRestoreTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTagArgs', 'NdbDatabaseRestoreTagArgsDict', 'outputs.NdbDatabaseRestoreTag']]]]] = None,
                  time_zone_pitr: pulumi.Input[Optional[_builtins.str]] = None,
                  user_pitr_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -631,7 +631,7 @@ class NdbDatabaseRestore(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] latest_snapshot: latest snapshot id
         :param pulumi.Input[_builtins.int] restore_version: helps to restore the database with same config.
         :param pulumi.Input[_builtins.str] snapshot_id: snapshot id from you want to use for restoring the instance
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTagArgs', 'NdbDatabaseRestoreTagArgsDict']]]] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTagArgs', 'NdbDatabaseRestoreTagArgsDict', 'outputs.NdbDatabaseRestoreTag']]]] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
         :param pulumi.Input[_builtins.str] time_zone_pitr: timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`" pulumi-lang-hcl="`user_pitr_timestamp`">`userPitrTimestamp`</span>
         :param pulumi.Input[_builtins.str] user_pitr_timestamp: the time to which you want to restore your instance.
         """
@@ -664,7 +664,7 @@ class NdbDatabaseRestore(pulumi.CustomResource):
                  latest_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
                  restore_version: pulumi.Input[Optional[_builtins.int]] = None,
                  snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTagArgs', 'NdbDatabaseRestoreTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTagArgs', 'NdbDatabaseRestoreTagArgsDict', 'outputs.NdbDatabaseRestoreTag']]]]] = None,
                  time_zone_pitr: pulumi.Input[Optional[_builtins.str]] = None,
                  user_pitr_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -722,26 +722,26 @@ class NdbDatabaseRestore(pulumi.CustomResource):
             database_id: pulumi.Input[Optional[_builtins.str]] = None,
             database_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
             database_name: pulumi.Input[Optional[_builtins.str]] = None,
-            database_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreDatabaseNodeArgs', 'NdbDatabaseRestoreDatabaseNodeArgsDict']]]]] = None,
+            database_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreDatabaseNodeArgs', 'NdbDatabaseRestoreDatabaseNodeArgsDict', 'outputs.NdbDatabaseRestoreDatabaseNode']]]]] = None,
             date_created: pulumi.Input[Optional[_builtins.str]] = None,
             date_modified: pulumi.Input[Optional[_builtins.str]] = None,
             dbserver_logical_cluster: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             dbserver_logical_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreInfoArgs', 'NdbDatabaseRestoreInfoArgsDict']]]]] = None,
+            infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreInfoArgs', 'NdbDatabaseRestoreInfoArgsDict', 'outputs.NdbDatabaseRestoreInfo']]]]] = None,
             latest_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
-            lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreLcmConfigArgs', 'NdbDatabaseRestoreLcmConfigArgsDict']]]]] = None,
-            linked_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreLinkedDatabaseArgs', 'NdbDatabaseRestoreLinkedDatabaseArgsDict']]]]] = None,
+            lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreLcmConfigArgs', 'NdbDatabaseRestoreLcmConfigArgsDict', 'outputs.NdbDatabaseRestoreLcmConfig']]]]] = None,
+            linked_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreLinkedDatabaseArgs', 'NdbDatabaseRestoreLinkedDatabaseArgsDict', 'outputs.NdbDatabaseRestoreLinkedDatabase']]]]] = None,
             metric: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestorePropertyArgs', 'NdbDatabaseRestorePropertyArgsDict']]]]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestorePropertyArgs', 'NdbDatabaseRestorePropertyArgsDict', 'outputs.NdbDatabaseRestoreProperty']]]]] = None,
             restore_version: pulumi.Input[Optional[_builtins.int]] = None,
             snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTagArgs', 'NdbDatabaseRestoreTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTagArgs', 'NdbDatabaseRestoreTagArgsDict', 'outputs.NdbDatabaseRestoreTag']]]]] = None,
             time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
-            time_machines: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTimeMachineArgs', 'NdbDatabaseRestoreTimeMachineArgsDict']]]]] = None,
+            time_machines: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTimeMachineArgs', 'NdbDatabaseRestoreTimeMachineArgsDict', 'outputs.NdbDatabaseRestoreTimeMachine']]]]] = None,
             time_zone: pulumi.Input[Optional[_builtins.str]] = None,
             time_zone_pitr: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -757,26 +757,26 @@ class NdbDatabaseRestore(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] database_cluster_type: database cluster type
         :param pulumi.Input[_builtins.str] database_id: database id
         :param pulumi.Input[_builtins.str] database_name: name of database
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestoreDatabaseNodeArgs', 'NdbDatabaseRestoreDatabaseNodeArgsDict']]]] database_nodes: database nodes associated with database instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestoreDatabaseNodeArgs', 'NdbDatabaseRestoreDatabaseNodeArgsDict', 'outputs.NdbDatabaseRestoreDatabaseNode']]]] database_nodes: database nodes associated with database instance
         :param pulumi.Input[_builtins.str] date_created: date created for db instance
         :param pulumi.Input[_builtins.str] date_modified: date modified for instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] dbserver_logical_cluster: dbserver logical cluster
         :param pulumi.Input[_builtins.str] dbserver_logical_cluster_id: dbserver logical cluster id
         :param pulumi.Input[_builtins.str] description: description of database instance
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestoreInfoArgs', 'NdbDatabaseRestoreInfoArgsDict']]]] infos: info of instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestoreInfoArgs', 'NdbDatabaseRestoreInfoArgsDict', 'outputs.NdbDatabaseRestoreInfo']]]] infos: info of instance
         :param pulumi.Input[_builtins.str] latest_snapshot: latest snapshot id
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestoreLcmConfigArgs', 'NdbDatabaseRestoreLcmConfigArgsDict']]]] lcm_configs: LCM config of instance
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestoreLinkedDatabaseArgs', 'NdbDatabaseRestoreLinkedDatabaseArgsDict']]]] linked_databases: linked databases within database instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestoreLcmConfigArgs', 'NdbDatabaseRestoreLcmConfigArgsDict', 'outputs.NdbDatabaseRestoreLcmConfig']]]] lcm_configs: LCM config of instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestoreLinkedDatabaseArgs', 'NdbDatabaseRestoreLinkedDatabaseArgsDict', 'outputs.NdbDatabaseRestoreLinkedDatabase']]]] linked_databases: linked databases within database instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metric: Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
         :param pulumi.Input[_builtins.str] name: Name of database instance
         :param pulumi.Input[_builtins.str] parent_database_id: parent database id
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestorePropertyArgs', 'NdbDatabaseRestorePropertyArgsDict']]]] properties: properties of database created
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestorePropertyArgs', 'NdbDatabaseRestorePropertyArgsDict', 'outputs.NdbDatabaseRestoreProperty']]]] properties: properties of database created
         :param pulumi.Input[_builtins.int] restore_version: helps to restore the database with same config.
         :param pulumi.Input[_builtins.str] snapshot_id: snapshot id from you want to use for restoring the instance
         :param pulumi.Input[_builtins.str] status: status of instance
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTagArgs', 'NdbDatabaseRestoreTagArgsDict']]]] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTagArgs', 'NdbDatabaseRestoreTagArgsDict', 'outputs.NdbDatabaseRestoreTag']]]] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
         :param pulumi.Input[_builtins.str] time_machine_id: time machine id of instance
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTimeMachineArgs', 'NdbDatabaseRestoreTimeMachineArgsDict']]]] time_machines: Time Machine details of instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTimeMachineArgs', 'NdbDatabaseRestoreTimeMachineArgsDict', 'outputs.NdbDatabaseRestoreTimeMachine']]]] time_machines: Time Machine details of instance
         :param pulumi.Input[_builtins.str] time_zone: timezone on which instance is created xw
         :param pulumi.Input[_builtins.str] time_zone_pitr: timezone . Should be used with  <span pulumi-lang-nodejs="`userPitrTimestamp`" pulumi-lang-dotnet="`UserPitrTimestamp`" pulumi-lang-go="`userPitrTimestamp`" pulumi-lang-python="`user_pitr_timestamp`" pulumi-lang-yaml="`userPitrTimestamp`" pulumi-lang-java="`userPitrTimestamp`" pulumi-lang-hcl="`user_pitr_timestamp`">`userPitrTimestamp`</span>
         :param pulumi.Input[_builtins.str] type: type of database

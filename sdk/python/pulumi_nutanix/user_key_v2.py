@@ -795,12 +795,12 @@ class UserKeyV2(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             expiry_time: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            key_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserKeyV2KeyDetailArgs', 'UserKeyV2KeyDetailArgsDict']]]]] = None,
+            key_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserKeyV2KeyDetailArgs', 'UserKeyV2KeyDetailArgsDict', 'outputs.UserKeyV2KeyDetail']]]]] = None,
             key_type: pulumi.Input[Optional[_builtins.str]] = None,
             last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
             last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
             last_used_time: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserKeyV2LinkArgs', 'UserKeyV2LinkArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserKeyV2LinkArgs', 'UserKeyV2LinkArgsDict', 'outputs.UserKeyV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -822,14 +822,14 @@ class UserKeyV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: - ( Optional ) Brief description of the key.
         :param pulumi.Input[_builtins.str] expiry_time: - ( Optional ) The time when the key will expire.
         :param pulumi.Input[_builtins.str] ext_id: - The External Identifier of the User Group.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UserKeyV2KeyDetailArgs', 'UserKeyV2KeyDetailArgsDict']]]] key_details: - Details specific to type of the key.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UserKeyV2KeyDetailArgs', 'UserKeyV2KeyDetailArgsDict', 'outputs.UserKeyV2KeyDetail']]]] key_details: - Details specific to type of the key.
         :param pulumi.Input[_builtins.str] key_type: - ( Required ) The type of key. Enum Values:
                  _ "API_KEY": A key type that is used to identify a service.
                  _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
         :param pulumi.Input[_builtins.str] last_updated_by: - User who updated the key.
         :param pulumi.Input[_builtins.str] last_updated_time: - The time when the key was updated.
         :param pulumi.Input[_builtins.str] last_used_time: - The time when the key was last used.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UserKeyV2LinkArgs', 'UserKeyV2LinkArgsDict']]]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UserKeyV2LinkArgs', 'UserKeyV2LinkArgsDict', 'outputs.UserKeyV2Link']]]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[_builtins.str] name: - ( Required ) Identifier for the key in the form of a name.
         :param pulumi.Input[_builtins.str] status: - ( Optional ) The status of the key. Enum Values:
                  _ "REVOKED": Key is revoked.

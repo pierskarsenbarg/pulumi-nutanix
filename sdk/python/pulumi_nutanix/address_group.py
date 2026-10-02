@@ -154,7 +154,7 @@ class AddressGroup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_address_block_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupIpAddressBlockListArgs', 'AddressGroupIpAddressBlockListArgsDict']]]]] = None,
+                 ip_address_block_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupIpAddressBlockListArgs', 'AddressGroupIpAddressBlockListArgsDict', 'outputs.AddressGroupIpAddressBlockList']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -181,7 +181,7 @@ class AddressGroup(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: - (Optional) Description of the service group
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupIpAddressBlockListArgs', 'AddressGroupIpAddressBlockListArgsDict']]]] ip_address_block_lists: - (Required) list of IP address blocks with their prefix length
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupIpAddressBlockListArgs', 'AddressGroupIpAddressBlockListArgsDict', 'outputs.AddressGroupIpAddressBlockList']]]] ip_address_block_lists: - (Required) list of IP address blocks with their prefix length
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the service group
         """
         ...
@@ -227,7 +227,7 @@ class AddressGroup(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_address_block_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupIpAddressBlockListArgs', 'AddressGroupIpAddressBlockListArgsDict']]]]] = None,
+                 ip_address_block_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupIpAddressBlockListArgs', 'AddressGroupIpAddressBlockListArgsDict', 'outputs.AddressGroupIpAddressBlockList']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -256,7 +256,7 @@ class AddressGroup(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             address_group_string: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            ip_address_block_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupIpAddressBlockListArgs', 'AddressGroupIpAddressBlockListArgsDict']]]]] = None,
+            ip_address_block_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupIpAddressBlockListArgs', 'AddressGroupIpAddressBlockListArgsDict', 'outputs.AddressGroupIpAddressBlockList']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None) -> 'AddressGroup':
         """
         Get an existing AddressGroup resource's state with the given name, id, and optional extra
@@ -267,7 +267,7 @@ class AddressGroup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] address_group_string: - (ReadOnly) Address Group string
         :param pulumi.Input[_builtins.str] description: - (Optional) Description of the service group
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupIpAddressBlockListArgs', 'AddressGroupIpAddressBlockListArgsDict']]]] ip_address_block_lists: - (Required) list of IP address blocks with their prefix length
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupIpAddressBlockListArgs', 'AddressGroupIpAddressBlockListArgsDict', 'outputs.AddressGroupIpAddressBlockList']]]] ip_address_block_lists: - (Required) list of IP address blocks with their prefix length
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the service group
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

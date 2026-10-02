@@ -137,7 +137,7 @@ class OvaVmDeployV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cluster_location_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 override_vm_config: pulumi.Input[Optional[Union['OvaVmDeployV2OverrideVmConfigArgs', 'OvaVmDeployV2OverrideVmConfigArgsDict']]] = None,
+                 override_vm_config: pulumi.Input[Optional[Union['OvaVmDeployV2OverrideVmConfigArgs', 'OvaVmDeployV2OverrideVmConfigArgsDict', 'outputs.OvaVmDeployV2OverrideVmConfig']]] = None,
                  __props__=None):
         """
         Deploys a VM from an OVA, allowing you to override the VM configuration if needed.
@@ -193,7 +193,7 @@ class OvaVmDeployV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_location_ext_id: -(Required) Cluster identifier to deploy VM from OVA. This field is required when deploying an OVA and must be a part of the OVA location list.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier for an OVA.
-        :param pulumi.Input[Union['OvaVmDeployV2OverrideVmConfigArgs', 'OvaVmDeployV2OverrideVmConfigArgsDict']] override_vm_config: -(Required) VM config override spec for OVA VM deploy endpoint
+        :param pulumi.Input[Union['OvaVmDeployV2OverrideVmConfigArgs', 'OvaVmDeployV2OverrideVmConfigArgsDict', 'outputs.OvaVmDeployV2OverrideVmConfig']] override_vm_config: -(Required) VM config override spec for OVA VM deploy endpoint
         """
         ...
     @overload
@@ -268,7 +268,7 @@ class OvaVmDeployV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cluster_location_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 override_vm_config: pulumi.Input[Optional[Union['OvaVmDeployV2OverrideVmConfigArgs', 'OvaVmDeployV2OverrideVmConfigArgsDict']]] = None,
+                 override_vm_config: pulumi.Input[Optional[Union['OvaVmDeployV2OverrideVmConfigArgs', 'OvaVmDeployV2OverrideVmConfigArgsDict', 'outputs.OvaVmDeployV2OverrideVmConfig']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -299,7 +299,7 @@ class OvaVmDeployV2(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             cluster_location_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            override_vm_config: pulumi.Input[Optional[Union['OvaVmDeployV2OverrideVmConfigArgs', 'OvaVmDeployV2OverrideVmConfigArgsDict']]] = None) -> 'OvaVmDeployV2':
+            override_vm_config: pulumi.Input[Optional[Union['OvaVmDeployV2OverrideVmConfigArgs', 'OvaVmDeployV2OverrideVmConfigArgsDict', 'outputs.OvaVmDeployV2OverrideVmConfig']]] = None) -> 'OvaVmDeployV2':
         """
         Get an existing OvaVmDeployV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -309,7 +309,7 @@ class OvaVmDeployV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_location_ext_id: -(Required) Cluster identifier to deploy VM from OVA. This field is required when deploying an OVA and must be a part of the OVA location list.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier for an OVA.
-        :param pulumi.Input[Union['OvaVmDeployV2OverrideVmConfigArgs', 'OvaVmDeployV2OverrideVmConfigArgsDict']] override_vm_config: -(Required) VM config override spec for OVA VM deploy endpoint
+        :param pulumi.Input[Union['OvaVmDeployV2OverrideVmConfigArgs', 'OvaVmDeployV2OverrideVmConfigArgsDict', 'outputs.OvaVmDeployV2OverrideVmConfig']] override_vm_config: -(Required) VM config override spec for OVA VM deploy endpoint
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

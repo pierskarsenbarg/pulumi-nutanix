@@ -342,12 +342,12 @@ class AwaitableGetProjectResult(GetProjectResult):
             vpc_reference_lists=self.vpc_reference_lists)
 
 
-def get_project(categories: Optional[Sequence[Union['GetProjectCategoryArgs', 'GetProjectCategoryArgsDict']]] = None,
-                external_user_group_reference_lists: Optional[Sequence[Union['GetProjectExternalUserGroupReferenceListArgs', 'GetProjectExternalUserGroupReferenceListArgsDict']]] = None,
+def get_project(categories: Optional[Sequence[Union['GetProjectCategoryArgs', 'GetProjectCategoryArgsDict', 'outputs.GetProjectCategoryResult']]] = None,
+                external_user_group_reference_lists: Optional[Sequence[Union['GetProjectExternalUserGroupReferenceListArgs', 'GetProjectExternalUserGroupReferenceListArgsDict', 'outputs.GetProjectExternalUserGroupReferenceListResult']]] = None,
                 project_id: Optional[_builtins.str] = None,
                 project_name: Optional[_builtins.str] = None,
-                subnet_reference_lists: Optional[Sequence[Union['GetProjectSubnetReferenceListArgs', 'GetProjectSubnetReferenceListArgsDict']]] = None,
-                user_reference_lists: Optional[Sequence[Union['GetProjectUserReferenceListArgs', 'GetProjectUserReferenceListArgsDict']]] = None,
+                subnet_reference_lists: Optional[Sequence[Union['GetProjectSubnetReferenceListArgs', 'GetProjectSubnetReferenceListArgsDict', 'outputs.GetProjectSubnetReferenceListResult']]] = None,
+                user_reference_lists: Optional[Sequence[Union['GetProjectUserReferenceListArgs', 'GetProjectUserReferenceListArgsDict', 'outputs.GetProjectUserReferenceListResult']]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProjectResult:
     """
     Describe a Nutanix Project and its values (if it has them).
@@ -397,8 +397,8 @@ def get_project(categories: Optional[Sequence[Union['GetProjectCategoryArgs', 'G
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetProjectCategoryArgs', 'GetProjectCategoryArgsDict']] categories: - (Optional) The category values represented as a dictionary of key > list of values.
-    :param Sequence[Union['GetProjectExternalUserGroupReferenceListArgs', 'GetProjectExternalUserGroupReferenceListArgsDict']] external_user_group_reference_lists: List of directory service user groups. These groups are not managed by Nutanix.
+    :param Sequence[Union['GetProjectCategoryArgs', 'GetProjectCategoryArgsDict', 'outputs.GetProjectCategoryResult']] categories: - (Optional) The category values represented as a dictionary of key > list of values.
+    :param Sequence[Union['GetProjectExternalUserGroupReferenceListArgs', 'GetProjectExternalUserGroupReferenceListArgsDict', 'outputs.GetProjectExternalUserGroupReferenceListResult']] external_user_group_reference_lists: List of directory service user groups. These groups are not managed by Nutanix.
            * `external_user_group_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`" pulumi-lang-hcl="`user_group`">`userGroup`</span>
            * `external_user_group_reference_list.#.uuid` - The UUID of a<span pulumi-lang-nodejs=" userGroup
              " pulumi-lang-dotnet=" UserGroup
@@ -410,11 +410,11 @@ def get_project(categories: Optional[Sequence[Union['GetProjectCategoryArgs', 'G
              "> userGroup
              </span>* `external_user_group_reference_list.#.name` - The name of a user_group
     :param _builtins.str project_id: - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`">`id`</span> of the project.
-    :param Sequence[Union['GetProjectSubnetReferenceListArgs', 'GetProjectSubnetReferenceListArgsDict']] subnet_reference_lists: List of subnets for the project.
+    :param Sequence[Union['GetProjectSubnetReferenceListArgs', 'GetProjectSubnetReferenceListArgsDict', 'outputs.GetProjectSubnetReferenceListResult']] subnet_reference_lists: List of subnets for the project.
            * `subnet_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`" pulumi-lang-hcl="`subnet`">`subnet`</span>
            * `subnet_reference_list.#.uuid` - The UUID of a subnet
            * `subnet_reference_list.#.name` - The name of a subnet.
-    :param Sequence[Union['GetProjectUserReferenceListArgs', 'GetProjectUserReferenceListArgsDict']] user_reference_lists: List of Reference of users.
+    :param Sequence[Union['GetProjectUserReferenceListArgs', 'GetProjectUserReferenceListArgsDict', 'outputs.GetProjectUserReferenceListResult']] user_reference_lists: List of Reference of users.
     """
     __args__ = dict()
     __args__['categories'] = categories
@@ -452,12 +452,12 @@ def get_project(categories: Optional[Sequence[Union['GetProjectCategoryArgs', 'G
         tunnel_reference_lists=pulumi.get(__ret__, 'tunnel_reference_lists'),
         user_reference_lists=pulumi.get(__ret__, 'user_reference_lists'),
         vpc_reference_lists=pulumi.get(__ret__, 'vpc_reference_lists'))
-def get_project_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetProjectCategoryArgs', 'GetProjectCategoryArgsDict']]]]] = None,
-                       external_user_group_reference_lists: pulumi.Input[Optional[Optional[Sequence[Union['GetProjectExternalUserGroupReferenceListArgs', 'GetProjectExternalUserGroupReferenceListArgsDict']]]]] = None,
+def get_project_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetProjectCategoryArgs', 'GetProjectCategoryArgsDict', 'outputs.GetProjectCategoryResult']]]]] = None,
+                       external_user_group_reference_lists: pulumi.Input[Optional[Optional[Sequence[Union['GetProjectExternalUserGroupReferenceListArgs', 'GetProjectExternalUserGroupReferenceListArgsDict', 'outputs.GetProjectExternalUserGroupReferenceListResult']]]]] = None,
                        project_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        project_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                       subnet_reference_lists: pulumi.Input[Optional[Optional[Sequence[Union['GetProjectSubnetReferenceListArgs', 'GetProjectSubnetReferenceListArgsDict']]]]] = None,
-                       user_reference_lists: pulumi.Input[Optional[Optional[Sequence[Union['GetProjectUserReferenceListArgs', 'GetProjectUserReferenceListArgsDict']]]]] = None,
+                       subnet_reference_lists: pulumi.Input[Optional[Optional[Sequence[Union['GetProjectSubnetReferenceListArgs', 'GetProjectSubnetReferenceListArgsDict', 'outputs.GetProjectSubnetReferenceListResult']]]]] = None,
+                       user_reference_lists: pulumi.Input[Optional[Optional[Sequence[Union['GetProjectUserReferenceListArgs', 'GetProjectUserReferenceListArgsDict', 'outputs.GetProjectUserReferenceListResult']]]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProjectResult]:
     """
     Describe a Nutanix Project and its values (if it has them).
@@ -507,8 +507,8 @@ def get_project_output(categories: pulumi.Input[Optional[Optional[Sequence[Union
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetProjectCategoryArgs', 'GetProjectCategoryArgsDict']] categories: - (Optional) The category values represented as a dictionary of key > list of values.
-    :param Sequence[Union['GetProjectExternalUserGroupReferenceListArgs', 'GetProjectExternalUserGroupReferenceListArgsDict']] external_user_group_reference_lists: List of directory service user groups. These groups are not managed by Nutanix.
+    :param Sequence[Union['GetProjectCategoryArgs', 'GetProjectCategoryArgsDict', 'outputs.GetProjectCategoryResult']] categories: - (Optional) The category values represented as a dictionary of key > list of values.
+    :param Sequence[Union['GetProjectExternalUserGroupReferenceListArgs', 'GetProjectExternalUserGroupReferenceListArgsDict', 'outputs.GetProjectExternalUserGroupReferenceListResult']] external_user_group_reference_lists: List of directory service user groups. These groups are not managed by Nutanix.
            * `external_user_group_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`" pulumi-lang-hcl="`user_group`">`userGroup`</span>
            * `external_user_group_reference_list.#.uuid` - The UUID of a<span pulumi-lang-nodejs=" userGroup
              " pulumi-lang-dotnet=" UserGroup
@@ -520,11 +520,11 @@ def get_project_output(categories: pulumi.Input[Optional[Optional[Sequence[Union
              "> userGroup
              </span>* `external_user_group_reference_list.#.name` - The name of a user_group
     :param _builtins.str project_id: - (Required) The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`">`id`</span> of the project.
-    :param Sequence[Union['GetProjectSubnetReferenceListArgs', 'GetProjectSubnetReferenceListArgsDict']] subnet_reference_lists: List of subnets for the project.
+    :param Sequence[Union['GetProjectSubnetReferenceListArgs', 'GetProjectSubnetReferenceListArgsDict', 'outputs.GetProjectSubnetReferenceListResult']] subnet_reference_lists: List of subnets for the project.
            * `subnet_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`subnet`" pulumi-lang-dotnet="`Subnet`" pulumi-lang-go="`subnet`" pulumi-lang-python="`subnet`" pulumi-lang-yaml="`subnet`" pulumi-lang-java="`subnet`" pulumi-lang-hcl="`subnet`">`subnet`</span>
            * `subnet_reference_list.#.uuid` - The UUID of a subnet
            * `subnet_reference_list.#.name` - The name of a subnet.
-    :param Sequence[Union['GetProjectUserReferenceListArgs', 'GetProjectUserReferenceListArgsDict']] user_reference_lists: List of Reference of users.
+    :param Sequence[Union['GetProjectUserReferenceListArgs', 'GetProjectUserReferenceListArgsDict', 'outputs.GetProjectUserReferenceListResult']] user_reference_lists: List of Reference of users.
     """
     __args__ = dict()
     __args__['categories'] = categories

@@ -69,7 +69,7 @@ class AwaitableGetServiceGroupsResult(GetServiceGroupsResult):
             metadatas=self.metadatas)
 
 
-def get_service_groups(metadatas: Optional[Sequence[Union['GetServiceGroupsMetadataArgs', 'GetServiceGroupsMetadataArgsDict']]] = None,
+def get_service_groups(metadatas: Optional[Sequence[Union['GetServiceGroupsMetadataArgs', 'GetServiceGroupsMetadataArgsDict', 'outputs.GetServiceGroupsMetadataResult']]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceGroupsResult:
     """
     Use this data source to access information about an existing resource.
@@ -83,7 +83,7 @@ def get_service_groups(metadatas: Optional[Sequence[Union['GetServiceGroupsMetad
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-def get_service_groups_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetServiceGroupsMetadataArgs', 'GetServiceGroupsMetadataArgsDict']]]]] = None,
+def get_service_groups_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetServiceGroupsMetadataArgs', 'GetServiceGroupsMetadataArgsDict', 'outputs.GetServiceGroupsMetadataResult']]]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceGroupsResult]:
     """
     Use this data source to access information about an existing resource.

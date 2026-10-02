@@ -838,7 +838,7 @@ class Subnet(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetCategoryArgs', 'SubnetCategoryArgsDict']]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetCategoryArgs', 'SubnetCategoryArgsDict', 'outputs.SubnetCategory']]]]] = None,
                  cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                  default_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -873,7 +873,7 @@ class Subnet(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] availability_zone_reference: - (Optional) The reference to a availability_zone.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SubnetCategoryArgs', 'SubnetCategoryArgsDict']]]] categories: - (Optional) The categories of the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SubnetCategoryArgs', 'SubnetCategoryArgsDict', 'outputs.SubnetCategory']]]] categories: - (Optional) The categories of the resource.
         :param pulumi.Input[_builtins.str] cluster_uuid: - (Required) The UUID of the cluster.
         :param pulumi.Input[_builtins.str] default_gateway_ip: - (Optional) Default gateway IP address.
         :param pulumi.Input[_builtins.str] description: - (Optional) A description for subnet.
@@ -927,7 +927,7 @@ class Subnet(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetCategoryArgs', 'SubnetCategoryArgsDict']]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetCategoryArgs', 'SubnetCategoryArgsDict', 'outputs.SubnetCategory']]]]] = None,
                  cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                  default_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -999,7 +999,7 @@ class Subnet(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             api_version: pulumi.Input[Optional[_builtins.str]] = None,
             availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetCategoryArgs', 'SubnetCategoryArgsDict']]]]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetCategoryArgs', 'SubnetCategoryArgsDict', 'outputs.SubnetCategory']]]]] = None,
             cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
             cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
             default_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1033,7 +1033,7 @@ class Subnet(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] availability_zone_reference: - (Optional) The reference to a availability_zone.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['SubnetCategoryArgs', 'SubnetCategoryArgsDict']]]] categories: - (Optional) The categories of the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SubnetCategoryArgs', 'SubnetCategoryArgsDict', 'outputs.SubnetCategory']]]] categories: - (Optional) The categories of the resource.
         :param pulumi.Input[_builtins.str] cluster_uuid: - (Required) The UUID of the cluster.
         :param pulumi.Input[_builtins.str] default_gateway_ip: - (Optional) Default gateway IP address.
         :param pulumi.Input[_builtins.str] description: - (Optional) A description for subnet.

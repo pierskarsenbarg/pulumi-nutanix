@@ -597,15 +597,15 @@ class VolumeGroupV2(pulumi.CustomResource):
                  cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  created_by: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2DiskArgs', 'VolumeGroupV2DiskArgsDict']]]]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2DiskArgs', 'VolumeGroupV2DiskArgsDict', 'outputs.VolumeGroupV2Disk']]]]] = None,
                  enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
                  is_hidden: pulumi.Input[Optional[_builtins.bool]] = None,
-                 iscsi_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict']]]]] = None,
+                 iscsi_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict', 'outputs.VolumeGroupV2IscsiFeature']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  protocol: pulumi.Input[Optional[_builtins.str]] = None,
                  sharing_status: pulumi.Input[Optional[_builtins.str]] = None,
                  should_load_balance_vm_attachments: pulumi.Input[Optional[_builtins.bool]] = None,
-                 storage_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict']]]]] = None,
+                 storage_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict', 'outputs.VolumeGroupV2StorageFeature']]]]] = None,
                  target_name: pulumi.Input[Optional[_builtins.str]] = None,
                  target_prefix: pulumi.Input[Optional[_builtins.str]] = None,
                  usage_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -652,10 +652,10 @@ class VolumeGroupV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_reference: -(Required) The UUID of the cluster that will host the Volume Group.
         :param pulumi.Input[_builtins.str] created_by: -(Optional) Service/user who created this Volume Group.
         :param pulumi.Input[_builtins.str] description: -(Optional) Volume Group description. This is an optional field.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2DiskArgs', 'VolumeGroupV2DiskArgsDict']]]] disks: -(Optional) A list of Volume Disks to be attached to the Volume Group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2DiskArgs', 'VolumeGroupV2DiskArgsDict', 'outputs.VolumeGroupV2Disk']]]] disks: -(Optional) A list of Volume Disks to be attached to the Volume Group.
         :param pulumi.Input[_builtins.str] enabled_authentications: -(Optional) The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
         :param pulumi.Input[_builtins.bool] is_hidden: -(Optional) Indicates whether the Volume Group is meant to be hidden or not.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict']]]] iscsi_features: -(Optional) iSCSI specific settings for the Volume Group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict', 'outputs.VolumeGroupV2IscsiFeature']]]] iscsi_features: -(Optional) iSCSI specific settings for the Volume Group.
         :param pulumi.Input[_builtins.str] name: -(Required) Volume Group name. This is an optional field.
         :param pulumi.Input[_builtins.str] protocol: -(Optional) Type of protocol to be used for Volume Group. Valid values are :
                - NOT_ASSIGNED : Volume Group does not use any protocol.
@@ -663,7 +663,7 @@ class VolumeGroupV2(pulumi.CustomResource):
                - NVMF : Volume Group uses NVMf protocol.
         :param pulumi.Input[_builtins.str] sharing_status: -(Optional) Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
         :param pulumi.Input[_builtins.bool] should_load_balance_vm_attachments: -(Optional) Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict']]]] storage_features: -(Optional) Storage optimization features which must be enabled on the Volume Group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict', 'outputs.VolumeGroupV2StorageFeature']]]] storage_features: -(Optional) Storage optimization features which must be enabled on the Volume Group.
         :param pulumi.Input[_builtins.str] target_name: -(Optional) Name of the external client target that will be visible and accessible to the client.
         :param pulumi.Input[_builtins.str] target_prefix: The specifications contain the target prefix for external clients as the value. This is an optional field.
         :param pulumi.Input[_builtins.str] usage_type: -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
@@ -726,15 +726,15 @@ class VolumeGroupV2(pulumi.CustomResource):
                  cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  created_by: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2DiskArgs', 'VolumeGroupV2DiskArgsDict']]]]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2DiskArgs', 'VolumeGroupV2DiskArgsDict', 'outputs.VolumeGroupV2Disk']]]]] = None,
                  enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
                  is_hidden: pulumi.Input[Optional[_builtins.bool]] = None,
-                 iscsi_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict']]]]] = None,
+                 iscsi_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict', 'outputs.VolumeGroupV2IscsiFeature']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  protocol: pulumi.Input[Optional[_builtins.str]] = None,
                  sharing_status: pulumi.Input[Optional[_builtins.str]] = None,
                  should_load_balance_vm_attachments: pulumi.Input[Optional[_builtins.bool]] = None,
-                 storage_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict']]]]] = None,
+                 storage_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict', 'outputs.VolumeGroupV2StorageFeature']]]]] = None,
                  target_name: pulumi.Input[Optional[_builtins.str]] = None,
                  target_prefix: pulumi.Input[Optional[_builtins.str]] = None,
                  usage_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -780,16 +780,16 @@ class VolumeGroupV2(pulumi.CustomResource):
             cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2DiskArgs', 'VolumeGroupV2DiskArgsDict']]]]] = None,
+            disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2DiskArgs', 'VolumeGroupV2DiskArgsDict', 'outputs.VolumeGroupV2Disk']]]]] = None,
             enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             is_hidden: pulumi.Input[Optional[_builtins.bool]] = None,
-            iscsi_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict']]]]] = None,
+            iscsi_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict', 'outputs.VolumeGroupV2IscsiFeature']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             protocol: pulumi.Input[Optional[_builtins.str]] = None,
             sharing_status: pulumi.Input[Optional[_builtins.str]] = None,
             should_load_balance_vm_attachments: pulumi.Input[Optional[_builtins.bool]] = None,
-            storage_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict']]]]] = None,
+            storage_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict', 'outputs.VolumeGroupV2StorageFeature']]]]] = None,
             target_name: pulumi.Input[Optional[_builtins.str]] = None,
             target_prefix: pulumi.Input[Optional[_builtins.str]] = None,
             usage_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'VolumeGroupV2':
@@ -807,11 +807,11 @@ class VolumeGroupV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_reference: -(Required) The UUID of the cluster that will host the Volume Group.
         :param pulumi.Input[_builtins.str] created_by: -(Optional) Service/user who created this Volume Group.
         :param pulumi.Input[_builtins.str] description: -(Optional) Volume Group description. This is an optional field.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2DiskArgs', 'VolumeGroupV2DiskArgsDict']]]] disks: -(Optional) A list of Volume Disks to be attached to the Volume Group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2DiskArgs', 'VolumeGroupV2DiskArgsDict', 'outputs.VolumeGroupV2Disk']]]] disks: -(Optional) A list of Volume Disks to be attached to the Volume Group.
         :param pulumi.Input[_builtins.str] enabled_authentications: -(Optional) The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
         :param pulumi.Input[_builtins.str] ext_id: -(Optional) A globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[_builtins.bool] is_hidden: -(Optional) Indicates whether the Volume Group is meant to be hidden or not.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict']]]] iscsi_features: -(Optional) iSCSI specific settings for the Volume Group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict', 'outputs.VolumeGroupV2IscsiFeature']]]] iscsi_features: -(Optional) iSCSI specific settings for the Volume Group.
         :param pulumi.Input[_builtins.str] name: -(Required) Volume Group name. This is an optional field.
         :param pulumi.Input[_builtins.str] protocol: -(Optional) Type of protocol to be used for Volume Group. Valid values are :
                - NOT_ASSIGNED : Volume Group does not use any protocol.
@@ -819,7 +819,7 @@ class VolumeGroupV2(pulumi.CustomResource):
                - NVMF : Volume Group uses NVMf protocol.
         :param pulumi.Input[_builtins.str] sharing_status: -(Optional) Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
         :param pulumi.Input[_builtins.bool] should_load_balance_vm_attachments: -(Optional) Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict']]]] storage_features: -(Optional) Storage optimization features which must be enabled on the Volume Group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict', 'outputs.VolumeGroupV2StorageFeature']]]] storage_features: -(Optional) Storage optimization features which must be enabled on the Volume Group.
         :param pulumi.Input[_builtins.str] target_name: -(Optional) Name of the external client target that will be visible and accessible to the client.
         :param pulumi.Input[_builtins.str] target_prefix: The specifications contain the target prefix for external clients as the value. This is an optional field.
         :param pulumi.Input[_builtins.str] usage_type: -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER

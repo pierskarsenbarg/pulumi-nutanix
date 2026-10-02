@@ -444,14 +444,14 @@ class ClusterV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  cluster_profile_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict']]]]] = None,
+                 configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict', 'outputs.ClusterV2Config']]]]] = None,
                  container_name: pulumi.Input[Optional[_builtins.str]] = None,
                  dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
                  expand: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict']]]]] = None,
-                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict']]]]] = None,
+                 networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict', 'outputs.ClusterV2Network']]]]] = None,
+                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict', 'outputs.ClusterV2Node']]]]] = None,
                  __props__=None):
         """
         Represents the Cluster entity. Provides the basic infrastructure for compute, storage and networking. This includes the operations that can be carried out on cluster and its subresources - host (node), rsyslog servers etc and actions that can be performed on cluster - add a node, remove a node, attach categories.
@@ -656,12 +656,12 @@ class ClusterV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: - (Optional) The reference to a project.
         :param pulumi.Input[_builtins.str] cluster_profile_ext_id: - (Optional) The reference to a cluster profile.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict']]]] configs: - (Optional) Cluster configuration details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict', 'outputs.ClusterV2Config']]]] configs: - (Optional) Cluster configuration details.
         :param pulumi.Input[_builtins.str] container_name: - (Optional) The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
         :param pulumi.Input[_builtins.bool] dryrun: - (Optional) parameter that allows long-running operations to execute in a dry-run mode providing ability to identify trouble spots and system failures without performing the actual operation. Additionally this mode also offers a summary snapshot of the resultant system in order to better understand how things fit together. The operation runs in dry-run mode only if the provided value is true.
         :param pulumi.Input[_builtins.str] name: - (Required) The name for the vm.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict']]]] networks: - (Optional) Network details of a cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict']]]] nodes: - (Optional) The reference to a node and remove node parameters.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict', 'outputs.ClusterV2Network']]]] networks: - (Optional) Network details of a cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict', 'outputs.ClusterV2Node']]]] nodes: - (Optional) The reference to a node and remove node parameters.
         """
         ...
     @overload
@@ -885,14 +885,14 @@ class ClusterV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  cluster_profile_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict']]]]] = None,
+                 configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict', 'outputs.ClusterV2Config']]]]] = None,
                  container_name: pulumi.Input[Optional[_builtins.str]] = None,
                  dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
                  expand: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict']]]]] = None,
-                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict']]]]] = None,
+                 networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict', 'outputs.ClusterV2Network']]]]] = None,
+                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict', 'outputs.ClusterV2Node']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -931,16 +931,16 @@ class ClusterV2(pulumi.CustomResource):
             backup_eligibility_score: pulumi.Input[Optional[_builtins.int]] = None,
             categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             cluster_profile_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict']]]]] = None,
+            configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict', 'outputs.ClusterV2Config']]]]] = None,
             container_name: pulumi.Input[Optional[_builtins.str]] = None,
             dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
             expand: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             inefficient_vm_count: pulumi.Input[Optional[_builtins.int]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2LinkArgs', 'ClusterV2LinkArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2LinkArgs', 'ClusterV2LinkArgsDict', 'outputs.ClusterV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict']]]]] = None,
-            nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict']]]]] = None,
+            networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict', 'outputs.ClusterV2Network']]]]] = None,
+            nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict', 'outputs.ClusterV2Node']]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             upgrade_status: pulumi.Input[Optional[_builtins.str]] = None,
             vm_count: pulumi.Input[Optional[_builtins.int]] = None) -> 'ClusterV2':
@@ -953,12 +953,12 @@ class ClusterV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: - (Optional) The reference to a project.
         :param pulumi.Input[_builtins.str] cluster_profile_ext_id: - (Optional) The reference to a cluster profile.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict']]]] configs: - (Optional) Cluster configuration details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict', 'outputs.ClusterV2Config']]]] configs: - (Optional) Cluster configuration details.
         :param pulumi.Input[_builtins.str] container_name: - (Optional) The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
         :param pulumi.Input[_builtins.bool] dryrun: - (Optional) parameter that allows long-running operations to execute in a dry-run mode providing ability to identify trouble spots and system failures without performing the actual operation. Additionally this mode also offers a summary snapshot of the resultant system in order to better understand how things fit together. The operation runs in dry-run mode only if the provided value is true.
         :param pulumi.Input[_builtins.str] name: - (Required) The name for the vm.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict']]]] networks: - (Optional) Network details of a cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict']]]] nodes: - (Optional) The reference to a node and remove node parameters.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict', 'outputs.ClusterV2Network']]]] networks: - (Optional) Network details of a cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict', 'outputs.ClusterV2Node']]]] nodes: - (Optional) The reference to a node and remove node parameters.
         :param pulumi.Input[_builtins.str] upgrade_status: - (Optional) Upgrade status of a cluster.
                  Valid values are:
                - "CANCELLED"	The cluster upgrade is cancelled.

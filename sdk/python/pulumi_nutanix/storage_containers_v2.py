@@ -850,7 +850,7 @@ class StorageContainersV2(pulumi.CustomResource):
                  logical_advertised_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  logical_explicit_reserved_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 nfs_whitelist_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StorageContainersV2NfsWhitelistAddressArgs', 'StorageContainersV2NfsWhitelistAddressArgsDict']]]]] = None,
+                 nfs_whitelist_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StorageContainersV2NfsWhitelistAddressArgs', 'StorageContainersV2NfsWhitelistAddressArgsDict', 'outputs.StorageContainersV2NfsWhitelistAddress']]]]] = None,
                  on_disk_dedup: pulumi.Input[Optional[_builtins.str]] = None,
                  owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  replication_factor: pulumi.Input[Optional[_builtins.int]] = None,
@@ -906,7 +906,7 @@ class StorageContainersV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] logical_advertised_capacity_bytes: -(Optional) Max capacity of the Container as defined by the user.
         :param pulumi.Input[_builtins.int] logical_explicit_reserved_capacity_bytes: -(Optional) Total reserved size (in bytes) of the container (set by Admin). This also accounts for the container's replication factor. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity.
         :param pulumi.Input[_builtins.str] name: -(Required) Name of the storage container.  Note that the name of Storage Container should be unique per cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StorageContainersV2NfsWhitelistAddressArgs', 'StorageContainersV2NfsWhitelistAddressArgsDict']]]] nfs_whitelist_addresses: -(Optional) List of NFS addresses which need to be whitelisted.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StorageContainersV2NfsWhitelistAddressArgs', 'StorageContainersV2NfsWhitelistAddressArgsDict', 'outputs.StorageContainersV2NfsWhitelistAddress']]]] nfs_whitelist_addresses: -(Optional) List of NFS addresses which need to be whitelisted.
         :param pulumi.Input[_builtins.str] on_disk_dedup: - Indicates the current status of Disk Deduplication for the Container. available values:  `NONE`,    `OFF`,    `POST_PROCESS`
         :param pulumi.Input[_builtins.str] owner_ext_id: -(Optional) owner ext id
         :param pulumi.Input[_builtins.int] replication_factor: -(Optional) Replication factor of the Storage Container.
@@ -982,7 +982,7 @@ class StorageContainersV2(pulumi.CustomResource):
                  logical_advertised_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  logical_explicit_reserved_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 nfs_whitelist_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StorageContainersV2NfsWhitelistAddressArgs', 'StorageContainersV2NfsWhitelistAddressArgsDict']]]]] = None,
+                 nfs_whitelist_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StorageContainersV2NfsWhitelistAddressArgs', 'StorageContainersV2NfsWhitelistAddressArgsDict', 'outputs.StorageContainersV2NfsWhitelistAddress']]]]] = None,
                  on_disk_dedup: pulumi.Input[Optional[_builtins.str]] = None,
                  owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  replication_factor: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1053,13 +1053,13 @@ class StorageContainersV2(pulumi.CustomResource):
             is_internal: pulumi.Input[Optional[_builtins.bool]] = None,
             is_marked_for_removal: pulumi.Input[Optional[_builtins.bool]] = None,
             is_software_encryption_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StorageContainersV2LinkArgs', 'StorageContainersV2LinkArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StorageContainersV2LinkArgs', 'StorageContainersV2LinkArgsDict', 'outputs.StorageContainersV2Link']]]]] = None,
             logical_advertised_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
             logical_explicit_reserved_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
             logical_implicit_reserved_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
             max_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            nfs_whitelist_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StorageContainersV2NfsWhitelistAddressArgs', 'StorageContainersV2NfsWhitelistAddressArgsDict']]]]] = None,
+            nfs_whitelist_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StorageContainersV2NfsWhitelistAddressArgs', 'StorageContainersV2NfsWhitelistAddressArgsDict', 'outputs.StorageContainersV2NfsWhitelistAddress']]]]] = None,
             on_disk_dedup: pulumi.Input[Optional[_builtins.str]] = None,
             owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             replication_factor: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1088,13 +1088,13 @@ class StorageContainersV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_internal: - Indicates whether the Container is internal and is managed by Nutanix.
         :param pulumi.Input[_builtins.bool] is_marked_for_removal: - Indicates if the Storage Container is marked for removal. This field is set when the Storage Container is about to be destroyed.
         :param pulumi.Input[_builtins.bool] is_software_encryption_enabled: -(Optional) Indicates whether the Container instance has software encryption enabled.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StorageContainersV2LinkArgs', 'StorageContainersV2LinkArgsDict']]]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StorageContainersV2LinkArgs', 'StorageContainersV2LinkArgsDict', 'outputs.StorageContainersV2Link']]]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[_builtins.int] logical_advertised_capacity_bytes: -(Optional) Max capacity of the Container as defined by the user.
         :param pulumi.Input[_builtins.int] logical_explicit_reserved_capacity_bytes: -(Optional) Total reserved size (in bytes) of the container (set by Admin). This also accounts for the container's replication factor. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity.
         :param pulumi.Input[_builtins.int] logical_implicit_reserved_capacity_bytes: - This is the summation of reservations provisioned on all vdisks in the container. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity
         :param pulumi.Input[_builtins.int] max_capacity_bytes: - Maximum physical capacity of the Storage Container in bytes.
         :param pulumi.Input[_builtins.str] name: -(Required) Name of the storage container.  Note that the name of Storage Container should be unique per cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StorageContainersV2NfsWhitelistAddressArgs', 'StorageContainersV2NfsWhitelistAddressArgsDict']]]] nfs_whitelist_addresses: -(Optional) List of NFS addresses which need to be whitelisted.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StorageContainersV2NfsWhitelistAddressArgs', 'StorageContainersV2NfsWhitelistAddressArgsDict', 'outputs.StorageContainersV2NfsWhitelistAddress']]]] nfs_whitelist_addresses: -(Optional) List of NFS addresses which need to be whitelisted.
         :param pulumi.Input[_builtins.str] on_disk_dedup: - Indicates the current status of Disk Deduplication for the Container. available values:  `NONE`,    `OFF`,    `POST_PROCESS`
         :param pulumi.Input[_builtins.str] owner_ext_id: -(Optional) owner ext id
         :param pulumi.Input[_builtins.int] replication_factor: -(Optional) Replication factor of the Storage Container.

@@ -229,7 +229,7 @@ class PcRegistrationV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 remote_cluster: pulumi.Input[Optional[Union['PcRegistrationV2RemoteClusterArgs', 'PcRegistrationV2RemoteClusterArgsDict']]] = None,
+                 remote_cluster: pulumi.Input[Optional[Union['PcRegistrationV2RemoteClusterArgs', 'PcRegistrationV2RemoteClusterArgsDict', 'outputs.PcRegistrationV2RemoteCluster']]] = None,
                  __props__=None):
         """
         Provides a resource to Registers a domain manager (Prism Central) instance to other entities like PE and PC. This process is asynchronous, creating a registration task and returning its UUID.
@@ -238,7 +238,7 @@ class PcRegistrationV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pc_ext_id: -(Required) The display name for the Role.
-        :param pulumi.Input[Union['PcRegistrationV2RemoteClusterArgs', 'PcRegistrationV2RemoteClusterArgsDict']] remote_cluster: -(Required)  The registration request consists of the remote cluster details. Credentials must be of domain manager (Prism Central) role.
+        :param pulumi.Input[Union['PcRegistrationV2RemoteClusterArgs', 'PcRegistrationV2RemoteClusterArgsDict', 'outputs.PcRegistrationV2RemoteCluster']] remote_cluster: -(Required)  The registration request consists of the remote cluster details. Credentials must be of domain manager (Prism Central) role.
                The remote cluster details are different based on the object type. The object type is used to determine the type of remote cluster. The object type can be one of the following:
                * `prism.v4.management.DomainManagerRemoteClusterSpec`
                * `prism.v4.management.AOSRemoteClusterSpec`
@@ -270,7 +270,7 @@ class PcRegistrationV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 remote_cluster: pulumi.Input[Optional[Union['PcRegistrationV2RemoteClusterArgs', 'PcRegistrationV2RemoteClusterArgsDict']]] = None,
+                 remote_cluster: pulumi.Input[Optional[Union['PcRegistrationV2RemoteClusterArgs', 'PcRegistrationV2RemoteClusterArgsDict', 'outputs.PcRegistrationV2RemoteCluster']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -305,15 +305,15 @@ class PcRegistrationV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcRegistrationV2ConfigArgs', 'PcRegistrationV2ConfigArgsDict']]]]] = None,
+            configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcRegistrationV2ConfigArgs', 'PcRegistrationV2ConfigArgsDict', 'outputs.PcRegistrationV2Config']]]]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             hosting_cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             is_registered_with_hosting_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcRegistrationV2LinkArgs', 'PcRegistrationV2LinkArgsDict']]]]] = None,
-            networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcRegistrationV2NetworkArgs', 'PcRegistrationV2NetworkArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcRegistrationV2LinkArgs', 'PcRegistrationV2LinkArgsDict', 'outputs.PcRegistrationV2Link']]]]] = None,
+            networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcRegistrationV2NetworkArgs', 'PcRegistrationV2NetworkArgsDict', 'outputs.PcRegistrationV2Network']]]]] = None,
             node_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            remote_cluster: pulumi.Input[Optional[Union['PcRegistrationV2RemoteClusterArgs', 'PcRegistrationV2RemoteClusterArgsDict']]] = None,
+            remote_cluster: pulumi.Input[Optional[Union['PcRegistrationV2RemoteClusterArgs', 'PcRegistrationV2RemoteClusterArgsDict', 'outputs.PcRegistrationV2RemoteCluster']]] = None,
             should_enable_high_availability: pulumi.Input[Optional[_builtins.bool]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PcRegistrationV2':
         """
@@ -324,7 +324,7 @@ class PcRegistrationV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] pc_ext_id: -(Required) The display name for the Role.
-        :param pulumi.Input[Union['PcRegistrationV2RemoteClusterArgs', 'PcRegistrationV2RemoteClusterArgsDict']] remote_cluster: -(Required)  The registration request consists of the remote cluster details. Credentials must be of domain manager (Prism Central) role.
+        :param pulumi.Input[Union['PcRegistrationV2RemoteClusterArgs', 'PcRegistrationV2RemoteClusterArgsDict', 'outputs.PcRegistrationV2RemoteCluster']] remote_cluster: -(Required)  The registration request consists of the remote cluster details. Credentials must be of domain manager (Prism Central) role.
                The remote cluster details are different based on the object type. The object type is used to determine the type of remote cluster. The object type can be one of the following:
                * `prism.v4.management.DomainManagerRemoteClusterSpec`
                * `prism.v4.management.AOSRemoteClusterSpec`

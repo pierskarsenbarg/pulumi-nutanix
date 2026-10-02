@@ -365,9 +365,9 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
                  authorization_policy_type: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 entities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict']]]]] = None,
+                 entities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict', 'outputs.AuthorizationPolicyV2Entity']]]]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 identities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict']]]]] = None,
+                 identities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict', 'outputs.AuthorizationPolicyV2Identity']]]]] = None,
                  role: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -410,9 +410,9 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
                - `USER_DEFINED` : ACP defined by an User.
         :param pulumi.Input[_builtins.str] description: Description of the Authorization Policy.
         :param pulumi.Input[_builtins.str] display_name: Name of the Authorization Policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict']]]] entities: The entities being qualified by the Authorization Policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict', 'outputs.AuthorizationPolicyV2Entity']]]] entities: The entities being qualified by the Authorization Policy.
         :param pulumi.Input[_builtins.str] ext_id: ext_id of Authorization policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict']]]] identities: The identities for which the Authorization Policy is created.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict', 'outputs.AuthorizationPolicyV2Identity']]]] identities: The identities for which the Authorization Policy is created.
         :param pulumi.Input[_builtins.str] role: The Role associated with the Authorization Policy.
         """
         ...
@@ -469,9 +469,9 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
                  authorization_policy_type: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 entities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict']]]]] = None,
+                 entities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict', 'outputs.AuthorizationPolicyV2Entity']]]]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 identities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict']]]]] = None,
+                 identities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict', 'outputs.AuthorizationPolicyV2Identity']]]]] = None,
                  role: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -518,9 +518,9 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
             created_time: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
-            entities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict']]]]] = None,
+            entities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict', 'outputs.AuthorizationPolicyV2Entity']]]]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            identities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict']]]]] = None,
+            identities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict', 'outputs.AuthorizationPolicyV2Identity']]]]] = None,
             is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
             last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
             role: pulumi.Input[Optional[_builtins.str]] = None) -> 'AuthorizationPolicyV2':
@@ -542,9 +542,9 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] created_time: The creation time of the Authorization Policy.
         :param pulumi.Input[_builtins.str] description: Description of the Authorization Policy.
         :param pulumi.Input[_builtins.str] display_name: Name of the Authorization Policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict']]]] entities: The entities being qualified by the Authorization Policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict', 'outputs.AuthorizationPolicyV2Entity']]]] entities: The entities being qualified by the Authorization Policy.
         :param pulumi.Input[_builtins.str] ext_id: ext_id of Authorization policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict']]]] identities: The identities for which the Authorization Policy is created.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict', 'outputs.AuthorizationPolicyV2Identity']]]] identities: The identities for which the Authorization Policy is created.
         :param pulumi.Input[_builtins.bool] is_system_defined: Flag identifying if the Authorization Policy is system defined or not.
         :param pulumi.Input[_builtins.str] last_updated_time: The time when the Authorization Policy was last updated.
         :param pulumi.Input[_builtins.str] role: The Role associated with the Authorization Policy.
