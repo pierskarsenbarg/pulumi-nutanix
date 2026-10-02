@@ -348,11 +348,11 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
-                 cluster_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ClusterEntityFilterArgs', 'ImagePlacementPolicyV2ClusterEntityFilterArgsDict']]]]] = None,
+                 cluster_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ClusterEntityFilterArgs', 'ImagePlacementPolicyV2ClusterEntityFilterArgsDict', 'outputs.ImagePlacementPolicyV2ClusterEntityFilter']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  enforcement_state: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 image_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ImageEntityFilterArgs', 'ImagePlacementPolicyV2ImageEntityFilterArgsDict']]]]] = None,
+                 image_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ImageEntityFilterArgs', 'ImagePlacementPolicyV2ImageEntityFilterArgsDict', 'outputs.ImagePlacementPolicyV2ImageEntityFilter']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  placement_type: pulumi.Input[Optional[_builtins.str]] = None,
                  should_cancel_running_tasks: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -384,10 +384,10 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Action to be performed on the image placement policy. Valid values "RESUME", "SUSPEND"
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ClusterEntityFilterArgs', 'ImagePlacementPolicyV2ClusterEntityFilterArgsDict']]]] cluster_entity_filters: Category-based entity filter.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ClusterEntityFilterArgs', 'ImagePlacementPolicyV2ClusterEntityFilterArgsDict', 'outputs.ImagePlacementPolicyV2ClusterEntityFilter']]]] cluster_entity_filters: Category-based entity filter.
         :param pulumi.Input[_builtins.str] description: Description of the image placement policy.
         :param pulumi.Input[_builtins.str] enforcement_state: Enforcement status of the image placement policy. Valid values "ACTIVE", "SUSPENDED"
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ImageEntityFilterArgs', 'ImagePlacementPolicyV2ImageEntityFilterArgsDict']]]] image_entity_filters: Category-based entity filter.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ImageEntityFilterArgs', 'ImagePlacementPolicyV2ImageEntityFilterArgsDict', 'outputs.ImagePlacementPolicyV2ImageEntityFilter']]]] image_entity_filters: Category-based entity filter.
         :param pulumi.Input[_builtins.str] name: Name of the image placement policy.
         :param pulumi.Input[_builtins.str] placement_type: Type of the image placement policy. Valid values "HARD", "SOFT"
         """
@@ -437,11 +437,11 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: pulumi.Input[Optional[_builtins.str]] = None,
-                 cluster_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ClusterEntityFilterArgs', 'ImagePlacementPolicyV2ClusterEntityFilterArgsDict']]]]] = None,
+                 cluster_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ClusterEntityFilterArgs', 'ImagePlacementPolicyV2ClusterEntityFilterArgsDict', 'outputs.ImagePlacementPolicyV2ClusterEntityFilter']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  enforcement_state: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 image_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ImageEntityFilterArgs', 'ImagePlacementPolicyV2ImageEntityFilterArgsDict']]]]] = None,
+                 image_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ImageEntityFilterArgs', 'ImagePlacementPolicyV2ImageEntityFilterArgsDict', 'outputs.ImagePlacementPolicyV2ImageEntityFilter']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  placement_type: pulumi.Input[Optional[_builtins.str]] = None,
                  should_cancel_running_tasks: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -483,12 +483,12 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             action: pulumi.Input[Optional[_builtins.str]] = None,
-            cluster_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ClusterEntityFilterArgs', 'ImagePlacementPolicyV2ClusterEntityFilterArgsDict']]]]] = None,
+            cluster_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ClusterEntityFilterArgs', 'ImagePlacementPolicyV2ClusterEntityFilterArgsDict', 'outputs.ImagePlacementPolicyV2ClusterEntityFilter']]]]] = None,
             create_time: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             enforcement_state: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            image_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ImageEntityFilterArgs', 'ImagePlacementPolicyV2ImageEntityFilterArgsDict']]]]] = None,
+            image_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ImageEntityFilterArgs', 'ImagePlacementPolicyV2ImageEntityFilterArgsDict', 'outputs.ImagePlacementPolicyV2ImageEntityFilter']]]]] = None,
             last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -502,10 +502,10 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: Action to be performed on the image placement policy. Valid values "RESUME", "SUSPEND"
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ClusterEntityFilterArgs', 'ImagePlacementPolicyV2ClusterEntityFilterArgsDict']]]] cluster_entity_filters: Category-based entity filter.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ClusterEntityFilterArgs', 'ImagePlacementPolicyV2ClusterEntityFilterArgsDict', 'outputs.ImagePlacementPolicyV2ClusterEntityFilter']]]] cluster_entity_filters: Category-based entity filter.
         :param pulumi.Input[_builtins.str] description: Description of the image placement policy.
         :param pulumi.Input[_builtins.str] enforcement_state: Enforcement status of the image placement policy. Valid values "ACTIVE", "SUSPENDED"
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ImageEntityFilterArgs', 'ImagePlacementPolicyV2ImageEntityFilterArgsDict']]]] image_entity_filters: Category-based entity filter.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ImageEntityFilterArgs', 'ImagePlacementPolicyV2ImageEntityFilterArgsDict', 'outputs.ImagePlacementPolicyV2ImageEntityFilter']]]] image_entity_filters: Category-based entity filter.
         :param pulumi.Input[_builtins.str] name: Name of the image placement policy.
         :param pulumi.Input[_builtins.str] placement_type: Type of the image placement policy. Valid values "HARD", "SOFT"
         """

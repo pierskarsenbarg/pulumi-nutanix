@@ -174,7 +174,7 @@ class ClustersUnconfiguredNodeNetworksV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  expand: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodeListArgs', 'ClustersUnconfiguredNodeNetworksV2NodeListArgsDict']]]]] = None,
+                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodeListArgs', 'ClustersUnconfiguredNodeNetworksV2NodeListArgsDict', 'outputs.ClustersUnconfiguredNodeNetworksV2NodeList']]]]] = None,
                  request_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -210,7 +210,7 @@ class ClustersUnconfiguredNodeNetworksV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodeListArgs', 'ClustersUnconfiguredNodeNetworksV2NodeListArgsDict']]]] node_lists: -(Required) List of nodes for which the network information is required.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodeListArgs', 'ClustersUnconfiguredNodeNetworksV2NodeListArgsDict', 'outputs.ClustersUnconfiguredNodeNetworksV2NodeList']]]] node_lists: -(Required) List of nodes for which the network information is required.
         :param pulumi.Input[_builtins.str] request_type: -(Optional) Request type
         """
         ...
@@ -266,7 +266,7 @@ class ClustersUnconfiguredNodeNetworksV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  expand: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodeListArgs', 'ClustersUnconfiguredNodeNetworksV2NodeListArgsDict']]]]] = None,
+                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodeListArgs', 'ClustersUnconfiguredNodeNetworksV2NodeListArgsDict', 'outputs.ClustersUnconfiguredNodeNetworksV2NodeList']]]]] = None,
                  request_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -298,8 +298,8 @@ class ClustersUnconfiguredNodeNetworksV2(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             expand: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodeListArgs', 'ClustersUnconfiguredNodeNetworksV2NodeListArgsDict']]]]] = None,
-            nodes_networking_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailArgs', 'ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailArgsDict']]]]] = None,
+            node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodeListArgs', 'ClustersUnconfiguredNodeNetworksV2NodeListArgsDict', 'outputs.ClustersUnconfiguredNodeNetworksV2NodeList']]]]] = None,
+            nodes_networking_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailArgs', 'ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailArgsDict', 'outputs.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail']]]]] = None,
             request_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'ClustersUnconfiguredNodeNetworksV2':
         """
         Get an existing ClustersUnconfiguredNodeNetworksV2 resource's state with the given name, id, and optional extra
@@ -309,7 +309,7 @@ class ClustersUnconfiguredNodeNetworksV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) Cluster UUID.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodeListArgs', 'ClustersUnconfiguredNodeNetworksV2NodeListArgsDict']]]] node_lists: -(Required) List of nodes for which the network information is required.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodeListArgs', 'ClustersUnconfiguredNodeNetworksV2NodeListArgsDict', 'outputs.ClustersUnconfiguredNodeNetworksV2NodeList']]]] node_lists: -(Required) List of nodes for which the network information is required.
         :param pulumi.Input[_builtins.str] request_type: -(Optional) Request type
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

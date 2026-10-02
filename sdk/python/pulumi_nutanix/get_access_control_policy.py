@@ -212,7 +212,7 @@ class AwaitableGetAccessControlPolicyResult(GetAccessControlPolicyResult):
 
 def get_access_control_policy(access_control_policy_id: Optional[_builtins.str] = None,
                               access_control_policy_name: Optional[_builtins.str] = None,
-                              categories: Optional[Sequence[Union['GetAccessControlPolicyCategoryArgs', 'GetAccessControlPolicyCategoryArgsDict']]] = None,
+                              categories: Optional[Sequence[Union['GetAccessControlPolicyCategoryArgs', 'GetAccessControlPolicyCategoryArgsDict', 'outputs.GetAccessControlPolicyCategoryResult']]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAccessControlPolicyResult:
     """
     Describes an Access Control Policy.
@@ -237,7 +237,7 @@ def get_access_control_policy(access_control_policy_id: Optional[_builtins.str] 
 
 
     :param _builtins.str access_control_policy_id: - (Required) The UUID of an access control policy.
-    :param Sequence[Union['GetAccessControlPolicyCategoryArgs', 'GetAccessControlPolicyCategoryArgsDict']] categories: - The category values represented as a dictionary of key > list of values.
+    :param Sequence[Union['GetAccessControlPolicyCategoryArgs', 'GetAccessControlPolicyCategoryArgsDict', 'outputs.GetAccessControlPolicyCategoryResult']] categories: - The category values represented as a dictionary of key > list of values.
     """
     __args__ = dict()
     __args__['accessControlPolicyId'] = access_control_policy_id
@@ -264,7 +264,7 @@ def get_access_control_policy(access_control_policy_id: Optional[_builtins.str] 
         user_reference_lists=pulumi.get(__ret__, 'user_reference_lists'))
 def get_access_control_policy_output(access_control_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      access_control_policy_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                                     categories: pulumi.Input[Optional[Optional[Sequence[Union['GetAccessControlPolicyCategoryArgs', 'GetAccessControlPolicyCategoryArgsDict']]]]] = None,
+                                     categories: pulumi.Input[Optional[Optional[Sequence[Union['GetAccessControlPolicyCategoryArgs', 'GetAccessControlPolicyCategoryArgsDict', 'outputs.GetAccessControlPolicyCategoryResult']]]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAccessControlPolicyResult]:
     """
     Describes an Access Control Policy.
@@ -289,7 +289,7 @@ def get_access_control_policy_output(access_control_policy_id: pulumi.Input[Opti
 
 
     :param _builtins.str access_control_policy_id: - (Required) The UUID of an access control policy.
-    :param Sequence[Union['GetAccessControlPolicyCategoryArgs', 'GetAccessControlPolicyCategoryArgsDict']] categories: - The category values represented as a dictionary of key > list of values.
+    :param Sequence[Union['GetAccessControlPolicyCategoryArgs', 'GetAccessControlPolicyCategoryArgsDict', 'outputs.GetAccessControlPolicyCategoryResult']] categories: - The category values represented as a dictionary of key > list of values.
     """
     __args__ = dict()
     __args__['accessControlPolicyId'] = access_control_policy_id

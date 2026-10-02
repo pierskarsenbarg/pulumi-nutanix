@@ -251,8 +251,8 @@ class AddressGroupsV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict']]]]] = None,
-                 ipv4_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict']]]]] = None,
+                 ip_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict', 'outputs.AddressGroupsV2IpRange']]]]] = None,
+                 ipv4_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict', 'outputs.AddressGroupsV2Ipv4Address']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -294,8 +294,8 @@ class AddressGroupsV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: - (Optional) Description of the Address group
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict']]]] ip_ranges: - (Optional) List of IP range containing start and end IP.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict']]]] ipv4_addresses: - (Optional) List of CIDR blocks in the Address Group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict', 'outputs.AddressGroupsV2IpRange']]]] ip_ranges: - (Optional) List of IP range containing start and end IP.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict', 'outputs.AddressGroupsV2Ipv4Address']]]] ipv4_addresses: - (Optional) List of CIDR blocks in the Address Group.
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the Address group
         """
         ...
@@ -356,8 +356,8 @@ class AddressGroupsV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict']]]]] = None,
-                 ipv4_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict']]]]] = None,
+                 ip_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict', 'outputs.AddressGroupsV2IpRange']]]]] = None,
+                 ipv4_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict', 'outputs.AddressGroupsV2Ipv4Address']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -390,9 +390,9 @@ class AddressGroupsV2(pulumi.CustomResource):
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            ip_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict']]]]] = None,
-            ipv4_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict']]]]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2LinkArgs', 'AddressGroupsV2LinkArgsDict']]]]] = None,
+            ip_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict', 'outputs.AddressGroupsV2IpRange']]]]] = None,
+            ipv4_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict', 'outputs.AddressGroupsV2Ipv4Address']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2LinkArgs', 'AddressGroupsV2LinkArgsDict', 'outputs.AddressGroupsV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             policy_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AddressGroupsV2':
@@ -406,9 +406,9 @@ class AddressGroupsV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] created_by: created by.
         :param pulumi.Input[_builtins.str] description: - (Optional) Description of the Address group
         :param pulumi.Input[_builtins.str] ext_id: address group uuid.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict']]]] ip_ranges: - (Optional) List of IP range containing start and end IP.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict']]]] ipv4_addresses: - (Optional) List of CIDR blocks in the Address Group.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2LinkArgs', 'AddressGroupsV2LinkArgsDict']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict', 'outputs.AddressGroupsV2IpRange']]]] ip_ranges: - (Optional) List of IP range containing start and end IP.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict', 'outputs.AddressGroupsV2Ipv4Address']]]] ipv4_addresses: - (Optional) List of CIDR blocks in the Address Group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2LinkArgs', 'AddressGroupsV2LinkArgsDict', 'outputs.AddressGroupsV2Link']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the Address group
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policy_references: Reference to policy associated with Address Group.
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.

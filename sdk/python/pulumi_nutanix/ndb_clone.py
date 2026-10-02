@@ -1296,7 +1296,7 @@ class NdbClone(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actionarguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneActionargumentArgs', 'NdbCloneActionargumentArgsDict']]]]] = None,
+                 actionarguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneActionargumentArgs', 'NdbCloneActionargumentArgsDict', 'outputs.NdbCloneActionargument']]]]] = None,
                  clustered: pulumi.Input[Optional[_builtins.bool]] = None,
                  compute_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                  create_dbserver: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1310,19 +1310,19 @@ class NdbClone(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  forced: pulumi.Input[Optional[_builtins.bool]] = None,
                  latest_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
-                 lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneLcmConfigArgs', 'NdbCloneLcmConfigArgsDict']]]]] = None,
+                 lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneLcmConfigArgs', 'NdbCloneLcmConfigArgsDict', 'outputs.NdbCloneLcmConfig']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                  node_count: pulumi.Input[Optional[_builtins.int]] = None,
-                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneNodeArgs', 'NdbCloneNodeArgsDict']]]]] = None,
+                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneNodeArgs', 'NdbCloneNodeArgsDict', 'outputs.NdbCloneNode']]]]] = None,
                  nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 postgresql_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClonePostgresqlInfoArgs', 'NdbClonePostgresqlInfoArgsDict']]]]] = None,
+                 postgresql_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClonePostgresqlInfoArgs', 'NdbClonePostgresqlInfoArgsDict', 'outputs.NdbClonePostgresqlInfo']]]]] = None,
                  remove: pulumi.Input[Optional[_builtins.bool]] = None,
                  remove_logical_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
                  snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
                  soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
                  ssh_public_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneTagArgs', 'NdbCloneTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneTagArgs', 'NdbCloneTagArgsDict', 'outputs.NdbCloneTag']]]]] = None,
                  time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
                  time_machine_name: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1367,7 +1367,7 @@ class NdbClone(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneActionargumentArgs', 'NdbCloneActionargumentArgsDict']]]] actionarguments: if any action arguments is required
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneActionargumentArgs', 'NdbCloneActionargumentArgsDict', 'outputs.NdbCloneActionargument']]]] actionarguments: if any action arguments is required
         :param pulumi.Input[_builtins.bool] clustered: clone will be clustered or not
         :param pulumi.Input[_builtins.str] compute_profile_id: specify the compute profile id
         :param pulumi.Input[_builtins.bool] create_dbserver: create new dbserver
@@ -1381,19 +1381,19 @@ class NdbClone(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: database instance description
         :param pulumi.Input[_builtins.bool] forced: - (Optional) Force delete of instance. Default is false
         :param pulumi.Input[_builtins.bool] latest_snapshot: latest snapshot
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneLcmConfigArgs', 'NdbCloneLcmConfigArgsDict']]]] lcm_configs: LCM Config contains the expiry details and refresh details
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneLcmConfigArgs', 'NdbCloneLcmConfigArgsDict', 'outputs.NdbCloneLcmConfig']]]] lcm_configs: LCM Config contains the expiry details and refresh details
         :param pulumi.Input[_builtins.str] name: database instance name
         :param pulumi.Input[_builtins.str] network_profile_id: specify the network profile id
         :param pulumi.Input[_builtins.int] node_count: Node count. Default is 1 for single instance
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneNodeArgs', 'NdbCloneNodeArgsDict']]]] nodes: Nodes contain info about dbservers vm
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneNodeArgs', 'NdbCloneNodeArgsDict', 'outputs.NdbCloneNode']]]] nodes: Nodes contain info about dbservers vm
         :param pulumi.Input[_builtins.str] nx_cluster_id: cluster id on where clone will be present
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbClonePostgresqlInfoArgs', 'NdbClonePostgresqlInfoArgsDict']]]] postgresql_infos: postgresql info for the clone
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbClonePostgresqlInfoArgs', 'NdbClonePostgresqlInfoArgsDict', 'outputs.NdbClonePostgresqlInfo']]]] postgresql_infos: postgresql info for the clone
         :param pulumi.Input[_builtins.bool] remove: - (Optional) Unregister the database clone from NDB. Default value is false
         :param pulumi.Input[_builtins.bool] remove_logical_cluster: remove logical cluster. Default value is false
         :param pulumi.Input[_builtins.str] snapshot_id: snapshot id from where clone is created
         :param pulumi.Input[_builtins.bool] soft_remove: - (Optional) Soft remove. Default will be false
         :param pulumi.Input[_builtins.str] ssh_public_key: ssh public key
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneTagArgs', 'NdbCloneTagArgsDict']]]] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneTagArgs', 'NdbCloneTagArgsDict', 'outputs.NdbCloneTag']]]] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
         :param pulumi.Input[_builtins.str] time_machine_id: time machine id
         :param pulumi.Input[_builtins.str] time_machine_name: time machine name
         :param pulumi.Input[_builtins.str] time_zone: timezone
@@ -1457,7 +1457,7 @@ class NdbClone(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actionarguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneActionargumentArgs', 'NdbCloneActionargumentArgsDict']]]]] = None,
+                 actionarguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneActionargumentArgs', 'NdbCloneActionargumentArgsDict', 'outputs.NdbCloneActionargument']]]]] = None,
                  clustered: pulumi.Input[Optional[_builtins.bool]] = None,
                  compute_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                  create_dbserver: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1471,19 +1471,19 @@ class NdbClone(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  forced: pulumi.Input[Optional[_builtins.bool]] = None,
                  latest_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
-                 lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneLcmConfigArgs', 'NdbCloneLcmConfigArgsDict']]]]] = None,
+                 lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneLcmConfigArgs', 'NdbCloneLcmConfigArgsDict', 'outputs.NdbCloneLcmConfig']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                  node_count: pulumi.Input[Optional[_builtins.int]] = None,
-                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneNodeArgs', 'NdbCloneNodeArgsDict']]]]] = None,
+                 nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneNodeArgs', 'NdbCloneNodeArgsDict', 'outputs.NdbCloneNode']]]]] = None,
                  nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 postgresql_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClonePostgresqlInfoArgs', 'NdbClonePostgresqlInfoArgsDict']]]]] = None,
+                 postgresql_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClonePostgresqlInfoArgs', 'NdbClonePostgresqlInfoArgsDict', 'outputs.NdbClonePostgresqlInfo']]]]] = None,
                  remove: pulumi.Input[Optional[_builtins.bool]] = None,
                  remove_logical_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
                  snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
                  soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
                  ssh_public_key: pulumi.Input[Optional[_builtins.str]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneTagArgs', 'NdbCloneTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneTagArgs', 'NdbCloneTagArgsDict', 'outputs.NdbCloneTag']]]]] = None,
                  time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
                  time_machine_name: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1561,14 +1561,14 @@ class NdbClone(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actionarguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneActionargumentArgs', 'NdbCloneActionargumentArgsDict']]]]] = None,
+            actionarguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneActionargumentArgs', 'NdbCloneActionargumentArgsDict', 'outputs.NdbCloneActionargument']]]]] = None,
             clone: pulumi.Input[Optional[_builtins.bool]] = None,
             clustered: pulumi.Input[Optional[_builtins.bool]] = None,
             compute_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
             create_dbserver: pulumi.Input[Optional[_builtins.bool]] = None,
             database_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
             database_name: pulumi.Input[Optional[_builtins.str]] = None,
-            database_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneDatabaseNodeArgs', 'NdbCloneDatabaseNodeArgsDict']]]]] = None,
+            database_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneDatabaseNodeArgs', 'NdbCloneDatabaseNodeArgsDict', 'outputs.NdbCloneDatabaseNode']]]]] = None,
             database_parameter_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
             date_created: pulumi.Input[Optional[_builtins.str]] = None,
             date_modified: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1581,29 +1581,29 @@ class NdbClone(pulumi.CustomResource):
             delete_time_machine: pulumi.Input[Optional[_builtins.bool]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             forced: pulumi.Input[Optional[_builtins.bool]] = None,
-            infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneInfoArgs', 'NdbCloneInfoArgsDict']]]]] = None,
+            infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneInfoArgs', 'NdbCloneInfoArgsDict', 'outputs.NdbCloneInfo']]]]] = None,
             latest_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
-            lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneLcmConfigArgs', 'NdbCloneLcmConfigArgsDict']]]]] = None,
-            linked_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneLinkedDatabaseArgs', 'NdbCloneLinkedDatabaseArgsDict']]]]] = None,
+            lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneLcmConfigArgs', 'NdbCloneLcmConfigArgsDict', 'outputs.NdbCloneLcmConfig']]]]] = None,
+            linked_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneLinkedDatabaseArgs', 'NdbCloneLinkedDatabaseArgsDict', 'outputs.NdbCloneLinkedDatabase']]]]] = None,
             metric: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             network_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
             node_count: pulumi.Input[Optional[_builtins.int]] = None,
-            nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneNodeArgs', 'NdbCloneNodeArgsDict']]]]] = None,
+            nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneNodeArgs', 'NdbCloneNodeArgsDict', 'outputs.NdbCloneNode']]]]] = None,
             nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
             parent_database_id: pulumi.Input[Optional[_builtins.str]] = None,
-            postgresql_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClonePostgresqlInfoArgs', 'NdbClonePostgresqlInfoArgsDict']]]]] = None,
-            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClonePropertyArgs', 'NdbClonePropertyArgsDict']]]]] = None,
+            postgresql_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClonePostgresqlInfoArgs', 'NdbClonePostgresqlInfoArgsDict', 'outputs.NdbClonePostgresqlInfo']]]]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClonePropertyArgs', 'NdbClonePropertyArgsDict', 'outputs.NdbCloneProperty']]]]] = None,
             remove: pulumi.Input[Optional[_builtins.bool]] = None,
             remove_logical_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
             snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
             soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
             ssh_public_key: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneTagArgs', 'NdbCloneTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneTagArgs', 'NdbCloneTagArgsDict', 'outputs.NdbCloneTag']]]]] = None,
             time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
             time_machine_name: pulumi.Input[Optional[_builtins.str]] = None,
-            time_machines: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneTimeMachineArgs', 'NdbCloneTimeMachineArgsDict']]]]] = None,
+            time_machines: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbCloneTimeMachineArgs', 'NdbCloneTimeMachineArgsDict', 'outputs.NdbCloneTimeMachine']]]]] = None,
             time_zone: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             user_pitr_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1615,14 +1615,14 @@ class NdbClone(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneActionargumentArgs', 'NdbCloneActionargumentArgsDict']]]] actionarguments: if any action arguments is required
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneActionargumentArgs', 'NdbCloneActionargumentArgsDict', 'outputs.NdbCloneActionargument']]]] actionarguments: if any action arguments is required
         :param pulumi.Input[_builtins.bool] clone: cloned or not
         :param pulumi.Input[_builtins.bool] clustered: clone will be clustered or not
         :param pulumi.Input[_builtins.str] compute_profile_id: specify the compute profile id
         :param pulumi.Input[_builtins.bool] create_dbserver: create new dbserver
         :param pulumi.Input[_builtins.str] database_cluster_type: database cluster type
         :param pulumi.Input[_builtins.str] database_name: database name
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneDatabaseNodeArgs', 'NdbCloneDatabaseNodeArgsDict']]]] database_nodes: database nodes associated with database instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneDatabaseNodeArgs', 'NdbCloneDatabaseNodeArgsDict', 'outputs.NdbCloneDatabaseNode']]]] database_nodes: database nodes associated with database instance
         :param pulumi.Input[_builtins.str] database_parameter_profile_id: specify the database parameter profile id
         :param pulumi.Input[_builtins.str] date_created: date created for clone
         :param pulumi.Input[_builtins.str] date_modified: last modified date for clone
@@ -1635,25 +1635,25 @@ class NdbClone(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] delete_time_machine: - (Optional) Delete the database's Time Machine (snapshots/logs) from the NDB. Default value is true
         :param pulumi.Input[_builtins.str] description: database instance description
         :param pulumi.Input[_builtins.bool] forced: - (Optional) Force delete of instance. Default is false
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneInfoArgs', 'NdbCloneInfoArgsDict']]]] infos: info of clone
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneInfoArgs', 'NdbCloneInfoArgsDict', 'outputs.NdbCloneInfo']]]] infos: info of clone
         :param pulumi.Input[_builtins.bool] latest_snapshot: latest snapshot
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneLcmConfigArgs', 'NdbCloneLcmConfigArgsDict']]]] lcm_configs: LCM Config contains the expiry details and refresh details
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneLinkedDatabaseArgs', 'NdbCloneLinkedDatabaseArgsDict']]]] linked_databases: linked databases within database instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneLcmConfigArgs', 'NdbCloneLcmConfigArgsDict', 'outputs.NdbCloneLcmConfig']]]] lcm_configs: LCM Config contains the expiry details and refresh details
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneLinkedDatabaseArgs', 'NdbCloneLinkedDatabaseArgsDict', 'outputs.NdbCloneLinkedDatabase']]]] linked_databases: linked databases within database instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metric: Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
         :param pulumi.Input[_builtins.str] name: database instance name
         :param pulumi.Input[_builtins.str] network_profile_id: specify the network profile id
         :param pulumi.Input[_builtins.int] node_count: Node count. Default is 1 for single instance
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneNodeArgs', 'NdbCloneNodeArgsDict']]]] nodes: Nodes contain info about dbservers vm
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneNodeArgs', 'NdbCloneNodeArgsDict', 'outputs.NdbCloneNode']]]] nodes: Nodes contain info about dbservers vm
         :param pulumi.Input[_builtins.str] nx_cluster_id: cluster id on where clone will be present
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbClonePostgresqlInfoArgs', 'NdbClonePostgresqlInfoArgsDict']]]] postgresql_infos: postgresql info for the clone
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbClonePropertyArgs', 'NdbClonePropertyArgsDict']]]] properties: List of all the properties
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbClonePostgresqlInfoArgs', 'NdbClonePostgresqlInfoArgsDict', 'outputs.NdbClonePostgresqlInfo']]]] postgresql_infos: postgresql info for the clone
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbClonePropertyArgs', 'NdbClonePropertyArgsDict', 'outputs.NdbCloneProperty']]]] properties: List of all the properties
         :param pulumi.Input[_builtins.bool] remove: - (Optional) Unregister the database clone from NDB. Default value is false
         :param pulumi.Input[_builtins.bool] remove_logical_cluster: remove logical cluster. Default value is false
         :param pulumi.Input[_builtins.str] snapshot_id: snapshot id from where clone is created
         :param pulumi.Input[_builtins.bool] soft_remove: - (Optional) Soft remove. Default will be false
         :param pulumi.Input[_builtins.str] ssh_public_key: ssh public key
         :param pulumi.Input[_builtins.str] status: status of clone
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneTagArgs', 'NdbCloneTagArgsDict']]]] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbCloneTagArgs', 'NdbCloneTagArgsDict', 'outputs.NdbCloneTag']]]] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
         :param pulumi.Input[_builtins.str] time_machine_id: time machine id
         :param pulumi.Input[_builtins.str] time_machine_name: time machine name
         :param pulumi.Input[_builtins.str] time_zone: timezone

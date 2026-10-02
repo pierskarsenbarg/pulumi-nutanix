@@ -352,7 +352,7 @@ class AwaitableGetNdbDatabaseResult(GetNdbDatabaseResult):
 
 
 def get_ndb_database(database_id: Optional[_builtins.str] = None,
-                     tags: Optional[Sequence[Union['GetNdbDatabaseTagArgs', 'GetNdbDatabaseTagArgsDict']]] = None,
+                     tags: Optional[Sequence[Union['GetNdbDatabaseTagArgs', 'GetNdbDatabaseTagArgsDict', 'outputs.GetNdbDatabaseTagResult']]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNdbDatabaseResult:
     """
     Describes a database instance in Nutanix Database Service
@@ -371,7 +371,7 @@ def get_ndb_database(database_id: Optional[_builtins.str] = None,
 
 
     :param _builtins.str database_id: ID of database instance
-    :param Sequence[Union['GetNdbDatabaseTagArgs', 'GetNdbDatabaseTagArgsDict']] tags: - tags attached
+    :param Sequence[Union['GetNdbDatabaseTagArgs', 'GetNdbDatabaseTagArgsDict', 'outputs.GetNdbDatabaseTagResult']] tags: - tags attached
     """
     __args__ = dict()
     __args__['databaseId'] = database_id
@@ -408,7 +408,7 @@ def get_ndb_database(database_id: Optional[_builtins.str] = None,
         time_zone=pulumi.get(__ret__, 'time_zone'),
         type=pulumi.get(__ret__, 'type'))
 def get_ndb_database_output(database_id: pulumi.Input[Optional[_builtins.str]] = None,
-                            tags: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbDatabaseTagArgs', 'GetNdbDatabaseTagArgsDict']]]]] = None,
+                            tags: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbDatabaseTagArgs', 'GetNdbDatabaseTagArgsDict', 'outputs.GetNdbDatabaseTagResult']]]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbDatabaseResult]:
     """
     Describes a database instance in Nutanix Database Service
@@ -427,7 +427,7 @@ def get_ndb_database_output(database_id: pulumi.Input[Optional[_builtins.str]] =
 
 
     :param _builtins.str database_id: ID of database instance
-    :param Sequence[Union['GetNdbDatabaseTagArgs', 'GetNdbDatabaseTagArgsDict']] tags: - tags attached
+    :param Sequence[Union['GetNdbDatabaseTagArgs', 'GetNdbDatabaseTagArgsDict', 'outputs.GetNdbDatabaseTagResult']] tags: - tags attached
     """
     __args__ = dict()
     __args__['databaseId'] = database_id

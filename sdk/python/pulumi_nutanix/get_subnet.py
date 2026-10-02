@@ -393,8 +393,8 @@ class AwaitableGetSubnetResult(GetSubnetResult):
             vswitch_name=self.vswitch_name)
 
 
-def get_subnet(additional_filters: Optional[Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict']]] = None,
-               categories: Optional[Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict']]] = None,
+def get_subnet(additional_filters: Optional[Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict', 'outputs.GetSubnetAdditionalFilterResult']]] = None,
+               categories: Optional[Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict', 'outputs.GetSubnetCategoryResult']]] = None,
                subnet_id: Optional[_builtins.str] = None,
                subnet_name: Optional[_builtins.str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubnetResult:
@@ -407,8 +407,8 @@ def get_subnet(additional_filters: Optional[Sequence[Union['GetSubnetAdditionalF
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict']] additional_filters: - Additional filters to narrow down list of subnets.
-    :param Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict']] categories: The API Version.
+    :param Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict', 'outputs.GetSubnetAdditionalFilterResult']] additional_filters: - Additional filters to narrow down list of subnets.
+    :param Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict', 'outputs.GetSubnetCategoryResult']] categories: The API Version.
     :param _builtins.str subnet_id: - (Optional) The ID for the subnet.
     :param _builtins.str subnet_name: - (Optional) The name for the subnet
     """
@@ -453,8 +453,8 @@ def get_subnet(additional_filters: Optional[Sequence[Union['GetSubnetAdditionalF
         vlan_id=pulumi.get(__ret__, 'vlan_id'),
         vpc_reference=pulumi.get(__ret__, 'vpc_reference'),
         vswitch_name=pulumi.get(__ret__, 'vswitch_name'))
-def get_subnet_output(additional_filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict']]]]] = None,
-                      categories: pulumi.Input[Optional[Optional[Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict']]]]] = None,
+def get_subnet_output(additional_filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict', 'outputs.GetSubnetAdditionalFilterResult']]]]] = None,
+                      categories: pulumi.Input[Optional[Optional[Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict', 'outputs.GetSubnetCategoryResult']]]]] = None,
                       subnet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       subnet_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubnetResult]:
@@ -467,8 +467,8 @@ def get_subnet_output(additional_filters: pulumi.Input[Optional[Optional[Sequenc
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict']] additional_filters: - Additional filters to narrow down list of subnets.
-    :param Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict']] categories: The API Version.
+    :param Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict', 'outputs.GetSubnetAdditionalFilterResult']] additional_filters: - Additional filters to narrow down list of subnets.
+    :param Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict', 'outputs.GetSubnetCategoryResult']] categories: The API Version.
     :param _builtins.str subnet_id: - (Optional) The ID for the subnet.
     :param _builtins.str subnet_name: - (Optional) The name for the subnet
     """

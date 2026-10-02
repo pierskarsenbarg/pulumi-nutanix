@@ -302,7 +302,7 @@ class VolumeGroupIscsiClientV2(pulumi.CustomResource):
                  enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  iscsi_initiator_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 iscsi_initiator_network_ids: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs', 'VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgsDict']]]]] = None,
+                 iscsi_initiator_network_ids: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs', 'VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgsDict', 'outputs.VolumeGroupIscsiClientV2IscsiInitiatorNetworkId']]]]] = None,
                  num_virtual_targets: pulumi.Input[Optional[_builtins.int]] = None,
                  vg_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -334,7 +334,7 @@ class VolumeGroupIscsiClientV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] enabled_authentications: -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
         :param pulumi.Input[_builtins.str] ext_id: -(Required) A globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[_builtins.str] iscsi_initiator_name: -iSCSI initiator name. During the attach operation, exactly one of iscsiInitiatorName and iscsiInitiatorNetworkId must be specified. This field is immutable.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs', 'VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgsDict']]]] iscsi_initiator_network_ids: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs', 'VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgsDict', 'outputs.VolumeGroupIscsiClientV2IscsiInitiatorNetworkId']]]] iscsi_initiator_network_ids: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
         :param pulumi.Input[_builtins.int] num_virtual_targets: -(Optional) Number of virtual targets generated for the iSCSI target. This field is immutable.
         :param pulumi.Input[_builtins.str] vg_ext_id: -(Required) The external identifier of the volume group.
         """
@@ -385,7 +385,7 @@ class VolumeGroupIscsiClientV2(pulumi.CustomResource):
                  enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  iscsi_initiator_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 iscsi_initiator_network_ids: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs', 'VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgsDict']]]]] = None,
+                 iscsi_initiator_network_ids: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs', 'VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgsDict', 'outputs.VolumeGroupIscsiClientV2IscsiInitiatorNetworkId']]]]] = None,
                  num_virtual_targets: pulumi.Input[Optional[_builtins.int]] = None,
                  vg_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -422,7 +422,7 @@ class VolumeGroupIscsiClientV2(pulumi.CustomResource):
             enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             iscsi_initiator_name: pulumi.Input[Optional[_builtins.str]] = None,
-            iscsi_initiator_network_ids: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs', 'VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgsDict']]]]] = None,
+            iscsi_initiator_network_ids: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs', 'VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgsDict', 'outputs.VolumeGroupIscsiClientV2IscsiInitiatorNetworkId']]]]] = None,
             num_virtual_targets: pulumi.Input[Optional[_builtins.int]] = None,
             vg_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VolumeGroupIscsiClientV2':
         """
@@ -437,7 +437,7 @@ class VolumeGroupIscsiClientV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] enabled_authentications: -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
         :param pulumi.Input[_builtins.str] ext_id: -(Required) A globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[_builtins.str] iscsi_initiator_name: -iSCSI initiator name. During the attach operation, exactly one of iscsiInitiatorName and iscsiInitiatorNetworkId must be specified. This field is immutable.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs', 'VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgsDict']]]] iscsi_initiator_network_ids: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs', 'VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgsDict', 'outputs.VolumeGroupIscsiClientV2IscsiInitiatorNetworkId']]]] iscsi_initiator_network_ids: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
         :param pulumi.Input[_builtins.int] num_virtual_targets: -(Optional) Number of virtual targets generated for the iSCSI target. This field is immutable.
         :param pulumi.Input[_builtins.str] vg_ext_id: -(Required) The external identifier of the volume group.
         """

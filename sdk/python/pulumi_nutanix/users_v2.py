@@ -628,7 +628,7 @@ class UsersV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict']]]]] = None,
+                 additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict', 'outputs.UsersV2AdditionalAttribute']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  email_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -650,7 +650,7 @@ class UsersV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict']]]] additional_attributes: -(Optional) Any additional attribute for the User.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict', 'outputs.UsersV2AdditionalAttribute']]]] additional_attributes: -(Optional) Any additional attribute for the User.
         :param pulumi.Input[_builtins.str] description: -( Optional ) Description of the user.
         :param pulumi.Input[_builtins.str] display_name: -(Optional) Display name for the User.
         :param pulumi.Input[_builtins.str] email_id: -(Optional) Email Id for the User.
@@ -691,7 +691,7 @@ class UsersV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict']]]]] = None,
+                 additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict', 'outputs.UsersV2AdditionalAttribute']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  email_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -753,8 +753,8 @@ class UsersV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict']]]]] = None,
-            buckets_access_keys: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsersV2BucketsAccessKeyArgs', 'UsersV2BucketsAccessKeyArgsDict']]]]] = None,
+            additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict', 'outputs.UsersV2AdditionalAttribute']]]]] = None,
+            buckets_access_keys: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsersV2BucketsAccessKeyArgs', 'UsersV2BucketsAccessKeyArgsDict', 'outputs.UsersV2BucketsAccessKey']]]]] = None,
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
             created_time: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -767,7 +767,7 @@ class UsersV2(pulumi.CustomResource):
             last_login_time: pulumi.Input[Optional[_builtins.str]] = None,
             last_name: pulumi.Input[Optional[_builtins.str]] = None,
             last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsersV2LinkArgs', 'UsersV2LinkArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsersV2LinkArgs', 'UsersV2LinkArgsDict', 'outputs.UsersV2Link']]]]] = None,
             locale: pulumi.Input[Optional[_builtins.str]] = None,
             middle_initial: pulumi.Input[Optional[_builtins.str]] = None,
             password: pulumi.Input[Optional[_builtins.str]] = None,
@@ -782,8 +782,8 @@ class UsersV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict']]]] additional_attributes: -(Optional) Any additional attribute for the User.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2BucketsAccessKeyArgs', 'UsersV2BucketsAccessKeyArgsDict']]]] buckets_access_keys: - Bucket Access Keys for the User.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict', 'outputs.UsersV2AdditionalAttribute']]]] additional_attributes: -(Optional) Any additional attribute for the User.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2BucketsAccessKeyArgs', 'UsersV2BucketsAccessKeyArgsDict', 'outputs.UsersV2BucketsAccessKey']]]] buckets_access_keys: - Bucket Access Keys for the User.
         :param pulumi.Input[_builtins.str] created_by: - User or Service who created the User.
         :param pulumi.Input[_builtins.str] created_time: - Creation time for the Bucket Access Key.
         :param pulumi.Input[_builtins.str] description: -( Optional ) Description of the user.
@@ -795,7 +795,7 @@ class UsersV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] last_login_time: - Last successful logged in time for the User.
         :param pulumi.Input[_builtins.str] last_name: -(Optional) Last name for the User.
         :param pulumi.Input[_builtins.str] last_updated_time: - Last updated time of the User.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2LinkArgs', 'UsersV2LinkArgsDict']]]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2LinkArgs', 'UsersV2LinkArgsDict', 'outputs.UsersV2Link']]]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[_builtins.str] locale: -(Optional) Default locale for the User.
         :param pulumi.Input[_builtins.str] middle_initial: -(Optional) Middle name for the User.
         :param pulumi.Input[_builtins.str] password: -(Optional) Password for the User.

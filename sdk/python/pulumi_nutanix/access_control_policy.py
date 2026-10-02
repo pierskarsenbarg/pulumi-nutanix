@@ -337,14 +337,14 @@ class AccessControlPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyCategoryArgs', 'AccessControlPolicyCategoryArgsDict']]]]] = None,
-                 context_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyContextFilterListArgs', 'AccessControlPolicyContextFilterListArgsDict']]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyCategoryArgs', 'AccessControlPolicyCategoryArgsDict', 'outputs.AccessControlPolicyCategory']]]]] = None,
+                 context_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyContextFilterListArgs', 'AccessControlPolicyContextFilterListArgsDict', 'outputs.AccessControlPolicyContextFilterList']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 owner_reference: pulumi.Input[Optional[Union['AccessControlPolicyOwnerReferenceArgs', 'AccessControlPolicyOwnerReferenceArgsDict']]] = None,
-                 role_reference: pulumi.Input[Optional[Union['AccessControlPolicyRoleReferenceArgs', 'AccessControlPolicyRoleReferenceArgsDict']]] = None,
-                 user_group_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyUserGroupReferenceListArgs', 'AccessControlPolicyUserGroupReferenceListArgsDict']]]]] = None,
-                 user_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyUserReferenceListArgs', 'AccessControlPolicyUserReferenceListArgsDict']]]]] = None,
+                 owner_reference: pulumi.Input[Optional[Union['AccessControlPolicyOwnerReferenceArgs', 'AccessControlPolicyOwnerReferenceArgsDict', 'outputs.AccessControlPolicyOwnerReference']]] = None,
+                 role_reference: pulumi.Input[Optional[Union['AccessControlPolicyRoleReferenceArgs', 'AccessControlPolicyRoleReferenceArgsDict', 'outputs.AccessControlPolicyRoleReference']]] = None,
+                 user_group_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyUserGroupReferenceListArgs', 'AccessControlPolicyUserGroupReferenceListArgsDict', 'outputs.AccessControlPolicyUserGroupReferenceList']]]]] = None,
+                 user_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyUserReferenceListArgs', 'AccessControlPolicyUserReferenceListArgsDict', 'outputs.AccessControlPolicyUserReferenceList']]]]] = None,
                  __props__=None):
         """
         Provides a resource to create an access control policy based on the input parameters.
@@ -419,13 +419,13 @@ class AccessControlPolicy(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AccessControlPolicyCategoryArgs', 'AccessControlPolicyCategoryArgsDict']]]] categories: - (Optional) Categories for the Access Control Policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AccessControlPolicyCategoryArgs', 'AccessControlPolicyCategoryArgsDict', 'outputs.AccessControlPolicyCategory']]]] categories: - (Optional) Categories for the Access Control Policy.
         :param pulumi.Input[_builtins.str] description: - (Optional) The description of Access Control Policy.
         :param pulumi.Input[_builtins.str] name: - (Optional) Name of the Access Control Policy.
-        :param pulumi.Input[Union['AccessControlPolicyOwnerReferenceArgs', 'AccessControlPolicyOwnerReferenceArgsDict']] owner_reference: - (Optional) The reference to a user.
-        :param pulumi.Input[Union['AccessControlPolicyRoleReferenceArgs', 'AccessControlPolicyRoleReferenceArgsDict']] role_reference: - (Required) The reference to a role.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AccessControlPolicyUserGroupReferenceListArgs', 'AccessControlPolicyUserGroupReferenceListArgsDict']]]] user_group_reference_lists: - (Optional) The User group(s) being assigned a given role.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AccessControlPolicyUserReferenceListArgs', 'AccessControlPolicyUserReferenceListArgsDict']]]] user_reference_lists: - (Optional) The User(s) being assigned a given role.
+        :param pulumi.Input[Union['AccessControlPolicyOwnerReferenceArgs', 'AccessControlPolicyOwnerReferenceArgsDict', 'outputs.AccessControlPolicyOwnerReference']] owner_reference: - (Optional) The reference to a user.
+        :param pulumi.Input[Union['AccessControlPolicyRoleReferenceArgs', 'AccessControlPolicyRoleReferenceArgsDict', 'outputs.AccessControlPolicyRoleReference']] role_reference: - (Required) The reference to a role.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AccessControlPolicyUserGroupReferenceListArgs', 'AccessControlPolicyUserGroupReferenceListArgsDict', 'outputs.AccessControlPolicyUserGroupReferenceList']]]] user_group_reference_lists: - (Optional) The User group(s) being assigned a given role.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AccessControlPolicyUserReferenceListArgs', 'AccessControlPolicyUserReferenceListArgsDict', 'outputs.AccessControlPolicyUserReferenceList']]]] user_reference_lists: - (Optional) The User(s) being assigned a given role.
         """
         ...
     @overload
@@ -519,14 +519,14 @@ class AccessControlPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyCategoryArgs', 'AccessControlPolicyCategoryArgsDict']]]]] = None,
-                 context_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyContextFilterListArgs', 'AccessControlPolicyContextFilterListArgsDict']]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyCategoryArgs', 'AccessControlPolicyCategoryArgsDict', 'outputs.AccessControlPolicyCategory']]]]] = None,
+                 context_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyContextFilterListArgs', 'AccessControlPolicyContextFilterListArgsDict', 'outputs.AccessControlPolicyContextFilterList']]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 owner_reference: pulumi.Input[Optional[Union['AccessControlPolicyOwnerReferenceArgs', 'AccessControlPolicyOwnerReferenceArgsDict']]] = None,
-                 role_reference: pulumi.Input[Optional[Union['AccessControlPolicyRoleReferenceArgs', 'AccessControlPolicyRoleReferenceArgsDict']]] = None,
-                 user_group_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyUserGroupReferenceListArgs', 'AccessControlPolicyUserGroupReferenceListArgsDict']]]]] = None,
-                 user_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyUserReferenceListArgs', 'AccessControlPolicyUserReferenceListArgsDict']]]]] = None,
+                 owner_reference: pulumi.Input[Optional[Union['AccessControlPolicyOwnerReferenceArgs', 'AccessControlPolicyOwnerReferenceArgsDict', 'outputs.AccessControlPolicyOwnerReference']]] = None,
+                 role_reference: pulumi.Input[Optional[Union['AccessControlPolicyRoleReferenceArgs', 'AccessControlPolicyRoleReferenceArgsDict', 'outputs.AccessControlPolicyRoleReference']]] = None,
+                 user_group_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyUserGroupReferenceListArgs', 'AccessControlPolicyUserGroupReferenceListArgsDict', 'outputs.AccessControlPolicyUserGroupReferenceList']]]]] = None,
+                 user_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyUserReferenceListArgs', 'AccessControlPolicyUserReferenceListArgsDict', 'outputs.AccessControlPolicyUserReferenceList']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -560,16 +560,16 @@ class AccessControlPolicy(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             api_version: pulumi.Input[Optional[_builtins.str]] = None,
-            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyCategoryArgs', 'AccessControlPolicyCategoryArgsDict']]]]] = None,
-            context_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyContextFilterListArgs', 'AccessControlPolicyContextFilterListArgsDict']]]]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyCategoryArgs', 'AccessControlPolicyCategoryArgsDict', 'outputs.AccessControlPolicyCategory']]]]] = None,
+            context_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyContextFilterListArgs', 'AccessControlPolicyContextFilterListArgsDict', 'outputs.AccessControlPolicyContextFilterList']]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            owner_reference: pulumi.Input[Optional[Union['AccessControlPolicyOwnerReferenceArgs', 'AccessControlPolicyOwnerReferenceArgsDict']]] = None,
-            role_reference: pulumi.Input[Optional[Union['AccessControlPolicyRoleReferenceArgs', 'AccessControlPolicyRoleReferenceArgsDict']]] = None,
+            owner_reference: pulumi.Input[Optional[Union['AccessControlPolicyOwnerReferenceArgs', 'AccessControlPolicyOwnerReferenceArgsDict', 'outputs.AccessControlPolicyOwnerReference']]] = None,
+            role_reference: pulumi.Input[Optional[Union['AccessControlPolicyRoleReferenceArgs', 'AccessControlPolicyRoleReferenceArgsDict', 'outputs.AccessControlPolicyRoleReference']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            user_group_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyUserGroupReferenceListArgs', 'AccessControlPolicyUserGroupReferenceListArgsDict']]]]] = None,
-            user_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyUserReferenceListArgs', 'AccessControlPolicyUserReferenceListArgsDict']]]]] = None) -> 'AccessControlPolicy':
+            user_group_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyUserGroupReferenceListArgs', 'AccessControlPolicyUserGroupReferenceListArgsDict', 'outputs.AccessControlPolicyUserGroupReferenceList']]]]] = None,
+            user_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyUserReferenceListArgs', 'AccessControlPolicyUserReferenceListArgsDict', 'outputs.AccessControlPolicyUserReferenceList']]]]] = None) -> 'AccessControlPolicy':
         """
         Get an existing AccessControlPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -578,15 +578,15 @@ class AccessControlPolicy(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] api_version: The version of the API.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AccessControlPolicyCategoryArgs', 'AccessControlPolicyCategoryArgsDict']]]] categories: - (Optional) Categories for the Access Control Policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AccessControlPolicyCategoryArgs', 'AccessControlPolicyCategoryArgsDict', 'outputs.AccessControlPolicyCategory']]]] categories: - (Optional) Categories for the Access Control Policy.
         :param pulumi.Input[_builtins.str] description: - (Optional) The description of Access Control Policy.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: - The Access Control Policy kind metadata.
         :param pulumi.Input[_builtins.str] name: - (Optional) Name of the Access Control Policy.
-        :param pulumi.Input[Union['AccessControlPolicyOwnerReferenceArgs', 'AccessControlPolicyOwnerReferenceArgsDict']] owner_reference: - (Optional) The reference to a user.
-        :param pulumi.Input[Union['AccessControlPolicyRoleReferenceArgs', 'AccessControlPolicyRoleReferenceArgsDict']] role_reference: - (Required) The reference to a role.
+        :param pulumi.Input[Union['AccessControlPolicyOwnerReferenceArgs', 'AccessControlPolicyOwnerReferenceArgsDict', 'outputs.AccessControlPolicyOwnerReference']] owner_reference: - (Optional) The reference to a user.
+        :param pulumi.Input[Union['AccessControlPolicyRoleReferenceArgs', 'AccessControlPolicyRoleReferenceArgsDict', 'outputs.AccessControlPolicyRoleReference']] role_reference: - (Required) The reference to a role.
         :param pulumi.Input[_builtins.str] state: - The state of the Access Control Policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AccessControlPolicyUserGroupReferenceListArgs', 'AccessControlPolicyUserGroupReferenceListArgsDict']]]] user_group_reference_lists: - (Optional) The User group(s) being assigned a given role.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AccessControlPolicyUserReferenceListArgs', 'AccessControlPolicyUserReferenceListArgsDict']]]] user_reference_lists: - (Optional) The User(s) being assigned a given role.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AccessControlPolicyUserGroupReferenceListArgs', 'AccessControlPolicyUserGroupReferenceListArgsDict', 'outputs.AccessControlPolicyUserGroupReferenceList']]]] user_group_reference_lists: - (Optional) The User group(s) being assigned a given role.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AccessControlPolicyUserReferenceListArgs', 'AccessControlPolicyUserReferenceListArgsDict', 'outputs.AccessControlPolicyUserReferenceList']]]] user_reference_lists: - (Optional) The User(s) being assigned a given role.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

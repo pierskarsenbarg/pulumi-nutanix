@@ -211,9 +211,9 @@ class VmNetworkDeviceMigrateV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2IpAddressArgs', 'VmNetworkDeviceMigrateV2IpAddressArgsDict']]]]] = None,
+                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2IpAddressArgs', 'VmNetworkDeviceMigrateV2IpAddressArgsDict', 'outputs.VmNetworkDeviceMigrateV2IpAddress']]]]] = None,
                  migrate_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2SubnetArgs', 'VmNetworkDeviceMigrateV2SubnetArgsDict']]]]] = None,
+                 subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2SubnetArgs', 'VmNetworkDeviceMigrateV2SubnetArgsDict', 'outputs.VmNetworkDeviceMigrateV2Subnet']]]]] = None,
                  vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -244,12 +244,12 @@ class VmNetworkDeviceMigrateV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ext_id: - (Required) The globally unique identifier of a Nic. It should be of type UUID.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2IpAddressArgs', 'VmNetworkDeviceMigrateV2IpAddressArgsDict']]]] ip_addresses: - (Optional) Ip config settings.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2IpAddressArgs', 'VmNetworkDeviceMigrateV2IpAddressArgsDict', 'outputs.VmNetworkDeviceMigrateV2IpAddress']]]] ip_addresses: - (Optional) Ip config settings.
         :param pulumi.Input[_builtins.str] migrate_type: - (Required) The type of IP address management for NIC migration.
                  Valid values are:
                - `ASSIGN_IP` The type of NIC is Span-Destination.
                - `RELEASE_IP` The type of NIC is Normal.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2SubnetArgs', 'VmNetworkDeviceMigrateV2SubnetArgsDict']]]] subnets: - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2SubnetArgs', 'VmNetworkDeviceMigrateV2SubnetArgsDict', 'outputs.VmNetworkDeviceMigrateV2Subnet']]]] subnets: - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
         :param pulumi.Input[_builtins.str] vm_ext_id: - (Required) The globally unique identifier of a VM. It should be of type UUID.
         """
         ...
@@ -299,9 +299,9 @@ class VmNetworkDeviceMigrateV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2IpAddressArgs', 'VmNetworkDeviceMigrateV2IpAddressArgsDict']]]]] = None,
+                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2IpAddressArgs', 'VmNetworkDeviceMigrateV2IpAddressArgsDict', 'outputs.VmNetworkDeviceMigrateV2IpAddress']]]]] = None,
                  migrate_type: pulumi.Input[Optional[_builtins.str]] = None,
-                 subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2SubnetArgs', 'VmNetworkDeviceMigrateV2SubnetArgsDict']]]]] = None,
+                 subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2SubnetArgs', 'VmNetworkDeviceMigrateV2SubnetArgsDict', 'outputs.VmNetworkDeviceMigrateV2Subnet']]]]] = None,
                  vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -336,9 +336,9 @@ class VmNetworkDeviceMigrateV2(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2IpAddressArgs', 'VmNetworkDeviceMigrateV2IpAddressArgsDict']]]]] = None,
+            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2IpAddressArgs', 'VmNetworkDeviceMigrateV2IpAddressArgsDict', 'outputs.VmNetworkDeviceMigrateV2IpAddress']]]]] = None,
             migrate_type: pulumi.Input[Optional[_builtins.str]] = None,
-            subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2SubnetArgs', 'VmNetworkDeviceMigrateV2SubnetArgsDict']]]]] = None,
+            subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2SubnetArgs', 'VmNetworkDeviceMigrateV2SubnetArgsDict', 'outputs.VmNetworkDeviceMigrateV2Subnet']]]]] = None,
             vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VmNetworkDeviceMigrateV2':
         """
         Get an existing VmNetworkDeviceMigrateV2 resource's state with the given name, id, and optional extra
@@ -348,12 +348,12 @@ class VmNetworkDeviceMigrateV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ext_id: - (Required) The globally unique identifier of a Nic. It should be of type UUID.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2IpAddressArgs', 'VmNetworkDeviceMigrateV2IpAddressArgsDict']]]] ip_addresses: - (Optional) Ip config settings.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2IpAddressArgs', 'VmNetworkDeviceMigrateV2IpAddressArgsDict', 'outputs.VmNetworkDeviceMigrateV2IpAddress']]]] ip_addresses: - (Optional) Ip config settings.
         :param pulumi.Input[_builtins.str] migrate_type: - (Required) The type of IP address management for NIC migration.
                  Valid values are:
                - `ASSIGN_IP` The type of NIC is Span-Destination.
                - `RELEASE_IP` The type of NIC is Normal.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2SubnetArgs', 'VmNetworkDeviceMigrateV2SubnetArgsDict']]]] subnets: - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2SubnetArgs', 'VmNetworkDeviceMigrateV2SubnetArgsDict', 'outputs.VmNetworkDeviceMigrateV2Subnet']]]] subnets: - (Required) Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC.
         :param pulumi.Input[_builtins.str] vm_ext_id: - (Required) The globally unique identifier of a VM. It should be of type UUID.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

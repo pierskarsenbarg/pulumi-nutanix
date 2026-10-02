@@ -293,7 +293,7 @@ class UserKeyRevokeV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            arguments_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserKeyRevokeV2ArgumentsMapArgs', 'UserKeyRevokeV2ArgumentsMapArgsDict']]]]] = None,
+            arguments_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserKeyRevokeV2ArgumentsMapArgs', 'UserKeyRevokeV2ArgumentsMapArgsDict', 'outputs.UserKeyRevokeV2ArgumentsMap']]]]] = None,
             code: pulumi.Input[Optional[_builtins.str]] = None,
             error_group: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -308,7 +308,7 @@ class UserKeyRevokeV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UserKeyRevokeV2ArgumentsMapArgs', 'UserKeyRevokeV2ArgumentsMapArgsDict']]]] arguments_maps: - The map of argument name to value.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UserKeyRevokeV2ArgumentsMapArgs', 'UserKeyRevokeV2ArgumentsMapArgsDict', 'outputs.UserKeyRevokeV2ArgumentsMap']]]] arguments_maps: - The map of argument name to value.
         :param pulumi.Input[_builtins.str] code: - The code associated with this message.This string is typically prefixed by the namespace the endpoint belongs to. For example: VMM-40000.
         :param pulumi.Input[_builtins.str] error_group: - The error group associated with this message of severity ERROR.
         :param pulumi.Input[_builtins.str] locale: - Locale for this message. The default locale would be 'en-US'.

@@ -136,8 +136,8 @@ class PcDeployV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config: pulumi.Input[Optional[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict']]] = None,
-                 network: pulumi.Input[Optional[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict']]] = None,
+                 config: pulumi.Input[Optional[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict', 'outputs.PcDeployV2Config']]] = None,
+                 network: pulumi.Input[Optional[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict', 'outputs.PcDeployV2Network']]] = None,
                  should_enable_high_availability: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
@@ -218,8 +218,8 @@ class PcDeployV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict']] config: -(Required) Domain manager (Prism Central) cluster configuration details.
-        :param pulumi.Input[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict']] network: -(Required) Domain manager (Prism Central) network configuration details.
+        :param pulumi.Input[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict', 'outputs.PcDeployV2Config']] config: -(Required) Domain manager (Prism Central) cluster configuration details.
+        :param pulumi.Input[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict', 'outputs.PcDeployV2Network']] network: -(Required) Domain manager (Prism Central) network configuration details.
         :param pulumi.Input[_builtins.bool] should_enable_high_availability: -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>.
         """
         ...
@@ -319,8 +319,8 @@ class PcDeployV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 config: pulumi.Input[Optional[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict']]] = None,
-                 network: pulumi.Input[Optional[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict']]] = None,
+                 config: pulumi.Input[Optional[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict', 'outputs.PcDeployV2Config']]] = None,
+                 network: pulumi.Input[Optional[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict', 'outputs.PcDeployV2Network']]] = None,
                  should_enable_high_availability: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -348,8 +348,8 @@ class PcDeployV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            config: pulumi.Input[Optional[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict']]] = None,
-            network: pulumi.Input[Optional[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict']]] = None,
+            config: pulumi.Input[Optional[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict', 'outputs.PcDeployV2Config']]] = None,
+            network: pulumi.Input[Optional[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict', 'outputs.PcDeployV2Network']]] = None,
             should_enable_high_availability: pulumi.Input[Optional[_builtins.bool]] = None) -> 'PcDeployV2':
         """
         Get an existing PcDeployV2 resource's state with the given name, id, and optional extra
@@ -358,8 +358,8 @@ class PcDeployV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict']] config: -(Required) Domain manager (Prism Central) cluster configuration details.
-        :param pulumi.Input[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict']] network: -(Required) Domain manager (Prism Central) network configuration details.
+        :param pulumi.Input[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict', 'outputs.PcDeployV2Config']] config: -(Required) Domain manager (Prism Central) cluster configuration details.
+        :param pulumi.Input[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict', 'outputs.PcDeployV2Network']] network: -(Required) Domain manager (Prism Central) network configuration details.
         :param pulumi.Input[_builtins.bool] should_enable_high_availability: -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

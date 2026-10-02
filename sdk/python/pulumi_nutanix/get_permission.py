@@ -198,7 +198,7 @@ class AwaitableGetPermissionResult(GetPermissionResult):
             state=self.state)
 
 
-def get_permission(categories: Optional[Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict']]] = None,
+def get_permission(categories: Optional[Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict', 'outputs.GetPermissionCategoryResult']]] = None,
                    permission_id: Optional[_builtins.str] = None,
                    permission_name: Optional[_builtins.str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPermissionResult:
@@ -220,7 +220,7 @@ def get_permission(categories: Optional[Sequence[Union['GetPermissionCategoryArg
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict']] categories: The categories for this resource.
+    :param Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict', 'outputs.GetPermissionCategoryResult']] categories: The categories for this resource.
     :param _builtins.str permission_id: The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`">`id`</span> of the permission.
     :param _builtins.str permission_name: The <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`">`name`</span> of the permission.
     """
@@ -246,7 +246,7 @@ def get_permission(categories: Optional[Sequence[Union['GetPermissionCategoryArg
         permission_name=pulumi.get(__ret__, 'permission_name'),
         project_reference=pulumi.get(__ret__, 'project_reference'),
         state=pulumi.get(__ret__, 'state'))
-def get_permission_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict']]]]] = None,
+def get_permission_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict', 'outputs.GetPermissionCategoryResult']]]]] = None,
                           permission_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           permission_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPermissionResult]:
@@ -268,7 +268,7 @@ def get_permission_output(categories: pulumi.Input[Optional[Optional[Sequence[Un
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict']] categories: The categories for this resource.
+    :param Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict', 'outputs.GetPermissionCategoryResult']] categories: The categories for this resource.
     :param _builtins.str permission_id: The <span pulumi-lang-nodejs="`id`" pulumi-lang-dotnet="`Id`" pulumi-lang-go="`id`" pulumi-lang-python="`id`" pulumi-lang-yaml="`id`" pulumi-lang-java="`id`" pulumi-lang-hcl="`id`">`id`</span> of the permission.
     :param _builtins.str permission_name: The <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`">`name`</span> of the permission.
     """

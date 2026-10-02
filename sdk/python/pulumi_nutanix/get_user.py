@@ -213,7 +213,7 @@ class AwaitableGetUserResult(GetUserResult):
             user_type=self.user_type)
 
 
-def get_user(categories: Optional[Sequence[Union['GetUserCategoryArgs', 'GetUserCategoryArgsDict']]] = None,
+def get_user(categories: Optional[Sequence[Union['GetUserCategoryArgs', 'GetUserCategoryArgsDict', 'outputs.GetUserCategoryResult']]] = None,
              owner_reference: Optional[Mapping[str, _builtins.str]] = None,
              project_reference: Optional[Mapping[str, _builtins.str]] = None,
              user_id: Optional[_builtins.str] = None,
@@ -243,7 +243,7 @@ def get_user(categories: Optional[Sequence[Union['GetUserCategoryArgs', 'GetUser
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetUserCategoryArgs', 'GetUserCategoryArgsDict']] categories: - (Optional) Categories for the Access Control Policy.
+    :param Sequence[Union['GetUserCategoryArgs', 'GetUserCategoryArgsDict', 'outputs.GetUserCategoryResult']] categories: - (Optional) Categories for the Access Control Policy.
     :param Mapping[str, _builtins.str] owner_reference: - (Optional) The reference to a user.
     :param Mapping[str, _builtins.str] project_reference: - (Optional) The reference to a project.
     """
@@ -272,7 +272,7 @@ def get_user(categories: Optional[Sequence[Union['GetUserCategoryArgs', 'GetUser
         user_id=pulumi.get(__ret__, 'user_id'),
         user_name=pulumi.get(__ret__, 'user_name'),
         user_type=pulumi.get(__ret__, 'user_type'))
-def get_user_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetUserCategoryArgs', 'GetUserCategoryArgsDict']]]]] = None,
+def get_user_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetUserCategoryArgs', 'GetUserCategoryArgsDict', 'outputs.GetUserCategoryResult']]]]] = None,
                     owner_reference: pulumi.Input[Optional[Optional[Mapping[str, _builtins.str]]]] = None,
                     project_reference: pulumi.Input[Optional[Optional[Mapping[str, _builtins.str]]]] = None,
                     user_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -302,7 +302,7 @@ def get_user_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['G
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetUserCategoryArgs', 'GetUserCategoryArgsDict']] categories: - (Optional) Categories for the Access Control Policy.
+    :param Sequence[Union['GetUserCategoryArgs', 'GetUserCategoryArgsDict', 'outputs.GetUserCategoryResult']] categories: - (Optional) Categories for the Access Control Policy.
     :param Mapping[str, _builtins.str] owner_reference: - (Optional) The reference to a user.
     :param Mapping[str, _builtins.str] project_reference: - (Optional) The reference to a project.
     """

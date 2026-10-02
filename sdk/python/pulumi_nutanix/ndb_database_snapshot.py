@@ -818,7 +818,7 @@ class NdbDatabaseSnapshot(pulumi.CustomResource):
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  remove_schedule_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  replicate_to_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotTagArgs', 'NdbDatabaseSnapshotTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotTagArgs', 'NdbDatabaseSnapshotTagArgsDict', 'outputs.NdbDatabaseSnapshotTag']]]]] = None,
                  time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
                  time_machine_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -832,7 +832,7 @@ class NdbDatabaseSnapshot(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: Snapshot name. Default value is era_manual_snapshot.
         :param pulumi.Input[_builtins.int] remove_schedule_in_days: Removal schedule after which the snapshot should be removed.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] replicate_to_clusters: snapshots to be replicated to clusters.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotTagArgs', 'NdbDatabaseSnapshotTagArgsDict']]]] tags: tags
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotTagArgs', 'NdbDatabaseSnapshotTagArgsDict', 'outputs.NdbDatabaseSnapshotTag']]]] tags: tags
         :param pulumi.Input[_builtins.str] time_machine_id: Time Machine Id
         :param pulumi.Input[_builtins.str] time_machine_name: Time Machine Name
         """
@@ -865,7 +865,7 @@ class NdbDatabaseSnapshot(pulumi.CustomResource):
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  remove_schedule_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  replicate_to_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotTagArgs', 'NdbDatabaseSnapshotTagArgsDict']]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotTagArgs', 'NdbDatabaseSnapshotTagArgsDict', 'outputs.NdbDatabaseSnapshotTag']]]]] = None,
                  time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
                  time_machine_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -942,13 +942,13 @@ class NdbDatabaseSnapshot(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             expiry_date_timezone: pulumi.Input[Optional[_builtins.str]] = None,
             from_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
-            lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotLcmConfigArgs', 'NdbDatabaseSnapshotLcmConfigArgsDict']]]]] = None,
+            lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotLcmConfigArgs', 'NdbDatabaseSnapshotLcmConfigArgsDict', 'outputs.NdbDatabaseSnapshotLcmConfig']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
             parent_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
             parent_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
             processed: pulumi.Input[Optional[_builtins.bool]] = None,
-            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotPropertyArgs', 'NdbDatabaseSnapshotPropertyArgsDict']]]]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotPropertyArgs', 'NdbDatabaseSnapshotPropertyArgsDict', 'outputs.NdbDatabaseSnapshotProperty']]]]] = None,
             protection_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
             remove_schedule_in_days: pulumi.Input[Optional[_builtins.int]] = None,
             replicate_to_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -965,7 +965,7 @@ class NdbDatabaseSnapshot(pulumi.CustomResource):
             software_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
             software_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotTagArgs', 'NdbDatabaseSnapshotTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotTagArgs', 'NdbDatabaseSnapshotTagArgsDict', 'outputs.NdbDatabaseSnapshotTag']]]]] = None,
             time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
             time_machine_name: pulumi.Input[Optional[_builtins.str]] = None,
             timezone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -991,13 +991,13 @@ class NdbDatabaseSnapshot(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: description of snapshot
         :param pulumi.Input[_builtins.str] expiry_date_timezone: Default is set to Asia/Calcutta
         :param pulumi.Input[_builtins.str] from_timestamp: from timestamp
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotLcmConfigArgs', 'NdbDatabaseSnapshotLcmConfigArgsDict']]]] lcm_configs: LCM config
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotLcmConfigArgs', 'NdbDatabaseSnapshotLcmConfigArgsDict', 'outputs.NdbDatabaseSnapshotLcmConfig']]]] lcm_configs: LCM config
         :param pulumi.Input[_builtins.str] name: Snapshot name. Default value is era_manual_snapshot.
         :param pulumi.Input[_builtins.str] nx_cluster_id: nx cluster id
         :param pulumi.Input[_builtins.bool] parent_snapshot: parent snapshot
         :param pulumi.Input[_builtins.str] parent_snapshot_id: parent snapshot id
         :param pulumi.Input[_builtins.bool] processed: processed
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotPropertyArgs', 'NdbDatabaseSnapshotPropertyArgsDict']]]] properties: properties
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotPropertyArgs', 'NdbDatabaseSnapshotPropertyArgsDict', 'outputs.NdbDatabaseSnapshotProperty']]]] properties: properties
         :param pulumi.Input[_builtins.str] protection_domain_id: protection domain
         :param pulumi.Input[_builtins.int] remove_schedule_in_days: Removal schedule after which the snapshot should be removed.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] replicate_to_clusters: snapshots to be replicated to clusters.
@@ -1011,7 +1011,7 @@ class NdbDatabaseSnapshot(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] software_snapshot: software snapshot
         :param pulumi.Input[_builtins.str] software_snapshot_id: software snapshot id
         :param pulumi.Input[_builtins.str] status: status
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotTagArgs', 'NdbDatabaseSnapshotTagArgsDict']]]] tags: tags
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotTagArgs', 'NdbDatabaseSnapshotTagArgsDict', 'outputs.NdbDatabaseSnapshotTag']]]] tags: tags
         :param pulumi.Input[_builtins.str] time_machine_id: Time Machine Id
         :param pulumi.Input[_builtins.str] time_machine_name: Time Machine Name
         :param pulumi.Input[_builtins.str] timezone: timezone

@@ -233,9 +233,9 @@ class ClusterAddNodeV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 config_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2ConfigParamArgs', 'ClusterAddNodeV2ConfigParamArgsDict']]]]] = None,
-                 node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2NodeParamArgs', 'ClusterAddNodeV2NodeParamArgsDict']]]]] = None,
-                 remove_node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2RemoveNodeParamArgs', 'ClusterAddNodeV2RemoveNodeParamArgsDict']]]]] = None,
+                 config_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2ConfigParamArgs', 'ClusterAddNodeV2ConfigParamArgsDict', 'outputs.ClusterAddNodeV2ConfigParam']]]]] = None,
+                 node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2NodeParamArgs', 'ClusterAddNodeV2NodeParamArgsDict', 'outputs.ClusterAddNodeV2NodeParam']]]]] = None,
+                 remove_node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2RemoveNodeParamArgs', 'ClusterAddNodeV2RemoveNodeParamArgsDict', 'outputs.ClusterAddNodeV2RemoveNodeParam']]]]] = None,
                  should_skip_add_node: pulumi.Input[Optional[_builtins.bool]] = None,
                  should_skip_pre_expand_checks: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
@@ -356,9 +356,9 @@ class ClusterAddNodeV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_ext_id: -(Required) Cluster UUID.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2ConfigParamArgs', 'ClusterAddNodeV2ConfigParamArgsDict']]]] config_params: -(Optional) Config parameters.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2NodeParamArgs', 'ClusterAddNodeV2NodeParamArgsDict']]]] node_params: -(Required) Parameters of the node to be added.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2RemoveNodeParamArgs', 'ClusterAddNodeV2RemoveNodeParamArgsDict']]]] remove_node_params: -(Optional) configuration for node removal.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2ConfigParamArgs', 'ClusterAddNodeV2ConfigParamArgsDict', 'outputs.ClusterAddNodeV2ConfigParam']]]] config_params: -(Optional) Config parameters.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2NodeParamArgs', 'ClusterAddNodeV2NodeParamArgsDict', 'outputs.ClusterAddNodeV2NodeParam']]]] node_params: -(Required) Parameters of the node to be added.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2RemoveNodeParamArgs', 'ClusterAddNodeV2RemoveNodeParamArgsDict', 'outputs.ClusterAddNodeV2RemoveNodeParam']]]] remove_node_params: -(Optional) configuration for node removal.
         :param pulumi.Input[_builtins.bool] should_skip_add_node: -(Optional) Indicates if node addition can be skipped.
         :param pulumi.Input[_builtins.bool] should_skip_pre_expand_checks: -(Optional) Indicates if pre-expand checks can be skipped for node addition.
         """
@@ -498,9 +498,9 @@ class ClusterAddNodeV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 config_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2ConfigParamArgs', 'ClusterAddNodeV2ConfigParamArgsDict']]]]] = None,
-                 node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2NodeParamArgs', 'ClusterAddNodeV2NodeParamArgsDict']]]]] = None,
-                 remove_node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2RemoveNodeParamArgs', 'ClusterAddNodeV2RemoveNodeParamArgsDict']]]]] = None,
+                 config_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2ConfigParamArgs', 'ClusterAddNodeV2ConfigParamArgsDict', 'outputs.ClusterAddNodeV2ConfigParam']]]]] = None,
+                 node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2NodeParamArgs', 'ClusterAddNodeV2NodeParamArgsDict', 'outputs.ClusterAddNodeV2NodeParam']]]]] = None,
+                 remove_node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2RemoveNodeParamArgs', 'ClusterAddNodeV2RemoveNodeParamArgsDict', 'outputs.ClusterAddNodeV2RemoveNodeParam']]]]] = None,
                  should_skip_add_node: pulumi.Input[Optional[_builtins.bool]] = None,
                  should_skip_pre_expand_checks: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
@@ -533,9 +533,9 @@ class ClusterAddNodeV2(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            config_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2ConfigParamArgs', 'ClusterAddNodeV2ConfigParamArgsDict']]]]] = None,
-            node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2NodeParamArgs', 'ClusterAddNodeV2NodeParamArgsDict']]]]] = None,
-            remove_node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2RemoveNodeParamArgs', 'ClusterAddNodeV2RemoveNodeParamArgsDict']]]]] = None,
+            config_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2ConfigParamArgs', 'ClusterAddNodeV2ConfigParamArgsDict', 'outputs.ClusterAddNodeV2ConfigParam']]]]] = None,
+            node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2NodeParamArgs', 'ClusterAddNodeV2NodeParamArgsDict', 'outputs.ClusterAddNodeV2NodeParam']]]]] = None,
+            remove_node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2RemoveNodeParamArgs', 'ClusterAddNodeV2RemoveNodeParamArgsDict', 'outputs.ClusterAddNodeV2RemoveNodeParam']]]]] = None,
             should_skip_add_node: pulumi.Input[Optional[_builtins.bool]] = None,
             should_skip_pre_expand_checks: pulumi.Input[Optional[_builtins.bool]] = None) -> 'ClusterAddNodeV2':
         """
@@ -546,9 +546,9 @@ class ClusterAddNodeV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_ext_id: -(Required) Cluster UUID.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2ConfigParamArgs', 'ClusterAddNodeV2ConfigParamArgsDict']]]] config_params: -(Optional) Config parameters.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2NodeParamArgs', 'ClusterAddNodeV2NodeParamArgsDict']]]] node_params: -(Required) Parameters of the node to be added.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2RemoveNodeParamArgs', 'ClusterAddNodeV2RemoveNodeParamArgsDict']]]] remove_node_params: -(Optional) configuration for node removal.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2ConfigParamArgs', 'ClusterAddNodeV2ConfigParamArgsDict', 'outputs.ClusterAddNodeV2ConfigParam']]]] config_params: -(Optional) Config parameters.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2NodeParamArgs', 'ClusterAddNodeV2NodeParamArgsDict', 'outputs.ClusterAddNodeV2NodeParam']]]] node_params: -(Required) Parameters of the node to be added.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterAddNodeV2RemoveNodeParamArgs', 'ClusterAddNodeV2RemoveNodeParamArgsDict', 'outputs.ClusterAddNodeV2RemoveNodeParam']]]] remove_node_params: -(Optional) configuration for node removal.
         :param pulumi.Input[_builtins.bool] should_skip_add_node: -(Optional) Indicates if node addition can be skipped.
         :param pulumi.Input[_builtins.bool] should_skip_pre_expand_checks: -(Optional) Indicates if pre-expand checks can be skipped for node addition.
         """

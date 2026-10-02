@@ -382,11 +382,11 @@ class ImagesV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 checksums: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict']]]]] = None,
+                 checksums: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict', 'outputs.ImagesV2Checksum']]]]] = None,
                  cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict']]]]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict', 'outputs.ImagesV2Source']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -432,11 +432,11 @@ class ImagesV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ext_ids: List of category external identifiers for an image.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict']]]] checksums: The checksum of an image.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict', 'outputs.ImagesV2Checksum']]]] checksums: The checksum of an image.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: List of cluster external identifiers where the image is located.
         :param pulumi.Input[_builtins.str] description: The user defined description of an image.
         :param pulumi.Input[_builtins.str] name: The user defined name of an image.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict']]]] sources: The source of an image. It can be a VM disk or a URL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict', 'outputs.ImagesV2Source']]]] sources: The source of an image. It can be a VM disk or a URL.
         :param pulumi.Input[_builtins.str] type: The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
         """
         ...
@@ -501,11 +501,11 @@ class ImagesV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 checksums: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict']]]]] = None,
+                 checksums: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict', 'outputs.ImagesV2Checksum']]]]] = None,
                  cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict']]]]] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict', 'outputs.ImagesV2Source']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -544,18 +544,18 @@ class ImagesV2(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            checksums: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict']]]]] = None,
+            checksums: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict', 'outputs.ImagesV2Checksum']]]]] = None,
             cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             create_time: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2LinkArgs', 'ImagesV2LinkArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2LinkArgs', 'ImagesV2LinkArgsDict', 'outputs.ImagesV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            placement_policy_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2PlacementPolicyStatusArgs', 'ImagesV2PlacementPolicyStatusArgsDict']]]]] = None,
+            placement_policy_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2PlacementPolicyStatusArgs', 'ImagesV2PlacementPolicyStatusArgsDict', 'outputs.ImagesV2PlacementPolicyStatus']]]]] = None,
             size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
-            sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict']]]]] = None,
+            sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict', 'outputs.ImagesV2Source']]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None) -> 'ImagesV2':
         """
@@ -566,16 +566,16 @@ class ImagesV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ext_ids: List of category external identifiers for an image.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict']]]] checksums: The checksum of an image.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict', 'outputs.ImagesV2Checksum']]]] checksums: The checksum of an image.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: List of cluster external identifiers where the image is located.
         :param pulumi.Input[_builtins.str] create_time: Create time of an image.
         :param pulumi.Input[_builtins.str] description: The user defined description of an image.
         :param pulumi.Input[_builtins.str] last_update_time: Last update time of an image.
         :param pulumi.Input[_builtins.str] name: The user defined name of an image.
         :param pulumi.Input[_builtins.str] owner_ext_id: External identifier of the owner of the image
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2PlacementPolicyStatusArgs', 'ImagesV2PlacementPolicyStatusArgsDict']]]] placement_policy_statuses: Status of an image placement policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2PlacementPolicyStatusArgs', 'ImagesV2PlacementPolicyStatusArgsDict', 'outputs.ImagesV2PlacementPolicyStatus']]]] placement_policy_statuses: Status of an image placement policy.
         :param pulumi.Input[_builtins.int] size_bytes: The size in bytes of an image file.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict']]]] sources: The source of an image. It can be a VM disk or a URL.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict', 'outputs.ImagesV2Source']]]] sources: The source of an image. It can be a VM disk or a URL.
         :param pulumi.Input[_builtins.str] type: The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

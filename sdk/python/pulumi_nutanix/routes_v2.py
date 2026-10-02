@@ -441,11 +441,11 @@ class RoutesV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 destination: pulumi.Input[Optional[Union['RoutesV2DestinationArgs', 'RoutesV2DestinationArgsDict']]] = None,
+                 destination: pulumi.Input[Optional[Union['RoutesV2DestinationArgs', 'RoutesV2DestinationArgsDict', 'outputs.RoutesV2Destination']]] = None,
                  external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadata: pulumi.Input[Optional[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict', 'outputs.RoutesV2Metadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 next_hop: pulumi.Input[Optional[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict']]] = None,
+                 next_hop: pulumi.Input[Optional[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']]] = None,
                  route_table_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  route_table_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  route_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -491,11 +491,11 @@ class RoutesV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: BGP session description.
-        :param pulumi.Input[Union['RoutesV2DestinationArgs', 'RoutesV2DestinationArgsDict']] destination: Destination IP Subnet Configuration.
+        :param pulumi.Input[Union['RoutesV2DestinationArgs', 'RoutesV2DestinationArgsDict', 'outputs.RoutesV2Destination']] destination: Destination IP Subnet Configuration.
         :param pulumi.Input[_builtins.str] external_routing_domain_reference: External routing domain associated with this route table.
-        :param pulumi.Input[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict']] metadata: Metadata associated with this resource.
+        :param pulumi.Input[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict', 'outputs.RoutesV2Metadata']] metadata: Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: Route name.
-        :param pulumi.Input[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict']] next_hop: Route nexthop.
+        :param pulumi.Input[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']] next_hop: Route nexthop.
         :param pulumi.Input[_builtins.str] route_table_ext_id: Route table UUID
         :param pulumi.Input[_builtins.str] route_table_reference: Route table reference.
         :param pulumi.Input[_builtins.str] route_type: Route type. Acceptable values are "STATIC", "LOCAL", "DYNAMIC"
@@ -560,11 +560,11 @@ class RoutesV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 destination: pulumi.Input[Optional[Union['RoutesV2DestinationArgs', 'RoutesV2DestinationArgsDict']]] = None,
+                 destination: pulumi.Input[Optional[Union['RoutesV2DestinationArgs', 'RoutesV2DestinationArgsDict', 'outputs.RoutesV2Destination']]] = None,
                  external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadata: pulumi.Input[Optional[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict', 'outputs.RoutesV2Metadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 next_hop: pulumi.Input[Optional[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict']]] = None,
+                 next_hop: pulumi.Input[Optional[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']]] = None,
                  route_table_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  route_table_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  route_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -608,14 +608,14 @@ class RoutesV2(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            destination: pulumi.Input[Optional[Union['RoutesV2DestinationArgs', 'RoutesV2DestinationArgsDict']]] = None,
+            destination: pulumi.Input[Optional[Union['RoutesV2DestinationArgs', 'RoutesV2DestinationArgsDict', 'outputs.RoutesV2Destination']]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
             is_active: pulumi.Input[Optional[_builtins.bool]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoutesV2LinkArgs', 'RoutesV2LinkArgsDict']]]]] = None,
-            metadata: pulumi.Input[Optional[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict']]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoutesV2LinkArgs', 'RoutesV2LinkArgsDict', 'outputs.RoutesV2Link']]]]] = None,
+            metadata: pulumi.Input[Optional[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict', 'outputs.RoutesV2Metadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            next_hop: pulumi.Input[Optional[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict']]] = None,
+            next_hop: pulumi.Input[Optional[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']]] = None,
             priority: pulumi.Input[Optional[_builtins.int]] = None,
             route_table_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             route_table_reference: pulumi.Input[Optional[_builtins.str]] = None,
@@ -630,14 +630,14 @@ class RoutesV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: BGP session description.
-        :param pulumi.Input[Union['RoutesV2DestinationArgs', 'RoutesV2DestinationArgsDict']] destination: Destination IP Subnet Configuration.
+        :param pulumi.Input[Union['RoutesV2DestinationArgs', 'RoutesV2DestinationArgsDict', 'outputs.RoutesV2Destination']] destination: Destination IP Subnet Configuration.
         :param pulumi.Input[_builtins.str] ext_id: Route UUID
         :param pulumi.Input[_builtins.str] external_routing_domain_reference: External routing domain associated with this route table.
         :param pulumi.Input[_builtins.bool] is_active: Indicates whether the route is active in the forwarding plane.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RoutesV2LinkArgs', 'RoutesV2LinkArgsDict']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        :param pulumi.Input[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict']] metadata: Metadata associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RoutesV2LinkArgs', 'RoutesV2LinkArgsDict', 'outputs.RoutesV2Link']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict', 'outputs.RoutesV2Metadata']] metadata: Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: Route name.
-        :param pulumi.Input[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict']] next_hop: Route nexthop.
+        :param pulumi.Input[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']] next_hop: Route nexthop.
         :param pulumi.Input[_builtins.int] priority: Route priority. A higher value implies greater preference is assigned to the route.
         :param pulumi.Input[_builtins.str] route_table_ext_id: Route table UUID
         :param pulumi.Input[_builtins.str] route_table_reference: Route table reference.
