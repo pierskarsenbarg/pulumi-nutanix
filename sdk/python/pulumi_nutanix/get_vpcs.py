@@ -87,7 +87,7 @@ class AwaitableGetVpcsResult(GetVpcsResult):
             metadatas=self.metadatas)
 
 
-def get_vpcs(metadatas: Optional[Sequence[Union['GetVpcsMetadataArgs', 'GetVpcsMetadataArgsDict']]] = None,
+def get_vpcs(metadatas: Optional[Sequence[Union['GetVpcsMetadataArgs', 'GetVpcsMetadataArgsDict', 'outputs.GetVpcsMetadataResult']]] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVpcsResult:
     """
     Provides a datasource to retrieve all the vpcs.
@@ -104,7 +104,7 @@ def get_vpcs(metadatas: Optional[Sequence[Union['GetVpcsMetadataArgs', 'GetVpcsM
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetVpcsMetadataArgs', 'GetVpcsMetadataArgsDict']] metadatas: - The vpc kind metadata.
+    :param Sequence[Union['GetVpcsMetadataArgs', 'GetVpcsMetadataArgsDict', 'outputs.GetVpcsMetadataResult']] metadatas: - The vpc kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
@@ -116,7 +116,7 @@ def get_vpcs(metadatas: Optional[Sequence[Union['GetVpcsMetadataArgs', 'GetVpcsM
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-def get_vpcs_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetVpcsMetadataArgs', 'GetVpcsMetadataArgsDict']]]]] = None,
+def get_vpcs_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetVpcsMetadataArgs', 'GetVpcsMetadataArgsDict', 'outputs.GetVpcsMetadataResult']]]]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVpcsResult]:
     """
     Provides a datasource to retrieve all the vpcs.
@@ -133,7 +133,7 @@ def get_vpcs_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['Ge
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetVpcsMetadataArgs', 'GetVpcsMetadataArgsDict']] metadatas: - The vpc kind metadata.
+    :param Sequence[Union['GetVpcsMetadataArgs', 'GetVpcsMetadataArgsDict', 'outputs.GetVpcsMetadataResult']] metadatas: - The vpc kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas

@@ -87,7 +87,7 @@ class AwaitableGetRolesResult(GetRolesResult):
             metadatas=self.metadatas)
 
 
-def get_roles(metadatas: Optional[Sequence[Union['GetRolesMetadataArgs', 'GetRolesMetadataArgsDict']]] = None,
+def get_roles(metadatas: Optional[Sequence[Union['GetRolesMetadataArgs', 'GetRolesMetadataArgsDict', 'outputs.GetRolesMetadataResult']]] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRolesResult:
     """
     Describes a list of roles.
@@ -104,7 +104,7 @@ def get_roles(metadatas: Optional[Sequence[Union['GetRolesMetadataArgs', 'GetRol
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetRolesMetadataArgs', 'GetRolesMetadataArgsDict']] metadatas: - The role kind metadata.
+    :param Sequence[Union['GetRolesMetadataArgs', 'GetRolesMetadataArgsDict', 'outputs.GetRolesMetadataResult']] metadatas: - The role kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
@@ -116,7 +116,7 @@ def get_roles(metadatas: Optional[Sequence[Union['GetRolesMetadataArgs', 'GetRol
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-def get_roles_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetRolesMetadataArgs', 'GetRolesMetadataArgsDict']]]]] = None,
+def get_roles_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetRolesMetadataArgs', 'GetRolesMetadataArgsDict', 'outputs.GetRolesMetadataResult']]]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRolesResult]:
     """
     Describes a list of roles.
@@ -133,7 +133,7 @@ def get_roles_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['G
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetRolesMetadataArgs', 'GetRolesMetadataArgsDict']] metadatas: - The role kind metadata.
+    :param Sequence[Union['GetRolesMetadataArgs', 'GetRolesMetadataArgsDict', 'outputs.GetRolesMetadataResult']] metadatas: - The role kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas

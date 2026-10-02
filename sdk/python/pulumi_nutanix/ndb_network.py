@@ -395,7 +395,7 @@ class NdbNetwork(pulumi.CustomResource):
                  cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  dns_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  gateway: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_pools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkIpPoolArgs', 'NdbNetworkIpPoolArgsDict']]]]] = None,
+                 ip_pools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkIpPoolArgs', 'NdbNetworkIpPoolArgsDict', 'outputs.NdbNetworkIpPool']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  primary_dns: pulumi.Input[Optional[_builtins.str]] = None,
                  secondary_dns: pulumi.Input[Optional[_builtins.str]] = None,
@@ -434,7 +434,7 @@ class NdbNetwork(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_id: Select the Nutanix cluster on which you want to add the VLAN.
         :param pulumi.Input[_builtins.str] dns_domain: dns domain for vlan. (Static IP address assignment only)
         :param pulumi.Input[_builtins.str] gateway: Gateway for vlan. Supports in Static IP address assignment only
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbNetworkIpPoolArgs', 'NdbNetworkIpPoolArgsDict']]]] ip_pools: Manage IP Address Pool in NDB option if you want to assign static IP addresses to your database server VMs
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbNetworkIpPoolArgs', 'NdbNetworkIpPoolArgsDict', 'outputs.NdbNetworkIpPool']]]] ip_pools: Manage IP Address Pool in NDB option if you want to assign static IP addresses to your database server VMs
         :param pulumi.Input[_builtins.str] name: Name of the vlan to be attached in NDB
         :param pulumi.Input[_builtins.str] primary_dns: primary dns for vlan. (Static IP address assignment only)
         :param pulumi.Input[_builtins.str] secondary_dns: secondary dns for vlan. (Static IP address assignment only)
@@ -492,7 +492,7 @@ class NdbNetwork(pulumi.CustomResource):
                  cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  dns_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  gateway: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_pools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkIpPoolArgs', 'NdbNetworkIpPoolArgsDict']]]]] = None,
+                 ip_pools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkIpPoolArgs', 'NdbNetworkIpPoolArgsDict', 'outputs.NdbNetworkIpPool']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  primary_dns: pulumi.Input[Optional[_builtins.str]] = None,
                  secondary_dns: pulumi.Input[Optional[_builtins.str]] = None,
@@ -537,12 +537,12 @@ class NdbNetwork(pulumi.CustomResource):
             cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
             dns_domain: pulumi.Input[Optional[_builtins.str]] = None,
             gateway: pulumi.Input[Optional[_builtins.str]] = None,
-            ip_pools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkIpPoolArgs', 'NdbNetworkIpPoolArgsDict']]]]] = None,
+            ip_pools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkIpPoolArgs', 'NdbNetworkIpPoolArgsDict', 'outputs.NdbNetworkIpPool']]]]] = None,
             managed: pulumi.Input[Optional[_builtins.bool]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             primary_dns: pulumi.Input[Optional[_builtins.str]] = None,
-            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkPropertyArgs', 'NdbNetworkPropertyArgsDict']]]]] = None,
-            properties_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkPropertiesMapArgs', 'NdbNetworkPropertiesMapArgsDict']]]]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkPropertyArgs', 'NdbNetworkPropertyArgsDict', 'outputs.NdbNetworkProperty']]]]] = None,
+            properties_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkPropertiesMapArgs', 'NdbNetworkPropertiesMapArgsDict', 'outputs.NdbNetworkPropertiesMap']]]]] = None,
             secondary_dns: pulumi.Input[Optional[_builtins.str]] = None,
             stretched_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_mask: pulumi.Input[Optional[_builtins.str]] = None,
@@ -557,12 +557,12 @@ class NdbNetwork(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_id: Select the Nutanix cluster on which you want to add the VLAN.
         :param pulumi.Input[_builtins.str] dns_domain: dns domain for vlan. (Static IP address assignment only)
         :param pulumi.Input[_builtins.str] gateway: Gateway for vlan. Supports in Static IP address assignment only
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbNetworkIpPoolArgs', 'NdbNetworkIpPoolArgsDict']]]] ip_pools: Manage IP Address Pool in NDB option if you want to assign static IP addresses to your database server VMs
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbNetworkIpPoolArgs', 'NdbNetworkIpPoolArgsDict', 'outputs.NdbNetworkIpPool']]]] ip_pools: Manage IP Address Pool in NDB option if you want to assign static IP addresses to your database server VMs
         :param pulumi.Input[_builtins.bool] managed: Managed by NDB or not
         :param pulumi.Input[_builtins.str] name: Name of the vlan to be attached in NDB
         :param pulumi.Input[_builtins.str] primary_dns: primary dns for vlan. (Static IP address assignment only)
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbNetworkPropertyArgs', 'NdbNetworkPropertyArgsDict']]]] properties: properties of network
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbNetworkPropertiesMapArgs', 'NdbNetworkPropertiesMapArgsDict']]]] properties_maps: properties map of network
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbNetworkPropertyArgs', 'NdbNetworkPropertyArgsDict', 'outputs.NdbNetworkProperty']]]] properties: properties of network
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbNetworkPropertiesMapArgs', 'NdbNetworkPropertiesMapArgsDict', 'outputs.NdbNetworkPropertiesMap']]]] properties_maps: properties map of network
         :param pulumi.Input[_builtins.str] secondary_dns: secondary dns for vlan. (Static IP address assignment only)
         :param pulumi.Input[_builtins.str] stretched_vlan_id: stretched vlan id
         :param pulumi.Input[_builtins.str] subnet_mask: Subnet mask for vlan. (Static IP address assignment only)

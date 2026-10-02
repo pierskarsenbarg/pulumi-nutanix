@@ -516,7 +516,7 @@ class AwaitableGetNetworkSecurityRuleResult(GetNetworkSecurityRuleResult):
             quarantine_rule_target_group_peer_specification_type=self.quarantine_rule_target_group_peer_specification_type)
 
 
-def get_network_security_rule(categories: Optional[Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict']]] = None,
+def get_network_security_rule(categories: Optional[Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict', 'outputs.GetNetworkSecurityRuleCategoryResult']]] = None,
                               network_security_rule_id: Optional[_builtins.str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkSecurityRuleResult:
     """
@@ -554,7 +554,7 @@ def get_network_security_rule(categories: Optional[Sequence[Union['GetNetworkSec
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict']] categories: Categories for the network_security_rule.
+    :param Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict', 'outputs.GetNetworkSecurityRuleCategoryResult']] categories: Categories for the network_security_rule.
     :param _builtins.str network_security_rule_id: Represents network security rule UUID
     """
     __args__ = dict()
@@ -606,7 +606,7 @@ def get_network_security_rule(categories: Optional[Sequence[Union['GetNetworkSec
         quarantine_rule_target_group_filter_params=pulumi.get(__ret__, 'quarantine_rule_target_group_filter_params'),
         quarantine_rule_target_group_filter_type=pulumi.get(__ret__, 'quarantine_rule_target_group_filter_type'),
         quarantine_rule_target_group_peer_specification_type=pulumi.get(__ret__, 'quarantine_rule_target_group_peer_specification_type'))
-def get_network_security_rule_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict']]]]] = None,
+def get_network_security_rule_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict', 'outputs.GetNetworkSecurityRuleCategoryResult']]]]] = None,
                                      network_security_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSecurityRuleResult]:
     """
@@ -644,7 +644,7 @@ def get_network_security_rule_output(categories: pulumi.Input[Optional[Optional[
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict']] categories: Categories for the network_security_rule.
+    :param Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict', 'outputs.GetNetworkSecurityRuleCategoryResult']] categories: Categories for the network_security_rule.
     :param _builtins.str network_security_rule_id: Represents network security rule UUID
     """
     __args__ = dict()

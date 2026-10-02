@@ -264,13 +264,13 @@ class SelfServiceAppPatch(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchCategoryArgs', 'SelfServiceAppPatchCategoryArgsDict']]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchCategoryArgs', 'SelfServiceAppPatchCategoryArgsDict', 'outputs.SelfServiceAppPatchCategory']]]]] = None,
                  config_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchDiskArgs', 'SelfServiceAppPatchDiskArgsDict']]]]] = None,
-                 nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchNicArgs', 'SelfServiceAppPatchNicArgsDict']]]]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchDiskArgs', 'SelfServiceAppPatchDiskArgsDict', 'outputs.SelfServiceAppPatchDisk']]]]] = None,
+                 nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchNicArgs', 'SelfServiceAppPatchNicArgsDict', 'outputs.SelfServiceAppPatchNic']]]]] = None,
                  patch_name: pulumi.Input[Optional[_builtins.str]] = None,
                  runlog_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchVmConfigArgs', 'SelfServiceAppPatchVmConfigArgsDict']]]]] = None,
+                 vm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchVmConfigArgs', 'SelfServiceAppPatchVmConfigArgsDict', 'outputs.SelfServiceAppPatchVmConfig']]]]] = None,
                  __props__=None):
         """
         Run the specified patch on the application by running patch action to update vm configuration, add nics, add disks, add/delete categories.
@@ -597,13 +597,13 @@ class SelfServiceAppPatch(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchCategoryArgs', 'SelfServiceAppPatchCategoryArgsDict']]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchCategoryArgs', 'SelfServiceAppPatchCategoryArgsDict', 'outputs.SelfServiceAppPatchCategory']]]]] = None,
                  config_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchDiskArgs', 'SelfServiceAppPatchDiskArgsDict']]]]] = None,
-                 nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchNicArgs', 'SelfServiceAppPatchNicArgsDict']]]]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchDiskArgs', 'SelfServiceAppPatchDiskArgsDict', 'outputs.SelfServiceAppPatchDisk']]]]] = None,
+                 nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchNicArgs', 'SelfServiceAppPatchNicArgsDict', 'outputs.SelfServiceAppPatchNic']]]]] = None,
                  patch_name: pulumi.Input[Optional[_builtins.str]] = None,
                  runlog_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 vm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchVmConfigArgs', 'SelfServiceAppPatchVmConfigArgsDict']]]]] = None,
+                 vm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchVmConfigArgs', 'SelfServiceAppPatchVmConfigArgsDict', 'outputs.SelfServiceAppPatchVmConfig']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -638,13 +638,13 @@ class SelfServiceAppPatch(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchCategoryArgs', 'SelfServiceAppPatchCategoryArgsDict']]]]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchCategoryArgs', 'SelfServiceAppPatchCategoryArgsDict', 'outputs.SelfServiceAppPatchCategory']]]]] = None,
             config_name: pulumi.Input[Optional[_builtins.str]] = None,
-            disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchDiskArgs', 'SelfServiceAppPatchDiskArgsDict']]]]] = None,
-            nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchNicArgs', 'SelfServiceAppPatchNicArgsDict']]]]] = None,
+            disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchDiskArgs', 'SelfServiceAppPatchDiskArgsDict', 'outputs.SelfServiceAppPatchDisk']]]]] = None,
+            nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchNicArgs', 'SelfServiceAppPatchNicArgsDict', 'outputs.SelfServiceAppPatchNic']]]]] = None,
             patch_name: pulumi.Input[Optional[_builtins.str]] = None,
             runlog_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-            vm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchVmConfigArgs', 'SelfServiceAppPatchVmConfigArgsDict']]]]] = None) -> 'SelfServiceAppPatch':
+            vm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchVmConfigArgs', 'SelfServiceAppPatchVmConfigArgsDict', 'outputs.SelfServiceAppPatchVmConfig']]]]] = None) -> 'SelfServiceAppPatch':
         """
         Get an existing SelfServiceAppPatch resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

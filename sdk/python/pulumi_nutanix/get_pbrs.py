@@ -87,7 +87,7 @@ class AwaitableGetPbrsResult(GetPbrsResult):
             metadatas=self.metadatas)
 
 
-def get_pbrs(metadatas: Optional[Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsMetadataArgsDict']]] = None,
+def get_pbrs(metadatas: Optional[Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsMetadataArgsDict', 'outputs.GetPbrsMetadataResult']]] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPbrsResult:
     """
     Provides a datasource to retrieve all the pbrs.
@@ -104,7 +104,7 @@ def get_pbrs(metadatas: Optional[Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsM
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsMetadataArgsDict']] metadatas: - The routing policies kind metadata.
+    :param Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsMetadataArgsDict', 'outputs.GetPbrsMetadataResult']] metadatas: - The routing policies kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
@@ -116,7 +116,7 @@ def get_pbrs(metadatas: Optional[Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsM
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-def get_pbrs_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsMetadataArgsDict']]]]] = None,
+def get_pbrs_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsMetadataArgsDict', 'outputs.GetPbrsMetadataResult']]]]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPbrsResult]:
     """
     Provides a datasource to retrieve all the pbrs.
@@ -133,7 +133,7 @@ def get_pbrs_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['Ge
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsMetadataArgsDict']] metadatas: - The routing policies kind metadata.
+    :param Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsMetadataArgsDict', 'outputs.GetPbrsMetadataResult']] metadatas: - The routing policies kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas

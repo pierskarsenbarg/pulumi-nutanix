@@ -330,10 +330,10 @@ class NgtInstallationV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  capablities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 credential: pulumi.Input[Optional[Union['NgtInstallationV2CredentialArgs', 'NgtInstallationV2CredentialArgsDict']]] = None,
+                 credential: pulumi.Input[Optional[Union['NgtInstallationV2CredentialArgs', 'NgtInstallationV2CredentialArgsDict', 'outputs.NgtInstallationV2Credential']]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 reboot_preference: pulumi.Input[Optional[Union['NgtInstallationV2RebootPreferenceArgs', 'NgtInstallationV2RebootPreferenceArgsDict']]] = None,
+                 reboot_preference: pulumi.Input[Optional[Union['NgtInstallationV2RebootPreferenceArgs', 'NgtInstallationV2RebootPreferenceArgsDict', 'outputs.NgtInstallationV2RebootPreference']]] = None,
                  __props__=None):
         """
         Provides Nutanix resource to Installs Nutanix Guest Tools in a Virtual Machine by using the provided credentials.
@@ -362,10 +362,10 @@ class NgtInstallationV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capablities: The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
-        :param pulumi.Input[Union['NgtInstallationV2CredentialArgs', 'NgtInstallationV2CredentialArgsDict']] credential: Sign in credentials for the server.
+        :param pulumi.Input[Union['NgtInstallationV2CredentialArgs', 'NgtInstallationV2CredentialArgsDict', 'outputs.NgtInstallationV2Credential']] credential: Sign in credentials for the server.
         :param pulumi.Input[_builtins.str] ext_id: uuid of the Virtual Machine.
         :param pulumi.Input[_builtins.bool] is_enabled: Indicates whether Nutanix Guest Tools is enabled or not.
-        :param pulumi.Input[Union['NgtInstallationV2RebootPreferenceArgs', 'NgtInstallationV2RebootPreferenceArgsDict']] reboot_preference: The restart schedule after installing or upgrading Nutanix Guest Tools.
+        :param pulumi.Input[Union['NgtInstallationV2RebootPreferenceArgs', 'NgtInstallationV2RebootPreferenceArgsDict', 'outputs.NgtInstallationV2RebootPreference']] reboot_preference: The restart schedule after installing or upgrading Nutanix Guest Tools.
         """
         ...
     @overload
@@ -413,10 +413,10 @@ class NgtInstallationV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  capablities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 credential: pulumi.Input[Optional[Union['NgtInstallationV2CredentialArgs', 'NgtInstallationV2CredentialArgsDict']]] = None,
+                 credential: pulumi.Input[Optional[Union['NgtInstallationV2CredentialArgs', 'NgtInstallationV2CredentialArgsDict', 'outputs.NgtInstallationV2Credential']]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
-                 reboot_preference: pulumi.Input[Optional[Union['NgtInstallationV2RebootPreferenceArgs', 'NgtInstallationV2RebootPreferenceArgsDict']]] = None,
+                 reboot_preference: pulumi.Input[Optional[Union['NgtInstallationV2RebootPreferenceArgs', 'NgtInstallationV2RebootPreferenceArgsDict', 'outputs.NgtInstallationV2RebootPreference']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -453,7 +453,7 @@ class NgtInstallationV2(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             available_version: pulumi.Input[Optional[_builtins.str]] = None,
             capablities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            credential: pulumi.Input[Optional[Union['NgtInstallationV2CredentialArgs', 'NgtInstallationV2CredentialArgsDict']]] = None,
+            credential: pulumi.Input[Optional[Union['NgtInstallationV2CredentialArgs', 'NgtInstallationV2CredentialArgsDict', 'outputs.NgtInstallationV2Credential']]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             guest_os_version: pulumi.Input[Optional[_builtins.str]] = None,
             is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -462,7 +462,7 @@ class NgtInstallationV2(pulumi.CustomResource):
             is_reachable: pulumi.Input[Optional[_builtins.bool]] = None,
             is_vm_mobility_drivers_installed: pulumi.Input[Optional[_builtins.bool]] = None,
             is_vss_snapshot_capable: pulumi.Input[Optional[_builtins.bool]] = None,
-            reboot_preference: pulumi.Input[Optional[Union['NgtInstallationV2RebootPreferenceArgs', 'NgtInstallationV2RebootPreferenceArgsDict']]] = None,
+            reboot_preference: pulumi.Input[Optional[Union['NgtInstallationV2RebootPreferenceArgs', 'NgtInstallationV2RebootPreferenceArgsDict', 'outputs.NgtInstallationV2RebootPreference']]] = None,
             version: pulumi.Input[Optional[_builtins.str]] = None) -> 'NgtInstallationV2':
         """
         Get an existing NgtInstallationV2 resource's state with the given name, id, and optional extra
@@ -473,7 +473,7 @@ class NgtInstallationV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] available_version: Version of Nutanix Guest Tools available on the cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capablities: The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
-        :param pulumi.Input[Union['NgtInstallationV2CredentialArgs', 'NgtInstallationV2CredentialArgsDict']] credential: Sign in credentials for the server.
+        :param pulumi.Input[Union['NgtInstallationV2CredentialArgs', 'NgtInstallationV2CredentialArgsDict', 'outputs.NgtInstallationV2Credential']] credential: Sign in credentials for the server.
         :param pulumi.Input[_builtins.str] ext_id: uuid of the Virtual Machine.
         :param pulumi.Input[_builtins.str] guest_os_version: Version of the operating system on the VM.
         :param pulumi.Input[_builtins.bool] is_enabled: Indicates whether Nutanix Guest Tools is enabled or not.
@@ -482,7 +482,7 @@ class NgtInstallationV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_reachable: Indicates whether the communication from VM to CVM is active or not.
         :param pulumi.Input[_builtins.bool] is_vm_mobility_drivers_installed: Indicates whether the VM mobility drivers are installed on the VM or not.
         :param pulumi.Input[_builtins.bool] is_vss_snapshot_capable: Indicates whether the VM is configured to take VSS snapshots through NGT or not.
-        :param pulumi.Input[Union['NgtInstallationV2RebootPreferenceArgs', 'NgtInstallationV2RebootPreferenceArgsDict']] reboot_preference: The restart schedule after installing or upgrading Nutanix Guest Tools.
+        :param pulumi.Input[Union['NgtInstallationV2RebootPreferenceArgs', 'NgtInstallationV2RebootPreferenceArgsDict', 'outputs.NgtInstallationV2RebootPreference']] reboot_preference: The restart schedule after installing or upgrading Nutanix Guest Tools.
         :param pulumi.Input[_builtins.str] version: Version of Nutanix Guest Tools installed on the VM.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

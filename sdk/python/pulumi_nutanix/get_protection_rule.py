@@ -194,7 +194,7 @@ class AwaitableGetProtectionRuleResult(GetProtectionRuleResult):
             state=self.state)
 
 
-def get_protection_rule(categories: Optional[Sequence[Union['GetProtectionRuleCategoryArgs', 'GetProtectionRuleCategoryArgsDict']]] = None,
+def get_protection_rule(categories: Optional[Sequence[Union['GetProtectionRuleCategoryArgs', 'GetProtectionRuleCategoryArgsDict', 'outputs.GetProtectionRuleCategoryResult']]] = None,
                         protection_rule_id: Optional[_builtins.str] = None,
                         protection_rule_name: Optional[_builtins.str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtectionRuleResult:
@@ -259,7 +259,7 @@ def get_protection_rule(categories: Optional[Sequence[Union['GetProtectionRuleCa
         protection_rule_name=pulumi.get(__ret__, 'protection_rule_name'),
         start_time=pulumi.get(__ret__, 'start_time'),
         state=pulumi.get(__ret__, 'state'))
-def get_protection_rule_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectionRuleCategoryArgs', 'GetProtectionRuleCategoryArgsDict']]]]] = None,
+def get_protection_rule_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectionRuleCategoryArgs', 'GetProtectionRuleCategoryArgsDict', 'outputs.GetProtectionRuleCategoryResult']]]]] = None,
                                protection_rule_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                protection_rule_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionRuleResult]:

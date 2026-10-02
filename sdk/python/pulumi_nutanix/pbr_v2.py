@@ -298,7 +298,7 @@ class PbrV2(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict']]]]] = None,
+                 policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict', 'outputs.PbrV2Policy']]]]] = None,
                  priority: pulumi.Input[Optional[_builtins.int]] = None,
                  vpc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -350,7 +350,7 @@ class PbrV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: A description of the routing policy.
         :param pulumi.Input[_builtins.str] ext_id: A globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[_builtins.str] name: Name of the routing policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict']]]] policies: Routing Policies.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict', 'outputs.PbrV2Policy']]]] policies: Routing Policies.
         :param pulumi.Input[_builtins.int] priority: Priority of the routing policy.
         :param pulumi.Input[_builtins.str] vpc_ext_id: ExtId of the VPC extId to which the routing policy belongs.
         """
@@ -421,7 +421,7 @@ class PbrV2(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict']]]]] = None,
+                 policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict', 'outputs.PbrV2Policy']]]]] = None,
                  priority: pulumi.Input[Optional[_builtins.int]] = None,
                  vpc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -461,14 +461,14 @@ class PbrV2(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2LinkArgs', 'PbrV2LinkArgsDict']]]]] = None,
-            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2MetadataArgs', 'PbrV2MetadataArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2LinkArgs', 'PbrV2LinkArgsDict', 'outputs.PbrV2Link']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2MetadataArgs', 'PbrV2MetadataArgsDict', 'outputs.PbrV2Metadata']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict']]]]] = None,
+            policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict', 'outputs.PbrV2Policy']]]]] = None,
             priority: pulumi.Input[Optional[_builtins.int]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             vpc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2VpcArgs', 'PbrV2VpcArgsDict']]]]] = None) -> 'PbrV2':
+            vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2VpcArgs', 'PbrV2VpcArgsDict', 'outputs.PbrV2Vpc']]]]] = None) -> 'PbrV2':
         """
         Get an existing PbrV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -478,14 +478,14 @@ class PbrV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: A description of the routing policy.
         :param pulumi.Input[_builtins.str] ext_id: A globally unique identifier of an instance that is suitable for external consumption.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PbrV2LinkArgs', 'PbrV2LinkArgsDict']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PbrV2MetadataArgs', 'PbrV2MetadataArgsDict']]]] metadatas: Metadata associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PbrV2LinkArgs', 'PbrV2LinkArgsDict', 'outputs.PbrV2Link']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PbrV2MetadataArgs', 'PbrV2MetadataArgsDict', 'outputs.PbrV2Metadata']]]] metadatas: Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: Name of the routing policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict']]]] policies: Routing Policies.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict', 'outputs.PbrV2Policy']]]] policies: Routing Policies.
         :param pulumi.Input[_builtins.int] priority: Priority of the routing policy.
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity
         :param pulumi.Input[_builtins.str] vpc_ext_id: ExtId of the VPC extId to which the routing policy belongs.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['PbrV2VpcArgs', 'PbrV2VpcArgsDict']]]] vpcs: VPC name for projections
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PbrV2VpcArgs', 'PbrV2VpcArgsDict', 'outputs.PbrV2Vpc']]]] vpcs: VPC name for projections
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

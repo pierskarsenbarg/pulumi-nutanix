@@ -141,7 +141,7 @@ class KeyManagementServerV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_information: pulumi.Input[Optional[Union['KeyManagementServerV2AccessInformationArgs', 'KeyManagementServerV2AccessInformationArgsDict']]] = None,
+                 access_information: pulumi.Input[Optional[Union['KeyManagementServerV2AccessInformationArgs', 'KeyManagementServerV2AccessInformationArgsDict', 'outputs.KeyManagementServerV2AccessInformation']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -172,7 +172,7 @@ class KeyManagementServerV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['KeyManagementServerV2AccessInformationArgs', 'KeyManagementServerV2AccessInformationArgsDict']] access_information: - (Required) KMS Access information, it can be Azure Key Vault access information or KMIP based External Key Manager Access Information.
+        :param pulumi.Input[Union['KeyManagementServerV2AccessInformationArgs', 'KeyManagementServerV2AccessInformationArgsDict', 'outputs.KeyManagementServerV2AccessInformation']] access_information: - (Required) KMS Access information, it can be Azure Key Vault access information or KMIP based External Key Manager Access Information.
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the key management server (KMS).
         """
         ...
@@ -222,7 +222,7 @@ class KeyManagementServerV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_information: pulumi.Input[Optional[Union['KeyManagementServerV2AccessInformationArgs', 'KeyManagementServerV2AccessInformationArgsDict']]] = None,
+                 access_information: pulumi.Input[Optional[Union['KeyManagementServerV2AccessInformationArgs', 'KeyManagementServerV2AccessInformationArgsDict', 'outputs.KeyManagementServerV2AccessInformation']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -250,9 +250,9 @@ class KeyManagementServerV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_information: pulumi.Input[Optional[Union['KeyManagementServerV2AccessInformationArgs', 'KeyManagementServerV2AccessInformationArgsDict']]] = None,
+            access_information: pulumi.Input[Optional[Union['KeyManagementServerV2AccessInformationArgs', 'KeyManagementServerV2AccessInformationArgsDict', 'outputs.KeyManagementServerV2AccessInformation']]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyManagementServerV2LinkArgs', 'KeyManagementServerV2LinkArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyManagementServerV2LinkArgs', 'KeyManagementServerV2LinkArgsDict', 'outputs.KeyManagementServerV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'KeyManagementServerV2':
         """
@@ -262,7 +262,7 @@ class KeyManagementServerV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['KeyManagementServerV2AccessInformationArgs', 'KeyManagementServerV2AccessInformationArgsDict']] access_information: - (Required) KMS Access information, it can be Azure Key Vault access information or KMIP based External Key Manager Access Information.
+        :param pulumi.Input[Union['KeyManagementServerV2AccessInformationArgs', 'KeyManagementServerV2AccessInformationArgsDict', 'outputs.KeyManagementServerV2AccessInformation']] access_information: - (Required) KMS Access information, it can be Azure Key Vault access information or KMIP based External Key Manager Access Information.
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the key management server (KMS).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

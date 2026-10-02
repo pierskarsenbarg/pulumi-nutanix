@@ -1203,7 +1203,7 @@ class NdbRegisterDatabase(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actionarguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict']]]]] = None,
+                 actionarguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict', 'outputs.NdbRegisterDatabaseActionargument']]]]] = None,
                  auto_tune_staging_drive: pulumi.Input[Optional[_builtins.bool]] = None,
                  category: pulumi.Input[Optional[_builtins.str]] = None,
                  clustered: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1216,12 +1216,12 @@ class NdbRegisterDatabase(pulumi.CustomResource):
                  forced: pulumi.Input[Optional[_builtins.bool]] = None,
                  forced_install: pulumi.Input[Optional[_builtins.bool]] = None,
                  nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 postgress_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabasePostgressInfoArgs', 'NdbRegisterDatabasePostgressInfoArgsDict']]]]] = None,
+                 postgress_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabasePostgressInfoArgs', 'NdbRegisterDatabasePostgressInfoArgsDict', 'outputs.NdbRegisterDatabasePostgressInfo']]]]] = None,
                  remove: pulumi.Input[Optional[_builtins.bool]] = None,
                  reset_description_in_nx_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
                  soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTagArgs', 'NdbRegisterDatabaseTagArgsDict']]]]] = None,
-                 time_machine_info: pulumi.Input[Optional[Union['NdbRegisterDatabaseTimeMachineInfoArgs', 'NdbRegisterDatabaseTimeMachineInfoArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTagArgs', 'NdbRegisterDatabaseTagArgsDict', 'outputs.NdbRegisterDatabaseTag']]]]] = None,
+                 time_machine_info: pulumi.Input[Optional[Union['NdbRegisterDatabaseTimeMachineInfoArgs', 'NdbRegisterDatabaseTimeMachineInfoArgsDict', 'outputs.NdbRegisterDatabaseTimeMachineInfo']]] = None,
                  vm_description: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_ip: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_password: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1235,7 +1235,7 @@ class NdbRegisterDatabase(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict']]]] actionarguments: action arguments
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict', 'outputs.NdbRegisterDatabaseActionargument']]]] actionarguments: action arguments
         :param pulumi.Input[_builtins.bool] auto_tune_staging_drive: auto tune staging drive. Default is true
         :param pulumi.Input[_builtins.str] category: category of database. Default is "DEFAULT"
         :param pulumi.Input[_builtins.bool] clustered: clustered or not. Default is false
@@ -1248,12 +1248,12 @@ class NdbRegisterDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] forced: - (Optional) Force delete of instance. Default is false
         :param pulumi.Input[_builtins.bool] forced_install: forced install. Default:  true
         :param pulumi.Input[_builtins.str] nx_cluster_id: cluster on which NDB is present
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabasePostgressInfoArgs', 'NdbRegisterDatabasePostgressInfoArgsDict']]]] postgress_infos: Postgress_Info for registering.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabasePostgressInfoArgs', 'NdbRegisterDatabasePostgressInfoArgsDict', 'outputs.NdbRegisterDatabasePostgressInfo']]]] postgress_infos: Postgress_Info for registering.
         :param pulumi.Input[_builtins.bool] remove: - (Optional) Unregister the database from NDB. Default value is true
         :param pulumi.Input[_builtins.bool] reset_description_in_nx_cluster: Reset description in cluster
         :param pulumi.Input[_builtins.bool] soft_remove: - (Optional) Soft remove. Default will be false
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTagArgs', 'NdbRegisterDatabaseTagArgsDict']]]] tags: tags
-        :param pulumi.Input[Union['NdbRegisterDatabaseTimeMachineInfoArgs', 'NdbRegisterDatabaseTimeMachineInfoArgsDict']] time_machine_info: Time Machine info
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTagArgs', 'NdbRegisterDatabaseTagArgsDict', 'outputs.NdbRegisterDatabaseTag']]]] tags: tags
+        :param pulumi.Input[Union['NdbRegisterDatabaseTimeMachineInfoArgs', 'NdbRegisterDatabaseTimeMachineInfoArgsDict', 'outputs.NdbRegisterDatabaseTimeMachineInfo']] time_machine_info: Time Machine info
         :param pulumi.Input[_builtins.str] vm_description: description for VM
         :param pulumi.Input[_builtins.str] vm_ip: IP address of dbserver VM
         :param pulumi.Input[_builtins.str] vm_password: password of the NDB drive user account.
@@ -1286,7 +1286,7 @@ class NdbRegisterDatabase(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actionarguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict']]]]] = None,
+                 actionarguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict', 'outputs.NdbRegisterDatabaseActionargument']]]]] = None,
                  auto_tune_staging_drive: pulumi.Input[Optional[_builtins.bool]] = None,
                  category: pulumi.Input[Optional[_builtins.str]] = None,
                  clustered: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1299,12 +1299,12 @@ class NdbRegisterDatabase(pulumi.CustomResource):
                  forced: pulumi.Input[Optional[_builtins.bool]] = None,
                  forced_install: pulumi.Input[Optional[_builtins.bool]] = None,
                  nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 postgress_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabasePostgressInfoArgs', 'NdbRegisterDatabasePostgressInfoArgsDict']]]]] = None,
+                 postgress_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabasePostgressInfoArgs', 'NdbRegisterDatabasePostgressInfoArgsDict', 'outputs.NdbRegisterDatabasePostgressInfo']]]]] = None,
                  remove: pulumi.Input[Optional[_builtins.bool]] = None,
                  reset_description_in_nx_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
                  soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTagArgs', 'NdbRegisterDatabaseTagArgsDict']]]]] = None,
-                 time_machine_info: pulumi.Input[Optional[Union['NdbRegisterDatabaseTimeMachineInfoArgs', 'NdbRegisterDatabaseTimeMachineInfoArgsDict']]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTagArgs', 'NdbRegisterDatabaseTagArgsDict', 'outputs.NdbRegisterDatabaseTag']]]]] = None,
+                 time_machine_info: pulumi.Input[Optional[Union['NdbRegisterDatabaseTimeMachineInfoArgs', 'NdbRegisterDatabaseTimeMachineInfoArgsDict', 'outputs.NdbRegisterDatabaseTimeMachineInfo']]] = None,
                  vm_description: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_ip: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_password: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1386,14 +1386,14 @@ class NdbRegisterDatabase(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actionarguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict']]]]] = None,
+            actionarguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict', 'outputs.NdbRegisterDatabaseActionargument']]]]] = None,
             auto_tune_staging_drive: pulumi.Input[Optional[_builtins.bool]] = None,
             category: pulumi.Input[Optional[_builtins.str]] = None,
             clone: pulumi.Input[Optional[_builtins.bool]] = None,
             clustered: pulumi.Input[Optional[_builtins.bool]] = None,
             database_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
             database_name: pulumi.Input[Optional[_builtins.str]] = None,
-            database_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseDatabaseNodeArgs', 'NdbRegisterDatabaseDatabaseNodeArgsDict']]]]] = None,
+            database_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseDatabaseNodeArgs', 'NdbRegisterDatabaseDatabaseNodeArgsDict', 'outputs.NdbRegisterDatabaseDatabaseNode']]]]] = None,
             database_status: pulumi.Input[Optional[_builtins.str]] = None,
             database_type: pulumi.Input[Optional[_builtins.str]] = None,
             date_created: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1407,25 +1407,25 @@ class NdbRegisterDatabase(pulumi.CustomResource):
             forced: pulumi.Input[Optional[_builtins.bool]] = None,
             forced_install: pulumi.Input[Optional[_builtins.bool]] = None,
             group_info: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseInfoArgs', 'NdbRegisterDatabaseInfoArgsDict']]]]] = None,
-            lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseLcmConfigArgs', 'NdbRegisterDatabaseLcmConfigArgsDict']]]]] = None,
-            linked_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseLinkedDatabaseArgs', 'NdbRegisterDatabaseLinkedDatabaseArgsDict']]]]] = None,
+            infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseInfoArgs', 'NdbRegisterDatabaseInfoArgsDict', 'outputs.NdbRegisterDatabaseInfo']]]]] = None,
+            lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseLcmConfigArgs', 'NdbRegisterDatabaseLcmConfigArgsDict', 'outputs.NdbRegisterDatabaseLcmConfig']]]]] = None,
+            linked_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseLinkedDatabaseArgs', 'NdbRegisterDatabaseLinkedDatabaseArgsDict', 'outputs.NdbRegisterDatabaseLinkedDatabase']]]]] = None,
             metric: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
             parent_database_id: pulumi.Input[Optional[_builtins.str]] = None,
             parent_source_database_id: pulumi.Input[Optional[_builtins.str]] = None,
             parent_time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
-            postgress_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabasePostgressInfoArgs', 'NdbRegisterDatabasePostgressInfoArgsDict']]]]] = None,
-            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabasePropertyArgs', 'NdbRegisterDatabasePropertyArgsDict']]]]] = None,
+            postgress_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabasePostgressInfoArgs', 'NdbRegisterDatabasePostgressInfoArgsDict', 'outputs.NdbRegisterDatabasePostgressInfo']]]]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabasePropertyArgs', 'NdbRegisterDatabasePropertyArgsDict', 'outputs.NdbRegisterDatabaseProperty']]]]] = None,
             remove: pulumi.Input[Optional[_builtins.bool]] = None,
             reset_description_in_nx_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
             soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
-            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTagArgs', 'NdbRegisterDatabaseTagArgsDict']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTagArgs', 'NdbRegisterDatabaseTagArgsDict', 'outputs.NdbRegisterDatabaseTag']]]]] = None,
             time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
-            time_machine_info: pulumi.Input[Optional[Union['NdbRegisterDatabaseTimeMachineInfoArgs', 'NdbRegisterDatabaseTimeMachineInfoArgsDict']]] = None,
-            time_machines: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTimeMachineArgs', 'NdbRegisterDatabaseTimeMachineArgsDict']]]]] = None,
+            time_machine_info: pulumi.Input[Optional[Union['NdbRegisterDatabaseTimeMachineInfoArgs', 'NdbRegisterDatabaseTimeMachineInfoArgsDict', 'outputs.NdbRegisterDatabaseTimeMachineInfo']]] = None,
+            time_machines: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTimeMachineArgs', 'NdbRegisterDatabaseTimeMachineArgsDict', 'outputs.NdbRegisterDatabaseTimeMachine']]]]] = None,
             time_zone: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             vm_description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1441,14 +1441,14 @@ class NdbRegisterDatabase(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict']]]] actionarguments: action arguments
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseActionargumentArgs', 'NdbRegisterDatabaseActionargumentArgsDict', 'outputs.NdbRegisterDatabaseActionargument']]]] actionarguments: action arguments
         :param pulumi.Input[_builtins.bool] auto_tune_staging_drive: auto tune staging drive. Default is true
         :param pulumi.Input[_builtins.str] category: category of database. Default is "DEFAULT"
         :param pulumi.Input[_builtins.bool] clone: whether instance is cloned or not
         :param pulumi.Input[_builtins.bool] clustered: clustered or not. Default is false
         :param pulumi.Input[_builtins.str] database_cluster_type: database cluster type
         :param pulumi.Input[_builtins.str] database_name: name of database
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseDatabaseNodeArgs', 'NdbRegisterDatabaseDatabaseNodeArgsDict']]]] database_nodes: database nodes associated with database instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseDatabaseNodeArgs', 'NdbRegisterDatabaseDatabaseNodeArgsDict', 'outputs.NdbRegisterDatabaseDatabaseNode']]]] database_nodes: database nodes associated with database instance
         :param pulumi.Input[_builtins.str] database_status: status of database
         :param pulumi.Input[_builtins.str] database_type: type of database. Required value: postgres_database
         :param pulumi.Input[_builtins.str] date_created: date created for db instance
@@ -1461,25 +1461,25 @@ class NdbRegisterDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: description
         :param pulumi.Input[_builtins.bool] forced: - (Optional) Force delete of instance. Default is false
         :param pulumi.Input[_builtins.bool] forced_install: forced install. Default:  true
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseInfoArgs', 'NdbRegisterDatabaseInfoArgsDict']]]] infos: info of instance
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseLcmConfigArgs', 'NdbRegisterDatabaseLcmConfigArgsDict']]]] lcm_configs: LCM config of instance
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseLinkedDatabaseArgs', 'NdbRegisterDatabaseLinkedDatabaseArgsDict']]]] linked_databases: linked databases within database instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseInfoArgs', 'NdbRegisterDatabaseInfoArgsDict', 'outputs.NdbRegisterDatabaseInfo']]]] infos: info of instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseLcmConfigArgs', 'NdbRegisterDatabaseLcmConfigArgsDict', 'outputs.NdbRegisterDatabaseLcmConfig']]]] lcm_configs: LCM config of instance
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseLinkedDatabaseArgs', 'NdbRegisterDatabaseLinkedDatabaseArgsDict', 'outputs.NdbRegisterDatabaseLinkedDatabase']]]] linked_databases: linked databases within database instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metric: Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
         :param pulumi.Input[_builtins.str] name: Name of database instance
         :param pulumi.Input[_builtins.str] nx_cluster_id: cluster on which NDB is present
         :param pulumi.Input[_builtins.str] parent_database_id: parent database id
         :param pulumi.Input[_builtins.str] parent_source_database_id: parent source database id
         :param pulumi.Input[_builtins.str] parent_time_machine_id: parent time machine id
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabasePostgressInfoArgs', 'NdbRegisterDatabasePostgressInfoArgsDict']]]] postgress_infos: Postgress_Info for registering.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabasePropertyArgs', 'NdbRegisterDatabasePropertyArgsDict']]]] properties: properties of database created
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabasePostgressInfoArgs', 'NdbRegisterDatabasePostgressInfoArgsDict', 'outputs.NdbRegisterDatabasePostgressInfo']]]] postgress_infos: Postgress_Info for registering.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabasePropertyArgs', 'NdbRegisterDatabasePropertyArgsDict', 'outputs.NdbRegisterDatabaseProperty']]]] properties: properties of database created
         :param pulumi.Input[_builtins.bool] remove: - (Optional) Unregister the database from NDB. Default value is true
         :param pulumi.Input[_builtins.bool] reset_description_in_nx_cluster: Reset description in cluster
         :param pulumi.Input[_builtins.bool] soft_remove: - (Optional) Soft remove. Default will be false
         :param pulumi.Input[_builtins.str] status: status of instance
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTagArgs', 'NdbRegisterDatabaseTagArgsDict']]]] tags: tags
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTagArgs', 'NdbRegisterDatabaseTagArgsDict', 'outputs.NdbRegisterDatabaseTag']]]] tags: tags
         :param pulumi.Input[_builtins.str] time_machine_id: time machine id of instance
-        :param pulumi.Input[Union['NdbRegisterDatabaseTimeMachineInfoArgs', 'NdbRegisterDatabaseTimeMachineInfoArgsDict']] time_machine_info: Time Machine info
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTimeMachineArgs', 'NdbRegisterDatabaseTimeMachineArgsDict']]]] time_machines: Time Machine details of instance
+        :param pulumi.Input[Union['NdbRegisterDatabaseTimeMachineInfoArgs', 'NdbRegisterDatabaseTimeMachineInfoArgsDict', 'outputs.NdbRegisterDatabaseTimeMachineInfo']] time_machine_info: Time Machine info
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbRegisterDatabaseTimeMachineArgs', 'NdbRegisterDatabaseTimeMachineArgsDict', 'outputs.NdbRegisterDatabaseTimeMachine']]]] time_machines: Time Machine details of instance
         :param pulumi.Input[_builtins.str] time_zone: timezone on which instance is created xw
         :param pulumi.Input[_builtins.str] type: type of database
         :param pulumi.Input[_builtins.str] vm_description: description for VM

@@ -177,7 +177,7 @@ class AwaitableGetRoleResult(GetRoleResult):
             state=self.state)
 
 
-def get_role(categories: Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']]] = None,
+def get_role(categories: Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict', 'outputs.GetRoleCategoryResult']]] = None,
              role_id: Optional[_builtins.str] = None,
              role_name: Optional[_builtins.str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRoleResult:
@@ -203,7 +203,7 @@ def get_role(categories: Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRole
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']] categories: - Categories for the Role.
+    :param Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict', 'outputs.GetRoleCategoryResult']] categories: - Categories for the Role.
     :param _builtins.str role_id: - (Optional) The UUID of a Role.
     :param _builtins.str role_name: - (Optional) The name of a Role.
     """
@@ -227,7 +227,7 @@ def get_role(categories: Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRole
         role_id=pulumi.get(__ret__, 'role_id'),
         role_name=pulumi.get(__ret__, 'role_name'),
         state=pulumi.get(__ret__, 'state'))
-def get_role_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']]]]] = None,
+def get_role_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict', 'outputs.GetRoleCategoryResult']]]]] = None,
                     role_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                     role_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRoleResult]:
@@ -253,7 +253,7 @@ def get_role_output(categories: pulumi.Input[Optional[Optional[Sequence[Union['G
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']] categories: - Categories for the Role.
+    :param Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict', 'outputs.GetRoleCategoryResult']] categories: - Categories for the Role.
     :param _builtins.str role_id: - (Optional) The UUID of a Role.
     :param _builtins.str role_name: - (Optional) The name of a Role.
     """

@@ -411,9 +411,9 @@ class DirectoryServicesV2(pulumi.CustomResource):
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  group_search_type: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict']]]]] = None,
+                 open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict', 'outputs.DirectoryServicesV2OpenLdapConfiguration']]]]] = None,
                  secondary_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_accounts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict']]]]] = None,
+                 service_accounts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict', 'outputs.DirectoryServicesV2ServiceAccount']]]]] = None,
                  url: pulumi.Input[Optional[_builtins.str]] = None,
                  white_listed_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -449,9 +449,9 @@ class DirectoryServicesV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ext_id: -(Optional) A globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[_builtins.str] group_search_type: -(Optional) Group membership search type for the Directory Service. Supported values are: "NON_RECURSIVE" (Doesn't search recursively within groups.) and "RECURSIVE" (Searches recursively within groups.)
         :param pulumi.Input[_builtins.str] name: -(Required) Name for the Directory Service.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict']]]] open_ldap_configurations: -(Optional) Configuration for OpenLDAP Directory Service.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict', 'outputs.DirectoryServicesV2OpenLdapConfiguration']]]] open_ldap_configurations: -(Optional) Configuration for OpenLDAP Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secondary_urls: -(Optional) Secondary URL for the Directory Service.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict']]]] service_accounts: -(Required) Information of Service account to connect to the Directory Service.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict', 'outputs.DirectoryServicesV2ServiceAccount']]]] service_accounts: -(Required) Information of Service account to connect to the Directory Service.
         :param pulumi.Input[_builtins.str] url: -(Required) URL for the Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] white_listed_groups: -(Optional) List of allowed User Groups for the Directory Service.
         """
@@ -506,9 +506,9 @@ class DirectoryServicesV2(pulumi.CustomResource):
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  group_search_type: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict']]]]] = None,
+                 open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict', 'outputs.DirectoryServicesV2OpenLdapConfiguration']]]]] = None,
                  secondary_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_accounts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict']]]]] = None,
+                 service_accounts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict', 'outputs.DirectoryServicesV2ServiceAccount']]]]] = None,
                  url: pulumi.Input[Optional[_builtins.str]] = None,
                  white_listed_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -559,9 +559,9 @@ class DirectoryServicesV2(pulumi.CustomResource):
             group_search_type: pulumi.Input[Optional[_builtins.str]] = None,
             last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict']]]]] = None,
+            open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict', 'outputs.DirectoryServicesV2OpenLdapConfiguration']]]]] = None,
             secondary_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            service_accounts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict']]]]] = None,
+            service_accounts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict', 'outputs.DirectoryServicesV2ServiceAccount']]]]] = None,
             url: pulumi.Input[Optional[_builtins.str]] = None,
             white_listed_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'DirectoryServicesV2':
         """
@@ -579,9 +579,9 @@ class DirectoryServicesV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] group_search_type: -(Optional) Group membership search type for the Directory Service. Supported values are: "NON_RECURSIVE" (Doesn't search recursively within groups.) and "RECURSIVE" (Searches recursively within groups.)
         :param pulumi.Input[_builtins.str] last_updated_time: - Last updated time of the Directory Service.
         :param pulumi.Input[_builtins.str] name: -(Required) Name for the Directory Service.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict']]]] open_ldap_configurations: -(Optional) Configuration for OpenLDAP Directory Service.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict', 'outputs.DirectoryServicesV2OpenLdapConfiguration']]]] open_ldap_configurations: -(Optional) Configuration for OpenLDAP Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secondary_urls: -(Optional) Secondary URL for the Directory Service.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict']]]] service_accounts: -(Required) Information of Service account to connect to the Directory Service.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict', 'outputs.DirectoryServicesV2ServiceAccount']]]] service_accounts: -(Required) Information of Service account to connect to the Directory Service.
         :param pulumi.Input[_builtins.str] url: -(Required) URL for the Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] white_listed_groups: -(Optional) List of allowed User Groups for the Directory Service.
         """

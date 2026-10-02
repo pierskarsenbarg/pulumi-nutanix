@@ -235,8 +235,8 @@ class LcmUpgradeV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  auto_handle_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmUpgradeV2EntityUpdateSpecArgs', 'LcmUpgradeV2EntityUpdateSpecArgsDict']]]]] = None,
-                 management_server: pulumi.Input[Optional[Union['LcmUpgradeV2ManagementServerArgs', 'LcmUpgradeV2ManagementServerArgsDict']]] = None,
+                 entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmUpgradeV2EntityUpdateSpecArgs', 'LcmUpgradeV2EntityUpdateSpecArgsDict', 'outputs.LcmUpgradeV2EntityUpdateSpec']]]]] = None,
+                 management_server: pulumi.Input[Optional[Union['LcmUpgradeV2ManagementServerArgs', 'LcmUpgradeV2ManagementServerArgsDict', 'outputs.LcmUpgradeV2ManagementServer']]] = None,
                  max_wait_time_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
                  skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -263,8 +263,8 @@ class LcmUpgradeV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] auto_handle_flags: List of automated system operations to perform, to avoid precheck failure and let the system restore state after an update is complete. The allowed flag is: - 'powerOffUvms': This allows the system to automatically power off user VMs which cannot be migrated to other hosts and power them on when the update is done. This option can avoid pinned VM precheck failure on the host which needs to enter maintenance mode during the update and allow the update to go through. Items Enum: `POWER_OFF_UVMS`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LcmUpgradeV2EntityUpdateSpecArgs', 'LcmUpgradeV2EntityUpdateSpecArgsDict']]]] entity_update_specs: List of entity update objects for getting recommendations.
-        :param pulumi.Input[Union['LcmUpgradeV2ManagementServerArgs', 'LcmUpgradeV2ManagementServerArgsDict']] management_server: Cluster management server configuration used while updating clusters with ESX or Hyper-V.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LcmUpgradeV2EntityUpdateSpecArgs', 'LcmUpgradeV2EntityUpdateSpecArgsDict', 'outputs.LcmUpgradeV2EntityUpdateSpec']]]] entity_update_specs: List of entity update objects for getting recommendations.
+        :param pulumi.Input[Union['LcmUpgradeV2ManagementServerArgs', 'LcmUpgradeV2ManagementServerArgsDict', 'outputs.LcmUpgradeV2ManagementServer']] management_server: Cluster management server configuration used while updating clusters with ESX or Hyper-V.
         :param pulumi.Input[_builtins.int] max_wait_time_in_secs: Number of seconds LCM waits for the VMs to come up after exiting host maintenance mode. Value in Range [ 60 .. 86400]
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] skipped_precheck_flags: List of prechecks to skip. The allowed value is 'powerOffUvms' that skips the pinned VM prechecks. Items Enum: `POWER_OFF_UVMS`
         :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
@@ -310,8 +310,8 @@ class LcmUpgradeV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  auto_handle_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmUpgradeV2EntityUpdateSpecArgs', 'LcmUpgradeV2EntityUpdateSpecArgsDict']]]]] = None,
-                 management_server: pulumi.Input[Optional[Union['LcmUpgradeV2ManagementServerArgs', 'LcmUpgradeV2ManagementServerArgsDict']]] = None,
+                 entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmUpgradeV2EntityUpdateSpecArgs', 'LcmUpgradeV2EntityUpdateSpecArgsDict', 'outputs.LcmUpgradeV2EntityUpdateSpec']]]]] = None,
+                 management_server: pulumi.Input[Optional[Union['LcmUpgradeV2ManagementServerArgs', 'LcmUpgradeV2ManagementServerArgsDict', 'outputs.LcmUpgradeV2ManagementServer']]] = None,
                  max_wait_time_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
                  skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -341,8 +341,8 @@ class LcmUpgradeV2(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             auto_handle_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmUpgradeV2EntityUpdateSpecArgs', 'LcmUpgradeV2EntityUpdateSpecArgsDict']]]]] = None,
-            management_server: pulumi.Input[Optional[Union['LcmUpgradeV2ManagementServerArgs', 'LcmUpgradeV2ManagementServerArgsDict']]] = None,
+            entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmUpgradeV2EntityUpdateSpecArgs', 'LcmUpgradeV2EntityUpdateSpecArgsDict', 'outputs.LcmUpgradeV2EntityUpdateSpec']]]]] = None,
+            management_server: pulumi.Input[Optional[Union['LcmUpgradeV2ManagementServerArgs', 'LcmUpgradeV2ManagementServerArgsDict', 'outputs.LcmUpgradeV2ManagementServer']]] = None,
             max_wait_time_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
             skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'LcmUpgradeV2':
@@ -354,8 +354,8 @@ class LcmUpgradeV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] auto_handle_flags: List of automated system operations to perform, to avoid precheck failure and let the system restore state after an update is complete. The allowed flag is: - 'powerOffUvms': This allows the system to automatically power off user VMs which cannot be migrated to other hosts and power them on when the update is done. This option can avoid pinned VM precheck failure on the host which needs to enter maintenance mode during the update and allow the update to go through. Items Enum: `POWER_OFF_UVMS`
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LcmUpgradeV2EntityUpdateSpecArgs', 'LcmUpgradeV2EntityUpdateSpecArgsDict']]]] entity_update_specs: List of entity update objects for getting recommendations.
-        :param pulumi.Input[Union['LcmUpgradeV2ManagementServerArgs', 'LcmUpgradeV2ManagementServerArgsDict']] management_server: Cluster management server configuration used while updating clusters with ESX or Hyper-V.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LcmUpgradeV2EntityUpdateSpecArgs', 'LcmUpgradeV2EntityUpdateSpecArgsDict', 'outputs.LcmUpgradeV2EntityUpdateSpec']]]] entity_update_specs: List of entity update objects for getting recommendations.
+        :param pulumi.Input[Union['LcmUpgradeV2ManagementServerArgs', 'LcmUpgradeV2ManagementServerArgsDict', 'outputs.LcmUpgradeV2ManagementServer']] management_server: Cluster management server configuration used while updating clusters with ESX or Hyper-V.
         :param pulumi.Input[_builtins.int] max_wait_time_in_secs: Number of seconds LCM waits for the VMs to come up after exiting host maintenance mode. Value in Range [ 60 .. 86400]
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] skipped_precheck_flags: List of prechecks to skip. The allowed value is 'powerOffUvms' that skips the pinned VM prechecks. Items Enum: `POWER_OFF_UVMS`
         :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.

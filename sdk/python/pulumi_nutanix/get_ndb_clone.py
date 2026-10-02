@@ -404,8 +404,8 @@ class AwaitableGetNdbCloneResult(GetNdbCloneResult):
 
 def get_ndb_clone(clone_id: Optional[_builtins.str] = None,
                   clone_name: Optional[_builtins.str] = None,
-                  filters: Optional[Sequence[Union['GetNdbCloneFilterArgs', 'GetNdbCloneFilterArgsDict']]] = None,
-                  tags: Optional[Sequence[Union['GetNdbCloneTagArgs', 'GetNdbCloneTagArgsDict']]] = None,
+                  filters: Optional[Sequence[Union['GetNdbCloneFilterArgs', 'GetNdbCloneFilterArgsDict', 'outputs.GetNdbCloneFilterResult']]] = None,
+                  tags: Optional[Sequence[Union['GetNdbCloneTagArgs', 'GetNdbCloneTagArgsDict', 'outputs.GetNdbCloneTagResult']]] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNdbCloneResult:
     """
     Describes the clone present in Nutanix Database Service
@@ -413,8 +413,8 @@ def get_ndb_clone(clone_id: Optional[_builtins.str] = None,
 
     :param _builtins.str clone_id: Clone id
     :param _builtins.str clone_name: Clone Name
-    :param Sequence[Union['GetNdbCloneFilterArgs', 'GetNdbCloneFilterArgsDict']] filters: Fetches info based on filter
-    :param Sequence[Union['GetNdbCloneTagArgs', 'GetNdbCloneTagArgsDict']] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+    :param Sequence[Union['GetNdbCloneFilterArgs', 'GetNdbCloneFilterArgsDict', 'outputs.GetNdbCloneFilterResult']] filters: Fetches info based on filter
+    :param Sequence[Union['GetNdbCloneTagArgs', 'GetNdbCloneTagArgsDict', 'outputs.GetNdbCloneTagResult']] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
     """
     __args__ = dict()
     __args__['cloneId'] = clone_id
@@ -458,8 +458,8 @@ def get_ndb_clone(clone_id: Optional[_builtins.str] = None,
         type=pulumi.get(__ret__, 'type'))
 def get_ndb_clone_output(clone_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          clone_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
-                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbCloneFilterArgs', 'GetNdbCloneFilterArgsDict']]]]] = None,
-                         tags: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbCloneTagArgs', 'GetNdbCloneTagArgsDict']]]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbCloneFilterArgs', 'GetNdbCloneFilterArgsDict', 'outputs.GetNdbCloneFilterResult']]]]] = None,
+                         tags: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbCloneTagArgs', 'GetNdbCloneTagArgsDict', 'outputs.GetNdbCloneTagResult']]]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbCloneResult]:
     """
     Describes the clone present in Nutanix Database Service
@@ -467,8 +467,8 @@ def get_ndb_clone_output(clone_id: pulumi.Input[Optional[Optional[_builtins.str]
 
     :param _builtins.str clone_id: Clone id
     :param _builtins.str clone_name: Clone Name
-    :param Sequence[Union['GetNdbCloneFilterArgs', 'GetNdbCloneFilterArgsDict']] filters: Fetches info based on filter
-    :param Sequence[Union['GetNdbCloneTagArgs', 'GetNdbCloneTagArgsDict']] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+    :param Sequence[Union['GetNdbCloneFilterArgs', 'GetNdbCloneFilterArgsDict', 'outputs.GetNdbCloneFilterResult']] filters: Fetches info based on filter
+    :param Sequence[Union['GetNdbCloneTagArgs', 'GetNdbCloneTagArgsDict', 'outputs.GetNdbCloneTagResult']] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
     """
     __args__ = dict()
     __args__['cloneId'] = clone_id

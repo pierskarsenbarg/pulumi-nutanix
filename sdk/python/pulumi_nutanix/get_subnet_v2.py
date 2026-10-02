@@ -358,14 +358,14 @@ class AwaitableGetSubnetV2Result(GetSubnetV2Result):
 
 
 def get_subnet_v2(ext_id: Optional[_builtins.str] = None,
-                  reserved_ip_addresses: Optional[Sequence[Union['GetSubnetV2ReservedIpAddressArgs', 'GetSubnetV2ReservedIpAddressArgsDict']]] = None,
+                  reserved_ip_addresses: Optional[Sequence[Union['GetSubnetV2ReservedIpAddressArgs', 'GetSubnetV2ReservedIpAddressArgsDict', 'outputs.GetSubnetV2ReservedIpAddressResult']]] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubnetV2Result:
     """
     Get a subnet with the specified UUID.
 
 
     :param _builtins.str ext_id: - (Required) The UUID of the subnet.
-    :param Sequence[Union['GetSubnetV2ReservedIpAddressArgs', 'GetSubnetV2ReservedIpAddressArgsDict']] reserved_ip_addresses: List of IPs that are excluded while allocating IP addresses to VM ports.
+    :param Sequence[Union['GetSubnetV2ReservedIpAddressArgs', 'GetSubnetV2ReservedIpAddressArgsDict', 'outputs.GetSubnetV2ReservedIpAddressResult']] reserved_ip_addresses: List of IPs that are excluded while allocating IP addresses to VM ports.
     """
     __args__ = dict()
     __args__['extId'] = ext_id
@@ -402,14 +402,14 @@ def get_subnet_v2(ext_id: Optional[_builtins.str] = None,
         vpc_reference=pulumi.get(__ret__, 'vpc_reference'),
         vpcs=pulumi.get(__ret__, 'vpcs'))
 def get_subnet_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                         reserved_ip_addresses: pulumi.Input[Optional[Optional[Sequence[Union['GetSubnetV2ReservedIpAddressArgs', 'GetSubnetV2ReservedIpAddressArgsDict']]]]] = None,
+                         reserved_ip_addresses: pulumi.Input[Optional[Optional[Sequence[Union['GetSubnetV2ReservedIpAddressArgs', 'GetSubnetV2ReservedIpAddressArgsDict', 'outputs.GetSubnetV2ReservedIpAddressResult']]]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubnetV2Result]:
     """
     Get a subnet with the specified UUID.
 
 
     :param _builtins.str ext_id: - (Required) The UUID of the subnet.
-    :param Sequence[Union['GetSubnetV2ReservedIpAddressArgs', 'GetSubnetV2ReservedIpAddressArgsDict']] reserved_ip_addresses: List of IPs that are excluded while allocating IP addresses to VM ports.
+    :param Sequence[Union['GetSubnetV2ReservedIpAddressArgs', 'GetSubnetV2ReservedIpAddressArgsDict', 'outputs.GetSubnetV2ReservedIpAddressResult']] reserved_ip_addresses: List of IPs that are excluded while allocating IP addresses to VM ports.
     """
     __args__ = dict()
     __args__['extId'] = ext_id
