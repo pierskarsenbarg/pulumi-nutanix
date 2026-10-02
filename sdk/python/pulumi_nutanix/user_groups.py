@@ -226,12 +226,12 @@ class UserGroups(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsCategoryArgs', 'UserGroupsCategoryArgsDict']]]]] = None,
-                 directory_service_ous: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceOusArgs', 'UserGroupsDirectoryServiceOusArgsDict']]]]] = None,
-                 directory_service_user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceUserGroupArgs', 'UserGroupsDirectoryServiceUserGroupArgsDict']]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsCategoryArgs', 'UserGroupsCategoryArgsDict', 'outputs.UserGroupsCategory']]]]] = None,
+                 directory_service_ous: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceOusArgs', 'UserGroupsDirectoryServiceOusArgsDict', 'outputs.UserGroupsDirectoryServiceOus']]]]] = None,
+                 directory_service_user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceUserGroupArgs', 'UserGroupsDirectoryServiceUserGroupArgsDict', 'outputs.UserGroupsDirectoryServiceUserGroup']]]]] = None,
                  owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 saml_user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsSamlUserGroupArgs', 'UserGroupsSamlUserGroupArgsDict']]]]] = None,
+                 saml_user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsSamlUserGroupArgs', 'UserGroupsSamlUserGroupArgsDict', 'outputs.UserGroupsSamlUserGroup']]]]] = None,
                  __props__=None):
         """
         Provides a resource to add a User group to the system..
@@ -264,9 +264,9 @@ class UserGroups(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceOusArgs', 'UserGroupsDirectoryServiceOusArgsDict']]]] directory_service_ous: - (Optional) A Directory Service organizational unit.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceUserGroupArgs', 'UserGroupsDirectoryServiceUserGroupArgsDict']]]] directory_service_user_groups: - (Optional) A Directory Service user group.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UserGroupsSamlUserGroupArgs', 'UserGroupsSamlUserGroupArgsDict']]]] saml_user_groups: - (Optional) A SAML Service user group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceOusArgs', 'UserGroupsDirectoryServiceOusArgsDict', 'outputs.UserGroupsDirectoryServiceOus']]]] directory_service_ous: - (Optional) A Directory Service organizational unit.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceUserGroupArgs', 'UserGroupsDirectoryServiceUserGroupArgsDict', 'outputs.UserGroupsDirectoryServiceUserGroup']]]] directory_service_user_groups: - (Optional) A Directory Service user group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UserGroupsSamlUserGroupArgs', 'UserGroupsSamlUserGroupArgsDict', 'outputs.UserGroupsSamlUserGroup']]]] saml_user_groups: - (Optional) A SAML Service user group.
         """
         ...
     @overload
@@ -318,12 +318,12 @@ class UserGroups(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsCategoryArgs', 'UserGroupsCategoryArgsDict']]]]] = None,
-                 directory_service_ous: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceOusArgs', 'UserGroupsDirectoryServiceOusArgsDict']]]]] = None,
-                 directory_service_user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceUserGroupArgs', 'UserGroupsDirectoryServiceUserGroupArgsDict']]]]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsCategoryArgs', 'UserGroupsCategoryArgsDict', 'outputs.UserGroupsCategory']]]]] = None,
+                 directory_service_ous: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceOusArgs', 'UserGroupsDirectoryServiceOusArgsDict', 'outputs.UserGroupsDirectoryServiceOus']]]]] = None,
+                 directory_service_user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceUserGroupArgs', 'UserGroupsDirectoryServiceUserGroupArgsDict', 'outputs.UserGroupsDirectoryServiceUserGroup']]]]] = None,
                  owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 saml_user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsSamlUserGroupArgs', 'UserGroupsSamlUserGroupArgsDict']]]]] = None,
+                 saml_user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsSamlUserGroupArgs', 'UserGroupsSamlUserGroupArgsDict', 'outputs.UserGroupsSamlUserGroup']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -350,13 +350,13 @@ class UserGroups(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsCategoryArgs', 'UserGroupsCategoryArgsDict']]]]] = None,
-            directory_service_ous: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceOusArgs', 'UserGroupsDirectoryServiceOusArgsDict']]]]] = None,
-            directory_service_user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceUserGroupArgs', 'UserGroupsDirectoryServiceUserGroupArgsDict']]]]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsCategoryArgs', 'UserGroupsCategoryArgsDict', 'outputs.UserGroupsCategory']]]]] = None,
+            directory_service_ous: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceOusArgs', 'UserGroupsDirectoryServiceOusArgsDict', 'outputs.UserGroupsDirectoryServiceOus']]]]] = None,
+            directory_service_user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceUserGroupArgs', 'UserGroupsDirectoryServiceUserGroupArgsDict', 'outputs.UserGroupsDirectoryServiceUserGroup']]]]] = None,
             metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            saml_user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsSamlUserGroupArgs', 'UserGroupsSamlUserGroupArgsDict']]]]] = None) -> 'UserGroups':
+            saml_user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsSamlUserGroupArgs', 'UserGroupsSamlUserGroupArgsDict', 'outputs.UserGroupsSamlUserGroup']]]]] = None) -> 'UserGroups':
         """
         Get an existing UserGroups resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -364,10 +364,10 @@ class UserGroups(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceOusArgs', 'UserGroupsDirectoryServiceOusArgsDict']]]] directory_service_ous: - (Optional) A Directory Service organizational unit.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceUserGroupArgs', 'UserGroupsDirectoryServiceUserGroupArgsDict']]]] directory_service_user_groups: - (Optional) A Directory Service user group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceOusArgs', 'UserGroupsDirectoryServiceOusArgsDict', 'outputs.UserGroupsDirectoryServiceOus']]]] directory_service_ous: - (Optional) A Directory Service organizational unit.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceUserGroupArgs', 'UserGroupsDirectoryServiceUserGroupArgsDict', 'outputs.UserGroupsDirectoryServiceUserGroup']]]] directory_service_user_groups: - (Optional) A Directory Service user group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: The<span pulumi-lang-nodejs=" userGroup " pulumi-lang-dotnet=" UserGroup " pulumi-lang-go=" userGroup " pulumi-lang-python=" user_group " pulumi-lang-yaml=" userGroup " pulumi-lang-java=" userGroup " pulumi-lang-hcl=" user_group "> userGroup </span>kind metadata.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['UserGroupsSamlUserGroupArgs', 'UserGroupsSamlUserGroupArgsDict']]]] saml_user_groups: - (Optional) A SAML Service user group.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UserGroupsSamlUserGroupArgs', 'UserGroupsSamlUserGroupArgsDict', 'outputs.UserGroupsSamlUserGroup']]]] saml_user_groups: - (Optional) A SAML Service user group.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

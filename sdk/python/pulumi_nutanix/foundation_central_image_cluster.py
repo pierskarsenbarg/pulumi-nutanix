@@ -699,13 +699,13 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
                  cluster_external_ip: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_size: pulumi.Input[Optional[_builtins.int]] = None,
-                 cluster_status: pulumi.Input[Optional[Union['FoundationCentralImageClusterClusterStatusArgs', 'FoundationCentralImageClusterClusterStatusArgsDict']]] = None,
-                 common_network_settings: pulumi.Input[Optional[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']]] = None,
+                 cluster_status: pulumi.Input[Optional[Union['FoundationCentralImageClusterClusterStatusArgs', 'FoundationCentralImageClusterClusterStatusArgsDict', 'outputs.FoundationCentralImageClusterClusterStatus']]] = None,
+                 common_network_settings: pulumi.Input[Optional[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict', 'outputs.FoundationCentralImageClusterCommonNetworkSettings']]] = None,
                  fc_api_key_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 hypervisor_iso_details: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']]] = None,
-                 hypervisor_isos: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']]] = None,
+                 hypervisor_iso_details: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict', 'outputs.FoundationCentralImageClusterHypervisorIsoDetails']]] = None,
+                 hypervisor_isos: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict', 'outputs.FoundationCentralImageClusterHypervisorIsos']]] = None,
                  image_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict']]]]] = None,
+                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict', 'outputs.FoundationCentralImageClusterNodeList']]]]] = None,
                  redundancy_factor: pulumi.Input[Optional[_builtins.int]] = None,
                  server_configuration_data: pulumi.Input[Optional[_builtins.str]] = None,
                  skip_cluster_creation: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -817,10 +817,10 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_external_ip: External management ip of the cluster.
         :param pulumi.Input[_builtins.str] cluster_name: Name of the cluster.
         :param pulumi.Input[_builtins.int] cluster_size: Number of nodes in the cluster.
-        :param pulumi.Input[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']] common_network_settings: Common network settings across the nodes in the cluster.
+        :param pulumi.Input[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict', 'outputs.FoundationCentralImageClusterCommonNetworkSettings']] common_network_settings: Common network settings across the nodes in the cluster.
         :param pulumi.Input[_builtins.str] fc_api_key_uuid: UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
-        :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']] hypervisor_iso_details: Details of the hypervisor iso. (Deprecated)
-        :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']] hypervisor_isos: Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
+        :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict', 'outputs.FoundationCentralImageClusterHypervisorIsoDetails']] hypervisor_iso_details: Details of the hypervisor iso. (Deprecated)
+        :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict', 'outputs.FoundationCentralImageClusterHypervisorIsos']] hypervisor_isos: Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
         :param pulumi.Input[_builtins.int] redundancy_factor: Redundancy factor of the cluster.
         :param pulumi.Input[_builtins.str] server_configuration_data: JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:
                ```
@@ -957,13 +957,13 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
                  cluster_external_ip: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
                  cluster_size: pulumi.Input[Optional[_builtins.int]] = None,
-                 cluster_status: pulumi.Input[Optional[Union['FoundationCentralImageClusterClusterStatusArgs', 'FoundationCentralImageClusterClusterStatusArgsDict']]] = None,
-                 common_network_settings: pulumi.Input[Optional[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']]] = None,
+                 cluster_status: pulumi.Input[Optional[Union['FoundationCentralImageClusterClusterStatusArgs', 'FoundationCentralImageClusterClusterStatusArgsDict', 'outputs.FoundationCentralImageClusterClusterStatus']]] = None,
+                 common_network_settings: pulumi.Input[Optional[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict', 'outputs.FoundationCentralImageClusterCommonNetworkSettings']]] = None,
                  fc_api_key_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 hypervisor_iso_details: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']]] = None,
-                 hypervisor_isos: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']]] = None,
+                 hypervisor_iso_details: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict', 'outputs.FoundationCentralImageClusterHypervisorIsoDetails']]] = None,
+                 hypervisor_isos: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict', 'outputs.FoundationCentralImageClusterHypervisorIsos']]] = None,
                  image_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict']]]]] = None,
+                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict', 'outputs.FoundationCentralImageClusterNodeList']]]]] = None,
                  redundancy_factor: pulumi.Input[Optional[_builtins.int]] = None,
                  server_configuration_data: pulumi.Input[Optional[_builtins.str]] = None,
                  skip_cluster_creation: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1020,20 +1020,20 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
             cluster_external_ip: pulumi.Input[Optional[_builtins.str]] = None,
             cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
             cluster_size: pulumi.Input[Optional[_builtins.int]] = None,
-            cluster_status: pulumi.Input[Optional[Union['FoundationCentralImageClusterClusterStatusArgs', 'FoundationCentralImageClusterClusterStatusArgsDict']]] = None,
-            common_network_settings: pulumi.Input[Optional[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']]] = None,
+            cluster_status: pulumi.Input[Optional[Union['FoundationCentralImageClusterClusterStatusArgs', 'FoundationCentralImageClusterClusterStatusArgsDict', 'outputs.FoundationCentralImageClusterClusterStatus']]] = None,
+            common_network_settings: pulumi.Input[Optional[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict', 'outputs.FoundationCentralImageClusterCommonNetworkSettings']]] = None,
             created_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
             current_time: pulumi.Input[Optional[_builtins.str]] = None,
             destroyed: pulumi.Input[Optional[_builtins.bool]] = None,
             fc_api_key_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-            foundation_init_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationCentralImageClusterFoundationInitConfigArgs', 'FoundationCentralImageClusterFoundationInitConfigArgsDict']]]]] = None,
+            foundation_init_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationCentralImageClusterFoundationInitConfigArgs', 'FoundationCentralImageClusterFoundationInitConfigArgsDict', 'outputs.FoundationCentralImageClusterFoundationInitConfig']]]]] = None,
             foundation_init_node_uuid: pulumi.Input[Optional[_builtins.str]] = None,
-            hypervisor_iso_details: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']]] = None,
-            hypervisor_isos: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']]] = None,
+            hypervisor_iso_details: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict', 'outputs.FoundationCentralImageClusterHypervisorIsoDetails']]] = None,
+            hypervisor_isos: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict', 'outputs.FoundationCentralImageClusterHypervisorIsos']]] = None,
             image_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
             imaged_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
             imaged_node_uuid_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict']]]]] = None,
+            node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict', 'outputs.FoundationCentralImageClusterNodeList']]]]] = None,
             redundancy_factor: pulumi.Input[Optional[_builtins.int]] = None,
             server_configuration_data: pulumi.Input[Optional[_builtins.str]] = None,
             skip_cluster_creation: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1052,10 +1052,10 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_external_ip: External management ip of the cluster.
         :param pulumi.Input[_builtins.str] cluster_name: Name of the cluster.
         :param pulumi.Input[_builtins.int] cluster_size: Number of nodes in the cluster.
-        :param pulumi.Input[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']] common_network_settings: Common network settings across the nodes in the cluster.
+        :param pulumi.Input[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict', 'outputs.FoundationCentralImageClusterCommonNetworkSettings']] common_network_settings: Common network settings across the nodes in the cluster.
         :param pulumi.Input[_builtins.str] fc_api_key_uuid: UUID of the FC API key to be used in the imaging process. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes.
-        :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']] hypervisor_iso_details: Details of the hypervisor iso. (Deprecated)
-        :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']] hypervisor_isos: Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
+        :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict', 'outputs.FoundationCentralImageClusterHypervisorIsoDetails']] hypervisor_iso_details: Details of the hypervisor iso. (Deprecated)
+        :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict', 'outputs.FoundationCentralImageClusterHypervisorIsos']] hypervisor_isos: Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
         :param pulumi.Input[_builtins.str] imaged_cluster_uuid: Unique id of the cluster.
         :param pulumi.Input[_builtins.int] redundancy_factor: Redundancy factor of the cluster.
         :param pulumi.Input[_builtins.str] server_configuration_data: JSON-encoded server configuration data for cluster. Required only for imaging via a hardware manager like Cisco Intersight managed UCS nodes. Example:

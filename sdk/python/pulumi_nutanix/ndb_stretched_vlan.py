@@ -225,7 +225,7 @@ class NdbStretchedVlan(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadata: pulumi.Input[Optional[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict', 'outputs.NdbStretchedVlanMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  vlan_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -277,7 +277,7 @@ class NdbStretchedVlan(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description of stretched vlan
-        :param pulumi.Input[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict']] metadata: Update the stretched VLAN Gateway and Subnet Mask IP address
+        :param pulumi.Input[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict', 'outputs.NdbStretchedVlanMetadata']] metadata: Update the stretched VLAN Gateway and Subnet Mask IP address
                * `metadata.gateway`: Update the gateway of stretched vlan
                * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask " pulumi-lang-hcl=" subnet_mask "> subnetMask </span>of stretched vlan
         :param pulumi.Input[_builtins.str] name: name for the stretched VLAN
@@ -350,7 +350,7 @@ class NdbStretchedVlan(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadata: pulumi.Input[Optional[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict']]] = None,
+                 metadata: pulumi.Input[Optional[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict', 'outputs.NdbStretchedVlanMetadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  vlan_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -384,11 +384,11 @@ class NdbStretchedVlan(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
-            metadata: pulumi.Input[Optional[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict']]] = None,
+            metadata: pulumi.Input[Optional[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict', 'outputs.NdbStretchedVlanMetadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             vlan_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            vlans_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbStretchedVlanVlansListArgs', 'NdbStretchedVlanVlansListArgsDict']]]]] = None) -> 'NdbStretchedVlan':
+            vlans_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbStretchedVlanVlansListArgs', 'NdbStretchedVlanVlansListArgsDict', 'outputs.NdbStretchedVlanVlansList']]]]] = None) -> 'NdbStretchedVlan':
         """
         Get an existing NdbStretchedVlan resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -397,13 +397,13 @@ class NdbStretchedVlan(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] description: Description of stretched vlan
-        :param pulumi.Input[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict']] metadata: Update the stretched VLAN Gateway and Subnet Mask IP address
+        :param pulumi.Input[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict', 'outputs.NdbStretchedVlanMetadata']] metadata: Update the stretched VLAN Gateway and Subnet Mask IP address
                * `metadata.gateway`: Update the gateway of stretched vlan
                * `metadata.subnet_mask`: Update the<span pulumi-lang-nodejs=" subnetMask " pulumi-lang-dotnet=" SubnetMask " pulumi-lang-go=" subnetMask " pulumi-lang-python=" subnet_mask " pulumi-lang-yaml=" subnetMask " pulumi-lang-java=" subnetMask " pulumi-lang-hcl=" subnet_mask "> subnetMask </span>of stretched vlan
         :param pulumi.Input[_builtins.str] name: name for the stretched VLAN
         :param pulumi.Input[_builtins.str] type: type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vlan_ids: list of vlan ids to be added in NDB
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbStretchedVlanVlansListArgs', 'NdbStretchedVlanVlansListArgsDict']]]] vlans_lists: properties of vlans
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbStretchedVlanVlansListArgs', 'NdbStretchedVlanVlansListArgsDict', 'outputs.NdbStretchedVlanVlansList']]]] vlans_lists: properties of vlans
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

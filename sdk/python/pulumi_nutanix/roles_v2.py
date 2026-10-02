@@ -502,7 +502,7 @@ class RolesV2(pulumi.CustomResource):
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
             last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RolesV2LinkArgs', 'RolesV2LinkArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RolesV2LinkArgs', 'RolesV2LinkArgsDict', 'outputs.RolesV2Link']]]]] = None,
             operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'RolesV2':
         """
@@ -524,7 +524,7 @@ class RolesV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[_builtins.bool] is_system_defined: - Flag identifying if the Role is system defined or not.
         :param pulumi.Input[_builtins.str] last_updated_time: - The time when the Role was last updated.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RolesV2LinkArgs', 'RolesV2LinkArgsDict']]]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RolesV2LinkArgs', 'RolesV2LinkArgsDict', 'outputs.RolesV2Link']]]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operations: -(Required) List of operations for the role.
         :param pulumi.Input[_builtins.str] tenant_id: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
         """

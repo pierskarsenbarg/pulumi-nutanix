@@ -181,8 +181,8 @@ class LcmPrechecksV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict']]]]] = None,
-                 management_server: pulumi.Input[Optional[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict']]] = None,
+                 entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict', 'outputs.LcmPrechecksV2EntityUpdateSpec']]]]] = None,
+                 management_server: pulumi.Input[Optional[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict', 'outputs.LcmPrechecksV2ManagementServer']]] = None,
                  skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -208,8 +208,8 @@ class LcmPrechecksV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict']]]] entity_update_specs: List of entity update objects for getting recommendations.
-        :param pulumi.Input[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict']] management_server: Cluster management server configuration used while updating clusters with ESX or Hyper-V.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict', 'outputs.LcmPrechecksV2EntityUpdateSpec']]]] entity_update_specs: List of entity update objects for getting recommendations.
+        :param pulumi.Input[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict', 'outputs.LcmPrechecksV2ManagementServer']] management_server: Cluster management server configuration used while updating clusters with ESX or Hyper-V.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] skipped_precheck_flags: List of prechecks to skip. The allowed value is 'powerOffUvms' that skips the pinned VM prechecks. Items Enum: `POWER_OFF_UVMS`
         :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
         """
@@ -254,8 +254,8 @@ class LcmPrechecksV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict']]]]] = None,
-                 management_server: pulumi.Input[Optional[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict']]] = None,
+                 entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict', 'outputs.LcmPrechecksV2EntityUpdateSpec']]]]] = None,
+                 management_server: pulumi.Input[Optional[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict', 'outputs.LcmPrechecksV2ManagementServer']]] = None,
                  skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -284,9 +284,9 @@ class LcmPrechecksV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict']]]]] = None,
+            entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict', 'outputs.LcmPrechecksV2EntityUpdateSpec']]]]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            management_server: pulumi.Input[Optional[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict']]] = None,
+            management_server: pulumi.Input[Optional[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict', 'outputs.LcmPrechecksV2ManagementServer']]] = None,
             skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'LcmPrechecksV2':
         """
@@ -296,8 +296,8 @@ class LcmPrechecksV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict']]]] entity_update_specs: List of entity update objects for getting recommendations.
-        :param pulumi.Input[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict']] management_server: Cluster management server configuration used while updating clusters with ESX or Hyper-V.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict', 'outputs.LcmPrechecksV2EntityUpdateSpec']]]] entity_update_specs: List of entity update objects for getting recommendations.
+        :param pulumi.Input[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict', 'outputs.LcmPrechecksV2ManagementServer']] management_server: Cluster management server configuration used while updating clusters with ESX or Hyper-V.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] skipped_precheck_flags: List of prechecks to skip. The allowed value is 'powerOffUvms' that skips the pinned VM prechecks. Items Enum: `POWER_OFF_UVMS`
         :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
         """

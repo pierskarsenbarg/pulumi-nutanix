@@ -299,11 +299,11 @@ class StoragePolicyV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compression_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2CompressionSpecArgs', 'StoragePolicyV2CompressionSpecArgsDict']]]]] = None,
-                 encryption_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2EncryptionSpecArgs', 'StoragePolicyV2EncryptionSpecArgsDict']]]]] = None,
-                 fault_tolerance_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2FaultToleranceSpecArgs', 'StoragePolicyV2FaultToleranceSpecArgsDict']]]]] = None,
+                 compression_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2CompressionSpecArgs', 'StoragePolicyV2CompressionSpecArgsDict', 'outputs.StoragePolicyV2CompressionSpec']]]]] = None,
+                 encryption_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2EncryptionSpecArgs', 'StoragePolicyV2EncryptionSpecArgsDict', 'outputs.StoragePolicyV2EncryptionSpec']]]]] = None,
+                 fault_tolerance_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2FaultToleranceSpecArgs', 'StoragePolicyV2FaultToleranceSpecArgsDict', 'outputs.StoragePolicyV2FaultToleranceSpec']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 qos_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2QosSpecArgs', 'StoragePolicyV2QosSpecArgsDict']]]]] = None,
+                 qos_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2QosSpecArgs', 'StoragePolicyV2QosSpecArgsDict', 'outputs.StoragePolicyV2QosSpec']]]]] = None,
                  __props__=None):
         """
         Provides Nutanix resource to create storage policy
@@ -433,11 +433,11 @@ class StoragePolicyV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ext_ids: - (Optional) List of external identifiers for Categories to be included in the Storage Policy. Each ID must be a valid UUID format. Maximum 20 items allowed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2CompressionSpecArgs', 'StoragePolicyV2CompressionSpecArgsDict']]]] compression_specs: - (Optional) Defines compression parameters for entities governed by the Storage Policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2EncryptionSpecArgs', 'StoragePolicyV2EncryptionSpecArgsDict']]]] encryption_specs: - (Optional) Defines encryption parameters for entities governed by the Storage Policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2FaultToleranceSpecArgs', 'StoragePolicyV2FaultToleranceSpecArgsDict']]]] fault_tolerance_specs: - (Optional) Defines Fault Tolerance parameters for the entities.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2CompressionSpecArgs', 'StoragePolicyV2CompressionSpecArgsDict', 'outputs.StoragePolicyV2CompressionSpec']]]] compression_specs: - (Optional) Defines compression parameters for entities governed by the Storage Policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2EncryptionSpecArgs', 'StoragePolicyV2EncryptionSpecArgsDict', 'outputs.StoragePolicyV2EncryptionSpec']]]] encryption_specs: - (Optional) Defines encryption parameters for entities governed by the Storage Policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2FaultToleranceSpecArgs', 'StoragePolicyV2FaultToleranceSpecArgsDict', 'outputs.StoragePolicyV2FaultToleranceSpec']]]] fault_tolerance_specs: - (Optional) Defines Fault Tolerance parameters for the entities.
         :param pulumi.Input[_builtins.str] name: - (Required) Storage Policy name. Must be unique and cannot exceed 64 characters.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2QosSpecArgs', 'StoragePolicyV2QosSpecArgsDict']]]] qos_specs: - (Optional) Defines Storage Quality of Service (QOS) parameters for the entities.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2QosSpecArgs', 'StoragePolicyV2QosSpecArgsDict', 'outputs.StoragePolicyV2QosSpec']]]] qos_specs: - (Optional) Defines Storage Quality of Service (QOS) parameters for the entities.
         """
         ...
     @overload
@@ -586,11 +586,11 @@ class StoragePolicyV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compression_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2CompressionSpecArgs', 'StoragePolicyV2CompressionSpecArgsDict']]]]] = None,
-                 encryption_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2EncryptionSpecArgs', 'StoragePolicyV2EncryptionSpecArgsDict']]]]] = None,
-                 fault_tolerance_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2FaultToleranceSpecArgs', 'StoragePolicyV2FaultToleranceSpecArgsDict']]]]] = None,
+                 compression_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2CompressionSpecArgs', 'StoragePolicyV2CompressionSpecArgsDict', 'outputs.StoragePolicyV2CompressionSpec']]]]] = None,
+                 encryption_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2EncryptionSpecArgs', 'StoragePolicyV2EncryptionSpecArgsDict', 'outputs.StoragePolicyV2EncryptionSpec']]]]] = None,
+                 fault_tolerance_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2FaultToleranceSpecArgs', 'StoragePolicyV2FaultToleranceSpecArgsDict', 'outputs.StoragePolicyV2FaultToleranceSpec']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 qos_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2QosSpecArgs', 'StoragePolicyV2QosSpecArgsDict']]]]] = None,
+                 qos_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2QosSpecArgs', 'StoragePolicyV2QosSpecArgsDict', 'outputs.StoragePolicyV2QosSpec']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -621,14 +621,14 @@ class StoragePolicyV2(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            compression_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2CompressionSpecArgs', 'StoragePolicyV2CompressionSpecArgsDict']]]]] = None,
-            encryption_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2EncryptionSpecArgs', 'StoragePolicyV2EncryptionSpecArgsDict']]]]] = None,
+            compression_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2CompressionSpecArgs', 'StoragePolicyV2CompressionSpecArgsDict', 'outputs.StoragePolicyV2CompressionSpec']]]]] = None,
+            encryption_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2EncryptionSpecArgs', 'StoragePolicyV2EncryptionSpecArgsDict', 'outputs.StoragePolicyV2EncryptionSpec']]]]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            fault_tolerance_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2FaultToleranceSpecArgs', 'StoragePolicyV2FaultToleranceSpecArgsDict']]]]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2LinkArgs', 'StoragePolicyV2LinkArgsDict']]]]] = None,
+            fault_tolerance_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2FaultToleranceSpecArgs', 'StoragePolicyV2FaultToleranceSpecArgsDict', 'outputs.StoragePolicyV2FaultToleranceSpec']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2LinkArgs', 'StoragePolicyV2LinkArgsDict', 'outputs.StoragePolicyV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             policy_type: pulumi.Input[Optional[_builtins.str]] = None,
-            qos_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2QosSpecArgs', 'StoragePolicyV2QosSpecArgsDict']]]]] = None,
+            qos_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2QosSpecArgs', 'StoragePolicyV2QosSpecArgsDict', 'outputs.StoragePolicyV2QosSpec']]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'StoragePolicyV2':
         """
         Get an existing StoragePolicyV2 resource's state with the given name, id, and optional extra
@@ -638,14 +638,14 @@ class StoragePolicyV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ext_ids: - (Optional) List of external identifiers for Categories to be included in the Storage Policy. Each ID must be a valid UUID format. Maximum 20 items allowed.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2CompressionSpecArgs', 'StoragePolicyV2CompressionSpecArgsDict']]]] compression_specs: - (Optional) Defines compression parameters for entities governed by the Storage Policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2EncryptionSpecArgs', 'StoragePolicyV2EncryptionSpecArgsDict']]]] encryption_specs: - (Optional) Defines encryption parameters for entities governed by the Storage Policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2CompressionSpecArgs', 'StoragePolicyV2CompressionSpecArgsDict', 'outputs.StoragePolicyV2CompressionSpec']]]] compression_specs: - (Optional) Defines compression parameters for entities governed by the Storage Policy.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2EncryptionSpecArgs', 'StoragePolicyV2EncryptionSpecArgsDict', 'outputs.StoragePolicyV2EncryptionSpec']]]] encryption_specs: - (Optional) Defines encryption parameters for entities governed by the Storage Policy.
         :param pulumi.Input[_builtins.str] ext_id: - (Computed) External identifier of the Storage Policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2FaultToleranceSpecArgs', 'StoragePolicyV2FaultToleranceSpecArgsDict']]]] fault_tolerance_specs: - (Optional) Defines Fault Tolerance parameters for the entities.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2LinkArgs', 'StoragePolicyV2LinkArgsDict']]]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2FaultToleranceSpecArgs', 'StoragePolicyV2FaultToleranceSpecArgsDict', 'outputs.StoragePolicyV2FaultToleranceSpec']]]] fault_tolerance_specs: - (Optional) Defines Fault Tolerance parameters for the entities.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2LinkArgs', 'StoragePolicyV2LinkArgsDict', 'outputs.StoragePolicyV2Link']]]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[_builtins.str] name: - (Required) Storage Policy name. Must be unique and cannot exceed 64 characters.
         :param pulumi.Input[_builtins.str] policy_type: - (Computed) Indicates whether the policy is user-created or system-created. Valid values: `"USER"`, `"SYSTEM"`.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2QosSpecArgs', 'StoragePolicyV2QosSpecArgsDict']]]] qos_specs: - (Optional) Defines Storage Quality of Service (QOS) parameters for the entities.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StoragePolicyV2QosSpecArgs', 'StoragePolicyV2QosSpecArgsDict', 'outputs.StoragePolicyV2QosSpec']]]] qos_specs: - (Optional) Defines Storage Quality of Service (QOS) parameters for the entities.
         :param pulumi.Input[_builtins.str] tenant_id: - A globally unique identifier that represents the tenant that owns this entity.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

@@ -102,7 +102,7 @@ class AwaitableGetFoundationCentralImagedClustersListResult(GetFoundationCentral
             offset=self.offset)
 
 
-def get_foundation_central_imaged_clusters_list(filters: Optional[Union['GetFoundationCentralImagedClustersListFiltersArgs', 'GetFoundationCentralImagedClustersListFiltersArgsDict']] = None,
+def get_foundation_central_imaged_clusters_list(filters: Optional[Union['GetFoundationCentralImagedClustersListFiltersArgs', 'GetFoundationCentralImagedClustersListFiltersArgsDict', 'outputs.GetFoundationCentralImagedClustersListFiltersResult']] = None,
                                                 length: Optional[_builtins.int] = None,
                                                 offset: Optional[_builtins.int] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFoundationCentralImagedClustersListResult:
@@ -138,7 +138,7 @@ def get_foundation_central_imaged_clusters_list(filters: Optional[Union['GetFoun
         length=pulumi.get(__ret__, 'length'),
         metadatas=pulumi.get(__ret__, 'metadatas'),
         offset=pulumi.get(__ret__, 'offset'))
-def get_foundation_central_imaged_clusters_list_output(filters: pulumi.Input[Optional[Optional[Union['GetFoundationCentralImagedClustersListFiltersArgs', 'GetFoundationCentralImagedClustersListFiltersArgsDict']]]] = None,
+def get_foundation_central_imaged_clusters_list_output(filters: pulumi.Input[Optional[Optional[Union['GetFoundationCentralImagedClustersListFiltersArgs', 'GetFoundationCentralImagedClustersListFiltersArgsDict', 'outputs.GetFoundationCentralImagedClustersListFiltersResult']]]] = None,
                                                        length: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                        offset: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFoundationCentralImagedClustersListResult]:

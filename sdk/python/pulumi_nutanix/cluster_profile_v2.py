@@ -550,13 +550,13 @@ class ClusterProfileV2(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict']]]]] = None,
+                 name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict', 'outputs.ClusterProfileV2NameServerIpList']]]]] = None,
                  nfs_subnet_white_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict']]]]] = None,
-                 pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict']]]]] = None,
-                 rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict']]]]] = None,
-                 smtp_server: pulumi.Input[Optional[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict']]] = None,
-                 snmp_config: pulumi.Input[Optional[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict']]] = None,
+                 ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict', 'outputs.ClusterProfileV2NtpServerIpList']]]]] = None,
+                 pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict', 'outputs.ClusterProfileV2PulseStatus']]]]] = None,
+                 rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict', 'outputs.ClusterProfileV2RsyslogServerList']]]]] = None,
+                 smtp_server: pulumi.Input[Optional[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict', 'outputs.ClusterProfileV2SmtpServer']]] = None,
+                 snmp_config: pulumi.Input[Optional[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict', 'outputs.ClusterProfileV2SnmpConfig']]] = None,
                  __props__=None):
         """
         ## Example Usage
@@ -691,13 +691,13 @@ class ClusterProfileV2(pulumi.CustomResource):
                | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
         :param pulumi.Input[_builtins.str] description: - (Optional) Detailed description of a cluster profile.
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the cluster profile.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict']]]] name_server_ip_lists: - (Optional) List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict', 'outputs.ClusterProfileV2NameServerIpList']]]] name_server_ip_lists: - (Optional) List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nfs_subnet_white_lists: - (Optional) NFS subnet allowlist addresses. This is part of the payload for cluster update operation only.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict']]]] ntp_server_ip_lists: - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict']]]] pulse_statuses: - (Optional) Pulse status for a cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict']]]] rsyslog_server_lists: - (Optional) RSYSLOG Server.
-        :param pulumi.Input[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict']] smtp_server: - (Optional) SMTP servers on a cluster. This is part of payload for cluster update operation only.
-        :param pulumi.Input[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict']] snmp_config: - (Optional) SNMP information.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict', 'outputs.ClusterProfileV2NtpServerIpList']]]] ntp_server_ip_lists: - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict', 'outputs.ClusterProfileV2PulseStatus']]]] pulse_statuses: - (Optional) Pulse status for a cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict', 'outputs.ClusterProfileV2RsyslogServerList']]]] rsyslog_server_lists: - (Optional) RSYSLOG Server.
+        :param pulumi.Input[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict', 'outputs.ClusterProfileV2SmtpServer']] smtp_server: - (Optional) SMTP servers on a cluster. This is part of payload for cluster update operation only.
+        :param pulumi.Input[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict', 'outputs.ClusterProfileV2SnmpConfig']] snmp_config: - (Optional) SNMP information.
         """
         ...
     @overload
@@ -842,13 +842,13 @@ class ClusterProfileV2(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict']]]]] = None,
+                 name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict', 'outputs.ClusterProfileV2NameServerIpList']]]]] = None,
                  nfs_subnet_white_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict']]]]] = None,
-                 pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict']]]]] = None,
-                 rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict']]]]] = None,
-                 smtp_server: pulumi.Input[Optional[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict']]] = None,
-                 snmp_config: pulumi.Input[Optional[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict']]] = None,
+                 ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict', 'outputs.ClusterProfileV2NtpServerIpList']]]]] = None,
+                 pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict', 'outputs.ClusterProfileV2PulseStatus']]]]] = None,
+                 rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict', 'outputs.ClusterProfileV2RsyslogServerList']]]]] = None,
+                 smtp_server: pulumi.Input[Optional[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict', 'outputs.ClusterProfileV2SmtpServer']]] = None,
+                 snmp_config: pulumi.Input[Optional[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict', 'outputs.ClusterProfileV2SnmpConfig']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -891,7 +891,7 @@ class ClusterProfileV2(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             allowed_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             cluster_count: pulumi.Input[Optional[_builtins.int]] = None,
-            clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2ClusterArgs', 'ClusterProfileV2ClusterArgsDict']]]]] = None,
+            clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2ClusterArgs', 'ClusterProfileV2ClusterArgsDict', 'outputs.ClusterProfileV2Cluster']]]]] = None,
             create_time: pulumi.Input[Optional[_builtins.str]] = None,
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -900,15 +900,15 @@ class ClusterProfileV2(pulumi.CustomResource):
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
             last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2LinkArgs', 'ClusterProfileV2LinkArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2LinkArgs', 'ClusterProfileV2LinkArgsDict', 'outputs.ClusterProfileV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict']]]]] = None,
+            name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict', 'outputs.ClusterProfileV2NameServerIpList']]]]] = None,
             nfs_subnet_white_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict']]]]] = None,
-            pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict']]]]] = None,
-            rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict']]]]] = None,
-            smtp_server: pulumi.Input[Optional[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict']]] = None,
-            snmp_config: pulumi.Input[Optional[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict']]] = None,
+            ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict', 'outputs.ClusterProfileV2NtpServerIpList']]]]] = None,
+            pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict', 'outputs.ClusterProfileV2PulseStatus']]]]] = None,
+            rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict', 'outputs.ClusterProfileV2RsyslogServerList']]]]] = None,
+            smtp_server: pulumi.Input[Optional[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict', 'outputs.ClusterProfileV2SmtpServer']]] = None,
+            snmp_config: pulumi.Input[Optional[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict', 'outputs.ClusterProfileV2SnmpConfig']]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ClusterProfileV2':
         """
         Get an existing ClusterProfileV2 resource's state with the given name, id, and optional extra
@@ -930,13 +930,13 @@ class ClusterProfileV2(pulumi.CustomResource):
                | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
         :param pulumi.Input[_builtins.str] description: - (Optional) Detailed description of a cluster profile.
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the cluster profile.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict']]]] name_server_ip_lists: - (Optional) List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict', 'outputs.ClusterProfileV2NameServerIpList']]]] name_server_ip_lists: - (Optional) List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nfs_subnet_white_lists: - (Optional) NFS subnet allowlist addresses. This is part of the payload for cluster update operation only.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict']]]] ntp_server_ip_lists: - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict']]]] pulse_statuses: - (Optional) Pulse status for a cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict']]]] rsyslog_server_lists: - (Optional) RSYSLOG Server.
-        :param pulumi.Input[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict']] smtp_server: - (Optional) SMTP servers on a cluster. This is part of payload for cluster update operation only.
-        :param pulumi.Input[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict']] snmp_config: - (Optional) SNMP information.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict', 'outputs.ClusterProfileV2NtpServerIpList']]]] ntp_server_ip_lists: - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict', 'outputs.ClusterProfileV2PulseStatus']]]] pulse_statuses: - (Optional) Pulse status for a cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict', 'outputs.ClusterProfileV2RsyslogServerList']]]] rsyslog_server_lists: - (Optional) RSYSLOG Server.
+        :param pulumi.Input[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict', 'outputs.ClusterProfileV2SmtpServer']] smtp_server: - (Optional) SMTP servers on a cluster. This is part of payload for cluster update operation only.
+        :param pulumi.Input[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict', 'outputs.ClusterProfileV2SnmpConfig']] snmp_config: - (Optional) SNMP information.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

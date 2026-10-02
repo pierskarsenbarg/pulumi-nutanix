@@ -97,7 +97,7 @@ class AwaitableGetFoundationCentralListApiKeysResult(GetFoundationCentralListApi
 
 
 def get_foundation_central_list_api_keys(length: Optional[_builtins.int] = None,
-                                         metadata: Optional[Union['GetFoundationCentralListApiKeysMetadataArgs', 'GetFoundationCentralListApiKeysMetadataArgsDict']] = None,
+                                         metadata: Optional[Union['GetFoundationCentralListApiKeysMetadataArgs', 'GetFoundationCentralListApiKeysMetadataArgsDict', 'outputs.GetFoundationCentralListApiKeysMetadataResult']] = None,
                                          offset: Optional[_builtins.int] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFoundationCentralListApiKeysResult:
     """
@@ -116,7 +116,7 @@ def get_foundation_central_list_api_keys(length: Optional[_builtins.int] = None,
 
 
     :param _builtins.int length: The number of records retrieved.
-    :param Union['GetFoundationCentralListApiKeysMetadataArgs', 'GetFoundationCentralListApiKeysMetadataArgsDict'] metadata: List metadata output for all list apis.
+    :param Union['GetFoundationCentralListApiKeysMetadataArgs', 'GetFoundationCentralListApiKeysMetadataArgsDict', 'outputs.GetFoundationCentralListApiKeysMetadataResult'] metadata: List metadata output for all list apis.
     :param _builtins.int offset: Offset from the start of the object list.
     """
     __args__ = dict()
@@ -133,7 +133,7 @@ def get_foundation_central_list_api_keys(length: Optional[_builtins.int] = None,
         metadata=pulumi.get(__ret__, 'metadata'),
         offset=pulumi.get(__ret__, 'offset'))
 def get_foundation_central_list_api_keys_output(length: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
-                                                metadata: pulumi.Input[Optional[Optional[Union['GetFoundationCentralListApiKeysMetadataArgs', 'GetFoundationCentralListApiKeysMetadataArgsDict']]]] = None,
+                                                metadata: pulumi.Input[Optional[Optional[Union['GetFoundationCentralListApiKeysMetadataArgs', 'GetFoundationCentralListApiKeysMetadataArgsDict', 'outputs.GetFoundationCentralListApiKeysMetadataResult']]]] = None,
                                                 offset: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFoundationCentralListApiKeysResult]:
     """
@@ -152,7 +152,7 @@ def get_foundation_central_list_api_keys_output(length: pulumi.Input[Optional[Op
 
 
     :param _builtins.int length: The number of records retrieved.
-    :param Union['GetFoundationCentralListApiKeysMetadataArgs', 'GetFoundationCentralListApiKeysMetadataArgsDict'] metadata: List metadata output for all list apis.
+    :param Union['GetFoundationCentralListApiKeysMetadataArgs', 'GetFoundationCentralListApiKeysMetadataArgsDict', 'outputs.GetFoundationCentralListApiKeysMetadataResult'] metadata: List metadata output for all list apis.
     :param _builtins.int offset: Offset from the start of the object list.
     """
     __args__ = dict()

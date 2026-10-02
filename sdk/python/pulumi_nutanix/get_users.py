@@ -87,7 +87,7 @@ class AwaitableGetUsersResult(GetUsersResult):
             metadatas=self.metadatas)
 
 
-def get_users(metadatas: Optional[Sequence[Union['GetUsersMetadataArgs', 'GetUsersMetadataArgsDict']]] = None,
+def get_users(metadatas: Optional[Sequence[Union['GetUsersMetadataArgs', 'GetUsersMetadataArgsDict', 'outputs.GetUsersMetadataResult']]] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUsersResult:
     """
     Provides a datasource to retrieve all the users.
@@ -110,7 +110,7 @@ def get_users(metadatas: Optional[Sequence[Union['GetUsersMetadataArgs', 'GetUse
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetUsersMetadataArgs', 'GetUsersMetadataArgsDict']] metadatas: - The user kind metadata.
+    :param Sequence[Union['GetUsersMetadataArgs', 'GetUsersMetadataArgsDict', 'outputs.GetUsersMetadataResult']] metadatas: - The user kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
@@ -122,7 +122,7 @@ def get_users(metadatas: Optional[Sequence[Union['GetUsersMetadataArgs', 'GetUse
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-def get_users_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetUsersMetadataArgs', 'GetUsersMetadataArgsDict']]]]] = None,
+def get_users_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['GetUsersMetadataArgs', 'GetUsersMetadataArgsDict', 'outputs.GetUsersMetadataResult']]]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUsersResult]:
     """
     Provides a datasource to retrieve all the users.
@@ -145,7 +145,7 @@ def get_users_output(metadatas: pulumi.Input[Optional[Optional[Sequence[Union['G
     <!--End PulumiCodeChooser -->
 
 
-    :param Sequence[Union['GetUsersMetadataArgs', 'GetUsersMetadataArgsDict']] metadatas: - The user kind metadata.
+    :param Sequence[Union['GetUsersMetadataArgs', 'GetUsersMetadataArgsDict', 'outputs.GetUsersMetadataResult']] metadatas: - The user kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas

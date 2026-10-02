@@ -205,7 +205,7 @@ class AwaitableGetNdbMaintenanceWindowResult(GetNdbMaintenanceWindowResult):
 
 
 def get_ndb_maintenance_window(id: Optional[_builtins.str] = None,
-                               tags: Optional[Sequence[Union['GetNdbMaintenanceWindowTagArgs', 'GetNdbMaintenanceWindowTagArgsDict']]] = None,
+                               tags: Optional[Sequence[Union['GetNdbMaintenanceWindowTagArgs', 'GetNdbMaintenanceWindowTagArgsDict', 'outputs.GetNdbMaintenanceWindowTagResult']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNdbMaintenanceWindowResult:
     """
     Describes a maintenance window in Nutanix Database Service
@@ -223,7 +223,7 @@ def get_ndb_maintenance_window(id: Optional[_builtins.str] = None,
 
 
     :param _builtins.str id: Maintenance window id.
-    :param Sequence[Union['GetNdbMaintenanceWindowTagArgs', 'GetNdbMaintenanceWindowTagArgsDict']] tags: tags of maintenance window
+    :param Sequence[Union['GetNdbMaintenanceWindowTagArgs', 'GetNdbMaintenanceWindowTagArgsDict', 'outputs.GetNdbMaintenanceWindowTagResult']] tags: tags of maintenance window
     """
     __args__ = dict()
     __args__['id'] = id
@@ -247,7 +247,7 @@ def get_ndb_maintenance_window(id: Optional[_builtins.str] = None,
         tags=pulumi.get(__ret__, 'tags'),
         timezone=pulumi.get(__ret__, 'timezone'))
 def get_ndb_maintenance_window_output(id: pulumi.Input[Optional[_builtins.str]] = None,
-                                      tags: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbMaintenanceWindowTagArgs', 'GetNdbMaintenanceWindowTagArgsDict']]]]] = None,
+                                      tags: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbMaintenanceWindowTagArgs', 'GetNdbMaintenanceWindowTagArgsDict', 'outputs.GetNdbMaintenanceWindowTagResult']]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbMaintenanceWindowResult]:
     """
     Describes a maintenance window in Nutanix Database Service
@@ -265,7 +265,7 @@ def get_ndb_maintenance_window_output(id: pulumi.Input[Optional[_builtins.str]] 
 
 
     :param _builtins.str id: Maintenance window id.
-    :param Sequence[Union['GetNdbMaintenanceWindowTagArgs', 'GetNdbMaintenanceWindowTagArgsDict']] tags: tags of maintenance window
+    :param Sequence[Union['GetNdbMaintenanceWindowTagArgs', 'GetNdbMaintenanceWindowTagArgsDict', 'outputs.GetNdbMaintenanceWindowTagResult']] tags: tags of maintenance window
     """
     __args__ = dict()
     __args__['id'] = id

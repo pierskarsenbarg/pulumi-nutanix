@@ -420,14 +420,14 @@ class NetworkFunctionV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 data_plane_health_check_config: pulumi.Input[Optional[Union['NetworkFunctionV2DataPlaneHealthCheckConfigArgs', 'NetworkFunctionV2DataPlaneHealthCheckConfigArgsDict']]] = None,
+                 data_plane_health_check_config: pulumi.Input[Optional[Union['NetworkFunctionV2DataPlaneHealthCheckConfigArgs', 'NetworkFunctionV2DataPlaneHealthCheckConfigArgsDict', 'outputs.NetworkFunctionV2DataPlaneHealthCheckConfig']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  failure_handling: pulumi.Input[Optional[_builtins.str]] = None,
                  high_availability_mode: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict']]]]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict', 'outputs.NetworkFunctionV2Metadata']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 nic_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict']]]]] = None,
+                 nic_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict', 'outputs.NetworkFunctionV2NicPair']]]]] = None,
                  traffic_forwarding_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -472,7 +472,7 @@ class NetworkFunctionV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['NetworkFunctionV2DataPlaneHealthCheckConfigArgs', 'NetworkFunctionV2DataPlaneHealthCheckConfigArgsDict']] data_plane_health_check_config: Data Plane Health check configuration applied for the network function.
+        :param pulumi.Input[Union['NetworkFunctionV2DataPlaneHealthCheckConfigArgs', 'NetworkFunctionV2DataPlaneHealthCheckConfigArgsDict', 'outputs.NetworkFunctionV2DataPlaneHealthCheckConfig']] data_plane_health_check_config: Data Plane Health check configuration applied for the network function.
         :param pulumi.Input[_builtins.str] description: Description of the network function.
         :param pulumi.Input[_builtins.str] ext_id: globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[_builtins.str] failure_handling: Failure handling behavior when network function is unhealthy. Values:
@@ -487,9 +487,9 @@ class NetworkFunctionV2(pulumi.CustomResource):
                | Value | Description |
                | --- | --- |
                | `ACTIVE_PASSIVE` | NIC pair is in ACTIVE_PASSIVE mode. In ACTIVE_PASSIVE mode, one of the NIC pairs will be selected as the ACTIVE network function and all other NIC pairs will be on STANDBY |
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict']]]] metadatas: Metadata associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict', 'outputs.NetworkFunctionV2Metadata']]]] metadatas: Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: Name of the network function.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict']]]] nic_pairs: List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict', 'outputs.NetworkFunctionV2NicPair']]]] nic_pairs: List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
         :param pulumi.Input[_builtins.str] traffic_forwarding_mode: Traffic forwarding mode. Values:
                
                | Value | Description |
@@ -558,14 +558,14 @@ class NetworkFunctionV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 data_plane_health_check_config: pulumi.Input[Optional[Union['NetworkFunctionV2DataPlaneHealthCheckConfigArgs', 'NetworkFunctionV2DataPlaneHealthCheckConfigArgsDict']]] = None,
+                 data_plane_health_check_config: pulumi.Input[Optional[Union['NetworkFunctionV2DataPlaneHealthCheckConfigArgs', 'NetworkFunctionV2DataPlaneHealthCheckConfigArgsDict', 'outputs.NetworkFunctionV2DataPlaneHealthCheckConfig']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  failure_handling: pulumi.Input[Optional[_builtins.str]] = None,
                  high_availability_mode: pulumi.Input[Optional[_builtins.str]] = None,
-                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict']]]]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict', 'outputs.NetworkFunctionV2Metadata']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 nic_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict']]]]] = None,
+                 nic_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict', 'outputs.NetworkFunctionV2NicPair']]]]] = None,
                  traffic_forwarding_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -601,15 +601,15 @@ class NetworkFunctionV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            data_plane_health_check_config: pulumi.Input[Optional[Union['NetworkFunctionV2DataPlaneHealthCheckConfigArgs', 'NetworkFunctionV2DataPlaneHealthCheckConfigArgsDict']]] = None,
+            data_plane_health_check_config: pulumi.Input[Optional[Union['NetworkFunctionV2DataPlaneHealthCheckConfigArgs', 'NetworkFunctionV2DataPlaneHealthCheckConfigArgsDict', 'outputs.NetworkFunctionV2DataPlaneHealthCheckConfig']]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             failure_handling: pulumi.Input[Optional[_builtins.str]] = None,
             high_availability_mode: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2LinkArgs', 'NetworkFunctionV2LinkArgsDict']]]]] = None,
-            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2LinkArgs', 'NetworkFunctionV2LinkArgsDict', 'outputs.NetworkFunctionV2Link']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict', 'outputs.NetworkFunctionV2Metadata']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            nic_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict']]]]] = None,
+            nic_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict', 'outputs.NetworkFunctionV2NicPair']]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             traffic_forwarding_mode: pulumi.Input[Optional[_builtins.str]] = None) -> 'NetworkFunctionV2':
         """
@@ -619,7 +619,7 @@ class NetworkFunctionV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Union['NetworkFunctionV2DataPlaneHealthCheckConfigArgs', 'NetworkFunctionV2DataPlaneHealthCheckConfigArgsDict']] data_plane_health_check_config: Data Plane Health check configuration applied for the network function.
+        :param pulumi.Input[Union['NetworkFunctionV2DataPlaneHealthCheckConfigArgs', 'NetworkFunctionV2DataPlaneHealthCheckConfigArgsDict', 'outputs.NetworkFunctionV2DataPlaneHealthCheckConfig']] data_plane_health_check_config: Data Plane Health check configuration applied for the network function.
         :param pulumi.Input[_builtins.str] description: Description of the network function.
         :param pulumi.Input[_builtins.str] ext_id: globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[_builtins.str] failure_handling: Failure handling behavior when network function is unhealthy. Values:
@@ -634,10 +634,10 @@ class NetworkFunctionV2(pulumi.CustomResource):
                | Value | Description |
                | --- | --- |
                | `ACTIVE_PASSIVE` | NIC pair is in ACTIVE_PASSIVE mode. In ACTIVE_PASSIVE mode, one of the NIC pairs will be selected as the ACTIVE network function and all other NIC pairs will be on STANDBY |
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2LinkArgs', 'NetworkFunctionV2LinkArgsDict']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict']]]] metadatas: Metadata associated with this resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2LinkArgs', 'NetworkFunctionV2LinkArgsDict', 'outputs.NetworkFunctionV2Link']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict', 'outputs.NetworkFunctionV2Metadata']]]] metadatas: Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: Name of the network function.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict']]]] nic_pairs: List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict', 'outputs.NetworkFunctionV2NicPair']]]] nic_pairs: List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.
         :param pulumi.Input[_builtins.str] traffic_forwarding_mode: Traffic forwarding mode. Values:
                

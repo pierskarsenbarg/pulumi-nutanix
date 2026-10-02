@@ -137,7 +137,7 @@ class VmNetworkDeviceAssignIpV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceAssignIpV2IpAddressArgs', 'VmNetworkDeviceAssignIpV2IpAddressArgsDict']]]]] = None,
+                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceAssignIpV2IpAddressArgs', 'VmNetworkDeviceAssignIpV2IpAddressArgsDict', 'outputs.VmNetworkDeviceAssignIpV2IpAddress']]]]] = None,
                  vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -164,7 +164,7 @@ class VmNetworkDeviceAssignIpV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ext_id: - (Required) The globally unique identifier of a Nic. It should be of type UUID.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceAssignIpV2IpAddressArgs', 'VmNetworkDeviceAssignIpV2IpAddressArgsDict']]]] ip_addresses: - (Optional) Ip config settings.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceAssignIpV2IpAddressArgs', 'VmNetworkDeviceAssignIpV2IpAddressArgsDict', 'outputs.VmNetworkDeviceAssignIpV2IpAddress']]]] ip_addresses: - (Optional) Ip config settings.
         :param pulumi.Input[_builtins.str] vm_ext_id: - (Required) The globally unique identifier of a VM. It should be of type UUID.
         """
         ...
@@ -210,7 +210,7 @@ class VmNetworkDeviceAssignIpV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceAssignIpV2IpAddressArgs', 'VmNetworkDeviceAssignIpV2IpAddressArgsDict']]]]] = None,
+                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceAssignIpV2IpAddressArgs', 'VmNetworkDeviceAssignIpV2IpAddressArgsDict', 'outputs.VmNetworkDeviceAssignIpV2IpAddress']]]]] = None,
                  vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -239,7 +239,7 @@ class VmNetworkDeviceAssignIpV2(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceAssignIpV2IpAddressArgs', 'VmNetworkDeviceAssignIpV2IpAddressArgsDict']]]]] = None,
+            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceAssignIpV2IpAddressArgs', 'VmNetworkDeviceAssignIpV2IpAddressArgsDict', 'outputs.VmNetworkDeviceAssignIpV2IpAddress']]]]] = None,
             vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VmNetworkDeviceAssignIpV2':
         """
         Get an existing VmNetworkDeviceAssignIpV2 resource's state with the given name, id, and optional extra
@@ -249,7 +249,7 @@ class VmNetworkDeviceAssignIpV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ext_id: - (Required) The globally unique identifier of a Nic. It should be of type UUID.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceAssignIpV2IpAddressArgs', 'VmNetworkDeviceAssignIpV2IpAddressArgsDict']]]] ip_addresses: - (Optional) Ip config settings.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VmNetworkDeviceAssignIpV2IpAddressArgs', 'VmNetworkDeviceAssignIpV2IpAddressArgsDict', 'outputs.VmNetworkDeviceAssignIpV2IpAddress']]]] ip_addresses: - (Optional) Ip config settings.
         :param pulumi.Input[_builtins.str] vm_ext_id: - (Required) The globally unique identifier of a VM. It should be of type UUID.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

@@ -188,7 +188,7 @@ class NdbMaintenanceTask(pulumi.CustomResource):
                  dbserver_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  dbserver_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  maintenance_window_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict']]]]] = None,
+                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict', 'outputs.NdbMaintenanceTaskTask']]]]] = None,
                  __props__=None):
         """
         Provides a resource to associate a maintenance window with database server VM based on the input parameters.
@@ -255,7 +255,7 @@ class NdbMaintenanceTask(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_clusters: dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"" pulumi-lang-hcl=""dbserver_id"">"dbserverId"</span>
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_ids: dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"" pulumi-lang-hcl=""dbserver_cluster"">"dbserverCluster"</span>
         :param pulumi.Input[_builtins.str] maintenance_window_id: maintenance window id which has to be associated
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict']]]] tasks: task input for Operating System Patching or Database Patching or both
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict', 'outputs.NdbMaintenanceTaskTask']]]] tasks: task input for Operating System Patching or Database Patching or both
         """
         ...
     @overload
@@ -341,7 +341,7 @@ class NdbMaintenanceTask(pulumi.CustomResource):
                  dbserver_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  dbserver_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  maintenance_window_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict']]]]] = None,
+                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict', 'outputs.NdbMaintenanceTaskTask']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -370,9 +370,9 @@ class NdbMaintenanceTask(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             dbserver_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             dbserver_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            entity_task_associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceTaskEntityTaskAssociationArgs', 'NdbMaintenanceTaskEntityTaskAssociationArgsDict']]]]] = None,
+            entity_task_associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceTaskEntityTaskAssociationArgs', 'NdbMaintenanceTaskEntityTaskAssociationArgsDict', 'outputs.NdbMaintenanceTaskEntityTaskAssociation']]]]] = None,
             maintenance_window_id: pulumi.Input[Optional[_builtins.str]] = None,
-            tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict']]]]] = None) -> 'NdbMaintenanceTask':
+            tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict', 'outputs.NdbMaintenanceTaskTask']]]]] = None) -> 'NdbMaintenanceTask':
         """
         Get an existing NdbMaintenanceTask resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -382,9 +382,9 @@ class NdbMaintenanceTask(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_clusters: dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"" pulumi-lang-hcl=""dbserver_id"">"dbserverId"</span>
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dbserver_ids: dbserver vm id. Conflicts with <span pulumi-lang-nodejs=""dbserverCluster"" pulumi-lang-dotnet=""DbserverCluster"" pulumi-lang-go=""dbserverCluster"" pulumi-lang-python=""dbserver_cluster"" pulumi-lang-yaml=""dbserverCluster"" pulumi-lang-java=""dbserverCluster"" pulumi-lang-hcl=""dbserver_cluster"">"dbserverCluster"</span>
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceTaskEntityTaskAssociationArgs', 'NdbMaintenanceTaskEntityTaskAssociationArgsDict']]]] entity_task_associations: Entity Task Association  List.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceTaskEntityTaskAssociationArgs', 'NdbMaintenanceTaskEntityTaskAssociationArgsDict', 'outputs.NdbMaintenanceTaskEntityTaskAssociation']]]] entity_task_associations: Entity Task Association  List.
         :param pulumi.Input[_builtins.str] maintenance_window_id: maintenance window id which has to be associated
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict']]]] tasks: task input for Operating System Patching or Database Patching or both
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict', 'outputs.NdbMaintenanceTaskTask']]]] tasks: task input for Operating System Patching or Database Patching or both
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

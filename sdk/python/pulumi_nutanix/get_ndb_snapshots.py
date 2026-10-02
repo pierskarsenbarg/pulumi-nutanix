@@ -69,13 +69,13 @@ class AwaitableGetNdbSnapshotsResult(GetNdbSnapshotsResult):
             snapshots=self.snapshots)
 
 
-def get_ndb_snapshots(filters: Optional[Sequence[Union['GetNdbSnapshotsFilterArgs', 'GetNdbSnapshotsFilterArgsDict']]] = None,
+def get_ndb_snapshots(filters: Optional[Sequence[Union['GetNdbSnapshotsFilterArgs', 'GetNdbSnapshotsFilterArgsDict', 'outputs.GetNdbSnapshotsFilterResult']]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNdbSnapshotsResult:
     """
     List all snapshots present in Nutanix Database Service
 
 
-    :param Sequence[Union['GetNdbSnapshotsFilterArgs', 'GetNdbSnapshotsFilterArgsDict']] filters: filters help to fetch the snapshots based on input
+    :param Sequence[Union['GetNdbSnapshotsFilterArgs', 'GetNdbSnapshotsFilterArgsDict', 'outputs.GetNdbSnapshotsFilterResult']] filters: filters help to fetch the snapshots based on input
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -86,13 +86,13 @@ def get_ndb_snapshots(filters: Optional[Sequence[Union['GetNdbSnapshotsFilterArg
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         snapshots=pulumi.get(__ret__, 'snapshots'))
-def get_ndb_snapshots_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbSnapshotsFilterArgs', 'GetNdbSnapshotsFilterArgsDict']]]]] = None,
+def get_ndb_snapshots_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNdbSnapshotsFilterArgs', 'GetNdbSnapshotsFilterArgsDict', 'outputs.GetNdbSnapshotsFilterResult']]]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbSnapshotsResult]:
     """
     List all snapshots present in Nutanix Database Service
 
 
-    :param Sequence[Union['GetNdbSnapshotsFilterArgs', 'GetNdbSnapshotsFilterArgsDict']] filters: filters help to fetch the snapshots based on input
+    :param Sequence[Union['GetNdbSnapshotsFilterArgs', 'GetNdbSnapshotsFilterArgsDict', 'outputs.GetNdbSnapshotsFilterResult']] filters: filters help to fetch the snapshots based on input
     """
     __args__ = dict()
     __args__['filters'] = filters

@@ -177,7 +177,7 @@ class PcBackupTargetV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 location: pulumi.Input[Optional[Union['PcBackupTargetV2LocationArgs', 'PcBackupTargetV2LocationArgsDict']]] = None,
+                 location: pulumi.Input[Optional[Union['PcBackupTargetV2LocationArgs', 'PcBackupTargetV2LocationArgsDict', 'outputs.PcBackupTargetV2Location']]] = None,
                  __props__=None):
         """
         Create a cluster or object store as the backup target. For a given Prism Central, there can be up to 3 clusters as backup targets and 1 object store as backup target. If any cluster or object store is not eligible for backup or lacks appropriate permissions, the API request will fail. For object store backup targets, specifying backup policy is mandatory along with the location of the object store.
@@ -235,7 +235,7 @@ class PcBackupTargetV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] domain_manager_ext_id: -(Required) A unique identifier for the domain manager.
-        :param pulumi.Input[Union['PcBackupTargetV2LocationArgs', 'PcBackupTargetV2LocationArgsDict']] location: -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
+        :param pulumi.Input[Union['PcBackupTargetV2LocationArgs', 'PcBackupTargetV2LocationArgsDict', 'outputs.PcBackupTargetV2Location']] location: -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
         """
         ...
     @overload
@@ -312,7 +312,7 @@ class PcBackupTargetV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 location: pulumi.Input[Optional[Union['PcBackupTargetV2LocationArgs', 'PcBackupTargetV2LocationArgsDict']]] = None,
+                 location: pulumi.Input[Optional[Union['PcBackupTargetV2LocationArgs', 'PcBackupTargetV2LocationArgsDict', 'outputs.PcBackupTargetV2Location']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -349,8 +349,8 @@ class PcBackupTargetV2(pulumi.CustomResource):
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             is_backup_paused: pulumi.Input[Optional[_builtins.bool]] = None,
             last_sync_time: pulumi.Input[Optional[_builtins.str]] = None,
-            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcBackupTargetV2LinkArgs', 'PcBackupTargetV2LinkArgsDict']]]]] = None,
-            location: pulumi.Input[Optional[Union['PcBackupTargetV2LocationArgs', 'PcBackupTargetV2LocationArgsDict']]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcBackupTargetV2LinkArgs', 'PcBackupTargetV2LinkArgsDict', 'outputs.PcBackupTargetV2Link']]]]] = None,
+            location: pulumi.Input[Optional[Union['PcBackupTargetV2LocationArgs', 'PcBackupTargetV2LocationArgsDict', 'outputs.PcBackupTargetV2Location']]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'PcBackupTargetV2':
         """
         Get an existing PcBackupTargetV2 resource's state with the given name, id, and optional extra
@@ -360,7 +360,7 @@ class PcBackupTargetV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] domain_manager_ext_id: -(Required) A unique identifier for the domain manager.
-        :param pulumi.Input[Union['PcBackupTargetV2LocationArgs', 'PcBackupTargetV2LocationArgsDict']] location: -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
+        :param pulumi.Input[Union['PcBackupTargetV2LocationArgs', 'PcBackupTargetV2LocationArgsDict', 'outputs.PcBackupTargetV2Location']] location: -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
