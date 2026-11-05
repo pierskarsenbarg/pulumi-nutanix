@@ -126,6 +126,12 @@ func (LcmUpgradeV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*lcmUpgradeV2State)(nil)).Elem()
 }
 
+// LcmUpgradeV2Exists checks whether an existing LcmUpgradeV2 resource with the given ID exists.
+func LcmUpgradeV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LcmUpgradeV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/lcmUpgradeV2:LcmUpgradeV2", id, state, "", opts...)
+}
+
 type lcmUpgradeV2Args struct {
 	// List of automated system operations to perform, to avoid precheck failure and let the system restore state after an update is complete. The allowed flag is: - 'powerOffUvms': This allows the system to automatically power off user VMs which cannot be migrated to other hosts and power them on when the update is done. This option can avoid pinned VM precheck failure on the host which needs to enter maintenance mode during the update and allow the update to go through. Items Enum: `POWER_OFF_UVMS`
 	AutoHandleFlags []string `pulumi:"autoHandleFlags"`

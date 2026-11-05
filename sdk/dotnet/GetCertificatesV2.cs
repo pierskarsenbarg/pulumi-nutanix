@@ -15,9 +15,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Get a list of the SSL certificates which can be used to access an Object store.
         /// 
-        /// 
-        /// 
-        /// 
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -127,9 +124,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Get a list of the SSL certificates which can be used to access an Object store.
         /// 
-        /// 
-        /// 
-        /// 
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -238,9 +232,6 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// Get a list of the SSL certificates which can be used to access an Object store.
-        /// 
-        /// 
-        /// 
         /// 
         /// ## Example Usage
         /// 

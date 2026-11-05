@@ -13,8 +13,7 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetKeyManagementServerV2
     {
         /// <summary>
-        /// Fetches the details of a key management server identified by its unique identifier (ext_id).  
-        /// 
+        /// Fetches the details of a key management server identified by its unique identifier (ext_id).
         /// 
         /// ## Example
         /// 
@@ -123,8 +122,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetKeyManagementServerV2Result>("nutanix:index/getKeyManagementServerV2:getKeyManagementServerV2", args ?? new GetKeyManagementServerV2Args(), options.WithDefaults());
 
         /// <summary>
-        /// Fetches the details of a key management server identified by its unique identifier (ext_id).  
-        /// 
+        /// Fetches the details of a key management server identified by its unique identifier (ext_id).
         /// 
         /// ## Example
         /// 
@@ -233,8 +231,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.Invoke<GetKeyManagementServerV2Result>("nutanix:index/getKeyManagementServerV2:getKeyManagementServerV2", args ?? new GetKeyManagementServerV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Fetches the details of a key management server identified by its unique identifier (ext_id).  
-        /// 
+        /// Fetches the details of a key management server identified by its unique identifier (ext_id).
         /// 
         /// ## Example
         /// 

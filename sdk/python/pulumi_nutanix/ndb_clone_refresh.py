@@ -325,6 +325,20 @@ class NdbCloneRefresh(pulumi.CustomResource):
         __props__.__dict__["user_pitr_timestamp"] = user_pitr_timestamp
         return NdbCloneRefresh(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            clone_id: pulumi.Input[Optional[_builtins.str]] = None,
+            snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+            timezone: pulumi.Input[Optional[_builtins.str]] = None,
+            user_pitr_timestamp: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cloneId"] = clone_id
+        __props__["snapshotId"] = snapshot_id
+        __props__["timezone"] = timezone
+        __props__["userPitrTimestamp"] = user_pitr_timestamp
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbCloneRefresh:NdbCloneRefresh', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cloneId")
     def clone_id(self) -> pulumi.Output[_builtins.str]:

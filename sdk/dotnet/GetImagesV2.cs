@@ -182,14 +182,12 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`" pulumi-lang-hcl="`owner_ext_id`"&gt;`ownerExtId`&lt;/span&gt;: External identifier of the owner of the image
         /// * &lt;span pulumi-lang-nodejs="`placementPolicyStatus`" pulumi-lang-dotnet="`PlacementPolicyStatus`" pulumi-lang-go="`placementPolicyStatus`" pulumi-lang-python="`placement_policy_status`" pulumi-lang-yaml="`placementPolicyStatus`" pulumi-lang-java="`placementPolicyStatus`" pulumi-lang-hcl="`placement_policy_status`"&gt;`placementPolicyStatus`&lt;/span&gt;: Status of an image placement policy.
         /// 
-        /// 
         /// ### source
         /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: The external identifier of VM Disk.
         /// * &lt;span pulumi-lang-nodejs="`url`" pulumi-lang-dotnet="`Url`" pulumi-lang-go="`url`" pulumi-lang-python="`url`" pulumi-lang-yaml="`url`" pulumi-lang-java="`url`" pulumi-lang-hcl="`url`"&gt;`url`&lt;/span&gt;: The URL for creating an image.
         /// * &lt;span pulumi-lang-nodejs="`basicAuth`" pulumi-lang-dotnet="`BasicAuth`" pulumi-lang-go="`basicAuth`" pulumi-lang-python="`basic_auth`" pulumi-lang-yaml="`basicAuth`" pulumi-lang-java="`basicAuth`" pulumi-lang-hcl="`basic_auth`"&gt;`basicAuth`&lt;/span&gt;: Basic authentication credentials for image source HTTP/S URL.
         /// * `basic_auth.username`: Username for basic authentication.
         /// * `basic_auth.password`: Password for basic authentication.
-        /// 
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" placementPolicyStatus
         /// " pulumi-lang-dotnet=" PlacementPolicyStatus
@@ -381,14 +379,12 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`" pulumi-lang-hcl="`owner_ext_id`"&gt;`ownerExtId`&lt;/span&gt;: External identifier of the owner of the image
         /// * &lt;span pulumi-lang-nodejs="`placementPolicyStatus`" pulumi-lang-dotnet="`PlacementPolicyStatus`" pulumi-lang-go="`placementPolicyStatus`" pulumi-lang-python="`placement_policy_status`" pulumi-lang-yaml="`placementPolicyStatus`" pulumi-lang-java="`placementPolicyStatus`" pulumi-lang-hcl="`placement_policy_status`"&gt;`placementPolicyStatus`&lt;/span&gt;: Status of an image placement policy.
         /// 
-        /// 
         /// ### source
         /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: The external identifier of VM Disk.
         /// * &lt;span pulumi-lang-nodejs="`url`" pulumi-lang-dotnet="`Url`" pulumi-lang-go="`url`" pulumi-lang-python="`url`" pulumi-lang-yaml="`url`" pulumi-lang-java="`url`" pulumi-lang-hcl="`url`"&gt;`url`&lt;/span&gt;: The URL for creating an image.
         /// * &lt;span pulumi-lang-nodejs="`basicAuth`" pulumi-lang-dotnet="`BasicAuth`" pulumi-lang-go="`basicAuth`" pulumi-lang-python="`basic_auth`" pulumi-lang-yaml="`basicAuth`" pulumi-lang-java="`basicAuth`" pulumi-lang-hcl="`basic_auth`"&gt;`basicAuth`&lt;/span&gt;: Basic authentication credentials for image source HTTP/S URL.
         /// * `basic_auth.username`: Username for basic authentication.
         /// * `basic_auth.password`: Password for basic authentication.
-        /// 
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" placementPolicyStatus
         /// " pulumi-lang-dotnet=" PlacementPolicyStatus
@@ -580,14 +576,12 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`" pulumi-lang-hcl="`owner_ext_id`"&gt;`ownerExtId`&lt;/span&gt;: External identifier of the owner of the image
         /// * &lt;span pulumi-lang-nodejs="`placementPolicyStatus`" pulumi-lang-dotnet="`PlacementPolicyStatus`" pulumi-lang-go="`placementPolicyStatus`" pulumi-lang-python="`placement_policy_status`" pulumi-lang-yaml="`placementPolicyStatus`" pulumi-lang-java="`placementPolicyStatus`" pulumi-lang-hcl="`placement_policy_status`"&gt;`placementPolicyStatus`&lt;/span&gt;: Status of an image placement policy.
         /// 
-        /// 
         /// ### source
         /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: The external identifier of VM Disk.
         /// * &lt;span pulumi-lang-nodejs="`url`" pulumi-lang-dotnet="`Url`" pulumi-lang-go="`url`" pulumi-lang-python="`url`" pulumi-lang-yaml="`url`" pulumi-lang-java="`url`" pulumi-lang-hcl="`url`"&gt;`url`&lt;/span&gt;: The URL for creating an image.
         /// * &lt;span pulumi-lang-nodejs="`basicAuth`" pulumi-lang-dotnet="`BasicAuth`" pulumi-lang-go="`basicAuth`" pulumi-lang-python="`basic_auth`" pulumi-lang-yaml="`basicAuth`" pulumi-lang-java="`basicAuth`" pulumi-lang-hcl="`basic_auth`"&gt;`basicAuth`&lt;/span&gt;: Basic authentication credentials for image source HTTP/S URL.
         /// * `basic_auth.username`: Username for basic authentication.
         /// * `basic_auth.password`: Password for basic authentication.
-        /// 
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" placementPolicyStatus
         /// " pulumi-lang-dotnet=" PlacementPolicyStatus

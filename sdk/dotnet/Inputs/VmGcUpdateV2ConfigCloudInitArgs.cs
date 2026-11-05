@@ -27,8 +27,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         /// <summary>
         /// - (Optional) Type of datasource.
-        /// Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
-        /// Valid values are:
+        ///   Default: CONFIG_DRIVE_V2Default is `CONFIG_DRIVE_V2`.
+        ///   Valid values are:
         /// - `CONFIG_DRIVE_V2` The type of datasource for cloud-init is Config Drive V2.
         /// </summary>
         [Input("datasourceType")]

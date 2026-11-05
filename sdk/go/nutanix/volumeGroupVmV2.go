@@ -122,6 +122,12 @@ func (VolumeGroupVmV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*volumeGroupVmV2State)(nil)).Elem()
 }
 
+// VolumeGroupVmV2Exists checks whether an existing VolumeGroupVmV2 resource with the given ID exists.
+func VolumeGroupVmV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VolumeGroupVmV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/volumeGroupVmV2:VolumeGroupVmV2", id, state, "", opts...)
+}
+
 type volumeGroupVmV2Args struct {
 	// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
 	//

@@ -80,6 +80,17 @@ export class VpcV2 extends pulumi.CustomResource {
         return new VpcV2(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing VpcV2 resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: VpcV2State, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("nutanix:index/vpcV2:VpcV2", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'nutanix:index/vpcV2:VpcV2';
 

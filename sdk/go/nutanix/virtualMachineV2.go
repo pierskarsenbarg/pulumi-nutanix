@@ -601,6 +601,12 @@ func (VirtualMachineV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*virtualMachineV2State)(nil)).Elem()
 }
 
+// VirtualMachineV2Exists checks whether an existing VirtualMachineV2 resource with the given ID exists.
+func VirtualMachineV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VirtualMachineV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/virtualMachineV2:VirtualMachineV2", id, state, "", opts...)
+}
+
 type virtualMachineV2Args struct {
 	// Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
 	ApcConfigs        []VirtualMachineV2ApcConfig        `pulumi:"apcConfigs"`

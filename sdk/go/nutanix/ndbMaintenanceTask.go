@@ -204,6 +204,12 @@ func (NdbMaintenanceTaskState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbMaintenanceTaskState)(nil)).Elem()
 }
 
+// NdbMaintenanceTaskExists checks whether an existing NdbMaintenanceTask resource with the given ID exists.
+func NdbMaintenanceTaskExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbMaintenanceTaskState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbMaintenanceTask:NdbMaintenanceTask", id, state, "", opts...)
+}
+
 type ndbMaintenanceTaskArgs struct {
 	// dbserver cluster ids. Conflicts with <span pulumi-lang-nodejs=""dbserverId"" pulumi-lang-dotnet=""DbserverId"" pulumi-lang-go=""dbserverId"" pulumi-lang-python=""dbserver_id"" pulumi-lang-yaml=""dbserverId"" pulumi-lang-java=""dbserverId"" pulumi-lang-hcl=""dbserver_id"">"dbserverId"</span>
 	DbserverClusters []string `pulumi:"dbserverClusters"`

@@ -347,6 +347,34 @@ class PcRegistrationV2(pulumi.CustomResource):
         __props__.__dict__["tenant_id"] = tenant_id
         return PcRegistrationV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcRegistrationV2ConfigArgs', 'PcRegistrationV2ConfigArgsDict', 'outputs.PcRegistrationV2Config']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            hosting_cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_registered_with_hosting_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcRegistrationV2LinkArgs', 'PcRegistrationV2LinkArgsDict', 'outputs.PcRegistrationV2Link']]]]] = None,
+            networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcRegistrationV2NetworkArgs', 'PcRegistrationV2NetworkArgsDict', 'outputs.PcRegistrationV2Network']]]]] = None,
+            node_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_cluster: pulumi.Input[Optional[Union['PcRegistrationV2RemoteClusterArgs', 'PcRegistrationV2RemoteClusterArgsDict', 'outputs.PcRegistrationV2RemoteCluster']]] = None,
+            should_enable_high_availability: pulumi.Input[Optional[_builtins.bool]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["configs"] = configs
+        __props__["extId"] = ext_id
+        __props__["hostingClusterExtId"] = hosting_cluster_ext_id
+        __props__["isRegisteredWithHostingCluster"] = is_registered_with_hosting_cluster
+        __props__["links"] = links
+        __props__["networks"] = networks
+        __props__["nodeExtIds"] = node_ext_ids
+        __props__["pcExtId"] = pc_ext_id
+        __props__["remoteCluster"] = remote_cluster
+        __props__["shouldEnableHighAvailability"] = should_enable_high_availability
+        __props__["tenantId"] = tenant_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/pcRegistrationV2:PcRegistrationV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def configs(self) -> pulumi.Output[Sequence['outputs.PcRegistrationV2Config']]:

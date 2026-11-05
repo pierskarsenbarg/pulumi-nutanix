@@ -993,6 +993,44 @@ class ClusterV2(pulumi.CustomResource):
         __props__.__dict__["vm_count"] = vm_count
         return ClusterV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            backup_eligibility_score: pulumi.Input[Optional[_builtins.int]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cluster_profile_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2ConfigArgs', 'ClusterV2ConfigArgsDict', 'outputs.ClusterV2Config']]]]] = None,
+            container_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
+            expand: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            inefficient_vm_count: pulumi.Input[Optional[_builtins.int]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2LinkArgs', 'ClusterV2LinkArgsDict', 'outputs.ClusterV2Link']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NetworkArgs', 'ClusterV2NetworkArgsDict', 'outputs.ClusterV2Network']]]]] = None,
+            nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterV2NodeArgs', 'ClusterV2NodeArgsDict', 'outputs.ClusterV2Node']]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            upgrade_status: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_count: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["backupEligibilityScore"] = backup_eligibility_score
+        __props__["categories"] = categories
+        __props__["clusterProfileExtId"] = cluster_profile_ext_id
+        __props__["configs"] = configs
+        __props__["containerName"] = container_name
+        __props__["dryrun"] = dryrun
+        __props__["expand"] = expand
+        __props__["extId"] = ext_id
+        __props__["inefficientVmCount"] = inefficient_vm_count
+        __props__["links"] = links
+        __props__["name"] = name
+        __props__["networks"] = networks
+        __props__["nodes"] = nodes
+        __props__["tenantId"] = tenant_id
+        __props__["upgradeStatus"] = upgrade_status
+        __props__["vmCount"] = vm_count
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/clusterV2:ClusterV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="backupEligibilityScore")
     def backup_eligibility_score(self) -> pulumi.Output[_builtins.int]:

@@ -264,6 +264,20 @@ class NdbLogCatchups(pulumi.CustomResource):
         __props__.__dict__["time_machine_id"] = time_machine_id
         return NdbLogCatchups(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            for_restore: pulumi.Input[Optional[_builtins.bool]] = None,
+            log_catchup_version: pulumi.Input[Optional[_builtins.int]] = None,
+            time_machine_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["databaseId"] = database_id
+        __props__["forRestore"] = for_restore
+        __props__["logCatchupVersion"] = log_catchup_version
+        __props__["timeMachineId"] = time_machine_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbLogCatchups:NdbLogCatchups', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> pulumi.Output[Optional[_builtins.str]]:

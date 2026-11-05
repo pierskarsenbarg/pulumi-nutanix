@@ -53,7 +53,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// -(Required) New password for a user account.
         /// 
-        /// 
         /// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
         /// </summary>
         [Output("newPassword")]
@@ -121,7 +120,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// -(Required) New password for a user account.
         /// 
-        /// 
         /// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
         /// </summary>
         [Input("newPassword", required: true)]
@@ -149,7 +147,6 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// -(Required) New password for a user account.
-        /// 
         /// 
         /// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
         /// </summary>

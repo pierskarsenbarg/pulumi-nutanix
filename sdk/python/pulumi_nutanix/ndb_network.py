@@ -587,6 +587,38 @@ class NdbNetwork(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return NdbNetwork(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_pools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkIpPoolArgs', 'NdbNetworkIpPoolArgsDict', 'outputs.NdbNetworkIpPool']]]]] = None,
+            managed: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            primary_dns: pulumi.Input[Optional[_builtins.str]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkPropertyArgs', 'NdbNetworkPropertyArgsDict', 'outputs.NdbNetworkProperty']]]]] = None,
+            properties_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbNetworkPropertiesMapArgs', 'NdbNetworkPropertiesMapArgsDict', 'outputs.NdbNetworkPropertiesMap']]]]] = None,
+            secondary_dns: pulumi.Input[Optional[_builtins.str]] = None,
+            stretched_vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_mask: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["clusterId"] = cluster_id
+        __props__["dnsDomain"] = dns_domain
+        __props__["gateway"] = gateway
+        __props__["ipPools"] = ip_pools
+        __props__["managed"] = managed
+        __props__["name"] = name
+        __props__["primaryDns"] = primary_dns
+        __props__["properties"] = properties
+        __props__["propertiesMaps"] = properties_maps
+        __props__["secondaryDns"] = secondary_dns
+        __props__["stretchedVlanId"] = stretched_vlan_id
+        __props__["subnetMask"] = subnet_mask
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbNetwork:NdbNetwork', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Output[_builtins.str]:

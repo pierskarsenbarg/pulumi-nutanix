@@ -83,6 +83,12 @@ func (NdbLogCatchupsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbLogCatchupsState)(nil)).Elem()
 }
 
+// NdbLogCatchupsExists checks whether an existing NdbLogCatchups resource with the given ID exists.
+func NdbLogCatchupsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbLogCatchupsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbLogCatchups:NdbLogCatchups", id, state, "", opts...)
+}
+
 type ndbLogCatchupsArgs struct {
 	DatabaseId *string `pulumi:"databaseId"`
 	// Logs to Backup. The database may contain additional logs. Backup any remaining logs before restore or they will be lost.

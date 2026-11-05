@@ -121,6 +121,12 @@ func (VmGcUpdateV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*vmGcUpdateV2State)(nil)).Elem()
 }
 
+// VmGcUpdateV2Exists checks whether an existing VmGcUpdateV2 resource with the given ID exists.
+func VmGcUpdateV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VmGcUpdateV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/vmGcUpdateV2:VmGcUpdateV2", id, state, "", opts...)
+}
+
 type vmGcUpdateV2Args struct {
 	// - (Optional) The Nutanix Guest Tools customization settings.
 	Configs []VmGcUpdateV2Config `pulumi:"configs"`

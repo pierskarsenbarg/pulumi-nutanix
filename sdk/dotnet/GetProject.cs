@@ -1148,14 +1148,14 @@ namespace PiersKarsenbarg.Nutanix
         /// List of directory service user groups. These groups are not managed by Nutanix.
         /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`" pulumi-lang-hcl="`user_group`"&gt;`userGroup`&lt;/span&gt;
         /// * `external_user_group_reference_list.#.uuid` - The UUID of a&lt;span pulumi-lang-nodejs=" userGroup
-        /// " pulumi-lang-dotnet=" UserGroup
-        /// " pulumi-lang-go=" userGroup
-        /// " pulumi-lang-python=" user_group
-        /// " pulumi-lang-yaml=" userGroup
-        /// " pulumi-lang-java=" userGroup
-        /// " pulumi-lang-hcl=" user_group
-        /// "&gt; userGroup
-        /// &lt;/span&gt;* `external_user_group_reference_list.#.name` - The name of a user_group
+        ///   " pulumi-lang-dotnet=" UserGroup
+        ///   " pulumi-lang-go=" userGroup
+        ///   " pulumi-lang-python=" user_group
+        ///   " pulumi-lang-yaml=" userGroup
+        ///   " pulumi-lang-java=" userGroup
+        ///   " pulumi-lang-hcl=" user_group
+        ///   "&gt; userGroup
+        ///   &lt;/span&gt;* `external_user_group_reference_list.#.name` - The name of a user_group
         /// </summary>
         public List<Inputs.GetProjectExternalUserGroupReferenceListArgs> ExternalUserGroupReferenceLists
         {
@@ -1226,14 +1226,14 @@ namespace PiersKarsenbarg.Nutanix
         /// List of directory service user groups. These groups are not managed by Nutanix.
         /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`" pulumi-lang-hcl="`user_group`"&gt;`userGroup`&lt;/span&gt;
         /// * `external_user_group_reference_list.#.uuid` - The UUID of a&lt;span pulumi-lang-nodejs=" userGroup
-        /// " pulumi-lang-dotnet=" UserGroup
-        /// " pulumi-lang-go=" userGroup
-        /// " pulumi-lang-python=" user_group
-        /// " pulumi-lang-yaml=" userGroup
-        /// " pulumi-lang-java=" userGroup
-        /// " pulumi-lang-hcl=" user_group
-        /// "&gt; userGroup
-        /// &lt;/span&gt;* `external_user_group_reference_list.#.name` - The name of a user_group
+        ///   " pulumi-lang-dotnet=" UserGroup
+        ///   " pulumi-lang-go=" userGroup
+        ///   " pulumi-lang-python=" user_group
+        ///   " pulumi-lang-yaml=" userGroup
+        ///   " pulumi-lang-java=" userGroup
+        ///   " pulumi-lang-hcl=" user_group
+        ///   "&gt; userGroup
+        ///   &lt;/span&gt;* `external_user_group_reference_list.#.name` - The name of a user_group
         /// </summary>
         public InputList<Inputs.GetProjectExternalUserGroupReferenceListInputArgs> ExternalUserGroupReferenceLists
         {
@@ -1336,14 +1336,14 @@ namespace PiersKarsenbarg.Nutanix
         /// List of directory service user groups. These groups are not managed by Nutanix.
         /// * `external_user_group_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`userGroup`" pulumi-lang-dotnet="`UserGroup`" pulumi-lang-go="`userGroup`" pulumi-lang-python="`user_group`" pulumi-lang-yaml="`userGroup`" pulumi-lang-java="`userGroup`" pulumi-lang-hcl="`user_group`"&gt;`userGroup`&lt;/span&gt;
         /// * `external_user_group_reference_list.#.uuid` - The UUID of a&lt;span pulumi-lang-nodejs=" userGroup
-        /// " pulumi-lang-dotnet=" UserGroup
-        /// " pulumi-lang-go=" userGroup
-        /// " pulumi-lang-python=" user_group
-        /// " pulumi-lang-yaml=" userGroup
-        /// " pulumi-lang-java=" userGroup
-        /// " pulumi-lang-hcl=" user_group
-        /// "&gt; userGroup
-        /// &lt;/span&gt;* `external_user_group_reference_list.#.name` - The name of a user_group
+        ///   " pulumi-lang-dotnet=" UserGroup
+        ///   " pulumi-lang-go=" userGroup
+        ///   " pulumi-lang-python=" user_group
+        ///   " pulumi-lang-yaml=" userGroup
+        ///   " pulumi-lang-java=" userGroup
+        ///   " pulumi-lang-hcl=" user_group
+        ///   "&gt; userGroup
+        ///   &lt;/span&gt;* `external_user_group_reference_list.#.name` - The name of a user_group
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectExternalUserGroupReferenceListResult> ExternalUserGroupReferenceLists;
         /// <summary>

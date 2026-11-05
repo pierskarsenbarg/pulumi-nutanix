@@ -46,7 +46,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
         /// 
-        /// 
         /// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/VolumeGroups/operation/attachVm).
         /// </summary>
         [Output("index")]
@@ -114,7 +113,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
         /// 
-        /// 
         /// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/VolumeGroups/operation/attachVm).
         /// </summary>
         [Input("index")]
@@ -148,7 +146,6 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
-        /// 
         /// 
         /// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/VolumeGroups/operation/attachVm).
         /// </summary>

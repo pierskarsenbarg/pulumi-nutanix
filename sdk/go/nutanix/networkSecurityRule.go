@@ -417,6 +417,12 @@ func (NetworkSecurityRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkSecurityRuleState)(nil)).Elem()
 }
 
+// NetworkSecurityRuleExists checks whether an existing NetworkSecurityRule resource with the given ID exists.
+func NetworkSecurityRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkSecurityRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/networkSecurityRule:NetworkSecurityRule", id, state, "", opts...)
+}
+
 type networkSecurityRuleArgs struct {
 	// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty<span pulumi-lang-nodejs=" inboundAllowList " pulumi-lang-dotnet=" InboundAllowList " pulumi-lang-go=" inboundAllowList " pulumi-lang-python=" inbound_allow_list " pulumi-lang-yaml=" inboundAllowList " pulumi-lang-java=" inboundAllowList " pulumi-lang-hcl=" inbound_allow_list "> inboundAllowList </span>will not anything into target group. Empty<span pulumi-lang-nodejs=" outboundAllowList " pulumi-lang-dotnet=" OutboundAllowList " pulumi-lang-go=" outboundAllowList " pulumi-lang-python=" outbound_allow_list " pulumi-lang-yaml=" outboundAllowList " pulumi-lang-java=" outboundAllowList " pulumi-lang-hcl=" outbound_allow_list "> outboundAllowList </span>will allow everything from target group.
 	AdRuleAction *string `pulumi:"adRuleAction"`

@@ -121,6 +121,12 @@ func (LcmPrechecksV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*lcmPrechecksV2State)(nil)).Elem()
 }
 
+// LcmPrechecksV2Exists checks whether an existing LcmPrechecksV2 resource with the given ID exists.
+func LcmPrechecksV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LcmPrechecksV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/lcmPrechecksV2:LcmPrechecksV2", id, state, "", opts...)
+}
+
 type lcmPrechecksV2Args struct {
 	// List of entity update objects for getting recommendations.
 	EntityUpdateSpecs []LcmPrechecksV2EntityUpdateSpec `pulumi:"entityUpdateSpecs"`

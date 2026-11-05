@@ -34,7 +34,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<int> TrunkedVlans;
         /// <summary>
         /// - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-        /// Valid values are:
+        ///   Valid values are:
         /// - `TRUNK` The virtual NIC is created in TRUNKED mode.
         /// - `ACCESS` The virtual NIC is created in ACCESS mode.
         /// </summary>

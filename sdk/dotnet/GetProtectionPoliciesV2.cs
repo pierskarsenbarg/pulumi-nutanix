@@ -17,8 +17,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// List the protection policies defined on the system. This operation supports filtering, sorting, selection and pagination.
         /// 
-        /// 
-        /// 
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -220,7 +218,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`isApprovalPolicyNeeded`" pulumi-lang-dotnet="`IsApprovalPolicyNeeded`" pulumi-lang-go="`isApprovalPolicyNeeded`" pulumi-lang-python="`is_approval_policy_needed`" pulumi-lang-yaml="`isApprovalPolicyNeeded`" pulumi-lang-java="`isApprovalPolicyNeeded`" pulumi-lang-hcl="`is_approval_policy_needed`"&gt;`isApprovalPolicyNeeded`&lt;/span&gt;: - Disks attached to host.
         /// * &lt;span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`" pulumi-lang-hcl="`owner_ext_id`"&gt;`ownerExtId`&lt;/span&gt;: - Node degraded status.
         /// 
-        /// 
         /// ### Links
         /// The links attribute supports the following:
         /// 
@@ -295,9 +292,6 @@ namespace PiersKarsenbarg.Nutanix
         ///    * `MONTHLY`: Specifies the number of latest monthly recovery points to retain.
         ///    * `HOURLY`: Specifies the number of latest hourly recovery points to retain.
         /// * &lt;span pulumi-lang-nodejs="`frequency`" pulumi-lang-dotnet="`Frequency`" pulumi-lang-go="`frequency`" pulumi-lang-python="`frequency`" pulumi-lang-yaml="`frequency`" pulumi-lang-java="`frequency`" pulumi-lang-hcl="`frequency`"&gt;`frequency`&lt;/span&gt;: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
-        /// 
-        /// 
-        /// 
         /// 
         /// See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.2#tag/ProtectionPolicies/operation/listProtectionPolicies).
         /// </summary>
@@ -309,8 +303,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// List the protection policies defined on the system. This operation supports filtering, sorting, selection and pagination.
         /// 
-        /// 
-        /// 
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -512,7 +504,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`isApprovalPolicyNeeded`" pulumi-lang-dotnet="`IsApprovalPolicyNeeded`" pulumi-lang-go="`isApprovalPolicyNeeded`" pulumi-lang-python="`is_approval_policy_needed`" pulumi-lang-yaml="`isApprovalPolicyNeeded`" pulumi-lang-java="`isApprovalPolicyNeeded`" pulumi-lang-hcl="`is_approval_policy_needed`"&gt;`isApprovalPolicyNeeded`&lt;/span&gt;: - Disks attached to host.
         /// * &lt;span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`" pulumi-lang-hcl="`owner_ext_id`"&gt;`ownerExtId`&lt;/span&gt;: - Node degraded status.
         /// 
-        /// 
         /// ### Links
         /// The links attribute supports the following:
         /// 
@@ -587,9 +578,6 @@ namespace PiersKarsenbarg.Nutanix
         ///    * `MONTHLY`: Specifies the number of latest monthly recovery points to retain.
         ///    * `HOURLY`: Specifies the number of latest hourly recovery points to retain.
         /// * &lt;span pulumi-lang-nodejs="`frequency`" pulumi-lang-dotnet="`Frequency`" pulumi-lang-go="`frequency`" pulumi-lang-python="`frequency`" pulumi-lang-yaml="`frequency`" pulumi-lang-java="`frequency`" pulumi-lang-hcl="`frequency`"&gt;`frequency`&lt;/span&gt;: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
-        /// 
-        /// 
-        /// 
         /// 
         /// See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.2#tag/ProtectionPolicies/operation/listProtectionPolicies).
         /// </summary>
@@ -601,8 +589,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// List the protection policies defined on the system. This operation supports filtering, sorting, selection and pagination.
         /// 
-        /// 
-        /// 
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -804,7 +790,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`isApprovalPolicyNeeded`" pulumi-lang-dotnet="`IsApprovalPolicyNeeded`" pulumi-lang-go="`isApprovalPolicyNeeded`" pulumi-lang-python="`is_approval_policy_needed`" pulumi-lang-yaml="`isApprovalPolicyNeeded`" pulumi-lang-java="`isApprovalPolicyNeeded`" pulumi-lang-hcl="`is_approval_policy_needed`"&gt;`isApprovalPolicyNeeded`&lt;/span&gt;: - Disks attached to host.
         /// * &lt;span pulumi-lang-nodejs="`ownerExtId`" pulumi-lang-dotnet="`OwnerExtId`" pulumi-lang-go="`ownerExtId`" pulumi-lang-python="`owner_ext_id`" pulumi-lang-yaml="`ownerExtId`" pulumi-lang-java="`ownerExtId`" pulumi-lang-hcl="`owner_ext_id`"&gt;`ownerExtId`&lt;/span&gt;: - Node degraded status.
         /// 
-        /// 
         /// ### Links
         /// The links attribute supports the following:
         /// 
@@ -879,9 +864,6 @@ namespace PiersKarsenbarg.Nutanix
         ///    * `MONTHLY`: Specifies the number of latest monthly recovery points to retain.
         ///    * `HOURLY`: Specifies the number of latest hourly recovery points to retain.
         /// * &lt;span pulumi-lang-nodejs="`frequency`" pulumi-lang-dotnet="`Frequency`" pulumi-lang-go="`frequency`" pulumi-lang-python="`frequency`" pulumi-lang-yaml="`frequency`" pulumi-lang-java="`frequency`" pulumi-lang-hcl="`frequency`"&gt;`frequency`&lt;/span&gt;: - Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
-        /// 
-        /// 
-        /// 
         /// 
         /// See detailed information in [Nutanix List Protection Policies V4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.2#tag/ProtectionPolicies/operation/listProtectionPolicies).
         /// </summary>

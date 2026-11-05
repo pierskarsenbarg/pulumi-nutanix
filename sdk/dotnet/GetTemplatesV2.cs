@@ -180,13 +180,11 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`" pulumi-lang-hcl="`created_by`"&gt;`createdBy`&lt;/span&gt;: Information of the User.
         /// * &lt;span pulumi-lang-nodejs="`updatedBy`" pulumi-lang-dotnet="`UpdatedBy`" pulumi-lang-go="`updatedBy`" pulumi-lang-python="`updated_by`" pulumi-lang-yaml="`updatedBy`" pulumi-lang-java="`updatedBy`" pulumi-lang-hcl="`updated_by`"&gt;`updatedBy`&lt;/span&gt;: Information of the User.
         /// 
-        /// 
         /// ### Links
         /// The &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`"&gt;`links`&lt;/span&gt; attribute supports the following:
         /// 
         /// * &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
         /// * &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-        /// 
         /// 
         /// ### Template Version Spec
         /// The &lt;span pulumi-lang-nodejs="`templateVersionSpec`" pulumi-lang-dotnet="`TemplateVersionSpec`" pulumi-lang-go="`templateVersionSpec`" pulumi-lang-python="`template_version_spec`" pulumi-lang-yaml="`templateVersionSpec`" pulumi-lang-java="`templateVersionSpec`" pulumi-lang-hcl="`template_version_spec`"&gt;`templateVersionSpec`&lt;/span&gt; attribute supports the following:
@@ -199,7 +197,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`" pulumi-lang-hcl="`created_by`"&gt;`createdBy`&lt;/span&gt;: Information of the User.
         /// * &lt;span pulumi-lang-nodejs="`isActiveVersion`" pulumi-lang-dotnet="`IsActiveVersion`" pulumi-lang-go="`isActiveVersion`" pulumi-lang-python="`is_active_version`" pulumi-lang-yaml="`isActiveVersion`" pulumi-lang-java="`isActiveVersion`" pulumi-lang-hcl="`is_active_version`"&gt;`isActiveVersion`&lt;/span&gt;: Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise.
         /// * &lt;span pulumi-lang-nodejs="`isGcOverrideEnabled`" pulumi-lang-dotnet="`IsGcOverrideEnabled`" pulumi-lang-go="`isGcOverrideEnabled`" pulumi-lang-python="`is_gc_override_enabled`" pulumi-lang-yaml="`isGcOverrideEnabled`" pulumi-lang-java="`isGcOverrideEnabled`" pulumi-lang-hcl="`is_gc_override_enabled`"&gt;`isGcOverrideEnabled`&lt;/span&gt;: Allow or disallow override of the Guest Customization during Template deployment.
-        /// 
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" guestUpdateStatus
         /// " pulumi-lang-dotnet=" GuestUpdateStatus
@@ -262,7 +259,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`protectionType`" pulumi-lang-dotnet="`ProtectionType`" pulumi-lang-go="`protectionType`" pulumi-lang-python="`protection_type`" pulumi-lang-yaml="`protectionType`" pulumi-lang-java="`protectionType`" pulumi-lang-hcl="`protection_type`"&gt;`protectionType`&lt;/span&gt;: The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
         /// * &lt;span pulumi-lang-nodejs="`protectionPolicyState`" pulumi-lang-dotnet="`ProtectionPolicyState`" pulumi-lang-go="`protectionPolicyState`" pulumi-lang-python="`protection_policy_state`" pulumi-lang-yaml="`protectionPolicyState`" pulumi-lang-java="`protectionPolicyState`" pulumi-lang-hcl="`protection_policy_state`"&gt;`protectionPolicyState`&lt;/span&gt;: Status of protection policy applied to this VM.
         /// 
-        /// 
         /// ### Source
         /// 
         /// The &lt;span pulumi-lang-nodejs="`source`" pulumi-lang-dotnet="`Source`" pulumi-lang-go="`source`" pulumi-lang-python="`source`" pulumi-lang-yaml="`source`" pulumi-lang-java="`source`" pulumi-lang-hcl="`source`"&gt;`source`&lt;/span&gt; attribute supports the following:
@@ -306,14 +302,11 @@ namespace PiersKarsenbarg.Nutanix
         /// * `config.sysprep`: Sysprep config
         /// * `config.cloud_init`: CloudInit Config
         /// 
-        /// 
-        /// 
         /// #### config.sysprep
         /// * &lt;span pulumi-lang-nodejs="`installType`" pulumi-lang-dotnet="`InstallType`" pulumi-lang-go="`installType`" pulumi-lang-python="`install_type`" pulumi-lang-yaml="`installType`" pulumi-lang-java="`installType`" pulumi-lang-hcl="`install_type`"&gt;`installType`&lt;/span&gt;: Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Default is 'PREPARED'.
         /// * &lt;span pulumi-lang-nodejs="`sysprepScript`" pulumi-lang-dotnet="`SysprepScript`" pulumi-lang-go="`sysprepScript`" pulumi-lang-python="`sysprep_script`" pulumi-lang-yaml="`sysprepScript`" pulumi-lang-java="`sysprepScript`" pulumi-lang-hcl="`sysprep_script`"&gt;`sysprepScript`&lt;/span&gt;: Object either UnattendXml or CustomKeyValues
         /// * `sysprep_script.unattend_xml`: xml object
         /// * `sysprep_script.custom_key_values`: The list of the individual KeyValuePair elements.
-        /// 
         /// 
         /// #### config.cloud_init
         /// * &lt;span pulumi-lang-nodejs="`datasourceType`" pulumi-lang-dotnet="`DatasourceType`" pulumi-lang-go="`datasourceType`" pulumi-lang-python="`datasource_type`" pulumi-lang-yaml="`datasourceType`" pulumi-lang-java="`datasourceType`" pulumi-lang-hcl="`datasource_type`"&gt;`datasourceType`&lt;/span&gt;: Type of datasource. Default: CONFIG_DRIVE_V2
@@ -321,7 +314,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`cloudInitScript`" pulumi-lang-dotnet="`CloudInitScript`" pulumi-lang-go="`cloudInitScript`" pulumi-lang-python="`cloud_init_script`" pulumi-lang-yaml="`cloudInitScript`" pulumi-lang-java="`cloudInitScript`" pulumi-lang-hcl="`cloud_init_script`"&gt;`cloudInitScript`&lt;/span&gt;: The script to use for cloud-init.
         /// * `cloud_init_script.user_data`: user data object
         /// * `cloud_init_script.custom_keys`: The list of the individual KeyValuePair elements.
-        /// 
         /// 
         /// ### Guest Tools
         /// The &lt;span pulumi-lang-nodejs="`guestTools`" pulumi-lang-dotnet="`GuestTools`" pulumi-lang-go="`guestTools`" pulumi-lang-python="`guest_tools`" pulumi-lang-yaml="`guestTools`" pulumi-lang-java="`guestTools`" pulumi-lang-hcl="`guest_tools`"&gt;`guestTools`&lt;/span&gt; attribute supports the following:
@@ -354,7 +346,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`bootOrder`" pulumi-lang-dotnet="`BootOrder`" pulumi-lang-go="`bootOrder`" pulumi-lang-python="`boot_order`" pulumi-lang-yaml="`bootOrder`" pulumi-lang-java="`bootOrder`" pulumi-lang-hcl="`boot_order`"&gt;`bootOrder`&lt;/span&gt;: Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
         /// 
-        /// 
         /// #### boot_config.uefi_boot
         /// * &lt;span pulumi-lang-nodejs="`isSecureBootEnabled`" pulumi-lang-dotnet="`IsSecureBootEnabled`" pulumi-lang-go="`isSecureBootEnabled`" pulumi-lang-python="`is_secure_boot_enabled`" pulumi-lang-yaml="`isSecureBootEnabled`" pulumi-lang-java="`isSecureBootEnabled`" pulumi-lang-hcl="`is_secure_boot_enabled`"&gt;`isSecureBootEnabled`&lt;/span&gt;: Indicate whether to enable secure boot or not
         /// * &lt;span pulumi-lang-nodejs="`nvramDevice`" pulumi-lang-dotnet="`NvramDevice`" pulumi-lang-go="`nvramDevice`" pulumi-lang-python="`nvram_device`" pulumi-lang-yaml="`nvramDevice`" pulumi-lang-java="`nvramDevice`" pulumi-lang-hcl="`nvram_device`"&gt;`nvramDevice`&lt;/span&gt;: Configuration for NVRAM to be presented to the VM.
@@ -383,7 +374,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * `cpu_model.ext_id`: The globally unique identifier of the CPU model associated with the VM.
         /// * `cpu_model.name`: Name of the CPU model associated with the VM.
         /// 
-        /// 
         /// ### Storage Config
         /// The &lt;span pulumi-lang-nodejs="`storageConfig`" pulumi-lang-dotnet="`StorageConfig`" pulumi-lang-go="`storageConfig`" pulumi-lang-python="`storage_config`" pulumi-lang-yaml="`storageConfig`" pulumi-lang-java="`storageConfig`" pulumi-lang-hcl="`storage_config`"&gt;`storageConfig`&lt;/span&gt; attribute supports the following:
         /// 
@@ -402,7 +392,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * `backing_info.vm_disk`: backing Info for vmDisk
         /// * `backing_info.adfs_volume_group_reference`: Volume Group Reference
         /// * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: The globally unique identifier of an ADSF volume group. It should be of type UUID.
-        /// 
         /// 
         /// #### backing_info.vm_disk
         /// * &lt;span pulumi-lang-nodejs="`diskExtId`" pulumi-lang-dotnet="`DiskExtId`" pulumi-lang-go="`diskExtId`" pulumi-lang-python="`disk_ext_id`" pulumi-lang-yaml="`diskExtId`" pulumi-lang-java="`diskExtId`" pulumi-lang-hcl="`disk_ext_id`"&gt;`diskExtId`&lt;/span&gt;: The globally unique identifier of a VM disk. It should be of type UUID.
@@ -426,8 +415,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * `reference.vm_disk_reference.vm_reference`: This is a reference to a VM.
         /// * `reference.vm_disk_reference.vm_reference.ext_id`: A globally unique identifier of a VM of type UUID.
         /// 
-        /// 
-        /// 
         /// ### CD-ROMs
         /// The &lt;span pulumi-lang-nodejs="`cdRoms`" pulumi-lang-dotnet="`CdRoms`" pulumi-lang-go="`cdRoms`" pulumi-lang-python="`cd_roms`" pulumi-lang-yaml="`cdRoms`" pulumi-lang-java="`cdRoms`" pulumi-lang-hcl="`cd_roms`"&gt;`cdRoms`&lt;/span&gt; attribute supports the following:
         /// 
@@ -435,7 +422,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`diskAddress`" pulumi-lang-dotnet="`DiskAddress`" pulumi-lang-go="`diskAddress`" pulumi-lang-python="`disk_address`" pulumi-lang-yaml="`diskAddress`" pulumi-lang-java="`diskAddress`" pulumi-lang-hcl="`disk_address`"&gt;`diskAddress`&lt;/span&gt;: Virtual Machine disk (VM disk).
         /// * &lt;span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`"&gt;`backingInfo`&lt;/span&gt;: Storage provided by Nutanix ADSF
         /// * &lt;span pulumi-lang-nodejs="`isoType`" pulumi-lang-dotnet="`IsoType`" pulumi-lang-go="`isoType`" pulumi-lang-python="`iso_type`" pulumi-lang-yaml="`isoType`" pulumi-lang-java="`isoType`" pulumi-lang-hcl="`iso_type`"&gt;`isoType`&lt;/span&gt;: Type of ISO image inserted in CD-ROM
-        /// 
         /// 
         /// ### NICs
         /// The &lt;span pulumi-lang-nodejs="`nics`" pulumi-lang-dotnet="`Nics`" pulumi-lang-go="`nics`" pulumi-lang-python="`nics`" pulumi-lang-yaml="`nics`" pulumi-lang-java="`nics`" pulumi-lang-hcl="`nics`"&gt;`nics`&lt;/span&gt; attribute supports the following:
@@ -564,8 +550,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`lastUpdatedTime`" pulumi-lang-dotnet="`LastUpdatedTime`" pulumi-lang-go="`lastUpdatedTime`" pulumi-lang-python="`last_updated_time`" pulumi-lang-yaml="`lastUpdatedTime`" pulumi-lang-java="`lastUpdatedTime`" pulumi-lang-hcl="`last_updated_time`"&gt;`lastUpdatedTime`&lt;/span&gt;: Last updated time of the User.
         /// * &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`" pulumi-lang-hcl="`created_by`"&gt;`createdBy`&lt;/span&gt;: User or Service who created the User.
         /// * &lt;span pulumi-lang-nodejs="`lastUpdatedBy`" pulumi-lang-dotnet="`LastUpdatedBy`" pulumi-lang-go="`lastUpdatedBy`" pulumi-lang-python="`last_updated_by`" pulumi-lang-yaml="`lastUpdatedBy`" pulumi-lang-java="`lastUpdatedBy`" pulumi-lang-hcl="`last_updated_by`"&gt;`lastUpdatedBy`&lt;/span&gt;: Last updated by this User ID.
-        /// 
-        /// 
         /// 
         /// See detailed information in [Nutanix List Templates V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Templates/operation/listTemplates).
         /// </summary>
@@ -740,13 +724,11 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`" pulumi-lang-hcl="`created_by`"&gt;`createdBy`&lt;/span&gt;: Information of the User.
         /// * &lt;span pulumi-lang-nodejs="`updatedBy`" pulumi-lang-dotnet="`UpdatedBy`" pulumi-lang-go="`updatedBy`" pulumi-lang-python="`updated_by`" pulumi-lang-yaml="`updatedBy`" pulumi-lang-java="`updatedBy`" pulumi-lang-hcl="`updated_by`"&gt;`updatedBy`&lt;/span&gt;: Information of the User.
         /// 
-        /// 
         /// ### Links
         /// The &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`"&gt;`links`&lt;/span&gt; attribute supports the following:
         /// 
         /// * &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
         /// * &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-        /// 
         /// 
         /// ### Template Version Spec
         /// The &lt;span pulumi-lang-nodejs="`templateVersionSpec`" pulumi-lang-dotnet="`TemplateVersionSpec`" pulumi-lang-go="`templateVersionSpec`" pulumi-lang-python="`template_version_spec`" pulumi-lang-yaml="`templateVersionSpec`" pulumi-lang-java="`templateVersionSpec`" pulumi-lang-hcl="`template_version_spec`"&gt;`templateVersionSpec`&lt;/span&gt; attribute supports the following:
@@ -759,7 +741,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`" pulumi-lang-hcl="`created_by`"&gt;`createdBy`&lt;/span&gt;: Information of the User.
         /// * &lt;span pulumi-lang-nodejs="`isActiveVersion`" pulumi-lang-dotnet="`IsActiveVersion`" pulumi-lang-go="`isActiveVersion`" pulumi-lang-python="`is_active_version`" pulumi-lang-yaml="`isActiveVersion`" pulumi-lang-java="`isActiveVersion`" pulumi-lang-hcl="`is_active_version`"&gt;`isActiveVersion`&lt;/span&gt;: Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise.
         /// * &lt;span pulumi-lang-nodejs="`isGcOverrideEnabled`" pulumi-lang-dotnet="`IsGcOverrideEnabled`" pulumi-lang-go="`isGcOverrideEnabled`" pulumi-lang-python="`is_gc_override_enabled`" pulumi-lang-yaml="`isGcOverrideEnabled`" pulumi-lang-java="`isGcOverrideEnabled`" pulumi-lang-hcl="`is_gc_override_enabled`"&gt;`isGcOverrideEnabled`&lt;/span&gt;: Allow or disallow override of the Guest Customization during Template deployment.
-        /// 
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" guestUpdateStatus
         /// " pulumi-lang-dotnet=" GuestUpdateStatus
@@ -822,7 +803,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`protectionType`" pulumi-lang-dotnet="`ProtectionType`" pulumi-lang-go="`protectionType`" pulumi-lang-python="`protection_type`" pulumi-lang-yaml="`protectionType`" pulumi-lang-java="`protectionType`" pulumi-lang-hcl="`protection_type`"&gt;`protectionType`&lt;/span&gt;: The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
         /// * &lt;span pulumi-lang-nodejs="`protectionPolicyState`" pulumi-lang-dotnet="`ProtectionPolicyState`" pulumi-lang-go="`protectionPolicyState`" pulumi-lang-python="`protection_policy_state`" pulumi-lang-yaml="`protectionPolicyState`" pulumi-lang-java="`protectionPolicyState`" pulumi-lang-hcl="`protection_policy_state`"&gt;`protectionPolicyState`&lt;/span&gt;: Status of protection policy applied to this VM.
         /// 
-        /// 
         /// ### Source
         /// 
         /// The &lt;span pulumi-lang-nodejs="`source`" pulumi-lang-dotnet="`Source`" pulumi-lang-go="`source`" pulumi-lang-python="`source`" pulumi-lang-yaml="`source`" pulumi-lang-java="`source`" pulumi-lang-hcl="`source`"&gt;`source`&lt;/span&gt; attribute supports the following:
@@ -866,14 +846,11 @@ namespace PiersKarsenbarg.Nutanix
         /// * `config.sysprep`: Sysprep config
         /// * `config.cloud_init`: CloudInit Config
         /// 
-        /// 
-        /// 
         /// #### config.sysprep
         /// * &lt;span pulumi-lang-nodejs="`installType`" pulumi-lang-dotnet="`InstallType`" pulumi-lang-go="`installType`" pulumi-lang-python="`install_type`" pulumi-lang-yaml="`installType`" pulumi-lang-java="`installType`" pulumi-lang-hcl="`install_type`"&gt;`installType`&lt;/span&gt;: Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Default is 'PREPARED'.
         /// * &lt;span pulumi-lang-nodejs="`sysprepScript`" pulumi-lang-dotnet="`SysprepScript`" pulumi-lang-go="`sysprepScript`" pulumi-lang-python="`sysprep_script`" pulumi-lang-yaml="`sysprepScript`" pulumi-lang-java="`sysprepScript`" pulumi-lang-hcl="`sysprep_script`"&gt;`sysprepScript`&lt;/span&gt;: Object either UnattendXml or CustomKeyValues
         /// * `sysprep_script.unattend_xml`: xml object
         /// * `sysprep_script.custom_key_values`: The list of the individual KeyValuePair elements.
-        /// 
         /// 
         /// #### config.cloud_init
         /// * &lt;span pulumi-lang-nodejs="`datasourceType`" pulumi-lang-dotnet="`DatasourceType`" pulumi-lang-go="`datasourceType`" pulumi-lang-python="`datasource_type`" pulumi-lang-yaml="`datasourceType`" pulumi-lang-java="`datasourceType`" pulumi-lang-hcl="`datasource_type`"&gt;`datasourceType`&lt;/span&gt;: Type of datasource. Default: CONFIG_DRIVE_V2
@@ -881,7 +858,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`cloudInitScript`" pulumi-lang-dotnet="`CloudInitScript`" pulumi-lang-go="`cloudInitScript`" pulumi-lang-python="`cloud_init_script`" pulumi-lang-yaml="`cloudInitScript`" pulumi-lang-java="`cloudInitScript`" pulumi-lang-hcl="`cloud_init_script`"&gt;`cloudInitScript`&lt;/span&gt;: The script to use for cloud-init.
         /// * `cloud_init_script.user_data`: user data object
         /// * `cloud_init_script.custom_keys`: The list of the individual KeyValuePair elements.
-        /// 
         /// 
         /// ### Guest Tools
         /// The &lt;span pulumi-lang-nodejs="`guestTools`" pulumi-lang-dotnet="`GuestTools`" pulumi-lang-go="`guestTools`" pulumi-lang-python="`guest_tools`" pulumi-lang-yaml="`guestTools`" pulumi-lang-java="`guestTools`" pulumi-lang-hcl="`guest_tools`"&gt;`guestTools`&lt;/span&gt; attribute supports the following:
@@ -914,7 +890,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`bootOrder`" pulumi-lang-dotnet="`BootOrder`" pulumi-lang-go="`bootOrder`" pulumi-lang-python="`boot_order`" pulumi-lang-yaml="`bootOrder`" pulumi-lang-java="`bootOrder`" pulumi-lang-hcl="`boot_order`"&gt;`bootOrder`&lt;/span&gt;: Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
         /// 
-        /// 
         /// #### boot_config.uefi_boot
         /// * &lt;span pulumi-lang-nodejs="`isSecureBootEnabled`" pulumi-lang-dotnet="`IsSecureBootEnabled`" pulumi-lang-go="`isSecureBootEnabled`" pulumi-lang-python="`is_secure_boot_enabled`" pulumi-lang-yaml="`isSecureBootEnabled`" pulumi-lang-java="`isSecureBootEnabled`" pulumi-lang-hcl="`is_secure_boot_enabled`"&gt;`isSecureBootEnabled`&lt;/span&gt;: Indicate whether to enable secure boot or not
         /// * &lt;span pulumi-lang-nodejs="`nvramDevice`" pulumi-lang-dotnet="`NvramDevice`" pulumi-lang-go="`nvramDevice`" pulumi-lang-python="`nvram_device`" pulumi-lang-yaml="`nvramDevice`" pulumi-lang-java="`nvramDevice`" pulumi-lang-hcl="`nvram_device`"&gt;`nvramDevice`&lt;/span&gt;: Configuration for NVRAM to be presented to the VM.
@@ -943,7 +918,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * `cpu_model.ext_id`: The globally unique identifier of the CPU model associated with the VM.
         /// * `cpu_model.name`: Name of the CPU model associated with the VM.
         /// 
-        /// 
         /// ### Storage Config
         /// The &lt;span pulumi-lang-nodejs="`storageConfig`" pulumi-lang-dotnet="`StorageConfig`" pulumi-lang-go="`storageConfig`" pulumi-lang-python="`storage_config`" pulumi-lang-yaml="`storageConfig`" pulumi-lang-java="`storageConfig`" pulumi-lang-hcl="`storage_config`"&gt;`storageConfig`&lt;/span&gt; attribute supports the following:
         /// 
@@ -962,7 +936,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * `backing_info.vm_disk`: backing Info for vmDisk
         /// * `backing_info.adfs_volume_group_reference`: Volume Group Reference
         /// * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: The globally unique identifier of an ADSF volume group. It should be of type UUID.
-        /// 
         /// 
         /// #### backing_info.vm_disk
         /// * &lt;span pulumi-lang-nodejs="`diskExtId`" pulumi-lang-dotnet="`DiskExtId`" pulumi-lang-go="`diskExtId`" pulumi-lang-python="`disk_ext_id`" pulumi-lang-yaml="`diskExtId`" pulumi-lang-java="`diskExtId`" pulumi-lang-hcl="`disk_ext_id`"&gt;`diskExtId`&lt;/span&gt;: The globally unique identifier of a VM disk. It should be of type UUID.
@@ -986,8 +959,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * `reference.vm_disk_reference.vm_reference`: This is a reference to a VM.
         /// * `reference.vm_disk_reference.vm_reference.ext_id`: A globally unique identifier of a VM of type UUID.
         /// 
-        /// 
-        /// 
         /// ### CD-ROMs
         /// The &lt;span pulumi-lang-nodejs="`cdRoms`" pulumi-lang-dotnet="`CdRoms`" pulumi-lang-go="`cdRoms`" pulumi-lang-python="`cd_roms`" pulumi-lang-yaml="`cdRoms`" pulumi-lang-java="`cdRoms`" pulumi-lang-hcl="`cd_roms`"&gt;`cdRoms`&lt;/span&gt; attribute supports the following:
         /// 
@@ -995,7 +966,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`diskAddress`" pulumi-lang-dotnet="`DiskAddress`" pulumi-lang-go="`diskAddress`" pulumi-lang-python="`disk_address`" pulumi-lang-yaml="`diskAddress`" pulumi-lang-java="`diskAddress`" pulumi-lang-hcl="`disk_address`"&gt;`diskAddress`&lt;/span&gt;: Virtual Machine disk (VM disk).
         /// * &lt;span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`"&gt;`backingInfo`&lt;/span&gt;: Storage provided by Nutanix ADSF
         /// * &lt;span pulumi-lang-nodejs="`isoType`" pulumi-lang-dotnet="`IsoType`" pulumi-lang-go="`isoType`" pulumi-lang-python="`iso_type`" pulumi-lang-yaml="`isoType`" pulumi-lang-java="`isoType`" pulumi-lang-hcl="`iso_type`"&gt;`isoType`&lt;/span&gt;: Type of ISO image inserted in CD-ROM
-        /// 
         /// 
         /// ### NICs
         /// The &lt;span pulumi-lang-nodejs="`nics`" pulumi-lang-dotnet="`Nics`" pulumi-lang-go="`nics`" pulumi-lang-python="`nics`" pulumi-lang-yaml="`nics`" pulumi-lang-java="`nics`" pulumi-lang-hcl="`nics`"&gt;`nics`&lt;/span&gt; attribute supports the following:
@@ -1124,8 +1094,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`lastUpdatedTime`" pulumi-lang-dotnet="`LastUpdatedTime`" pulumi-lang-go="`lastUpdatedTime`" pulumi-lang-python="`last_updated_time`" pulumi-lang-yaml="`lastUpdatedTime`" pulumi-lang-java="`lastUpdatedTime`" pulumi-lang-hcl="`last_updated_time`"&gt;`lastUpdatedTime`&lt;/span&gt;: Last updated time of the User.
         /// * &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`" pulumi-lang-hcl="`created_by`"&gt;`createdBy`&lt;/span&gt;: User or Service who created the User.
         /// * &lt;span pulumi-lang-nodejs="`lastUpdatedBy`" pulumi-lang-dotnet="`LastUpdatedBy`" pulumi-lang-go="`lastUpdatedBy`" pulumi-lang-python="`last_updated_by`" pulumi-lang-yaml="`lastUpdatedBy`" pulumi-lang-java="`lastUpdatedBy`" pulumi-lang-hcl="`last_updated_by`"&gt;`lastUpdatedBy`&lt;/span&gt;: Last updated by this User ID.
-        /// 
-        /// 
         /// 
         /// See detailed information in [Nutanix List Templates V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Templates/operation/listTemplates).
         /// </summary>
@@ -1300,13 +1268,11 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`" pulumi-lang-hcl="`created_by`"&gt;`createdBy`&lt;/span&gt;: Information of the User.
         /// * &lt;span pulumi-lang-nodejs="`updatedBy`" pulumi-lang-dotnet="`UpdatedBy`" pulumi-lang-go="`updatedBy`" pulumi-lang-python="`updated_by`" pulumi-lang-yaml="`updatedBy`" pulumi-lang-java="`updatedBy`" pulumi-lang-hcl="`updated_by`"&gt;`updatedBy`&lt;/span&gt;: Information of the User.
         /// 
-        /// 
         /// ### Links
         /// The &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`"&gt;`links`&lt;/span&gt; attribute supports the following:
         /// 
         /// * &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
         /// * &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-        /// 
         /// 
         /// ### Template Version Spec
         /// The &lt;span pulumi-lang-nodejs="`templateVersionSpec`" pulumi-lang-dotnet="`TemplateVersionSpec`" pulumi-lang-go="`templateVersionSpec`" pulumi-lang-python="`template_version_spec`" pulumi-lang-yaml="`templateVersionSpec`" pulumi-lang-java="`templateVersionSpec`" pulumi-lang-hcl="`template_version_spec`"&gt;`templateVersionSpec`&lt;/span&gt; attribute supports the following:
@@ -1319,7 +1285,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`" pulumi-lang-hcl="`created_by`"&gt;`createdBy`&lt;/span&gt;: Information of the User.
         /// * &lt;span pulumi-lang-nodejs="`isActiveVersion`" pulumi-lang-dotnet="`IsActiveVersion`" pulumi-lang-go="`isActiveVersion`" pulumi-lang-python="`is_active_version`" pulumi-lang-yaml="`isActiveVersion`" pulumi-lang-java="`isActiveVersion`" pulumi-lang-hcl="`is_active_version`"&gt;`isActiveVersion`&lt;/span&gt;: Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise.
         /// * &lt;span pulumi-lang-nodejs="`isGcOverrideEnabled`" pulumi-lang-dotnet="`IsGcOverrideEnabled`" pulumi-lang-go="`isGcOverrideEnabled`" pulumi-lang-python="`is_gc_override_enabled`" pulumi-lang-yaml="`isGcOverrideEnabled`" pulumi-lang-java="`isGcOverrideEnabled`" pulumi-lang-hcl="`is_gc_override_enabled`"&gt;`isGcOverrideEnabled`&lt;/span&gt;: Allow or disallow override of the Guest Customization during Template deployment.
-        /// 
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" guestUpdateStatus
         /// " pulumi-lang-dotnet=" GuestUpdateStatus
@@ -1382,7 +1347,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`protectionType`" pulumi-lang-dotnet="`ProtectionType`" pulumi-lang-go="`protectionType`" pulumi-lang-python="`protection_type`" pulumi-lang-yaml="`protectionType`" pulumi-lang-java="`protectionType`" pulumi-lang-hcl="`protection_type`"&gt;`protectionType`&lt;/span&gt;: The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
         /// * &lt;span pulumi-lang-nodejs="`protectionPolicyState`" pulumi-lang-dotnet="`ProtectionPolicyState`" pulumi-lang-go="`protectionPolicyState`" pulumi-lang-python="`protection_policy_state`" pulumi-lang-yaml="`protectionPolicyState`" pulumi-lang-java="`protectionPolicyState`" pulumi-lang-hcl="`protection_policy_state`"&gt;`protectionPolicyState`&lt;/span&gt;: Status of protection policy applied to this VM.
         /// 
-        /// 
         /// ### Source
         /// 
         /// The &lt;span pulumi-lang-nodejs="`source`" pulumi-lang-dotnet="`Source`" pulumi-lang-go="`source`" pulumi-lang-python="`source`" pulumi-lang-yaml="`source`" pulumi-lang-java="`source`" pulumi-lang-hcl="`source`"&gt;`source`&lt;/span&gt; attribute supports the following:
@@ -1426,14 +1390,11 @@ namespace PiersKarsenbarg.Nutanix
         /// * `config.sysprep`: Sysprep config
         /// * `config.cloud_init`: CloudInit Config
         /// 
-        /// 
-        /// 
         /// #### config.sysprep
         /// * &lt;span pulumi-lang-nodejs="`installType`" pulumi-lang-dotnet="`InstallType`" pulumi-lang-go="`installType`" pulumi-lang-python="`install_type`" pulumi-lang-yaml="`installType`" pulumi-lang-java="`installType`" pulumi-lang-hcl="`install_type`"&gt;`installType`&lt;/span&gt;: Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Default is 'PREPARED'.
         /// * &lt;span pulumi-lang-nodejs="`sysprepScript`" pulumi-lang-dotnet="`SysprepScript`" pulumi-lang-go="`sysprepScript`" pulumi-lang-python="`sysprep_script`" pulumi-lang-yaml="`sysprepScript`" pulumi-lang-java="`sysprepScript`" pulumi-lang-hcl="`sysprep_script`"&gt;`sysprepScript`&lt;/span&gt;: Object either UnattendXml or CustomKeyValues
         /// * `sysprep_script.unattend_xml`: xml object
         /// * `sysprep_script.custom_key_values`: The list of the individual KeyValuePair elements.
-        /// 
         /// 
         /// #### config.cloud_init
         /// * &lt;span pulumi-lang-nodejs="`datasourceType`" pulumi-lang-dotnet="`DatasourceType`" pulumi-lang-go="`datasourceType`" pulumi-lang-python="`datasource_type`" pulumi-lang-yaml="`datasourceType`" pulumi-lang-java="`datasourceType`" pulumi-lang-hcl="`datasource_type`"&gt;`datasourceType`&lt;/span&gt;: Type of datasource. Default: CONFIG_DRIVE_V2
@@ -1441,7 +1402,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`cloudInitScript`" pulumi-lang-dotnet="`CloudInitScript`" pulumi-lang-go="`cloudInitScript`" pulumi-lang-python="`cloud_init_script`" pulumi-lang-yaml="`cloudInitScript`" pulumi-lang-java="`cloudInitScript`" pulumi-lang-hcl="`cloud_init_script`"&gt;`cloudInitScript`&lt;/span&gt;: The script to use for cloud-init.
         /// * `cloud_init_script.user_data`: user data object
         /// * `cloud_init_script.custom_keys`: The list of the individual KeyValuePair elements.
-        /// 
         /// 
         /// ### Guest Tools
         /// The &lt;span pulumi-lang-nodejs="`guestTools`" pulumi-lang-dotnet="`GuestTools`" pulumi-lang-go="`guestTools`" pulumi-lang-python="`guest_tools`" pulumi-lang-yaml="`guestTools`" pulumi-lang-java="`guestTools`" pulumi-lang-hcl="`guest_tools`"&gt;`guestTools`&lt;/span&gt; attribute supports the following:
@@ -1474,7 +1434,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`bootOrder`" pulumi-lang-dotnet="`BootOrder`" pulumi-lang-go="`bootOrder`" pulumi-lang-python="`boot_order`" pulumi-lang-yaml="`bootOrder`" pulumi-lang-java="`bootOrder`" pulumi-lang-hcl="`boot_order`"&gt;`bootOrder`&lt;/span&gt;: Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
         /// 
-        /// 
         /// #### boot_config.uefi_boot
         /// * &lt;span pulumi-lang-nodejs="`isSecureBootEnabled`" pulumi-lang-dotnet="`IsSecureBootEnabled`" pulumi-lang-go="`isSecureBootEnabled`" pulumi-lang-python="`is_secure_boot_enabled`" pulumi-lang-yaml="`isSecureBootEnabled`" pulumi-lang-java="`isSecureBootEnabled`" pulumi-lang-hcl="`is_secure_boot_enabled`"&gt;`isSecureBootEnabled`&lt;/span&gt;: Indicate whether to enable secure boot or not
         /// * &lt;span pulumi-lang-nodejs="`nvramDevice`" pulumi-lang-dotnet="`NvramDevice`" pulumi-lang-go="`nvramDevice`" pulumi-lang-python="`nvram_device`" pulumi-lang-yaml="`nvramDevice`" pulumi-lang-java="`nvramDevice`" pulumi-lang-hcl="`nvram_device`"&gt;`nvramDevice`&lt;/span&gt;: Configuration for NVRAM to be presented to the VM.
@@ -1503,7 +1462,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * `cpu_model.ext_id`: The globally unique identifier of the CPU model associated with the VM.
         /// * `cpu_model.name`: Name of the CPU model associated with the VM.
         /// 
-        /// 
         /// ### Storage Config
         /// The &lt;span pulumi-lang-nodejs="`storageConfig`" pulumi-lang-dotnet="`StorageConfig`" pulumi-lang-go="`storageConfig`" pulumi-lang-python="`storage_config`" pulumi-lang-yaml="`storageConfig`" pulumi-lang-java="`storageConfig`" pulumi-lang-hcl="`storage_config`"&gt;`storageConfig`&lt;/span&gt; attribute supports the following:
         /// 
@@ -1522,7 +1480,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * `backing_info.vm_disk`: backing Info for vmDisk
         /// * `backing_info.adfs_volume_group_reference`: Volume Group Reference
         /// * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: The globally unique identifier of an ADSF volume group. It should be of type UUID.
-        /// 
         /// 
         /// #### backing_info.vm_disk
         /// * &lt;span pulumi-lang-nodejs="`diskExtId`" pulumi-lang-dotnet="`DiskExtId`" pulumi-lang-go="`diskExtId`" pulumi-lang-python="`disk_ext_id`" pulumi-lang-yaml="`diskExtId`" pulumi-lang-java="`diskExtId`" pulumi-lang-hcl="`disk_ext_id`"&gt;`diskExtId`&lt;/span&gt;: The globally unique identifier of a VM disk. It should be of type UUID.
@@ -1546,8 +1503,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * `reference.vm_disk_reference.vm_reference`: This is a reference to a VM.
         /// * `reference.vm_disk_reference.vm_reference.ext_id`: A globally unique identifier of a VM of type UUID.
         /// 
-        /// 
-        /// 
         /// ### CD-ROMs
         /// The &lt;span pulumi-lang-nodejs="`cdRoms`" pulumi-lang-dotnet="`CdRoms`" pulumi-lang-go="`cdRoms`" pulumi-lang-python="`cd_roms`" pulumi-lang-yaml="`cdRoms`" pulumi-lang-java="`cdRoms`" pulumi-lang-hcl="`cd_roms`"&gt;`cdRoms`&lt;/span&gt; attribute supports the following:
         /// 
@@ -1555,7 +1510,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`diskAddress`" pulumi-lang-dotnet="`DiskAddress`" pulumi-lang-go="`diskAddress`" pulumi-lang-python="`disk_address`" pulumi-lang-yaml="`diskAddress`" pulumi-lang-java="`diskAddress`" pulumi-lang-hcl="`disk_address`"&gt;`diskAddress`&lt;/span&gt;: Virtual Machine disk (VM disk).
         /// * &lt;span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`"&gt;`backingInfo`&lt;/span&gt;: Storage provided by Nutanix ADSF
         /// * &lt;span pulumi-lang-nodejs="`isoType`" pulumi-lang-dotnet="`IsoType`" pulumi-lang-go="`isoType`" pulumi-lang-python="`iso_type`" pulumi-lang-yaml="`isoType`" pulumi-lang-java="`isoType`" pulumi-lang-hcl="`iso_type`"&gt;`isoType`&lt;/span&gt;: Type of ISO image inserted in CD-ROM
-        /// 
         /// 
         /// ### NICs
         /// The &lt;span pulumi-lang-nodejs="`nics`" pulumi-lang-dotnet="`Nics`" pulumi-lang-go="`nics`" pulumi-lang-python="`nics`" pulumi-lang-yaml="`nics`" pulumi-lang-java="`nics`" pulumi-lang-hcl="`nics`"&gt;`nics`&lt;/span&gt; attribute supports the following:
@@ -1684,8 +1638,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`lastUpdatedTime`" pulumi-lang-dotnet="`LastUpdatedTime`" pulumi-lang-go="`lastUpdatedTime`" pulumi-lang-python="`last_updated_time`" pulumi-lang-yaml="`lastUpdatedTime`" pulumi-lang-java="`lastUpdatedTime`" pulumi-lang-hcl="`last_updated_time`"&gt;`lastUpdatedTime`&lt;/span&gt;: Last updated time of the User.
         /// * &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`" pulumi-lang-hcl="`created_by`"&gt;`createdBy`&lt;/span&gt;: User or Service who created the User.
         /// * &lt;span pulumi-lang-nodejs="`lastUpdatedBy`" pulumi-lang-dotnet="`LastUpdatedBy`" pulumi-lang-go="`lastUpdatedBy`" pulumi-lang-python="`last_updated_by`" pulumi-lang-yaml="`lastUpdatedBy`" pulumi-lang-java="`lastUpdatedBy`" pulumi-lang-hcl="`last_updated_by`"&gt;`lastUpdatedBy`&lt;/span&gt;: Last updated by this User ID.
-        /// 
-        /// 
         /// 
         /// See detailed information in [Nutanix List Templates V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Templates/operation/listTemplates).
         /// </summary>

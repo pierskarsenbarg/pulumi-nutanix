@@ -348,6 +348,22 @@ class DeployTemplatesV2(pulumi.CustomResource):
         __props__.__dict__["version_id"] = version_id
         return DeployTemplatesV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            number_of_vms: pulumi.Input[Optional[_builtins.int]] = None,
+            override_vm_config_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeployTemplatesV2OverrideVmConfigMapArgs', 'DeployTemplatesV2OverrideVmConfigMapArgsDict', 'outputs.DeployTemplatesV2OverrideVmConfigMap']]]]] = None,
+            version_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["clusterReference"] = cluster_reference
+        __props__["extId"] = ext_id
+        __props__["numberOfVms"] = number_of_vms
+        __props__["overrideVmConfigMaps"] = override_vm_config_maps
+        __props__["versionId"] = version_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/deployTemplatesV2:DeployTemplatesV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="clusterReference")
     def cluster_reference(self) -> pulumi.Output[_builtins.str]:

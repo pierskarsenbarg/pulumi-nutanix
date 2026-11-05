@@ -29,7 +29,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			// # resource for cloning using Point in time given time machine name
+//			//# resource for cloning using Point in time given time machine name
 //			_, err := nutanix.NewNdbClone(ctx, "name", &nutanix.NdbCloneArgs{
 //				TimeMachineName:            pulumi.String("test-pg-inst"),
 //				Name:                       pulumi.String("test-inst-tf-check"),
@@ -400,6 +400,12 @@ type NdbCloneState struct {
 
 func (NdbCloneState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbCloneState)(nil)).Elem()
+}
+
+// NdbCloneExists checks whether an existing NdbClone resource with the given ID exists.
+func NdbCloneExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbCloneState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbClone:NdbClone", id, state, "", opts...)
 }
 
 type ndbCloneArgs struct {

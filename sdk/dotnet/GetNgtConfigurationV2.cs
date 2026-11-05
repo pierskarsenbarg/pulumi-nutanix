@@ -15,7 +15,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Provides Nutanix datasource to Retrieves the Nutanix Guest Tools configuration for a Virtual Machine.
         /// 
-        /// 
         /// ## Example
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -125,7 +124,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Provides Nutanix datasource to Retrieves the Nutanix Guest Tools configuration for a Virtual Machine.
         /// 
-        /// 
         /// ## Example
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -234,7 +232,6 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// Provides Nutanix datasource to Retrieves the Nutanix Guest Tools configuration for a Virtual Machine.
-        /// 
         /// 
         /// ## Example
         /// 

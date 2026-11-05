@@ -102,6 +102,12 @@ func (PromoteProtectedResourceV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*promoteProtectedResourceV2State)(nil)).Elem()
 }
 
+// PromoteProtectedResourceV2Exists checks whether an existing PromoteProtectedResourceV2 resource with the given ID exists.
+func PromoteProtectedResourceV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PromoteProtectedResourceV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/promoteProtectedResourceV2:PromoteProtectedResourceV2", id, state, "", opts...)
+}
+
 type promoteProtectedResourceV2Args struct {
 	// -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
 	//

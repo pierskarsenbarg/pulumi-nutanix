@@ -1091,6 +1091,66 @@ class Subnet(pulumi.CustomResource):
         __props__.__dict__["vswitch_name"] = vswitch_name
         return Subnet(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetCategoryArgs', 'SubnetCategoryArgsDict', 'outputs.SubnetCategory']]]]] = None,
+            cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            default_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dhcp_domain_name_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dhcp_domain_search_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dhcp_options: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            dhcp_server_address: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            dhcp_server_address_port: pulumi.Input[Optional[_builtins.int]] = None,
+            enable_nat: pulumi.Input[Optional[_builtins.bool]] = None,
+            ip_config_pool_list_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            is_external: pulumi.Input[Optional[_builtins.bool]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_function_chain_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+            project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_type: pulumi.Input[Optional[_builtins.str]] = None,
+            vlan_id: pulumi.Input[Optional[_builtins.int]] = None,
+            vpc_reference_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            vswitch_name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apiVersion"] = api_version
+        __props__["availabilityZoneReference"] = availability_zone_reference
+        __props__["categories"] = categories
+        __props__["clusterName"] = cluster_name
+        __props__["clusterUuid"] = cluster_uuid
+        __props__["defaultGatewayIp"] = default_gateway_ip
+        __props__["description"] = description
+        __props__["dhcpDomainNameServerLists"] = dhcp_domain_name_server_lists
+        __props__["dhcpDomainSearchLists"] = dhcp_domain_search_lists
+        __props__["dhcpOptions"] = dhcp_options
+        __props__["dhcpServerAddress"] = dhcp_server_address
+        __props__["dhcpServerAddressPort"] = dhcp_server_address_port
+        __props__["enableNat"] = enable_nat
+        __props__["ipConfigPoolListRanges"] = ip_config_pool_list_ranges
+        __props__["isExternal"] = is_external
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["networkFunctionChainReference"] = network_function_chain_reference
+        __props__["ownerReference"] = owner_reference
+        __props__["prefixLength"] = prefix_length
+        __props__["projectReference"] = project_reference
+        __props__["state"] = state
+        __props__["subnetIp"] = subnet_ip
+        __props__["subnetType"] = subnet_type
+        __props__["vlanId"] = vlan_id
+        __props__["vpcReferenceUuid"] = vpc_reference_uuid
+        __props__["vswitchName"] = vswitch_name
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/subnet:Subnet', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apiVersion")
     def api_version(self) -> pulumi.Output[_builtins.str]:

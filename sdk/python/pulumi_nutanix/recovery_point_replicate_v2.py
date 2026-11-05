@@ -275,6 +275,20 @@ class RecoveryPointReplicateV2(pulumi.CustomResource):
         __props__.__dict__["replicated_rp_ext_id"] = replicated_rp_ext_id
         return RecoveryPointReplicateV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            replicated_rp_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["clusterExtId"] = cluster_ext_id
+        __props__["extId"] = ext_id
+        __props__["pcExtId"] = pc_ext_id
+        __props__["replicatedRpExtId"] = replicated_rp_ext_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/recoveryPointReplicateV2:RecoveryPointReplicateV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="clusterExtId")
     def cluster_ext_id(self) -> pulumi.Output[Optional[_builtins.str]]:

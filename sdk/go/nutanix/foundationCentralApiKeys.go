@@ -118,6 +118,12 @@ func (FoundationCentralApiKeysState) ElementType() reflect.Type {
 	return reflect.TypeOf((*foundationCentralApiKeysState)(nil)).Elem()
 }
 
+// FoundationCentralApiKeysExists checks whether an existing FoundationCentralApiKeys resource with the given ID exists.
+func FoundationCentralApiKeysExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FoundationCentralApiKeysState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/foundationCentralApiKeys:FoundationCentralApiKeys", id, state, "", opts...)
+}
+
 type foundationCentralApiKeysArgs struct {
 	// - (Required) Alias for the api key to be created.
 	Alias string `pulumi:"alias"`

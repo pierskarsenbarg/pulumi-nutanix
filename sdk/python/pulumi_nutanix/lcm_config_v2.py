@@ -448,6 +448,28 @@ class LcmConfigV2(pulumi.CustomResource):
         __props__.__dict__["x_cluster_id"] = x_cluster_id
         return LcmConfigV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auto_inventory_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+            connectivity_type: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            has_module_auto_upgrade_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_auto_inventory_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_https_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None,
+            x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autoInventorySchedule"] = auto_inventory_schedule
+        __props__["connectivityType"] = connectivity_type
+        __props__["extId"] = ext_id
+        __props__["hasModuleAutoUpgradeEnabled"] = has_module_auto_upgrade_enabled
+        __props__["isAutoInventoryEnabled"] = is_auto_inventory_enabled
+        __props__["isHttpsEnabled"] = is_https_enabled
+        __props__["url"] = url
+        __props__["xClusterId"] = x_cluster_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/lcmConfigV2:LcmConfigV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autoInventorySchedule")
     def auto_inventory_schedule(self) -> pulumi.Output[Optional[_builtins.str]]:

@@ -861,6 +861,46 @@ class UserKeyV2(pulumi.CustomResource):
         __props__.__dict__["user_ext_id"] = user_ext_id
         return UserKeyV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            assigned_to: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_time: pulumi.Input[Optional[_builtins.str]] = None,
+            creation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            expiry_time: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserKeyV2KeyDetailArgs', 'UserKeyV2KeyDetailArgsDict', 'outputs.UserKeyV2KeyDetail']]]]] = None,
+            key_type: pulumi.Input[Optional[_builtins.str]] = None,
+            last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
+            last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+            last_used_time: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserKeyV2LinkArgs', 'UserKeyV2LinkArgsDict', 'outputs.UserKeyV2Link']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            user_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["assignedTo"] = assigned_to
+        __props__["createdBy"] = created_by
+        __props__["createdTime"] = created_time
+        __props__["creationType"] = creation_type
+        __props__["description"] = description
+        __props__["expiryTime"] = expiry_time
+        __props__["extId"] = ext_id
+        __props__["keyDetails"] = key_details
+        __props__["keyType"] = key_type
+        __props__["lastUpdatedBy"] = last_updated_by
+        __props__["lastUpdatedTime"] = last_updated_time
+        __props__["lastUsedTime"] = last_used_time
+        __props__["links"] = links
+        __props__["name"] = name
+        __props__["status"] = status
+        __props__["tenantId"] = tenant_id
+        __props__["userExtId"] = user_ext_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/userKeyV2:UserKeyV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="assignedTo")
     def assigned_to(self) -> pulumi.Output[_builtins.str]:

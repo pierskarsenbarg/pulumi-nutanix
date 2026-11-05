@@ -434,6 +434,32 @@ class RecoveryPlan(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         return RecoveryPlan(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPlanCategoryArgs', 'RecoveryPlanCategoryArgsDict', 'outputs.RecoveryPlanCategory']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_reference: pulumi.Input[Optional[Union['RecoveryPlanOwnerReferenceArgs', 'RecoveryPlanOwnerReferenceArgsDict', 'outputs.RecoveryPlanOwnerReference']]] = None,
+            parameters: pulumi.Input[Optional[Union['RecoveryPlanParametersArgs', 'RecoveryPlanParametersArgsDict', 'outputs.RecoveryPlanParameters']]] = None,
+            project_reference: pulumi.Input[Optional[Union['RecoveryPlanProjectReferenceArgs', 'RecoveryPlanProjectReferenceArgsDict', 'outputs.RecoveryPlanProjectReference']]] = None,
+            stage_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPlanStageListArgs', 'RecoveryPlanStageListArgsDict', 'outputs.RecoveryPlanStageList']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apiVersion"] = api_version
+        __props__["categories"] = categories
+        __props__["description"] = description
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["ownerReference"] = owner_reference
+        __props__["parameters"] = parameters
+        __props__["projectReference"] = project_reference
+        __props__["stageLists"] = stage_lists
+        __props__["state"] = state
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/recoveryPlan:RecoveryPlan', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apiVersion")
     def api_version(self) -> pulumi.Output[_builtins.str]:

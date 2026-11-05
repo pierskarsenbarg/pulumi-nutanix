@@ -144,7 +144,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`affinityHostExtId`" pulumi-lang-dotnet="`AffinityHostExtId`" pulumi-lang-go="`affinityHostExtId`" pulumi-lang-python="`affinity_host_ext_id`" pulumi-lang-yaml="`affinityHostExtId`" pulumi-lang-java="`affinityHostExtId`" pulumi-lang-hcl="`affinity_host_ext_id`"&gt;`affinityHostExtId`&lt;/span&gt;: - Affinity host extId for RF 1 Storage Container.
         /// * &lt;span pulumi-lang-nodejs="`clusterName`" pulumi-lang-dotnet="`ClusterName`" pulumi-lang-go="`clusterName`" pulumi-lang-python="`cluster_name`" pulumi-lang-yaml="`clusterName`" pulumi-lang-java="`clusterName`" pulumi-lang-hcl="`cluster_name`"&gt;`clusterName`&lt;/span&gt;: - Corresponding name of the Cluster owning the Storage Container instance.
         /// 
-        /// 
         /// ###&lt;span pulumi-lang-nodejs=" nfsWhitelistAddresses
         /// " pulumi-lang-dotnet=" NfsWhitelistAddresses
         /// " pulumi-lang-go=" nfsWhitelistAddresses
@@ -166,8 +165,6 @@ namespace PiersKarsenbarg.Nutanix
         /// ### fqdn (Reference to address configuration)
         /// 
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: value of fqdn address
-        /// 
-        /// 
         /// 
         /// See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/StorageContainers/operation/listStorageContainers).
         /// </summary>
@@ -306,7 +303,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`affinityHostExtId`" pulumi-lang-dotnet="`AffinityHostExtId`" pulumi-lang-go="`affinityHostExtId`" pulumi-lang-python="`affinity_host_ext_id`" pulumi-lang-yaml="`affinityHostExtId`" pulumi-lang-java="`affinityHostExtId`" pulumi-lang-hcl="`affinity_host_ext_id`"&gt;`affinityHostExtId`&lt;/span&gt;: - Affinity host extId for RF 1 Storage Container.
         /// * &lt;span pulumi-lang-nodejs="`clusterName`" pulumi-lang-dotnet="`ClusterName`" pulumi-lang-go="`clusterName`" pulumi-lang-python="`cluster_name`" pulumi-lang-yaml="`clusterName`" pulumi-lang-java="`clusterName`" pulumi-lang-hcl="`cluster_name`"&gt;`clusterName`&lt;/span&gt;: - Corresponding name of the Cluster owning the Storage Container instance.
         /// 
-        /// 
         /// ###&lt;span pulumi-lang-nodejs=" nfsWhitelistAddresses
         /// " pulumi-lang-dotnet=" NfsWhitelistAddresses
         /// " pulumi-lang-go=" nfsWhitelistAddresses
@@ -328,8 +324,6 @@ namespace PiersKarsenbarg.Nutanix
         /// ### fqdn (Reference to address configuration)
         /// 
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: value of fqdn address
-        /// 
-        /// 
         /// 
         /// See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/StorageContainers/operation/listStorageContainers).
         /// </summary>
@@ -468,7 +462,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`affinityHostExtId`" pulumi-lang-dotnet="`AffinityHostExtId`" pulumi-lang-go="`affinityHostExtId`" pulumi-lang-python="`affinity_host_ext_id`" pulumi-lang-yaml="`affinityHostExtId`" pulumi-lang-java="`affinityHostExtId`" pulumi-lang-hcl="`affinity_host_ext_id`"&gt;`affinityHostExtId`&lt;/span&gt;: - Affinity host extId for RF 1 Storage Container.
         /// * &lt;span pulumi-lang-nodejs="`clusterName`" pulumi-lang-dotnet="`ClusterName`" pulumi-lang-go="`clusterName`" pulumi-lang-python="`cluster_name`" pulumi-lang-yaml="`clusterName`" pulumi-lang-java="`clusterName`" pulumi-lang-hcl="`cluster_name`"&gt;`clusterName`&lt;/span&gt;: - Corresponding name of the Cluster owning the Storage Container instance.
         /// 
-        /// 
         /// ###&lt;span pulumi-lang-nodejs=" nfsWhitelistAddresses
         /// " pulumi-lang-dotnet=" NfsWhitelistAddresses
         /// " pulumi-lang-go=" nfsWhitelistAddresses
@@ -490,8 +483,6 @@ namespace PiersKarsenbarg.Nutanix
         /// ### fqdn (Reference to address configuration)
         /// 
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: value of fqdn address
-        /// 
-        /// 
         /// 
         /// See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/StorageContainers/operation/listStorageContainers).
         /// </summary>

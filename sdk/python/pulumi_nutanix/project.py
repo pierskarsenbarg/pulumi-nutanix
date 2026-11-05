@@ -933,6 +933,66 @@ class Project(pulumi.CustomResource):
         __props__.__dict__["vpc_reference_lists"] = vpc_reference_lists
         return Project(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            account_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectAccountReferenceListArgs', 'ProjectAccountReferenceListArgsDict', 'outputs.ProjectAccountReferenceList']]]]] = None,
+            acps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectAcpArgs', 'ProjectAcpArgsDict', 'outputs.ProjectAcp']]]]] = None,
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectCategoryArgs', 'ProjectCategoryArgsDict', 'outputs.ProjectCategory']]]]] = None,
+            cluster_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectClusterReferenceListArgs', 'ProjectClusterReferenceListArgsDict', 'outputs.ProjectClusterReferenceList']]]]] = None,
+            cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            default_environment_reference: pulumi.Input[Optional[Union['ProjectDefaultEnvironmentReferenceArgs', 'ProjectDefaultEnvironmentReferenceArgsDict', 'outputs.ProjectDefaultEnvironmentReference']]] = None,
+            default_subnet_reference: pulumi.Input[Optional[Union['ProjectDefaultSubnetReferenceArgs', 'ProjectDefaultSubnetReferenceArgsDict', 'outputs.ProjectDefaultSubnetReference']]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_collab: pulumi.Input[Optional[_builtins.bool]] = None,
+            environment_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectEnvironmentReferenceListArgs', 'ProjectEnvironmentReferenceListArgsDict', 'outputs.ProjectEnvironmentReferenceList']]]]] = None,
+            external_network_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectExternalNetworkListArgs', 'ProjectExternalNetworkListArgsDict', 'outputs.ProjectExternalNetworkList']]]]] = None,
+            external_user_group_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectExternalUserGroupReferenceListArgs', 'ProjectExternalUserGroupReferenceListArgsDict', 'outputs.ProjectExternalUserGroupReferenceList']]]]] = None,
+            is_default: pulumi.Input[Optional[_builtins.bool]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            resource_domain: pulumi.Input[Optional[Union['ProjectResourceDomainArgs', 'ProjectResourceDomainArgsDict', 'outputs.ProjectResourceDomain']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectSubnetReferenceListArgs', 'ProjectSubnetReferenceListArgsDict', 'outputs.ProjectSubnetReferenceList']]]]] = None,
+            tunnel_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectTunnelReferenceListArgs', 'ProjectTunnelReferenceListArgsDict', 'outputs.ProjectTunnelReferenceList']]]]] = None,
+            use_project_internal: pulumi.Input[Optional[_builtins.bool]] = None,
+            user_group_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectUserGroupListArgs', 'ProjectUserGroupListArgsDict', 'outputs.ProjectUserGroupList']]]]] = None,
+            user_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectUserListArgs', 'ProjectUserListArgsDict', 'outputs.ProjectUserList']]]]] = None,
+            user_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectUserReferenceListArgs', 'ProjectUserReferenceListArgsDict', 'outputs.ProjectUserReferenceList']]]]] = None,
+            vpc_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectVpcReferenceListArgs', 'ProjectVpcReferenceListArgsDict', 'outputs.ProjectVpcReferenceList']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["accountReferenceLists"] = account_reference_lists
+        __props__["acps"] = acps
+        __props__["apiVersion"] = api_version
+        __props__["categories"] = categories
+        __props__["clusterReferenceLists"] = cluster_reference_lists
+        __props__["clusterUuid"] = cluster_uuid
+        __props__["defaultEnvironmentReference"] = default_environment_reference
+        __props__["defaultSubnetReference"] = default_subnet_reference
+        __props__["description"] = description
+        __props__["enableCollab"] = enable_collab
+        __props__["environmentReferenceLists"] = environment_reference_lists
+        __props__["externalNetworkLists"] = external_network_lists
+        __props__["externalUserGroupReferenceLists"] = external_user_group_reference_lists
+        __props__["isDefault"] = is_default
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["ownerReference"] = owner_reference
+        __props__["projectReference"] = project_reference
+        __props__["resourceDomain"] = resource_domain
+        __props__["state"] = state
+        __props__["subnetReferenceLists"] = subnet_reference_lists
+        __props__["tunnelReferenceLists"] = tunnel_reference_lists
+        __props__["useProjectInternal"] = use_project_internal
+        __props__["userGroupLists"] = user_group_lists
+        __props__["userLists"] = user_lists
+        __props__["userReferenceLists"] = user_reference_lists
+        __props__["vpcReferenceLists"] = vpc_reference_lists
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/project:Project', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="accountReferenceLists")
     def account_reference_lists(self) -> pulumi.Output[Sequence['outputs.ProjectAccountReferenceList']]:

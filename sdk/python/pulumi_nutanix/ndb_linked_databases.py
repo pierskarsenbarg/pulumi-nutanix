@@ -343,6 +343,40 @@ class NdbLinkedDatabases(pulumi.CustomResource):
         __props__.__dict__["timezone"] = timezone
         return NdbLinkedDatabases(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_name: pulumi.Input[Optional[_builtins.str]] = None,
+            database_status: pulumi.Input[Optional[_builtins.str]] = None,
+            date_created: pulumi.Input[Optional[_builtins.str]] = None,
+            date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbLinkedDatabasesInfoArgs', 'NdbLinkedDatabasesInfoArgsDict', 'outputs.NdbLinkedDatabasesInfo']]]]] = None,
+            metric: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_linked_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            timezone: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["databaseId"] = database_id
+        __props__["databaseName"] = database_name
+        __props__["databaseStatus"] = database_status
+        __props__["dateCreated"] = date_created
+        __props__["dateModified"] = date_modified
+        __props__["description"] = description
+        __props__["infos"] = infos
+        __props__["metric"] = metric
+        __props__["name"] = name
+        __props__["parentDatabaseId"] = parent_database_id
+        __props__["parentLinkedDatabaseId"] = parent_linked_database_id
+        __props__["snapshotId"] = snapshot_id
+        __props__["status"] = status
+        __props__["timezone"] = timezone
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbLinkedDatabases:NdbLinkedDatabases', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> pulumi.Output[_builtins.str]:

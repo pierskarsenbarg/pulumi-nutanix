@@ -349,6 +349,12 @@ func (ClusterProfileV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*clusterProfileV2State)(nil)).Elem()
 }
 
+// ClusterProfileV2Exists checks whether an existing ClusterProfileV2 resource with the given ID exists.
+func ClusterProfileV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ClusterProfileV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/clusterProfileV2:ClusterProfileV2", id, state, "", opts...)
+}
+
 type clusterProfileV2Args struct {
 	// - (Optional) Indicates if a configuration of attached clusters can be skipped from monitoring.
 	//

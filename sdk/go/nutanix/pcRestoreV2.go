@@ -101,6 +101,12 @@ func (PcRestoreV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*pcRestoreV2State)(nil)).Elem()
 }
 
+// PcRestoreV2Exists checks whether an existing PcRestoreV2 resource with the given ID exists.
+func PcRestoreV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PcRestoreV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/pcRestoreV2:PcRestoreV2", id, state, "", opts...)
+}
+
 type pcRestoreV2Args struct {
 	// -(Required) Domain manager (Prism Central) details.
 	DomainManager PcRestoreV2DomainManager `pulumi:"domainManager"`

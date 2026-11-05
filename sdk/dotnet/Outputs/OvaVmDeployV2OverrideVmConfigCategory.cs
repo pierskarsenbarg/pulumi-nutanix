@@ -17,7 +17,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// A globally unique identifier of a VM category of type UUID.
         /// 
-        /// 
         /// See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Ovas/operation/deployOva).
         /// </summary>
         public readonly string? ExtId;

@@ -186,6 +186,12 @@ func (RecoveryPointsV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*recoveryPointsV2State)(nil)).Elem()
 }
 
+// RecoveryPointsV2Exists checks whether an existing RecoveryPointsV2 resource with the given ID exists.
+func RecoveryPointsV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RecoveryPointsV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/recoveryPointsV2:RecoveryPointsV2", id, state, "", opts...)
+}
+
 type recoveryPointsV2Args struct {
 	// -(Optional) The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
 	ExpirationTime *string `pulumi:"expirationTime"`

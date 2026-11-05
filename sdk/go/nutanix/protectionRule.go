@@ -162,6 +162,12 @@ func (ProtectionRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*protectionRuleState)(nil)).Elem()
 }
 
+// ProtectionRuleExists checks whether an existing ProtectionRule resource with the given ID exists.
+func ProtectionRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProtectionRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/protectionRule:ProtectionRule", id, state, "", opts...)
+}
+
 type protectionRuleArgs struct {
 	AvailabilityZoneConnectivityLists []ProtectionRuleAvailabilityZoneConnectivityList `pulumi:"availabilityZoneConnectivityLists"`
 	Categories                        []ProtectionRuleCategory                         `pulumi:"categories"`

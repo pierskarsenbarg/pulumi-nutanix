@@ -671,6 +671,28 @@ class SelfServiceAppPatch(pulumi.CustomResource):
         __props__.__dict__["vm_configs"] = vm_configs
         return SelfServiceAppPatch(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchCategoryArgs', 'SelfServiceAppPatchCategoryArgsDict', 'outputs.SelfServiceAppPatchCategory']]]]] = None,
+            config_name: pulumi.Input[Optional[_builtins.str]] = None,
+            disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchDiskArgs', 'SelfServiceAppPatchDiskArgsDict', 'outputs.SelfServiceAppPatchDisk']]]]] = None,
+            nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchNicArgs', 'SelfServiceAppPatchNicArgsDict', 'outputs.SelfServiceAppPatchNic']]]]] = None,
+            patch_name: pulumi.Input[Optional[_builtins.str]] = None,
+            runlog_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppPatchVmConfigArgs', 'SelfServiceAppPatchVmConfigArgsDict', 'outputs.SelfServiceAppPatchVmConfig']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["appUuid"] = app_uuid
+        __props__["categories"] = categories
+        __props__["configName"] = config_name
+        __props__["disks"] = disks
+        __props__["nics"] = nics
+        __props__["patchName"] = patch_name
+        __props__["runlogUuid"] = runlog_uuid
+        __props__["vmConfigs"] = vm_configs
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/selfServiceAppPatch:SelfServiceAppPatch', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="appUuid")
     def app_uuid(self) -> pulumi.Output[_builtins.str]:

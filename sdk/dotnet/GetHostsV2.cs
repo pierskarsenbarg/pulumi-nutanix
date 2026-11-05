@@ -139,13 +139,11 @@ namespace PiersKarsenbarg.Nutanix
         ///    * `DISCONNECTED`: Acropolis disconnected.
         ///    * `CONNECTED`: Acropolis connected.
         /// 
-        /// 
         /// ### Cluster
         /// The cluster attribute supports the following:
         /// 
         /// * &lt;span pulumi-lang-nodejs="`uuid`" pulumi-lang-dotnet="`Uuid`" pulumi-lang-go="`uuid`" pulumi-lang-python="`uuid`" pulumi-lang-yaml="`uuid`" pulumi-lang-java="`uuid`" pulumi-lang-hcl="`uuid`"&gt;`uuid`&lt;/span&gt;: - Cluster UUID.
         /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt;: - Cluster name. This is part of payload for both cluster create &amp; update operations.
-        /// 
         /// 
         /// ### Controller VM
         /// The&lt;span pulumi-lang-nodejs=" controllerVm " pulumi-lang-dotnet=" ControllerVm " pulumi-lang-go=" controllerVm " pulumi-lang-python=" controller_vm " pulumi-lang-yaml=" controllerVm " pulumi-lang-java=" controllerVm " pulumi-lang-hcl=" controller_vm "&gt; controllerVm &lt;/span&gt;attribute supports the following:
@@ -159,7 +157,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`natPort`" pulumi-lang-dotnet="`NatPort`" pulumi-lang-go="`natPort`" pulumi-lang-python="`nat_port`" pulumi-lang-yaml="`natPort`" pulumi-lang-java="`natPort`" pulumi-lang-hcl="`nat_port`"&gt;`natPort`&lt;/span&gt;: - NAT port.
         /// * &lt;span pulumi-lang-nodejs="`maintenanceMode`" pulumi-lang-dotnet="`MaintenanceMode`" pulumi-lang-go="`maintenanceMode`" pulumi-lang-python="`maintenance_mode`" pulumi-lang-yaml="`maintenanceMode`" pulumi-lang-java="`maintenanceMode`" pulumi-lang-hcl="`maintenance_mode`"&gt;`maintenanceMode`&lt;/span&gt;: - Maintenance mode status.
         /// * &lt;span pulumi-lang-nodejs="`rackableUnitUuid`" pulumi-lang-dotnet="`RackableUnitUuid`" pulumi-lang-go="`rackableUnitUuid`" pulumi-lang-python="`rackable_unit_uuid`" pulumi-lang-yaml="`rackableUnitUuid`" pulumi-lang-java="`rackableUnitUuid`" pulumi-lang-hcl="`rackable_unit_uuid`"&gt;`rackableUnitUuid`&lt;/span&gt;: - Rackable unit UUID.
-        /// 
         /// 
         /// ### Disk
         /// The disk attribute supports the following:
@@ -179,7 +176,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`keyManagementServerName`" pulumi-lang-dotnet="`KeyManagementServerName`" pulumi-lang-go="`keyManagementServerName`" pulumi-lang-python="`key_management_server_name`" pulumi-lang-yaml="`keyManagementServerName`" pulumi-lang-java="`keyManagementServerName`" pulumi-lang-hcl="`key_management_server_name`"&gt;`keyManagementServerName`&lt;/span&gt;: - Key management server name.
         /// * &lt;span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`" pulumi-lang-hcl="`status`"&gt;`status`&lt;/span&gt;: - Certificate status.
         /// 
-        /// 
         /// #### external Address
         /// The&lt;span pulumi-lang-nodejs=" externalAddress " pulumi-lang-dotnet=" ExternalAddress " pulumi-lang-go=" externalAddress " pulumi-lang-python=" external_address " pulumi-lang-yaml=" externalAddress " pulumi-lang-java=" externalAddress " pulumi-lang-hcl=" external_address "&gt; externalAddress &lt;/span&gt;attribute supports the following:
         /// 
@@ -198,13 +194,11 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
         /// * &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// 
-        /// 
         /// #### ipmi
         /// The ipmi attribute supports the following:
         /// 
         /// * &lt;span pulumi-lang-nodejs="`ip`" pulumi-lang-dotnet="`Ip`" pulumi-lang-go="`ip`" pulumi-lang-python="`ip`" pulumi-lang-yaml="`ip`" pulumi-lang-java="`ip`" pulumi-lang-hcl="`ip`"&gt;`ip`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
         /// * &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`" pulumi-lang-hcl="`username`"&gt;`username`&lt;/span&gt;: - IPMI username.
-        /// 
         /// 
         /// #### Nat Ip
         /// The&lt;span pulumi-lang-nodejs=" natIp " pulumi-lang-dotnet=" NatIp " pulumi-lang-go=" natIp " pulumi-lang-python=" nat_ip " pulumi-lang-yaml=" natIp " pulumi-lang-java=" natIp " pulumi-lang-hcl=" nat_ip "&gt; natIp &lt;/span&gt;attribute supports the following:
@@ -212,14 +206,12 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
         /// * &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// 
-        /// 
         /// ##### ip
         /// 
         /// The ip attribute supports the following:
         /// 
         /// * &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
         /// * &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
-        /// 
         /// 
         /// ###### IPV4
         /// 
@@ -234,8 +226,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// * &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`"&gt;`prefixLength`&lt;/span&gt;: - The prefix length of the network to which this host IPv6 address belongs.
-        /// 
-        /// 
         /// 
         /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/Clusters/operation/listHostsByClusterId).
         /// </summary>
@@ -369,13 +359,11 @@ namespace PiersKarsenbarg.Nutanix
         ///    * `DISCONNECTED`: Acropolis disconnected.
         ///    * `CONNECTED`: Acropolis connected.
         /// 
-        /// 
         /// ### Cluster
         /// The cluster attribute supports the following:
         /// 
         /// * &lt;span pulumi-lang-nodejs="`uuid`" pulumi-lang-dotnet="`Uuid`" pulumi-lang-go="`uuid`" pulumi-lang-python="`uuid`" pulumi-lang-yaml="`uuid`" pulumi-lang-java="`uuid`" pulumi-lang-hcl="`uuid`"&gt;`uuid`&lt;/span&gt;: - Cluster UUID.
         /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt;: - Cluster name. This is part of payload for both cluster create &amp; update operations.
-        /// 
         /// 
         /// ### Controller VM
         /// The&lt;span pulumi-lang-nodejs=" controllerVm " pulumi-lang-dotnet=" ControllerVm " pulumi-lang-go=" controllerVm " pulumi-lang-python=" controller_vm " pulumi-lang-yaml=" controllerVm " pulumi-lang-java=" controllerVm " pulumi-lang-hcl=" controller_vm "&gt; controllerVm &lt;/span&gt;attribute supports the following:
@@ -389,7 +377,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`natPort`" pulumi-lang-dotnet="`NatPort`" pulumi-lang-go="`natPort`" pulumi-lang-python="`nat_port`" pulumi-lang-yaml="`natPort`" pulumi-lang-java="`natPort`" pulumi-lang-hcl="`nat_port`"&gt;`natPort`&lt;/span&gt;: - NAT port.
         /// * &lt;span pulumi-lang-nodejs="`maintenanceMode`" pulumi-lang-dotnet="`MaintenanceMode`" pulumi-lang-go="`maintenanceMode`" pulumi-lang-python="`maintenance_mode`" pulumi-lang-yaml="`maintenanceMode`" pulumi-lang-java="`maintenanceMode`" pulumi-lang-hcl="`maintenance_mode`"&gt;`maintenanceMode`&lt;/span&gt;: - Maintenance mode status.
         /// * &lt;span pulumi-lang-nodejs="`rackableUnitUuid`" pulumi-lang-dotnet="`RackableUnitUuid`" pulumi-lang-go="`rackableUnitUuid`" pulumi-lang-python="`rackable_unit_uuid`" pulumi-lang-yaml="`rackableUnitUuid`" pulumi-lang-java="`rackableUnitUuid`" pulumi-lang-hcl="`rackable_unit_uuid`"&gt;`rackableUnitUuid`&lt;/span&gt;: - Rackable unit UUID.
-        /// 
         /// 
         /// ### Disk
         /// The disk attribute supports the following:
@@ -409,7 +396,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`keyManagementServerName`" pulumi-lang-dotnet="`KeyManagementServerName`" pulumi-lang-go="`keyManagementServerName`" pulumi-lang-python="`key_management_server_name`" pulumi-lang-yaml="`keyManagementServerName`" pulumi-lang-java="`keyManagementServerName`" pulumi-lang-hcl="`key_management_server_name`"&gt;`keyManagementServerName`&lt;/span&gt;: - Key management server name.
         /// * &lt;span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`" pulumi-lang-hcl="`status`"&gt;`status`&lt;/span&gt;: - Certificate status.
         /// 
-        /// 
         /// #### external Address
         /// The&lt;span pulumi-lang-nodejs=" externalAddress " pulumi-lang-dotnet=" ExternalAddress " pulumi-lang-go=" externalAddress " pulumi-lang-python=" external_address " pulumi-lang-yaml=" externalAddress " pulumi-lang-java=" externalAddress " pulumi-lang-hcl=" external_address "&gt; externalAddress &lt;/span&gt;attribute supports the following:
         /// 
@@ -428,13 +414,11 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
         /// * &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// 
-        /// 
         /// #### ipmi
         /// The ipmi attribute supports the following:
         /// 
         /// * &lt;span pulumi-lang-nodejs="`ip`" pulumi-lang-dotnet="`Ip`" pulumi-lang-go="`ip`" pulumi-lang-python="`ip`" pulumi-lang-yaml="`ip`" pulumi-lang-java="`ip`" pulumi-lang-hcl="`ip`"&gt;`ip`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
         /// * &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`" pulumi-lang-hcl="`username`"&gt;`username`&lt;/span&gt;: - IPMI username.
-        /// 
         /// 
         /// #### Nat Ip
         /// The&lt;span pulumi-lang-nodejs=" natIp " pulumi-lang-dotnet=" NatIp " pulumi-lang-go=" natIp " pulumi-lang-python=" nat_ip " pulumi-lang-yaml=" natIp " pulumi-lang-java=" natIp " pulumi-lang-hcl=" nat_ip "&gt; natIp &lt;/span&gt;attribute supports the following:
@@ -442,14 +426,12 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
         /// * &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// 
-        /// 
         /// ##### ip
         /// 
         /// The ip attribute supports the following:
         /// 
         /// * &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
         /// * &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
-        /// 
         /// 
         /// ###### IPV4
         /// 
@@ -464,8 +446,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// * &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`"&gt;`prefixLength`&lt;/span&gt;: - The prefix length of the network to which this host IPv6 address belongs.
-        /// 
-        /// 
         /// 
         /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/Clusters/operation/listHostsByClusterId).
         /// </summary>
@@ -599,13 +579,11 @@ namespace PiersKarsenbarg.Nutanix
         ///    * `DISCONNECTED`: Acropolis disconnected.
         ///    * `CONNECTED`: Acropolis connected.
         /// 
-        /// 
         /// ### Cluster
         /// The cluster attribute supports the following:
         /// 
         /// * &lt;span pulumi-lang-nodejs="`uuid`" pulumi-lang-dotnet="`Uuid`" pulumi-lang-go="`uuid`" pulumi-lang-python="`uuid`" pulumi-lang-yaml="`uuid`" pulumi-lang-java="`uuid`" pulumi-lang-hcl="`uuid`"&gt;`uuid`&lt;/span&gt;: - Cluster UUID.
         /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt;: - Cluster name. This is part of payload for both cluster create &amp; update operations.
-        /// 
         /// 
         /// ### Controller VM
         /// The&lt;span pulumi-lang-nodejs=" controllerVm " pulumi-lang-dotnet=" ControllerVm " pulumi-lang-go=" controllerVm " pulumi-lang-python=" controller_vm " pulumi-lang-yaml=" controllerVm " pulumi-lang-java=" controllerVm " pulumi-lang-hcl=" controller_vm "&gt; controllerVm &lt;/span&gt;attribute supports the following:
@@ -619,7 +597,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`natPort`" pulumi-lang-dotnet="`NatPort`" pulumi-lang-go="`natPort`" pulumi-lang-python="`nat_port`" pulumi-lang-yaml="`natPort`" pulumi-lang-java="`natPort`" pulumi-lang-hcl="`nat_port`"&gt;`natPort`&lt;/span&gt;: - NAT port.
         /// * &lt;span pulumi-lang-nodejs="`maintenanceMode`" pulumi-lang-dotnet="`MaintenanceMode`" pulumi-lang-go="`maintenanceMode`" pulumi-lang-python="`maintenance_mode`" pulumi-lang-yaml="`maintenanceMode`" pulumi-lang-java="`maintenanceMode`" pulumi-lang-hcl="`maintenance_mode`"&gt;`maintenanceMode`&lt;/span&gt;: - Maintenance mode status.
         /// * &lt;span pulumi-lang-nodejs="`rackableUnitUuid`" pulumi-lang-dotnet="`RackableUnitUuid`" pulumi-lang-go="`rackableUnitUuid`" pulumi-lang-python="`rackable_unit_uuid`" pulumi-lang-yaml="`rackableUnitUuid`" pulumi-lang-java="`rackableUnitUuid`" pulumi-lang-hcl="`rackable_unit_uuid`"&gt;`rackableUnitUuid`&lt;/span&gt;: - Rackable unit UUID.
-        /// 
         /// 
         /// ### Disk
         /// The disk attribute supports the following:
@@ -639,7 +616,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`keyManagementServerName`" pulumi-lang-dotnet="`KeyManagementServerName`" pulumi-lang-go="`keyManagementServerName`" pulumi-lang-python="`key_management_server_name`" pulumi-lang-yaml="`keyManagementServerName`" pulumi-lang-java="`keyManagementServerName`" pulumi-lang-hcl="`key_management_server_name`"&gt;`keyManagementServerName`&lt;/span&gt;: - Key management server name.
         /// * &lt;span pulumi-lang-nodejs="`status`" pulumi-lang-dotnet="`Status`" pulumi-lang-go="`status`" pulumi-lang-python="`status`" pulumi-lang-yaml="`status`" pulumi-lang-java="`status`" pulumi-lang-hcl="`status`"&gt;`status`&lt;/span&gt;: - Certificate status.
         /// 
-        /// 
         /// #### external Address
         /// The&lt;span pulumi-lang-nodejs=" externalAddress " pulumi-lang-dotnet=" ExternalAddress " pulumi-lang-go=" externalAddress " pulumi-lang-python=" external_address " pulumi-lang-yaml=" externalAddress " pulumi-lang-java=" externalAddress " pulumi-lang-hcl=" external_address "&gt; externalAddress &lt;/span&gt;attribute supports the following:
         /// 
@@ -658,13 +634,11 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
         /// * &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// 
-        /// 
         /// #### ipmi
         /// The ipmi attribute supports the following:
         /// 
         /// * &lt;span pulumi-lang-nodejs="`ip`" pulumi-lang-dotnet="`Ip`" pulumi-lang-go="`ip`" pulumi-lang-python="`ip`" pulumi-lang-yaml="`ip`" pulumi-lang-java="`ip`" pulumi-lang-hcl="`ip`"&gt;`ip`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
         /// * &lt;span pulumi-lang-nodejs="`username`" pulumi-lang-dotnet="`Username`" pulumi-lang-go="`username`" pulumi-lang-python="`username`" pulumi-lang-yaml="`username`" pulumi-lang-java="`username`" pulumi-lang-hcl="`username`"&gt;`username`&lt;/span&gt;: - IPMI username.
-        /// 
         /// 
         /// #### Nat Ip
         /// The&lt;span pulumi-lang-nodejs=" natIp " pulumi-lang-dotnet=" NatIp " pulumi-lang-go=" natIp " pulumi-lang-python=" nat_ip " pulumi-lang-yaml=" natIp " pulumi-lang-java=" natIp " pulumi-lang-hcl=" nat_ip "&gt; natIp &lt;/span&gt;attribute supports the following:
@@ -672,14 +646,12 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
         /// * &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// 
-        /// 
         /// ##### ip
         /// 
         /// The ip attribute supports the following:
         /// 
         /// * &lt;span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`"&gt;`ipv4`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv4 format.
         /// * &lt;span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`"&gt;`ipv6`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
-        /// 
         /// 
         /// ###### IPV4
         /// 
@@ -694,8 +666,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// * &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`"&gt;`prefixLength`&lt;/span&gt;: - The prefix length of the network to which this host IPv6 address belongs.
-        /// 
-        /// 
         /// 
         /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/Clusters/operation/listHostsByClusterId).
         /// </summary>

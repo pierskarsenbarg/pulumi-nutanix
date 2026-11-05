@@ -24,15 +24,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.GetClusterV2ConfigBuildInfoResult> BuildInfos;
         /// <summary>
         /// - Cluster arch.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "PPC64LE" PPC64LE cluster architecture type.
         /// - "X86_64" X86_64 cluster architecture type.
         /// </summary>
         public readonly string ClusterArch;
         /// <summary>
         /// - Cluster function. This is part of payload for cluster
-        /// create operation only (allowed enum values for creation are AOS, ONE_NODE &amp; TWO_NODE only).
-        /// Valid values are:
+        ///   create operation only (allowed enum values for creation are AOS, ONE_NODE &amp; TWO_NODE only).
+        ///   Valid values are:
         /// - "AOS"
         /// - "PRISM_CENTRAL"
         /// - "CLOUD_DATA_GATEWAY"
@@ -48,14 +48,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.GetClusterV2ConfigClusterSoftwareMapResult> ClusterSoftwareMaps;
         /// <summary>
         /// - Encryption in transit Status.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "DISABLED"	Disabled encryption status.
         /// - "ENABLED" 	Enabled encryption status.
         /// </summary>
         public readonly string EncryptionInTransitStatus;
         /// <summary>
         /// - Encryption option.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "SOFTWARE".
         /// - "HARDWARE".
         /// - "SOFTWARE_AND_HARDWARE"
@@ -63,7 +63,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<string> EncryptionOptions;
         /// <summary>
         /// - Encryption scope.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "CLUSTER".
         /// - "CONTAINER".
         /// </summary>
@@ -74,7 +74,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.GetClusterV2ConfigFaultToleranceStateResult> FaultToleranceStates;
         /// <summary>
         /// - Hypervisor types.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "AHV".
         /// - "ESX".
         /// - "HYPERV".
@@ -104,8 +104,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly bool IsRemoteSupportEnabled;
         /// <summary>
         /// - Cluster operation mode. This is part of payload for cluster
-        /// update operation only.
-        /// Valid values are:
+        ///   update operation only.
+        ///   Valid values are:
         /// - "OVERRIDE"	Override operation mode.
         /// - "STAND_ALONE"	Stand-alone operation mode.
         /// - "SWITCH_TO_TWO_NODE"	Switch to two-node operation mode.

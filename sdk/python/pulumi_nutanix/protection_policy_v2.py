@@ -739,6 +739,32 @@ class ProtectionPolicyV2(pulumi.CustomResource):
         __props__.__dict__["tenant_id"] = tenant_id
         return ProtectionPolicyV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            category_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_approval_policy_needed: pulumi.Input[Optional[_builtins.bool]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2LinkArgs', 'ProtectionPolicyV2LinkArgsDict', 'outputs.ProtectionPolicyV2Link']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationConfigurationArgs', 'ProtectionPolicyV2ReplicationConfigurationArgsDict', 'outputs.ProtectionPolicyV2ReplicationConfiguration']]]]] = None,
+            replication_locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionPolicyV2ReplicationLocationArgs', 'ProtectionPolicyV2ReplicationLocationArgsDict', 'outputs.ProtectionPolicyV2ReplicationLocation']]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["categoryIds"] = category_ids
+        __props__["description"] = description
+        __props__["extId"] = ext_id
+        __props__["isApprovalPolicyNeeded"] = is_approval_policy_needed
+        __props__["links"] = links
+        __props__["name"] = name
+        __props__["ownerExtId"] = owner_ext_id
+        __props__["replicationConfigurations"] = replication_configurations
+        __props__["replicationLocations"] = replication_locations
+        __props__["tenantId"] = tenant_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/protectionPolicyV2:ProtectionPolicyV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="categoryIds")
     def category_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:

@@ -16,7 +16,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         /// <summary>
         /// - (Required) Specifies the number of data copies for entities governed by the Storage Policy.
-        /// Valid values:
+        ///   Valid values:
         /// * `"SYSTEM_DERIVED"`:- User has not provided the number of copies; system decides.
         /// * `"TWO"`:- Two data copies (Original + 1 copy).
         /// * `"THREE"`:- Three data copies (Original + 2 copies).

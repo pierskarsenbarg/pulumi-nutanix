@@ -200,6 +200,12 @@ func (AuthorizationPolicyV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*authorizationPolicyV2State)(nil)).Elem()
 }
 
+// AuthorizationPolicyV2Exists checks whether an existing AuthorizationPolicyV2 resource with the given ID exists.
+func AuthorizationPolicyV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AuthorizationPolicyV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/authorizationPolicyV2:AuthorizationPolicyV2", id, state, "", opts...)
+}
+
 type authorizationPolicyV2Args struct {
 	// Type of Authorization Policy.
 	// - `PREDEFINED_READ_ONLY` : System-defined read-only ACP, i.e. no modifications allowed.

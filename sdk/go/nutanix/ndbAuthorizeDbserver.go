@@ -99,6 +99,12 @@ func (NdbAuthorizeDbserverState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbAuthorizeDbserverState)(nil)).Elem()
 }
 
+// NdbAuthorizeDbserverExists checks whether an existing NdbAuthorizeDbserver resource with the given ID exists.
+func NdbAuthorizeDbserverExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbAuthorizeDbserverState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbAuthorizeDbserver:NdbAuthorizeDbserver", id, state, "", opts...)
+}
+
 type ndbAuthorizeDbserverArgs struct {
 	DbserversIds  []string `pulumi:"dbserversIds"`
 	TimeMachineId *string  `pulumi:"timeMachineId"`

@@ -202,6 +202,12 @@ func (UsersV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*usersV2State)(nil)).Elem()
 }
 
+// UsersV2Exists checks whether an existing UsersV2 resource with the given ID exists.
+func UsersV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UsersV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/usersV2:UsersV2", id, state, "", opts...)
+}
+
 type usersV2Args struct {
 	// -(Optional) Any additional attribute for the User.
 	AdditionalAttributes []UsersV2AdditionalAttribute `pulumi:"additionalAttributes"`

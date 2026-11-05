@@ -666,6 +666,42 @@ class RoutesV2(pulumi.CustomResource):
         __props__.__dict__["vpc_reference"] = vpc_reference
         return RoutesV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            destination: pulumi.Input[Optional[Union['RoutesV2DestinationArgs', 'RoutesV2DestinationArgsDict', 'outputs.RoutesV2Destination']]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            is_active: pulumi.Input[Optional[_builtins.bool]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoutesV2LinkArgs', 'RoutesV2LinkArgsDict', 'outputs.RoutesV2Link']]]]] = None,
+            metadata: pulumi.Input[Optional[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict', 'outputs.RoutesV2Metadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            next_hop: pulumi.Input[Optional[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None,
+            route_table_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            route_table_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            route_type: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc_reference: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["destination"] = destination
+        __props__["extId"] = ext_id
+        __props__["externalRoutingDomainReference"] = external_routing_domain_reference
+        __props__["isActive"] = is_active
+        __props__["links"] = links
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["nextHop"] = next_hop
+        __props__["priority"] = priority
+        __props__["routeTableExtId"] = route_table_ext_id
+        __props__["routeTableReference"] = route_table_reference
+        __props__["routeType"] = route_type
+        __props__["tenantId"] = tenant_id
+        __props__["vpcReference"] = vpc_reference
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/routesV2:RoutesV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[_builtins.str]:

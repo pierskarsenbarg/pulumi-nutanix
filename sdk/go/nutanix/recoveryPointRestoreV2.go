@@ -145,6 +145,12 @@ func (RecoveryPointRestoreV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*recoveryPointRestoreV2State)(nil)).Elem()
 }
 
+// RecoveryPointRestoreV2Exists checks whether an existing RecoveryPointRestoreV2 resource with the given ID exists.
+func RecoveryPointRestoreV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RecoveryPointRestoreV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/recoveryPointRestoreV2:RecoveryPointRestoreV2", id, state, "", opts...)
+}
+
 type recoveryPointRestoreV2Args struct {
 	// -(Required) External identifier of the cluster.
 	ClusterExtId string `pulumi:"clusterExtId"`

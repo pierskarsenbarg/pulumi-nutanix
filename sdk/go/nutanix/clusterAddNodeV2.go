@@ -35,7 +35,7 @@ import (
 //			clustersExtId := "00057b8b-0b3b-4b3b-0000-000000000000"
 //			// for example
 //			cvmIp := "10.xx.xx.xx"
-//			// # check if the node to add is un configured or not
+//			//# check if the node to add is un configured or not
 //			cluster_node, err := nutanix.NewClustersDiscoverUnconfiguredNodesV2(ctx, "cluster-node", &nutanix.ClustersDiscoverUnconfiguredNodesV2Args{
 //				ExtId:       pulumi.String(clustersExtId),
 //				AddressType: pulumi.String("IPV4"),
@@ -52,7 +52,7 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			// # fetch Network info for unconfigured node
+//			//# fetch Network info for unconfigured node
 //			node_network_info, err := nutanix.NewClustersUnconfiguredNodeNetworksV2(ctx, "node-network-info", &nutanix.ClustersUnconfiguredNodeNetworksV2Args{
 //				ExtId:       pulumi.String(clustersExtId),
 //				RequestType: pulumi.String("expand_cluster"),
@@ -86,7 +86,7 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			// # add node to the cluster
+//			//# add node to the cluster
 //			_, err = nutanix.NewClusterAddNodeV2(ctx, "add-node", &nutanix.ClusterAddNodeV2Args{
 //				ClusterExtId:              pulumi.String(clustersExtId),
 //				ShouldSkipAddNode:         pulumi.Bool(false),
@@ -321,6 +321,12 @@ type ClusterAddNodeV2State struct {
 
 func (ClusterAddNodeV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*clusterAddNodeV2State)(nil)).Elem()
+}
+
+// ClusterAddNodeV2Exists checks whether an existing ClusterAddNodeV2 resource with the given ID exists.
+func ClusterAddNodeV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ClusterAddNodeV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/clusterAddNodeV2:ClusterAddNodeV2", id, state, "", opts...)
 }
 
 type clusterAddNodeV2Args struct {

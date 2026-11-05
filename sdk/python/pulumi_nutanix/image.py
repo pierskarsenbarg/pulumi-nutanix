@@ -835,6 +835,56 @@ class Image(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return Image(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            architecture: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_zone_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageCategoryArgs', 'ImageCategoryArgsDict', 'outputs.ImageCategory']]]]] = None,
+            checksum: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageClusterReferenceArgs', 'ImageClusterReferenceArgsDict', 'outputs.ImageClusterReference']]]]] = None,
+            cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            current_cluster_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageCurrentClusterReferenceListArgs', 'ImageCurrentClusterReferenceListArgsDict', 'outputs.ImageCurrentClusterReferenceList']]]]] = None,
+            data_source_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageDataSourceReferenceArgs', 'ImageDataSourceReferenceArgsDict', 'outputs.ImageDataSourceReference']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            image_type: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            retrieval_uri_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            source_path: pulumi.Input[Optional[_builtins.str]] = None,
+            source_uri: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apiVersion"] = api_version
+        __props__["architecture"] = architecture
+        __props__["availabilityZoneReference"] = availability_zone_reference
+        __props__["categories"] = categories
+        __props__["checksum"] = checksum
+        __props__["clusterName"] = cluster_name
+        __props__["clusterReferences"] = cluster_references
+        __props__["clusterUuid"] = cluster_uuid
+        __props__["currentClusterReferenceLists"] = current_cluster_reference_lists
+        __props__["dataSourceReferences"] = data_source_references
+        __props__["description"] = description
+        __props__["imageType"] = image_type
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["ownerReference"] = owner_reference
+        __props__["projectReference"] = project_reference
+        __props__["retrievalUriLists"] = retrieval_uri_lists
+        __props__["sizeBytes"] = size_bytes
+        __props__["sourcePath"] = source_path
+        __props__["sourceUri"] = source_uri
+        __props__["state"] = state
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/image:Image', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apiVersion")
     def api_version(self) -> pulumi.Output[_builtins.str]:

@@ -248,6 +248,22 @@ class FoundationCentralApiKeys(pulumi.CustomResource):
         __props__.__dict__["key_uuid"] = key_uuid
         return FoundationCentralApiKeys(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            alias: pulumi.Input[Optional[_builtins.str]] = None,
+            api_key: pulumi.Input[Optional[_builtins.str]] = None,
+            created_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+            current_time: pulumi.Input[Optional[_builtins.str]] = None,
+            key_uuid: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["alias"] = alias
+        __props__["apiKey"] = api_key
+        __props__["createdTimestamp"] = created_timestamp
+        __props__["currentTime"] = current_time
+        __props__["keyUuid"] = key_uuid
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/foundationCentralApiKeys:FoundationCentralApiKeys', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def alias(self) -> pulumi.Output[_builtins.str]:

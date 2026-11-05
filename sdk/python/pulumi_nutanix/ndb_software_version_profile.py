@@ -623,6 +623,46 @@ class NdbSoftwareVersionProfile(pulumi.CustomResource):
         __props__.__dict__["version_cluster_associations"] = version_cluster_associations
         return NdbSoftwareVersionProfile(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            available_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            db_version: pulumi.Input[Optional[_builtins.str]] = None,
+            deprecated: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            engine_type: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner: pulumi.Input[Optional[_builtins.str]] = None,
+            postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfilePostgresDatabaseArgs', 'NdbSoftwareVersionProfilePostgresDatabaseArgsDict', 'outputs.NdbSoftwareVersionProfilePostgresDatabase']]]]] = None,
+            profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfilePropertyArgs', 'NdbSoftwareVersionProfilePropertyArgsDict', 'outputs.NdbSoftwareVersionProfileProperty']]]]] = None,
+            properties_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            published: pulumi.Input[Optional[_builtins.bool]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            system_profile: pulumi.Input[Optional[_builtins.bool]] = None,
+            topology: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None,
+            version_cluster_associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfileVersionClusterAssociationArgs', 'NdbSoftwareVersionProfileVersionClusterAssociationArgsDict', 'outputs.NdbSoftwareVersionProfileVersionClusterAssociation']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availableClusterIds"] = available_cluster_ids
+        __props__["dbVersion"] = db_version
+        __props__["deprecated"] = deprecated
+        __props__["description"] = description
+        __props__["engineType"] = engine_type
+        __props__["name"] = name
+        __props__["owner"] = owner
+        __props__["postgresDatabases"] = postgres_databases
+        __props__["profileId"] = profile_id
+        __props__["properties"] = properties
+        __props__["propertiesMap"] = properties_map
+        __props__["published"] = published
+        __props__["status"] = status
+        __props__["systemProfile"] = system_profile
+        __props__["topology"] = topology
+        __props__["version"] = version
+        __props__["versionClusterAssociations"] = version_cluster_associations
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbSoftwareVersionProfile:NdbSoftwareVersionProfile', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availableClusterIds")
     def available_cluster_ids(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

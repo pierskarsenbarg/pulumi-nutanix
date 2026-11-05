@@ -152,6 +152,12 @@ func (UserGroupsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*userGroupsState)(nil)).Elem()
 }
 
+// UserGroupsExists checks whether an existing UserGroups resource with the given ID exists.
+func UserGroupsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UserGroupsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/userGroups:UserGroups", id, state, "", opts...)
+}
+
 type userGroupsArgs struct {
 	Categories []UserGroupsCategory `pulumi:"categories"`
 	// - (Optional) A Directory Service organizational unit.

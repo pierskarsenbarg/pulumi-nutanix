@@ -146,6 +146,12 @@ func (FoundationImageState) ElementType() reflect.Type {
 	return reflect.TypeOf((*foundationImageState)(nil)).Elem()
 }
 
+// FoundationImageExists checks whether an existing FoundationImage resource with the given ID exists.
+func FoundationImageExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FoundationImageState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/foundationImage:FoundationImage", id, state, "", opts...)
+}
+
 type foundationImageArgs struct {
 	// - (Required) Name of installer file to be kept in foundation vm.
 	Filename string `pulumi:"filename"`

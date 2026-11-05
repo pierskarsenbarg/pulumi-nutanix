@@ -191,7 +191,7 @@ namespace PiersKarsenbarg.Nutanix
         /// ```
         /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
-        /// ##  Argument Reference
+        /// ## Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
@@ -411,7 +411,7 @@ namespace PiersKarsenbarg.Nutanix
         /// ```
         /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
-        /// ##  Argument Reference
+        /// ## Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
@@ -631,7 +631,7 @@ namespace PiersKarsenbarg.Nutanix
         /// ```
         /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
-        /// ##  Argument Reference
+        /// ## Argument Reference
         /// 
         /// The following arguments are supported:
         /// 

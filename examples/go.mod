@@ -1,3 +1,3 @@
 module github.com/pierskarsenbarg/pulumi-nutanix/examples
 
-go 1.16
+go 1.27.3

@@ -227,6 +227,12 @@ func (VmHostAffinityPolicyV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*vmHostAffinityPolicyV2State)(nil)).Elem()
 }
 
+// VmHostAffinityPolicyV2Exists checks whether an existing VmHostAffinityPolicyV2 resource with the given ID exists.
+func VmHostAffinityPolicyV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VmHostAffinityPolicyV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/vmHostAffinityPolicyV2:VmHostAffinityPolicyV2", id, state, "", opts...)
+}
+
 type vmHostAffinityPolicyV2Args struct {
 	// A description of the VM-Host Affinity policy.
 	Description *string `pulumi:"description"`

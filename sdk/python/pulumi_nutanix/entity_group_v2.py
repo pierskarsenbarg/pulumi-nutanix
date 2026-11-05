@@ -611,6 +611,34 @@ class EntityGroupV2(pulumi.CustomResource):
         __props__.__dict__["tenant_id"] = tenant_id
         return EntityGroupV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            allowed_config: pulumi.Input[Optional[Union['EntityGroupV2AllowedConfigArgs', 'EntityGroupV2AllowedConfigArgsDict', 'outputs.EntityGroupV2AllowedConfig']]] = None,
+            creation_time: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            except_config: pulumi.Input[Optional[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict', 'outputs.EntityGroupV2ExceptConfig']]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EntityGroupV2LinkArgs', 'EntityGroupV2LinkArgsDict', 'outputs.EntityGroupV2Link']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["allowedConfig"] = allowed_config
+        __props__["creationTime"] = creation_time
+        __props__["description"] = description
+        __props__["exceptConfig"] = except_config
+        __props__["extId"] = ext_id
+        __props__["lastUpdateTime"] = last_update_time
+        __props__["links"] = links
+        __props__["name"] = name
+        __props__["ownerExtId"] = owner_ext_id
+        __props__["policyExtIds"] = policy_ext_ids
+        __props__["tenantId"] = tenant_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/entityGroupV2:EntityGroupV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="allowedConfig")
     def allowed_config(self) -> pulumi.Output['outputs.EntityGroupV2AllowedConfig']:

@@ -75,7 +75,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string?> SnapshotId { get; private set; } = null!;
 
         /// <summary>
-        /// timezone. Default is Asia/Calcutta. 
+        /// timezone. Default is Asia/Calcutta.
         /// 
         /// See detailed information in [NDB Clone Refresh](https://www.nutanix.dev/api_references/ndb/#/d4e53fff274fa-start-refresh-operation-for-the-given-clone).
         /// </summary>
@@ -145,7 +145,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? SnapshotId { get; set; }
 
         /// <summary>
-        /// timezone. Default is Asia/Calcutta. 
+        /// timezone. Default is Asia/Calcutta.
         /// 
         /// See detailed information in [NDB Clone Refresh](https://www.nutanix.dev/api_references/ndb/#/d4e53fff274fa-start-refresh-operation-for-the-given-clone).
         /// </summary>
@@ -176,7 +176,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? SnapshotId { get; set; }
 
         /// <summary>
-        /// timezone. Default is Asia/Calcutta. 
+        /// timezone. Default is Asia/Calcutta.
         /// 
         /// See detailed information in [NDB Clone Refresh](https://www.nutanix.dev/api_references/ndb/#/d4e53fff274fa-start-refresh-operation-for-the-given-clone).
         /// </summary>

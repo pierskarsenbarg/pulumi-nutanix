@@ -149,6 +149,12 @@ func (VmNetworkDeviceMigrateV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*vmNetworkDeviceMigrateV2State)(nil)).Elem()
 }
 
+// VmNetworkDeviceMigrateV2Exists checks whether an existing VmNetworkDeviceMigrateV2 resource with the given ID exists.
+func VmNetworkDeviceMigrateV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VmNetworkDeviceMigrateV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/vmNetworkDeviceMigrateV2:VmNetworkDeviceMigrateV2", id, state, "", opts...)
+}
+
 type vmNetworkDeviceMigrateV2Args struct {
 	// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
 	ExtId string `pulumi:"extId"`

@@ -367,6 +367,22 @@ class VmNetworkDeviceMigrateV2(pulumi.CustomResource):
         __props__.__dict__["vm_ext_id"] = vm_ext_id
         return VmNetworkDeviceMigrateV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2IpAddressArgs', 'VmNetworkDeviceMigrateV2IpAddressArgsDict', 'outputs.VmNetworkDeviceMigrateV2IpAddress']]]]] = None,
+            migrate_type: pulumi.Input[Optional[_builtins.str]] = None,
+            subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceMigrateV2SubnetArgs', 'VmNetworkDeviceMigrateV2SubnetArgsDict', 'outputs.VmNetworkDeviceMigrateV2Subnet']]]]] = None,
+            vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["extId"] = ext_id
+        __props__["ipAddresses"] = ip_addresses
+        __props__["migrateType"] = migrate_type
+        __props__["subnets"] = subnets
+        __props__["vmExtId"] = vm_ext_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/vmNetworkDeviceMigrateV2:VmNetworkDeviceMigrateV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> pulumi.Output[_builtins.str]:

@@ -231,6 +231,12 @@ func (NdbDatabaseRestoreState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbDatabaseRestoreState)(nil)).Elem()
 }
 
+// NdbDatabaseRestoreExists checks whether an existing NdbDatabaseRestore resource with the given ID exists.
+func NdbDatabaseRestoreExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbDatabaseRestoreState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbDatabaseRestore:NdbDatabaseRestore", id, state, "", opts...)
+}
+
 type ndbDatabaseRestoreArgs struct {
 	// database id
 	DatabaseId string `pulumi:"databaseId"`

@@ -28,7 +28,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// it helps to perform same operation with same config.
         /// 
-        /// 
         /// See detailed information in [NDB Log Catchups](https://www.nutanix.dev/api_references/ndb/#/6100cd9959e52-start-log-catchup-for-given-time-machine) .
         /// </summary>
         [Output("logCatchupVersion")]
@@ -99,7 +98,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// it helps to perform same operation with same config.
         /// 
-        /// 
         /// See detailed information in [NDB Log Catchups](https://www.nutanix.dev/api_references/ndb/#/6100cd9959e52-start-log-catchup-for-given-time-machine) .
         /// </summary>
         [Input("logCatchupVersion")]
@@ -130,7 +128,6 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// it helps to perform same operation with same config.
-        /// 
         /// 
         /// See detailed information in [NDB Log Catchups](https://www.nutanix.dev/api_references/ndb/#/6100cd9959e52-start-log-catchup-for-given-time-machine) .
         /// </summary>

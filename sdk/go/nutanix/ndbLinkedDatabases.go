@@ -101,6 +101,12 @@ func (NdbLinkedDatabasesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbLinkedDatabasesState)(nil)).Elem()
 }
 
+// NdbLinkedDatabasesExists checks whether an existing NdbLinkedDatabases resource with the given ID exists.
+func NdbLinkedDatabasesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbLinkedDatabasesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbLinkedDatabases:NdbLinkedDatabases", id, state, "", opts...)
+}
+
 type ndbLinkedDatabasesArgs struct {
 	DatabaseId   string  `pulumi:"databaseId"`
 	DatabaseName *string `pulumi:"databaseName"`

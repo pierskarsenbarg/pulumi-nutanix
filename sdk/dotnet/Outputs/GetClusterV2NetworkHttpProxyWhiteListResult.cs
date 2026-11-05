@@ -20,7 +20,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string Target;
         /// <summary>
         /// - Type of the target which is exempted from going through the configured HTTP Proxy.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "IPV6_ADDRESS"	IPV6 address.
         /// - "HOST_NAME"	Name of the host.
         /// - "DOMAIN_NAME_SUFFIX" Domain Name Suffix required for http proxy whitelist.

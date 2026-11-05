@@ -20,7 +20,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly bool? IsEnabled;
         /// <summary>
         /// - (Optional) PII scrubbing level.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
         /// - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
         /// </summary>

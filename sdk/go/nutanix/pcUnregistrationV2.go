@@ -81,6 +81,12 @@ func (PcUnregistrationV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*pcUnregistrationV2State)(nil)).Elem()
 }
 
+// PcUnregistrationV2Exists checks whether an existing PcUnregistrationV2 resource with the given ID exists.
+func PcUnregistrationV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PcUnregistrationV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/pcUnregistrationV2:PcUnregistrationV2", id, state, "", opts...)
+}
+
 type pcUnregistrationV2Args struct {
 	// -(Required) Cluster UUID of a remote cluster.
 	//

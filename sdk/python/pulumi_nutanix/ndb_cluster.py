@@ -1013,6 +1013,74 @@ class NdbCluster(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return NdbCluster(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            agent_network_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClusterAgentNetworkInfoArgs', 'NdbClusterAgentNetworkInfoArgsDict', 'outputs.NdbClusterAgentNetworkInfo']]]]] = None,
+            agent_vm_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            cloud_info: pulumi.Input[Optional[_builtins.str]] = None,
+            cloud_type: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
+            date_created: pulumi.Input[Optional[_builtins.str]] = None,
+            date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_counts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClusterEntityCountArgs', 'NdbClusterEntityCountArgsDict', 'outputs.NdbClusterEntityCount']]]]] = None,
+            fqdns: pulumi.Input[Optional[_builtins.str]] = None,
+            healthy: pulumi.Input[Optional[_builtins.bool]] = None,
+            hypervisor_type: pulumi.Input[Optional[_builtins.str]] = None,
+            hypervisor_version: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            management_server_info: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            networks_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClusterNetworksInfoArgs', 'NdbClusterNetworksInfoArgsDict', 'outputs.NdbClusterNetworksInfo']]]]] = None,
+            nx_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_id: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClusterPropertyArgs', 'NdbClusterPropertyArgsDict', 'outputs.NdbClusterProperty']]]]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            reference_count: pulumi.Input[Optional[_builtins.int]] = None,
+            resource_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbClusterResourceConfigArgs', 'NdbClusterResourceConfigArgsDict', 'outputs.NdbClusterResourceConfig']]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_container: pulumi.Input[Optional[_builtins.str]] = None,
+            unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["agentNetworkInfos"] = agent_network_infos
+        __props__["agentVmPrefix"] = agent_vm_prefix
+        __props__["cloudInfo"] = cloud_info
+        __props__["cloudType"] = cloud_type
+        __props__["clusterIp"] = cluster_ip
+        __props__["clusterType"] = cluster_type
+        __props__["dateCreated"] = date_created
+        __props__["dateModified"] = date_modified
+        __props__["description"] = description
+        __props__["entityCounts"] = entity_counts
+        __props__["fqdns"] = fqdns
+        __props__["healthy"] = healthy
+        __props__["hypervisorType"] = hypervisor_type
+        __props__["hypervisorVersion"] = hypervisor_version
+        __props__["ipAddresses"] = ip_addresses
+        __props__["managementServerInfo"] = management_server_info
+        __props__["name"] = name
+        __props__["networksInfos"] = networks_infos
+        __props__["nxClusterUuid"] = nx_cluster_uuid
+        __props__["ownerId"] = owner_id
+        __props__["password"] = password
+        __props__["port"] = port
+        __props__["properties"] = properties
+        __props__["protocol"] = protocol
+        __props__["referenceCount"] = reference_count
+        __props__["resourceConfigs"] = resource_configs
+        __props__["status"] = status
+        __props__["storageContainer"] = storage_container
+        __props__["uniqueName"] = unique_name
+        __props__["username"] = username
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbCluster:NdbCluster', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="agentNetworkInfos")
     def agent_network_infos(self) -> pulumi.Output[Sequence['outputs.NdbClusterAgentNetworkInfo']]:

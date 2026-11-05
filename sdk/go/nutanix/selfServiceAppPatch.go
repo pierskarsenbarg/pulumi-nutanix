@@ -376,6 +376,12 @@ func (SelfServiceAppPatchState) ElementType() reflect.Type {
 	return reflect.TypeOf((*selfServiceAppPatchState)(nil)).Elem()
 }
 
+// SelfServiceAppPatchExists checks whether an existing SelfServiceAppPatch resource with the given ID exists.
+func SelfServiceAppPatchExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SelfServiceAppPatchState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/selfServiceAppPatch:SelfServiceAppPatch", id, state, "", opts...)
+}
+
 type selfServiceAppPatchArgs struct {
 	// - (Required) The UUID of the application.
 	AppUuid    string                        `pulumi:"appUuid"`

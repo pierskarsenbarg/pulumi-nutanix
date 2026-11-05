@@ -27,7 +27,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         /// <summary>
         /// - (Optional) Options for the NIC emulation.
-        /// Valid values are:
+        ///   Valid values are:
         /// - `VIRTIO` The NIC emulation model is Virtio.
         /// - `E1000` The NIC emulation model is E1000.
         /// </summary>

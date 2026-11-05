@@ -149,6 +149,12 @@ func (RestoreProtectedResourceV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*restoreProtectedResourceV2State)(nil)).Elem()
 }
 
+// RestoreProtectedResourceV2Exists checks whether an existing RestoreProtectedResourceV2 resource with the given ID exists.
+func RestoreProtectedResourceV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RestoreProtectedResourceV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/restoreProtectedResourceV2:RestoreProtectedResourceV2", id, state, "", opts...)
+}
+
 type restoreProtectedResourceV2Args struct {
 	// -(Required) The external identifier of the cluster on which the entity has valid restorable time ranges. The restored entity will be created on the same cluster.
 	ClusterExtId string `pulumi:"clusterExtId"`

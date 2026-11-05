@@ -346,6 +346,12 @@ func (ProtectionPolicyV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*protectionPolicyV2State)(nil)).Elem()
 }
 
+// ProtectionPolicyV2Exists checks whether an existing ProtectionPolicyV2 resource with the given ID exists.
+func ProtectionPolicyV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProtectionPolicyV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/protectionPolicyV2:ProtectionPolicyV2", id, state, "", opts...)
+}
+
 type protectionPolicyV2Args struct {
 	// -(Optional) Host entity with its attributes.
 	CategoryIds []string `pulumi:"categoryIds"`

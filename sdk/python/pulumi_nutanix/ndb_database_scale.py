@@ -884,6 +884,74 @@ class NdbDatabaseScale(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return NdbDatabaseScale(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            application_type: pulumi.Input[Optional[_builtins.str]] = None,
+            clone: pulumi.Input[Optional[_builtins.bool]] = None,
+            data_storage_size: pulumi.Input[Optional[_builtins.int]] = None,
+            database_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
+            database_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_name: pulumi.Input[Optional[_builtins.str]] = None,
+            database_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseScaleDatabaseNodeArgs', 'NdbDatabaseScaleDatabaseNodeArgsDict', 'outputs.NdbDatabaseScaleDatabaseNode']]]]] = None,
+            database_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            databasetype: pulumi.Input[Optional[_builtins.str]] = None,
+            date_created: pulumi.Input[Optional[_builtins.str]] = None,
+            date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            dbserver_logical_cluster: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            dbserver_logical_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseScaleInfoArgs', 'NdbDatabaseScaleInfoArgsDict', 'outputs.NdbDatabaseScaleInfo']]]]] = None,
+            lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseScaleLcmConfigArgs', 'NdbDatabaseScaleLcmConfigArgsDict', 'outputs.NdbDatabaseScaleLcmConfig']]]]] = None,
+            linked_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseScaleLinkedDatabaseArgs', 'NdbDatabaseScaleLinkedDatabaseArgsDict', 'outputs.NdbDatabaseScaleLinkedDatabase']]]]] = None,
+            metric: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_source_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            post_script_cmd: pulumi.Input[Optional[_builtins.str]] = None,
+            pre_script_cmd: pulumi.Input[Optional[_builtins.str]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseScalePropertyArgs', 'NdbDatabaseScalePropertyArgsDict', 'outputs.NdbDatabaseScaleProperty']]]]] = None,
+            scale_count: pulumi.Input[Optional[_builtins.int]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseScaleTagArgs', 'NdbDatabaseScaleTagArgsDict', 'outputs.NdbDatabaseScaleTag']]]]] = None,
+            time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_machines: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseScaleTimeMachineArgs', 'NdbDatabaseScaleTimeMachineArgsDict', 'outputs.NdbDatabaseScaleTimeMachine']]]]] = None,
+            time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applicationType"] = application_type
+        __props__["clone"] = clone
+        __props__["dataStorageSize"] = data_storage_size
+        __props__["databaseClusterType"] = database_cluster_type
+        __props__["databaseInstanceId"] = database_instance_id
+        __props__["databaseName"] = database_name
+        __props__["databaseNodes"] = database_nodes
+        __props__["databaseUuid"] = database_uuid
+        __props__["databasetype"] = databasetype
+        __props__["dateCreated"] = date_created
+        __props__["dateModified"] = date_modified
+        __props__["dbserverLogicalCluster"] = dbserver_logical_cluster
+        __props__["dbserverLogicalClusterId"] = dbserver_logical_cluster_id
+        __props__["description"] = description
+        __props__["infos"] = infos
+        __props__["lcmConfigs"] = lcm_configs
+        __props__["linkedDatabases"] = linked_databases
+        __props__["metric"] = metric
+        __props__["name"] = name
+        __props__["parentDatabaseId"] = parent_database_id
+        __props__["parentSourceDatabaseId"] = parent_source_database_id
+        __props__["postScriptCmd"] = post_script_cmd
+        __props__["preScriptCmd"] = pre_script_cmd
+        __props__["properties"] = properties
+        __props__["scaleCount"] = scale_count
+        __props__["status"] = status
+        __props__["tags"] = tags
+        __props__["timeMachineId"] = time_machine_id
+        __props__["timeMachines"] = time_machines
+        __props__["timeZone"] = time_zone
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbDatabaseScale:NdbDatabaseScale', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applicationType")
     def application_type(self) -> pulumi.Output[_builtins.str]:

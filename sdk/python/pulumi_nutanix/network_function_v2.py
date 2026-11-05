@@ -663,6 +663,34 @@ class NetworkFunctionV2(pulumi.CustomResource):
         __props__.__dict__["traffic_forwarding_mode"] = traffic_forwarding_mode
         return NetworkFunctionV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            data_plane_health_check_config: pulumi.Input[Optional[Union['NetworkFunctionV2DataPlaneHealthCheckConfigArgs', 'NetworkFunctionV2DataPlaneHealthCheckConfigArgsDict', 'outputs.NetworkFunctionV2DataPlaneHealthCheckConfig']]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            failure_handling: pulumi.Input[Optional[_builtins.str]] = None,
+            high_availability_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2LinkArgs', 'NetworkFunctionV2LinkArgsDict', 'outputs.NetworkFunctionV2Link']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict', 'outputs.NetworkFunctionV2Metadata']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            nic_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict', 'outputs.NetworkFunctionV2NicPair']]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            traffic_forwarding_mode: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dataPlaneHealthCheckConfig"] = data_plane_health_check_config
+        __props__["description"] = description
+        __props__["extId"] = ext_id
+        __props__["failureHandling"] = failure_handling
+        __props__["highAvailabilityMode"] = high_availability_mode
+        __props__["links"] = links
+        __props__["metadatas"] = metadatas
+        __props__["name"] = name
+        __props__["nicPairs"] = nic_pairs
+        __props__["tenantId"] = tenant_id
+        __props__["trafficForwardingMode"] = traffic_forwarding_mode
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/networkFunctionV2:NetworkFunctionV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dataPlaneHealthCheckConfig")
     def data_plane_health_check_config(self) -> pulumi.Output['outputs.NetworkFunctionV2DataPlaneHealthCheckConfig']:

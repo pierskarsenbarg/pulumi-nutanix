@@ -84,21 +84,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// func main() {
         /// 	pulumi.Run(func(ctx *pulumi.Context) error {
-        /// 		// Retrieve by UUID
+        /// 		//Retrieve by UUID
         /// 		_, err := nutanix.GetUserGroup(ctx, &amp;nutanix.GetUserGroupArgs{
         /// 			UserGroupId: pulumi.StringRef("dd30a856-8e72-4158-b716-98455ceda220"),
         /// 		}, nil)
         /// 		if err != nil {
         /// 			return err
         /// 		}
-        /// 		// Retrieve by Name
+        /// 		//Retrieve by Name
         /// 		_, err = nutanix.GetUserGroup(ctx, &amp;nutanix.GetUserGroupArgs{
         /// 			UserGroupName: pulumi.StringRef("example-group-1"),
         /// 		}, nil)
         /// 		if err != nil {
         /// 			return err
         /// 		}
-        /// 		// Retrieve by Distinguished Name
+        /// 		//Retrieve by Distinguished Name
         /// 		_, err = nutanix.GetUserGroup(ctx, &amp;nutanix.GetUserGroupArgs{
         /// 			UserGroupDistinguishedName: pulumi.StringRef("cn=example-group-1,cn=users,dc=ntnxlab,dc=local"),
         /// 		}, nil)
@@ -269,21 +269,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// func main() {
         /// 	pulumi.Run(func(ctx *pulumi.Context) error {
-        /// 		// Retrieve by UUID
+        /// 		//Retrieve by UUID
         /// 		_, err := nutanix.GetUserGroup(ctx, &amp;nutanix.GetUserGroupArgs{
         /// 			UserGroupId: pulumi.StringRef("dd30a856-8e72-4158-b716-98455ceda220"),
         /// 		}, nil)
         /// 		if err != nil {
         /// 			return err
         /// 		}
-        /// 		// Retrieve by Name
+        /// 		//Retrieve by Name
         /// 		_, err = nutanix.GetUserGroup(ctx, &amp;nutanix.GetUserGroupArgs{
         /// 			UserGroupName: pulumi.StringRef("example-group-1"),
         /// 		}, nil)
         /// 		if err != nil {
         /// 			return err
         /// 		}
-        /// 		// Retrieve by Distinguished Name
+        /// 		//Retrieve by Distinguished Name
         /// 		_, err = nutanix.GetUserGroup(ctx, &amp;nutanix.GetUserGroupArgs{
         /// 			UserGroupDistinguishedName: pulumi.StringRef("cn=example-group-1,cn=users,dc=ntnxlab,dc=local"),
         /// 		}, nil)
@@ -454,21 +454,21 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// func main() {
         /// 	pulumi.Run(func(ctx *pulumi.Context) error {
-        /// 		// Retrieve by UUID
+        /// 		//Retrieve by UUID
         /// 		_, err := nutanix.GetUserGroup(ctx, &amp;nutanix.GetUserGroupArgs{
         /// 			UserGroupId: pulumi.StringRef("dd30a856-8e72-4158-b716-98455ceda220"),
         /// 		}, nil)
         /// 		if err != nil {
         /// 			return err
         /// 		}
-        /// 		// Retrieve by Name
+        /// 		//Retrieve by Name
         /// 		_, err = nutanix.GetUserGroup(ctx, &amp;nutanix.GetUserGroupArgs{
         /// 			UserGroupName: pulumi.StringRef("example-group-1"),
         /// 		}, nil)
         /// 		if err != nil {
         /// 			return err
         /// 		}
-        /// 		// Retrieve by Distinguished Name
+        /// 		//Retrieve by Distinguished Name
         /// 		_, err = nutanix.GetUserGroup(ctx, &amp;nutanix.GetUserGroupArgs{
         /// 			UserGroupDistinguishedName: pulumi.StringRef("cn=example-group-1,cn=users,dc=ntnxlab,dc=local"),
         /// 		}, nil)

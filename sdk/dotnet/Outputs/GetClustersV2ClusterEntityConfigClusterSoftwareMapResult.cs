@@ -16,7 +16,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         /// <summary>
         /// - Software type. This is part of payload for cluster create operation only.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "PRISM_CENTRAL": Prism Central software type.
         /// - "NOS": NOS software.
         /// - "NCC": NCC software.

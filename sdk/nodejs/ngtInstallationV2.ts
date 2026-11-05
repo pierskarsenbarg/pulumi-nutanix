@@ -44,6 +44,17 @@ export class NgtInstallationV2 extends pulumi.CustomResource {
         return new NgtInstallationV2(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing NgtInstallationV2 resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: NgtInstallationV2State, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("nutanix:index/ngtInstallationV2:NgtInstallationV2", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'nutanix:index/ngtInstallationV2:NgtInstallationV2';
 

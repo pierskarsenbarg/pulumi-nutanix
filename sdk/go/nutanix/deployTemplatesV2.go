@@ -135,6 +135,12 @@ func (DeployTemplatesV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*deployTemplatesV2State)(nil)).Elem()
 }
 
+// DeployTemplatesV2Exists checks whether an existing DeployTemplatesV2 resource with the given ID exists.
+func DeployTemplatesV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DeployTemplatesV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/deployTemplatesV2:DeployTemplatesV2", id, state, "", opts...)
+}
+
 type deployTemplatesV2Args struct {
 	// The identifier of the Cluster where the VM(s) will be created using a Template.
 	ClusterReference string `pulumi:"clusterReference"`

@@ -160,6 +160,12 @@ func (VolumeGroupDiskV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*volumeGroupDiskV2State)(nil)).Elem()
 }
 
+// VolumeGroupDiskV2Exists checks whether an existing VolumeGroupDiskV2 resource with the given ID exists.
+func VolumeGroupDiskV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VolumeGroupDiskV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/volumeGroupDiskV2:VolumeGroupDiskV2", id, state, "", opts...)
+}
+
 type volumeGroupDiskV2Args struct {
 	// - Volume Disk description.
 	Description *string `pulumi:"description"`

@@ -202,6 +202,12 @@ func (RoutesV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*routesV2State)(nil)).Elem()
 }
 
+// RoutesV2Exists checks whether an existing RoutesV2 resource with the given ID exists.
+func RoutesV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RoutesV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/routesV2:RoutesV2", id, state, "", opts...)
+}
+
 type routesV2Args struct {
 	// BGP session description.
 	Description *string `pulumi:"description"`

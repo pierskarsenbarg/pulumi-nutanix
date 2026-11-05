@@ -1066,6 +1066,96 @@ class NdbDatabaseSnapshot(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return NdbDatabaseSnapshot(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            app_info_version: pulumi.Input[Optional[_builtins.str]] = None,
+            applicable_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            database_node_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
+            date_created: pulumi.Input[Optional[_builtins.str]] = None,
+            date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            dbserver_id: pulumi.Input[Optional[_builtins.str]] = None,
+            dbserver_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            dbserver_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dbserver_storage_metadata_version: pulumi.Input[Optional[_builtins.int]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            expiry_date_timezone: pulumi.Input[Optional[_builtins.str]] = None,
+            from_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+            lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotLcmConfigArgs', 'NdbDatabaseSnapshotLcmConfigArgsDict', 'outputs.NdbDatabaseSnapshotLcmConfig']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
+            parent_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+            processed: pulumi.Input[Optional[_builtins.bool]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotPropertyArgs', 'NdbDatabaseSnapshotPropertyArgsDict', 'outputs.NdbDatabaseSnapshotProperty']]]]] = None,
+            protection_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            remove_schedule_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            replicate_to_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            replicated_snapshots: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            santized: pulumi.Input[Optional[_builtins.bool]] = None,
+            santized_from_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+            santized_snapshots: pulumi.Input[Optional[_builtins.str]] = None,
+            snapshot_family: pulumi.Input[Optional[_builtins.str]] = None,
+            snapshot_size: pulumi.Input[Optional[_builtins.float]] = None,
+            snapshot_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+            snapshot_timestamp_date: pulumi.Input[Optional[_builtins.int]] = None,
+            snapshot_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            software_database_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
+            software_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+            software_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseSnapshotTagArgs', 'NdbDatabaseSnapshotTagArgsDict', 'outputs.NdbDatabaseSnapshotTag']]]]] = None,
+            time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_machine_name: pulumi.Input[Optional[_builtins.str]] = None,
+            timezone: pulumi.Input[Optional[_builtins.str]] = None,
+            to_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["appInfoVersion"] = app_info_version
+        __props__["applicableTypes"] = applicable_types
+        __props__["databaseNodeId"] = database_node_id
+        __props__["databaseSnapshot"] = database_snapshot
+        __props__["dateCreated"] = date_created
+        __props__["dateModified"] = date_modified
+        __props__["dbserverId"] = dbserver_id
+        __props__["dbserverIp"] = dbserver_ip
+        __props__["dbserverName"] = dbserver_name
+        __props__["dbserverStorageMetadataVersion"] = dbserver_storage_metadata_version
+        __props__["description"] = description
+        __props__["expiryDateTimezone"] = expiry_date_timezone
+        __props__["fromTimestamp"] = from_timestamp
+        __props__["lcmConfigs"] = lcm_configs
+        __props__["name"] = name
+        __props__["nxClusterId"] = nx_cluster_id
+        __props__["parentSnapshot"] = parent_snapshot
+        __props__["parentSnapshotId"] = parent_snapshot_id
+        __props__["processed"] = processed
+        __props__["properties"] = properties
+        __props__["protectionDomainId"] = protection_domain_id
+        __props__["removeScheduleInDays"] = remove_schedule_in_days
+        __props__["replicateToClusters"] = replicate_to_clusters
+        __props__["replicatedSnapshots"] = replicated_snapshots
+        __props__["santized"] = santized
+        __props__["santizedFromSnapshotId"] = santized_from_snapshot_id
+        __props__["santizedSnapshots"] = santized_snapshots
+        __props__["snapshotFamily"] = snapshot_family
+        __props__["snapshotSize"] = snapshot_size
+        __props__["snapshotTimestamp"] = snapshot_timestamp
+        __props__["snapshotTimestampDate"] = snapshot_timestamp_date
+        __props__["snapshotUuid"] = snapshot_uuid
+        __props__["softwareDatabaseSnapshot"] = software_database_snapshot
+        __props__["softwareSnapshot"] = software_snapshot
+        __props__["softwareSnapshotId"] = software_snapshot_id
+        __props__["status"] = status
+        __props__["tags"] = tags
+        __props__["timeMachineId"] = time_machine_id
+        __props__["timeMachineName"] = time_machine_name
+        __props__["timezone"] = timezone
+        __props__["toTimestamp"] = to_timestamp
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbDatabaseSnapshot:NdbDatabaseSnapshot', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="appInfoVersion")
     def app_info_version(self) -> pulumi.Output[_builtins.str]:

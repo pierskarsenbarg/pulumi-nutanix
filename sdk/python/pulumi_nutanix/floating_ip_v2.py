@@ -734,6 +734,48 @@ class FloatingIpV2(pulumi.CustomResource):
         __props__.__dict__["vpcs"] = vpcs
         return FloatingIpV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            association_status: pulumi.Input[Optional[_builtins.str]] = None,
+            associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2AssociationArgs', 'FloatingIpV2AssociationArgsDict', 'outputs.FloatingIpV2Association']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_subnet_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2ExternalSubnetArgs', 'FloatingIpV2ExternalSubnetArgsDict', 'outputs.FloatingIpV2ExternalSubnet']]]]] = None,
+            floating_ip_value: pulumi.Input[Optional[_builtins.str]] = None,
+            floating_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2FloatingIpArgs', 'FloatingIpV2FloatingIpArgsDict', 'outputs.FloatingIpV2FloatingIp']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2LinkArgs', 'FloatingIpV2LinkArgsDict', 'outputs.FloatingIpV2Link']]]]] = None,
+            load_balancer_session_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2MetadataArgs', 'FloatingIpV2MetadataArgsDict', 'outputs.FloatingIpV2Metadata']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_nic_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VmNicArgs', 'FloatingIpV2VmNicArgsDict', 'outputs.FloatingIpV2VmNic']]]]] = None,
+            vpc_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VpcArgs', 'FloatingIpV2VpcArgsDict', 'outputs.FloatingIpV2Vpc']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["associationStatus"] = association_status
+        __props__["associations"] = associations
+        __props__["description"] = description
+        __props__["extId"] = ext_id
+        __props__["externalSubnetReference"] = external_subnet_reference
+        __props__["externalSubnets"] = external_subnets
+        __props__["floatingIpValue"] = floating_ip_value
+        __props__["floatingIps"] = floating_ips
+        __props__["links"] = links
+        __props__["loadBalancerSessionReference"] = load_balancer_session_reference
+        __props__["metadatas"] = metadatas
+        __props__["name"] = name
+        __props__["privateIp"] = private_ip
+        __props__["tenantId"] = tenant_id
+        __props__["vmNicReference"] = vm_nic_reference
+        __props__["vmNics"] = vm_nics
+        __props__["vpcReference"] = vpc_reference
+        __props__["vpcs"] = vpcs
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/floatingIpV2:FloatingIpV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="associationStatus")
     def association_status(self) -> pulumi.Output[_builtins.str]:

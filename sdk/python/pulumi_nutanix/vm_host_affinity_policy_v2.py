@@ -524,6 +524,38 @@ class VmHostAffinityPolicyV2(pulumi.CustomResource):
         __props__.__dict__["vm_categories"] = vm_categories
         return VmHostAffinityPolicyV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            create_time: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            host_categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            last_updated_by: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            num_compliant_vms: pulumi.Input[Optional[_builtins.int]] = None,
+            num_hosts: pulumi.Input[Optional[_builtins.int]] = None,
+            num_non_compliant_vms: pulumi.Input[Optional[_builtins.int]] = None,
+            num_vms: pulumi.Input[Optional[_builtins.int]] = None,
+            update_time: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createTime"] = create_time
+        __props__["createdBy"] = created_by
+        __props__["description"] = description
+        __props__["extId"] = ext_id
+        __props__["hostCategories"] = host_categories
+        __props__["lastUpdatedBy"] = last_updated_by
+        __props__["name"] = name
+        __props__["numCompliantVms"] = num_compliant_vms
+        __props__["numHosts"] = num_hosts
+        __props__["numNonCompliantVms"] = num_non_compliant_vms
+        __props__["numVms"] = num_vms
+        __props__["updateTime"] = update_time
+        __props__["vmCategories"] = vm_categories
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/vmHostAffinityPolicyV2:VmHostAffinityPolicyV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="createTime")
     def create_time(self) -> pulumi.Output[_builtins.str]:

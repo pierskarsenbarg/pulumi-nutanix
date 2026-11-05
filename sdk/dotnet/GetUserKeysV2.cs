@@ -167,7 +167,7 @@ namespace PiersKarsenbarg.Nutanix
         /// ```
         /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
-        /// ##  Argument Reference
+        /// ## Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
@@ -182,7 +182,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     * lastUpdatedBy
         ///     * name
         ///     * status
-        ///     * tenantId  
+        ///     * tenantId
         /// * &lt;span pulumi-lang-nodejs="`orderby`" pulumi-lang-dotnet="`Orderby`" pulumi-lang-go="`orderby`" pulumi-lang-python="`orderby`" pulumi-lang-yaml="`orderby`" pulumi-lang-java="`orderby`" pulumi-lang-hcl="`orderby`"&gt;`orderby`&lt;/span&gt; :- (Optional) A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:     * createdBy
         ///     * assignedTo
         ///     * createdBy
@@ -368,7 +368,7 @@ namespace PiersKarsenbarg.Nutanix
         /// ```
         /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
-        /// ##  Argument Reference
+        /// ## Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
@@ -383,7 +383,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     * lastUpdatedBy
         ///     * name
         ///     * status
-        ///     * tenantId  
+        ///     * tenantId
         /// * &lt;span pulumi-lang-nodejs="`orderby`" pulumi-lang-dotnet="`Orderby`" pulumi-lang-go="`orderby`" pulumi-lang-python="`orderby`" pulumi-lang-yaml="`orderby`" pulumi-lang-java="`orderby`" pulumi-lang-hcl="`orderby`"&gt;`orderby`&lt;/span&gt; :- (Optional) A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:     * createdBy
         ///     * assignedTo
         ///     * createdBy
@@ -569,7 +569,7 @@ namespace PiersKarsenbarg.Nutanix
         /// ```
         /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
-        /// ##  Argument Reference
+        /// ## Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
@@ -584,7 +584,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     * lastUpdatedBy
         ///     * name
         ///     * status
-        ///     * tenantId  
+        ///     * tenantId
         /// * &lt;span pulumi-lang-nodejs="`orderby`" pulumi-lang-dotnet="`Orderby`" pulumi-lang-go="`orderby`" pulumi-lang-python="`orderby`" pulumi-lang-yaml="`orderby`" pulumi-lang-java="`orderby`" pulumi-lang-hcl="`orderby`"&gt;`orderby`&lt;/span&gt; :- (Optional) A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:     * createdBy
         ///     * assignedTo
         ///     * createdBy

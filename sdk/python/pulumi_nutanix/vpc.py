@@ -494,6 +494,28 @@ class Vpc(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         return Vpc(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            common_domain_name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcCommonDomainNameServerIpListArgs', 'VpcCommonDomainNameServerIpListArgsDict', 'outputs.VpcCommonDomainNameServerIpList']]]]] = None,
+            external_subnet_list_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcExternalSubnetListStatusArgs', 'VpcExternalSubnetListStatusArgsDict', 'outputs.VpcExternalSubnetListStatus']]]]] = None,
+            external_subnet_reference_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            external_subnet_reference_uuids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            externally_routable_prefix_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcExternallyRoutablePrefixListArgs', 'VpcExternallyRoutablePrefixListArgsDict', 'outputs.VpcExternallyRoutablePrefixList']]]]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apiVersion"] = api_version
+        __props__["commonDomainNameServerIpLists"] = common_domain_name_server_ip_lists
+        __props__["externalSubnetListStatuses"] = external_subnet_list_statuses
+        __props__["externalSubnetReferenceNames"] = external_subnet_reference_names
+        __props__["externalSubnetReferenceUuids"] = external_subnet_reference_uuids
+        __props__["externallyRoutablePrefixLists"] = externally_routable_prefix_lists
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/vpc:Vpc', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apiVersion")
     def api_version(self) -> pulumi.Output[_builtins.str]:

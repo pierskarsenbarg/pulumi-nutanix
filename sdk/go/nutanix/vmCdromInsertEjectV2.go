@@ -30,17 +30,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			// #############################################
+//			//#############################################
 //			// ------------------------------------------------
 //			// This resource allows inserting a custom ISO into
 //			// a VM’s CD-ROM device.
 //			//
 //			// You can manage both:
-//			//  1. **Insertion** — via `apply`
-//			//  2. **Ejection** — automatically on `delete`
-//			//     You can also eject the ISO by setting `action = "eject"` → triggers eject operation explicitly.
-//			//
-//			// #############################################
+//			// 1. **Insertion** — via `apply`
+//			// 2. **Ejection** — automatically on `delete`
+//			//  You can also eject the ISO by setting `action = "eject"` → triggers eject operation explicitly.
+//			//#############################################
 //			_, err := nutanix.NewVmCdromInsertEjectV2(ctx, "insert-cdrom", &nutanix.VmCdromInsertEjectV2Args{
 //				VmExtId: pulumi.String("8a938cc5-282b-48c4-81be-de22de145d07"),
 //				ExtId:   pulumi.String("c2c249b0-98a0-43fa-9ff6-dcde578d3936"),
@@ -152,6 +151,12 @@ type VmCdromInsertEjectV2State struct {
 
 func (VmCdromInsertEjectV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*vmCdromInsertEjectV2State)(nil)).Elem()
+}
+
+// VmCdromInsertEjectV2Exists checks whether an existing VmCdromInsertEjectV2 resource with the given ID exists.
+func VmCdromInsertEjectV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VmCdromInsertEjectV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/vmCdromInsertEjectV2:VmCdromInsertEjectV2", id, state, "", opts...)
 }
 
 type vmCdromInsertEjectV2Args struct {

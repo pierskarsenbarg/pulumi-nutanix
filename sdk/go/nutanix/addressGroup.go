@@ -119,6 +119,12 @@ func (AddressGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*addressGroupState)(nil)).Elem()
 }
 
+// AddressGroupExists checks whether an existing AddressGroup resource with the given ID exists.
+func AddressGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AddressGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/addressGroup:AddressGroup", id, state, "", opts...)
+}
+
 type addressGroupArgs struct {
 	// - (Optional) Description of the service group
 	Description *string `pulumi:"description"`

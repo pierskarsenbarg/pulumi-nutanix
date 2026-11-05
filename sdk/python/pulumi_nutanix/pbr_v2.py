@@ -503,6 +503,32 @@ class PbrV2(pulumi.CustomResource):
         __props__.__dict__["vpcs"] = vpcs
         return PbrV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2LinkArgs', 'PbrV2LinkArgsDict', 'outputs.PbrV2Link']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2MetadataArgs', 'PbrV2MetadataArgsDict', 'outputs.PbrV2Metadata']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2PolicyArgs', 'PbrV2PolicyArgsDict', 'outputs.PbrV2Policy']]]]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PbrV2VpcArgs', 'PbrV2VpcArgsDict', 'outputs.PbrV2Vpc']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["extId"] = ext_id
+        __props__["links"] = links
+        __props__["metadatas"] = metadatas
+        __props__["name"] = name
+        __props__["policies"] = policies
+        __props__["priority"] = priority
+        __props__["tenantId"] = tenant_id
+        __props__["vpcExtId"] = vpc_ext_id
+        __props__["vpcs"] = vpcs
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/pbrV2:PbrV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[_builtins.str]:

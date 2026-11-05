@@ -1136,6 +1136,70 @@ class StorageContainersV2(pulumi.CustomResource):
         __props__.__dict__["tenant_id"] = tenant_id
         return StorageContainersV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            affinity_host_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cache_deduplication: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+            compression_delay_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            container_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            erasure_code: pulumi.Input[Optional[_builtins.str]] = None,
+            erasure_code_delay_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            has_higher_ec_fault_domain_preference: pulumi.Input[Optional[_builtins.bool]] = None,
+            ignore_small_files: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_compression_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_encrypted: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_inline_ec_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_internal: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_marked_for_removal: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_software_encryption_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StorageContainersV2LinkArgs', 'StorageContainersV2LinkArgsDict', 'outputs.StorageContainersV2Link']]]]] = None,
+            logical_advertised_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            logical_explicit_reserved_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            logical_implicit_reserved_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            max_capacity_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            nfs_whitelist_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StorageContainersV2NfsWhitelistAddressArgs', 'StorageContainersV2NfsWhitelistAddressArgsDict', 'outputs.StorageContainersV2NfsWhitelistAddress']]]]] = None,
+            on_disk_dedup: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_factor: pulumi.Input[Optional[_builtins.int]] = None,
+            storage_pool_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["affinityHostExtId"] = affinity_host_ext_id
+        __props__["cacheDeduplication"] = cache_deduplication
+        __props__["clusterExtId"] = cluster_ext_id
+        __props__["clusterName"] = cluster_name
+        __props__["compressionDelaySecs"] = compression_delay_secs
+        __props__["containerExtId"] = container_ext_id
+        __props__["erasureCode"] = erasure_code
+        __props__["erasureCodeDelaySecs"] = erasure_code_delay_secs
+        __props__["extId"] = ext_id
+        __props__["hasHigherEcFaultDomainPreference"] = has_higher_ec_fault_domain_preference
+        __props__["ignoreSmallFiles"] = ignore_small_files
+        __props__["isCompressionEnabled"] = is_compression_enabled
+        __props__["isEncrypted"] = is_encrypted
+        __props__["isInlineEcEnabled"] = is_inline_ec_enabled
+        __props__["isInternal"] = is_internal
+        __props__["isMarkedForRemoval"] = is_marked_for_removal
+        __props__["isSoftwareEncryptionEnabled"] = is_software_encryption_enabled
+        __props__["links"] = links
+        __props__["logicalAdvertisedCapacityBytes"] = logical_advertised_capacity_bytes
+        __props__["logicalExplicitReservedCapacityBytes"] = logical_explicit_reserved_capacity_bytes
+        __props__["logicalImplicitReservedCapacityBytes"] = logical_implicit_reserved_capacity_bytes
+        __props__["maxCapacityBytes"] = max_capacity_bytes
+        __props__["name"] = name
+        __props__["nfsWhitelistAddresses"] = nfs_whitelist_addresses
+        __props__["onDiskDedup"] = on_disk_dedup
+        __props__["ownerExtId"] = owner_ext_id
+        __props__["replicationFactor"] = replication_factor
+        __props__["storagePoolExtId"] = storage_pool_ext_id
+        __props__["tenantId"] = tenant_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/storageContainersV2:StorageContainersV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="affinityHostExtId")
     def affinity_host_ext_id(self) -> pulumi.Output[_builtins.str]:

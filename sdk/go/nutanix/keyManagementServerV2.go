@@ -119,6 +119,12 @@ func (KeyManagementServerV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*keyManagementServerV2State)(nil)).Elem()
 }
 
+// KeyManagementServerV2Exists checks whether an existing KeyManagementServerV2 resource with the given ID exists.
+func KeyManagementServerV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *KeyManagementServerV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/keyManagementServerV2:KeyManagementServerV2", id, state, "", opts...)
+}
+
 type keyManagementServerV2Args struct {
 	// - (Required) KMS Access information, it can be Azure Key Vault access information or KMIP based External Key Manager Access Information.
 	AccessInformation KeyManagementServerV2AccessInformation `pulumi:"accessInformation"`

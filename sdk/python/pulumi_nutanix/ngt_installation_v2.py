@@ -504,6 +504,38 @@ class NgtInstallationV2(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return NgtInstallationV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            available_version: pulumi.Input[Optional[_builtins.str]] = None,
+            capablities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            credential: pulumi.Input[Optional[Union['NgtInstallationV2CredentialArgs', 'NgtInstallationV2CredentialArgsDict', 'outputs.NgtInstallationV2Credential']]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            guest_os_version: pulumi.Input[Optional[_builtins.str]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_installed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_iso_inserted: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_reachable: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_vm_mobility_drivers_installed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_vss_snapshot_capable: pulumi.Input[Optional[_builtins.bool]] = None,
+            reboot_preference: pulumi.Input[Optional[Union['NgtInstallationV2RebootPreferenceArgs', 'NgtInstallationV2RebootPreferenceArgsDict', 'outputs.NgtInstallationV2RebootPreference']]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availableVersion"] = available_version
+        __props__["capablities"] = capablities
+        __props__["credential"] = credential
+        __props__["extId"] = ext_id
+        __props__["guestOsVersion"] = guest_os_version
+        __props__["isEnabled"] = is_enabled
+        __props__["isInstalled"] = is_installed
+        __props__["isIsoInserted"] = is_iso_inserted
+        __props__["isReachable"] = is_reachable
+        __props__["isVmMobilityDriversInstalled"] = is_vm_mobility_drivers_installed
+        __props__["isVssSnapshotCapable"] = is_vss_snapshot_capable
+        __props__["rebootPreference"] = reboot_preference
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ngtInstallationV2:NgtInstallationV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availableVersion")
     def available_version(self) -> pulumi.Output[_builtins.str]:

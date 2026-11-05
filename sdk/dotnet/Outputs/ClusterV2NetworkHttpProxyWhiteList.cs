@@ -20,7 +20,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string Target;
         /// <summary>
         /// - (Optional) Target type.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "IPV6_ADDRESS"	IPV6 address.
         /// - "HOST_NAME"	Name of the host.
         /// - "IPV4_ADDRESS"	IPV4 address.

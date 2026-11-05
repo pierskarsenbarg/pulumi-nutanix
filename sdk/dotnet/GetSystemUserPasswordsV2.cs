@@ -15,8 +15,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Lists password status of system user accounts on supported products.
         /// 
-        /// 
-        /// 
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -226,8 +224,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Lists password status of system user accounts on supported products.
         /// 
-        /// 
-        /// 
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -436,8 +432,6 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// Lists password status of system user accounts on supported products.
-        /// 
-        /// 
         /// 
         /// ## Example Usage
         /// 

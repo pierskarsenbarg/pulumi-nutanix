@@ -847,6 +847,46 @@ class VolumeGroupV2(pulumi.CustomResource):
         __props__.__dict__["usage_type"] = usage_type
         return VolumeGroupV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            disks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2DiskArgs', 'VolumeGroupV2DiskArgsDict', 'outputs.VolumeGroupV2Disk']]]]] = None,
+            enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_hidden: pulumi.Input[Optional[_builtins.bool]] = None,
+            iscsi_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2IscsiFeatureArgs', 'VolumeGroupV2IscsiFeatureArgsDict', 'outputs.VolumeGroupV2IscsiFeature']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            sharing_status: pulumi.Input[Optional[_builtins.str]] = None,
+            should_load_balance_vm_attachments: pulumi.Input[Optional[_builtins.bool]] = None,
+            storage_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupV2StorageFeatureArgs', 'VolumeGroupV2StorageFeatureArgsDict', 'outputs.VolumeGroupV2StorageFeature']]]]] = None,
+            target_name: pulumi.Input[Optional[_builtins.str]] = None,
+            target_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            usage_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["attachmentType"] = attachment_type
+        __props__["clusterReference"] = cluster_reference
+        __props__["createdBy"] = created_by
+        __props__["description"] = description
+        __props__["disks"] = disks
+        __props__["enabledAuthentications"] = enabled_authentications
+        __props__["extId"] = ext_id
+        __props__["isHidden"] = is_hidden
+        __props__["iscsiFeatures"] = iscsi_features
+        __props__["name"] = name
+        __props__["protocol"] = protocol
+        __props__["sharingStatus"] = sharing_status
+        __props__["shouldLoadBalanceVmAttachments"] = should_load_balance_vm_attachments
+        __props__["storageFeatures"] = storage_features
+        __props__["targetName"] = target_name
+        __props__["targetPrefix"] = target_prefix
+        __props__["usageType"] = usage_type
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/volumeGroupV2:VolumeGroupV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="attachmentType")
     def attachment_type(self) -> pulumi.Output[_builtins.str]:

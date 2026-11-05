@@ -550,6 +550,38 @@ class RecoveryPointsV2(pulumi.CustomResource):
         __props__.__dict__["volume_group_recovery_points"] = volume_group_recovery_points
         return RecoveryPointsV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            creation_time: pulumi.Input[Optional[_builtins.str]] = None,
+            expiration_time: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2LinkArgs', 'RecoveryPointsV2LinkArgsDict', 'outputs.RecoveryPointsV2Link']]]]] = None,
+            location_agnostic_id: pulumi.Input[Optional[_builtins.str]] = None,
+            location_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2LocationReferenceArgs', 'RecoveryPointsV2LocationReferenceArgsDict', 'outputs.RecoveryPointsV2LocationReference']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            recovery_point_type: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict', 'outputs.RecoveryPointsV2VmRecoveryPoint']]]]] = None,
+            volume_group_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VolumeGroupRecoveryPointArgs', 'RecoveryPointsV2VolumeGroupRecoveryPointArgsDict', 'outputs.RecoveryPointsV2VolumeGroupRecoveryPoint']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["creationTime"] = creation_time
+        __props__["expirationTime"] = expiration_time
+        __props__["extId"] = ext_id
+        __props__["links"] = links
+        __props__["locationAgnosticId"] = location_agnostic_id
+        __props__["locationReferences"] = location_references
+        __props__["name"] = name
+        __props__["ownerExtId"] = owner_ext_id
+        __props__["recoveryPointType"] = recovery_point_type
+        __props__["status"] = status
+        __props__["tenantId"] = tenant_id
+        __props__["vmRecoveryPoints"] = vm_recovery_points
+        __props__["volumeGroupRecoveryPoints"] = volume_group_recovery_points
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/recoveryPointsV2:RecoveryPointsV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="creationTime")
     def creation_time(self) -> pulumi.Output[_builtins.str]:

@@ -198,6 +198,16 @@ class PcUnregistrationV2(pulumi.CustomResource):
         __props__.__dict__["pc_ext_id"] = pc_ext_id
         return PcUnregistrationV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pc_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["extId"] = ext_id
+        __props__["pcExtId"] = pc_ext_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/pcUnregistrationV2:PcUnregistrationV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> pulumi.Output[_builtins.str]:

@@ -229,6 +229,18 @@ class NdbAuthorizeDbserver(pulumi.CustomResource):
         __props__.__dict__["time_machine_name"] = time_machine_name
         return NdbAuthorizeDbserver(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            dbservers_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_machine_name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dbserversIds"] = dbservers_ids
+        __props__["timeMachineId"] = time_machine_id
+        __props__["timeMachineName"] = time_machine_name
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbAuthorizeDbserver:NdbAuthorizeDbserver', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dbserversIds")
     def dbservers_ids(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

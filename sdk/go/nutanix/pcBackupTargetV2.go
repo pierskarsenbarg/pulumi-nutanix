@@ -70,7 +70,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			// using object store location
+//			//using object store location
 //			_, err := nutanix.NewPcBackupTargetV2(ctx, "object-store-location", &nutanix.PcBackupTargetV2Args{
 //				DomainManagerExtId: pulumi.String("75dde184-3a0e-4f59-a185-03ca1efead17"),
 //				Location: &nutanix.PcBackupTargetV2LocationArgs{
@@ -182,6 +182,12 @@ type PcBackupTargetV2State struct {
 
 func (PcBackupTargetV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*pcBackupTargetV2State)(nil)).Elem()
+}
+
+// PcBackupTargetV2Exists checks whether an existing PcBackupTargetV2 resource with the given ID exists.
+func PcBackupTargetV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PcBackupTargetV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/pcBackupTargetV2:PcBackupTargetV2", id, state, "", opts...)
 }
 
 type pcBackupTargetV2Args struct {

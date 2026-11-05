@@ -50,6 +50,6 @@ All files under `sdk/nodejs/`, `sdk/python/`, `sdk/go/`, and `sdk/dotnet/` are g
 
 ## CI
 
-- `main.yml` — builds provider and SDKs on push to `main` (matrix: Go 1.24.x, Node 20.x, Python 3.11, .NET 8.0.x).
+- `main.yml` — builds provider and SDKs on push to `main` (matrix: Go 1.27.x, Node 24.x, Python 3.12, .NET 10.0.201).
 - `run-acceptance-tests.yml` — runs integration tests; triggered manually on approved PRs.
 - `release.yml` — publishes to npm, PyPI, and NuGet on tag push; binaries via GoReleaser.

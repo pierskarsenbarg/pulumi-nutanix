@@ -473,6 +473,12 @@ func (FoundationImageNodesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*foundationImageNodesState)(nil)).Elem()
 }
 
+// FoundationImageNodesExists checks whether an existing FoundationImageNodes resource with the given ID exists.
+func FoundationImageNodesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FoundationImageNodesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/foundationImageNodes:FoundationImageNodes", id, state, "", opts...)
+}
+
 type foundationImageNodesArgs struct {
 	// - (Required) Terraform blocks of Block level parameters.
 	Blocks []FoundationImageNodesBlock `pulumi:"blocks"`

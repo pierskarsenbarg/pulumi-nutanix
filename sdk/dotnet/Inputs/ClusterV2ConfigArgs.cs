@@ -39,7 +39,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         /// <summary>
         /// - (Optional) Cluster arch.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "PPC64LE" PPC64LE cluster architecture type.
         /// - "X86_64" X86_64 cluster architecture type.
         /// </summary>
@@ -51,8 +51,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         /// <summary>
         /// - (Optional) Cluster function. This is part of payload for cluster
-        /// create operation only (allowed enum values for creation are AOS, ONE_NODE &amp; TWO_NODE only).
-        /// Valid values are:
+        ///   create operation only (allowed enum values for creation are AOS, ONE_NODE &amp; TWO_NODE only).
+        ///   Valid values are:
         /// - "AOS"
         /// - "PRISM_CENTRAL"
         /// - "CLOUD_DATA_GATEWAY"
@@ -77,7 +77,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         /// <summary>
         /// - (Optional) Encryption in transit Status.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "DISABLED"	Disabled encryption status.
         /// - "ENABLED"	Enabled encryption status.
         /// </summary>
@@ -137,8 +137,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         /// <summary>
         /// - (Optional) Cluster operation mode. This is part of payload for cluster
-        /// update operation only.
-        /// Valid values are:
+        ///   update operation only.
+        ///   Valid values are:
         /// - "OVERRIDE"	Override operation mode.
         /// - "STAND_ALONE"	Stand-alone operation mode.
         /// - "SWITCH_TO_TWO_NODE"	Switch to two-node operation mode.
