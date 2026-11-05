@@ -77,7 +77,7 @@ jobs:
         dotnetversion:
           - 10.0.201
         goversion:
-          - 1.26.x
+          - 1.27.x
         language:
           - nodejs
           - python
@@ -86,7 +86,7 @@ jobs:
         nodeversion:
           - 24.x
         pythonversion:
-          - "3.11"
+          - "3.12"
   prerequisites:
     name: prerequisites
     runs-on: ubuntu-latest
@@ -151,7 +151,7 @@ jobs:
         dotnetversion:
           - 10.0.201
         goversion:
-          - 1.26.x
+          - 1.27.x
         nodeversion:
           - 24.x
         pythonversion:
@@ -190,7 +190,7 @@ jobs:
         dotnetversion:
           - 10.0.201
         goversion:
-          - 1.26.x
+          - 1.27.x
         nodeversion:
           - 24.x
         pythonversion:
@@ -285,11 +285,11 @@ jobs:
         dotnetversion:
           - 10.0.201
         goversion:
-          - 1.26.x
+          - 1.27.x
         nodeversion:
           - 24.x
         pythonversion:
-          - "3.11"
+          - "3.12"
 name: release
 "on":
   push:
