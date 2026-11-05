@@ -158,6 +158,12 @@ func (TemplateGuestOsActionsV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*templateGuestOsActionsV2State)(nil)).Elem()
 }
 
+// TemplateGuestOsActionsV2Exists checks whether an existing TemplateGuestOsActionsV2 resource with the given ID exists.
+func TemplateGuestOsActionsV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *TemplateGuestOsActionsV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/templateGuestOsActionsV2:TemplateGuestOsActionsV2", id, state, "", opts...)
+}
+
 type templateGuestOsActionsV2Args struct {
 	// Actions to be performed. Acceptable values are "initiate", "complete", "cancel" .
 	Action string `pulumi:"action"`

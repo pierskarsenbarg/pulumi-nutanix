@@ -833,6 +833,56 @@ class UsersV2(pulumi.CustomResource):
         __props__.__dict__["username"] = username
         return UsersV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict', 'outputs.UsersV2AdditionalAttribute']]]]] = None,
+            buckets_access_keys: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsersV2BucketsAccessKeyArgs', 'UsersV2BucketsAccessKeyArgsDict', 'outputs.UsersV2BucketsAccessKey']]]]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_time: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            email_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            first_name: pulumi.Input[Optional[_builtins.str]] = None,
+            force_reset_password: pulumi.Input[Optional[_builtins.bool]] = None,
+            idp_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_login_time: pulumi.Input[Optional[_builtins.str]] = None,
+            last_name: pulumi.Input[Optional[_builtins.str]] = None,
+            last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsersV2LinkArgs', 'UsersV2LinkArgsDict', 'outputs.UsersV2Link']]]]] = None,
+            locale: pulumi.Input[Optional[_builtins.str]] = None,
+            middle_initial: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            user_type: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalAttributes"] = additional_attributes
+        __props__["bucketsAccessKeys"] = buckets_access_keys
+        __props__["createdBy"] = created_by
+        __props__["createdTime"] = created_time
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["emailId"] = email_id
+        __props__["extId"] = ext_id
+        __props__["firstName"] = first_name
+        __props__["forceResetPassword"] = force_reset_password
+        __props__["idpId"] = idp_id
+        __props__["lastLoginTime"] = last_login_time
+        __props__["lastName"] = last_name
+        __props__["lastUpdatedTime"] = last_updated_time
+        __props__["links"] = links
+        __props__["locale"] = locale
+        __props__["middleInitial"] = middle_initial
+        __props__["password"] = password
+        __props__["region"] = region
+        __props__["status"] = status
+        __props__["userType"] = user_type
+        __props__["username"] = username
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/usersV2:UsersV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalAttributes")
     def additional_attributes(self) -> pulumi.Output[Sequence['outputs.UsersV2AdditionalAttribute']]:

@@ -161,6 +161,12 @@ func (FoundationIpmiConfigState) ElementType() reflect.Type {
 	return reflect.TypeOf((*foundationIpmiConfigState)(nil)).Elem()
 }
 
+// FoundationIpmiConfigExists checks whether an existing FoundationIpmiConfig resource with the given ID exists.
+func FoundationIpmiConfigExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FoundationIpmiConfigState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/foundationIpmiConfig:FoundationIpmiConfig", id, state, "", opts...)
+}
+
 type foundationIpmiConfigArgs struct {
 	// - (Required) List of blocks.
 	Blocks []FoundationIpmiConfigBlock `pulumi:"blocks"`

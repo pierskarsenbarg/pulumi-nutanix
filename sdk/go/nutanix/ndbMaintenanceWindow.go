@@ -238,6 +238,12 @@ func (NdbMaintenanceWindowState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbMaintenanceWindowState)(nil)).Elem()
 }
 
+// NdbMaintenanceWindowExists checks whether an existing NdbMaintenanceWindow resource with the given ID exists.
+func NdbMaintenanceWindowExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbMaintenanceWindowState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbMaintenanceWindow:NdbMaintenanceWindow", id, state, "", opts...)
+}
+
 type ndbMaintenanceWindowArgs struct {
 	// Day of the week to trigger maintenance window. Supports [ MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
 	DayOfWeek *string `pulumi:"dayOfWeek"`

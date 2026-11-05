@@ -498,6 +498,36 @@ class ProtectionRule(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         return ProtectionRule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_zone_connectivity_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleAvailabilityZoneConnectivityListArgs', 'ProtectionRuleAvailabilityZoneConnectivityListArgsDict', 'outputs.ProtectionRuleAvailabilityZoneConnectivityList']]]]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleCategoryArgs', 'ProtectionRuleCategoryArgsDict', 'outputs.ProtectionRuleCategory']]]]] = None,
+            category_filter: pulumi.Input[Optional[Union['ProtectionRuleCategoryFilterArgs', 'ProtectionRuleCategoryFilterArgsDict', 'outputs.ProtectionRuleCategoryFilter']]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            ordered_availability_zone_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleOrderedAvailabilityZoneListArgs', 'ProtectionRuleOrderedAvailabilityZoneListArgsDict', 'outputs.ProtectionRuleOrderedAvailabilityZoneList']]]]] = None,
+            owner_reference: pulumi.Input[Optional[Union['ProtectionRuleOwnerReferenceArgs', 'ProtectionRuleOwnerReferenceArgsDict', 'outputs.ProtectionRuleOwnerReference']]] = None,
+            project_reference: pulumi.Input[Optional[Union['ProtectionRuleProjectReferenceArgs', 'ProtectionRuleProjectReferenceArgsDict', 'outputs.ProtectionRuleProjectReference']]] = None,
+            start_time: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apiVersion"] = api_version
+        __props__["availabilityZoneConnectivityLists"] = availability_zone_connectivity_lists
+        __props__["categories"] = categories
+        __props__["categoryFilter"] = category_filter
+        __props__["description"] = description
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["orderedAvailabilityZoneLists"] = ordered_availability_zone_lists
+        __props__["ownerReference"] = owner_reference
+        __props__["projectReference"] = project_reference
+        __props__["startTime"] = start_time
+        __props__["state"] = state
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/protectionRule:ProtectionRule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apiVersion")
     def api_version(self) -> pulumi.Output[_builtins.str]:

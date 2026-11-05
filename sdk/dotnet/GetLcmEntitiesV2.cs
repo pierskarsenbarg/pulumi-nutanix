@@ -15,7 +15,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Get details about all LCM entities.
         /// 
-        /// 
         /// ## Example
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -170,7 +169,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Get details about all LCM entities.
         /// 
-        /// 
         /// ## Example
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -324,7 +322,6 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// Get details about all LCM entities.
-        /// 
         /// 
         /// ## Example
         /// 

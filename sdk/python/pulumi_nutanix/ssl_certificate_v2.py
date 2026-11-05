@@ -459,6 +459,24 @@ class SslCertificateV2(pulumi.CustomResource):
         __props__.__dict__["public_certificate"] = public_certificate
         return SslCertificateV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ca_chain: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+            private_key: pulumi.Input[Optional[_builtins.str]] = None,
+            private_key_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            public_certificate: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["caChain"] = ca_chain
+        __props__["clusterExtId"] = cluster_ext_id
+        __props__["passphrase"] = passphrase
+        __props__["privateKey"] = private_key
+        __props__["privateKeyAlgorithm"] = private_key_algorithm
+        __props__["publicCertificate"] = public_certificate
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/sslCertificateV2:SslCertificateV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="caChain")
     def ca_chain(self) -> pulumi.Output[_builtins.str]:

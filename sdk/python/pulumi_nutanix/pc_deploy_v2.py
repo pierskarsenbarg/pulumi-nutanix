@@ -371,6 +371,18 @@ class PcDeployV2(pulumi.CustomResource):
         __props__.__dict__["should_enable_high_availability"] = should_enable_high_availability
         return PcDeployV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            config: pulumi.Input[Optional[Union['PcDeployV2ConfigArgs', 'PcDeployV2ConfigArgsDict', 'outputs.PcDeployV2Config']]] = None,
+            network: pulumi.Input[Optional[Union['PcDeployV2NetworkArgs', 'PcDeployV2NetworkArgsDict', 'outputs.PcDeployV2Network']]] = None,
+            should_enable_high_availability: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["config"] = config
+        __props__["network"] = network
+        __props__["shouldEnableHighAvailability"] = should_enable_high_availability
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/pcDeployV2:PcDeployV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def config(self) -> pulumi.Output['outputs.PcDeployV2Config']:

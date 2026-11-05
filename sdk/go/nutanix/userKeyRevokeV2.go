@@ -142,6 +142,12 @@ func (UserKeyRevokeV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*userKeyRevokeV2State)(nil)).Elem()
 }
 
+// UserKeyRevokeV2Exists checks whether an existing UserKeyRevokeV2 resource with the given ID exists.
+func UserKeyRevokeV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UserKeyRevokeV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/userKeyRevokeV2:UserKeyRevokeV2", id, state, "", opts...)
+}
+
 type userKeyRevokeV2Args struct {
 	ExtId     string `pulumi:"extId"`
 	UserExtId string `pulumi:"userExtId"`

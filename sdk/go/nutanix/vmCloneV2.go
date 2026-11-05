@@ -258,6 +258,12 @@ func (VmCloneV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*vmCloneV2State)(nil)).Elem()
 }
 
+// VmCloneV2Exists checks whether an existing VmCloneV2 resource with the given ID exists.
+func VmCloneV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VmCloneV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/vmCloneV2:VmCloneV2", id, state, "", opts...)
+}
+
 type vmCloneV2Args struct {
 	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
 	BootConfigs []VmCloneV2BootConfig `pulumi:"bootConfigs"`

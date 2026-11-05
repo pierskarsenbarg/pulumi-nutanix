@@ -226,6 +226,12 @@ func (NetworkFunctionV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkFunctionV2State)(nil)).Elem()
 }
 
+// NetworkFunctionV2Exists checks whether an existing NetworkFunctionV2 resource with the given ID exists.
+func NetworkFunctionV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkFunctionV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/networkFunctionV2:NetworkFunctionV2", id, state, "", opts...)
+}
+
 type networkFunctionV2Args struct {
 	// Data Plane Health check configuration applied for the network function.
 	DataPlaneHealthCheckConfig *NetworkFunctionV2DataPlaneHealthCheckConfig `pulumi:"dataPlaneHealthCheckConfig"`

@@ -1048,6 +1048,54 @@ class ObjectStoreV2(pulumi.CustomResource):
         __props__.__dict__["total_capacity_gib"] = total_capacity_gib
         return ObjectStoreV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            certificate_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            creation_time: pulumi.Input[Optional[_builtins.str]] = None,
+            deployment_version: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2LinkArgs', 'ObjectStoreV2LinkArgsDict', 'outputs.ObjectStoreV2Link']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2MetadataArgs', 'ObjectStoreV2MetadataArgsDict', 'outputs.ObjectStoreV2Metadata']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            num_worker_nodes: pulumi.Input[Optional[_builtins.int]] = None,
+            public_network_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreV2PublicNetworkIpArgs', 'ObjectStoreV2PublicNetworkIpArgsDict', 'outputs.ObjectStoreV2PublicNetworkIp']]]]] = None,
+            public_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_network_dns_ip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkDnsIpArgs', 'ObjectStoreV2StorageNetworkDnsIpArgsDict', 'outputs.ObjectStoreV2StorageNetworkDnsIp']]] = None,
+            storage_network_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_network_vip: pulumi.Input[Optional[Union['ObjectStoreV2StorageNetworkVipArgs', 'ObjectStoreV2StorageNetworkVipArgsDict', 'outputs.ObjectStoreV2StorageNetworkVip']]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            total_capacity_gib: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["certificateExtIds"] = certificate_ext_ids
+        __props__["clusterExtId"] = cluster_ext_id
+        __props__["creationTime"] = creation_time
+        __props__["deploymentVersion"] = deployment_version
+        __props__["description"] = description
+        __props__["domain"] = domain
+        __props__["extId"] = ext_id
+        __props__["lastUpdateTime"] = last_update_time
+        __props__["links"] = links
+        __props__["metadatas"] = metadatas
+        __props__["name"] = name
+        __props__["numWorkerNodes"] = num_worker_nodes
+        __props__["publicNetworkIps"] = public_network_ips
+        __props__["publicNetworkReference"] = public_network_reference
+        __props__["region"] = region
+        __props__["state"] = state
+        __props__["storageNetworkDnsIp"] = storage_network_dns_ip
+        __props__["storageNetworkReference"] = storage_network_reference
+        __props__["storageNetworkVip"] = storage_network_vip
+        __props__["tenantId"] = tenant_id
+        __props__["totalCapacityGib"] = total_capacity_gib
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/objectStoreV2:ObjectStoreV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="certificateExtIds")
     def certificate_ext_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:

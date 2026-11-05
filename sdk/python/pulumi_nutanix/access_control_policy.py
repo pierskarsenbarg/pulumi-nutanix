@@ -605,6 +605,34 @@ class AccessControlPolicy(pulumi.CustomResource):
         __props__.__dict__["user_reference_lists"] = user_reference_lists
         return AccessControlPolicy(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyCategoryArgs', 'AccessControlPolicyCategoryArgsDict', 'outputs.AccessControlPolicyCategory']]]]] = None,
+            context_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyContextFilterListArgs', 'AccessControlPolicyContextFilterListArgsDict', 'outputs.AccessControlPolicyContextFilterList']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_reference: pulumi.Input[Optional[Union['AccessControlPolicyOwnerReferenceArgs', 'AccessControlPolicyOwnerReferenceArgsDict', 'outputs.AccessControlPolicyOwnerReference']]] = None,
+            role_reference: pulumi.Input[Optional[Union['AccessControlPolicyRoleReferenceArgs', 'AccessControlPolicyRoleReferenceArgsDict', 'outputs.AccessControlPolicyRoleReference']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            user_group_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyUserGroupReferenceListArgs', 'AccessControlPolicyUserGroupReferenceListArgsDict', 'outputs.AccessControlPolicyUserGroupReferenceList']]]]] = None,
+            user_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AccessControlPolicyUserReferenceListArgs', 'AccessControlPolicyUserReferenceListArgsDict', 'outputs.AccessControlPolicyUserReferenceList']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apiVersion"] = api_version
+        __props__["categories"] = categories
+        __props__["contextFilterLists"] = context_filter_lists
+        __props__["description"] = description
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["ownerReference"] = owner_reference
+        __props__["roleReference"] = role_reference
+        __props__["state"] = state
+        __props__["userGroupReferenceLists"] = user_group_reference_lists
+        __props__["userReferenceLists"] = user_reference_lists
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/accessControlPolicy:AccessControlPolicy', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apiVersion")
     def api_version(self) -> pulumi.Output[_builtins.str]:

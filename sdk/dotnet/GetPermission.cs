@@ -72,14 +72,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// func main() {
         /// 	pulumi.Run(func(ctx *pulumi.Context) error {
-        /// 		// Get permission by UUID
+        /// 		//Get permission by UUID
         /// 		_, err := nutanix.GetPermission(ctx, &amp;nutanix.GetPermissionArgs{
         /// 			PermissionId: pulumi.StringRef("26b81a55-2bca-48c6-9fab-4f82c6bb4284"),
         /// 		}, nil)
         /// 		if err != nil {
         /// 			return err
         /// 		}
-        /// 		// Get permission by name
+        /// 		//Get permission by name
         /// 		_, err = nutanix.GetPermission(ctx, &amp;nutanix.GetPermissionArgs{
         /// 			PermissionName: pulumi.StringRef("Access_Console_Virtual_Machine"),
         /// 		}, nil)
@@ -223,14 +223,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// func main() {
         /// 	pulumi.Run(func(ctx *pulumi.Context) error {
-        /// 		// Get permission by UUID
+        /// 		//Get permission by UUID
         /// 		_, err := nutanix.GetPermission(ctx, &amp;nutanix.GetPermissionArgs{
         /// 			PermissionId: pulumi.StringRef("26b81a55-2bca-48c6-9fab-4f82c6bb4284"),
         /// 		}, nil)
         /// 		if err != nil {
         /// 			return err
         /// 		}
-        /// 		// Get permission by name
+        /// 		//Get permission by name
         /// 		_, err = nutanix.GetPermission(ctx, &amp;nutanix.GetPermissionArgs{
         /// 			PermissionName: pulumi.StringRef("Access_Console_Virtual_Machine"),
         /// 		}, nil)
@@ -374,14 +374,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// func main() {
         /// 	pulumi.Run(func(ctx *pulumi.Context) error {
-        /// 		// Get permission by UUID
+        /// 		//Get permission by UUID
         /// 		_, err := nutanix.GetPermission(ctx, &amp;nutanix.GetPermissionArgs{
         /// 			PermissionId: pulumi.StringRef("26b81a55-2bca-48c6-9fab-4f82c6bb4284"),
         /// 		}, nil)
         /// 		if err != nil {
         /// 			return err
         /// 		}
-        /// 		// Get permission by name
+        /// 		//Get permission by name
         /// 		_, err = nutanix.GetPermission(ctx, &amp;nutanix.GetPermissionArgs{
         /// 			PermissionName: pulumi.StringRef("Access_Console_Virtual_Machine"),
         /// 		}, nil)

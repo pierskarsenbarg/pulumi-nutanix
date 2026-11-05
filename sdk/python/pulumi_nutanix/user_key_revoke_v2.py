@@ -329,6 +329,28 @@ class UserKeyRevokeV2(pulumi.CustomResource):
         __props__.__dict__["user_ext_id"] = user_ext_id
         return UserKeyRevokeV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            arguments_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserKeyRevokeV2ArgumentsMapArgs', 'UserKeyRevokeV2ArgumentsMapArgsDict', 'outputs.UserKeyRevokeV2ArgumentsMap']]]]] = None,
+            code: pulumi.Input[Optional[_builtins.str]] = None,
+            error_group: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            locale: pulumi.Input[Optional[_builtins.str]] = None,
+            message: pulumi.Input[Optional[_builtins.str]] = None,
+            severity: pulumi.Input[Optional[_builtins.str]] = None,
+            user_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["argumentsMaps"] = arguments_maps
+        __props__["code"] = code
+        __props__["errorGroup"] = error_group
+        __props__["extId"] = ext_id
+        __props__["locale"] = locale
+        __props__["message"] = message
+        __props__["severity"] = severity
+        __props__["userExtId"] = user_ext_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/userKeyRevokeV2:UserKeyRevokeV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="argumentsMaps")
     def arguments_maps(self) -> pulumi.Output[Sequence['outputs.UserKeyRevokeV2ArgumentsMap']]:

@@ -664,6 +664,32 @@ class StoragePolicyV2(pulumi.CustomResource):
         __props__.__dict__["tenant_id"] = tenant_id
         return StoragePolicyV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compression_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2CompressionSpecArgs', 'StoragePolicyV2CompressionSpecArgsDict', 'outputs.StoragePolicyV2CompressionSpec']]]]] = None,
+            encryption_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2EncryptionSpecArgs', 'StoragePolicyV2EncryptionSpecArgsDict', 'outputs.StoragePolicyV2EncryptionSpec']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            fault_tolerance_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2FaultToleranceSpecArgs', 'StoragePolicyV2FaultToleranceSpecArgsDict', 'outputs.StoragePolicyV2FaultToleranceSpec']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2LinkArgs', 'StoragePolicyV2LinkArgsDict', 'outputs.StoragePolicyV2Link']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_type: pulumi.Input[Optional[_builtins.str]] = None,
+            qos_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StoragePolicyV2QosSpecArgs', 'StoragePolicyV2QosSpecArgsDict', 'outputs.StoragePolicyV2QosSpec']]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["categoryExtIds"] = category_ext_ids
+        __props__["compressionSpecs"] = compression_specs
+        __props__["encryptionSpecs"] = encryption_specs
+        __props__["extId"] = ext_id
+        __props__["faultToleranceSpecs"] = fault_tolerance_specs
+        __props__["links"] = links
+        __props__["name"] = name
+        __props__["policyType"] = policy_type
+        __props__["qosSpecs"] = qos_specs
+        __props__["tenantId"] = tenant_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/storagePolicyV2:StoragePolicyV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="categoryExtIds")
     def category_ext_ids(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

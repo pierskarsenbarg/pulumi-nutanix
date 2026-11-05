@@ -428,6 +428,36 @@ class TemplateV2(pulumi.CustomResource):
         __props__.__dict__["updated_bies"] = updated_bies
         return TemplateV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            create_time: pulumi.Input[Optional[_builtins.str]] = None,
+            created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict', 'outputs.TemplateV2CreatedBy']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict', 'outputs.TemplateV2GuestUpdateStatus']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2LinkArgs', 'TemplateV2LinkArgsDict', 'outputs.TemplateV2Link']]]]] = None,
+            template_description: pulumi.Input[Optional[_builtins.str]] = None,
+            template_name: pulumi.Input[Optional[_builtins.str]] = None,
+            template_version_spec: pulumi.Input[Optional[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict', 'outputs.TemplateV2TemplateVersionSpec']]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            update_time: pulumi.Input[Optional[_builtins.str]] = None,
+            updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2UpdatedByArgs', 'TemplateV2UpdatedByArgsDict', 'outputs.TemplateV2UpdatedBy']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["categoryExtIds"] = category_ext_ids
+        __props__["createTime"] = create_time
+        __props__["createdBies"] = created_bies
+        __props__["extId"] = ext_id
+        __props__["guestUpdateStatuses"] = guest_update_statuses
+        __props__["links"] = links
+        __props__["templateDescription"] = template_description
+        __props__["templateName"] = template_name
+        __props__["templateVersionSpec"] = template_version_spec
+        __props__["tenantId"] = tenant_id
+        __props__["updateTime"] = update_time
+        __props__["updatedBies"] = updated_bies
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/templateV2:TemplateV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="categoryExtIds")
     def category_ext_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:

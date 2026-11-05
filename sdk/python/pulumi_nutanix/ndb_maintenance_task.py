@@ -397,6 +397,22 @@ class NdbMaintenanceTask(pulumi.CustomResource):
         __props__.__dict__["tasks"] = tasks
         return NdbMaintenanceTask(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            dbserver_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dbserver_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            entity_task_associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceTaskEntityTaskAssociationArgs', 'NdbMaintenanceTaskEntityTaskAssociationArgsDict', 'outputs.NdbMaintenanceTaskEntityTaskAssociation']]]]] = None,
+            maintenance_window_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict', 'outputs.NdbMaintenanceTaskTask']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dbserverClusters"] = dbserver_clusters
+        __props__["dbserverIds"] = dbserver_ids
+        __props__["entityTaskAssociations"] = entity_task_associations
+        __props__["maintenanceWindowId"] = maintenance_window_id
+        __props__["tasks"] = tasks
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbMaintenanceTask:NdbMaintenanceTask', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dbserverClusters")
     def dbserver_clusters(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

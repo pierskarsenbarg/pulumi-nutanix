@@ -16,7 +16,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         /// <summary>
         /// - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
         /// - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
         /// - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
@@ -29,7 +29,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly int CurrentMaxFaultTolerance;
         /// <summary>
         /// - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
         /// - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
         /// - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
@@ -42,7 +42,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly int DesiredMaxFaultTolerance;
         /// <summary>
         /// - Domain awareness level corresponds to unit of cluster group. This is part of payload for both cluster create &amp; update operations.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "RACK"	Rack level awareness.
         /// - "NODE"	Node level awareness.
         /// - "BLOCK"	Block level awareness.

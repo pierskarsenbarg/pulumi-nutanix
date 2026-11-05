@@ -116,6 +116,12 @@ func (VmNetworkDeviceAssignIpV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*vmNetworkDeviceAssignIpV2State)(nil)).Elem()
 }
 
+// VmNetworkDeviceAssignIpV2Exists checks whether an existing VmNetworkDeviceAssignIpV2 resource with the given ID exists.
+func VmNetworkDeviceAssignIpV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VmNetworkDeviceAssignIpV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/vmNetworkDeviceAssignIpV2:VmNetworkDeviceAssignIpV2", id, state, "", opts...)
+}
+
 type vmNetworkDeviceAssignIpV2Args struct {
 	// - (Required) The globally unique identifier of a Nic. It should be of type UUID.
 	ExtId string `pulumi:"extId"`

@@ -455,6 +455,28 @@ class FloatingIp(pulumi.CustomResource):
         __props__.__dict__["vpc_reference_uuid"] = vpc_reference_uuid
         return FloatingIp(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            external_subnet_reference_name: pulumi.Input[Optional[_builtins.str]] = None,
+            external_subnet_reference_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_nic_reference_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc_reference_name: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc_reference_uuid: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apiVersion"] = api_version
+        __props__["externalSubnetReferenceName"] = external_subnet_reference_name
+        __props__["externalSubnetReferenceUuid"] = external_subnet_reference_uuid
+        __props__["metadata"] = metadata
+        __props__["privateIp"] = private_ip
+        __props__["vmNicReferenceUuid"] = vm_nic_reference_uuid
+        __props__["vpcReferenceName"] = vpc_reference_name
+        __props__["vpcReferenceUuid"] = vpc_reference_uuid
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/floatingIp:FloatingIp', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apiVersion")
     def api_version(self) -> pulumi.Output[_builtins.str]:

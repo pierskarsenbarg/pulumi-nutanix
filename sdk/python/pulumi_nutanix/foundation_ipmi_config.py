@@ -390,6 +390,22 @@ class FoundationIpmiConfig(pulumi.CustomResource):
         __props__.__dict__["ipmi_user"] = ipmi_user
         return FoundationIpmiConfig(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            blocks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict', 'outputs.FoundationIpmiConfigBlock']]]]] = None,
+            ipmi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            ipmi_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+            ipmi_password: pulumi.Input[Optional[_builtins.str]] = None,
+            ipmi_user: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["blocks"] = blocks
+        __props__["ipmiGateway"] = ipmi_gateway
+        __props__["ipmiNetmask"] = ipmi_netmask
+        __props__["ipmiPassword"] = ipmi_password
+        __props__["ipmiUser"] = ipmi_user
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/foundationIpmiConfig:FoundationIpmiConfig', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def blocks(self) -> pulumi.Output[Sequence['outputs.FoundationIpmiConfigBlock']]:

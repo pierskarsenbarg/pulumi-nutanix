@@ -205,6 +205,12 @@ func (NdbSoftwareVersionProfileState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbSoftwareVersionProfileState)(nil)).Elem()
 }
 
+// NdbSoftwareVersionProfileExists checks whether an existing NdbSoftwareVersionProfile resource with the given ID exists.
+func NdbSoftwareVersionProfileExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbSoftwareVersionProfileState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbSoftwareVersionProfile:NdbSoftwareVersionProfile", id, state, "", opts...)
+}
+
 type ndbSoftwareVersionProfileArgs struct {
 	// available cluster ids
 	AvailableClusterIds []string `pulumi:"availableClusterIds"`

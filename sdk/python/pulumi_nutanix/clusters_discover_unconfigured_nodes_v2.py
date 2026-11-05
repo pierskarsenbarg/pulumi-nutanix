@@ -415,6 +415,28 @@ class ClustersDiscoverUnconfiguredNodesV2(pulumi.CustomResource):
         __props__.__dict__["uuid_filter_lists"] = uuid_filter_lists
         return ClustersDiscoverUnconfiguredNodesV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            address_type: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            interface_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ip_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs', 'ClustersDiscoverUnconfiguredNodesV2IpFilterListArgsDict', 'outputs.ClustersDiscoverUnconfiguredNodesV2IpFilterList']]]]] = None,
+            is_manual_discovery: pulumi.Input[Optional[_builtins.bool]] = None,
+            timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            unconfigured_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeArgs', 'ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeArgsDict', 'outputs.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode']]]]] = None,
+            uuid_filter_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["addressType"] = address_type
+        __props__["extId"] = ext_id
+        __props__["interfaceFilterLists"] = interface_filter_lists
+        __props__["ipFilterLists"] = ip_filter_lists
+        __props__["isManualDiscovery"] = is_manual_discovery
+        __props__["timeout"] = timeout
+        __props__["unconfiguredNodes"] = unconfigured_nodes
+        __props__["uuidFilterLists"] = uuid_filter_lists
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/clustersDiscoverUnconfiguredNodesV2:ClustersDiscoverUnconfiguredNodesV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="addressType")
     def address_type(self) -> pulumi.Output[Optional[_builtins.str]]:

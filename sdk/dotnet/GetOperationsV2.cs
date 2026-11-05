@@ -82,7 +82,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// func main() {
         /// 	pulumi.Run(func(ctx *pulumi.Context) error {
-        /// 		// list operations
+        /// 		//list operations
         /// 		_, err := nutanix.GetOperationsV2(ctx, &amp;nutanix.GetOperationsV2Args{}, nil)
         /// 		if err != nil {
         /// 			return err
@@ -264,7 +264,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// func main() {
         /// 	pulumi.Run(func(ctx *pulumi.Context) error {
-        /// 		// list operations
+        /// 		//list operations
         /// 		_, err := nutanix.GetOperationsV2(ctx, &amp;nutanix.GetOperationsV2Args{}, nil)
         /// 		if err != nil {
         /// 			return err
@@ -446,7 +446,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// func main() {
         /// 	pulumi.Run(func(ctx *pulumi.Context) error {
-        /// 		// list operations
+        /// 		//list operations
         /// 		_, err := nutanix.GetOperationsV2(ctx, &amp;nutanix.GetOperationsV2Args{}, nil)
         /// 		if err != nil {
         /// 			return err

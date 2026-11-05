@@ -222,6 +222,12 @@ func (FloatingIpV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*floatingIpV2State)(nil)).Elem()
 }
 
+// FloatingIpV2Exists checks whether an existing FloatingIpV2 resource with the given ID exists.
+func FloatingIpV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FloatingIpV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/floatingIpV2:FloatingIpV2", id, state, "", opts...)
+}
+
 type floatingIpV2Args struct {
 	// Association of the Floating IP with either NIC or Private IP
 	Associations []FloatingIpV2Association `pulumi:"associations"`

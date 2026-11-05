@@ -114,6 +114,12 @@ func (ClustersDiscoverUnconfiguredNodesV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*clustersDiscoverUnconfiguredNodesV2State)(nil)).Elem()
 }
 
+// ClustersDiscoverUnconfiguredNodesV2Exists checks whether an existing ClustersDiscoverUnconfiguredNodesV2 resource with the given ID exists.
+func ClustersDiscoverUnconfiguredNodesV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ClustersDiscoverUnconfiguredNodesV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/clustersDiscoverUnconfiguredNodesV2:ClustersDiscoverUnconfiguredNodesV2", id, state, "", opts...)
+}
+
 type clustersDiscoverUnconfiguredNodesV2Args struct {
 	// - (Optional) Address type.
 	//   Valid values are:

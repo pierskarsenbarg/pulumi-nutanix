@@ -29,7 +29,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			// creating subnet with IP pool
+//			//creating subnet with IP pool
 //			_, err := nutanix.NewSubnetV2(ctx, "vlan-112", &nutanix.SubnetV2Args{
 //				Name:             pulumi.String("vlan-112"),
 //				Description:      pulumi.String("subnet VLAN 112 managed by Terraform with IP pool"),
@@ -78,7 +78,7 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			// creating subnet without IP pool
+//			//creating subnet without IP pool
 //			_, err = nutanix.NewSubnetV2(ctx, "vlan-113", &nutanix.SubnetV2Args{
 //				Name:             pulumi.String("vlan-113"),
 //				Description:      pulumi.String("subnet VLAN 113 managed by Terraform"),
@@ -348,6 +348,12 @@ type SubnetV2State struct {
 
 func (SubnetV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*subnetV2State)(nil)).Elem()
+}
+
+// SubnetV2Exists checks whether an existing SubnetV2 resource with the given ID exists.
+func SubnetV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SubnetV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/subnetV2:SubnetV2", id, state, "", opts...)
 }
 
 type subnetV2Args struct {

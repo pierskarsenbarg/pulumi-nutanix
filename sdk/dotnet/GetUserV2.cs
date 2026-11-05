@@ -118,7 +118,7 @@ namespace PiersKarsenbarg.Nutanix
         /// ```
         /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
-        /// ##  Argument Reference
+        /// ## Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
@@ -233,7 +233,7 @@ namespace PiersKarsenbarg.Nutanix
         /// ```
         /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
-        /// ##  Argument Reference
+        /// ## Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
@@ -348,7 +348,7 @@ namespace PiersKarsenbarg.Nutanix
         /// ```
         /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
-        /// ##  Argument Reference
+        /// ## Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
@@ -474,7 +474,7 @@ namespace PiersKarsenbarg.Nutanix
         public readonly string Status;
         /// <summary>
         /// - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
-        /// Type of the User.
+        ///   Type of the User.
         /// </summary>
         public readonly string UserType;
         /// <summary>

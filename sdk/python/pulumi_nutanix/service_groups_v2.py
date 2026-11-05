@@ -515,6 +515,34 @@ class ServiceGroupsV2(pulumi.CustomResource):
         __props__.__dict__["udp_services"] = udp_services
         return ServiceGroupsV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            icmp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2IcmpServiceArgs', 'ServiceGroupsV2IcmpServiceArgsDict', 'outputs.ServiceGroupsV2IcmpService']]]]] = None,
+            is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2LinkArgs', 'ServiceGroupsV2LinkArgsDict', 'outputs.ServiceGroupsV2Link']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tcp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2TcpServiceArgs', 'ServiceGroupsV2TcpServiceArgsDict', 'outputs.ServiceGroupsV2TcpService']]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            udp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2UdpServiceArgs', 'ServiceGroupsV2UdpServiceArgsDict', 'outputs.ServiceGroupsV2UdpService']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdBy"] = created_by
+        __props__["description"] = description
+        __props__["extId"] = ext_id
+        __props__["icmpServices"] = icmp_services
+        __props__["isSystemDefined"] = is_system_defined
+        __props__["links"] = links
+        __props__["name"] = name
+        __props__["policyReferences"] = policy_references
+        __props__["tcpServices"] = tcp_services
+        __props__["tenantId"] = tenant_id
+        __props__["udpServices"] = udp_services
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/serviceGroupsV2:ServiceGroupsV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> pulumi.Output[_builtins.str]:

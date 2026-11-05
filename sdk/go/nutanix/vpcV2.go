@@ -219,6 +219,12 @@ func (VpcV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*vpcV2State)(nil)).Elem()
 }
 
+// VpcV2Exists checks whether an existing VpcV2 resource with the given ID exists.
+func VpcV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VpcV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/vpcV2:VpcV2", id, state, "", opts...)
+}
+
 type vpcV2Args struct {
 	// List of DHCP options to be configured.
 	CommonDhcpOptions []VpcV2CommonDhcpOption `pulumi:"commonDhcpOptions"`

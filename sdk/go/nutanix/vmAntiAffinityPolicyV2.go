@@ -201,6 +201,12 @@ func (VmAntiAffinityPolicyV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*vmAntiAffinityPolicyV2State)(nil)).Elem()
 }
 
+// VmAntiAffinityPolicyV2Exists checks whether an existing VmAntiAffinityPolicyV2 resource with the given ID exists.
+func VmAntiAffinityPolicyV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VmAntiAffinityPolicyV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/vmAntiAffinityPolicyV2:VmAntiAffinityPolicyV2", id, state, "", opts...)
+}
+
 type vmAntiAffinityPolicyV2Args struct {
 	// List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
 	Categories []string `pulumi:"categories"`

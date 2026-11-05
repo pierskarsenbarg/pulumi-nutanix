@@ -294,6 +294,12 @@ func (FoundationCentralImageClusterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*foundationCentralImageClusterState)(nil)).Elem()
 }
 
+// FoundationCentralImageClusterExists checks whether an existing FoundationCentralImageCluster resource with the given ID exists.
+func FoundationCentralImageClusterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FoundationCentralImageClusterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/foundationCentralImageCluster:FoundationCentralImageCluster", id, state, "", opts...)
+}
+
 type foundationCentralImageClusterArgs struct {
 	// Sha256sum of AOS package.
 	AosPackageSha256sum *string `pulumi:"aosPackageSha256sum"`

@@ -1827,6 +1827,88 @@ class FoundationImageNodes(pulumi.CustomResource):
         __props__.__dict__["xs_master_username"] = xs_master_username
         return FoundationImageNodes(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            blocks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationImageNodesBlockArgs', 'FoundationImageNodesBlockArgsDict', 'outputs.FoundationImageNodesBlock']]]]] = None,
+            cluster_urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationImageNodesClusterUrlArgs', 'FoundationImageNodesClusterUrlArgsDict', 'outputs.FoundationImageNodesClusterUrl']]]]] = None,
+            clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationImageNodesClusterArgs', 'FoundationImageNodesClusterArgsDict', 'outputs.FoundationImageNodesCluster']]]]] = None,
+            cvm_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            cvm_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+            eos_metadata: pulumi.Input[Optional[Union['FoundationImageNodesEosMetadataArgs', 'FoundationImageNodesEosMetadataArgsDict', 'outputs.FoundationImageNodesEosMetadata']]] = None,
+            fc_settings: pulumi.Input[Optional[Union['FoundationImageNodesFcSettingsArgs', 'FoundationImageNodesFcSettingsArgsDict', 'outputs.FoundationImageNodesFcSettings']]] = None,
+            hyperv_external_vnic: pulumi.Input[Optional[_builtins.str]] = None,
+            hyperv_external_vswitch: pulumi.Input[Optional[_builtins.str]] = None,
+            hyperv_product_key: pulumi.Input[Optional[_builtins.str]] = None,
+            hyperv_sku: pulumi.Input[Optional[_builtins.bool]] = None,
+            hypervisor_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            hypervisor_iso: pulumi.Input[Optional[Union['FoundationImageNodesHypervisorIsoArgs', 'FoundationImageNodesHypervisorIsoArgsDict', 'outputs.FoundationImageNodesHypervisorIso']]] = None,
+            hypervisor_nameserver: pulumi.Input[Optional[_builtins.str]] = None,
+            hypervisor_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+            hypervisor_password: pulumi.Input[Optional[_builtins.str]] = None,
+            install_script: pulumi.Input[Optional[_builtins.str]] = None,
+            ipmi_gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            ipmi_netmask: pulumi.Input[Optional[_builtins.str]] = None,
+            ipmi_password: pulumi.Input[Optional[_builtins.str]] = None,
+            ipmi_user: pulumi.Input[Optional[_builtins.str]] = None,
+            layout_egg_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            nos_package: pulumi.Input[Optional[_builtins.str]] = None,
+            session_id: pulumi.Input[Optional[_builtins.str]] = None,
+            skip_hypervisor: pulumi.Input[Optional[_builtins.bool]] = None,
+            svm_rescue_args: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tests: pulumi.Input[Optional[Union['FoundationImageNodesTestsArgs', 'FoundationImageNodesTestsArgsDict', 'outputs.FoundationImageNodesTests']]] = None,
+            ucsm_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            ucsm_password: pulumi.Input[Optional[_builtins.str]] = None,
+            ucsm_user: pulumi.Input[Optional[_builtins.str]] = None,
+            unc_password: pulumi.Input[Optional[_builtins.str]] = None,
+            unc_path: pulumi.Input[Optional[_builtins.str]] = None,
+            unc_username: pulumi.Input[Optional[_builtins.str]] = None,
+            xen_config_type: pulumi.Input[Optional[_builtins.str]] = None,
+            xs_master_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            xs_master_label: pulumi.Input[Optional[_builtins.str]] = None,
+            xs_master_password: pulumi.Input[Optional[_builtins.str]] = None,
+            xs_master_username: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["blocks"] = blocks
+        __props__["clusterUrls"] = cluster_urls
+        __props__["clusters"] = clusters
+        __props__["cvmGateway"] = cvm_gateway
+        __props__["cvmNetmask"] = cvm_netmask
+        __props__["eosMetadata"] = eos_metadata
+        __props__["fcSettings"] = fc_settings
+        __props__["hypervExternalVnic"] = hyperv_external_vnic
+        __props__["hypervExternalVswitch"] = hyperv_external_vswitch
+        __props__["hypervProductKey"] = hyperv_product_key
+        __props__["hypervSku"] = hyperv_sku
+        __props__["hypervisorGateway"] = hypervisor_gateway
+        __props__["hypervisorIso"] = hypervisor_iso
+        __props__["hypervisorNameserver"] = hypervisor_nameserver
+        __props__["hypervisorNetmask"] = hypervisor_netmask
+        __props__["hypervisorPassword"] = hypervisor_password
+        __props__["installScript"] = install_script
+        __props__["ipmiGateway"] = ipmi_gateway
+        __props__["ipmiNetmask"] = ipmi_netmask
+        __props__["ipmiPassword"] = ipmi_password
+        __props__["ipmiUser"] = ipmi_user
+        __props__["layoutEggUuid"] = layout_egg_uuid
+        __props__["nosPackage"] = nos_package
+        __props__["sessionId"] = session_id
+        __props__["skipHypervisor"] = skip_hypervisor
+        __props__["svmRescueArgs"] = svm_rescue_args
+        __props__["tests"] = tests
+        __props__["ucsmIp"] = ucsm_ip
+        __props__["ucsmPassword"] = ucsm_password
+        __props__["ucsmUser"] = ucsm_user
+        __props__["uncPassword"] = unc_password
+        __props__["uncPath"] = unc_path
+        __props__["uncUsername"] = unc_username
+        __props__["xenConfigType"] = xen_config_type
+        __props__["xsMasterIp"] = xs_master_ip
+        __props__["xsMasterLabel"] = xs_master_label
+        __props__["xsMasterPassword"] = xs_master_password
+        __props__["xsMasterUsername"] = xs_master_username
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/foundationImageNodes:FoundationImageNodes', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def blocks(self) -> pulumi.Output[Sequence['outputs.FoundationImageNodesBlock']]:

@@ -425,6 +425,26 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
         __props__.__dict__["volume_group_ext_id"] = volume_group_ext_id
         return VolumeGroupDiskV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            disk_data_source_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskDataSourceReferenceArgs', 'VolumeGroupDiskV2DiskDataSourceReferenceArgsDict', 'outputs.VolumeGroupDiskV2DiskDataSourceReference']]]]] = None,
+            disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            disk_storage_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskStorageFeatureArgs', 'VolumeGroupDiskV2DiskStorageFeatureArgsDict', 'outputs.VolumeGroupDiskV2DiskStorageFeature']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            index: pulumi.Input[Optional[_builtins.int]] = None,
+            volume_group_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["diskDataSourceReferences"] = disk_data_source_references
+        __props__["diskSizeBytes"] = disk_size_bytes
+        __props__["diskStorageFeatures"] = disk_storage_features
+        __props__["extId"] = ext_id
+        __props__["index"] = index
+        __props__["volumeGroupExtId"] = volume_group_ext_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/volumeGroupDiskV2:VolumeGroupDiskV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[_builtins.str]:

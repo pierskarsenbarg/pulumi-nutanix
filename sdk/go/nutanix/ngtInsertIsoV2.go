@@ -29,17 +29,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			// #############################################
+//			//#############################################
 //			// ------------------------------------------------
 //			// This resource allows inserting a NGT ISO into
 //			// a VM’s CD-ROM device.
 //			//
 //			// You can manage both:
-//			//  1. **Insertion** — via `apply`
-//			//  2. **Ejection** — automatically on `delete`
-//			//     You can also eject the NGT ISO by setting `action = "eject"` → triggers eject operation explicitly.
-//			//
-//			// #############################################
+//			// 1. **Insertion** — via `apply`
+//			// 2. **Ejection** — automatically on `delete`
+//			//  You can also eject the NGT ISO by setting `action = "eject"` → triggers eject operation explicitly.
+//			//#############################################
 //			_, err := nutanix.NewNgtInsertIsoV2(ctx, "example", &nutanix.NgtInsertIsoV2Args{
 //				ExtId: pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),
 //				Capablities: pulumi.StringArray{
@@ -185,6 +184,12 @@ type NgtInsertIsoV2State struct {
 
 func (NgtInsertIsoV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*ngtInsertIsoV2State)(nil)).Elem()
+}
+
+// NgtInsertIsoV2Exists checks whether an existing NgtInsertIsoV2 resource with the given ID exists.
+func NgtInsertIsoV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NgtInsertIsoV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ngtInsertIsoV2:NgtInsertIsoV2", id, state, "", opts...)
 }
 
 type ngtInsertIsoV2Args struct {

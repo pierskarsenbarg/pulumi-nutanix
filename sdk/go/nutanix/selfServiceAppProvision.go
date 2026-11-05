@@ -168,6 +168,12 @@ func (SelfServiceAppProvisionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*selfServiceAppProvisionState)(nil)).Elem()
 }
 
+// SelfServiceAppProvisionExists checks whether an existing SelfServiceAppProvision resource with the given ID exists.
+func SelfServiceAppProvisionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SelfServiceAppProvisionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/selfServiceAppProvision:SelfServiceAppProvision", id, state, "", opts...)
+}
+
 type selfServiceAppProvisionArgs struct {
 	// - (Optional) System action to trigger after provisioning. Valid values: ["start", "stop", "restart"]
 	Action *string `pulumi:"action"`

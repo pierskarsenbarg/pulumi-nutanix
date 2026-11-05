@@ -354,6 +354,24 @@ class RecoveryPointRestoreV2(pulumi.CustomResource):
         __props__.__dict__["volume_group_recovery_point_restore_overrides"] = volume_group_recovery_point_restore_overrides
         return RecoveryPointRestoreV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            vm_recovery_point_restore_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs', 'RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgsDict', 'outputs.RecoveryPointRestoreV2VmRecoveryPointRestoreOverride']]]]] = None,
+            volume_group_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            volume_group_recovery_point_restore_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs', 'RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgsDict', 'outputs.RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverride']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["clusterExtId"] = cluster_ext_id
+        __props__["extId"] = ext_id
+        __props__["vmExtIds"] = vm_ext_ids
+        __props__["vmRecoveryPointRestoreOverrides"] = vm_recovery_point_restore_overrides
+        __props__["volumeGroupExtIds"] = volume_group_ext_ids
+        __props__["volumeGroupRecoveryPointRestoreOverrides"] = volume_group_recovery_point_restore_overrides
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/recoveryPointRestoreV2:RecoveryPointRestoreV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="clusterExtId")
     def cluster_ext_id(self) -> pulumi.Output[_builtins.str]:

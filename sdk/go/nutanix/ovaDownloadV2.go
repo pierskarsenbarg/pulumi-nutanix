@@ -69,6 +69,12 @@ func (OvaDownloadV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*ovaDownloadV2State)(nil)).Elem()
 }
 
+// OvaDownloadV2Exists checks whether an existing OvaDownloadV2 resource with the given ID exists.
+func OvaDownloadV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OvaDownloadV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ovaDownloadV2:OvaDownloadV2", id, state, "", opts...)
+}
+
 type ovaDownloadV2Args struct {
 	// -(Required) The external identifier for an OVA.
 	OvaExtId string `pulumi:"ovaExtId"`

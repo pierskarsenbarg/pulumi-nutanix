@@ -312,6 +312,22 @@ class LcmPrechecksV2(pulumi.CustomResource):
         __props__.__dict__["x_cluster_id"] = x_cluster_id
         return LcmPrechecksV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict', 'outputs.LcmPrechecksV2EntityUpdateSpec']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            management_server: pulumi.Input[Optional[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict', 'outputs.LcmPrechecksV2ManagementServer']]] = None,
+            skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["entityUpdateSpecs"] = entity_update_specs
+        __props__["extId"] = ext_id
+        __props__["managementServer"] = management_server
+        __props__["skippedPrecheckFlags"] = skipped_precheck_flags
+        __props__["xClusterId"] = x_cluster_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/lcmPrechecksV2:LcmPrechecksV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="entityUpdateSpecs")
     def entity_update_specs(self) -> pulumi.Output[Sequence['outputs.LcmPrechecksV2EntityUpdateSpec']]:

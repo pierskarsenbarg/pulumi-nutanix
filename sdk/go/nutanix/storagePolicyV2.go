@@ -351,6 +351,12 @@ func (StoragePolicyV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*storagePolicyV2State)(nil)).Elem()
 }
 
+// StoragePolicyV2Exists checks whether an existing StoragePolicyV2 resource with the given ID exists.
+func StoragePolicyV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *StoragePolicyV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/storagePolicyV2:StoragePolicyV2", id, state, "", opts...)
+}
+
 type storagePolicyV2Args struct {
 	// - (Optional) List of external identifiers for Categories to be included in the Storage Policy. Each ID must be a valid UUID format. Maximum 20 items allowed.
 	CategoryExtIds []string `pulumi:"categoryExtIds"`

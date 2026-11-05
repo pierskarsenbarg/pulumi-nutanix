@@ -323,6 +323,22 @@ class ClustersUnconfiguredNodeNetworksV2(pulumi.CustomResource):
         __props__.__dict__["request_type"] = request_type
         return ClustersUnconfiguredNodeNetworksV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            expand: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodeListArgs', 'ClustersUnconfiguredNodeNetworksV2NodeListArgsDict', 'outputs.ClustersUnconfiguredNodeNetworksV2NodeList']]]]] = None,
+            nodes_networking_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailArgs', 'ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailArgsDict', 'outputs.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail']]]]] = None,
+            request_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["expand"] = expand
+        __props__["extId"] = ext_id
+        __props__["nodeLists"] = node_lists
+        __props__["nodesNetworkingDetails"] = nodes_networking_details
+        __props__["requestType"] = request_type
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/clustersUnconfiguredNodeNetworksV2:ClustersUnconfiguredNodeNetworksV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def expand(self) -> pulumi.Output[Optional[_builtins.str]]:

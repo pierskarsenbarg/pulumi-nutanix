@@ -712,6 +712,42 @@ class SamlIdentityProvidersV2(pulumi.CustomResource):
         __props__.__dict__["username_attribute"] = username_attribute
         return SamlIdentityProvidersV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_time: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            email_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_issuer: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            groups_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+            groups_delim: pulumi.Input[Optional[_builtins.str]] = None,
+            idp_metadata_url: pulumi.Input[Optional[_builtins.str]] = None,
+            idp_metadata_xml: pulumi.Input[Optional[_builtins.str]] = None,
+            idp_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SamlIdentityProvidersV2IdpMetadataArgs', 'SamlIdentityProvidersV2IdpMetadataArgsDict', 'outputs.SamlIdentityProvidersV2IdpMetadata']]]]] = None,
+            is_signed_authn_req_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            username_attribute: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdBy"] = created_by
+        __props__["createdTime"] = created_time
+        __props__["customAttributes"] = custom_attributes
+        __props__["emailAttribute"] = email_attribute
+        __props__["entityIssuer"] = entity_issuer
+        __props__["extId"] = ext_id
+        __props__["groupsAttribute"] = groups_attribute
+        __props__["groupsDelim"] = groups_delim
+        __props__["idpMetadataUrl"] = idp_metadata_url
+        __props__["idpMetadataXml"] = idp_metadata_xml
+        __props__["idpMetadatas"] = idp_metadatas
+        __props__["isSignedAuthnReqEnabled"] = is_signed_authn_req_enabled
+        __props__["lastUpdatedTime"] = last_updated_time
+        __props__["name"] = name
+        __props__["usernameAttribute"] = username_attribute
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/samlIdentityProvidersV2:SamlIdentityProvidersV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> pulumi.Output[_builtins.str]:

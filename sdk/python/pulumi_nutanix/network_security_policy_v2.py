@@ -706,6 +706,46 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
         __props__.__dict__["vpc_references"] = vpc_references
         return NetworkSecurityPolicyV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            creation_time: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_hitlog_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_ipv6_traffic_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2LinkArgs', 'NetworkSecurityPolicyV2LinkArgsDict', 'outputs.NetworkSecurityPolicyV2Link']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict', 'outputs.NetworkSecurityPolicyV2Rule']]]]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            secured_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdBy"] = created_by
+        __props__["creationTime"] = creation_time
+        __props__["description"] = description
+        __props__["extId"] = ext_id
+        __props__["isHitlogEnabled"] = is_hitlog_enabled
+        __props__["isIpv6TrafficAllowed"] = is_ipv6_traffic_allowed
+        __props__["isSystemDefined"] = is_system_defined
+        __props__["lastUpdateTime"] = last_update_time
+        __props__["links"] = links
+        __props__["name"] = name
+        __props__["rules"] = rules
+        __props__["scope"] = scope
+        __props__["securedGroups"] = secured_groups
+        __props__["state"] = state
+        __props__["tenantId"] = tenant_id
+        __props__["type"] = type
+        __props__["vpcReferences"] = vpc_references
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/networkSecurityPolicyV2:NetworkSecurityPolicyV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> pulumi.Output[_builtins.str]:

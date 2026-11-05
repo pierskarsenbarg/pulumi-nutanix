@@ -179,6 +179,17 @@ export class SelfServiceAppPatch extends pulumi.CustomResource {
         return new SelfServiceAppPatch(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing SelfServiceAppPatch resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: SelfServiceAppPatchState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("nutanix:index/selfServiceAppPatch:SelfServiceAppPatch", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'nutanix:index/selfServiceAppPatch:SelfServiceAppPatch';
 

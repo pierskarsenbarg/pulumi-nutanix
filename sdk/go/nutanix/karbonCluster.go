@@ -300,6 +300,12 @@ func (KarbonClusterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*karbonClusterState)(nil)).Elem()
 }
 
+// KarbonClusterExists checks whether an existing KarbonCluster resource with the given ID exists.
+func KarbonClusterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *KarbonClusterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/karbonCluster:KarbonCluster", id, state, "", opts...)
+}
+
 type karbonClusterArgs struct {
 	// - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
 	ActivePassiveConfig *KarbonClusterActivePassiveConfig `pulumi:"activePassiveConfig"`

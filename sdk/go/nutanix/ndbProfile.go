@@ -158,6 +158,12 @@ func (NdbProfileState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbProfileState)(nil)).Elem()
 }
 
+// NdbProfileExists checks whether an existing NdbProfile resource with the given ID exists.
+func NdbProfileExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbProfileState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbProfile:NdbProfile", id, state, "", opts...)
+}
+
 type ndbProfileArgs struct {
 	// Compute Profile
 	ComputeProfiles []NdbProfileComputeProfile `pulumi:"computeProfiles"`

@@ -133,6 +133,12 @@ func (FoundationCentralOnboardNodesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*foundationCentralOnboardNodesState)(nil)).Elem()
 }
 
+// FoundationCentralOnboardNodesExists checks whether an existing FoundationCentralOnboardNodes resource with the given ID exists.
+func FoundationCentralOnboardNodesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FoundationCentralOnboardNodesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/foundationCentralOnboardNodes:FoundationCentralOnboardNodes", id, state, "", opts...)
+}
+
 type foundationCentralOnboardNodesArgs struct {
 	// Serial number of the node to onboard
 	NodeSerial string `pulumi:"nodeSerial"`

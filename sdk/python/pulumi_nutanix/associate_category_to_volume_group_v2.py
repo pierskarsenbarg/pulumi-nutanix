@@ -225,6 +225,16 @@ class AssociateCategoryToVolumeGroupV2(pulumi.CustomResource):
         __props__.__dict__["ext_id"] = ext_id
         return AssociateCategoryToVolumeGroupV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssociateCategoryToVolumeGroupV2CategoryArgs', 'AssociateCategoryToVolumeGroupV2CategoryArgsDict', 'outputs.AssociateCategoryToVolumeGroupV2Category']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["categories"] = categories
+        __props__["extId"] = ext_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/associateCategoryToVolumeGroupV2:AssociateCategoryToVolumeGroupV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def categories(self) -> pulumi.Output[Optional[Sequence['outputs.AssociateCategoryToVolumeGroupV2Category']]]:

@@ -100,7 +100,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string TenantId;
         /// <summary>
         /// - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
-        /// Type of the User.
+        ///   Type of the User.
         /// </summary>
         public readonly string UserType;
         /// <summary>

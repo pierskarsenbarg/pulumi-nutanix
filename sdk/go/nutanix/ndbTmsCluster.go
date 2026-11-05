@@ -180,6 +180,12 @@ func (NdbTmsClusterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbTmsClusterState)(nil)).Elem()
 }
 
+// NdbTmsClusterExists checks whether an existing NdbTmsCluster resource with the given ID exists.
+func NdbTmsClusterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbTmsClusterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbTmsCluster:NdbTmsCluster", id, state, "", opts...)
+}
+
 type ndbTmsClusterArgs struct {
 	// Nutanix cluster id on the associated registered clusters.
 	NxClusterId string `pulumi:"nxClusterId"`

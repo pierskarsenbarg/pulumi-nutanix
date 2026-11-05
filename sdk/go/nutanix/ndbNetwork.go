@@ -182,6 +182,12 @@ func (NdbNetworkState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbNetworkState)(nil)).Elem()
 }
 
+// NdbNetworkExists checks whether an existing NdbNetwork resource with the given ID exists.
+func NdbNetworkExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbNetworkState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbNetwork:NdbNetwork", id, state, "", opts...)
+}
+
 type ndbNetworkArgs struct {
 	// Select the Nutanix cluster on which you want to add the VLAN.
 	ClusterId string `pulumi:"clusterId"`

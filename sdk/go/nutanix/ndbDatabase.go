@@ -650,6 +650,12 @@ func (NdbDatabaseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbDatabaseState)(nil)).Elem()
 }
 
+// NdbDatabaseExists checks whether an existing NdbDatabase resource with the given ID exists.
+func NdbDatabaseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbDatabaseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbDatabase:NdbDatabase", id, state, "", opts...)
+}
+
 type ndbDatabaseArgs struct {
 	// - (Optional) action arguments for database. For postgress, you can use postgresql_info
 	Actionarguments []NdbDatabaseActionargument `pulumi:"actionarguments"`

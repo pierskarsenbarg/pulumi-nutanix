@@ -428,6 +428,30 @@ class AddressGroupsV2(pulumi.CustomResource):
         __props__.__dict__["tenant_id"] = tenant_id
         return AddressGroupsV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict', 'outputs.AddressGroupsV2IpRange']]]]] = None,
+            ipv4_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict', 'outputs.AddressGroupsV2Ipv4Address']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2LinkArgs', 'AddressGroupsV2LinkArgsDict', 'outputs.AddressGroupsV2Link']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdBy"] = created_by
+        __props__["description"] = description
+        __props__["extId"] = ext_id
+        __props__["ipRanges"] = ip_ranges
+        __props__["ipv4Addresses"] = ipv4_addresses
+        __props__["links"] = links
+        __props__["name"] = name
+        __props__["policyReferences"] = policy_references
+        __props__["tenantId"] = tenant_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/addressGroupsV2:AddressGroupsV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> pulumi.Output[_builtins.str]:

@@ -417,6 +417,24 @@ class NdbStretchedVlan(pulumi.CustomResource):
         __props__.__dict__["vlans_lists"] = vlans_lists
         return NdbStretchedVlan(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Union['NdbStretchedVlanMetadataArgs', 'NdbStretchedVlanMetadataArgsDict', 'outputs.NdbStretchedVlanMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            vlan_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            vlans_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbStretchedVlanVlansListArgs', 'NdbStretchedVlanVlansListArgsDict', 'outputs.NdbStretchedVlanVlansList']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["type"] = type
+        __props__["vlanIds"] = vlan_ids
+        __props__["vlansLists"] = vlans_lists
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbStretchedVlan:NdbStretchedVlan', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:

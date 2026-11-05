@@ -231,6 +231,12 @@ func (VolumeGroupV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*volumeGroupV2State)(nil)).Elem()
 }
 
+// VolumeGroupV2Exists checks whether an existing VolumeGroupV2 resource with the given ID exists.
+func VolumeGroupV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VolumeGroupV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/volumeGroupV2:VolumeGroupV2", id, state, "", opts...)
+}
+
 type volumeGroupV2Args struct {
 	// -(Optional) The field indicates whether a VG has a VM or an external attachment associated with it. Valid values are :
 	// - EXTERNAL : Volume Group has an external iSCSI or NVMf attachment.

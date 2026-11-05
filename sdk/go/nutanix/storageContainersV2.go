@@ -280,6 +280,12 @@ func (StorageContainersV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*storageContainersV2State)(nil)).Elem()
 }
 
+// StorageContainersV2Exists checks whether an existing StorageContainersV2 resource with the given ID exists.
+func StorageContainersV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *StorageContainersV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/storageContainersV2:StorageContainersV2", id, state, "", opts...)
+}
+
 type storageContainersV2Args struct {
 	// -(Optional) Affinity host extId for RF 1 Storage Container.
 	AffinityHostExtId *string `pulumi:"affinityHostExtId"`

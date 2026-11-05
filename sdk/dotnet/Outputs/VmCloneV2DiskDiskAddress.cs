@@ -16,7 +16,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         /// <summary>
         /// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-        /// Valid values are:
+        ///   Valid values are:
         /// - `SCSI` The type of disk bus is SCSI.
         /// - `SPAPR` The type of disk bus is SPAPR.
         /// - `PCI` The type of disk bus is PCI.

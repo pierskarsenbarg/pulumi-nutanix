@@ -164,6 +164,12 @@ func (AddressGroupsV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*addressGroupsV2State)(nil)).Elem()
 }
 
+// AddressGroupsV2Exists checks whether an existing AddressGroupsV2 resource with the given ID exists.
+func AddressGroupsV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AddressGroupsV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/addressGroupsV2:AddressGroupsV2", id, state, "", opts...)
+}
+
 type addressGroupsV2Args struct {
 	// - (Optional) Description of the Address group
 	Description *string `pulumi:"description"`

@@ -212,6 +212,12 @@ func (AccessControlPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*accessControlPolicyState)(nil)).Elem()
 }
 
+// AccessControlPolicyExists checks whether an existing AccessControlPolicy resource with the given ID exists.
+func AccessControlPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AccessControlPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/accessControlPolicy:AccessControlPolicy", id, state, "", opts...)
+}
+
 type accessControlPolicyArgs struct {
 	// - (Optional) Categories for the Access Control Policy.
 	Categories         []AccessControlPolicyCategory          `pulumi:"categories"`

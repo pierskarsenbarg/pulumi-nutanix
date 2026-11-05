@@ -179,6 +179,12 @@ func (KarbonWorkerNodepoolState) ElementType() reflect.Type {
 	return reflect.TypeOf((*karbonWorkerNodepoolState)(nil)).Elem()
 }
 
+// KarbonWorkerNodepoolExists checks whether an existing KarbonWorkerNodepool resource with the given ID exists.
+func KarbonWorkerNodepoolExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *KarbonWorkerNodepoolState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/karbonWorkerNodepool:KarbonWorkerNodepool", id, state, "", opts...)
+}
+
 type karbonWorkerNodepoolArgs struct {
 	// VM configuration in AHV.
 	AhvConfig *KarbonWorkerNodepoolAhvConfig `pulumi:"ahvConfig"`

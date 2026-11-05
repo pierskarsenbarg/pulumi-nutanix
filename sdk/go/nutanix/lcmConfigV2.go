@@ -148,6 +148,12 @@ func (LcmConfigV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*lcmConfigV2State)(nil)).Elem()
 }
 
+// LcmConfigV2Exists checks whether an existing LcmConfigV2 resource with the given ID exists.
+func LcmConfigV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LcmConfigV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/lcmConfigV2:LcmConfigV2", id, state, "", opts...)
+}
+
 type lcmConfigV2Args struct {
 	// The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when<span pulumi-lang-nodejs=" autoInventoryEnabled " pulumi-lang-dotnet=" AutoInventoryEnabled " pulumi-lang-go=" autoInventoryEnabled " pulumi-lang-python=" auto_inventory_enabled " pulumi-lang-yaml=" autoInventoryEnabled " pulumi-lang-java=" autoInventoryEnabled " pulumi-lang-hcl=" auto_inventory_enabled "> autoInventoryEnabled </span>is set to True. The default schedule time is 03:00(AM).
 	AutoInventorySchedule *string `pulumi:"autoInventorySchedule"`

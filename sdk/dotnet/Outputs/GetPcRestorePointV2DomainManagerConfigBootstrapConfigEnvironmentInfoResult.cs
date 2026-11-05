@@ -16,7 +16,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         /// <summary>
         /// - Enums denoting the provider type of the PC, that is, AHV or ESXi.
-        /// Following are the supported provider types:
+        ///   Following are the supported provider types:
         /// - `VSPHERE` : Vsphere cloud provider.
         /// - `AZURE` : Azure cloud provider.
         /// - `NTNX` : Nutanix cloud provider.
@@ -32,7 +32,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string ProvisioningType;
         /// <summary>
         /// - Enums denoting the environment type of the PC, that is, on-prem PC or cloud PC.
-        /// Following are the supported entity types:
+        ///   Following are the supported entity types:
         /// - `ONPREM` : On-prem environment.
         /// - `NTNX_CLOUD` : Nutanix cloud environment.
         /// </summary>

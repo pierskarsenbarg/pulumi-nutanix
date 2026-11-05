@@ -109,6 +109,12 @@ func (CategoryKeyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*categoryKeyState)(nil)).Elem()
 }
 
+// CategoryKeyExists checks whether an existing CategoryKey resource with the given ID exists.
+func CategoryKeyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CategoryKeyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/categoryKey:CategoryKey", id, state, "", opts...)
+}
+
 type categoryKeyArgs struct {
 	// - (Optional) A description for category key.
 	Description *string `pulumi:"description"`

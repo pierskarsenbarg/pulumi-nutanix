@@ -15,7 +15,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Fetch a category
         /// 
-        /// 
         /// ## Example
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -125,7 +124,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Fetch a category
         /// 
-        /// 
         /// ## Example
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -234,7 +232,6 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// Fetch a category
-        /// 
         /// 
         /// ## Example
         /// 

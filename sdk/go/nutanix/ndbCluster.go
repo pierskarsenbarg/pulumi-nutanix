@@ -313,6 +313,12 @@ func (NdbClusterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbClusterState)(nil)).Elem()
 }
 
+// NdbClusterExists checks whether an existing NdbCluster resource with the given ID exists.
+func NdbClusterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbClusterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbCluster:NdbCluster", id, state, "", opts...)
+}
+
 type ndbClusterArgs struct {
 	// agent network info to register cluster
 	AgentNetworkInfos []NdbClusterAgentNetworkInfo `pulumi:"agentNetworkInfos"`

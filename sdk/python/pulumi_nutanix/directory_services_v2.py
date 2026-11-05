@@ -604,6 +604,38 @@ class DirectoryServicesV2(pulumi.CustomResource):
         __props__.__dict__["white_listed_groups"] = white_listed_groups
         return DirectoryServicesV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_time: pulumi.Input[Optional[_builtins.str]] = None,
+            directory_type: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_search_type: pulumi.Input[Optional[_builtins.str]] = None,
+            last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict', 'outputs.DirectoryServicesV2OpenLdapConfiguration']]]]] = None,
+            secondary_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            service_accounts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict', 'outputs.DirectoryServicesV2ServiceAccount']]]]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None,
+            white_listed_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdBy"] = created_by
+        __props__["createdTime"] = created_time
+        __props__["directoryType"] = directory_type
+        __props__["domainName"] = domain_name
+        __props__["extId"] = ext_id
+        __props__["groupSearchType"] = group_search_type
+        __props__["lastUpdatedTime"] = last_updated_time
+        __props__["name"] = name
+        __props__["openLdapConfigurations"] = open_ldap_configurations
+        __props__["secondaryUrls"] = secondary_urls
+        __props__["serviceAccounts"] = service_accounts
+        __props__["url"] = url
+        __props__["whiteListedGroups"] = white_listed_groups
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/directoryServicesV2:DirectoryServicesV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> pulumi.Output[_builtins.str]:

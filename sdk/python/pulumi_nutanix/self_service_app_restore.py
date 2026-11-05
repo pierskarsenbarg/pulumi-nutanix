@@ -344,6 +344,22 @@ class SelfServiceAppRestore(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         return SelfServiceAppRestore(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            app_name: pulumi.Input[Optional[_builtins.str]] = None,
+            app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            restore_action_name: pulumi.Input[Optional[_builtins.str]] = None,
+            snapshot_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["appName"] = app_name
+        __props__["appUuid"] = app_uuid
+        __props__["restoreActionName"] = restore_action_name
+        __props__["snapshotUuid"] = snapshot_uuid
+        __props__["state"] = state
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/selfServiceAppRestore:SelfServiceAppRestore', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="appName")
     def app_name(self) -> pulumi.Output[Optional[_builtins.str]]:

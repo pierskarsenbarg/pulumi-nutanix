@@ -47,8 +47,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         /// <summary>
         /// - (Optional) The type of this Network function NIC.
-        /// Defaults to INGRESS.
-        /// Valid values are:
+        ///   Defaults to INGRESS.
+        ///   Valid values are:
         /// - `TAP` The type of Network-Function NIC is Tap.
         /// - `EGRESS` The type of Network-Function NIC is Egress.
         /// - `INGRESS` The type of Network-Function NIC is Ingress.
@@ -58,8 +58,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         /// <summary>
         /// - (Optional) NIC type.
-        /// Defaults to NORMAL_NIC.
-        /// Valid values are:
+        ///   Defaults to NORMAL_NIC.
+        ///   Valid values are:
         /// - `SPAN_DESTINATION_NIC` The type of NIC is Span-Destination.
         /// - `NORMAL_NIC` The type of NIC is Normal.
         /// - `DIRECT_NIC` The type of NIC is Direct.
@@ -100,7 +100,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         /// <summary>
         /// - (Optional) By default, all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-        /// Valid values are:
+        ///   Valid values are:
         /// - `TRUNK` The virtual NIC is created in TRUNKED mode.
         /// - `ACCESS` The virtual NIC is created in ACCESS mode.
         /// </summary>

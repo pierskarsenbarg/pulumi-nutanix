@@ -15,7 +15,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Provides a datasource to Fetches the stats information of the Storage Container identified by {containerExtId}.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -153,7 +152,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Provides a datasource to Fetches the stats information of the Storage Container identified by {containerExtId}.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -290,7 +288,6 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// Provides a datasource to Fetches the stats information of the Storage Container identified by {containerExtId}.
-        /// 
         /// 
         /// ## Example Usage
         /// 

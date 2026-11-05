@@ -299,6 +299,12 @@ func (NdbDatabaseSnapshotState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbDatabaseSnapshotState)(nil)).Elem()
 }
 
+// NdbDatabaseSnapshotExists checks whether an existing NdbDatabaseSnapshot resource with the given ID exists.
+func NdbDatabaseSnapshotExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbDatabaseSnapshotState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbDatabaseSnapshot:NdbDatabaseSnapshot", id, state, "", opts...)
+}
+
 type ndbDatabaseSnapshotArgs struct {
 	// Default is set to Asia/Calcutta
 	ExpiryDateTimezone *string `pulumi:"expiryDateTimezone"`

@@ -387,6 +387,26 @@ class KarbonPrivateRegistry(pulumi.CustomResource):
         __props__.__dict__["username"] = username
         return KarbonPrivateRegistry(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cert: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cert"] = cert
+        __props__["endpoint"] = endpoint
+        __props__["name"] = name
+        __props__["password"] = password
+        __props__["port"] = port
+        __props__["url"] = url
+        __props__["username"] = username
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/karbonPrivateRegistry:KarbonPrivateRegistry', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def cert(self) -> pulumi.Output[Optional[_builtins.str]]:

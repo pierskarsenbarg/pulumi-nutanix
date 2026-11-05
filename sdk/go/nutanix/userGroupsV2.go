@@ -151,6 +151,12 @@ func (UserGroupsV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*userGroupsV2State)(nil)).Elem()
 }
 
+// UserGroupsV2Exists checks whether an existing UserGroupsV2 resource with the given ID exists.
+func UserGroupsV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UserGroupsV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/userGroupsV2:UserGroupsV2", id, state, "", opts...)
+}
+
 type userGroupsV2Args struct {
 	// -(Optional) Identifier for the User Group in the form of a distinguished name.
 	DistinguishedName *string `pulumi:"distinguishedName"`

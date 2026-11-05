@@ -214,6 +214,12 @@ func (SamlIdentityProvidersV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*samlIdentityProvidersV2State)(nil)).Elem()
 }
 
+// SamlIdentityProvidersV2Exists checks whether an existing SamlIdentityProvidersV2 resource with the given ID exists.
+func SamlIdentityProvidersV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SamlIdentityProvidersV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/samlIdentityProvidersV2:SamlIdentityProvidersV2", id, state, "", opts...)
+}
+
 type samlIdentityProvidersV2Args struct {
 	CustomAttributes []string `pulumi:"customAttributes"`
 	EmailAttribute   *string  `pulumi:"emailAttribute"`

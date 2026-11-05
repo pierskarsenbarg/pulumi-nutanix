@@ -584,6 +584,26 @@ class CategoryV2(pulumi.CustomResource):
         __props__.__dict__["value"] = value
         return CategoryV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CategoryV2AssociationArgs', 'CategoryV2AssociationArgsDict', 'outputs.CategoryV2Association']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            detailed_associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CategoryV2DetailedAssociationArgs', 'CategoryV2DetailedAssociationArgsDict', 'outputs.CategoryV2DetailedAssociation']]]]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            value: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["associations"] = associations
+        __props__["description"] = description
+        __props__["detailedAssociations"] = detailed_associations
+        __props__["key"] = key
+        __props__["ownerUuid"] = owner_uuid
+        __props__["type"] = type
+        __props__["value"] = value
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/categoryV2:CategoryV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def associations(self) -> pulumi.Output[Sequence['outputs.CategoryV2Association']]:

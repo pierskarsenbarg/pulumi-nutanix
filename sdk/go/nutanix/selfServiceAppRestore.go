@@ -104,6 +104,12 @@ func (SelfServiceAppRestoreState) ElementType() reflect.Type {
 	return reflect.TypeOf((*selfServiceAppRestoreState)(nil)).Elem()
 }
 
+// SelfServiceAppRestoreExists checks whether an existing SelfServiceAppRestore resource with the given ID exists.
+func SelfServiceAppRestoreExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SelfServiceAppRestoreState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/selfServiceAppRestore:SelfServiceAppRestore", id, state, "", opts...)
+}
+
 type selfServiceAppRestoreArgs struct {
 	// - (Optional) The name of the application
 	AppName *string `pulumi:"appName"`

@@ -188,6 +188,12 @@ func (DirectoryServicesV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*directoryServicesV2State)(nil)).Elem()
 }
 
+// DirectoryServicesV2Exists checks whether an existing DirectoryServicesV2 resource with the given ID exists.
+func DirectoryServicesV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DirectoryServicesV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/directoryServicesV2:DirectoryServicesV2", id, state, "", opts...)
+}
+
 type directoryServicesV2Args struct {
 	// -(Required) Type of Directory Service, Supported values are: "ACTIVE_DIRECTORY" (Directory Service type is Active Directory.) and "OPEN_LDAP" (Directory Service type is Open LDAP.)
 	DirectoryType string `pulumi:"directoryType"`

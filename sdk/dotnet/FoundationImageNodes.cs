@@ -182,14 +182,14 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - list containing cluster name and cluster urls for created clusters in current session
         /// * `cluster_urls.#.cluster_name` :-&lt;span pulumi-lang-nodejs=" clusterName
-        /// " pulumi-lang-dotnet=" ClusterName
-        /// " pulumi-lang-go=" clusterName
-        /// " pulumi-lang-python=" cluster_name
-        /// " pulumi-lang-yaml=" clusterName
-        /// " pulumi-lang-java=" clusterName
-        /// " pulumi-lang-hcl=" cluster_name
-        /// "&gt; clusterName
-        /// &lt;/span&gt;* `cluster_urls.#.cluster_url` :- url to access the cluster login
+        ///   " pulumi-lang-dotnet=" ClusterName
+        ///   " pulumi-lang-go=" clusterName
+        ///   " pulumi-lang-python=" cluster_name
+        ///   " pulumi-lang-yaml=" clusterName
+        ///   " pulumi-lang-java=" clusterName
+        ///   " pulumi-lang-hcl=" cluster_name
+        ///   "&gt; clusterName
+        ///   &lt;/span&gt;* `cluster_urls.#.cluster_url` :- url to access the cluster login
         /// </summary>
         [Output("clusterUrls")]
         public Output<ImmutableArray<Outputs.FoundationImageNodesClusterUrl>> ClusterUrls { get; private set; } = null!;
@@ -711,14 +711,14 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - list containing cluster name and cluster urls for created clusters in current session
         /// * `cluster_urls.#.cluster_name` :-&lt;span pulumi-lang-nodejs=" clusterName
-        /// " pulumi-lang-dotnet=" ClusterName
-        /// " pulumi-lang-go=" clusterName
-        /// " pulumi-lang-python=" cluster_name
-        /// " pulumi-lang-yaml=" clusterName
-        /// " pulumi-lang-java=" clusterName
-        /// " pulumi-lang-hcl=" cluster_name
-        /// "&gt; clusterName
-        /// &lt;/span&gt;* `cluster_urls.#.cluster_url` :- url to access the cluster login
+        ///   " pulumi-lang-dotnet=" ClusterName
+        ///   " pulumi-lang-go=" clusterName
+        ///   " pulumi-lang-python=" cluster_name
+        ///   " pulumi-lang-yaml=" clusterName
+        ///   " pulumi-lang-java=" clusterName
+        ///   " pulumi-lang-hcl=" cluster_name
+        ///   "&gt; clusterName
+        ///   &lt;/span&gt;* `cluster_urls.#.cluster_url` :- url to access the cluster login
         /// </summary>
         public InputList<Inputs.FoundationImageNodesClusterUrlGetArgs> ClusterUrls
         {

@@ -263,6 +263,12 @@ func (UserKeyV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*userKeyV2State)(nil)).Elem()
 }
 
+// UserKeyV2Exists checks whether an existing UserKeyV2 resource with the given ID exists.
+func UserKeyV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UserKeyV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/userKeyV2:UserKeyV2", id, state, "", opts...)
+}
+
 type userKeyV2Args struct {
 	// - ( Optional ) External client to whom the given key is allocated.
 	AssignedTo *string `pulumi:"assignedTo"`

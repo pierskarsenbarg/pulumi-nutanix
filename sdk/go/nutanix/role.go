@@ -157,6 +157,12 @@ func (RoleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*roleState)(nil)).Elem()
 }
 
+// RoleExists checks whether an existing Role resource with the given ID exists.
+func RoleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RoleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/role:Role", id, state, "", opts...)
+}
+
 type roleArgs struct {
 	// - (Optional) Categories for the role.
 	Categories []RoleCategory `pulumi:"categories"`

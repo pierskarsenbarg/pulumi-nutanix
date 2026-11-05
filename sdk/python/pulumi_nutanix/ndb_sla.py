@@ -614,6 +614,44 @@ class NdbSla(pulumi.CustomResource):
         __props__.__dict__["yearly_retention"] = yearly_retention
         return NdbSla(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            continuous_retention: pulumi.Input[Optional[_builtins.int]] = None,
+            current_active_frequency: pulumi.Input[Optional[_builtins.str]] = None,
+            daily_retention: pulumi.Input[Optional[_builtins.int]] = None,
+            date_created: pulumi.Input[Optional[_builtins.str]] = None,
+            date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            monthly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pitr_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            quarterly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+            reference_count: pulumi.Input[Optional[_builtins.int]] = None,
+            system_sla: pulumi.Input[Optional[_builtins.bool]] = None,
+            unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            weekly_retention: pulumi.Input[Optional[_builtins.int]] = None,
+            yearly_retention: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["continuousRetention"] = continuous_retention
+        __props__["currentActiveFrequency"] = current_active_frequency
+        __props__["dailyRetention"] = daily_retention
+        __props__["dateCreated"] = date_created
+        __props__["dateModified"] = date_modified
+        __props__["description"] = description
+        __props__["monthlyRetention"] = monthly_retention
+        __props__["name"] = name
+        __props__["ownerId"] = owner_id
+        __props__["pitrEnabled"] = pitr_enabled
+        __props__["quarterlyRetention"] = quarterly_retention
+        __props__["referenceCount"] = reference_count
+        __props__["systemSla"] = system_sla
+        __props__["uniqueName"] = unique_name
+        __props__["weeklyRetention"] = weekly_retention
+        __props__["yearlyRetention"] = yearly_retention
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbSla:NdbSla', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="continuousRetention")
     def continuous_retention(self) -> pulumi.Output[Optional[_builtins.int]]:

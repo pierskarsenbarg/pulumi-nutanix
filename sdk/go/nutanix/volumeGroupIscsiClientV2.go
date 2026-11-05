@@ -29,7 +29,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			// list iscsi clients
+//			//list iscsi clients
 //			list_iscsi_clients, err := nutanix.GetVolumeIscsiClientsV2(ctx, &nutanix.GetVolumeIscsiClientsV2Args{}, nil)
 //			if err != nil {
 //				return err
@@ -142,6 +142,12 @@ type VolumeGroupIscsiClientV2State struct {
 
 func (VolumeGroupIscsiClientV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*volumeGroupIscsiClientV2State)(nil)).Elem()
+}
+
+// VolumeGroupIscsiClientV2Exists checks whether an existing VolumeGroupIscsiClientV2 resource with the given ID exists.
+func VolumeGroupIscsiClientV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VolumeGroupIscsiClientV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/volumeGroupIscsiClientV2:VolumeGroupIscsiClientV2", id, state, "", opts...)
 }
 
 type volumeGroupIscsiClientV2Args struct {

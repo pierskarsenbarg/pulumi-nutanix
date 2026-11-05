@@ -326,6 +326,12 @@ func (ObjectStoreV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*objectStoreV2State)(nil)).Elem()
 }
 
+// ObjectStoreV2Exists checks whether an existing ObjectStoreV2 resource with the given ID exists.
+func ObjectStoreV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ObjectStoreV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/objectStoreV2:ObjectStoreV2", id, state, "", opts...)
+}
+
 type objectStoreV2Args struct {
 	// - A list of the UUIDs of the certificates of an Object store.
 	CertificateExtIds []string `pulumi:"certificateExtIds"`

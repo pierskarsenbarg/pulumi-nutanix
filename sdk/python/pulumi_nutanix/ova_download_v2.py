@@ -161,6 +161,16 @@ class OvaDownloadV2(pulumi.CustomResource):
         __props__.__dict__["ova_file_path"] = ova_file_path
         return OvaDownloadV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ova_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ova_file_path: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["ovaExtId"] = ova_ext_id
+        __props__["ovaFilePath"] = ova_file_path
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ovaDownloadV2:OvaDownloadV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="ovaExtId")
     def ova_ext_id(self) -> pulumi.Output[_builtins.str]:

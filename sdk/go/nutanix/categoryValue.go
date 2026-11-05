@@ -127,6 +127,12 @@ func (CategoryValueState) ElementType() reflect.Type {
 	return reflect.TypeOf((*categoryValueState)(nil)).Elem()
 }
 
+// CategoryValueExists checks whether an existing CategoryValue resource with the given ID exists.
+func CategoryValueExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CategoryValueState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/categoryValue:CategoryValue", id, state, "", opts...)
+}
+
 type categoryValueArgs struct {
 	// - (Optional) A description for category value.
 	Description *string `pulumi:"description"`

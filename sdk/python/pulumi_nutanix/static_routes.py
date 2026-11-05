@@ -397,6 +397,24 @@ class StaticRoutes(pulumi.CustomResource):
         __props__.__dict__["vpc_uuid"] = vpc_uuid
         return StaticRoutes(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            default_route_nexthops: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StaticRoutesDefaultRouteNexthopArgs', 'StaticRoutesDefaultRouteNexthopArgsDict', 'outputs.StaticRoutesDefaultRouteNexthop']]]]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            static_routes_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StaticRoutesStaticRoutesListArgs', 'StaticRoutesStaticRoutesListArgsDict', 'outputs.StaticRoutesStaticRoutesList']]]]] = None,
+            vpc_name: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc_uuid: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apiVersion"] = api_version
+        __props__["defaultRouteNexthops"] = default_route_nexthops
+        __props__["metadata"] = metadata
+        __props__["staticRoutesLists"] = static_routes_lists
+        __props__["vpcName"] = vpc_name
+        __props__["vpcUuid"] = vpc_uuid
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/staticRoutes:StaticRoutes', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apiVersion")
     def api_version(self) -> pulumi.Output[_builtins.str]:

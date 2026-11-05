@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         /// <summary>
         /// - (Required) Controls enabling or disabling compression. If no explicit preference is set, the system chooses a value.
-        /// Valid values:
+        ///   Valid values:
         /// * `"DISABLED"`:- User wants data not compressed.
         /// * `"POSTPROCESS"`:- User wants data compressed later.
         /// * `"INLINE"`:- User wants data compressed inline.

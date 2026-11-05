@@ -234,6 +234,18 @@ class VmRevertV2(pulumi.CustomResource):
         __props__.__dict__["vm_recovery_point_ext_id"] = vm_recovery_point_ext_id
         return VmRevertV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_recovery_point_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["extId"] = ext_id
+        __props__["status"] = status
+        __props__["vmRecoveryPointExtId"] = vm_recovery_point_ext_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/vmRevertV2:VmRevertV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> pulumi.Output[_builtins.str]:

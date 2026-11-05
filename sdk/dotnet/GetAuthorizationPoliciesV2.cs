@@ -75,7 +75,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// func main() {
         /// 	pulumi.Run(func(ctx *pulumi.Context) error {
-        /// 		// list of authorization policies, with limit and filter
+        /// 		//list of authorization policies, with limit and filter
         /// 		_, err := nutanix.GetAuthorizationPoliciesV2(ctx, &amp;nutanix.GetAuthorizationPoliciesV2Args{
         /// 			Filter: pulumi.StringRef("displayName eq 'auth_policy_example'"),
         /// 			Limit:  pulumi.IntRef(2),
@@ -265,7 +265,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// func main() {
         /// 	pulumi.Run(func(ctx *pulumi.Context) error {
-        /// 		// list of authorization policies, with limit and filter
+        /// 		//list of authorization policies, with limit and filter
         /// 		_, err := nutanix.GetAuthorizationPoliciesV2(ctx, &amp;nutanix.GetAuthorizationPoliciesV2Args{
         /// 			Filter: pulumi.StringRef("displayName eq 'auth_policy_example'"),
         /// 			Limit:  pulumi.IntRef(2),
@@ -455,7 +455,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// func main() {
         /// 	pulumi.Run(func(ctx *pulumi.Context) error {
-        /// 		// list of authorization policies, with limit and filter
+        /// 		//list of authorization policies, with limit and filter
         /// 		_, err := nutanix.GetAuthorizationPoliciesV2(ctx, &amp;nutanix.GetAuthorizationPoliciesV2Args{
         /// 			Filter: pulumi.StringRef("displayName eq 'auth_policy_example'"),
         /// 			Limit:  pulumi.IntRef(2),

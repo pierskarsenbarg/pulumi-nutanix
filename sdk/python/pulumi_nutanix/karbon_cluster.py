@@ -843,6 +843,42 @@ class KarbonCluster(pulumi.CustomResource):
         __props__.__dict__["worker_node_pool"] = worker_node_pool
         return KarbonCluster(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active_passive_config: pulumi.Input[Optional[Union['KarbonClusterActivePassiveConfigArgs', 'KarbonClusterActivePassiveConfigArgsDict', 'outputs.KarbonClusterActivePassiveConfig']]] = None,
+            cni_config: pulumi.Input[Optional[Union['KarbonClusterCniConfigArgs', 'KarbonClusterCniConfigArgsDict', 'outputs.KarbonClusterCniConfig']]] = None,
+            deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            etcd_node_pool: pulumi.Input[Optional[Union['KarbonClusterEtcdNodePoolArgs', 'KarbonClusterEtcdNodePoolArgsDict', 'outputs.KarbonClusterEtcdNodePool']]] = None,
+            external_lb_config: pulumi.Input[Optional[Union['KarbonClusterExternalLbConfigArgs', 'KarbonClusterExternalLbConfigArgsDict', 'outputs.KarbonClusterExternalLbConfig']]] = None,
+            kubeapi_server_ipv4_address: pulumi.Input[Optional[_builtins.str]] = None,
+            master_node_pool: pulumi.Input[Optional[Union['KarbonClusterMasterNodePoolArgs', 'KarbonClusterMasterNodePoolArgsDict', 'outputs.KarbonClusterMasterNodePool']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            private_registries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KarbonClusterPrivateRegistryArgs', 'KarbonClusterPrivateRegistryArgsDict', 'outputs.KarbonClusterPrivateRegistry']]]]] = None,
+            single_master_config: pulumi.Input[Optional[Union['KarbonClusterSingleMasterConfigArgs', 'KarbonClusterSingleMasterConfigArgsDict', 'outputs.KarbonClusterSingleMasterConfig']]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_class_config: pulumi.Input[Optional[Union['KarbonClusterStorageClassConfigArgs', 'KarbonClusterStorageClassConfigArgsDict', 'outputs.KarbonClusterStorageClassConfig']]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None,
+            wait_timeout_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+            worker_node_pool: pulumi.Input[Optional[Union['KarbonClusterWorkerNodePoolArgs', 'KarbonClusterWorkerNodePoolArgsDict', 'outputs.KarbonClusterWorkerNodePool']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["activePassiveConfig"] = active_passive_config
+        __props__["cniConfig"] = cni_config
+        __props__["deploymentType"] = deployment_type
+        __props__["etcdNodePool"] = etcd_node_pool
+        __props__["externalLbConfig"] = external_lb_config
+        __props__["kubeapiServerIpv4Address"] = kubeapi_server_ipv4_address
+        __props__["masterNodePool"] = master_node_pool
+        __props__["name"] = name
+        __props__["privateRegistries"] = private_registries
+        __props__["singleMasterConfig"] = single_master_config
+        __props__["status"] = status
+        __props__["storageClassConfig"] = storage_class_config
+        __props__["version"] = version
+        __props__["waitTimeoutMinutes"] = wait_timeout_minutes
+        __props__["workerNodePool"] = worker_node_pool
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/karbonCluster:KarbonCluster', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="activePassiveConfig")
     def active_passive_config(self) -> pulumi.Output[Optional['outputs.KarbonClusterActivePassiveConfig']]:

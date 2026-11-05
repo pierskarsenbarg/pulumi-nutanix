@@ -599,6 +599,42 @@ class ImagesV2(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return ImagesV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            checksums: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2ChecksumArgs', 'ImagesV2ChecksumArgsDict', 'outputs.ImagesV2Checksum']]]]] = None,
+            cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            create_time: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2LinkArgs', 'ImagesV2LinkArgsDict', 'outputs.ImagesV2Link']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            placement_policy_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2PlacementPolicyStatusArgs', 'ImagesV2PlacementPolicyStatusArgsDict', 'outputs.ImagesV2PlacementPolicyStatus']]]]] = None,
+            size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict', 'outputs.ImagesV2Source']]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["categoryExtIds"] = category_ext_ids
+        __props__["checksums"] = checksums
+        __props__["clusterLocationExtIds"] = cluster_location_ext_ids
+        __props__["createTime"] = create_time
+        __props__["description"] = description
+        __props__["extId"] = ext_id
+        __props__["lastUpdateTime"] = last_update_time
+        __props__["links"] = links
+        __props__["name"] = name
+        __props__["ownerExtId"] = owner_ext_id
+        __props__["placementPolicyStatuses"] = placement_policy_statuses
+        __props__["sizeBytes"] = size_bytes
+        __props__["sources"] = sources
+        __props__["tenantId"] = tenant_id
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/imagesV2:ImagesV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="categoryExtIds")
     def category_ext_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:

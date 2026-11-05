@@ -1102,6 +1102,82 @@ class NdbDbserverVm(pulumi.CustomResource):
         __props__.__dict__["vm_timezone"] = vm_timezone
         return NdbDbserverVm(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            client_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmCredentialArgs', 'NdbDbserverVmCredentialArgsDict', 'outputs.NdbDbserverVmCredential']]]]] = None,
+            database_type: pulumi.Input[Optional[_builtins.str]] = None,
+            dbserver_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            delete_vgs: pulumi.Input[Optional[_builtins.bool]] = None,
+            delete_vm_snapshots: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            era_drive_id: pulumi.Input[Optional[_builtins.str]] = None,
+            era_version: pulumi.Input[Optional[_builtins.str]] = None,
+            fqdns: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            latest_snapshot: pulumi.Input[Optional[_builtins.bool]] = None,
+            mac_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            maintenance_tasks: pulumi.Input[Optional[Union['NdbDbserverVmMaintenanceTasksArgs', 'NdbDbserverVmMaintenanceTasksArgsDict', 'outputs.NdbDbserverVmMaintenanceTasks']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            postgres_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmPostgresDatabaseArgs', 'NdbDbserverVmPostgresDatabaseArgsDict', 'outputs.NdbDbserverVmPostgresDatabase']]]]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmPropertyArgs', 'NdbDbserverVmPropertyArgsDict', 'outputs.NdbDbserverVmProperty']]]]] = None,
+            remove: pulumi.Input[Optional[_builtins.bool]] = None,
+            snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+            soft_remove: pulumi.Input[Optional[_builtins.bool]] = None,
+            software_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            software_profile_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDbserverVmTagArgs', 'NdbDbserverVmTagArgsDict', 'outputs.NdbDbserverVmTag']]]]] = None,
+            time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+            timezone: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_password: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_timezone: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["clientId"] = client_id
+        __props__["computeProfileId"] = compute_profile_id
+        __props__["credentials"] = credentials
+        __props__["databaseType"] = database_type
+        __props__["dbserverClusterId"] = dbserver_cluster_id
+        __props__["delete"] = delete
+        __props__["deleteVgs"] = delete_vgs
+        __props__["deleteVmSnapshots"] = delete_vm_snapshots
+        __props__["description"] = description
+        __props__["eraDriveId"] = era_drive_id
+        __props__["eraVersion"] = era_version
+        __props__["fqdns"] = fqdns
+        __props__["ipAddresses"] = ip_addresses
+        __props__["latestSnapshot"] = latest_snapshot
+        __props__["macAddresses"] = mac_addresses
+        __props__["maintenanceTasks"] = maintenance_tasks
+        __props__["name"] = name
+        __props__["networkProfileId"] = network_profile_id
+        __props__["nxClusterId"] = nx_cluster_id
+        __props__["postgresDatabases"] = postgres_databases
+        __props__["properties"] = properties
+        __props__["remove"] = remove
+        __props__["snapshotId"] = snapshot_id
+        __props__["softRemove"] = soft_remove
+        __props__["softwareProfileId"] = software_profile_id
+        __props__["softwareProfileVersionId"] = software_profile_version_id
+        __props__["status"] = status
+        __props__["tags"] = tags
+        __props__["timeMachineId"] = time_machine_id
+        __props__["timezone"] = timezone
+        __props__["type"] = type
+        __props__["vmClusterName"] = vm_cluster_name
+        __props__["vmClusterUuid"] = vm_cluster_uuid
+        __props__["vmPassword"] = vm_password
+        __props__["vmTimezone"] = vm_timezone
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbDbserverVm:NdbDbserverVm', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="clientId")
     def client_id(self) -> pulumi.Output[_builtins.str]:

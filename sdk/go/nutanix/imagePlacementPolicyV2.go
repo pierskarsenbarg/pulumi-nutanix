@@ -167,6 +167,12 @@ func (ImagePlacementPolicyV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*imagePlacementPolicyV2State)(nil)).Elem()
 }
 
+// ImagePlacementPolicyV2Exists checks whether an existing ImagePlacementPolicyV2 resource with the given ID exists.
+func ImagePlacementPolicyV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ImagePlacementPolicyV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/imagePlacementPolicyV2:ImagePlacementPolicyV2", id, state, "", opts...)
+}
+
 type imagePlacementPolicyV2Args struct {
 	// Action to be performed on the image placement policy. Valid values "RESUME", "SUSPEND"
 	Action *string `pulumi:"action"`

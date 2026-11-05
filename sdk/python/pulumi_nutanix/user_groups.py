@@ -382,6 +382,26 @@ class UserGroups(pulumi.CustomResource):
         __props__.__dict__["saml_user_groups"] = saml_user_groups
         return UserGroups(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsCategoryArgs', 'UserGroupsCategoryArgsDict', 'outputs.UserGroupsCategory']]]]] = None,
+            directory_service_ous: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceOusArgs', 'UserGroupsDirectoryServiceOusArgsDict', 'outputs.UserGroupsDirectoryServiceOus']]]]] = None,
+            directory_service_user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsDirectoryServiceUserGroupArgs', 'UserGroupsDirectoryServiceUserGroupArgsDict', 'outputs.UserGroupsDirectoryServiceUserGroup']]]]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            saml_user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserGroupsSamlUserGroupArgs', 'UserGroupsSamlUserGroupArgsDict', 'outputs.UserGroupsSamlUserGroup']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["categories"] = categories
+        __props__["directoryServiceOus"] = directory_service_ous
+        __props__["directoryServiceUserGroups"] = directory_service_user_groups
+        __props__["metadata"] = metadata
+        __props__["ownerReference"] = owner_reference
+        __props__["projectReference"] = project_reference
+        __props__["samlUserGroups"] = saml_user_groups
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/userGroups:UserGroups', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def categories(self) -> pulumi.Output[Sequence['outputs.UserGroupsCategory']]:

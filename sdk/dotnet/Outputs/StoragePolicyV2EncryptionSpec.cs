@@ -16,7 +16,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         /// <summary>
         /// - (Required) Controls enabling encryption. Once enabled, it cannot be disabled. If no explicit preference is set, the system decides.
-        /// Valid values:
+        ///   Valid values:
         /// * `"SYSTEM_DERIVED"`:- User is not interested in encryption; system decides.
         /// * `"ENABLED"`:- User wants data encrypted.
         /// 

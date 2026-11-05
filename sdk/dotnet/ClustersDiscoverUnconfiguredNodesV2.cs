@@ -18,7 +18,7 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// - (Optional) Address type.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "IPV4"	IPV4 address type.
         /// - "IPV6"	IPV6 address type.
         /// </summary>
@@ -113,7 +113,7 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// - (Optional) Address type.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "IPV4"	IPV4 address type.
         /// - "IPV6"	IPV6 address type.
         /// </summary>
@@ -184,7 +184,7 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// - (Optional) Address type.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "IPV4"	IPV4 address type.
         /// - "IPV6"	IPV6 address type.
         /// </summary>

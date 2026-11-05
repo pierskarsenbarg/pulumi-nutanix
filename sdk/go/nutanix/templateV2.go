@@ -111,6 +111,12 @@ func (TemplateV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*templateV2State)(nil)).Elem()
 }
 
+// TemplateV2Exists checks whether an existing TemplateV2 resource with the given ID exists.
+func TemplateV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *TemplateV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/templateV2:TemplateV2", id, state, "", opts...)
+}
+
 type templateV2Args struct {
 	CategoryExtIds []string              `pulumi:"categoryExtIds"`
 	CreatedBies    []TemplateV2CreatedBy `pulumi:"createdBies"`

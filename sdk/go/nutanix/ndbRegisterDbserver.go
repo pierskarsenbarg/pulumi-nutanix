@@ -230,6 +230,12 @@ func (NdbRegisterDbserverState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbRegisterDbserverState)(nil)).Elem()
 }
 
+// NdbRegisterDbserverExists checks whether an existing NdbRegisterDbserver resource with the given ID exists.
+func NdbRegisterDbserverExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbRegisterDbserverState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbRegisterDbserver:NdbRegisterDbserver", id, state, "", opts...)
+}
+
 type ndbRegisterDbserverArgs struct {
 	Credentials []NdbRegisterDbserverCredential `pulumi:"credentials"`
 	// database type i.e. postgres_database

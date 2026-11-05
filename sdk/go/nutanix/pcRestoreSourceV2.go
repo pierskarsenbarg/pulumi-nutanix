@@ -180,6 +180,12 @@ func (PcRestoreSourceV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*pcRestoreSourceV2State)(nil)).Elem()
 }
 
+// PcRestoreSourceV2Exists checks whether an existing PcRestoreSourceV2 resource with the given ID exists.
+func PcRestoreSourceV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PcRestoreSourceV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/pcRestoreSourceV2:PcRestoreSourceV2", id, state, "", opts...)
+}
+
 type pcRestoreSourceV2Args struct {
 	// -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
 	Location PcRestoreSourceV2Location `pulumi:"location"`
