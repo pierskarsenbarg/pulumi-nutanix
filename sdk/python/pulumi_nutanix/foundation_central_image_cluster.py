@@ -1101,6 +1101,64 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
         __props__.__dict__["workflow_type"] = workflow_type
         return FoundationCentralImageCluster(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            aos_package_sha256sum: pulumi.Input[Optional[_builtins.str]] = None,
+            aos_package_url: pulumi.Input[Optional[_builtins.str]] = None,
+            archived: pulumi.Input[Optional[_builtins.bool]] = None,
+            cluster_external_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_size: pulumi.Input[Optional[_builtins.int]] = None,
+            cluster_status: pulumi.Input[Optional[Union['FoundationCentralImageClusterClusterStatusArgs', 'FoundationCentralImageClusterClusterStatusArgsDict', 'outputs.FoundationCentralImageClusterClusterStatus']]] = None,
+            common_network_settings: pulumi.Input[Optional[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict', 'outputs.FoundationCentralImageClusterCommonNetworkSettings']]] = None,
+            created_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+            current_time: pulumi.Input[Optional[_builtins.str]] = None,
+            destroyed: pulumi.Input[Optional[_builtins.bool]] = None,
+            fc_api_key_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            foundation_init_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationCentralImageClusterFoundationInitConfigArgs', 'FoundationCentralImageClusterFoundationInitConfigArgsDict', 'outputs.FoundationCentralImageClusterFoundationInitConfig']]]]] = None,
+            foundation_init_node_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            hypervisor_iso_details: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict', 'outputs.FoundationCentralImageClusterHypervisorIsoDetails']]] = None,
+            hypervisor_isos: pulumi.Input[Optional[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict', 'outputs.FoundationCentralImageClusterHypervisorIsos']]] = None,
+            image_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            imaged_cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            imaged_node_uuid_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict', 'outputs.FoundationCentralImageClusterNodeList']]]]] = None,
+            redundancy_factor: pulumi.Input[Optional[_builtins.int]] = None,
+            server_configuration_data: pulumi.Input[Optional[_builtins.str]] = None,
+            skip_cluster_creation: pulumi.Input[Optional[_builtins.bool]] = None,
+            storage_node_count: pulumi.Input[Optional[_builtins.int]] = None,
+            timezone: pulumi.Input[Optional[_builtins.str]] = None,
+            workflow_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["aosPackageSha256sum"] = aos_package_sha256sum
+        __props__["aosPackageUrl"] = aos_package_url
+        __props__["archived"] = archived
+        __props__["clusterExternalIp"] = cluster_external_ip
+        __props__["clusterName"] = cluster_name
+        __props__["clusterSize"] = cluster_size
+        __props__["clusterStatus"] = cluster_status
+        __props__["commonNetworkSettings"] = common_network_settings
+        __props__["createdTimestamp"] = created_timestamp
+        __props__["currentTime"] = current_time
+        __props__["destroyed"] = destroyed
+        __props__["fcApiKeyUuid"] = fc_api_key_uuid
+        __props__["foundationInitConfigs"] = foundation_init_configs
+        __props__["foundationInitNodeUuid"] = foundation_init_node_uuid
+        __props__["hypervisorIsoDetails"] = hypervisor_iso_details
+        __props__["hypervisorIsos"] = hypervisor_isos
+        __props__["imageClusterUuid"] = image_cluster_uuid
+        __props__["imagedClusterUuid"] = imaged_cluster_uuid
+        __props__["imagedNodeUuidLists"] = imaged_node_uuid_lists
+        __props__["nodeLists"] = node_lists
+        __props__["redundancyFactor"] = redundancy_factor
+        __props__["serverConfigurationData"] = server_configuration_data
+        __props__["skipClusterCreation"] = skip_cluster_creation
+        __props__["storageNodeCount"] = storage_node_count
+        __props__["timezone"] = timezone
+        __props__["workflowType"] = workflow_type
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/foundationCentralImageCluster:FoundationCentralImageCluster', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="aosPackageSha256sum")
     def aos_package_sha256sum(self) -> pulumi.Output[_builtins.str]:

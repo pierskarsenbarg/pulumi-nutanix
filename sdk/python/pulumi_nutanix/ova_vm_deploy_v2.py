@@ -320,6 +320,18 @@ class OvaVmDeployV2(pulumi.CustomResource):
         __props__.__dict__["override_vm_config"] = override_vm_config
         return OvaVmDeployV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cluster_location_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            override_vm_config: pulumi.Input[Optional[Union['OvaVmDeployV2OverrideVmConfigArgs', 'OvaVmDeployV2OverrideVmConfigArgsDict', 'outputs.OvaVmDeployV2OverrideVmConfig']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["clusterLocationExtId"] = cluster_location_ext_id
+        __props__["extId"] = ext_id
+        __props__["overrideVmConfig"] = override_vm_config
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ovaVmDeployV2:OvaVmDeployV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="clusterLocationExtId")
     def cluster_location_ext_id(self) -> pulumi.Output[_builtins.str]:

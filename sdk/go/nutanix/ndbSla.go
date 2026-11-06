@@ -186,6 +186,12 @@ func (NdbSlaState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbSlaState)(nil)).Elem()
 }
 
+// NdbSlaExists checks whether an existing NdbSla resource with the given ID exists.
+func NdbSlaExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbSlaState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbSla:NdbSla", id, state, "", opts...)
+}
+
 type ndbSlaArgs struct {
 	// Duration in days for which transaction logs are retained in NDB.
 	ContinuousRetention *int `pulumi:"continuousRetention"`

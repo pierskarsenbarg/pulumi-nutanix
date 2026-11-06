@@ -261,6 +261,18 @@ class VmNetworkDeviceAssignIpV2(pulumi.CustomResource):
         __props__.__dict__["vm_ext_id"] = vm_ext_id
         return VmNetworkDeviceAssignIpV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmNetworkDeviceAssignIpV2IpAddressArgs', 'VmNetworkDeviceAssignIpV2IpAddressArgsDict', 'outputs.VmNetworkDeviceAssignIpV2IpAddress']]]]] = None,
+            vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["extId"] = ext_id
+        __props__["ipAddresses"] = ip_addresses
+        __props__["vmExtId"] = vm_ext_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/vmNetworkDeviceAssignIpV2:VmNetworkDeviceAssignIpV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> pulumi.Output[_builtins.str]:

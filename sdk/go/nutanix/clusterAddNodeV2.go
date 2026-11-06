@@ -323,6 +323,12 @@ func (ClusterAddNodeV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*clusterAddNodeV2State)(nil)).Elem()
 }
 
+// ClusterAddNodeV2Exists checks whether an existing ClusterAddNodeV2 resource with the given ID exists.
+func ClusterAddNodeV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ClusterAddNodeV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/clusterAddNodeV2:ClusterAddNodeV2", id, state, "", opts...)
+}
+
 type clusterAddNodeV2Args struct {
 	// -(Required) Cluster UUID.
 	ClusterExtId string `pulumi:"clusterExtId"`

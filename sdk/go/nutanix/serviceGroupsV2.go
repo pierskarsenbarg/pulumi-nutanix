@@ -204,6 +204,12 @@ func (ServiceGroupsV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*serviceGroupsV2State)(nil)).Elem()
 }
 
+// ServiceGroupsV2Exists checks whether an existing ServiceGroupsV2 resource with the given ID exists.
+func ServiceGroupsV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ServiceGroupsV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/serviceGroupsV2:ServiceGroupsV2", id, state, "", opts...)
+}
+
 type serviceGroupsV2Args struct {
 	// Description of the service group
 	Description *string `pulumi:"description"`

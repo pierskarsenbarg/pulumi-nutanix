@@ -362,6 +362,12 @@ func (NdbRegisterDatabaseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbRegisterDatabaseState)(nil)).Elem()
 }
 
+// NdbRegisterDatabaseExists checks whether an existing NdbRegisterDatabase resource with the given ID exists.
+func NdbRegisterDatabaseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbRegisterDatabaseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbRegisterDatabase:NdbRegisterDatabase", id, state, "", opts...)
+}
+
 type ndbRegisterDatabaseArgs struct {
 	// action arguments
 	Actionarguments []NdbRegisterDatabaseActionargument `pulumi:"actionarguments"`

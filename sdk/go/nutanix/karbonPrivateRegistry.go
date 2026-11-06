@@ -139,6 +139,12 @@ func (KarbonPrivateRegistryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*karbonPrivateRegistryState)(nil)).Elem()
 }
 
+// KarbonPrivateRegistryExists checks whether an existing KarbonPrivateRegistry resource with the given ID exists.
+func KarbonPrivateRegistryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *KarbonPrivateRegistryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/karbonPrivateRegistry:KarbonPrivateRegistry", id, state, "", opts...)
+}
+
 type karbonPrivateRegistryArgs struct {
 	// - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
 	Cert *string `pulumi:"cert"`

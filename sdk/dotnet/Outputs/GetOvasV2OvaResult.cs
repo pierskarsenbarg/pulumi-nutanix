@@ -29,10 +29,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.GetOvasV2OvaCreatedByResult> CreatedBies;
         /// <summary>
         /// - Disk format of an OVA.
-        /// |ENUM |Description |
-        /// |---|---|
-        /// | VMDK | The VMDK disk format of an OVA. |
-        /// | QCOW2 | The QCOW2 disk format of an OVA. |
+        ///   |ENUM |Description |
+        ///   |---|---|
+        ///   | VMDK | The VMDK disk format of an OVA. |
+        ///   | QCOW2 | The QCOW2 disk format of an OVA. |
         /// </summary>
         public readonly string DiskFormat;
         /// <summary>

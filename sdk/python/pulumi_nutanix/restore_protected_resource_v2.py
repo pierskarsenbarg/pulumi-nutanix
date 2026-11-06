@@ -297,6 +297,18 @@ class RestoreProtectedResourceV2(pulumi.CustomResource):
         __props__.__dict__["restore_time"] = restore_time
         return RestoreProtectedResourceV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            restore_time: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["clusterExtId"] = cluster_ext_id
+        __props__["extId"] = ext_id
+        __props__["restoreTime"] = restore_time
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/restoreProtectedResourceV2:RestoreProtectedResourceV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="clusterExtId")
     def cluster_ext_id(self) -> pulumi.Output[_builtins.str]:

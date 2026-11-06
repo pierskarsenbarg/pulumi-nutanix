@@ -537,6 +537,40 @@ class SelfServiceAppProvision(pulumi.CustomResource):
         __props__.__dict__["vms"] = vms
         return SelfServiceAppProvision(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            actions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionActionArgs', 'SelfServiceAppProvisionActionArgsDict', 'outputs.SelfServiceAppProvisionAction']]]]] = None,
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            app_description: pulumi.Input[Optional[_builtins.str]] = None,
+            app_name: pulumi.Input[Optional[_builtins.str]] = None,
+            app_summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionAppSummaryArgs', 'SelfServiceAppProvisionAppSummaryArgsDict', 'outputs.SelfServiceAppProvisionAppSummary']]]]] = None,
+            bp_name: pulumi.Input[Optional[_builtins.str]] = None,
+            bp_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            runtime_editables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionRuntimeEditableArgs', 'SelfServiceAppProvisionRuntimeEditableArgsDict', 'outputs.SelfServiceAppProvisionRuntimeEditable']]]]] = None,
+            soft_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            spec: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            vms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfServiceAppProvisionVmArgs', 'SelfServiceAppProvisionVmArgsDict', 'outputs.SelfServiceAppProvisionVm']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["action"] = action
+        __props__["actions"] = actions
+        __props__["apiVersion"] = api_version
+        __props__["appDescription"] = app_description
+        __props__["appName"] = app_name
+        __props__["appSummaries"] = app_summaries
+        __props__["bpName"] = bp_name
+        __props__["bpUuid"] = bp_uuid
+        __props__["runtimeEditables"] = runtime_editables
+        __props__["softDelete"] = soft_delete
+        __props__["spec"] = spec
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["vms"] = vms
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/selfServiceAppProvision:SelfServiceAppProvision', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def action(self) -> pulumi.Output[Optional[_builtins.str]]:

@@ -165,6 +165,12 @@ func (FloatingIpState) ElementType() reflect.Type {
 	return reflect.TypeOf((*floatingIpState)(nil)).Elem()
 }
 
+// FloatingIpExists checks whether an existing FloatingIp resource with the given ID exists.
+func FloatingIpExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FloatingIpState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/floatingIp:FloatingIp", id, state, "", opts...)
+}
+
 type floatingIpArgs struct {
 	// The version of the API.
 	ApiVersion *string `pulumi:"apiVersion"`

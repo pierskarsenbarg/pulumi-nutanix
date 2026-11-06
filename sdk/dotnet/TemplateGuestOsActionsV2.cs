@@ -68,7 +68,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with &lt;span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`" pulumi-lang-hcl="`complete`"&gt;`complete`&lt;/span&gt; action.
         /// 
-        /// 
         /// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Templates/operation/initiateGuestUpdate).
         /// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Templates/operation/completeGuestUpdate).
         /// See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Templates/operation/cancelGuestUpdate).
@@ -156,7 +155,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with &lt;span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`" pulumi-lang-hcl="`complete`"&gt;`complete`&lt;/span&gt; action.
         /// 
-        /// 
         /// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Templates/operation/initiateGuestUpdate).
         /// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Templates/operation/completeGuestUpdate).
         /// See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Templates/operation/cancelGuestUpdate).
@@ -204,7 +202,6 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with &lt;span pulumi-lang-nodejs="`complete`" pulumi-lang-dotnet="`Complete`" pulumi-lang-go="`complete`" pulumi-lang-python="`complete`" pulumi-lang-yaml="`complete`" pulumi-lang-java="`complete`" pulumi-lang-hcl="`complete`"&gt;`complete`&lt;/span&gt; action.
-        /// 
         /// 
         /// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Templates/operation/initiateGuestUpdate).
         /// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Templates/operation/completeGuestUpdate).

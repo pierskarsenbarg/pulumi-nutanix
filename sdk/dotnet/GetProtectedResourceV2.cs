@@ -15,7 +15,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Get the details of the specified protected resource such as the restorable time ranges available on the local Prism Central and the state of replication to the targets specified in the applied protection policies. This applies only if the entity is protected in a minutely or synchronous schedule. Other protection schedules are not served by this endpoint yet, and are considered not protected.
         /// 
-        /// 
         /// ## Example 1: Get Protected Virtual Machine
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -228,7 +227,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Get the details of the specified protected resource such as the restorable time ranges available on the local Prism Central and the state of replication to the targets specified in the applied protection policies. This applies only if the entity is protected in a minutely or synchronous schedule. Other protection schedules are not served by this endpoint yet, and are considered not protected.
         /// 
-        /// 
         /// ## Example 1: Get Protected Virtual Machine
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -440,7 +438,6 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// Get the details of the specified protected resource such as the restorable time ranges available on the local Prism Central and the state of replication to the targets specified in the applied protection policies. This applies only if the entity is protected in a minutely or synchronous schedule. Other protection schedules are not served by this endpoint yet, and are considered not protected.
-        /// 
         /// 
         /// ## Example 1: Get Protected Virtual Machine
         /// 

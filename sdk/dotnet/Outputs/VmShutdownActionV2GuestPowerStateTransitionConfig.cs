@@ -21,7 +21,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// Indicates whether to abort VM shutdown/restart if the script fails.
         /// 
-        /// 
         /// See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Vm/operation/shutdownVm).
         /// See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Vm/operation/shutdownGuestVm).
         /// See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/Vm/operation/rebootVm).

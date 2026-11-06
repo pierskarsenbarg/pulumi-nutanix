@@ -455,6 +455,28 @@ class VolumeGroupIscsiClientV2(pulumi.CustomResource):
         __props__.__dict__["vg_ext_id"] = vg_ext_id
         return VolumeGroupIscsiClientV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            attachment_site: pulumi.Input[Optional[_builtins.str]] = None,
+            client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            iscsi_initiator_name: pulumi.Input[Optional[_builtins.str]] = None,
+            iscsi_initiator_network_ids: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgs', 'VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdArgsDict', 'outputs.VolumeGroupIscsiClientV2IscsiInitiatorNetworkId']]]]] = None,
+            num_virtual_targets: pulumi.Input[Optional[_builtins.int]] = None,
+            vg_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["attachmentSite"] = attachment_site
+        __props__["clientSecret"] = client_secret
+        __props__["enabledAuthentications"] = enabled_authentications
+        __props__["extId"] = ext_id
+        __props__["iscsiInitiatorName"] = iscsi_initiator_name
+        __props__["iscsiInitiatorNetworkIds"] = iscsi_initiator_network_ids
+        __props__["numVirtualTargets"] = num_virtual_targets
+        __props__["vgExtId"] = vg_ext_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/volumeGroupIscsiClientV2:VolumeGroupIscsiClientV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="attachmentSite")
     def attachment_site(self) -> pulumi.Output[Optional[_builtins.str]]:

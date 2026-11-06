@@ -372,6 +372,24 @@ class LcmUpgradeV2(pulumi.CustomResource):
         __props__.__dict__["x_cluster_id"] = x_cluster_id
         return LcmUpgradeV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auto_handle_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmUpgradeV2EntityUpdateSpecArgs', 'LcmUpgradeV2EntityUpdateSpecArgsDict', 'outputs.LcmUpgradeV2EntityUpdateSpec']]]]] = None,
+            management_server: pulumi.Input[Optional[Union['LcmUpgradeV2ManagementServerArgs', 'LcmUpgradeV2ManagementServerArgsDict', 'outputs.LcmUpgradeV2ManagementServer']]] = None,
+            max_wait_time_in_secs: pulumi.Input[Optional[_builtins.int]] = None,
+            skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autoHandleFlags"] = auto_handle_flags
+        __props__["entityUpdateSpecs"] = entity_update_specs
+        __props__["managementServer"] = management_server
+        __props__["maxWaitTimeInSecs"] = max_wait_time_in_secs
+        __props__["skippedPrecheckFlags"] = skipped_precheck_flags
+        __props__["xClusterId"] = x_cluster_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/lcmUpgradeV2:LcmUpgradeV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autoHandleFlags")
     def auto_handle_flags(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

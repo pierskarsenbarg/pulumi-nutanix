@@ -154,6 +154,12 @@ func (VmCdromInsertEjectV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*vmCdromInsertEjectV2State)(nil)).Elem()
 }
 
+// VmCdromInsertEjectV2Exists checks whether an existing VmCdromInsertEjectV2 resource with the given ID exists.
+func VmCdromInsertEjectV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VmCdromInsertEjectV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/vmCdromInsertEjectV2:VmCdromInsertEjectV2", id, state, "", opts...)
+}
+
 type vmCdromInsertEjectV2Args struct {
 	// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
 	Action *string `pulumi:"action"`

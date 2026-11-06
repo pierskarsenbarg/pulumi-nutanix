@@ -135,6 +135,12 @@ func (OvaV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*ovaV2State)(nil)).Elem()
 }
 
+// OvaV2Exists checks whether an existing OvaV2 resource with the given ID exists.
+func OvaV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OvaV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ovaV2:OvaV2", id, state, "", opts...)
+}
+
 type ovaV2Args struct {
 	// -(Optional) The checksum of an OVA.
 	Checksum *OvaV2Checksum `pulumi:"checksum"`

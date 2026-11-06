@@ -350,6 +350,12 @@ func (SubnetV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*subnetV2State)(nil)).Elem()
 }
 
+// SubnetV2Exists checks whether an existing SubnetV2 resource with the given ID exists.
+func SubnetV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SubnetV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/subnetV2:SubnetV2", id, state, "", opts...)
+}
+
 type subnetV2Args struct {
 	// Name of the bridge on the host for the subnet.
 	BridgeName *string `pulumi:"bridgeName"`

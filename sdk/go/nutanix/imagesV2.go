@@ -215,6 +215,12 @@ func (ImagesV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*imagesV2State)(nil)).Elem()
 }
 
+// ImagesV2Exists checks whether an existing ImagesV2 resource with the given ID exists.
+func ImagesV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ImagesV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/imagesV2:ImagesV2", id, state, "", opts...)
+}
+
 type imagesV2Args struct {
 	// List of category external identifiers for an image.
 	CategoryExtIds []string `pulumi:"categoryExtIds"`

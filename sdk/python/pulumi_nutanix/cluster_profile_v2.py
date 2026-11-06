@@ -965,6 +965,54 @@ class ClusterProfileV2(pulumi.CustomResource):
         __props__.__dict__["tenant_id"] = tenant_id
         return ClusterProfileV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            allowed_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cluster_count: pulumi.Input[Optional[_builtins.int]] = None,
+            clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2ClusterArgs', 'ClusterProfileV2ClusterArgsDict', 'outputs.ClusterProfileV2Cluster']]]]] = None,
+            create_time: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            drifted_cluster_count: pulumi.Input[Optional[_builtins.int]] = None,
+            dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+            last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2LinkArgs', 'ClusterProfileV2LinkArgsDict', 'outputs.ClusterProfileV2Link']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict', 'outputs.ClusterProfileV2NameServerIpList']]]]] = None,
+            nfs_subnet_white_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict', 'outputs.ClusterProfileV2NtpServerIpList']]]]] = None,
+            pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict', 'outputs.ClusterProfileV2PulseStatus']]]]] = None,
+            rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict', 'outputs.ClusterProfileV2RsyslogServerList']]]]] = None,
+            smtp_server: pulumi.Input[Optional[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict', 'outputs.ClusterProfileV2SmtpServer']]] = None,
+            snmp_config: pulumi.Input[Optional[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict', 'outputs.ClusterProfileV2SnmpConfig']]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["allowedOverrides"] = allowed_overrides
+        __props__["clusterCount"] = cluster_count
+        __props__["clusters"] = clusters
+        __props__["createTime"] = create_time
+        __props__["createdBy"] = created_by
+        __props__["description"] = description
+        __props__["driftedClusterCount"] = drifted_cluster_count
+        __props__["dryrun"] = dryrun
+        __props__["extId"] = ext_id
+        __props__["lastUpdateTime"] = last_update_time
+        __props__["lastUpdatedBy"] = last_updated_by
+        __props__["links"] = links
+        __props__["name"] = name
+        __props__["nameServerIpLists"] = name_server_ip_lists
+        __props__["nfsSubnetWhiteLists"] = nfs_subnet_white_lists
+        __props__["ntpServerIpLists"] = ntp_server_ip_lists
+        __props__["pulseStatuses"] = pulse_statuses
+        __props__["rsyslogServerLists"] = rsyslog_server_lists
+        __props__["smtpServer"] = smtp_server
+        __props__["snmpConfig"] = snmp_config
+        __props__["tenantId"] = tenant_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/clusterProfileV2:ClusterProfileV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="allowedOverrides")
     def allowed_overrides(self) -> pulumi.Output[Sequence[_builtins.str]]:

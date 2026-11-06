@@ -77,7 +77,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// schedule info
         /// 
-        /// 
         /// See detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNdbTimeMachinesTimeMachineScheduleResult> Schedules;

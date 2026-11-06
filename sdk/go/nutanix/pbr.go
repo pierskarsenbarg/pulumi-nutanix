@@ -181,6 +181,12 @@ func (PbrState) ElementType() reflect.Type {
 	return reflect.TypeOf((*pbrState)(nil)).Elem()
 }
 
+// PbrExists checks whether an existing Pbr resource with the given ID exists.
+func PbrExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PbrState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/pbr:Pbr", id, state, "", opts...)
+}
+
 type pbrArgs struct {
 	// Routing policy action. Must be one of {DENY, PERMIT, REROUTE} .
 	Action string `pulumi:"action"`

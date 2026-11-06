@@ -41,7 +41,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
         /// 
-        /// 
         /// See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&amp;version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
         /// </summary>
         [Output("extId")]
@@ -97,7 +96,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
         /// 
-        /// 
         /// See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&amp;version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
         /// </summary>
         [Input("extId", required: true)]
@@ -113,7 +111,6 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
-        /// 
         /// 
         /// See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&amp;version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
         /// </summary>

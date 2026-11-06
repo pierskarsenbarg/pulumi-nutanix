@@ -184,6 +184,12 @@ func (PcBackupTargetV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*pcBackupTargetV2State)(nil)).Elem()
 }
 
+// PcBackupTargetV2Exists checks whether an existing PcBackupTargetV2 resource with the given ID exists.
+func PcBackupTargetV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PcBackupTargetV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/pcBackupTargetV2:PcBackupTargetV2", id, state, "", opts...)
+}
+
 type pcBackupTargetV2Args struct {
 	// -(Required) A unique identifier for the domain manager.
 	DomainManagerExtId string `pulumi:"domainManagerExtId"`

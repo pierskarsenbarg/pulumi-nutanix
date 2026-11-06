@@ -234,6 +234,12 @@ func (NdbDbserverVmState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbDbserverVmState)(nil)).Elem()
 }
 
+// NdbDbserverVmExists checks whether an existing NdbDbserverVm resource with the given ID exists.
+func NdbDbserverVmExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbDbserverVmState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbDbserverVm:NdbDbserverVm", id, state, "", opts...)
+}
+
 type ndbDbserverVmArgs struct {
 	// Compute profile id.
 	ComputeProfileId string                    `pulumi:"computeProfileId"`

@@ -224,6 +224,12 @@ func (SubnetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*subnetState)(nil)).Elem()
 }
 
+// SubnetExists checks whether an existing Subnet resource with the given ID exists.
+func SubnetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SubnetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/subnet:Subnet", id, state, "", opts...)
+}
+
 type subnetArgs struct {
 	// - (Optional) The reference to a availability_zone.
 	AvailabilityZoneReference map[string]string `pulumi:"availabilityZoneReference"`

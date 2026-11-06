@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.GetClustersV2ClusterEntityNetworkSmtpServerServerResult> Servers;
         /// <summary>
         /// - Type of management server.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "VCENTER"   	Vcenter management server.
         /// </summary>
         public readonly string Type;

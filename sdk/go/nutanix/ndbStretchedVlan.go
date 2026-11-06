@@ -177,6 +177,12 @@ func (NdbStretchedVlanState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbStretchedVlanState)(nil)).Elem()
 }
 
+// NdbStretchedVlanExists checks whether an existing NdbStretchedVlan resource with the given ID exists.
+func NdbStretchedVlanExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbStretchedVlanState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbStretchedVlan:NdbStretchedVlan", id, state, "", opts...)
+}
+
 type ndbStretchedVlanArgs struct {
 	// Description of stretched vlan
 	Description *string `pulumi:"description"`

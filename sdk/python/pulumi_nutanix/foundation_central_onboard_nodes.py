@@ -286,6 +286,24 @@ class FoundationCentralOnboardNodes(pulumi.CustomResource):
         __props__.__dict__["node_type"] = node_type
         return FoundationCentralOnboardNodes(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            block_serial: pulumi.Input[Optional[_builtins.str]] = None,
+            imaged_node_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            model: pulumi.Input[Optional[_builtins.str]] = None,
+            node_serial: pulumi.Input[Optional[_builtins.str]] = None,
+            node_state: pulumi.Input[Optional[_builtins.str]] = None,
+            node_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["blockSerial"] = block_serial
+        __props__["imagedNodeUuid"] = imaged_node_uuid
+        __props__["model"] = model
+        __props__["nodeSerial"] = node_serial
+        __props__["nodeState"] = node_state
+        __props__["nodeType"] = node_type
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/foundationCentralOnboardNodes:FoundationCentralOnboardNodes', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="blockSerial")
     def block_serial(self) -> pulumi.Output[_builtins.str]:

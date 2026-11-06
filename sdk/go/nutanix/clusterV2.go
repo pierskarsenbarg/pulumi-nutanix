@@ -494,6 +494,12 @@ func (ClusterV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*clusterV2State)(nil)).Elem()
 }
 
+// ClusterV2Exists checks whether an existing ClusterV2 resource with the given ID exists.
+func ClusterV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ClusterV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/clusterV2:ClusterV2", id, state, "", opts...)
+}
+
 type clusterV2Args struct {
 	// - (Optional) The reference to a project.
 	Categories []string `pulumi:"categories"`

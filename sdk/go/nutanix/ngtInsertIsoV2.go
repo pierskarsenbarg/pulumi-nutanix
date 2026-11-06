@@ -187,6 +187,12 @@ func (NgtInsertIsoV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*ngtInsertIsoV2State)(nil)).Elem()
 }
 
+// NgtInsertIsoV2Exists checks whether an existing NgtInsertIsoV2 resource with the given ID exists.
+func NgtInsertIsoV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NgtInsertIsoV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ngtInsertIsoV2:NgtInsertIsoV2", id, state, "", opts...)
+}
+
 type ngtInsertIsoV2Args struct {
 	// Default value: "insert". Accepted values: "insert" → Mounts the specified ISO image to the VM’s CD-ROM, "eject" → Unmounts (ejects) the ISO image from the VM’s CD-ROM.
 	Action *string `pulumi:"action"`

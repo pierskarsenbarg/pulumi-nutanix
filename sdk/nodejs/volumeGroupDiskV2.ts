@@ -54,6 +54,17 @@ export class VolumeGroupDiskV2 extends pulumi.CustomResource {
         return new VolumeGroupDiskV2(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing VolumeGroupDiskV2 resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: VolumeGroupDiskV2State, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("nutanix:index/volumeGroupDiskV2:VolumeGroupDiskV2", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'nutanix:index/volumeGroupDiskV2:VolumeGroupDiskV2';
 

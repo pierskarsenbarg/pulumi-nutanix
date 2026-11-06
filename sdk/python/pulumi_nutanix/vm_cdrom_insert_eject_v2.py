@@ -377,6 +377,26 @@ class VmCdromInsertEjectV2(pulumi.CustomResource):
         __props__.__dict__["vm_ext_id"] = vm_ext_id
         return VmCdromInsertEjectV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            backing_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2BackingInfoArgs', 'VmCdromInsertEjectV2BackingInfoArgsDict', 'outputs.VmCdromInsertEjectV2BackingInfo']]]]] = None,
+            cdrom_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            disk_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCdromInsertEjectV2DiskAddressArgs', 'VmCdromInsertEjectV2DiskAddressArgsDict', 'outputs.VmCdromInsertEjectV2DiskAddress']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            iso_type: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["action"] = action
+        __props__["backingInfos"] = backing_infos
+        __props__["cdromExtId"] = cdrom_ext_id
+        __props__["diskAddresses"] = disk_addresses
+        __props__["extId"] = ext_id
+        __props__["isoType"] = iso_type
+        __props__["vmExtId"] = vm_ext_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/vmCdromInsertEjectV2:VmCdromInsertEjectV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def action(self) -> pulumi.Output[Optional[_builtins.str]]:

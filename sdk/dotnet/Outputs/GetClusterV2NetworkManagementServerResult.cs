@@ -32,7 +32,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly bool IsRegistered;
         /// <summary>
         /// - Type of management server.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "VCENTER"   	Vcenter management server.
         /// </summary>
         public readonly bool Type;

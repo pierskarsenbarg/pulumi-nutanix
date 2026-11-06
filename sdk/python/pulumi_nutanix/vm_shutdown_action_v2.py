@@ -227,6 +227,18 @@ class VmShutdownActionV2(pulumi.CustomResource):
         __props__.__dict__["guest_power_state_transition_configs"] = guest_power_state_transition_configs
         return VmShutdownActionV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            guest_power_state_transition_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmShutdownActionV2GuestPowerStateTransitionConfigArgs', 'VmShutdownActionV2GuestPowerStateTransitionConfigArgsDict', 'outputs.VmShutdownActionV2GuestPowerStateTransitionConfig']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["action"] = action
+        __props__["extId"] = ext_id
+        __props__["guestPowerStateTransitionConfigs"] = guest_power_state_transition_configs
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/vmShutdownActionV2:VmShutdownActionV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def action(self) -> pulumi.Output[_builtins.str]:

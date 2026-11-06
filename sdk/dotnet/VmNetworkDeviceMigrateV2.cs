@@ -67,7 +67,7 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// - (Required) The type of IP address management for NIC migration.
-        /// Valid values are:
+        ///   Valid values are:
         /// - `ASSIGN_IP` The type of NIC is Span-Destination.
         /// - `RELEASE_IP` The type of NIC is Normal.
         /// </summary>
@@ -153,7 +153,7 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// - (Required) The type of IP address management for NIC migration.
-        /// Valid values are:
+        ///   Valid values are:
         /// - `ASSIGN_IP` The type of NIC is Span-Destination.
         /// - `RELEASE_IP` The type of NIC is Normal.
         /// </summary>
@@ -206,7 +206,7 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// - (Required) The type of IP address management for NIC migration.
-        /// Valid values are:
+        ///   Valid values are:
         /// - `ASSIGN_IP` The type of NIC is Span-Destination.
         /// - `RELEASE_IP` The type of NIC is Normal.
         /// </summary>

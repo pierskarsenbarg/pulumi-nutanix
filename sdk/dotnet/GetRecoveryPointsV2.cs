@@ -135,7 +135,6 @@ namespace PiersKarsenbarg.Nutanix
         /// ```
         /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
-        /// 
         /// ## Recovery Points
         /// 
         /// The &lt;span pulumi-lang-nodejs="`recoveryPoints`" pulumi-lang-dotnet="`RecoveryPoints`" pulumi-lang-go="`recoveryPoints`" pulumi-lang-python="`recovery_points`" pulumi-lang-yaml="`recoveryPoints`" pulumi-lang-java="`recoveryPoints`" pulumi-lang-hcl="`recovery_points`"&gt;`recoveryPoints`&lt;/span&gt; attribute contains list of recovery points. Each recovery point contains the following attributes:
@@ -164,7 +163,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
         /// * &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-        /// 
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" locationReferences
         /// " pulumi-lang-dotnet=" LocationReferences
@@ -219,7 +217,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`volumeGroupCategories`" pulumi-lang-dotnet="`VolumeGroupCategories`" pulumi-lang-go="`volumeGroupCategories`" pulumi-lang-python="`volume_group_categories`" pulumi-lang-yaml="`volumeGroupCategories`" pulumi-lang-java="`volumeGroupCategories`" pulumi-lang-hcl="`volume_group_categories`"&gt;`volumeGroupCategories`&lt;/span&gt;: Category key-value pairs associated with the volume group at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' will be represented as 'dept/hr'.
         /// * &lt;span pulumi-lang-nodejs="`diskRecoveryPoints`" pulumi-lang-dotnet="`DiskRecoveryPoints`" pulumi-lang-go="`diskRecoveryPoints`" pulumi-lang-python="`disk_recovery_points`" pulumi-lang-yaml="`diskRecoveryPoints`" pulumi-lang-java="`diskRecoveryPoints`" pulumi-lang-hcl="`disk_recovery_points`"&gt;`diskRecoveryPoints`&lt;/span&gt;: array of disk recovery points.
         /// 
-        /// 
         /// ###&lt;span pulumi-lang-nodejs=" diskRecoveryPoints
         /// " pulumi-lang-dotnet=" DiskRecoveryPoints
         /// " pulumi-lang-go=" diskRecoveryPoints
@@ -230,7 +227,6 @@ namespace PiersKarsenbarg.Nutanix
         /// "&gt; diskRecoveryPoints
         /// &lt;/span&gt;* &lt;span pulumi-lang-nodejs="`diskRecoveryPointExtId`" pulumi-lang-dotnet="`DiskRecoveryPointExtId`" pulumi-lang-go="`diskRecoveryPointExtId`" pulumi-lang-python="`disk_recovery_point_ext_id`" pulumi-lang-yaml="`diskRecoveryPointExtId`" pulumi-lang-java="`diskRecoveryPointExtId`" pulumi-lang-hcl="`disk_recovery_point_ext_id`"&gt;`diskRecoveryPointExtId`&lt;/span&gt;: External identifier of the disk recovery point.
         /// * &lt;span pulumi-lang-nodejs="`diskExtId`" pulumi-lang-dotnet="`DiskExtId`" pulumi-lang-go="`diskExtId`" pulumi-lang-python="`disk_ext_id`" pulumi-lang-yaml="`diskExtId`" pulumi-lang-java="`diskExtId`" pulumi-lang-hcl="`disk_ext_id`"&gt;`diskExtId`&lt;/span&gt;: External identifier of the disk.
-        /// 
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" applicationConsistentProperties
         /// " pulumi-lang-dotnet=" ApplicationConsistentProperties
@@ -248,7 +244,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`writers`" pulumi-lang-dotnet="`Writers`" pulumi-lang-go="`writers`" pulumi-lang-python="`writers`" pulumi-lang-yaml="`writers`" pulumi-lang-java="`writers`" pulumi-lang-hcl="`writers`"&gt;`writers`&lt;/span&gt;: List of VSS writer UUIDs that are used in an application consistent recovery point. The default values are the system and the registry writer UUIDs.
         /// * &lt;span pulumi-lang-nodejs="`shouldStoreVssMetadata`" pulumi-lang-dotnet="`ShouldStoreVssMetadata`" pulumi-lang-go="`shouldStoreVssMetadata`" pulumi-lang-python="`should_store_vss_metadata`" pulumi-lang-yaml="`shouldStoreVssMetadata`" pulumi-lang-java="`shouldStoreVssMetadata`" pulumi-lang-hcl="`should_store_vss_metadata`"&gt;`shouldStoreVssMetadata`&lt;/span&gt;: Indicates whether to store the VSS metadata if the user is interested in application-specific backup/restore. The VSS metadata consists of VSS writers and requester metadata details. These are compressed into a cabinet file(.cab file) during a VSS backup operation. This cabinet file must be saved to the backup media during a backup operation, as it is required during the restore operation.
         /// * &lt;span pulumi-lang-nodejs="`objectType`" pulumi-lang-dotnet="`ObjectType`" pulumi-lang-go="`objectType`" pulumi-lang-python="`object_type`" pulumi-lang-yaml="`objectType`" pulumi-lang-java="`objectType`" pulumi-lang-hcl="`object_type`"&gt;`objectType`&lt;/span&gt;: value: `dataprotection.v4.common.VssProperties`
-        /// 
         /// 
         /// See detailed information in [Nutanix List Recovery Points V4](http://developers.nutanix.com/api-reference?namespace=dataprotection&amp;version=v4.0#tag/RecoveryPoints/operation/listRecoveryPoints).
         /// </summary>
@@ -378,7 +373,6 @@ namespace PiersKarsenbarg.Nutanix
         /// ```
         /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
-        /// 
         /// ## Recovery Points
         /// 
         /// The &lt;span pulumi-lang-nodejs="`recoveryPoints`" pulumi-lang-dotnet="`RecoveryPoints`" pulumi-lang-go="`recoveryPoints`" pulumi-lang-python="`recovery_points`" pulumi-lang-yaml="`recoveryPoints`" pulumi-lang-java="`recoveryPoints`" pulumi-lang-hcl="`recovery_points`"&gt;`recoveryPoints`&lt;/span&gt; attribute contains list of recovery points. Each recovery point contains the following attributes:
@@ -407,7 +401,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
         /// * &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-        /// 
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" locationReferences
         /// " pulumi-lang-dotnet=" LocationReferences
@@ -462,7 +455,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`volumeGroupCategories`" pulumi-lang-dotnet="`VolumeGroupCategories`" pulumi-lang-go="`volumeGroupCategories`" pulumi-lang-python="`volume_group_categories`" pulumi-lang-yaml="`volumeGroupCategories`" pulumi-lang-java="`volumeGroupCategories`" pulumi-lang-hcl="`volume_group_categories`"&gt;`volumeGroupCategories`&lt;/span&gt;: Category key-value pairs associated with the volume group at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' will be represented as 'dept/hr'.
         /// * &lt;span pulumi-lang-nodejs="`diskRecoveryPoints`" pulumi-lang-dotnet="`DiskRecoveryPoints`" pulumi-lang-go="`diskRecoveryPoints`" pulumi-lang-python="`disk_recovery_points`" pulumi-lang-yaml="`diskRecoveryPoints`" pulumi-lang-java="`diskRecoveryPoints`" pulumi-lang-hcl="`disk_recovery_points`"&gt;`diskRecoveryPoints`&lt;/span&gt;: array of disk recovery points.
         /// 
-        /// 
         /// ###&lt;span pulumi-lang-nodejs=" diskRecoveryPoints
         /// " pulumi-lang-dotnet=" DiskRecoveryPoints
         /// " pulumi-lang-go=" diskRecoveryPoints
@@ -473,7 +465,6 @@ namespace PiersKarsenbarg.Nutanix
         /// "&gt; diskRecoveryPoints
         /// &lt;/span&gt;* &lt;span pulumi-lang-nodejs="`diskRecoveryPointExtId`" pulumi-lang-dotnet="`DiskRecoveryPointExtId`" pulumi-lang-go="`diskRecoveryPointExtId`" pulumi-lang-python="`disk_recovery_point_ext_id`" pulumi-lang-yaml="`diskRecoveryPointExtId`" pulumi-lang-java="`diskRecoveryPointExtId`" pulumi-lang-hcl="`disk_recovery_point_ext_id`"&gt;`diskRecoveryPointExtId`&lt;/span&gt;: External identifier of the disk recovery point.
         /// * &lt;span pulumi-lang-nodejs="`diskExtId`" pulumi-lang-dotnet="`DiskExtId`" pulumi-lang-go="`diskExtId`" pulumi-lang-python="`disk_ext_id`" pulumi-lang-yaml="`diskExtId`" pulumi-lang-java="`diskExtId`" pulumi-lang-hcl="`disk_ext_id`"&gt;`diskExtId`&lt;/span&gt;: External identifier of the disk.
-        /// 
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" applicationConsistentProperties
         /// " pulumi-lang-dotnet=" ApplicationConsistentProperties
@@ -491,7 +482,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`writers`" pulumi-lang-dotnet="`Writers`" pulumi-lang-go="`writers`" pulumi-lang-python="`writers`" pulumi-lang-yaml="`writers`" pulumi-lang-java="`writers`" pulumi-lang-hcl="`writers`"&gt;`writers`&lt;/span&gt;: List of VSS writer UUIDs that are used in an application consistent recovery point. The default values are the system and the registry writer UUIDs.
         /// * &lt;span pulumi-lang-nodejs="`shouldStoreVssMetadata`" pulumi-lang-dotnet="`ShouldStoreVssMetadata`" pulumi-lang-go="`shouldStoreVssMetadata`" pulumi-lang-python="`should_store_vss_metadata`" pulumi-lang-yaml="`shouldStoreVssMetadata`" pulumi-lang-java="`shouldStoreVssMetadata`" pulumi-lang-hcl="`should_store_vss_metadata`"&gt;`shouldStoreVssMetadata`&lt;/span&gt;: Indicates whether to store the VSS metadata if the user is interested in application-specific backup/restore. The VSS metadata consists of VSS writers and requester metadata details. These are compressed into a cabinet file(.cab file) during a VSS backup operation. This cabinet file must be saved to the backup media during a backup operation, as it is required during the restore operation.
         /// * &lt;span pulumi-lang-nodejs="`objectType`" pulumi-lang-dotnet="`ObjectType`" pulumi-lang-go="`objectType`" pulumi-lang-python="`object_type`" pulumi-lang-yaml="`objectType`" pulumi-lang-java="`objectType`" pulumi-lang-hcl="`object_type`"&gt;`objectType`&lt;/span&gt;: value: `dataprotection.v4.common.VssProperties`
-        /// 
         /// 
         /// See detailed information in [Nutanix List Recovery Points V4](http://developers.nutanix.com/api-reference?namespace=dataprotection&amp;version=v4.0#tag/RecoveryPoints/operation/listRecoveryPoints).
         /// </summary>
@@ -621,7 +611,6 @@ namespace PiersKarsenbarg.Nutanix
         /// ```
         /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
-        /// 
         /// ## Recovery Points
         /// 
         /// The &lt;span pulumi-lang-nodejs="`recoveryPoints`" pulumi-lang-dotnet="`RecoveryPoints`" pulumi-lang-go="`recoveryPoints`" pulumi-lang-python="`recovery_points`" pulumi-lang-yaml="`recoveryPoints`" pulumi-lang-java="`recoveryPoints`" pulumi-lang-hcl="`recovery_points`"&gt;`recoveryPoints`&lt;/span&gt; attribute contains list of recovery points. Each recovery point contains the following attributes:
@@ -650,7 +639,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
         /// * &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-        /// 
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" locationReferences
         /// " pulumi-lang-dotnet=" LocationReferences
@@ -705,7 +693,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`volumeGroupCategories`" pulumi-lang-dotnet="`VolumeGroupCategories`" pulumi-lang-go="`volumeGroupCategories`" pulumi-lang-python="`volume_group_categories`" pulumi-lang-yaml="`volumeGroupCategories`" pulumi-lang-java="`volumeGroupCategories`" pulumi-lang-hcl="`volume_group_categories`"&gt;`volumeGroupCategories`&lt;/span&gt;: Category key-value pairs associated with the volume group at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' will be represented as 'dept/hr'.
         /// * &lt;span pulumi-lang-nodejs="`diskRecoveryPoints`" pulumi-lang-dotnet="`DiskRecoveryPoints`" pulumi-lang-go="`diskRecoveryPoints`" pulumi-lang-python="`disk_recovery_points`" pulumi-lang-yaml="`diskRecoveryPoints`" pulumi-lang-java="`diskRecoveryPoints`" pulumi-lang-hcl="`disk_recovery_points`"&gt;`diskRecoveryPoints`&lt;/span&gt;: array of disk recovery points.
         /// 
-        /// 
         /// ###&lt;span pulumi-lang-nodejs=" diskRecoveryPoints
         /// " pulumi-lang-dotnet=" DiskRecoveryPoints
         /// " pulumi-lang-go=" diskRecoveryPoints
@@ -716,7 +703,6 @@ namespace PiersKarsenbarg.Nutanix
         /// "&gt; diskRecoveryPoints
         /// &lt;/span&gt;* &lt;span pulumi-lang-nodejs="`diskRecoveryPointExtId`" pulumi-lang-dotnet="`DiskRecoveryPointExtId`" pulumi-lang-go="`diskRecoveryPointExtId`" pulumi-lang-python="`disk_recovery_point_ext_id`" pulumi-lang-yaml="`diskRecoveryPointExtId`" pulumi-lang-java="`diskRecoveryPointExtId`" pulumi-lang-hcl="`disk_recovery_point_ext_id`"&gt;`diskRecoveryPointExtId`&lt;/span&gt;: External identifier of the disk recovery point.
         /// * &lt;span pulumi-lang-nodejs="`diskExtId`" pulumi-lang-dotnet="`DiskExtId`" pulumi-lang-go="`diskExtId`" pulumi-lang-python="`disk_ext_id`" pulumi-lang-yaml="`diskExtId`" pulumi-lang-java="`diskExtId`" pulumi-lang-hcl="`disk_ext_id`"&gt;`diskExtId`&lt;/span&gt;: External identifier of the disk.
-        /// 
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" applicationConsistentProperties
         /// " pulumi-lang-dotnet=" ApplicationConsistentProperties
@@ -734,7 +720,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`writers`" pulumi-lang-dotnet="`Writers`" pulumi-lang-go="`writers`" pulumi-lang-python="`writers`" pulumi-lang-yaml="`writers`" pulumi-lang-java="`writers`" pulumi-lang-hcl="`writers`"&gt;`writers`&lt;/span&gt;: List of VSS writer UUIDs that are used in an application consistent recovery point. The default values are the system and the registry writer UUIDs.
         /// * &lt;span pulumi-lang-nodejs="`shouldStoreVssMetadata`" pulumi-lang-dotnet="`ShouldStoreVssMetadata`" pulumi-lang-go="`shouldStoreVssMetadata`" pulumi-lang-python="`should_store_vss_metadata`" pulumi-lang-yaml="`shouldStoreVssMetadata`" pulumi-lang-java="`shouldStoreVssMetadata`" pulumi-lang-hcl="`should_store_vss_metadata`"&gt;`shouldStoreVssMetadata`&lt;/span&gt;: Indicates whether to store the VSS metadata if the user is interested in application-specific backup/restore. The VSS metadata consists of VSS writers and requester metadata details. These are compressed into a cabinet file(.cab file) during a VSS backup operation. This cabinet file must be saved to the backup media during a backup operation, as it is required during the restore operation.
         /// * &lt;span pulumi-lang-nodejs="`objectType`" pulumi-lang-dotnet="`ObjectType`" pulumi-lang-go="`objectType`" pulumi-lang-python="`object_type`" pulumi-lang-yaml="`objectType`" pulumi-lang-java="`objectType`" pulumi-lang-hcl="`object_type`"&gt;`objectType`&lt;/span&gt;: value: `dataprotection.v4.common.VssProperties`
-        /// 
         /// 
         /// See detailed information in [Nutanix List Recovery Points V4](http://developers.nutanix.com/api-reference?namespace=dataprotection&amp;version=v4.0#tag/RecoveryPoints/operation/listRecoveryPoints).
         /// </summary>

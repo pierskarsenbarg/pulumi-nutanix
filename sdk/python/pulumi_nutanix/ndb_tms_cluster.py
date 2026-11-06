@@ -493,6 +493,40 @@ class NdbTmsCluster(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return NdbTmsCluster(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            date_created: pulumi.Input[Optional[_builtins.str]] = None,
+            date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            log_drive_id: pulumi.Input[Optional[_builtins.str]] = None,
+            log_drive_status: pulumi.Input[Optional[_builtins.str]] = None,
+            nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_id: pulumi.Input[Optional[_builtins.str]] = None,
+            schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
+            sla_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.bool]] = None,
+            source_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dateCreated"] = date_created
+        __props__["dateModified"] = date_modified
+        __props__["description"] = description
+        __props__["logDriveId"] = log_drive_id
+        __props__["logDriveStatus"] = log_drive_status
+        __props__["nxClusterId"] = nx_cluster_id
+        __props__["ownerId"] = owner_id
+        __props__["scheduleId"] = schedule_id
+        __props__["slaId"] = sla_id
+        __props__["source"] = source
+        __props__["sourceClusters"] = source_clusters
+        __props__["status"] = status
+        __props__["timeMachineId"] = time_machine_id
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbTmsCluster:NdbTmsCluster', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dateCreated")
     def date_created(self) -> pulumi.Output[_builtins.str]:

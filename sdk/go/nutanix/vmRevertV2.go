@@ -111,6 +111,12 @@ func (VmRevertV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*vmRevertV2State)(nil)).Elem()
 }
 
+// VmRevertV2Exists checks whether an existing VmRevertV2 resource with the given ID exists.
+func VmRevertV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VmRevertV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/vmRevertV2:VmRevertV2", id, state, "", opts...)
+}
+
 type vmRevertV2Args struct {
 	// -(Required) The globally unique identifier of a VM. It should be of type UUID.
 	ExtId string `pulumi:"extId"`

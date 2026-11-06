@@ -1215,6 +1215,64 @@ class SubnetV2(pulumi.CustomResource):
         __props__.__dict__["vpcs"] = vpcs
         return SubnetV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bridge_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dhcp_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2DhcpOptionArgs', 'SubnetV2DhcpOptionArgsDict', 'outputs.SubnetV2DhcpOption']]]]] = None,
+            dynamic_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2DynamicIpAddressArgs', 'SubnetV2DynamicIpAddressArgsDict', 'outputs.SubnetV2DynamicIpAddress']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            hypervisor_type: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2IpConfigArgs', 'SubnetV2IpConfigArgsDict', 'outputs.SubnetV2IpConfig']]]]] = None,
+            ip_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_usages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2IpUsageArgs', 'SubnetV2IpUsageArgsDict', 'outputs.SubnetV2IpUsage']]]]] = None,
+            is_advanced_networking: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_external: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_nat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2LinkArgs', 'SubnetV2LinkArgsDict', 'outputs.SubnetV2Link']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2MetadataArgs', 'SubnetV2MetadataArgsDict', 'outputs.SubnetV2Metadata']]]]] = None,
+            migration_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_function_chain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            network_id: pulumi.Input[Optional[_builtins.int]] = None,
+            reserved_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2ReservedIpAddressArgs', 'SubnetV2ReservedIpAddressArgsDict', 'outputs.SubnetV2ReservedIpAddress']]]]] = None,
+            subnet_type: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual_switch_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual_switches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2VirtualSwitchArgs', 'SubnetV2VirtualSwitchArgsDict', 'outputs.SubnetV2VirtualSwitch']]]]] = None,
+            vpc_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            vpcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubnetV2VpcArgs', 'SubnetV2VpcArgsDict', 'outputs.SubnetV2Vpc']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bridgeName"] = bridge_name
+        __props__["clusterName"] = cluster_name
+        __props__["clusterReference"] = cluster_reference
+        __props__["description"] = description
+        __props__["dhcpOptions"] = dhcp_options
+        __props__["dynamicIpAddresses"] = dynamic_ip_addresses
+        __props__["extId"] = ext_id
+        __props__["hypervisorType"] = hypervisor_type
+        __props__["ipConfigs"] = ip_configs
+        __props__["ipPrefix"] = ip_prefix
+        __props__["ipUsages"] = ip_usages
+        __props__["isAdvancedNetworking"] = is_advanced_networking
+        __props__["isExternal"] = is_external
+        __props__["isNatEnabled"] = is_nat_enabled
+        __props__["links"] = links
+        __props__["metadatas"] = metadatas
+        __props__["migrationState"] = migration_state
+        __props__["name"] = name
+        __props__["networkFunctionChainReference"] = network_function_chain_reference
+        __props__["networkId"] = network_id
+        __props__["reservedIpAddresses"] = reserved_ip_addresses
+        __props__["subnetType"] = subnet_type
+        __props__["virtualSwitchReference"] = virtual_switch_reference
+        __props__["virtualSwitches"] = virtual_switches
+        __props__["vpcReference"] = vpc_reference
+        __props__["vpcs"] = vpcs
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/subnetV2:SubnetV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="bridgeName")
     def bridge_name(self) -> pulumi.Output[_builtins.str]:

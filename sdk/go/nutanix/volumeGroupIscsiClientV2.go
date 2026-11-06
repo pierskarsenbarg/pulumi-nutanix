@@ -144,6 +144,12 @@ func (VolumeGroupIscsiClientV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*volumeGroupIscsiClientV2State)(nil)).Elem()
 }
 
+// VolumeGroupIscsiClientV2Exists checks whether an existing VolumeGroupIscsiClientV2 resource with the given ID exists.
+func VolumeGroupIscsiClientV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VolumeGroupIscsiClientV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/volumeGroupIscsiClientV2:VolumeGroupIscsiClientV2", id, state, "", opts...)
+}
+
 type volumeGroupIscsiClientV2Args struct {
 	// -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
 	AttachmentSite *string `pulumi:"attachmentSite"`

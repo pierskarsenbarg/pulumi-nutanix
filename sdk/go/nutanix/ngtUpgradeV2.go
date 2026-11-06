@@ -163,6 +163,12 @@ func (NgtUpgradeV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*ngtUpgradeV2State)(nil)).Elem()
 }
 
+// NgtUpgradeV2Exists checks whether an existing NgtUpgradeV2 resource with the given ID exists.
+func NgtUpgradeV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NgtUpgradeV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ngtUpgradeV2:NgtUpgradeV2", id, state, "", opts...)
+}
+
 type ngtUpgradeV2Args struct {
 	// uuid of the Virtual Machine.
 	ExtId string `pulumi:"extId"`

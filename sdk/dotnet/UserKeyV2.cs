@@ -102,9 +102,9 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// - ( Optional ) The creation mechanism of this entity. Enum Values:
-        /// _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
-        /// _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
-        /// _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
+        ///   _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+        ///   _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+        ///   _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
         /// </summary>
         [Output("creationType")]
         public Output<string> CreationType { get; private set; } = null!;
@@ -135,8 +135,8 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// - ( Required ) The type of key. Enum Values:
-        /// _ "API_KEY": A key type that is used to identify a service.
-        /// _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
+        ///   _ "API_KEY": A key type that is used to identify a service.
+        ///   _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
         /// </summary>
         [Output("keyType")]
         public Output<string> KeyType { get; private set; } = null!;
@@ -173,9 +173,9 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// - ( Optional ) The status of the key. Enum Values:
-        /// _ "REVOKED": Key is revoked.
-        /// _ "VALID": Key is valid.
-        /// _ "EXPIRED": Key is expired.
+        ///   _ "REVOKED": Key is revoked.
+        ///   _ "VALID": Key is valid.
+        ///   _ "EXPIRED": Key is expired.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -259,9 +259,9 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// - ( Optional ) The creation mechanism of this entity. Enum Values:
-        /// _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
-        /// _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
-        /// _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
+        ///   _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+        ///   _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+        ///   _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
         /// </summary>
         [Input("creationType")]
         public Input<string>? CreationType { get; set; }
@@ -280,8 +280,8 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// - ( Required ) The type of key. Enum Values:
-        /// _ "API_KEY": A key type that is used to identify a service.
-        /// _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
+        ///   _ "API_KEY": A key type that is used to identify a service.
+        ///   _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
         /// </summary>
         [Input("keyType", required: true)]
         public Input<string> KeyType { get; set; } = null!;
@@ -312,9 +312,9 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// - ( Optional ) The status of the key. Enum Values:
-        /// _ "REVOKED": Key is revoked.
-        /// _ "VALID": Key is valid.
-        /// _ "EXPIRED": Key is expired.
+        ///   _ "REVOKED": Key is revoked.
+        ///   _ "VALID": Key is valid.
+        ///   _ "EXPIRED": Key is expired.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -353,9 +353,9 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// - ( Optional ) The creation mechanism of this entity. Enum Values:
-        /// _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
-        /// _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
-        /// _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
+        ///   _ "PREDEFINED": Predefined creator workflow type is for entity created by the system.
+        ///   _ "SERVICEDEFINED": Servicedefined creator workflow type is for entity created by the service.
+        ///   _ "USERDEFINED": Userdefined creator workflow type is for entity created by the users.
         /// </summary>
         [Input("creationType")]
         public Input<string>? CreationType { get; set; }
@@ -392,8 +392,8 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// - ( Required ) The type of key. Enum Values:
-        /// _ "API_KEY": A key type that is used to identify a service.
-        /// _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
+        ///   _ "API_KEY": A key type that is used to identify a service.
+        ///   _ "OBJECT_KEY": A combination of access key and secret key to sign an API request.
         /// </summary>
         [Input("keyType")]
         public Input<string>? KeyType { get; set; }
@@ -436,9 +436,9 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// - ( Optional ) The status of the key. Enum Values:
-        /// _ "REVOKED": Key is revoked.
-        /// _ "VALID": Key is valid.
-        /// _ "EXPIRED": Key is expired.
+        ///   _ "REVOKED": Key is revoked.
+        ///   _ "VALID": Key is valid.
+        ///   _ "EXPIRED": Key is expired.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }

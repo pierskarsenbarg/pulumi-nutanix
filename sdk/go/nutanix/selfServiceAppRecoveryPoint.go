@@ -120,6 +120,12 @@ func (SelfServiceAppRecoveryPointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*selfServiceAppRecoveryPointState)(nil)).Elem()
 }
 
+// SelfServiceAppRecoveryPointExists checks whether an existing SelfServiceAppRecoveryPoint resource with the given ID exists.
+func SelfServiceAppRecoveryPointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SelfServiceAppRecoveryPointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/selfServiceAppRecoveryPoint:SelfServiceAppRecoveryPoint", id, state, "", opts...)
+}
+
 type selfServiceAppRecoveryPointArgs struct {
 	// - (Required) The name of the snapshot action to trigger.
 	ActionName string `pulumi:"actionName"`

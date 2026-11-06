@@ -160,6 +160,12 @@ func (OvaVmDeployV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*ovaVmDeployV2State)(nil)).Elem()
 }
 
+// OvaVmDeployV2Exists checks whether an existing OvaVmDeployV2 resource with the given ID exists.
+func OvaVmDeployV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OvaVmDeployV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ovaVmDeployV2:OvaVmDeployV2", id, state, "", opts...)
+}
+
 type ovaVmDeployV2Args struct {
 	// -(Required) Cluster identifier to deploy VM from OVA. This field is required when deploying an OVA and must be a part of the OVA location list.
 	ClusterLocationExtId string `pulumi:"clusterLocationExtId"`

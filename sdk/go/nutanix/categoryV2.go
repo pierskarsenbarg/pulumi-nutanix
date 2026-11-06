@@ -251,6 +251,12 @@ func (CategoryV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*categoryV2State)(nil)).Elem()
 }
 
+// CategoryV2Exists checks whether an existing CategoryV2 resource with the given ID exists.
+func CategoryV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CategoryV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/categoryV2:CategoryV2", id, state, "", opts...)
+}
+
 type categoryV2Args struct {
 	// -(Optional) A string consisting of the description of the category as defined by the user.
 	// Description can be optionally provided in the payload of createCategory and updateCategoryById APIs.

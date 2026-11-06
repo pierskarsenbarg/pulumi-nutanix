@@ -817,6 +817,70 @@ class NdbDatabaseRestore(pulumi.CustomResource):
         __props__.__dict__["user_pitr_timestamp"] = user_pitr_timestamp
         return NdbDatabaseRestore(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            clone: pulumi.Input[Optional[_builtins.bool]] = None,
+            database_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_name: pulumi.Input[Optional[_builtins.str]] = None,
+            database_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreDatabaseNodeArgs', 'NdbDatabaseRestoreDatabaseNodeArgsDict', 'outputs.NdbDatabaseRestoreDatabaseNode']]]]] = None,
+            date_created: pulumi.Input[Optional[_builtins.str]] = None,
+            date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            dbserver_logical_cluster: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            dbserver_logical_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreInfoArgs', 'NdbDatabaseRestoreInfoArgsDict', 'outputs.NdbDatabaseRestoreInfo']]]]] = None,
+            latest_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+            lcm_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreLcmConfigArgs', 'NdbDatabaseRestoreLcmConfigArgsDict', 'outputs.NdbDatabaseRestoreLcmConfig']]]]] = None,
+            linked_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreLinkedDatabaseArgs', 'NdbDatabaseRestoreLinkedDatabaseArgsDict', 'outputs.NdbDatabaseRestoreLinkedDatabase']]]]] = None,
+            metric: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestorePropertyArgs', 'NdbDatabaseRestorePropertyArgsDict', 'outputs.NdbDatabaseRestoreProperty']]]]] = None,
+            restore_version: pulumi.Input[Optional[_builtins.int]] = None,
+            snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTagArgs', 'NdbDatabaseRestoreTagArgsDict', 'outputs.NdbDatabaseRestoreTag']]]]] = None,
+            time_machine_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_machines: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbDatabaseRestoreTimeMachineArgs', 'NdbDatabaseRestoreTimeMachineArgsDict', 'outputs.NdbDatabaseRestoreTimeMachine']]]]] = None,
+            time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            time_zone_pitr: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            user_pitr_timestamp: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["clone"] = clone
+        __props__["databaseClusterType"] = database_cluster_type
+        __props__["databaseId"] = database_id
+        __props__["databaseInstanceId"] = database_instance_id
+        __props__["databaseName"] = database_name
+        __props__["databaseNodes"] = database_nodes
+        __props__["dateCreated"] = date_created
+        __props__["dateModified"] = date_modified
+        __props__["dbserverLogicalCluster"] = dbserver_logical_cluster
+        __props__["dbserverLogicalClusterId"] = dbserver_logical_cluster_id
+        __props__["description"] = description
+        __props__["infos"] = infos
+        __props__["latestSnapshot"] = latest_snapshot
+        __props__["lcmConfigs"] = lcm_configs
+        __props__["linkedDatabases"] = linked_databases
+        __props__["metric"] = metric
+        __props__["name"] = name
+        __props__["parentDatabaseId"] = parent_database_id
+        __props__["properties"] = properties
+        __props__["restoreVersion"] = restore_version
+        __props__["snapshotId"] = snapshot_id
+        __props__["status"] = status
+        __props__["tags"] = tags
+        __props__["timeMachineId"] = time_machine_id
+        __props__["timeMachines"] = time_machines
+        __props__["timeZone"] = time_zone
+        __props__["timeZonePitr"] = time_zone_pitr
+        __props__["type"] = type
+        __props__["userPitrTimestamp"] = user_pitr_timestamp
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbDatabaseRestore:NdbDatabaseRestore', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def clone(self) -> pulumi.Output[_builtins.bool]:

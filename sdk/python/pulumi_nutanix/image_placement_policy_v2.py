@@ -527,6 +527,36 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
         __props__.__dict__["should_cancel_running_tasks"] = should_cancel_running_tasks
         return ImagePlacementPolicyV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ClusterEntityFilterArgs', 'ImagePlacementPolicyV2ClusterEntityFilterArgsDict', 'outputs.ImagePlacementPolicyV2ClusterEntityFilter']]]]] = None,
+            create_time: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            enforcement_state: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            image_entity_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagePlacementPolicyV2ImageEntityFilterArgs', 'ImagePlacementPolicyV2ImageEntityFilterArgsDict', 'outputs.ImagePlacementPolicyV2ImageEntityFilter']]]]] = None,
+            last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            placement_type: pulumi.Input[Optional[_builtins.str]] = None,
+            should_cancel_running_tasks: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["action"] = action
+        __props__["clusterEntityFilters"] = cluster_entity_filters
+        __props__["createTime"] = create_time
+        __props__["description"] = description
+        __props__["enforcementState"] = enforcement_state
+        __props__["extId"] = ext_id
+        __props__["imageEntityFilters"] = image_entity_filters
+        __props__["lastUpdateTime"] = last_update_time
+        __props__["name"] = name
+        __props__["ownerExtId"] = owner_ext_id
+        __props__["placementType"] = placement_type
+        __props__["shouldCancelRunningTasks"] = should_cancel_running_tasks
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/imagePlacementPolicyV2:ImagePlacementPolicyV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def action(self) -> pulumi.Output[Optional[_builtins.str]]:

@@ -619,6 +619,38 @@ class Pbr(pulumi.CustomResource):
         __props__.__dict__["vpc_reference_uuid"] = vpc_reference_uuid
         return Pbr(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            destination: pulumi.Input[Optional[Union['PbrDestinationArgs', 'PbrDestinationArgsDict', 'outputs.PbrDestination']]] = None,
+            is_bidirectional: pulumi.Input[Optional[_builtins.bool]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None,
+            protocol_parameters: pulumi.Input[Optional[Union['PbrProtocolParametersArgs', 'PbrProtocolParametersArgsDict', 'outputs.PbrProtocolParameters']]] = None,
+            protocol_type: pulumi.Input[Optional[_builtins.str]] = None,
+            service_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            source: pulumi.Input[Optional[Union['PbrSourceArgs', 'PbrSourceArgsDict', 'outputs.PbrSource']]] = None,
+            vpc_name: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc_reference_uuid: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["action"] = action
+        __props__["apiVersion"] = api_version
+        __props__["destination"] = destination
+        __props__["isBidirectional"] = is_bidirectional
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["priority"] = priority
+        __props__["protocolParameters"] = protocol_parameters
+        __props__["protocolType"] = protocol_type
+        __props__["serviceIpLists"] = service_ip_lists
+        __props__["source"] = source
+        __props__["vpcName"] = vpc_name
+        __props__["vpcReferenceUuid"] = vpc_reference_uuid
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/pbr:Pbr', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def action(self) -> pulumi.Output[_builtins.str]:

@@ -564,6 +564,24 @@ class ClusterAddNodeV2(pulumi.CustomResource):
         __props__.__dict__["should_skip_pre_expand_checks"] = should_skip_pre_expand_checks
         return ClusterAddNodeV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cluster_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2ConfigParamArgs', 'ClusterAddNodeV2ConfigParamArgsDict', 'outputs.ClusterAddNodeV2ConfigParam']]]]] = None,
+            node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2NodeParamArgs', 'ClusterAddNodeV2NodeParamArgsDict', 'outputs.ClusterAddNodeV2NodeParam']]]]] = None,
+            remove_node_params: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterAddNodeV2RemoveNodeParamArgs', 'ClusterAddNodeV2RemoveNodeParamArgsDict', 'outputs.ClusterAddNodeV2RemoveNodeParam']]]]] = None,
+            should_skip_add_node: pulumi.Input[Optional[_builtins.bool]] = None,
+            should_skip_pre_expand_checks: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["clusterExtId"] = cluster_ext_id
+        __props__["configParams"] = config_params
+        __props__["nodeParams"] = node_params
+        __props__["removeNodeParams"] = remove_node_params
+        __props__["shouldSkipAddNode"] = should_skip_add_node
+        __props__["shouldSkipPreExpandChecks"] = should_skip_pre_expand_checks
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/clusterAddNodeV2:ClusterAddNodeV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="clusterExtId")
     def cluster_ext_id(self) -> pulumi.Output[_builtins.str]:

@@ -149,6 +149,12 @@ func (NdbCloneRefreshState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbCloneRefreshState)(nil)).Elem()
 }
 
+// NdbCloneRefreshExists checks whether an existing NdbCloneRefresh resource with the given ID exists.
+func NdbCloneRefreshExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbCloneRefreshState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbCloneRefresh:NdbCloneRefresh", id, state, "", opts...)
+}
+
 type ndbCloneRefreshArgs struct {
 	// clone id
 	CloneId string `pulumi:"cloneId"`

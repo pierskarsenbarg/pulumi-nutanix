@@ -280,6 +280,20 @@ class AddressGroup(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         return AddressGroup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            address_group_string: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_address_block_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupIpAddressBlockListArgs', 'AddressGroupIpAddressBlockListArgsDict', 'outputs.AddressGroupIpAddressBlockList']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["addressGroupString"] = address_group_string
+        __props__["description"] = description
+        __props__["ipAddressBlockLists"] = ip_address_block_lists
+        __props__["name"] = name
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/addressGroup:AddressGroup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="addressGroupString")
     def address_group_string(self) -> pulumi.Output[_builtins.str]:

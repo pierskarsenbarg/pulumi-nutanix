@@ -600,6 +600,46 @@ class NdbProfile(pulumi.CustomResource):
         __props__.__dict__["versions"] = versions
         return NdbProfile(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            assoc_databases: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            assoc_db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cluster_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileClusterAvailabilityArgs', 'NdbProfileClusterAvailabilityArgsDict', 'outputs.NdbProfileClusterAvailability']]]]] = None,
+            compute_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileComputeProfileArgs', 'NdbProfileComputeProfileArgsDict', 'outputs.NdbProfileComputeProfile']]]]] = None,
+            database_parameter_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileDatabaseParameterProfileArgs', 'NdbProfileDatabaseParameterProfileArgsDict', 'outputs.NdbProfileDatabaseParameterProfile']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            engine_type: pulumi.Input[Optional[_builtins.str]] = None,
+            latest_version: pulumi.Input[Optional[_builtins.str]] = None,
+            latest_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_profiles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileNetworkProfileArgs', 'NdbProfileNetworkProfileArgsDict', 'outputs.NdbProfileNetworkProfile']]]]] = None,
+            nx_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            owner: pulumi.Input[Optional[_builtins.str]] = None,
+            published: pulumi.Input[Optional[_builtins.bool]] = None,
+            software_profile: pulumi.Input[Optional[Union['NdbProfileSoftwareProfileArgs', 'NdbProfileSoftwareProfileArgsDict', 'outputs.NdbProfileSoftwareProfile']]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbProfileVersionArgs', 'NdbProfileVersionArgsDict', 'outputs.NdbProfileVersion']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["assocDatabases"] = assoc_databases
+        __props__["assocDbServers"] = assoc_db_servers
+        __props__["clusterAvailabilities"] = cluster_availabilities
+        __props__["computeProfiles"] = compute_profiles
+        __props__["databaseParameterProfiles"] = database_parameter_profiles
+        __props__["description"] = description
+        __props__["engineType"] = engine_type
+        __props__["latestVersion"] = latest_version
+        __props__["latestVersionId"] = latest_version_id
+        __props__["name"] = name
+        __props__["networkProfiles"] = network_profiles
+        __props__["nxClusterId"] = nx_cluster_id
+        __props__["owner"] = owner
+        __props__["published"] = published
+        __props__["softwareProfile"] = software_profile
+        __props__["status"] = status
+        __props__["versions"] = versions
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbProfile:NdbProfile', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="assocDatabases")
     def assoc_databases(self) -> pulumi.Output[Sequence[_builtins.str]]:

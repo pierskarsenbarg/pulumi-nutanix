@@ -117,6 +117,12 @@ func (PasswordChangeRequestV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*passwordChangeRequestV2State)(nil)).Elem()
 }
 
+// PasswordChangeRequestV2Exists checks whether an existing PasswordChangeRequestV2 resource with the given ID exists.
+func PasswordChangeRequestV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PasswordChangeRequestV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/passwordChangeRequestV2:PasswordChangeRequestV2", id, state, "", opts...)
+}
+
 type passwordChangeRequestV2Args struct {
 	// -(Optional) Existing password of a user account.
 	CurrentPassword *string `pulumi:"currentPassword"`

@@ -167,6 +167,12 @@ func (StaticRoutesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*staticRoutesState)(nil)).Elem()
 }
 
+// StaticRoutesExists checks whether an existing StaticRoutes resource with the given ID exists.
+func StaticRoutesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *StaticRoutesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/staticRoutes:StaticRoutes", id, state, "", opts...)
+}
+
 type staticRoutesArgs struct {
 	// The version of the API.
 	ApiVersion *string `pulumi:"apiVersion"`

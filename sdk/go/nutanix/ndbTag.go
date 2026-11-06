@@ -177,6 +177,12 @@ func (NdbTagState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbTagState)(nil)).Elem()
 }
 
+// NdbTagExists checks whether an existing NdbTag resource with the given ID exists.
+func NdbTagExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbTagState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbTag:NdbTag", id, state, "", opts...)
+}
+
 type ndbTagArgs struct {
 	// description for the tag
 	Description *string `pulumi:"description"`

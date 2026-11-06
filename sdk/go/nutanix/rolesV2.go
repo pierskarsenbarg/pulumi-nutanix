@@ -196,6 +196,12 @@ func (RolesV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*rolesV2State)(nil)).Elem()
 }
 
+// RolesV2Exists checks whether an existing RolesV2 resource with the given ID exists.
+func RolesV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RolesV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/rolesV2:RolesV2", id, state, "", opts...)
+}
+
 type rolesV2Args struct {
 	// - Client that created the entity.
 	ClientName *string `pulumi:"clientName"`

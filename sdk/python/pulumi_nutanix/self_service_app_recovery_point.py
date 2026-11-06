@@ -303,6 +303,20 @@ class SelfServiceAppRecoveryPoint(pulumi.CustomResource):
         __props__.__dict__["recovery_point_name"] = recovery_point_name
         return SelfServiceAppRecoveryPoint(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action_name: pulumi.Input[Optional[_builtins.str]] = None,
+            app_name: pulumi.Input[Optional[_builtins.str]] = None,
+            app_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            recovery_point_name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["actionName"] = action_name
+        __props__["appName"] = app_name
+        __props__["appUuid"] = app_uuid
+        __props__["recoveryPointName"] = recovery_point_name
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/selfServiceAppRecoveryPoint:SelfServiceAppRecoveryPoint', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="actionName")
     def action_name(self) -> pulumi.Output[_builtins.str]:

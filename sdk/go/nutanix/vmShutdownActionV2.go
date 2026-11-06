@@ -81,6 +81,12 @@ func (VmShutdownActionV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*vmShutdownActionV2State)(nil)).Elem()
 }
 
+// VmShutdownActionV2Exists checks whether an existing VmShutdownActionV2 resource with the given ID exists.
+func VmShutdownActionV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VmShutdownActionV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/vmShutdownActionV2:VmShutdownActionV2", id, state, "", opts...)
+}
+
 type vmShutdownActionV2Args struct {
 	// It supports "shutdown", <span pulumi-lang-nodejs=""guestShutdown"" pulumi-lang-dotnet=""GuestShutdown"" pulumi-lang-go=""guestShutdown"" pulumi-lang-python=""guest_shutdown"" pulumi-lang-yaml=""guestShutdown"" pulumi-lang-java=""guestShutdown"" pulumi-lang-hcl=""guest_shutdown"">"guestShutdown"</span>, "reboot", <span pulumi-lang-nodejs=""guestReboot"" pulumi-lang-dotnet=""GuestReboot"" pulumi-lang-go=""guestReboot"" pulumi-lang-python=""guest_reboot"" pulumi-lang-yaml=""guestReboot"" pulumi-lang-java=""guestReboot"" pulumi-lang-hcl=""guest_reboot"">"guestReboot"</span>.
 	Action string `pulumi:"action"`

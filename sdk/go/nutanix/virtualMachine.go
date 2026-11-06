@@ -443,6 +443,12 @@ func (VirtualMachineState) ElementType() reflect.Type {
 	return reflect.TypeOf((*virtualMachineState)(nil)).Elem()
 }
 
+// VirtualMachineExists checks whether an existing VirtualMachine resource with the given ID exists.
+func VirtualMachineExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VirtualMachineState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/virtualMachine:VirtualMachine", id, state, "", opts...)
+}
+
 type virtualMachineArgs struct {
 	// - (Optional) The reference to a availability_zone.
 	AvailabilityZoneReference map[string]string `pulumi:"availabilityZoneReference"`

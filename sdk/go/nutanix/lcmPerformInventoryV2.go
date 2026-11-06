@@ -97,6 +97,12 @@ func (LcmPerformInventoryV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*lcmPerformInventoryV2State)(nil)).Elem()
 }
 
+// LcmPerformInventoryV2Exists checks whether an existing LcmPerformInventoryV2 resource with the given ID exists.
+func LcmPerformInventoryV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LcmPerformInventoryV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/lcmPerformInventoryV2:LcmPerformInventoryV2", id, state, "", opts...)
+}
+
 type lcmPerformInventoryV2Args struct {
 	// Cluster uuid on which the resource is present or operation is being performed.
 	//

@@ -129,6 +129,12 @@ func (SelfServiceAppCustomActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*selfServiceAppCustomActionState)(nil)).Elem()
 }
 
+// SelfServiceAppCustomActionExists checks whether an existing SelfServiceAppCustomAction resource with the given ID exists.
+func SelfServiceAppCustomActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SelfServiceAppCustomActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/selfServiceAppCustomAction:SelfServiceAppCustomAction", id, state, "", opts...)
+}
+
 type selfServiceAppCustomActionArgs struct {
 	// - (Required) The name of the action to run.
 	//

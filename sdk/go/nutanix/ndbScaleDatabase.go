@@ -277,6 +277,12 @@ func (NdbScaleDatabaseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ndbScaleDatabaseState)(nil)).Elem()
 }
 
+// NdbScaleDatabaseExists checks whether an existing NdbScaleDatabase resource with the given ID exists.
+func NdbScaleDatabaseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NdbScaleDatabaseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ndbScaleDatabase:NdbScaleDatabase", id, state, "", opts...)
+}
+
 type ndbScaleDatabaseArgs struct {
 	// type of instance. eg: postgres_database
 	ApplicationType string `pulumi:"applicationType"`

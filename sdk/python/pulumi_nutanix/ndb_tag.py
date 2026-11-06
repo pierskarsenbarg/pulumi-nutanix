@@ -444,6 +444,30 @@ class NdbTag(pulumi.CustomResource):
         __props__.__dict__["values"] = values
         return NdbTag(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            date_created: pulumi.Input[Optional[_builtins.str]] = None,
+            date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner: pulumi.Input[Optional[_builtins.str]] = None,
+            required: pulumi.Input[Optional[_builtins.bool]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            values: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dateCreated"] = date_created
+        __props__["dateModified"] = date_modified
+        __props__["description"] = description
+        __props__["entityType"] = entity_type
+        __props__["name"] = name
+        __props__["owner"] = owner
+        __props__["required"] = required
+        __props__["status"] = status
+        __props__["values"] = values
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbTag:NdbTag', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dateCreated")
     def date_created(self) -> pulumi.Output[_builtins.str]:

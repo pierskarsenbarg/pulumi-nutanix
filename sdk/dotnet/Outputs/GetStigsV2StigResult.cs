@@ -48,25 +48,25 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string RuleId;
         /// <summary>
         /// - Contains possible values for the severity level of a vulnerability.
-        /// | Enum | Description |
-        /// |--------------|--------------------|
-        /// | `HIGH` | Severity level high. |
-        /// | `MEDIUM` | Severity level medium. |
-        /// | `LOW` | Severity level low. |
-        /// | `UNKNOWN` | Unknown value. |
-        /// | `CRITICAL` | Severity level critical. |
-        /// | `REDACTED` | Redacted value. |
+        ///   | Enum | Description |
+        ///   |--------------|--------------------|
+        ///   | `HIGH` | Severity level high. |
+        ///   | `MEDIUM` | Severity level medium. |
+        ///   | `LOW` | Severity level low. |
+        ///   | `UNKNOWN` | Unknown value. |
+        ///   | `CRITICAL` | Severity level critical. |
+        ///   | `REDACTED` | Redacted value. |
         /// </summary>
         public readonly string Severity;
         /// <summary>
         /// - Current status of the STIG rule.
-        /// | Enum | Description |
-        /// |--------------|--------------------|
-        /// | `NOT_APPLICABLE` | STIG is not applicable. |
-        /// | `NEEDS_REVIEW` | STIG application needs a review. |
-        /// | `APPLICABLE` | STIG is applicable. |
-        /// | `UNKNOWN` | Unknown value. |
-        /// | `REDACTED` | Redacted value. |
+        ///   | Enum | Description |
+        ///   |--------------|--------------------|
+        ///   | `NOT_APPLICABLE` | STIG is not applicable. |
+        ///   | `NEEDS_REVIEW` | STIG application needs a review. |
+        ///   | `APPLICABLE` | STIG is applicable. |
+        ///   | `UNKNOWN` | Unknown value. |
+        ///   | `REDACTED` | Redacted value. |
         /// </summary>
         public readonly string Status;
         /// <summary>

@@ -376,6 +376,28 @@ class PcBackupTargetV2(pulumi.CustomResource):
         __props__.__dict__["tenant_id"] = tenant_id
         return PcBackupTargetV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            backup_pause_reason: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_manager_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_backup_paused: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_sync_time: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PcBackupTargetV2LinkArgs', 'PcBackupTargetV2LinkArgsDict', 'outputs.PcBackupTargetV2Link']]]]] = None,
+            location: pulumi.Input[Optional[Union['PcBackupTargetV2LocationArgs', 'PcBackupTargetV2LocationArgsDict', 'outputs.PcBackupTargetV2Location']]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["backupPauseReason"] = backup_pause_reason
+        __props__["domainManagerExtId"] = domain_manager_ext_id
+        __props__["extId"] = ext_id
+        __props__["isBackupPaused"] = is_backup_paused
+        __props__["lastSyncTime"] = last_sync_time
+        __props__["links"] = links
+        __props__["location"] = location
+        __props__["tenantId"] = tenant_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/pcBackupTargetV2:PcBackupTargetV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="backupPauseReason")
     def backup_pause_reason(self) -> pulumi.Output[_builtins.str]:

@@ -149,6 +149,12 @@ func (RecoveryPlanState) ElementType() reflect.Type {
 	return reflect.TypeOf((*recoveryPlanState)(nil)).Elem()
 }
 
+// RecoveryPlanExists checks whether an existing RecoveryPlan resource with the given ID exists.
+func RecoveryPlanExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RecoveryPlanState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/recoveryPlan:RecoveryPlan", id, state, "", opts...)
+}
+
 type recoveryPlanArgs struct {
 	Categories []RecoveryPlanCategory `pulumi:"categories"`
 	// A description for Recovery Plan.

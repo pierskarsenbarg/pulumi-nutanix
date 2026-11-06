@@ -109,6 +109,12 @@ func (AssociateCategoryToVolumeGroupV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*associateCategoryToVolumeGroupV2State)(nil)).Elem()
 }
 
+// AssociateCategoryToVolumeGroupV2Exists checks whether an existing AssociateCategoryToVolumeGroupV2 resource with the given ID exists.
+func AssociateCategoryToVolumeGroupV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AssociateCategoryToVolumeGroupV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/associateCategoryToVolumeGroupV2:AssociateCategoryToVolumeGroupV2", id, state, "", opts...)
+}
+
 type associateCategoryToVolumeGroupV2Args struct {
 	// -(Required) The category to be associated/disassociated with the Volume Group. This is a mandatory field.
 	Categories []AssociateCategoryToVolumeGroupV2Category `pulumi:"categories"`

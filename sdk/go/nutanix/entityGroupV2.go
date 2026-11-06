@@ -240,6 +240,12 @@ func (EntityGroupV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*entityGroupV2State)(nil)).Elem()
 }
 
+// EntityGroupV2Exists checks whether an existing EntityGroupV2 resource with the given ID exists.
+func EntityGroupV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EntityGroupV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/entityGroupV2:EntityGroupV2", id, state, "", opts...)
+}
+
 type entityGroupV2Args struct {
 	// Configuration of the allowed entities in the Entity Group.
 	AllowedConfig *EntityGroupV2AllowedConfig `pulumi:"allowedConfig"`

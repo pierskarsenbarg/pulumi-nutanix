@@ -114,6 +114,12 @@ func (PcRegistrationV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*pcRegistrationV2State)(nil)).Elem()
 }
 
+// PcRegistrationV2Exists checks whether an existing PcRegistrationV2 resource with the given ID exists.
+func PcRegistrationV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PcRegistrationV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/pcRegistrationV2:PcRegistrationV2", id, state, "", opts...)
+}
+
 type pcRegistrationV2Args struct {
 	// -(Required) The display name for the Role.
 	PcExtId string `pulumi:"pcExtId"`

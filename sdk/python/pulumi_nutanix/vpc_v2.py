@@ -603,6 +603,36 @@ class VpcV2(pulumi.CustomResource):
         __props__.__dict__["vpc_type"] = vpc_type
         return VpcV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            common_dhcp_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2CommonDhcpOptionArgs', 'VpcV2CommonDhcpOptionArgsDict', 'outputs.VpcV2CommonDhcpOption']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternalSubnetArgs', 'VpcV2ExternalSubnetArgsDict', 'outputs.VpcV2ExternalSubnet']]]]] = None,
+            externally_routable_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternallyRoutablePrefixArgs', 'VpcV2ExternallyRoutablePrefixArgsDict', 'outputs.VpcV2ExternallyRoutablePrefix']]]]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2LinkArgs', 'VpcV2LinkArgsDict', 'outputs.VpcV2Link']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2MetadataArgs', 'VpcV2MetadataArgsDict', 'outputs.VpcV2Metadata']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            snat_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2SnatIpArgs', 'VpcV2SnatIpArgsDict', 'outputs.VpcV2SnatIp']]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["commonDhcpOptions"] = common_dhcp_options
+        __props__["description"] = description
+        __props__["extId"] = ext_id
+        __props__["externalRoutingDomainReference"] = external_routing_domain_reference
+        __props__["externalSubnets"] = external_subnets
+        __props__["externallyRoutablePrefixes"] = externally_routable_prefixes
+        __props__["links"] = links
+        __props__["metadatas"] = metadatas
+        __props__["name"] = name
+        __props__["snatIps"] = snat_ips
+        __props__["tenantId"] = tenant_id
+        __props__["vpcType"] = vpc_type
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/vpcV2:VpcV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="commonDhcpOptions")
     def common_dhcp_options(self) -> pulumi.Output[Sequence['outputs.VpcV2CommonDhcpOption']]:

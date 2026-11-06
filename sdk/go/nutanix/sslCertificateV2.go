@@ -199,6 +199,12 @@ func (SslCertificateV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*sslCertificateV2State)(nil)).Elem()
 }
 
+// SslCertificateV2Exists checks whether an existing SslCertificateV2 resource with the given ID exists.
+func SslCertificateV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SslCertificateV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/sslCertificateV2:SslCertificateV2", id, state, "", opts...)
+}
+
 type sslCertificateV2Args struct {
 	// — Description of the certificate authority (CA) chain.
 	CaChain *string `pulumi:"caChain"`

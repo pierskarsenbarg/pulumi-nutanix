@@ -65,7 +65,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> ApiVersion { get; private set; } = null!;
 
         /// <summary>
-        /// The reference to a subnet. Should not be used with 
+        /// The reference to a subnet. Should not be used with
         /// {external_subnet_reference_uuid} .
         /// </summary>
         [Output("externalSubnetReferenceName")]
@@ -161,7 +161,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? ApiVersion { get; set; }
 
         /// <summary>
-        /// The reference to a subnet. Should not be used with 
+        /// The reference to a subnet. Should not be used with
         /// {external_subnet_reference_uuid} .
         /// </summary>
         [Input("externalSubnetReferenceName")]
@@ -212,7 +212,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? ApiVersion { get; set; }
 
         /// <summary>
-        /// The reference to a subnet. Should not be used with 
+        /// The reference to a subnet. Should not be used with
         /// {external_subnet_reference_uuid} .
         /// </summary>
         [Input("externalSubnetReferenceName")]

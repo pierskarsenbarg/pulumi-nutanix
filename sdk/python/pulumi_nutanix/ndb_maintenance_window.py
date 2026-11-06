@@ -711,6 +711,48 @@ class NdbMaintenanceWindow(pulumi.CustomResource):
         __props__.__dict__["week_of_month"] = week_of_month
         return NdbMaintenanceWindow(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            access_level: pulumi.Input[Optional[_builtins.str]] = None,
+            date_created: pulumi.Input[Optional[_builtins.str]] = None,
+            date_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            day_of_week: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            duration: pulumi.Input[Optional[_builtins.int]] = None,
+            entity_task_assocs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowEntityTaskAssocArgs', 'NdbMaintenanceWindowEntityTaskAssocArgsDict', 'outputs.NdbMaintenanceWindowEntityTaskAssoc']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            next_run_time: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_id: pulumi.Input[Optional[_builtins.str]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowPropertyArgs', 'NdbMaintenanceWindowPropertyArgsDict', 'outputs.NdbMaintenanceWindowProperty']]]]] = None,
+            recurrence: pulumi.Input[Optional[_builtins.str]] = None,
+            schedules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowScheduleArgs', 'NdbMaintenanceWindowScheduleArgsDict', 'outputs.NdbMaintenanceWindowSchedule']]]]] = None,
+            start_time: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NdbMaintenanceWindowTagArgs', 'NdbMaintenanceWindowTagArgsDict', 'outputs.NdbMaintenanceWindowTag']]]]] = None,
+            timezone: pulumi.Input[Optional[_builtins.str]] = None,
+            week_of_month: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["accessLevel"] = access_level
+        __props__["dateCreated"] = date_created
+        __props__["dateModified"] = date_modified
+        __props__["dayOfWeek"] = day_of_week
+        __props__["description"] = description
+        __props__["duration"] = duration
+        __props__["entityTaskAssocs"] = entity_task_assocs
+        __props__["name"] = name
+        __props__["nextRunTime"] = next_run_time
+        __props__["ownerId"] = owner_id
+        __props__["properties"] = properties
+        __props__["recurrence"] = recurrence
+        __props__["schedules"] = schedules
+        __props__["startTime"] = start_time
+        __props__["status"] = status
+        __props__["tags"] = tags
+        __props__["timezone"] = timezone
+        __props__["weekOfMonth"] = week_of_month
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/ndbMaintenanceWindow:NdbMaintenanceWindow', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="accessLevel")
     def access_level(self) -> pulumi.Output[_builtins.str]:

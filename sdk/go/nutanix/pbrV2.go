@@ -191,6 +191,12 @@ func (PbrV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*pbrV2State)(nil)).Elem()
 }
 
+// PbrV2Exists checks whether an existing PbrV2 resource with the given ID exists.
+func PbrV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PbrV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/pbrV2:PbrV2", id, state, "", opts...)
+}
+
 type pbrV2Args struct {
 	// A description of the routing policy.
 	Description *string `pulumi:"description"`

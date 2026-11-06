@@ -457,6 +457,30 @@ class Role(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         return Role(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            api_version: pulumi.Input[Optional[_builtins.str]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoleCategoryArgs', 'RoleCategoryArgsDict', 'outputs.RoleCategory']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_reference: pulumi.Input[Optional[Union['RoleOwnerReferenceArgs', 'RoleOwnerReferenceArgsDict', 'outputs.RoleOwnerReference']]] = None,
+            permission_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RolePermissionReferenceListArgs', 'RolePermissionReferenceListArgsDict', 'outputs.RolePermissionReferenceList']]]]] = None,
+            project_reference: pulumi.Input[Optional[Union['RoleProjectReferenceArgs', 'RoleProjectReferenceArgsDict', 'outputs.RoleProjectReference']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apiVersion"] = api_version
+        __props__["categories"] = categories
+        __props__["description"] = description
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["ownerReference"] = owner_reference
+        __props__["permissionReferenceLists"] = permission_reference_lists
+        __props__["projectReference"] = project_reference
+        __props__["state"] = state
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/role:Role', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apiVersion")
     def api_version(self) -> pulumi.Output[_builtins.str]:

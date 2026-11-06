@@ -403,6 +403,28 @@ class UserGroupsV2(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         return UserGroupsV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_time: pulumi.Input[Optional[_builtins.str]] = None,
+            distinguished_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_type: pulumi.Input[Optional[_builtins.str]] = None,
+            idp_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdBy"] = created_by
+        __props__["createdTime"] = created_time
+        __props__["distinguishedName"] = distinguished_name
+        __props__["extId"] = ext_id
+        __props__["groupType"] = group_type
+        __props__["idpId"] = idp_id
+        __props__["lastUpdatedTime"] = last_updated_time
+        __props__["name"] = name
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/userGroupsV2:UserGroupsV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> pulumi.Output[_builtins.str]:

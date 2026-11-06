@@ -189,6 +189,12 @@ func (PcDeployV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*pcDeployV2State)(nil)).Elem()
 }
 
+// PcDeployV2Exists checks whether an existing PcDeployV2 resource with the given ID exists.
+func PcDeployV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PcDeployV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/pcDeployV2:PcDeployV2", id, state, "", opts...)
+}
+
 type pcDeployV2Args struct {
 	// -(Required) Domain manager (Prism Central) cluster configuration details.
 	Config PcDeployV2Config `pulumi:"config"`

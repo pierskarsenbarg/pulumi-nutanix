@@ -567,6 +567,36 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
         __props__.__dict__["role"] = role
         return AuthorizationPolicyV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            authorization_policy_type: pulumi.Input[Optional[_builtins.str]] = None,
+            client_name: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            created_time: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            entities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict', 'outputs.AuthorizationPolicyV2Entity']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            identities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict', 'outputs.AuthorizationPolicyV2Identity']]]]] = None,
+            is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["authorizationPolicyType"] = authorization_policy_type
+        __props__["clientName"] = client_name
+        __props__["createdBy"] = created_by
+        __props__["createdTime"] = created_time
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["entities"] = entities
+        __props__["extId"] = ext_id
+        __props__["identities"] = identities
+        __props__["isSystemDefined"] = is_system_defined
+        __props__["lastUpdatedTime"] = last_updated_time
+        __props__["role"] = role
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/authorizationPolicyV2:AuthorizationPolicyV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="authorizationPolicyType")
     def authorization_policy_type(self) -> pulumi.Output[_builtins.str]:

@@ -15,7 +15,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Fetches the list of iSCSI clients.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -192,7 +191,7 @@ namespace PiersKarsenbarg.Nutanix
         /// ```
         /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
-        /// ##  Argument Reference
+        /// ## Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
@@ -223,7 +222,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`enabledAuthentications`" pulumi-lang-dotnet="`EnabledAuthentications`" pulumi-lang-go="`enabledAuthentications`" pulumi-lang-python="`enabled_authentications`" pulumi-lang-yaml="`enabledAuthentications`" pulumi-lang-java="`enabledAuthentications`" pulumi-lang-hcl="`enabled_authentications`"&gt;`enabledAuthentications`&lt;/span&gt;: -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
         /// * &lt;span pulumi-lang-nodejs="`numVirtualTargets`" pulumi-lang-dotnet="`NumVirtualTargets`" pulumi-lang-go="`numVirtualTargets`" pulumi-lang-python="`num_virtual_targets`" pulumi-lang-yaml="`numVirtualTargets`" pulumi-lang-java="`numVirtualTargets`" pulumi-lang-hcl="`num_virtual_targets`"&gt;`numVirtualTargets`&lt;/span&gt;: -(Optional) Number of virtual targets generated for the iSCSI target. This field is immutable.
         /// * &lt;span pulumi-lang-nodejs="`attachmentSite`" pulumi-lang-dotnet="`AttachmentSite`" pulumi-lang-go="`attachmentSite`" pulumi-lang-python="`attachment_site`" pulumi-lang-yaml="`attachmentSite`" pulumi-lang-java="`attachmentSite`" pulumi-lang-hcl="`attachment_site`"&gt;`attachmentSite`&lt;/span&gt;: -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
-        /// 
         /// 
         /// #### Links
         /// 
@@ -260,15 +258,12 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: - The fully qualified domain name.
         /// 
-        /// 
         /// #### Attached Targets
         /// 
         /// The&lt;span pulumi-lang-nodejs=" attachedTargets " pulumi-lang-dotnet=" AttachedTargets " pulumi-lang-go=" attachedTargets " pulumi-lang-python=" attached_targets " pulumi-lang-yaml=" attachedTargets " pulumi-lang-java=" attachedTargets " pulumi-lang-hcl=" attached_targets "&gt; attachedTargets &lt;/span&gt;attribute supports the following:
         /// 
         /// * &lt;span pulumi-lang-nodejs="`numVirtualTargets`" pulumi-lang-dotnet="`NumVirtualTargets`" pulumi-lang-go="`numVirtualTargets`" pulumi-lang-python="`num_virtual_targets`" pulumi-lang-yaml="`numVirtualTargets`" pulumi-lang-java="`numVirtualTargets`" pulumi-lang-hcl="`num_virtual_targets`"&gt;`numVirtualTargets`&lt;/span&gt;: - Number of virtual targets generated for the iSCSI target. This field is immutable.
         /// * &lt;span pulumi-lang-nodejs="`iscsiTargetName`" pulumi-lang-dotnet="`IscsiTargetName`" pulumi-lang-go="`iscsiTargetName`" pulumi-lang-python="`iscsi_target_name`" pulumi-lang-yaml="`iscsiTargetName`" pulumi-lang-java="`iscsiTargetName`" pulumi-lang-hcl="`iscsi_target_name`"&gt;`iscsiTargetName`&lt;/span&gt;: - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
-        /// 
-        /// 
         /// 
         /// See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/IscsiClients/operation/listIscsiClients).
         /// </summary>
@@ -278,7 +273,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Fetches the list of iSCSI clients.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -455,7 +449,7 @@ namespace PiersKarsenbarg.Nutanix
         /// ```
         /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
-        /// ##  Argument Reference
+        /// ## Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
@@ -486,7 +480,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`enabledAuthentications`" pulumi-lang-dotnet="`EnabledAuthentications`" pulumi-lang-go="`enabledAuthentications`" pulumi-lang-python="`enabled_authentications`" pulumi-lang-yaml="`enabledAuthentications`" pulumi-lang-java="`enabledAuthentications`" pulumi-lang-hcl="`enabled_authentications`"&gt;`enabledAuthentications`&lt;/span&gt;: -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
         /// * &lt;span pulumi-lang-nodejs="`numVirtualTargets`" pulumi-lang-dotnet="`NumVirtualTargets`" pulumi-lang-go="`numVirtualTargets`" pulumi-lang-python="`num_virtual_targets`" pulumi-lang-yaml="`numVirtualTargets`" pulumi-lang-java="`numVirtualTargets`" pulumi-lang-hcl="`num_virtual_targets`"&gt;`numVirtualTargets`&lt;/span&gt;: -(Optional) Number of virtual targets generated for the iSCSI target. This field is immutable.
         /// * &lt;span pulumi-lang-nodejs="`attachmentSite`" pulumi-lang-dotnet="`AttachmentSite`" pulumi-lang-go="`attachmentSite`" pulumi-lang-python="`attachment_site`" pulumi-lang-yaml="`attachmentSite`" pulumi-lang-java="`attachmentSite`" pulumi-lang-hcl="`attachment_site`"&gt;`attachmentSite`&lt;/span&gt;: -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
-        /// 
         /// 
         /// #### Links
         /// 
@@ -523,15 +516,12 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: - The fully qualified domain name.
         /// 
-        /// 
         /// #### Attached Targets
         /// 
         /// The&lt;span pulumi-lang-nodejs=" attachedTargets " pulumi-lang-dotnet=" AttachedTargets " pulumi-lang-go=" attachedTargets " pulumi-lang-python=" attached_targets " pulumi-lang-yaml=" attachedTargets " pulumi-lang-java=" attachedTargets " pulumi-lang-hcl=" attached_targets "&gt; attachedTargets &lt;/span&gt;attribute supports the following:
         /// 
         /// * &lt;span pulumi-lang-nodejs="`numVirtualTargets`" pulumi-lang-dotnet="`NumVirtualTargets`" pulumi-lang-go="`numVirtualTargets`" pulumi-lang-python="`num_virtual_targets`" pulumi-lang-yaml="`numVirtualTargets`" pulumi-lang-java="`numVirtualTargets`" pulumi-lang-hcl="`num_virtual_targets`"&gt;`numVirtualTargets`&lt;/span&gt;: - Number of virtual targets generated for the iSCSI target. This field is immutable.
         /// * &lt;span pulumi-lang-nodejs="`iscsiTargetName`" pulumi-lang-dotnet="`IscsiTargetName`" pulumi-lang-go="`iscsiTargetName`" pulumi-lang-python="`iscsi_target_name`" pulumi-lang-yaml="`iscsiTargetName`" pulumi-lang-java="`iscsiTargetName`" pulumi-lang-hcl="`iscsi_target_name`"&gt;`iscsiTargetName`&lt;/span&gt;: - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
-        /// 
-        /// 
         /// 
         /// See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/IscsiClients/operation/listIscsiClients).
         /// </summary>
@@ -541,7 +531,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Fetches the list of iSCSI clients.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -718,7 +707,7 @@ namespace PiersKarsenbarg.Nutanix
         /// ```
         /// &lt;!--End PulumiCodeChooser --&gt;
         /// 
-        /// ##  Argument Reference
+        /// ## Argument Reference
         /// 
         /// The following arguments are supported:
         /// 
@@ -749,7 +738,6 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`enabledAuthentications`" pulumi-lang-dotnet="`EnabledAuthentications`" pulumi-lang-go="`enabledAuthentications`" pulumi-lang-python="`enabled_authentications`" pulumi-lang-yaml="`enabledAuthentications`" pulumi-lang-java="`enabledAuthentications`" pulumi-lang-hcl="`enabled_authentications`"&gt;`enabledAuthentications`&lt;/span&gt;: -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
         /// * &lt;span pulumi-lang-nodejs="`numVirtualTargets`" pulumi-lang-dotnet="`NumVirtualTargets`" pulumi-lang-go="`numVirtualTargets`" pulumi-lang-python="`num_virtual_targets`" pulumi-lang-yaml="`numVirtualTargets`" pulumi-lang-java="`numVirtualTargets`" pulumi-lang-hcl="`num_virtual_targets`"&gt;`numVirtualTargets`&lt;/span&gt;: -(Optional) Number of virtual targets generated for the iSCSI target. This field is immutable.
         /// * &lt;span pulumi-lang-nodejs="`attachmentSite`" pulumi-lang-dotnet="`AttachmentSite`" pulumi-lang-go="`attachmentSite`" pulumi-lang-python="`attachment_site`" pulumi-lang-yaml="`attachmentSite`" pulumi-lang-java="`attachmentSite`" pulumi-lang-hcl="`attachment_site`"&gt;`attachmentSite`&lt;/span&gt;: -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
-        /// 
         /// 
         /// #### Links
         /// 
@@ -786,15 +774,12 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: - The fully qualified domain name.
         /// 
-        /// 
         /// #### Attached Targets
         /// 
         /// The&lt;span pulumi-lang-nodejs=" attachedTargets " pulumi-lang-dotnet=" AttachedTargets " pulumi-lang-go=" attachedTargets " pulumi-lang-python=" attached_targets " pulumi-lang-yaml=" attachedTargets " pulumi-lang-java=" attachedTargets " pulumi-lang-hcl=" attached_targets "&gt; attachedTargets &lt;/span&gt;attribute supports the following:
         /// 
         /// * &lt;span pulumi-lang-nodejs="`numVirtualTargets`" pulumi-lang-dotnet="`NumVirtualTargets`" pulumi-lang-go="`numVirtualTargets`" pulumi-lang-python="`num_virtual_targets`" pulumi-lang-yaml="`numVirtualTargets`" pulumi-lang-java="`numVirtualTargets`" pulumi-lang-hcl="`num_virtual_targets`"&gt;`numVirtualTargets`&lt;/span&gt;: - Number of virtual targets generated for the iSCSI target. This field is immutable.
         /// * &lt;span pulumi-lang-nodejs="`iscsiTargetName`" pulumi-lang-dotnet="`IscsiTargetName`" pulumi-lang-go="`iscsiTargetName`" pulumi-lang-python="`iscsi_target_name`" pulumi-lang-yaml="`iscsiTargetName`" pulumi-lang-java="`iscsiTargetName`" pulumi-lang-hcl="`iscsi_target_name`"&gt;`iscsiTargetName`&lt;/span&gt;: - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
-        /// 
-        /// 
         /// 
         /// See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/IscsiClients/operation/listIscsiClients).
         /// </summary>

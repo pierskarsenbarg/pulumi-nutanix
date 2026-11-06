@@ -15,8 +15,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// This lists all accessible OVAs using the default pagination, which can be customized.
         /// 
-        /// 
-        /// 
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -315,8 +313,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// This lists all accessible OVAs using the default pagination, which can be customized.
         /// 
-        /// 
-        /// 
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -614,8 +610,6 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// This lists all accessible OVAs using the default pagination, which can be customized.
-        /// 
-        /// 
         /// 
         /// ## Example Usage
         /// 

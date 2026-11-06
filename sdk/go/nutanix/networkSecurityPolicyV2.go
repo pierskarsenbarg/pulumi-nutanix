@@ -247,6 +247,12 @@ func (NetworkSecurityPolicyV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkSecurityPolicyV2State)(nil)).Elem()
 }
 
+// NetworkSecurityPolicyV2Exists checks whether an existing NetworkSecurityPolicyV2 resource with the given ID exists.
+func NetworkSecurityPolicyV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkSecurityPolicyV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/networkSecurityPolicyV2:NetworkSecurityPolicyV2", id, state, "", opts...)
+}
+
 type networkSecurityPolicyV2Args struct {
 	// A user defined annotation for a policy.
 	Description *string `pulumi:"description"`

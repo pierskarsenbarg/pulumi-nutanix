@@ -45,7 +45,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string InternalSubnet;
         /// <summary>
         /// - Key management server type.
-        /// Valid values are:
+        ///   Valid values are:
         /// - "PRISM_CENTRAL"	Prism Central management server.
         /// - "EXTERNAL"	External management server.
         /// - "LOCAL"	Local management server.

@@ -176,6 +176,12 @@ func (NgtInstallationV2State) ElementType() reflect.Type {
 	return reflect.TypeOf((*ngtInstallationV2State)(nil)).Elem()
 }
 
+// NgtInstallationV2Exists checks whether an existing NgtInstallationV2 resource with the given ID exists.
+func NgtInstallationV2Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NgtInstallationV2State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("nutanix:index/ngtInstallationV2:NgtInstallationV2", id, state, "", opts...)
+}
+
 type ngtInstallationV2Args struct {
 	// The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
 	Capablities []string `pulumi:"capablities"`

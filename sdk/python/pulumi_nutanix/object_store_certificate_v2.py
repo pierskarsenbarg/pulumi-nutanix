@@ -315,6 +315,28 @@ class ObjectStoreCertificateV2(pulumi.CustomResource):
         __props__.__dict__["tenant_id"] = tenant_id
         return ObjectStoreCertificateV2(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            alternate_fqdns: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreCertificateV2AlternateFqdnArgs', 'ObjectStoreCertificateV2AlternateFqdnArgsDict', 'outputs.ObjectStoreCertificateV2AlternateFqdn']]]]] = None,
+            alternate_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreCertificateV2AlternateIpArgs', 'ObjectStoreCertificateV2AlternateIpArgsDict', 'outputs.ObjectStoreCertificateV2AlternateIp']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreCertificateV2LinkArgs', 'ObjectStoreCertificateV2LinkArgsDict', 'outputs.ObjectStoreCertificateV2Link']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ObjectStoreCertificateV2MetadataArgs', 'ObjectStoreCertificateV2MetadataArgsDict', 'outputs.ObjectStoreCertificateV2Metadata']]]]] = None,
+            object_store_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            path: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["alternateFqdns"] = alternate_fqdns
+        __props__["alternateIps"] = alternate_ips
+        __props__["extId"] = ext_id
+        __props__["links"] = links
+        __props__["metadatas"] = metadatas
+        __props__["objectStoreExtId"] = object_store_ext_id
+        __props__["path"] = path
+        __props__["tenantId"] = tenant_id
+        return pulumi.runtime.exists_resource(None, 'nutanix:index/objectStoreCertificateV2:ObjectStoreCertificateV2', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="alternateFqdns")
     def alternate_fqdns(self) -> pulumi.Output[Sequence['outputs.ObjectStoreCertificateV2AlternateFqdn']]:
