@@ -75,9 +75,9 @@ namespace PiersKarsenbarg.Nutanix
     ///         {
     ///             new Nutanix.Inputs.SelfServiceAppPatchVmConfigArgs
     ///             {
-    ///                 MemorySizeMib = "SIZE IN MiB",
-    ///                 NumSockets = "vCPU count",
-    ///                 NumVcpusPerSocket = "NUMBER OF CORES VCPU",
+    ///                 MemorySizeMib = int.Parse("SIZE IN MiB", System.Globalization.CultureInfo.InvariantCulture),
+    ///                 NumSockets = int.Parse("vCPU count", System.Globalization.CultureInfo.InvariantCulture),
+    ///                 NumVcpusPerSocket = int.Parse("NUMBER OF CORES VCPU", System.Globalization.CultureInfo.InvariantCulture),
     ///             },
     ///         },
     ///     });
@@ -193,7 +193,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         {
     ///             new Nutanix.Inputs.SelfServiceAppPatchDiskArgs
     ///             {
-    ///                 DiskSizeMib = "SIZE OF DISK IN MiB",
+    ///                 DiskSizeMib = int.Parse("SIZE OF DISK IN MiB", System.Globalization.CultureInfo.InvariantCulture),
     ///                 Operation = "add",
     ///             },
     ///         },
@@ -232,7 +232,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         {
     ///             new Nutanix.Inputs.SelfServiceAppPatchNicArgs
     ///             {
-    ///                 Index = "DUMMY INDEX VALUE",
+    ///                 Index = int.Parse("DUMMY INDEX VALUE", System.Globalization.CultureInfo.InvariantCulture),
     ///                 Operation = "add",
     ///                 SubnetUuid = "VALID SUBNET UUID IN PROJECT ATTACHED TO APP",
     ///             },

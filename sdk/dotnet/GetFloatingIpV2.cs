@@ -68,7 +68,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -76,7 +76,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getfloatingipv2" "get-floating-ip" {
+        /// data "nutanix_floating_ip_v2" "get-floating-ip" {
         ///   ext_id = "cf1a7643-605e-4622-9f2a-b3fdccdbd072"
         /// }
         /// ```
@@ -177,7 +177,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -185,7 +185,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getfloatingipv2" "get-floating-ip" {
+        /// data "nutanix_floating_ip_v2" "get-floating-ip" {
         ///   ext_id = "cf1a7643-605e-4622-9f2a-b3fdccdbd072"
         /// }
         /// ```
@@ -286,7 +286,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -294,7 +294,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getfloatingipv2" "get-floating-ip" {
+        /// data "nutanix_floating_ip_v2" "get-floating-ip" {
         ///   ext_id = "cf1a7643-605e-4622-9f2a-b3fdccdbd072"
         /// }
         /// ```

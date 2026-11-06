@@ -122,7 +122,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -130,15 +130,15 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getsystemuserpasswordsv2" "passwords" {
+        /// data "nutanix_system_user_passwords_v2" "passwords" {
         /// }
-        /// data "nutanix_getsystemuserpasswordsv2" "limitedPasswords" {
+        /// data "nutanix_system_user_passwords_v2" "limitedPasswords" {
         ///   limit = 10
         /// }
-        /// data "nutanix_getsystemuserpasswordsv2" "filteredPasswords" {
+        /// data "nutanix_system_user_passwords_v2" "filteredPasswords" {
         ///   filter = "systemType eq Clustermgmt.Config.SystemType'PC'"
         /// }
-        /// data "nutanix_getsystemuserpasswordsv2" "adminPcPasswords" {
+        /// data "nutanix_system_user_passwords_v2" "adminPcPasswords" {
         ///   filter = "username eq 'admin' and systemType eq Clustermgmt.Config.SystemType'PC'"
         /// }
         /// 
@@ -331,7 +331,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -339,15 +339,15 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getsystemuserpasswordsv2" "passwords" {
+        /// data "nutanix_system_user_passwords_v2" "passwords" {
         /// }
-        /// data "nutanix_getsystemuserpasswordsv2" "limitedPasswords" {
+        /// data "nutanix_system_user_passwords_v2" "limitedPasswords" {
         ///   limit = 10
         /// }
-        /// data "nutanix_getsystemuserpasswordsv2" "filteredPasswords" {
+        /// data "nutanix_system_user_passwords_v2" "filteredPasswords" {
         ///   filter = "systemType eq Clustermgmt.Config.SystemType'PC'"
         /// }
-        /// data "nutanix_getsystemuserpasswordsv2" "adminPcPasswords" {
+        /// data "nutanix_system_user_passwords_v2" "adminPcPasswords" {
         ///   filter = "username eq 'admin' and systemType eq Clustermgmt.Config.SystemType'PC'"
         /// }
         /// 
@@ -540,7 +540,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -548,15 +548,15 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getsystemuserpasswordsv2" "passwords" {
+        /// data "nutanix_system_user_passwords_v2" "passwords" {
         /// }
-        /// data "nutanix_getsystemuserpasswordsv2" "limitedPasswords" {
+        /// data "nutanix_system_user_passwords_v2" "limitedPasswords" {
         ///   limit = 10
         /// }
-        /// data "nutanix_getsystemuserpasswordsv2" "filteredPasswords" {
+        /// data "nutanix_system_user_passwords_v2" "filteredPasswords" {
         ///   filter = "systemType eq Clustermgmt.Config.SystemType'PC'"
         /// }
-        /// data "nutanix_getsystemuserpasswordsv2" "adminPcPasswords" {
+        /// data "nutanix_system_user_passwords_v2" "adminPcPasswords" {
         ///   filter = "username eq 'admin' and systemType eq Clustermgmt.Config.SystemType'PC'"
         /// }
         /// 

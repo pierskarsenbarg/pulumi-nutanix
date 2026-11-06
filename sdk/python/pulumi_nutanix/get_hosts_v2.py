@@ -129,6 +129,16 @@ def get_hosts_v2(apply: Optional[_builtins.str] = None,
     ## Example Usage
 
     <!--Start PulumiCodeChooser -->
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    # list all host entities accosted to cluster
+    hosts = nutanix.get_hosts_v2(cluster_ext_id="021151dc-3ed1-4fec-a81d-39606451750c")
+    # list all host entities accosted to cluster with filter
+    filtered_hosts = nutanix.get_hosts_v2(cluster_ext_id="021151dc-3ed1-4fec-a81d-39606451750c",
+        filter="hostName eq 'cluster_host_example'")
+    ```
     <!--End PulumiCodeChooser -->
 
     ## Host Entities
@@ -367,6 +377,16 @@ def get_hosts_v2_output(apply: pulumi.Input[Optional[Optional[_builtins.str]]] =
     ## Example Usage
 
     <!--Start PulumiCodeChooser -->
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    # list all host entities accosted to cluster
+    hosts = nutanix.get_hosts_v2(cluster_ext_id="021151dc-3ed1-4fec-a81d-39606451750c")
+    # list all host entities accosted to cluster with filter
+    filtered_hosts = nutanix.get_hosts_v2(cluster_ext_id="021151dc-3ed1-4fec-a81d-39606451750c",
+        filter="hostName eq 'cluster_host_example'")
+    ```
     <!--End PulumiCodeChooser -->
 
     ## Host Entities

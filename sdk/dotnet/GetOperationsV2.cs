@@ -107,7 +107,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -115,12 +115,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getoperationsv2" "operation-list" {
+        /// data "nutanix_operations_v2" "operation-list" {
         /// }
-        /// data "nutanix_getoperationsv2" "operation-list-filtered" {
+        /// data "nutanix_operations_v2" "operation-list-filtered" {
         ///   filter = "displayName eq 'Create_Role'"
         /// }
-        /// data "nutanix_getoperationsv2" "operation-list-paginated" {
+        /// data "nutanix_operations_v2" "operation-list-paginated" {
         ///   page  = 1
         ///   limit = 10
         /// }
@@ -289,7 +289,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -297,12 +297,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getoperationsv2" "operation-list" {
+        /// data "nutanix_operations_v2" "operation-list" {
         /// }
-        /// data "nutanix_getoperationsv2" "operation-list-filtered" {
+        /// data "nutanix_operations_v2" "operation-list-filtered" {
         ///   filter = "displayName eq 'Create_Role'"
         /// }
-        /// data "nutanix_getoperationsv2" "operation-list-paginated" {
+        /// data "nutanix_operations_v2" "operation-list-paginated" {
         ///   page  = 1
         ///   limit = 10
         /// }
@@ -471,7 +471,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -479,12 +479,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getoperationsv2" "operation-list" {
+        /// data "nutanix_operations_v2" "operation-list" {
         /// }
-        /// data "nutanix_getoperationsv2" "operation-list-filtered" {
+        /// data "nutanix_operations_v2" "operation-list-filtered" {
         ///   filter = "displayName eq 'Create_Role'"
         /// }
-        /// data "nutanix_getoperationsv2" "operation-list-paginated" {
+        /// data "nutanix_operations_v2" "operation-list-paginated" {
         ///   page  = 1
         ///   limit = 10
         /// }

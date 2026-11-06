@@ -91,7 +91,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -99,10 +99,10 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getentitygroupv2" "example" {
+        /// data "nutanix_entity_group_v2" "example" {
         ///   ext_id = "00000000-0000-0000-0000-000000000000"
         /// }
-        /// data "nutanix_getentitygroupv2" "byId" {
+        /// data "nutanix_entity_group_v2" "byId" {
         ///   ext_id = myGroup.id
         /// }
         /// 
@@ -137,7 +137,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         ///         // Fetch entity group created by a resource
         ///         final var byId = NutanixFunctions.getEntityGroupV2(GetEntityGroupV2Args.builder()
-        ///             .extId(myGroup.id())
+        ///             .extId(myGroup.get("id"))
         ///             .build());
         /// 
         ///     }
@@ -242,7 +242,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -250,10 +250,10 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getentitygroupv2" "example" {
+        /// data "nutanix_entity_group_v2" "example" {
         ///   ext_id = "00000000-0000-0000-0000-000000000000"
         /// }
-        /// data "nutanix_getentitygroupv2" "byId" {
+        /// data "nutanix_entity_group_v2" "byId" {
         ///   ext_id = myGroup.id
         /// }
         /// 
@@ -288,7 +288,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         ///         // Fetch entity group created by a resource
         ///         final var byId = NutanixFunctions.getEntityGroupV2(GetEntityGroupV2Args.builder()
-        ///             .extId(myGroup.id())
+        ///             .extId(myGroup.get("id"))
         ///             .build());
         /// 
         ///     }
@@ -393,7 +393,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -401,10 +401,10 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getentitygroupv2" "example" {
+        /// data "nutanix_entity_group_v2" "example" {
         ///   ext_id = "00000000-0000-0000-0000-000000000000"
         /// }
-        /// data "nutanix_getentitygroupv2" "byId" {
+        /// data "nutanix_entity_group_v2" "byId" {
         ///   ext_id = myGroup.id
         /// }
         /// 
@@ -439,7 +439,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         ///         // Fetch entity group created by a resource
         ///         final var byId = NutanixFunctions.getEntityGroupV2(GetEntityGroupV2Args.builder()
-        ///             .extId(myGroup.id())
+        ///             .extId(myGroup.get("id"))
         ///             .build());
         /// 
         ///     }

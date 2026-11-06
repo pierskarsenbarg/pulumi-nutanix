@@ -72,7 +72,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -80,7 +80,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getroutev2" "route-by-id" {
+        /// data "nutanix_route_v2" "route-by-id" {
         ///   route_table_ext_id = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b"
         ///   ext_id             = "7f66e20f-67f4-473f-96bb-c4fcfd487f16"
         /// }
@@ -188,7 +188,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -196,7 +196,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getroutev2" "route-by-id" {
+        /// data "nutanix_route_v2" "route-by-id" {
         ///   route_table_ext_id = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b"
         ///   ext_id             = "7f66e20f-67f4-473f-96bb-c4fcfd487f16"
         /// }
@@ -304,7 +304,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -312,7 +312,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getroutev2" "route-by-id" {
+        /// data "nutanix_route_v2" "route-by-id" {
         ///   route_table_ext_id = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b"
         ///   ext_id             = "7f66e20f-67f4-473f-96bb-c4fcfd487f16"
         /// }

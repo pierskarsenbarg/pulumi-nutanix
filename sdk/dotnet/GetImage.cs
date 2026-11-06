@@ -91,7 +91,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
-        /// 			ImageId: testImage.ID().ToIDOutput().ToStringOutput(),
+        /// 			ImageId: testImage.ID(),
         /// 		}, nil)
         /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
         /// 			ImageName: testImage.Name,
@@ -101,7 +101,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -109,14 +109,17 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getimage" "test" {
+        /// data "nutanix_image" "test" {
         ///   image_id = nutanix_image.test.id
         /// }
-        /// data "nutanix_getimage" "testname" {
+        /// data "nutanix_image" "testname" {
         ///   image_name = nutanix_image.test.name
         /// }
         /// 
         /// resource "nutanix_image" "test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "Ubuntu"
         ///   description = "Ubuntu"
         ///   source_uri  = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso"
@@ -267,7 +270,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
-        /// 			ImageId: testImage.ID().ToIDOutput().ToStringOutput(),
+        /// 			ImageId: testImage.ID(),
         /// 		}, nil)
         /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
         /// 			ImageName: testImage.Name,
@@ -277,7 +280,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -285,14 +288,17 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getimage" "test" {
+        /// data "nutanix_image" "test" {
         ///   image_id = nutanix_image.test.id
         /// }
-        /// data "nutanix_getimage" "testname" {
+        /// data "nutanix_image" "testname" {
         ///   image_name = nutanix_image.test.name
         /// }
         /// 
         /// resource "nutanix_image" "test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "Ubuntu"
         ///   description = "Ubuntu"
         ///   source_uri  = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso"
@@ -443,7 +449,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
-        /// 			ImageId: testImage.ID().ToIDOutput().ToStringOutput(),
+        /// 			ImageId: testImage.ID(),
         /// 		}, nil)
         /// 		_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
         /// 			ImageName: testImage.Name,
@@ -453,7 +459,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -461,14 +467,17 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getimage" "test" {
+        /// data "nutanix_image" "test" {
         ///   image_id = nutanix_image.test.id
         /// }
-        /// data "nutanix_getimage" "testname" {
+        /// data "nutanix_image" "testname" {
         ///   image_name = nutanix_image.test.name
         /// }
         /// 
         /// resource "nutanix_image" "test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "Ubuntu"
         ///   description = "Ubuntu"
         ///   source_uri  = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso"

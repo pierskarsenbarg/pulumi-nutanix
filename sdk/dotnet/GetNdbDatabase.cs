@@ -75,7 +75,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -83,12 +83,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbdatabase" "db1" {
+        /// data "nutanix_ndb_database" "db1" {
         ///   database_id = "&lt;sample-id&gt;"
         /// }
         /// 
         /// output "db1Output" {
-        ///   value = data.nutanix_getndbdatabase.db1
+        ///   value = data.nutanix_ndb_database.db1
         /// }
         /// ```
         /// ```java
@@ -198,7 +198,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -206,12 +206,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbdatabase" "db1" {
+        /// data "nutanix_ndb_database" "db1" {
         ///   database_id = "&lt;sample-id&gt;"
         /// }
         /// 
         /// output "db1Output" {
-        ///   value = data.nutanix_getndbdatabase.db1
+        ///   value = data.nutanix_ndb_database.db1
         /// }
         /// ```
         /// ```java
@@ -321,7 +321,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -329,12 +329,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbdatabase" "db1" {
+        /// data "nutanix_ndb_database" "db1" {
         ///   database_id = "&lt;sample-id&gt;"
         /// }
         /// 
         /// output "db1Output" {
-        ///   value = data.nutanix_getndbdatabase.db1
+        ///   value = data.nutanix_ndb_database.db1
         /// }
         /// ```
         /// ```java

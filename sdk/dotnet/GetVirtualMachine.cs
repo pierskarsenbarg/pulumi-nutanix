@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -27,25 +27,28 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getclusters" "clusters" {
+        /// data "nutanix_clusters" "clusters" {
         ///   metadata = {
         ///     "length" = 2
         ///   }
         /// }
-        /// data "nutanix_getvirtualmachine" "nutanixVirtualMachine" {
-        ///   vm_id = nutanix_virtualmachine.vm1.id
+        /// data "nutanix_virtual_machine" "nutanixVirtualMachine" {
+        ///   vm_id = nutanix_virtual_machine.vm1.id
         /// }
         /// 
-        /// resource "nutanix_virtualmachine" "vm1" {
+        /// resource "nutanix_virtual_machine" "vm1" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name                 = "test-dou-%d"
-        ///   cluster_uuid         = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        ///   cluster_uuid         = data.nutanix_clusters.clusters.entities[0].metadata.uuid
         ///   num_vcpus_per_socket = 1
         ///   num_sockets          = 1
         ///   memory_size_mib      = 2048
         ///   power_state          = "ON"
         /// }
         /// output "cluster" {
-        ///   value = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        ///   value = data.nutanix_clusters.clusters.entities[0].metadata.uuid
         /// }
         /// ```
         /// ```yaml
@@ -86,7 +89,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -94,25 +97,28 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getclusters" "clusters" {
+        /// data "nutanix_clusters" "clusters" {
         ///   metadata = {
         ///     "length" = 2
         ///   }
         /// }
-        /// data "nutanix_getvirtualmachine" "nutanixVirtualMachine" {
-        ///   vm_id = nutanix_virtualmachine.vm1.id
+        /// data "nutanix_virtual_machine" "nutanixVirtualMachine" {
+        ///   vm_id = nutanix_virtual_machine.vm1.id
         /// }
         /// 
-        /// resource "nutanix_virtualmachine" "vm1" {
+        /// resource "nutanix_virtual_machine" "vm1" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name                 = "test-dou-%d"
-        ///   cluster_uuid         = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        ///   cluster_uuid         = data.nutanix_clusters.clusters.entities[0].metadata.uuid
         ///   num_vcpus_per_socket = 1
         ///   num_sockets          = 1
         ///   memory_size_mib      = 2048
         ///   power_state          = "ON"
         /// }
         /// output "cluster" {
-        ///   value = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        ///   value = data.nutanix_clusters.clusters.entities[0].metadata.uuid
         /// }
         /// ```
         /// ```yaml
@@ -153,7 +159,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -161,25 +167,28 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getclusters" "clusters" {
+        /// data "nutanix_clusters" "clusters" {
         ///   metadata = {
         ///     "length" = 2
         ///   }
         /// }
-        /// data "nutanix_getvirtualmachine" "nutanixVirtualMachine" {
-        ///   vm_id = nutanix_virtualmachine.vm1.id
+        /// data "nutanix_virtual_machine" "nutanixVirtualMachine" {
+        ///   vm_id = nutanix_virtual_machine.vm1.id
         /// }
         /// 
-        /// resource "nutanix_virtualmachine" "vm1" {
+        /// resource "nutanix_virtual_machine" "vm1" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name                 = "test-dou-%d"
-        ///   cluster_uuid         = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        ///   cluster_uuid         = data.nutanix_clusters.clusters.entities[0].metadata.uuid
         ///   num_vcpus_per_socket = 1
         ///   num_sockets          = 1
         ///   memory_size_mib      = 2048
         ///   power_state          = "ON"
         /// }
         /// output "cluster" {
-        ///   value = data.nutanix_getclusters.clusters.entities[0].metadata.uuid
+        ///   value = data.nutanix_clusters.clusters.entities[0].metadata.uuid
         /// }
         /// ```
         /// ```yaml

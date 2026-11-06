@@ -91,7 +91,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -99,10 +99,10 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getkarbonclusterssh" "sshbyid" {
+        /// data "nutanix_karbon_cluster_ssh" "sshbyid" {
         ///   karbon_cluster_id = "&lt;YOUR-CLUSTER-ID&gt;"
         /// }
-        /// data "nutanix_getkarbonclusterssh" "sshbyname" {
+        /// data "nutanix_karbon_cluster_ssh" "sshbyname" {
         ///   karbon_cluster_name = "&lt;YOUR-CLUSTER-NAME&gt;"
         /// }
         /// 
@@ -242,7 +242,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -250,10 +250,10 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getkarbonclusterssh" "sshbyid" {
+        /// data "nutanix_karbon_cluster_ssh" "sshbyid" {
         ///   karbon_cluster_id = "&lt;YOUR-CLUSTER-ID&gt;"
         /// }
-        /// data "nutanix_getkarbonclusterssh" "sshbyname" {
+        /// data "nutanix_karbon_cluster_ssh" "sshbyname" {
         ///   karbon_cluster_name = "&lt;YOUR-CLUSTER-NAME&gt;"
         /// }
         /// 
@@ -393,7 +393,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -401,10 +401,10 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getkarbonclusterssh" "sshbyid" {
+        /// data "nutanix_karbon_cluster_ssh" "sshbyid" {
         ///   karbon_cluster_id = "&lt;YOUR-CLUSTER-ID&gt;"
         /// }
-        /// data "nutanix_getkarbonclusterssh" "sshbyname" {
+        /// data "nutanix_karbon_cluster_ssh" "sshbyname" {
         ///   karbon_cluster_name = "&lt;YOUR-CLUSTER-NAME&gt;"
         /// }
         /// 

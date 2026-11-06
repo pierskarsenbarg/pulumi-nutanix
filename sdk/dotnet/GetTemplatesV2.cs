@@ -92,7 +92,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -100,9 +100,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_gettemplatesv2" "list-templates" {
+        /// data "nutanix_templates_v2" "list-templates" {
         /// }
-        /// data "nutanix_gettemplatesv2" "filtered-templates" {
+        /// data "nutanix_templates_v2" "filtered-templates" {
         ///   filter = "startswith(templateName,'template_name')"
         ///   page   = 0
         ///   limit  = 10
@@ -636,7 +636,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -644,9 +644,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_gettemplatesv2" "list-templates" {
+        /// data "nutanix_templates_v2" "list-templates" {
         /// }
-        /// data "nutanix_gettemplatesv2" "filtered-templates" {
+        /// data "nutanix_templates_v2" "filtered-templates" {
         ///   filter = "startswith(templateName,'template_name')"
         ///   page   = 0
         ///   limit  = 10
@@ -1180,7 +1180,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -1188,9 +1188,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_gettemplatesv2" "list-templates" {
+        /// data "nutanix_templates_v2" "list-templates" {
         /// }
-        /// data "nutanix_gettemplatesv2" "filtered-templates" {
+        /// data "nutanix_templates_v2" "filtered-templates" {
         ///   filter = "startswith(templateName,'template_name')"
         ///   page   = 0
         ///   limit  = 10

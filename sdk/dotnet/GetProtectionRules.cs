@@ -61,7 +61,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -69,7 +69,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getprotectionrules" "protectionRules" {
+        /// data "nutanix_protection_rules" "protectionRules" {
         /// }
         /// ```
         /// ```java
@@ -158,7 +158,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -166,7 +166,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getprotectionrules" "protectionRules" {
+        /// data "nutanix_protection_rules" "protectionRules" {
         /// }
         /// ```
         /// ```java
@@ -255,7 +255,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -263,7 +263,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getprotectionrules" "protectionRules" {
+        /// data "nutanix_protection_rules" "protectionRules" {
         /// }
         /// ```
         /// ```java

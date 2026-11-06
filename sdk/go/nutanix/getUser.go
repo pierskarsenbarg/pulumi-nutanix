@@ -41,7 +41,7 @@ import (
 //			}
 //			//Retrieve by UUID
 //			_ = nutanix.GetUserOutput(ctx, nutanix.GetUserOutputArgs{
-//				UserId: userUser.ID().ToIDOutput().ToStringOutput(),
+//				UserId: userUser.ID(),
 //			}, nil)
 //			//Retrieve by Name
 //			_ = nutanix.GetUserOutput(ctx, nutanix.GetUserOutputArgs{

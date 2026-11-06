@@ -76,7 +76,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -84,9 +84,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getservicegroupsv2" "serviceGroup" {
+        /// data "nutanix_service_groups_v2" "serviceGroup" {
         /// }
-        /// data "nutanix_getservicegroupsv2" "serviceGroupFiltered" {
+        /// data "nutanix_service_groups_v2" "serviceGroupFiltered" {
         ///   filter = "name eq 'service_group_name'"
         /// }
         /// ```
@@ -202,7 +202,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -210,9 +210,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getservicegroupsv2" "serviceGroup" {
+        /// data "nutanix_service_groups_v2" "serviceGroup" {
         /// }
-        /// data "nutanix_getservicegroupsv2" "serviceGroupFiltered" {
+        /// data "nutanix_service_groups_v2" "serviceGroupFiltered" {
         ///   filter = "name eq 'service_group_name'"
         /// }
         /// ```
@@ -328,7 +328,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -336,9 +336,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getservicegroupsv2" "serviceGroup" {
+        /// data "nutanix_service_groups_v2" "serviceGroup" {
         /// }
-        /// data "nutanix_getservicegroupsv2" "serviceGroupFiltered" {
+        /// data "nutanix_service_groups_v2" "serviceGroupFiltered" {
         ///   filter = "name eq 'service_group_name'"
         /// }
         /// ```

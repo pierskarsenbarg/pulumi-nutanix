@@ -106,7 +106,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -114,11 +114,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getpcrestorepointsv2" "restorePoints" {
+        /// data "nutanix_pc_restore_points_v2" "restorePoints" {
         ///   restorable_domain_manager_ext_id = "1cf35cfe-a341-4f27-8e31-2f51b79302c4"
         ///   restore_source_ext_id            = "ec77405b-16c5-4c8d-ade1-bede241afae0"
         /// }
-        /// data "nutanix_getpcrestorepointsv2" "restorePointsSelect" {
+        /// data "nutanix_pc_restore_points_v2" "restorePointsSelect" {
         ///   restorable_domain_manager_ext_id = "1cf35cfe-a341-4f27-8e31-2f51b79302c4"
         ///   restore_source_ext_id            = "ec77405b-16c5-4c8d-ade1-bede241afae0"
         ///   select                           = "creationTime,domainManager,extId"
@@ -438,7 +438,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -446,11 +446,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getpcrestorepointsv2" "restorePoints" {
+        /// data "nutanix_pc_restore_points_v2" "restorePoints" {
         ///   restorable_domain_manager_ext_id = "1cf35cfe-a341-4f27-8e31-2f51b79302c4"
         ///   restore_source_ext_id            = "ec77405b-16c5-4c8d-ade1-bede241afae0"
         /// }
-        /// data "nutanix_getpcrestorepointsv2" "restorePointsSelect" {
+        /// data "nutanix_pc_restore_points_v2" "restorePointsSelect" {
         ///   restorable_domain_manager_ext_id = "1cf35cfe-a341-4f27-8e31-2f51b79302c4"
         ///   restore_source_ext_id            = "ec77405b-16c5-4c8d-ade1-bede241afae0"
         ///   select                           = "creationTime,domainManager,extId"
@@ -770,7 +770,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -778,11 +778,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getpcrestorepointsv2" "restorePoints" {
+        /// data "nutanix_pc_restore_points_v2" "restorePoints" {
         ///   restorable_domain_manager_ext_id = "1cf35cfe-a341-4f27-8e31-2f51b79302c4"
         ///   restore_source_ext_id            = "ec77405b-16c5-4c8d-ade1-bede241afae0"
         /// }
-        /// data "nutanix_getpcrestorepointsv2" "restorePointsSelect" {
+        /// data "nutanix_pc_restore_points_v2" "restorePointsSelect" {
         ///   restorable_domain_manager_ext_id = "1cf35cfe-a341-4f27-8e31-2f51b79302c4"
         ///   restore_source_ext_id            = "ec77405b-16c5-4c8d-ade1-bede241afae0"
         ///   select                           = "creationTime,domainManager,extId"

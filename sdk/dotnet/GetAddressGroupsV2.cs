@@ -107,7 +107,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -115,12 +115,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getaddressgroupsv2" "list-addr-groups" {
+        /// data "nutanix_address_groups_v2" "list-addr-groups" {
         /// }
-        /// data "nutanix_getaddressgroupsv2" "list-addr-group-filtered" {
+        /// data "nutanix_address_groups_v2" "list-addr-group-filtered" {
         ///   filter = "name eq 'td-addr-group'"
         /// }
-        /// data "nutanix_getaddressgroupsv2" "list-addr-groups-filter-limit" {
+        /// data "nutanix_address_groups_v2" "list-addr-groups-filter-limit" {
         ///   filter = "name eq 'td-addr-group'"
         ///   limit  = 1
         /// }
@@ -289,7 +289,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -297,12 +297,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getaddressgroupsv2" "list-addr-groups" {
+        /// data "nutanix_address_groups_v2" "list-addr-groups" {
         /// }
-        /// data "nutanix_getaddressgroupsv2" "list-addr-group-filtered" {
+        /// data "nutanix_address_groups_v2" "list-addr-group-filtered" {
         ///   filter = "name eq 'td-addr-group'"
         /// }
-        /// data "nutanix_getaddressgroupsv2" "list-addr-groups-filter-limit" {
+        /// data "nutanix_address_groups_v2" "list-addr-groups-filter-limit" {
         ///   filter = "name eq 'td-addr-group'"
         ///   limit  = 1
         /// }
@@ -471,7 +471,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -479,12 +479,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getaddressgroupsv2" "list-addr-groups" {
+        /// data "nutanix_address_groups_v2" "list-addr-groups" {
         /// }
-        /// data "nutanix_getaddressgroupsv2" "list-addr-group-filtered" {
+        /// data "nutanix_address_groups_v2" "list-addr-group-filtered" {
         ///   filter = "name eq 'td-addr-group'"
         /// }
-        /// data "nutanix_getaddressgroupsv2" "list-addr-groups-filter-limit" {
+        /// data "nutanix_address_groups_v2" "list-addr-groups-filter-limit" {
         ///   filter = "name eq 'td-addr-group'"
         ///   limit  = 1
         /// }

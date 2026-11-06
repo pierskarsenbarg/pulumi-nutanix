@@ -40,7 +40,7 @@ import (
 //				return err
 //			}
 //			_ = nutanix.GetAccessControlPolicyOutput(ctx, nutanix.GetAccessControlPolicyOutputArgs{
-//				AccessControlPolicyId: testAccessControlPolicy.ID().ToIDOutput().ToStringOutput(),
+//				AccessControlPolicyId: testAccessControlPolicy.ID(),
 //			}, nil)
 //			return nil
 //		})

@@ -79,7 +79,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -87,13 +87,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getiamentityv2" "example" {
+        /// data "nutanix_iam_entity_v2" "example" {
         ///   ext_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         /// }
         /// 
         /// # Get entity by ext_id
         /// output "entityName" {
-        ///   value = data.nutanix_getiamentityv2.example.name
+        ///   value = data.nutanix_iam_entity_v2.example.name
         /// }
         /// ```
         /// ```java
@@ -209,7 +209,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -217,13 +217,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getiamentityv2" "example" {
+        /// data "nutanix_iam_entity_v2" "example" {
         ///   ext_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         /// }
         /// 
         /// # Get entity by ext_id
         /// output "entityName" {
-        ///   value = data.nutanix_getiamentityv2.example.name
+        ///   value = data.nutanix_iam_entity_v2.example.name
         /// }
         /// ```
         /// ```java
@@ -339,7 +339,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -347,13 +347,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getiamentityv2" "example" {
+        /// data "nutanix_iam_entity_v2" "example" {
         ///   ext_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         /// }
         /// 
         /// # Get entity by ext_id
         /// output "entityName" {
-        ///   value = data.nutanix_getiamentityv2.example.name
+        ///   value = data.nutanix_iam_entity_v2.example.name
         /// }
         /// ```
         /// ```java

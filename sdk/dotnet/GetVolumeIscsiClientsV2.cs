@@ -107,7 +107,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -115,12 +115,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvolumeiscsiclientsv2" "list-iscsi-clients" {
+        /// data "nutanix_volume_iscsi_clients_v2" "list-iscsi-clients" {
         /// }
-        /// data "nutanix_getvolumeiscsiclientsv2" "list-iscsi-clients-filter" {
+        /// data "nutanix_volume_iscsi_clients_v2" "list-iscsi-clients-filter" {
         ///   filter = "clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'"
         /// }
-        /// data "nutanix_getvolumeiscsiclientsv2" "list-iscsi-clients-limit" {
+        /// data "nutanix_volume_iscsi_clients_v2" "list-iscsi-clients-limit" {
         ///   page  = 2
         ///   limit = 1
         /// }
@@ -365,7 +365,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -373,12 +373,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvolumeiscsiclientsv2" "list-iscsi-clients" {
+        /// data "nutanix_volume_iscsi_clients_v2" "list-iscsi-clients" {
         /// }
-        /// data "nutanix_getvolumeiscsiclientsv2" "list-iscsi-clients-filter" {
+        /// data "nutanix_volume_iscsi_clients_v2" "list-iscsi-clients-filter" {
         ///   filter = "clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'"
         /// }
-        /// data "nutanix_getvolumeiscsiclientsv2" "list-iscsi-clients-limit" {
+        /// data "nutanix_volume_iscsi_clients_v2" "list-iscsi-clients-limit" {
         ///   page  = 2
         ///   limit = 1
         /// }
@@ -623,7 +623,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -631,12 +631,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvolumeiscsiclientsv2" "list-iscsi-clients" {
+        /// data "nutanix_volume_iscsi_clients_v2" "list-iscsi-clients" {
         /// }
-        /// data "nutanix_getvolumeiscsiclientsv2" "list-iscsi-clients-filter" {
+        /// data "nutanix_volume_iscsi_clients_v2" "list-iscsi-clients-filter" {
         ///   filter = "clusterReference eq '00057b8b-0b7b-4b7b-0000-000000000000'"
         /// }
-        /// data "nutanix_getvolumeiscsiclientsv2" "list-iscsi-clients-limit" {
+        /// data "nutanix_volume_iscsi_clients_v2" "list-iscsi-clients-limit" {
         ///   page  = 2
         ///   limit = 1
         /// }

@@ -68,7 +68,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -76,7 +76,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvirtualmachinev2" "vm" {
+        /// data "nutanix_virtual_machine_v2" "vm" {
         ///   ext_id = "{{ ext_id of vm }}"
         /// }
         /// ```
@@ -177,7 +177,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -185,7 +185,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvirtualmachinev2" "vm" {
+        /// data "nutanix_virtual_machine_v2" "vm" {
         ///   ext_id = "{{ ext_id of vm }}"
         /// }
         /// ```
@@ -286,7 +286,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -294,7 +294,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvirtualmachinev2" "vm" {
+        /// data "nutanix_virtual_machine_v2" "vm" {
         ///   ext_id = "{{ ext_id of vm }}"
         /// }
         /// ```

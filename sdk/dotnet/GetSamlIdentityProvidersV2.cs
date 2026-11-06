@@ -84,7 +84,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -92,9 +92,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getsamlidentityprovidersv2" "idps-list" {
+        /// data "nutanix_saml_identity_providers_v2" "idps-list" {
         /// }
-        /// data "nutanix_getsamlidentityprovidersv2" "filtered-idps" {
+        /// data "nutanix_saml_identity_providers_v2" "filtered-idps" {
         ///   filter = "name eq 'idp_example_name'"
         ///   limit  = 2
         /// }
@@ -261,7 +261,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -269,9 +269,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getsamlidentityprovidersv2" "idps-list" {
+        /// data "nutanix_saml_identity_providers_v2" "idps-list" {
         /// }
-        /// data "nutanix_getsamlidentityprovidersv2" "filtered-idps" {
+        /// data "nutanix_saml_identity_providers_v2" "filtered-idps" {
         ///   filter = "name eq 'idp_example_name'"
         ///   limit  = 2
         /// }
@@ -438,7 +438,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -446,9 +446,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getsamlidentityprovidersv2" "idps-list" {
+        /// data "nutanix_saml_identity_providers_v2" "idps-list" {
         /// }
-        /// data "nutanix_getsamlidentityprovidersv2" "filtered-idps" {
+        /// data "nutanix_saml_identity_providers_v2" "filtered-idps" {
         ///   filter = "name eq 'idp_example_name'"
         ///   limit  = 2
         /// }

@@ -110,7 +110,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -118,13 +118,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getusergroup" "usergroup" {
+        /// data "nutanix_user_group" "usergroup" {
         ///   user_group_id = "dd30a856-8e72-4158-b716-98455ceda220"
         /// }
-        /// data "nutanix_getusergroup" "usergroupbyname" {
+        /// data "nutanix_user_group" "usergroupbyname" {
         ///   user_group_name = "example-group-1"
         /// }
-        /// data "nutanix_getusergroup" "test" {
+        /// data "nutanix_user_group" "test" {
         ///   user_group_distinguished_name = "cn=example-group-1,cn=users,dc=ntnxlab,dc=local"
         /// }
         /// 
@@ -295,7 +295,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -303,13 +303,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getusergroup" "usergroup" {
+        /// data "nutanix_user_group" "usergroup" {
         ///   user_group_id = "dd30a856-8e72-4158-b716-98455ceda220"
         /// }
-        /// data "nutanix_getusergroup" "usergroupbyname" {
+        /// data "nutanix_user_group" "usergroupbyname" {
         ///   user_group_name = "example-group-1"
         /// }
-        /// data "nutanix_getusergroup" "test" {
+        /// data "nutanix_user_group" "test" {
         ///   user_group_distinguished_name = "cn=example-group-1,cn=users,dc=ntnxlab,dc=local"
         /// }
         /// 
@@ -480,7 +480,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -488,13 +488,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getusergroup" "usergroup" {
+        /// data "nutanix_user_group" "usergroup" {
         ///   user_group_id = "dd30a856-8e72-4158-b716-98455ceda220"
         /// }
-        /// data "nutanix_getusergroup" "usergroupbyname" {
+        /// data "nutanix_user_group" "usergroupbyname" {
         ///   user_group_name = "example-group-1"
         /// }
-        /// data "nutanix_getusergroup" "test" {
+        /// data "nutanix_user_group" "test" {
         ///   user_group_distinguished_name = "cn=example-group-1,cn=users,dc=ntnxlab,dc=local"
         /// }
         /// 

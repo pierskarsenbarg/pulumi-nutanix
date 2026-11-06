@@ -68,7 +68,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -76,7 +76,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getsamlidentityproviderv2" "idp" {
+        /// data "nutanix_saml_identity_provider_v2" "idp" {
         ///   ext_id = "a2a8650a-358a-4791-90c9-7a8b6e2989d6"
         /// }
         /// ```
@@ -183,7 +183,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -191,7 +191,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getsamlidentityproviderv2" "idp" {
+        /// data "nutanix_saml_identity_provider_v2" "idp" {
         ///   ext_id = "a2a8650a-358a-4791-90c9-7a8b6e2989d6"
         /// }
         /// ```
@@ -298,7 +298,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -306,7 +306,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getsamlidentityproviderv2" "idp" {
+        /// data "nutanix_saml_identity_provider_v2" "idp" {
         ///   ext_id = "a2a8650a-358a-4791-90c9-7a8b6e2989d6"
         /// }
         /// ```

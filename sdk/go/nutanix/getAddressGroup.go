@@ -42,7 +42,7 @@ import (
 //				return err
 //			}
 //			_ = nutanix.GetAddressGroupOutput(ctx, nutanix.GetAddressGroupOutputArgs{
-//				Uuid: testAddress.ID().ToIDOutput().ToStringOutput(),
+//				Uuid: testAddress.ID(),
 //			}, nil)
 //			return nil
 //		})

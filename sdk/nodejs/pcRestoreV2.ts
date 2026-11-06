@@ -25,7 +25,7 @@ import * as utilities from "./utilities";
  * const domainManagerExtId = cls.clusterEntities[0].extId;
  * const clusterExtId = clusters.then(clusters => .filter(cluster => cluster.config[0].clusterFunction[0] != "PRISM_CENTRAL").map(cluster => (cluster.extId))[0]);
  * // Create a restore source, before make sure to get the cluster ext_id from PC and create backup target
- * // wait until backup target is synced, you can check the last_sync_time from the backup target data source
+ * // wait until backup target is synced, you can check the last_sync_time from the backup target function
  * const cluster_location = new nutanix.PcRestoreSourceV2("cluster-location", {location: {
  *     clusterLocations: [{
  *         configs: [{
@@ -48,7 +48,7 @@ import * as utilities from "./utilities";
  * });
  * const restorePoint = restore_point;
  * // define the restore pc resource
- * // you can get these values from the data source nutanix_pc_v2, this data source is on PC provider
+ * // you can get these values from the function nutanix_pc_v2, this function is on PC provider
  * const test = new nutanix.PcRestoreV2("test", {
  *     extId: restorePoint.extId,
  *     restoreSourceExtId: cluster_location.id,
@@ -67,47 +67,47 @@ import * as utilities from "./utilities";
  *             })),
  *             externalAddress: {
  *                 ipv4s: [{
- *                     value: restorePoint.domainManager?.[0]?.network?.[0]?.externalAddress?.[0]?.ipv4?.[0]?.value.apply(x =>String(x)),
+ *                     value: restorePoint.domainManager?.[0]?.network?.[0]?.externalAddress?.[0]?.ipv4?.[0]?.value,
  *                 }],
  *             },
  *             externalNetworks: [{
- *                 networkExtId: restorePoint.domainManager?.[0]?.network?.[0]?.externalNetworks?.[0]?.networkExtId.apply(x =>String(x)),
+ *                 networkExtId: restorePoint.domainManager?.[0]?.network?.[0]?.externalNetworks?.[0]?.networkExtId,
  *                 defaultGateway: {
  *                     ipv4s: [{
- *                         value: restorePoint.domainManager?.[0]?.network?.[0]?.externalNetworks?.[0]?.defaultGateway?.[0]?.ipv4?.[0]?.value.apply(x =>String(x)),
+ *                         value: restorePoint.domainManager?.[0]?.network?.[0]?.externalNetworks?.[0]?.defaultGateway?.[0]?.ipv4?.[0]?.value,
  *                     }],
  *                 },
  *                 subnetMask: {
  *                     ipv4s: [{
- *                         value: restorePoint.domainManager?.[0]?.network?.[0]?.externalNetworks?.[0]?.subnetMask?.[0]?.ipv4?.[0]?.value.apply(x =>String(x)),
+ *                         value: restorePoint.domainManager?.[0]?.network?.[0]?.externalNetworks?.[0]?.subnetMask?.[0]?.ipv4?.[0]?.value,
  *                     }],
  *                 },
  *                 ipRanges: [{
  *                     begin: {
  *                         ipv4s: [{
- *                             value: restorePoint.domainManager?.[0]?.network?.[0]?.externalNetworks?.[0]?.ipRanges?.[0]?.begin?.[0]?.ipv4?.[0]?.value.apply(x =>String(x)),
+ *                             value: restorePoint.domainManager?.[0]?.network?.[0]?.externalNetworks?.[0]?.ipRanges?.[0]?.begin?.[0]?.ipv4?.[0]?.value,
  *                         }],
  *                     },
  *                     end: {
  *                         ipv4s: [{
- *                             value: restorePoint.domainManager?.[0]?.network?.[0]?.externalNetworks?.[0]?.ipRanges?.[0]?.end?.[0]?.ipv4?.[0]?.value.apply(x =>String(x)),
+ *                             value: restorePoint.domainManager?.[0]?.network?.[0]?.externalNetworks?.[0]?.ipRanges?.[0]?.end?.[0]?.ipv4?.[0]?.value,
  *                         }],
  *                     },
  *                 }],
  *             }],
  *         }],
  *         configs: [{
- *             shouldEnableLockdownMode: restorePoint.domainManager?.[0]?.config?.[0]?.shouldEnableLockdownMode.apply(x =>x === "true"),
+ *             shouldEnableLockdownMode: restorePoint.domainManager?.[0]?.config?.[0]?.shouldEnableLockdownMode,
  *             buildInfo: {
- *                 version: restorePoint.domainManager?.[0]?.config?.[0]?.buildInfo?.[0]?.version.apply(x =>String(x)),
+ *                 version: restorePoint.domainManager?.[0]?.config?.[0]?.buildInfo?.[0]?.version,
  *             },
- *             name: restorePoint.domainManager?.[0]?.config?.[0]?.name.apply(x =>String(x)),
- *             size: restorePoint.domainManager?.[0]?.config?.[0]?.size.apply(x =>String(x)),
+ *             name: restorePoint.domainManager?.[0]?.config?.[0]?.name,
+ *             size: restorePoint.domainManager?.[0]?.config?.[0]?.size,
  *             resourceConfigs: [{
  *                 containerExtIds: restorePoint.domainManager?.[0]?.config?.[0]?.resourceConfig?.[0]?.containerExtIds,
- *                 dataDiskSizeBytes: restorePoint.domainManager?.[0]?.config?.[0]?.resourceConfig?.[0]?.dataDiskSizeBytes.apply(x =>Number(x)),
- *                 memorySizeBytes: restorePoint.domainManager?.[0]?.config?.[0]?.resourceConfig?.[0]?.memorySizeBytes.apply(x =>Number(x)),
- *                 numVcpus: restorePoint.domainManager?.[0]?.config?.[0]?.resourceConfig?.[0]?.numVcpus.apply(x =>Number(x)),
+ *                 dataDiskSizeBytes: restorePoint.domainManager?.[0]?.config?.[0]?.resourceConfig?.[0]?.dataDiskSizeBytes,
+ *                 memorySizeBytes: restorePoint.domainManager?.[0]?.config?.[0]?.resourceConfig?.[0]?.memorySizeBytes,
+ *                 numVcpus: restorePoint.domainManager?.[0]?.config?.[0]?.resourceConfig?.[0]?.numVcpus,
  *             }],
  *         }],
  *     },

@@ -107,7 +107,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -115,12 +115,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getrolesv2" "roles" {
+        /// data "nutanix_roles_v2" "roles" {
         /// }
-        /// data "nutanix_getrolesv2" "filtered-roles" {
+        /// data "nutanix_roles_v2" "filtered-roles" {
         ///   filter = "displayName eq 'example_role'"
         /// }
-        /// data "nutanix_getrolesv2" "filtered-ordered-roles" {
+        /// data "nutanix_roles_v2" "filtered-ordered-roles" {
         ///   filter   = "displayName eq 'example_role'"
         ///   order_by = "createdTime desc"
         /// }
@@ -327,7 +327,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -335,12 +335,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getrolesv2" "roles" {
+        /// data "nutanix_roles_v2" "roles" {
         /// }
-        /// data "nutanix_getrolesv2" "filtered-roles" {
+        /// data "nutanix_roles_v2" "filtered-roles" {
         ///   filter = "displayName eq 'example_role'"
         /// }
-        /// data "nutanix_getrolesv2" "filtered-ordered-roles" {
+        /// data "nutanix_roles_v2" "filtered-ordered-roles" {
         ///   filter   = "displayName eq 'example_role'"
         ///   order_by = "createdTime desc"
         /// }
@@ -547,7 +547,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -555,12 +555,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getrolesv2" "roles" {
+        /// data "nutanix_roles_v2" "roles" {
         /// }
-        /// data "nutanix_getrolesv2" "filtered-roles" {
+        /// data "nutanix_roles_v2" "filtered-roles" {
         ///   filter = "displayName eq 'example_role'"
         /// }
-        /// data "nutanix_getrolesv2" "filtered-ordered-roles" {
+        /// data "nutanix_roles_v2" "filtered-ordered-roles" {
         ///   filter   = "displayName eq 'example_role'"
         ///   order_by = "createdTime desc"
         /// }

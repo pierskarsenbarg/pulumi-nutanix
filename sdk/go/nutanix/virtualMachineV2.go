@@ -166,7 +166,7 @@ import (
 //												},
 //											},
 //										},
-//										DiskSizeBytes: pulumi.Int(20 * pulumi.Float64(invokePow.Result)),
+//										DiskSizeBytes: pulumi.Int(20 * float64(invokePow.Result)),
 //									},
 //								},
 //							},
@@ -183,7 +183,7 @@ import (
 //							&nutanix.VirtualMachineV2DiskBackingInfoArgs{
 //								VmDisks: nutanix.VirtualMachineV2DiskBackingInfoVmDiskArray{
 //									&nutanix.VirtualMachineV2DiskBackingInfoVmDiskArgs{
-//										DiskSizeBytes: pulumi.Int(10 * pulumi.Float64(invokePow1.Result)),
+//										DiskSizeBytes: pulumi.Int(10 * float64(invokePow1.Result)),
 //										StorageContainers: nutanix.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArray{
 //											&nutanix.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArgs{
 //												ExtId: pulumi.String("5d9b5941-fec3-4996-9d31-f31bed1c7735"),
@@ -205,7 +205,7 @@ import (
 //							&nutanix.VirtualMachineV2DiskBackingInfoArgs{
 //								VmDisks: nutanix.VirtualMachineV2DiskBackingInfoVmDiskArray{
 //									&nutanix.VirtualMachineV2DiskBackingInfoVmDiskArgs{
-//										DiskSizeBytes: pulumi.Int(15 * pulumi.Float64(invokePow2.Result)),
+//										DiskSizeBytes: pulumi.Int(15 * float64(invokePow2.Result)),
 //										StorageContainers: nutanix.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArray{
 //											&nutanix.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArgs{
 //												ExtId: pulumi.String("5d9b5941-fec3-4996-9d31-f31bed1c7735"),
@@ -227,7 +227,7 @@ import (
 //							&nutanix.VirtualMachineV2DiskBackingInfoArgs{
 //								VmDisks: nutanix.VirtualMachineV2DiskBackingInfoVmDiskArray{
 //									&nutanix.VirtualMachineV2DiskBackingInfoVmDiskArgs{
-//										DiskSizeBytes: pulumi.Int(20 * pulumi.Float64(invokePow3.Result)),
+//										DiskSizeBytes: pulumi.Int(20 * float64(invokePow3.Result)),
 //										StorageContainers: nutanix.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArray{
 //											&nutanix.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArgs{
 //												ExtId: pulumi.String("5d9b5941-fec3-4996-9d31-f31bed1c7735"),

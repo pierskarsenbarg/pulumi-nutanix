@@ -84,7 +84,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -92,7 +92,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getstoragecontainerstatsinfov2" "example" {
+        /// data "nutanix_storage_container_stats_info_v2" "example" {
         ///   ext_id            = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd"
         ///   start_time        = "2024-08-01T00:00:00Z"
         ///   end_time          = "2024-08-30T00:00:00Z"
@@ -221,7 +221,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -229,7 +229,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getstoragecontainerstatsinfov2" "example" {
+        /// data "nutanix_storage_container_stats_info_v2" "example" {
         ///   ext_id            = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd"
         ///   start_time        = "2024-08-01T00:00:00Z"
         ///   end_time          = "2024-08-30T00:00:00Z"
@@ -358,7 +358,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -366,7 +366,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getstoragecontainerstatsinfov2" "example" {
+        /// data "nutanix_storage_container_stats_info_v2" "example" {
         ///   ext_id            = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd"
         ///   start_time        = "2024-08-01T00:00:00Z"
         ///   end_time          = "2024-08-30T00:00:00Z"

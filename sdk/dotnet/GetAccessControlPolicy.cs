@@ -95,14 +95,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetAccessControlPolicyOutput(ctx, nutanix.GetAccessControlPolicyOutputArgs{
-        /// 			AccessControlPolicyId: testAccessControlPolicy.ID().ToIDOutput().ToStringOutput(),
+        /// 			AccessControlPolicyId: testAccessControlPolicy.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -110,14 +110,17 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getaccesscontrolpolicy" "test" {
-        ///   access_control_policy_id = nutanix_accesscontrolpolicy.test.id
+        /// data "nutanix_access_control_policy" "test" {
+        ///   access_control_policy_id = nutanix_access_control_policy.test.id
         /// }
         /// 
-        /// resource "nutanix_accesscontrolpolicy" "test" {
+        /// resource "nutanix_access_control_policy" "test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "NAME OF ACCESS CONTROL POLICY"
         ///   description = "DESCRIPTION OF THE ACCESS CONTROL POLICY"
-        ///   role_reference = {
+        ///   role_reference {
         ///     kind = "role"
         ///     uuid = "UUID of role"
         ///   }
@@ -269,14 +272,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetAccessControlPolicyOutput(ctx, nutanix.GetAccessControlPolicyOutputArgs{
-        /// 			AccessControlPolicyId: testAccessControlPolicy.ID().ToIDOutput().ToStringOutput(),
+        /// 			AccessControlPolicyId: testAccessControlPolicy.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -284,14 +287,17 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getaccesscontrolpolicy" "test" {
-        ///   access_control_policy_id = nutanix_accesscontrolpolicy.test.id
+        /// data "nutanix_access_control_policy" "test" {
+        ///   access_control_policy_id = nutanix_access_control_policy.test.id
         /// }
         /// 
-        /// resource "nutanix_accesscontrolpolicy" "test" {
+        /// resource "nutanix_access_control_policy" "test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "NAME OF ACCESS CONTROL POLICY"
         ///   description = "DESCRIPTION OF THE ACCESS CONTROL POLICY"
-        ///   role_reference = {
+        ///   role_reference {
         ///     kind = "role"
         ///     uuid = "UUID of role"
         ///   }
@@ -443,14 +449,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetAccessControlPolicyOutput(ctx, nutanix.GetAccessControlPolicyOutputArgs{
-        /// 			AccessControlPolicyId: testAccessControlPolicy.ID().ToIDOutput().ToStringOutput(),
+        /// 			AccessControlPolicyId: testAccessControlPolicy.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -458,14 +464,17 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getaccesscontrolpolicy" "test" {
-        ///   access_control_policy_id = nutanix_accesscontrolpolicy.test.id
+        /// data "nutanix_access_control_policy" "test" {
+        ///   access_control_policy_id = nutanix_access_control_policy.test.id
         /// }
         /// 
-        /// resource "nutanix_accesscontrolpolicy" "test" {
+        /// resource "nutanix_access_control_policy" "test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "NAME OF ACCESS CONTROL POLICY"
         ///   description = "DESCRIPTION OF THE ACCESS CONTROL POLICY"
-        ///   role_reference = {
+        ///   role_reference {
         ///     kind = "role"
         ///     uuid = "UUID of role"
         ///   }

@@ -68,7 +68,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -76,11 +76,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbslas" "slas" {
+        /// data "nutanix_ndb_slas" "slas" {
         /// }
         /// 
         /// output "sla" {
-        ///   value = data.nutanix_getndbslas.slas
+        ///   value = data.nutanix_ndb_slas.slas
         /// }
         /// ```
         /// ```java
@@ -179,7 +179,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -187,11 +187,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbslas" "slas" {
+        /// data "nutanix_ndb_slas" "slas" {
         /// }
         /// 
         /// output "sla" {
-        ///   value = data.nutanix_getndbslas.slas
+        ///   value = data.nutanix_ndb_slas.slas
         /// }
         /// ```
         /// ```java
@@ -290,7 +290,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -298,11 +298,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbslas" "slas" {
+        /// data "nutanix_ndb_slas" "slas" {
         /// }
         /// 
         /// output "sla" {
-        ///   value = data.nutanix_getndbslas.slas
+        ///   value = data.nutanix_ndb_slas.slas
         /// }
         /// ```
         /// ```java

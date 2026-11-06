@@ -218,14 +218,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetProjectOutput(ctx, nutanix.GetProjectOutputArgs{
-        /// 			ProjectId: projectTest.ID().ToIDOutput().ToStringOutput(),
+        /// 			ProjectId: projectTest.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -233,11 +233,14 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getproject" "test" {
+        /// data "nutanix_project" "test" {
         ///   project_id = nutanix_project.project_test.id
         /// }
         /// 
         /// resource "nutanix_subnet" "subnet" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   cluster_uuid       = "&lt;YOUR_CLUSTER_ID&gt;"
         ///   name               = "sunet_test_name"
         ///   description        = "Description of my unit test VLAN"
@@ -251,17 +254,20 @@ namespace PiersKarsenbarg.Nutanix
         ///     "domain_name"      = "nutanix"
         ///     "tftp_server_name" = "10.250.140.200"
         ///   }
-        ///   dhcp_domain_name_server_lists = ["8.8.8.8", "4.2.2.2"]
-        ///   dhcp_domain_search_lists      = ["terraform.nutanix.com", "terraform.unit.test.com"]
+        ///   dhcp_domain_name_server_list = ["8.8.8.8", "4.2.2.2"]
+        ///   dhcp_domain_search_list      = ["terraform.nutanix.com", "terraform.unit.test.com"]
         /// }
         /// resource "nutanix_project" "project_test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "my-project"
         ///   description = "This is my project"
         ///   categories {
         ///     name  = "Environment"
         ///     value = "Staging"
         ///   }
-        ///   default_subnet_reference = {
+        ///   default_subnet_reference {
         ///     uuid = nutanix_subnet.subnet.metadata.uuid
         ///   }
         ///   api_version = "3.1"
@@ -324,7 +330,7 @@ namespace PiersKarsenbarg.Nutanix
         ///                 .value("Staging")
         ///                 .build())
         ///             .defaultSubnetReference(ProjectDefaultSubnetReferenceArgs.builder()
-        ///                 .uuid(subnet.metadata().applyValue(_metadata -&gt; _metadata.uuid()))
+        ///                 .uuid(subnet.metadata().applyValue(_metadata -&gt; _metadata.get("uuid")))
         ///                 .build())
         ///             .apiVersion("3.1")
         ///             .build());
@@ -589,14 +595,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetProjectOutput(ctx, nutanix.GetProjectOutputArgs{
-        /// 			ProjectId: projectTest.ID().ToIDOutput().ToStringOutput(),
+        /// 			ProjectId: projectTest.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -604,11 +610,14 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getproject" "test" {
+        /// data "nutanix_project" "test" {
         ///   project_id = nutanix_project.project_test.id
         /// }
         /// 
         /// resource "nutanix_subnet" "subnet" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   cluster_uuid       = "&lt;YOUR_CLUSTER_ID&gt;"
         ///   name               = "sunet_test_name"
         ///   description        = "Description of my unit test VLAN"
@@ -622,17 +631,20 @@ namespace PiersKarsenbarg.Nutanix
         ///     "domain_name"      = "nutanix"
         ///     "tftp_server_name" = "10.250.140.200"
         ///   }
-        ///   dhcp_domain_name_server_lists = ["8.8.8.8", "4.2.2.2"]
-        ///   dhcp_domain_search_lists      = ["terraform.nutanix.com", "terraform.unit.test.com"]
+        ///   dhcp_domain_name_server_list = ["8.8.8.8", "4.2.2.2"]
+        ///   dhcp_domain_search_list      = ["terraform.nutanix.com", "terraform.unit.test.com"]
         /// }
         /// resource "nutanix_project" "project_test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "my-project"
         ///   description = "This is my project"
         ///   categories {
         ///     name  = "Environment"
         ///     value = "Staging"
         ///   }
-        ///   default_subnet_reference = {
+        ///   default_subnet_reference {
         ///     uuid = nutanix_subnet.subnet.metadata.uuid
         ///   }
         ///   api_version = "3.1"
@@ -695,7 +707,7 @@ namespace PiersKarsenbarg.Nutanix
         ///                 .value("Staging")
         ///                 .build())
         ///             .defaultSubnetReference(ProjectDefaultSubnetReferenceArgs.builder()
-        ///                 .uuid(subnet.metadata().applyValue(_metadata -&gt; _metadata.uuid()))
+        ///                 .uuid(subnet.metadata().applyValue(_metadata -&gt; _metadata.get("uuid")))
         ///                 .build())
         ///             .apiVersion("3.1")
         ///             .build());
@@ -960,14 +972,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetProjectOutput(ctx, nutanix.GetProjectOutputArgs{
-        /// 			ProjectId: projectTest.ID().ToIDOutput().ToStringOutput(),
+        /// 			ProjectId: projectTest.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -975,11 +987,14 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getproject" "test" {
+        /// data "nutanix_project" "test" {
         ///   project_id = nutanix_project.project_test.id
         /// }
         /// 
         /// resource "nutanix_subnet" "subnet" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   cluster_uuid       = "&lt;YOUR_CLUSTER_ID&gt;"
         ///   name               = "sunet_test_name"
         ///   description        = "Description of my unit test VLAN"
@@ -993,17 +1008,20 @@ namespace PiersKarsenbarg.Nutanix
         ///     "domain_name"      = "nutanix"
         ///     "tftp_server_name" = "10.250.140.200"
         ///   }
-        ///   dhcp_domain_name_server_lists = ["8.8.8.8", "4.2.2.2"]
-        ///   dhcp_domain_search_lists      = ["terraform.nutanix.com", "terraform.unit.test.com"]
+        ///   dhcp_domain_name_server_list = ["8.8.8.8", "4.2.2.2"]
+        ///   dhcp_domain_search_list      = ["terraform.nutanix.com", "terraform.unit.test.com"]
         /// }
         /// resource "nutanix_project" "project_test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "my-project"
         ///   description = "This is my project"
         ///   categories {
         ///     name  = "Environment"
         ///     value = "Staging"
         ///   }
-        ///   default_subnet_reference = {
+        ///   default_subnet_reference {
         ///     uuid = nutanix_subnet.subnet.metadata.uuid
         ///   }
         ///   api_version = "3.1"
@@ -1066,7 +1084,7 @@ namespace PiersKarsenbarg.Nutanix
         ///                 .value("Staging")
         ///                 .build())
         ///             .defaultSubnetReference(ProjectDefaultSubnetReferenceArgs.builder()
-        ///                 .uuid(subnet.metadata().applyValue(_metadata -&gt; _metadata.uuid()))
+        ///                 .uuid(subnet.metadata().applyValue(_metadata -&gt; _metadata.get("uuid")))
         ///                 .build())
         ///             .apiVersion("3.1")
         ///             .build());

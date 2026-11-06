@@ -112,6 +112,12 @@ def get_karbon_private_registry(private_registry_id: Optional[_builtins.str] = N
     ## Example Usage
 
     <!--Start PulumiCodeChooser -->
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    registry = nutanix.get_karbon_private_registry(cluster_id="<YOUR-CLUSTER-ID>")
+    ```
     <!--End PulumiCodeChooser -->
 
 
@@ -140,6 +146,12 @@ def get_karbon_private_registry_output(private_registry_id: pulumi.Input[Optiona
     ## Example Usage
 
     <!--Start PulumiCodeChooser -->
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    registry = nutanix.get_karbon_private_registry(cluster_id="<YOUR-CLUSTER-ID>")
+    ```
     <!--End PulumiCodeChooser -->
 
 

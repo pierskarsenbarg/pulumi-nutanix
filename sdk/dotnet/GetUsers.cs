@@ -96,7 +96,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -104,13 +104,16 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getuser" "users" {
+        /// data "nutanix_user" "users" {
         /// }
         /// 
         /// resource "nutanix_user" "user" {
-        ///   directory_service_user = {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
+        ///   directory_service_user {
         ///     user_principal_name = "test-user@ntnxlab.local"
-        ///     directory_service_reference = {
+        ///     directory_service_reference {
         ///       uuid = "&lt;directory-service-uuid&gt;"
         ///     }
         ///   }
@@ -260,7 +263,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -268,13 +271,16 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getuser" "users" {
+        /// data "nutanix_user" "users" {
         /// }
         /// 
         /// resource "nutanix_user" "user" {
-        ///   directory_service_user = {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
+        ///   directory_service_user {
         ///     user_principal_name = "test-user@ntnxlab.local"
-        ///     directory_service_reference = {
+        ///     directory_service_reference {
         ///       uuid = "&lt;directory-service-uuid&gt;"
         ///     }
         ///   }
@@ -424,7 +430,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -432,13 +438,16 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getuser" "users" {
+        /// data "nutanix_user" "users" {
         /// }
         /// 
         /// resource "nutanix_user" "user" {
-        ///   directory_service_user = {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
+        ///   directory_service_user {
         ///     user_principal_name = "test-user@ntnxlab.local"
-        ///     directory_service_reference = {
+        ///     directory_service_reference {
         ///       uuid = "&lt;directory-service-uuid&gt;"
         ///     }
         ///   }

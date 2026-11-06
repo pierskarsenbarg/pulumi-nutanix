@@ -18,8 +18,57 @@ namespace PiersKarsenbarg.Nutanix
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const registry = nutanix.getKarbonPrivateRegistry({
+        ///     clusterId: "&lt;YOUR-CLUSTER-ID&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// registry = nutanix.get_karbon_private_registry(cluster_id="&lt;YOUR-CLUSTER-ID&gt;")
+        /// ```
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var registry = Nutanix.GetKarbonPrivateRegistry.Invoke(new()
+        ///     {
+        ///         ClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetKarbonPrivateRegistry(ctx, &amp;nutanix.LookupKarbonPrivateRegistryArgs{
+        /// 			ClusterId: "&lt;YOUR-CLUSTER-ID&gt;",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -27,8 +76,36 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getkarbonprivateregistry" "registry" {
+        /// data "nutanix_karbon_private_registry" "registry" {
         ///   cluster_id = "&lt;YOUR-CLUSTER-ID&gt;"
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetKarbonPrivateRegistryArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var registry = NutanixFunctions.getKarbonPrivateRegistry(GetKarbonPrivateRegistryArgs.builder()
+        ///             .clusterId("&lt;YOUR-CLUSTER-ID&gt;")
+        ///             .build());
+        /// 
+        ///     }
         /// }
         /// ```
         /// ```yaml
@@ -50,8 +127,57 @@ namespace PiersKarsenbarg.Nutanix
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const registry = nutanix.getKarbonPrivateRegistry({
+        ///     clusterId: "&lt;YOUR-CLUSTER-ID&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// registry = nutanix.get_karbon_private_registry(cluster_id="&lt;YOUR-CLUSTER-ID&gt;")
+        /// ```
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var registry = Nutanix.GetKarbonPrivateRegistry.Invoke(new()
+        ///     {
+        ///         ClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetKarbonPrivateRegistry(ctx, &amp;nutanix.LookupKarbonPrivateRegistryArgs{
+        /// 			ClusterId: "&lt;YOUR-CLUSTER-ID&gt;",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -59,8 +185,36 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getkarbonprivateregistry" "registry" {
+        /// data "nutanix_karbon_private_registry" "registry" {
         ///   cluster_id = "&lt;YOUR-CLUSTER-ID&gt;"
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetKarbonPrivateRegistryArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var registry = NutanixFunctions.getKarbonPrivateRegistry(GetKarbonPrivateRegistryArgs.builder()
+        ///             .clusterId("&lt;YOUR-CLUSTER-ID&gt;")
+        ///             .build());
+        /// 
+        ///     }
         /// }
         /// ```
         /// ```yaml
@@ -82,8 +236,57 @@ namespace PiersKarsenbarg.Nutanix
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// const registry = nutanix.getKarbonPrivateRegistry({
+        ///     clusterId: "&lt;YOUR-CLUSTER-ID&gt;",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// registry = nutanix.get_karbon_private_registry(cluster_id="&lt;YOUR-CLUSTER-ID&gt;")
+        /// ```
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var registry = Nutanix.GetKarbonPrivateRegistry.Invoke(new()
+        ///     {
+        ///         ClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		_, err := nutanix.GetKarbonPrivateRegistry(ctx, &amp;nutanix.LookupKarbonPrivateRegistryArgs{
+        /// 			ClusterId: "&lt;YOUR-CLUSTER-ID&gt;",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -91,8 +294,36 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getkarbonprivateregistry" "registry" {
+        /// data "nutanix_karbon_private_registry" "registry" {
         ///   cluster_id = "&lt;YOUR-CLUSTER-ID&gt;"
+        /// }
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetKarbonPrivateRegistryArgs;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         final var registry = NutanixFunctions.getKarbonPrivateRegistry(GetKarbonPrivateRegistryArgs.builder()
+        ///             .clusterId("&lt;YOUR-CLUSTER-ID&gt;")
+        ///             .build());
+        /// 
+        ///     }
         /// }
         /// ```
         /// ```yaml

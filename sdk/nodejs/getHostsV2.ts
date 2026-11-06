@@ -12,6 +12,20 @@ import * as utilities from "./utilities";
  * ## Example Usage
  *
  * <!--Start PulumiCodeChooser -->
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * // list all host entities accosted to cluster
+ * const hosts = nutanix.getHostsV2({
+ *     clusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+ * });
+ * // list all host entities accosted to cluster with filter
+ * const filtered_hosts = nutanix.getHostsV2({
+ *     clusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+ *     filter: "hostName eq 'cluster_host_example'",
+ * });
+ * ```
  * <!--End PulumiCodeChooser -->
  *
  * ## Host Entities
@@ -276,6 +290,20 @@ export interface GetHostsV2Result {
  * ## Example Usage
  *
  * <!--Start PulumiCodeChooser -->
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * // list all host entities accosted to cluster
+ * const hosts = nutanix.getHostsV2({
+ *     clusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+ * });
+ * // list all host entities accosted to cluster with filter
+ * const filtered_hosts = nutanix.getHostsV2({
+ *     clusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+ *     filter: "hostName eq 'cluster_host_example'",
+ * });
+ * ```
  * <!--End PulumiCodeChooser -->
  *
  * ## Host Entities

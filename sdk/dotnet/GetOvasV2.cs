@@ -172,7 +172,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -180,21 +180,21 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getovasv2" "example" {
+        /// data "nutanix_ovas_v2" "example" {
         /// }
-        /// data "nutanix_getovasv2" "exampleFilteredDiskFormat" {
+        /// data "nutanix_ovas_v2" "exampleFilteredDiskFormat" {
         ///   filter = "diskFormat eq Vmm.Content.OvaDiskFormat'QCOW2'"
         /// }
-        /// data "nutanix_getovasv2" "exampleFilteredName" {
+        /// data "nutanix_ovas_v2" "exampleFilteredName" {
         ///   filter = "name eq 'example-ova'"
         /// }
-        /// data "nutanix_getovasv2" "exampleFilteredParentVm" {
+        /// data "nutanix_ovas_v2" "exampleFilteredParentVm" {
         ///   filter = "parentVm eq 'LinuxServer_VM'"
         /// }
-        /// data "nutanix_getovasv2" "exampleFilteredSize" {
+        /// data "nutanix_ovas_v2" "exampleFilteredSize" {
         ///   filter = "sizeBytes eq 57"
         /// }
-        /// data "nutanix_getovasv2" "example2" {
+        /// data "nutanix_ovas_v2" "example2" {
         ///   filter   = "startswith(parentVm, 'Linux')"
         ///   limit    = 10
         ///   select   = "diskFormat,extId,name,vmConfig,checksum"
@@ -470,7 +470,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -478,21 +478,21 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getovasv2" "example" {
+        /// data "nutanix_ovas_v2" "example" {
         /// }
-        /// data "nutanix_getovasv2" "exampleFilteredDiskFormat" {
+        /// data "nutanix_ovas_v2" "exampleFilteredDiskFormat" {
         ///   filter = "diskFormat eq Vmm.Content.OvaDiskFormat'QCOW2'"
         /// }
-        /// data "nutanix_getovasv2" "exampleFilteredName" {
+        /// data "nutanix_ovas_v2" "exampleFilteredName" {
         ///   filter = "name eq 'example-ova'"
         /// }
-        /// data "nutanix_getovasv2" "exampleFilteredParentVm" {
+        /// data "nutanix_ovas_v2" "exampleFilteredParentVm" {
         ///   filter = "parentVm eq 'LinuxServer_VM'"
         /// }
-        /// data "nutanix_getovasv2" "exampleFilteredSize" {
+        /// data "nutanix_ovas_v2" "exampleFilteredSize" {
         ///   filter = "sizeBytes eq 57"
         /// }
-        /// data "nutanix_getovasv2" "example2" {
+        /// data "nutanix_ovas_v2" "example2" {
         ///   filter   = "startswith(parentVm, 'Linux')"
         ///   limit    = 10
         ///   select   = "diskFormat,extId,name,vmConfig,checksum"
@@ -768,7 +768,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -776,21 +776,21 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getovasv2" "example" {
+        /// data "nutanix_ovas_v2" "example" {
         /// }
-        /// data "nutanix_getovasv2" "exampleFilteredDiskFormat" {
+        /// data "nutanix_ovas_v2" "exampleFilteredDiskFormat" {
         ///   filter = "diskFormat eq Vmm.Content.OvaDiskFormat'QCOW2'"
         /// }
-        /// data "nutanix_getovasv2" "exampleFilteredName" {
+        /// data "nutanix_ovas_v2" "exampleFilteredName" {
         ///   filter = "name eq 'example-ova'"
         /// }
-        /// data "nutanix_getovasv2" "exampleFilteredParentVm" {
+        /// data "nutanix_ovas_v2" "exampleFilteredParentVm" {
         ///   filter = "parentVm eq 'LinuxServer_VM'"
         /// }
-        /// data "nutanix_getovasv2" "exampleFilteredSize" {
+        /// data "nutanix_ovas_v2" "exampleFilteredSize" {
         ///   filter = "sizeBytes eq 57"
         /// }
-        /// data "nutanix_getovasv2" "example2" {
+        /// data "nutanix_ovas_v2" "example2" {
         ///   filter   = "startswith(parentVm, 'Linux')"
         ///   limit    = 10
         ///   select   = "diskFormat,extId,name,vmConfig,checksum"

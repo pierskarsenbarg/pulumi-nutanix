@@ -110,7 +110,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -118,15 +118,15 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getfloatingipsv2" "floating-ips" {
+        /// data "nutanix_floating_ips_v2" "floating-ips" {
         /// }
-        /// data "nutanix_getfloatingipsv2" "floating-ips-filter" {
+        /// data "nutanix_floating_ips_v2" "floating-ips-filter" {
         ///   filter = "name eq 'floating_ip_example'"
         /// }
-        /// data "nutanix_getfloatingipsv2" "floating-ips-limit" {
+        /// data "nutanix_floating_ips_v2" "floating-ips-limit" {
         ///   limit = 10
         /// }
-        /// data "nutanix_getfloatingipsv2" "floating-ips-filter-limit" {
+        /// data "nutanix_floating_ips_v2" "floating-ips-filter-limit" {
         ///   filter = "name eq 'floating_ip_example'"
         ///   limit  = 10
         /// }
@@ -297,7 +297,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -305,15 +305,15 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getfloatingipsv2" "floating-ips" {
+        /// data "nutanix_floating_ips_v2" "floating-ips" {
         /// }
-        /// data "nutanix_getfloatingipsv2" "floating-ips-filter" {
+        /// data "nutanix_floating_ips_v2" "floating-ips-filter" {
         ///   filter = "name eq 'floating_ip_example'"
         /// }
-        /// data "nutanix_getfloatingipsv2" "floating-ips-limit" {
+        /// data "nutanix_floating_ips_v2" "floating-ips-limit" {
         ///   limit = 10
         /// }
-        /// data "nutanix_getfloatingipsv2" "floating-ips-filter-limit" {
+        /// data "nutanix_floating_ips_v2" "floating-ips-filter-limit" {
         ///   filter = "name eq 'floating_ip_example'"
         ///   limit  = 10
         /// }
@@ -484,7 +484,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -492,15 +492,15 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getfloatingipsv2" "floating-ips" {
+        /// data "nutanix_floating_ips_v2" "floating-ips" {
         /// }
-        /// data "nutanix_getfloatingipsv2" "floating-ips-filter" {
+        /// data "nutanix_floating_ips_v2" "floating-ips-filter" {
         ///   filter = "name eq 'floating_ip_example'"
         /// }
-        /// data "nutanix_getfloatingipsv2" "floating-ips-limit" {
+        /// data "nutanix_floating_ips_v2" "floating-ips-limit" {
         ///   limit = 10
         /// }
-        /// data "nutanix_getfloatingipsv2" "floating-ips-filter-limit" {
+        /// data "nutanix_floating_ips_v2" "floating-ips-filter-limit" {
         ///   filter = "name eq 'floating_ip_example'"
         ///   limit  = 10
         /// }

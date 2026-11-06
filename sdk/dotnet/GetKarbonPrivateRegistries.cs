@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -27,7 +27,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getkarbonprivateregistries" "registry" {
+        /// data "nutanix_karbon_private_registries" "registry" {
         ///   cluster_id = "&lt;YOUR-CLUSTER-ID&gt;"
         /// }
         /// ```
@@ -51,7 +51,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -59,7 +59,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getkarbonprivateregistries" "registry" {
+        /// data "nutanix_karbon_private_registries" "registry" {
         ///   cluster_id = "&lt;YOUR-CLUSTER-ID&gt;"
         /// }
         /// ```
@@ -83,7 +83,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -91,7 +91,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getkarbonprivateregistries" "registry" {
+        /// data "nutanix_karbon_private_registries" "registry" {
         ///   cluster_id = "&lt;YOUR-CLUSTER-ID&gt;"
         /// }
         /// ```

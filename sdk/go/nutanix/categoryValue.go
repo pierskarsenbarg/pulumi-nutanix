@@ -37,7 +37,7 @@ import (
 //				return err
 //			}
 //			_, err = nutanix.NewCategoryValue(ctx, "test", &nutanix.CategoryValueArgs{
-//				Name:        test_category_key.ID().ToIDOutput().ToStringOutput(),
+//				Name:        test_category_key.ID(),
 //				Description: pulumi.String("Test Category Value"),
 //				Value:       pulumi.String("test-value"),
 //			})

@@ -80,7 +80,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -88,7 +88,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getpcrestorepointv2" "getRestorePoint" {
+        /// data "nutanix_pc_restore_point_v2" "getRestorePoint" {
         ///   restorable_domain_manager_ext_id = testNutanixRestorablePcsV2.restorablePcs[0].extId
         ///   restore_source_ext_id            = cluster-location.id
         ///   ext_id                           = test.restorePoints[0].extId
@@ -119,9 +119,9 @@ namespace PiersKarsenbarg.Nutanix
         ///     public static void stack(Context ctx) {
         ///         // this is PE based module, so use PE provider alias
         ///         final var getRestorePoint = NutanixFunctions.getPcRestorePointV2(GetPcRestorePointV2Args.builder()
-        ///             .restorableDomainManagerExtId(testNutanixRestorablePcsV2.restorablePcs()[0].extId())
-        ///             .restoreSourceExtId(cluster_location.id())
-        ///             .extId(test.restorePoints()[0].extId())
+        ///             .restorableDomainManagerExtId(testNutanixRestorablePcsV2.get("restorablePcs")[0].get("extId"))
+        ///             .restoreSourceExtId(cluster_location.get("id"))
+        ///             .extId(test.get("restorePoints")[0].get("extId"))
         ///             .build());
         /// 
         ///     }
@@ -211,7 +211,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -219,7 +219,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getpcrestorepointv2" "getRestorePoint" {
+        /// data "nutanix_pc_restore_point_v2" "getRestorePoint" {
         ///   restorable_domain_manager_ext_id = testNutanixRestorablePcsV2.restorablePcs[0].extId
         ///   restore_source_ext_id            = cluster-location.id
         ///   ext_id                           = test.restorePoints[0].extId
@@ -250,9 +250,9 @@ namespace PiersKarsenbarg.Nutanix
         ///     public static void stack(Context ctx) {
         ///         // this is PE based module, so use PE provider alias
         ///         final var getRestorePoint = NutanixFunctions.getPcRestorePointV2(GetPcRestorePointV2Args.builder()
-        ///             .restorableDomainManagerExtId(testNutanixRestorablePcsV2.restorablePcs()[0].extId())
-        ///             .restoreSourceExtId(cluster_location.id())
-        ///             .extId(test.restorePoints()[0].extId())
+        ///             .restorableDomainManagerExtId(testNutanixRestorablePcsV2.get("restorablePcs")[0].get("extId"))
+        ///             .restoreSourceExtId(cluster_location.get("id"))
+        ///             .extId(test.get("restorePoints")[0].get("extId"))
         ///             .build());
         /// 
         ///     }
@@ -342,7 +342,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -350,7 +350,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getpcrestorepointv2" "getRestorePoint" {
+        /// data "nutanix_pc_restore_point_v2" "getRestorePoint" {
         ///   restorable_domain_manager_ext_id = testNutanixRestorablePcsV2.restorablePcs[0].extId
         ///   restore_source_ext_id            = cluster-location.id
         ///   ext_id                           = test.restorePoints[0].extId
@@ -381,9 +381,9 @@ namespace PiersKarsenbarg.Nutanix
         ///     public static void stack(Context ctx) {
         ///         // this is PE based module, so use PE provider alias
         ///         final var getRestorePoint = NutanixFunctions.getPcRestorePointV2(GetPcRestorePointV2Args.builder()
-        ///             .restorableDomainManagerExtId(testNutanixRestorablePcsV2.restorablePcs()[0].extId())
-        ///             .restoreSourceExtId(cluster_location.id())
-        ///             .extId(test.restorePoints()[0].extId())
+        ///             .restorableDomainManagerExtId(testNutanixRestorablePcsV2.get("restorablePcs")[0].get("extId"))
+        ///             .restoreSourceExtId(cluster_location.get("id"))
+        ///             .extId(test.get("restorePoints")[0].get("extId"))
         ///             .build());
         /// 
         ///     }

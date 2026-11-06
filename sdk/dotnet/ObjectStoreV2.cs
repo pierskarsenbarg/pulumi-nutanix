@@ -40,11 +40,11 @@ namespace PiersKarsenbarg.Nutanix
     ///         Domain = "msp.pc-idbc.nutanix.com",
     ///         NumWorkerNodes = 1,
     ///         ClusterExtId = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
-    ///         TotalCapacityGib = Std.Pow.Invoke(new()
+    ///         TotalCapacityGib = Output.Create(Std.Pow.Invoke(new()
     ///         {
-    ///             Base = 1024,
-    ///             Exponent = 3,
-    ///         }).Apply(invoke =&gt; 20 * invoke.Result),
+    ///             Base = 1024.0,
+    ///             Exponent = 3.0,
+    ///         }).Apply(invoke =&gt; 20.0 * invoke.Result)).Apply(x =&gt; (int)x),
     ///         PublicNetworkReference = "57c4caf1-67e3-457e-8265-6d872f2a3135",
     ///         PublicNetworkIps = new[]
     ///         {
@@ -82,11 +82,11 @@ namespace PiersKarsenbarg.Nutanix
     ///         Domain = "msp.pc-idbc.nutanix.com",
     ///         NumWorkerNodes = 1,
     ///         ClusterExtId = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
-    ///         TotalCapacityGib = Std.Pow.Invoke(new()
+    ///         TotalCapacityGib = Output.Create(Std.Pow.Invoke(new()
     ///         {
-    ///             Base = 1024,
-    ///             Exponent = 3,
-    ///         }).Apply(invoke =&gt; 20 * invoke.Result),
+    ///             Base = 1024.0,
+    ///             Exponent = 3.0,
+    ///         }).Apply(invoke =&gt; 20.0 * invoke.Result)).Apply(x =&gt; (int)x),
     ///         PublicNetworkReference = "57c4caf1-67e3-457e-8265-6d872f2a3135",
     ///         State = "UNDEPLOYED_OBJECT_STORE",
     ///         PublicNetworkIps = new[]

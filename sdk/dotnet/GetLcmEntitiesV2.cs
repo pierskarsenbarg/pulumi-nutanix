@@ -91,7 +91,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -99,12 +99,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getlcmentityv2" "entities" {
+        /// data "nutanix_lcm_entity_v2" "entities" {
         /// }
-        /// data "nutanix_getlcmentitiesv2" "lcm-entities-filtered" {
+        /// data "nutanix_lcm_entities_v2" "lcm-entities-filtered" {
         ///   filter = "entityModel eq 'Calm Policy Engine'"
         /// }
-        /// data "nutanix_getlcmentitiesv2" "lcm-entities-limit" {
+        /// data "nutanix_lcm_entities_v2" "lcm-entities-limit" {
         ///   limit = 5
         /// }
         /// ```
@@ -245,7 +245,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -253,12 +253,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getlcmentityv2" "entities" {
+        /// data "nutanix_lcm_entity_v2" "entities" {
         /// }
-        /// data "nutanix_getlcmentitiesv2" "lcm-entities-filtered" {
+        /// data "nutanix_lcm_entities_v2" "lcm-entities-filtered" {
         ///   filter = "entityModel eq 'Calm Policy Engine'"
         /// }
-        /// data "nutanix_getlcmentitiesv2" "lcm-entities-limit" {
+        /// data "nutanix_lcm_entities_v2" "lcm-entities-limit" {
         ///   limit = 5
         /// }
         /// ```
@@ -399,7 +399,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -407,12 +407,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getlcmentityv2" "entities" {
+        /// data "nutanix_lcm_entity_v2" "entities" {
         /// }
-        /// data "nutanix_getlcmentitiesv2" "lcm-entities-filtered" {
+        /// data "nutanix_lcm_entities_v2" "lcm-entities-filtered" {
         ///   filter = "entityModel eq 'Calm Policy Engine'"
         /// }
-        /// data "nutanix_getlcmentitiesv2" "lcm-entities-limit" {
+        /// data "nutanix_lcm_entities_v2" "lcm-entities-limit" {
         ///   limit = 5
         /// }
         /// ```

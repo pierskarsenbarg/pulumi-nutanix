@@ -190,7 +190,7 @@ class PcRestoreV2(pulumi.CustomResource):
         domain_manager_ext_id = cls["clusterEntities"][0]["extId"]
         cluster_ext_id = [cluster.ext_id for cluster in clusters.cluster_entities if cluster.config[0]["clusterFunction"][0] != "PRISM_CENTRAL"][0]
         # Create a restore source, before make sure to get the cluster ext_id from PC and create backup target
-        # wait until backup target is synced, you can check the last_sync_time from the backup target data source
+        # wait until backup target is synced, you can check the last_sync_time from the backup target function
         cluster_location = nutanix.PcRestoreSourceV2("cluster-location", location={
             "cluster_locations": [{
                 "configs": [{
@@ -207,7 +207,7 @@ class PcRestoreV2(pulumi.CustomResource):
             ext_id=restore_points.restore_points[0].ext_id)
         restore_point_1 = restore_point
         # define the restore pc resource
-        # you can get these values from the data source nutanix_pc_v2, this data source is on PC provider
+        # you can get these values from the function nutanix_pc_v2, this function is on PC provider
         test = nutanix.PcRestoreV2("test",
             ext_id=restore_point_1.ext_id,
             restore_source_ext_id=cluster_location.id,
@@ -226,47 +226,47 @@ class PcRestoreV2(pulumi.CustomResource):
                     } for entry2 in restore_point_1.apply(lambda restore_point: [{"key": k, "value": v} for k, v in sorted(restore_point.domain_manager[0]["network"][0]["ntpServers"].items())])],
                     "external_address": {
                         "ipv4s": [{
-                            "value": restore_point_1.domain_manager[0]["network"][0]["externalAddress"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                            "value": restore_point_1.domain_manager[0]["network"][0]["externalAddress"][0]["ipv4"][0]["value"],
                         }],
                     },
                     "external_networks": [{
-                        "network_ext_id": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["networkExtId"].apply(lambda x: str(x)),
+                        "network_ext_id": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["networkExtId"],
                         "default_gateway": {
                             "ipv4s": [{
-                                "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["defaultGateway"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                                "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["defaultGateway"][0]["ipv4"][0]["value"],
                             }],
                         },
                         "subnet_mask": {
                             "ipv4s": [{
-                                "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["subnetMask"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                                "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["subnetMask"][0]["ipv4"][0]["value"],
                             }],
                         },
                         "ip_ranges": [{
                             "begin": {
                                 "ipv4s": [{
-                                    "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["ipRanges"][0]["begin"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                                    "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["ipRanges"][0]["begin"][0]["ipv4"][0]["value"],
                                 }],
                             },
                             "end": {
                                 "ipv4s": [{
-                                    "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["ipRanges"][0]["end"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                                    "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["ipRanges"][0]["end"][0]["ipv4"][0]["value"],
                                 }],
                             },
                         }],
                     }],
                 }],
                 "configs": [{
-                    "should_enable_lockdown_mode": restore_point_1.domain_manager[0]["config"][0]["shouldEnableLockdownMode"].apply(lambda x: x == "true"),
+                    "should_enable_lockdown_mode": restore_point_1.domain_manager[0]["config"][0]["shouldEnableLockdownMode"],
                     "build_info": {
-                        "version": restore_point_1.domain_manager[0]["config"][0]["buildInfo"][0]["version"].apply(lambda x: str(x)),
+                        "version": restore_point_1.domain_manager[0]["config"][0]["buildInfo"][0]["version"],
                     },
-                    "name": restore_point_1.domain_manager[0]["config"][0]["name"].apply(lambda x: str(x)),
-                    "size": restore_point_1.domain_manager[0]["config"][0]["size"].apply(lambda x: str(x)),
+                    "name": restore_point_1.domain_manager[0]["config"][0]["name"],
+                    "size": restore_point_1.domain_manager[0]["config"][0]["size"],
                     "resource_configs": [{
                         "container_ext_ids": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["containerExtIds"],
-                        "data_disk_size_bytes": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["dataDiskSizeBytes"].apply(lambda x: int(x)),
-                        "memory_size_bytes": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["memorySizeBytes"].apply(lambda x: int(x)),
-                        "num_vcpus": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["numVcpus"].apply(lambda x: int(x)),
+                        "data_disk_size_bytes": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["dataDiskSizeBytes"],
+                        "memory_size_bytes": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["memorySizeBytes"],
+                        "num_vcpus": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["numVcpus"],
                     }],
                 }],
             })
@@ -308,7 +308,7 @@ class PcRestoreV2(pulumi.CustomResource):
         domain_manager_ext_id = cls["clusterEntities"][0]["extId"]
         cluster_ext_id = [cluster.ext_id for cluster in clusters.cluster_entities if cluster.config[0]["clusterFunction"][0] != "PRISM_CENTRAL"][0]
         # Create a restore source, before make sure to get the cluster ext_id from PC and create backup target
-        # wait until backup target is synced, you can check the last_sync_time from the backup target data source
+        # wait until backup target is synced, you can check the last_sync_time from the backup target function
         cluster_location = nutanix.PcRestoreSourceV2("cluster-location", location={
             "cluster_locations": [{
                 "configs": [{
@@ -325,7 +325,7 @@ class PcRestoreV2(pulumi.CustomResource):
             ext_id=restore_points.restore_points[0].ext_id)
         restore_point_1 = restore_point
         # define the restore pc resource
-        # you can get these values from the data source nutanix_pc_v2, this data source is on PC provider
+        # you can get these values from the function nutanix_pc_v2, this function is on PC provider
         test = nutanix.PcRestoreV2("test",
             ext_id=restore_point_1.ext_id,
             restore_source_ext_id=cluster_location.id,
@@ -344,47 +344,47 @@ class PcRestoreV2(pulumi.CustomResource):
                     } for entry2 in restore_point_1.apply(lambda restore_point: [{"key": k, "value": v} for k, v in sorted(restore_point.domain_manager[0]["network"][0]["ntpServers"].items())])],
                     "external_address": {
                         "ipv4s": [{
-                            "value": restore_point_1.domain_manager[0]["network"][0]["externalAddress"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                            "value": restore_point_1.domain_manager[0]["network"][0]["externalAddress"][0]["ipv4"][0]["value"],
                         }],
                     },
                     "external_networks": [{
-                        "network_ext_id": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["networkExtId"].apply(lambda x: str(x)),
+                        "network_ext_id": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["networkExtId"],
                         "default_gateway": {
                             "ipv4s": [{
-                                "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["defaultGateway"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                                "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["defaultGateway"][0]["ipv4"][0]["value"],
                             }],
                         },
                         "subnet_mask": {
                             "ipv4s": [{
-                                "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["subnetMask"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                                "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["subnetMask"][0]["ipv4"][0]["value"],
                             }],
                         },
                         "ip_ranges": [{
                             "begin": {
                                 "ipv4s": [{
-                                    "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["ipRanges"][0]["begin"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                                    "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["ipRanges"][0]["begin"][0]["ipv4"][0]["value"],
                                 }],
                             },
                             "end": {
                                 "ipv4s": [{
-                                    "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["ipRanges"][0]["end"][0]["ipv4"][0]["value"].apply(lambda x: str(x)),
+                                    "value": restore_point_1.domain_manager[0]["network"][0]["externalNetworks"][0]["ipRanges"][0]["end"][0]["ipv4"][0]["value"],
                                 }],
                             },
                         }],
                     }],
                 }],
                 "configs": [{
-                    "should_enable_lockdown_mode": restore_point_1.domain_manager[0]["config"][0]["shouldEnableLockdownMode"].apply(lambda x: x == "true"),
+                    "should_enable_lockdown_mode": restore_point_1.domain_manager[0]["config"][0]["shouldEnableLockdownMode"],
                     "build_info": {
-                        "version": restore_point_1.domain_manager[0]["config"][0]["buildInfo"][0]["version"].apply(lambda x: str(x)),
+                        "version": restore_point_1.domain_manager[0]["config"][0]["buildInfo"][0]["version"],
                     },
-                    "name": restore_point_1.domain_manager[0]["config"][0]["name"].apply(lambda x: str(x)),
-                    "size": restore_point_1.domain_manager[0]["config"][0]["size"].apply(lambda x: str(x)),
+                    "name": restore_point_1.domain_manager[0]["config"][0]["name"],
+                    "size": restore_point_1.domain_manager[0]["config"][0]["size"],
                     "resource_configs": [{
                         "container_ext_ids": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["containerExtIds"],
-                        "data_disk_size_bytes": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["dataDiskSizeBytes"].apply(lambda x: int(x)),
-                        "memory_size_bytes": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["memorySizeBytes"].apply(lambda x: int(x)),
-                        "num_vcpus": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["numVcpus"].apply(lambda x: int(x)),
+                        "data_disk_size_bytes": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["dataDiskSizeBytes"],
+                        "memory_size_bytes": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["memorySizeBytes"],
+                        "num_vcpus": restore_point_1.domain_manager[0]["config"][0]["resourceConfig"][0]["numVcpus"],
                     }],
                 }],
             })

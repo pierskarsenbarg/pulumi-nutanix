@@ -117,7 +117,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -125,21 +125,21 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getcategoriesv2" "categories-list" {
+        /// data "nutanix_categories_v2" "categories-list" {
         /// }
-        /// data "nutanix_getcategoriesv2" "categories-paginated" {
+        /// data "nutanix_categories_v2" "categories-paginated" {
         ///   page  = 1
         ///   limit = 10
         /// }
-        /// data "nutanix_getcategoriesv2" "categories-sorted" {
+        /// data "nutanix_categories_v2" "categories-sorted" {
         ///   order_by = "key desc"
         /// }
-        /// data "nutanix_getcategoriesv2" "categories-filtered" {
+        /// data "nutanix_categories_v2" "categories-filtered" {
         ///   filter = "key eq 'key_example'"
         /// }
         /// 
         /// output "category" {
-        ///   value = data.nutanix_getcategoriesv2.categories-list.categories[0]
+        ///   value = data.nutanix_categories_v2.categories-list.categories[0]
         /// }
         /// ```
         /// ```java
@@ -357,7 +357,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -365,21 +365,21 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getcategoriesv2" "categories-list" {
+        /// data "nutanix_categories_v2" "categories-list" {
         /// }
-        /// data "nutanix_getcategoriesv2" "categories-paginated" {
+        /// data "nutanix_categories_v2" "categories-paginated" {
         ///   page  = 1
         ///   limit = 10
         /// }
-        /// data "nutanix_getcategoriesv2" "categories-sorted" {
+        /// data "nutanix_categories_v2" "categories-sorted" {
         ///   order_by = "key desc"
         /// }
-        /// data "nutanix_getcategoriesv2" "categories-filtered" {
+        /// data "nutanix_categories_v2" "categories-filtered" {
         ///   filter = "key eq 'key_example'"
         /// }
         /// 
         /// output "category" {
-        ///   value = data.nutanix_getcategoriesv2.categories-list.categories[0]
+        ///   value = data.nutanix_categories_v2.categories-list.categories[0]
         /// }
         /// ```
         /// ```java
@@ -597,7 +597,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -605,21 +605,21 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getcategoriesv2" "categories-list" {
+        /// data "nutanix_categories_v2" "categories-list" {
         /// }
-        /// data "nutanix_getcategoriesv2" "categories-paginated" {
+        /// data "nutanix_categories_v2" "categories-paginated" {
         ///   page  = 1
         ///   limit = 10
         /// }
-        /// data "nutanix_getcategoriesv2" "categories-sorted" {
+        /// data "nutanix_categories_v2" "categories-sorted" {
         ///   order_by = "key desc"
         /// }
-        /// data "nutanix_getcategoriesv2" "categories-filtered" {
+        /// data "nutanix_categories_v2" "categories-filtered" {
         ///   filter = "key eq 'key_example'"
         /// }
         /// 
         /// output "category" {
-        ///   value = data.nutanix_getcategoriesv2.categories-list.categories[0]
+        ///   value = data.nutanix_categories_v2.categories-list.categories[0]
         /// }
         /// ```
         /// ```java

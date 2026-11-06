@@ -39,7 +39,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     }).ToList()[0];
     /// 
     ///     // Create a restore source, before make sure to get the cluster ext_id from PC and create backup target
-    ///     // wait until backup target is synced, you can check the last_sync_time from the backup target data source
+    ///     // wait until backup target is synced, you can check the last_sync_time from the backup target function
     ///     var cluster_location = new Nutanix.PcRestoreSourceV2("cluster-location", new()
     ///     {
     ///         Location = new Nutanix.Inputs.PcRestoreSourceV2LocationArgs
@@ -83,7 +83,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     var restorePoint = restore_point;
     /// 
     ///     // define the restore pc resource
-    ///     // you can get these values from the data source nutanix_pc_v2, this data source is on PC provider
+    ///     // you can get these values from the function nutanix_pc_v2, this function is on PC provider
     ///     var test = new Nutanix.PcRestoreV2("test", new()
     ///     {
     ///         ExtId = restorePoint.Apply(restorePoint =&gt; restorePoint.ExtId),

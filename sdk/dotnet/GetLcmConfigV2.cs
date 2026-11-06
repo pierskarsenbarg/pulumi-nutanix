@@ -80,7 +80,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -88,9 +88,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getlcmconfigv2" "lcm-configuration" {
+        /// data "nutanix_lcm_config_v2" "lcm-configuration" {
         /// }
-        /// data "nutanix_getlcmconfigv2" "lcm-configuration-cluster" {
+        /// data "nutanix_lcm_config_v2" "lcm-configuration-cluster" {
         ///   x_cluster_id = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b"
         /// }
         /// 
@@ -214,7 +214,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -222,9 +222,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getlcmconfigv2" "lcm-configuration" {
+        /// data "nutanix_lcm_config_v2" "lcm-configuration" {
         /// }
-        /// data "nutanix_getlcmconfigv2" "lcm-configuration-cluster" {
+        /// data "nutanix_lcm_config_v2" "lcm-configuration-cluster" {
         ///   x_cluster_id = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b"
         /// }
         /// 
@@ -348,7 +348,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -356,9 +356,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getlcmconfigv2" "lcm-configuration" {
+        /// data "nutanix_lcm_config_v2" "lcm-configuration" {
         /// }
-        /// data "nutanix_getlcmconfigv2" "lcm-configuration-cluster" {
+        /// data "nutanix_lcm_config_v2" "lcm-configuration-cluster" {
         ///   x_cluster_id = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b"
         /// }
         /// 

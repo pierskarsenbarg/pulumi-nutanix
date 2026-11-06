@@ -91,7 +91,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -99,10 +99,10 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getpermission" "byuuid" {
+        /// data "nutanix_permission" "byuuid" {
         ///   permission_id = "26b81a55-2bca-48c6-9fab-4f82c6bb4284"
         /// }
-        /// data "nutanix_getpermission" "byname" {
+        /// data "nutanix_permission" "byname" {
         ///   permission_name = "Access_Console_Virtual_Machine"
         /// }
         /// 
@@ -242,7 +242,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -250,10 +250,10 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getpermission" "byuuid" {
+        /// data "nutanix_permission" "byuuid" {
         ///   permission_id = "26b81a55-2bca-48c6-9fab-4f82c6bb4284"
         /// }
-        /// data "nutanix_getpermission" "byname" {
+        /// data "nutanix_permission" "byname" {
         ///   permission_name = "Access_Console_Virtual_Machine"
         /// }
         /// 
@@ -393,7 +393,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -401,10 +401,10 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getpermission" "byuuid" {
+        /// data "nutanix_permission" "byuuid" {
         ///   permission_id = "26b81a55-2bca-48c6-9fab-4f82c6bb4284"
         /// }
-        /// data "nutanix_getpermission" "byname" {
+        /// data "nutanix_permission" "byname" {
         ///   permission_name = "Access_Console_Virtual_Machine"
         /// }
         /// 

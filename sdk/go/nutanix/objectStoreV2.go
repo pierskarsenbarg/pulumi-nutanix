@@ -50,7 +50,7 @@ import (
 //				Domain:                 pulumi.String("msp.pc-idbc.nutanix.com"),
 //				NumWorkerNodes:         pulumi.Int(1),
 //				ClusterExtId:           pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
-//				TotalCapacityGib:       pulumi.Int(20 * pulumi.Float64(invokePow.Result)),
+//				TotalCapacityGib:       pulumi.Int(20 * float64(invokePow.Result)),
 //				PublicNetworkReference: pulumi.String("57c4caf1-67e3-457e-8265-6d872f2a3135"),
 //				PublicNetworkIps: nutanix.ObjectStoreV2PublicNetworkIpArray{
 //					&nutanix.ObjectStoreV2PublicNetworkIpArgs{
@@ -89,7 +89,7 @@ import (
 //				Domain:                 pulumi.String("msp.pc-idbc.nutanix.com"),
 //				NumWorkerNodes:         pulumi.Int(1),
 //				ClusterExtId:           pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
-//				TotalCapacityGib:       pulumi.Int(20 * pulumi.Float64(invokePow1.Result)),
+//				TotalCapacityGib:       pulumi.Int(20 * float64(invokePow1.Result)),
 //				PublicNetworkReference: pulumi.String("57c4caf1-67e3-457e-8265-6d872f2a3135"),
 //				State:                  pulumi.String("UNDEPLOYED_OBJECT_STORE"),
 //				PublicNetworkIps: nutanix.ObjectStoreV2PublicNetworkIpArray{

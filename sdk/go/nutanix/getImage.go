@@ -37,7 +37,7 @@ import (
 //				return err
 //			}
 //			_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
-//				ImageId: testImage.ID().ToIDOutput().ToStringOutput(),
+//				ImageId: testImage.ID(),
 //			}, nil)
 //			_ = nutanix.GetImageOutput(ctx, nutanix.GetImageOutputArgs{
 //				ImageName: testImage.Name,

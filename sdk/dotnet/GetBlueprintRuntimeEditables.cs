@@ -105,7 +105,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     local = {
         ///       source = "pulumi/local"
@@ -116,13 +116,16 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getblueprintruntimeeditables" "example" {
+        /// data "nutanix_blueprint_runtime_editables" "example" {
         ///   bp_name = "NAME OF BLUEPRINT"
         /// }
         /// 
         /// # dumps read value into a readable json file
         /// resource "local_file" "dump_runtime_value" {
-        ///   content  = jsonencode(data.nutanix_getblueprintruntimeeditables.example.runtime_editables)
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
+        ///   content  = jsonencode(data.nutanix_blueprint_runtime_editables.example.runtime_editables)
         ///   filename = "runtime_value.json"
         /// }
         /// ```
@@ -279,7 +282,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     local = {
         ///       source = "pulumi/local"
@@ -290,13 +293,16 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getblueprintruntimeeditables" "example" {
+        /// data "nutanix_blueprint_runtime_editables" "example" {
         ///   bp_name = "NAME OF BLUEPRINT"
         /// }
         /// 
         /// # dumps read value into a readable json file
         /// resource "local_file" "dump_runtime_value" {
-        ///   content  = jsonencode(data.nutanix_getblueprintruntimeeditables.example.runtime_editables)
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
+        ///   content  = jsonencode(data.nutanix_blueprint_runtime_editables.example.runtime_editables)
         ///   filename = "runtime_value.json"
         /// }
         /// ```
@@ -453,7 +459,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     local = {
         ///       source = "pulumi/local"
@@ -464,13 +470,16 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getblueprintruntimeeditables" "example" {
+        /// data "nutanix_blueprint_runtime_editables" "example" {
         ///   bp_name = "NAME OF BLUEPRINT"
         /// }
         /// 
         /// # dumps read value into a readable json file
         /// resource "local_file" "dump_runtime_value" {
-        ///   content  = jsonencode(data.nutanix_getblueprintruntimeeditables.example.runtime_editables)
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
+        ///   content  = jsonencode(data.nutanix_blueprint_runtime_editables.example.runtime_editables)
         ///   filename = "runtime_value.json"
         /// }
         /// ```

@@ -68,7 +68,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -76,11 +76,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbprofiles" "profiles" {
+        /// data "nutanix_ndb_profiles" "profiles" {
         /// }
         /// 
         /// output "profilesList" {
-        ///   value = data.nutanix_getndbprofiles.profiles
+        ///   value = data.nutanix_ndb_profiles.profiles
         /// }
         /// ```
         /// ```java
@@ -204,7 +204,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -212,11 +212,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbprofiles" "profiles" {
+        /// data "nutanix_ndb_profiles" "profiles" {
         /// }
         /// 
         /// output "profilesList" {
-        ///   value = data.nutanix_getndbprofiles.profiles
+        ///   value = data.nutanix_ndb_profiles.profiles
         /// }
         /// ```
         /// ```java
@@ -340,7 +340,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -348,11 +348,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbprofiles" "profiles" {
+        /// data "nutanix_ndb_profiles" "profiles" {
         /// }
         /// 
         /// output "profilesList" {
-        ///   value = data.nutanix_getndbprofiles.profiles
+        ///   value = data.nutanix_ndb_profiles.profiles
         /// }
         /// ```
         /// ```java

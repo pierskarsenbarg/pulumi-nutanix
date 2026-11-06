@@ -99,7 +99,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -107,12 +107,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getusersv2" "list-users" {
+        /// data "nutanix_users_v2" "list-users" {
         /// }
-        /// data "nutanix_getusersv2" "filtered-users" {
+        /// data "nutanix_users_v2" "filtered-users" {
         ///   filter = "username eq 'username-example'"
         /// }
-        /// data "nutanix_getusersv2" "listServiceAccount" {
+        /// data "nutanix_users_v2" "listServiceAccount" {
         ///   filter = "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'"
         /// }
         /// 
@@ -320,7 +320,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -328,12 +328,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getusersv2" "list-users" {
+        /// data "nutanix_users_v2" "list-users" {
         /// }
-        /// data "nutanix_getusersv2" "filtered-users" {
+        /// data "nutanix_users_v2" "filtered-users" {
         ///   filter = "username eq 'username-example'"
         /// }
-        /// data "nutanix_getusersv2" "listServiceAccount" {
+        /// data "nutanix_users_v2" "listServiceAccount" {
         ///   filter = "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'"
         /// }
         /// 
@@ -541,7 +541,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -549,12 +549,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getusersv2" "list-users" {
+        /// data "nutanix_users_v2" "list-users" {
         /// }
-        /// data "nutanix_getusersv2" "filtered-users" {
+        /// data "nutanix_users_v2" "filtered-users" {
         ///   filter = "username eq 'username-example'"
         /// }
-        /// data "nutanix_getusersv2" "listServiceAccount" {
+        /// data "nutanix_users_v2" "listServiceAccount" {
         ///   filter = "userType eq Schema.Enums.UserType'SERVICE_ACCOUNT'"
         /// }
         /// 

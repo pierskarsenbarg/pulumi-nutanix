@@ -79,7 +79,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -87,13 +87,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbprofile" "profile1" {
+        /// data "nutanix_ndb_profile" "profile1" {
         ///   profile_type = "Network"
         ///   profile_name = "TEST_NETWORK_PROFILE"
         /// }
         /// 
         /// output "profile" {
-        ///   value = data.nutanix_getndbprofile.profile1
+        ///   value = data.nutanix_ndb_profile.profile1
         /// }
         /// ```
         /// ```java
@@ -209,7 +209,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -217,13 +217,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbprofile" "profile1" {
+        /// data "nutanix_ndb_profile" "profile1" {
         ///   profile_type = "Network"
         ///   profile_name = "TEST_NETWORK_PROFILE"
         /// }
         /// 
         /// output "profile" {
-        ///   value = data.nutanix_getndbprofile.profile1
+        ///   value = data.nutanix_ndb_profile.profile1
         /// }
         /// ```
         /// ```java
@@ -339,7 +339,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -347,13 +347,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbprofile" "profile1" {
+        /// data "nutanix_ndb_profile" "profile1" {
         ///   profile_type = "Network"
         ///   profile_name = "TEST_NETWORK_PROFILE"
         /// }
         /// 
         /// output "profile" {
-        ///   value = data.nutanix_getndbprofile.profile1
+        ///   value = data.nutanix_ndb_profile.profile1
         /// }
         /// ```
         /// ```java

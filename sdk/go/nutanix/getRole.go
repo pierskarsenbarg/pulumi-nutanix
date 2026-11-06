@@ -42,7 +42,7 @@ import (
 //				return err
 //			}
 //			_ = nutanix.GetRoleOutput(ctx, nutanix.GetRoleOutputArgs{
-//				RoleId: testRole.ID().ToIDOutput().ToStringOutput(),
+//				RoleId: testRole.ID(),
 //			}, nil)
 //			return nil
 //		})

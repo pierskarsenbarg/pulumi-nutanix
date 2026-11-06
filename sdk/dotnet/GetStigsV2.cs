@@ -125,7 +125,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -133,18 +133,18 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getstigsv2" "all" {
+        /// data "nutanix_stigs_v2" "all" {
         /// }
-        /// data "nutanix_getstigsv2" "filtered-status" {
+        /// data "nutanix_stigs_v2" "filtered-status" {
         ///   filter = "status eq Security.Report.StigStatus'APPLICABLE'"
         /// }
-        /// data "nutanix_getstigsv2" "filtered-severity" {
+        /// data "nutanix_stigs_v2" "filtered-severity" {
         ///   filter = "severity eq Security.Report.Severity'HIGH'"
         /// }
-        /// data "nutanix_getstigsv2" "limited" {
+        /// data "nutanix_stigs_v2" "limited" {
         ///   limit = 2
         /// }
-        /// data "nutanix_getstigsv2" "select-example" {
+        /// data "nutanix_stigs_v2" "select-example" {
         ///   select = "stigVersion,status"
         /// }
         /// ```
@@ -336,7 +336,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -344,18 +344,18 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getstigsv2" "all" {
+        /// data "nutanix_stigs_v2" "all" {
         /// }
-        /// data "nutanix_getstigsv2" "filtered-status" {
+        /// data "nutanix_stigs_v2" "filtered-status" {
         ///   filter = "status eq Security.Report.StigStatus'APPLICABLE'"
         /// }
-        /// data "nutanix_getstigsv2" "filtered-severity" {
+        /// data "nutanix_stigs_v2" "filtered-severity" {
         ///   filter = "severity eq Security.Report.Severity'HIGH'"
         /// }
-        /// data "nutanix_getstigsv2" "limited" {
+        /// data "nutanix_stigs_v2" "limited" {
         ///   limit = 2
         /// }
-        /// data "nutanix_getstigsv2" "select-example" {
+        /// data "nutanix_stigs_v2" "select-example" {
         ///   select = "stigVersion,status"
         /// }
         /// ```
@@ -547,7 +547,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -555,18 +555,18 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getstigsv2" "all" {
+        /// data "nutanix_stigs_v2" "all" {
         /// }
-        /// data "nutanix_getstigsv2" "filtered-status" {
+        /// data "nutanix_stigs_v2" "filtered-status" {
         ///   filter = "status eq Security.Report.StigStatus'APPLICABLE'"
         /// }
-        /// data "nutanix_getstigsv2" "filtered-severity" {
+        /// data "nutanix_stigs_v2" "filtered-severity" {
         ///   filter = "severity eq Security.Report.Severity'HIGH'"
         /// }
-        /// data "nutanix_getstigsv2" "limited" {
+        /// data "nutanix_stigs_v2" "limited" {
         ///   limit = 2
         /// }
-        /// data "nutanix_getstigsv2" "select-example" {
+        /// data "nutanix_stigs_v2" "select-example" {
         ///   select = "stigVersion,status"
         /// }
         /// ```

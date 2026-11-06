@@ -95,7 +95,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -103,10 +103,10 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getuserkeysv2" "getKeys" {
+        /// data "nutanix_user_keys_v2" "getKeys" {
         ///   user_ext_id = "&lt;SERVICE_ACCOUNT_UUID&gt;"
         /// }
-        /// data "nutanix_getuserkeysv2" "getKeysFilter" {
+        /// data "nutanix_user_keys_v2" "getKeysFilter" {
         ///   user_ext_id = "&lt;SERVICE_ACCOUNT_UUID&gt;"
         ///   filter      = "name eq '&lt;NAME_OF_API_KEY&gt;'"
         /// }
@@ -296,7 +296,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -304,10 +304,10 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getuserkeysv2" "getKeys" {
+        /// data "nutanix_user_keys_v2" "getKeys" {
         ///   user_ext_id = "&lt;SERVICE_ACCOUNT_UUID&gt;"
         /// }
-        /// data "nutanix_getuserkeysv2" "getKeysFilter" {
+        /// data "nutanix_user_keys_v2" "getKeysFilter" {
         ///   user_ext_id = "&lt;SERVICE_ACCOUNT_UUID&gt;"
         ///   filter      = "name eq '&lt;NAME_OF_API_KEY&gt;'"
         /// }
@@ -497,7 +497,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -505,10 +505,10 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getuserkeysv2" "getKeys" {
+        /// data "nutanix_user_keys_v2" "getKeys" {
         ///   user_ext_id = "&lt;SERVICE_ACCOUNT_UUID&gt;"
         /// }
-        /// data "nutanix_getuserkeysv2" "getKeysFilter" {
+        /// data "nutanix_user_keys_v2" "getKeysFilter" {
         ///   user_ext_id = "&lt;SERVICE_ACCOUNT_UUID&gt;"
         ///   filter      = "name eq '&lt;NAME_OF_API_KEY&gt;'"
         /// }

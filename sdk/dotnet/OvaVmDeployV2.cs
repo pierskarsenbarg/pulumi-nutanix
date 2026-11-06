@@ -31,7 +31,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         OverrideVmConfig = new Nutanix.Inputs.OvaVmDeployV2OverrideVmConfigArgs
     ///         {
     ///             Name = "vm-from-ova",
-    ///             MemorySizeBytes = 8 * 1024 * 1024 * 1024,
+    ///             MemorySizeBytes = (int)(8 * 1024 * 1024.0 * 1024.0),
     ///             Nics = new[]
     ///             {
     ///                 new Nutanix.Inputs.OvaVmDeployV2OverrideVmConfigNicArgs
@@ -84,7 +84,7 @@ namespace PiersKarsenbarg.Nutanix
     ///                             {
     ///                                 new Nutanix.Inputs.OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskArgs
     ///                                 {
-    ///                                     DiskSizeBytes = 10 * 1024 * 1024 * 1024,
+    ///                                     DiskSizeBytes = (int)(10 * 1024 * 1024.0 * 1024.0),
     ///                                 },
     ///                             },
     ///                         },
