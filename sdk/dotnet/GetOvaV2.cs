@@ -470,6 +470,10 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string ParentVm;
         /// <summary>
+        /// - External identifier of the project associated with the OVA.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
         /// - Size of OVA in bytes.
         /// </summary>
         public readonly int SizeBytes;
@@ -510,6 +514,8 @@ namespace PiersKarsenbarg.Nutanix
 
             string parentVm,
 
+            string projectExtId,
+
             int sizeBytes,
 
             ImmutableArray<Outputs.GetOvaV2SourceResult> sources,
@@ -529,6 +535,7 @@ namespace PiersKarsenbarg.Nutanix
             Links = links;
             Name = name;
             ParentVm = parentVm;
+            ProjectExtId = projectExtId;
             SizeBytes = sizeBytes;
             Sources = sources;
             TenantId = tenantId;

@@ -7,6 +7,7 @@ from . import _utilities
 import typing
 # Export this package's modules as members:
 from .access_control_policy import *
+from .ad_group_category_mapping_v2 import *
 from .address_group import *
 from .address_groups_v2 import *
 from .associate_category_to_volume_group_v2 import *
@@ -15,11 +16,13 @@ from .category_key import *
 from .category_v2 import *
 from .category_value import *
 from .cluster_add_node_v2 import *
+from .cluster_category_associations_v2 import *
 from .cluster_profile_v2 import *
 from .cluster_v2 import *
 from .clusters_discover_unconfigured_nodes_v2 import *
 from .clusters_unconfigured_node_networks_v2 import *
 from .deploy_templates_v2 import *
+from .directory_server_config_v2 import *
 from .directory_services_v2 import *
 from .entity_group_v2 import *
 from .floating_ip import *
@@ -32,6 +35,8 @@ from .foundation_image_nodes import *
 from .foundation_ipmi_config import *
 from .get_access_control_policies import *
 from .get_access_control_policy import *
+from .get_ad_group_category_mapping_v2 import *
+from .get_ad_group_category_mappings_v2 import *
 from .get_address_group import *
 from .get_address_group_v2 import *
 from .get_address_groups import *
@@ -51,8 +56,12 @@ from .get_cluster_profiles_v2 import *
 from .get_cluster_v2 import *
 from .get_clusters import *
 from .get_clusters_v2 import *
+from .get_directory_server_config_v2 import *
+from .get_directory_server_configs_v2 import *
+from .get_directory_service_users_search_v2 import *
 from .get_directory_service_v2 import *
 from .get_directory_services_v2 import *
+from .get_effective_image_rate_limit_policies_v2 import *
 from .get_entity_group_v2 import *
 from .get_entity_groups_v2 import *
 from .get_floating_ip import *
@@ -78,6 +87,8 @@ from .get_iam_entity_v2 import *
 from .get_image import *
 from .get_image_placement_policies_v2 import *
 from .get_image_placement_policy_v2 import *
+from .get_image_rate_limit_policies_v2 import *
+from .get_image_rate_limit_policy_v2 import *
 from .get_image_v2 import *
 from .get_images_v2 import *
 from .get_karbon_cluster import *
@@ -123,6 +134,7 @@ from .get_network_security_policy_rules_v2 import *
 from .get_network_security_policy_v2 import *
 from .get_network_security_rule import *
 from .get_ngt_configuration_v2 import *
+from .get_node_schedulable_statuses_v2 import *
 from .get_object_store_v2 import *
 from .get_object_stores_v2 import *
 from .get_operation_v2 import *
@@ -143,7 +155,9 @@ from .get_pcs_v2 import *
 from .get_permission import *
 from .get_permissions import *
 from .get_project import *
+from .get_project_v2 import *
 from .get_projects import *
+from .get_projects_v2 import *
 from .get_protected_resource_v2 import *
 from .get_protection_policies_v2 import *
 from .get_protection_policy_v2 import *
@@ -153,8 +167,13 @@ from .get_recovery_plan import *
 from .get_recovery_plans import *
 from .get_recovery_point_v2 import *
 from .get_recovery_points_v2 import *
+from .get_resource_group_v2 import *
+from .get_resource_groups_v2 import *
 from .get_restorable_pcs_v2 import *
 from .get_role import *
+from .get_role_membership_summary_v2 import *
+from .get_role_membership_v2 import *
+from .get_role_memberships_v2 import *
 from .get_role_v2 import *
 from .get_roles import *
 from .get_roles_v2 import *
@@ -171,6 +190,9 @@ from .get_service_group import *
 from .get_service_group_v2 import *
 from .get_service_groups import *
 from .get_service_groups_v2 import *
+from .get_snmp_config_v2 import *
+from .get_snmp_trap_v2 import *
+from .get_snmp_user_v2 import *
 from .get_ssl_certificate_v2 import *
 from .get_static_routes import *
 from .get_stigs_v2 import *
@@ -184,6 +206,8 @@ from .get_subnet_v2 import *
 from .get_subnets import *
 from .get_subnets_v2 import *
 from .get_system_user_passwords_v2 import *
+from .get_template_placement_policies_v2 import *
+from .get_template_placement_policy_v2 import *
 from .get_template_v2 import *
 from .get_templates_v2 import *
 from .get_user import *
@@ -199,11 +223,26 @@ from .get_users_v2 import *
 from .get_virtual_machine import *
 from .get_virtual_machine_v2 import *
 from .get_virtual_machines_v2 import *
+from .get_virtual_switch_v2 import *
+from .get_virtual_switches_v2 import *
 from .get_vm_anti_affinity_policies_v2 import *
 from .get_vm_anti_affinity_policy_v2 import *
+from .get_vm_guest_customization_profile_v2 import *
+from .get_vm_guest_customization_profiles_v2 import *
 from .get_vm_host_affinity_policies_v2 import *
 from .get_vm_host_affinity_policy_v2 import *
 from .get_vm_recovery_point_info_v2 import *
+from .get_vm_startup_policies_v2 import *
+from .get_vm_startup_policy_dependency_conflict_dependee_vms_v2 import *
+from .get_vm_startup_policy_dependency_conflict_dependent_vms_v2 import *
+from .get_vm_startup_policy_dependency_conflict_v2 import *
+from .get_vm_startup_policy_dependency_conflicts_v2 import *
+from .get_vm_startup_policy_start_condition_conflict_dependee_vms_v2 import *
+from .get_vm_startup_policy_start_condition_conflict_dependent_vms_v2 import *
+from .get_vm_startup_policy_start_condition_conflict_v2 import *
+from .get_vm_startup_policy_start_condition_conflicts_v2 import *
+from .get_vm_startup_policy_v2 import *
+from .get_vm_startup_policy_vm_compliance_states_v2 import *
 from .get_volume_group_disk_v2 import *
 from .get_volume_group_disks_v2 import *
 from .get_volume_group_v2 import *
@@ -212,10 +251,12 @@ from .get_volume_iscsi_client_v2 import *
 from .get_volume_iscsi_clients_v2 import *
 from .get_vpc import *
 from .get_vpc_v2 import *
+from .get_vpc_virtual_switch_mappings_v2 import *
 from .get_vpcs import *
 from .get_vpcs_v2 import *
 from .image import *
 from .image_placement_policy_v2 import *
+from .image_rate_limit_policy_v2 import *
 from .images_v2 import *
 from .karbon_cluster import *
 from .karbon_private_registry import *
@@ -249,6 +290,8 @@ from .ndb_stretched_vlan import *
 from .ndb_tag import *
 from .ndb_tms_cluster import *
 from .network_function_v2 import *
+from .network_security_policy_export_v2 import *
+from .network_security_policy_import_v2 import *
 from .network_security_policy_v2 import *
 from .network_security_rule import *
 from .ngt_insert_iso_v2 import *
@@ -269,6 +312,7 @@ from .pc_restore_source_v2 import *
 from .pc_restore_v2 import *
 from .pc_unregistration_v2 import *
 from .project import *
+from .project_v2 import *
 from .promote_protected_resource_v2 import *
 from .protection_policy_v2 import *
 from .protection_rule import *
@@ -277,8 +321,10 @@ from .recovery_plan import *
 from .recovery_point_replicate_v2 import *
 from .recovery_point_restore_v2 import *
 from .recovery_points_v2 import *
+from .resource_group_v2 import *
 from .restore_protected_resource_v2 import *
 from .role import *
+from .role_membership_v2 import *
 from .roles_v2 import *
 from .routes_v2 import *
 from .saml_identity_providers_v2 import *
@@ -289,6 +335,9 @@ from .self_service_app_recovery_point import *
 from .self_service_app_restore import *
 from .service_group import *
 from .service_groups_v2 import *
+from .snmp_config_v2 import *
+from .snmp_trap_v2 import *
+from .snmp_user_v2 import *
 from .ssl_certificate_v2 import *
 from .static_routes import *
 from .storage_containers_v2 import *
@@ -296,6 +345,7 @@ from .storage_policy_v2 import *
 from .subnet import *
 from .subnet_v2 import *
 from .template_guest_os_actions_v2 import *
+from .template_placement_policy_v2 import *
 from .template_v2 import *
 from .user import *
 from .user_groups import *
@@ -305,21 +355,25 @@ from .user_key_v2 import *
 from .users_v2 import *
 from .virtual_machine import *
 from .virtual_machine_v2 import *
+from .virtual_switch_v2 import *
 from .vm_anti_affinity_policy_v2 import *
 from .vm_cdrom_insert_eject_v2 import *
 from .vm_clone_v2 import *
 from .vm_gc_update_v2 import *
+from .vm_guest_customization_profile_v2 import *
 from .vm_host_affinity_policy_v2 import *
 from .vm_network_device_assign_ip_v2 import *
 from .vm_network_device_migrate_v2 import *
 from .vm_revert_v2 import *
 from .vm_shutdown_action_v2 import *
+from .vm_startup_policy_v2 import *
 from .volume_group_disk_v2 import *
 from .volume_group_iscsi_client_v2 import *
 from .volume_group_v2 import *
 from .volume_group_vm_v2 import *
 from .vpc import *
 from .vpc_v2 import *
+from .vpc_virtual_switch_mapping_v2 import *
 from ._inputs import *
 from . import outputs
 
@@ -339,6 +393,14 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/accessControlPolicy:AccessControlPolicy": "AccessControlPolicy"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/adGroupCategoryMappingV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/adGroupCategoryMappingV2:AdGroupCategoryMappingV2": "AdGroupCategoryMappingV2"
   }
  },
  {
@@ -407,6 +469,14 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/clusterCategoryAssociationsV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/clusterCategoryAssociationsV2:ClusterCategoryAssociationsV2": "ClusterCategoryAssociationsV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/clusterProfileV2",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -443,6 +513,14 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/deployTemplatesV2:DeployTemplatesV2": "DeployTemplatesV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/directoryServerConfigV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/directoryServerConfigV2:DirectoryServerConfigV2": "DirectoryServerConfigV2"
   }
  },
  {
@@ -539,6 +617,14 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/imagePlacementPolicyV2:ImagePlacementPolicyV2": "ImagePlacementPolicyV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/imageRateLimitPolicyV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/imageRateLimitPolicyV2:ImageRateLimitPolicyV2": "ImageRateLimitPolicyV2"
   }
  },
  {
@@ -807,6 +893,22 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/networkSecurityPolicyExportV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/networkSecurityPolicyExportV2:NetworkSecurityPolicyExportV2": "NetworkSecurityPolicyExportV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/networkSecurityPolicyImportV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/networkSecurityPolicyImportV2:NetworkSecurityPolicyImportV2": "NetworkSecurityPolicyImportV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/networkSecurityPolicyV2",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -967,6 +1069,14 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/projectV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/projectV2:ProjectV2": "ProjectV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/promoteProtectedResourceV2",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -1023,6 +1133,14 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/resourceGroupV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/resourceGroupV2:ResourceGroupV2": "ResourceGroupV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/restoreProtectedResourceV2",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -1035,6 +1153,14 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/role:Role": "Role"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/roleMembershipV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/roleMembershipV2:RoleMembershipV2": "RoleMembershipV2"
   }
  },
  {
@@ -1119,6 +1245,30 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/snmpConfigV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/snmpConfigV2:SnmpConfigV2": "SnmpConfigV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/snmpTrapV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/snmpTrapV2:SnmpTrapV2": "SnmpTrapV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/snmpUserV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/snmpUserV2:SnmpUserV2": "SnmpUserV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/sslCertificateV2",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -1171,6 +1321,14 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/templateGuestOsActionsV2:TemplateGuestOsActionsV2": "TemplateGuestOsActionsV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/templatePlacementPolicyV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/templatePlacementPolicyV2:TemplatePlacementPolicyV2": "TemplatePlacementPolicyV2"
   }
  },
  {
@@ -1247,6 +1405,14 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/virtualSwitchV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/virtualSwitchV2:VirtualSwitchV2": "VirtualSwitchV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/vmAntiAffinityPolicyV2",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -1275,6 +1441,14 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/vmGcUpdateV2:VmGcUpdateV2": "VmGcUpdateV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/vmGuestCustomizationProfileV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/vmGuestCustomizationProfileV2:VmGuestCustomizationProfileV2": "VmGuestCustomizationProfileV2"
   }
  },
  {
@@ -1315,6 +1489,14 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/vmShutdownActionV2:VmShutdownActionV2": "VmShutdownActionV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/vmStartupPolicyV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/vmStartupPolicyV2:VmStartupPolicyV2": "VmStartupPolicyV2"
   }
  },
  {
@@ -1363,6 +1545,14 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/vpcV2:VpcV2": "VpcV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/vpcVirtualSwitchMappingV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/vpcVirtualSwitchMappingV2:VpcVirtualSwitchMappingV2": "VpcVirtualSwitchMappingV2"
   }
  }
 ]

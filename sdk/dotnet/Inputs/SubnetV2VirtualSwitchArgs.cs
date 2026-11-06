@@ -62,6 +62,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("metadatas")]
         private InputList<Inputs.SubnetV2VirtualSwitchMetadataArgs>? _metadatas;
+
+        /// <summary>
+        /// Metadata associated with the subnet.
+        /// </summary>
         public InputList<Inputs.SubnetV2VirtualSwitchMetadataArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new InputList<Inputs.SubnetV2VirtualSwitchMetadataArgs>());

@@ -27,7 +27,7 @@ class GetRecoveryPointV2Result:
     """
     A collection of values returned by getRecoveryPointV2.
     """
-    def __init__(__self__, creation_time=None, expiration_time=None, ext_id=None, id=None, links=None, location_agnostic_id=None, location_references=None, name=None, owner_ext_id=None, recovery_point_type=None, status=None, tenant_id=None, vm_recovery_points=None, volume_group_recovery_points=None):
+    def __init__(__self__, creation_time=None, expiration_time=None, ext_id=None, id=None, links=None, location_agnostic_id=None, location_references=None, name=None, owner_ext_id=None, project_ext_id=None, recovery_point_type=None, status=None, tenant_id=None, vm_recovery_points=None, volume_group_recovery_points=None):
         if creation_time and not isinstance(creation_time, str):
             raise TypeError("Expected argument 'creation_time' to be a str")
         pulumi.set(__self__, "creation_time", creation_time)
@@ -55,6 +55,9 @@ class GetRecoveryPointV2Result:
         if owner_ext_id and not isinstance(owner_ext_id, str):
             raise TypeError("Expected argument 'owner_ext_id' to be a str")
         pulumi.set(__self__, "owner_ext_id", owner_ext_id)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
         if recovery_point_type and not isinstance(recovery_point_type, str):
             raise TypeError("Expected argument 'recovery_point_type' to be a str")
         pulumi.set(__self__, "recovery_point_type", recovery_point_type)
@@ -144,6 +147,14 @@ class GetRecoveryPointV2Result:
         return pulumi.get(self, "owner_ext_id")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        Project external ID associated with the recovery point.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
     @pulumi.getter(name="recoveryPointType")
     def recovery_point_type(self) -> _builtins.str:
         """
@@ -201,6 +212,7 @@ class AwaitableGetRecoveryPointV2Result(GetRecoveryPointV2Result):
             location_references=self.location_references,
             name=self.name,
             owner_ext_id=self.owner_ext_id,
+            project_ext_id=self.project_ext_id,
             recovery_point_type=self.recovery_point_type,
             status=self.status,
             tenant_id=self.tenant_id,
@@ -242,6 +254,7 @@ def get_recovery_point_v2(ext_id: Optional[_builtins.str] = None,
         location_references=pulumi.get(__ret__, 'location_references'),
         name=pulumi.get(__ret__, 'name'),
         owner_ext_id=pulumi.get(__ret__, 'owner_ext_id'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
         recovery_point_type=pulumi.get(__ret__, 'recovery_point_type'),
         status=pulumi.get(__ret__, 'status'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
@@ -280,6 +293,7 @@ def get_recovery_point_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] =
         location_references=pulumi.get(__response__, 'location_references'),
         name=pulumi.get(__response__, 'name'),
         owner_ext_id=pulumi.get(__response__, 'owner_ext_id'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
         recovery_point_type=pulumi.get(__response__, 'recovery_point_type'),
         status=pulumi.get(__response__, 'status'),
         tenant_id=pulumi.get(__response__, 'tenant_id'),

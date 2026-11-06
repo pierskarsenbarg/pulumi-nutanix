@@ -27,7 +27,7 @@ class GetRouteV2Result:
     """
     A collection of values returned by getRouteV2.
     """
-    def __init__(__self__, description=None, destinations=None, ext_id=None, external_routing_domain_reference=None, id=None, is_active=None, links=None, metadatas=None, name=None, next_hops=None, priority=None, route_table_ext_id=None, route_table_reference=None, route_type=None, tenant_id=None, vpc_reference=None):
+    def __init__(__self__, description=None, destinations=None, ext_id=None, external_routing_domain_reference=None, id=None, is_active=None, links=None, metadatas=None, name=None, next_hops=None, priority=None, project_ext_id=None, route_table_ext_id=None, route_table_reference=None, route_type=None, tenant_id=None, vpc_reference=None):
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
@@ -61,6 +61,9 @@ class GetRouteV2Result:
         if priority and not isinstance(priority, int):
             raise TypeError("Expected argument 'priority' to be a int")
         pulumi.set(__self__, "priority", priority)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
         if route_table_ext_id and not isinstance(route_table_ext_id, str):
             raise TypeError("Expected argument 'route_table_ext_id' to be a str")
         pulumi.set(__self__, "route_table_ext_id", route_table_ext_id)
@@ -153,7 +156,7 @@ class GetRouteV2Result:
     @pulumi.getter(name="nextHops")
     def next_hops(self) -> Sequence['outputs.GetRouteV2NextHopResult']:
         """
-        Route nexthop.
+        Route nexthop(s). Supports multiple entries.
         """
         return pulumi.get(self, "next_hops")
 
@@ -164,6 +167,14 @@ class GetRouteV2Result:
         Route priority. A higher value implies greater preference is assigned to the route.
         """
         return pulumi.get(self, "priority")
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        External identifier of the project associated with the Route.
+        """
+        return pulumi.get(self, "project_ext_id")
 
     @_builtins.property
     @pulumi.getter(name="routeTableExtId")
@@ -220,6 +231,7 @@ class AwaitableGetRouteV2Result(GetRouteV2Result):
             name=self.name,
             next_hops=self.next_hops,
             priority=self.priority,
+            project_ext_id=self.project_ext_id,
             route_table_ext_id=self.route_table_ext_id,
             route_table_reference=self.route_table_reference,
             route_type=self.route_type,
@@ -267,6 +279,7 @@ def get_route_v2(ext_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         next_hops=pulumi.get(__ret__, 'next_hops'),
         priority=pulumi.get(__ret__, 'priority'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
         route_table_ext_id=pulumi.get(__ret__, 'route_table_ext_id'),
         route_table_reference=pulumi.get(__ret__, 'route_table_reference'),
         route_type=pulumi.get(__ret__, 'route_type'),
@@ -311,6 +324,7 @@ def get_route_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
         name=pulumi.get(__response__, 'name'),
         next_hops=pulumi.get(__response__, 'next_hops'),
         priority=pulumi.get(__response__, 'priority'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
         route_table_ext_id=pulumi.get(__response__, 'route_table_ext_id'),
         route_table_reference=pulumi.get(__response__, 'route_table_reference'),
         route_type=pulumi.get(__response__, 'route_type'),

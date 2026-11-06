@@ -29,6 +29,7 @@ class NetworkFunctionV2Args:
                  failure_handling: pulumi.Input[Optional[_builtins.str]] = None,
                  metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFunctionV2MetadataArgs']]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  traffic_forwarding_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFunctionV2 resource.
@@ -51,6 +52,7 @@ class NetworkFunctionV2Args:
                | `FAIL_OPEN` | When all the network function VM(s) are down, traffic from sources can be forwarded directly to the destinations, effectively bypassing the network function VM. |
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFunctionV2MetadataArgs']]] metadatas: Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: Name of the network function.
+        :param pulumi.Input[_builtins.str] project_ext_id: Project external ID to associate with the network function. Note: This field cannot be updated after creation.
         :param pulumi.Input[_builtins.str] traffic_forwarding_mode: Traffic forwarding mode. Values:
                
                | Value | Description |
@@ -72,6 +74,8 @@ class NetworkFunctionV2Args:
             pulumi.set(__self__, "metadatas", metadatas)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if traffic_forwarding_mode is not None:
             pulumi.set(__self__, "traffic_forwarding_mode", traffic_forwarding_mode)
 
@@ -182,6 +186,18 @@ class NetworkFunctionV2Args:
         pulumi.set(self, "name", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Project external ID to associate with the network function. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="trafficForwardingMode")
     def traffic_forwarding_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -211,6 +227,7 @@ class _NetworkFunctionV2State:
                  metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFunctionV2MetadataArgs']]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  nic_pairs: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkFunctionV2NicPairArgs']]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
                  traffic_forwarding_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
@@ -235,6 +252,7 @@ class _NetworkFunctionV2State:
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFunctionV2MetadataArgs']]] metadatas: Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: Name of the network function.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFunctionV2NicPairArgs']]] nic_pairs: List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
+        :param pulumi.Input[_builtins.str] project_ext_id: Project external ID to associate with the network function. Note: This field cannot be updated after creation.
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.
         :param pulumi.Input[_builtins.str] traffic_forwarding_mode: Traffic forwarding mode. Values:
                
@@ -261,6 +279,8 @@ class _NetworkFunctionV2State:
             pulumi.set(__self__, "name", name)
         if nic_pairs is not None:
             pulumi.set(__self__, "nic_pairs", nic_pairs)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if tenant_id is not None:
             pulumi.set(__self__, "tenant_id", tenant_id)
         if traffic_forwarding_mode is not None:
@@ -385,6 +405,18 @@ class _NetworkFunctionV2State:
         pulumi.set(self, "nic_pairs", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Project external ID to associate with the network function. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -428,6 +460,7 @@ class NetworkFunctionV2(pulumi.CustomResource):
                  metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict', 'outputs.NetworkFunctionV2Metadata']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  nic_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict', 'outputs.NetworkFunctionV2NicPair']]]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  traffic_forwarding_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -490,6 +523,7 @@ class NetworkFunctionV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict', 'outputs.NetworkFunctionV2Metadata']]]] metadatas: Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: Name of the network function.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict', 'outputs.NetworkFunctionV2NicPair']]]] nic_pairs: List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
+        :param pulumi.Input[_builtins.str] project_ext_id: Project external ID to associate with the network function. Note: This field cannot be updated after creation.
         :param pulumi.Input[_builtins.str] traffic_forwarding_mode: Traffic forwarding mode. Values:
                
                | Value | Description |
@@ -566,6 +600,7 @@ class NetworkFunctionV2(pulumi.CustomResource):
                  metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict', 'outputs.NetworkFunctionV2Metadata']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  nic_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict', 'outputs.NetworkFunctionV2NicPair']]]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  traffic_forwarding_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -588,6 +623,7 @@ class NetworkFunctionV2(pulumi.CustomResource):
             if nic_pairs is None and not opts.urn:
                 raise TypeError("Missing required property 'nic_pairs'")
             __props__.__dict__["nic_pairs"] = nic_pairs
+            __props__.__dict__["project_ext_id"] = project_ext_id
             __props__.__dict__["traffic_forwarding_mode"] = traffic_forwarding_mode
             __props__.__dict__["links"] = None
             __props__.__dict__["tenant_id"] = None
@@ -610,6 +646,7 @@ class NetworkFunctionV2(pulumi.CustomResource):
             metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict', 'outputs.NetworkFunctionV2Metadata']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             nic_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict', 'outputs.NetworkFunctionV2NicPair']]]]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             traffic_forwarding_mode: pulumi.Input[Optional[_builtins.str]] = None) -> 'NetworkFunctionV2':
         """
@@ -638,6 +675,7 @@ class NetworkFunctionV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict', 'outputs.NetworkFunctionV2Metadata']]]] metadatas: Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: Name of the network function.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict', 'outputs.NetworkFunctionV2NicPair']]]] nic_pairs: List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
+        :param pulumi.Input[_builtins.str] project_ext_id: Project external ID to associate with the network function. Note: This field cannot be updated after creation.
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.
         :param pulumi.Input[_builtins.str] traffic_forwarding_mode: Traffic forwarding mode. Values:
                
@@ -659,6 +697,7 @@ class NetworkFunctionV2(pulumi.CustomResource):
         __props__.__dict__["metadatas"] = metadatas
         __props__.__dict__["name"] = name
         __props__.__dict__["nic_pairs"] = nic_pairs
+        __props__.__dict__["project_ext_id"] = project_ext_id
         __props__.__dict__["tenant_id"] = tenant_id
         __props__.__dict__["traffic_forwarding_mode"] = traffic_forwarding_mode
         return NetworkFunctionV2(resource_name, opts=opts, __props__=__props__)
@@ -675,6 +714,7 @@ class NetworkFunctionV2(pulumi.CustomResource):
             metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2MetadataArgs', 'NetworkFunctionV2MetadataArgsDict', 'outputs.NetworkFunctionV2Metadata']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             nic_pairs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFunctionV2NicPairArgs', 'NetworkFunctionV2NicPairArgsDict', 'outputs.NetworkFunctionV2NicPair']]]]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             traffic_forwarding_mode: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
         __props__: dict = {}
@@ -687,6 +727,7 @@ class NetworkFunctionV2(pulumi.CustomResource):
         __props__["metadatas"] = metadatas
         __props__["name"] = name
         __props__["nicPairs"] = nic_pairs
+        __props__["projectExtId"] = project_ext_id
         __props__["tenantId"] = tenant_id
         __props__["trafficForwardingMode"] = traffic_forwarding_mode
         return pulumi.runtime.exists_resource(None, 'nutanix:index/networkFunctionV2:NetworkFunctionV2', id, __props__, opts or pulumi.ResourceOptions())
@@ -772,6 +813,14 @@ class NetworkFunctionV2(pulumi.CustomResource):
         List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
         """
         return pulumi.get(self, "nic_pairs")
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        Project external ID to associate with the network function. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
 
     @_builtins.property
     @pulumi.getter(name="tenantId")

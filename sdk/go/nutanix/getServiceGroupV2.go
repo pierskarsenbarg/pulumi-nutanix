@@ -75,6 +75,8 @@ type GetServiceGroupV2Result struct {
 	Name string `pulumi:"name"`
 	// Reference to policy associated with Service Group.
 	PolicyReferences []string `pulumi:"policyReferences"`
+	// Project external ID associated with the service group.
+	ProjectExtId string `pulumi:"projectExtId"`
 	// List of TCP ports in the service.
 	TcpServices []GetServiceGroupV2TcpService `pulumi:"tcpServices"`
 	// A globally unique identifier that represents the tenant that owns this entity.
@@ -155,6 +157,11 @@ func (o GetServiceGroupV2ResultOutput) Name() pulumi.StringOutput {
 // Reference to policy associated with Service Group.
 func (o GetServiceGroupV2ResultOutput) PolicyReferences() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetServiceGroupV2Result) []string { return v.PolicyReferences }).(pulumi.StringArrayOutput)
+}
+
+// Project external ID associated with the service group.
+func (o GetServiceGroupV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceGroupV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // List of TCP ports in the service.

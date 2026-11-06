@@ -15,6 +15,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetProtectionPolicyV2ReplicationConfigurationScheduleResult
     {
         /// <summary>
+        /// - Indicates whether replication is paused for all VMs and volume groups associated with the remote replication location.
+        /// </summary>
+        public readonly bool IsReplicationPaused;
+        /// <summary>
+        /// - Duration (in seconds) that the latest recovery point is retained past its expiry time if the entity is unprotected, deleted, or migrated. If not specified, the latest recovery point will be retained for a minimum of 30 days. Set to 0 to not retain past expiry.
+        /// </summary>
+        public readonly int? LatestRecoveryPointRetentionSeconds;
+        /// <summary>
         /// - The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
         /// - Minute(s): 1, 2, 3, 4, 5, 6, 10, 12, 15
         /// - Hour(s): 1, 2, 3, 4, 6, 8, 12
@@ -33,6 +41,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly Outputs.GetProtectionPolicyV2ReplicationConfigurationScheduleRetentionResult? Retention;
         /// <summary>
+        /// - System-generated schedule ID for the replication configuration.
+        /// </summary>
+        public readonly string ScheduleExtId;
+        /// <summary>
         /// - Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.
         /// </summary>
         public readonly string? StartTime;
@@ -43,19 +55,28 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
         [OutputConstructor]
         private GetProtectionPolicyV2ReplicationConfigurationScheduleResult(
+            bool isReplicationPaused,
+
+            int? latestRecoveryPointRetentionSeconds,
+
             int? recoveryPointObjectiveTimeSeconds,
 
             string? recoveryPointType,
 
             Outputs.GetProtectionPolicyV2ReplicationConfigurationScheduleRetentionResult? retention,
 
+            string scheduleExtId,
+
             string? startTime,
 
             int? syncReplicationAutoSuspendTimeoutSeconds)
         {
+            IsReplicationPaused = isReplicationPaused;
+            LatestRecoveryPointRetentionSeconds = latestRecoveryPointRetentionSeconds;
             RecoveryPointObjectiveTimeSeconds = recoveryPointObjectiveTimeSeconds;
             RecoveryPointType = recoveryPointType;
             Retention = retention;
+            ScheduleExtId = scheduleExtId;
             StartTime = startTime;
             SyncReplicationAutoSuspendTimeoutSeconds = syncReplicationAutoSuspendTimeoutSeconds;
         }

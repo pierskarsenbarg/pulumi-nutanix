@@ -62,7 +62,8 @@ type LookupVpcV2Result struct {
 	CommonDhcpOptions []GetVpcV2CommonDhcpOption `pulumi:"commonDhcpOptions"`
 	// Description of the VPC.
 	Description string `pulumi:"description"`
-	ExtId       string `pulumi:"extId"`
+	// ExtID of the Kubernetes cluster.
+	ExtId string `pulumi:"extId"`
 	// External routing domain associated with this route table
 	ExternalRoutingDomainReference string `pulumi:"externalRoutingDomainReference"`
 	// List of external subnets that the VPC is attached to.
@@ -71,14 +72,26 @@ type LookupVpcV2Result struct {
 	ExternallyRoutablePrefixes []GetVpcV2ExternallyRoutablePrefix `pulumi:"externallyRoutablePrefixes"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// List of Kubernetes clusters associated with the VPC.
+	KubernetesClusters []GetVpcV2KubernetesCluster `pulumi:"kubernetesClusters"`
 	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 	Links []GetVpcV2Link `pulumi:"links"`
 	// Metadata associated with this resource.
 	Metadatas []GetVpcV2Metadata `pulumi:"metadatas"`
 	// Name of the VPC.
 	Name string `pulumi:"name"`
+	// External identifier of the project associated with the VPC.
+	ProjectExtId string `pulumi:"projectExtId"`
+	// VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+	Scope string `pulumi:"scope"`
+	// List of project external identifiers with which the VPC is shared.
+	SharedWithProjects []string `pulumi:"sharedWithProjects"`
+	// When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes.
+	ShouldAdvertiseConnectedSubnets bool `pulumi:"shouldAdvertiseConnectedSubnets"`
 	// List of IP Addresses used for SNAT.
 	SnatIps []GetVpcV2SnatIp `pulumi:"snatIps"`
+	// Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+	SupportedMultipleExternalSubnetType string `pulumi:"supportedMultipleExternalSubnetType"`
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId string `pulumi:"tenantId"`
 	// Type of VPC.
@@ -125,6 +138,7 @@ func (o LookupVpcV2ResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpcV2Result) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// ExtID of the Kubernetes cluster.
 func (o LookupVpcV2ResultOutput) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpcV2Result) string { return v.ExtId }).(pulumi.StringOutput)
 }
@@ -149,6 +163,11 @@ func (o LookupVpcV2ResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpcV2Result) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// List of Kubernetes clusters associated with the VPC.
+func (o LookupVpcV2ResultOutput) KubernetesClusters() GetVpcV2KubernetesClusterArrayOutput {
+	return o.ApplyT(func(v LookupVpcV2Result) []GetVpcV2KubernetesCluster { return v.KubernetesClusters }).(GetVpcV2KubernetesClusterArrayOutput)
+}
+
 // A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 func (o LookupVpcV2ResultOutput) Links() GetVpcV2LinkArrayOutput {
 	return o.ApplyT(func(v LookupVpcV2Result) []GetVpcV2Link { return v.Links }).(GetVpcV2LinkArrayOutput)
@@ -164,9 +183,34 @@ func (o LookupVpcV2ResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpcV2Result) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// External identifier of the project associated with the VPC.
+func (o LookupVpcV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupVpcV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
+}
+
+// VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+func (o LookupVpcV2ResultOutput) Scope() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupVpcV2Result) string { return v.Scope }).(pulumi.StringOutput)
+}
+
+// List of project external identifiers with which the VPC is shared.
+func (o LookupVpcV2ResultOutput) SharedWithProjects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupVpcV2Result) []string { return v.SharedWithProjects }).(pulumi.StringArrayOutput)
+}
+
+// When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes.
+func (o LookupVpcV2ResultOutput) ShouldAdvertiseConnectedSubnets() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupVpcV2Result) bool { return v.ShouldAdvertiseConnectedSubnets }).(pulumi.BoolOutput)
+}
+
 // List of IP Addresses used for SNAT.
 func (o LookupVpcV2ResultOutput) SnatIps() GetVpcV2SnatIpArrayOutput {
 	return o.ApplyT(func(v LookupVpcV2Result) []GetVpcV2SnatIp { return v.SnatIps }).(GetVpcV2SnatIpArrayOutput)
+}
+
+// Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+func (o LookupVpcV2ResultOutput) SupportedMultipleExternalSubnetType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupVpcV2Result) string { return v.SupportedMultipleExternalSubnetType }).(pulumi.StringOutput)
 }
 
 // A globally unique identifier that represents the tenant that owns this entity.

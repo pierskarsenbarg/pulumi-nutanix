@@ -19,6 +19,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string? Name;
         public readonly ImmutableArray<Outputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetList> SubnetLists;
+        public readonly string? SubnetUuid;
         public readonly bool? UseVpcReference;
         public readonly Outputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReference? VirtualNetworkReference;
         public readonly Outputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReference? VpcReference;
@@ -29,6 +30,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<Outputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetList> subnetLists,
 
+            string? subnetUuid,
+
             bool? useVpcReference,
 
             Outputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReference? virtualNetworkReference,
@@ -37,6 +40,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         {
             Name = name;
             SubnetLists = subnetLists;
+            SubnetUuid = subnetUuid;
             UseVpcReference = useVpcReference;
             VirtualNetworkReference = virtualNetworkReference;
             VpcReference = vpcReference;

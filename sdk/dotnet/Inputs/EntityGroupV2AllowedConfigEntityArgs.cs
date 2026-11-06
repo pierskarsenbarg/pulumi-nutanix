@@ -19,6 +19,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("addresses")]
         public Input<Inputs.EntityGroupV2AllowedConfigEntityAddressesArgs>? Addresses { get; set; }
 
+        [Input("fqdns")]
+        private InputList<string>? _fqdns;
+
+        /// <summary>
+        /// List of FQDNs. Required when &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; is `FQDN_VALUES`.
+        /// </summary>
+        public InputList<string> Fqdns
+        {
+            get => _fqdns ?? (_fqdns = new InputList<string>());
+            set => _fqdns = value;
+        }
+
         /// <summary>
         /// With &lt;span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`"&gt;`ipv4Ranges`&lt;/span&gt; block(s):
         /// </summary>
@@ -37,6 +49,12 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _kubeEntities = value;
         }
 
+        /// <summary>
+        /// Match criteria for regex-based entity selection. Valid values: `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `EQUALS`.
+        /// </summary>
+        [Input("matchCriteria")]
+        public Input<string>? MatchCriteria { get; set; }
+
         [Input("referenceExtIds")]
         private InputList<string>? _referenceExtIds;
 
@@ -50,7 +68,13 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         }
 
         /// <summary>
-        /// The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`.
+        /// String pattern for matching entities. Required when &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; is `REGEX`.
+        /// </summary>
+        [Input("referenceString")]
+        public Input<string>? ReferenceString { get; set; }
+
+        /// <summary>
+        /// The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
         /// </summary>
         [Input("selectedBy")]
         public Input<string>? SelectedBy { get; set; }

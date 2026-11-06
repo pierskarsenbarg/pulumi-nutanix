@@ -96,6 +96,8 @@ type NetworkFunctionV2 struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
 	NicPairs NetworkFunctionV2NicPairArrayOutput `pulumi:"nicPairs"`
+	// Project external ID to associate with the network function. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
 	// Traffic forwarding mode. Values:
@@ -171,6 +173,8 @@ type networkFunctionV2State struct {
 	Name *string `pulumi:"name"`
 	// List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
 	NicPairs []NetworkFunctionV2NicPair `pulumi:"nicPairs"`
+	// Project external ID to associate with the network function. Note: This field cannot be updated after creation.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId *string `pulumi:"tenantId"`
 	// Traffic forwarding mode. Values:
@@ -211,6 +215,8 @@ type NetworkFunctionV2State struct {
 	Name pulumi.StringPtrInput
 	// List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
 	NicPairs NetworkFunctionV2NicPairArrayInput
+	// Project external ID to associate with the network function. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringPtrInput
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId pulumi.StringPtrInput
 	// Traffic forwarding mode. Values:
@@ -259,6 +265,8 @@ type networkFunctionV2Args struct {
 	Name *string `pulumi:"name"`
 	// List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
 	NicPairs []NetworkFunctionV2NicPair `pulumi:"nicPairs"`
+	// Project external ID to associate with the network function. Note: This field cannot be updated after creation.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// Traffic forwarding mode. Values:
 	//
 	// | Value | Description |
@@ -296,6 +304,8 @@ type NetworkFunctionV2Args struct {
 	Name pulumi.StringPtrInput
 	// List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
 	NicPairs NetworkFunctionV2NicPairArrayInput
+	// Project external ID to associate with the network function. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringPtrInput
 	// Traffic forwarding mode. Values:
 	//
 	// | Value | Description |
@@ -447,6 +457,11 @@ func (o NetworkFunctionV2Output) Name() pulumi.StringOutput {
 // List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
 func (o NetworkFunctionV2Output) NicPairs() NetworkFunctionV2NicPairArrayOutput {
 	return o.ApplyT(func(v *NetworkFunctionV2) NetworkFunctionV2NicPairArrayOutput { return v.NicPairs }).(NetworkFunctionV2NicPairArrayOutput)
+}
+
+// Project external ID to associate with the network function. Note: This field cannot be updated after creation.
+func (o NetworkFunctionV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *NetworkFunctionV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // A globally unique identifier that represents the tenant that owns this entity.

@@ -47,7 +47,7 @@ import * as utilities from "./utilities";
  * `terraform import nutanix_pbr_v2.pbr_import <UUID>
  * `
  *
- * See detailed information in [Nutanix Routing Policy v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/RoutingPolicies/operation/createRoutingPolicy).
+ * See detailed information in [Nutanix Routing Policy v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.4#tag/RoutingPolicies/operation/createRoutingPolicy).
  */
 export class PbrV2 extends pulumi.CustomResource {
     /**
@@ -117,6 +117,10 @@ export class PbrV2 extends pulumi.CustomResource {
      */
     declare public readonly priority: pulumi.Output<number>;
     /**
+     * External identifier of the project associated with the Routing Policy.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
+    /**
      * A globally unique identifier that represents the tenant that owns this entity
      */
     declare public /*out*/ readonly tenantId: pulumi.Output<string>;
@@ -149,6 +153,7 @@ export class PbrV2 extends pulumi.CustomResource {
             resourceInputs["name"] = state?.name;
             resourceInputs["policies"] = state?.policies;
             resourceInputs["priority"] = state?.priority;
+            resourceInputs["projectExtId"] = state?.projectExtId;
             resourceInputs["tenantId"] = state?.tenantId;
             resourceInputs["vpcExtId"] = state?.vpcExtId;
             resourceInputs["vpcs"] = state?.vpcs;
@@ -168,6 +173,7 @@ export class PbrV2 extends pulumi.CustomResource {
             resourceInputs["name"] = args?.name;
             resourceInputs["policies"] = args?.policies;
             resourceInputs["priority"] = args?.priority;
+            resourceInputs["projectExtId"] = args?.projectExtId;
             resourceInputs["vpcExtId"] = args?.vpcExtId;
             resourceInputs["links"] = undefined /*out*/;
             resourceInputs["metadatas"] = undefined /*out*/;
@@ -212,6 +218,10 @@ export interface PbrV2State {
      */
     priority?: pulumi.Input<number | undefined>;
     /**
+     * External identifier of the project associated with the Routing Policy.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
      * A globally unique identifier that represents the tenant that owns this entity
      */
     tenantId?: pulumi.Input<string | undefined>;
@@ -249,6 +259,10 @@ export interface PbrV2Args {
      * Priority of the routing policy.
      */
     priority: pulumi.Input<number>;
+    /**
+     * External identifier of the project associated with the Routing Policy.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
     /**
      * ExtId of the VPC extId to which the routing policy belongs.
      */

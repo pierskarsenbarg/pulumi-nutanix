@@ -42,10 +42,13 @@ namespace PiersKarsenbarg.Nutanix
     ///                 PrefixLength = 32,
     ///             },
     ///         },
-    ///         NextHop = new Nutanix.Inputs.RoutesV2NextHopArgs
+    ///         NextHops = new[]
     ///         {
-    ///             NextHopType = "EXTERNAL_SUBNET",
-    ///             NextHopReference = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+    ///             new Nutanix.Inputs.RoutesV2NextHopArgs
+    ///             {
+    ///                 NextHopType = "EXTERNAL_SUBNET",
+    ///                 NextHopReference = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+    ///             },
     ///         },
     ///         Metadata = new Nutanix.Inputs.RoutesV2MetadataArgs
     ///         {
@@ -111,16 +114,22 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// Route nexthop.
+        /// Route nexthop. Supports multiple entries.
         /// </summary>
-        [Output("nextHop")]
-        public Output<Outputs.RoutesV2NextHop> NextHop { get; private set; } = null!;
+        [Output("nextHops")]
+        public Output<ImmutableArray<Outputs.RoutesV2NextHop>> NextHops { get; private set; } = null!;
 
         /// <summary>
         /// Route priority. A higher value implies greater preference is assigned to the route.
         /// </summary>
         [Output("priority")]
         public Output<int> Priority { get; private set; } = null!;
+
+        /// <summary>
+        /// External identifier of the project associated with the Route.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
 
         /// <summary>
         /// Route table UUID
@@ -229,11 +238,23 @@ namespace PiersKarsenbarg.Nutanix
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        [Input("nextHops")]
+        private InputList<Inputs.RoutesV2NextHopArgs>? _nextHops;
+
         /// <summary>
-        /// Route nexthop.
+        /// Route nexthop. Supports multiple entries.
         /// </summary>
-        [Input("nextHop")]
-        public Input<Inputs.RoutesV2NextHopArgs>? NextHop { get; set; }
+        public InputList<Inputs.RoutesV2NextHopArgs> NextHops
+        {
+            get => _nextHops ?? (_nextHops = new InputList<Inputs.RoutesV2NextHopArgs>());
+            set => _nextHops = value;
+        }
+
+        /// <summary>
+        /// External identifier of the project associated with the Route.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
 
         /// <summary>
         /// Route table UUID
@@ -321,17 +342,29 @@ namespace PiersKarsenbarg.Nutanix
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        [Input("nextHops")]
+        private InputList<Inputs.RoutesV2NextHopGetArgs>? _nextHops;
+
         /// <summary>
-        /// Route nexthop.
+        /// Route nexthop. Supports multiple entries.
         /// </summary>
-        [Input("nextHop")]
-        public Input<Inputs.RoutesV2NextHopGetArgs>? NextHop { get; set; }
+        public InputList<Inputs.RoutesV2NextHopGetArgs> NextHops
+        {
+            get => _nextHops ?? (_nextHops = new InputList<Inputs.RoutesV2NextHopGetArgs>());
+            set => _nextHops = value;
+        }
 
         /// <summary>
         /// Route priority. A higher value implies greater preference is assigned to the route.
         /// </summary>
         [Input("priority")]
         public Input<int>? Priority { get; set; }
+
+        /// <summary>
+        /// External identifier of the project associated with the Route.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
 
         /// <summary>
         /// Route table UUID

@@ -88,6 +88,8 @@ type GetLcmEntityV2Result struct {
 	HardwareFamily string `pulumi:"hardwareFamily"`
 	// Hardware vendor information.
 	HardwareVendor string `pulumi:"hardwareVendor"`
+	// (default <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>) Indicates whether the most recent inventory operation failed for this entity. When true, the entity's version or available-version data may be stale.
+	HasPreviousInventoryFailed bool `pulumi:"hasPreviousInventoryFailed"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// UTC date and time in RFC-3339 format when the task was last updated.
@@ -204,6 +206,11 @@ func (o GetLcmEntityV2ResultOutput) HardwareFamily() pulumi.StringOutput {
 // Hardware vendor information.
 func (o GetLcmEntityV2ResultOutput) HardwareVendor() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLcmEntityV2Result) string { return v.HardwareVendor }).(pulumi.StringOutput)
+}
+
+// (default <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>) Indicates whether the most recent inventory operation failed for this entity. When true, the entity's version or available-version data may be stale.
+func (o GetLcmEntityV2ResultOutput) HasPreviousInventoryFailed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetLcmEntityV2Result) bool { return v.HasPreviousInventoryFailed }).(pulumi.BoolOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

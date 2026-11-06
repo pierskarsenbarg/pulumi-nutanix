@@ -27,6 +27,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _subnetLists = value;
         }
 
+        [Input("subnetUuid")]
+        public Input<string>? SubnetUuid { get; set; }
+
         [Input("useVpcReference")]
         public Input<bool>? UseVpcReference { get; set; }
 

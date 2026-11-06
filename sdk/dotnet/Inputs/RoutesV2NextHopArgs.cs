@@ -15,18 +15,31 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("nextHopIpAddresses")]
         private InputList<Inputs.RoutesV2NextHopNextHopIpAddressArgs>? _nextHopIpAddresses;
+
+        /// <summary>
+        /// IP address of the nexthop. See &lt;span pulumi-lang-nodejs="`nextHopIpAddress`" pulumi-lang-dotnet="`NextHopIpAddress`" pulumi-lang-go="`nextHopIpAddress`" pulumi-lang-python="`next_hop_ip_address`" pulumi-lang-yaml="`nextHopIpAddress`" pulumi-lang-java="`nextHopIpAddress`" pulumi-lang-hcl="`next_hop_ip_address`"&gt;`nextHopIpAddress`&lt;/span&gt; below.
+        /// </summary>
         public InputList<Inputs.RoutesV2NextHopNextHopIpAddressArgs> NextHopIpAddresses
         {
             get => _nextHopIpAddresses ?? (_nextHopIpAddresses = new InputList<Inputs.RoutesV2NextHopNextHopIpAddressArgs>());
             set => _nextHopIpAddresses = value;
         }
 
+        /// <summary>
+        /// Name of the nexthop.
+        /// </summary>
         [Input("nextHopName")]
         public Input<string>? NextHopName { get; set; }
 
+        /// <summary>
+        /// The reference to a link, such as a VPN connection or a subnet.
+        /// </summary>
         [Input("nextHopReference")]
         public Input<string>? NextHopReference { get; set; }
 
+        /// <summary>
+        /// Nexthop type. Supported values: `LOCAL_SUBNET`, `DIRECT_CONNECT_VIF`, `VPN_CONNECTION`, `IP_ADDRESS`, `EXTERNAL_SUBNET`.
+        /// </summary>
         [Input("nextHopType", required: true)]
         public Input<string> NextHopType { get; set; } = null!;
 

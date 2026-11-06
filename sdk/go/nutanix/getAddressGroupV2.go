@@ -77,6 +77,8 @@ type GetAddressGroupV2Result struct {
 	Name string `pulumi:"name"`
 	// Reference to policy associated with Address Group.
 	PolicyReferences []string `pulumi:"policyReferences"`
+	// Project external ID associated with the address group.
+	ProjectExtId string `pulumi:"projectExtId"`
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId string `pulumi:"tenantId"`
 }
@@ -155,6 +157,11 @@ func (o GetAddressGroupV2ResultOutput) Name() pulumi.StringOutput {
 // Reference to policy associated with Address Group.
 func (o GetAddressGroupV2ResultOutput) PolicyReferences() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAddressGroupV2Result) []string { return v.PolicyReferences }).(pulumi.StringArrayOutput)
+}
+
+// Project external ID associated with the address group.
+func (o GetAddressGroupV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAddressGroupV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // A globally unique identifier that represents the tenant that owns this entity.

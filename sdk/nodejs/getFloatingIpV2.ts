@@ -93,6 +93,10 @@ export interface GetFloatingIpV2Result {
      */
     readonly privateIp: string;
     /**
+     * External identifier of the project associated with the Floating IP.
+     */
+    readonly projectExtId: string;
+    /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
     readonly tenantId: string;

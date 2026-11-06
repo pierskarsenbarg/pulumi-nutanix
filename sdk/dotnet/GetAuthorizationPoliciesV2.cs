@@ -189,6 +189,8 @@ namespace PiersKarsenbarg.Nutanix
         ///   - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
         ///   - `SERVICE_DEFINED` : ACP defined by a service.
         ///   - `USER_DEFINED` : ACP defined by an User.
+        /// * &lt;span pulumi-lang-nodejs="`projectExtId`" pulumi-lang-dotnet="`ProjectExtId`" pulumi-lang-go="`projectExtId`" pulumi-lang-python="`project_ext_id`" pulumi-lang-yaml="`projectExtId`" pulumi-lang-java="`projectExtId`" pulumi-lang-hcl="`project_ext_id`"&gt;`projectExtId`&lt;/span&gt;: - Project reference for the Authorization Policy.
+        /// * &lt;span pulumi-lang-nodejs="`shareWithAllProjects`" pulumi-lang-dotnet="`ShareWithAllProjects`" pulumi-lang-go="`shareWithAllProjects`" pulumi-lang-python="`share_with_all_projects`" pulumi-lang-yaml="`shareWithAllProjects`" pulumi-lang-java="`shareWithAllProjects`" pulumi-lang-hcl="`share_with_all_projects`"&gt;`shareWithAllProjects`&lt;/span&gt;: - Flag indicating whether the Authorization Policy is shared with all projects or not.
         /// 
         /// ### Links
         /// 
@@ -197,7 +199,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
         /// - &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object
         /// 
-        /// See detailed information in [Nutanix List Authorization Policies v4](https://developers.nutanix.com/api-reference?namespace=iam&amp;version=v4.0#tag/AuthorizationPolicies/operation/listAuthorizationPolicies).
+        /// See detailed information in [Nutanix List Authorization Policies v4](https://developers.nutanix.com/api-reference?namespace=iam&amp;version=v4.1.b3#tag/AuthorizationPolicies/operation/listAuthorizationPolicies).
         /// </summary>
         public static Task<GetAuthorizationPoliciesV2Result> InvokeAsync(GetAuthorizationPoliciesV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuthorizationPoliciesV2Result>("nutanix:index/getAuthorizationPoliciesV2:getAuthorizationPoliciesV2", args ?? new GetAuthorizationPoliciesV2Args(), options.WithDefaults());
@@ -379,6 +381,8 @@ namespace PiersKarsenbarg.Nutanix
         ///   - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
         ///   - `SERVICE_DEFINED` : ACP defined by a service.
         ///   - `USER_DEFINED` : ACP defined by an User.
+        /// * &lt;span pulumi-lang-nodejs="`projectExtId`" pulumi-lang-dotnet="`ProjectExtId`" pulumi-lang-go="`projectExtId`" pulumi-lang-python="`project_ext_id`" pulumi-lang-yaml="`projectExtId`" pulumi-lang-java="`projectExtId`" pulumi-lang-hcl="`project_ext_id`"&gt;`projectExtId`&lt;/span&gt;: - Project reference for the Authorization Policy.
+        /// * &lt;span pulumi-lang-nodejs="`shareWithAllProjects`" pulumi-lang-dotnet="`ShareWithAllProjects`" pulumi-lang-go="`shareWithAllProjects`" pulumi-lang-python="`share_with_all_projects`" pulumi-lang-yaml="`shareWithAllProjects`" pulumi-lang-java="`shareWithAllProjects`" pulumi-lang-hcl="`share_with_all_projects`"&gt;`shareWithAllProjects`&lt;/span&gt;: - Flag indicating whether the Authorization Policy is shared with all projects or not.
         /// 
         /// ### Links
         /// 
@@ -387,7 +391,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
         /// - &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object
         /// 
-        /// See detailed information in [Nutanix List Authorization Policies v4](https://developers.nutanix.com/api-reference?namespace=iam&amp;version=v4.0#tag/AuthorizationPolicies/operation/listAuthorizationPolicies).
+        /// See detailed information in [Nutanix List Authorization Policies v4](https://developers.nutanix.com/api-reference?namespace=iam&amp;version=v4.1.b3#tag/AuthorizationPolicies/operation/listAuthorizationPolicies).
         /// </summary>
         public static Output<GetAuthorizationPoliciesV2Result> Invoke(GetAuthorizationPoliciesV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuthorizationPoliciesV2Result>("nutanix:index/getAuthorizationPoliciesV2:getAuthorizationPoliciesV2", args ?? new GetAuthorizationPoliciesV2InvokeArgs(), options.WithDefaults());
@@ -569,6 +573,8 @@ namespace PiersKarsenbarg.Nutanix
         ///   - `PREDEFINED_UPDATE_IDENTITY_ONLY` : System-defined ACP prohibiting any modifications from customer.
         ///   - `SERVICE_DEFINED` : ACP defined by a service.
         ///   - `USER_DEFINED` : ACP defined by an User.
+        /// * &lt;span pulumi-lang-nodejs="`projectExtId`" pulumi-lang-dotnet="`ProjectExtId`" pulumi-lang-go="`projectExtId`" pulumi-lang-python="`project_ext_id`" pulumi-lang-yaml="`projectExtId`" pulumi-lang-java="`projectExtId`" pulumi-lang-hcl="`project_ext_id`"&gt;`projectExtId`&lt;/span&gt;: - Project reference for the Authorization Policy.
+        /// * &lt;span pulumi-lang-nodejs="`shareWithAllProjects`" pulumi-lang-dotnet="`ShareWithAllProjects`" pulumi-lang-go="`shareWithAllProjects`" pulumi-lang-python="`share_with_all_projects`" pulumi-lang-yaml="`shareWithAllProjects`" pulumi-lang-java="`shareWithAllProjects`" pulumi-lang-hcl="`share_with_all_projects`"&gt;`shareWithAllProjects`&lt;/span&gt;: - Flag indicating whether the Authorization Policy is shared with all projects or not.
         /// 
         /// ### Links
         /// 
@@ -577,7 +583,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - &lt;span pulumi-lang-nodejs="`href`" pulumi-lang-dotnet="`Href`" pulumi-lang-go="`href`" pulumi-lang-python="`href`" pulumi-lang-yaml="`href`" pulumi-lang-java="`href`" pulumi-lang-hcl="`href`"&gt;`href`&lt;/span&gt;: - The URL at which the entity described by the link can be accessed.
         /// - &lt;span pulumi-lang-nodejs="`rel`" pulumi-lang-dotnet="`Rel`" pulumi-lang-go="`rel`" pulumi-lang-python="`rel`" pulumi-lang-yaml="`rel`" pulumi-lang-java="`rel`" pulumi-lang-hcl="`rel`"&gt;`rel`&lt;/span&gt;: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object
         /// 
-        /// See detailed information in [Nutanix List Authorization Policies v4](https://developers.nutanix.com/api-reference?namespace=iam&amp;version=v4.0#tag/AuthorizationPolicies/operation/listAuthorizationPolicies).
+        /// See detailed information in [Nutanix List Authorization Policies v4](https://developers.nutanix.com/api-reference?namespace=iam&amp;version=v4.1.b3#tag/AuthorizationPolicies/operation/listAuthorizationPolicies).
         /// </summary>
         public static Output<GetAuthorizationPoliciesV2Result> Invoke(GetAuthorizationPoliciesV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetAuthorizationPoliciesV2Result>("nutanix:index/getAuthorizationPoliciesV2:getAuthorizationPoliciesV2", args ?? new GetAuthorizationPoliciesV2InvokeArgs(), options.WithDefaults());

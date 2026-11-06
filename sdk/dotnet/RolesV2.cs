@@ -12,41 +12,6 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides a resource to add a Role.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// &lt;!--Start PulumiCodeChooser --&gt;
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     // filtered list operation
-    ///     var operations_filtered_list = Nutanix.GetOperationsV2.Invoke(new()
-    ///     {
-    ///         Filter = "startswith(displayName, 'Create_')",
-    ///     });
-    /// 
-    ///     // Create role
-    ///     var example_role = new Nutanix.RolesV2("example-role", new()
-    ///     {
-    ///         DisplayName = "example_role",
-    ///         Description = "create example role",
-    ///         Operations = new[]
-    ///         {
-    ///             operations_filtered_list.Apply(operations_filtered_list =&gt; operations_filtered_list.Apply(getOperationsV2Result =&gt; getOperationsV2Result.Operations[0]?.ExtId)),
-    ///             operations_filtered_list.Apply(operations_filtered_list =&gt; operations_filtered_list.Apply(getOperationsV2Result =&gt; getOperationsV2Result.Operations[1]?.ExtId)),
-    ///             operations_filtered_list.Apply(operations_filtered_list =&gt; operations_filtered_list.Apply(getOperationsV2Result =&gt; getOperationsV2Result.Operations[2]?.ExtId)),
-    ///             operations_filtered_list.Apply(operations_filtered_list =&gt; operations_filtered_list.Apply(getOperationsV2Result =&gt; getOperationsV2Result.Operations[3]?.ExtId)),
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/rolesV2:RolesV2")]
     public partial class RolesV2 : global::Pulumi.CustomResource
@@ -111,6 +76,9 @@ namespace PiersKarsenbarg.Nutanix
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
 
+        [Output("isGlobal")]
+        public Output<bool?> IsGlobal { get; private set; } = null!;
+
         /// <summary>
         /// - Flag identifying if the Role is system defined or not.
         /// </summary>
@@ -134,6 +102,18 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Output("operations")]
         public Output<ImmutableArray<string>> Operations { get; private set; } = null!;
+
+        /// <summary>
+        /// -(Optional) Project reference for the role.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
+
+        /// <summary>
+        /// - Flag indicating whether the role is shared with all projects or not.
+        /// </summary>
+        [Output("shareWithAllProjects")]
+        public Output<bool> ShareWithAllProjects { get; private set; } = null!;
 
         /// <summary>
         /// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
@@ -212,6 +192,9 @@ namespace PiersKarsenbarg.Nutanix
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        [Input("isGlobal")]
+        public Input<bool>? IsGlobal { get; set; }
+
         [Input("operations", required: true)]
         private InputList<string>? _operations;
 
@@ -223,6 +206,12 @@ namespace PiersKarsenbarg.Nutanix
             get => _operations ?? (_operations = new InputList<string>());
             set => _operations = value;
         }
+
+        /// <summary>
+        /// -(Optional) Project reference for the role.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
 
         public RolesV2Args()
         {
@@ -304,6 +293,9 @@ namespace PiersKarsenbarg.Nutanix
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        [Input("isGlobal")]
+        public Input<bool>? IsGlobal { get; set; }
+
         /// <summary>
         /// - Flag identifying if the Role is system defined or not.
         /// </summary>
@@ -339,6 +331,18 @@ namespace PiersKarsenbarg.Nutanix
             get => _operations ?? (_operations = new InputList<string>());
             set => _operations = value;
         }
+
+        /// <summary>
+        /// -(Optional) Project reference for the role.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
+        /// <summary>
+        /// - Flag indicating whether the role is shared with all projects or not.
+        /// </summary>
+        [Input("shareWithAllProjects")]
+        public Input<bool>? ShareWithAllProjects { get; set; }
 
         /// <summary>
         /// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).

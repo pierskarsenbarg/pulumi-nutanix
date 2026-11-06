@@ -75,14 +75,18 @@ import * as utilities from "./utilities";
  * The combination of <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> and <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> must be one of the following valid pairs:
  *
  * * `(CATEGORY_EXT_ID, VM)`
+ * * `(EXT_ID, VM)`
+ * * `(REGEX, VM)`
  * * `(CATEGORY_EXT_ID, SUBNET)`
+ * * `(EXT_ID, SUBNET)`
  * * `(CATEGORY_EXT_ID, VPC)`
  * * `(EXT_ID, KUBE_CLUSTER)`
- * * `(EXT_ID, ADDRESS_GROUP)`
  * * `(LABELS, KUBE_PODS)`
  * * `(NAME, KUBE_NAMESPACE)`
  * * `(NAME, KUBE_SERVICE)`
+ * * `(EXT_ID, ADDRESS_GROUP)`
  * * `(IP_VALUES, ADDRESS_GROUP)`
+ * * `(FQDN_VALUES, ADDRESS_GROUP)`
  *
  * Any other combination will result in a validation error.
  *
@@ -103,7 +107,7 @@ import * as utilities from "./utilities";
  * $ pulumi import nutanix:index/entityGroupV2:EntityGroupV2 import_entity_group <entityGroupUUID>
  * ```
  *
- * See detailed information in [Nutanix Entity Groups V4](https://developers.nutanix.com/api-reference?namespace=microseg&version=v4.2#tag/EntityGroups/operation/createEntityGroup).
+ * See detailed information in [Nutanix Entity Groups V4](https://developers.nutanix.com/api-reference?namespace=microseg&version=v4.3#tag/EntityGroups/operation/createEntityGroup).
  */
 export class EntityGroupV2 extends pulumi.CustomResource {
     /**
@@ -165,6 +169,14 @@ export class EntityGroupV2 extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly extId: pulumi.Output<string>;
     /**
+     * Indicates whether the entity group is shared with all projects.
+     */
+    declare public /*out*/ readonly isSharedWithAllProjects: pulumi.Output<boolean>;
+    /**
+     * A flag indicating whether the entity group is system-defined.
+     */
+    declare public /*out*/ readonly isSystemDefined: pulumi.Output<boolean>;
+    /**
      * The timestamp when the Entity Group was last updated.
      */
     declare public /*out*/ readonly lastUpdateTime: pulumi.Output<string>;
@@ -184,6 +196,10 @@ export class EntityGroupV2 extends pulumi.CustomResource {
      * List of policy external identifiers.
      */
     declare public readonly policyExtIds: pulumi.Output<string[]>;
+    /**
+     * Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
@@ -207,11 +223,14 @@ export class EntityGroupV2 extends pulumi.CustomResource {
             resourceInputs["description"] = state?.description;
             resourceInputs["exceptConfig"] = state?.exceptConfig;
             resourceInputs["extId"] = state?.extId;
+            resourceInputs["isSharedWithAllProjects"] = state?.isSharedWithAllProjects;
+            resourceInputs["isSystemDefined"] = state?.isSystemDefined;
             resourceInputs["lastUpdateTime"] = state?.lastUpdateTime;
             resourceInputs["links"] = state?.links;
             resourceInputs["name"] = state?.name;
             resourceInputs["ownerExtId"] = state?.ownerExtId;
             resourceInputs["policyExtIds"] = state?.policyExtIds;
+            resourceInputs["projectExtId"] = state?.projectExtId;
             resourceInputs["tenantId"] = state?.tenantId;
         } else {
             const args = argsOrState as EntityGroupV2Args | undefined;
@@ -220,8 +239,11 @@ export class EntityGroupV2 extends pulumi.CustomResource {
             resourceInputs["exceptConfig"] = args?.exceptConfig;
             resourceInputs["name"] = args?.name;
             resourceInputs["policyExtIds"] = args?.policyExtIds;
+            resourceInputs["projectExtId"] = args?.projectExtId;
             resourceInputs["creationTime"] = undefined /*out*/;
             resourceInputs["extId"] = undefined /*out*/;
+            resourceInputs["isSharedWithAllProjects"] = undefined /*out*/;
+            resourceInputs["isSystemDefined"] = undefined /*out*/;
             resourceInputs["lastUpdateTime"] = undefined /*out*/;
             resourceInputs["links"] = undefined /*out*/;
             resourceInputs["ownerExtId"] = undefined /*out*/;
@@ -257,6 +279,14 @@ export interface EntityGroupV2State {
      */
     extId?: pulumi.Input<string | undefined>;
     /**
+     * Indicates whether the entity group is shared with all projects.
+     */
+    isSharedWithAllProjects?: pulumi.Input<boolean | undefined>;
+    /**
+     * A flag indicating whether the entity group is system-defined.
+     */
+    isSystemDefined?: pulumi.Input<boolean | undefined>;
+    /**
      * The timestamp when the Entity Group was last updated.
      */
     lastUpdateTime?: pulumi.Input<string | undefined>;
@@ -276,6 +306,10 @@ export interface EntityGroupV2State {
      * List of policy external identifiers.
      */
     policyExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
@@ -306,4 +340,8 @@ export interface EntityGroupV2Args {
      * List of policy external identifiers.
      */
     policyExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
 }

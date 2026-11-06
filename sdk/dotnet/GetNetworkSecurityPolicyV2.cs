@@ -93,6 +93,10 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly bool IsIpv6TrafficAllowed;
         /// <summary>
+        /// Whether the network security policy is shared with all projects.
+        /// </summary>
+        public readonly bool IsSharedWithAllProjects;
+        /// <summary>
         /// Is system defined NSP
         /// </summary>
         public readonly bool IsSystemDefined;
@@ -105,9 +109,13 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkSecurityPolicyV2LinkResult> Links;
         /// <summary>
-        /// Name of the Flow Network Security Policy.
+        /// A user-defined name for the rule.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// Project external ID associated with the network security policy.
+        /// </summary>
+        public readonly string ProjectExtId;
         /// <summary>
         /// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
         /// </summary>
@@ -153,6 +161,8 @@ namespace PiersKarsenbarg.Nutanix
 
             bool isIpv6TrafficAllowed,
 
+            bool isSharedWithAllProjects,
+
             bool isSystemDefined,
 
             string lastUpdateTime,
@@ -160,6 +170,8 @@ namespace PiersKarsenbarg.Nutanix
             ImmutableArray<Outputs.GetNetworkSecurityPolicyV2LinkResult> links,
 
             string name,
+
+            string projectExtId,
 
             ImmutableArray<Outputs.GetNetworkSecurityPolicyV2RuleResult> rules,
 
@@ -182,10 +194,12 @@ namespace PiersKarsenbarg.Nutanix
             Id = id;
             IsHitlogEnabled = isHitlogEnabled;
             IsIpv6TrafficAllowed = isIpv6TrafficAllowed;
+            IsSharedWithAllProjects = isSharedWithAllProjects;
             IsSystemDefined = isSystemDefined;
             LastUpdateTime = lastUpdateTime;
             Links = links;
             Name = name;
+            ProjectExtId = projectExtId;
             Rules = rules;
             Scope = scope;
             SecuredGroups = securedGroups;

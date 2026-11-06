@@ -92,6 +92,52 @@ import (
 //			if err != nil {
 //				return err
 //			}
+//			securedGroup, err := nutanix.NewEntityGroupV2(ctx, "secured_group", &nutanix.EntityGroupV2Args{
+//				Name:        pulumi.String("secured-group"),
+//				Description: pulumi.String("Secured group for an application policy"),
+//				AllowedConfig: &nutanix.EntityGroupV2AllowedConfigArgs{
+//					Entities: nutanix.EntityGroupV2AllowedConfigEntityArray{
+//						&nutanix.EntityGroupV2AllowedConfigEntityArgs{
+//							Type:       pulumi.String("VM"),
+//							SelectedBy: pulumi.String("CATEGORY_EXT_ID"),
+//							ReferenceExtIds: pulumi.StringArray{
+//								example.Id,
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			// Application rules can use an entity group as the secured group instead of categories.
+//			// Use either secured_group_category_references or secured_group_entity_group_reference, not both.
+//			_, err = nutanix.NewNetworkSecurityPolicyV2(ctx, "entity-group-nsp", &nutanix.NetworkSecurityPolicyV2Args{
+//				Name:        pulumi.String("my-entity-group-policy"),
+//				Description: pulumi.String("Application policy with secured group entity group reference"),
+//				State:       pulumi.String("SAVE"),
+//				Type:        pulumi.String("APPLICATION"),
+//				Scope:       pulumi.String("GLOBAL"),
+//				Rules: nutanix.NetworkSecurityPolicyV2RuleArray{
+//					&nutanix.NetworkSecurityPolicyV2RuleArgs{
+//						Type: pulumi.String("APPLICATION"),
+//						Specs: nutanix.NetworkSecurityPolicyV2RuleSpecArray{
+//							&nutanix.NetworkSecurityPolicyV2RuleSpecArgs{
+//								ApplicationRuleSpecs: nutanix.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArray{
+//									&nutanix.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgs{
+//										SecuredGroupEntityGroupReference: securedGroup.ID(),
+//										SrcAllowSpec:                     pulumi.String("ALL"),
+//										IsAllProtocolAllowed:             pulumi.Bool(true),
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
 //			return nil
 //		})
 //	}
@@ -113,6 +159,8 @@ type NetworkSecurityPolicyV2 struct {
 	IsHitlogEnabled pulumi.BoolPtrOutput `pulumi:"isHitlogEnabled"`
 	// If Ipv6 Traffic is allowed.
 	IsIpv6TrafficAllowed pulumi.BoolPtrOutput `pulumi:"isIpv6TrafficAllowed"`
+	// Indicates whether the network security policy is shared with all projects.
+	IsSharedWithAllProjects pulumi.BoolOutput `pulumi:"isSharedWithAllProjects"`
 	// Is system defined NSP
 	IsSystemDefined pulumi.BoolOutput `pulumi:"isSystemDefined"`
 	// last updated time
@@ -121,9 +169,13 @@ type NetworkSecurityPolicyV2 struct {
 	Links NetworkSecurityPolicyV2LinkArrayOutput `pulumi:"links"`
 	// Name of the Flow Network Security Policy.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+	// Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+	Priority pulumi.IntOutput `pulumi:"priority"`
+	// Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
+	// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
 	Rules NetworkSecurityPolicyV2RuleArrayOutput `pulumi:"rules"`
-	// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+	// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
 	Scope pulumi.StringOutput `pulumi:"scope"`
 	// Uuids of the secured groups in the NSP.
 	SecuredGroups pulumi.StringArrayOutput `pulumi:"securedGroups"`
@@ -131,7 +183,7 @@ type NetworkSecurityPolicyV2 struct {
 	State pulumi.StringPtrOutput `pulumi:"state"`
 	// A globally unique identifier that represents the tenant that owns this entity
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
-	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
 	Type pulumi.StringOutput `pulumi:"type"`
 	// A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
 	VpcReferences pulumi.StringArrayOutput `pulumi:"vpcReferences"`
@@ -182,6 +234,8 @@ type networkSecurityPolicyV2State struct {
 	IsHitlogEnabled *bool `pulumi:"isHitlogEnabled"`
 	// If Ipv6 Traffic is allowed.
 	IsIpv6TrafficAllowed *bool `pulumi:"isIpv6TrafficAllowed"`
+	// Indicates whether the network security policy is shared with all projects.
+	IsSharedWithAllProjects *bool `pulumi:"isSharedWithAllProjects"`
 	// Is system defined NSP
 	IsSystemDefined *bool `pulumi:"isSystemDefined"`
 	// last updated time
@@ -190,9 +244,13 @@ type networkSecurityPolicyV2State struct {
 	Links []NetworkSecurityPolicyV2Link `pulumi:"links"`
 	// Name of the Flow Network Security Policy.
 	Name *string `pulumi:"name"`
-	// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+	// Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+	Priority *int `pulumi:"priority"`
+	// Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+	ProjectExtId *string `pulumi:"projectExtId"`
+	// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
 	Rules []NetworkSecurityPolicyV2Rule `pulumi:"rules"`
-	// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+	// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
 	Scope *string `pulumi:"scope"`
 	// Uuids of the secured groups in the NSP.
 	SecuredGroups []string `pulumi:"securedGroups"`
@@ -200,7 +258,7 @@ type networkSecurityPolicyV2State struct {
 	State *string `pulumi:"state"`
 	// A globally unique identifier that represents the tenant that owns this entity
 	TenantId *string `pulumi:"tenantId"`
-	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
 	Type *string `pulumi:"type"`
 	// A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
 	VpcReferences []string `pulumi:"vpcReferences"`
@@ -219,6 +277,8 @@ type NetworkSecurityPolicyV2State struct {
 	IsHitlogEnabled pulumi.BoolPtrInput
 	// If Ipv6 Traffic is allowed.
 	IsIpv6TrafficAllowed pulumi.BoolPtrInput
+	// Indicates whether the network security policy is shared with all projects.
+	IsSharedWithAllProjects pulumi.BoolPtrInput
 	// Is system defined NSP
 	IsSystemDefined pulumi.BoolPtrInput
 	// last updated time
@@ -227,9 +287,13 @@ type NetworkSecurityPolicyV2State struct {
 	Links NetworkSecurityPolicyV2LinkArrayInput
 	// Name of the Flow Network Security Policy.
 	Name pulumi.StringPtrInput
-	// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+	// Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+	Priority pulumi.IntPtrInput
+	// Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringPtrInput
+	// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
 	Rules NetworkSecurityPolicyV2RuleArrayInput
-	// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+	// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
 	Scope pulumi.StringPtrInput
 	// Uuids of the secured groups in the NSP.
 	SecuredGroups pulumi.StringArrayInput
@@ -237,7 +301,7 @@ type NetworkSecurityPolicyV2State struct {
 	State pulumi.StringPtrInput
 	// A globally unique identifier that represents the tenant that owns this entity
 	TenantId pulumi.StringPtrInput
-	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
 	Type pulumi.StringPtrInput
 	// A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
 	VpcReferences pulumi.StringArrayInput
@@ -262,13 +326,17 @@ type networkSecurityPolicyV2Args struct {
 	IsIpv6TrafficAllowed *bool `pulumi:"isIpv6TrafficAllowed"`
 	// Name of the Flow Network Security Policy.
 	Name *string `pulumi:"name"`
-	// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+	// Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+	Priority *int `pulumi:"priority"`
+	// Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+	ProjectExtId *string `pulumi:"projectExtId"`
+	// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
 	Rules []NetworkSecurityPolicyV2Rule `pulumi:"rules"`
-	// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+	// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
 	Scope *string `pulumi:"scope"`
 	// Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
 	State *string `pulumi:"state"`
-	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
 	Type string `pulumi:"type"`
 	// A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
 	VpcReferences []string `pulumi:"vpcReferences"`
@@ -284,13 +352,17 @@ type NetworkSecurityPolicyV2Args struct {
 	IsIpv6TrafficAllowed pulumi.BoolPtrInput
 	// Name of the Flow Network Security Policy.
 	Name pulumi.StringPtrInput
-	// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+	// Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+	Priority pulumi.IntPtrInput
+	// Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringPtrInput
+	// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
 	Rules NetworkSecurityPolicyV2RuleArrayInput
-	// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+	// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
 	Scope pulumi.StringPtrInput
 	// Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
 	State pulumi.StringPtrInput
-	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+	// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
 	Type pulumi.StringInput
 	// A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
 	VpcReferences pulumi.StringArrayInput
@@ -413,6 +485,11 @@ func (o NetworkSecurityPolicyV2Output) IsIpv6TrafficAllowed() pulumi.BoolPtrOutp
 	return o.ApplyT(func(v *NetworkSecurityPolicyV2) pulumi.BoolPtrOutput { return v.IsIpv6TrafficAllowed }).(pulumi.BoolPtrOutput)
 }
 
+// Indicates whether the network security policy is shared with all projects.
+func (o NetworkSecurityPolicyV2Output) IsSharedWithAllProjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v *NetworkSecurityPolicyV2) pulumi.BoolOutput { return v.IsSharedWithAllProjects }).(pulumi.BoolOutput)
+}
+
 // Is system defined NSP
 func (o NetworkSecurityPolicyV2Output) IsSystemDefined() pulumi.BoolOutput {
 	return o.ApplyT(func(v *NetworkSecurityPolicyV2) pulumi.BoolOutput { return v.IsSystemDefined }).(pulumi.BoolOutput)
@@ -433,12 +510,22 @@ func (o NetworkSecurityPolicyV2Output) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityPolicyV2) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+// Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+func (o NetworkSecurityPolicyV2Output) Priority() pulumi.IntOutput {
+	return o.ApplyT(func(v *NetworkSecurityPolicyV2) pulumi.IntOutput { return v.Priority }).(pulumi.IntOutput)
+}
+
+// Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+func (o NetworkSecurityPolicyV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *NetworkSecurityPolicyV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
+}
+
+// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
 func (o NetworkSecurityPolicyV2Output) Rules() NetworkSecurityPolicyV2RuleArrayOutput {
 	return o.ApplyT(func(v *NetworkSecurityPolicyV2) NetworkSecurityPolicyV2RuleArrayOutput { return v.Rules }).(NetworkSecurityPolicyV2RuleArrayOutput)
 }
 
-// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
 func (o NetworkSecurityPolicyV2Output) Scope() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityPolicyV2) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
 }
@@ -458,7 +545,7 @@ func (o NetworkSecurityPolicyV2Output) TenantId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityPolicyV2) pulumi.StringOutput { return v.TenantId }).(pulumi.StringOutput)
 }
 
-// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
 func (o NetworkSecurityPolicyV2Output) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityPolicyV2) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

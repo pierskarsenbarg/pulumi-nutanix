@@ -166,7 +166,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: value of fqdn address
         /// 
-        /// See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/StorageContainers/operation/listStorageContainers).
+        /// See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/StorageContainers/operation/listStorageContainers).
         /// </summary>
         public static Task<GetStorageContainersV2Result> InvokeAsync(GetStorageContainersV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetStorageContainersV2Result>("nutanix:index/getStorageContainersV2:getStorageContainersV2", args ?? new GetStorageContainersV2Args(), options.WithDefaults());
@@ -325,7 +325,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: value of fqdn address
         /// 
-        /// See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/StorageContainers/operation/listStorageContainers).
+        /// See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/StorageContainers/operation/listStorageContainers).
         /// </summary>
         public static Output<GetStorageContainersV2Result> Invoke(GetStorageContainersV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStorageContainersV2Result>("nutanix:index/getStorageContainersV2:getStorageContainersV2", args ?? new GetStorageContainersV2InvokeArgs(), options.WithDefaults());
@@ -484,7 +484,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: value of fqdn address
         /// 
-        /// See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/StorageContainers/operation/listStorageContainers).
+        /// See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/StorageContainers/operation/listStorageContainers).
         /// </summary>
         public static Output<GetStorageContainersV2Result> Invoke(GetStorageContainersV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetStorageContainersV2Result>("nutanix:index/getStorageContainersV2:getStorageContainersV2", args ?? new GetStorageContainersV2InvokeArgs(), options.WithDefaults());

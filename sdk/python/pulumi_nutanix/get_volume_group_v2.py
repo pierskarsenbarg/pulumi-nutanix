@@ -27,7 +27,7 @@ class GetVolumeGroupV2Result:
     """
     A collection of values returned by getVolumeGroupV2.
     """
-    def __init__(__self__, cluster_reference=None, created_by=None, description=None, enabled_authentications=None, ext_id=None, id=None, is_hidden=None, iscsi_features=None, links=None, name=None, sharing_status=None, should_load_balance_vm_attachments=None, storage_features=None, target_name=None, tenant_id=None, usage_type=None):
+    def __init__(__self__, cluster_reference=None, created_by=None, description=None, enabled_authentications=None, ext_id=None, id=None, is_hidden=None, iscsi_features=None, links=None, name=None, project_ext_id=None, sharing_status=None, should_load_balance_vm_attachments=None, storage_features=None, target_name=None, tenant_id=None, usage_type=None):
         if cluster_reference and not isinstance(cluster_reference, str):
             raise TypeError("Expected argument 'cluster_reference' to be a str")
         pulumi.set(__self__, "cluster_reference", cluster_reference)
@@ -58,6 +58,9 @@ class GetVolumeGroupV2Result:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
         if sharing_status and not isinstance(sharing_status, str):
             raise TypeError("Expected argument 'sharing_status' to be a str")
         pulumi.set(__self__, "sharing_status", sharing_status)
@@ -158,6 +161,14 @@ class GetVolumeGroupV2Result:
         return pulumi.get(self, "name")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        - External identifier of the project associated with the Volume Group.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
     @pulumi.getter(name="sharingStatus")
     def sharing_status(self) -> _builtins.str:
         """
@@ -222,6 +233,7 @@ class AwaitableGetVolumeGroupV2Result(GetVolumeGroupV2Result):
             iscsi_features=self.iscsi_features,
             links=self.links,
             name=self.name,
+            project_ext_id=self.project_ext_id,
             sharing_status=self.sharing_status,
             should_load_balance_vm_attachments=self.should_load_balance_vm_attachments,
             storage_features=self.storage_features,
@@ -265,6 +277,7 @@ def get_volume_group_v2(ext_id: Optional[_builtins.str] = None,
         iscsi_features=pulumi.get(__ret__, 'iscsi_features'),
         links=pulumi.get(__ret__, 'links'),
         name=pulumi.get(__ret__, 'name'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
         sharing_status=pulumi.get(__ret__, 'sharing_status'),
         should_load_balance_vm_attachments=pulumi.get(__ret__, 'should_load_balance_vm_attachments'),
         storage_features=pulumi.get(__ret__, 'storage_features'),
@@ -305,6 +318,7 @@ def get_volume_group_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = N
         iscsi_features=pulumi.get(__response__, 'iscsi_features'),
         links=pulumi.get(__response__, 'links'),
         name=pulumi.get(__response__, 'name'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
         sharing_status=pulumi.get(__response__, 'sharing_status'),
         should_load_balance_vm_attachments=pulumi.get(__response__, 'should_load_balance_vm_attachments'),
         storage_features=pulumi.get(__response__, 'storage_features'),

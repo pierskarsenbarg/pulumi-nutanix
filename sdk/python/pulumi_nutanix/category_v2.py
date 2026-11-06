@@ -25,6 +25,9 @@ class CategoryV2Args:
                  value: pulumi.Input[_builtins.str],
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  owner_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shared_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
+                 shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CategoryV2 resource.
@@ -56,6 +59,8 @@ class CategoryV2Args:
                This field can be updated through updateCategoryById API, in which case, should be provided, UUID of a valid user is present in the system.
                Validity of the user UUID can be checked by invoking the API: authn/users/{extId} in the 'Identity and Access Management' or 'IAM' namespace.
                It is used for enabling RBAC access to self-owned categories.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] shared_with_projects: -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
         :param pulumi.Input[_builtins.str] type: -(Required) Denotes the type of a category.
                Valid values are:
                - `SYSTEM` Predefined categories contained in the system to be used by workflows visible in the UI that involve categories. System-defined categories can't be created through the Categories API. They are predefined in a configuration file and are created at PC boot-up time. System-defined categories can't be updated or deleted.
@@ -68,6 +73,12 @@ class CategoryV2Args:
             pulumi.set(__self__, "description", description)
         if owner_uuid is not None:
             pulumi.set(__self__, "owner_uuid", owner_uuid)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
+        if shared_with_all_projects is not None:
+            pulumi.set(__self__, "shared_with_all_projects", shared_with_all_projects)
+        if shared_with_projects is not None:
+            pulumi.set(__self__, "shared_with_projects", shared_with_projects)
         if type is not None:
             pulumi.set(__self__, "type", type)
 
@@ -143,6 +154,39 @@ class CategoryV2Args:
         pulumi.set(self, "owner_uuid", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithAllProjects")
+    def shared_with_all_projects(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "shared_with_all_projects")
+
+    @shared_with_all_projects.setter
+    def shared_with_all_projects(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "shared_with_all_projects", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithProjects")
+    def shared_with_projects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
+        """
+        return pulumi.get(self, "shared_with_projects")
+
+    @shared_with_projects.setter
+    def shared_with_projects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "shared_with_projects", value)
+
+    @_builtins.property
     @pulumi.getter
     def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -165,8 +209,12 @@ class _CategoryV2State:
                  associations: pulumi.Input[Optional[Sequence[pulumi.Input['CategoryV2AssociationArgs']]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  detailed_associations: pulumi.Input[Optional[Sequence[pulumi.Input['CategoryV2DetailedAssociationArgs']]]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  key: pulumi.Input[Optional[_builtins.str]] = None,
                  owner_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shared_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
+                 shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  value: pulumi.Input[Optional[_builtins.str]] = None):
         """
@@ -199,6 +247,8 @@ class _CategoryV2State:
                This field can be updated through updateCategoryById API, in which case, should be provided, UUID of a valid user is present in the system.
                Validity of the user UUID can be checked by invoking the API: authn/users/{extId} in the 'Identity and Access Management' or 'IAM' namespace.
                It is used for enabling RBAC access to self-owned categories.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] shared_with_projects: -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
         :param pulumi.Input[_builtins.str] type: -(Required) Denotes the type of a category.
                Valid values are:
                - `SYSTEM` Predefined categories contained in the system to be used by workflows visible in the UI that involve categories. System-defined categories can't be created through the Categories API. They are predefined in a configuration file and are created at PC boot-up time. System-defined categories can't be updated or deleted.
@@ -220,10 +270,18 @@ class _CategoryV2State:
             pulumi.set(__self__, "description", description)
         if detailed_associations is not None:
             pulumi.set(__self__, "detailed_associations", detailed_associations)
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
         if key is not None:
             pulumi.set(__self__, "key", key)
         if owner_uuid is not None:
             pulumi.set(__self__, "owner_uuid", owner_uuid)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
+        if shared_with_all_projects is not None:
+            pulumi.set(__self__, "shared_with_all_projects", shared_with_all_projects)
+        if shared_with_projects is not None:
+            pulumi.set(__self__, "shared_with_projects", shared_with_projects)
         if type is not None:
             pulumi.set(__self__, "type", type)
         if value is not None:
@@ -277,6 +335,15 @@ class _CategoryV2State:
         pulumi.set(self, "detailed_associations", value)
 
     @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ext_id", value)
+
+    @_builtins.property
     @pulumi.getter
     def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -310,6 +377,39 @@ class _CategoryV2State:
     @owner_uuid.setter
     def owner_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner_uuid", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithAllProjects")
+    def shared_with_all_projects(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "shared_with_all_projects")
+
+    @shared_with_all_projects.setter
+    def shared_with_all_projects(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "shared_with_all_projects", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithProjects")
+    def shared_with_projects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
+        """
+        return pulumi.get(self, "shared_with_projects")
+
+    @shared_with_projects.setter
+    def shared_with_projects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "shared_with_projects", value)
 
     @_builtins.property
     @pulumi.getter
@@ -357,6 +457,9 @@ class CategoryV2(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  key: pulumi.Input[Optional[_builtins.str]] = None,
                  owner_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shared_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
+                 shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  value: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -374,6 +477,22 @@ class CategoryV2(pulumi.CustomResource):
             key="category_example_key",
             value="category_example_value",
             description="category example description")
+        # Category with project association
+        with_project = nutanix.CategoryV2("with_project",
+            key="environment",
+            value="production",
+            description="Production environment category",
+            project_ext_id="project-ext-id-here")
+        # Category shared with multiple projects
+        shared = nutanix.CategoryV2("shared",
+            key="department",
+            value="engineering",
+            description="Engineering department category",
+            shared_with_projects=[
+                "project-ext-id-1",
+                "project-ext-id-2",
+                "project-ext-id-3",
+            ])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -389,7 +508,7 @@ class CategoryV2(pulumi.CustomResource):
 
         Please use datasources (nutanix_categories_v2) to fetch uuids (ext_id) of all category key valye pairs to import them.
 
-        See detailed information in [Nutanix Create Category v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/Categories/operation/createCategory).
+        See detailed information in [Nutanix Create Category v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/Categories/operation/createCategory).
 
 
         :param str resource_name: The name of the resource.
@@ -412,6 +531,8 @@ class CategoryV2(pulumi.CustomResource):
                This field can be updated through updateCategoryById API, in which case, should be provided, UUID of a valid user is present in the system.
                Validity of the user UUID can be checked by invoking the API: authn/users/{extId} in the 'Identity and Access Management' or 'IAM' namespace.
                It is used for enabling RBAC access to self-owned categories.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] shared_with_projects: -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
         :param pulumi.Input[_builtins.str] type: -(Required) Denotes the type of a category.
                Valid values are:
                - `SYSTEM` Predefined categories contained in the system to be used by workflows visible in the UI that involve categories. System-defined categories can't be created through the Categories API. They are predefined in a configuration file and are created at PC boot-up time. System-defined categories can't be updated or deleted.
@@ -447,6 +568,22 @@ class CategoryV2(pulumi.CustomResource):
             key="category_example_key",
             value="category_example_value",
             description="category example description")
+        # Category with project association
+        with_project = nutanix.CategoryV2("with_project",
+            key="environment",
+            value="production",
+            description="Production environment category",
+            project_ext_id="project-ext-id-here")
+        # Category shared with multiple projects
+        shared = nutanix.CategoryV2("shared",
+            key="department",
+            value="engineering",
+            description="Engineering department category",
+            shared_with_projects=[
+                "project-ext-id-1",
+                "project-ext-id-2",
+                "project-ext-id-3",
+            ])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -462,7 +599,7 @@ class CategoryV2(pulumi.CustomResource):
 
         Please use datasources (nutanix_categories_v2) to fetch uuids (ext_id) of all category key valye pairs to import them.
 
-        See detailed information in [Nutanix Create Category v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/Categories/operation/createCategory).
+        See detailed information in [Nutanix Create Category v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/Categories/operation/createCategory).
 
 
         :param str resource_name: The name of the resource.
@@ -483,6 +620,9 @@ class CategoryV2(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  key: pulumi.Input[Optional[_builtins.str]] = None,
                  owner_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shared_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
+                 shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  value: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -499,12 +639,16 @@ class CategoryV2(pulumi.CustomResource):
                 raise TypeError("Missing required property 'key'")
             __props__.__dict__["key"] = key
             __props__.__dict__["owner_uuid"] = owner_uuid
+            __props__.__dict__["project_ext_id"] = project_ext_id
+            __props__.__dict__["shared_with_all_projects"] = shared_with_all_projects
+            __props__.__dict__["shared_with_projects"] = shared_with_projects
             __props__.__dict__["type"] = type
             if value is None and not opts.urn:
                 raise TypeError("Missing required property 'value'")
             __props__.__dict__["value"] = value
             __props__.__dict__["associations"] = None
             __props__.__dict__["detailed_associations"] = None
+            __props__.__dict__["ext_id"] = None
         super(CategoryV2, __self__).__init__(
             'nutanix:index/categoryV2:CategoryV2',
             resource_name,
@@ -518,8 +662,12 @@ class CategoryV2(pulumi.CustomResource):
             associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CategoryV2AssociationArgs', 'CategoryV2AssociationArgsDict', 'outputs.CategoryV2Association']]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             detailed_associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CategoryV2DetailedAssociationArgs', 'CategoryV2DetailedAssociationArgsDict', 'outputs.CategoryV2DetailedAssociation']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             key: pulumi.Input[Optional[_builtins.str]] = None,
             owner_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            shared_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
+            shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             value: pulumi.Input[Optional[_builtins.str]] = None) -> 'CategoryV2':
         """
@@ -556,6 +704,8 @@ class CategoryV2(pulumi.CustomResource):
                This field can be updated through updateCategoryById API, in which case, should be provided, UUID of a valid user is present in the system.
                Validity of the user UUID can be checked by invoking the API: authn/users/{extId} in the 'Identity and Access Management' or 'IAM' namespace.
                It is used for enabling RBAC access to self-owned categories.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] shared_with_projects: -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
         :param pulumi.Input[_builtins.str] type: -(Required) Denotes the type of a category.
                Valid values are:
                - `SYSTEM` Predefined categories contained in the system to be used by workflows visible in the UI that involve categories. System-defined categories can't be created through the Categories API. They are predefined in a configuration file and are created at PC boot-up time. System-defined categories can't be updated or deleted.
@@ -578,8 +728,12 @@ class CategoryV2(pulumi.CustomResource):
         __props__.__dict__["associations"] = associations
         __props__.__dict__["description"] = description
         __props__.__dict__["detailed_associations"] = detailed_associations
+        __props__.__dict__["ext_id"] = ext_id
         __props__.__dict__["key"] = key
         __props__.__dict__["owner_uuid"] = owner_uuid
+        __props__.__dict__["project_ext_id"] = project_ext_id
+        __props__.__dict__["shared_with_all_projects"] = shared_with_all_projects
+        __props__.__dict__["shared_with_projects"] = shared_with_projects
         __props__.__dict__["type"] = type
         __props__.__dict__["value"] = value
         return CategoryV2(resource_name, opts=opts, __props__=__props__)
@@ -590,16 +744,24 @@ class CategoryV2(pulumi.CustomResource):
             associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CategoryV2AssociationArgs', 'CategoryV2AssociationArgsDict', 'outputs.CategoryV2Association']]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             detailed_associations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CategoryV2DetailedAssociationArgs', 'CategoryV2DetailedAssociationArgsDict', 'outputs.CategoryV2DetailedAssociation']]]]] = None,
+            ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             key: pulumi.Input[Optional[_builtins.str]] = None,
             owner_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            shared_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
+            shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             value: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
         __props__: dict = {}
         __props__["associations"] = associations
         __props__["description"] = description
         __props__["detailedAssociations"] = detailed_associations
+        __props__["extId"] = ext_id
         __props__["key"] = key
         __props__["ownerUuid"] = owner_uuid
+        __props__["projectExtId"] = project_ext_id
+        __props__["sharedWithAllProjects"] = shared_with_all_projects
+        __props__["sharedWithProjects"] = shared_with_projects
         __props__["type"] = type
         __props__["value"] = value
         return pulumi.runtime.exists_resource(None, 'nutanix:index/categoryV2:CategoryV2', id, __props__, opts or pulumi.ResourceOptions())
@@ -640,6 +802,11 @@ class CategoryV2(pulumi.CustomResource):
         return pulumi.get(self, "detailed_associations")
 
     @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Output[_builtins.str]:
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
     @pulumi.getter
     def key(self) -> pulumi.Output[_builtins.str]:
         """
@@ -665,6 +832,27 @@ class CategoryV2(pulumi.CustomResource):
         It is used for enabling RBAC access to self-owned categories.
         """
         return pulumi.get(self, "owner_uuid")
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithAllProjects")
+    def shared_with_all_projects(self) -> pulumi.Output[_builtins.bool]:
+        return pulumi.get(self, "shared_with_all_projects")
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithProjects")
+    def shared_with_projects(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
+        """
+        return pulumi.get(self, "shared_with_projects")
 
     @_builtins.property
     @pulumi.getter

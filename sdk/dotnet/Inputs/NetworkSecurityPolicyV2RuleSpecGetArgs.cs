@@ -25,6 +25,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _applicationRuleSpecs = value;
         }
 
+        [Input("flexRuleSpecs")]
+        private InputList<Inputs.NetworkSecurityPolicyV2RuleSpecFlexRuleSpecGetArgs>? _flexRuleSpecs;
+
+        /// <summary>
+        /// Flex Rule Spec.
+        /// </summary>
+        public InputList<Inputs.NetworkSecurityPolicyV2RuleSpecFlexRuleSpecGetArgs> FlexRuleSpecs
+        {
+            get => _flexRuleSpecs ?? (_flexRuleSpecs = new InputList<Inputs.NetworkSecurityPolicyV2RuleSpecFlexRuleSpecGetArgs>());
+            set => _flexRuleSpecs = value;
+        }
+
         [Input("intraEntityGroupRuleSpecs")]
         private InputList<Inputs.NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecGetArgs>? _intraEntityGroupRuleSpecs;
 

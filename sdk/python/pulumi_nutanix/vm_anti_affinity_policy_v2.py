@@ -21,19 +21,23 @@ class VmAntiAffinityPolicyV2Args:
     def __init__(__self__, *,
                  categories: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a VmAntiAffinityPolicyV2 resource.
 
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
         :param pulumi.Input[_builtins.str] description: A description of the VM-VM Anti-Affinity policy.
         :param pulumi.Input[_builtins.str] name: The name of the VM-VM Anti-Affinity policy.
+        :param pulumi.Input[_builtins.str] project_ext_id: The external identifier of the project that this policy is associated with.
         """
         pulumi.set(__self__, "categories", categories)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
 
     @_builtins.property
     @pulumi.getter
@@ -71,6 +75,18 @@ class VmAntiAffinityPolicyV2Args:
     def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The external identifier of the project that this policy is associated with.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
 
 @pulumi.input_type
 class _VmAntiAffinityPolicyV2State:
@@ -84,6 +100,7 @@ class _VmAntiAffinityPolicyV2State:
                  num_compliant_vms: pulumi.Input[Optional[_builtins.int]] = None,
                  num_non_compliant_vms: pulumi.Input[Optional[_builtins.int]] = None,
                  num_pending_vms: pulumi.Input[Optional[_builtins.int]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  update_time: pulumi.Input[Optional[_builtins.str]] = None,
                  updated_by: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
@@ -98,6 +115,7 @@ class _VmAntiAffinityPolicyV2State:
         :param pulumi.Input[_builtins.int] num_compliant_vms: Number of compliant VMs which are part of the VM-VM anti-affinity policy.
         :param pulumi.Input[_builtins.int] num_non_compliant_vms: Number of non-compliant VMs which are part of the VM-VM anti-affinity policy.
         :param pulumi.Input[_builtins.int] num_pending_vms: Number of VMs with compliance state as pending, which are part of the VM-VM anti-affinity policy.
+        :param pulumi.Input[_builtins.str] project_ext_id: The external identifier of the project that this policy is associated with.
         :param pulumi.Input[_builtins.str] update_time: The timestamp when the policy was last updated.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] updated_by: Information about the entity that last updated the policy.
         """
@@ -119,6 +137,8 @@ class _VmAntiAffinityPolicyV2State:
             pulumi.set(__self__, "num_non_compliant_vms", num_non_compliant_vms)
         if num_pending_vms is not None:
             pulumi.set(__self__, "num_pending_vms", num_pending_vms)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if update_time is not None:
             pulumi.set(__self__, "update_time", update_time)
         if updated_by is not None:
@@ -233,6 +253,18 @@ class _VmAntiAffinityPolicyV2State:
         pulumi.set(self, "num_pending_vms", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The external identifier of the project that this policy is associated with.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="updateTime")
     def update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -266,6 +298,7 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
                  categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to create, read, update, and delete VM-VM Anti-Affinity policies. VM-VM Anti-Affinity policies ensure that VMs in specified categories are spread across different hosts for high availability and fault tolerance. This helps prevent single points of failure by distributing VMs across the cluster. For more information on VM-VM Anti-Affinity policies, see the [AHV Administration Guide](https://portal.nutanix.com/page/documents/details?targetId=AHV-Admin-Guide-v11_0:ahv-anti-affinity-policies-c.html).
@@ -303,7 +336,7 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
         ```
         <!--End PulumiCodeChooser -->
 
-        See detailed information in [Nutanix VM-VM Anti-Affinity Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/VmAntiAffinityPolicies)
+        See detailed information in [Nutanix VM-VM Anti-Affinity Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/VmAntiAffinityPolicies/operation/createVmAntiAffinityPolicy)
 
 
         :param str resource_name: The name of the resource.
@@ -311,6 +344,7 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] categories: List of VM category external IDs (<span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>) that this policy applies to. VMs with these categories will be spread across different hosts according to the anti-affinity rules.
         :param pulumi.Input[_builtins.str] description: A description of the VM-VM Anti-Affinity policy.
         :param pulumi.Input[_builtins.str] name: The name of the VM-VM Anti-Affinity policy.
+        :param pulumi.Input[_builtins.str] project_ext_id: The external identifier of the project that this policy is associated with.
         """
         ...
     @overload
@@ -354,7 +388,7 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
         ```
         <!--End PulumiCodeChooser -->
 
-        See detailed information in [Nutanix VM-VM Anti-Affinity Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/VmAntiAffinityPolicies)
+        See detailed information in [Nutanix VM-VM Anti-Affinity Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/VmAntiAffinityPolicies/operation/createVmAntiAffinityPolicy)
 
 
         :param str resource_name: The name of the resource.
@@ -375,6 +409,7 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
                  categories: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -389,6 +424,7 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
             __props__.__dict__["categories"] = categories
             __props__.__dict__["description"] = description
             __props__.__dict__["name"] = name
+            __props__.__dict__["project_ext_id"] = project_ext_id
             __props__.__dict__["create_time"] = None
             __props__.__dict__["created_by"] = None
             __props__.__dict__["ext_id"] = None
@@ -416,6 +452,7 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
             num_compliant_vms: pulumi.Input[Optional[_builtins.int]] = None,
             num_non_compliant_vms: pulumi.Input[Optional[_builtins.int]] = None,
             num_pending_vms: pulumi.Input[Optional[_builtins.int]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             update_time: pulumi.Input[Optional[_builtins.str]] = None,
             updated_by: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> 'VmAntiAffinityPolicyV2':
         """
@@ -434,6 +471,7 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] num_compliant_vms: Number of compliant VMs which are part of the VM-VM anti-affinity policy.
         :param pulumi.Input[_builtins.int] num_non_compliant_vms: Number of non-compliant VMs which are part of the VM-VM anti-affinity policy.
         :param pulumi.Input[_builtins.int] num_pending_vms: Number of VMs with compliance state as pending, which are part of the VM-VM anti-affinity policy.
+        :param pulumi.Input[_builtins.str] project_ext_id: The external identifier of the project that this policy is associated with.
         :param pulumi.Input[_builtins.str] update_time: The timestamp when the policy was last updated.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] updated_by: Information about the entity that last updated the policy.
         """
@@ -450,6 +488,7 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
         __props__.__dict__["num_compliant_vms"] = num_compliant_vms
         __props__.__dict__["num_non_compliant_vms"] = num_non_compliant_vms
         __props__.__dict__["num_pending_vms"] = num_pending_vms
+        __props__.__dict__["project_ext_id"] = project_ext_id
         __props__.__dict__["update_time"] = update_time
         __props__.__dict__["updated_by"] = updated_by
         return VmAntiAffinityPolicyV2(resource_name, opts=opts, __props__=__props__)
@@ -466,6 +505,7 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
             num_compliant_vms: pulumi.Input[Optional[_builtins.int]] = None,
             num_non_compliant_vms: pulumi.Input[Optional[_builtins.int]] = None,
             num_pending_vms: pulumi.Input[Optional[_builtins.int]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             update_time: pulumi.Input[Optional[_builtins.str]] = None,
             updated_by: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
         __props__: dict = {}
@@ -478,6 +518,7 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
         __props__["numCompliantVms"] = num_compliant_vms
         __props__["numNonCompliantVms"] = num_non_compliant_vms
         __props__["numPendingVms"] = num_pending_vms
+        __props__["projectExtId"] = project_ext_id
         __props__["updateTime"] = update_time
         __props__["updatedBy"] = updated_by
         return pulumi.runtime.exists_resource(None, 'nutanix:index/vmAntiAffinityPolicyV2:VmAntiAffinityPolicyV2', id, __props__, opts or pulumi.ResourceOptions())
@@ -553,6 +594,14 @@ class VmAntiAffinityPolicyV2(pulumi.CustomResource):
         Number of VMs with compliance state as pending, which are part of the VM-VM anti-affinity policy.
         """
         return pulumi.get(self, "num_pending_vms")
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The external identifier of the project that this policy is associated with.
+        """
+        return pulumi.get(self, "project_ext_id")
 
     @_builtins.property
     @pulumi.getter(name="updateTime")

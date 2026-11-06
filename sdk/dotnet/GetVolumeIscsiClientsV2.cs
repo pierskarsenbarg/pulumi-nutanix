@@ -265,7 +265,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`numVirtualTargets`" pulumi-lang-dotnet="`NumVirtualTargets`" pulumi-lang-go="`numVirtualTargets`" pulumi-lang-python="`num_virtual_targets`" pulumi-lang-yaml="`numVirtualTargets`" pulumi-lang-java="`numVirtualTargets`" pulumi-lang-hcl="`num_virtual_targets`"&gt;`numVirtualTargets`&lt;/span&gt;: - Number of virtual targets generated for the iSCSI target. This field is immutable.
         /// * &lt;span pulumi-lang-nodejs="`iscsiTargetName`" pulumi-lang-dotnet="`IscsiTargetName`" pulumi-lang-go="`iscsiTargetName`" pulumi-lang-python="`iscsi_target_name`" pulumi-lang-yaml="`iscsiTargetName`" pulumi-lang-java="`iscsiTargetName`" pulumi-lang-hcl="`iscsi_target_name`"&gt;`iscsiTargetName`&lt;/span&gt;: - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
         /// 
-        /// See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/IscsiClients/operation/listIscsiClients).
+        /// See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.3#tag/IscsiClients/operation/listIscsiClients).
         /// </summary>
         public static Task<GetVolumeIscsiClientsV2Result> InvokeAsync(GetVolumeIscsiClientsV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVolumeIscsiClientsV2Result>("nutanix:index/getVolumeIscsiClientsV2:getVolumeIscsiClientsV2", args ?? new GetVolumeIscsiClientsV2Args(), options.WithDefaults());
@@ -523,7 +523,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`numVirtualTargets`" pulumi-lang-dotnet="`NumVirtualTargets`" pulumi-lang-go="`numVirtualTargets`" pulumi-lang-python="`num_virtual_targets`" pulumi-lang-yaml="`numVirtualTargets`" pulumi-lang-java="`numVirtualTargets`" pulumi-lang-hcl="`num_virtual_targets`"&gt;`numVirtualTargets`&lt;/span&gt;: - Number of virtual targets generated for the iSCSI target. This field is immutable.
         /// * &lt;span pulumi-lang-nodejs="`iscsiTargetName`" pulumi-lang-dotnet="`IscsiTargetName`" pulumi-lang-go="`iscsiTargetName`" pulumi-lang-python="`iscsi_target_name`" pulumi-lang-yaml="`iscsiTargetName`" pulumi-lang-java="`iscsiTargetName`" pulumi-lang-hcl="`iscsi_target_name`"&gt;`iscsiTargetName`&lt;/span&gt;: - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
         /// 
-        /// See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/IscsiClients/operation/listIscsiClients).
+        /// See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.3#tag/IscsiClients/operation/listIscsiClients).
         /// </summary>
         public static Output<GetVolumeIscsiClientsV2Result> Invoke(GetVolumeIscsiClientsV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeIscsiClientsV2Result>("nutanix:index/getVolumeIscsiClientsV2:getVolumeIscsiClientsV2", args ?? new GetVolumeIscsiClientsV2InvokeArgs(), options.WithDefaults());
@@ -781,7 +781,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`numVirtualTargets`" pulumi-lang-dotnet="`NumVirtualTargets`" pulumi-lang-go="`numVirtualTargets`" pulumi-lang-python="`num_virtual_targets`" pulumi-lang-yaml="`numVirtualTargets`" pulumi-lang-java="`numVirtualTargets`" pulumi-lang-hcl="`num_virtual_targets`"&gt;`numVirtualTargets`&lt;/span&gt;: - Number of virtual targets generated for the iSCSI target. This field is immutable.
         /// * &lt;span pulumi-lang-nodejs="`iscsiTargetName`" pulumi-lang-dotnet="`IscsiTargetName`" pulumi-lang-go="`iscsiTargetName`" pulumi-lang-python="`iscsi_target_name`" pulumi-lang-yaml="`iscsiTargetName`" pulumi-lang-java="`iscsiTargetName`" pulumi-lang-hcl="`iscsi_target_name`"&gt;`iscsiTargetName`&lt;/span&gt;: - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
         /// 
-        /// See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/IscsiClients/operation/listIscsiClients).
+        /// See detailed information in [Nutanix List iSCSI Clients V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.3#tag/IscsiClients/operation/listIscsiClients).
         /// </summary>
         public static Output<GetVolumeIscsiClientsV2Result> Invoke(GetVolumeIscsiClientsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeIscsiClientsV2Result>("nutanix:index/getVolumeIscsiClientsV2:getVolumeIscsiClientsV2", args ?? new GetVolumeIscsiClientsV2InvokeArgs(), options.WithDefaults());

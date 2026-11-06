@@ -25,6 +25,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// |-----------|------------------------------|
         /// | SHA       | SHA SNMP authentication      |
         /// | MD5       | MD5 SNMP authentication      |
+        /// | SHA224    | SHA-224 SNMP authentication  |
+        /// | SHA256    | SHA-256 SNMP authentication  |
+        /// | SHA384    | SHA-384 SNMP authentication  |
+        /// | SHA512    | SHA-512 SNMP authentication  |
         /// </summary>
         public readonly string AuthType;
         public readonly string? ExtId;
@@ -40,6 +44,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// |-----------|--------------------|
         /// | DES       | DES SNMP key       |
         /// | AES       | AES SNMP key       |
+        /// | AES192    | AES-192 SNMP key   |
+        /// | AES256    | AES-256 SNMP key   |
         /// </summary>
         public readonly string? PrivType;
         public readonly string? TenantId;

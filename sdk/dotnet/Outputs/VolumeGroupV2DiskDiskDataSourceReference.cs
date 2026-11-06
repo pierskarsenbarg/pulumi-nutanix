@@ -14,21 +14,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VolumeGroupV2DiskDiskDataSourceReference
     {
-        /// <summary>
-        /// - The Entity Type of the Data Source Reference.
-        /// </summary>
         public readonly string? EntityType;
         /// <summary>
-        /// - The external identifier of the Data Source Reference.
+        /// -(Optional) A globally unique identifier of an instance that is suitable for external consumption.
         /// </summary>
         public readonly string ExtId;
         /// <summary>
-        /// - The name of the Data Source Reference. for the Volume Group.
+        /// -(Required) Volume Group name. This is an optional field.
         /// </summary>
         public readonly string? Name;
-        /// <summary>
-        /// - The uri list of the Data Source Reference.
-        /// </summary>
         public readonly ImmutableArray<string> Uris;
 
         [OutputConstructor]

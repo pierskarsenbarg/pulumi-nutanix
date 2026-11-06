@@ -78,6 +78,8 @@ type LookupVmAntiAffinityPolicyV2Result struct {
 	NumNonCompliantVms int `pulumi:"numNonCompliantVms"`
 	// Number of VMs with compliance state as pending, which are part of the VM-VM anti-affinity policy.
 	NumPendingVms int `pulumi:"numPendingVms"`
+	// The external identifier of the project that this policy is associated with.
+	ProjectExtId string `pulumi:"projectExtId"`
 	// The timestamp when the policy was last updated.
 	UpdateTime string `pulumi:"updateTime"`
 	// Information about the entity that last updated the policy.
@@ -161,6 +163,11 @@ func (o LookupVmAntiAffinityPolicyV2ResultOutput) NumNonCompliantVms() pulumi.In
 // Number of VMs with compliance state as pending, which are part of the VM-VM anti-affinity policy.
 func (o LookupVmAntiAffinityPolicyV2ResultOutput) NumPendingVms() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupVmAntiAffinityPolicyV2Result) int { return v.NumPendingVms }).(pulumi.IntOutput)
+}
+
+// The external identifier of the project that this policy is associated with.
+func (o LookupVmAntiAffinityPolicyV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupVmAntiAffinityPolicyV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // The timestamp when the policy was last updated.

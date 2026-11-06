@@ -127,7 +127,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   * &lt;span pulumi-lang-nodejs="`replicationFactor`" pulumi-lang-dotnet="`ReplicationFactor`" pulumi-lang-go="`replicationFactor`" pulumi-lang-python="`replication_factor`" pulumi-lang-yaml="`replicationFactor`" pulumi-lang-java="`replicationFactor`" pulumi-lang-hcl="`replication_factor`"&gt;`replicationFactor`&lt;/span&gt;:- Replication factor value.
         /// * &lt;span pulumi-lang-nodejs="`policyType`" pulumi-lang-dotnet="`PolicyType`" pulumi-lang-go="`policyType`" pulumi-lang-python="`policy_type`" pulumi-lang-yaml="`policyType`" pulumi-lang-java="`policyType`" pulumi-lang-hcl="`policy_type`"&gt;`policyType`&lt;/span&gt;:- Indicates whether the policy is user-created or system-created. Valid values: `"USER"`, `"SYSTEM"`.
         /// 
-        /// See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.2#tag/StoragePolicies/operation/listStoragePolicies).
+        /// See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.3#tag/StoragePolicies/operation/listStoragePolicies).
         /// </summary>
         public static Task<GetStoragePoliciesV2Result> InvokeAsync(GetStoragePoliciesV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetStoragePoliciesV2Result>("nutanix:index/getStoragePoliciesV2:getStoragePoliciesV2", args ?? new GetStoragePoliciesV2Args(), options.WithDefaults());
@@ -247,7 +247,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   * &lt;span pulumi-lang-nodejs="`replicationFactor`" pulumi-lang-dotnet="`ReplicationFactor`" pulumi-lang-go="`replicationFactor`" pulumi-lang-python="`replication_factor`" pulumi-lang-yaml="`replicationFactor`" pulumi-lang-java="`replicationFactor`" pulumi-lang-hcl="`replication_factor`"&gt;`replicationFactor`&lt;/span&gt;:- Replication factor value.
         /// * &lt;span pulumi-lang-nodejs="`policyType`" pulumi-lang-dotnet="`PolicyType`" pulumi-lang-go="`policyType`" pulumi-lang-python="`policy_type`" pulumi-lang-yaml="`policyType`" pulumi-lang-java="`policyType`" pulumi-lang-hcl="`policy_type`"&gt;`policyType`&lt;/span&gt;:- Indicates whether the policy is user-created or system-created. Valid values: `"USER"`, `"SYSTEM"`.
         /// 
-        /// See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.2#tag/StoragePolicies/operation/listStoragePolicies).
+        /// See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.3#tag/StoragePolicies/operation/listStoragePolicies).
         /// </summary>
         public static Output<GetStoragePoliciesV2Result> Invoke(GetStoragePoliciesV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStoragePoliciesV2Result>("nutanix:index/getStoragePoliciesV2:getStoragePoliciesV2", args ?? new GetStoragePoliciesV2InvokeArgs(), options.WithDefaults());
@@ -367,7 +367,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   * &lt;span pulumi-lang-nodejs="`replicationFactor`" pulumi-lang-dotnet="`ReplicationFactor`" pulumi-lang-go="`replicationFactor`" pulumi-lang-python="`replication_factor`" pulumi-lang-yaml="`replicationFactor`" pulumi-lang-java="`replicationFactor`" pulumi-lang-hcl="`replication_factor`"&gt;`replicationFactor`&lt;/span&gt;:- Replication factor value.
         /// * &lt;span pulumi-lang-nodejs="`policyType`" pulumi-lang-dotnet="`PolicyType`" pulumi-lang-go="`policyType`" pulumi-lang-python="`policy_type`" pulumi-lang-yaml="`policyType`" pulumi-lang-java="`policyType`" pulumi-lang-hcl="`policy_type`"&gt;`policyType`&lt;/span&gt;:- Indicates whether the policy is user-created or system-created. Valid values: `"USER"`, `"SYSTEM"`.
         /// 
-        /// See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.2#tag/StoragePolicies/operation/listStoragePolicies).
+        /// See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&amp;version=v4.3#tag/StoragePolicies/operation/listStoragePolicies).
         /// </summary>
         public static Output<GetStoragePoliciesV2Result> Invoke(GetStoragePoliciesV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetStoragePoliciesV2Result>("nutanix:index/getStoragePoliciesV2:getStoragePoliciesV2", args ?? new GetStoragePoliciesV2InvokeArgs(), options.WithDefaults());

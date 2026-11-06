@@ -57,6 +57,8 @@ type LookupSubnetV2Result struct {
 	IpUsages []GetSubnetV2IpUsage `pulumi:"ipUsages"`
 	// Indicates whether the subnet is used for advanced networking.
 	IsAdvancedNetworking bool `pulumi:"isAdvancedNetworking"`
+	// Indicates whether the subnet is connected.
+	IsConnected bool `pulumi:"isConnected"`
 	// Indicates whether the subnet is used for external connectivity.
 	IsExternal bool `pulumi:"isExternal"`
 	// Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
@@ -72,8 +74,12 @@ type LookupSubnetV2Result struct {
 	NetworkFunctionChainReference string `pulumi:"networkFunctionChainReference"`
 	// or VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
 	NetworkId int `pulumi:"networkId"`
+	// External identifier of the project associated with the Subnet.
+	ProjectExtId string `pulumi:"projectExtId"`
 	// List of IPs that are excluded while allocating IP addresses to VM ports.
 	ReservedIpAddresses []GetSubnetV2ReservedIpAddress `pulumi:"reservedIpAddresses"`
+	// List of project external identifiers with which the Subnet is shared.
+	SharedWithProjects []string `pulumi:"sharedWithProjects"`
 	// Type of subnet.
 	SubnetType string `pulumi:"subnetType"`
 	// UUID of the virtual switch this subnet belongs to (type VLAN only).
@@ -182,6 +188,11 @@ func (o LookupSubnetV2ResultOutput) IsAdvancedNetworking() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupSubnetV2Result) bool { return v.IsAdvancedNetworking }).(pulumi.BoolOutput)
 }
 
+// Indicates whether the subnet is connected.
+func (o LookupSubnetV2ResultOutput) IsConnected() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupSubnetV2Result) bool { return v.IsConnected }).(pulumi.BoolOutput)
+}
+
 // Indicates whether the subnet is used for external connectivity.
 func (o LookupSubnetV2ResultOutput) IsExternal() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupSubnetV2Result) bool { return v.IsExternal }).(pulumi.BoolOutput)
@@ -221,9 +232,19 @@ func (o LookupSubnetV2ResultOutput) NetworkId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupSubnetV2Result) int { return v.NetworkId }).(pulumi.IntOutput)
 }
 
+// External identifier of the project associated with the Subnet.
+func (o LookupSubnetV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSubnetV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
+}
+
 // List of IPs that are excluded while allocating IP addresses to VM ports.
 func (o LookupSubnetV2ResultOutput) ReservedIpAddresses() GetSubnetV2ReservedIpAddressArrayOutput {
 	return o.ApplyT(func(v LookupSubnetV2Result) []GetSubnetV2ReservedIpAddress { return v.ReservedIpAddresses }).(GetSubnetV2ReservedIpAddressArrayOutput)
+}
+
+// List of project external identifiers with which the Subnet is shared.
+func (o LookupSubnetV2ResultOutput) SharedWithProjects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupSubnetV2Result) []string { return v.SharedWithProjects }).(pulumi.StringArrayOutput)
 }
 
 // Type of subnet.

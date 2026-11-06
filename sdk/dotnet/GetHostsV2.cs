@@ -338,7 +338,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// * &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`"&gt;`prefixLength`&lt;/span&gt;: - The prefix length of the network to which this host IPv6 address belongs.
         /// 
-        /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/Clusters/operation/listHostsByClusterId).
+        /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/Clusters/operation/listHostsByClusterId).
         /// </summary>
         public static Task<GetHostsV2Result> InvokeAsync(GetHostsV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetHostsV2Result>("nutanix:index/getHostsV2:getHostsV2", args ?? new GetHostsV2Args(), options.WithDefaults());
@@ -669,7 +669,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// * &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`"&gt;`prefixLength`&lt;/span&gt;: - The prefix length of the network to which this host IPv6 address belongs.
         /// 
-        /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/Clusters/operation/listHostsByClusterId).
+        /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/Clusters/operation/listHostsByClusterId).
         /// </summary>
         public static Output<GetHostsV2Result> Invoke(GetHostsV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHostsV2Result>("nutanix:index/getHostsV2:getHostsV2", args ?? new GetHostsV2InvokeArgs(), options.WithDefaults());
@@ -1000,7 +1000,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: - An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// * &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`"&gt;`prefixLength`&lt;/span&gt;: - The prefix length of the network to which this host IPv6 address belongs.
         /// 
-        /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/Clusters/operation/listHostsByClusterId).
+        /// See detailed information in [Nutanix List Hosts V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/Clusters/operation/listHostsByClusterId).
         /// </summary>
         public static Output<GetHostsV2Result> Invoke(GetHostsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetHostsV2Result>("nutanix:index/getHostsV2:getHostsV2", args ?? new GetHostsV2InvokeArgs(), options.WithDefaults());

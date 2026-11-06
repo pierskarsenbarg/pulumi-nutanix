@@ -15,10 +15,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("flashModes")]
         private InputList<Inputs.VolumeGroupV2DiskDiskStorageFeatureFlashModeArgs>? _flashModes;
-
-        /// <summary>
-        /// - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
-        /// </summary>
         public InputList<Inputs.VolumeGroupV2DiskDiskStorageFeatureFlashModeArgs> FlashModes
         {
             get => _flashModes ?? (_flashModes = new InputList<Inputs.VolumeGroupV2DiskDiskStorageFeatureFlashModeArgs>());

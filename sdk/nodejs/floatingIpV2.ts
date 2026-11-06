@@ -125,6 +125,10 @@ export class FloatingIpV2 extends pulumi.CustomResource {
     declare public readonly name: pulumi.Output<string>;
     declare public /*out*/ readonly privateIp: pulumi.Output<string>;
     /**
+     * External identifier of the project associated with the Floating IP.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
+    /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
     declare public /*out*/ readonly tenantId: pulumi.Output<string>;
@@ -171,6 +175,7 @@ export class FloatingIpV2 extends pulumi.CustomResource {
             resourceInputs["metadatas"] = state?.metadatas;
             resourceInputs["name"] = state?.name;
             resourceInputs["privateIp"] = state?.privateIp;
+            resourceInputs["projectExtId"] = state?.projectExtId;
             resourceInputs["tenantId"] = state?.tenantId;
             resourceInputs["vmNicReference"] = state?.vmNicReference;
             resourceInputs["vmNics"] = state?.vmNics;
@@ -186,6 +191,7 @@ export class FloatingIpV2 extends pulumi.CustomResource {
             resourceInputs["floatingIps"] = args?.floatingIps;
             resourceInputs["loadBalancerSessionReference"] = args?.loadBalancerSessionReference;
             resourceInputs["name"] = args?.name;
+            resourceInputs["projectExtId"] = args?.projectExtId;
             resourceInputs["vmNicReference"] = args?.vmNicReference;
             resourceInputs["vmNics"] = args?.vmNics;
             resourceInputs["vpcReference"] = args?.vpcReference;
@@ -247,6 +253,10 @@ export interface FloatingIpV2State {
     name?: pulumi.Input<string | undefined>;
     privateIp?: pulumi.Input<string | undefined>;
     /**
+     * External identifier of the project associated with the Floating IP.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
     tenantId?: pulumi.Input<string | undefined>;
@@ -298,6 +308,10 @@ export interface FloatingIpV2Args {
      * Name of the floating IP.
      */
     name?: pulumi.Input<string | undefined>;
+    /**
+     * External identifier of the project associated with the Floating IP.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
     /**
      * VM NIC reference.
      */

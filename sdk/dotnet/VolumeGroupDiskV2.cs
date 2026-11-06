@@ -63,6 +63,8 @@ namespace PiersKarsenbarg.Nutanix
     /// });
     /// ```
     /// &lt;!--End PulumiCodeChooser --&gt;
+    /// 
+    /// &gt; **Volume Group disk workflow:** Create the disk with &lt;span pulumi-lang-nodejs="`nutanix.VolumeGroupDiskV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupDiskV2`" pulumi-lang-go="`VolumeGroupDiskV2`" pulumi-lang-python="`VolumeGroupDiskV2`" pulumi-lang-yaml="`nutanix.VolumeGroupDiskV2`" pulumi-lang-java="`nutanix.VolumeGroupDiskV2`" pulumi-lang-hcl="`nutanix_volume_group_disk_v2`"&gt;`nutanix.VolumeGroupDiskV2`&lt;/span&gt; and attach it to a VM with &lt;span pulumi-lang-nodejs="`nutanix.VolumeGroupVmV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupVmV2`" pulumi-lang-go="`VolumeGroupVmV2`" pulumi-lang-python="`VolumeGroupVmV2`" pulumi-lang-yaml="`nutanix.VolumeGroupVmV2`" pulumi-lang-java="`nutanix.VolumeGroupVmV2`" pulumi-lang-hcl="`nutanix_volume_group_vm_v2`"&gt;`nutanix.VolumeGroupVmV2`&lt;/span&gt;.
     /// </summary>
     [NutanixResourceType("nutanix:index/volumeGroupDiskV2:VolumeGroupDiskV2")]
     public partial class VolumeGroupDiskV2 : global::Pulumi.CustomResource
@@ -104,7 +106,13 @@ namespace PiersKarsenbarg.Nutanix
         public Output<int> Index { get; private set; } = null!;
 
         /// <summary>
-        /// The external identifier of the volume group.
+        /// The ID of the storage container.
+        /// </summary>
+        [Output("storageContainerId")]
+        public Output<string> StorageContainerId { get; private set; } = null!;
+
+        /// <summary>
+        /// -(Required) The external identifier of the Volume Group.
         /// </summary>
         [Output("volumeGroupExtId")]
         public Output<string> VolumeGroupExtId { get; private set; } = null!;
@@ -199,7 +207,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<int>? Index { get; set; }
 
         /// <summary>
-        /// The external identifier of the volume group.
+        /// -(Required) The external identifier of the Volume Group.
         /// </summary>
         [Input("volumeGroupExtId", required: true)]
         public Input<string> VolumeGroupExtId { get; set; } = null!;
@@ -261,7 +269,13 @@ namespace PiersKarsenbarg.Nutanix
         public Input<int>? Index { get; set; }
 
         /// <summary>
-        /// The external identifier of the volume group.
+        /// The ID of the storage container.
+        /// </summary>
+        [Input("storageContainerId")]
+        public Input<string>? StorageContainerId { get; set; }
+
+        /// <summary>
+        /// -(Required) The external identifier of the Volume Group.
         /// </summary>
         [Input("volumeGroupExtId")]
         public Input<string>? VolumeGroupExtId { get; set; }

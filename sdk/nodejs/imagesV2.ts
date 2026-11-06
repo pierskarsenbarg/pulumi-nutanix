@@ -28,6 +28,7 @@ import * as utilities from "./utilities";
  *     name: "test-image",
  *     description: "img desc",
  *     type: "DISK_IMAGE",
+ *     projectExtId: "<project_uuid>",
  *     sources: [{
  *         urlSources: [{
  *             url: "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
@@ -126,6 +127,14 @@ export class ImagesV2 extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly placementPolicyStatuses: pulumi.Output<outputs.ImagesV2PlacementPolicyStatus[]>;
     /**
+     * External identifier of the project associated with the image.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
+    /**
+     * Indicates whether the image is shared with all projects.
+     */
+    declare public /*out*/ readonly shareWithAllProjects: pulumi.Output<boolean>;
+    /**
      * The size in bytes of an image file.
      */
     declare public /*out*/ readonly sizeBytes: pulumi.Output<number>;
@@ -163,6 +172,8 @@ export class ImagesV2 extends pulumi.CustomResource {
             resourceInputs["name"] = state?.name;
             resourceInputs["ownerExtId"] = state?.ownerExtId;
             resourceInputs["placementPolicyStatuses"] = state?.placementPolicyStatuses;
+            resourceInputs["projectExtId"] = state?.projectExtId;
+            resourceInputs["shareWithAllProjects"] = state?.shareWithAllProjects;
             resourceInputs["sizeBytes"] = state?.sizeBytes;
             resourceInputs["sources"] = state?.sources;
             resourceInputs["tenantId"] = state?.tenantId;
@@ -177,6 +188,7 @@ export class ImagesV2 extends pulumi.CustomResource {
             resourceInputs["clusterLocationExtIds"] = args?.clusterLocationExtIds;
             resourceInputs["description"] = args?.description;
             resourceInputs["name"] = args?.name;
+            resourceInputs["projectExtId"] = args?.projectExtId;
             resourceInputs["sources"] = args?.sources;
             resourceInputs["type"] = args?.type;
             resourceInputs["createTime"] = undefined /*out*/;
@@ -185,6 +197,7 @@ export class ImagesV2 extends pulumi.CustomResource {
             resourceInputs["links"] = undefined /*out*/;
             resourceInputs["ownerExtId"] = undefined /*out*/;
             resourceInputs["placementPolicyStatuses"] = undefined /*out*/;
+            resourceInputs["shareWithAllProjects"] = undefined /*out*/;
             resourceInputs["sizeBytes"] = undefined /*out*/;
             resourceInputs["tenantId"] = undefined /*out*/;
         }
@@ -236,6 +249,14 @@ export interface ImagesV2State {
      */
     placementPolicyStatuses?: pulumi.Input<pulumi.Input<inputs.ImagesV2PlacementPolicyStatus>[] | undefined>;
     /**
+     * External identifier of the project associated with the image.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates whether the image is shared with all projects.
+     */
+    shareWithAllProjects?: pulumi.Input<boolean | undefined>;
+    /**
      * The size in bytes of an image file.
      */
     sizeBytes?: pulumi.Input<number | undefined>;
@@ -274,6 +295,10 @@ export interface ImagesV2Args {
      * The user defined name of an image.
      */
     name?: pulumi.Input<string | undefined>;
+    /**
+     * External identifier of the project associated with the image.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
     /**
      * The source of an image. It can be a VM disk or a URL.
      */

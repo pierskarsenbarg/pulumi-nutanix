@@ -25,7 +25,8 @@ class EntityGroupV2Args:
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  except_config: pulumi.Input[Optional['EntityGroupV2ExceptConfigArgs']] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 policy_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 policy_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a EntityGroupV2 resource.
 
@@ -34,6 +35,7 @@ class EntityGroupV2Args:
         :param pulumi.Input['EntityGroupV2ExceptConfigArgs'] except_config: Configuration of except entities in the Entity Group.
         :param pulumi.Input[_builtins.str] name: A short identifier of an Entity Group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policy_ext_ids: List of policy external identifiers.
+        :param pulumi.Input[_builtins.str] project_ext_id: Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
         """
         if allowed_config is not None:
             pulumi.set(__self__, "allowed_config", allowed_config)
@@ -45,6 +47,8 @@ class EntityGroupV2Args:
             pulumi.set(__self__, "name", name)
         if policy_ext_ids is not None:
             pulumi.set(__self__, "policy_ext_ids", policy_ext_ids)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
 
     @_builtins.property
     @pulumi.getter(name="allowedConfig")
@@ -106,6 +110,18 @@ class EntityGroupV2Args:
     def policy_ext_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "policy_ext_ids", value)
 
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
 
 @pulumi.input_type
 class _EntityGroupV2State:
@@ -115,11 +131,14 @@ class _EntityGroupV2State:
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  except_config: pulumi.Input[Optional['EntityGroupV2ExceptConfigArgs']] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_shared_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
                  last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
                  links: pulumi.Input[Optional[Sequence[pulumi.Input['EntityGroupV2LinkArgs']]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  policy_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  tenant_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering EntityGroupV2 resources.
@@ -129,11 +148,14 @@ class _EntityGroupV2State:
         :param pulumi.Input[_builtins.str] description: A user defined annotation for an Entity Group.
         :param pulumi.Input['EntityGroupV2ExceptConfigArgs'] except_config: Configuration of except entities in the Entity Group.
         :param pulumi.Input[_builtins.str] ext_id: Entity group UUID.
+        :param pulumi.Input[_builtins.bool] is_shared_with_all_projects: Indicates whether the entity group is shared with all projects.
+        :param pulumi.Input[_builtins.bool] is_system_defined: A flag indicating whether the entity group is system-defined.
         :param pulumi.Input[_builtins.str] last_update_time: The timestamp when the Entity Group was last updated.
         :param pulumi.Input[Sequence[pulumi.Input['EntityGroupV2LinkArgs']]] links: A HATEOAS style link for the response.
         :param pulumi.Input[_builtins.str] name: A short identifier of an Entity Group.
         :param pulumi.Input[_builtins.str] owner_ext_id: The external identifier of the user who created the Entity Group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policy_ext_ids: List of policy external identifiers.
+        :param pulumi.Input[_builtins.str] project_ext_id: Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.
         """
         if allowed_config is not None:
@@ -146,6 +168,10 @@ class _EntityGroupV2State:
             pulumi.set(__self__, "except_config", except_config)
         if ext_id is not None:
             pulumi.set(__self__, "ext_id", ext_id)
+        if is_shared_with_all_projects is not None:
+            pulumi.set(__self__, "is_shared_with_all_projects", is_shared_with_all_projects)
+        if is_system_defined is not None:
+            pulumi.set(__self__, "is_system_defined", is_system_defined)
         if last_update_time is not None:
             pulumi.set(__self__, "last_update_time", last_update_time)
         if links is not None:
@@ -156,6 +182,8 @@ class _EntityGroupV2State:
             pulumi.set(__self__, "owner_ext_id", owner_ext_id)
         if policy_ext_ids is not None:
             pulumi.set(__self__, "policy_ext_ids", policy_ext_ids)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if tenant_id is not None:
             pulumi.set(__self__, "tenant_id", tenant_id)
 
@@ -220,6 +248,30 @@ class _EntityGroupV2State:
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="isSharedWithAllProjects")
+    def is_shared_with_all_projects(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the entity group is shared with all projects.
+        """
+        return pulumi.get(self, "is_shared_with_all_projects")
+
+    @is_shared_with_all_projects.setter
+    def is_shared_with_all_projects(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_shared_with_all_projects", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isSystemDefined")
+    def is_system_defined(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        A flag indicating whether the entity group is system-defined.
+        """
+        return pulumi.get(self, "is_system_defined")
+
+    @is_system_defined.setter
+    def is_system_defined(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_system_defined", value)
+
+    @_builtins.property
     @pulumi.getter(name="lastUpdateTime")
     def last_update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -280,6 +332,18 @@ class _EntityGroupV2State:
         pulumi.set(self, "policy_ext_ids", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -303,6 +367,7 @@ class EntityGroupV2(pulumi.CustomResource):
                  except_config: pulumi.Input[Optional[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict', 'outputs.EntityGroupV2ExceptConfig']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  policy_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create and manage an Entity Group for microsegmentation.
@@ -371,14 +436,18 @@ class EntityGroupV2(pulumi.CustomResource):
         The combination of <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> and <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> must be one of the following valid pairs:
 
         * `(CATEGORY_EXT_ID, VM)`
+        * `(EXT_ID, VM)`
+        * `(REGEX, VM)`
         * `(CATEGORY_EXT_ID, SUBNET)`
+        * `(EXT_ID, SUBNET)`
         * `(CATEGORY_EXT_ID, VPC)`
         * `(EXT_ID, KUBE_CLUSTER)`
-        * `(EXT_ID, ADDRESS_GROUP)`
         * `(LABELS, KUBE_PODS)`
         * `(NAME, KUBE_NAMESPACE)`
         * `(NAME, KUBE_SERVICE)`
+        * `(EXT_ID, ADDRESS_GROUP)`
         * `(IP_VALUES, ADDRESS_GROUP)`
+        * `(FQDN_VALUES, ADDRESS_GROUP)`
 
         Any other combination will result in a validation error.
 
@@ -399,7 +468,7 @@ class EntityGroupV2(pulumi.CustomResource):
         $ pulumi import nutanix:index/entityGroupV2:EntityGroupV2 import_entity_group <entityGroupUUID>
         ```
 
-        See detailed information in [Nutanix Entity Groups V4](https://developers.nutanix.com/api-reference?namespace=microseg&version=v4.2#tag/EntityGroups/operation/createEntityGroup).
+        See detailed information in [Nutanix Entity Groups V4](https://developers.nutanix.com/api-reference?namespace=microseg&version=v4.3#tag/EntityGroups/operation/createEntityGroup).
 
 
         :param str resource_name: The name of the resource.
@@ -409,6 +478,7 @@ class EntityGroupV2(pulumi.CustomResource):
         :param pulumi.Input[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict', 'outputs.EntityGroupV2ExceptConfig']] except_config: Configuration of except entities in the Entity Group.
         :param pulumi.Input[_builtins.str] name: A short identifier of an Entity Group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policy_ext_ids: List of policy external identifiers.
+        :param pulumi.Input[_builtins.str] project_ext_id: Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
         """
         ...
     @overload
@@ -483,14 +553,18 @@ class EntityGroupV2(pulumi.CustomResource):
         The combination of <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> and <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> must be one of the following valid pairs:
 
         * `(CATEGORY_EXT_ID, VM)`
+        * `(EXT_ID, VM)`
+        * `(REGEX, VM)`
         * `(CATEGORY_EXT_ID, SUBNET)`
+        * `(EXT_ID, SUBNET)`
         * `(CATEGORY_EXT_ID, VPC)`
         * `(EXT_ID, KUBE_CLUSTER)`
-        * `(EXT_ID, ADDRESS_GROUP)`
         * `(LABELS, KUBE_PODS)`
         * `(NAME, KUBE_NAMESPACE)`
         * `(NAME, KUBE_SERVICE)`
+        * `(EXT_ID, ADDRESS_GROUP)`
         * `(IP_VALUES, ADDRESS_GROUP)`
+        * `(FQDN_VALUES, ADDRESS_GROUP)`
 
         Any other combination will result in a validation error.
 
@@ -511,7 +585,7 @@ class EntityGroupV2(pulumi.CustomResource):
         $ pulumi import nutanix:index/entityGroupV2:EntityGroupV2 import_entity_group <entityGroupUUID>
         ```
 
-        See detailed information in [Nutanix Entity Groups V4](https://developers.nutanix.com/api-reference?namespace=microseg&version=v4.2#tag/EntityGroups/operation/createEntityGroup).
+        See detailed information in [Nutanix Entity Groups V4](https://developers.nutanix.com/api-reference?namespace=microseg&version=v4.3#tag/EntityGroups/operation/createEntityGroup).
 
 
         :param str resource_name: The name of the resource.
@@ -534,6 +608,7 @@ class EntityGroupV2(pulumi.CustomResource):
                  except_config: pulumi.Input[Optional[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict', 'outputs.EntityGroupV2ExceptConfig']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  policy_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -548,8 +623,11 @@ class EntityGroupV2(pulumi.CustomResource):
             __props__.__dict__["except_config"] = except_config
             __props__.__dict__["name"] = name
             __props__.__dict__["policy_ext_ids"] = policy_ext_ids
+            __props__.__dict__["project_ext_id"] = project_ext_id
             __props__.__dict__["creation_time"] = None
             __props__.__dict__["ext_id"] = None
+            __props__.__dict__["is_shared_with_all_projects"] = None
+            __props__.__dict__["is_system_defined"] = None
             __props__.__dict__["last_update_time"] = None
             __props__.__dict__["links"] = None
             __props__.__dict__["owner_ext_id"] = None
@@ -569,11 +647,14 @@ class EntityGroupV2(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             except_config: pulumi.Input[Optional[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict', 'outputs.EntityGroupV2ExceptConfig']]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_shared_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
             last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EntityGroupV2LinkArgs', 'EntityGroupV2LinkArgsDict', 'outputs.EntityGroupV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             policy_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'EntityGroupV2':
         """
         Get an existing EntityGroupV2 resource's state with the given name, id, and optional extra
@@ -587,11 +668,14 @@ class EntityGroupV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: A user defined annotation for an Entity Group.
         :param pulumi.Input[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict', 'outputs.EntityGroupV2ExceptConfig']] except_config: Configuration of except entities in the Entity Group.
         :param pulumi.Input[_builtins.str] ext_id: Entity group UUID.
+        :param pulumi.Input[_builtins.bool] is_shared_with_all_projects: Indicates whether the entity group is shared with all projects.
+        :param pulumi.Input[_builtins.bool] is_system_defined: A flag indicating whether the entity group is system-defined.
         :param pulumi.Input[_builtins.str] last_update_time: The timestamp when the Entity Group was last updated.
         :param pulumi.Input[Sequence[pulumi.Input[Union['EntityGroupV2LinkArgs', 'EntityGroupV2LinkArgsDict', 'outputs.EntityGroupV2Link']]]] links: A HATEOAS style link for the response.
         :param pulumi.Input[_builtins.str] name: A short identifier of an Entity Group.
         :param pulumi.Input[_builtins.str] owner_ext_id: The external identifier of the user who created the Entity Group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policy_ext_ids: List of policy external identifiers.
+        :param pulumi.Input[_builtins.str] project_ext_id: Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -603,11 +687,14 @@ class EntityGroupV2(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["except_config"] = except_config
         __props__.__dict__["ext_id"] = ext_id
+        __props__.__dict__["is_shared_with_all_projects"] = is_shared_with_all_projects
+        __props__.__dict__["is_system_defined"] = is_system_defined
         __props__.__dict__["last_update_time"] = last_update_time
         __props__.__dict__["links"] = links
         __props__.__dict__["name"] = name
         __props__.__dict__["owner_ext_id"] = owner_ext_id
         __props__.__dict__["policy_ext_ids"] = policy_ext_ids
+        __props__.__dict__["project_ext_id"] = project_ext_id
         __props__.__dict__["tenant_id"] = tenant_id
         return EntityGroupV2(resource_name, opts=opts, __props__=__props__)
 
@@ -619,11 +706,14 @@ class EntityGroupV2(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             except_config: pulumi.Input[Optional[Union['EntityGroupV2ExceptConfigArgs', 'EntityGroupV2ExceptConfigArgsDict', 'outputs.EntityGroupV2ExceptConfig']]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_shared_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
             last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EntityGroupV2LinkArgs', 'EntityGroupV2LinkArgsDict', 'outputs.EntityGroupV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             policy_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
         __props__: dict = {}
         __props__["allowedConfig"] = allowed_config
@@ -631,11 +721,14 @@ class EntityGroupV2(pulumi.CustomResource):
         __props__["description"] = description
         __props__["exceptConfig"] = except_config
         __props__["extId"] = ext_id
+        __props__["isSharedWithAllProjects"] = is_shared_with_all_projects
+        __props__["isSystemDefined"] = is_system_defined
         __props__["lastUpdateTime"] = last_update_time
         __props__["links"] = links
         __props__["name"] = name
         __props__["ownerExtId"] = owner_ext_id
         __props__["policyExtIds"] = policy_ext_ids
+        __props__["projectExtId"] = project_ext_id
         __props__["tenantId"] = tenant_id
         return pulumi.runtime.exists_resource(None, 'nutanix:index/entityGroupV2:EntityGroupV2', id, __props__, opts or pulumi.ResourceOptions())
 
@@ -680,6 +773,22 @@ class EntityGroupV2(pulumi.CustomResource):
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
+    @pulumi.getter(name="isSharedWithAllProjects")
+    def is_shared_with_all_projects(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Indicates whether the entity group is shared with all projects.
+        """
+        return pulumi.get(self, "is_shared_with_all_projects")
+
+    @_builtins.property
+    @pulumi.getter(name="isSystemDefined")
+    def is_system_defined(self) -> pulumi.Output[_builtins.bool]:
+        """
+        A flag indicating whether the entity group is system-defined.
+        """
+        return pulumi.get(self, "is_system_defined")
+
+    @_builtins.property
     @pulumi.getter(name="lastUpdateTime")
     def last_update_time(self) -> pulumi.Output[_builtins.str]:
         """
@@ -718,6 +827,14 @@ class EntityGroupV2(pulumi.CustomResource):
         List of policy external identifiers.
         """
         return pulumi.get(self, "policy_ext_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
 
     @_builtins.property
     @pulumi.getter(name="tenantId")

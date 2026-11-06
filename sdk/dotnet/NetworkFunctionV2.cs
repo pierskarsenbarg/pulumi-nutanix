@@ -129,6 +129,12 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.NetworkFunctionV2NicPair>> NicPairs { get; private set; } = null!;
 
         /// <summary>
+        /// Project external ID to associate with the network function. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
+
+        /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity.
         /// </summary>
         [Output("tenantId")]
@@ -263,6 +269,12 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
+        /// Project external ID to associate with the network function. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
+        /// <summary>
         /// Traffic forwarding mode. Values:
         /// 
         /// | Value | Description |
@@ -362,6 +374,12 @@ namespace PiersKarsenbarg.Nutanix
             get => _nicPairs ?? (_nicPairs = new InputList<Inputs.NetworkFunctionV2NicPairGetArgs>());
             set => _nicPairs = value;
         }
+
+        /// <summary>
+        /// Project external ID to associate with the network function. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
 
         /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity.

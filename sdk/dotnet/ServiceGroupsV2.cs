@@ -149,6 +149,12 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<string>> PolicyReferences { get; private set; } = null!;
 
         /// <summary>
+        /// Project external ID to associate with the service group. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
+
+        /// <summary>
         /// List of TCP ports in the service.
         /// </summary>
         [Output("tcpServices")]
@@ -236,6 +242,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// Project external ID to associate with the service group. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
 
         [Input("tcpServices")]
         private InputList<Inputs.ServiceGroupsV2TcpServiceArgs>? _tcpServices;
@@ -334,6 +346,12 @@ namespace PiersKarsenbarg.Nutanix
             get => _policyReferences ?? (_policyReferences = new InputList<string>());
             set => _policyReferences = value;
         }
+
+        /// <summary>
+        /// Project external ID to associate with the service group. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
 
         [Input("tcpServices")]
         private InputList<Inputs.ServiceGroupsV2TcpServiceGetArgs>? _tcpServices;

@@ -19,24 +19,70 @@ __all__ = ['LcmPerformInventoryV2Args', 'LcmPerformInventoryV2']
 @pulumi.input_type
 class LcmPerformInventoryV2Args:
     def __init__(__self__, *,
+                 inventory_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a LcmPerformInventoryV2 resource.
 
-        :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
+        :param pulumi.Input[_builtins.str] inventory_type: The scope of the inventory scan to perform. When omitted, a full inventory is performed.
                
-               See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
+               | Enum     | Description                                                                                                                                            |
+               |----------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+               | FULL     | Full inventory. Scans all nodes in the cluster for both software and firmware entities and checks the LCM repository for available updates.             |
+               | SOFTWARE | Software-only inventory. Scans only software entities (e.g. AOS, NCC, LCM framework) without scanning firmware components.                             |
+               | NODE     | Node-scoped inventory. Scans only the specific nodes listed in <span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`">`nodeList`</span>. Requires <span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`">`nodeList`</span> to be provided.                                       |
+               | RESCAN   | Rescan inventory. Re-checks the LCM repository for available updates without performing a full hardware scan of cluster nodes. Faster than FULL.        |
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] node_lists: List of node UUIDs to inventory. Required when <span pulumi-lang-nodejs="`inventoryType`" pulumi-lang-dotnet="`InventoryType`" pulumi-lang-go="`inventoryType`" pulumi-lang-python="`inventory_type`" pulumi-lang-yaml="`inventoryType`" pulumi-lang-java="`inventoryType`" pulumi-lang-hcl="`inventory_type`">`inventoryType`</span> is set to `NODE`; ignored for other inventory types.
+               
+               See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Inventory/operation/performInventory)
+        :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
         """
+        if inventory_type is not None:
+            pulumi.set(__self__, "inventory_type", inventory_type)
+        if node_lists is not None:
+            pulumi.set(__self__, "node_lists", node_lists)
         if x_cluster_id is not None:
             pulumi.set(__self__, "x_cluster_id", x_cluster_id)
+
+    @_builtins.property
+    @pulumi.getter(name="inventoryType")
+    def inventory_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The scope of the inventory scan to perform. When omitted, a full inventory is performed.
+
+        | Enum     | Description                                                                                                                                            |
+        |----------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+        | FULL     | Full inventory. Scans all nodes in the cluster for both software and firmware entities and checks the LCM repository for available updates.             |
+        | SOFTWARE | Software-only inventory. Scans only software entities (e.g. AOS, NCC, LCM framework) without scanning firmware components.                             |
+        | NODE     | Node-scoped inventory. Scans only the specific nodes listed in <span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`">`nodeList`</span>. Requires <span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`">`nodeList`</span> to be provided.                                       |
+        | RESCAN   | Rescan inventory. Re-checks the LCM repository for available updates without performing a full hardware scan of cluster nodes. Faster than FULL.        |
+        """
+        return pulumi.get(self, "inventory_type")
+
+    @inventory_type.setter
+    def inventory_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "inventory_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nodeLists")
+    def node_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of node UUIDs to inventory. Required when <span pulumi-lang-nodejs="`inventoryType`" pulumi-lang-dotnet="`InventoryType`" pulumi-lang-go="`inventoryType`" pulumi-lang-python="`inventory_type`" pulumi-lang-yaml="`inventoryType`" pulumi-lang-java="`inventoryType`" pulumi-lang-hcl="`inventory_type`">`inventoryType`</span> is set to `NODE`; ignored for other inventory types.
+
+        See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Inventory/operation/performInventory)
+        """
+        return pulumi.get(self, "node_lists")
+
+    @node_lists.setter
+    def node_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "node_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="xClusterId")
     def x_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cluster uuid on which the resource is present or operation is being performed.
-
-        See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
         """
         return pulumi.get(self, "x_cluster_id")
 
@@ -48,24 +94,70 @@ class LcmPerformInventoryV2Args:
 @pulumi.input_type
 class _LcmPerformInventoryV2State:
     def __init__(__self__, *,
+                 inventory_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LcmPerformInventoryV2 resources.
 
-        :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
+        :param pulumi.Input[_builtins.str] inventory_type: The scope of the inventory scan to perform. When omitted, a full inventory is performed.
                
-               See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
+               | Enum     | Description                                                                                                                                            |
+               |----------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+               | FULL     | Full inventory. Scans all nodes in the cluster for both software and firmware entities and checks the LCM repository for available updates.             |
+               | SOFTWARE | Software-only inventory. Scans only software entities (e.g. AOS, NCC, LCM framework) without scanning firmware components.                             |
+               | NODE     | Node-scoped inventory. Scans only the specific nodes listed in <span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`">`nodeList`</span>. Requires <span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`">`nodeList`</span> to be provided.                                       |
+               | RESCAN   | Rescan inventory. Re-checks the LCM repository for available updates without performing a full hardware scan of cluster nodes. Faster than FULL.        |
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] node_lists: List of node UUIDs to inventory. Required when <span pulumi-lang-nodejs="`inventoryType`" pulumi-lang-dotnet="`InventoryType`" pulumi-lang-go="`inventoryType`" pulumi-lang-python="`inventory_type`" pulumi-lang-yaml="`inventoryType`" pulumi-lang-java="`inventoryType`" pulumi-lang-hcl="`inventory_type`">`inventoryType`</span> is set to `NODE`; ignored for other inventory types.
+               
+               See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Inventory/operation/performInventory)
+        :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
         """
+        if inventory_type is not None:
+            pulumi.set(__self__, "inventory_type", inventory_type)
+        if node_lists is not None:
+            pulumi.set(__self__, "node_lists", node_lists)
         if x_cluster_id is not None:
             pulumi.set(__self__, "x_cluster_id", x_cluster_id)
+
+    @_builtins.property
+    @pulumi.getter(name="inventoryType")
+    def inventory_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The scope of the inventory scan to perform. When omitted, a full inventory is performed.
+
+        | Enum     | Description                                                                                                                                            |
+        |----------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+        | FULL     | Full inventory. Scans all nodes in the cluster for both software and firmware entities and checks the LCM repository for available updates.             |
+        | SOFTWARE | Software-only inventory. Scans only software entities (e.g. AOS, NCC, LCM framework) without scanning firmware components.                             |
+        | NODE     | Node-scoped inventory. Scans only the specific nodes listed in <span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`">`nodeList`</span>. Requires <span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`">`nodeList`</span> to be provided.                                       |
+        | RESCAN   | Rescan inventory. Re-checks the LCM repository for available updates without performing a full hardware scan of cluster nodes. Faster than FULL.        |
+        """
+        return pulumi.get(self, "inventory_type")
+
+    @inventory_type.setter
+    def inventory_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "inventory_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nodeLists")
+    def node_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of node UUIDs to inventory. Required when <span pulumi-lang-nodejs="`inventoryType`" pulumi-lang-dotnet="`InventoryType`" pulumi-lang-go="`inventoryType`" pulumi-lang-python="`inventory_type`" pulumi-lang-yaml="`inventoryType`" pulumi-lang-java="`inventoryType`" pulumi-lang-hcl="`inventory_type`">`inventoryType`</span> is set to `NODE`; ignored for other inventory types.
+
+        See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Inventory/operation/performInventory)
+        """
+        return pulumi.get(self, "node_lists")
+
+    @node_lists.setter
+    def node_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "node_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="xClusterId")
     def x_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cluster uuid on which the resource is present or operation is being performed.
-
-        See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
         """
         return pulumi.get(self, "x_cluster_id")
 
@@ -80,6 +172,8 @@ class LcmPerformInventoryV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 inventory_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -94,15 +188,36 @@ class LcmPerformInventoryV2(pulumi.CustomResource):
 
         # perform inventory
         inventory = nutanix.LcmPerformInventoryV2("inventory", x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
+        # perform software-only inventory
+        software_inventory = nutanix.LcmPerformInventoryV2("software_inventory",
+            x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
+            inventory_type="SOFTWARE")
+        # perform node-specific inventory
+        node_inventory = nutanix.LcmPerformInventoryV2("node_inventory",
+            x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
+            inventory_type="NODE",
+            node_lists=[
+                "node-uuid-1",
+                "node-uuid-2",
+            ])
         ```
         <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
+        :param pulumi.Input[_builtins.str] inventory_type: The scope of the inventory scan to perform. When omitted, a full inventory is performed.
                
-               See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
+               | Enum     | Description                                                                                                                                            |
+               |----------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+               | FULL     | Full inventory. Scans all nodes in the cluster for both software and firmware entities and checks the LCM repository for available updates.             |
+               | SOFTWARE | Software-only inventory. Scans only software entities (e.g. AOS, NCC, LCM framework) without scanning firmware components.                             |
+               | NODE     | Node-scoped inventory. Scans only the specific nodes listed in <span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`">`nodeList`</span>. Requires <span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`">`nodeList`</span> to be provided.                                       |
+               | RESCAN   | Rescan inventory. Re-checks the LCM repository for available updates without performing a full hardware scan of cluster nodes. Faster than FULL.        |
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] node_lists: List of node UUIDs to inventory. Required when <span pulumi-lang-nodejs="`inventoryType`" pulumi-lang-dotnet="`InventoryType`" pulumi-lang-go="`inventoryType`" pulumi-lang-python="`inventory_type`" pulumi-lang-yaml="`inventoryType`" pulumi-lang-java="`inventoryType`" pulumi-lang-hcl="`inventory_type`">`inventoryType`</span> is set to `NODE`; ignored for other inventory types.
+               
+               See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Inventory/operation/performInventory)
+        :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
         """
         ...
     @overload
@@ -122,6 +237,18 @@ class LcmPerformInventoryV2(pulumi.CustomResource):
 
         # perform inventory
         inventory = nutanix.LcmPerformInventoryV2("inventory", x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b")
+        # perform software-only inventory
+        software_inventory = nutanix.LcmPerformInventoryV2("software_inventory",
+            x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
+            inventory_type="SOFTWARE")
+        # perform node-specific inventory
+        node_inventory = nutanix.LcmPerformInventoryV2("node_inventory",
+            x_cluster_id="0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
+            inventory_type="NODE",
+            node_lists=[
+                "node-uuid-1",
+                "node-uuid-2",
+            ])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -141,6 +268,8 @@ class LcmPerformInventoryV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 inventory_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -151,6 +280,8 @@ class LcmPerformInventoryV2(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = LcmPerformInventoryV2Args.__new__(LcmPerformInventoryV2Args)
 
+            __props__.__dict__["inventory_type"] = inventory_type
+            __props__.__dict__["node_lists"] = node_lists
             __props__.__dict__["x_cluster_id"] = x_cluster_id
         super(LcmPerformInventoryV2, __self__).__init__(
             'nutanix:index/lcmPerformInventoryV2:LcmPerformInventoryV2',
@@ -162,6 +293,8 @@ class LcmPerformInventoryV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            inventory_type: pulumi.Input[Optional[_builtins.str]] = None,
+            node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'LcmPerformInventoryV2':
         """
         Get an existing LcmPerformInventoryV2 resource's state with the given name, id, and optional extra
@@ -170,32 +303,70 @@ class LcmPerformInventoryV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
+        :param pulumi.Input[_builtins.str] inventory_type: The scope of the inventory scan to perform. When omitted, a full inventory is performed.
                
-               See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
+               | Enum     | Description                                                                                                                                            |
+               |----------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+               | FULL     | Full inventory. Scans all nodes in the cluster for both software and firmware entities and checks the LCM repository for available updates.             |
+               | SOFTWARE | Software-only inventory. Scans only software entities (e.g. AOS, NCC, LCM framework) without scanning firmware components.                             |
+               | NODE     | Node-scoped inventory. Scans only the specific nodes listed in <span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`">`nodeList`</span>. Requires <span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`">`nodeList`</span> to be provided.                                       |
+               | RESCAN   | Rescan inventory. Re-checks the LCM repository for available updates without performing a full hardware scan of cluster nodes. Faster than FULL.        |
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] node_lists: List of node UUIDs to inventory. Required when <span pulumi-lang-nodejs="`inventoryType`" pulumi-lang-dotnet="`InventoryType`" pulumi-lang-go="`inventoryType`" pulumi-lang-python="`inventory_type`" pulumi-lang-yaml="`inventoryType`" pulumi-lang-java="`inventoryType`" pulumi-lang-hcl="`inventory_type`">`inventoryType`</span> is set to `NODE`; ignored for other inventory types.
+               
+               See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Inventory/operation/performInventory)
+        :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _LcmPerformInventoryV2State.__new__(_LcmPerformInventoryV2State)
 
+        __props__.__dict__["inventory_type"] = inventory_type
+        __props__.__dict__["node_lists"] = node_lists
         __props__.__dict__["x_cluster_id"] = x_cluster_id
         return LcmPerformInventoryV2(resource_name, opts=opts, __props__=__props__)
 
     @staticmethod
     def exists(id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            inventory_type: pulumi.Input[Optional[_builtins.str]] = None,
+            node_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
         __props__: dict = {}
+        __props__["inventoryType"] = inventory_type
+        __props__["nodeLists"] = node_lists
         __props__["xClusterId"] = x_cluster_id
         return pulumi.runtime.exists_resource(None, 'nutanix:index/lcmPerformInventoryV2:LcmPerformInventoryV2', id, __props__, opts or pulumi.ResourceOptions())
+
+    @_builtins.property
+    @pulumi.getter(name="inventoryType")
+    def inventory_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The scope of the inventory scan to perform. When omitted, a full inventory is performed.
+
+        | Enum     | Description                                                                                                                                            |
+        |----------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+        | FULL     | Full inventory. Scans all nodes in the cluster for both software and firmware entities and checks the LCM repository for available updates.             |
+        | SOFTWARE | Software-only inventory. Scans only software entities (e.g. AOS, NCC, LCM framework) without scanning firmware components.                             |
+        | NODE     | Node-scoped inventory. Scans only the specific nodes listed in <span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`">`nodeList`</span>. Requires <span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`">`nodeList`</span> to be provided.                                       |
+        | RESCAN   | Rescan inventory. Re-checks the LCM repository for available updates without performing a full hardware scan of cluster nodes. Faster than FULL.        |
+        """
+        return pulumi.get(self, "inventory_type")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeLists")
+    def node_lists(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
+        """
+        List of node UUIDs to inventory. Required when <span pulumi-lang-nodejs="`inventoryType`" pulumi-lang-dotnet="`InventoryType`" pulumi-lang-go="`inventoryType`" pulumi-lang-python="`inventory_type`" pulumi-lang-yaml="`inventoryType`" pulumi-lang-java="`inventoryType`" pulumi-lang-hcl="`inventory_type`">`inventoryType`</span> is set to `NODE`; ignored for other inventory types.
+
+        See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Inventory/operation/performInventory)
+        """
+        return pulumi.get(self, "node_lists")
 
     @_builtins.property
     @pulumi.getter(name="xClusterId")
     def x_cluster_id(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         Cluster uuid on which the resource is present or operation is being performed.
-
-        See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Inventory/operation/performInventory)
         """
         return pulumi.get(self, "x_cluster_id")
 

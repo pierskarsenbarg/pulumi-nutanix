@@ -84,6 +84,10 @@ export interface GetNetworkFunctionV2Result {
      */
     readonly nicPairs: outputs.GetNetworkFunctionV2NicPair[];
     /**
+     * Project external ID associated with the network function.
+     */
+    readonly projectExtId: string;
+    /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
     readonly tenantId: string;

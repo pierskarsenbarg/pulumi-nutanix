@@ -132,6 +132,10 @@ export class NetworkFunctionV2 extends pulumi.CustomResource {
      */
     declare public readonly nicPairs: pulumi.Output<outputs.NetworkFunctionV2NicPair[]>;
     /**
+     * Project external ID to associate with the network function. Note: This field cannot be updated after creation.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
+    /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
     declare public /*out*/ readonly tenantId: pulumi.Output<string>;
@@ -167,6 +171,7 @@ export class NetworkFunctionV2 extends pulumi.CustomResource {
             resourceInputs["metadatas"] = state?.metadatas;
             resourceInputs["name"] = state?.name;
             resourceInputs["nicPairs"] = state?.nicPairs;
+            resourceInputs["projectExtId"] = state?.projectExtId;
             resourceInputs["tenantId"] = state?.tenantId;
             resourceInputs["trafficForwardingMode"] = state?.trafficForwardingMode;
         } else {
@@ -185,6 +190,7 @@ export class NetworkFunctionV2 extends pulumi.CustomResource {
             resourceInputs["metadatas"] = args?.metadatas;
             resourceInputs["name"] = args?.name;
             resourceInputs["nicPairs"] = args?.nicPairs;
+            resourceInputs["projectExtId"] = args?.projectExtId;
             resourceInputs["trafficForwardingMode"] = args?.trafficForwardingMode;
             resourceInputs["links"] = undefined /*out*/;
             resourceInputs["tenantId"] = undefined /*out*/;
@@ -244,6 +250,10 @@ export interface NetworkFunctionV2State {
      * List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
      */
     nicPairs?: pulumi.Input<pulumi.Input<inputs.NetworkFunctionV2NicPair>[] | undefined>;
+    /**
+     * Project external ID to associate with the network function. Note: This field cannot be updated after creation.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
@@ -305,6 +315,10 @@ export interface NetworkFunctionV2Args {
      * List of all NIC pairs part of this network function. Minimum 1 and maximum 2 NIC pairs are allowed.
      */
     nicPairs: pulumi.Input<pulumi.Input<inputs.NetworkFunctionV2NicPair>[]>;
+    /**
+     * Project external ID to associate with the network function. Note: This field cannot be updated after creation.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
     /**
      * Traffic forwarding mode. Values:
      *

@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string ExtId;
         /// <summary>
-        /// An unique address that identifies a device on the internet or a local network in IPv4, IPv6 or format.
+        /// IP address of the proxy server.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterProfileV2RsyslogServerListIpAddressResult> IpAddresses;
         /// <summary>
@@ -29,7 +29,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.GetClusterProfileV2RsyslogServerListModuleResult> Modules;
         public readonly string NetworkProtocol;
         /// <summary>
-        /// (Integer) SNMP port.
+        /// HTTP proxy server port.
         /// </summary>
         public readonly int Port;
         public readonly string ServerName;

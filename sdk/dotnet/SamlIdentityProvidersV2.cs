@@ -11,88 +11,9 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
+    /// &gt; **Note:** This resource is in Beta because the underlying Nutanix SDK API is currently in Beta. The resource and its behavior may change in future releases as the SDK API evolves.
+    /// 
     /// Provides a resource to Create a SAML Identity Provider.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// &lt;!--Start PulumiCodeChooser --&gt;
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var idp = new Nutanix.SamlIdentityProvidersV2("idp", new()
-    ///     {
-    ///         Name = "example_idp_name",
-    ///         IdpMetadatas = new[]
-    ///         {
-    ///             new Nutanix.Inputs.SamlIdentityProvidersV2IdpMetadataArgs
-    ///             {
-    ///                 EntityId = "entity_id",
-    ///                 LoginUrl = "login_url",
-    ///                 LogoutUrl = "logout_url",
-    ///                 ErrorUrl = "error_url",
-    ///                 Certificate = "certificate",
-    ///             },
-    ///         },
-    ///         UsernameAttribute = "username",
-    ///         EmailAttribute = "email",
-    ///         GroupsAttribute = "groups",
-    ///         GroupsDelim = ",",
-    ///         IdpMetadataXml = "&lt;IDENTITY_PROVIDER_METADATA_XML content&gt;",
-    ///         EntityIssuer = "entity_issuer_issuer",
-    ///         IsSignedAuthnReqEnabled = true,
-    ///         CustomAttributes = new[]
-    ///         {
-    ///             "custom1",
-    ///             "custom2",
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// &lt;!--End PulumiCodeChooser --&gt;
-    /// 
-    /// ## Argument Reference
-    /// 
-    /// The following arguments are supported:
-    /// 
-    /// * &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: -(Optional) External identifier of the SAML Identity Provider.
-    /// * &lt;span pulumi-lang-nodejs="`idpMetadataUrl`" pulumi-lang-dotnet="`IdpMetadataUrl`" pulumi-lang-go="`idpMetadataUrl`" pulumi-lang-python="`idp_metadata_url`" pulumi-lang-yaml="`idpMetadataUrl`" pulumi-lang-java="`idpMetadataUrl`" pulumi-lang-hcl="`idp_metadata_url`"&gt;`idpMetadataUrl`&lt;/span&gt;: -(Optional) Metadata url that provides IDP details.
-    /// * &lt;span pulumi-lang-nodejs="`idpMetadataXml`" pulumi-lang-dotnet="`IdpMetadataXml`" pulumi-lang-go="`idpMetadataXml`" pulumi-lang-python="`idp_metadata_xml`" pulumi-lang-yaml="`idpMetadataXml`" pulumi-lang-java="`idpMetadataXml`" pulumi-lang-hcl="`idp_metadata_xml`"&gt;`idpMetadataXml`&lt;/span&gt;: -(Optional) Base64 encoded metadata in XML format with IDP details.
-    /// * &lt;span pulumi-lang-nodejs="`idpMetadata`" pulumi-lang-dotnet="`IdpMetadata`" pulumi-lang-go="`idpMetadata`" pulumi-lang-python="`idp_metadata`" pulumi-lang-yaml="`idpMetadata`" pulumi-lang-java="`idpMetadata`" pulumi-lang-hcl="`idp_metadata`"&gt;`idpMetadata`&lt;/span&gt;: -(Optional) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
-    /// * &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt;: -(Required) Unique name of the IDP.
-    /// * &lt;span pulumi-lang-nodejs="`usernameAttr`" pulumi-lang-dotnet="`UsernameAttr`" pulumi-lang-go="`usernameAttr`" pulumi-lang-python="`username_attr`" pulumi-lang-yaml="`usernameAttr`" pulumi-lang-java="`usernameAttr`" pulumi-lang-hcl="`username_attr`"&gt;`usernameAttr`&lt;/span&gt;: -(Optional) SAML assertion Username attribute element.
-    /// * &lt;span pulumi-lang-nodejs="`emailAttr`" pulumi-lang-dotnet="`EmailAttr`" pulumi-lang-go="`emailAttr`" pulumi-lang-python="`email_attr`" pulumi-lang-yaml="`emailAttr`" pulumi-lang-java="`emailAttr`" pulumi-lang-hcl="`email_attr`"&gt;`emailAttr`&lt;/span&gt;: -(Optional) SAML assertion email attribute element.
-    /// * &lt;span pulumi-lang-nodejs="`groupsAttr`" pulumi-lang-dotnet="`GroupsAttr`" pulumi-lang-go="`groupsAttr`" pulumi-lang-python="`groups_attr`" pulumi-lang-yaml="`groupsAttr`" pulumi-lang-java="`groupsAttr`" pulumi-lang-hcl="`groups_attr`"&gt;`groupsAttr`&lt;/span&gt;: -(Optional) SAML assertion groups attribute element.
-    /// * &lt;span pulumi-lang-nodejs="`groupsDelim`" pulumi-lang-dotnet="`GroupsDelim`" pulumi-lang-go="`groupsDelim`" pulumi-lang-python="`groups_delim`" pulumi-lang-yaml="`groupsDelim`" pulumi-lang-java="`groupsDelim`" pulumi-lang-hcl="`groups_delim`"&gt;`groupsDelim`&lt;/span&gt;: -(Optional) Delimiter is used to split the value of attribute into multiple groups.
-    /// * &lt;span pulumi-lang-nodejs="`customAttr`" pulumi-lang-dotnet="`CustomAttr`" pulumi-lang-go="`customAttr`" pulumi-lang-python="`custom_attr`" pulumi-lang-yaml="`customAttr`" pulumi-lang-java="`customAttr`" pulumi-lang-hcl="`custom_attr`"&gt;`customAttr`&lt;/span&gt;: -(Optional) SAML assertions for list of custom attribute elements.
-    /// * &lt;span pulumi-lang-nodejs="`entityIssuer`" pulumi-lang-dotnet="`EntityIssuer`" pulumi-lang-go="`entityIssuer`" pulumi-lang-python="`entity_issuer`" pulumi-lang-yaml="`entityIssuer`" pulumi-lang-java="`entityIssuer`" pulumi-lang-hcl="`entity_issuer`"&gt;`entityIssuer`&lt;/span&gt;: -(Optional) It will be used as Issuer in SAML authnRequest.
-    /// * &lt;span pulumi-lang-nodejs="`isSignedAuthnReqEnabled`" pulumi-lang-dotnet="`IsSignedAuthnReqEnabled`" pulumi-lang-go="`isSignedAuthnReqEnabled`" pulumi-lang-python="`is_signed_authn_req_enabled`" pulumi-lang-yaml="`isSignedAuthnReqEnabled`" pulumi-lang-java="`isSignedAuthnReqEnabled`" pulumi-lang-hcl="`is_signed_authn_req_enabled`"&gt;`isSignedAuthnReqEnabled`&lt;/span&gt;: -(Optional) Flag indicating signing of SAML authnRequests.
-    /// 
-    /// ### Idp Metadata
-    /// 
-    /// The&lt;span pulumi-lang-nodejs=" idpMetadata " pulumi-lang-dotnet=" IdpMetadata " pulumi-lang-go=" idpMetadata " pulumi-lang-python=" idp_metadata " pulumi-lang-yaml=" idpMetadata " pulumi-lang-java=" idpMetadata " pulumi-lang-hcl=" idp_metadata "&gt; idpMetadata &lt;/span&gt;attribute supports the following:
-    /// 
-    /// * &lt;span pulumi-lang-nodejs="`entityId`" pulumi-lang-dotnet="`EntityId`" pulumi-lang-go="`entityId`" pulumi-lang-python="`entity_id`" pulumi-lang-yaml="`entityId`" pulumi-lang-java="`entityId`" pulumi-lang-hcl="`entity_id`"&gt;`entityId`&lt;/span&gt;: -(Required) Entity Identifier of Identity provider.
-    /// * &lt;span pulumi-lang-nodejs="`loginUrl`" pulumi-lang-dotnet="`LoginUrl`" pulumi-lang-go="`loginUrl`" pulumi-lang-python="`login_url`" pulumi-lang-yaml="`loginUrl`" pulumi-lang-java="`loginUrl`" pulumi-lang-hcl="`login_url`"&gt;`loginUrl`&lt;/span&gt;: -(Required) Login URL of the Identity provider.
-    /// * &lt;span pulumi-lang-nodejs="`logoutUrl`" pulumi-lang-dotnet="`LogoutUrl`" pulumi-lang-go="`logoutUrl`" pulumi-lang-python="`logout_url`" pulumi-lang-yaml="`logoutUrl`" pulumi-lang-java="`logoutUrl`" pulumi-lang-hcl="`logout_url`"&gt;`logoutUrl`&lt;/span&gt;: -(Optional) Logout URL of the Identity provider.
-    /// * &lt;span pulumi-lang-nodejs="`errorUrl`" pulumi-lang-dotnet="`ErrorUrl`" pulumi-lang-go="`errorUrl`" pulumi-lang-python="`error_url`" pulumi-lang-yaml="`errorUrl`" pulumi-lang-java="`errorUrl`" pulumi-lang-hcl="`error_url`"&gt;`errorUrl`&lt;/span&gt;: - (Optional) Error URL of the Identity provider.
-    /// * &lt;span pulumi-lang-nodejs="`certificate`" pulumi-lang-dotnet="`Certificate`" pulumi-lang-go="`certificate`" pulumi-lang-python="`certificate`" pulumi-lang-yaml="`certificate`" pulumi-lang-java="`certificate`" pulumi-lang-hcl="`certificate`"&gt;`certificate`&lt;/span&gt;: -(Required) Certificate for verification.
-    /// * &lt;span pulumi-lang-nodejs="`nameIdPolicyFormat`" pulumi-lang-dotnet="`NameIdPolicyFormat`" pulumi-lang-go="`nameIdPolicyFormat`" pulumi-lang-python="`name_id_policy_format`" pulumi-lang-yaml="`nameIdPolicyFormat`" pulumi-lang-java="`nameIdPolicyFormat`" pulumi-lang-hcl="`name_id_policy_format`"&gt;`nameIdPolicyFormat`&lt;/span&gt;: -(Optional) Name ID Policy format.
-    ///   * supported values:
-    ///     * `emailAddress`: -  Uses email address as NameID format
-    ///     * &lt;span pulumi-lang-nodejs="`encrypted`" pulumi-lang-dotnet="`Encrypted`" pulumi-lang-go="`encrypted`" pulumi-lang-python="`encrypted`" pulumi-lang-yaml="`encrypted`" pulumi-lang-java="`encrypted`" pulumi-lang-hcl="`encrypted`"&gt;`encrypted`&lt;/span&gt;: -  Uses encrypted as NameID format.
-    ///     * &lt;span pulumi-lang-nodejs="`unspecified`" pulumi-lang-dotnet="`Unspecified`" pulumi-lang-go="`unspecified`" pulumi-lang-python="`unspecified`" pulumi-lang-yaml="`unspecified`" pulumi-lang-java="`unspecified`" pulumi-lang-hcl="`unspecified`"&gt;`unspecified`&lt;/span&gt;: -  NameID format is left to individual implementations.
-    ///     * &lt;span pulumi-lang-nodejs="`transient`" pulumi-lang-dotnet="`Transient`" pulumi-lang-go="`transient`" pulumi-lang-python="`transient`" pulumi-lang-yaml="`transient`" pulumi-lang-java="`transient`" pulumi-lang-hcl="`transient`"&gt;`transient`&lt;/span&gt;: -  	Uses identifier with transient semantics as NameID format.
-    ///     * `WindowsDomainQualifiedName`: -  Uses Windows domain qualified name as NameID format.
-    ///     * `X509SubjectName`: -  	Uses X509SubjectName as NameID format.
-    ///     * &lt;span pulumi-lang-nodejs="`kerberos`" pulumi-lang-dotnet="`Kerberos`" pulumi-lang-go="`kerberos`" pulumi-lang-python="`kerberos`" pulumi-lang-yaml="`kerberos`" pulumi-lang-java="`kerberos`" pulumi-lang-hcl="`kerberos`"&gt;`kerberos`&lt;/span&gt;: -  	Uses kerberos principal name as NameID format.
-    ///     * &lt;span pulumi-lang-nodejs="`persistent`" pulumi-lang-dotnet="`Persistent`" pulumi-lang-go="`persistent`" pulumi-lang-python="`persistent`" pulumi-lang-yaml="`persistent`" pulumi-lang-java="`persistent`" pulumi-lang-hcl="`persistent`"&gt;`persistent`&lt;/span&gt;: -  Uses persistent name identifier as NameID format.
-    ///     * &lt;span pulumi-lang-nodejs="`entity`" pulumi-lang-dotnet="`Entity`" pulumi-lang-go="`entity`" pulumi-lang-python="`entity`" pulumi-lang-yaml="`entity`" pulumi-lang-java="`entity`" pulumi-lang-hcl="`entity`"&gt;`entity`&lt;/span&gt;: -  Uses identifier of an entity as NameID format.
     /// </summary>
     [NutanixResourceType("nutanix:index/samlIdentityProvidersV2:SamlIdentityProvidersV2")]
     public partial class SamlIdentityProvidersV2 : global::Pulumi.CustomResource
@@ -122,7 +43,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> EntityIssuer { get; private set; } = null!;
 
         /// <summary>
-        /// The External Identifier of the User Group.
+        /// The External Identifier of the SAML Identity Provider.
         /// </summary>
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
@@ -165,6 +86,24 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
+
+        /// <summary>
+        /// - Project reference for the SAML Identity Provider.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
+
+        /// <summary>
+        /// - Flag indicating whether the SAML Identity Provider is shared with all projects or not.
+        /// </summary>
+        [Output("shareWithAllProjects")]
+        public Output<bool> ShareWithAllProjects { get; private set; } = null!;
+
+        /// <summary>
+        /// - List of projects with which the SAML Identity Provider is shared.
+        /// </summary>
+        [Output("sharedWithProjects")]
+        public Output<ImmutableArray<string>> SharedWithProjects { get; private set; } = null!;
 
         [Output("usernameAttribute")]
         public Output<string> UsernameAttribute { get; private set; } = null!;
@@ -234,7 +173,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? EntityIssuer { get; set; }
 
         /// <summary>
-        /// The External Identifier of the User Group.
+        /// The External Identifier of the SAML Identity Provider.
         /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
@@ -278,6 +217,30 @@ namespace PiersKarsenbarg.Nutanix
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - Project reference for the SAML Identity Provider.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
+        /// <summary>
+        /// - Flag indicating whether the SAML Identity Provider is shared with all projects or not.
+        /// </summary>
+        [Input("shareWithAllProjects")]
+        public Input<bool>? ShareWithAllProjects { get; set; }
+
+        [Input("sharedWithProjects")]
+        private InputList<string>? _sharedWithProjects;
+
+        /// <summary>
+        /// - List of projects with which the SAML Identity Provider is shared.
+        /// </summary>
+        public InputList<string> SharedWithProjects
+        {
+            get => _sharedWithProjects ?? (_sharedWithProjects = new InputList<string>());
+            set => _sharedWithProjects = value;
+        }
+
         [Input("usernameAttribute")]
         public Input<string>? UsernameAttribute { get; set; }
 
@@ -319,7 +282,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? EntityIssuer { get; set; }
 
         /// <summary>
-        /// The External Identifier of the User Group.
+        /// The External Identifier of the SAML Identity Provider.
         /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
@@ -368,6 +331,30 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// - Project reference for the SAML Identity Provider.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
+        /// <summary>
+        /// - Flag indicating whether the SAML Identity Provider is shared with all projects or not.
+        /// </summary>
+        [Input("shareWithAllProjects")]
+        public Input<bool>? ShareWithAllProjects { get; set; }
+
+        [Input("sharedWithProjects")]
+        private InputList<string>? _sharedWithProjects;
+
+        /// <summary>
+        /// - List of projects with which the SAML Identity Provider is shared.
+        /// </summary>
+        public InputList<string> SharedWithProjects
+        {
+            get => _sharedWithProjects ?? (_sharedWithProjects = new InputList<string>());
+            set => _sharedWithProjects = value;
+        }
 
         [Input("usernameAttribute")]
         public Input<string>? UsernameAttribute { get; set; }

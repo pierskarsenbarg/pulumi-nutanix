@@ -420,6 +420,15 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string OwnerUuid;
         /// <summary>
+        /// The external identifier of the project to which the category belongs.
+        /// </summary>
+        public readonly string ProjectExtId;
+        public readonly bool SharedWithAllProjects;
+        /// <summary>
+        /// A set of project external identifiers with which the category is shared.
+        /// </summary>
+        public readonly ImmutableArray<string> SharedWithProjects;
+        /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity.
         /// </summary>
         public readonly string TenantId;
@@ -453,6 +462,12 @@ namespace PiersKarsenbarg.Nutanix
 
             string ownerUuid,
 
+            string projectExtId,
+
+            bool sharedWithAllProjects,
+
+            ImmutableArray<string> sharedWithProjects,
+
             string tenantId,
 
             string type,
@@ -468,6 +483,9 @@ namespace PiersKarsenbarg.Nutanix
             Key = key;
             Links = links;
             OwnerUuid = ownerUuid;
+            ProjectExtId = projectExtId;
+            SharedWithAllProjects = sharedWithAllProjects;
+            SharedWithProjects = sharedWithProjects;
             TenantId = tenantId;
             Type = type;
             Value = value;

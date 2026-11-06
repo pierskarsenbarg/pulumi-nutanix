@@ -81,7 +81,7 @@ export class LcmConfigV2 extends pulumi.CustomResource {
     /**
      * Indicates if LCM is enabled to auto-upgrade products. The default value is False.
      *
-     * See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
+     * See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Config/operation/updateConfig)
      */
     declare public readonly hasModuleAutoUpgradeEnabled: pulumi.Output<boolean | undefined>;
     /**
@@ -154,7 +154,7 @@ export interface LcmConfigV2State {
     /**
      * Indicates if LCM is enabled to auto-upgrade products. The default value is False.
      *
-     * See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
+     * See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Config/operation/updateConfig)
      */
     hasModuleAutoUpgradeEnabled?: pulumi.Input<boolean | undefined>;
     /**
@@ -190,7 +190,7 @@ export interface LcmConfigV2Args {
     /**
      * Indicates if LCM is enabled to auto-upgrade products. The default value is False.
      *
-     * See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Config/operation/updateConfig)
+     * See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Config/operation/updateConfig)
      */
     hasModuleAutoUpgradeEnabled?: pulumi.Input<boolean | undefined>;
     /**

@@ -51,6 +51,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkFunctionsV2NetworkFunctionNicPairResult> NicPairs;
         /// <summary>
+        /// Project external ID associated with the network function.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity.
         /// </summary>
         public readonly string TenantId;
@@ -79,6 +83,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<Outputs.GetNetworkFunctionsV2NetworkFunctionNicPairResult> nicPairs,
 
+            string projectExtId,
+
             string tenantId,
 
             string trafficForwardingMode)
@@ -92,6 +98,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             Metadatas = metadatas;
             Name = name;
             NicPairs = nicPairs;
+            ProjectExtId = projectExtId;
             TenantId = tenantId;
             TrafficForwardingMode = trafficForwardingMode;
         }

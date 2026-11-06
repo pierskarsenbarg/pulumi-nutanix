@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "nutanix:index/accessControlPolicy:AccessControlPolicy":
 		r = &AccessControlPolicy{}
+	case "nutanix:index/adGroupCategoryMappingV2:AdGroupCategoryMappingV2":
+		r = &AdGroupCategoryMappingV2{}
 	case "nutanix:index/addressGroup:AddressGroup":
 		r = &AddressGroup{}
 	case "nutanix:index/addressGroupsV2:AddressGroupsV2":
@@ -39,6 +41,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &CategoryValue{}
 	case "nutanix:index/clusterAddNodeV2:ClusterAddNodeV2":
 		r = &ClusterAddNodeV2{}
+	case "nutanix:index/clusterCategoryAssociationsV2:ClusterCategoryAssociationsV2":
+		r = &ClusterCategoryAssociationsV2{}
 	case "nutanix:index/clusterProfileV2:ClusterProfileV2":
 		r = &ClusterProfileV2{}
 	case "nutanix:index/clusterV2:ClusterV2":
@@ -49,6 +53,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ClustersUnconfiguredNodeNetworksV2{}
 	case "nutanix:index/deployTemplatesV2:DeployTemplatesV2":
 		r = &DeployTemplatesV2{}
+	case "nutanix:index/directoryServerConfigV2:DirectoryServerConfigV2":
+		r = &DirectoryServerConfigV2{}
 	case "nutanix:index/directoryServicesV2:DirectoryServicesV2":
 		r = &DirectoryServicesV2{}
 	case "nutanix:index/entityGroupV2:EntityGroupV2":
@@ -73,6 +79,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Image{}
 	case "nutanix:index/imagePlacementPolicyV2:ImagePlacementPolicyV2":
 		r = &ImagePlacementPolicyV2{}
+	case "nutanix:index/imageRateLimitPolicyV2:ImageRateLimitPolicyV2":
+		r = &ImageRateLimitPolicyV2{}
 	case "nutanix:index/imagesV2:ImagesV2":
 		r = &ImagesV2{}
 	case "nutanix:index/karbonCluster:KarbonCluster":
@@ -139,6 +147,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &NdbTmsCluster{}
 	case "nutanix:index/networkFunctionV2:NetworkFunctionV2":
 		r = &NetworkFunctionV2{}
+	case "nutanix:index/networkSecurityPolicyExportV2:NetworkSecurityPolicyExportV2":
+		r = &NetworkSecurityPolicyExportV2{}
+	case "nutanix:index/networkSecurityPolicyImportV2:NetworkSecurityPolicyImportV2":
+		r = &NetworkSecurityPolicyImportV2{}
 	case "nutanix:index/networkSecurityPolicyV2:NetworkSecurityPolicyV2":
 		r = &NetworkSecurityPolicyV2{}
 	case "nutanix:index/networkSecurityRule:NetworkSecurityRule":
@@ -179,6 +191,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &PcUnregistrationV2{}
 	case "nutanix:index/project:Project":
 		r = &Project{}
+	case "nutanix:index/projectV2:ProjectV2":
+		r = &ProjectV2{}
 	case "nutanix:index/promoteProtectedResourceV2:PromoteProtectedResourceV2":
 		r = &PromoteProtectedResourceV2{}
 	case "nutanix:index/protectionPolicyV2:ProtectionPolicyV2":
@@ -193,10 +207,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &RecoveryPointRestoreV2{}
 	case "nutanix:index/recoveryPointsV2:RecoveryPointsV2":
 		r = &RecoveryPointsV2{}
+	case "nutanix:index/resourceGroupV2:ResourceGroupV2":
+		r = &ResourceGroupV2{}
 	case "nutanix:index/restoreProtectedResourceV2:RestoreProtectedResourceV2":
 		r = &RestoreProtectedResourceV2{}
 	case "nutanix:index/role:Role":
 		r = &Role{}
+	case "nutanix:index/roleMembershipV2:RoleMembershipV2":
+		r = &RoleMembershipV2{}
 	case "nutanix:index/rolesV2:RolesV2":
 		r = &RolesV2{}
 	case "nutanix:index/routesV2:RoutesV2":
@@ -217,6 +235,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ServiceGroup{}
 	case "nutanix:index/serviceGroupsV2:ServiceGroupsV2":
 		r = &ServiceGroupsV2{}
+	case "nutanix:index/snmpConfigV2:SnmpConfigV2":
+		r = &SnmpConfigV2{}
+	case "nutanix:index/snmpTrapV2:SnmpTrapV2":
+		r = &SnmpTrapV2{}
+	case "nutanix:index/snmpUserV2:SnmpUserV2":
+		r = &SnmpUserV2{}
 	case "nutanix:index/sslCertificateV2:SslCertificateV2":
 		r = &SslCertificateV2{}
 	case "nutanix:index/staticRoutes:StaticRoutes":
@@ -231,6 +255,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &SubnetV2{}
 	case "nutanix:index/templateGuestOsActionsV2:TemplateGuestOsActionsV2":
 		r = &TemplateGuestOsActionsV2{}
+	case "nutanix:index/templatePlacementPolicyV2:TemplatePlacementPolicyV2":
+		r = &TemplatePlacementPolicyV2{}
 	case "nutanix:index/templateV2:TemplateV2":
 		r = &TemplateV2{}
 	case "nutanix:index/user:User":
@@ -249,6 +275,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &VirtualMachine{}
 	case "nutanix:index/virtualMachineV2:VirtualMachineV2":
 		r = &VirtualMachineV2{}
+	case "nutanix:index/virtualSwitchV2:VirtualSwitchV2":
+		r = &VirtualSwitchV2{}
 	case "nutanix:index/vmAntiAffinityPolicyV2:VmAntiAffinityPolicyV2":
 		r = &VmAntiAffinityPolicyV2{}
 	case "nutanix:index/vmCdromInsertEjectV2:VmCdromInsertEjectV2":
@@ -257,6 +285,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &VmCloneV2{}
 	case "nutanix:index/vmGcUpdateV2:VmGcUpdateV2":
 		r = &VmGcUpdateV2{}
+	case "nutanix:index/vmGuestCustomizationProfileV2:VmGuestCustomizationProfileV2":
+		r = &VmGuestCustomizationProfileV2{}
 	case "nutanix:index/vmHostAffinityPolicyV2:VmHostAffinityPolicyV2":
 		r = &VmHostAffinityPolicyV2{}
 	case "nutanix:index/vmNetworkDeviceAssignIpV2:VmNetworkDeviceAssignIpV2":
@@ -267,6 +297,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &VmRevertV2{}
 	case "nutanix:index/vmShutdownActionV2:VmShutdownActionV2":
 		r = &VmShutdownActionV2{}
+	case "nutanix:index/vmStartupPolicyV2:VmStartupPolicyV2":
+		r = &VmStartupPolicyV2{}
 	case "nutanix:index/volumeGroupDiskV2:VolumeGroupDiskV2":
 		r = &VolumeGroupDiskV2{}
 	case "nutanix:index/volumeGroupIscsiClientV2:VolumeGroupIscsiClientV2":
@@ -279,6 +311,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Vpc{}
 	case "nutanix:index/vpcV2:VpcV2":
 		r = &VpcV2{}
+	case "nutanix:index/vpcVirtualSwitchMappingV2:VpcVirtualSwitchMappingV2":
+		r = &VpcVirtualSwitchMappingV2{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -313,6 +347,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/accessControlPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/adGroupCategoryMappingV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -357,6 +396,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/clusterCategoryAssociationsV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/clusterProfileV2",
 		&module{version},
 	)
@@ -378,6 +422,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/deployTemplatesV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/directoryServerConfigV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -438,6 +487,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/imagePlacementPolicyV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/imageRateLimitPolicyV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -607,6 +661,16 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/networkSecurityPolicyExportV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/networkSecurityPolicyImportV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/networkSecurityPolicyV2",
 		&module{version},
 	)
@@ -707,6 +771,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/projectV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/promoteProtectedResourceV2",
 		&module{version},
 	)
@@ -742,12 +811,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/resourceGroupV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/restoreProtectedResourceV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/role",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/roleMembershipV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -802,6 +881,21 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/snmpConfigV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/snmpTrapV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/snmpUserV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/sslCertificateV2",
 		&module{version},
 	)
@@ -833,6 +927,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/templateGuestOsActionsV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/templatePlacementPolicyV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -882,6 +981,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/virtualSwitchV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/vmAntiAffinityPolicyV2",
 		&module{version},
 	)
@@ -898,6 +1002,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/vmGcUpdateV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/vmGuestCustomizationProfileV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -923,6 +1032,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/vmShutdownActionV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/vmStartupPolicyV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -953,6 +1067,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/vpcV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/vpcVirtualSwitchMappingV2",
 		&module{version},
 	)
 	pulumi.RegisterResourcePackage(

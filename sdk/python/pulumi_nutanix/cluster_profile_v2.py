@@ -24,11 +24,16 @@ class ClusterProfileV2Args:
                  allowed_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
+                 fault_tolerance_config: pulumi.Input[Optional['ClusterProfileV2FaultToleranceConfigArgs']] = None,
+                 http_proxy_config: pulumi.Input[Optional['ClusterProfileV2HttpProxyConfigArgs']] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NameServerIpListArgs']]]] = None,
                  nfs_subnet_white_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ntp_server_config_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListArgs']]]] = None,
                  ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]]] = None,
                  pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]]] = None,
+                 rebuild_reservation_config: pulumi.Input[Optional['ClusterProfileV2RebuildReservationConfigArgs']] = None,
+                 resilient_capacity_warning_threshold_config: pulumi.Input[Optional['ClusterProfileV2ResilientCapacityWarningThresholdConfigArgs']] = None,
                  rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListArgs']]]] = None,
                  smtp_server: pulumi.Input[Optional['ClusterProfileV2SmtpServerArgs']] = None,
                  snmp_config: pulumi.Input[Optional['ClusterProfileV2SnmpConfigArgs']] = None):
@@ -46,12 +51,21 @@ class ClusterProfileV2Args:
                | PULSE_CONFIG                | Pulse status for a cluster                 |
                | NAME_SERVER_CONFIG          | Name server configuration                  |
                | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+               | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+               | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+               | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+               | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
         :param pulumi.Input[_builtins.str] description: - (Optional) Detailed description of a cluster profile.
+        :param pulumi.Input['ClusterProfileV2FaultToleranceConfigArgs'] fault_tolerance_config: - (Optional) Fault tolerant state of cluster.
+        :param pulumi.Input['ClusterProfileV2HttpProxyConfigArgs'] http_proxy_config: - (Optional) HTTP proxy configuration for the cluster.
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the cluster profile.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NameServerIpListArgs']]] name_server_ip_lists: - (Optional) List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nfs_subnet_white_lists: - (Optional) NFS subnet allowlist addresses. This is part of the payload for cluster update operation only.
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListArgs']]] ntp_server_config_lists: - (Optional) List of NTP server configurations with encryption authentication.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]] ntp_server_ip_lists: - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]] pulse_statuses: - (Optional) Pulse status for a cluster.
+        :param pulumi.Input['ClusterProfileV2RebuildReservationConfigArgs'] rebuild_reservation_config: - (Optional) Rebuild capacity reservation configuration.
+        :param pulumi.Input['ClusterProfileV2ResilientCapacityWarningThresholdConfigArgs'] resilient_capacity_warning_threshold_config: - (Optional) Resilient capacity warning threshold configuration.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListArgs']]] rsyslog_server_lists: - (Optional) RSYSLOG Server.
         :param pulumi.Input['ClusterProfileV2SmtpServerArgs'] smtp_server: - (Optional) SMTP servers on a cluster. This is part of payload for cluster update operation only.
         :param pulumi.Input['ClusterProfileV2SnmpConfigArgs'] snmp_config: - (Optional) SNMP information.
@@ -62,16 +76,26 @@ class ClusterProfileV2Args:
             pulumi.set(__self__, "description", description)
         if dryrun is not None:
             pulumi.set(__self__, "dryrun", dryrun)
+        if fault_tolerance_config is not None:
+            pulumi.set(__self__, "fault_tolerance_config", fault_tolerance_config)
+        if http_proxy_config is not None:
+            pulumi.set(__self__, "http_proxy_config", http_proxy_config)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if name_server_ip_lists is not None:
             pulumi.set(__self__, "name_server_ip_lists", name_server_ip_lists)
         if nfs_subnet_white_lists is not None:
             pulumi.set(__self__, "nfs_subnet_white_lists", nfs_subnet_white_lists)
+        if ntp_server_config_lists is not None:
+            pulumi.set(__self__, "ntp_server_config_lists", ntp_server_config_lists)
         if ntp_server_ip_lists is not None:
             pulumi.set(__self__, "ntp_server_ip_lists", ntp_server_ip_lists)
         if pulse_statuses is not None:
             pulumi.set(__self__, "pulse_statuses", pulse_statuses)
+        if rebuild_reservation_config is not None:
+            pulumi.set(__self__, "rebuild_reservation_config", rebuild_reservation_config)
+        if resilient_capacity_warning_threshold_config is not None:
+            pulumi.set(__self__, "resilient_capacity_warning_threshold_config", resilient_capacity_warning_threshold_config)
         if rsyslog_server_lists is not None:
             pulumi.set(__self__, "rsyslog_server_lists", rsyslog_server_lists)
         if smtp_server is not None:
@@ -94,6 +118,10 @@ class ClusterProfileV2Args:
         | PULSE_CONFIG                | Pulse status for a cluster                 |
         | NAME_SERVER_CONFIG          | Name server configuration                  |
         | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+        | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+        | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+        | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+        | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
         """
         return pulumi.get(self, "allowed_overrides")
 
@@ -121,6 +149,30 @@ class ClusterProfileV2Args:
     @dryrun.setter
     def dryrun(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "dryrun", value)
+
+    @_builtins.property
+    @pulumi.getter(name="faultToleranceConfig")
+    def fault_tolerance_config(self) -> pulumi.Input[Optional['ClusterProfileV2FaultToleranceConfigArgs']]:
+        """
+        - (Optional) Fault tolerant state of cluster.
+        """
+        return pulumi.get(self, "fault_tolerance_config")
+
+    @fault_tolerance_config.setter
+    def fault_tolerance_config(self, value: pulumi.Input[Optional['ClusterProfileV2FaultToleranceConfigArgs']]):
+        pulumi.set(self, "fault_tolerance_config", value)
+
+    @_builtins.property
+    @pulumi.getter(name="httpProxyConfig")
+    def http_proxy_config(self) -> pulumi.Input[Optional['ClusterProfileV2HttpProxyConfigArgs']]:
+        """
+        - (Optional) HTTP proxy configuration for the cluster.
+        """
+        return pulumi.get(self, "http_proxy_config")
+
+    @http_proxy_config.setter
+    def http_proxy_config(self, value: pulumi.Input[Optional['ClusterProfileV2HttpProxyConfigArgs']]):
+        pulumi.set(self, "http_proxy_config", value)
 
     @_builtins.property
     @pulumi.getter
@@ -159,6 +211,18 @@ class ClusterProfileV2Args:
         pulumi.set(self, "nfs_subnet_white_lists", value)
 
     @_builtins.property
+    @pulumi.getter(name="ntpServerConfigLists")
+    def ntp_server_config_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListArgs']]]]:
+        """
+        - (Optional) List of NTP server configurations with encryption authentication.
+        """
+        return pulumi.get(self, "ntp_server_config_lists")
+
+    @ntp_server_config_lists.setter
+    def ntp_server_config_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListArgs']]]]):
+        pulumi.set(self, "ntp_server_config_lists", value)
+
+    @_builtins.property
     @pulumi.getter(name="ntpServerIpLists")
     def ntp_server_ip_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]]]:
         """
@@ -181,6 +245,30 @@ class ClusterProfileV2Args:
     @pulse_statuses.setter
     def pulse_statuses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]]]):
         pulumi.set(self, "pulse_statuses", value)
+
+    @_builtins.property
+    @pulumi.getter(name="rebuildReservationConfig")
+    def rebuild_reservation_config(self) -> pulumi.Input[Optional['ClusterProfileV2RebuildReservationConfigArgs']]:
+        """
+        - (Optional) Rebuild capacity reservation configuration.
+        """
+        return pulumi.get(self, "rebuild_reservation_config")
+
+    @rebuild_reservation_config.setter
+    def rebuild_reservation_config(self, value: pulumi.Input[Optional['ClusterProfileV2RebuildReservationConfigArgs']]):
+        pulumi.set(self, "rebuild_reservation_config", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resilientCapacityWarningThresholdConfig")
+    def resilient_capacity_warning_threshold_config(self) -> pulumi.Input[Optional['ClusterProfileV2ResilientCapacityWarningThresholdConfigArgs']]:
+        """
+        - (Optional) Resilient capacity warning threshold configuration.
+        """
+        return pulumi.get(self, "resilient_capacity_warning_threshold_config")
+
+    @resilient_capacity_warning_threshold_config.setter
+    def resilient_capacity_warning_threshold_config(self, value: pulumi.Input[Optional['ClusterProfileV2ResilientCapacityWarningThresholdConfigArgs']]):
+        pulumi.set(self, "resilient_capacity_warning_threshold_config", value)
 
     @_builtins.property
     @pulumi.getter(name="rsyslogServerLists")
@@ -231,14 +319,19 @@ class _ClusterProfileV2State:
                  drifted_cluster_count: pulumi.Input[Optional[_builtins.int]] = None,
                  dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault_tolerance_config: pulumi.Input[Optional['ClusterProfileV2FaultToleranceConfigArgs']] = None,
+                 http_proxy_config: pulumi.Input[Optional['ClusterProfileV2HttpProxyConfigArgs']] = None,
                  last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
                  last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
                  links: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2LinkArgs']]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NameServerIpListArgs']]]] = None,
                  nfs_subnet_white_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ntp_server_config_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListArgs']]]] = None,
                  ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]]] = None,
                  pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]]] = None,
+                 rebuild_reservation_config: pulumi.Input[Optional['ClusterProfileV2RebuildReservationConfigArgs']] = None,
+                 resilient_capacity_warning_threshold_config: pulumi.Input[Optional['ClusterProfileV2ResilientCapacityWarningThresholdConfigArgs']] = None,
                  rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListArgs']]]] = None,
                  smtp_server: pulumi.Input[Optional['ClusterProfileV2SmtpServerArgs']] = None,
                  snmp_config: pulumi.Input[Optional['ClusterProfileV2SnmpConfigArgs']] = None,
@@ -257,12 +350,21 @@ class _ClusterProfileV2State:
                | PULSE_CONFIG                | Pulse status for a cluster                 |
                | NAME_SERVER_CONFIG          | Name server configuration                  |
                | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+               | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+               | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+               | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+               | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
         :param pulumi.Input[_builtins.str] description: - (Optional) Detailed description of a cluster profile.
+        :param pulumi.Input['ClusterProfileV2FaultToleranceConfigArgs'] fault_tolerance_config: - (Optional) Fault tolerant state of cluster.
+        :param pulumi.Input['ClusterProfileV2HttpProxyConfigArgs'] http_proxy_config: - (Optional) HTTP proxy configuration for the cluster.
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the cluster profile.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NameServerIpListArgs']]] name_server_ip_lists: - (Optional) List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nfs_subnet_white_lists: - (Optional) NFS subnet allowlist addresses. This is part of the payload for cluster update operation only.
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListArgs']]] ntp_server_config_lists: - (Optional) List of NTP server configurations with encryption authentication.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]] ntp_server_ip_lists: - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]] pulse_statuses: - (Optional) Pulse status for a cluster.
+        :param pulumi.Input['ClusterProfileV2RebuildReservationConfigArgs'] rebuild_reservation_config: - (Optional) Rebuild capacity reservation configuration.
+        :param pulumi.Input['ClusterProfileV2ResilientCapacityWarningThresholdConfigArgs'] resilient_capacity_warning_threshold_config: - (Optional) Resilient capacity warning threshold configuration.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListArgs']]] rsyslog_server_lists: - (Optional) RSYSLOG Server.
         :param pulumi.Input['ClusterProfileV2SmtpServerArgs'] smtp_server: - (Optional) SMTP servers on a cluster. This is part of payload for cluster update operation only.
         :param pulumi.Input['ClusterProfileV2SnmpConfigArgs'] snmp_config: - (Optional) SNMP information.
@@ -285,6 +387,10 @@ class _ClusterProfileV2State:
             pulumi.set(__self__, "dryrun", dryrun)
         if ext_id is not None:
             pulumi.set(__self__, "ext_id", ext_id)
+        if fault_tolerance_config is not None:
+            pulumi.set(__self__, "fault_tolerance_config", fault_tolerance_config)
+        if http_proxy_config is not None:
+            pulumi.set(__self__, "http_proxy_config", http_proxy_config)
         if last_update_time is not None:
             pulumi.set(__self__, "last_update_time", last_update_time)
         if last_updated_by is not None:
@@ -297,10 +403,16 @@ class _ClusterProfileV2State:
             pulumi.set(__self__, "name_server_ip_lists", name_server_ip_lists)
         if nfs_subnet_white_lists is not None:
             pulumi.set(__self__, "nfs_subnet_white_lists", nfs_subnet_white_lists)
+        if ntp_server_config_lists is not None:
+            pulumi.set(__self__, "ntp_server_config_lists", ntp_server_config_lists)
         if ntp_server_ip_lists is not None:
             pulumi.set(__self__, "ntp_server_ip_lists", ntp_server_ip_lists)
         if pulse_statuses is not None:
             pulumi.set(__self__, "pulse_statuses", pulse_statuses)
+        if rebuild_reservation_config is not None:
+            pulumi.set(__self__, "rebuild_reservation_config", rebuild_reservation_config)
+        if resilient_capacity_warning_threshold_config is not None:
+            pulumi.set(__self__, "resilient_capacity_warning_threshold_config", resilient_capacity_warning_threshold_config)
         if rsyslog_server_lists is not None:
             pulumi.set(__self__, "rsyslog_server_lists", rsyslog_server_lists)
         if smtp_server is not None:
@@ -325,6 +437,10 @@ class _ClusterProfileV2State:
         | PULSE_CONFIG                | Pulse status for a cluster                 |
         | NAME_SERVER_CONFIG          | Name server configuration                  |
         | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+        | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+        | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+        | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+        | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
         """
         return pulumi.get(self, "allowed_overrides")
 
@@ -408,6 +524,30 @@ class _ClusterProfileV2State:
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="faultToleranceConfig")
+    def fault_tolerance_config(self) -> pulumi.Input[Optional['ClusterProfileV2FaultToleranceConfigArgs']]:
+        """
+        - (Optional) Fault tolerant state of cluster.
+        """
+        return pulumi.get(self, "fault_tolerance_config")
+
+    @fault_tolerance_config.setter
+    def fault_tolerance_config(self, value: pulumi.Input[Optional['ClusterProfileV2FaultToleranceConfigArgs']]):
+        pulumi.set(self, "fault_tolerance_config", value)
+
+    @_builtins.property
+    @pulumi.getter(name="httpProxyConfig")
+    def http_proxy_config(self) -> pulumi.Input[Optional['ClusterProfileV2HttpProxyConfigArgs']]:
+        """
+        - (Optional) HTTP proxy configuration for the cluster.
+        """
+        return pulumi.get(self, "http_proxy_config")
+
+    @http_proxy_config.setter
+    def http_proxy_config(self, value: pulumi.Input[Optional['ClusterProfileV2HttpProxyConfigArgs']]):
+        pulumi.set(self, "http_proxy_config", value)
+
+    @_builtins.property
     @pulumi.getter(name="lastUpdateTime")
     def last_update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "last_update_time")
@@ -471,6 +611,18 @@ class _ClusterProfileV2State:
         pulumi.set(self, "nfs_subnet_white_lists", value)
 
     @_builtins.property
+    @pulumi.getter(name="ntpServerConfigLists")
+    def ntp_server_config_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListArgs']]]]:
+        """
+        - (Optional) List of NTP server configurations with encryption authentication.
+        """
+        return pulumi.get(self, "ntp_server_config_lists")
+
+    @ntp_server_config_lists.setter
+    def ntp_server_config_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListArgs']]]]):
+        pulumi.set(self, "ntp_server_config_lists", value)
+
+    @_builtins.property
     @pulumi.getter(name="ntpServerIpLists")
     def ntp_server_ip_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerIpListArgs']]]]:
         """
@@ -493,6 +645,30 @@ class _ClusterProfileV2State:
     @pulse_statuses.setter
     def pulse_statuses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2PulseStatusArgs']]]]):
         pulumi.set(self, "pulse_statuses", value)
+
+    @_builtins.property
+    @pulumi.getter(name="rebuildReservationConfig")
+    def rebuild_reservation_config(self) -> pulumi.Input[Optional['ClusterProfileV2RebuildReservationConfigArgs']]:
+        """
+        - (Optional) Rebuild capacity reservation configuration.
+        """
+        return pulumi.get(self, "rebuild_reservation_config")
+
+    @rebuild_reservation_config.setter
+    def rebuild_reservation_config(self, value: pulumi.Input[Optional['ClusterProfileV2RebuildReservationConfigArgs']]):
+        pulumi.set(self, "rebuild_reservation_config", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resilientCapacityWarningThresholdConfig")
+    def resilient_capacity_warning_threshold_config(self) -> pulumi.Input[Optional['ClusterProfileV2ResilientCapacityWarningThresholdConfigArgs']]:
+        """
+        - (Optional) Resilient capacity warning threshold configuration.
+        """
+        return pulumi.get(self, "resilient_capacity_warning_threshold_config")
+
+    @resilient_capacity_warning_threshold_config.setter
+    def resilient_capacity_warning_threshold_config(self, value: pulumi.Input[Optional['ClusterProfileV2ResilientCapacityWarningThresholdConfigArgs']]):
+        pulumi.set(self, "resilient_capacity_warning_threshold_config", value)
 
     @_builtins.property
     @pulumi.getter(name="rsyslogServerLists")
@@ -549,11 +725,16 @@ class ClusterProfileV2(pulumi.CustomResource):
                  allowed_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
+                 fault_tolerance_config: pulumi.Input[Optional[Union['ClusterProfileV2FaultToleranceConfigArgs', 'ClusterProfileV2FaultToleranceConfigArgsDict', 'outputs.ClusterProfileV2FaultToleranceConfig']]] = None,
+                 http_proxy_config: pulumi.Input[Optional[Union['ClusterProfileV2HttpProxyConfigArgs', 'ClusterProfileV2HttpProxyConfigArgsDict', 'outputs.ClusterProfileV2HttpProxyConfig']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict', 'outputs.ClusterProfileV2NameServerIpList']]]]] = None,
                  nfs_subnet_white_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ntp_server_config_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerConfigListArgs', 'ClusterProfileV2NtpServerConfigListArgsDict', 'outputs.ClusterProfileV2NtpServerConfigList']]]]] = None,
                  ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict', 'outputs.ClusterProfileV2NtpServerIpList']]]]] = None,
                  pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict', 'outputs.ClusterProfileV2PulseStatus']]]]] = None,
+                 rebuild_reservation_config: pulumi.Input[Optional[Union['ClusterProfileV2RebuildReservationConfigArgs', 'ClusterProfileV2RebuildReservationConfigArgsDict', 'outputs.ClusterProfileV2RebuildReservationConfig']]] = None,
+                 resilient_capacity_warning_threshold_config: pulumi.Input[Optional[Union['ClusterProfileV2ResilientCapacityWarningThresholdConfigArgs', 'ClusterProfileV2ResilientCapacityWarningThresholdConfigArgsDict', 'outputs.ClusterProfileV2ResilientCapacityWarningThresholdConfig']]] = None,
                  rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict', 'outputs.ClusterProfileV2RsyslogServerList']]]]] = None,
                  smtp_server: pulumi.Input[Optional[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict', 'outputs.ClusterProfileV2SmtpServer']]] = None,
                  snmp_config: pulumi.Input[Optional[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict', 'outputs.ClusterProfileV2SnmpConfig']]] = None,
@@ -689,12 +870,21 @@ class ClusterProfileV2(pulumi.CustomResource):
                | PULSE_CONFIG                | Pulse status for a cluster                 |
                | NAME_SERVER_CONFIG          | Name server configuration                  |
                | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+               | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+               | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+               | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+               | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
         :param pulumi.Input[_builtins.str] description: - (Optional) Detailed description of a cluster profile.
+        :param pulumi.Input[Union['ClusterProfileV2FaultToleranceConfigArgs', 'ClusterProfileV2FaultToleranceConfigArgsDict', 'outputs.ClusterProfileV2FaultToleranceConfig']] fault_tolerance_config: - (Optional) Fault tolerant state of cluster.
+        :param pulumi.Input[Union['ClusterProfileV2HttpProxyConfigArgs', 'ClusterProfileV2HttpProxyConfigArgsDict', 'outputs.ClusterProfileV2HttpProxyConfig']] http_proxy_config: - (Optional) HTTP proxy configuration for the cluster.
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the cluster profile.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict', 'outputs.ClusterProfileV2NameServerIpList']]]] name_server_ip_lists: - (Optional) List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nfs_subnet_white_lists: - (Optional) NFS subnet allowlist addresses. This is part of the payload for cluster update operation only.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerConfigListArgs', 'ClusterProfileV2NtpServerConfigListArgsDict', 'outputs.ClusterProfileV2NtpServerConfigList']]]] ntp_server_config_lists: - (Optional) List of NTP server configurations with encryption authentication.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict', 'outputs.ClusterProfileV2NtpServerIpList']]]] ntp_server_ip_lists: - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict', 'outputs.ClusterProfileV2PulseStatus']]]] pulse_statuses: - (Optional) Pulse status for a cluster.
+        :param pulumi.Input[Union['ClusterProfileV2RebuildReservationConfigArgs', 'ClusterProfileV2RebuildReservationConfigArgsDict', 'outputs.ClusterProfileV2RebuildReservationConfig']] rebuild_reservation_config: - (Optional) Rebuild capacity reservation configuration.
+        :param pulumi.Input[Union['ClusterProfileV2ResilientCapacityWarningThresholdConfigArgs', 'ClusterProfileV2ResilientCapacityWarningThresholdConfigArgsDict', 'outputs.ClusterProfileV2ResilientCapacityWarningThresholdConfig']] resilient_capacity_warning_threshold_config: - (Optional) Resilient capacity warning threshold configuration.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict', 'outputs.ClusterProfileV2RsyslogServerList']]]] rsyslog_server_lists: - (Optional) RSYSLOG Server.
         :param pulumi.Input[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict', 'outputs.ClusterProfileV2SmtpServer']] smtp_server: - (Optional) SMTP servers on a cluster. This is part of payload for cluster update operation only.
         :param pulumi.Input[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict', 'outputs.ClusterProfileV2SnmpConfig']] snmp_config: - (Optional) SNMP information.
@@ -841,11 +1031,16 @@ class ClusterProfileV2(pulumi.CustomResource):
                  allowed_overrides: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
+                 fault_tolerance_config: pulumi.Input[Optional[Union['ClusterProfileV2FaultToleranceConfigArgs', 'ClusterProfileV2FaultToleranceConfigArgsDict', 'outputs.ClusterProfileV2FaultToleranceConfig']]] = None,
+                 http_proxy_config: pulumi.Input[Optional[Union['ClusterProfileV2HttpProxyConfigArgs', 'ClusterProfileV2HttpProxyConfigArgsDict', 'outputs.ClusterProfileV2HttpProxyConfig']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict', 'outputs.ClusterProfileV2NameServerIpList']]]]] = None,
                  nfs_subnet_white_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ntp_server_config_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerConfigListArgs', 'ClusterProfileV2NtpServerConfigListArgsDict', 'outputs.ClusterProfileV2NtpServerConfigList']]]]] = None,
                  ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict', 'outputs.ClusterProfileV2NtpServerIpList']]]]] = None,
                  pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict', 'outputs.ClusterProfileV2PulseStatus']]]]] = None,
+                 rebuild_reservation_config: pulumi.Input[Optional[Union['ClusterProfileV2RebuildReservationConfigArgs', 'ClusterProfileV2RebuildReservationConfigArgsDict', 'outputs.ClusterProfileV2RebuildReservationConfig']]] = None,
+                 resilient_capacity_warning_threshold_config: pulumi.Input[Optional[Union['ClusterProfileV2ResilientCapacityWarningThresholdConfigArgs', 'ClusterProfileV2ResilientCapacityWarningThresholdConfigArgsDict', 'outputs.ClusterProfileV2ResilientCapacityWarningThresholdConfig']]] = None,
                  rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict', 'outputs.ClusterProfileV2RsyslogServerList']]]]] = None,
                  smtp_server: pulumi.Input[Optional[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict', 'outputs.ClusterProfileV2SmtpServer']]] = None,
                  snmp_config: pulumi.Input[Optional[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict', 'outputs.ClusterProfileV2SnmpConfig']]] = None,
@@ -861,11 +1056,16 @@ class ClusterProfileV2(pulumi.CustomResource):
             __props__.__dict__["allowed_overrides"] = allowed_overrides
             __props__.__dict__["description"] = description
             __props__.__dict__["dryrun"] = dryrun
+            __props__.__dict__["fault_tolerance_config"] = fault_tolerance_config
+            __props__.__dict__["http_proxy_config"] = http_proxy_config
             __props__.__dict__["name"] = name
             __props__.__dict__["name_server_ip_lists"] = name_server_ip_lists
             __props__.__dict__["nfs_subnet_white_lists"] = nfs_subnet_white_lists
+            __props__.__dict__["ntp_server_config_lists"] = ntp_server_config_lists
             __props__.__dict__["ntp_server_ip_lists"] = ntp_server_ip_lists
             __props__.__dict__["pulse_statuses"] = pulse_statuses
+            __props__.__dict__["rebuild_reservation_config"] = rebuild_reservation_config
+            __props__.__dict__["resilient_capacity_warning_threshold_config"] = resilient_capacity_warning_threshold_config
             __props__.__dict__["rsyslog_server_lists"] = rsyslog_server_lists
             __props__.__dict__["smtp_server"] = smtp_server
             __props__.__dict__["snmp_config"] = snmp_config
@@ -898,14 +1098,19 @@ class ClusterProfileV2(pulumi.CustomResource):
             drifted_cluster_count: pulumi.Input[Optional[_builtins.int]] = None,
             dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            fault_tolerance_config: pulumi.Input[Optional[Union['ClusterProfileV2FaultToleranceConfigArgs', 'ClusterProfileV2FaultToleranceConfigArgsDict', 'outputs.ClusterProfileV2FaultToleranceConfig']]] = None,
+            http_proxy_config: pulumi.Input[Optional[Union['ClusterProfileV2HttpProxyConfigArgs', 'ClusterProfileV2HttpProxyConfigArgsDict', 'outputs.ClusterProfileV2HttpProxyConfig']]] = None,
             last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
             last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2LinkArgs', 'ClusterProfileV2LinkArgsDict', 'outputs.ClusterProfileV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict', 'outputs.ClusterProfileV2NameServerIpList']]]]] = None,
             nfs_subnet_white_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ntp_server_config_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerConfigListArgs', 'ClusterProfileV2NtpServerConfigListArgsDict', 'outputs.ClusterProfileV2NtpServerConfigList']]]]] = None,
             ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict', 'outputs.ClusterProfileV2NtpServerIpList']]]]] = None,
             pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict', 'outputs.ClusterProfileV2PulseStatus']]]]] = None,
+            rebuild_reservation_config: pulumi.Input[Optional[Union['ClusterProfileV2RebuildReservationConfigArgs', 'ClusterProfileV2RebuildReservationConfigArgsDict', 'outputs.ClusterProfileV2RebuildReservationConfig']]] = None,
+            resilient_capacity_warning_threshold_config: pulumi.Input[Optional[Union['ClusterProfileV2ResilientCapacityWarningThresholdConfigArgs', 'ClusterProfileV2ResilientCapacityWarningThresholdConfigArgsDict', 'outputs.ClusterProfileV2ResilientCapacityWarningThresholdConfig']]] = None,
             rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict', 'outputs.ClusterProfileV2RsyslogServerList']]]]] = None,
             smtp_server: pulumi.Input[Optional[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict', 'outputs.ClusterProfileV2SmtpServer']]] = None,
             snmp_config: pulumi.Input[Optional[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict', 'outputs.ClusterProfileV2SnmpConfig']]] = None,
@@ -928,12 +1133,21 @@ class ClusterProfileV2(pulumi.CustomResource):
                | PULSE_CONFIG                | Pulse status for a cluster                 |
                | NAME_SERVER_CONFIG          | Name server configuration                  |
                | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+               | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+               | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+               | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+               | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
         :param pulumi.Input[_builtins.str] description: - (Optional) Detailed description of a cluster profile.
+        :param pulumi.Input[Union['ClusterProfileV2FaultToleranceConfigArgs', 'ClusterProfileV2FaultToleranceConfigArgsDict', 'outputs.ClusterProfileV2FaultToleranceConfig']] fault_tolerance_config: - (Optional) Fault tolerant state of cluster.
+        :param pulumi.Input[Union['ClusterProfileV2HttpProxyConfigArgs', 'ClusterProfileV2HttpProxyConfigArgsDict', 'outputs.ClusterProfileV2HttpProxyConfig']] http_proxy_config: - (Optional) HTTP proxy configuration for the cluster.
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the cluster profile.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict', 'outputs.ClusterProfileV2NameServerIpList']]]] name_server_ip_lists: - (Optional) List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nfs_subnet_white_lists: - (Optional) NFS subnet allowlist addresses. This is part of the payload for cluster update operation only.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerConfigListArgs', 'ClusterProfileV2NtpServerConfigListArgsDict', 'outputs.ClusterProfileV2NtpServerConfigList']]]] ntp_server_config_lists: - (Optional) List of NTP server configurations with encryption authentication.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict', 'outputs.ClusterProfileV2NtpServerIpList']]]] ntp_server_ip_lists: - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict', 'outputs.ClusterProfileV2PulseStatus']]]] pulse_statuses: - (Optional) Pulse status for a cluster.
+        :param pulumi.Input[Union['ClusterProfileV2RebuildReservationConfigArgs', 'ClusterProfileV2RebuildReservationConfigArgsDict', 'outputs.ClusterProfileV2RebuildReservationConfig']] rebuild_reservation_config: - (Optional) Rebuild capacity reservation configuration.
+        :param pulumi.Input[Union['ClusterProfileV2ResilientCapacityWarningThresholdConfigArgs', 'ClusterProfileV2ResilientCapacityWarningThresholdConfigArgsDict', 'outputs.ClusterProfileV2ResilientCapacityWarningThresholdConfig']] resilient_capacity_warning_threshold_config: - (Optional) Resilient capacity warning threshold configuration.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict', 'outputs.ClusterProfileV2RsyslogServerList']]]] rsyslog_server_lists: - (Optional) RSYSLOG Server.
         :param pulumi.Input[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict', 'outputs.ClusterProfileV2SmtpServer']] smtp_server: - (Optional) SMTP servers on a cluster. This is part of payload for cluster update operation only.
         :param pulumi.Input[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict', 'outputs.ClusterProfileV2SnmpConfig']] snmp_config: - (Optional) SNMP information.
@@ -951,14 +1165,19 @@ class ClusterProfileV2(pulumi.CustomResource):
         __props__.__dict__["drifted_cluster_count"] = drifted_cluster_count
         __props__.__dict__["dryrun"] = dryrun
         __props__.__dict__["ext_id"] = ext_id
+        __props__.__dict__["fault_tolerance_config"] = fault_tolerance_config
+        __props__.__dict__["http_proxy_config"] = http_proxy_config
         __props__.__dict__["last_update_time"] = last_update_time
         __props__.__dict__["last_updated_by"] = last_updated_by
         __props__.__dict__["links"] = links
         __props__.__dict__["name"] = name
         __props__.__dict__["name_server_ip_lists"] = name_server_ip_lists
         __props__.__dict__["nfs_subnet_white_lists"] = nfs_subnet_white_lists
+        __props__.__dict__["ntp_server_config_lists"] = ntp_server_config_lists
         __props__.__dict__["ntp_server_ip_lists"] = ntp_server_ip_lists
         __props__.__dict__["pulse_statuses"] = pulse_statuses
+        __props__.__dict__["rebuild_reservation_config"] = rebuild_reservation_config
+        __props__.__dict__["resilient_capacity_warning_threshold_config"] = resilient_capacity_warning_threshold_config
         __props__.__dict__["rsyslog_server_lists"] = rsyslog_server_lists
         __props__.__dict__["smtp_server"] = smtp_server
         __props__.__dict__["snmp_config"] = snmp_config
@@ -977,14 +1196,19 @@ class ClusterProfileV2(pulumi.CustomResource):
             drifted_cluster_count: pulumi.Input[Optional[_builtins.int]] = None,
             dryrun: pulumi.Input[Optional[_builtins.bool]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            fault_tolerance_config: pulumi.Input[Optional[Union['ClusterProfileV2FaultToleranceConfigArgs', 'ClusterProfileV2FaultToleranceConfigArgsDict', 'outputs.ClusterProfileV2FaultToleranceConfig']]] = None,
+            http_proxy_config: pulumi.Input[Optional[Union['ClusterProfileV2HttpProxyConfigArgs', 'ClusterProfileV2HttpProxyConfigArgsDict', 'outputs.ClusterProfileV2HttpProxyConfig']]] = None,
             last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
             last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2LinkArgs', 'ClusterProfileV2LinkArgsDict', 'outputs.ClusterProfileV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             name_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NameServerIpListArgs', 'ClusterProfileV2NameServerIpListArgsDict', 'outputs.ClusterProfileV2NameServerIpList']]]]] = None,
             nfs_subnet_white_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ntp_server_config_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerConfigListArgs', 'ClusterProfileV2NtpServerConfigListArgsDict', 'outputs.ClusterProfileV2NtpServerConfigList']]]]] = None,
             ntp_server_ip_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2NtpServerIpListArgs', 'ClusterProfileV2NtpServerIpListArgsDict', 'outputs.ClusterProfileV2NtpServerIpList']]]]] = None,
             pulse_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2PulseStatusArgs', 'ClusterProfileV2PulseStatusArgsDict', 'outputs.ClusterProfileV2PulseStatus']]]]] = None,
+            rebuild_reservation_config: pulumi.Input[Optional[Union['ClusterProfileV2RebuildReservationConfigArgs', 'ClusterProfileV2RebuildReservationConfigArgsDict', 'outputs.ClusterProfileV2RebuildReservationConfig']]] = None,
+            resilient_capacity_warning_threshold_config: pulumi.Input[Optional[Union['ClusterProfileV2ResilientCapacityWarningThresholdConfigArgs', 'ClusterProfileV2ResilientCapacityWarningThresholdConfigArgsDict', 'outputs.ClusterProfileV2ResilientCapacityWarningThresholdConfig']]] = None,
             rsyslog_server_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterProfileV2RsyslogServerListArgs', 'ClusterProfileV2RsyslogServerListArgsDict', 'outputs.ClusterProfileV2RsyslogServerList']]]]] = None,
             smtp_server: pulumi.Input[Optional[Union['ClusterProfileV2SmtpServerArgs', 'ClusterProfileV2SmtpServerArgsDict', 'outputs.ClusterProfileV2SmtpServer']]] = None,
             snmp_config: pulumi.Input[Optional[Union['ClusterProfileV2SnmpConfigArgs', 'ClusterProfileV2SnmpConfigArgsDict', 'outputs.ClusterProfileV2SnmpConfig']]] = None,
@@ -999,14 +1223,19 @@ class ClusterProfileV2(pulumi.CustomResource):
         __props__["driftedClusterCount"] = drifted_cluster_count
         __props__["dryrun"] = dryrun
         __props__["extId"] = ext_id
+        __props__["faultToleranceConfig"] = fault_tolerance_config
+        __props__["httpProxyConfig"] = http_proxy_config
         __props__["lastUpdateTime"] = last_update_time
         __props__["lastUpdatedBy"] = last_updated_by
         __props__["links"] = links
         __props__["name"] = name
         __props__["nameServerIpLists"] = name_server_ip_lists
         __props__["nfsSubnetWhiteLists"] = nfs_subnet_white_lists
+        __props__["ntpServerConfigLists"] = ntp_server_config_lists
         __props__["ntpServerIpLists"] = ntp_server_ip_lists
         __props__["pulseStatuses"] = pulse_statuses
+        __props__["rebuildReservationConfig"] = rebuild_reservation_config
+        __props__["resilientCapacityWarningThresholdConfig"] = resilient_capacity_warning_threshold_config
         __props__["rsyslogServerLists"] = rsyslog_server_lists
         __props__["smtpServer"] = smtp_server
         __props__["snmpConfig"] = snmp_config
@@ -1028,6 +1257,10 @@ class ClusterProfileV2(pulumi.CustomResource):
         | PULSE_CONFIG                | Pulse status for a cluster                 |
         | NAME_SERVER_CONFIG          | Name server configuration                  |
         | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+        | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+        | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+        | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+        | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
         """
         return pulumi.get(self, "allowed_overrides")
 
@@ -1075,6 +1308,22 @@ class ClusterProfileV2(pulumi.CustomResource):
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
+    @pulumi.getter(name="faultToleranceConfig")
+    def fault_tolerance_config(self) -> pulumi.Output['outputs.ClusterProfileV2FaultToleranceConfig']:
+        """
+        - (Optional) Fault tolerant state of cluster.
+        """
+        return pulumi.get(self, "fault_tolerance_config")
+
+    @_builtins.property
+    @pulumi.getter(name="httpProxyConfig")
+    def http_proxy_config(self) -> pulumi.Output['outputs.ClusterProfileV2HttpProxyConfig']:
+        """
+        - (Optional) HTTP proxy configuration for the cluster.
+        """
+        return pulumi.get(self, "http_proxy_config")
+
+    @_builtins.property
     @pulumi.getter(name="lastUpdateTime")
     def last_update_time(self) -> pulumi.Output[_builtins.str]:
         return pulumi.get(self, "last_update_time")
@@ -1114,6 +1363,14 @@ class ClusterProfileV2(pulumi.CustomResource):
         return pulumi.get(self, "nfs_subnet_white_lists")
 
     @_builtins.property
+    @pulumi.getter(name="ntpServerConfigLists")
+    def ntp_server_config_lists(self) -> pulumi.Output[Sequence['outputs.ClusterProfileV2NtpServerConfigList']]:
+        """
+        - (Optional) List of NTP server configurations with encryption authentication.
+        """
+        return pulumi.get(self, "ntp_server_config_lists")
+
+    @_builtins.property
     @pulumi.getter(name="ntpServerIpLists")
     def ntp_server_ip_lists(self) -> pulumi.Output[Sequence['outputs.ClusterProfileV2NtpServerIpList']]:
         """
@@ -1128,6 +1385,22 @@ class ClusterProfileV2(pulumi.CustomResource):
         - (Optional) Pulse status for a cluster.
         """
         return pulumi.get(self, "pulse_statuses")
+
+    @_builtins.property
+    @pulumi.getter(name="rebuildReservationConfig")
+    def rebuild_reservation_config(self) -> pulumi.Output['outputs.ClusterProfileV2RebuildReservationConfig']:
+        """
+        - (Optional) Rebuild capacity reservation configuration.
+        """
+        return pulumi.get(self, "rebuild_reservation_config")
+
+    @_builtins.property
+    @pulumi.getter(name="resilientCapacityWarningThresholdConfig")
+    def resilient_capacity_warning_threshold_config(self) -> pulumi.Output['outputs.ClusterProfileV2ResilientCapacityWarningThresholdConfig']:
+        """
+        - (Optional) Resilient capacity warning threshold configuration.
+        """
+        return pulumi.get(self, "resilient_capacity_warning_threshold_config")
 
     @_builtins.property
     @pulumi.getter(name="rsyslogServerLists")

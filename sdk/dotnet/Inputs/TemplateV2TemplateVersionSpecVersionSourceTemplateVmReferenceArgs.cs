@@ -16,6 +16,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("extId", required: true)]
         public Input<string> ExtId { get; set; } = null!;
 
+        [Input("guestCustomizationProfile")]
+        public Input<Inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfileArgs>? GuestCustomizationProfile { get; set; }
+
         [Input("guestCustomizations")]
         private InputList<Inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationArgs>? _guestCustomizations;
         public InputList<Inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationArgs> GuestCustomizations

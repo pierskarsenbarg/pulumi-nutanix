@@ -438,6 +438,10 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDirectoryServiceV2OpenLdapConfigurationResult> OpenLdapConfigurations;
         /// <summary>
+        /// - Project reference for the Directory Service.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
         /// - Secondary URL for the Directory Service.
         /// </summary>
         public readonly ImmutableArray<string> SecondaryUrls;
@@ -445,6 +449,14 @@ namespace PiersKarsenbarg.Nutanix
         /// - Information of Service account to connect to the Directory Service.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDirectoryServiceV2ServiceAccountResult> ServiceAccounts;
+        /// <summary>
+        /// - Flag indicating whether the directory service is shared with all projects or not.
+        /// </summary>
+        public readonly bool ShareWithAllProjects;
+        /// <summary>
+        /// - List of projects with which the directory service is shared.
+        /// </summary>
+        public readonly ImmutableArray<string> SharedWithProjects;
         /// <summary>
         /// - URL for the Directory Service.
         /// </summary>
@@ -476,9 +488,15 @@ namespace PiersKarsenbarg.Nutanix
 
             ImmutableArray<Outputs.GetDirectoryServiceV2OpenLdapConfigurationResult> openLdapConfigurations,
 
+            string projectExtId,
+
             ImmutableArray<string> secondaryUrls,
 
             ImmutableArray<Outputs.GetDirectoryServiceV2ServiceAccountResult> serviceAccounts,
+
+            bool shareWithAllProjects,
+
+            ImmutableArray<string> sharedWithProjects,
 
             string url,
 
@@ -494,8 +512,11 @@ namespace PiersKarsenbarg.Nutanix
             LastUpdatedTime = lastUpdatedTime;
             Name = name;
             OpenLdapConfigurations = openLdapConfigurations;
+            ProjectExtId = projectExtId;
             SecondaryUrls = secondaryUrls;
             ServiceAccounts = serviceAccounts;
+            ShareWithAllProjects = shareWithAllProjects;
+            SharedWithProjects = sharedWithProjects;
             Url = url;
             WhiteListedGroups = whiteListedGroups;
         }

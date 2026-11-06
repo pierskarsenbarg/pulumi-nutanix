@@ -19,6 +19,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecApplicationRuleSpecResult> ApplicationRuleSpecs;
         /// <summary>
+        /// Flex Rule Spec.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecFlexRuleSpecResult> FlexRuleSpecs;
+        /// <summary>
         /// Intra entity group Rule Spec
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecIntraEntityGroupRuleSpecResult> IntraEntityGroupRuleSpecs;
@@ -35,6 +39,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         private GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecResult(
             ImmutableArray<Outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecApplicationRuleSpecResult> applicationRuleSpecs,
 
+            ImmutableArray<Outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecFlexRuleSpecResult> flexRuleSpecs,
+
             ImmutableArray<Outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecIntraEntityGroupRuleSpecResult> intraEntityGroupRuleSpecs,
 
             ImmutableArray<Outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecMultiEnvIsolationRuleSpecResult> multiEnvIsolationRuleSpecs,
@@ -42,6 +48,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             ImmutableArray<Outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecTwoEnvIsolationRuleSpecResult> twoEnvIsolationRuleSpecs)
         {
             ApplicationRuleSpecs = applicationRuleSpecs;
+            FlexRuleSpecs = flexRuleSpecs;
             IntraEntityGroupRuleSpecs = intraEntityGroupRuleSpecs;
             MultiEnvIsolationRuleSpecs = multiEnvIsolationRuleSpecs;
             TwoEnvIsolationRuleSpecs = twoEnvIsolationRuleSpecs;

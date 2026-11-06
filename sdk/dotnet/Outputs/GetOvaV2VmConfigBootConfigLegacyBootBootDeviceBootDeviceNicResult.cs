@@ -17,10 +17,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// mac address
         /// </summary>
-        public readonly string MacAddress;
+        public readonly string? MacAddress;
 
         [OutputConstructor]
-        private GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicResult(string macAddress)
+        private GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicResult(string? macAddress)
         {
             MacAddress = macAddress;
         }

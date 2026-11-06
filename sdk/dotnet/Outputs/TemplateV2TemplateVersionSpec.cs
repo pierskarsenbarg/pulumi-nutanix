@@ -17,14 +17,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string? CreateTime;
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecCreatedBy> CreatedBies;
         public readonly string? ExtId;
+        public readonly Outputs.TemplateV2TemplateVersionSpecGuestCustomizationProfile? GuestCustomizationProfile;
         /// <summary>
         /// Default: &lt;span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`"&gt;`true`&lt;/span&gt;  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
         /// </summary>
         public readonly bool? IsActiveVersion;
         /// <summary>
         /// Allow or disallow overriding guest customization during template deployment.
-        /// * `version_source.template_vm_reference`: (Optional) Template VM Reference
-        /// * `version_source.template_version_reference`: (Optional) Template Version Reference
+        /// * `version_source.template_vm_reference`: (Optional) Template VM Reference. Used to source a version from a VM. This is the **only** valid source when creating a new template. Mutually exclusive with &lt;span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`"&gt;`templateVersionReference`&lt;/span&gt;.
+        /// * `version_source.template_version_reference`: (Optional) Template Version Reference. Used to source a new version from an existing version of the template (update only). Mutually exclusive with &lt;span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`"&gt;`templateVmReference`&lt;/span&gt;.
         /// </summary>
         public readonly bool? IsGcOverrideEnabled;
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecLink> Links;
@@ -38,7 +39,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string? VersionName;
         /// <summary>
-        /// Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either &lt;span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`"&gt;`templateVmReference`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`"&gt;`templateVersionReference`&lt;/span&gt; .
+        /// Source of the created Template Version. When creating a **new template**, the source must be a VM (&lt;span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`"&gt;`templateVmReference`&lt;/span&gt;). When creating a **new version** of an existing template (an update), the source can be either a VM (&lt;span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`"&gt;`templateVmReference`&lt;/span&gt;) or an existing version within the template (&lt;span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`"&gt;`templateVersionReference`&lt;/span&gt;). Specify exactly **one** of &lt;span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`"&gt;`templateVmReference`&lt;/span&gt; or &lt;span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`"&gt;`templateVersionReference`&lt;/span&gt; - they are mutually exclusive.
         /// </summary>
         public readonly Outputs.TemplateV2TemplateVersionSpecVersionSource VersionSource;
         /// <summary>
@@ -57,6 +58,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             ImmutableArray<Outputs.TemplateV2TemplateVersionSpecCreatedBy> createdBies,
 
             string? extId,
+
+            Outputs.TemplateV2TemplateVersionSpecGuestCustomizationProfile? guestCustomizationProfile,
 
             bool? isActiveVersion,
 
@@ -79,6 +82,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             CreateTime = createTime;
             CreatedBies = createdBies;
             ExtId = extId;
+            GuestCustomizationProfile = guestCustomizationProfile;
             IsActiveVersion = isActiveVersion;
             IsGcOverrideEnabled = isGcOverrideEnabled;
             Links = links;

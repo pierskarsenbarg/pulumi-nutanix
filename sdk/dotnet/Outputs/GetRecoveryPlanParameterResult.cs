@@ -15,6 +15,12 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetRecoveryPlanParameterResult
     {
         /// <summary>
+        /// List of Availability Zones (source and recovery) across which the Recovery Plan is applicable.
+        /// * `parameters.0.availability_zone_list.#.availability_zone_url` - URL of the Availability Zone.
+        /// * `parameters.0.availability_zone_list.#.cluster_reference_list` - List of clusters in the Availability Zone that are part of the Recovery Plan (&lt;span pulumi-lang-nodejs="`kind`" pulumi-lang-dotnet="`Kind`" pulumi-lang-go="`kind`" pulumi-lang-python="`kind`" pulumi-lang-yaml="`kind`" pulumi-lang-java="`kind`" pulumi-lang-hcl="`kind`"&gt;`kind`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`uuid`" pulumi-lang-dotnet="`Uuid`" pulumi-lang-go="`uuid`" pulumi-lang-python="`uuid`" pulumi-lang-yaml="`uuid`" pulumi-lang-java="`uuid`" pulumi-lang-hcl="`uuid`"&gt;`uuid`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt;).
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetRecoveryPlanParameterAvailabilityZoneListResult> AvailabilityZoneLists;
+        /// <summary>
         /// (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
         /// * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
         /// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
@@ -52,6 +58,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
         /// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
         /// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
+        /// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_uuid` - UUID of the subnet backing the network.
         /// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
         /// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
         /// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
@@ -62,6 +69,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
         /// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
         /// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
+        /// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_uuid` - UUID of the subnet backing the network.
         /// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
         /// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
         /// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
@@ -82,15 +90,25 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRecoveryPlanParameterNetworkMappingListResult> NetworkMappingLists;
+        /// <summary>
+        /// Index of the primary location in &lt;span pulumi-lang-nodejs="`availabilityZoneList`" pulumi-lang-dotnet="`AvailabilityZoneList`" pulumi-lang-go="`availabilityZoneList`" pulumi-lang-python="`availability_zone_list`" pulumi-lang-yaml="`availabilityZoneList`" pulumi-lang-java="`availabilityZoneList`" pulumi-lang-hcl="`availability_zone_list`"&gt;`availabilityZoneList`&lt;/span&gt;.
+        /// </summary>
+        public readonly int PrimaryLocationIndex;
 
         [OutputConstructor]
         private GetRecoveryPlanParameterResult(
+            ImmutableArray<Outputs.GetRecoveryPlanParameterAvailabilityZoneListResult> availabilityZoneLists,
+
             ImmutableArray<Outputs.GetRecoveryPlanParameterFloatingIpAssignmentListResult> floatingIpAssignmentLists,
 
-            ImmutableArray<Outputs.GetRecoveryPlanParameterNetworkMappingListResult> networkMappingLists)
+            ImmutableArray<Outputs.GetRecoveryPlanParameterNetworkMappingListResult> networkMappingLists,
+
+            int primaryLocationIndex)
         {
+            AvailabilityZoneLists = availabilityZoneLists;
             FloatingIpAssignmentLists = floatingIpAssignmentLists;
             NetworkMappingLists = networkMappingLists;
+            PrimaryLocationIndex = primaryLocationIndex;
         }
     }
 }

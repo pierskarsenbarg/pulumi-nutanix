@@ -25,6 +25,12 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        /// <summary>
+        /// Specifies whether hit log is enabled for the rule.
+        /// </summary>
+        [Input("isLoggingEnabled")]
+        public Input<bool>? IsLoggingEnabled { get; set; }
+
         [Input("links")]
         private InputList<Inputs.NetworkSecurityPolicyV2RuleLinkGetArgs>? _links;
 
@@ -36,6 +42,12 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             get => _links ?? (_links = new InputList<Inputs.NetworkSecurityPolicyV2RuleLinkGetArgs>());
             set => _links = value;
         }
+
+        /// <summary>
+        /// A user-defined name for the rule. Primarily used for Flex policy rules.
+        /// </summary>
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         [Input("specs", required: true)]
         private InputList<Inputs.NetworkSecurityPolicyV2RuleSpecGetArgs>? _specs;
@@ -50,7 +62,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         }
 
         /// <summary>
-        /// The type for a rule—the value chosen here restricts which specification can be chosen. Acceptable values are "QUARANTINE", "TWO_ENV_ISOLATION", "APPLICATION", "INTRA_GROUP", "MULTI_ENV_ISOLATION", "SHARED_SERVICE".
+        /// The type for a rule—the value chosen here restricts which specification can be chosen. Acceptable values are "QUARANTINE", "TWO_ENV_ISOLATION", "APPLICATION", "INTRA_GROUP", "MULTI_ENV_ISOLATION", "SHARED_SERVICE", "FLEX".
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

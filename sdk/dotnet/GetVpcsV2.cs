@@ -214,6 +214,53 @@ namespace PiersKarsenbarg.Nutanix
         /// - &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`" pulumi-lang-hcl="`tenant_id`"&gt;`tenantId`&lt;/span&gt;: A globally unique identifier that represents the tenant that owns this entity.
         /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// - &lt;span pulumi-lang-nodejs="`metadata`" pulumi-lang-dotnet="`Metadata`" pulumi-lang-go="`metadata`" pulumi-lang-python="`metadata`" pulumi-lang-yaml="`metadata`" pulumi-lang-java="`metadata`" pulumi-lang-hcl="`metadata`"&gt;`metadata`&lt;/span&gt;: Metadata associated with this resource.
+        /// - &lt;span pulumi-lang-nodejs="`projectExtId`" pulumi-lang-dotnet="`ProjectExtId`" pulumi-lang-go="`projectExtId`" pulumi-lang-python="`project_ext_id`" pulumi-lang-yaml="`projectExtId`" pulumi-lang-java="`projectExtId`" pulumi-lang-hcl="`project_ext_id`"&gt;`projectExtId`&lt;/span&gt;: External identifier of the project associated with the VPC.
+        /// - &lt;span pulumi-lang-nodejs="`sharedWithProjects`" pulumi-lang-dotnet="`SharedWithProjects`" pulumi-lang-go="`sharedWithProjects`" pulumi-lang-python="`shared_with_projects`" pulumi-lang-yaml="`sharedWithProjects`" pulumi-lang-java="`sharedWithProjects`" pulumi-lang-hcl="`shared_with_projects`"&gt;`sharedWithProjects`&lt;/span&gt;: List of project external identifiers with which the VPC is shared.
+        /// - &lt;span pulumi-lang-nodejs="`shouldAdvertiseConnectedSubnets`" pulumi-lang-dotnet="`ShouldAdvertiseConnectedSubnets`" pulumi-lang-go="`shouldAdvertiseConnectedSubnets`" pulumi-lang-python="`should_advertise_connected_subnets`" pulumi-lang-yaml="`shouldAdvertiseConnectedSubnets`" pulumi-lang-java="`shouldAdvertiseConnectedSubnets`" pulumi-lang-hcl="`should_advertise_connected_subnets`"&gt;`shouldAdvertiseConnectedSubnets`&lt;/span&gt;: When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes.
+        /// - &lt;span pulumi-lang-nodejs="`supportedMultipleExternalSubnetType`" pulumi-lang-dotnet="`SupportedMultipleExternalSubnetType`" pulumi-lang-go="`supportedMultipleExternalSubnetType`" pulumi-lang-python="`supported_multiple_external_subnet_type`" pulumi-lang-yaml="`supportedMultipleExternalSubnetType`" pulumi-lang-java="`supportedMultipleExternalSubnetType`" pulumi-lang-hcl="`supported_multiple_external_subnet_type`"&gt;`supportedMultipleExternalSubnetType`&lt;/span&gt;: Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+        /// - &lt;span pulumi-lang-nodejs="`scope`" pulumi-lang-dotnet="`Scope`" pulumi-lang-go="`scope`" pulumi-lang-python="`scope`" pulumi-lang-yaml="`scope`" pulumi-lang-java="`scope`" pulumi-lang-hcl="`scope`"&gt;`scope`&lt;/span&gt;: VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+        /// - &lt;span pulumi-lang-nodejs="`kubernetesClusters`" pulumi-lang-dotnet="`KubernetesClusters`" pulumi-lang-go="`kubernetesClusters`" pulumi-lang-python="`kubernetes_clusters`" pulumi-lang-yaml="`kubernetesClusters`" pulumi-lang-java="`kubernetesClusters`" pulumi-lang-hcl="`kubernetes_clusters`"&gt;`kubernetesClusters`&lt;/span&gt;: List of Kubernetes clusters associated with the VPC.
+        /// 
+        /// ###&lt;span pulumi-lang-nodejs=" kubernetesClusters
+        /// " pulumi-lang-dotnet=" KubernetesClusters
+        /// " pulumi-lang-go=" kubernetesClusters
+        /// " pulumi-lang-python=" kubernetes_clusters
+        /// " pulumi-lang-yaml=" kubernetesClusters
+        /// " pulumi-lang-java=" kubernetesClusters
+        /// " pulumi-lang-hcl=" kubernetes_clusters
+        /// "&gt; kubernetesClusters
+        /// &lt;/span&gt;
+        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: ExtID of the Kubernetes cluster.
+        /// - &lt;span pulumi-lang-nodejs="`gatewayNodesSelector`" pulumi-lang-dotnet="`GatewayNodesSelector`" pulumi-lang-go="`gatewayNodesSelector`" pulumi-lang-python="`gateway_nodes_selector`" pulumi-lang-yaml="`gatewayNodesSelector`" pulumi-lang-java="`gatewayNodesSelector`" pulumi-lang-hcl="`gateway_nodes_selector`"&gt;`gatewayNodesSelector`&lt;/span&gt;: Selector used to identify gateway node candidates within the Kubernetes cluster.
+        /// - &lt;span pulumi-lang-nodejs="`namespaceSelector`" pulumi-lang-dotnet="`NamespaceSelector`" pulumi-lang-go="`namespaceSelector`" pulumi-lang-python="`namespace_selector`" pulumi-lang-yaml="`namespaceSelector`" pulumi-lang-java="`namespaceSelector`" pulumi-lang-hcl="`namespace_selector`"&gt;`namespaceSelector`&lt;/span&gt;: Selector used to identify namespaces within the Kubernetes cluster.
+        /// - &lt;span pulumi-lang-nodejs="`podNetwork`" pulumi-lang-dotnet="`PodNetwork`" pulumi-lang-go="`podNetwork`" pulumi-lang-python="`pod_network`" pulumi-lang-yaml="`podNetwork`" pulumi-lang-java="`podNetwork`" pulumi-lang-hcl="`pod_network`"&gt;`podNetwork`&lt;/span&gt;: Pod network of the Kubernetes cluster.
+        /// 
+        /// ### gateway_nodes_selector,&lt;span pulumi-lang-nodejs=" namespaceSelector
+        /// " pulumi-lang-dotnet=" NamespaceSelector
+        /// " pulumi-lang-go=" namespaceSelector
+        /// " pulumi-lang-python=" namespace_selector
+        /// " pulumi-lang-yaml=" namespaceSelector
+        /// " pulumi-lang-java=" namespaceSelector
+        /// " pulumi-lang-hcl=" namespace_selector
+        /// "&gt; namespaceSelector
+        /// &lt;/span&gt;
+        /// - &lt;span pulumi-lang-nodejs="`matchLabels`" pulumi-lang-dotnet="`MatchLabels`" pulumi-lang-go="`matchLabels`" pulumi-lang-python="`match_labels`" pulumi-lang-yaml="`matchLabels`" pulumi-lang-java="`matchLabels`" pulumi-lang-hcl="`match_labels`"&gt;`matchLabels`&lt;/span&gt;: Labels (key-value pairs) used to select entities.
+        /// - `match_labels.name`: The key of the label.
+        /// - `match_labels.value`: The value of the label.
+        /// 
+        /// ###&lt;span pulumi-lang-nodejs=" podNetwork
+        /// " pulumi-lang-dotnet=" PodNetwork
+        /// " pulumi-lang-go=" podNetwork
+        /// " pulumi-lang-python=" pod_network
+        /// " pulumi-lang-yaml=" podNetwork
+        /// " pulumi-lang-java=" podNetwork
+        /// " pulumi-lang-hcl=" pod_network
+        /// "&gt; podNetwork
+        /// &lt;/span&gt;
+        /// - &lt;span pulumi-lang-nodejs="`cidr`" pulumi-lang-dotnet="`Cidr`" pulumi-lang-go="`cidr`" pulumi-lang-python="`cidr`" pulumi-lang-yaml="`cidr`" pulumi-lang-java="`cidr`" pulumi-lang-hcl="`cidr`"&gt;`cidr`&lt;/span&gt;: CIDR of the pod network (IPSubnet).
+        /// - `cidr.ipv4`: IPv4 Subnet Configuration.
+        /// - `cidr.ipv6`: IPv6 Subnet Configuration.
+        /// - &lt;span pulumi-lang-nodejs="`hostSlice`" pulumi-lang-dotnet="`HostSlice`" pulumi-lang-go="`hostSlice`" pulumi-lang-python="`host_slice`" pulumi-lang-yaml="`hostSlice`" pulumi-lang-java="`hostSlice`" pulumi-lang-hcl="`host_slice`"&gt;`hostSlice`&lt;/span&gt;: Host slice of the pod network. Default value is 24.
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" commonDhcpOptions
         /// " pulumi-lang-dotnet=" CommonDhcpOptions
@@ -277,7 +324,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: value of address
         /// - &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`"&gt;`prefixLength`&lt;/span&gt;: The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
-        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.3#tag/Vpcs/operation/listVpcs).
+        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.4#tag/Vpcs/operation/listVpcs).
         /// </summary>
         public static Task<GetVpcsV2Result> InvokeAsync(GetVpcsV2Args? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVpcsV2Result>("nutanix:index/getVpcsV2:getVpcsV2", args ?? new GetVpcsV2Args(), options.WithDefaults());
@@ -484,6 +531,53 @@ namespace PiersKarsenbarg.Nutanix
         /// - &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`" pulumi-lang-hcl="`tenant_id`"&gt;`tenantId`&lt;/span&gt;: A globally unique identifier that represents the tenant that owns this entity.
         /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// - &lt;span pulumi-lang-nodejs="`metadata`" pulumi-lang-dotnet="`Metadata`" pulumi-lang-go="`metadata`" pulumi-lang-python="`metadata`" pulumi-lang-yaml="`metadata`" pulumi-lang-java="`metadata`" pulumi-lang-hcl="`metadata`"&gt;`metadata`&lt;/span&gt;: Metadata associated with this resource.
+        /// - &lt;span pulumi-lang-nodejs="`projectExtId`" pulumi-lang-dotnet="`ProjectExtId`" pulumi-lang-go="`projectExtId`" pulumi-lang-python="`project_ext_id`" pulumi-lang-yaml="`projectExtId`" pulumi-lang-java="`projectExtId`" pulumi-lang-hcl="`project_ext_id`"&gt;`projectExtId`&lt;/span&gt;: External identifier of the project associated with the VPC.
+        /// - &lt;span pulumi-lang-nodejs="`sharedWithProjects`" pulumi-lang-dotnet="`SharedWithProjects`" pulumi-lang-go="`sharedWithProjects`" pulumi-lang-python="`shared_with_projects`" pulumi-lang-yaml="`sharedWithProjects`" pulumi-lang-java="`sharedWithProjects`" pulumi-lang-hcl="`shared_with_projects`"&gt;`sharedWithProjects`&lt;/span&gt;: List of project external identifiers with which the VPC is shared.
+        /// - &lt;span pulumi-lang-nodejs="`shouldAdvertiseConnectedSubnets`" pulumi-lang-dotnet="`ShouldAdvertiseConnectedSubnets`" pulumi-lang-go="`shouldAdvertiseConnectedSubnets`" pulumi-lang-python="`should_advertise_connected_subnets`" pulumi-lang-yaml="`shouldAdvertiseConnectedSubnets`" pulumi-lang-java="`shouldAdvertiseConnectedSubnets`" pulumi-lang-hcl="`should_advertise_connected_subnets`"&gt;`shouldAdvertiseConnectedSubnets`&lt;/span&gt;: When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes.
+        /// - &lt;span pulumi-lang-nodejs="`supportedMultipleExternalSubnetType`" pulumi-lang-dotnet="`SupportedMultipleExternalSubnetType`" pulumi-lang-go="`supportedMultipleExternalSubnetType`" pulumi-lang-python="`supported_multiple_external_subnet_type`" pulumi-lang-yaml="`supportedMultipleExternalSubnetType`" pulumi-lang-java="`supportedMultipleExternalSubnetType`" pulumi-lang-hcl="`supported_multiple_external_subnet_type`"&gt;`supportedMultipleExternalSubnetType`&lt;/span&gt;: Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+        /// - &lt;span pulumi-lang-nodejs="`scope`" pulumi-lang-dotnet="`Scope`" pulumi-lang-go="`scope`" pulumi-lang-python="`scope`" pulumi-lang-yaml="`scope`" pulumi-lang-java="`scope`" pulumi-lang-hcl="`scope`"&gt;`scope`&lt;/span&gt;: VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+        /// - &lt;span pulumi-lang-nodejs="`kubernetesClusters`" pulumi-lang-dotnet="`KubernetesClusters`" pulumi-lang-go="`kubernetesClusters`" pulumi-lang-python="`kubernetes_clusters`" pulumi-lang-yaml="`kubernetesClusters`" pulumi-lang-java="`kubernetesClusters`" pulumi-lang-hcl="`kubernetes_clusters`"&gt;`kubernetesClusters`&lt;/span&gt;: List of Kubernetes clusters associated with the VPC.
+        /// 
+        /// ###&lt;span pulumi-lang-nodejs=" kubernetesClusters
+        /// " pulumi-lang-dotnet=" KubernetesClusters
+        /// " pulumi-lang-go=" kubernetesClusters
+        /// " pulumi-lang-python=" kubernetes_clusters
+        /// " pulumi-lang-yaml=" kubernetesClusters
+        /// " pulumi-lang-java=" kubernetesClusters
+        /// " pulumi-lang-hcl=" kubernetes_clusters
+        /// "&gt; kubernetesClusters
+        /// &lt;/span&gt;
+        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: ExtID of the Kubernetes cluster.
+        /// - &lt;span pulumi-lang-nodejs="`gatewayNodesSelector`" pulumi-lang-dotnet="`GatewayNodesSelector`" pulumi-lang-go="`gatewayNodesSelector`" pulumi-lang-python="`gateway_nodes_selector`" pulumi-lang-yaml="`gatewayNodesSelector`" pulumi-lang-java="`gatewayNodesSelector`" pulumi-lang-hcl="`gateway_nodes_selector`"&gt;`gatewayNodesSelector`&lt;/span&gt;: Selector used to identify gateway node candidates within the Kubernetes cluster.
+        /// - &lt;span pulumi-lang-nodejs="`namespaceSelector`" pulumi-lang-dotnet="`NamespaceSelector`" pulumi-lang-go="`namespaceSelector`" pulumi-lang-python="`namespace_selector`" pulumi-lang-yaml="`namespaceSelector`" pulumi-lang-java="`namespaceSelector`" pulumi-lang-hcl="`namespace_selector`"&gt;`namespaceSelector`&lt;/span&gt;: Selector used to identify namespaces within the Kubernetes cluster.
+        /// - &lt;span pulumi-lang-nodejs="`podNetwork`" pulumi-lang-dotnet="`PodNetwork`" pulumi-lang-go="`podNetwork`" pulumi-lang-python="`pod_network`" pulumi-lang-yaml="`podNetwork`" pulumi-lang-java="`podNetwork`" pulumi-lang-hcl="`pod_network`"&gt;`podNetwork`&lt;/span&gt;: Pod network of the Kubernetes cluster.
+        /// 
+        /// ### gateway_nodes_selector,&lt;span pulumi-lang-nodejs=" namespaceSelector
+        /// " pulumi-lang-dotnet=" NamespaceSelector
+        /// " pulumi-lang-go=" namespaceSelector
+        /// " pulumi-lang-python=" namespace_selector
+        /// " pulumi-lang-yaml=" namespaceSelector
+        /// " pulumi-lang-java=" namespaceSelector
+        /// " pulumi-lang-hcl=" namespace_selector
+        /// "&gt; namespaceSelector
+        /// &lt;/span&gt;
+        /// - &lt;span pulumi-lang-nodejs="`matchLabels`" pulumi-lang-dotnet="`MatchLabels`" pulumi-lang-go="`matchLabels`" pulumi-lang-python="`match_labels`" pulumi-lang-yaml="`matchLabels`" pulumi-lang-java="`matchLabels`" pulumi-lang-hcl="`match_labels`"&gt;`matchLabels`&lt;/span&gt;: Labels (key-value pairs) used to select entities.
+        /// - `match_labels.name`: The key of the label.
+        /// - `match_labels.value`: The value of the label.
+        /// 
+        /// ###&lt;span pulumi-lang-nodejs=" podNetwork
+        /// " pulumi-lang-dotnet=" PodNetwork
+        /// " pulumi-lang-go=" podNetwork
+        /// " pulumi-lang-python=" pod_network
+        /// " pulumi-lang-yaml=" podNetwork
+        /// " pulumi-lang-java=" podNetwork
+        /// " pulumi-lang-hcl=" pod_network
+        /// "&gt; podNetwork
+        /// &lt;/span&gt;
+        /// - &lt;span pulumi-lang-nodejs="`cidr`" pulumi-lang-dotnet="`Cidr`" pulumi-lang-go="`cidr`" pulumi-lang-python="`cidr`" pulumi-lang-yaml="`cidr`" pulumi-lang-java="`cidr`" pulumi-lang-hcl="`cidr`"&gt;`cidr`&lt;/span&gt;: CIDR of the pod network (IPSubnet).
+        /// - `cidr.ipv4`: IPv4 Subnet Configuration.
+        /// - `cidr.ipv6`: IPv6 Subnet Configuration.
+        /// - &lt;span pulumi-lang-nodejs="`hostSlice`" pulumi-lang-dotnet="`HostSlice`" pulumi-lang-go="`hostSlice`" pulumi-lang-python="`host_slice`" pulumi-lang-yaml="`hostSlice`" pulumi-lang-java="`hostSlice`" pulumi-lang-hcl="`host_slice`"&gt;`hostSlice`&lt;/span&gt;: Host slice of the pod network. Default value is 24.
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" commonDhcpOptions
         /// " pulumi-lang-dotnet=" CommonDhcpOptions
@@ -547,7 +641,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: value of address
         /// - &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`"&gt;`prefixLength`&lt;/span&gt;: The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
-        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.3#tag/Vpcs/operation/listVpcs).
+        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.4#tag/Vpcs/operation/listVpcs).
         /// </summary>
         public static Output<GetVpcsV2Result> Invoke(GetVpcsV2InvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVpcsV2Result>("nutanix:index/getVpcsV2:getVpcsV2", args ?? new GetVpcsV2InvokeArgs(), options.WithDefaults());
@@ -754,6 +848,53 @@ namespace PiersKarsenbarg.Nutanix
         /// - &lt;span pulumi-lang-nodejs="`tenantId`" pulumi-lang-dotnet="`TenantId`" pulumi-lang-go="`tenantId`" pulumi-lang-python="`tenant_id`" pulumi-lang-yaml="`tenantId`" pulumi-lang-java="`tenantId`" pulumi-lang-hcl="`tenant_id`"&gt;`tenantId`&lt;/span&gt;: A globally unique identifier that represents the tenant that owns this entity.
         /// - &lt;span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`"&gt;`links`&lt;/span&gt;: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// - &lt;span pulumi-lang-nodejs="`metadata`" pulumi-lang-dotnet="`Metadata`" pulumi-lang-go="`metadata`" pulumi-lang-python="`metadata`" pulumi-lang-yaml="`metadata`" pulumi-lang-java="`metadata`" pulumi-lang-hcl="`metadata`"&gt;`metadata`&lt;/span&gt;: Metadata associated with this resource.
+        /// - &lt;span pulumi-lang-nodejs="`projectExtId`" pulumi-lang-dotnet="`ProjectExtId`" pulumi-lang-go="`projectExtId`" pulumi-lang-python="`project_ext_id`" pulumi-lang-yaml="`projectExtId`" pulumi-lang-java="`projectExtId`" pulumi-lang-hcl="`project_ext_id`"&gt;`projectExtId`&lt;/span&gt;: External identifier of the project associated with the VPC.
+        /// - &lt;span pulumi-lang-nodejs="`sharedWithProjects`" pulumi-lang-dotnet="`SharedWithProjects`" pulumi-lang-go="`sharedWithProjects`" pulumi-lang-python="`shared_with_projects`" pulumi-lang-yaml="`sharedWithProjects`" pulumi-lang-java="`sharedWithProjects`" pulumi-lang-hcl="`shared_with_projects`"&gt;`sharedWithProjects`&lt;/span&gt;: List of project external identifiers with which the VPC is shared.
+        /// - &lt;span pulumi-lang-nodejs="`shouldAdvertiseConnectedSubnets`" pulumi-lang-dotnet="`ShouldAdvertiseConnectedSubnets`" pulumi-lang-go="`shouldAdvertiseConnectedSubnets`" pulumi-lang-python="`should_advertise_connected_subnets`" pulumi-lang-yaml="`shouldAdvertiseConnectedSubnets`" pulumi-lang-java="`shouldAdvertiseConnectedSubnets`" pulumi-lang-hcl="`should_advertise_connected_subnets`"&gt;`shouldAdvertiseConnectedSubnets`&lt;/span&gt;: When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes.
+        /// - &lt;span pulumi-lang-nodejs="`supportedMultipleExternalSubnetType`" pulumi-lang-dotnet="`SupportedMultipleExternalSubnetType`" pulumi-lang-go="`supportedMultipleExternalSubnetType`" pulumi-lang-python="`supported_multiple_external_subnet_type`" pulumi-lang-yaml="`supportedMultipleExternalSubnetType`" pulumi-lang-java="`supportedMultipleExternalSubnetType`" pulumi-lang-hcl="`supported_multiple_external_subnet_type`"&gt;`supportedMultipleExternalSubnetType`&lt;/span&gt;: Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+        /// - &lt;span pulumi-lang-nodejs="`scope`" pulumi-lang-dotnet="`Scope`" pulumi-lang-go="`scope`" pulumi-lang-python="`scope`" pulumi-lang-yaml="`scope`" pulumi-lang-java="`scope`" pulumi-lang-hcl="`scope`"&gt;`scope`&lt;/span&gt;: VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+        /// - &lt;span pulumi-lang-nodejs="`kubernetesClusters`" pulumi-lang-dotnet="`KubernetesClusters`" pulumi-lang-go="`kubernetesClusters`" pulumi-lang-python="`kubernetes_clusters`" pulumi-lang-yaml="`kubernetesClusters`" pulumi-lang-java="`kubernetesClusters`" pulumi-lang-hcl="`kubernetes_clusters`"&gt;`kubernetesClusters`&lt;/span&gt;: List of Kubernetes clusters associated with the VPC.
+        /// 
+        /// ###&lt;span pulumi-lang-nodejs=" kubernetesClusters
+        /// " pulumi-lang-dotnet=" KubernetesClusters
+        /// " pulumi-lang-go=" kubernetesClusters
+        /// " pulumi-lang-python=" kubernetes_clusters
+        /// " pulumi-lang-yaml=" kubernetesClusters
+        /// " pulumi-lang-java=" kubernetesClusters
+        /// " pulumi-lang-hcl=" kubernetes_clusters
+        /// "&gt; kubernetesClusters
+        /// &lt;/span&gt;
+        /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: ExtID of the Kubernetes cluster.
+        /// - &lt;span pulumi-lang-nodejs="`gatewayNodesSelector`" pulumi-lang-dotnet="`GatewayNodesSelector`" pulumi-lang-go="`gatewayNodesSelector`" pulumi-lang-python="`gateway_nodes_selector`" pulumi-lang-yaml="`gatewayNodesSelector`" pulumi-lang-java="`gatewayNodesSelector`" pulumi-lang-hcl="`gateway_nodes_selector`"&gt;`gatewayNodesSelector`&lt;/span&gt;: Selector used to identify gateway node candidates within the Kubernetes cluster.
+        /// - &lt;span pulumi-lang-nodejs="`namespaceSelector`" pulumi-lang-dotnet="`NamespaceSelector`" pulumi-lang-go="`namespaceSelector`" pulumi-lang-python="`namespace_selector`" pulumi-lang-yaml="`namespaceSelector`" pulumi-lang-java="`namespaceSelector`" pulumi-lang-hcl="`namespace_selector`"&gt;`namespaceSelector`&lt;/span&gt;: Selector used to identify namespaces within the Kubernetes cluster.
+        /// - &lt;span pulumi-lang-nodejs="`podNetwork`" pulumi-lang-dotnet="`PodNetwork`" pulumi-lang-go="`podNetwork`" pulumi-lang-python="`pod_network`" pulumi-lang-yaml="`podNetwork`" pulumi-lang-java="`podNetwork`" pulumi-lang-hcl="`pod_network`"&gt;`podNetwork`&lt;/span&gt;: Pod network of the Kubernetes cluster.
+        /// 
+        /// ### gateway_nodes_selector,&lt;span pulumi-lang-nodejs=" namespaceSelector
+        /// " pulumi-lang-dotnet=" NamespaceSelector
+        /// " pulumi-lang-go=" namespaceSelector
+        /// " pulumi-lang-python=" namespace_selector
+        /// " pulumi-lang-yaml=" namespaceSelector
+        /// " pulumi-lang-java=" namespaceSelector
+        /// " pulumi-lang-hcl=" namespace_selector
+        /// "&gt; namespaceSelector
+        /// &lt;/span&gt;
+        /// - &lt;span pulumi-lang-nodejs="`matchLabels`" pulumi-lang-dotnet="`MatchLabels`" pulumi-lang-go="`matchLabels`" pulumi-lang-python="`match_labels`" pulumi-lang-yaml="`matchLabels`" pulumi-lang-java="`matchLabels`" pulumi-lang-hcl="`match_labels`"&gt;`matchLabels`&lt;/span&gt;: Labels (key-value pairs) used to select entities.
+        /// - `match_labels.name`: The key of the label.
+        /// - `match_labels.value`: The value of the label.
+        /// 
+        /// ###&lt;span pulumi-lang-nodejs=" podNetwork
+        /// " pulumi-lang-dotnet=" PodNetwork
+        /// " pulumi-lang-go=" podNetwork
+        /// " pulumi-lang-python=" pod_network
+        /// " pulumi-lang-yaml=" podNetwork
+        /// " pulumi-lang-java=" podNetwork
+        /// " pulumi-lang-hcl=" pod_network
+        /// "&gt; podNetwork
+        /// &lt;/span&gt;
+        /// - &lt;span pulumi-lang-nodejs="`cidr`" pulumi-lang-dotnet="`Cidr`" pulumi-lang-go="`cidr`" pulumi-lang-python="`cidr`" pulumi-lang-yaml="`cidr`" pulumi-lang-java="`cidr`" pulumi-lang-hcl="`cidr`"&gt;`cidr`&lt;/span&gt;: CIDR of the pod network (IPSubnet).
+        /// - `cidr.ipv4`: IPv4 Subnet Configuration.
+        /// - `cidr.ipv6`: IPv6 Subnet Configuration.
+        /// - &lt;span pulumi-lang-nodejs="`hostSlice`" pulumi-lang-dotnet="`HostSlice`" pulumi-lang-go="`hostSlice`" pulumi-lang-python="`host_slice`" pulumi-lang-yaml="`hostSlice`" pulumi-lang-java="`hostSlice`" pulumi-lang-hcl="`host_slice`"&gt;`hostSlice`&lt;/span&gt;: Host slice of the pod network. Default value is 24.
         /// 
         /// ###&lt;span pulumi-lang-nodejs=" commonDhcpOptions
         /// " pulumi-lang-dotnet=" CommonDhcpOptions
@@ -817,7 +958,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - &lt;span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`"&gt;`value`&lt;/span&gt;: value of address
         /// - &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`"&gt;`prefixLength`&lt;/span&gt;: The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// 
-        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.3#tag/Vpcs/operation/listVpcs).
+        /// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.4#tag/Vpcs/operation/listVpcs).
         /// </summary>
         public static Output<GetVpcsV2Result> Invoke(GetVpcsV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVpcsV2Result>("nutanix:index/getVpcsV2:getVpcsV2", args ?? new GetVpcsV2InvokeArgs(), options.WithDefaults());

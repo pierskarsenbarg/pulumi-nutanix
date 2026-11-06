@@ -42,6 +42,8 @@ import (
 //
 // ```
 // <!--End PulumiCodeChooser -->
+//
+// > **Volume Group disk attachments:** To add a Volume Group disk to a VM, manage the disk with <span pulumi-lang-nodejs="`nutanix.VolumeGroupDiskV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupDiskV2`" pulumi-lang-go="`VolumeGroupDiskV2`" pulumi-lang-python="`VolumeGroupDiskV2`" pulumi-lang-yaml="`nutanix.VolumeGroupDiskV2`" pulumi-lang-java="`nutanix.VolumeGroupDiskV2`" pulumi-lang-hcl="`nutanix_volume_group_disk_v2`">`nutanix.VolumeGroupDiskV2`</span> and attach the VM to the Volume Group with <span pulumi-lang-nodejs="`nutanix.VolumeGroupVmV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupVmV2`" pulumi-lang-go="`VolumeGroupVmV2`" pulumi-lang-python="`VolumeGroupVmV2`" pulumi-lang-yaml="`nutanix.VolumeGroupVmV2`" pulumi-lang-java="`nutanix.VolumeGroupVmV2`" pulumi-lang-hcl="`nutanix_volume_group_vm_v2`">`nutanix.VolumeGroupVmV2`</span>.
 type VolumeGroupVmV2 struct {
 	pulumi.CustomResourceState
 
@@ -49,7 +51,7 @@ type VolumeGroupVmV2 struct {
 	ExtId pulumi.StringOutput `pulumi:"extId"`
 	// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
 	//
-	// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
+	// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/attachVm).
 	Index pulumi.IntPtrOutput `pulumi:"index"`
 	// -(Required) A globally unique identifier of an instance that is suitable for external consumption.
 	VmExtId pulumi.StringOutput `pulumi:"vmExtId"`
@@ -97,7 +99,7 @@ type volumeGroupVmV2State struct {
 	ExtId *string `pulumi:"extId"`
 	// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
 	//
-	// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
+	// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/attachVm).
 	Index *int `pulumi:"index"`
 	// -(Required) A globally unique identifier of an instance that is suitable for external consumption.
 	VmExtId *string `pulumi:"vmExtId"`
@@ -110,7 +112,7 @@ type VolumeGroupVmV2State struct {
 	ExtId pulumi.StringPtrInput
 	// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
 	//
-	// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
+	// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/attachVm).
 	Index pulumi.IntPtrInput
 	// -(Required) A globally unique identifier of an instance that is suitable for external consumption.
 	VmExtId pulumi.StringPtrInput
@@ -131,7 +133,7 @@ func VolumeGroupVmV2Exists(ctx *pulumi.Context,
 type volumeGroupVmV2Args struct {
 	// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
 	//
-	// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
+	// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/attachVm).
 	Index *int `pulumi:"index"`
 	// -(Required) A globally unique identifier of an instance that is suitable for external consumption.
 	VmExtId string `pulumi:"vmExtId"`
@@ -143,7 +145,7 @@ type volumeGroupVmV2Args struct {
 type VolumeGroupVmV2Args struct {
 	// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
 	//
-	// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
+	// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/attachVm).
 	Index pulumi.IntPtrInput
 	// -(Required) A globally unique identifier of an instance that is suitable for external consumption.
 	VmExtId pulumi.StringInput
@@ -245,7 +247,7 @@ func (o VolumeGroupVmV2Output) ExtId() pulumi.StringOutput {
 
 // -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
 //
-// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachVm).
+// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/attachVm).
 func (o VolumeGroupVmV2Output) Index() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *VolumeGroupVmV2) pulumi.IntPtrOutput { return v.Index }).(pulumi.IntPtrOutput)
 }

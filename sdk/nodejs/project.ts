@@ -68,13 +68,19 @@ export class Project extends pulumi.CustomResource {
      * A description for project.
      */
     declare public readonly description: pulumi.Output<string>;
+    declare public readonly directoryReferenceLists: pulumi.Output<outputs.ProjectDirectoryReferenceList[]>;
     /**
      * flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
      */
     declare public readonly enableCollab: pulumi.Output<boolean | undefined>;
+    /**
+     * flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
+     */
+    declare public readonly enableDirectoryAndIdentityProviderShortlist: pulumi.Output<boolean>;
     declare public readonly environmentReferenceLists: pulumi.Output<outputs.ProjectEnvironmentReferenceList[]>;
     declare public readonly externalNetworkLists: pulumi.Output<outputs.ProjectExternalNetworkList[]>;
     declare public readonly externalUserGroupReferenceLists: pulumi.Output<outputs.ProjectExternalUserGroupReferenceList[]>;
+    declare public readonly identityProvidersReferenceLists: pulumi.Output<outputs.ProjectIdentityProvidersReferenceList[]>;
     declare public /*out*/ readonly isDefault: pulumi.Output<boolean>;
     declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
@@ -124,10 +130,13 @@ export class Project extends pulumi.CustomResource {
             resourceInputs["defaultEnvironmentReference"] = state?.defaultEnvironmentReference;
             resourceInputs["defaultSubnetReference"] = state?.defaultSubnetReference;
             resourceInputs["description"] = state?.description;
+            resourceInputs["directoryReferenceLists"] = state?.directoryReferenceLists;
             resourceInputs["enableCollab"] = state?.enableCollab;
+            resourceInputs["enableDirectoryAndIdentityProviderShortlist"] = state?.enableDirectoryAndIdentityProviderShortlist;
             resourceInputs["environmentReferenceLists"] = state?.environmentReferenceLists;
             resourceInputs["externalNetworkLists"] = state?.externalNetworkLists;
             resourceInputs["externalUserGroupReferenceLists"] = state?.externalUserGroupReferenceLists;
+            resourceInputs["identityProvidersReferenceLists"] = state?.identityProvidersReferenceLists;
             resourceInputs["isDefault"] = state?.isDefault;
             resourceInputs["metadata"] = state?.metadata;
             resourceInputs["name"] = state?.name;
@@ -159,10 +168,13 @@ export class Project extends pulumi.CustomResource {
             resourceInputs["defaultEnvironmentReference"] = args?.defaultEnvironmentReference;
             resourceInputs["defaultSubnetReference"] = args?.defaultSubnetReference;
             resourceInputs["description"] = args?.description;
+            resourceInputs["directoryReferenceLists"] = args?.directoryReferenceLists;
             resourceInputs["enableCollab"] = args?.enableCollab;
+            resourceInputs["enableDirectoryAndIdentityProviderShortlist"] = args?.enableDirectoryAndIdentityProviderShortlist;
             resourceInputs["environmentReferenceLists"] = args?.environmentReferenceLists;
             resourceInputs["externalNetworkLists"] = args?.externalNetworkLists;
             resourceInputs["externalUserGroupReferenceLists"] = args?.externalUserGroupReferenceLists;
+            resourceInputs["identityProvidersReferenceLists"] = args?.identityProvidersReferenceLists;
             resourceInputs["name"] = args?.name;
             resourceInputs["ownerReference"] = args?.ownerReference;
             resourceInputs["projectReference"] = args?.projectReference;
@@ -205,13 +217,19 @@ export interface ProjectState {
      * A description for project.
      */
     description?: pulumi.Input<string | undefined>;
+    directoryReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectDirectoryReferenceList>[] | undefined>;
     /**
      * flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
      */
     enableCollab?: pulumi.Input<boolean | undefined>;
+    /**
+     * flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
+     */
+    enableDirectoryAndIdentityProviderShortlist?: pulumi.Input<boolean | undefined>;
     environmentReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectEnvironmentReferenceList>[] | undefined>;
     externalNetworkLists?: pulumi.Input<pulumi.Input<inputs.ProjectExternalNetworkList>[] | undefined>;
     externalUserGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectExternalUserGroupReferenceList>[] | undefined>;
+    identityProvidersReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectIdentityProvidersReferenceList>[] | undefined>;
     isDefault?: pulumi.Input<boolean | undefined>;
     metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
@@ -262,13 +280,19 @@ export interface ProjectArgs {
      * A description for project.
      */
     description: pulumi.Input<string>;
+    directoryReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectDirectoryReferenceList>[] | undefined>;
     /**
      * flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
      */
     enableCollab?: pulumi.Input<boolean | undefined>;
+    /**
+     * flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
+     */
+    enableDirectoryAndIdentityProviderShortlist?: pulumi.Input<boolean | undefined>;
     environmentReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectEnvironmentReferenceList>[] | undefined>;
     externalNetworkLists?: pulumi.Input<pulumi.Input<inputs.ProjectExternalNetworkList>[] | undefined>;
     externalUserGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectExternalUserGroupReferenceList>[] | undefined>;
+    identityProvidersReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectIdentityProvidersReferenceList>[] | undefined>;
     /**
      * The name for the project.
      */

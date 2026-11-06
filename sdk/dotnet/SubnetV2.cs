@@ -33,6 +33,20 @@ namespace PiersKarsenbarg.Nutanix
     ///         SubnetType = "VLAN",
     ///         NetworkId = 122,
     ///         IsExternal = true,
+    ///         Metadatas = new[]
+    ///         {
+    ///             new Nutanix.Inputs.SubnetV2MetadataArgs
+    ///             {
+    ///                 OwnerReferenceId = "d0f5c9b0-7b3c-4f5a-9d5b-0a1b2c3d4e5f",
+    ///                 OwnerUserName = "admin",
+    ///                 ProjectReferenceId = "2defe0f5-6e48-4c9b-b07c-bdd2dc004225",
+    ///                 ProjectName = "default",
+    ///                 CategoryIds = new[]
+    ///                 {
+    ///                     "4c9b0f5d-6e48-2def-b07c-bdd2dc004225",
+    ///                 },
+    ///             },
+    ///         },
     ///         IpConfigs = new[]
     ///         {
     ///             new Nutanix.Inputs.SubnetV2IpConfigArgs
@@ -261,6 +275,12 @@ namespace PiersKarsenbarg.Nutanix
         public Output<bool> IsAdvancedNetworking { get; private set; } = null!;
 
         /// <summary>
+        /// Indicates whether the subnet is connected.
+        /// </summary>
+        [Output("isConnected")]
+        public Output<bool?> IsConnected { get; private set; } = null!;
+
+        /// <summary>
         /// Indicates whether the subnet is used for external connectivity.
         /// </summary>
         [Output("isExternal")]
@@ -275,6 +295,9 @@ namespace PiersKarsenbarg.Nutanix
         [Output("links")]
         public Output<ImmutableArray<Outputs.SubnetV2Link>> Links { get; private set; } = null!;
 
+        /// <summary>
+        /// Metadata associated with the subnet.
+        /// </summary>
         [Output("metadatas")]
         public Output<ImmutableArray<Outputs.SubnetV2Metadata>> Metadatas { get; private set; } = null!;
 
@@ -300,10 +323,22 @@ namespace PiersKarsenbarg.Nutanix
         public Output<int?> NetworkId { get; private set; } = null!;
 
         /// <summary>
+        /// External identifier of the project associated with the Subnet.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
+
+        /// <summary>
         /// List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
         /// </summary>
         [Output("reservedIpAddresses")]
         public Output<ImmutableArray<Outputs.SubnetV2ReservedIpAddress>> ReservedIpAddresses { get; private set; } = null!;
+
+        /// <summary>
+        /// List of project external identifiers with which the Subnet is shared.
+        /// </summary>
+        [Output("sharedWithProjects")]
+        public Output<ImmutableArray<string>> SharedWithProjects { get; private set; } = null!;
 
         /// <summary>
         /// Type of subnet. Acceptables values are "OVERLAY", "VLAN".
@@ -472,6 +507,12 @@ namespace PiersKarsenbarg.Nutanix
         public Input<bool>? IsAdvancedNetworking { get; set; }
 
         /// <summary>
+        /// Indicates whether the subnet is connected.
+        /// </summary>
+        [Input("isConnected")]
+        public Input<bool>? IsConnected { get; set; }
+
+        /// <summary>
         /// Indicates whether the subnet is used for external connectivity.
         /// </summary>
         [Input("isExternal")]
@@ -485,6 +526,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("metadatas")]
         private InputList<Inputs.SubnetV2MetadataArgs>? _metadatas;
+
+        /// <summary>
+        /// Metadata associated with the subnet.
+        /// </summary>
         public InputList<Inputs.SubnetV2MetadataArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new InputList<Inputs.SubnetV2MetadataArgs>());
@@ -509,6 +554,12 @@ namespace PiersKarsenbarg.Nutanix
         [Input("networkId")]
         public Input<int>? NetworkId { get; set; }
 
+        /// <summary>
+        /// External identifier of the project associated with the Subnet.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
         [Input("reservedIpAddresses")]
         private InputList<Inputs.SubnetV2ReservedIpAddressArgs>? _reservedIpAddresses;
 
@@ -519,6 +570,18 @@ namespace PiersKarsenbarg.Nutanix
         {
             get => _reservedIpAddresses ?? (_reservedIpAddresses = new InputList<Inputs.SubnetV2ReservedIpAddressArgs>());
             set => _reservedIpAddresses = value;
+        }
+
+        [Input("sharedWithProjects")]
+        private InputList<string>? _sharedWithProjects;
+
+        /// <summary>
+        /// List of project external identifiers with which the Subnet is shared.
+        /// </summary>
+        public InputList<string> SharedWithProjects
+        {
+            get => _sharedWithProjects ?? (_sharedWithProjects = new InputList<string>());
+            set => _sharedWithProjects = value;
         }
 
         /// <summary>
@@ -661,6 +724,12 @@ namespace PiersKarsenbarg.Nutanix
         public Input<bool>? IsAdvancedNetworking { get; set; }
 
         /// <summary>
+        /// Indicates whether the subnet is connected.
+        /// </summary>
+        [Input("isConnected")]
+        public Input<bool>? IsConnected { get; set; }
+
+        /// <summary>
         /// Indicates whether the subnet is used for external connectivity.
         /// </summary>
         [Input("isExternal")]
@@ -682,6 +751,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("metadatas")]
         private InputList<Inputs.SubnetV2MetadataGetArgs>? _metadatas;
+
+        /// <summary>
+        /// Metadata associated with the subnet.
+        /// </summary>
         public InputList<Inputs.SubnetV2MetadataGetArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new InputList<Inputs.SubnetV2MetadataGetArgs>());
@@ -709,6 +782,12 @@ namespace PiersKarsenbarg.Nutanix
         [Input("networkId")]
         public Input<int>? NetworkId { get; set; }
 
+        /// <summary>
+        /// External identifier of the project associated with the Subnet.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
         [Input("reservedIpAddresses")]
         private InputList<Inputs.SubnetV2ReservedIpAddressGetArgs>? _reservedIpAddresses;
 
@@ -719,6 +798,18 @@ namespace PiersKarsenbarg.Nutanix
         {
             get => _reservedIpAddresses ?? (_reservedIpAddresses = new InputList<Inputs.SubnetV2ReservedIpAddressGetArgs>());
             set => _reservedIpAddresses = value;
+        }
+
+        [Input("sharedWithProjects")]
+        private InputList<string>? _sharedWithProjects;
+
+        /// <summary>
+        /// List of project external identifiers with which the Subnet is shared.
+        /// </summary>
+        public InputList<string> SharedWithProjects
+        {
+            get => _sharedWithProjects ?? (_sharedWithProjects = new InputList<string>());
+            set => _sharedWithProjects = value;
         }
 
         /// <summary>

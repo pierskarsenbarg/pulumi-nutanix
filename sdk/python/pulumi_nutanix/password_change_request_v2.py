@@ -28,7 +28,7 @@ class PasswordChangeRequestV2Args:
         :param pulumi.Input[_builtins.str] ext_id: -(Required) External identifier of the system user password.
         :param pulumi.Input[_builtins.str] new_password: -(Required) New password for a user account.
                
-               See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
+               See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         :param pulumi.Input[_builtins.str] current_password: -(Optional) Existing password of a user account.
         """
         pulumi.set(__self__, "ext_id", ext_id)
@@ -54,7 +54,7 @@ class PasswordChangeRequestV2Args:
         """
         -(Required) New password for a user account.
 
-        See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
+        See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         """
         return pulumi.get(self, "new_password")
 
@@ -88,7 +88,7 @@ class _PasswordChangeRequestV2State:
         :param pulumi.Input[_builtins.str] ext_id: -(Required) External identifier of the system user password.
         :param pulumi.Input[_builtins.str] new_password: -(Required) New password for a user account.
                
-               See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
+               See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         """
         if current_password is not None:
             pulumi.set(__self__, "current_password", current_password)
@@ -127,7 +127,7 @@ class _PasswordChangeRequestV2State:
         """
         -(Required) New password for a user account.
 
-        See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
+        See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         """
         return pulumi.get(self, "new_password")
 
@@ -170,7 +170,7 @@ class PasswordChangeRequestV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ext_id: -(Required) External identifier of the system user password.
         :param pulumi.Input[_builtins.str] new_password: -(Required) New password for a user account.
                
-               See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
+               See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         """
         ...
     @overload
@@ -254,7 +254,7 @@ class PasswordChangeRequestV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ext_id: -(Required) External identifier of the system user password.
         :param pulumi.Input[_builtins.str] new_password: -(Required) New password for a user account.
                
-               See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
+               See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -299,7 +299,7 @@ class PasswordChangeRequestV2(pulumi.CustomResource):
         """
         -(Required) New password for a user account.
 
-        See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
+        See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         """
         return pulumi.get(self, "new_password")
 

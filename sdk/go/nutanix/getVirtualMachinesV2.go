@@ -380,7 +380,7 @@ import (
 // "> protectionPolicyState
 // </span>* <span pulumi-lang-nodejs="`policy`" pulumi-lang-dotnet="`Policy`" pulumi-lang-go="`policy`" pulumi-lang-python="`policy`" pulumi-lang-yaml="`policy`" pulumi-lang-java="`policy`" pulumi-lang-hcl="`policy`">`policy`</span>: Reference to the policy object in use.
 //
-// See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/listVms).
+// See detailed information in [Nutanix List Virtual Machines V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/listVms).
 func GetVirtualMachinesV2(ctx *pulumi.Context, args *GetVirtualMachinesV2Args, opts ...pulumi.InvokeOption) (*GetVirtualMachinesV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVirtualMachinesV2Result

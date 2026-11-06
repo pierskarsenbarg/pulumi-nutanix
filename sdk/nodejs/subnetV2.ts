@@ -24,6 +24,13 @@ import * as utilities from "./utilities";
  *     subnetType: "VLAN",
  *     networkId: 122,
  *     isExternal: true,
+ *     metadatas: [{
+ *         ownerReferenceId: "d0f5c9b0-7b3c-4f5a-9d5b-0a1b2c3d4e5f",
+ *         ownerUserName: "admin",
+ *         projectReferenceId: "2defe0f5-6e48-4c9b-b07c-bdd2dc004225",
+ *         projectName: "default",
+ *         categoryIds: ["4c9b0f5d-6e48-2def-b07c-bdd2dc004225"],
+ *     }],
  *     ipConfigs: [{
  *         ipv4s: [{
  *             ipSubnets: [{
@@ -179,6 +186,10 @@ export class SubnetV2 extends pulumi.CustomResource {
      */
     declare public readonly isAdvancedNetworking: pulumi.Output<boolean>;
     /**
+     * Indicates whether the subnet is connected.
+     */
+    declare public readonly isConnected: pulumi.Output<boolean | undefined>;
+    /**
      * Indicates whether the subnet is used for external connectivity.
      */
     declare public readonly isExternal: pulumi.Output<boolean>;
@@ -187,6 +198,9 @@ export class SubnetV2 extends pulumi.CustomResource {
      */
     declare public readonly isNatEnabled: pulumi.Output<boolean>;
     declare public /*out*/ readonly links: pulumi.Output<outputs.SubnetV2Link[]>;
+    /**
+     * Metadata associated with the subnet.
+     */
     declare public readonly metadatas: pulumi.Output<outputs.SubnetV2Metadata[]>;
     declare public /*out*/ readonly migrationState: pulumi.Output<string>;
     /**
@@ -202,9 +216,17 @@ export class SubnetV2 extends pulumi.CustomResource {
      */
     declare public readonly networkId: pulumi.Output<number | undefined>;
     /**
+     * External identifier of the project associated with the Subnet.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
+    /**
      * List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
      */
     declare public readonly reservedIpAddresses: pulumi.Output<outputs.SubnetV2ReservedIpAddress[]>;
+    /**
+     * List of project external identifiers with which the Subnet is shared.
+     */
+    declare public readonly sharedWithProjects: pulumi.Output<string[]>;
     /**
      * Type of subnet. Acceptables values are "OVERLAY", "VLAN".
      */
@@ -251,6 +273,7 @@ export class SubnetV2 extends pulumi.CustomResource {
             resourceInputs["ipPrefix"] = state?.ipPrefix;
             resourceInputs["ipUsages"] = state?.ipUsages;
             resourceInputs["isAdvancedNetworking"] = state?.isAdvancedNetworking;
+            resourceInputs["isConnected"] = state?.isConnected;
             resourceInputs["isExternal"] = state?.isExternal;
             resourceInputs["isNatEnabled"] = state?.isNatEnabled;
             resourceInputs["links"] = state?.links;
@@ -259,7 +282,9 @@ export class SubnetV2 extends pulumi.CustomResource {
             resourceInputs["name"] = state?.name;
             resourceInputs["networkFunctionChainReference"] = state?.networkFunctionChainReference;
             resourceInputs["networkId"] = state?.networkId;
+            resourceInputs["projectExtId"] = state?.projectExtId;
             resourceInputs["reservedIpAddresses"] = state?.reservedIpAddresses;
+            resourceInputs["sharedWithProjects"] = state?.sharedWithProjects;
             resourceInputs["subnetType"] = state?.subnetType;
             resourceInputs["virtualSwitchReference"] = state?.virtualSwitchReference;
             resourceInputs["virtualSwitches"] = state?.virtualSwitches;
@@ -282,13 +307,16 @@ export class SubnetV2 extends pulumi.CustomResource {
             resourceInputs["ipPrefix"] = args?.ipPrefix;
             resourceInputs["ipUsages"] = args?.ipUsages;
             resourceInputs["isAdvancedNetworking"] = args?.isAdvancedNetworking;
+            resourceInputs["isConnected"] = args?.isConnected;
             resourceInputs["isExternal"] = args?.isExternal;
             resourceInputs["isNatEnabled"] = args?.isNatEnabled;
             resourceInputs["metadatas"] = args?.metadatas;
             resourceInputs["name"] = args?.name;
             resourceInputs["networkFunctionChainReference"] = args?.networkFunctionChainReference;
             resourceInputs["networkId"] = args?.networkId;
+            resourceInputs["projectExtId"] = args?.projectExtId;
             resourceInputs["reservedIpAddresses"] = args?.reservedIpAddresses;
+            resourceInputs["sharedWithProjects"] = args?.sharedWithProjects;
             resourceInputs["subnetType"] = args?.subnetType;
             resourceInputs["virtualSwitchReference"] = args?.virtualSwitchReference;
             resourceInputs["virtualSwitches"] = args?.virtualSwitches;
@@ -349,6 +377,10 @@ export interface SubnetV2State {
      */
     isAdvancedNetworking?: pulumi.Input<boolean | undefined>;
     /**
+     * Indicates whether the subnet is connected.
+     */
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
      * Indicates whether the subnet is used for external connectivity.
      */
     isExternal?: pulumi.Input<boolean | undefined>;
@@ -357,6 +389,9 @@ export interface SubnetV2State {
      */
     isNatEnabled?: pulumi.Input<boolean | undefined>;
     links?: pulumi.Input<pulumi.Input<inputs.SubnetV2Link>[] | undefined>;
+    /**
+     * Metadata associated with the subnet.
+     */
     metadatas?: pulumi.Input<pulumi.Input<inputs.SubnetV2Metadata>[] | undefined>;
     migrationState?: pulumi.Input<string | undefined>;
     /**
@@ -372,9 +407,17 @@ export interface SubnetV2State {
      */
     networkId?: pulumi.Input<number | undefined>;
     /**
+     * External identifier of the project associated with the Subnet.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
      * List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
      */
     reservedIpAddresses?: pulumi.Input<pulumi.Input<inputs.SubnetV2ReservedIpAddress>[] | undefined>;
+    /**
+     * List of project external identifiers with which the Subnet is shared.
+     */
+    sharedWithProjects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Type of subnet. Acceptables values are "OVERLAY", "VLAN".
      */
@@ -444,6 +487,10 @@ export interface SubnetV2Args {
      */
     isAdvancedNetworking?: pulumi.Input<boolean | undefined>;
     /**
+     * Indicates whether the subnet is connected.
+     */
+    isConnected?: pulumi.Input<boolean | undefined>;
+    /**
      * Indicates whether the subnet is used for external connectivity.
      */
     isExternal?: pulumi.Input<boolean | undefined>;
@@ -451,6 +498,9 @@ export interface SubnetV2Args {
      * Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
      */
     isNatEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * Metadata associated with the subnet.
+     */
     metadatas?: pulumi.Input<pulumi.Input<inputs.SubnetV2Metadata>[] | undefined>;
     /**
      * Name of the subnet.
@@ -465,9 +515,17 @@ export interface SubnetV2Args {
      */
     networkId?: pulumi.Input<number | undefined>;
     /**
+     * External identifier of the project associated with the Subnet.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
      * List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
      */
     reservedIpAddresses?: pulumi.Input<pulumi.Input<inputs.SubnetV2ReservedIpAddress>[] | undefined>;
+    /**
+     * List of project external identifiers with which the Subnet is shared.
+     */
+    sharedWithProjects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Type of subnet. Acceptables values are "OVERLAY", "VLAN".
      */

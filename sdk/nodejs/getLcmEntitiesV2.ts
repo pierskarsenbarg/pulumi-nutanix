@@ -51,6 +51,7 @@ export interface GetLcmEntitiesV2Args {
      * * `entityType`
      * * `entityVersion`
      * * `hardwareVendor`
+     * * `hasPreviousInventoryFailed`
      */
     filter?: string;
     /**
@@ -70,6 +71,7 @@ export interface GetLcmEntitiesV2Args {
      * * `entityType`
      * * `entityVersion`
      * * `hardwareVendor`
+     * * `hasPreviousInventoryFailed`
      */
     select?: string;
 }
@@ -137,6 +139,7 @@ export interface GetLcmEntitiesV2OutputArgs {
      * * `entityType`
      * * `entityVersion`
      * * `hardwareVendor`
+     * * `hasPreviousInventoryFailed`
      */
     filter?: pulumi.Input<string | undefined>;
     /**
@@ -156,6 +159,7 @@ export interface GetLcmEntitiesV2OutputArgs {
      * * `entityType`
      * * `entityVersion`
      * * `hardwareVendor`
+     * * `hasPreviousInventoryFailed`
      */
     select?: pulumi.Input<string | undefined>;
 }

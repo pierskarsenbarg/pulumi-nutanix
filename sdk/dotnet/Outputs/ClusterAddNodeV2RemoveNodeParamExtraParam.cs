@@ -17,7 +17,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// -(Optional) Indicates if add check needs to be skipped or not.
         /// 
-        /// See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/Clusters/operation/expandCluster).
+        /// See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/Clusters/operation/expandCluster).
         /// </summary>
         public readonly bool? ShouldSkipAddCheck;
         /// <summary>

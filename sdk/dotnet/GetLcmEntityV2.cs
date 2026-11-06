@@ -432,6 +432,10 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string HardwareVendor;
         /// <summary>
+        /// (default &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`"&gt;`false`&lt;/span&gt;) Indicates whether the most recent inventory operation failed for this entity. When true, the entity's version or available-version data may be stale.
+        /// </summary>
+        public readonly bool HasPreviousInventoryFailed;
+        /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
@@ -490,6 +494,8 @@ namespace PiersKarsenbarg.Nutanix
 
             string hardwareVendor,
 
+            bool hasPreviousInventoryFailed,
+
             string id,
 
             string lastUpdatedTime,
@@ -518,6 +524,7 @@ namespace PiersKarsenbarg.Nutanix
             GroupUuid = groupUuid;
             HardwareFamily = hardwareFamily;
             HardwareVendor = hardwareVendor;
+            HasPreviousInventoryFailed = hasPreviousInventoryFailed;
             Id = id;
             LastUpdatedTime = lastUpdatedTime;
             Links = links;

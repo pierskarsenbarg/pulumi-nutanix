@@ -82,6 +82,7 @@ export class VmCloneV2 extends pulumi.CustomResource {
     declare public /*out*/ readonly extId: pulumi.Output<string>;
     declare public /*out*/ readonly generationUuid: pulumi.Output<string>;
     declare public /*out*/ readonly gpuses: pulumi.Output<outputs.VmCloneV2Gpus[]>;
+    declare public readonly guestCustomizationProfileConfig: pulumi.Output<outputs.VmCloneV2GuestCustomizationProfileConfig>;
     /**
      * - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
      */
@@ -163,6 +164,7 @@ export class VmCloneV2 extends pulumi.CustomResource {
             resourceInputs["extId"] = state?.extId;
             resourceInputs["generationUuid"] = state?.generationUuid;
             resourceInputs["gpuses"] = state?.gpuses;
+            resourceInputs["guestCustomizationProfileConfig"] = state?.guestCustomizationProfileConfig;
             resourceInputs["guestCustomizations"] = state?.guestCustomizations;
             resourceInputs["guestTools"] = state?.guestTools;
             resourceInputs["hardwareClockTimezone"] = state?.hardwareClockTimezone;
@@ -202,6 +204,7 @@ export class VmCloneV2 extends pulumi.CustomResource {
                 throw new Error("Missing required property 'vmExtId'");
             }
             resourceInputs["bootConfigs"] = args?.bootConfigs;
+            resourceInputs["guestCustomizationProfileConfig"] = args?.guestCustomizationProfileConfig;
             resourceInputs["guestCustomizations"] = args?.guestCustomizations;
             resourceInputs["memorySizeBytes"] = args?.memorySizeBytes;
             resourceInputs["name"] = args?.name;
@@ -273,6 +276,7 @@ export interface VmCloneV2State {
     extId?: pulumi.Input<string | undefined>;
     generationUuid?: pulumi.Input<string | undefined>;
     gpuses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2Gpus>[] | undefined>;
+    guestCustomizationProfileConfig?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfig | undefined>;
     /**
      * - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
      */
@@ -337,6 +341,7 @@ export interface VmCloneV2Args {
      * - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
      */
     bootConfigs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfig>[] | undefined>;
+    guestCustomizationProfileConfig?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfig | undefined>;
     /**
      * - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
      */

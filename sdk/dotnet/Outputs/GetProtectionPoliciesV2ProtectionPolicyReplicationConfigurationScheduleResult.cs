@@ -14,27 +14,39 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetProtectionPoliciesV2ProtectionPolicyReplicationConfigurationScheduleResult
     {
+        public readonly bool IsReplicationPaused;
+        public readonly int? LatestRecoveryPointRetentionSeconds;
         public readonly int? RecoveryPointObjectiveTimeSeconds;
         public readonly string? RecoveryPointType;
         public readonly Outputs.GetProtectionPoliciesV2ProtectionPolicyReplicationConfigurationScheduleRetentionResult? Retention;
+        public readonly string ScheduleExtId;
         public readonly string? StartTime;
         public readonly int? SyncReplicationAutoSuspendTimeoutSeconds;
 
         [OutputConstructor]
         private GetProtectionPoliciesV2ProtectionPolicyReplicationConfigurationScheduleResult(
+            bool isReplicationPaused,
+
+            int? latestRecoveryPointRetentionSeconds,
+
             int? recoveryPointObjectiveTimeSeconds,
 
             string? recoveryPointType,
 
             Outputs.GetProtectionPoliciesV2ProtectionPolicyReplicationConfigurationScheduleRetentionResult? retention,
 
+            string scheduleExtId,
+
             string? startTime,
 
             int? syncReplicationAutoSuspendTimeoutSeconds)
         {
+            IsReplicationPaused = isReplicationPaused;
+            LatestRecoveryPointRetentionSeconds = latestRecoveryPointRetentionSeconds;
             RecoveryPointObjectiveTimeSeconds = recoveryPointObjectiveTimeSeconds;
             RecoveryPointType = recoveryPointType;
             Retention = retention;
+            ScheduleExtId = scheduleExtId;
             StartTime = startTime;
             SyncReplicationAutoSuspendTimeoutSeconds = syncReplicationAutoSuspendTimeoutSeconds;
         }

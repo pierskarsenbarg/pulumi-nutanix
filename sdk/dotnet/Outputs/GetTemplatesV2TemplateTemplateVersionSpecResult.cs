@@ -17,12 +17,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string CreateTime;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecCreatedByResult> CreatedBies;
         public readonly string ExtId;
+        public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecGuestCustomizationProfileResult> GuestCustomizationProfiles;
         public readonly bool IsActiveVersion;
         public readonly bool IsGcOverrideEnabled;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecLinkResult> Links;
         public readonly string TenantId;
         public readonly string VersionDescription;
         public readonly string VersionName;
+        public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceResult> VersionSources;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecResult> VmSpecs;
 
         [OutputConstructor]
@@ -32,6 +34,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecCreatedByResult> createdBies,
 
             string extId,
+
+            ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecGuestCustomizationProfileResult> guestCustomizationProfiles,
 
             bool isActiveVersion,
 
@@ -45,17 +49,21 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string versionName,
 
+            ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceResult> versionSources,
+
             ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecResult> vmSpecs)
         {
             CreateTime = createTime;
             CreatedBies = createdBies;
             ExtId = extId;
+            GuestCustomizationProfiles = guestCustomizationProfiles;
             IsActiveVersion = isActiveVersion;
             IsGcOverrideEnabled = isGcOverrideEnabled;
             Links = links;
             TenantId = tenantId;
             VersionDescription = versionDescription;
             VersionName = versionName;
+            VersionSources = versionSources;
             VmSpecs = vmSpecs;
         }
     }

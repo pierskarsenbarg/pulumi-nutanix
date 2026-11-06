@@ -62,7 +62,7 @@ export class PromoteProtectedResourceV2 extends pulumi.CustomResource {
     /**
      * -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
      *
-     * See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
+     * See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.4#tag/ProtectedResources/operation/promoteProtectedResource).
      */
     declare public readonly extId: pulumi.Output<string>;
 
@@ -99,7 +99,7 @@ export interface PromoteProtectedResourceV2State {
     /**
      * -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
      *
-     * See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
+     * See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.4#tag/ProtectedResources/operation/promoteProtectedResource).
      */
     extId?: pulumi.Input<string | undefined>;
 }
@@ -111,7 +111,7 @@ export interface PromoteProtectedResourceV2Args {
     /**
      * -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
      *
-     * See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
+     * See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.4#tag/ProtectedResources/operation/promoteProtectedResource).
      */
     extId: pulumi.Input<string>;
 }

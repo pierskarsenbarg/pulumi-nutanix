@@ -414,6 +414,10 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Name;
         /// <summary>
+        /// - External identifier of the project associated with the Volume Group.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
         /// - Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
         /// </summary>
         public readonly string SharingStatus;
@@ -460,6 +464,8 @@ namespace PiersKarsenbarg.Nutanix
 
             string name,
 
+            string projectExtId,
+
             string sharingStatus,
 
             bool shouldLoadBalanceVmAttachments,
@@ -482,6 +488,7 @@ namespace PiersKarsenbarg.Nutanix
             IscsiFeatures = iscsiFeatures;
             Links = links;
             Name = name;
+            ProjectExtId = projectExtId;
             SharingStatus = sharingStatus;
             ShouldLoadBalanceVmAttachments = shouldLoadBalanceVmAttachments;
             StorageFeatures = storageFeatures;

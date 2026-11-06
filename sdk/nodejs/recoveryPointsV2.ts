@@ -101,6 +101,10 @@ export class RecoveryPointsV2 extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly ownerExtId: pulumi.Output<string>;
     /**
+     * -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
+    /**
      * -(Optional) Type of the Recovery point.
      * * supported values:
      * * `CRASH_CONSISTENT`: -  capture all the VM and application level details.
@@ -147,6 +151,7 @@ export class RecoveryPointsV2 extends pulumi.CustomResource {
             resourceInputs["locationReferences"] = state?.locationReferences;
             resourceInputs["name"] = state?.name;
             resourceInputs["ownerExtId"] = state?.ownerExtId;
+            resourceInputs["projectExtId"] = state?.projectExtId;
             resourceInputs["recoveryPointType"] = state?.recoveryPointType;
             resourceInputs["status"] = state?.status;
             resourceInputs["tenantId"] = state?.tenantId;
@@ -156,6 +161,7 @@ export class RecoveryPointsV2 extends pulumi.CustomResource {
             const args = argsOrState as RecoveryPointsV2Args | undefined;
             resourceInputs["expirationTime"] = args?.expirationTime;
             resourceInputs["name"] = args?.name;
+            resourceInputs["projectExtId"] = args?.projectExtId;
             resourceInputs["recoveryPointType"] = args?.recoveryPointType;
             resourceInputs["status"] = args?.status;
             resourceInputs["vmRecoveryPoints"] = args?.vmRecoveryPoints;
@@ -210,6 +216,10 @@ export interface RecoveryPointsV2State {
      */
     ownerExtId?: pulumi.Input<string | undefined>;
     /**
+     * -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
      * -(Optional) Type of the Recovery point.
      * * supported values:
      * * `CRASH_CONSISTENT`: -  capture all the VM and application level details.
@@ -248,6 +258,10 @@ export interface RecoveryPointsV2Args {
      * -(Optional) The name of the Recovery point.
      */
     name?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Type of the Recovery point.
      * * supported values:

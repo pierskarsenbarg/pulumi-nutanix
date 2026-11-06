@@ -27,11 +27,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string SecuredGroupCategoryAssociatedEntityType;
         /// <summary>
-        /// A specification to whether traffic between intra secured group entities should be allowed or denied.
+        /// List of category references for the secured group. The rule contains either this field or &lt;span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`"&gt;`securedGroupEntityGroupReference`&lt;/span&gt;, not both.
         /// </summary>
         public readonly ImmutableArray<string> SecuredGroupCategoryReferences;
         /// <summary>
-        /// Reference to the secured group entity group.
+        /// Reference to the secured group entity group. The rule contains either this field or &lt;span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`"&gt;`securedGroupCategoryReferences`&lt;/span&gt;, not both.
         /// </summary>
         public readonly string SecuredGroupEntityGroupReference;
         /// <summary>

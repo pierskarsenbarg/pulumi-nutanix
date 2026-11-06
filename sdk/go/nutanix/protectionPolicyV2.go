@@ -16,6 +16,20 @@ import (
 //
 // Creates a protection policy to automate the recovery point creation and replication process.
 //
+// ## Notes
+//
+// > **Please review the following behaviors before configuring a protection policy:**
+//
+// * **<span pulumi-lang-nodejs="`latestRecoveryPointRetentionSeconds`" pulumi-lang-dotnet="`LatestRecoveryPointRetentionSeconds`" pulumi-lang-go="`latestRecoveryPointRetentionSeconds`" pulumi-lang-python="`latest_recovery_point_retention_seconds`" pulumi-lang-yaml="`latestRecoveryPointRetentionSeconds`" pulumi-lang-java="`latestRecoveryPointRetentionSeconds`" pulumi-lang-hcl="`latest_recovery_point_retention_seconds`">`latestRecoveryPointRetentionSeconds`</span>**
+//   - Must be a multiple of <span pulumi-lang-nodejs="`3600`" pulumi-lang-dotnet="`3600`" pulumi-lang-go="`3600`" pulumi-lang-python="`3600`" pulumi-lang-yaml="`3600`" pulumi-lang-java="`3600`" pulumi-lang-hcl="`3600`">`3600`</span> seconds (i.e., whole hours).
+//   - Set it to <span pulumi-lang-nodejs="`0`" pulumi-lang-dotnet="`0`" pulumi-lang-go="`0`" pulumi-lang-python="`0`" pulumi-lang-yaml="`0`" pulumi-lang-java="`0`" pulumi-lang-hcl="`0`">`0`</span> to indicate that the latest recovery point should **not** be retained past its expiry time.
+//   - It is only sent to the API when explicitly set in the configuration. If you omit it, it is left out of the request entirely and the latest recovery point will be retained for a minimum of 30 days.
+//   - It **cannot** be specified for **synchronous** replication (<span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds " pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds " pulumi-lang-go="`recoveryPointObjectiveTimeSeconds " pulumi-lang-python="`recovery_point_objective_time_seconds " pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds " pulumi-lang-java="`recoveryPointObjectiveTimeSeconds " pulumi-lang-hcl="`recovery_point_objective_time_seconds ">`recoveryPointObjectiveTimeSeconds </span>= 0`). The API rejects the request if it is provided for a synchronous schedule.
+//
+// * **<span pulumi-lang-nodejs="`isReplicationPaused`" pulumi-lang-dotnet="`IsReplicationPaused`" pulumi-lang-go="`isReplicationPaused`" pulumi-lang-python="`is_replication_paused`" pulumi-lang-yaml="`isReplicationPaused`" pulumi-lang-java="`isReplicationPaused`" pulumi-lang-hcl="`is_replication_paused`">`isReplicationPaused`</span>**
+//   - <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span> is supported **only** for **synchronous** replication.
+//   - It can be set **only** through an **update** request.
+//
 // ## Example—Synchronous Protection Policy
 //
 // <!--Start PulumiCodeChooser -->
@@ -101,8 +115,9 @@ import (
 //						SourceLocationLabel: pulumi.String("source"),
 //						RemoteLocationLabel: pulumi.String("target"),
 //						Schedule: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleArgs{
-//							RecoveryPointObjectiveTimeSeconds: pulumi.Int(7200),
-//							RecoveryPointType:                 pulumi.String("CRASH_CONSISTENT"),
+//							RecoveryPointObjectiveTimeSeconds:   pulumi.Int(7200),
+//							LatestRecoveryPointRetentionSeconds: pulumi.Int(7200),
+//							RecoveryPointType:                   pulumi.String("CRASH_CONSISTENT"),
 //							Retention: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionArgs{
 //								LinearRetention: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionLinearRetentionArgs{
 //									Local:  pulumi.Int(1),
@@ -115,8 +130,9 @@ import (
 //						SourceLocationLabel: pulumi.String("target"),
 //						RemoteLocationLabel: pulumi.String("source"),
 //						Schedule: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleArgs{
-//							RecoveryPointObjectiveTimeSeconds: pulumi.Int(7200),
-//							RecoveryPointType:                 pulumi.String("CRASH_CONSISTENT"),
+//							RecoveryPointObjectiveTimeSeconds:   pulumi.Int(7200),
+//							LatestRecoveryPointRetentionSeconds: pulumi.Int(7200),
+//							RecoveryPointType:                   pulumi.String("CRASH_CONSISTENT"),
 //							Retention: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionArgs{
 //								LinearRetention: &nutanix.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionLinearRetentionArgs{
 //									Local:  pulumi.Int(1),

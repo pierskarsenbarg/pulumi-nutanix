@@ -102,6 +102,60 @@ namespace PiersKarsenbarg.Nutanix
     ///         },
     ///     });
     /// 
+    ///     var securedGroup = new Nutanix.EntityGroupV2("secured_group", new()
+    ///     {
+    ///         Name = "secured-group",
+    ///         Description = "Secured group for an application policy",
+    ///         AllowedConfig = new Nutanix.Inputs.EntityGroupV2AllowedConfigArgs
+    ///         {
+    ///             Entities = new[]
+    ///             {
+    ///                 new Nutanix.Inputs.EntityGroupV2AllowedConfigEntityArgs
+    ///                 {
+    ///                     Type = "VM",
+    ///                     SelectedBy = "CATEGORY_EXT_ID",
+    ///                     ReferenceExtIds = new[]
+    ///                     {
+    ///                         example.Id,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     // Application rules can use an entity group as the secured group instead of categories.
+    ///     // Use either secured_group_category_references or secured_group_entity_group_reference, not both.
+    ///     var entity_group_nsp = new Nutanix.NetworkSecurityPolicyV2("entity-group-nsp", new()
+    ///     {
+    ///         Name = "my-entity-group-policy",
+    ///         Description = "Application policy with secured group entity group reference",
+    ///         State = "SAVE",
+    ///         Type = "APPLICATION",
+    ///         Scope = "GLOBAL",
+    ///         Rules = new[]
+    ///         {
+    ///             new Nutanix.Inputs.NetworkSecurityPolicyV2RuleArgs
+    ///             {
+    ///                 Type = "APPLICATION",
+    ///                 Specs = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.NetworkSecurityPolicyV2RuleSpecArgs
+    ///                     {
+    ///                         ApplicationRuleSpecs = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgs
+    ///                             {
+    ///                                 SecuredGroupEntityGroupReference = securedGroup.Id,
+    ///                                 SrcAllowSpec = "ALL",
+    ///                                 IsAllProtocolAllowed = true,
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
     /// });
     /// ```
     /// &lt;!--End PulumiCodeChooser --&gt;
@@ -146,6 +200,12 @@ namespace PiersKarsenbarg.Nutanix
         public Output<bool?> IsIpv6TrafficAllowed { get; private set; } = null!;
 
         /// <summary>
+        /// Indicates whether the network security policy is shared with all projects.
+        /// </summary>
+        [Output("isSharedWithAllProjects")]
+        public Output<bool> IsSharedWithAllProjects { get; private set; } = null!;
+
+        /// <summary>
         /// Is system defined NSP
         /// </summary>
         [Output("isSystemDefined")]
@@ -170,13 +230,25 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+        /// Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+        /// </summary>
+        [Output("priority")]
+        public Output<int> Priority { get; private set; } = null!;
+
+        /// <summary>
+        /// Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
+
+        /// <summary>
+        /// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
         /// </summary>
         [Output("rules")]
         public Output<ImmutableArray<Outputs.NetworkSecurityPolicyV2Rule>> Rules { get; private set; } = null!;
 
         /// <summary>
-        /// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+        /// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
         /// </summary>
         [Output("scope")]
         public Output<string> Scope { get; private set; } = null!;
@@ -200,7 +272,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> TenantId { get; private set; } = null!;
 
         /// <summary>
-        /// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+        /// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require &lt;span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`"&gt;`priority`&lt;/span&gt; to be set.
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -282,11 +354,23 @@ namespace PiersKarsenbarg.Nutanix
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+        /// </summary>
+        [Input("priority")]
+        public Input<int>? Priority { get; set; }
+
+        /// <summary>
+        /// Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
         [Input("rules")]
         private InputList<Inputs.NetworkSecurityPolicyV2RuleArgs>? _rules;
 
         /// <summary>
-        /// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+        /// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
         /// </summary>
         public InputList<Inputs.NetworkSecurityPolicyV2RuleArgs> Rules
         {
@@ -295,7 +379,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+        /// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
@@ -307,7 +391,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+        /// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require &lt;span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`"&gt;`priority`&lt;/span&gt; to be set.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -369,6 +453,12 @@ namespace PiersKarsenbarg.Nutanix
         public Input<bool>? IsIpv6TrafficAllowed { get; set; }
 
         /// <summary>
+        /// Indicates whether the network security policy is shared with all projects.
+        /// </summary>
+        [Input("isSharedWithAllProjects")]
+        public Input<bool>? IsSharedWithAllProjects { get; set; }
+
+        /// <summary>
         /// Is system defined NSP
         /// </summary>
         [Input("isSystemDefined")]
@@ -398,11 +488,23 @@ namespace PiersKarsenbarg.Nutanix
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+        /// </summary>
+        [Input("priority")]
+        public Input<int>? Priority { get; set; }
+
+        /// <summary>
+        /// Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
         [Input("rules")]
         private InputList<Inputs.NetworkSecurityPolicyV2RuleGetArgs>? _rules;
 
         /// <summary>
-        /// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+        /// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
         /// </summary>
         public InputList<Inputs.NetworkSecurityPolicyV2RuleGetArgs> Rules
         {
@@ -411,7 +513,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+        /// Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }
@@ -441,7 +543,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? TenantId { get; set; }
 
         /// <summary>
-        /// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+        /// Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require &lt;span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`"&gt;`priority`&lt;/span&gt; to be set.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

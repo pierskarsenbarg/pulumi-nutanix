@@ -51,6 +51,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly int NumPendingVms;
         /// <summary>
+        /// The external identifier of the project that this policy is associated with.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
         /// The timestamp when the policy was last updated.
         /// </summary>
         public readonly string UpdateTime;
@@ -79,6 +83,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             int numPendingVms,
 
+            string projectExtId,
+
             string updateTime,
 
             ImmutableDictionary<string, string> updatedBy)
@@ -92,6 +98,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             NumCompliantVms = numCompliantVms;
             NumNonCompliantVms = numNonCompliantVms;
             NumPendingVms = numPendingVms;
+            ProjectExtId = projectExtId;
             UpdateTime = updateTime;
             UpdatedBy = updatedBy;
         }

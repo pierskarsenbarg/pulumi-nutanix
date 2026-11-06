@@ -42,7 +42,7 @@ import * as utilities from "./utilities";
  * ```
  * <!--End PulumiCodeChooser -->
  *
- * See detailed information in [Nutanix VM-VM Anti-Affinity Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/VmAntiAffinityPolicies)
+ * See detailed information in [Nutanix VM-VM Anti-Affinity Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/VmAntiAffinityPolicies/operation/createVmAntiAffinityPolicy)
  */
 export class VmAntiAffinityPolicyV2 extends pulumi.CustomResource {
     /**
@@ -120,6 +120,10 @@ export class VmAntiAffinityPolicyV2 extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly numPendingVms: pulumi.Output<number>;
     /**
+     * The external identifier of the project that this policy is associated with.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
+    /**
      * The timestamp when the policy was last updated.
      */
     declare public /*out*/ readonly updateTime: pulumi.Output<string>;
@@ -150,6 +154,7 @@ export class VmAntiAffinityPolicyV2 extends pulumi.CustomResource {
             resourceInputs["numCompliantVms"] = state?.numCompliantVms;
             resourceInputs["numNonCompliantVms"] = state?.numNonCompliantVms;
             resourceInputs["numPendingVms"] = state?.numPendingVms;
+            resourceInputs["projectExtId"] = state?.projectExtId;
             resourceInputs["updateTime"] = state?.updateTime;
             resourceInputs["updatedBy"] = state?.updatedBy;
         } else {
@@ -160,6 +165,7 @@ export class VmAntiAffinityPolicyV2 extends pulumi.CustomResource {
             resourceInputs["categories"] = args?.categories;
             resourceInputs["description"] = args?.description;
             resourceInputs["name"] = args?.name;
+            resourceInputs["projectExtId"] = args?.projectExtId;
             resourceInputs["createTime"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["extId"] = undefined /*out*/;
@@ -215,6 +221,10 @@ export interface VmAntiAffinityPolicyV2State {
      */
     numPendingVms?: pulumi.Input<number | undefined>;
     /**
+     * The external identifier of the project that this policy is associated with.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
      * The timestamp when the policy was last updated.
      */
     updateTime?: pulumi.Input<string | undefined>;
@@ -240,4 +250,8 @@ export interface VmAntiAffinityPolicyV2Args {
      * The name of the VM-VM Anti-Affinity policy.
      */
     name?: pulumi.Input<string | undefined>;
+    /**
+     * The external identifier of the project that this policy is associated with.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
 }

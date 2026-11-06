@@ -25,7 +25,9 @@ class RolesV2Args:
                  operations: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  client_name: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_global: pulumi.Input[Optional[_builtins.bool]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a RolesV2 resource.
 
@@ -34,6 +36,7 @@ class RolesV2Args:
         :param pulumi.Input[_builtins.str] client_name: - Client that created the entity.
         :param pulumi.Input[_builtins.str] description: - Description of the Role.
         :param pulumi.Input[_builtins.str] ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) Project reference for the role.
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "operations", operations)
@@ -43,6 +46,10 @@ class RolesV2Args:
             pulumi.set(__self__, "description", description)
         if ext_id is not None:
             pulumi.set(__self__, "ext_id", ext_id)
+        if is_global is not None:
+            pulumi.set(__self__, "is_global", is_global)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -104,6 +111,27 @@ class RolesV2Args:
     def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
+    @_builtins.property
+    @pulumi.getter(name="isGlobal")
+    def is_global(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "is_global")
+
+    @is_global.setter
+    def is_global(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_global", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        -(Optional) Project reference for the role.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
 
 @pulumi.input_type
 class _RolesV2State:
@@ -118,10 +146,13 @@ class _RolesV2State:
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_global: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
                  last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
                  links: pulumi.Input[Optional[Sequence[pulumi.Input['RolesV2LinkArgs']]]] = None,
                  operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 share_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
                  tenant_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RolesV2 resources.
@@ -140,6 +171,8 @@ class _RolesV2State:
         :param pulumi.Input[_builtins.str] last_updated_time: - The time when the Role was last updated.
         :param pulumi.Input[Sequence[pulumi.Input['RolesV2LinkArgs']]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operations: -(Required) List of operations for the role.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) Project reference for the role.
+        :param pulumi.Input[_builtins.bool] share_with_all_projects: - Flag indicating whether the role is shared with all projects or not.
         :param pulumi.Input[_builtins.str] tenant_id: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
         """
         if accessible_clients is not None:
@@ -162,6 +195,8 @@ class _RolesV2State:
             pulumi.set(__self__, "display_name", display_name)
         if ext_id is not None:
             pulumi.set(__self__, "ext_id", ext_id)
+        if is_global is not None:
+            pulumi.set(__self__, "is_global", is_global)
         if is_system_defined is not None:
             pulumi.set(__self__, "is_system_defined", is_system_defined)
         if last_updated_time is not None:
@@ -170,6 +205,10 @@ class _RolesV2State:
             pulumi.set(__self__, "links", links)
         if operations is not None:
             pulumi.set(__self__, "operations", operations)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
+        if share_with_all_projects is not None:
+            pulumi.set(__self__, "share_with_all_projects", share_with_all_projects)
         if tenant_id is not None:
             pulumi.set(__self__, "tenant_id", tenant_id)
 
@@ -294,6 +333,15 @@ class _RolesV2State:
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="isGlobal")
+    def is_global(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "is_global")
+
+    @is_global.setter
+    def is_global(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_global", value)
+
+    @_builtins.property
     @pulumi.getter(name="isSystemDefined")
     def is_system_defined(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -342,6 +390,30 @@ class _RolesV2State:
         pulumi.set(self, "operations", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        -(Optional) Project reference for the role.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shareWithAllProjects")
+    def share_with_all_projects(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        - Flag indicating whether the role is shared with all projects or not.
+        """
+        return pulumi.get(self, "share_with_all_projects")
+
+    @share_with_all_projects.setter
+    def share_with_all_projects(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "share_with_all_projects", value)
+
+    @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -364,32 +436,12 @@ class RolesV2(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_global: pulumi.Input[Optional[_builtins.bool]] = None,
                  operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides a resource to add a Role.
-
-        ## Example Usage
-
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        import pulumi_nutanix as nutanix
-
-        # filtered list operation
-        operations_filtered_list = nutanix.get_operations_v2(filter="startswith(displayName, 'Create_')")
-        # Create role
-        example_role = nutanix.RolesV2("example-role",
-            display_name="example_role",
-            description="create example role",
-            operations=[
-                operations_filtered_list.operations[0].ext_id,
-                operations_filtered_list.operations[1].ext_id,
-                operations_filtered_list.operations[2].ext_id,
-                operations_filtered_list.operations[3].ext_id,
-            ])
-        ```
-        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -399,6 +451,7 @@ class RolesV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: -(Required) The display name for the Role.
         :param pulumi.Input[_builtins.str] ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operations: -(Required) List of operations for the role.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) Project reference for the role.
         """
         ...
     @overload
@@ -408,28 +461,6 @@ class RolesV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a resource to add a Role.
-
-        ## Example Usage
-
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        import pulumi_nutanix as nutanix
-
-        # filtered list operation
-        operations_filtered_list = nutanix.get_operations_v2(filter="startswith(displayName, 'Create_')")
-        # Create role
-        example_role = nutanix.RolesV2("example-role",
-            display_name="example_role",
-            description="create example role",
-            operations=[
-                operations_filtered_list.operations[0].ext_id,
-                operations_filtered_list.operations[1].ext_id,
-                operations_filtered_list.operations[2].ext_id,
-                operations_filtered_list.operations[3].ext_id,
-            ])
-        ```
-        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -451,7 +482,9 @@ class RolesV2(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_global: pulumi.Input[Optional[_builtins.bool]] = None,
                  operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -467,9 +500,11 @@ class RolesV2(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["ext_id"] = ext_id
+            __props__.__dict__["is_global"] = is_global
             if operations is None and not opts.urn:
                 raise TypeError("Missing required property 'operations'")
             __props__.__dict__["operations"] = operations
+            __props__.__dict__["project_ext_id"] = project_ext_id
             __props__.__dict__["accessible_clients"] = None
             __props__.__dict__["accessible_entity_types"] = None
             __props__.__dict__["assigned_users_count"] = None
@@ -479,6 +514,7 @@ class RolesV2(pulumi.CustomResource):
             __props__.__dict__["is_system_defined"] = None
             __props__.__dict__["last_updated_time"] = None
             __props__.__dict__["links"] = None
+            __props__.__dict__["share_with_all_projects"] = None
             __props__.__dict__["tenant_id"] = None
         super(RolesV2, __self__).__init__(
             'nutanix:index/rolesV2:RolesV2',
@@ -500,10 +536,13 @@ class RolesV2(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_global: pulumi.Input[Optional[_builtins.bool]] = None,
             is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
             last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RolesV2LinkArgs', 'RolesV2LinkArgsDict', 'outputs.RolesV2Link']]]]] = None,
             operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            share_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'RolesV2':
         """
         Get an existing RolesV2 resource's state with the given name, id, and optional extra
@@ -526,6 +565,8 @@ class RolesV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] last_updated_time: - The time when the Role was last updated.
         :param pulumi.Input[Sequence[pulumi.Input[Union['RolesV2LinkArgs', 'RolesV2LinkArgsDict', 'outputs.RolesV2Link']]]] links: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] operations: -(Required) List of operations for the role.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) Project reference for the role.
+        :param pulumi.Input[_builtins.bool] share_with_all_projects: - Flag indicating whether the role is shared with all projects or not.
         :param pulumi.Input[_builtins.str] tenant_id: - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -542,10 +583,13 @@ class RolesV2(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["ext_id"] = ext_id
+        __props__.__dict__["is_global"] = is_global
         __props__.__dict__["is_system_defined"] = is_system_defined
         __props__.__dict__["last_updated_time"] = last_updated_time
         __props__.__dict__["links"] = links
         __props__.__dict__["operations"] = operations
+        __props__.__dict__["project_ext_id"] = project_ext_id
+        __props__.__dict__["share_with_all_projects"] = share_with_all_projects
         __props__.__dict__["tenant_id"] = tenant_id
         return RolesV2(resource_name, opts=opts, __props__=__props__)
 
@@ -562,10 +606,13 @@ class RolesV2(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_global: pulumi.Input[Optional[_builtins.bool]] = None,
             is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
             last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RolesV2LinkArgs', 'RolesV2LinkArgsDict', 'outputs.RolesV2Link']]]]] = None,
             operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            share_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
         __props__: dict = {}
         __props__["accessibleClients"] = accessible_clients
@@ -578,10 +625,13 @@ class RolesV2(pulumi.CustomResource):
         __props__["description"] = description
         __props__["displayName"] = display_name
         __props__["extId"] = ext_id
+        __props__["isGlobal"] = is_global
         __props__["isSystemDefined"] = is_system_defined
         __props__["lastUpdatedTime"] = last_updated_time
         __props__["links"] = links
         __props__["operations"] = operations
+        __props__["projectExtId"] = project_ext_id
+        __props__["shareWithAllProjects"] = share_with_all_projects
         __props__["tenantId"] = tenant_id
         return pulumi.runtime.exists_resource(None, 'nutanix:index/rolesV2:RolesV2', id, __props__, opts or pulumi.ResourceOptions())
 
@@ -666,6 +716,11 @@ class RolesV2(pulumi.CustomResource):
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
+    @pulumi.getter(name="isGlobal")
+    def is_global(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        return pulumi.get(self, "is_global")
+
+    @_builtins.property
     @pulumi.getter(name="isSystemDefined")
     def is_system_defined(self) -> pulumi.Output[_builtins.bool]:
         """
@@ -696,6 +751,22 @@ class RolesV2(pulumi.CustomResource):
         -(Required) List of operations for the role.
         """
         return pulumi.get(self, "operations")
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        -(Optional) Project reference for the role.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="shareWithAllProjects")
+    def share_with_all_projects(self) -> pulumi.Output[_builtins.bool]:
+        """
+        - Flag indicating whether the role is shared with all projects or not.
+        """
+        return pulumi.get(self, "share_with_all_projects")
 
     @_builtins.property
     @pulumi.getter(name="tenantId")

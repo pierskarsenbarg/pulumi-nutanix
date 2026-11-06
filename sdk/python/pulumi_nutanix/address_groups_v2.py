@@ -24,7 +24,8 @@ class AddressGroupsV2Args:
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  ip_ranges: pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]]] = None,
                  ipv4_addresses: pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AddressGroupsV2 resource.
 
@@ -32,6 +33,7 @@ class AddressGroupsV2Args:
         :param pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2IpRangeArgs']]] ip_ranges: - (Optional) List of IP range containing start and end IP.
         :param pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2Ipv4AddressArgs']]] ipv4_addresses: - (Optional) List of CIDR blocks in the Address Group.
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the Address group
+        :param pulumi.Input[_builtins.str] project_ext_id: - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -41,6 +43,8 @@ class AddressGroupsV2Args:
             pulumi.set(__self__, "ipv4_addresses", ipv4_addresses)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
 
     @_builtins.property
     @pulumi.getter
@@ -90,6 +94,18 @@ class AddressGroupsV2Args:
     def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
 
 @pulumi.input_type
 class _AddressGroupsV2State:
@@ -102,6 +118,7 @@ class _AddressGroupsV2State:
                  links: pulumi.Input[Optional[Sequence[pulumi.Input['AddressGroupsV2LinkArgs']]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  policy_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  tenant_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AddressGroupsV2 resources.
@@ -114,6 +131,7 @@ class _AddressGroupsV2State:
         :param pulumi.Input[Sequence[pulumi.Input['AddressGroupsV2LinkArgs']]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the Address group
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policy_references: Reference to policy associated with Address Group.
+        :param pulumi.Input[_builtins.str] project_ext_id: - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.
         """
         if created_by is not None:
@@ -132,6 +150,8 @@ class _AddressGroupsV2State:
             pulumi.set(__self__, "name", name)
         if policy_references is not None:
             pulumi.set(__self__, "policy_references", policy_references)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if tenant_id is not None:
             pulumi.set(__self__, "tenant_id", tenant_id)
 
@@ -232,6 +252,18 @@ class _AddressGroupsV2State:
         pulumi.set(self, "policy_references", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -254,6 +286,7 @@ class AddressGroupsV2(pulumi.CustomResource):
                  ip_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict', 'outputs.AddressGroupsV2IpRange']]]]] = None,
                  ipv4_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict', 'outputs.AddressGroupsV2Ipv4Address']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create an Address Group
@@ -297,6 +330,7 @@ class AddressGroupsV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict', 'outputs.AddressGroupsV2IpRange']]]] ip_ranges: - (Optional) List of IP range containing start and end IP.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict', 'outputs.AddressGroupsV2Ipv4Address']]]] ipv4_addresses: - (Optional) List of CIDR blocks in the Address Group.
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the Address group
+        :param pulumi.Input[_builtins.str] project_ext_id: - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
         """
         ...
     @overload
@@ -359,6 +393,7 @@ class AddressGroupsV2(pulumi.CustomResource):
                  ip_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2IpRangeArgs', 'AddressGroupsV2IpRangeArgsDict', 'outputs.AddressGroupsV2IpRange']]]]] = None,
                  ipv4_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2Ipv4AddressArgs', 'AddressGroupsV2Ipv4AddressArgsDict', 'outputs.AddressGroupsV2Ipv4Address']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -372,6 +407,7 @@ class AddressGroupsV2(pulumi.CustomResource):
             __props__.__dict__["ip_ranges"] = ip_ranges
             __props__.__dict__["ipv4_addresses"] = ipv4_addresses
             __props__.__dict__["name"] = name
+            __props__.__dict__["project_ext_id"] = project_ext_id
             __props__.__dict__["created_by"] = None
             __props__.__dict__["ext_id"] = None
             __props__.__dict__["links"] = None
@@ -395,6 +431,7 @@ class AddressGroupsV2(pulumi.CustomResource):
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2LinkArgs', 'AddressGroupsV2LinkArgsDict', 'outputs.AddressGroupsV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             policy_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AddressGroupsV2':
         """
         Get an existing AddressGroupsV2 resource's state with the given name, id, and optional extra
@@ -411,6 +448,7 @@ class AddressGroupsV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AddressGroupsV2LinkArgs', 'AddressGroupsV2LinkArgsDict', 'outputs.AddressGroupsV2Link']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[_builtins.str] name: - (Required) Name of the Address group
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policy_references: Reference to policy associated with Address Group.
+        :param pulumi.Input[_builtins.str] project_ext_id: - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -425,6 +463,7 @@ class AddressGroupsV2(pulumi.CustomResource):
         __props__.__dict__["links"] = links
         __props__.__dict__["name"] = name
         __props__.__dict__["policy_references"] = policy_references
+        __props__.__dict__["project_ext_id"] = project_ext_id
         __props__.__dict__["tenant_id"] = tenant_id
         return AddressGroupsV2(resource_name, opts=opts, __props__=__props__)
 
@@ -439,6 +478,7 @@ class AddressGroupsV2(pulumi.CustomResource):
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressGroupsV2LinkArgs', 'AddressGroupsV2LinkArgsDict', 'outputs.AddressGroupsV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             policy_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
         __props__: dict = {}
         __props__["createdBy"] = created_by
@@ -449,6 +489,7 @@ class AddressGroupsV2(pulumi.CustomResource):
         __props__["links"] = links
         __props__["name"] = name
         __props__["policyReferences"] = policy_references
+        __props__["projectExtId"] = project_ext_id
         __props__["tenantId"] = tenant_id
         return pulumi.runtime.exists_resource(None, 'nutanix:index/addressGroupsV2:AddressGroupsV2', id, __props__, opts or pulumi.ResourceOptions())
 
@@ -515,6 +556,14 @@ class AddressGroupsV2(pulumi.CustomResource):
         Reference to policy associated with Address Group.
         """
         return pulumi.get(self, "policy_references")
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
 
     @_builtins.property
     @pulumi.getter(name="tenantId")

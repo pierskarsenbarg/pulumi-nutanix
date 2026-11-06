@@ -44,14 +44,18 @@ type LookupNetworkSecurityPolicyV2Result struct {
 	IsHitlogEnabled bool `pulumi:"isHitlogEnabled"`
 	// If Ipv6 Traffic is allowed.
 	IsIpv6TrafficAllowed bool `pulumi:"isIpv6TrafficAllowed"`
+	// Whether the network security policy is shared with all projects.
+	IsSharedWithAllProjects bool `pulumi:"isSharedWithAllProjects"`
 	// Is system defined NSP
 	IsSystemDefined bool `pulumi:"isSystemDefined"`
 	// last updated time
 	LastUpdateTime string `pulumi:"lastUpdateTime"`
 	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 	Links []GetNetworkSecurityPolicyV2Link `pulumi:"links"`
-	// Name of the Flow Network Security Policy.
+	// A user-defined name for the rule.
 	Name string `pulumi:"name"`
+	// Project external ID associated with the network security policy.
+	ProjectExtId string `pulumi:"projectExtId"`
 	// A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
 	Rules []GetNetworkSecurityPolicyV2Rule `pulumi:"rules"`
 	// Defines the scope of the policy. Values include "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
@@ -133,6 +137,11 @@ func (o LookupNetworkSecurityPolicyV2ResultOutput) IsIpv6TrafficAllowed() pulumi
 	return o.ApplyT(func(v LookupNetworkSecurityPolicyV2Result) bool { return v.IsIpv6TrafficAllowed }).(pulumi.BoolOutput)
 }
 
+// Whether the network security policy is shared with all projects.
+func (o LookupNetworkSecurityPolicyV2ResultOutput) IsSharedWithAllProjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupNetworkSecurityPolicyV2Result) bool { return v.IsSharedWithAllProjects }).(pulumi.BoolOutput)
+}
+
 // Is system defined NSP
 func (o LookupNetworkSecurityPolicyV2ResultOutput) IsSystemDefined() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupNetworkSecurityPolicyV2Result) bool { return v.IsSystemDefined }).(pulumi.BoolOutput)
@@ -148,9 +157,14 @@ func (o LookupNetworkSecurityPolicyV2ResultOutput) Links() GetNetworkSecurityPol
 	return o.ApplyT(func(v LookupNetworkSecurityPolicyV2Result) []GetNetworkSecurityPolicyV2Link { return v.Links }).(GetNetworkSecurityPolicyV2LinkArrayOutput)
 }
 
-// Name of the Flow Network Security Policy.
+// A user-defined name for the rule.
 func (o LookupNetworkSecurityPolicyV2ResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNetworkSecurityPolicyV2Result) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Project external ID associated with the network security policy.
+func (o LookupNetworkSecurityPolicyV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNetworkSecurityPolicyV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.

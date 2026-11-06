@@ -15,9 +15,12 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetEntityGroupsV2EntityGroupAllowedConfigEntityResult
     {
         public readonly ImmutableArray<Outputs.GetEntityGroupsV2EntityGroupAllowedConfigEntityAddressResult> Addresses;
+        public readonly ImmutableArray<string> Fqdns;
         public readonly ImmutableArray<Outputs.GetEntityGroupsV2EntityGroupAllowedConfigEntityIpRangeResult> IpRanges;
         public readonly ImmutableArray<string> KubeEntities;
+        public readonly string MatchCriteria;
         public readonly ImmutableArray<string> ReferenceExtIds;
+        public readonly string ReferenceString;
         public readonly string SelectedBy;
         public readonly string Type;
 
@@ -25,20 +28,29 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         private GetEntityGroupsV2EntityGroupAllowedConfigEntityResult(
             ImmutableArray<Outputs.GetEntityGroupsV2EntityGroupAllowedConfigEntityAddressResult> addresses,
 
+            ImmutableArray<string> fqdns,
+
             ImmutableArray<Outputs.GetEntityGroupsV2EntityGroupAllowedConfigEntityIpRangeResult> ipRanges,
 
             ImmutableArray<string> kubeEntities,
 
+            string matchCriteria,
+
             ImmutableArray<string> referenceExtIds,
+
+            string referenceString,
 
             string selectedBy,
 
             string type)
         {
             Addresses = addresses;
+            Fqdns = fqdns;
             IpRanges = ipRanges;
             KubeEntities = kubeEntities;
+            MatchCriteria = matchCriteria;
             ReferenceExtIds = referenceExtIds;
+            ReferenceString = referenceString;
             SelectedBy = selectedBy;
             Type = type;
         }

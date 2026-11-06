@@ -7,29 +7,9 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
+ * > **Note:** This resource is in Beta because the underlying Nutanix SDK API is currently in Beta. The resource and its behavior may change in future releases as the SDK API evolves.
+ *
  * Provides a resource to Create a Directory Service.
- *
- * ## Example Usage
- *
- * <!--Start PulumiCodeChooser -->
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * // Add Directory Service .
- * const active_directory = new nutanix.DirectoryServicesV2("active-directory", {
- *     name: "example_active_directory",
- *     url: "ldap://10.xx.xx.xx:xxxx",
- *     directoryType: "ACTIVE_DIRECTORY",
- *     domainName: "nutanix.com",
- *     serviceAccounts: [{
- *         username: "username",
- *         password: "password",
- *     }],
- *     whiteListedGroups: ["example"],
- * });
- * ```
- * <!--End PulumiCodeChooser -->
  */
 export class DirectoryServicesV2 extends pulumi.CustomResource {
     /**
@@ -107,6 +87,10 @@ export class DirectoryServicesV2 extends pulumi.CustomResource {
      */
     declare public readonly openLdapConfigurations: pulumi.Output<outputs.DirectoryServicesV2OpenLdapConfiguration[]>;
     /**
+     * -(Optional) Project reference for the Directory Service.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
+    /**
      * -(Optional) Secondary URL for the Directory Service.
      */
     declare public readonly secondaryUrls: pulumi.Output<string[]>;
@@ -114,6 +98,14 @@ export class DirectoryServicesV2 extends pulumi.CustomResource {
      * -(Required) Information of Service account to connect to the Directory Service.
      */
     declare public readonly serviceAccounts: pulumi.Output<outputs.DirectoryServicesV2ServiceAccount[]>;
+    /**
+     * -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+     */
+    declare public readonly shareWithAllProjects: pulumi.Output<boolean>;
+    /**
+     * -(Optional) List of projects with which the directory service is shared.
+     */
+    declare public readonly sharedWithProjects: pulumi.Output<string[]>;
     /**
      * -(Required) URL for the Directory Service.
      */
@@ -145,8 +137,11 @@ export class DirectoryServicesV2 extends pulumi.CustomResource {
             resourceInputs["lastUpdatedTime"] = state?.lastUpdatedTime;
             resourceInputs["name"] = state?.name;
             resourceInputs["openLdapConfigurations"] = state?.openLdapConfigurations;
+            resourceInputs["projectExtId"] = state?.projectExtId;
             resourceInputs["secondaryUrls"] = state?.secondaryUrls;
             resourceInputs["serviceAccounts"] = state?.serviceAccounts;
+            resourceInputs["shareWithAllProjects"] = state?.shareWithAllProjects;
+            resourceInputs["sharedWithProjects"] = state?.sharedWithProjects;
             resourceInputs["url"] = state?.url;
             resourceInputs["whiteListedGroups"] = state?.whiteListedGroups;
         } else {
@@ -169,8 +164,11 @@ export class DirectoryServicesV2 extends pulumi.CustomResource {
             resourceInputs["groupSearchType"] = args?.groupSearchType;
             resourceInputs["name"] = args?.name;
             resourceInputs["openLdapConfigurations"] = args?.openLdapConfigurations;
+            resourceInputs["projectExtId"] = args?.projectExtId;
             resourceInputs["secondaryUrls"] = args?.secondaryUrls;
             resourceInputs["serviceAccounts"] = args?.serviceAccounts;
+            resourceInputs["shareWithAllProjects"] = args?.shareWithAllProjects;
+            resourceInputs["sharedWithProjects"] = args?.sharedWithProjects;
             resourceInputs["url"] = args?.url;
             resourceInputs["whiteListedGroups"] = args?.whiteListedGroups;
             resourceInputs["createdBy"] = undefined /*out*/;
@@ -223,6 +221,10 @@ export interface DirectoryServicesV2State {
      */
     openLdapConfigurations?: pulumi.Input<pulumi.Input<inputs.DirectoryServicesV2OpenLdapConfiguration>[] | undefined>;
     /**
+     * -(Optional) Project reference for the Directory Service.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
      * -(Optional) Secondary URL for the Directory Service.
      */
     secondaryUrls?: pulumi.Input<pulumi.Input<string>[] | undefined>;
@@ -230,6 +232,14 @@ export interface DirectoryServicesV2State {
      * -(Required) Information of Service account to connect to the Directory Service.
      */
     serviceAccounts?: pulumi.Input<pulumi.Input<inputs.DirectoryServicesV2ServiceAccount>[] | undefined>;
+    /**
+     * -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+     */
+    shareWithAllProjects?: pulumi.Input<boolean | undefined>;
+    /**
+     * -(Optional) List of projects with which the directory service is shared.
+     */
+    sharedWithProjects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * -(Required) URL for the Directory Service.
      */
@@ -269,6 +279,10 @@ export interface DirectoryServicesV2Args {
      */
     openLdapConfigurations?: pulumi.Input<pulumi.Input<inputs.DirectoryServicesV2OpenLdapConfiguration>[] | undefined>;
     /**
+     * -(Optional) Project reference for the Directory Service.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
      * -(Optional) Secondary URL for the Directory Service.
      */
     secondaryUrls?: pulumi.Input<pulumi.Input<string>[] | undefined>;
@@ -276,6 +290,14 @@ export interface DirectoryServicesV2Args {
      * -(Required) Information of Service account to connect to the Directory Service.
      */
     serviceAccounts: pulumi.Input<pulumi.Input<inputs.DirectoryServicesV2ServiceAccount>[]>;
+    /**
+     * -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+     */
+    shareWithAllProjects?: pulumi.Input<boolean | undefined>;
+    /**
+     * -(Optional) List of projects with which the directory service is shared.
+     */
+    sharedWithProjects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * -(Required) URL for the Directory Service.
      */

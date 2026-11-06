@@ -59,6 +59,10 @@ export interface GetNetworkSecurityPolicyV2Result {
      */
     readonly isIpv6TrafficAllowed: boolean;
     /**
+     * Whether the network security policy is shared with all projects.
+     */
+    readonly isSharedWithAllProjects: boolean;
+    /**
      * Is system defined NSP
      */
     readonly isSystemDefined: boolean;
@@ -71,9 +75,13 @@ export interface GetNetworkSecurityPolicyV2Result {
      */
     readonly links: outputs.GetNetworkSecurityPolicyV2Link[];
     /**
-     * Name of the Flow Network Security Policy.
+     * A user-defined name for the rule.
      */
     readonly name: string;
+    /**
+     * Project external ID associated with the network security policy.
+     */
+    readonly projectExtId: string;
     /**
      * A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
      */

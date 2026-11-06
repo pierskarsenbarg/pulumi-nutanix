@@ -14,10 +14,25 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class SubnetV2VpcMetadata
     {
+        /// <summary>
+        /// Set of category external identifiers associated with the subnet.
+        /// </summary>
         public readonly ImmutableArray<string> CategoryIds;
+        /// <summary>
+        /// External identifier of the owner associated with the subnet.
+        /// </summary>
         public readonly string? OwnerReferenceId;
+        /// <summary>
+        /// User name of the subnet owner.
+        /// </summary>
         public readonly string? OwnerUserName;
+        /// <summary>
+        /// Name of the project associated with the subnet.
+        /// </summary>
         public readonly string? ProjectName;
+        /// <summary>
+        /// External identifier of the project associated with the subnet.
+        /// </summary>
         public readonly string? ProjectReferenceId;
 
         [OutputConstructor]

@@ -15,24 +15,12 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class VolumeGroupV2Disk
     {
         /// <summary>
-        /// - Volume Disk description.
+        /// -(Optional) Volume Group description. This is an optional field.
         /// </summary>
         public readonly string? Description;
-        /// <summary>
-        /// -(Required) Disk Data Source Reference.
-        /// </summary>
         public readonly ImmutableArray<Outputs.VolumeGroupV2DiskDiskDataSourceReference> DiskDataSourceReferences;
-        /// <summary>
-        /// - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
-        /// </summary>
         public readonly int DiskSizeBytes;
-        /// <summary>
-        /// - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
-        /// </summary>
         public readonly ImmutableArray<Outputs.VolumeGroupV2DiskDiskStorageFeature> DiskStorageFeatures;
-        /// <summary>
-        /// - Index of the disk in a Volume Group. This field is optional and immutable.
-        /// </summary>
         public readonly int? Index;
 
         [OutputConstructor]

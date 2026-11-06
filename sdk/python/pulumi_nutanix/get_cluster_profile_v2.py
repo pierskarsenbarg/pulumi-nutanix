@@ -27,7 +27,7 @@ class GetClusterProfileV2Result:
     """
     A collection of values returned by getClusterProfileV2.
     """
-    def __init__(__self__, allowed_overrides=None, cluster_count=None, clusters=None, create_time=None, created_by=None, description=None, drifted_cluster_count=None, ext_id=None, id=None, last_update_time=None, last_updated_by=None, links=None, name=None, name_server_ip_lists=None, nfs_subnet_white_lists=None, ntp_server_ip_lists=None, pulse_statuses=None, rsyslog_server_lists=None, smtp_servers=None, snmp_configs=None, tenant_id=None):
+    def __init__(__self__, allowed_overrides=None, cluster_count=None, clusters=None, create_time=None, created_by=None, description=None, drifted_cluster_count=None, ext_id=None, fault_tolerance_configs=None, http_proxy_configs=None, id=None, last_update_time=None, last_updated_by=None, links=None, name=None, name_server_ip_lists=None, nfs_subnet_white_lists=None, ntp_server_config_lists=None, ntp_server_ip_lists=None, pulse_statuses=None, rebuild_reservation_configs=None, resilient_capacity_warning_threshold_configs=None, rsyslog_server_lists=None, smtp_servers=None, snmp_configs=None, tenant_id=None):
         if allowed_overrides and not isinstance(allowed_overrides, list):
             raise TypeError("Expected argument 'allowed_overrides' to be a list")
         pulumi.set(__self__, "allowed_overrides", allowed_overrides)
@@ -52,6 +52,12 @@ class GetClusterProfileV2Result:
         if ext_id and not isinstance(ext_id, str):
             raise TypeError("Expected argument 'ext_id' to be a str")
         pulumi.set(__self__, "ext_id", ext_id)
+        if fault_tolerance_configs and not isinstance(fault_tolerance_configs, list):
+            raise TypeError("Expected argument 'fault_tolerance_configs' to be a list")
+        pulumi.set(__self__, "fault_tolerance_configs", fault_tolerance_configs)
+        if http_proxy_configs and not isinstance(http_proxy_configs, list):
+            raise TypeError("Expected argument 'http_proxy_configs' to be a list")
+        pulumi.set(__self__, "http_proxy_configs", http_proxy_configs)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -73,12 +79,21 @@ class GetClusterProfileV2Result:
         if nfs_subnet_white_lists and not isinstance(nfs_subnet_white_lists, list):
             raise TypeError("Expected argument 'nfs_subnet_white_lists' to be a list")
         pulumi.set(__self__, "nfs_subnet_white_lists", nfs_subnet_white_lists)
+        if ntp_server_config_lists and not isinstance(ntp_server_config_lists, list):
+            raise TypeError("Expected argument 'ntp_server_config_lists' to be a list")
+        pulumi.set(__self__, "ntp_server_config_lists", ntp_server_config_lists)
         if ntp_server_ip_lists and not isinstance(ntp_server_ip_lists, list):
             raise TypeError("Expected argument 'ntp_server_ip_lists' to be a list")
         pulumi.set(__self__, "ntp_server_ip_lists", ntp_server_ip_lists)
         if pulse_statuses and not isinstance(pulse_statuses, list):
             raise TypeError("Expected argument 'pulse_statuses' to be a list")
         pulumi.set(__self__, "pulse_statuses", pulse_statuses)
+        if rebuild_reservation_configs and not isinstance(rebuild_reservation_configs, list):
+            raise TypeError("Expected argument 'rebuild_reservation_configs' to be a list")
+        pulumi.set(__self__, "rebuild_reservation_configs", rebuild_reservation_configs)
+        if resilient_capacity_warning_threshold_configs and not isinstance(resilient_capacity_warning_threshold_configs, list):
+            raise TypeError("Expected argument 'resilient_capacity_warning_threshold_configs' to be a list")
+        pulumi.set(__self__, "resilient_capacity_warning_threshold_configs", resilient_capacity_warning_threshold_configs)
         if rsyslog_server_lists and not isinstance(rsyslog_server_lists, list):
             raise TypeError("Expected argument 'rsyslog_server_lists' to be a list")
         pulumi.set(__self__, "rsyslog_server_lists", rsyslog_server_lists)
@@ -157,6 +172,22 @@ class GetClusterProfileV2Result:
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
+    @pulumi.getter(name="faultToleranceConfigs")
+    def fault_tolerance_configs(self) -> Sequence['outputs.GetClusterProfileV2FaultToleranceConfigResult']:
+        """
+        - Fault tolerant state of cluster.
+        """
+        return pulumi.get(self, "fault_tolerance_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="httpProxyConfigs")
+    def http_proxy_configs(self) -> Sequence['outputs.GetClusterProfileV2HttpProxyConfigResult']:
+        """
+        - HTTP proxy configuration for the cluster.
+        """
+        return pulumi.get(self, "http_proxy_configs")
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
@@ -192,7 +223,7 @@ class GetClusterProfileV2Result:
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        - Name of the cluster profile.
+        HTTP proxy server name.
         """
         return pulumi.get(self, "name")
 
@@ -213,6 +244,14 @@ class GetClusterProfileV2Result:
         return pulumi.get(self, "nfs_subnet_white_lists")
 
     @_builtins.property
+    @pulumi.getter(name="ntpServerConfigLists")
+    def ntp_server_config_lists(self) -> Sequence['outputs.GetClusterProfileV2NtpServerConfigListResult']:
+        """
+        - List of NTP server configurations with encryption authentication.
+        """
+        return pulumi.get(self, "ntp_server_config_lists")
+
+    @_builtins.property
     @pulumi.getter(name="ntpServerIpLists")
     def ntp_server_ip_lists(self) -> Sequence['outputs.GetClusterProfileV2NtpServerIpListResult']:
         """
@@ -227,6 +266,22 @@ class GetClusterProfileV2Result:
         - Pulse status for a cluster.
         """
         return pulumi.get(self, "pulse_statuses")
+
+    @_builtins.property
+    @pulumi.getter(name="rebuildReservationConfigs")
+    def rebuild_reservation_configs(self) -> Sequence['outputs.GetClusterProfileV2RebuildReservationConfigResult']:
+        """
+        - Rebuild capacity reservation configuration.
+        """
+        return pulumi.get(self, "rebuild_reservation_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="resilientCapacityWarningThresholdConfigs")
+    def resilient_capacity_warning_threshold_configs(self) -> Sequence['outputs.GetClusterProfileV2ResilientCapacityWarningThresholdConfigResult']:
+        """
+        - Resilient capacity warning threshold configuration.
+        """
+        return pulumi.get(self, "resilient_capacity_warning_threshold_configs")
 
     @_builtins.property
     @pulumi.getter(name="rsyslogServerLists")
@@ -275,6 +330,8 @@ class AwaitableGetClusterProfileV2Result(GetClusterProfileV2Result):
             description=self.description,
             drifted_cluster_count=self.drifted_cluster_count,
             ext_id=self.ext_id,
+            fault_tolerance_configs=self.fault_tolerance_configs,
+            http_proxy_configs=self.http_proxy_configs,
             id=self.id,
             last_update_time=self.last_update_time,
             last_updated_by=self.last_updated_by,
@@ -282,8 +339,11 @@ class AwaitableGetClusterProfileV2Result(GetClusterProfileV2Result):
             name=self.name,
             name_server_ip_lists=self.name_server_ip_lists,
             nfs_subnet_white_lists=self.nfs_subnet_white_lists,
+            ntp_server_config_lists=self.ntp_server_config_lists,
             ntp_server_ip_lists=self.ntp_server_ip_lists,
             pulse_statuses=self.pulse_statuses,
+            rebuild_reservation_configs=self.rebuild_reservation_configs,
+            resilient_capacity_warning_threshold_configs=self.resilient_capacity_warning_threshold_configs,
             rsyslog_server_lists=self.rsyslog_server_lists,
             smtp_servers=self.smtp_servers,
             snmp_configs=self.snmp_configs,
@@ -323,6 +383,8 @@ def get_cluster_profile_v2(ext_id: Optional[_builtins.str] = None,
         description=pulumi.get(__ret__, 'description'),
         drifted_cluster_count=pulumi.get(__ret__, 'drifted_cluster_count'),
         ext_id=pulumi.get(__ret__, 'ext_id'),
+        fault_tolerance_configs=pulumi.get(__ret__, 'fault_tolerance_configs'),
+        http_proxy_configs=pulumi.get(__ret__, 'http_proxy_configs'),
         id=pulumi.get(__ret__, 'id'),
         last_update_time=pulumi.get(__ret__, 'last_update_time'),
         last_updated_by=pulumi.get(__ret__, 'last_updated_by'),
@@ -330,8 +392,11 @@ def get_cluster_profile_v2(ext_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         name_server_ip_lists=pulumi.get(__ret__, 'name_server_ip_lists'),
         nfs_subnet_white_lists=pulumi.get(__ret__, 'nfs_subnet_white_lists'),
+        ntp_server_config_lists=pulumi.get(__ret__, 'ntp_server_config_lists'),
         ntp_server_ip_lists=pulumi.get(__ret__, 'ntp_server_ip_lists'),
         pulse_statuses=pulumi.get(__ret__, 'pulse_statuses'),
+        rebuild_reservation_configs=pulumi.get(__ret__, 'rebuild_reservation_configs'),
+        resilient_capacity_warning_threshold_configs=pulumi.get(__ret__, 'resilient_capacity_warning_threshold_configs'),
         rsyslog_server_lists=pulumi.get(__ret__, 'rsyslog_server_lists'),
         smtp_servers=pulumi.get(__ret__, 'smtp_servers'),
         snmp_configs=pulumi.get(__ret__, 'snmp_configs'),
@@ -368,6 +433,8 @@ def get_cluster_profile_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] 
         description=pulumi.get(__response__, 'description'),
         drifted_cluster_count=pulumi.get(__response__, 'drifted_cluster_count'),
         ext_id=pulumi.get(__response__, 'ext_id'),
+        fault_tolerance_configs=pulumi.get(__response__, 'fault_tolerance_configs'),
+        http_proxy_configs=pulumi.get(__response__, 'http_proxy_configs'),
         id=pulumi.get(__response__, 'id'),
         last_update_time=pulumi.get(__response__, 'last_update_time'),
         last_updated_by=pulumi.get(__response__, 'last_updated_by'),
@@ -375,8 +442,11 @@ def get_cluster_profile_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] 
         name=pulumi.get(__response__, 'name'),
         name_server_ip_lists=pulumi.get(__response__, 'name_server_ip_lists'),
         nfs_subnet_white_lists=pulumi.get(__response__, 'nfs_subnet_white_lists'),
+        ntp_server_config_lists=pulumi.get(__response__, 'ntp_server_config_lists'),
         ntp_server_ip_lists=pulumi.get(__response__, 'ntp_server_ip_lists'),
         pulse_statuses=pulumi.get(__response__, 'pulse_statuses'),
+        rebuild_reservation_configs=pulumi.get(__response__, 'rebuild_reservation_configs'),
+        resilient_capacity_warning_threshold_configs=pulumi.get(__response__, 'resilient_capacity_warning_threshold_configs'),
         rsyslog_server_lists=pulumi.get(__response__, 'rsyslog_server_lists'),
         smtp_servers=pulumi.get(__response__, 'smtp_servers'),
         snmp_configs=pulumi.get(__response__, 'snmp_configs'),

@@ -80,6 +80,10 @@ export interface GetVmAntiAffinityPolicyV2Result {
      */
     readonly numPendingVms: number;
     /**
+     * The external identifier of the project that this policy is associated with.
+     */
+    readonly projectExtId: string;
+    /**
      * The timestamp when the policy was last updated.
      */
     readonly updateTime: string;

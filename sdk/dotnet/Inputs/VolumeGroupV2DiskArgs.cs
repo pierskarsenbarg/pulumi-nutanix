@@ -14,44 +14,30 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class VolumeGroupV2DiskArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - Volume Disk description.
+        /// -(Optional) Volume Group description. This is an optional field.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         [Input("diskDataSourceReferences", required: true)]
         private InputList<Inputs.VolumeGroupV2DiskDiskDataSourceReferenceArgs>? _diskDataSourceReferences;
-
-        /// <summary>
-        /// -(Required) Disk Data Source Reference.
-        /// </summary>
         public InputList<Inputs.VolumeGroupV2DiskDiskDataSourceReferenceArgs> DiskDataSourceReferences
         {
             get => _diskDataSourceReferences ?? (_diskDataSourceReferences = new InputList<Inputs.VolumeGroupV2DiskDiskDataSourceReferenceArgs>());
             set => _diskDataSourceReferences = value;
         }
 
-        /// <summary>
-        /// - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
-        /// </summary>
         [Input("diskSizeBytes", required: true)]
         public Input<int> DiskSizeBytes { get; set; } = null!;
 
         [Input("diskStorageFeatures")]
         private InputList<Inputs.VolumeGroupV2DiskDiskStorageFeatureArgs>? _diskStorageFeatures;
-
-        /// <summary>
-        /// - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
-        /// </summary>
         public InputList<Inputs.VolumeGroupV2DiskDiskStorageFeatureArgs> DiskStorageFeatures
         {
             get => _diskStorageFeatures ?? (_diskStorageFeatures = new InputList<Inputs.VolumeGroupV2DiskDiskStorageFeatureArgs>());
             set => _diskStorageFeatures = value;
         }
 
-        /// <summary>
-        /// - Index of the disk in a Volume Group. This field is optional and immutable.
-        /// </summary>
         [Input("index")]
         public Input<int>? Index { get; set; }
 

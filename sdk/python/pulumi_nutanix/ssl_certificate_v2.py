@@ -309,7 +309,7 @@ class SslCertificateV2(pulumi.CustomResource):
 
         ## API Reference
 
-        See detailed information in [Nutanix SSL Certificate v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/SSLCertificate/operation/updateSSLCertificate)
+        See detailed information in [Nutanix SSL Certificate v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/SSLCertificate/operation/updateSSLCertificate)
 
 
         :param str resource_name: The name of the resource.
@@ -362,7 +362,7 @@ class SslCertificateV2(pulumi.CustomResource):
 
         ## API Reference
 
-        See detailed information in [Nutanix SSL Certificate v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/SSLCertificate/operation/updateSSLCertificate)
+        See detailed information in [Nutanix SSL Certificate v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/SSLCertificate/operation/updateSSLCertificate)
 
 
         :param str resource_name: The name of the resource.

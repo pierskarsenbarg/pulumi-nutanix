@@ -13,6 +13,14 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class RecoveryPlanParametersArgs : global::Pulumi.ResourceArgs
     {
+        [Input("availabilityZoneLists")]
+        private InputList<Inputs.RecoveryPlanParametersAvailabilityZoneListArgs>? _availabilityZoneLists;
+        public InputList<Inputs.RecoveryPlanParametersAvailabilityZoneListArgs> AvailabilityZoneLists
+        {
+            get => _availabilityZoneLists ?? (_availabilityZoneLists = new InputList<Inputs.RecoveryPlanParametersAvailabilityZoneListArgs>());
+            set => _availabilityZoneLists = value;
+        }
+
         [Input("floatingIpAssignmentLists")]
         private InputList<Inputs.RecoveryPlanParametersFloatingIpAssignmentListArgs>? _floatingIpAssignmentLists;
         public InputList<Inputs.RecoveryPlanParametersFloatingIpAssignmentListArgs> FloatingIpAssignmentLists
@@ -28,6 +36,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             get => _networkMappingLists ?? (_networkMappingLists = new InputList<Inputs.RecoveryPlanParametersNetworkMappingListArgs>());
             set => _networkMappingLists = value;
         }
+
+        [Input("primaryLocationIndex")]
+        public Input<int>? PrimaryLocationIndex { get; set; }
 
         public RecoveryPlanParametersArgs()
         {

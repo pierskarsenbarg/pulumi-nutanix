@@ -27,6 +27,7 @@ class ImagesV2Args:
                  cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  sources: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2SourceArgs']]]] = None):
         """
         The set of arguments for constructing a ImagesV2 resource.
@@ -37,6 +38,7 @@ class ImagesV2Args:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: List of cluster external identifiers where the image is located.
         :param pulumi.Input[_builtins.str] description: The user defined description of an image.
         :param pulumi.Input[_builtins.str] name: The user defined name of an image.
+        :param pulumi.Input[_builtins.str] project_ext_id: External identifier of the project associated with the image.
         :param pulumi.Input[Sequence[pulumi.Input['ImagesV2SourceArgs']]] sources: The source of an image. It can be a VM disk or a URL.
         """
         pulumi.set(__self__, "type", type)
@@ -50,6 +52,8 @@ class ImagesV2Args:
             pulumi.set(__self__, "description", description)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if sources is not None:
             pulumi.set(__self__, "sources", sources)
 
@@ -126,6 +130,18 @@ class ImagesV2Args:
         pulumi.set(self, "name", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        External identifier of the project associated with the image.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
     @pulumi.getter
     def sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2SourceArgs']]]]:
         """
@@ -152,6 +168,8 @@ class _ImagesV2State:
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  placement_policy_statuses: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2PlacementPolicyStatusArgs']]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 share_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
                  size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  sources: pulumi.Input[Optional[Sequence[pulumi.Input['ImagesV2SourceArgs']]]] = None,
                  tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -168,6 +186,8 @@ class _ImagesV2State:
         :param pulumi.Input[_builtins.str] name: The user defined name of an image.
         :param pulumi.Input[_builtins.str] owner_ext_id: External identifier of the owner of the image
         :param pulumi.Input[Sequence[pulumi.Input['ImagesV2PlacementPolicyStatusArgs']]] placement_policy_statuses: Status of an image placement policy.
+        :param pulumi.Input[_builtins.str] project_ext_id: External identifier of the project associated with the image.
+        :param pulumi.Input[_builtins.bool] share_with_all_projects: Indicates whether the image is shared with all projects.
         :param pulumi.Input[_builtins.int] size_bytes: The size in bytes of an image file.
         :param pulumi.Input[Sequence[pulumi.Input['ImagesV2SourceArgs']]] sources: The source of an image. It can be a VM disk or a URL.
         :param pulumi.Input[_builtins.str] type: The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
@@ -194,6 +214,10 @@ class _ImagesV2State:
             pulumi.set(__self__, "owner_ext_id", owner_ext_id)
         if placement_policy_statuses is not None:
             pulumi.set(__self__, "placement_policy_statuses", placement_policy_statuses)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
+        if share_with_all_projects is not None:
+            pulumi.set(__self__, "share_with_all_projects", share_with_all_projects)
         if size_bytes is not None:
             pulumi.set(__self__, "size_bytes", size_bytes)
         if sources is not None:
@@ -330,6 +354,30 @@ class _ImagesV2State:
         pulumi.set(self, "placement_policy_statuses", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        External identifier of the project associated with the image.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shareWithAllProjects")
+    def share_with_all_projects(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the image is shared with all projects.
+        """
+        return pulumi.get(self, "share_with_all_projects")
+
+    @share_with_all_projects.setter
+    def share_with_all_projects(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "share_with_all_projects", value)
+
+    @_builtins.property
     @pulumi.getter(name="sizeBytes")
     def size_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -386,6 +434,7 @@ class ImagesV2(pulumi.CustomResource):
                  cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict', 'outputs.ImagesV2Source']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -410,6 +459,7 @@ class ImagesV2(pulumi.CustomResource):
             name="test-image",
             description="img desc",
             type="DISK_IMAGE",
+            project_ext_id="<project_uuid>",
             sources=[{
                 "url_sources": [{
                     "url": "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
@@ -436,6 +486,7 @@ class ImagesV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_location_ext_ids: List of cluster external identifiers where the image is located.
         :param pulumi.Input[_builtins.str] description: The user defined description of an image.
         :param pulumi.Input[_builtins.str] name: The user defined name of an image.
+        :param pulumi.Input[_builtins.str] project_ext_id: External identifier of the project associated with the image.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict', 'outputs.ImagesV2Source']]]] sources: The source of an image. It can be a VM disk or a URL.
         :param pulumi.Input[_builtins.str] type: The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
         """
@@ -466,6 +517,7 @@ class ImagesV2(pulumi.CustomResource):
             name="test-image",
             description="img desc",
             type="DISK_IMAGE",
+            project_ext_id="<project_uuid>",
             sources=[{
                 "url_sources": [{
                     "url": "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
@@ -505,6 +557,7 @@ class ImagesV2(pulumi.CustomResource):
                  cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict', 'outputs.ImagesV2Source']]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -521,6 +574,7 @@ class ImagesV2(pulumi.CustomResource):
             __props__.__dict__["cluster_location_ext_ids"] = cluster_location_ext_ids
             __props__.__dict__["description"] = description
             __props__.__dict__["name"] = name
+            __props__.__dict__["project_ext_id"] = project_ext_id
             __props__.__dict__["sources"] = sources
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
@@ -531,6 +585,7 @@ class ImagesV2(pulumi.CustomResource):
             __props__.__dict__["links"] = None
             __props__.__dict__["owner_ext_id"] = None
             __props__.__dict__["placement_policy_statuses"] = None
+            __props__.__dict__["share_with_all_projects"] = None
             __props__.__dict__["size_bytes"] = None
             __props__.__dict__["tenant_id"] = None
         super(ImagesV2, __self__).__init__(
@@ -554,6 +609,8 @@ class ImagesV2(pulumi.CustomResource):
             name: pulumi.Input[Optional[_builtins.str]] = None,
             owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             placement_policy_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2PlacementPolicyStatusArgs', 'ImagesV2PlacementPolicyStatusArgsDict', 'outputs.ImagesV2PlacementPolicyStatus']]]]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            share_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
             size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
             sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict', 'outputs.ImagesV2Source']]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -574,6 +631,8 @@ class ImagesV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: The user defined name of an image.
         :param pulumi.Input[_builtins.str] owner_ext_id: External identifier of the owner of the image
         :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2PlacementPolicyStatusArgs', 'ImagesV2PlacementPolicyStatusArgsDict', 'outputs.ImagesV2PlacementPolicyStatus']]]] placement_policy_statuses: Status of an image placement policy.
+        :param pulumi.Input[_builtins.str] project_ext_id: External identifier of the project associated with the image.
+        :param pulumi.Input[_builtins.bool] share_with_all_projects: Indicates whether the image is shared with all projects.
         :param pulumi.Input[_builtins.int] size_bytes: The size in bytes of an image file.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict', 'outputs.ImagesV2Source']]]] sources: The source of an image. It can be a VM disk or a URL.
         :param pulumi.Input[_builtins.str] type: The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
@@ -593,6 +652,8 @@ class ImagesV2(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         __props__.__dict__["owner_ext_id"] = owner_ext_id
         __props__.__dict__["placement_policy_statuses"] = placement_policy_statuses
+        __props__.__dict__["project_ext_id"] = project_ext_id
+        __props__.__dict__["share_with_all_projects"] = share_with_all_projects
         __props__.__dict__["size_bytes"] = size_bytes
         __props__.__dict__["sources"] = sources
         __props__.__dict__["tenant_id"] = tenant_id
@@ -613,6 +674,8 @@ class ImagesV2(pulumi.CustomResource):
             name: pulumi.Input[Optional[_builtins.str]] = None,
             owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             placement_policy_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2PlacementPolicyStatusArgs', 'ImagesV2PlacementPolicyStatusArgsDict', 'outputs.ImagesV2PlacementPolicyStatus']]]]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            share_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
             size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
             sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImagesV2SourceArgs', 'ImagesV2SourceArgsDict', 'outputs.ImagesV2Source']]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -629,6 +692,8 @@ class ImagesV2(pulumi.CustomResource):
         __props__["name"] = name
         __props__["ownerExtId"] = owner_ext_id
         __props__["placementPolicyStatuses"] = placement_policy_statuses
+        __props__["projectExtId"] = project_ext_id
+        __props__["shareWithAllProjects"] = share_with_all_projects
         __props__["sizeBytes"] = size_bytes
         __props__["sources"] = sources
         __props__["tenantId"] = tenant_id
@@ -716,6 +781,22 @@ class ImagesV2(pulumi.CustomResource):
         Status of an image placement policy.
         """
         return pulumi.get(self, "placement_policy_statuses")
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        External identifier of the project associated with the image.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="shareWithAllProjects")
+    def share_with_all_projects(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Indicates whether the image is shared with all projects.
+        """
+        return pulumi.get(self, "share_with_all_projects")
 
     @_builtins.property
     @pulumi.getter(name="sizeBytes")

@@ -73,6 +73,8 @@ type LookupPbrV2Result struct {
 	Policies []GetPbrV2Policy `pulumi:"policies"`
 	// Priority of the routing policy.
 	Priority int `pulumi:"priority"`
+	// External identifier of the project associated with the Routing Policy.
+	ProjectExtId string `pulumi:"projectExtId"`
 	// A globally unique identifier that represents the tenant that owns this entity
 	TenantId string `pulumi:"tenantId"`
 	// ExtId of the VPC extId to which the routing policy belongs.
@@ -148,6 +150,11 @@ func (o LookupPbrV2ResultOutput) Policies() GetPbrV2PolicyArrayOutput {
 // Priority of the routing policy.
 func (o LookupPbrV2ResultOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupPbrV2Result) int { return v.Priority }).(pulumi.IntOutput)
+}
+
+// External identifier of the project associated with the Routing Policy.
+func (o LookupPbrV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPbrV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // A globally unique identifier that represents the tenant that owns this entity

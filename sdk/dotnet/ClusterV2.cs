@@ -418,7 +418,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## What happens when you do terraform destroy for nutanix_clusters_v2?  First thing, inorder to destroy the cluster from Terraform it need to be registered.
     /// 
-    /// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/Clusters/operation/createCluster).
+    /// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/Clusters/operation/createCluster).
     /// </summary>
     [NutanixResourceType("nutanix:index/clusterV2:ClusterV2")]
     public partial class ClusterV2 : global::Pulumi.CustomResource

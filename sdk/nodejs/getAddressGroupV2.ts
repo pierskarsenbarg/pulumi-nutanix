@@ -82,6 +82,10 @@ export interface GetAddressGroupV2Result {
      */
     readonly policyReferences: string[];
     /**
+     * Project external ID associated with the address group.
+     */
+    readonly projectExtId: string;
+    /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
     readonly tenantId: string;

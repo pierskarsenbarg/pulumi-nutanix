@@ -76,6 +76,14 @@ export interface GetClusterProfileV2Result {
      */
     readonly extId: string;
     /**
+     * - Fault tolerant state of cluster.
+     */
+    readonly faultToleranceConfigs: outputs.GetClusterProfileV2FaultToleranceConfig[];
+    /**
+     * - HTTP proxy configuration for the cluster.
+     */
+    readonly httpProxyConfigs: outputs.GetClusterProfileV2HttpProxyConfig[];
+    /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
@@ -92,7 +100,7 @@ export interface GetClusterProfileV2Result {
      */
     readonly links: outputs.GetClusterProfileV2Link[];
     /**
-     * - Name of the cluster profile.
+     * HTTP proxy server name.
      */
     readonly name: string;
     /**
@@ -104,6 +112,10 @@ export interface GetClusterProfileV2Result {
      */
     readonly nfsSubnetWhiteLists: string[];
     /**
+     * - List of NTP server configurations with encryption authentication.
+     */
+    readonly ntpServerConfigLists: outputs.GetClusterProfileV2NtpServerConfigList[];
+    /**
      * - List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
      */
     readonly ntpServerIpLists: outputs.GetClusterProfileV2NtpServerIpList[];
@@ -111,6 +123,14 @@ export interface GetClusterProfileV2Result {
      * - Pulse status for a cluster.
      */
     readonly pulseStatuses: outputs.GetClusterProfileV2PulseStatus[];
+    /**
+     * - Rebuild capacity reservation configuration.
+     */
+    readonly rebuildReservationConfigs: outputs.GetClusterProfileV2RebuildReservationConfig[];
+    /**
+     * - Resilient capacity warning threshold configuration.
+     */
+    readonly resilientCapacityWarningThresholdConfigs: outputs.GetClusterProfileV2ResilientCapacityWarningThresholdConfig[];
     /**
      * - RSYSLOG Server.
      */

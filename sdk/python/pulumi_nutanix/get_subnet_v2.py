@@ -28,7 +28,7 @@ class GetSubnetV2Result:
     """
     A collection of values returned by getSubnetV2.
     """
-    def __init__(__self__, bridge_name=None, cluster_name=None, cluster_reference=None, description=None, dhcp_options=None, dynamic_ip_addresses=None, ext_id=None, hypervisor_type=None, id=None, ip_configs=None, ip_prefix=None, ip_usages=None, is_advanced_networking=None, is_external=None, is_nat_enabled=None, links=None, metadatas=None, migration_state=None, name=None, network_function_chain_reference=None, network_id=None, reserved_ip_addresses=None, subnet_type=None, virtual_switch_reference=None, virtual_switches=None, vpc_reference=None, vpcs=None):
+    def __init__(__self__, bridge_name=None, cluster_name=None, cluster_reference=None, description=None, dhcp_options=None, dynamic_ip_addresses=None, ext_id=None, hypervisor_type=None, id=None, ip_configs=None, ip_prefix=None, ip_usages=None, is_advanced_networking=None, is_connected=None, is_external=None, is_nat_enabled=None, links=None, metadatas=None, migration_state=None, name=None, network_function_chain_reference=None, network_id=None, project_ext_id=None, reserved_ip_addresses=None, shared_with_projects=None, subnet_type=None, virtual_switch_reference=None, virtual_switches=None, vpc_reference=None, vpcs=None):
         if bridge_name and not isinstance(bridge_name, str):
             raise TypeError("Expected argument 'bridge_name' to be a str")
         pulumi.set(__self__, "bridge_name", bridge_name)
@@ -68,6 +68,9 @@ class GetSubnetV2Result:
         if is_advanced_networking and not isinstance(is_advanced_networking, bool):
             raise TypeError("Expected argument 'is_advanced_networking' to be a bool")
         pulumi.set(__self__, "is_advanced_networking", is_advanced_networking)
+        if is_connected and not isinstance(is_connected, bool):
+            raise TypeError("Expected argument 'is_connected' to be a bool")
+        pulumi.set(__self__, "is_connected", is_connected)
         if is_external and not isinstance(is_external, bool):
             raise TypeError("Expected argument 'is_external' to be a bool")
         pulumi.set(__self__, "is_external", is_external)
@@ -92,9 +95,15 @@ class GetSubnetV2Result:
         if network_id and not isinstance(network_id, int):
             raise TypeError("Expected argument 'network_id' to be a int")
         pulumi.set(__self__, "network_id", network_id)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
         if reserved_ip_addresses and not isinstance(reserved_ip_addresses, list):
             raise TypeError("Expected argument 'reserved_ip_addresses' to be a list")
         pulumi.set(__self__, "reserved_ip_addresses", reserved_ip_addresses)
+        if shared_with_projects and not isinstance(shared_with_projects, list):
+            raise TypeError("Expected argument 'shared_with_projects' to be a list")
+        pulumi.set(__self__, "shared_with_projects", shared_with_projects)
         if subnet_type and not isinstance(subnet_type, str):
             raise TypeError("Expected argument 'subnet_type' to be a str")
         pulumi.set(__self__, "subnet_type", subnet_type)
@@ -213,6 +222,14 @@ class GetSubnetV2Result:
         return pulumi.get(self, "is_advanced_networking")
 
     @_builtins.property
+    @pulumi.getter(name="isConnected")
+    def is_connected(self) -> _builtins.bool:
+        """
+        Indicates whether the subnet is connected.
+        """
+        return pulumi.get(self, "is_connected")
+
+    @_builtins.property
     @pulumi.getter(name="isExternal")
     def is_external(self) -> _builtins.bool:
         """
@@ -274,12 +291,28 @@ class GetSubnetV2Result:
         return pulumi.get(self, "network_id")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        External identifier of the project associated with the Subnet.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
     @pulumi.getter(name="reservedIpAddresses")
     def reserved_ip_addresses(self) -> Sequence['outputs.GetSubnetV2ReservedIpAddressResult']:
         """
         List of IPs that are excluded while allocating IP addresses to VM ports.
         """
         return pulumi.get(self, "reserved_ip_addresses")
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithProjects")
+    def shared_with_projects(self) -> Sequence[_builtins.str]:
+        """
+        List of project external identifiers with which the Subnet is shared.
+        """
+        return pulumi.get(self, "shared_with_projects")
 
     @_builtins.property
     @pulumi.getter(name="subnetType")
@@ -341,6 +374,7 @@ class AwaitableGetSubnetV2Result(GetSubnetV2Result):
             ip_prefix=self.ip_prefix,
             ip_usages=self.ip_usages,
             is_advanced_networking=self.is_advanced_networking,
+            is_connected=self.is_connected,
             is_external=self.is_external,
             is_nat_enabled=self.is_nat_enabled,
             links=self.links,
@@ -349,7 +383,9 @@ class AwaitableGetSubnetV2Result(GetSubnetV2Result):
             name=self.name,
             network_function_chain_reference=self.network_function_chain_reference,
             network_id=self.network_id,
+            project_ext_id=self.project_ext_id,
             reserved_ip_addresses=self.reserved_ip_addresses,
+            shared_with_projects=self.shared_with_projects,
             subnet_type=self.subnet_type,
             virtual_switch_reference=self.virtual_switch_reference,
             virtual_switches=self.virtual_switches,
@@ -387,6 +423,7 @@ def get_subnet_v2(ext_id: Optional[_builtins.str] = None,
         ip_prefix=pulumi.get(__ret__, 'ip_prefix'),
         ip_usages=pulumi.get(__ret__, 'ip_usages'),
         is_advanced_networking=pulumi.get(__ret__, 'is_advanced_networking'),
+        is_connected=pulumi.get(__ret__, 'is_connected'),
         is_external=pulumi.get(__ret__, 'is_external'),
         is_nat_enabled=pulumi.get(__ret__, 'is_nat_enabled'),
         links=pulumi.get(__ret__, 'links'),
@@ -395,7 +432,9 @@ def get_subnet_v2(ext_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         network_function_chain_reference=pulumi.get(__ret__, 'network_function_chain_reference'),
         network_id=pulumi.get(__ret__, 'network_id'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
         reserved_ip_addresses=pulumi.get(__ret__, 'reserved_ip_addresses'),
+        shared_with_projects=pulumi.get(__ret__, 'shared_with_projects'),
         subnet_type=pulumi.get(__ret__, 'subnet_type'),
         virtual_switch_reference=pulumi.get(__ret__, 'virtual_switch_reference'),
         virtual_switches=pulumi.get(__ret__, 'virtual_switches'),
@@ -430,6 +469,7 @@ def get_subnet_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
         ip_prefix=pulumi.get(__response__, 'ip_prefix'),
         ip_usages=pulumi.get(__response__, 'ip_usages'),
         is_advanced_networking=pulumi.get(__response__, 'is_advanced_networking'),
+        is_connected=pulumi.get(__response__, 'is_connected'),
         is_external=pulumi.get(__response__, 'is_external'),
         is_nat_enabled=pulumi.get(__response__, 'is_nat_enabled'),
         links=pulumi.get(__response__, 'links'),
@@ -438,7 +478,9 @@ def get_subnet_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
         name=pulumi.get(__response__, 'name'),
         network_function_chain_reference=pulumi.get(__response__, 'network_function_chain_reference'),
         network_id=pulumi.get(__response__, 'network_id'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
         reserved_ip_addresses=pulumi.get(__response__, 'reserved_ip_addresses'),
+        shared_with_projects=pulumi.get(__response__, 'shared_with_projects'),
         subnet_type=pulumi.get(__response__, 'subnet_type'),
         virtual_switch_reference=pulumi.get(__response__, 'virtual_switch_reference'),
         virtual_switches=pulumi.get(__response__, 'virtual_switches'),

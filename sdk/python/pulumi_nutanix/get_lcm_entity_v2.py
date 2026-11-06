@@ -27,7 +27,7 @@ class GetLcmEntityV2Result:
     """
     A collection of values returned by getLcmEntityV2.
     """
-    def __init__(__self__, available_versions=None, child_entities=None, cluster_ext_id=None, device_id=None, entity_class=None, entity_description=None, entity_details=None, entity_model=None, entity_type=None, entity_version=None, ext_id=None, group_uuid=None, hardware_family=None, hardware_vendor=None, id=None, last_updated_time=None, links=None, location_infos=None, sub_entities=None, target_version=None, tenant_id=None):
+    def __init__(__self__, available_versions=None, child_entities=None, cluster_ext_id=None, device_id=None, entity_class=None, entity_description=None, entity_details=None, entity_model=None, entity_type=None, entity_version=None, ext_id=None, group_uuid=None, hardware_family=None, hardware_vendor=None, has_previous_inventory_failed=None, id=None, last_updated_time=None, links=None, location_infos=None, sub_entities=None, target_version=None, tenant_id=None):
         if available_versions and not isinstance(available_versions, list):
             raise TypeError("Expected argument 'available_versions' to be a list")
         pulumi.set(__self__, "available_versions", available_versions)
@@ -70,6 +70,9 @@ class GetLcmEntityV2Result:
         if hardware_vendor and not isinstance(hardware_vendor, str):
             raise TypeError("Expected argument 'hardware_vendor' to be a str")
         pulumi.set(__self__, "hardware_vendor", hardware_vendor)
+        if has_previous_inventory_failed and not isinstance(has_previous_inventory_failed, bool):
+            raise TypeError("Expected argument 'has_previous_inventory_failed' to be a bool")
+        pulumi.set(__self__, "has_previous_inventory_failed", has_previous_inventory_failed)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -207,6 +210,14 @@ class GetLcmEntityV2Result:
         return pulumi.get(self, "hardware_vendor")
 
     @_builtins.property
+    @pulumi.getter(name="hasPreviousInventoryFailed")
+    def has_previous_inventory_failed(self) -> _builtins.bool:
+        """
+        (default <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>) Indicates whether the most recent inventory operation failed for this entity. When true, the entity's version or available-version data may be stale.
+        """
+        return pulumi.get(self, "has_previous_inventory_failed")
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
@@ -283,6 +294,7 @@ class AwaitableGetLcmEntityV2Result(GetLcmEntityV2Result):
             group_uuid=self.group_uuid,
             hardware_family=self.hardware_family,
             hardware_vendor=self.hardware_vendor,
+            has_previous_inventory_failed=self.has_previous_inventory_failed,
             id=self.id,
             last_updated_time=self.last_updated_time,
             links=self.links,
@@ -331,6 +343,7 @@ def get_lcm_entity_v2(ext_id: Optional[_builtins.str] = None,
         group_uuid=pulumi.get(__ret__, 'group_uuid'),
         hardware_family=pulumi.get(__ret__, 'hardware_family'),
         hardware_vendor=pulumi.get(__ret__, 'hardware_vendor'),
+        has_previous_inventory_failed=pulumi.get(__ret__, 'has_previous_inventory_failed'),
         id=pulumi.get(__ret__, 'id'),
         last_updated_time=pulumi.get(__ret__, 'last_updated_time'),
         links=pulumi.get(__ret__, 'links'),
@@ -376,6 +389,7 @@ def get_lcm_entity_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = Non
         group_uuid=pulumi.get(__response__, 'group_uuid'),
         hardware_family=pulumi.get(__response__, 'hardware_family'),
         hardware_vendor=pulumi.get(__response__, 'hardware_vendor'),
+        has_previous_inventory_failed=pulumi.get(__response__, 'has_previous_inventory_failed'),
         id=pulumi.get(__response__, 'id'),
         last_updated_time=pulumi.get(__response__, 'last_updated_time'),
         links=pulumi.get(__response__, 'links'),

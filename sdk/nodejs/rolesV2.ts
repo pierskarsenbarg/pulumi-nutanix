@@ -8,31 +8,6 @@ import * as utilities from "./utilities";
 
 /**
  * Provides a resource to add a Role.
- *
- * ## Example Usage
- *
- * <!--Start PulumiCodeChooser -->
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * // filtered list operation
- * const operations_filtered_list = nutanix.getOperationsV2({
- *     filter: "startswith(displayName, 'Create_')",
- * });
- * // Create role
- * const example_role = new nutanix.RolesV2("example-role", {
- *     displayName: "example_role",
- *     description: "create example role",
- *     operations: [
- *         operations_filtered_list.then(operations_filtered_list => operations_filtered_list.operations?.[0]?.extId),
- *         operations_filtered_list.then(operations_filtered_list => operations_filtered_list.operations?.[1]?.extId),
- *         operations_filtered_list.then(operations_filtered_list => operations_filtered_list.operations?.[2]?.extId),
- *         operations_filtered_list.then(operations_filtered_list => operations_filtered_list.operations?.[3]?.extId),
- *     ],
- * });
- * ```
- * <!--End PulumiCodeChooser -->
  */
 export class RolesV2 extends pulumi.CustomResource {
     /**
@@ -113,6 +88,7 @@ export class RolesV2 extends pulumi.CustomResource {
      * - A globally unique identifier of an instance that is suitable for external consumption.
      */
     declare public readonly extId: pulumi.Output<string>;
+    declare public readonly isGlobal: pulumi.Output<boolean | undefined>;
     /**
      * - Flag identifying if the Role is system defined or not.
      */
@@ -129,6 +105,14 @@ export class RolesV2 extends pulumi.CustomResource {
      * -(Required) List of operations for the role.
      */
     declare public readonly operations: pulumi.Output<string[]>;
+    /**
+     * -(Optional) Project reference for the role.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
+    /**
+     * - Flag indicating whether the role is shared with all projects or not.
+     */
+    declare public /*out*/ readonly shareWithAllProjects: pulumi.Output<boolean>;
     /**
      * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
      */
@@ -157,10 +141,13 @@ export class RolesV2 extends pulumi.CustomResource {
             resourceInputs["description"] = state?.description;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["extId"] = state?.extId;
+            resourceInputs["isGlobal"] = state?.isGlobal;
             resourceInputs["isSystemDefined"] = state?.isSystemDefined;
             resourceInputs["lastUpdatedTime"] = state?.lastUpdatedTime;
             resourceInputs["links"] = state?.links;
             resourceInputs["operations"] = state?.operations;
+            resourceInputs["projectExtId"] = state?.projectExtId;
+            resourceInputs["shareWithAllProjects"] = state?.shareWithAllProjects;
             resourceInputs["tenantId"] = state?.tenantId;
         } else {
             const args = argsOrState as RolesV2Args | undefined;
@@ -174,7 +161,9 @@ export class RolesV2 extends pulumi.CustomResource {
             resourceInputs["description"] = args?.description;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["extId"] = args?.extId;
+            resourceInputs["isGlobal"] = args?.isGlobal;
             resourceInputs["operations"] = args?.operations;
+            resourceInputs["projectExtId"] = args?.projectExtId;
             resourceInputs["accessibleClients"] = undefined /*out*/;
             resourceInputs["accessibleEntityTypes"] = undefined /*out*/;
             resourceInputs["assignedUsersCount"] = undefined /*out*/;
@@ -184,6 +173,7 @@ export class RolesV2 extends pulumi.CustomResource {
             resourceInputs["isSystemDefined"] = undefined /*out*/;
             resourceInputs["lastUpdatedTime"] = undefined /*out*/;
             resourceInputs["links"] = undefined /*out*/;
+            resourceInputs["shareWithAllProjects"] = undefined /*out*/;
             resourceInputs["tenantId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -235,6 +225,7 @@ export interface RolesV2State {
      * - A globally unique identifier of an instance that is suitable for external consumption.
      */
     extId?: pulumi.Input<string | undefined>;
+    isGlobal?: pulumi.Input<boolean | undefined>;
     /**
      * - Flag identifying if the Role is system defined or not.
      */
@@ -251,6 +242,14 @@ export interface RolesV2State {
      * -(Required) List of operations for the role.
      */
     operations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * -(Optional) Project reference for the role.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
+     * - Flag indicating whether the role is shared with all projects or not.
+     */
+    shareWithAllProjects?: pulumi.Input<boolean | undefined>;
     /**
      * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
      */
@@ -277,8 +276,13 @@ export interface RolesV2Args {
      * - A globally unique identifier of an instance that is suitable for external consumption.
      */
     extId?: pulumi.Input<string | undefined>;
+    isGlobal?: pulumi.Input<boolean | undefined>;
     /**
      * -(Required) List of operations for the role.
      */
     operations: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * -(Optional) Project reference for the role.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
 }

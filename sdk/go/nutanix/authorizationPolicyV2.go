@@ -13,50 +13,6 @@ import (
 )
 
 // Provides Nutanix resource to create authorization policy.
-//
-// ## Example
-//
-// <!--Start PulumiCodeChooser -->
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewAuthorizationPolicyV2(ctx, "ap-example", &nutanix.AuthorizationPolicyV2Args{
-//				Role:                    pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
-//				DisplayName:             pulumi.String("auth_policy_example"),
-//				Description:             pulumi.String("authorization policy example"),
-//				AuthorizationPolicyType: pulumi.String("USER_DEFINED"),
-//				Identities: nutanix.AuthorizationPolicyV2IdentityArray{
-//					&nutanix.AuthorizationPolicyV2IdentityArgs{
-//						Reserved: pulumi.String("{\"user\":{\"uuid\":{\"anyof\":[\"00000000-0000-0000-0000-000000000000\"]}}}"),
-//					},
-//				},
-//				Entities: nutanix.AuthorizationPolicyV2EntityArray{
-//					&nutanix.AuthorizationPolicyV2EntityArgs{
-//						Reserved: pulumi.String("{\"images\":{\"*\":{\"eq\":\"*\"}}}"),
-//					},
-//					&nutanix.AuthorizationPolicyV2EntityArgs{
-//						Reserved: pulumi.String("{\"marketplace_item\":{\"owner_uuid\":{\"eq\":\"SELF_OWNED\"}}}"),
-//					},
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// <!--End PulumiCodeChooser -->
 type AuthorizationPolicyV2 struct {
 	pulumi.CustomResourceState
 
@@ -83,12 +39,17 @@ type AuthorizationPolicyV2 struct {
 	ExtId pulumi.StringOutput `pulumi:"extId"`
 	// The identities for which the Authorization Policy is created.
 	Identities AuthorizationPolicyV2IdentityArrayOutput `pulumi:"identities"`
+	IsGlobal   pulumi.BoolOutput                        `pulumi:"isGlobal"`
 	// Flag identifying if the Authorization Policy is system defined or not.
 	IsSystemDefined pulumi.BoolOutput `pulumi:"isSystemDefined"`
 	// The time when the Authorization Policy was last updated.
 	LastUpdatedTime pulumi.StringOutput `pulumi:"lastUpdatedTime"`
+	// -(Optional) Project reference for the Authorization Policy.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
 	// The Role associated with the Authorization Policy.
 	Role pulumi.StringOutput `pulumi:"role"`
+	// - Flag indicating whether the Authorization Policy is shared with all projects or not.
+	ShareWithAllProjects pulumi.BoolOutput `pulumi:"shareWithAllProjects"`
 }
 
 // NewAuthorizationPolicyV2 registers a new resource with the given unique name, arguments, and options.
@@ -156,12 +117,17 @@ type authorizationPolicyV2State struct {
 	ExtId *string `pulumi:"extId"`
 	// The identities for which the Authorization Policy is created.
 	Identities []AuthorizationPolicyV2Identity `pulumi:"identities"`
+	IsGlobal   *bool                           `pulumi:"isGlobal"`
 	// Flag identifying if the Authorization Policy is system defined or not.
 	IsSystemDefined *bool `pulumi:"isSystemDefined"`
 	// The time when the Authorization Policy was last updated.
 	LastUpdatedTime *string `pulumi:"lastUpdatedTime"`
+	// -(Optional) Project reference for the Authorization Policy.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// The Role associated with the Authorization Policy.
 	Role *string `pulumi:"role"`
+	// - Flag indicating whether the Authorization Policy is shared with all projects or not.
+	ShareWithAllProjects *bool `pulumi:"shareWithAllProjects"`
 }
 
 type AuthorizationPolicyV2State struct {
@@ -188,12 +154,17 @@ type AuthorizationPolicyV2State struct {
 	ExtId pulumi.StringPtrInput
 	// The identities for which the Authorization Policy is created.
 	Identities AuthorizationPolicyV2IdentityArrayInput
+	IsGlobal   pulumi.BoolPtrInput
 	// Flag identifying if the Authorization Policy is system defined or not.
 	IsSystemDefined pulumi.BoolPtrInput
 	// The time when the Authorization Policy was last updated.
 	LastUpdatedTime pulumi.StringPtrInput
+	// -(Optional) Project reference for the Authorization Policy.
+	ProjectExtId pulumi.StringPtrInput
 	// The Role associated with the Authorization Policy.
 	Role pulumi.StringPtrInput
+	// - Flag indicating whether the Authorization Policy is shared with all projects or not.
+	ShareWithAllProjects pulumi.BoolPtrInput
 }
 
 func (AuthorizationPolicyV2State) ElementType() reflect.Type {
@@ -224,6 +195,9 @@ type authorizationPolicyV2Args struct {
 	ExtId *string `pulumi:"extId"`
 	// The identities for which the Authorization Policy is created.
 	Identities []AuthorizationPolicyV2Identity `pulumi:"identities"`
+	IsGlobal   *bool                           `pulumi:"isGlobal"`
+	// -(Optional) Project reference for the Authorization Policy.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// The Role associated with the Authorization Policy.
 	Role string `pulumi:"role"`
 }
@@ -247,6 +221,9 @@ type AuthorizationPolicyV2Args struct {
 	ExtId pulumi.StringPtrInput
 	// The identities for which the Authorization Policy is created.
 	Identities AuthorizationPolicyV2IdentityArrayInput
+	IsGlobal   pulumi.BoolPtrInput
+	// -(Optional) Project reference for the Authorization Policy.
+	ProjectExtId pulumi.StringPtrInput
 	// The Role associated with the Authorization Policy.
 	Role pulumi.StringInput
 }
@@ -388,6 +365,10 @@ func (o AuthorizationPolicyV2Output) Identities() AuthorizationPolicyV2IdentityA
 	return o.ApplyT(func(v *AuthorizationPolicyV2) AuthorizationPolicyV2IdentityArrayOutput { return v.Identities }).(AuthorizationPolicyV2IdentityArrayOutput)
 }
 
+func (o AuthorizationPolicyV2Output) IsGlobal() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AuthorizationPolicyV2) pulumi.BoolOutput { return v.IsGlobal }).(pulumi.BoolOutput)
+}
+
 // Flag identifying if the Authorization Policy is system defined or not.
 func (o AuthorizationPolicyV2Output) IsSystemDefined() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AuthorizationPolicyV2) pulumi.BoolOutput { return v.IsSystemDefined }).(pulumi.BoolOutput)
@@ -398,9 +379,19 @@ func (o AuthorizationPolicyV2Output) LastUpdatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuthorizationPolicyV2) pulumi.StringOutput { return v.LastUpdatedTime }).(pulumi.StringOutput)
 }
 
+// -(Optional) Project reference for the Authorization Policy.
+func (o AuthorizationPolicyV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AuthorizationPolicyV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
+}
+
 // The Role associated with the Authorization Policy.
 func (o AuthorizationPolicyV2Output) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v *AuthorizationPolicyV2) pulumi.StringOutput { return v.Role }).(pulumi.StringOutput)
+}
+
+// - Flag indicating whether the Authorization Policy is shared with all projects or not.
+func (o AuthorizationPolicyV2Output) ShareWithAllProjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AuthorizationPolicyV2) pulumi.BoolOutput { return v.ShareWithAllProjects }).(pulumi.BoolOutput)
 }
 
 type AuthorizationPolicyV2ArrayOutput struct{ *pulumi.OutputState }

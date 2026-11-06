@@ -16,7 +16,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly string LogSeverityLevel;
         /// <summary>
-        /// - Name of the cluster profile.
+        /// HTTP proxy server name.
         /// </summary>
         public readonly string Name;
         public readonly bool ShouldLogMonitorFiles;

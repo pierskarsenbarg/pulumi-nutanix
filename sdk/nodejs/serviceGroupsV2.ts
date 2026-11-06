@@ -130,6 +130,10 @@ export class ServiceGroupsV2 extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly policyReferences: pulumi.Output<string[]>;
     /**
+     * Project external ID to associate with the service group. Note: This field cannot be updated after creation.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
+    /**
      * List of TCP ports in the service.
      */
     declare public readonly tcpServices: pulumi.Output<outputs.ServiceGroupsV2TcpService[] | undefined>;
@@ -163,6 +167,7 @@ export class ServiceGroupsV2 extends pulumi.CustomResource {
             resourceInputs["links"] = state?.links;
             resourceInputs["name"] = state?.name;
             resourceInputs["policyReferences"] = state?.policyReferences;
+            resourceInputs["projectExtId"] = state?.projectExtId;
             resourceInputs["tcpServices"] = state?.tcpServices;
             resourceInputs["tenantId"] = state?.tenantId;
             resourceInputs["udpServices"] = state?.udpServices;
@@ -171,6 +176,7 @@ export class ServiceGroupsV2 extends pulumi.CustomResource {
             resourceInputs["description"] = args?.description;
             resourceInputs["icmpServices"] = args?.icmpServices;
             resourceInputs["name"] = args?.name;
+            resourceInputs["projectExtId"] = args?.projectExtId;
             resourceInputs["tcpServices"] = args?.tcpServices;
             resourceInputs["udpServices"] = args?.udpServices;
             resourceInputs["createdBy"] = undefined /*out*/;
@@ -222,6 +228,10 @@ export interface ServiceGroupsV2State {
      */
     policyReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
+     * Project external ID to associate with the service group. Note: This field cannot be updated after creation.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
      * List of TCP ports in the service.
      */
     tcpServices?: pulumi.Input<pulumi.Input<inputs.ServiceGroupsV2TcpService>[] | undefined>;
@@ -251,6 +261,10 @@ export interface ServiceGroupsV2Args {
      * Name of the service group
      */
     name?: pulumi.Input<string | undefined>;
+    /**
+     * Project external ID to associate with the service group. Note: This field cannot be updated after creation.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
     /**
      * List of TCP ports in the service.
      */

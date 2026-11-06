@@ -24,6 +24,7 @@ class ServiceGroupsV2Args:
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  icmp_services: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2IcmpServiceArgs']]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  tcp_services: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]]] = None,
                  udp_services: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]]] = None):
         """
@@ -32,6 +33,7 @@ class ServiceGroupsV2Args:
         :param pulumi.Input[_builtins.str] description: Description of the service group
         :param pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2IcmpServiceArgs']]] icmp_services: Icmp Type Code List.
         :param pulumi.Input[_builtins.str] name: Name of the service group
+        :param pulumi.Input[_builtins.str] project_ext_id: Project external ID to associate with the service group. Note: This field cannot be updated after creation.
         :param pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]] tcp_services: List of TCP ports in the service.
         :param pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]] udp_services: List of UDP ports in the service.
         """
@@ -41,6 +43,8 @@ class ServiceGroupsV2Args:
             pulumi.set(__self__, "icmp_services", icmp_services)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if tcp_services is not None:
             pulumi.set(__self__, "tcp_services", tcp_services)
         if udp_services is not None:
@@ -83,6 +87,18 @@ class ServiceGroupsV2Args:
         pulumi.set(self, "name", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Project external ID to associate with the service group. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="tcpServices")
     def tcp_services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]]]:
         """
@@ -118,6 +134,7 @@ class _ServiceGroupsV2State:
                  links: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2LinkArgs']]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  policy_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  tcp_services: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]]] = None,
                  tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
                  udp_services: pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]]] = None):
@@ -132,6 +149,7 @@ class _ServiceGroupsV2State:
         :param pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2LinkArgs']]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[_builtins.str] name: Name of the service group
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policy_references: Reference to policy associated with Address Group.
+        :param pulumi.Input[_builtins.str] project_ext_id: Project external ID to associate with the service group. Note: This field cannot be updated after creation.
         :param pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]] tcp_services: List of TCP ports in the service.
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.
         :param pulumi.Input[Sequence[pulumi.Input['ServiceGroupsV2UdpServiceArgs']]] udp_services: List of UDP ports in the service.
@@ -152,6 +170,8 @@ class _ServiceGroupsV2State:
             pulumi.set(__self__, "name", name)
         if policy_references is not None:
             pulumi.set(__self__, "policy_references", policy_references)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if tcp_services is not None:
             pulumi.set(__self__, "tcp_services", tcp_services)
         if tenant_id is not None:
@@ -256,6 +276,18 @@ class _ServiceGroupsV2State:
         pulumi.set(self, "policy_references", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Project external ID to associate with the service group. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="tcpServices")
     def tcp_services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ServiceGroupsV2TcpServiceArgs']]]]:
         """
@@ -301,6 +333,7 @@ class ServiceGroupsV2(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  icmp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2IcmpServiceArgs', 'ServiceGroupsV2IcmpServiceArgsDict', 'outputs.ServiceGroupsV2IcmpService']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  tcp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2TcpServiceArgs', 'ServiceGroupsV2TcpServiceArgsDict', 'outputs.ServiceGroupsV2TcpService']]]]] = None,
                  udp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2UdpServiceArgs', 'ServiceGroupsV2UdpServiceArgsDict', 'outputs.ServiceGroupsV2UdpService']]]]] = None,
                  __props__=None):
@@ -359,6 +392,7 @@ class ServiceGroupsV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: Description of the service group
         :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupsV2IcmpServiceArgs', 'ServiceGroupsV2IcmpServiceArgsDict', 'outputs.ServiceGroupsV2IcmpService']]]] icmp_services: Icmp Type Code List.
         :param pulumi.Input[_builtins.str] name: Name of the service group
+        :param pulumi.Input[_builtins.str] project_ext_id: Project external ID to associate with the service group. Note: This field cannot be updated after creation.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupsV2TcpServiceArgs', 'ServiceGroupsV2TcpServiceArgsDict', 'outputs.ServiceGroupsV2TcpService']]]] tcp_services: List of TCP ports in the service.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupsV2UdpServiceArgs', 'ServiceGroupsV2UdpServiceArgsDict', 'outputs.ServiceGroupsV2UdpService']]]] udp_services: List of UDP ports in the service.
         """
@@ -436,6 +470,7 @@ class ServiceGroupsV2(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  icmp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2IcmpServiceArgs', 'ServiceGroupsV2IcmpServiceArgsDict', 'outputs.ServiceGroupsV2IcmpService']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  tcp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2TcpServiceArgs', 'ServiceGroupsV2TcpServiceArgsDict', 'outputs.ServiceGroupsV2TcpService']]]]] = None,
                  udp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2UdpServiceArgs', 'ServiceGroupsV2UdpServiceArgsDict', 'outputs.ServiceGroupsV2UdpService']]]]] = None,
                  __props__=None):
@@ -450,6 +485,7 @@ class ServiceGroupsV2(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["icmp_services"] = icmp_services
             __props__.__dict__["name"] = name
+            __props__.__dict__["project_ext_id"] = project_ext_id
             __props__.__dict__["tcp_services"] = tcp_services
             __props__.__dict__["udp_services"] = udp_services
             __props__.__dict__["created_by"] = None
@@ -476,6 +512,7 @@ class ServiceGroupsV2(pulumi.CustomResource):
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2LinkArgs', 'ServiceGroupsV2LinkArgsDict', 'outputs.ServiceGroupsV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             policy_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             tcp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2TcpServiceArgs', 'ServiceGroupsV2TcpServiceArgsDict', 'outputs.ServiceGroupsV2TcpService']]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             udp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2UdpServiceArgs', 'ServiceGroupsV2UdpServiceArgsDict', 'outputs.ServiceGroupsV2UdpService']]]]] = None) -> 'ServiceGroupsV2':
@@ -494,6 +531,7 @@ class ServiceGroupsV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupsV2LinkArgs', 'ServiceGroupsV2LinkArgsDict', 'outputs.ServiceGroupsV2Link']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[_builtins.str] name: Name of the service group
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] policy_references: Reference to policy associated with Address Group.
+        :param pulumi.Input[_builtins.str] project_ext_id: Project external ID to associate with the service group. Note: This field cannot be updated after creation.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupsV2TcpServiceArgs', 'ServiceGroupsV2TcpServiceArgsDict', 'outputs.ServiceGroupsV2TcpService']]]] tcp_services: List of TCP ports in the service.
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupsV2UdpServiceArgs', 'ServiceGroupsV2UdpServiceArgsDict', 'outputs.ServiceGroupsV2UdpService']]]] udp_services: List of UDP ports in the service.
@@ -510,6 +548,7 @@ class ServiceGroupsV2(pulumi.CustomResource):
         __props__.__dict__["links"] = links
         __props__.__dict__["name"] = name
         __props__.__dict__["policy_references"] = policy_references
+        __props__.__dict__["project_ext_id"] = project_ext_id
         __props__.__dict__["tcp_services"] = tcp_services
         __props__.__dict__["tenant_id"] = tenant_id
         __props__.__dict__["udp_services"] = udp_services
@@ -526,6 +565,7 @@ class ServiceGroupsV2(pulumi.CustomResource):
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2LinkArgs', 'ServiceGroupsV2LinkArgsDict', 'outputs.ServiceGroupsV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             policy_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             tcp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2TcpServiceArgs', 'ServiceGroupsV2TcpServiceArgsDict', 'outputs.ServiceGroupsV2TcpService']]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             udp_services: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ServiceGroupsV2UdpServiceArgs', 'ServiceGroupsV2UdpServiceArgsDict', 'outputs.ServiceGroupsV2UdpService']]]]] = None) -> pulumi.Output[bool]:
@@ -538,6 +578,7 @@ class ServiceGroupsV2(pulumi.CustomResource):
         __props__["links"] = links
         __props__["name"] = name
         __props__["policyReferences"] = policy_references
+        __props__["projectExtId"] = project_ext_id
         __props__["tcpServices"] = tcp_services
         __props__["tenantId"] = tenant_id
         __props__["udpServices"] = udp_services
@@ -606,6 +647,14 @@ class ServiceGroupsV2(pulumi.CustomResource):
         Reference to policy associated with Address Group.
         """
         return pulumi.get(self, "policy_references")
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        Project external ID to associate with the service group. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
 
     @_builtins.property
     @pulumi.getter(name="tcpServices")

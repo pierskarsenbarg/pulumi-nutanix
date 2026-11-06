@@ -196,29 +196,43 @@ type ClusterProfileV2 struct {
 	// | PULSE_CONFIG                | Pulse status for a cluster                 |
 	// | NAME_SERVER_CONFIG          | Name server configuration                  |
 	// | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+	// | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+	// | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+	// | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+	// | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
 	AllowedOverrides pulumi.StringArrayOutput           `pulumi:"allowedOverrides"`
 	ClusterCount     pulumi.IntOutput                   `pulumi:"clusterCount"`
 	Clusters         ClusterProfileV2ClusterArrayOutput `pulumi:"clusters"`
 	CreateTime       pulumi.StringOutput                `pulumi:"createTime"`
 	CreatedBy        pulumi.StringOutput                `pulumi:"createdBy"`
 	// - (Optional) Detailed description of a cluster profile.
-	Description         pulumi.StringOutput             `pulumi:"description"`
-	DriftedClusterCount pulumi.IntOutput                `pulumi:"driftedClusterCount"`
-	Dryrun              pulumi.BoolPtrOutput            `pulumi:"dryrun"`
-	ExtId               pulumi.StringOutput             `pulumi:"extId"`
-	LastUpdateTime      pulumi.StringOutput             `pulumi:"lastUpdateTime"`
-	LastUpdatedBy       pulumi.StringOutput             `pulumi:"lastUpdatedBy"`
-	Links               ClusterProfileV2LinkArrayOutput `pulumi:"links"`
+	Description         pulumi.StringOutput  `pulumi:"description"`
+	DriftedClusterCount pulumi.IntOutput     `pulumi:"driftedClusterCount"`
+	Dryrun              pulumi.BoolPtrOutput `pulumi:"dryrun"`
+	ExtId               pulumi.StringOutput  `pulumi:"extId"`
+	// - (Optional) Fault tolerant state of cluster.
+	FaultToleranceConfig ClusterProfileV2FaultToleranceConfigOutput `pulumi:"faultToleranceConfig"`
+	// - (Optional) HTTP proxy configuration for the cluster.
+	HttpProxyConfig ClusterProfileV2HttpProxyConfigOutput `pulumi:"httpProxyConfig"`
+	LastUpdateTime  pulumi.StringOutput                   `pulumi:"lastUpdateTime"`
+	LastUpdatedBy   pulumi.StringOutput                   `pulumi:"lastUpdatedBy"`
+	Links           ClusterProfileV2LinkArrayOutput       `pulumi:"links"`
 	// - (Required) Name of the cluster profile.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// - (Optional) List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
 	NameServerIpLists ClusterProfileV2NameServerIpListArrayOutput `pulumi:"nameServerIpLists"`
 	// - (Optional) NFS subnet allowlist addresses. This is part of the payload for cluster update operation only.
 	NfsSubnetWhiteLists pulumi.StringArrayOutput `pulumi:"nfsSubnetWhiteLists"`
+	// - (Optional) List of NTP server configurations with encryption authentication.
+	NtpServerConfigLists ClusterProfileV2NtpServerConfigListArrayOutput `pulumi:"ntpServerConfigLists"`
 	// - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
 	NtpServerIpLists ClusterProfileV2NtpServerIpListArrayOutput `pulumi:"ntpServerIpLists"`
 	// - (Optional) Pulse status for a cluster.
 	PulseStatuses ClusterProfileV2PulseStatusArrayOutput `pulumi:"pulseStatuses"`
+	// - (Optional) Rebuild capacity reservation configuration.
+	RebuildReservationConfig ClusterProfileV2RebuildReservationConfigOutput `pulumi:"rebuildReservationConfig"`
+	// - (Optional) Resilient capacity warning threshold configuration.
+	ResilientCapacityWarningThresholdConfig ClusterProfileV2ResilientCapacityWarningThresholdConfigOutput `pulumi:"resilientCapacityWarningThresholdConfig"`
 	// - (Optional) RSYSLOG Server.
 	RsyslogServerLists ClusterProfileV2RsyslogServerListArrayOutput `pulumi:"rsyslogServerLists"`
 	// - (Optional) SMTP servers on a cluster. This is part of payload for cluster update operation only.
@@ -269,29 +283,43 @@ type clusterProfileV2State struct {
 	// | PULSE_CONFIG                | Pulse status for a cluster                 |
 	// | NAME_SERVER_CONFIG          | Name server configuration                  |
 	// | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+	// | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+	// | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+	// | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+	// | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
 	AllowedOverrides []string                  `pulumi:"allowedOverrides"`
 	ClusterCount     *int                      `pulumi:"clusterCount"`
 	Clusters         []ClusterProfileV2Cluster `pulumi:"clusters"`
 	CreateTime       *string                   `pulumi:"createTime"`
 	CreatedBy        *string                   `pulumi:"createdBy"`
 	// - (Optional) Detailed description of a cluster profile.
-	Description         *string                `pulumi:"description"`
-	DriftedClusterCount *int                   `pulumi:"driftedClusterCount"`
-	Dryrun              *bool                  `pulumi:"dryrun"`
-	ExtId               *string                `pulumi:"extId"`
-	LastUpdateTime      *string                `pulumi:"lastUpdateTime"`
-	LastUpdatedBy       *string                `pulumi:"lastUpdatedBy"`
-	Links               []ClusterProfileV2Link `pulumi:"links"`
+	Description         *string `pulumi:"description"`
+	DriftedClusterCount *int    `pulumi:"driftedClusterCount"`
+	Dryrun              *bool   `pulumi:"dryrun"`
+	ExtId               *string `pulumi:"extId"`
+	// - (Optional) Fault tolerant state of cluster.
+	FaultToleranceConfig *ClusterProfileV2FaultToleranceConfig `pulumi:"faultToleranceConfig"`
+	// - (Optional) HTTP proxy configuration for the cluster.
+	HttpProxyConfig *ClusterProfileV2HttpProxyConfig `pulumi:"httpProxyConfig"`
+	LastUpdateTime  *string                          `pulumi:"lastUpdateTime"`
+	LastUpdatedBy   *string                          `pulumi:"lastUpdatedBy"`
+	Links           []ClusterProfileV2Link           `pulumi:"links"`
 	// - (Required) Name of the cluster profile.
 	Name *string `pulumi:"name"`
 	// - (Optional) List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
 	NameServerIpLists []ClusterProfileV2NameServerIpList `pulumi:"nameServerIpLists"`
 	// - (Optional) NFS subnet allowlist addresses. This is part of the payload for cluster update operation only.
 	NfsSubnetWhiteLists []string `pulumi:"nfsSubnetWhiteLists"`
+	// - (Optional) List of NTP server configurations with encryption authentication.
+	NtpServerConfigLists []ClusterProfileV2NtpServerConfigList `pulumi:"ntpServerConfigLists"`
 	// - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
 	NtpServerIpLists []ClusterProfileV2NtpServerIpList `pulumi:"ntpServerIpLists"`
 	// - (Optional) Pulse status for a cluster.
 	PulseStatuses []ClusterProfileV2PulseStatus `pulumi:"pulseStatuses"`
+	// - (Optional) Rebuild capacity reservation configuration.
+	RebuildReservationConfig *ClusterProfileV2RebuildReservationConfig `pulumi:"rebuildReservationConfig"`
+	// - (Optional) Resilient capacity warning threshold configuration.
+	ResilientCapacityWarningThresholdConfig *ClusterProfileV2ResilientCapacityWarningThresholdConfig `pulumi:"resilientCapacityWarningThresholdConfig"`
 	// - (Optional) RSYSLOG Server.
 	RsyslogServerLists []ClusterProfileV2RsyslogServerList `pulumi:"rsyslogServerLists"`
 	// - (Optional) SMTP servers on a cluster. This is part of payload for cluster update operation only.
@@ -313,6 +341,10 @@ type ClusterProfileV2State struct {
 	// | PULSE_CONFIG                | Pulse status for a cluster                 |
 	// | NAME_SERVER_CONFIG          | Name server configuration                  |
 	// | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+	// | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+	// | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+	// | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+	// | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
 	AllowedOverrides pulumi.StringArrayInput
 	ClusterCount     pulumi.IntPtrInput
 	Clusters         ClusterProfileV2ClusterArrayInput
@@ -323,19 +355,29 @@ type ClusterProfileV2State struct {
 	DriftedClusterCount pulumi.IntPtrInput
 	Dryrun              pulumi.BoolPtrInput
 	ExtId               pulumi.StringPtrInput
-	LastUpdateTime      pulumi.StringPtrInput
-	LastUpdatedBy       pulumi.StringPtrInput
-	Links               ClusterProfileV2LinkArrayInput
+	// - (Optional) Fault tolerant state of cluster.
+	FaultToleranceConfig ClusterProfileV2FaultToleranceConfigPtrInput
+	// - (Optional) HTTP proxy configuration for the cluster.
+	HttpProxyConfig ClusterProfileV2HttpProxyConfigPtrInput
+	LastUpdateTime  pulumi.StringPtrInput
+	LastUpdatedBy   pulumi.StringPtrInput
+	Links           ClusterProfileV2LinkArrayInput
 	// - (Required) Name of the cluster profile.
 	Name pulumi.StringPtrInput
 	// - (Optional) List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
 	NameServerIpLists ClusterProfileV2NameServerIpListArrayInput
 	// - (Optional) NFS subnet allowlist addresses. This is part of the payload for cluster update operation only.
 	NfsSubnetWhiteLists pulumi.StringArrayInput
+	// - (Optional) List of NTP server configurations with encryption authentication.
+	NtpServerConfigLists ClusterProfileV2NtpServerConfigListArrayInput
 	// - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
 	NtpServerIpLists ClusterProfileV2NtpServerIpListArrayInput
 	// - (Optional) Pulse status for a cluster.
 	PulseStatuses ClusterProfileV2PulseStatusArrayInput
+	// - (Optional) Rebuild capacity reservation configuration.
+	RebuildReservationConfig ClusterProfileV2RebuildReservationConfigPtrInput
+	// - (Optional) Resilient capacity warning threshold configuration.
+	ResilientCapacityWarningThresholdConfig ClusterProfileV2ResilientCapacityWarningThresholdConfigPtrInput
 	// - (Optional) RSYSLOG Server.
 	RsyslogServerLists ClusterProfileV2RsyslogServerListArrayInput
 	// - (Optional) SMTP servers on a cluster. This is part of payload for cluster update operation only.
@@ -367,20 +409,34 @@ type clusterProfileV2Args struct {
 	// | PULSE_CONFIG                | Pulse status for a cluster                 |
 	// | NAME_SERVER_CONFIG          | Name server configuration                  |
 	// | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+	// | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+	// | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+	// | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+	// | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
 	AllowedOverrides []string `pulumi:"allowedOverrides"`
 	// - (Optional) Detailed description of a cluster profile.
 	Description *string `pulumi:"description"`
 	Dryrun      *bool   `pulumi:"dryrun"`
+	// - (Optional) Fault tolerant state of cluster.
+	FaultToleranceConfig *ClusterProfileV2FaultToleranceConfig `pulumi:"faultToleranceConfig"`
+	// - (Optional) HTTP proxy configuration for the cluster.
+	HttpProxyConfig *ClusterProfileV2HttpProxyConfig `pulumi:"httpProxyConfig"`
 	// - (Required) Name of the cluster profile.
 	Name *string `pulumi:"name"`
 	// - (Optional) List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
 	NameServerIpLists []ClusterProfileV2NameServerIpList `pulumi:"nameServerIpLists"`
 	// - (Optional) NFS subnet allowlist addresses. This is part of the payload for cluster update operation only.
 	NfsSubnetWhiteLists []string `pulumi:"nfsSubnetWhiteLists"`
+	// - (Optional) List of NTP server configurations with encryption authentication.
+	NtpServerConfigLists []ClusterProfileV2NtpServerConfigList `pulumi:"ntpServerConfigLists"`
 	// - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
 	NtpServerIpLists []ClusterProfileV2NtpServerIpList `pulumi:"ntpServerIpLists"`
 	// - (Optional) Pulse status for a cluster.
 	PulseStatuses []ClusterProfileV2PulseStatus `pulumi:"pulseStatuses"`
+	// - (Optional) Rebuild capacity reservation configuration.
+	RebuildReservationConfig *ClusterProfileV2RebuildReservationConfig `pulumi:"rebuildReservationConfig"`
+	// - (Optional) Resilient capacity warning threshold configuration.
+	ResilientCapacityWarningThresholdConfig *ClusterProfileV2ResilientCapacityWarningThresholdConfig `pulumi:"resilientCapacityWarningThresholdConfig"`
 	// - (Optional) RSYSLOG Server.
 	RsyslogServerLists []ClusterProfileV2RsyslogServerList `pulumi:"rsyslogServerLists"`
 	// - (Optional) SMTP servers on a cluster. This is part of payload for cluster update operation only.
@@ -402,20 +458,34 @@ type ClusterProfileV2Args struct {
 	// | PULSE_CONFIG                | Pulse status for a cluster                 |
 	// | NAME_SERVER_CONFIG          | Name server configuration                  |
 	// | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+	// | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+	// | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+	// | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+	// | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
 	AllowedOverrides pulumi.StringArrayInput
 	// - (Optional) Detailed description of a cluster profile.
 	Description pulumi.StringPtrInput
 	Dryrun      pulumi.BoolPtrInput
+	// - (Optional) Fault tolerant state of cluster.
+	FaultToleranceConfig ClusterProfileV2FaultToleranceConfigPtrInput
+	// - (Optional) HTTP proxy configuration for the cluster.
+	HttpProxyConfig ClusterProfileV2HttpProxyConfigPtrInput
 	// - (Required) Name of the cluster profile.
 	Name pulumi.StringPtrInput
 	// - (Optional) List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
 	NameServerIpLists ClusterProfileV2NameServerIpListArrayInput
 	// - (Optional) NFS subnet allowlist addresses. This is part of the payload for cluster update operation only.
 	NfsSubnetWhiteLists pulumi.StringArrayInput
+	// - (Optional) List of NTP server configurations with encryption authentication.
+	NtpServerConfigLists ClusterProfileV2NtpServerConfigListArrayInput
 	// - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
 	NtpServerIpLists ClusterProfileV2NtpServerIpListArrayInput
 	// - (Optional) Pulse status for a cluster.
 	PulseStatuses ClusterProfileV2PulseStatusArrayInput
+	// - (Optional) Rebuild capacity reservation configuration.
+	RebuildReservationConfig ClusterProfileV2RebuildReservationConfigPtrInput
+	// - (Optional) Resilient capacity warning threshold configuration.
+	ResilientCapacityWarningThresholdConfig ClusterProfileV2ResilientCapacityWarningThresholdConfigPtrInput
 	// - (Optional) RSYSLOG Server.
 	RsyslogServerLists ClusterProfileV2RsyslogServerListArrayInput
 	// - (Optional) SMTP servers on a cluster. This is part of payload for cluster update operation only.
@@ -522,6 +592,10 @@ func (o ClusterProfileV2Output) ToClusterProfileV2OutputWithContext(ctx context.
 // | PULSE_CONFIG                | Pulse status for a cluster                 |
 // | NAME_SERVER_CONFIG          | Name server configuration                  |
 // | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+// | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+// | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+// | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+// | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
 func (o ClusterProfileV2Output) AllowedOverrides() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterProfileV2) pulumi.StringArrayOutput { return v.AllowedOverrides }).(pulumi.StringArrayOutput)
 }
@@ -559,6 +633,16 @@ func (o ClusterProfileV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ClusterProfileV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }
 
+// - (Optional) Fault tolerant state of cluster.
+func (o ClusterProfileV2Output) FaultToleranceConfig() ClusterProfileV2FaultToleranceConfigOutput {
+	return o.ApplyT(func(v *ClusterProfileV2) ClusterProfileV2FaultToleranceConfigOutput { return v.FaultToleranceConfig }).(ClusterProfileV2FaultToleranceConfigOutput)
+}
+
+// - (Optional) HTTP proxy configuration for the cluster.
+func (o ClusterProfileV2Output) HttpProxyConfig() ClusterProfileV2HttpProxyConfigOutput {
+	return o.ApplyT(func(v *ClusterProfileV2) ClusterProfileV2HttpProxyConfigOutput { return v.HttpProxyConfig }).(ClusterProfileV2HttpProxyConfigOutput)
+}
+
 func (o ClusterProfileV2Output) LastUpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *ClusterProfileV2) pulumi.StringOutput { return v.LastUpdateTime }).(pulumi.StringOutput)
 }
@@ -586,6 +670,13 @@ func (o ClusterProfileV2Output) NfsSubnetWhiteLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ClusterProfileV2) pulumi.StringArrayOutput { return v.NfsSubnetWhiteLists }).(pulumi.StringArrayOutput)
 }
 
+// - (Optional) List of NTP server configurations with encryption authentication.
+func (o ClusterProfileV2Output) NtpServerConfigLists() ClusterProfileV2NtpServerConfigListArrayOutput {
+	return o.ApplyT(func(v *ClusterProfileV2) ClusterProfileV2NtpServerConfigListArrayOutput {
+		return v.NtpServerConfigLists
+	}).(ClusterProfileV2NtpServerConfigListArrayOutput)
+}
+
 // - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
 func (o ClusterProfileV2Output) NtpServerIpLists() ClusterProfileV2NtpServerIpListArrayOutput {
 	return o.ApplyT(func(v *ClusterProfileV2) ClusterProfileV2NtpServerIpListArrayOutput { return v.NtpServerIpLists }).(ClusterProfileV2NtpServerIpListArrayOutput)
@@ -594,6 +685,20 @@ func (o ClusterProfileV2Output) NtpServerIpLists() ClusterProfileV2NtpServerIpLi
 // - (Optional) Pulse status for a cluster.
 func (o ClusterProfileV2Output) PulseStatuses() ClusterProfileV2PulseStatusArrayOutput {
 	return o.ApplyT(func(v *ClusterProfileV2) ClusterProfileV2PulseStatusArrayOutput { return v.PulseStatuses }).(ClusterProfileV2PulseStatusArrayOutput)
+}
+
+// - (Optional) Rebuild capacity reservation configuration.
+func (o ClusterProfileV2Output) RebuildReservationConfig() ClusterProfileV2RebuildReservationConfigOutput {
+	return o.ApplyT(func(v *ClusterProfileV2) ClusterProfileV2RebuildReservationConfigOutput {
+		return v.RebuildReservationConfig
+	}).(ClusterProfileV2RebuildReservationConfigOutput)
+}
+
+// - (Optional) Resilient capacity warning threshold configuration.
+func (o ClusterProfileV2Output) ResilientCapacityWarningThresholdConfig() ClusterProfileV2ResilientCapacityWarningThresholdConfigOutput {
+	return o.ApplyT(func(v *ClusterProfileV2) ClusterProfileV2ResilientCapacityWarningThresholdConfigOutput {
+		return v.ResilientCapacityWarningThresholdConfig
+	}).(ClusterProfileV2ResilientCapacityWarningThresholdConfigOutput)
 }
 
 // - (Optional) RSYSLOG Server.

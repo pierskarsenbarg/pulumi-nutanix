@@ -81,6 +81,15 @@ export interface GetCategoryV2Result {
      */
     readonly ownerUuid: string;
     /**
+     * The external identifier of the project to which the category belongs.
+     */
+    readonly projectExtId: string;
+    readonly sharedWithAllProjects: boolean;
+    /**
+     * A set of project external identifiers with which the category is shared.
+     */
+    readonly sharedWithProjects: string[];
+    /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
     readonly tenantId: string;

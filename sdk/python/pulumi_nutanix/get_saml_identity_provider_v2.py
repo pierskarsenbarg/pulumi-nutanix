@@ -27,7 +27,7 @@ class GetSamlIdentityProviderV2Result:
     """
     A collection of values returned by getSamlIdentityProviderV2.
     """
-    def __init__(__self__, created_by=None, created_time=None, custom_attributes=None, email_attribute=None, entity_issuer=None, ext_id=None, groups_attribute=None, groups_delim=None, id=None, idp_metadatas=None, is_signed_authn_req_enabled=None, last_updated_time=None, name=None, username_attribute=None):
+    def __init__(__self__, created_by=None, created_time=None, custom_attributes=None, email_attribute=None, entity_issuer=None, ext_id=None, groups_attribute=None, groups_delim=None, id=None, idp_metadatas=None, is_signed_authn_req_enabled=None, last_updated_time=None, name=None, project_ext_id=None, share_with_all_projects=None, shared_with_projects=None, username_attribute=None):
         if created_by and not isinstance(created_by, str):
             raise TypeError("Expected argument 'created_by' to be a str")
         pulumi.set(__self__, "created_by", created_by)
@@ -67,6 +67,15 @@ class GetSamlIdentityProviderV2Result:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
+        if share_with_all_projects and not isinstance(share_with_all_projects, bool):
+            raise TypeError("Expected argument 'share_with_all_projects' to be a bool")
+        pulumi.set(__self__, "share_with_all_projects", share_with_all_projects)
+        if shared_with_projects and not isinstance(shared_with_projects, list):
+            raise TypeError("Expected argument 'shared_with_projects' to be a list")
+        pulumi.set(__self__, "shared_with_projects", shared_with_projects)
         if username_attribute and not isinstance(username_attribute, str):
             raise TypeError("Expected argument 'username_attribute' to be a str")
         pulumi.set(__self__, "username_attribute", username_attribute)
@@ -167,6 +176,30 @@ class GetSamlIdentityProviderV2Result:
         return pulumi.get(self, "name")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        - Project reference for the SAML Identity Provider.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="shareWithAllProjects")
+    def share_with_all_projects(self) -> _builtins.bool:
+        """
+        - Flag indicating whether the SAML Identity Provider is shared with all projects or not.
+        """
+        return pulumi.get(self, "share_with_all_projects")
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithProjects")
+    def shared_with_projects(self) -> Sequence[_builtins.str]:
+        """
+        - List of projects with which the SAML Identity Provider is shared.
+        """
+        return pulumi.get(self, "shared_with_projects")
+
+    @_builtins.property
     @pulumi.getter(name="usernameAttribute")
     def username_attribute(self) -> _builtins.str:
         return pulumi.get(self, "username_attribute")
@@ -191,6 +224,9 @@ class AwaitableGetSamlIdentityProviderV2Result(GetSamlIdentityProviderV2Result):
             is_signed_authn_req_enabled=self.is_signed_authn_req_enabled,
             last_updated_time=self.last_updated_time,
             name=self.name,
+            project_ext_id=self.project_ext_id,
+            share_with_all_projects=self.share_with_all_projects,
+            shared_with_projects=self.shared_with_projects,
             username_attribute=self.username_attribute)
 
 
@@ -238,6 +274,9 @@ def get_saml_identity_provider_v2(ext_id: Optional[_builtins.str] = None,
         is_signed_authn_req_enabled=pulumi.get(__ret__, 'is_signed_authn_req_enabled'),
         last_updated_time=pulumi.get(__ret__, 'last_updated_time'),
         name=pulumi.get(__ret__, 'name'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
+        share_with_all_projects=pulumi.get(__ret__, 'share_with_all_projects'),
+        shared_with_projects=pulumi.get(__ret__, 'shared_with_projects'),
         username_attribute=pulumi.get(__ret__, 'username_attribute'))
 def get_saml_identity_provider_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSamlIdentityProviderV2Result]:
@@ -282,4 +321,7 @@ def get_saml_identity_provider_v2_output(ext_id: pulumi.Input[Optional[_builtins
         is_signed_authn_req_enabled=pulumi.get(__response__, 'is_signed_authn_req_enabled'),
         last_updated_time=pulumi.get(__response__, 'last_updated_time'),
         name=pulumi.get(__response__, 'name'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
+        share_with_all_projects=pulumi.get(__response__, 'share_with_all_projects'),
+        shared_with_projects=pulumi.get(__response__, 'shared_with_projects'),
         username_attribute=pulumi.get(__response__, 'username_attribute')))

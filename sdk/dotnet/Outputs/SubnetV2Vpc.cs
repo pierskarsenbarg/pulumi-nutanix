@@ -39,6 +39,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VpcExternallyRoutablePrefix> ExternallyRoutablePrefixes;
         public readonly ImmutableArray<Outputs.SubnetV2VpcLink> Links;
+        /// <summary>
+        /// Metadata associated with the subnet.
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VpcMetadata> Metadatas;
         /// <summary>
         /// Name of the VPC.

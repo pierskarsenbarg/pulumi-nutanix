@@ -115,6 +115,10 @@ export class AddressGroupsV2 extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly policyReferences: pulumi.Output<string[]>;
     /**
+     * - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
+    /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
     declare public /*out*/ readonly tenantId: pulumi.Output<string>;
@@ -140,6 +144,7 @@ export class AddressGroupsV2 extends pulumi.CustomResource {
             resourceInputs["links"] = state?.links;
             resourceInputs["name"] = state?.name;
             resourceInputs["policyReferences"] = state?.policyReferences;
+            resourceInputs["projectExtId"] = state?.projectExtId;
             resourceInputs["tenantId"] = state?.tenantId;
         } else {
             const args = argsOrState as AddressGroupsV2Args | undefined;
@@ -147,6 +152,7 @@ export class AddressGroupsV2 extends pulumi.CustomResource {
             resourceInputs["ipRanges"] = args?.ipRanges;
             resourceInputs["ipv4Addresses"] = args?.ipv4Addresses;
             resourceInputs["name"] = args?.name;
+            resourceInputs["projectExtId"] = args?.projectExtId;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["extId"] = undefined /*out*/;
             resourceInputs["links"] = undefined /*out*/;
@@ -195,6 +201,10 @@ export interface AddressGroupsV2State {
      */
     policyReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
+     * - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
     tenantId?: pulumi.Input<string | undefined>;
@@ -220,4 +230,8 @@ export interface AddressGroupsV2Args {
      * - (Required) Name of the Address group
      */
     name?: pulumi.Input<string | undefined>;
+    /**
+     * - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
 }

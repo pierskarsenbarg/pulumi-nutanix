@@ -107,6 +107,8 @@ type FloatingIpV2 struct {
 	// Name of the floating IP.
 	Name      pulumi.StringOutput `pulumi:"name"`
 	PrivateIp pulumi.StringOutput `pulumi:"privateIp"`
+	// External identifier of the project associated with the Floating IP.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
 	// VM NIC reference.
@@ -171,6 +173,8 @@ type floatingIpV2State struct {
 	// Name of the floating IP.
 	Name      *string `pulumi:"name"`
 	PrivateIp *string `pulumi:"privateIp"`
+	// External identifier of the project associated with the Floating IP.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId *string `pulumi:"tenantId"`
 	// VM NIC reference.
@@ -206,6 +210,8 @@ type FloatingIpV2State struct {
 	// Name of the floating IP.
 	Name      pulumi.StringPtrInput
 	PrivateIp pulumi.StringPtrInput
+	// External identifier of the project associated with the Floating IP.
+	ProjectExtId pulumi.StringPtrInput
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId pulumi.StringPtrInput
 	// VM NIC reference.
@@ -243,6 +249,8 @@ type floatingIpV2Args struct {
 	LoadBalancerSessionReference *string                  `pulumi:"loadBalancerSessionReference"`
 	// Name of the floating IP.
 	Name *string `pulumi:"name"`
+	// External identifier of the project associated with the Floating IP.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// VM NIC reference.
 	VmNicReference *string `pulumi:"vmNicReference"`
 	// Virtual NIC for projections
@@ -269,6 +277,8 @@ type FloatingIpV2Args struct {
 	LoadBalancerSessionReference pulumi.StringPtrInput
 	// Name of the floating IP.
 	Name pulumi.StringPtrInput
+	// External identifier of the project associated with the Floating IP.
+	ProjectExtId pulumi.StringPtrInput
 	// VM NIC reference.
 	VmNicReference pulumi.StringPtrInput
 	// Virtual NIC for projections
@@ -425,6 +435,11 @@ func (o FloatingIpV2Output) Name() pulumi.StringOutput {
 
 func (o FloatingIpV2Output) PrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v *FloatingIpV2) pulumi.StringOutput { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
+// External identifier of the project associated with the Floating IP.
+func (o FloatingIpV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *FloatingIpV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // A globally unique identifier that represents the tenant that owns this entity.

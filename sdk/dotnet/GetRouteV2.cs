@@ -443,13 +443,17 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// Route nexthop.
+        /// Route nexthop(s). Supports multiple entries.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRouteV2NextHopResult> NextHops;
         /// <summary>
         /// Route priority. A higher value implies greater preference is assigned to the route.
         /// </summary>
         public readonly int Priority;
+        /// <summary>
+        /// External identifier of the project associated with the Route.
+        /// </summary>
+        public readonly string ProjectExtId;
         public readonly string RouteTableExtId;
         /// <summary>
         /// Route table reference.
@@ -492,6 +496,8 @@ namespace PiersKarsenbarg.Nutanix
 
             int priority,
 
+            string projectExtId,
+
             string routeTableExtId,
 
             string routeTableReference,
@@ -513,6 +519,7 @@ namespace PiersKarsenbarg.Nutanix
             Name = name;
             NextHops = nextHops;
             Priority = priority;
+            ProjectExtId = projectExtId;
             RouteTableExtId = routeTableExtId;
             RouteTableReference = routeTableReference;
             RouteType = routeType;

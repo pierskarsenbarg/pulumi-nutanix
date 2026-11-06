@@ -14,14 +14,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetOvasV2OvaVmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressResult
     {
-        public readonly string BusType;
-        public readonly int Index;
+        public readonly string? BusType;
+        public readonly int? Index;
 
         [OutputConstructor]
         private GetOvasV2OvaVmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressResult(
-            string busType,
+            string? busType,
 
-            int index)
+            int? index)
         {
             BusType = busType;
             Index = index;

@@ -54,11 +54,20 @@ namespace PiersKarsenbarg.Nutanix
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
+        [Output("directoryReferenceLists")]
+        public Output<ImmutableArray<Outputs.ProjectDirectoryReferenceList>> DirectoryReferenceLists { get; private set; } = null!;
+
         /// <summary>
         /// flag to allow collaboration of projects. (Use with&lt;span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "&gt; projectInternal &lt;/span&gt;flag)
         /// </summary>
         [Output("enableCollab")]
         public Output<bool?> EnableCollab { get; private set; } = null!;
+
+        /// <summary>
+        /// flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
+        /// </summary>
+        [Output("enableDirectoryAndIdentityProviderShortlist")]
+        public Output<bool> EnableDirectoryAndIdentityProviderShortlist { get; private set; } = null!;
 
         [Output("environmentReferenceLists")]
         public Output<ImmutableArray<Outputs.ProjectEnvironmentReferenceList>> EnvironmentReferenceLists { get; private set; } = null!;
@@ -68,6 +77,9 @@ namespace PiersKarsenbarg.Nutanix
 
         [Output("externalUserGroupReferenceLists")]
         public Output<ImmutableArray<Outputs.ProjectExternalUserGroupReferenceList>> ExternalUserGroupReferenceLists { get; private set; } = null!;
+
+        [Output("identityProvidersReferenceLists")]
+        public Output<ImmutableArray<Outputs.ProjectIdentityProvidersReferenceList>> IdentityProvidersReferenceLists { get; private set; } = null!;
 
         [Output("isDefault")]
         public Output<bool> IsDefault { get; private set; } = null!;
@@ -224,11 +236,25 @@ namespace PiersKarsenbarg.Nutanix
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
 
+        [Input("directoryReferenceLists")]
+        private InputList<Inputs.ProjectDirectoryReferenceListArgs>? _directoryReferenceLists;
+        public InputList<Inputs.ProjectDirectoryReferenceListArgs> DirectoryReferenceLists
+        {
+            get => _directoryReferenceLists ?? (_directoryReferenceLists = new InputList<Inputs.ProjectDirectoryReferenceListArgs>());
+            set => _directoryReferenceLists = value;
+        }
+
         /// <summary>
         /// flag to allow collaboration of projects. (Use with&lt;span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "&gt; projectInternal &lt;/span&gt;flag)
         /// </summary>
         [Input("enableCollab")]
         public Input<bool>? EnableCollab { get; set; }
+
+        /// <summary>
+        /// flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
+        /// </summary>
+        [Input("enableDirectoryAndIdentityProviderShortlist")]
+        public Input<bool>? EnableDirectoryAndIdentityProviderShortlist { get; set; }
 
         [Input("environmentReferenceLists")]
         private InputList<Inputs.ProjectEnvironmentReferenceListArgs>? _environmentReferenceLists;
@@ -252,6 +278,14 @@ namespace PiersKarsenbarg.Nutanix
         {
             get => _externalUserGroupReferenceLists ?? (_externalUserGroupReferenceLists = new InputList<Inputs.ProjectExternalUserGroupReferenceListArgs>());
             set => _externalUserGroupReferenceLists = value;
+        }
+
+        [Input("identityProvidersReferenceLists")]
+        private InputList<Inputs.ProjectIdentityProvidersReferenceListArgs>? _identityProvidersReferenceLists;
+        public InputList<Inputs.ProjectIdentityProvidersReferenceListArgs> IdentityProvidersReferenceLists
+        {
+            get => _identityProvidersReferenceLists ?? (_identityProvidersReferenceLists = new InputList<Inputs.ProjectIdentityProvidersReferenceListArgs>());
+            set => _identityProvidersReferenceLists = value;
         }
 
         /// <summary>
@@ -402,11 +436,25 @@ namespace PiersKarsenbarg.Nutanix
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        [Input("directoryReferenceLists")]
+        private InputList<Inputs.ProjectDirectoryReferenceListGetArgs>? _directoryReferenceLists;
+        public InputList<Inputs.ProjectDirectoryReferenceListGetArgs> DirectoryReferenceLists
+        {
+            get => _directoryReferenceLists ?? (_directoryReferenceLists = new InputList<Inputs.ProjectDirectoryReferenceListGetArgs>());
+            set => _directoryReferenceLists = value;
+        }
+
         /// <summary>
         /// flag to allow collaboration of projects. (Use with&lt;span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "&gt; projectInternal &lt;/span&gt;flag)
         /// </summary>
         [Input("enableCollab")]
         public Input<bool>? EnableCollab { get; set; }
+
+        /// <summary>
+        /// flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
+        /// </summary>
+        [Input("enableDirectoryAndIdentityProviderShortlist")]
+        public Input<bool>? EnableDirectoryAndIdentityProviderShortlist { get; set; }
 
         [Input("environmentReferenceLists")]
         private InputList<Inputs.ProjectEnvironmentReferenceListGetArgs>? _environmentReferenceLists;
@@ -430,6 +478,14 @@ namespace PiersKarsenbarg.Nutanix
         {
             get => _externalUserGroupReferenceLists ?? (_externalUserGroupReferenceLists = new InputList<Inputs.ProjectExternalUserGroupReferenceListGetArgs>());
             set => _externalUserGroupReferenceLists = value;
+        }
+
+        [Input("identityProvidersReferenceLists")]
+        private InputList<Inputs.ProjectIdentityProvidersReferenceListGetArgs>? _identityProvidersReferenceLists;
+        public InputList<Inputs.ProjectIdentityProvidersReferenceListGetArgs> IdentityProvidersReferenceLists
+        {
+            get => _identityProvidersReferenceLists ?? (_identityProvidersReferenceLists = new InputList<Inputs.ProjectIdentityProvidersReferenceListGetArgs>());
+            set => _identityProvidersReferenceLists = value;
         }
 
         [Input("isDefault")]

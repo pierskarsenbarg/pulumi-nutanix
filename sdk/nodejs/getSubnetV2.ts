@@ -85,6 +85,10 @@ export interface GetSubnetV2Result {
      */
     readonly isAdvancedNetworking: boolean;
     /**
+     * Indicates whether the subnet is connected.
+     */
+    readonly isConnected: boolean;
+    /**
      * Indicates whether the subnet is used for external connectivity.
      */
     readonly isExternal: boolean;
@@ -114,9 +118,17 @@ export interface GetSubnetV2Result {
      */
     readonly networkId: number;
     /**
+     * External identifier of the project associated with the Subnet.
+     */
+    readonly projectExtId: string;
+    /**
      * List of IPs that are excluded while allocating IP addresses to VM ports.
      */
     readonly reservedIpAddresses: outputs.GetSubnetV2ReservedIpAddress[];
+    /**
+     * List of project external identifiers with which the Subnet is shared.
+     */
+    readonly sharedWithProjects: string[];
     /**
      * Type of subnet.
      */

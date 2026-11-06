@@ -84,6 +84,10 @@ export interface GetVolumeGroupV2Result {
      */
     readonly name: string;
     /**
+     * - External identifier of the project associated with the Volume Group.
+     */
+    readonly projectExtId: string;
+    /**
      * - Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
      */
     readonly sharingStatus: string;

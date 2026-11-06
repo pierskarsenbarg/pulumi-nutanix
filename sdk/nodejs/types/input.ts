@@ -169,6 +169,30 @@ export interface AccessControlPolicyUserReferenceList {
     uuid: pulumi.Input<string>;
 }
 
+export interface AdGroupCategoryMappingV2AdInfo {
+    /**
+     * The ExtID of the directory service that will be used for mapping.
+     */
+    directoryServiceReference: pulumi.Input<string>;
+    /**
+     * The objectGUID for the object in AD. Use <span pulumi-lang-nodejs="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-dotnet="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-go="`getDirectoryServiceUsersSearchV2`" pulumi-lang-python="`get_directory_service_users_search_v2`" pulumi-lang-yaml="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-java="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-hcl="`data.nutanix_directory_service_users_search_v2`">`nutanix.getDirectoryServiceUsersSearchV2`</span> to look up this value. Cannot be updated once created.
+     */
+    objectIdentifier: pulumi.Input<string>;
+    /**
+     * The path for the mapped object in AD. Returned by the API.
+     */
+    objectPath?: pulumi.Input<string | undefined>;
+    /**
+     * The mapping status of AD Mapping. Valid values: `USABLE`, `DELETED`, `DIRECTORY_NOT_CONFIGURED`.
+     */
+    status?: pulumi.Input<string | undefined>;
+}
+
+export interface AdGroupCategoryMappingV2Link {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
 export interface AddressGroupIpAddressBlockList {
     /**
      * - (Required) IP of the address block
@@ -214,7 +238,7 @@ export interface AssociateCategoryToVolumeGroupV2Category {
      * -(Optional) Type of entity that's represented by this reference. Default value is "CATEGORY". Valid values are:
      * * "CATEGORY".
      *
-     * See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/associateCategory).
+     * See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/associateCategory).
      */
     entityType?: pulumi.Input<string | undefined>;
     /**
@@ -754,7 +778,7 @@ export interface ClusterAddNodeV2RemoveNodeParamExtraParam {
     /**
      * -(Optional) Indicates if add check needs to be skipped or not.
      *
-     * See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/expandCluster).
+     * See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/Clusters/operation/expandCluster).
      */
     shouldSkipAddCheck?: pulumi.Input<boolean | undefined>;
     /**
@@ -772,6 +796,99 @@ export interface ClusterProfileV2Cluster {
     extId?: pulumi.Input<string | undefined>;
     isCompliant?: pulumi.Input<boolean | undefined>;
     lastSyncedTime?: pulumi.Input<string | undefined>;
+}
+
+export interface ClusterProfileV2FaultToleranceConfig {
+    /**
+     * - (Optional) Desired cluster fault tolerance level. Allowed values:
+     *
+     * | Enum             | Description                         |
+     * |------------------|-------------------------------------|
+     * | CFT_0N_AND_0D    | No fault tolerance                  |
+     * | CFT_1N_OR_1D     | Tolerate 1 node or 1 disk failure   |
+     * | CFT_2N_OR_2D     | Tolerate 2 node or 2 disk failures  |
+     * | CFT_1N_AND_1D    | Tolerate 1 node and 1 disk failure  |
+     * | CFT_1N_OR_2D     | Tolerate 1 node or 2 disk failures  |
+     */
+    desiredClusterFaultTolerance?: pulumi.Input<string | undefined>;
+}
+
+export interface ClusterProfileV2HttpProxyConfig {
+    /**
+     * - (Optional) List of HTTP proxy server configurations. Each proxy object supports:
+     */
+    proxyLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2HttpProxyConfigProxyList>[] | undefined>;
+    /**
+     * - (Optional) Targets exempted from going through the configured HTTP proxy. Each whitelist entry supports:
+     */
+    proxyWhiteLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2HttpProxyConfigProxyWhiteList>[] | undefined>;
+}
+
+export interface ClusterProfileV2HttpProxyConfigProxyList {
+    /**
+     * IP address of the proxy server.
+     */
+    ipAddress?: pulumi.Input<inputs.ClusterProfileV2HttpProxyConfigProxyListIpAddress | undefined>;
+    /**
+     * HTTP proxy server name.
+     */
+    name: pulumi.Input<string>;
+    /**
+     * HTTP proxy server password.
+     */
+    password?: pulumi.Input<string | undefined>;
+    /**
+     * HTTP proxy server port.
+     */
+    port?: pulumi.Input<number | undefined>;
+    /**
+     * List of HTTP proxy types. Allowed values:
+     *
+     * | Enum     | Description         |
+     * |----------|---------------------|
+     * | HTTP     | HTTP proxy          |
+     * | HTTPS    | HTTPS proxy         |
+     * | SOCKS    | SOCKS proxy         |
+     */
+    proxyTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * HTTP proxy server username.
+     */
+    username?: pulumi.Input<string | undefined>;
+}
+
+export interface ClusterProfileV2HttpProxyConfigProxyListIpAddress {
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv4>[] | undefined>;
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv6>[] | undefined>;
+}
+
+export interface ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv4 {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv6 {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface ClusterProfileV2HttpProxyConfigProxyWhiteList {
+    /**
+     * Target identifier exempted from HTTP proxy.
+     */
+    target: pulumi.Input<string>;
+    /**
+     * Type of the whitelist target. Allowed values:
+     *
+     * | Enum                 | Description              |
+     * |----------------------|--------------------------|
+     * | IPV4_ADDRESS         | IPv4 address             |
+     * | IPV6_ADDRESS         | IPv6 address             |
+     * | IPV4_NETWORK_MASK    | IPv4 network mask        |
+     * | DOMAIN_NAME_SUFFIX   | Domain name suffix       |
+     * | HOST_NAME            | Host name                |
+     */
+    targetType: pulumi.Input<string>;
 }
 
 export interface ClusterProfileV2Link {
@@ -809,6 +926,51 @@ export interface ClusterProfileV2NameServerIpListIpv6 {
     /**
      * - (Required) Ip V6 address.
      */
+    value: pulumi.Input<string>;
+}
+
+export interface ClusterProfileV2NtpServerConfigList {
+    /**
+     * - (Optional) Encryption algorithm used for NTP server authentication.
+     *
+     * | Enum     | Description         |
+     * |----------|---------------------|
+     * | SHA256   | SHA-256 algorithm   |
+     * | SHA384   | SHA-384 algorithm   |
+     * | SHA512   | SHA-512 algorithm   |
+     */
+    encryptionAlgorithm?: pulumi.Input<string | undefined>;
+    /**
+     * - (Optional, Sensitive) Encryption key in hexadecimal format used for NTP server authentication.
+     */
+    encryptionKey?: pulumi.Input<string | undefined>;
+    /**
+     * - (Optional) Encryption key ID used for NTP server authentication.
+     */
+    encryptionKeyId?: pulumi.Input<number | undefined>;
+    /**
+     * - (Required) NTP server address (supports IPv4, IPv6, and FQDN).
+     */
+    ntpServerAddress: pulumi.Input<inputs.ClusterProfileV2NtpServerConfigListNtpServerAddress>;
+}
+
+export interface ClusterProfileV2NtpServerConfigListNtpServerAddress {
+    fqdns?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NtpServerConfigListNtpServerAddressFqdn>[] | undefined>;
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NtpServerConfigListNtpServerAddressIpv4>[] | undefined>;
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NtpServerConfigListNtpServerAddressIpv6>[] | undefined>;
+}
+
+export interface ClusterProfileV2NtpServerConfigListNtpServerAddressFqdn {
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface ClusterProfileV2NtpServerConfigListNtpServerAddressIpv4 {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface ClusterProfileV2NtpServerConfigListNtpServerAddressIpv6 {
+    prefixLength?: pulumi.Input<number | undefined>;
     value: pulumi.Input<string>;
 }
 
@@ -870,6 +1032,20 @@ export interface ClusterProfileV2PulseStatus {
      * | DEFAULT  | Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse |
      */
     piiScrubbingLevel?: pulumi.Input<string | undefined>;
+}
+
+export interface ClusterProfileV2RebuildReservationConfig {
+    /**
+     * - (Optional, default <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>) Enable rebuild capacity reservation to maintain free space for fault tolerance recovery operations.
+     */
+    isRebuildReservationEnabled?: pulumi.Input<boolean | undefined>;
+}
+
+export interface ClusterProfileV2ResilientCapacityWarningThresholdConfig {
+    /**
+     * - (Optional, default <span pulumi-lang-nodejs="`75`" pulumi-lang-dotnet="`75`" pulumi-lang-go="`75`" pulumi-lang-python="`75`" pulumi-lang-yaml="`75`" pulumi-lang-java="`75`" pulumi-lang-hcl="`75`">`75`</span>) Warning threshold percentage for resilient storage capacity.
+     */
+    resilientCapacityWarningThresholdPercentage?: pulumi.Input<number | undefined>;
 }
 
 export interface ClusterProfileV2RsyslogServerList {
@@ -1225,6 +1401,10 @@ export interface ClusterProfileV2SnmpConfigUser {
      * |-----------|------------------------------|
      * | SHA       | SHA SNMP authentication      |
      * | MD5       | MD5 SNMP authentication      |
+     * | SHA224    | SHA-224 SNMP authentication  |
+     * | SHA256    | SHA-256 SNMP authentication  |
+     * | SHA384    | SHA-384 SNMP authentication  |
+     * | SHA512    | SHA-512 SNMP authentication  |
      */
     authType: pulumi.Input<string>;
     extId?: pulumi.Input<string | undefined>;
@@ -1240,6 +1420,8 @@ export interface ClusterProfileV2SnmpConfigUser {
      * |-----------|--------------------|
      * | DES       | DES SNMP key       |
      * | AES       | AES SNMP key       |
+     * | AES192    | AES-192 SNMP key   |
+     * | AES256    | AES-256 SNMP key   |
      */
     privType?: pulumi.Input<string | undefined>;
     tenantId?: pulumi.Input<string | undefined>;
@@ -2555,6 +2737,7 @@ export interface ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailUplinkUp
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMap {
+    guestCustomizationProfileConfig?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfig | undefined>;
     /**
      * Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
      */
@@ -2606,7 +2789,7 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigClo
      * * `cloud_init_script.user_data`: (Optional) user data object
      * * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
      *
-     * See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/deployTemplate).
+     * See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Templates/operation/deployTemplate).
      */
     cloudInitScripts?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScript>[] | undefined>;
     /**
@@ -2700,6 +2883,160 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSys
 
 export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXml {
     value: pulumi.Input<string>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfig {
+    configOverrideSpec?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpec | undefined>;
+    profile: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigProfile>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpec {
+    sysprepConfig?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfig | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfig {
+    customization?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomization | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomization {
+    answerFile?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFile | undefined>;
+    sysprepParams?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParams | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFile {
+    unattendXml: pulumi.Input<string>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParams {
+    firstLogonCommands?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    generalSettings?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettings | undefined>;
+    localeSettings?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettings | undefined>;
+    networkSettings?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettings | undefined>;
+    workgroupOrDomainInfo?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfo | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettings {
+    administratorPassword?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPassword | undefined>;
+    autoLogonSettings?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettings | undefined>;
+    computerName?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerName | undefined>;
+    registeredOrganization?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganization | undefined>;
+    registeredOwner?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwner | undefined>;
+    timezone?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezone | undefined>;
+    windowsProductKey?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKey | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPassword {
+    discard?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettings {
+    logonCount?: pulumi.Input<number | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerName {
+    discard?: pulumi.Input<boolean | undefined>;
+    useVmName?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganization {
+    discard?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwner {
+    discard?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezone {
+    discard?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKey {
+    discard?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettings {
+    systemLocale?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocale | undefined>;
+    uiLanguage?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguage | undefined>;
+    userLocale?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocale | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocale {
+    discard?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguage {
+    discard?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocale {
+    discard?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettings {
+    nicConfigLists?: pulumi.Input<pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigList>[] | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigList {
+    dnsConfig?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfig | undefined>;
+    /**
+     * The IP address configurations.
+     */
+    ipv4Config?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4Config | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfig {
+    alternateDnsServerAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    preferredDnsServerAddress?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4Config {
+    defaultGateways?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    ipAddress?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddress | undefined>;
+    useDhcp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddress {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfo {
+    discard?: pulumi.Input<boolean | undefined>;
+    domainSettings?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettings | undefined>;
+    workgroup?: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroup | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettings {
+    credentials: pulumi.Input<inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentials>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentials {
+    domainName?: pulumi.Input<string | undefined>;
+    password?: pulumi.Input<string | undefined>;
+    username?: pulumi.Input<string | undefined>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroup {
+    /**
+     * VM name.
+     */
+    name: pulumi.Input<string>;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigProfile {
+    /**
+     * The identifier of a Template.
+     */
+    extId: pulumi.Input<string>;
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapNic {
@@ -3063,6 +3400,59 @@ export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEth
     extId?: pulumi.Input<string | undefined>;
 }
 
+export interface DirectoryServerConfigV2DomainController {
+    /**
+     * A fully qualified domain name with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> (Optional).
+     */
+    fqdn?: pulumi.Input<inputs.DirectoryServerConfigV2DomainControllerFqdn | undefined>;
+    /**
+     * An IPv4 address with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> (Required) and <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> (Optional).
+     */
+    ipv4?: pulumi.Input<inputs.DirectoryServerConfigV2DomainControllerIpv4 | undefined>;
+    /**
+     * An IPv6 address with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> (Required) and <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> (Optional).
+     */
+    ipv6?: pulumi.Input<inputs.DirectoryServerConfigV2DomainControllerIpv6 | undefined>;
+}
+
+export interface DirectoryServerConfigV2DomainControllerFqdn {
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface DirectoryServerConfigV2DomainControllerIpv4 {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface DirectoryServerConfigV2DomainControllerIpv6 {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface DirectoryServerConfigV2Link {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface DirectoryServerConfigV2MatchingCriteria {
+    /**
+     * The criteria to use for matching entities to be categorized. Only allowed when <span pulumi-lang-nodejs="`matchType`" pulumi-lang-dotnet="`MatchType`" pulumi-lang-go="`matchType`" pulumi-lang-python="`match_type`" pulumi-lang-yaml="`matchType`" pulumi-lang-java="`matchType`" pulumi-lang-hcl="`match_type`">`matchType`</span> is `CONTAINS`. Must not be set when <span pulumi-lang-nodejs="`matchType`" pulumi-lang-dotnet="`MatchType`" pulumi-lang-go="`matchType`" pulumi-lang-python="`match_type`" pulumi-lang-yaml="`matchType`" pulumi-lang-java="`matchType`" pulumi-lang-hcl="`match_type`">`matchType`</span> is `ALL`.
+     */
+    criteria?: pulumi.Input<string | undefined>;
+    /**
+     * The entity type to match on. Valid values: `VM`.
+     */
+    matchEntity?: pulumi.Input<string | undefined>;
+    /**
+     * The field to match on. Today only `NAME` is supported, which matches on an entity's name.
+     */
+    matchField?: pulumi.Input<string | undefined>;
+    /**
+     * The type of match. Valid values: `CONTAINS`, `ALL`. `CONTAINS` performs a substring match on the given entity and field for the criteria value whereas `ALL` allows all strings to match on the given entity.
+     */
+    matchType?: pulumi.Input<string | undefined>;
+}
+
 export interface DirectoryServicesV2OpenLdapConfiguration {
     /**
      * -(Required) this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
@@ -3132,6 +3522,10 @@ export interface EntityGroupV2AllowedConfigEntity {
      */
     addresses?: pulumi.Input<inputs.EntityGroupV2AllowedConfigEntityAddresses | undefined>;
     /**
+     * List of FQDNs. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `FQDN_VALUES`.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
      * With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> block(s):
      */
     ipRanges?: pulumi.Input<inputs.EntityGroupV2AllowedConfigEntityIpRanges | undefined>;
@@ -3140,11 +3534,19 @@ export interface EntityGroupV2AllowedConfigEntity {
      */
     kubeEntities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
+     * Match criteria for regex-based entity selection. Valid values: `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `EQUALS`.
+     */
+    matchCriteria?: pulumi.Input<string | undefined>;
+    /**
      * List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
      */
     referenceExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`.
+     * String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `REGEX`.
+     */
+    referenceString?: pulumi.Input<string | undefined>;
+    /**
+     * The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
      */
     selectedBy?: pulumi.Input<string | undefined>;
     /**
@@ -3204,7 +3606,7 @@ export interface EntityGroupV2ExceptConfigEntity {
      */
     referenceExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`.
+     * The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
      */
     selectedBy?: pulumi.Input<string | undefined>;
     /**
@@ -3331,6 +3733,7 @@ export interface FloatingIpV2ExternalSubnet {
     ipPrefix?: pulumi.Input<string | undefined>;
     ipUsages?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2ExternalSubnetIpUsage>[] | undefined>;
     isAdvancedNetworking?: pulumi.Input<boolean | undefined>;
+    isConnected?: pulumi.Input<boolean | undefined>;
     isExternal?: pulumi.Input<boolean | undefined>;
     isNatEnabled?: pulumi.Input<boolean | undefined>;
     /**
@@ -3348,7 +3751,12 @@ export interface FloatingIpV2ExternalSubnet {
     name?: pulumi.Input<string | undefined>;
     networkFunctionChainReference?: pulumi.Input<string | undefined>;
     networkId?: pulumi.Input<number | undefined>;
+    /**
+     * External identifier of the project associated with the Floating IP.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
     reservedIpAddresses?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2ExternalSubnetReservedIpAddress>[] | undefined>;
+    sharedWithProjects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     subnetType?: pulumi.Input<string | undefined>;
     virtualSwitchReference?: pulumi.Input<string | undefined>;
     virtualSwitches?: pulumi.Input<pulumi.Input<inputs.FloatingIpV2ExternalSubnetVirtualSwitch>[] | undefined>;
@@ -5977,6 +6385,28 @@ export interface GetRoleCategoryArgs {
     value?: pulumi.Input<string | undefined>;
 }
 
+export interface GetRoleMembershipV2ScopeTemplateNameValue {
+    /**
+     * The name of the variable.
+     */
+    name?: string;
+    /**
+     * The value to substitute.
+     */
+    value?: string;
+}
+
+export interface GetRoleMembershipV2ScopeTemplateNameValueArgs {
+    /**
+     * The name of the variable.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * The value to substitute.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
 export interface GetRolesMetadata {
     filter?: string;
     /**
@@ -6418,6 +6848,17 @@ export interface ImagePlacementPolicyV2ImageEntityFilter {
     type: pulumi.Input<string>;
 }
 
+export interface ImageRateLimitPolicyV2ClusterEntityFilter {
+    /**
+     * Filter matches entities that have these categories attached.
+     */
+    categoryExtIds: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Filter matching type. Valid values: "CATEGORIES_MATCH_ALL", "CATEGORIES_MATCH_ANY".
+     */
+    type: pulumi.Input<string>;
+}
+
 export interface ImagesV2Checksum {
     /**
      * The SHA1/SHA256 digest of an image file in hexadecimal format.
@@ -6508,8 +6949,13 @@ export interface ImagesV2SourceUrlSourceBasicAuth {
 export interface ImagesV2SourceVmDiskSource {
     /**
      * The external identifier of VM Disk.
+     * > **Deprecation Notice:** Providing <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span> without <span pulumi-lang-nodejs="`vmExtId`" pulumi-lang-dotnet="`VmExtId`" pulumi-lang-go="`vmExtId`" pulumi-lang-python="`vm_ext_id`" pulumi-lang-yaml="`vmExtId`" pulumi-lang-java="`vmExtId`" pulumi-lang-hcl="`vm_ext_id`">`vmExtId`</span> is deprecated and will not be supported in a future release.
      */
     extId: pulumi.Input<string>;
+    /**
+     * The external identifier of the source VM for the specified disk.
+     */
+    vmExtId?: pulumi.Input<string | undefined>;
 }
 
 export interface KarbonClusterActivePassiveConfig {
@@ -6880,7 +7326,7 @@ export interface LcmPrechecksV2EntityUpdateSpec {
     /**
      * Version to upgrade to.
      *
-     * See detailed information in [Nutanix LCM Prechecks v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Prechecks/operation/performPrechecks)
+     * See detailed information in [Nutanix LCM Prechecks v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Prechecks/operation/performPrechecks)
      */
     toVersion: pulumi.Input<string>;
 }
@@ -6915,7 +7361,7 @@ export interface LcmUpgradeV2EntityUpdateSpec {
     /**
      * Version to upgrade to.
      *
-     * See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Upgrades/operation/performUpgrade).
+     * See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Upgrades/operation/performUpgrade).
      */
     toVersion: pulumi.Input<string>;
 }
@@ -11504,15 +11950,23 @@ export interface NetworkSecurityPolicyV2Rule {
      */
     extId?: pulumi.Input<string | undefined>;
     /**
+     * Specifies whether hit log is enabled for the rule.
+     */
+    isLoggingEnabled?: pulumi.Input<boolean | undefined>;
+    /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
     links?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2RuleLink>[] | undefined>;
+    /**
+     * A user-defined name for the rule. Primarily used for Flex policy rules.
+     */
+    name?: pulumi.Input<string | undefined>;
     /**
      * Spec for rules.
      */
     specs: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2RuleSpec>[]>;
     /**
-     * The type for a rule—the value chosen here restricts which specification can be chosen. Acceptable values are "QUARANTINE", "TWO_ENV_ISOLATION", "APPLICATION", "INTRA_GROUP", "MULTI_ENV_ISOLATION", "SHARED_SERVICE".
+     * The type for a rule—the value chosen here restricts which specification can be chosen. Acceptable values are "QUARANTINE", "TWO_ENV_ISOLATION", "APPLICATION", "INTRA_GROUP", "MULTI_ENV_ISOLATION", "SHARED_SERVICE", "FLEX".
      */
     type: pulumi.Input<string>;
 }
@@ -11527,6 +11981,10 @@ export interface NetworkSecurityPolicyV2RuleSpec {
      * Application Rule Spec.
      */
     applicationRuleSpecs?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpec>[] | undefined>;
+    /**
+     * Flex Rule Spec.
+     */
+    flexRuleSpecs?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2RuleSpecFlexRuleSpec>[] | undefined>;
     /**
      * Intra entity group Rule Spec
      */
@@ -11587,11 +12045,11 @@ export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpec {
      */
     securedGroupCategoryAssociatedEntityType?: pulumi.Input<string | undefined>;
     /**
-     * A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories.
+     * A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
      */
-    securedGroupCategoryReferences: pulumi.Input<pulumi.Input<string>[]>;
+    securedGroupCategoryReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * Reference to the secured group entity group.
+     * Reference to the secured group entity group. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
      */
     securedGroupEntityGroupReference?: pulumi.Input<string | undefined>;
     /**
@@ -11679,6 +12137,147 @@ export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecUdpService {
     startPort: pulumi.Input<number>;
 }
 
+export interface NetworkSecurityPolicyV2RuleSpecFlexRuleSpec {
+    /**
+     * Action for the flex rule. Acceptable values are "ALLOW", "DENY", "REJECT".
+     */
+    action: pulumi.Input<string>;
+    /**
+     * Entity group references to which the flex rule is applied.
+     */
+    appliedToEntityGroupReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Destination entity group references.
+     */
+    destEntityGroupReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Destination subnet (value, prefix_length).
+     */
+    destSubnet?: pulumi.Input<inputs.NetworkSecurityPolicyV2RuleSpecFlexRuleSpecDestSubnet | undefined>;
+    /**
+     * Direction of traffic. Acceptable values are "IN", "OUT", "IN_OUT".
+     */
+    direction: pulumi.Input<string>;
+    /**
+     * ICMP type/code specs.
+     */
+    icmpServices?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpService>[] | undefined>;
+    /**
+     * ICMPv6 type/code specs.
+     */
+    icmpv6Services?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpv6Service>[] | undefined>;
+    /**
+     * IP version scope. Acceptable values are "IPV4", "IPV6", "IPV4_IPV6".
+     */
+    ipVersion?: pulumi.Input<string | undefined>;
+    /**
+     * Whether traffic is allowed for all protocols.
+     */
+    isAllProtocolAllowed?: pulumi.Input<boolean | undefined>;
+    /**
+     * Whether the flex rule is system-defined.
+     */
+    isSystemRule?: pulumi.Input<boolean | undefined>;
+    /**
+     * A reference to the network function.
+     */
+    networkFunctionReference?: pulumi.Input<string | undefined>;
+    /**
+     * Priority for the flex rule. Lower numbers indicate higher priority.
+     */
+    priority?: pulumi.Input<number | undefined>;
+    /**
+     * A list of service group references.
+     */
+    serviceGroupReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Whether the rule should allow all destinations.
+     */
+    shouldAllowAnyDst?: pulumi.Input<boolean | undefined>;
+    /**
+     * Whether the rule should allow all sources.
+     */
+    shouldAllowAnySrc?: pulumi.Input<boolean | undefined>;
+    /**
+     * Source entity group references.
+     */
+    srcEntityGroupReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Source subnet (value, prefix_length).
+     */
+    srcSubnet?: pulumi.Input<inputs.NetworkSecurityPolicyV2RuleSpecFlexRuleSpecSrcSubnet | undefined>;
+    /**
+     * TCP port ranges (start_port, end_port).
+     */
+    tcpServices?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2RuleSpecFlexRuleSpecTcpService>[] | undefined>;
+    /**
+     * UDP port ranges (start_port, end_port).
+     */
+    udpServices?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2RuleSpecFlexRuleSpecUdpService>[] | undefined>;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecFlexRuleSpecDestSubnet {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpService {
+    /**
+     * Icmp service Code. Ignore this field if Code has to be ANY.
+     */
+    code?: pulumi.Input<number | undefined>;
+    /**
+     * Set this field to true if both Type and Code is ANY.
+     */
+    isAllAllowed?: pulumi.Input<boolean | undefined>;
+    /**
+     * Icmp service Type. Ignore this field if Type has to be ANY.
+     */
+    type?: pulumi.Input<number | undefined>;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpv6Service {
+    /**
+     * Icmp service Code. Ignore this field if Code has to be ANY.
+     */
+    code?: pulumi.Input<number | undefined>;
+    /**
+     * Set this field to true if both Type and Code is ANY.
+     */
+    isAllAllowed?: pulumi.Input<boolean | undefined>;
+    /**
+     * Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
+     */
+    type?: pulumi.Input<number | undefined>;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecFlexRuleSpecSrcSubnet {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecFlexRuleSpecTcpService {
+    /**
+     * end port
+     */
+    endPort: pulumi.Input<number>;
+    /**
+     * start port
+     */
+    startPort: pulumi.Input<number>;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecFlexRuleSpecUdpService {
+    /**
+     * end port
+     */
+    endPort: pulumi.Input<number>;
+    /**
+     * start port
+     */
+    startPort: pulumi.Input<number>;
+}
+
 export interface NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpec {
     /**
      * ICMP type/code for the rule.
@@ -11693,11 +12292,11 @@ export interface NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpec {
      */
     securedGroupCategoryAssociatedEntityType?: pulumi.Input<string | undefined>;
     /**
-     * List of category references for the secured group.
+     * List of category references for the secured group. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
      */
     securedGroupCategoryReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * Reference to the secured group entity group.
+     * Reference to the secured group entity group. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
      */
     securedGroupEntityGroupReference?: pulumi.Input<string | undefined>;
     /**
@@ -13813,7 +14412,7 @@ export interface OvaVmDeployV2OverrideVmConfigCategory {
     /**
      * A globally unique identifier of a VM category of type UUID.
      *
-     * See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Ovas/operation/deployOva).
+     * See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Ovas/operation/deployOva).
      */
     extId?: pulumi.Input<string | undefined>;
 }
@@ -14752,7 +15351,7 @@ export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefix {
 
 export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4 {
     /**
-     * IP of address
+     * The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
      */
     ips?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip>[] | undefined>;
     /**
@@ -14771,7 +15370,7 @@ export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip {
 
 export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6 {
     /**
-     * IP of address
+     * The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
      */
     ips?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Ip>[] | undefined>;
     prefixLength?: pulumi.Input<number | undefined>;
@@ -14875,7 +15474,7 @@ export interface PbrV2PolicyPolicyMatchSourceSubnetPrefix {
 
 export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4 {
     /**
-     * IP of address
+     * The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
      */
     ips?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip>[] | undefined>;
     /**
@@ -14894,7 +15493,7 @@ export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip {
 
 export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6 {
     /**
-     * IP of address
+     * The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
      */
     ips?: pulumi.Input<pulumi.Input<inputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Ip>[] | undefined>;
     prefixLength?: pulumi.Input<number | undefined>;
@@ -15237,7 +15836,7 @@ export interface PcDeployV2NetworkExternalNetworkDefaultGatewayFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
      */
     value: pulumi.Input<string>;
 }
@@ -15360,7 +15959,7 @@ export interface PcDeployV2NetworkExternalNetworkSubnetMaskFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
      */
     value: pulumi.Input<string>;
 }
@@ -15421,7 +16020,7 @@ export interface PcDeployV2NetworkInternalNetworksDefaultGatewayFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
      */
     value: pulumi.Input<string>;
 }
@@ -15544,7 +16143,7 @@ export interface PcDeployV2NetworkInternalNetworksSubnetMaskFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
      */
     value: pulumi.Input<string>;
 }
@@ -15590,7 +16189,7 @@ export interface PcDeployV2NetworkNameServerFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
      */
     value: pulumi.Input<string>;
 }
@@ -15636,7 +16235,7 @@ export interface PcDeployV2NetworkNtpServerFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
      */
     value: pulumi.Input<string>;
 }
@@ -15733,7 +16332,7 @@ export interface PcRegistrationV2ConfigCredential {
     /**
      * -(Required)  Password required for the basic auth scheme.
      *
-     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
+     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
      */
     password: pulumi.Input<string>;
     /**
@@ -16270,7 +16869,7 @@ export interface PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterC
     /**
      * -(Required)  Password required for the basic auth scheme.
      *
-     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
+     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
      */
     password: pulumi.Input<string>;
     /**
@@ -16362,7 +16961,7 @@ export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemo
     /**
      * -(Required)  Password required for the basic auth scheme.
      *
-     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
+     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
      */
     password: pulumi.Input<string>;
     /**
@@ -16711,7 +17310,7 @@ export interface PcRestoreV2DomainManagerNetworkExternalNetworkDefaultGatewayFqd
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
      */
     value: pulumi.Input<string>;
 }
@@ -16834,7 +17433,7 @@ export interface PcRestoreV2DomainManagerNetworkExternalNetworkSubnetMaskFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
      */
     value: pulumi.Input<string>;
 }
@@ -16895,7 +17494,7 @@ export interface PcRestoreV2DomainManagerNetworkInternalNetworksDefaultGatewayFq
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
      */
     value: pulumi.Input<string>;
 }
@@ -17018,7 +17617,7 @@ export interface PcRestoreV2DomainManagerNetworkInternalNetworksSubnetMaskFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
      */
     value: pulumi.Input<string>;
 }
@@ -17064,7 +17663,7 @@ export interface PcRestoreV2DomainManagerNetworkNameServerFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
      */
     value: pulumi.Input<string>;
 }
@@ -17110,7 +17709,7 @@ export interface PcRestoreV2DomainManagerNetworkNtpServerFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
      */
     value: pulumi.Input<string>;
 }
@@ -17374,6 +17973,17 @@ export interface ProjectDefaultSubnetReference {
     uuid: pulumi.Input<string>;
 }
 
+export interface ProjectDirectoryReferenceList {
+    /**
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+     */
+    kind?: pulumi.Input<string | undefined>;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: pulumi.Input<string>;
+}
+
 export interface ProjectEnvironmentReferenceList {
     /**
      * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
@@ -17409,6 +18019,17 @@ export interface ProjectExternalUserGroupReferenceList {
      * The name for the project.
      */
     name?: pulumi.Input<string | undefined>;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: pulumi.Input<string>;
+}
+
+export interface ProjectIdentityProvidersReferenceList {
+    /**
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+     */
+    kind?: pulumi.Input<string | undefined>;
     /**
      * (Required) the UUID.
      */
@@ -17544,6 +18165,17 @@ export interface ProjectUserReferenceList {
     uuid: pulumi.Input<string>;
 }
 
+export interface ProjectV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * - A name that identifies the relationship of the link to the object.
+     */
+    rel?: pulumi.Input<string | undefined>;
+}
+
 export interface ProjectVpcReferenceList {
     /**
      * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
@@ -17581,6 +18213,14 @@ export interface ProtectionPolicyV2ReplicationConfiguration {
 
 export interface ProtectionPolicyV2ReplicationConfigurationSchedule {
     /**
+     * -(Optional) Indicates whether replication is paused for all VMs and volume groups associated with the remote replication location. Ignored in create requests, only used in update requests. Only 0 RPO schedules support this field. Pause replication is not supported for asynchronous or near synchronous replications.
+     */
+    isReplicationPaused?: pulumi.Input<boolean | undefined>;
+    /**
+     * -(Optional) Duration (in seconds) that the latest recovery point is retained past its expiry time if the entity is unprotected, deleted, or migrated. If not specified, the latest recovery point will be retained for a minimum of 30 days. Set to 0 to not retain past expiry. This attribute is only applicable to asynchronous replication (<span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds`" pulumi-lang-go="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-python="`recovery_point_objective_time_seconds`" pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-java="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-hcl="`recovery_point_objective_time_seconds`">`recoveryPointObjectiveTimeSeconds`</span> > 0); it must not be specified for synchronous replication (<span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds`" pulumi-lang-go="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-python="`recovery_point_objective_time_seconds`" pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-java="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-hcl="`recovery_point_objective_time_seconds`">`recoveryPointObjectiveTimeSeconds`</span> = 0).
+     */
+    latestRecoveryPointRetentionSeconds?: pulumi.Input<number | undefined>;
+    /**
      * -(Required) The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
      * - Minute(s): 1, 2, 3, 4, 5, 6, 10, 12, 15
      * - Hour(s): 1, 2, 3, 4, 6, 8, 12
@@ -17598,6 +18238,10 @@ export interface ProtectionPolicyV2ReplicationConfigurationSchedule {
      * -(Optional) Specifies the retention policy for the recovery point schedule.
      */
     retention?: pulumi.Input<inputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetention | undefined>;
+    /**
+     * -(Optional) System-generated schedule ID for the replication configuration. Must not be provided in create requests. In update requests, it can be included to identify and retain the same schedule.
+     */
+    scheduleExtId?: pulumi.Input<string | undefined>;
     /**
      * -(Optional) Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.
      */
@@ -17819,8 +18463,30 @@ export interface RecoveryPlanOwnerReference {
 }
 
 export interface RecoveryPlanParameters {
+    availabilityZoneLists?: pulumi.Input<pulumi.Input<inputs.RecoveryPlanParametersAvailabilityZoneList>[] | undefined>;
     floatingIpAssignmentLists?: pulumi.Input<pulumi.Input<inputs.RecoveryPlanParametersFloatingIpAssignmentList>[] | undefined>;
     networkMappingLists?: pulumi.Input<pulumi.Input<inputs.RecoveryPlanParametersNetworkMappingList>[] | undefined>;
+    primaryLocationIndex?: pulumi.Input<number | undefined>;
+}
+
+export interface RecoveryPlanParametersAvailabilityZoneList {
+    availabilityZoneUrl?: pulumi.Input<string | undefined>;
+    clusterReferenceLists?: pulumi.Input<pulumi.Input<inputs.RecoveryPlanParametersAvailabilityZoneListClusterReferenceList>[] | undefined>;
+}
+
+export interface RecoveryPlanParametersAvailabilityZoneListClusterReferenceList {
+    /**
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+     */
+    kind?: pulumi.Input<string | undefined>;
+    /**
+     * The name for the Recovery Plan.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * (Required) the UUID.
+     */
+    uuid?: pulumi.Input<string | undefined>;
 }
 
 export interface RecoveryPlanParametersFloatingIpAssignmentList {
@@ -17927,6 +18593,7 @@ export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetwork
      */
     name?: pulumi.Input<string | undefined>;
     subnetLists?: pulumi.Input<pulumi.Input<inputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetList>[] | undefined>;
+    subnetUuid?: pulumi.Input<string | undefined>;
     useVpcReference?: pulumi.Input<boolean | undefined>;
     virtualNetworkReference?: pulumi.Input<inputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReference | undefined>;
     vpcReference?: pulumi.Input<inputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReference | undefined>;
@@ -17998,6 +18665,7 @@ export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetwork
      */
     name?: pulumi.Input<string | undefined>;
     subnetLists?: pulumi.Input<pulumi.Input<inputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkSubnetList>[] | undefined>;
+    subnetUuid?: pulumi.Input<string | undefined>;
     useVpcReference?: pulumi.Input<boolean | undefined>;
     virtualNetworkReference?: pulumi.Input<inputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReference | undefined>;
     vpcReference?: pulumi.Input<inputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReference | undefined>;
@@ -18301,6 +18969,23 @@ export interface RecoveryPointsV2VolumeGroupRecoveryPointLink {
     rel?: pulumi.Input<string | undefined>;
 }
 
+export interface ResourceGroupV2Link {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface ResourceGroupV2PlacementTarget {
+    clusterExtId: pulumi.Input<string>;
+    storageContainers?: pulumi.Input<pulumi.Input<inputs.ResourceGroupV2PlacementTargetStorageContainer>[] | undefined>;
+}
+
+export interface ResourceGroupV2PlacementTargetStorageContainer {
+    /**
+     * - A globally unique identifier of the resource group.
+     */
+    extId: pulumi.Input<string>;
+}
+
 export interface RoleCategory {
     /**
      * - (Optional) Name of the role.
@@ -18308,6 +18993,22 @@ export interface RoleCategory {
     name?: pulumi.Input<string | undefined>;
     /**
      * - value of the key.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface RoleMembershipV2Link {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface RoleMembershipV2ScopeTemplateNameValue {
+    /**
+     * The name of the variable.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * The value to substitute.
      */
     value?: pulumi.Input<string | undefined>;
 }
@@ -18460,19 +19161,39 @@ export interface RoutesV2Metadata {
 }
 
 export interface RoutesV2NextHop {
+    /**
+     * IP address of the nexthop. See <span pulumi-lang-nodejs="`nextHopIpAddress`" pulumi-lang-dotnet="`NextHopIpAddress`" pulumi-lang-go="`nextHopIpAddress`" pulumi-lang-python="`next_hop_ip_address`" pulumi-lang-yaml="`nextHopIpAddress`" pulumi-lang-java="`nextHopIpAddress`" pulumi-lang-hcl="`next_hop_ip_address`">`nextHopIpAddress`</span> below.
+     */
     nextHopIpAddresses?: pulumi.Input<pulumi.Input<inputs.RoutesV2NextHopNextHopIpAddress>[] | undefined>;
+    /**
+     * Name of the nexthop.
+     */
     nextHopName?: pulumi.Input<string | undefined>;
+    /**
+     * The reference to a link, such as a VPN connection or a subnet.
+     */
     nextHopReference?: pulumi.Input<string | undefined>;
+    /**
+     * Nexthop type. Supported values: `LOCAL_SUBNET`, `DIRECT_CONNECT_VIF`, `VPN_CONNECTION`, `IP_ADDRESS`, `EXTERNAL_SUBNET`.
+     */
     nextHopType: pulumi.Input<string>;
 }
 
 export interface RoutesV2NextHopNextHopIpAddress {
     /**
-     * IPv4 Address
+     * IPv4 Subnet Object
+     * - `ipv4.ip`: (Required) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     * - `ipv4.ip.value`: (Required) The IPv4 address of the host.
+     * - `ipv4.ip.prefix_length`: (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     * - `ipv4.prefix_length`: (Required) The prefix length of the network to which this host IPv4 address belongs.
      */
     ipv4: pulumi.Input<inputs.RoutesV2NextHopNextHopIpAddressIpv4>;
     /**
-     * IPv6 Address
+     * IPv6 Subnet Object
+     * - `ipv6.ip`: (Required) IP address format
+     * - `ipv6.ip.value`: (Required) The IPv6 address of the host.
+     * - `ipv6.ip.prefix_length`: (Optional) The prefix length of the network to which this host IPv6 address belongs.
+     * - `ipv6.prefix_length`: (Required) The prefix length of the network to which this host IPv6 address belongs.
      */
     ipv6: pulumi.Input<inputs.RoutesV2NextHopNextHopIpAddressIpv6>;
 }
@@ -19128,6 +19849,78 @@ export interface ServiceGroupsV2UdpService {
     startPort: pulumi.Input<number>;
 }
 
+export interface SnmpConfigV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * - A name that identifies the relationship of the link to the object
+     *   that is returned by the URL. The unique value of <span pulumi-lang-nodejs="`self`" pulumi-lang-dotnet="`Self`" pulumi-lang-go="`self`" pulumi-lang-python="`self`" pulumi-lang-yaml="`self`" pulumi-lang-java="`self`" pulumi-lang-hcl="`self`">`self`</span> identifies the URL
+     *   for the object.
+     */
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface SnmpTrapV2Address {
+    /**
+     * - (Optional) IPv4 address block. Contains:
+     */
+    ipv4?: pulumi.Input<inputs.SnmpTrapV2AddressIpv4 | undefined>;
+    /**
+     * - (Optional) IPv6 address block. Contains:
+     */
+    ipv6?: pulumi.Input<inputs.SnmpTrapV2AddressIpv6 | undefined>;
+}
+
+export interface SnmpTrapV2AddressIpv4 {
+    /**
+     * - (Optional, Computed) The prefix length of the network
+     *   to which this host IPv4 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * - (Required) The IPv4 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface SnmpTrapV2AddressIpv6 {
+    /**
+     * - (Optional, Computed) The prefix length of the network
+     *   to which this host IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * - (Required) The IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface SnmpTrapV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * - A name that identifies the relationship of the link to the object
+     *   that is returned by the URL. The unique value of <span pulumi-lang-nodejs="`self`" pulumi-lang-dotnet="`Self`" pulumi-lang-go="`self`" pulumi-lang-python="`self`" pulumi-lang-yaml="`self`" pulumi-lang-java="`self`" pulumi-lang-hcl="`self`">`self`</span> identifies the URL
+     *   for the object.
+     */
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface SnmpUserV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel?: pulumi.Input<string | undefined>;
+}
+
 export interface StaticRoutesDefaultRouteNexthop {
     /**
      * Reference to a subnet.
@@ -19581,10 +20374,25 @@ export interface SubnetV2Link {
 }
 
 export interface SubnetV2Metadata {
+    /**
+     * Set of category external identifiers associated with the subnet.
+     */
     categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * External identifier of the owner associated with the subnet.
+     */
     ownerReferenceId?: pulumi.Input<string | undefined>;
+    /**
+     * User name of the subnet owner.
+     */
     ownerUserName?: pulumi.Input<string | undefined>;
+    /**
+     * Name of the project associated with the subnet.
+     */
     projectName?: pulumi.Input<string | undefined>;
+    /**
+     * External identifier of the project associated with the subnet.
+     */
     projectReferenceId?: pulumi.Input<string | undefined>;
 }
 
@@ -19619,6 +20427,9 @@ export interface SubnetV2VirtualSwitch {
      */
     isDefault?: pulumi.Input<boolean | undefined>;
     links?: pulumi.Input<pulumi.Input<inputs.SubnetV2VirtualSwitchLink>[] | undefined>;
+    /**
+     * Metadata associated with the subnet.
+     */
     metadatas?: pulumi.Input<pulumi.Input<inputs.SubnetV2VirtualSwitchMetadata>[] | undefined>;
     /**
      * MTU
@@ -19695,10 +20506,25 @@ export interface SubnetV2VirtualSwitchLink {
 }
 
 export interface SubnetV2VirtualSwitchMetadata {
+    /**
+     * Set of category external identifiers associated with the subnet.
+     */
     categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * External identifier of the owner associated with the subnet.
+     */
     ownerReferenceId?: pulumi.Input<string | undefined>;
+    /**
+     * User name of the subnet owner.
+     */
     ownerUserName?: pulumi.Input<string | undefined>;
+    /**
+     * Name of the project associated with the subnet.
+     */
     projectName?: pulumi.Input<string | undefined>;
+    /**
+     * External identifier of the project associated with the subnet.
+     */
     projectReferenceId?: pulumi.Input<string | undefined>;
 }
 
@@ -19728,6 +20554,9 @@ export interface SubnetV2Vpc {
      */
     externallyRoutablePrefixes?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcExternallyRoutablePrefix>[] | undefined>;
     links?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcLink>[] | undefined>;
+    /**
+     * Metadata associated with the subnet.
+     */
     metadatas?: pulumi.Input<pulumi.Input<inputs.SubnetV2VpcMetadata>[] | undefined>;
     /**
      * Name of the VPC.
@@ -19923,10 +20752,25 @@ export interface SubnetV2VpcLink {
 }
 
 export interface SubnetV2VpcMetadata {
+    /**
+     * Set of category external identifiers associated with the subnet.
+     */
     categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * External identifier of the owner associated with the subnet.
+     */
     ownerReferenceId?: pulumi.Input<string | undefined>;
+    /**
+     * User name of the subnet owner.
+     */
     ownerUserName?: pulumi.Input<string | undefined>;
+    /**
+     * Name of the project associated with the subnet.
+     */
     projectName?: pulumi.Input<string | undefined>;
+    /**
+     * External identifier of the project associated with the subnet.
+     */
     projectReferenceId?: pulumi.Input<string | undefined>;
 }
 
@@ -19952,6 +20796,28 @@ export interface SubnetV2VpcSnatIpIpv6 {
      * value of address
      */
     value?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplatePlacementPolicyV2ClusterFilter {
+    /**
+     * Filter to match entities based on the provided categories.
+     */
+    categoryExtIds: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The match type for categories. Valid values: `CATEGORIES_MATCH_ALL`, `CATEGORIES_MATCH_ANY`.
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface TemplatePlacementPolicyV2ContentFilter {
+    /**
+     * Filter to match entities based on the provided categories.
+     */
+    categoryExtIds: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The match type for categories. Valid values: `CATEGORIES_MATCH_ALL`, `CATEGORIES_MATCH_ANY`.
+     */
+    type: pulumi.Input<string>;
 }
 
 export interface TemplateV2CreatedBy {
@@ -20009,14 +20875,15 @@ export interface TemplateV2TemplateVersionSpec {
     createTime?: pulumi.Input<string | undefined>;
     createdBies?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecCreatedBy>[] | undefined>;
     extId?: pulumi.Input<string | undefined>;
+    guestCustomizationProfile?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecGuestCustomizationProfile | undefined>;
     /**
      * Default: <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
      */
     isActiveVersion?: pulumi.Input<boolean | undefined>;
     /**
      * Allow or disallow overriding guest customization during template deployment.
-     * * `version_source.template_vm_reference`: (Optional) Template VM Reference
-     * * `version_source.template_version_reference`: (Optional) Template Version Reference
+     * * `version_source.template_vm_reference`: (Optional) Template VM Reference. Used to source a version from a VM. This is the **only** valid source when creating a new template. Mutually exclusive with <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span>.
+     * * `version_source.template_version_reference`: (Optional) Template Version Reference. Used to source a new version from an existing version of the template (update only). Mutually exclusive with <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span>.
      */
     isGcOverrideEnabled?: pulumi.Input<boolean | undefined>;
     links?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecLink>[] | undefined>;
@@ -20030,7 +20897,7 @@ export interface TemplateV2TemplateVersionSpec {
      */
     versionName?: pulumi.Input<string | undefined>;
     /**
-     * Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span> or <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span> .
+     * Source of the created Template Version. When creating a **new template**, the source must be a VM (<span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span>). When creating a **new version** of an existing template (an update), the source can be either a VM (<span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span>) or an existing version within the template (<span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span>). Specify exactly **one** of <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span> or <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span> - they are mutually exclusive.
      */
     versionSource: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSource>;
     /**
@@ -20083,6 +20950,10 @@ export interface TemplateV2TemplateVersionSpecCreatedByAdditionalAttributeValue 
 
 export interface TemplateV2TemplateVersionSpecCreatedByAdditionalAttributeValueMapOfString {
     map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecGuestCustomizationProfile {
+    extId?: pulumi.Input<string | undefined>;
 }
 
 export interface TemplateV2TemplateVersionSpecLink {
@@ -20574,6 +21445,7 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReference {
     extId: pulumi.Input<string>;
+    guestCustomizationProfile?: pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfile | undefined>;
     guestCustomizations?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomization>[] | undefined>;
 }
 
@@ -20684,6 +21556,10 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGu
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptUnattendXml {
     value?: pulumi.Input<string | undefined>;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfile {
+    extId?: pulumi.Input<string | undefined>;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpec {
@@ -22728,6 +23604,8 @@ export interface VirtualMachineV2Disk {
      * * `backing_info.vm_disk`:(Optional) backing Info for vmDisk
      * * `backing_info.adfs_volume_group_reference`: (Required) Volume Group Reference
      * * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: (Required) The globally unique identifier of an ADSF volume group. It should be of type UUID.
+     *
+     * > **Note (Volume Group disk workflow):** Until now, Volume Group disk attachment could be managed as part of the <span pulumi-lang-nodejs="`nutanix.VirtualMachineV2`" pulumi-lang-dotnet="`nutanix.VirtualMachineV2`" pulumi-lang-go="`VirtualMachineV2`" pulumi-lang-python="`VirtualMachineV2`" pulumi-lang-yaml="`nutanix.VirtualMachineV2`" pulumi-lang-java="`nutanix.VirtualMachineV2`" pulumi-lang-hcl="`nutanix_virtual_machine_v2`">`nutanix.VirtualMachineV2`</span> <span pulumi-lang-nodejs="`disks`" pulumi-lang-dotnet="`Disks`" pulumi-lang-go="`disks`" pulumi-lang-python="`disks`" pulumi-lang-yaml="`disks`" pulumi-lang-java="`disks`" pulumi-lang-hcl="`disks`">`disks`</span> workflow. Starting with the next release, managing Volume Group disk attach/detach through the VM resource is deprecated. Use <span pulumi-lang-nodejs="`nutanix.VolumeGroupDiskV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupDiskV2`" pulumi-lang-go="`VolumeGroupDiskV2`" pulumi-lang-python="`VolumeGroupDiskV2`" pulumi-lang-yaml="`nutanix.VolumeGroupDiskV2`" pulumi-lang-java="`nutanix.VolumeGroupDiskV2`" pulumi-lang-hcl="`nutanix_volume_group_disk_v2`">`nutanix.VolumeGroupDiskV2`</span> to manage Volume Group disks and <span pulumi-lang-nodejs="`nutanix.VolumeGroupVmV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupVmV2`" pulumi-lang-go="`VolumeGroupVmV2`" pulumi-lang-python="`VolumeGroupVmV2`" pulumi-lang-yaml="`nutanix.VolumeGroupVmV2`" pulumi-lang-java="`nutanix.VolumeGroupVmV2`" pulumi-lang-hcl="`nutanix_volume_group_vm_v2`">`nutanix.VolumeGroupVmV2`</span> to attach or detach VMs from a Volume Group. When a Volume Group disk is attached out-of-band, <span pulumi-lang-nodejs="`nutanix.VirtualMachineV2`" pulumi-lang-dotnet="`nutanix.VirtualMachineV2`" pulumi-lang-go="`VirtualMachineV2`" pulumi-lang-python="`VirtualMachineV2`" pulumi-lang-yaml="`nutanix.VirtualMachineV2`" pulumi-lang-java="`nutanix.VirtualMachineV2`" pulumi-lang-hcl="`nutanix_virtual_machine_v2`">`nutanix.VirtualMachineV2`</span> may not include that externally attached disk in its <span pulumi-lang-nodejs="`disks`" pulumi-lang-dotnet="`Disks`" pulumi-lang-go="`disks`" pulumi-lang-python="`disks`" pulumi-lang-yaml="`disks`" pulumi-lang-java="`disks`" pulumi-lang-hcl="`disks`">`disks`</span> state unless the corresponding disk backing is explicitly configured, which reduces drift noise.
      */
     backingInfos?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2DiskBackingInfo>[] | undefined>;
     /**
@@ -23545,6 +24423,119 @@ export interface VirtualMachineV2VtpmConfig {
     version?: pulumi.Input<string | undefined>;
 }
 
+export interface VirtualSwitchV2Cluster {
+    /**
+     * The name of an existing OVS bridge on the host (e.g., <span pulumi-lang-nodejs="`br1`" pulumi-lang-dotnet="`Br1`" pulumi-lang-go="`br1`" pulumi-lang-python="`br1`" pulumi-lang-yaml="`br1`" pulumi-lang-java="`br1`" pulumi-lang-hcl="`br1`">`br1`</span>) to convert into this Virtual Switch. Setting this triggers the migration path.
+     */
+    existingBridgeName?: pulumi.Input<string | undefined>;
+    /**
+     * The UUID of the cluster where this Virtual Switch configuration is applied. When using the migrate path, this acts as the `clusterReference`.
+     */
+    extId?: pulumi.Input<string | undefined>;
+    /**
+     * The Gateway IP address for the virtual switch on this cluster. *(Only applicable during Standard Create; ignored during Migration).*
+     */
+    gatewayIpAddress?: pulumi.Input<inputs.VirtualSwitchV2ClusterGatewayIpAddress | undefined>;
+    /**
+     * A list of host-specific configurations within the cluster. See <span pulumi-lang-nodejs="`hosts`" pulumi-lang-dotnet="`Hosts`" pulumi-lang-go="`hosts`" pulumi-lang-python="`hosts`" pulumi-lang-yaml="`hosts`" pulumi-lang-java="`hosts`" pulumi-lang-hcl="`hosts`">`hosts`</span> below.
+     */
+    hosts?: pulumi.Input<pulumi.Input<inputs.VirtualSwitchV2ClusterHost>[] | undefined>;
+    /**
+     * The VLAN Identifier for this virtual switch within the cluster. Set to <span pulumi-lang-nodejs="`0`" pulumi-lang-dotnet="`0`" pulumi-lang-go="`0`" pulumi-lang-python="`0`" pulumi-lang-yaml="`0`" pulumi-lang-java="`0`" pulumi-lang-hcl="`0`">`0`</span> to explicitly remove VLAN tagging.
+     */
+    vlanIdentifier?: pulumi.Input<number | undefined>;
+}
+
+export interface VirtualSwitchV2ClusterGatewayIpAddress {
+    /**
+     * The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * The IPv4 address of the host.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VirtualSwitchV2ClusterHost {
+    /**
+     * Specifies the active uplink interface when using the `ACTIVE_BACKUP` bond mode. *(Standard create only).*
+     */
+    activeUplink?: pulumi.Input<string | undefined>;
+    /**
+     * The UUID of the physical host.
+     */
+    extId?: pulumi.Input<string | undefined>;
+    /**
+     * A list of physical Network Interface Cards (e.g., `["eth0", "eth1"]`) to bind to this virtual switch as uplinks. *(Only applicable during Standard Create; ignored during Migration).*
+     */
+    hostNics?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The internal logical bridge name (e.g., <span pulumi-lang-nodejs="`br0`" pulumi-lang-dotnet="`Br0`" pulumi-lang-go="`br0`" pulumi-lang-python="`br0`" pulumi-lang-yaml="`br0`" pulumi-lang-java="`br0`" pulumi-lang-hcl="`br0`">`br0`</span>). In practice, this is **read-only**. The standard create endpoint auto-allocates this and ignores user input. To target a specific bridge, use `clusters[].existing_bridge_name` instead.
+     */
+    internalBridgeName?: pulumi.Input<string | undefined>;
+    /**
+     * The IPv4 subnet address for the bridge interface on this host. *(Only applicable during Standard Create; ignored during Migration).*
+     */
+    ipAddress?: pulumi.Input<inputs.VirtualSwitchV2ClusterHostIpAddress | undefined>;
+    /**
+     * The internal route table number utilized by this host.
+     */
+    routeTable?: pulumi.Input<number | undefined>;
+}
+
+export interface VirtualSwitchV2ClusterHostIpAddress {
+    ip?: pulumi.Input<inputs.VirtualSwitchV2ClusterHostIpAddressIp | undefined>;
+    /**
+     * Prefix length of the IPv4 subnet.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+}
+
+export interface VirtualSwitchV2ClusterHostIpAddressIp {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VirtualSwitchV2IgmpSpec {
+    /**
+     * Enables IGMP snooping to optimize multicast traffic delivery.
+     */
+    isSnoopingEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * A block defining IGMP querier settings. See <span pulumi-lang-nodejs="`querierSpec`" pulumi-lang-dotnet="`QuerierSpec`" pulumi-lang-go="`querierSpec`" pulumi-lang-python="`querier_spec`" pulumi-lang-yaml="`querierSpec`" pulumi-lang-java="`querierSpec`" pulumi-lang-hcl="`querier_spec`">`querierSpec`</span> below.
+     */
+    querierSpec?: pulumi.Input<inputs.VirtualSwitchV2IgmpSpecQuerierSpec | undefined>;
+    /**
+     * The timeout value in seconds before an inactive multicast group membership expires.
+     */
+    snoopingTimeout?: pulumi.Input<number | undefined>;
+}
+
+export interface VirtualSwitchV2IgmpSpecQuerierSpec {
+    /**
+     * Enables the Virtual Switch to act as an IGMP querier.
+     */
+    isQuerierEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * A list of VLAN IDs on which the Virtual Switch will actively send IGMP queries.
+     */
+    vlanIdLists?: pulumi.Input<pulumi.Input<number>[] | undefined>;
+}
+
+export interface VirtualSwitchV2Link {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface VirtualSwitchV2Metadata {
+    categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    ownerReferenceId?: pulumi.Input<string | undefined>;
+    ownerUserName?: pulumi.Input<string | undefined>;
+    projectName?: pulumi.Input<string | undefined>;
+    projectReferenceId?: pulumi.Input<string | undefined>;
+}
+
 export interface VmCdromInsertEjectV2BackingInfo {
     /**
      * A reference to a disk or image that contains the contents of a disk.
@@ -24223,7 +25214,7 @@ export interface VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustom
     /**
      * - (Optional) The value associated with the key for this key-value pair.
      *
-     * See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/cloneVm).
+     * See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/cloneVm).
      */
     value?: pulumi.Input<string | undefined>;
 }
@@ -24272,13 +25263,173 @@ export interface VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyV
     /**
      * - (Optional) The value associated with the key for this key-value pair.
      *
-     * See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/cloneVm).
+     * See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/cloneVm).
      */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml {
     value?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfig {
+    configOverrideSpec?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpec | undefined>;
+    profile: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigProfile>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpec {
+    sysprepConfig?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfig | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfig {
+    customization?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomization | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomization {
+    answerFile?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFile | undefined>;
+    sysprepParams?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParams | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFile {
+    /**
+     * - (Optional) Generic key value pair used for custom attributes.
+     */
+    unattendXml: pulumi.Input<string>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParams {
+    firstLogonCommands?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    generalSettings?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettings | undefined>;
+    localeSettings?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettings | undefined>;
+    networkSettings?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettings | undefined>;
+    workgroupOrDomainInfo?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfo | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettings {
+    administratorPassword?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPassword | undefined>;
+    autoLogonSettings?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettings | undefined>;
+    computerName?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerName | undefined>;
+    registeredOrganization?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganization | undefined>;
+    registeredOwner?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwner | undefined>;
+    timezone?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezone | undefined>;
+    windowsProductKey?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKey | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPassword {
+    discard?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettings {
+    logonCount?: pulumi.Input<number | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerName {
+    discard?: pulumi.Input<boolean | undefined>;
+    useVmName?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganization {
+    discard?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwner {
+    discard?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezone {
+    discard?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKey {
+    discard?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettings {
+    systemLocale?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocale | undefined>;
+    uiLanguage?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguage | undefined>;
+    userLocale?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocale | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocale {
+    discard?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguage {
+    discard?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocale {
+    discard?: pulumi.Input<boolean | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettings {
+    nicConfigLists?: pulumi.Input<pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigList>[] | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigList {
+    dnsConfig?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfig | undefined>;
+    /**
+     * - (Optional) The IP address configurations.
+     */
+    ipv4Config?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4Config | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfig {
+    alternateDnsServerAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    preferredDnsServerAddress?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4Config {
+    defaultGateways?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    ipAddress?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddress | undefined>;
+    useDhcp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddress {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: pulumi.Input<number | undefined>;
+    /**
+     * - Ip address.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfo {
+    discard?: pulumi.Input<boolean | undefined>;
+    domainSettings?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettings | undefined>;
+    workgroup?: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroup | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettings {
+    credentials: pulumi.Input<inputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentials>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentials {
+    domainName?: pulumi.Input<string | undefined>;
+    password?: pulumi.Input<string | undefined>;
+    username?: pulumi.Input<string | undefined>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroup {
+    /**
+     * - (Optional) The name for the vm.
+     */
+    name: pulumi.Input<string>;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigProfile {
+    extId: pulumi.Input<string>;
 }
 
 export interface VmCloneV2GuestTool {
@@ -24833,7 +25984,7 @@ export interface VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePair
     /**
      * - (Optional) The value associated with the key for this key-value pair.
      *
-     * See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/customizeGuestVm).
+     * See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/customizeGuestVm).
      */
     value?: pulumi.Input<string | undefined>;
 }
@@ -24882,13 +26033,217 @@ export interface VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePai
     /**
      * - (Optional) The value associated with the key for this key-value pair.
      *
-     * See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/customizeGuestVm).
+     * See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/customizeGuestVm).
      */
     value?: pulumi.Input<string | undefined>;
 }
 
 export interface VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXml {
     value?: pulumi.Input<string | undefined>;
+}
+
+export interface VmGuestCustomizationProfileV2Config {
+    /**
+     * Configuration for customization of a Windows guest operating system.
+     */
+    sysprepConfig?: pulumi.Input<inputs.VmGuestCustomizationProfileV2ConfigSysprepConfig | undefined>;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfig {
+    /**
+     * Either specify the values for the parameters or an unattend XML file.
+     */
+    customization?: pulumi.Input<inputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomization | undefined>;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomization {
+    /**
+     * The answer file (unattend.xml) for sysprep.
+     */
+    answerFile?: pulumi.Input<inputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationAnswerFile | undefined>;
+    /**
+     * A set of various unattended settings supported by Windows.
+     */
+    sysprepParams?: pulumi.Input<inputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParams | undefined>;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationAnswerFile {
+    /**
+     * The unattend XML file as a string value. Note that double quotes in the XML file need to be escaped.
+     */
+    unattendXml: pulumi.Input<string>;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParams {
+    /**
+     * List of commands to be executed automatically when a user logs in for the first time after Windows setup.
+     */
+    firstLogonCommands?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * A set of general unattended settings supported by Windows.
+     */
+    generalSettings?: pulumi.Input<inputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettings | undefined>;
+    /**
+     * Language and locale settings for the system and the user.
+     */
+    localeSettings?: pulumi.Input<inputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsLocaleSettings | undefined>;
+    /**
+     * Network settings to apply to the NICs attached to the VM.
+     */
+    networkSettings?: pulumi.Input<inputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettings | undefined>;
+    /**
+     * JoinWorkgroup or JoinDomain settings of the computer.
+     */
+    workgroupOrDomainInfo?: pulumi.Input<inputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfo | undefined>;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettings {
+    /**
+     * Password to be configured for built-in Administrator account.
+     */
+    administratorPassword?: pulumi.Input<string | undefined>;
+    /**
+     * Autologon settings.
+     */
+    autoLogonSettings?: pulumi.Input<inputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettings | undefined>;
+    /**
+     * Mechanism to use to generate the computer name of the VM. Either <span pulumi-lang-nodejs="`useVmName`" pulumi-lang-dotnet="`UseVmName`" pulumi-lang-go="`useVmName`" pulumi-lang-python="`use_vm_name`" pulumi-lang-yaml="`useVmName`" pulumi-lang-java="`useVmName`" pulumi-lang-hcl="`use_vm_name`">`useVmName`</span> or <span pulumi-lang-nodejs="`mustProvideDuringDeployment`" pulumi-lang-dotnet="`MustProvideDuringDeployment`" pulumi-lang-go="`mustProvideDuringDeployment`" pulumi-lang-python="`must_provide_during_deployment`" pulumi-lang-yaml="`mustProvideDuringDeployment`" pulumi-lang-java="`mustProvideDuringDeployment`" pulumi-lang-hcl="`must_provide_during_deployment`">`mustProvideDuringDeployment`</span> should be set to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>.
+     */
+    computerName?: pulumi.Input<inputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerName | undefined>;
+    /**
+     * Name of the organization of the end user.
+     */
+    registeredOrganization?: pulumi.Input<string | undefined>;
+    /**
+     * Full name of the end user.
+     */
+    registeredOwner?: pulumi.Input<string | undefined>;
+    /**
+     * The computer's time zone in string format.
+     */
+    timezone?: pulumi.Input<string | undefined>;
+    /**
+     * The product key to use to install and activate Windows.
+     */
+    windowsProductKey?: pulumi.Input<string | undefined>;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettings {
+    /**
+     * The number of automatic logons allowed for the computer.
+     */
+    logonCount: pulumi.Input<number>;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerName {
+    /**
+     * Whether the computer name must be provided during deployment.
+     */
+    mustProvideDuringDeployment?: pulumi.Input<boolean | undefined>;
+    /**
+     * Whether to use the VM name as the computer name.
+     */
+    useVmName?: pulumi.Input<boolean | undefined>;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsLocaleSettings {
+    /**
+     * Default language to use for non-Unicode programs.
+     */
+    systemLocale?: pulumi.Input<string | undefined>;
+    /**
+     * Default system language to use to display UI items.
+     */
+    uiLanguage?: pulumi.Input<string | undefined>;
+    /**
+     * Per-user settings for formatting dates, times, currency, and numbers.
+     */
+    userLocale?: pulumi.Input<string | undefined>;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettings {
+    /**
+     * List of NIC configurations to be applied to the NICs attached to the VM in serial order.
+     */
+    nicConfigLists: pulumi.Input<pulumi.Input<inputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigList>[]>;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigList {
+    /**
+     * DNS configuration to be applied to the NIC.
+     */
+    dnsConfig?: pulumi.Input<inputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfig | undefined>;
+    /**
+     * Mechanism to configure IPv4 settings of the NIC.
+     */
+    ipv4Config: pulumi.Input<inputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4Config>;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfig {
+    /**
+     * List of IPv4 addresses to look for after preferred DNS server.
+     */
+    alternateDnsServerAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * An IPv4 address preferred to search first for the DNS server.
+     */
+    preferredDnsServerAddress: pulumi.Input<string>;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4Config {
+    /**
+     * Whether IPv4 configuration must be provided during deployment.
+     */
+    mustProvideDuringDeployment?: pulumi.Input<boolean | undefined>;
+    /**
+     * Whether to use DHCP for IPv4 configuration.
+     */
+    useDhcp?: pulumi.Input<boolean | undefined>;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfo {
+    /**
+     * Domain settings.
+     */
+    domainSettings?: pulumi.Input<inputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettings | undefined>;
+    /**
+     * Workgroup settings.
+     */
+    workgroup?: pulumi.Input<inputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroup | undefined>;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettings {
+    /**
+     * Credentials for the domain account.
+     */
+    credentials: pulumi.Input<inputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentials>;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentials {
+    /**
+     * The name of the domain.
+     */
+    domainName: pulumi.Input<string>;
+    /**
+     * The password of the domain user account.
+     */
+    password: pulumi.Input<string>;
+    /**
+     * Name of the domain user account with permission to add the computer to a domain.
+     */
+    username: pulumi.Input<string>;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroup {
+    /**
+     * Name of workgroup to be applied to the computer. It must be a valid NetBIOS name.
+     */
+    name: pulumi.Input<string>;
+}
+
+export interface VmGuestCustomizationProfileV2Link {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
 }
 
 export interface VmNetworkDeviceAssignIpV2IpAddress {
@@ -24899,7 +26254,7 @@ export interface VmNetworkDeviceAssignIpV2IpAddress {
     /**
      * - Ip address.
      *
-     * See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/assignIpById).
+     * See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/assignIpById).
      */
     value: pulumi.Input<string>;
 }
@@ -24912,7 +26267,7 @@ export interface VmNetworkDeviceMigrateV2IpAddress {
     /**
      * - Ip address.
      *
-     * See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/migrateNicById).
+     * See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/migrateNicById).
      */
     value: pulumi.Input<string>;
 }
@@ -24932,12 +26287,83 @@ export interface VmShutdownActionV2GuestPowerStateTransitionConfig {
     /**
      * Indicates whether to abort VM shutdown/restart if the script fails.
      *
-     * See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownVm).
-     * See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownGuestVm).
-     * See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/rebootVm).
-     * See detailed information in [Nutanix VMs Power Action Reboot Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/rebootGuestVm).
+     * See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/shutdownVm).
+     * See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/shutdownGuestVm).
+     * See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/rebootVm).
+     * See detailed information in [Nutanix VMs Power Action Reboot Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/rebootGuestVm).
      */
     shouldFailOnScriptFailure?: pulumi.Input<boolean | undefined>;
+}
+
+export interface VmStartupPolicyV2CreatedBy {
+    /**
+     * The external ID (UUID) of the user.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface VmStartupPolicyV2Group {
+    /**
+     * Categories configured for the group. Minimum 1, maximum 5 categories per group.
+     */
+    categories?: pulumi.Input<pulumi.Input<inputs.VmStartupPolicyV2GroupCategory>[] | undefined>;
+}
+
+export interface VmStartupPolicyV2GroupCategory {
+    /**
+     * The external ID (UUID) of the category.
+     */
+    extId?: pulumi.Input<string | undefined>;
+}
+
+export interface VmStartupPolicyV2Link {
+    /**
+     * The URL at which the entity described by the link can be accessed.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * A name that identifies the relationship of the link to the object that is returned by the URL.
+     */
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface VmStartupPolicyV2StartCondition {
+    /**
+     * The delay in seconds after the power state criteria is met before the dependent VMs are started. Valid range: 0–600. Default: 0.
+     */
+    delayDurationSecs?: pulumi.Input<number | undefined>;
+    /**
+     * The power state criteria that the VM must attain before the dependent VMs are started. Exactly one of <span pulumi-lang-nodejs="`powerOn`" pulumi-lang-dotnet="`PowerOn`" pulumi-lang-go="`powerOn`" pulumi-lang-python="`power_on`" pulumi-lang-yaml="`powerOn`" pulumi-lang-java="`powerOn`" pulumi-lang-hcl="`power_on`">`powerOn`</span> or <span pulumi-lang-nodejs="`guestBootup`" pulumi-lang-dotnet="`GuestBootup`" pulumi-lang-go="`guestBootup`" pulumi-lang-python="`guest_bootup`" pulumi-lang-yaml="`guestBootup`" pulumi-lang-java="`guestBootup`" pulumi-lang-hcl="`guest_bootup`">`guestBootup`</span> must be specified.
+     */
+    powerStateCriteria?: pulumi.Input<inputs.VmStartupPolicyV2StartConditionPowerStateCriteria | undefined>;
+}
+
+export interface VmStartupPolicyV2StartConditionPowerStateCriteria {
+    /**
+     * Guest bootup criteria.
+     */
+    guestBootup?: pulumi.Input<inputs.VmStartupPolicyV2StartConditionPowerStateCriteriaGuestBootup | undefined>;
+    /**
+     * Power on criteria. Empty block.
+     */
+    powerOn?: pulumi.Input<inputs.VmStartupPolicyV2StartConditionPowerStateCriteriaPowerOn | undefined>;
+}
+
+export interface VmStartupPolicyV2StartConditionPowerStateCriteriaGuestBootup {
+    /**
+     * The timeout in seconds in which the VM's Guest OS boot up should be detected successfully.
+     */
+    timeoutDurationSecs?: pulumi.Input<number | undefined>;
+}
+
+export interface VmStartupPolicyV2StartConditionPowerStateCriteriaPowerOn {
+}
+
+export interface VmStartupPolicyV2UpdatedBy {
+    /**
+     * The external ID (UUID) of the user.
+     */
+    extId?: pulumi.Input<string | undefined>;
 }
 
 export interface VolumeGroupDiskV2DiskDataSourceReference {
@@ -24996,7 +26422,7 @@ export interface VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdFqdn {
     /**
      * - The fully qualified domain name.
      *
-     * See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachIscsiClient).
+     * See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/attachIscsiClient).
      */
     value?: pulumi.Input<string | undefined>;
 }
@@ -25025,63 +26451,39 @@ export interface VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdIpv6 {
 
 export interface VolumeGroupV2Disk {
     /**
-     * - Volume Disk description.
+     * -(Optional) Volume Group description. This is an optional field.
      */
     description?: pulumi.Input<string | undefined>;
-    /**
-     * -(Required) Disk Data Source Reference.
-     */
     diskDataSourceReferences: pulumi.Input<pulumi.Input<inputs.VolumeGroupV2DiskDiskDataSourceReference>[]>;
-    /**
-     * - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
-     */
     diskSizeBytes: pulumi.Input<number>;
-    /**
-     * - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
-     */
     diskStorageFeatures?: pulumi.Input<pulumi.Input<inputs.VolumeGroupV2DiskDiskStorageFeature>[] | undefined>;
-    /**
-     * - Index of the disk in a Volume Group. This field is optional and immutable.
-     */
     index?: pulumi.Input<number | undefined>;
 }
 
 export interface VolumeGroupV2DiskDiskDataSourceReference {
-    /**
-     * - The Entity Type of the Data Source Reference.
-     */
     entityType?: pulumi.Input<string | undefined>;
     /**
-     * - The external identifier of the Data Source Reference.
+     * -(Optional) A globally unique identifier of an instance that is suitable for external consumption.
      */
     extId: pulumi.Input<string>;
     /**
-     * - The name of the Data Source Reference. for the Volume Group.
+     * -(Required) Volume Group name. This is an optional field.
      */
     name?: pulumi.Input<string | undefined>;
-    /**
-     * - The uri list of the Data Source Reference.
-     */
     uris?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 export interface VolumeGroupV2DiskDiskStorageFeature {
-    /**
-     * - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
-     */
     flashModes?: pulumi.Input<pulumi.Input<inputs.VolumeGroupV2DiskDiskStorageFeatureFlashMode>[] | undefined>;
 }
 
 export interface VolumeGroupV2DiskDiskStorageFeatureFlashMode {
-    /**
-     * - Indicates whether the flash mode is enabled for the Volume Group Disk.
-     */
     isEnabled?: pulumi.Input<boolean | undefined>;
 }
 
 export interface VolumeGroupV2IscsiFeature {
     /**
-     * - The authentication type enabled for the Volume Group.
+     * -(Optional) The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
      */
     enabledAuthentications?: pulumi.Input<string | undefined>;
     /**
@@ -25092,14 +26494,14 @@ export interface VolumeGroupV2IscsiFeature {
 
 export interface VolumeGroupV2StorageFeature {
     /**
-     * - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+     * Once configured, this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
      */
     flashModes?: pulumi.Input<pulumi.Input<inputs.VolumeGroupV2StorageFeatureFlashMode>[] | undefined>;
 }
 
 export interface VolumeGroupV2StorageFeatureFlashMode {
     /**
-     * - Indicates whether the flash mode is enabled for the Volume Group Disk.
+     * Indicates whether the flash mode is enabled for the Volume Group.
      */
     isEnabled?: pulumi.Input<boolean | undefined>;
 }
@@ -25253,6 +26655,97 @@ export interface VpcV2ExternallyRoutablePrefixIpv6Ip {
     value?: pulumi.Input<string | undefined>;
 }
 
+export interface VpcV2KubernetesCluster {
+    /**
+     * ExtID of the Kubernetes cluster.
+     */
+    extId: pulumi.Input<string>;
+    /**
+     * Selector used to identify gateway node candidates within the Kubernetes cluster.
+     */
+    gatewayNodesSelector?: pulumi.Input<inputs.VpcV2KubernetesClusterGatewayNodesSelector | undefined>;
+    /**
+     * Selector used to identify namespaces within the Kubernetes cluster.
+     */
+    namespaceSelector?: pulumi.Input<inputs.VpcV2KubernetesClusterNamespaceSelector | undefined>;
+    /**
+     * Pod network of the Kubernetes cluster.
+     */
+    podNetwork?: pulumi.Input<inputs.VpcV2KubernetesClusterPodNetwork | undefined>;
+}
+
+export interface VpcV2KubernetesClusterGatewayNodesSelector {
+    /**
+     * Labels (key-value pairs) used to select entities.
+     * - `match_labels.name`: (Optional) The key of the label.
+     * - `match_labels.value`: (Optional) The value of the label.
+     */
+    matchLabels?: pulumi.Input<pulumi.Input<inputs.VpcV2KubernetesClusterGatewayNodesSelectorMatchLabel>[] | undefined>;
+}
+
+export interface VpcV2KubernetesClusterGatewayNodesSelectorMatchLabel {
+    /**
+     * Name of the VPC.
+     */
+    name?: pulumi.Input<string | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VpcV2KubernetesClusterNamespaceSelector {
+    /**
+     * Labels (key-value pairs) used to select entities.
+     * - `match_labels.name`: (Optional) The key of the label.
+     * - `match_labels.value`: (Optional) The value of the label.
+     */
+    matchLabels?: pulumi.Input<pulumi.Input<inputs.VpcV2KubernetesClusterNamespaceSelectorMatchLabel>[] | undefined>;
+}
+
+export interface VpcV2KubernetesClusterNamespaceSelectorMatchLabel {
+    /**
+     * Name of the VPC.
+     */
+    name?: pulumi.Input<string | undefined>;
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface VpcV2KubernetesClusterPodNetwork {
+    /**
+     * CIDR of the pod network (IPSubnet).
+     * - `cidr.ipv4`: (Optional) IPv4 Subnet Configuration.
+     * - `cidr.ipv6`: (Optional) IPv6 Subnet Configuration.
+     */
+    cidrs: pulumi.Input<pulumi.Input<inputs.VpcV2KubernetesClusterPodNetworkCidr>[]>;
+    /**
+     * Host slice of the pod network. Default value is 24.
+     */
+    hostSlice?: pulumi.Input<number | undefined>;
+}
+
+export interface VpcV2KubernetesClusterPodNetworkCidr {
+    ipv4?: pulumi.Input<inputs.VpcV2KubernetesClusterPodNetworkCidrIpv4 | undefined>;
+    ipv6?: pulumi.Input<inputs.VpcV2KubernetesClusterPodNetworkCidrIpv6 | undefined>;
+}
+
+export interface VpcV2KubernetesClusterPodNetworkCidrIpv4 {
+    ip: pulumi.Input<inputs.VpcV2KubernetesClusterPodNetworkCidrIpv4Ip>;
+    prefixLength?: pulumi.Input<number | undefined>;
+}
+
+export interface VpcV2KubernetesClusterPodNetworkCidrIpv4Ip {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
+export interface VpcV2KubernetesClusterPodNetworkCidrIpv6 {
+    ip: pulumi.Input<inputs.VpcV2KubernetesClusterPodNetworkCidrIpv6Ip>;
+    prefixLength?: pulumi.Input<number | undefined>;
+}
+
+export interface VpcV2KubernetesClusterPodNetworkCidrIpv6Ip {
+    prefixLength?: pulumi.Input<number | undefined>;
+    value: pulumi.Input<string>;
+}
+
 export interface VpcV2Link {
     href?: pulumi.Input<string | undefined>;
     rel?: pulumi.Input<string | undefined>;
@@ -25279,4 +26772,48 @@ export interface VpcV2SnatIpIpv4 {
 export interface VpcV2SnatIpIpv6 {
     prefixLength?: pulumi.Input<number | undefined>;
     value?: pulumi.Input<string | undefined>;
+}
+
+export interface VpcVirtualSwitchMappingV2Mapping {
+    /**
+     * A list of cluster UUIDs where this Virtual Switch mapping is effective. This defines the physical cluster boundaries for the networking configuration.
+     */
+    clusterUuids?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * A boolean flag indicating the traffic permission policy. When set to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>, all network traffic is permitted to flow through the virtual switch. When set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>, the switch drops standard traffic and only permits basic ICMP and essential statistics collection requests.
+     */
+    isAllTrafficPermitted?: pulumi.Input<boolean | undefined>;
+    /**
+     * A block containing administrative and organizational metadata for the mapping. See the <span pulumi-lang-nodejs="`metadata`" pulumi-lang-dotnet="`Metadata`" pulumi-lang-go="`metadata`" pulumi-lang-python="`metadata`" pulumi-lang-yaml="`metadata`" pulumi-lang-java="`metadata`" pulumi-lang-hcl="`metadata`">`metadata`</span> block below for details.
+     */
+    metadatas?: pulumi.Input<pulumi.Input<inputs.VpcVirtualSwitchMappingV2MappingMetadata>[] | undefined>;
+    /**
+     * The Universally Unique Identifier (UUID) of the target Virtual Switch. This is the switch where the VPC traffic policies will be applied.
+     */
+    virtualSwitchUuid: pulumi.Input<string>;
+}
+
+export interface VpcVirtualSwitchMappingV2MappingMetadata {
+    /**
+     * A list of globally unique identifiers (UUIDs) representing the categories (tags) associated with the mapping. Categories are useful for policy enforcement, granular filtering, or billing attribution.
+     *
+     * See detailed information in [Nutanix VPC Virtual Switch Mapping V4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/VpcVirtualSwitchMappings/operation/createVpcVirtualSwitchMapping).
+     */
+    categoryIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * A globally unique identifier (UUID) that represents the user, group, or service account that owns this mapping resource.
+     */
+    ownerReferenceId?: pulumi.Input<string | undefined>;
+    /**
+     * The human-readable username of the resource owner.
+     */
+    ownerUserName?: pulumi.Input<string | undefined>;
+    /**
+     * The human-readable name of the Nutanix Project this resource is assigned to.
+     */
+    projectName?: pulumi.Input<string | undefined>;
+    /**
+     * A globally unique identifier (UUID) of the Nutanix Project this resource belongs to. This is heavily used for multi-tenancy and resource isolation.
+     */
+    projectReferenceId?: pulumi.Input<string | undefined>;
 }

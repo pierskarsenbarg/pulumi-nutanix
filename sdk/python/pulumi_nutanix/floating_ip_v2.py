@@ -29,6 +29,7 @@ class FloatingIpV2Args:
                  floating_ips: pulumi.Input[Optional[Sequence[pulumi.Input['FloatingIpV2FloatingIpArgs']]]] = None,
                  load_balancer_session_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_nic_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_nics: pulumi.Input[Optional[Sequence[pulumi.Input['FloatingIpV2VmNicArgs']]]] = None,
                  vpc_reference: pulumi.Input[Optional[_builtins.str]] = None,
@@ -42,6 +43,7 @@ class FloatingIpV2Args:
         :param pulumi.Input[Sequence[pulumi.Input['FloatingIpV2ExternalSubnetArgs']]] external_subnets: Networking common base object
         :param pulumi.Input[Sequence[pulumi.Input['FloatingIpV2FloatingIpArgs']]] floating_ips: Floating IP address.
         :param pulumi.Input[_builtins.str] name: Name of the floating IP.
+        :param pulumi.Input[_builtins.str] project_ext_id: External identifier of the project associated with the Floating IP.
         :param pulumi.Input[_builtins.str] vm_nic_reference: VM NIC reference.
         :param pulumi.Input[Sequence[pulumi.Input['FloatingIpV2VmNicArgs']]] vm_nics: Virtual NIC for projections
         :param pulumi.Input[_builtins.str] vpc_reference: VPC reference UUID
@@ -63,6 +65,8 @@ class FloatingIpV2Args:
             pulumi.set(__self__, "load_balancer_session_reference", load_balancer_session_reference)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if vm_nic_reference is not None:
             pulumi.set(__self__, "vm_nic_reference", vm_nic_reference)
         if vm_nics is not None:
@@ -163,6 +167,18 @@ class FloatingIpV2Args:
         pulumi.set(self, "name", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        External identifier of the project associated with the Floating IP.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="vmNicReference")
     def vm_nic_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -227,6 +243,7 @@ class _FloatingIpV2State:
                  metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['FloatingIpV2MetadataArgs']]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_nic_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_nics: pulumi.Input[Optional[Sequence[pulumi.Input['FloatingIpV2VmNicArgs']]]] = None,
@@ -244,6 +261,7 @@ class _FloatingIpV2State:
         :param pulumi.Input[Sequence[pulumi.Input['FloatingIpV2LinkArgs']]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[Sequence[pulumi.Input['FloatingIpV2MetadataArgs']]] metadatas: Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: Name of the floating IP.
+        :param pulumi.Input[_builtins.str] project_ext_id: External identifier of the project associated with the Floating IP.
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.
         :param pulumi.Input[_builtins.str] vm_nic_reference: VM NIC reference.
         :param pulumi.Input[Sequence[pulumi.Input['FloatingIpV2VmNicArgs']]] vm_nics: Virtual NIC for projections
@@ -276,6 +294,8 @@ class _FloatingIpV2State:
             pulumi.set(__self__, "name", name)
         if private_ip is not None:
             pulumi.set(__self__, "private_ip", private_ip)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if tenant_id is not None:
             pulumi.set(__self__, "tenant_id", tenant_id)
         if vm_nic_reference is not None:
@@ -432,6 +452,18 @@ class _FloatingIpV2State:
         pulumi.set(self, "private_ip", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        External identifier of the project associated with the Floating IP.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -506,6 +538,7 @@ class FloatingIpV2(pulumi.CustomResource):
                  floating_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2FloatingIpArgs', 'FloatingIpV2FloatingIpArgsDict', 'outputs.FloatingIpV2FloatingIp']]]]] = None,
                  load_balancer_session_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_nic_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VmNicArgs', 'FloatingIpV2VmNicArgsDict', 'outputs.FloatingIpV2VmNic']]]]] = None,
                  vpc_reference: pulumi.Input[Optional[_builtins.str]] = None,
@@ -557,6 +590,7 @@ class FloatingIpV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2ExternalSubnetArgs', 'FloatingIpV2ExternalSubnetArgsDict', 'outputs.FloatingIpV2ExternalSubnet']]]] external_subnets: Networking common base object
         :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2FloatingIpArgs', 'FloatingIpV2FloatingIpArgsDict', 'outputs.FloatingIpV2FloatingIp']]]] floating_ips: Floating IP address.
         :param pulumi.Input[_builtins.str] name: Name of the floating IP.
+        :param pulumi.Input[_builtins.str] project_ext_id: External identifier of the project associated with the Floating IP.
         :param pulumi.Input[_builtins.str] vm_nic_reference: VM NIC reference.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2VmNicArgs', 'FloatingIpV2VmNicArgsDict', 'outputs.FloatingIpV2VmNic']]]] vm_nics: Virtual NIC for projections
         :param pulumi.Input[_builtins.str] vpc_reference: VPC reference UUID
@@ -629,6 +663,7 @@ class FloatingIpV2(pulumi.CustomResource):
                  floating_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2FloatingIpArgs', 'FloatingIpV2FloatingIpArgsDict', 'outputs.FloatingIpV2FloatingIp']]]]] = None,
                  load_balancer_session_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_nic_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VmNicArgs', 'FloatingIpV2VmNicArgsDict', 'outputs.FloatingIpV2VmNic']]]]] = None,
                  vpc_reference: pulumi.Input[Optional[_builtins.str]] = None,
@@ -650,6 +685,7 @@ class FloatingIpV2(pulumi.CustomResource):
             __props__.__dict__["floating_ips"] = floating_ips
             __props__.__dict__["load_balancer_session_reference"] = load_balancer_session_reference
             __props__.__dict__["name"] = name
+            __props__.__dict__["project_ext_id"] = project_ext_id
             __props__.__dict__["vm_nic_reference"] = vm_nic_reference
             __props__.__dict__["vm_nics"] = vm_nics
             __props__.__dict__["vpc_reference"] = vpc_reference
@@ -683,6 +719,7 @@ class FloatingIpV2(pulumi.CustomResource):
             metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2MetadataArgs', 'FloatingIpV2MetadataArgsDict', 'outputs.FloatingIpV2Metadata']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             vm_nic_reference: pulumi.Input[Optional[_builtins.str]] = None,
             vm_nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VmNicArgs', 'FloatingIpV2VmNicArgsDict', 'outputs.FloatingIpV2VmNic']]]]] = None,
@@ -704,6 +741,7 @@ class FloatingIpV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2LinkArgs', 'FloatingIpV2LinkArgsDict', 'outputs.FloatingIpV2Link']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2MetadataArgs', 'FloatingIpV2MetadataArgsDict', 'outputs.FloatingIpV2Metadata']]]] metadatas: Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: Name of the floating IP.
+        :param pulumi.Input[_builtins.str] project_ext_id: External identifier of the project associated with the Floating IP.
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.
         :param pulumi.Input[_builtins.str] vm_nic_reference: VM NIC reference.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2VmNicArgs', 'FloatingIpV2VmNicArgsDict', 'outputs.FloatingIpV2VmNic']]]] vm_nics: Virtual NIC for projections
@@ -727,6 +765,7 @@ class FloatingIpV2(pulumi.CustomResource):
         __props__.__dict__["metadatas"] = metadatas
         __props__.__dict__["name"] = name
         __props__.__dict__["private_ip"] = private_ip
+        __props__.__dict__["project_ext_id"] = project_ext_id
         __props__.__dict__["tenant_id"] = tenant_id
         __props__.__dict__["vm_nic_reference"] = vm_nic_reference
         __props__.__dict__["vm_nics"] = vm_nics
@@ -750,6 +789,7 @@ class FloatingIpV2(pulumi.CustomResource):
             metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2MetadataArgs', 'FloatingIpV2MetadataArgsDict', 'outputs.FloatingIpV2Metadata']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             vm_nic_reference: pulumi.Input[Optional[_builtins.str]] = None,
             vm_nics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FloatingIpV2VmNicArgs', 'FloatingIpV2VmNicArgsDict', 'outputs.FloatingIpV2VmNic']]]]] = None,
@@ -769,6 +809,7 @@ class FloatingIpV2(pulumi.CustomResource):
         __props__["metadatas"] = metadatas
         __props__["name"] = name
         __props__["privateIp"] = private_ip
+        __props__["projectExtId"] = project_ext_id
         __props__["tenantId"] = tenant_id
         __props__["vmNicReference"] = vm_nic_reference
         __props__["vmNics"] = vm_nics
@@ -867,6 +908,14 @@ class FloatingIpV2(pulumi.CustomResource):
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> pulumi.Output[_builtins.str]:
         return pulumi.get(self, "private_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        External identifier of the project associated with the Floating IP.
+        """
+        return pulumi.get(self, "project_ext_id")
 
     @_builtins.property
     @pulumi.getter(name="tenantId")

@@ -73,6 +73,14 @@ export interface GetEntityGroupV2Result {
      */
     readonly id: string;
     /**
+     * Indicates whether the Entity Group is shared with all projects.
+     */
+    readonly isSharedWithAllProjects: boolean;
+    /**
+     * A flag indicating whether the entity group is system-defined.
+     */
+    readonly isSystemDefined: boolean;
+    /**
      * The timestamp when the Entity Group was last updated.
      */
     readonly lastUpdateTime: string;
@@ -92,6 +100,10 @@ export interface GetEntityGroupV2Result {
      * Mapping of entity group to the list of policy external identifiers.
      */
     readonly policyExtIds: string[];
+    /**
+     * Project external ID associated with the entity group.
+     */
+    readonly projectExtId: string;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */

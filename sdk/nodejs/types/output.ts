@@ -169,6 +169,30 @@ export interface AccessControlPolicyUserReferenceList {
     uuid: string;
 }
 
+export interface AdGroupCategoryMappingV2AdInfo {
+    /**
+     * The ExtID of the directory service that will be used for mapping.
+     */
+    directoryServiceReference: string;
+    /**
+     * The objectGUID for the object in AD. Use <span pulumi-lang-nodejs="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-dotnet="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-go="`getDirectoryServiceUsersSearchV2`" pulumi-lang-python="`get_directory_service_users_search_v2`" pulumi-lang-yaml="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-java="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-hcl="`data.nutanix_directory_service_users_search_v2`">`nutanix.getDirectoryServiceUsersSearchV2`</span> to look up this value. Cannot be updated once created.
+     */
+    objectIdentifier: string;
+    /**
+     * The path for the mapped object in AD. Returned by the API.
+     */
+    objectPath: string;
+    /**
+     * The mapping status of AD Mapping. Valid values: `USABLE`, `DELETED`, `DIRECTORY_NOT_CONFIGURED`.
+     */
+    status: string;
+}
+
+export interface AdGroupCategoryMappingV2Link {
+    href: string;
+    rel: string;
+}
+
 export interface AddressGroupIpAddressBlockList {
     /**
      * - (Required) IP of the address block
@@ -214,7 +238,7 @@ export interface AssociateCategoryToVolumeGroupV2Category {
      * -(Optional) Type of entity that's represented by this reference. Default value is "CATEGORY". Valid values are:
      * * "CATEGORY".
      *
-     * See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/associateCategory).
+     * See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/associateCategory).
      */
     entityType?: string;
     /**
@@ -754,7 +778,7 @@ export interface ClusterAddNodeV2RemoveNodeParamExtraParam {
     /**
      * -(Optional) Indicates if add check needs to be skipped or not.
      *
-     * See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/expandCluster).
+     * See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/Clusters/operation/expandCluster).
      */
     shouldSkipAddCheck?: boolean;
     /**
@@ -772,6 +796,99 @@ export interface ClusterProfileV2Cluster {
     extId: string;
     isCompliant: boolean;
     lastSyncedTime: string;
+}
+
+export interface ClusterProfileV2FaultToleranceConfig {
+    /**
+     * - (Optional) Desired cluster fault tolerance level. Allowed values:
+     *
+     * | Enum             | Description                         |
+     * |------------------|-------------------------------------|
+     * | CFT_0N_AND_0D    | No fault tolerance                  |
+     * | CFT_1N_OR_1D     | Tolerate 1 node or 1 disk failure   |
+     * | CFT_2N_OR_2D     | Tolerate 2 node or 2 disk failures  |
+     * | CFT_1N_AND_1D    | Tolerate 1 node and 1 disk failure  |
+     * | CFT_1N_OR_2D     | Tolerate 1 node or 2 disk failures  |
+     */
+    desiredClusterFaultTolerance: string;
+}
+
+export interface ClusterProfileV2HttpProxyConfig {
+    /**
+     * - (Optional) List of HTTP proxy server configurations. Each proxy object supports:
+     */
+    proxyLists: outputs.ClusterProfileV2HttpProxyConfigProxyList[];
+    /**
+     * - (Optional) Targets exempted from going through the configured HTTP proxy. Each whitelist entry supports:
+     */
+    proxyWhiteLists: outputs.ClusterProfileV2HttpProxyConfigProxyWhiteList[];
+}
+
+export interface ClusterProfileV2HttpProxyConfigProxyList {
+    /**
+     * IP address of the proxy server.
+     */
+    ipAddress: outputs.ClusterProfileV2HttpProxyConfigProxyListIpAddress;
+    /**
+     * HTTP proxy server name.
+     */
+    name: string;
+    /**
+     * HTTP proxy server password.
+     */
+    password?: string;
+    /**
+     * HTTP proxy server port.
+     */
+    port: number;
+    /**
+     * List of HTTP proxy types. Allowed values:
+     *
+     * | Enum     | Description         |
+     * |----------|---------------------|
+     * | HTTP     | HTTP proxy          |
+     * | HTTPS    | HTTPS proxy         |
+     * | SOCKS    | SOCKS proxy         |
+     */
+    proxyTypes: string[];
+    /**
+     * HTTP proxy server username.
+     */
+    username: string;
+}
+
+export interface ClusterProfileV2HttpProxyConfigProxyListIpAddress {
+    ipv4s: outputs.ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv4[];
+    ipv6s: outputs.ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv6[];
+}
+
+export interface ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv4 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv6 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface ClusterProfileV2HttpProxyConfigProxyWhiteList {
+    /**
+     * Target identifier exempted from HTTP proxy.
+     */
+    target: string;
+    /**
+     * Type of the whitelist target. Allowed values:
+     *
+     * | Enum                 | Description              |
+     * |----------------------|--------------------------|
+     * | IPV4_ADDRESS         | IPv4 address             |
+     * | IPV6_ADDRESS         | IPv6 address             |
+     * | IPV4_NETWORK_MASK    | IPv4 network mask        |
+     * | DOMAIN_NAME_SUFFIX   | Domain name suffix       |
+     * | HOST_NAME            | Host name                |
+     */
+    targetType: string;
 }
 
 export interface ClusterProfileV2Link {
@@ -809,6 +926,51 @@ export interface ClusterProfileV2NameServerIpListIpv6 {
     /**
      * - (Required) Ip V6 address.
      */
+    value: string;
+}
+
+export interface ClusterProfileV2NtpServerConfigList {
+    /**
+     * - (Optional) Encryption algorithm used for NTP server authentication.
+     *
+     * | Enum     | Description         |
+     * |----------|---------------------|
+     * | SHA256   | SHA-256 algorithm   |
+     * | SHA384   | SHA-384 algorithm   |
+     * | SHA512   | SHA-512 algorithm   |
+     */
+    encryptionAlgorithm: string;
+    /**
+     * - (Optional, Sensitive) Encryption key in hexadecimal format used for NTP server authentication.
+     */
+    encryptionKey?: string;
+    /**
+     * - (Optional) Encryption key ID used for NTP server authentication.
+     */
+    encryptionKeyId: number;
+    /**
+     * - (Required) NTP server address (supports IPv4, IPv6, and FQDN).
+     */
+    ntpServerAddress: outputs.ClusterProfileV2NtpServerConfigListNtpServerAddress;
+}
+
+export interface ClusterProfileV2NtpServerConfigListNtpServerAddress {
+    fqdns: outputs.ClusterProfileV2NtpServerConfigListNtpServerAddressFqdn[];
+    ipv4s: outputs.ClusterProfileV2NtpServerConfigListNtpServerAddressIpv4[];
+    ipv6s: outputs.ClusterProfileV2NtpServerConfigListNtpServerAddressIpv6[];
+}
+
+export interface ClusterProfileV2NtpServerConfigListNtpServerAddressFqdn {
+    value: string;
+}
+
+export interface ClusterProfileV2NtpServerConfigListNtpServerAddressIpv4 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface ClusterProfileV2NtpServerConfigListNtpServerAddressIpv6 {
+    prefixLength?: number;
     value: string;
 }
 
@@ -870,6 +1032,20 @@ export interface ClusterProfileV2PulseStatus {
      * | DEFAULT  | Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse |
      */
     piiScrubbingLevel: string;
+}
+
+export interface ClusterProfileV2RebuildReservationConfig {
+    /**
+     * - (Optional, default <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>) Enable rebuild capacity reservation to maintain free space for fault tolerance recovery operations.
+     */
+    isRebuildReservationEnabled?: boolean;
+}
+
+export interface ClusterProfileV2ResilientCapacityWarningThresholdConfig {
+    /**
+     * - (Optional, default <span pulumi-lang-nodejs="`75`" pulumi-lang-dotnet="`75`" pulumi-lang-go="`75`" pulumi-lang-python="`75`" pulumi-lang-yaml="`75`" pulumi-lang-java="`75`" pulumi-lang-hcl="`75`">`75`</span>) Warning threshold percentage for resilient storage capacity.
+     */
+    resilientCapacityWarningThresholdPercentage?: number;
 }
 
 export interface ClusterProfileV2RsyslogServerList {
@@ -1225,6 +1401,10 @@ export interface ClusterProfileV2SnmpConfigUser {
      * |-----------|------------------------------|
      * | SHA       | SHA SNMP authentication      |
      * | MD5       | MD5 SNMP authentication      |
+     * | SHA224    | SHA-224 SNMP authentication  |
+     * | SHA256    | SHA-256 SNMP authentication  |
+     * | SHA384    | SHA-384 SNMP authentication  |
+     * | SHA512    | SHA-512 SNMP authentication  |
      */
     authType: string;
     extId: string;
@@ -1240,6 +1420,8 @@ export interface ClusterProfileV2SnmpConfigUser {
      * |-----------|--------------------|
      * | DES       | DES SNMP key       |
      * | AES       | AES SNMP key       |
+     * | AES192    | AES-192 SNMP key   |
+     * | AES256    | AES-256 SNMP key   |
      */
     privType: string;
     tenantId: string;
@@ -2555,6 +2737,7 @@ export interface ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailUplinkUp
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMap {
+    guestCustomizationProfileConfig: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfig;
     /**
      * Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
      */
@@ -2606,7 +2789,7 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigClo
      * * `cloud_init_script.user_data`: (Optional) user data object
      * * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
      *
-     * See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/deployTemplate).
+     * See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Templates/operation/deployTemplate).
      */
     cloudInitScripts: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScript[];
     /**
@@ -2700,6 +2883,160 @@ export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSys
 
 export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXml {
     value: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfig {
+    configOverrideSpec?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpec;
+    profile: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigProfile;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpec {
+    sysprepConfig?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfig;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfig {
+    customization?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomization;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomization {
+    answerFile?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFile;
+    sysprepParams?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParams;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFile {
+    unattendXml: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParams {
+    firstLogonCommands?: string[];
+    generalSettings?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettings;
+    localeSettings?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettings;
+    networkSettings?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettings;
+    workgroupOrDomainInfo?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfo;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettings {
+    administratorPassword?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPassword;
+    autoLogonSettings?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettings;
+    computerName?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerName;
+    registeredOrganization?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganization;
+    registeredOwner?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwner;
+    timezone?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezone;
+    windowsProductKey?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKey;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPassword {
+    discard?: boolean;
+    value?: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettings {
+    logonCount?: number;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerName {
+    discard?: boolean;
+    useVmName?: boolean;
+    value?: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganization {
+    discard?: boolean;
+    value?: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwner {
+    discard?: boolean;
+    value?: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezone {
+    discard?: boolean;
+    value?: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKey {
+    discard?: boolean;
+    value?: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettings {
+    systemLocale?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocale;
+    uiLanguage?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguage;
+    userLocale?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocale;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocale {
+    discard?: boolean;
+    value?: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguage {
+    discard?: boolean;
+    value?: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocale {
+    discard?: boolean;
+    value?: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettings {
+    nicConfigLists?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigList[];
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigList {
+    dnsConfig?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfig;
+    /**
+     * The IP address configurations.
+     */
+    ipv4Config?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4Config;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfig {
+    alternateDnsServerAddresses?: string[];
+    preferredDnsServerAddress?: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4Config {
+    defaultGateways?: string[];
+    ipAddress?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddress;
+    useDhcp?: boolean;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddress {
+    prefixLength?: number;
+    value?: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfo {
+    discard?: boolean;
+    domainSettings?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettings;
+    workgroup?: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroup;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettings {
+    credentials: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentials;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentials {
+    domainName?: string;
+    password?: string;
+    username?: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroup {
+    /**
+     * VM name.
+     */
+    name: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigProfile {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
 }
 
 export interface DeployTemplatesV2OverrideVmConfigMapNic {
@@ -3063,6 +3400,59 @@ export interface DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEth
     extId: string;
 }
 
+export interface DirectoryServerConfigV2DomainController {
+    /**
+     * A fully qualified domain name with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> (Optional).
+     */
+    fqdn: outputs.DirectoryServerConfigV2DomainControllerFqdn;
+    /**
+     * An IPv4 address with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> (Required) and <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> (Optional).
+     */
+    ipv4: outputs.DirectoryServerConfigV2DomainControllerIpv4;
+    /**
+     * An IPv6 address with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> (Required) and <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> (Optional).
+     */
+    ipv6: outputs.DirectoryServerConfigV2DomainControllerIpv6;
+}
+
+export interface DirectoryServerConfigV2DomainControllerFqdn {
+    value: string;
+}
+
+export interface DirectoryServerConfigV2DomainControllerIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface DirectoryServerConfigV2DomainControllerIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface DirectoryServerConfigV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface DirectoryServerConfigV2MatchingCriteria {
+    /**
+     * The criteria to use for matching entities to be categorized. Only allowed when <span pulumi-lang-nodejs="`matchType`" pulumi-lang-dotnet="`MatchType`" pulumi-lang-go="`matchType`" pulumi-lang-python="`match_type`" pulumi-lang-yaml="`matchType`" pulumi-lang-java="`matchType`" pulumi-lang-hcl="`match_type`">`matchType`</span> is `CONTAINS`. Must not be set when <span pulumi-lang-nodejs="`matchType`" pulumi-lang-dotnet="`MatchType`" pulumi-lang-go="`matchType`" pulumi-lang-python="`match_type`" pulumi-lang-yaml="`matchType`" pulumi-lang-java="`matchType`" pulumi-lang-hcl="`match_type`">`matchType`</span> is `ALL`.
+     */
+    criteria: string;
+    /**
+     * The entity type to match on. Valid values: `VM`.
+     */
+    matchEntity: string;
+    /**
+     * The field to match on. Today only `NAME` is supported, which matches on an entity's name.
+     */
+    matchField: string;
+    /**
+     * The type of match. Valid values: `CONTAINS`, `ALL`. `CONTAINS` performs a substring match on the given entity and field for the criteria value whereas `ALL` allows all strings to match on the given entity.
+     */
+    matchType: string;
+}
+
 export interface DirectoryServicesV2OpenLdapConfiguration {
     /**
      * -(Required) this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
@@ -3132,6 +3522,10 @@ export interface EntityGroupV2AllowedConfigEntity {
      */
     addresses: outputs.EntityGroupV2AllowedConfigEntityAddresses;
     /**
+     * List of FQDNs. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `FQDN_VALUES`.
+     */
+    fqdns: string[];
+    /**
      * With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> block(s):
      */
     ipRanges: outputs.EntityGroupV2AllowedConfigEntityIpRanges;
@@ -3140,11 +3534,19 @@ export interface EntityGroupV2AllowedConfigEntity {
      */
     kubeEntities: string[];
     /**
+     * Match criteria for regex-based entity selection. Valid values: `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `EQUALS`.
+     */
+    matchCriteria: string;
+    /**
      * List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
      */
     referenceExtIds: string[];
     /**
-     * The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`.
+     * String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `REGEX`.
+     */
+    referenceString: string;
+    /**
+     * The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
      */
     selectedBy: string;
     /**
@@ -3204,7 +3606,7 @@ export interface EntityGroupV2ExceptConfigEntity {
      */
     referenceExtIds: string[];
     /**
-     * The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`.
+     * The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
      */
     selectedBy: string;
     /**
@@ -3331,6 +3733,7 @@ export interface FloatingIpV2ExternalSubnet {
     ipPrefix: string;
     ipUsages: outputs.FloatingIpV2ExternalSubnetIpUsage[];
     isAdvancedNetworking: boolean;
+    isConnected: boolean;
     isExternal: boolean;
     isNatEnabled: boolean;
     /**
@@ -3348,7 +3751,12 @@ export interface FloatingIpV2ExternalSubnet {
     name: string;
     networkFunctionChainReference: string;
     networkId: number;
+    /**
+     * External identifier of the project associated with the Floating IP.
+     */
+    projectExtId: string;
     reservedIpAddresses: outputs.FloatingIpV2ExternalSubnetReservedIpAddress[];
+    sharedWithProjects: string[];
     subnetType: string;
     virtualSwitchReference: string;
     virtualSwitches: outputs.FloatingIpV2ExternalSubnetVirtualSwitch[];
@@ -5370,6 +5778,89 @@ export interface GetAccessControlPolicyUserReferenceList {
     uuid: string;
 }
 
+export interface GetAdGroupCategoryMappingV2AdInfo {
+    /**
+     * The ExtID of the directory service that will be used for mapping.
+     */
+    directoryServiceReference: string;
+    /**
+     * The objectGUID for the object in AD.
+     */
+    objectIdentifier: string;
+    /**
+     * The path for the mapped object in AD.
+     */
+    objectPath: string;
+    /**
+     * The mapping status of AD Mapping.
+     */
+    status: string;
+}
+
+export interface GetAdGroupCategoryMappingV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetAdGroupCategoryMappingsV2CategoryMapping {
+    /**
+     * The Active Directory object information for this mapping.
+     */
+    adInfos: outputs.GetAdGroupCategoryMappingsV2CategoryMappingAdInfo[];
+    /**
+     * The name for the category that this mapping is for.
+     */
+    categoryName: string;
+    /**
+     * The value for the category that this mapping is for.
+     */
+    categoryValue: string;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * A HATEOAS style link for the response.
+     */
+    links: outputs.GetAdGroupCategoryMappingsV2CategoryMappingLink[];
+    /**
+     * Name of Category Mapping.
+     */
+    name: string;
+    /**
+     * The external identifier of the project associated with the Category Mapping.
+     */
+    projectExtId: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+}
+
+export interface GetAdGroupCategoryMappingsV2CategoryMappingAdInfo {
+    /**
+     * The ExtID of the directory service that will be used for mapping.
+     */
+    directoryServiceReference: string;
+    /**
+     * The objectGUID for the object in AD.
+     */
+    objectIdentifier: string;
+    /**
+     * The path for the mapped object in AD.
+     */
+    objectPath: string;
+    /**
+     * The mapping status of AD Mapping.
+     */
+    status: string;
+}
+
+export interface GetAdGroupCategoryMappingsV2CategoryMappingLink {
+    href: string;
+    rel: string;
+}
+
 export interface GetAddressGroupIpAddressBlockList {
     /**
      * - (ReadOnly) IP of the address block
@@ -5523,6 +6014,10 @@ export interface GetAddressGroupsV2AddressGroup {
      */
     policyReferences: string[];
     /**
+     * Project external ID associated with the address group.
+     */
+    projectExtId: string;
+    /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
     tenantId: string;
@@ -5572,7 +6067,9 @@ export interface GetAuthorizationPoliciesV2AuthPolicy {
     identities: outputs.GetAuthorizationPoliciesV2AuthPolicyIdentity[];
     isSystemDefined: boolean;
     lastUpdatedTime: string;
+    projectExtId: string;
     role: string;
+    shareWithAllProjects: boolean;
 }
 
 export interface GetAuthorizationPoliciesV2AuthPolicyEntity {
@@ -5943,6 +6440,9 @@ export interface GetCategoriesV2Category {
     key: string;
     links: outputs.GetCategoriesV2CategoryLink[];
     ownerUuid: string;
+    projectExtId: string;
+    sharedWithAllProjects: boolean;
+    sharedWithProjects: string[];
     tenantId: string;
     type: string;
     value: string;
@@ -6258,6 +6758,95 @@ export interface GetClusterProfileV2Cluster {
     lastSyncedTime: string;
 }
 
+export interface GetClusterProfileV2FaultToleranceConfig {
+    /**
+     * - Desired cluster fault tolerance level. Values: `CFT_0N_AND_0D`, `CFT_1N_OR_1D`, `CFT_2N_OR_2D`, `CFT_1N_AND_1D`, `CFT_1N_OR_2D`.
+     */
+    desiredClusterFaultTolerance: string;
+}
+
+export interface GetClusterProfileV2HttpProxyConfig {
+    /**
+     * - List of HTTP proxy server configurations.
+     */
+    proxyLists: outputs.GetClusterProfileV2HttpProxyConfigProxyList[];
+    /**
+     * - Targets exempted from going through the configured HTTP proxy.
+     */
+    proxyWhiteLists: outputs.GetClusterProfileV2HttpProxyConfigProxyWhiteList[];
+}
+
+export interface GetClusterProfileV2HttpProxyConfigProxyList {
+    /**
+     * IP address of the proxy server.
+     */
+    ipAddresses: outputs.GetClusterProfileV2HttpProxyConfigProxyListIpAddress[];
+    /**
+     * HTTP proxy server name.
+     */
+    name: string;
+    /**
+     * SMTP server password.
+     */
+    password: string;
+    /**
+     * HTTP proxy server port.
+     */
+    port: number;
+    /**
+     * List of HTTP proxy types. Values: `HTTP`, `HTTPS`, `SOCKS`.
+     */
+    proxyTypes: string[];
+    /**
+     * HTTP proxy server username.
+     */
+    username: string;
+}
+
+export interface GetClusterProfileV2HttpProxyConfigProxyListIpAddress {
+    /**
+     * (Optional) ip address params.
+     */
+    ipv4s: outputs.GetClusterProfileV2HttpProxyConfigProxyListIpAddressIpv4[];
+    /**
+     * (Optional) Ip address params.
+     */
+    ipv6s: outputs.GetClusterProfileV2HttpProxyConfigProxyListIpAddressIpv6[];
+}
+
+export interface GetClusterProfileV2HttpProxyConfigProxyListIpAddressIpv4 {
+    /**
+     * - (Optional, default 128) The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface GetClusterProfileV2HttpProxyConfigProxyListIpAddressIpv6 {
+    /**
+     * - (Optional, default 128) The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface GetClusterProfileV2HttpProxyConfigProxyWhiteList {
+    /**
+     * Target identifier exempted from HTTP proxy.
+     */
+    target: string;
+    /**
+     * Type of the whitelist target. Values: `IPV4_ADDRESS`, `IPV6_ADDRESS`, `IPV4_NETWORK_MASK`, `DOMAIN_NAME_SUFFIX`, `HOST_NAME`.
+     */
+    targetType: string;
+}
+
 export interface GetClusterProfileV2Link {
     href: string;
     rel: string;
@@ -6286,6 +6875,69 @@ export interface GetClusterProfileV2NameServerIpListIpv4 {
 }
 
 export interface GetClusterProfileV2NameServerIpListIpv6 {
+    /**
+     * - (Optional, default 128) The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface GetClusterProfileV2NtpServerConfigList {
+    /**
+     * - Encryption algorithm used for NTP server authentication. Values: `SHA256`, `SHA384`, `SHA512`.
+     */
+    encryptionAlgorithm: string;
+    /**
+     * - Encryption key in hexadecimal format used for NTP server authentication.
+     */
+    encryptionKey: string;
+    /**
+     * - Encryption key ID used for NTP server authentication.
+     */
+    encryptionKeyId: number;
+    /**
+     * - NTP server address (supports IPv4, IPv6, and FQDN).
+     */
+    ntpServerAddresses: outputs.GetClusterProfileV2NtpServerConfigListNtpServerAddress[];
+}
+
+export interface GetClusterProfileV2NtpServerConfigListNtpServerAddress {
+    /**
+     * - (Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns: outputs.GetClusterProfileV2NtpServerConfigListNtpServerAddressFqdn[];
+    /**
+     * (Optional) ip address params.
+     */
+    ipv4s: outputs.GetClusterProfileV2NtpServerConfigListNtpServerAddressIpv4[];
+    /**
+     * (Optional) Ip address params.
+     */
+    ipv6s: outputs.GetClusterProfileV2NtpServerConfigListNtpServerAddressIpv6[];
+}
+
+export interface GetClusterProfileV2NtpServerConfigListNtpServerAddressFqdn {
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface GetClusterProfileV2NtpServerConfigListNtpServerAddressIpv4 {
+    /**
+     * - (Optional, default 128) The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface GetClusterProfileV2NtpServerConfigListNtpServerAddressIpv6 {
     /**
      * - (Optional, default 128) The prefix length of the network to which this host IPv6 address belongs.
      */
@@ -6351,13 +7003,27 @@ export interface GetClusterProfileV2PulseStatus {
     piiScrubbingLevel: string;
 }
 
+export interface GetClusterProfileV2RebuildReservationConfig {
+    /**
+     * - (default <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>) Whether rebuild capacity reservation is enabled to maintain free space for fault tolerance recovery operations.
+     */
+    isRebuildReservationEnabled: boolean;
+}
+
+export interface GetClusterProfileV2ResilientCapacityWarningThresholdConfig {
+    /**
+     * - (default <span pulumi-lang-nodejs="`75`" pulumi-lang-dotnet="`75`" pulumi-lang-go="`75`" pulumi-lang-python="`75`" pulumi-lang-yaml="`75`" pulumi-lang-java="`75`" pulumi-lang-hcl="`75`">`75`</span>) Warning threshold percentage for resilient storage capacity.
+     */
+    resilientCapacityWarningThresholdPercentage: number;
+}
+
 export interface GetClusterProfileV2RsyslogServerList {
     /**
      * -Represents clusters uuid
      */
     extId: string;
     /**
-     * An unique address that identifies a device on the internet or a local network in IPv4, IPv6 or format.
+     * IP address of the proxy server.
      */
     ipAddresses: outputs.GetClusterProfileV2RsyslogServerListIpAddress[];
     /**
@@ -6367,7 +7033,7 @@ export interface GetClusterProfileV2RsyslogServerList {
     modules: outputs.GetClusterProfileV2RsyslogServerListModule[];
     networkProtocol: string;
     /**
-     * (Integer) SNMP port.
+     * HTTP proxy server port.
      */
     port: number;
     serverName: string;
@@ -6418,7 +7084,7 @@ export interface GetClusterProfileV2RsyslogServerListLink {
 export interface GetClusterProfileV2RsyslogServerListModule {
     logSeverityLevel: string;
     /**
-     * - Name of the cluster profile.
+     * HTTP proxy server name.
      */
     name: string;
     shouldLogMonitorFiles: boolean;
@@ -6441,7 +7107,7 @@ export interface GetClusterProfileV2SmtpServer {
 
 export interface GetClusterProfileV2SmtpServerServer {
     /**
-     * An unique address that identifies a device on the internet or a local network in IPv4, IPv6 or format.
+     * IP address of the proxy server.
      */
     ipAddresses: outputs.GetClusterProfileV2SmtpServerServerIpAddress[];
     /**
@@ -6449,11 +7115,11 @@ export interface GetClusterProfileV2SmtpServerServer {
      */
     password: string;
     /**
-     * (Integer) SNMP port.
+     * HTTP proxy server port.
      */
     port: number;
     /**
-     * (String, max 64 chars) SNMP username. Required for SNMP trap v3 version.
+     * HTTP proxy server username.
      */
     username: string;
 }
@@ -6540,7 +7206,7 @@ export interface GetClusterProfileV2SnmpConfigLink {
 
 export interface GetClusterProfileV2SnmpConfigTransport {
     /**
-     * (Integer) SNMP port.
+     * HTTP proxy server port.
      */
     port: number;
     /**
@@ -6571,7 +7237,7 @@ export interface GetClusterProfileV2SnmpConfigTrap {
      */
     links: outputs.GetClusterProfileV2SnmpConfigTrapLink[];
     /**
-     * (Integer) SNMP port.
+     * HTTP proxy server port.
      */
     port: number;
     /**
@@ -6591,7 +7257,7 @@ export interface GetClusterProfileV2SnmpConfigTrap {
      */
     tenantId: string;
     /**
-     * (String, max 64 chars) SNMP username. Required for SNMP trap v3 version.
+     * HTTP proxy server username.
      */
     username: string;
     /**
@@ -6668,7 +7334,7 @@ export interface GetClusterProfileV2SnmpConfigUser {
      */
     tenantId: string;
     /**
-     * (String, max 64 chars) SNMP username. Required for SNMP trap v3 version.
+     * HTTP proxy server username.
      */
     username: string;
 }
@@ -6712,6 +7378,14 @@ export interface GetClusterProfilesV2ClusterProfile {
      */
     extId: string;
     /**
+     * - Fault tolerant state of cluster.
+     */
+    faultToleranceConfigs: outputs.GetClusterProfilesV2ClusterProfileFaultToleranceConfig[];
+    /**
+     * - HTTP proxy configuration for the cluster.
+     */
+    httpProxyConfigs: outputs.GetClusterProfilesV2ClusterProfileHttpProxyConfig[];
+    /**
      * - The last updated time of a cluster profile.
      */
     lastUpdateTime: string;
@@ -6724,7 +7398,7 @@ export interface GetClusterProfilesV2ClusterProfile {
      */
     links: outputs.GetClusterProfilesV2ClusterProfileLink[];
     /**
-     * - Name of the cluster profile.
+     * HTTP proxy server name.
      */
     name: string;
     /**
@@ -6736,6 +7410,10 @@ export interface GetClusterProfilesV2ClusterProfile {
      */
     nfsSubnetWhiteLists: string[];
     /**
+     * - List of NTP server configurations with encryption authentication.
+     */
+    ntpServerConfigLists: outputs.GetClusterProfilesV2ClusterProfileNtpServerConfigList[];
+    /**
      * - List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
      */
     ntpServerIpLists: outputs.GetClusterProfilesV2ClusterProfileNtpServerIpList[];
@@ -6743,6 +7421,14 @@ export interface GetClusterProfilesV2ClusterProfile {
      * - Pulse status for a cluster.
      */
     pulseStatuses: outputs.GetClusterProfilesV2ClusterProfilePulseStatus[];
+    /**
+     * - Rebuild capacity reservation configuration.
+     */
+    rebuildReservationConfigs: outputs.GetClusterProfilesV2ClusterProfileRebuildReservationConfig[];
+    /**
+     * - Resilient capacity warning threshold configuration.
+     */
+    resilientCapacityWarningThresholdConfigs: outputs.GetClusterProfilesV2ClusterProfileResilientCapacityWarningThresholdConfig[];
     /**
      * - RSYSLOG Server.
      */
@@ -6780,6 +7466,95 @@ export interface GetClusterProfilesV2ClusterProfileCluster {
     lastSyncedTime: string;
 }
 
+export interface GetClusterProfilesV2ClusterProfileFaultToleranceConfig {
+    /**
+     * - Desired cluster fault tolerance level. Values: `CFT_0N_AND_0D`, `CFT_1N_OR_1D`, `CFT_2N_OR_2D`, `CFT_1N_AND_1D`, `CFT_1N_OR_2D`.
+     */
+    desiredClusterFaultTolerance: string;
+}
+
+export interface GetClusterProfilesV2ClusterProfileHttpProxyConfig {
+    /**
+     * - List of HTTP proxy server configurations.
+     */
+    proxyLists: outputs.GetClusterProfilesV2ClusterProfileHttpProxyConfigProxyList[];
+    /**
+     * - Targets exempted from going through the configured HTTP proxy.
+     */
+    proxyWhiteLists: outputs.GetClusterProfilesV2ClusterProfileHttpProxyConfigProxyWhiteList[];
+}
+
+export interface GetClusterProfilesV2ClusterProfileHttpProxyConfigProxyList {
+    /**
+     * IP address of the proxy server.
+     */
+    ipAddresses: outputs.GetClusterProfilesV2ClusterProfileHttpProxyConfigProxyListIpAddress[];
+    /**
+     * HTTP proxy server name.
+     */
+    name: string;
+    /**
+     * SMTP server password.
+     */
+    password: string;
+    /**
+     * HTTP proxy server port.
+     */
+    port: number;
+    /**
+     * List of HTTP proxy types. Values: `HTTP`, `HTTPS`, `SOCKS`.
+     */
+    proxyTypes: string[];
+    /**
+     * HTTP proxy server username.
+     */
+    username: string;
+}
+
+export interface GetClusterProfilesV2ClusterProfileHttpProxyConfigProxyListIpAddress {
+    /**
+     * (Optional) ip address params.
+     */
+    ipv4s: outputs.GetClusterProfilesV2ClusterProfileHttpProxyConfigProxyListIpAddressIpv4[];
+    /**
+     * (Optional) Ip address params.
+     */
+    ipv6s: outputs.GetClusterProfilesV2ClusterProfileHttpProxyConfigProxyListIpAddressIpv6[];
+}
+
+export interface GetClusterProfilesV2ClusterProfileHttpProxyConfigProxyListIpAddressIpv4 {
+    /**
+     * - (Optional, default 128) The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface GetClusterProfilesV2ClusterProfileHttpProxyConfigProxyListIpAddressIpv6 {
+    /**
+     * - (Optional, default 128) The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface GetClusterProfilesV2ClusterProfileHttpProxyConfigProxyWhiteList {
+    /**
+     * Target identifier exempted from HTTP proxy.
+     */
+    target: string;
+    /**
+     * Type of the whitelist target. Values: `IPV4_ADDRESS`, `IPV6_ADDRESS`, `IPV4_NETWORK_MASK`, `DOMAIN_NAME_SUFFIX`, `HOST_NAME`.
+     */
+    targetType: string;
+}
+
 export interface GetClusterProfilesV2ClusterProfileLink {
     href: string;
     rel: string;
@@ -6808,6 +7583,69 @@ export interface GetClusterProfilesV2ClusterProfileNameServerIpListIpv4 {
 }
 
 export interface GetClusterProfilesV2ClusterProfileNameServerIpListIpv6 {
+    /**
+     * - (Optional, default 128) The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface GetClusterProfilesV2ClusterProfileNtpServerConfigList {
+    /**
+     * - Encryption algorithm used for NTP server authentication. Values: `SHA256`, `SHA384`, `SHA512`.
+     */
+    encryptionAlgorithm: string;
+    /**
+     * - Encryption key in hexadecimal format used for NTP server authentication.
+     */
+    encryptionKey: string;
+    /**
+     * - Encryption key ID used for NTP server authentication.
+     */
+    encryptionKeyId: number;
+    /**
+     * - NTP server address (supports IPv4, IPv6, and FQDN).
+     */
+    ntpServerAddresses: outputs.GetClusterProfilesV2ClusterProfileNtpServerConfigListNtpServerAddress[];
+}
+
+export interface GetClusterProfilesV2ClusterProfileNtpServerConfigListNtpServerAddress {
+    /**
+     * - (Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns: outputs.GetClusterProfilesV2ClusterProfileNtpServerConfigListNtpServerAddressFqdn[];
+    /**
+     * (Optional) ip address params.
+     */
+    ipv4s: outputs.GetClusterProfilesV2ClusterProfileNtpServerConfigListNtpServerAddressIpv4[];
+    /**
+     * (Optional) Ip address params.
+     */
+    ipv6s: outputs.GetClusterProfilesV2ClusterProfileNtpServerConfigListNtpServerAddressIpv6[];
+}
+
+export interface GetClusterProfilesV2ClusterProfileNtpServerConfigListNtpServerAddressFqdn {
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface GetClusterProfilesV2ClusterProfileNtpServerConfigListNtpServerAddressIpv4 {
+    /**
+     * - (Optional, default 128) The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface GetClusterProfilesV2ClusterProfileNtpServerConfigListNtpServerAddressIpv6 {
     /**
      * - (Optional, default 128) The prefix length of the network to which this host IPv6 address belongs.
      */
@@ -6873,13 +7711,27 @@ export interface GetClusterProfilesV2ClusterProfilePulseStatus {
     piiScrubbingLevel: string;
 }
 
+export interface GetClusterProfilesV2ClusterProfileRebuildReservationConfig {
+    /**
+     * - (default <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>) Whether rebuild capacity reservation is enabled to maintain free space for fault tolerance recovery operations.
+     */
+    isRebuildReservationEnabled: boolean;
+}
+
+export interface GetClusterProfilesV2ClusterProfileResilientCapacityWarningThresholdConfig {
+    /**
+     * - (default <span pulumi-lang-nodejs="`75`" pulumi-lang-dotnet="`75`" pulumi-lang-go="`75`" pulumi-lang-python="`75`" pulumi-lang-yaml="`75`" pulumi-lang-java="`75`" pulumi-lang-hcl="`75`">`75`</span>) Warning threshold percentage for resilient storage capacity.
+     */
+    resilientCapacityWarningThresholdPercentage: number;
+}
+
 export interface GetClusterProfilesV2ClusterProfileRsyslogServerList {
     /**
      * - A globally unique identifier of an instance that is suitable for external consumption.
      */
     extId: string;
     /**
-     * An unique address that identifies a device on the internet or a local network in IPv4, IPv6 or format.
+     * IP address of the proxy server.
      */
     ipAddresses: outputs.GetClusterProfilesV2ClusterProfileRsyslogServerListIpAddress[];
     /**
@@ -6889,7 +7741,7 @@ export interface GetClusterProfilesV2ClusterProfileRsyslogServerList {
     modules: outputs.GetClusterProfilesV2ClusterProfileRsyslogServerListModule[];
     networkProtocol: string;
     /**
-     * (Integer) SNMP port.
+     * HTTP proxy server port.
      */
     port: number;
     serverName: string;
@@ -6940,7 +7792,7 @@ export interface GetClusterProfilesV2ClusterProfileRsyslogServerListLink {
 export interface GetClusterProfilesV2ClusterProfileRsyslogServerListModule {
     logSeverityLevel: string;
     /**
-     * - Name of the cluster profile.
+     * HTTP proxy server name.
      */
     name: string;
     shouldLogMonitorFiles: boolean;
@@ -6963,7 +7815,7 @@ export interface GetClusterProfilesV2ClusterProfileSmtpServer {
 
 export interface GetClusterProfilesV2ClusterProfileSmtpServerServer {
     /**
-     * An unique address that identifies a device on the internet or a local network in IPv4, IPv6 or format.
+     * IP address of the proxy server.
      */
     ipAddresses: outputs.GetClusterProfilesV2ClusterProfileSmtpServerServerIpAddress[];
     /**
@@ -6971,11 +7823,11 @@ export interface GetClusterProfilesV2ClusterProfileSmtpServerServer {
      */
     password: string;
     /**
-     * (Integer) SNMP port.
+     * HTTP proxy server port.
      */
     port: number;
     /**
-     * (String, max 64 chars) SNMP username. Required for SNMP trap v3 version.
+     * HTTP proxy server username.
      */
     username: string;
 }
@@ -7062,7 +7914,7 @@ export interface GetClusterProfilesV2ClusterProfileSnmpConfigLink {
 
 export interface GetClusterProfilesV2ClusterProfileSnmpConfigTransport {
     /**
-     * (Integer) SNMP port.
+     * HTTP proxy server port.
      */
     port: number;
     /**
@@ -7093,7 +7945,7 @@ export interface GetClusterProfilesV2ClusterProfileSnmpConfigTrap {
      */
     links: outputs.GetClusterProfilesV2ClusterProfileSnmpConfigTrapLink[];
     /**
-     * (Integer) SNMP port.
+     * HTTP proxy server port.
      */
     port: number;
     /**
@@ -7113,7 +7965,7 @@ export interface GetClusterProfilesV2ClusterProfileSnmpConfigTrap {
      */
     tenantId: string;
     /**
-     * (String, max 64 chars) SNMP username. Required for SNMP trap v3 version.
+     * HTTP proxy server username.
      */
     username: string;
     /**
@@ -7190,7 +8042,7 @@ export interface GetClusterProfilesV2ClusterProfileSnmpConfigUser {
      */
     tenantId: string;
     /**
-     * (String, max 64 chars) SNMP username. Required for SNMP trap v3 version.
+     * HTTP proxy server username.
      */
     username: string;
 }
@@ -9178,6 +10030,151 @@ export interface GetClustersV2ClusterEntityNodeNodeListHostIpIpv6 {
     value: string;
 }
 
+export interface GetDirectoryServerConfigV2DomainController {
+    fqdns: outputs.GetDirectoryServerConfigV2DomainControllerFqdn[];
+    ipv4s: outputs.GetDirectoryServerConfigV2DomainControllerIpv4[];
+    ipv6s: outputs.GetDirectoryServerConfigV2DomainControllerIpv6[];
+}
+
+export interface GetDirectoryServerConfigV2DomainControllerFqdn {
+    value: string;
+}
+
+export interface GetDirectoryServerConfigV2DomainControllerIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetDirectoryServerConfigV2DomainControllerIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetDirectoryServerConfigV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetDirectoryServerConfigV2MatchingCriteria {
+    /**
+     * The criteria to use for matching entities to be categorized.
+     */
+    criteria: string;
+    /**
+     * The entity type to match on.
+     */
+    matchEntity: string;
+    /**
+     * The field to match on.
+     */
+    matchField: string;
+    /**
+     * The type of match.
+     */
+    matchType: string;
+}
+
+export interface GetDirectoryServerConfigsV2DirectoryServerConfig {
+    /**
+     * The ExtID of the directory service that will be used for mapping.
+     */
+    directoryServiceReference: string;
+    /**
+     * List of domain controllers to be used for event scraping.
+     */
+    domainControllers: outputs.GetDirectoryServerConfigsV2DirectoryServerConfigDomainController[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * Enablement status of the default category.
+     */
+    isDefaultCategoryEnabled: boolean;
+    /**
+     * A HATEOAS style link for the response.
+     */
+    links: outputs.GetDirectoryServerConfigsV2DirectoryServerConfigLink[];
+    /**
+     * The matching criteria used to determine whether an entity will be categorized.
+     */
+    matchingCriterias: outputs.GetDirectoryServerConfigsV2DirectoryServerConfigMatchingCriteria[];
+    /**
+     * The external identifier of the project associated with the configuration.
+     */
+    projectExtId: string;
+    /**
+     * Retain default category on user login.
+     */
+    shouldKeepDefaultCategoryOnLogin: boolean;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+}
+
+export interface GetDirectoryServerConfigsV2DirectoryServerConfigDomainController {
+    fqdns: outputs.GetDirectoryServerConfigsV2DirectoryServerConfigDomainControllerFqdn[];
+    ipv4s: outputs.GetDirectoryServerConfigsV2DirectoryServerConfigDomainControllerIpv4[];
+    ipv6s: outputs.GetDirectoryServerConfigsV2DirectoryServerConfigDomainControllerIpv6[];
+}
+
+export interface GetDirectoryServerConfigsV2DirectoryServerConfigDomainControllerFqdn {
+    value: string;
+}
+
+export interface GetDirectoryServerConfigsV2DirectoryServerConfigDomainControllerIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetDirectoryServerConfigsV2DirectoryServerConfigDomainControllerIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetDirectoryServerConfigsV2DirectoryServerConfigLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetDirectoryServerConfigsV2DirectoryServerConfigMatchingCriteria {
+    criteria: string;
+    matchEntity: string;
+    matchField: string;
+    matchType: string;
+}
+
+export interface GetDirectoryServiceUsersSearchV2SearchResult {
+    /**
+     * - List of attributes for the search entity.
+     */
+    attributes: outputs.GetDirectoryServiceUsersSearchV2SearchResultAttribute[];
+    /**
+     * - Type of entity, either user or group.
+     */
+    entityType: string;
+    /**
+     * External identifier of the identity (if exists) in the directory service.
+     */
+    identityExtId: string;
+    /**
+     * - Name of the attribute.
+     */
+    name: string;
+}
+
+export interface GetDirectoryServiceUsersSearchV2SearchResultAttribute {
+    /**
+     * - Name of the attribute.
+     */
+    name: string;
+    /**
+     * - List of values for the attribute.
+     */
+    values: string[];
+}
+
 export interface GetDirectoryServiceV2OpenLdapConfiguration {
     /**
      * - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
@@ -9272,6 +10269,10 @@ export interface GetDirectoryServicesV2DirectoryService {
      */
     openLdapConfigurations: outputs.GetDirectoryServicesV2DirectoryServiceOpenLdapConfiguration[];
     /**
+     * - Project reference for the Directory Service.
+     */
+    projectExtId: string;
+    /**
      * - Secondary URL for the Directory Service.
      */
     secondaryUrls: string[];
@@ -9279,6 +10280,14 @@ export interface GetDirectoryServicesV2DirectoryService {
      * - Information of Service account to connect to the Directory Service.
      */
     serviceAccounts: outputs.GetDirectoryServicesV2DirectoryServiceServiceAccount[];
+    /**
+     * - Flag indicating whether the directory service is shared with all projects or not.
+     */
+    shareWithAllProjects: boolean;
+    /**
+     * - List of projects with which the directory service is shared.
+     */
+    sharedWithProjects: string[];
     /**
      * - URL for the Directory Service.
      */
@@ -9345,6 +10354,25 @@ export interface GetDirectoryServicesV2DirectoryServiceServiceAccount {
     username: string;
 }
 
+export interface GetEffectiveImageRateLimitPoliciesV2EffectiveRateLimitPolicy {
+    /**
+     * Cluster external identifier.
+     */
+    clusterExtId: string;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * The external identifier of image rate limit policy.
+     */
+    rateLimitExtId: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+}
+
 export interface GetEntityGroupV2AllowedConfig {
     /**
      * List of except entities. Each entity may contain:
@@ -9358,6 +10386,10 @@ export interface GetEntityGroupV2AllowedConfigEntity {
      */
     addresses: outputs.GetEntityGroupV2AllowedConfigEntityAddress[];
     /**
+     * List of FQDNs.
+     */
+    fqdns: string[];
+    /**
      * With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
      */
     ipRanges: outputs.GetEntityGroupV2AllowedConfigEntityIpRange[];
@@ -9366,11 +10398,19 @@ export interface GetEntityGroupV2AllowedConfigEntity {
      */
     kubeEntities: string[];
     /**
+     * Match criteria for regex-based selection (CONTAINS, STARTS_WITH, ENDS_WITH, EQUALS).
+     */
+    matchCriteria: string;
+    /**
      * List of reference external identifiers.
      */
     referenceExtIds: string[];
     /**
-     * The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES).
+     * String pattern for matching entities.
+     */
+    referenceString: string;
+    /**
+     * The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
      */
     selectedBy: string;
     /**
@@ -9418,7 +10458,7 @@ export interface GetEntityGroupV2ExceptConfigEntity {
      */
     referenceExtIds: string[];
     /**
-     * The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES).
+     * The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
      */
     selectedBy: string;
     /**
@@ -9472,6 +10512,14 @@ export interface GetEntityGroupsV2EntityGroup {
      */
     extId: string;
     /**
+     * Indicates whether the Entity Group is shared with all projects.
+     */
+    isSharedWithAllProjects: boolean;
+    /**
+     * A flag indicating whether the entity group is system-defined.
+     */
+    isSystemDefined: boolean;
+    /**
      * The timestamp when the Entity Group was last updated.
      */
     lastUpdateTime: string;
@@ -9492,6 +10540,10 @@ export interface GetEntityGroupsV2EntityGroup {
      */
     policyExtIds: string[];
     /**
+     * Project external ID associated with the entity group.
+     */
+    projectExtId: string;
+    /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
     tenantId: string;
@@ -9506,9 +10558,12 @@ export interface GetEntityGroupsV2EntityGroupAllowedConfig {
 
 export interface GetEntityGroupsV2EntityGroupAllowedConfigEntity {
     addresses: outputs.GetEntityGroupsV2EntityGroupAllowedConfigEntityAddress[];
+    fqdns: string[];
     ipRanges: outputs.GetEntityGroupsV2EntityGroupAllowedConfigEntityIpRange[];
     kubeEntities: string[];
+    matchCriteria: string;
     referenceExtIds: string[];
+    referenceString: string;
     selectedBy: string;
     type: string;
 }
@@ -9718,6 +10773,7 @@ export interface GetFloatingIpV2ExternalSubnet {
     ipPrefix: string;
     ipUsages: outputs.GetFloatingIpV2ExternalSubnetIpUsage[];
     isAdvancedNetworking: boolean;
+    isConnected: boolean;
     isExternal: boolean;
     isNatEnabled: boolean;
     /**
@@ -9735,7 +10791,12 @@ export interface GetFloatingIpV2ExternalSubnet {
     name: string;
     networkFunctionChainReference: string;
     networkId: number;
+    /**
+     * External identifier of the project associated with the Floating IP.
+     */
+    projectExtId: string;
     reservedIpAddresses: outputs.GetFloatingIpV2ExternalSubnetReservedIpAddress[];
+    sharedWithProjects: string[];
     subnetType: string;
     virtualSwitchReference: string;
     virtualSwitches: outputs.GetFloatingIpV2ExternalSubnetVirtualSwitch[];
@@ -10965,6 +12026,10 @@ export interface GetFloatingIpsV2FloatingIp {
      */
     privateIp: string;
     /**
+     * External identifier of the project associated with the Floating IP.
+     */
+    projectExtId: string;
+    /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
     tenantId: string;
@@ -11071,6 +12136,7 @@ export interface GetFloatingIpsV2FloatingIpExternalSubnet {
     ipPrefix: string;
     ipUsages: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpUsage[];
     isAdvancedNetworking: boolean;
+    isConnected: boolean;
     isExternal: boolean;
     isNatEnabled: boolean;
     /**
@@ -11088,7 +12154,12 @@ export interface GetFloatingIpsV2FloatingIpExternalSubnet {
     name: string;
     networkFunctionChainReference: string;
     networkId: number;
+    /**
+     * External identifier of the project associated with the Floating IP.
+     */
+    projectExtId: string;
     reservedIpAddresses: outputs.GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress[];
+    sharedWithProjects: string[];
     subnetType: string;
     virtualSwitchReference: string;
     virtualSwitches: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch[];
@@ -14061,6 +15132,75 @@ export interface GetImagePlacementPolicyV2ImageEntityFilter {
     type: string;
 }
 
+export interface GetImageRateLimitPoliciesV2RateLimitPolicy {
+    /**
+     * Category-based entity filter for clusters.
+     */
+    clusterEntityFilters: outputs.GetImageRateLimitPoliciesV2RateLimitPolicyClusterEntityFilter[];
+    /**
+     * Image rate limit policy creation time.
+     */
+    createTime: string;
+    /**
+     * Image rate limit policy specification.
+     */
+    description: string;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * Last updated time of an image rate limit policy.
+     */
+    lastUpdateTime: string;
+    /**
+     * External identifier of the Prism Elements where a rate limit is the effective rate limit policy.
+     */
+    matchingClusterExtIds: string[];
+    /**
+     * Name of the image rate limit policy.
+     */
+    name: string;
+    /**
+     * External identifier of the owner of the rate limit policy.
+     */
+    ownerExtId: string;
+    /**
+     * Name of the owner of the rate limit policy.
+     */
+    ownerName: string;
+    /**
+     * Network bandwidth in KBps that the rate limited image operation can utilize.
+     */
+    rateLimitKbps: number;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+}
+
+export interface GetImageRateLimitPoliciesV2RateLimitPolicyClusterEntityFilter {
+    /**
+     * Filter matches entities that have these categories attached.
+     */
+    categoryExtIds: string[];
+    /**
+     * Filter matching type.
+     */
+    type: string;
+}
+
+export interface GetImageRateLimitPolicyV2ClusterEntityFilter {
+    /**
+     * Filter matches entities that have these categories attached.
+     */
+    categoryExtIds: string[];
+    /**
+     * Filter matching type.
+     */
+    type: string;
+}
+
 export interface GetImageV2Checksum {
     hexDigest: string;
 }
@@ -14130,6 +15270,10 @@ export interface GetImageV2SourceVmDiskSource {
      * The external identifier of an image.
      */
     extId: string;
+    /**
+     * The external identifier of the source VM for the specified disk.
+     */
+    vmExtId: string;
 }
 
 export interface GetImagesV2Image {
@@ -14143,6 +15287,8 @@ export interface GetImagesV2Image {
     name: string;
     ownerExtId: string;
     placementPolicyStatuses: outputs.GetImagesV2ImagePlacementPolicyStatus[];
+    projectExtId: string;
+    shareWithAllProjects: boolean;
     sizeBytes: number;
     sources: outputs.GetImagesV2ImageSource[];
     type: string;
@@ -14184,6 +15330,7 @@ export interface GetImagesV2ImageSourceUrlSourceBasicAuth {
 
 export interface GetImagesV2ImageSourceVmDiskSource {
     extId: string;
+    vmExtId: string;
 }
 
 export interface GetKarbonClusterEtcdNodePool {
@@ -14867,6 +16014,10 @@ export interface GetLcmEntitiesV2Entity {
      * Hardware vendor information.
      */
     hardwareVendor: string;
+    /**
+     * (default <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>) Indicates whether the most recent inventory operation failed for this entity. When true, the entity's version or available-version data may be stale.
+     */
+    hasPreviousInventoryFailed: boolean;
     /**
      * UTC date and time in RFC-3339 format when the task was last updated.
      */
@@ -19927,6 +21078,10 @@ export interface GetNetworkFunctionsV2NetworkFunction {
      */
     nicPairs: outputs.GetNetworkFunctionsV2NetworkFunctionNicPair[];
     /**
+     * Project external ID associated with the network function.
+     */
+    projectExtId: string;
+    /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
     tenantId: string;
@@ -20042,6 +21197,10 @@ export interface GetNetworkSecurityPoliciesV2NetworkPolicy {
      */
     isIpv6TrafficAllowed: boolean;
     /**
+     * Whether the network security policy is shared with all projects.
+     */
+    isSharedWithAllProjects: boolean;
+    /**
      * Is system defined NSP
      */
     isSystemDefined: boolean;
@@ -20057,6 +21216,10 @@ export interface GetNetworkSecurityPoliciesV2NetworkPolicy {
      * Name of the Flow Network Security Policy.
      */
     name: string;
+    /**
+     * Project external ID associated with the network security policy.
+     */
+    projectExtId: string;
     /**
      * A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
      */
@@ -20095,7 +21258,7 @@ export interface GetNetworkSecurityPoliciesV2NetworkPolicyLink {
     /**
      * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
      *
-     * See detailed information in [Nutanix List Security Policies v4](https://developers.nutanix.com/api-reference?namespace=microseg&version=v4.2#tag/NetworkSecurityPolicies/operation/listNetworkSecurityPolicies).
+     * See detailed information in [Nutanix List Security Policies v4](https://developers.nutanix.com/api-reference?namespace=microseg&version=v4.3#tag/NetworkSecurityPolicies/operation/listNetworkSecurityPolicies).
      */
     rel: string;
 }
@@ -20110,9 +21273,17 @@ export interface GetNetworkSecurityPoliciesV2NetworkPolicyRule {
      */
     extId: string;
     /**
+     * Whether hit log is enabled for the rule.
+     */
+    isLoggingEnabled: boolean;
+    /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
     links: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleLink[];
+    /**
+     * A user-defined name for the rule.
+     */
+    name: string;
     /**
      * Spec for rules.
      */
@@ -20131,7 +21302,7 @@ export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleLink {
     /**
      * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
      *
-     * See detailed information in [Nutanix List Security Policies v4](https://developers.nutanix.com/api-reference?namespace=microseg&version=v4.2#tag/NetworkSecurityPolicies/operation/listNetworkSecurityPolicies).
+     * See detailed information in [Nutanix List Security Policies v4](https://developers.nutanix.com/api-reference?namespace=microseg&version=v4.3#tag/NetworkSecurityPolicies/operation/listNetworkSecurityPolicies).
      */
     rel: string;
 }
@@ -20141,6 +21312,10 @@ export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpec {
      * Application Rule Spec.
      */
     applicationRuleSpecs: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecApplicationRuleSpec[];
+    /**
+     * Flex Rule Spec.
+     */
+    flexRuleSpecs: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecFlexRuleSpec[];
     /**
      * Intra entity group Rule Spec
      */
@@ -20201,11 +21376,11 @@ export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecApplicationRul
      */
     securedGroupCategoryAssociatedEntityType: string;
     /**
-     * A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories.
+     * A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories. The rule contains either this field or <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span>, not both.
      */
     securedGroupCategoryReferences: string[];
     /**
-     * Reference to the secured group entity group.
+     * Reference to the secured group entity group. The rule contains either this field or <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span>, not both.
      */
     securedGroupEntityGroupReference: string;
     /**
@@ -20293,6 +21468,147 @@ export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecApplicationRul
     startPort: number;
 }
 
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecFlexRuleSpec {
+    /**
+     * Action for the flex rule (ALLOW, DENY, REJECT).
+     */
+    action: string;
+    /**
+     * Entity group references to which the flex rule is applied.
+     */
+    appliedToEntityGroupReferences: string[];
+    /**
+     * Destination entity group references.
+     */
+    destEntityGroupReferences: string[];
+    /**
+     * Destination subnet (value, prefix_length).
+     */
+    destSubnets: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecFlexRuleSpecDestSubnet[];
+    /**
+     * Direction of traffic (IN, OUT, IN_OUT).
+     */
+    direction: string;
+    /**
+     * ICMP type/code specs.
+     */
+    icmpServices: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecFlexRuleSpecIcmpService[];
+    /**
+     * ICMPv6 type/code specs.
+     */
+    icmpv6Services: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecFlexRuleSpecIcmpv6Service[];
+    /**
+     * IP version scope (IPV4, IPV6, IPV4_IPV6).
+     */
+    ipVersion: string;
+    /**
+     * Whether traffic is allowed for all protocols.
+     */
+    isAllProtocolAllowed: boolean;
+    /**
+     * Whether the flex rule is system-defined.
+     */
+    isSystemRule: boolean;
+    /**
+     * A reference to the network function.
+     */
+    networkFunctionReference: string;
+    /**
+     * Priority for the flex rule.
+     */
+    priority: number;
+    /**
+     * A list of service group references.
+     */
+    serviceGroupReferences: string[];
+    /**
+     * Whether the rule allows all destinations.
+     */
+    shouldAllowAnyDst: boolean;
+    /**
+     * Whether the rule allows all sources.
+     */
+    shouldAllowAnySrc: boolean;
+    /**
+     * Source entity group references.
+     */
+    srcEntityGroupReferences: string[];
+    /**
+     * Source subnet (value, prefix_length).
+     */
+    srcSubnets: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecFlexRuleSpecSrcSubnet[];
+    /**
+     * TCP port ranges (start_port, end_port).
+     */
+    tcpServices: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecFlexRuleSpecTcpService[];
+    /**
+     * UDP port ranges (start_port, end_port).
+     */
+    udpServices: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecFlexRuleSpecUdpService[];
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecFlexRuleSpecDestSubnet {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecFlexRuleSpecIcmpService {
+    /**
+     * Icmp service Code. Ignore this field if Code has to be ANY.
+     */
+    code: number;
+    /**
+     * Set this field to true if both Type and Code is ANY.
+     */
+    isAllAllowed: boolean;
+    /**
+     * Icmp service Type. Ignore this field if Type has to be ANY.
+     */
+    type: number;
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecFlexRuleSpecIcmpv6Service {
+    /**
+     * Icmp service Code. Ignore this field if Code has to be ANY.
+     */
+    code: number;
+    /**
+     * Set this field to true if both Type and Code is ANY.
+     */
+    isAllAllowed: boolean;
+    /**
+     * Defines the type of rules that can be used in a policy.
+     */
+    type: number;
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecFlexRuleSpecSrcSubnet {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecFlexRuleSpecTcpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
+    startPort: number;
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecFlexRuleSpecUdpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
+    startPort: number;
+}
+
 export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecIntraEntityGroupRuleSpec {
     /**
      * ICMP type/code for the rule.
@@ -20307,11 +21623,11 @@ export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecIntraEntityGro
      */
     securedGroupCategoryAssociatedEntityType: string;
     /**
-     * A specification to whether traffic between intra secured group entities should be allowed or denied.
+     * List of category references for the secured group. The rule contains either this field or <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span>, not both.
      */
     securedGroupCategoryReferences: string[];
     /**
-     * Reference to the secured group entity group.
+     * Reference to the secured group entity group. The rule contains either this field or <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span>, not both.
      */
     securedGroupEntityGroupReference: string;
     /**
@@ -20560,9 +21876,17 @@ export interface GetNetworkSecurityPolicyV2Rule {
      */
     extId: string;
     /**
+     * Whether hit log is enabled for the rule.
+     */
+    isLoggingEnabled: boolean;
+    /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
     links: outputs.GetNetworkSecurityPolicyV2RuleLink[];
+    /**
+     * A user-defined name for the rule.
+     */
+    name: string;
     /**
      * Multi Environment Isolation Rule Spec.
      */
@@ -20589,6 +21913,10 @@ export interface GetNetworkSecurityPolicyV2RuleSpec {
      * Application Rule Spec.
      */
     applicationRuleSpecs: outputs.GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpec[];
+    /**
+     * Flex Rule Spec.
+     */
+    flexRuleSpecs: outputs.GetNetworkSecurityPolicyV2RuleSpecFlexRuleSpec[];
     /**
      * Intra entity group Rule Spec
      */
@@ -20625,15 +21953,15 @@ export interface GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpec {
      */
     destEntityGroupReference: string;
     /**
-     * destination subnet value
+     * Destination subnet (value, prefix_length).
      */
     destSubnets: outputs.GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecDestSubnet[];
     /**
-     * ICMP type/code for the rule.
+     * ICMP type/code specs.
      */
     icmpServices: outputs.GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecIcmpService[];
     /**
-     * Denotes if rule allows traffic for all protocol.
+     * Whether traffic is allowed for all protocols.
      */
     isAllProtocolAllowed: boolean;
     /**
@@ -20641,7 +21969,7 @@ export interface GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpec {
      */
     networkFunctionChainReference: string;
     /**
-     * A reference to the network function in the rule.
+     * A reference to the network function.
      */
     networkFunctionReference: string;
     /**
@@ -20649,11 +21977,11 @@ export interface GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpec {
      */
     securedGroupCategoryAssociatedEntityType: string;
     /**
-     * A specification to whether traffic between intra secured group entities should be allowed or denied.
+     * List of category references for the secured group. The rule contains either this field or <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span>, not both.
      */
     securedGroupCategoryReferences: string[];
     /**
-     * Reference to the secured group entity group.
+     * Reference to the secured group entity group. The rule contains either this field or <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span>, not both.
      */
     securedGroupEntityGroupReference: string;
     /**
@@ -20681,15 +22009,15 @@ export interface GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpec {
      */
     srcEntityGroupReference: string;
     /**
-     * source subnet value
+     * Source subnet (value, prefix_length).
      */
     srcSubnets: outputs.GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecSrcSubnet[];
     /**
-     * TCP port ranges for the rule.
+     * TCP port ranges (start_port, end_port).
      */
     tcpServices: outputs.GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecTcpService[];
     /**
-     * UDP port ranges for the rule.
+     * UDP port ranges (start_port, end_port).
      */
     udpServices: outputs.GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecUdpService[];
 }
@@ -20741,9 +22069,150 @@ export interface GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecUdpService
     startPort: number;
 }
 
+export interface GetNetworkSecurityPolicyV2RuleSpecFlexRuleSpec {
+    /**
+     * Action for the flex rule (ALLOW, DENY, REJECT).
+     */
+    action: string;
+    /**
+     * Entity group references to which the flex rule is applied.
+     */
+    appliedToEntityGroupReferences: string[];
+    /**
+     * Destination entity group references.
+     */
+    destEntityGroupReferences: string[];
+    /**
+     * Destination subnet (value, prefix_length).
+     */
+    destSubnets: outputs.GetNetworkSecurityPolicyV2RuleSpecFlexRuleSpecDestSubnet[];
+    /**
+     * Direction of traffic (IN, OUT, IN_OUT).
+     */
+    direction: string;
+    /**
+     * ICMP type/code specs.
+     */
+    icmpServices: outputs.GetNetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpService[];
+    /**
+     * ICMPv6 type/code specs.
+     */
+    icmpv6Services: outputs.GetNetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpv6Service[];
+    /**
+     * IP version scope (IPV4, IPV6, IPV4_IPV6).
+     */
+    ipVersion: string;
+    /**
+     * Whether traffic is allowed for all protocols.
+     */
+    isAllProtocolAllowed: boolean;
+    /**
+     * Whether the flex rule is system-defined.
+     */
+    isSystemRule: boolean;
+    /**
+     * A reference to the network function.
+     */
+    networkFunctionReference: string;
+    /**
+     * Priority for the flex rule.
+     */
+    priority: number;
+    /**
+     * A list of service group references.
+     */
+    serviceGroupReferences: string[];
+    /**
+     * Whether the rule allows all destinations.
+     */
+    shouldAllowAnyDst: boolean;
+    /**
+     * Whether the rule allows all sources.
+     */
+    shouldAllowAnySrc: boolean;
+    /**
+     * Source entity group references.
+     */
+    srcEntityGroupReferences: string[];
+    /**
+     * Source subnet (value, prefix_length).
+     */
+    srcSubnets: outputs.GetNetworkSecurityPolicyV2RuleSpecFlexRuleSpecSrcSubnet[];
+    /**
+     * TCP port ranges (start_port, end_port).
+     */
+    tcpServices: outputs.GetNetworkSecurityPolicyV2RuleSpecFlexRuleSpecTcpService[];
+    /**
+     * UDP port ranges (start_port, end_port).
+     */
+    udpServices: outputs.GetNetworkSecurityPolicyV2RuleSpecFlexRuleSpecUdpService[];
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecFlexRuleSpecDestSubnet {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpService {
+    /**
+     * Icmp service Code. Ignore this field if Code has to be ANY.
+     */
+    code: number;
+    /**
+     * Set this field to true if both Type and Code is ANY.
+     */
+    isAllAllowed: boolean;
+    /**
+     * Icmp service Type. Ignore this field if Type has to be ANY.
+     */
+    type: number;
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpv6Service {
+    /**
+     * Icmp service Code. Ignore this field if Code has to be ANY.
+     */
+    code: number;
+    /**
+     * Set this field to true if both Type and Code is ANY.
+     */
+    isAllAllowed: boolean;
+    /**
+     * Icmp service Type. Ignore this field if Type has to be ANY.
+     */
+    type: number;
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecFlexRuleSpecSrcSubnet {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecFlexRuleSpecTcpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
+    startPort: number;
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecFlexRuleSpecUdpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
+    startPort: number;
+}
+
 export interface GetNetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpec {
     /**
-     * ICMP type/code for the rule.
+     * ICMP type/code specs.
      */
     icmpServices: outputs.GetNetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecIcmpService[];
     /**
@@ -20755,11 +22224,11 @@ export interface GetNetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpec {
      */
     securedGroupCategoryAssociatedEntityType: string;
     /**
-     * A specification to whether traffic between intra secured group entities should be allowed or denied.
+     * List of category references for the secured group. The rule contains either this field or <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span>, not both.
      */
     securedGroupCategoryReferences: string[];
     /**
-     * Reference to the secured group entity group.
+     * Reference to the secured group entity group. The rule contains either this field or <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span>, not both.
      */
     securedGroupEntityGroupReference: string;
     /**
@@ -20767,11 +22236,11 @@ export interface GetNetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpec {
      */
     securedGroupServiceReferences: string[];
     /**
-     * TCP port ranges for the rule.
+     * TCP port ranges (start_port, end_port).
      */
     tcpServices: outputs.GetNetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecTcpService[];
     /**
-     * UDP port ranges for the rule.
+     * UDP port ranges (start_port, end_port).
      */
     udpServices: outputs.GetNetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecUdpService[];
 }
@@ -21265,6 +22734,30 @@ export interface GetNetworkSecurityRuleQuarantineRuleTargetGroupFilterParam {
      */
     name: string;
     values: string[];
+}
+
+export interface GetNodeSchedulableStatusesV2NodeSchedulableStatus {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * The boolean value to indicate whether or not node is a storage only node.
+     */
+    isNeverSchedulable: boolean;
+    /**
+     * A HATEOAS style link for the response.
+     */
+    links: outputs.GetNodeSchedulableStatusesV2NodeSchedulableStatusLink[];
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+}
+
+export interface GetNodeSchedulableStatusesV2NodeSchedulableStatusLink {
+    href: string;
+    rel: string;
 }
 
 export interface GetObjectStoreV2Link {
@@ -22171,7 +23664,7 @@ export interface GetOvaV2VmConfigBootConfigLegacyBoot {
     /**
      * Boot Device object
      */
-    bootDevices: outputs.GetOvaV2VmConfigBootConfigLegacyBootBootDevice[];
+    bootDevices?: outputs.GetOvaV2VmConfigBootConfigLegacyBootBootDevice[];
     /**
      * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
      */
@@ -22182,43 +23675,43 @@ export interface GetOvaV2VmConfigBootConfigLegacyBootBootDevice {
     /**
      * Disk address.
      */
-    bootDeviceDisks: outputs.GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk[];
+    bootDeviceDisks?: outputs.GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk[];
     /**
      * Disk Nic address.
      */
-    bootDeviceNics: outputs.GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic[];
+    bootDeviceNics?: outputs.GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic[];
 }
 
 export interface GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk {
     /**
      * Virtual Machine disk (VM disk).
      */
-    diskAddresses: outputs.GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress[];
+    diskAddresses?: outputs.GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress[];
 }
 
 export interface GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
     /**
      * Bus type for the device
      */
-    busType: string;
+    busType?: string;
     /**
      * Device index on the bus. This field is ignored unless the bus details are specified.
      */
-    index: number;
+    index?: number;
 }
 
 export interface GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic {
     /**
      * mac address
      */
-    macAddress: string;
+    macAddress?: string;
 }
 
 export interface GetOvaV2VmConfigBootConfigUefiBoot {
     /**
      * Boot Device object
      */
-    bootDevices: outputs.GetOvaV2VmConfigBootConfigUefiBootBootDevice[];
+    bootDevices?: outputs.GetOvaV2VmConfigBootConfigUefiBootBootDevice[];
     /**
      * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
      */
@@ -22237,36 +23730,36 @@ export interface GetOvaV2VmConfigBootConfigUefiBootBootDevice {
     /**
      * Disk address.
      */
-    bootDeviceDisks: outputs.GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk[];
+    bootDeviceDisks?: outputs.GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk[];
     /**
      * Disk Nic address.
      */
-    bootDeviceNics: outputs.GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNic[];
+    bootDeviceNics?: outputs.GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNic[];
 }
 
 export interface GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk {
     /**
      * Virtual Machine disk (VM disk).
      */
-    diskAddresses: outputs.GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress[];
+    diskAddresses?: outputs.GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress[];
 }
 
 export interface GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
     /**
      * Bus type for the device
      */
-    busType: string;
+    busType?: string;
     /**
      * Device index on the bus. This field is ignored unless the bus details are specified.
      */
-    index: number;
+    index?: number;
 }
 
 export interface GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNic {
     /**
      * mac address
      */
-    macAddress: string;
+    macAddress?: string;
 }
 
 export interface GetOvaV2VmConfigBootConfigUefiBootNvramDevice {
@@ -23516,6 +25009,10 @@ export interface GetOvasV2Ova {
      */
     parentVm: string;
     /**
+     * - External identifier of the project associated with the OVA.
+     */
+    projectExtId: string;
+    /**
      * - Size of OVA in bytes.
      */
     sizeBytes: number;
@@ -23772,51 +25269,51 @@ export interface GetOvasV2OvaVmConfigBootConfig {
 }
 
 export interface GetOvasV2OvaVmConfigBootConfigLegacyBoot {
-    bootDevices: outputs.GetOvasV2OvaVmConfigBootConfigLegacyBootBootDevice[];
+    bootDevices?: outputs.GetOvasV2OvaVmConfigBootConfigLegacyBootBootDevice[];
     bootOrders: string[];
 }
 
 export interface GetOvasV2OvaVmConfigBootConfigLegacyBootBootDevice {
-    bootDeviceDisks: outputs.GetOvasV2OvaVmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk[];
-    bootDeviceNics: outputs.GetOvasV2OvaVmConfigBootConfigLegacyBootBootDeviceBootDeviceNic[];
+    bootDeviceDisks?: outputs.GetOvasV2OvaVmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk[];
+    bootDeviceNics?: outputs.GetOvasV2OvaVmConfigBootConfigLegacyBootBootDeviceBootDeviceNic[];
 }
 
 export interface GetOvasV2OvaVmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk {
-    diskAddresses: outputs.GetOvasV2OvaVmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress[];
+    diskAddresses?: outputs.GetOvasV2OvaVmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress[];
 }
 
 export interface GetOvasV2OvaVmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
-    busType: string;
-    index: number;
+    busType?: string;
+    index?: number;
 }
 
 export interface GetOvasV2OvaVmConfigBootConfigLegacyBootBootDeviceBootDeviceNic {
-    macAddress: string;
+    macAddress?: string;
 }
 
 export interface GetOvasV2OvaVmConfigBootConfigUefiBoot {
-    bootDevices: outputs.GetOvasV2OvaVmConfigBootConfigUefiBootBootDevice[];
+    bootDevices?: outputs.GetOvasV2OvaVmConfigBootConfigUefiBootBootDevice[];
     bootOrders: string[];
     isSecureBootEnabled: boolean;
     nvramDevices: outputs.GetOvasV2OvaVmConfigBootConfigUefiBootNvramDevice[];
 }
 
 export interface GetOvasV2OvaVmConfigBootConfigUefiBootBootDevice {
-    bootDeviceDisks: outputs.GetOvasV2OvaVmConfigBootConfigUefiBootBootDeviceBootDeviceDisk[];
-    bootDeviceNics: outputs.GetOvasV2OvaVmConfigBootConfigUefiBootBootDeviceBootDeviceNic[];
+    bootDeviceDisks?: outputs.GetOvasV2OvaVmConfigBootConfigUefiBootBootDeviceBootDeviceDisk[];
+    bootDeviceNics?: outputs.GetOvasV2OvaVmConfigBootConfigUefiBootBootDeviceBootDeviceNic[];
 }
 
 export interface GetOvasV2OvaVmConfigBootConfigUefiBootBootDeviceBootDeviceDisk {
-    diskAddresses: outputs.GetOvasV2OvaVmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress[];
+    diskAddresses?: outputs.GetOvasV2OvaVmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress[];
 }
 
 export interface GetOvasV2OvaVmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
-    busType: string;
-    index: number;
+    busType?: string;
+    index?: number;
 }
 
 export interface GetOvasV2OvaVmConfigBootConfigUefiBootBootDeviceBootDeviceNic {
-    macAddress: string;
+    macAddress?: string;
 }
 
 export interface GetOvasV2OvaVmConfigBootConfigUefiBootNvramDevice {
@@ -25005,7 +26502,7 @@ export interface GetPbrV2PolicyPolicyMatchDestinationSubnetPrefix {
 
 export interface GetPbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4 {
     /**
-     * IP of address
+     * The base IP address of the subnet. The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6).
      */
     ips: outputs.GetPbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip[];
     /**
@@ -25027,7 +26524,7 @@ export interface GetPbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip {
 
 export interface GetPbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6 {
     /**
-     * IP of address
+     * The base IP address of the subnet. The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6).
      */
     ips: outputs.GetPbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Ip[];
     /**
@@ -25119,7 +26616,7 @@ export interface GetPbrV2PolicyPolicyMatchSourceSubnetPrefix {
 
 export interface GetPbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4 {
     /**
-     * IP of address
+     * The base IP address of the subnet. The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6).
      */
     ips: outputs.GetPbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip[];
     /**
@@ -25141,7 +26638,7 @@ export interface GetPbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip {
 
 export interface GetPbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6 {
     /**
-     * IP of address
+     * The base IP address of the subnet. The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6).
      */
     ips: outputs.GetPbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Ip[];
     /**
@@ -25508,6 +27005,10 @@ export interface GetPbrsV2RoutingPolicy {
      */
     priority: number;
     /**
+     * External identifier of the project associated with the Routing Policy.
+     */
+    projectExtId: string;
+    /**
      * A globally unique identifier that represents the tenant that owns this entity
      */
     tenantId: string;
@@ -25749,7 +27250,7 @@ export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefix 
 
 export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefixIpv4 {
     /**
-     * IP of address
+     * The base IP address of the subnet. The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6).
      */
     ips: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefixIpv4Ip[];
     /**
@@ -25771,7 +27272,7 @@ export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefixI
 
 export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefixIpv6 {
     /**
-     * IP of address
+     * The base IP address of the subnet. The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6).
      */
     ips: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefixIpv6Ip[];
     /**
@@ -25863,7 +27364,7 @@ export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchSourceSubnetPrefix {
 
 export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchSourceSubnetPrefixIpv4 {
     /**
-     * IP of address
+     * The base IP address of the subnet. The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6).
      */
     ips: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchSourceSubnetPrefixIpv4Ip[];
     /**
@@ -25885,7 +27386,7 @@ export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchSourceSubnetPrefixIpv4Ip
 
 export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchSourceSubnetPrefixIpv6 {
     /**
-     * IP of address
+     * The base IP address of the subnet. The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6).
      */
     ips: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchSourceSubnetPrefixIpv6Ip[];
     /**
@@ -28092,6 +29593,17 @@ export interface GetProjectDefaultEnvironmentReference {
     uuid: string;
 }
 
+export interface GetProjectDirectoryReferenceList {
+    /**
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+     */
+    kind: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
 export interface GetProjectEnvironmentReferenceList {
     /**
      * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
@@ -28127,6 +29639,17 @@ export interface GetProjectExternalUserGroupReferenceList {
      * the name.
      */
     name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
+export interface GetProjectIdentityProvidersReferenceList {
+    /**
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+     */
+    kind: string;
     /**
      * (Required) the UUID.
      */
@@ -28192,6 +29715,17 @@ export interface GetProjectUserReferenceList {
     uuid: string;
 }
 
+export interface GetProjectV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object.
+     */
+    rel: string;
+}
+
 export interface GetProjectVpcReferenceList {
     /**
      * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
@@ -28229,6 +29763,16 @@ export interface GetProjectsEntity {
      */
     description: string;
     /**
+     * List of directory services associated with the project.
+     * * `directory_reference_list.#.uuid` - The UUID of a directory service.
+     * * `directory_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`directoryService`" pulumi-lang-dotnet="`DirectoryService`" pulumi-lang-go="`directoryService`" pulumi-lang-python="`directory_service`" pulumi-lang-yaml="`directoryService`" pulumi-lang-java="`directoryService`" pulumi-lang-hcl="`directory_service`">`directoryService`</span>
+     */
+    directoryReferenceLists: outputs.GetProjectsEntityDirectoryReferenceList[];
+    /**
+     * Flag indicating whether the directory services and identity providers associated with the project are shortlisted.
+     */
+    enableDirectoryAndIdentityProviderShortlist: boolean;
+    /**
      * List of environments associated with the project.
      * * `environment_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`" pulumi-lang-hcl="`environment`">`environment`</span>
      * * `environment_reference_list.#.uuid` - The UUID of an environment.
@@ -28255,6 +29799,12 @@ export interface GetProjectsEntity {
      *   </span>* `external_user_group_reference_list.#.name` - The name of a user_group
      */
     externalUserGroupReferenceLists: outputs.GetProjectsEntityExternalUserGroupReferenceList[];
+    /**
+     * List of identity providers associated with the project.
+     * * `identity_providers_reference_list.#.uuid` - The UUID of an identity provider.
+     * * `identity_providers_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`identityProvider`" pulumi-lang-dotnet="`IdentityProvider`" pulumi-lang-go="`identityProvider`" pulumi-lang-python="`identity_provider`" pulumi-lang-yaml="`identityProvider`" pulumi-lang-java="`identityProvider`" pulumi-lang-hcl="`identity_provider`">`identityProvider`</span>
+     */
+    identityProvidersReferenceLists: outputs.GetProjectsEntityIdentityProvidersReferenceList[];
     isDefault: boolean;
     metadata: {[key: string]: string};
     /**
@@ -28310,6 +29860,17 @@ export interface GetProjectsEntityCategory {
     value: string;
 }
 
+export interface GetProjectsEntityDirectoryReferenceList {
+    /**
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+     */
+    kind: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
 export interface GetProjectsEntityEnvironmentReferenceList {
     /**
      * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
@@ -28345,6 +29906,17 @@ export interface GetProjectsEntityExternalUserGroupReferenceList {
      * (Optional) the name.
      */
     name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
+export interface GetProjectsEntityIdentityProvidersReferenceList {
+    /**
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+     */
+    kind: string;
     /**
      * (Required) the UUID.
      */
@@ -28393,6 +29965,27 @@ export interface GetProjectsEntityUserReferenceList {
      * (Required) the UUID.
      */
     uuid: string;
+}
+
+export interface GetProjectsV2Project {
+    createdBy: string;
+    createdTimestamp: string;
+    description: string;
+    extId: string;
+    isDefault: boolean;
+    isSystemDefined: boolean;
+    links: outputs.GetProjectsV2ProjectLink[];
+    modifiedTimestamp: string;
+    name: string;
+    projectId: string;
+    state: string;
+    tenantId: string;
+    updatedBy: string;
+}
+
+export interface GetProjectsV2ProjectLink {
+    href: string;
+    rel: string;
 }
 
 export interface GetProtectedResourceV2Link {
@@ -28523,9 +30116,12 @@ export interface GetProtectionPoliciesV2ProtectionPolicyReplicationConfiguration
 }
 
 export interface GetProtectionPoliciesV2ProtectionPolicyReplicationConfigurationSchedule {
+    isReplicationPaused: boolean;
+    latestRecoveryPointRetentionSeconds?: number;
     recoveryPointObjectiveTimeSeconds?: number;
     recoveryPointType?: string;
     retention?: outputs.GetProtectionPoliciesV2ProtectionPolicyReplicationConfigurationScheduleRetention;
+    scheduleExtId: string;
     startTime?: string;
     syncReplicationAutoSuspendTimeoutSeconds?: number;
 }
@@ -28598,6 +30194,14 @@ export interface GetProtectionPolicyV2ReplicationConfiguration {
 
 export interface GetProtectionPolicyV2ReplicationConfigurationSchedule {
     /**
+     * - Indicates whether replication is paused for all VMs and volume groups associated with the remote replication location.
+     */
+    isReplicationPaused: boolean;
+    /**
+     * - Duration (in seconds) that the latest recovery point is retained past its expiry time if the entity is unprotected, deleted, or migrated. If not specified, the latest recovery point will be retained for a minimum of 30 days. Set to 0 to not retain past expiry.
+     */
+    latestRecoveryPointRetentionSeconds?: number;
+    /**
      * - The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
      * - Minute(s): 1, 2, 3, 4, 5, 6, 10, 12, 15
      * - Hour(s): 1, 2, 3, 4, 6, 8, 12
@@ -28615,6 +30219,10 @@ export interface GetProtectionPolicyV2ReplicationConfigurationSchedule {
      * - Specifies the retention policy for the recovery point schedule.
      */
     retention?: outputs.GetProtectionPolicyV2ReplicationConfigurationScheduleRetention;
+    /**
+     * - System-generated schedule ID for the replication configuration.
+     */
+    scheduleExtId: string;
     /**
      * - Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.
      */
@@ -29010,6 +30618,12 @@ export interface GetRecoveryPlanOwnerReference {
 
 export interface GetRecoveryPlanParameter {
     /**
+     * List of Availability Zones (source and recovery) across which the Recovery Plan is applicable.
+     * * `parameters.0.availability_zone_list.#.availability_zone_url` - URL of the Availability Zone.
+     * * `parameters.0.availability_zone_list.#.cluster_reference_list` - List of clusters in the Availability Zone that are part of the Recovery Plan (<span pulumi-lang-nodejs="`kind`" pulumi-lang-dotnet="`Kind`" pulumi-lang-go="`kind`" pulumi-lang-python="`kind`" pulumi-lang-yaml="`kind`" pulumi-lang-java="`kind`" pulumi-lang-hcl="`kind`">`kind`</span>, <span pulumi-lang-nodejs="`uuid`" pulumi-lang-dotnet="`Uuid`" pulumi-lang-go="`uuid`" pulumi-lang-python="`uuid`" pulumi-lang-yaml="`uuid`" pulumi-lang-java="`uuid`" pulumi-lang-hcl="`uuid`">`uuid`</span>, <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`">`name`</span>).
+     */
+    availabilityZoneLists: outputs.GetRecoveryPlanParameterAvailabilityZoneList[];
+    /**
      * (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
      * * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
      * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
@@ -29047,6 +30661,7 @@ export interface GetRecoveryPlanParameter {
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_uuid` - UUID of the subnet backing the network.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
@@ -29057,6 +30672,7 @@ export interface GetRecoveryPlanParameter {
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_uuid` - UUID of the subnet backing the network.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
@@ -29077,6 +30693,30 @@ export interface GetRecoveryPlanParameter {
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
      */
     networkMappingLists: outputs.GetRecoveryPlanParameterNetworkMappingList[];
+    /**
+     * Index of the primary location in <span pulumi-lang-nodejs="`availabilityZoneList`" pulumi-lang-dotnet="`AvailabilityZoneList`" pulumi-lang-go="`availabilityZoneList`" pulumi-lang-python="`availability_zone_list`" pulumi-lang-yaml="`availabilityZoneList`" pulumi-lang-java="`availabilityZoneList`" pulumi-lang-hcl="`availability_zone_list`">`availabilityZoneList`</span>.
+     */
+    primaryLocationIndex: number;
+}
+
+export interface GetRecoveryPlanParameterAvailabilityZoneList {
+    availabilityZoneUrl: string;
+    clusterReferenceLists: outputs.GetRecoveryPlanParameterAvailabilityZoneListClusterReferenceList[];
+}
+
+export interface GetRecoveryPlanParameterAvailabilityZoneListClusterReferenceList {
+    /**
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+     */
+    kind: string;
+    /**
+     * (Optional) the name.
+     */
+    name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
 }
 
 export interface GetRecoveryPlanParameterFloatingIpAssignmentList {
@@ -29183,6 +30823,7 @@ export interface GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetwo
      */
     name: string;
     subnetLists: outputs.GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetList[];
+    subnetUuid: string;
     useVpcReference: boolean;
     virtualNetworkReferences: outputs.GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReference[];
     vpcReferences: outputs.GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReference[];
@@ -29254,6 +30895,7 @@ export interface GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetwo
      */
     name: string;
     subnetLists: outputs.GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkSubnetList[];
+    subnetUuid: string;
     useVpcReference: boolean;
     virtualNetworkReferences: outputs.GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReference[];
     vpcReferences: outputs.GetRecoveryPlanParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReference[];
@@ -29423,6 +31065,12 @@ export interface GetRecoveryPlansEntityOwnerReference {
 
 export interface GetRecoveryPlansEntityParameter {
     /**
+     * List of Availability Zones (source and recovery) across which the Recovery Plan is applicable.
+     * * `parameters.0.availability_zone_list.#.availability_zone_url` - URL of the Availability Zone.
+     * * `parameters.0.availability_zone_list.#.cluster_reference_list` - List of clusters in the Availability Zone that are part of the Recovery Plan (<span pulumi-lang-nodejs="`kind`" pulumi-lang-dotnet="`Kind`" pulumi-lang-go="`kind`" pulumi-lang-python="`kind`" pulumi-lang-yaml="`kind`" pulumi-lang-java="`kind`" pulumi-lang-hcl="`kind`">`kind`</span>, <span pulumi-lang-nodejs="`uuid`" pulumi-lang-dotnet="`Uuid`" pulumi-lang-go="`uuid`" pulumi-lang-python="`uuid`" pulumi-lang-yaml="`uuid`" pulumi-lang-java="`uuid`" pulumi-lang-hcl="`uuid`">`uuid`</span>, <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`">`name`</span>).
+     */
+    availabilityZoneLists: outputs.GetRecoveryPlansEntityParameterAvailabilityZoneList[];
+    /**
      * (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
      * * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
      * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
@@ -29460,6 +31108,7 @@ export interface GetRecoveryPlansEntityParameter {
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_uuid` - UUID of the subnet backing the network.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
@@ -29470,6 +31119,7 @@ export interface GetRecoveryPlansEntityParameter {
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_uuid` - UUID of the subnet backing the network.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
@@ -29490,6 +31140,30 @@ export interface GetRecoveryPlansEntityParameter {
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
      */
     networkMappingLists: outputs.GetRecoveryPlansEntityParameterNetworkMappingList[];
+    /**
+     * Index of the primary location in <span pulumi-lang-nodejs="`availabilityZoneList`" pulumi-lang-dotnet="`AvailabilityZoneList`" pulumi-lang-go="`availabilityZoneList`" pulumi-lang-python="`availability_zone_list`" pulumi-lang-yaml="`availabilityZoneList`" pulumi-lang-java="`availabilityZoneList`" pulumi-lang-hcl="`availability_zone_list`">`availabilityZoneList`</span>.
+     */
+    primaryLocationIndex: number;
+}
+
+export interface GetRecoveryPlansEntityParameterAvailabilityZoneList {
+    availabilityZoneUrl: string;
+    clusterReferenceLists: outputs.GetRecoveryPlansEntityParameterAvailabilityZoneListClusterReferenceList[];
+}
+
+export interface GetRecoveryPlansEntityParameterAvailabilityZoneListClusterReferenceList {
+    /**
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+     */
+    kind: string;
+    /**
+     * (Optional) the name.
+     */
+    name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
 }
 
 export interface GetRecoveryPlansEntityParameterFloatingIpAssignmentList {
@@ -29596,6 +31270,7 @@ export interface GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZo
      */
     name: string;
     subnetLists: outputs.GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetList[];
+    subnetUuid: string;
     useVpcReference: boolean;
     virtualNetworkReferences: outputs.GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReference[];
     vpcReferences: outputs.GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReference[];
@@ -29667,6 +31342,7 @@ export interface GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZo
      */
     name: string;
     subnetLists: outputs.GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkSubnetList[];
+    subnetUuid: string;
     useVpcReference: boolean;
     virtualNetworkReferences: outputs.GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReference[];
     vpcReferences: outputs.GetRecoveryPlansEntityParameterNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReference[];
@@ -29973,6 +31649,7 @@ export interface GetRecoveryPointsV2RecoveryPoint {
     locationReferences: outputs.GetRecoveryPointsV2RecoveryPointLocationReference[];
     name: string;
     ownerExtId: string;
+    projectExtId: string;
     recoveryPointType: string;
     status: string;
     tenantId: string;
@@ -30043,6 +31720,100 @@ export interface GetRecoveryPointsV2RecoveryPointVolumeGroupRecoveryPointDiskRec
 export interface GetRecoveryPointsV2RecoveryPointVolumeGroupRecoveryPointLink {
     href: string;
     rel: string;
+}
+
+export interface GetResourceGroupV2Capability {
+    /**
+     * - Name of the resource group.
+     */
+    name: string;
+    value: string;
+}
+
+export interface GetResourceGroupV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetResourceGroupV2PlacementTarget {
+    /**
+     * - List of Capabilities and features for this Resource Group.
+     */
+    capabilities: outputs.GetResourceGroupV2PlacementTargetCapability[];
+    clusterExtId: string;
+    storageContainers: outputs.GetResourceGroupV2PlacementTargetStorageContainer[];
+}
+
+export interface GetResourceGroupV2PlacementTargetCapability {
+    /**
+     * - Name of the resource group.
+     */
+    name: string;
+    value: string;
+}
+
+export interface GetResourceGroupV2PlacementTargetStorageContainer {
+    /**
+     * - List of Capabilities and features for this Resource Group.
+     */
+    capabilities: outputs.GetResourceGroupV2PlacementTargetStorageContainerCapability[];
+    /**
+     * - (Required) The external identifier of the resource group.
+     */
+    extId: string;
+}
+
+export interface GetResourceGroupV2PlacementTargetStorageContainerCapability {
+    /**
+     * - Name of the resource group.
+     */
+    name: string;
+    value: string;
+}
+
+export interface GetResourceGroupsV2ResourceGroup {
+    capabilities: outputs.GetResourceGroupsV2ResourceGroupCapability[];
+    createTime: string;
+    createdBy: string;
+    extId: string;
+    lastUpdateTime: string;
+    lastUpdatedBy: string;
+    links: outputs.GetResourceGroupsV2ResourceGroupLink[];
+    name: string;
+    placementTargets: outputs.GetResourceGroupsV2ResourceGroupPlacementTarget[];
+    projectExtId: string;
+    tenantId: string;
+}
+
+export interface GetResourceGroupsV2ResourceGroupCapability {
+    name: string;
+    value: string;
+}
+
+export interface GetResourceGroupsV2ResourceGroupLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetResourceGroupsV2ResourceGroupPlacementTarget {
+    capabilities: outputs.GetResourceGroupsV2ResourceGroupPlacementTargetCapability[];
+    clusterExtId: string;
+    storageContainers: outputs.GetResourceGroupsV2ResourceGroupPlacementTargetStorageContainer[];
+}
+
+export interface GetResourceGroupsV2ResourceGroupPlacementTargetCapability {
+    name: string;
+    value: string;
+}
+
+export interface GetResourceGroupsV2ResourceGroupPlacementTargetStorageContainer {
+    capabilities: outputs.GetResourceGroupsV2ResourceGroupPlacementTargetStorageContainerCapability[];
+    extId: string;
+}
+
+export interface GetResourceGroupsV2ResourceGroupPlacementTargetStorageContainerCapability {
+    name: string;
+    value: string;
 }
 
 export interface GetRestorablePcsV2RestorablePc {
@@ -30251,6 +32022,129 @@ export interface GetRoleCategory {
     value: string;
 }
 
+export interface GetRoleMembershipSummaryV2Summary {
+    /**
+     * External identifier of the role membership summary. This attribute is used to fetch the summary of a specific project.
+     */
+    extId: string;
+    /**
+     * Count of distinct groups in the project.
+     */
+    groupsCount: number;
+    /**
+     * A HATEOAS style link for the response.
+     */
+    links: outputs.GetRoleMembershipSummaryV2SummaryLink[];
+    /**
+     * Count of distinct roles assigned in the project.
+     */
+    rolesCount: number;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this ID to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+     */
+    tenantId: string;
+    /**
+     * Total count of distinct identities (users and groups) in the project.
+     */
+    totalIdentitiesCount: number;
+    /**
+     * Count of distinct users in the project.
+     */
+    usersCount: number;
+}
+
+export interface GetRoleMembershipSummaryV2SummaryLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetRoleMembershipV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetRoleMembershipV2ScopeTemplateNameValue {
+    /**
+     * The name of the variable.
+     */
+    name: string;
+    /**
+     * The value to substitute.
+     */
+    value: string;
+}
+
+export interface GetRoleMembershipsV2RoleMembership {
+    /**
+     * User or Service who created the role membership.
+     */
+    createdBy: string;
+    /**
+     * Creation time of the role membership..
+     */
+    createdTime: string;
+    /**
+     * External identifier of the role membership.
+     */
+    extId: string;
+    /**
+     * External identifier of the identity (user or group) associated with the role membership.
+     */
+    identityExtId: string;
+    /**
+     * Type of identity. Valid values are `USER`, `GROUP`.
+     */
+    identityType: string;
+    /**
+     * External Identifier of the identity provider associated with the role membership.
+     */
+    idpExtId: string;
+    /**
+     * Last updated time of the role membership.
+     */
+    lastUpdatedTime: string;
+    /**
+     * A HATEOAS style link for the response.
+     */
+    links: outputs.GetRoleMembershipsV2RoleMembershipLink[];
+    /**
+     * External identifier of the project associated with the role membership.
+     */
+    projectExtId: string;
+    /**
+     * External identifier of the role associated with the role membership.
+     */
+    roleExtId: string;
+    /**
+     * Name of the scope template.
+     */
+    scopeTemplateName: string;
+    /**
+     * Name Value pairs to substitute in the scope template variables referenced by the role membership.
+     */
+    scopeTemplateNameValues: outputs.GetRoleMembershipsV2RoleMembershipScopeTemplateNameValue[];
+    /**
+     * Tenant identifier.
+     */
+    tenantId: string;
+}
+
+export interface GetRoleMembershipsV2RoleMembershipLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetRoleMembershipsV2RoleMembershipScopeTemplateNameValue {
+    /**
+     * The name of the variable.
+     */
+    name: string;
+    /**
+     * The value to substitute.
+     */
+    value: string;
+}
+
 export interface GetRolePermissionReferenceList {
     /**
      * - The kind name (Default value: project)(Required).
@@ -30412,6 +32306,14 @@ export interface GetRolesV2Role {
      * - List of operations for the role.
      */
     operations: string[];
+    /**
+     * - Project reference for the role.
+     */
+    projectExtId: string;
+    /**
+     * - Flag indicating whether the role is shared with all projects or not.
+     */
+    shareWithAllProjects: boolean;
     /**
      * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
      */
@@ -30684,13 +32586,17 @@ export interface GetRoutesV2Route {
      */
     name: string;
     /**
-     * Route nexthop.
+     * Route nexthop(s). Supports multiple entries.
      */
     nextHops: outputs.GetRoutesV2RouteNextHop[];
     /**
      * Route priority. A higher value implies greater preference is assigned to the route.
      */
     priority: number;
+    /**
+     * External identifier of the project associated with the Route.
+     */
+    projectExtId: string;
     /**
      * Route table UUID
      */
@@ -30905,6 +32811,18 @@ export interface GetSamlIdentityProvidersV2IdentityProvider {
      * - Unique name of the IDP.
      */
     name: string;
+    /**
+     * - Project reference for the SAML Identity Provider.
+     */
+    projectExtId: string;
+    /**
+     * - Flag indicating whether the SAML Identity Provider is shared with all projects or not.
+     */
+    shareWithAllProjects: boolean;
+    /**
+     * - List of projects with which the SAML Identity Provider is shared.
+     */
+    sharedWithProjects: string[];
     usernameAttribute: string;
 }
 
@@ -31326,6 +33244,10 @@ export interface GetServiceGroupsV2ServiceGroup {
      */
     policyReferences: string[];
     /**
+     * Project external ID associated with the service group.
+     */
+    projectExtId: string;
+    /**
      * List of TCP ports in the service.
      */
     tcpServices: outputs.GetServiceGroupsV2ServiceGroupTcpService[];
@@ -31379,6 +33301,205 @@ export interface GetServiceGroupsV2ServiceGroupUdpService {
      * start port
      */
     startPort: number;
+}
+
+export interface GetSnmpConfigV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object
+     *   that is returned by the URL. The unique value of <span pulumi-lang-nodejs="`self`" pulumi-lang-dotnet="`Self`" pulumi-lang-go="`self`" pulumi-lang-python="`self`" pulumi-lang-yaml="`self`" pulumi-lang-java="`self`" pulumi-lang-hcl="`self`">`self`</span> identifies the URL
+     *   for the object.
+     */
+    rel: string;
+}
+
+export interface GetSnmpConfigV2Transport {
+    /**
+     * - SNMP port.
+     */
+    port: number;
+    /**
+     * - SNMP protocol. One of `TCP`, `TCP6`, `UDP`, `UDP6`.
+     */
+    protocol: string;
+}
+
+export interface GetSnmpConfigV2Trap {
+    /**
+     * - Address of the SNMP trap receiver. Includes nested <span pulumi-lang-nodejs="`ipv4`" pulumi-lang-dotnet="`Ipv4`" pulumi-lang-go="`ipv4`" pulumi-lang-python="`ipv4`" pulumi-lang-yaml="`ipv4`" pulumi-lang-java="`ipv4`" pulumi-lang-hcl="`ipv4`">`ipv4`</span> /
+     *   <span pulumi-lang-nodejs="`ipv6`" pulumi-lang-dotnet="`Ipv6`" pulumi-lang-go="`ipv6`" pulumi-lang-python="`ipv6`" pulumi-lang-yaml="`ipv6`" pulumi-lang-java="`ipv6`" pulumi-lang-hcl="`ipv6`">`ipv6`</span> blocks, each with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> and <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span>.
+     */
+    addresses: outputs.GetSnmpConfigV2TrapAddress[];
+    /**
+     * - Community string (plaintext) for SNMP V2 traps.
+     */
+    communityString: string;
+    /**
+     * - SNMP engine Id.
+     */
+    engineId: string;
+    /**
+     * - A globally unique identifier of the user entity.
+     */
+    extId: string;
+    /**
+     * - HATEOAS links for the user.
+     */
+    links: outputs.GetSnmpConfigV2TrapLink[];
+    /**
+     * - SNMP port.
+     */
+    port: number;
+    /**
+     * - SNMP protocol. One of `TCP`, `TCP6`, `UDP`, `UDP6`.
+     */
+    protocol: string;
+    /**
+     * - SNMP receiver name.
+     */
+    receiverName: string;
+    /**
+     * - SNMP information status.
+     */
+    shouldInform: boolean;
+    /**
+     * - Tenant identifier.
+     */
+    tenantId: string;
+    /**
+     * - SNMP username.
+     */
+    username: string;
+    /**
+     * - SNMP version. One of `V2`, `V3`.
+     */
+    version: string;
+}
+
+export interface GetSnmpConfigV2TrapAddress {
+    ipv4s: outputs.GetSnmpConfigV2TrapAddressIpv4[];
+    ipv6s: outputs.GetSnmpConfigV2TrapAddressIpv6[];
+}
+
+export interface GetSnmpConfigV2TrapAddressIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetSnmpConfigV2TrapAddressIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetSnmpConfigV2TrapLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object
+     *   that is returned by the URL. The unique value of <span pulumi-lang-nodejs="`self`" pulumi-lang-dotnet="`Self`" pulumi-lang-go="`self`" pulumi-lang-python="`self`" pulumi-lang-yaml="`self`" pulumi-lang-java="`self`" pulumi-lang-hcl="`self`">`self`</span> identifies the URL
+     *   for the object.
+     */
+    rel: string;
+}
+
+export interface GetSnmpConfigV2User {
+    /**
+     * - SNMP user authentication type. One of `MD5`, `SHA`, `SHA224`, `SHA256`, `SHA384`, `SHA512`.
+     */
+    authType: string;
+    /**
+     * - A globally unique identifier of the user entity.
+     */
+    extId: string;
+    /**
+     * - HATEOAS links for the user.
+     */
+    links: outputs.GetSnmpConfigV2UserLink[];
+    /**
+     * - SNMP user encryption type. One of `DES`, `AES`, `AES192`, `AES256`.
+     */
+    privType: string;
+    /**
+     * - Tenant identifier.
+     */
+    tenantId: string;
+    /**
+     * - SNMP username.
+     */
+    username: string;
+}
+
+export interface GetSnmpConfigV2UserLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object
+     *   that is returned by the URL. The unique value of <span pulumi-lang-nodejs="`self`" pulumi-lang-dotnet="`Self`" pulumi-lang-go="`self`" pulumi-lang-python="`self`" pulumi-lang-yaml="`self`" pulumi-lang-java="`self`" pulumi-lang-hcl="`self`">`self`</span> identifies the URL
+     *   for the object.
+     */
+    rel: string;
+}
+
+export interface GetSnmpTrapV2Address {
+    /**
+     * - IPv4 address. Contains:
+     */
+    ipv4s: outputs.GetSnmpTrapV2AddressIpv4[];
+    /**
+     * - IPv6 address. Contains:
+     */
+    ipv6s: outputs.GetSnmpTrapV2AddressIpv6[];
+}
+
+export interface GetSnmpTrapV2AddressIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * - The IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface GetSnmpTrapV2AddressIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * - The IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface GetSnmpTrapV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetSnmpUserV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
 }
 
 export interface GetStaticRoutesSpec {
@@ -33174,6 +35295,7 @@ export interface GetSubnetsV2Subnet {
     ipPrefix: string;
     ipUsages: outputs.GetSubnetsV2SubnetIpUsage[];
     isAdvancedNetworking: boolean;
+    isConnected: boolean;
     isExternal: boolean;
     isNatEnabled: boolean;
     links: outputs.GetSubnetsV2SubnetLink[];
@@ -33182,7 +35304,9 @@ export interface GetSubnetsV2Subnet {
     name: string;
     networkFunctionChainReference: string;
     networkId: number;
+    projectExtId: string;
     reservedIpAddresses: outputs.GetSubnetsV2SubnetReservedIpAddress[];
+    sharedWithProjects: string[];
     subnetType: string;
     virtualSwitchReference: string;
     virtualSwitches: outputs.GetSubnetsV2SubnetVirtualSwitch[];
@@ -33642,6 +35766,97 @@ export interface GetSystemUserPasswordsV2PasswordLink {
     rel: string;
 }
 
+export interface GetTemplatePlacementPoliciesV2TemplatePlacementPolicy {
+    /**
+     * Category filter for clusters.
+     */
+    clusterFilters: outputs.GetTemplatePlacementPoliciesV2TemplatePlacementPolicyClusterFilter[];
+    /**
+     * Category filter for content.
+     */
+    contentFilters: outputs.GetTemplatePlacementPoliciesV2TemplatePlacementPolicyContentFilter[];
+    /**
+     * The time when the placement policy was created.
+     */
+    createTime: string;
+    /**
+     * External identifier of the user who created the placement policy.
+     */
+    createdBy: string;
+    /**
+     * Description of the placement policy.
+     */
+    description: string;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * Name of the placement policy.
+     */
+    name: string;
+    /**
+     * The placement type. Valid values: `SOFT`.
+     */
+    placementType: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+    /**
+     * The time when the placement policy was last updated.
+     */
+    updateTime: string;
+    /**
+     * External identifier of the user who updated the placement policy.
+     */
+    updatedBy: string;
+}
+
+export interface GetTemplatePlacementPoliciesV2TemplatePlacementPolicyClusterFilter {
+    /**
+     * Filter to match entities based on the provided categories.
+     */
+    categoryExtIds: string[];
+    /**
+     * The match type for categories. Valid values: `CATEGORIES_MATCH_ALL`, `CATEGORIES_MATCH_ANY`.
+     */
+    type: string;
+}
+
+export interface GetTemplatePlacementPoliciesV2TemplatePlacementPolicyContentFilter {
+    /**
+     * Filter to match entities based on the provided categories.
+     */
+    categoryExtIds: string[];
+    /**
+     * The match type for categories. Valid values: `CATEGORIES_MATCH_ALL`, `CATEGORIES_MATCH_ANY`.
+     */
+    type: string;
+}
+
+export interface GetTemplatePlacementPolicyV2ClusterFilter {
+    /**
+     * Filter to match entities based on the provided categories.
+     */
+    categoryExtIds: string[];
+    /**
+     * The match type for categories. Valid values: `CATEGORIES_MATCH_ALL`, `CATEGORIES_MATCH_ANY`.
+     */
+    type: string;
+}
+
+export interface GetTemplatePlacementPolicyV2ContentFilter {
+    /**
+     * Filter to match entities based on the provided categories.
+     */
+    categoryExtIds: string[];
+    /**
+     * The match type for categories. Valid values: `CATEGORIES_MATCH_ALL`, `CATEGORIES_MATCH_ANY`.
+     */
+    type: string;
+}
+
 export interface GetTemplateV2CreatedBy {
     /**
      * Any additional attribute for the User.
@@ -33760,6 +35975,7 @@ export interface GetTemplateV2TemplateVersionSpec {
      * The identifier of a Template.
      */
     extId: string;
+    guestCustomizationProfiles: outputs.GetTemplateV2TemplateVersionSpecGuestCustomizationProfile[];
     /**
      * Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise.
      */
@@ -33784,6 +36000,7 @@ export interface GetTemplateV2TemplateVersionSpec {
      * The user defined name of a Template Version.
      */
     versionName: string;
+    versionSources: outputs.GetTemplateV2TemplateVersionSpecVersionSource[];
     /**
      * VM configuration.
      */
@@ -33877,6 +36094,13 @@ export interface GetTemplateV2TemplateVersionSpecCreatedByAdditionalAttributeVal
     map: {[key: string]: string};
 }
 
+export interface GetTemplateV2TemplateVersionSpecGuestCustomizationProfile {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
 export interface GetTemplateV2TemplateVersionSpecLink {
     /**
      * - The URL at which the entity described by the link can be accessed.
@@ -33886,6 +36110,692 @@ export interface GetTemplateV2TemplateVersionSpecLink {
      * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
      */
     rel: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSource {
+    templateVersionReferences: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReference[];
+    templateVmReferences: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReference[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReference {
+    overrideVmConfigs: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig[];
+    versionId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig {
+    /**
+     * Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+     */
+    guestCustomizations: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomization[];
+    /**
+     * Memory size in bytes.
+     */
+    memorySizeBytes: number;
+    /**
+     * Name of the GPU resource.
+     */
+    name: string;
+    /**
+     * NICs attached to the VM.
+     */
+    nics: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic[];
+    /**
+     * Number of cores per socket.
+     */
+    numCoresPerSocket: number;
+    /**
+     * Number of vCPU sockets.
+     */
+    numSockets: number;
+    /**
+     * Number of threads per core
+     */
+    numThreadsPerCore: number;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomization {
+    /**
+     * The Nutanix Guest Tools customization settings.
+     */
+    configs: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfig[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfig {
+    /**
+     * CloudInit Config
+     */
+    cloudInits: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInit[];
+    /**
+     * Sysprep config
+     */
+    syspreps: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprep[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInit {
+    /**
+     * The script to use for cloud-init.
+     */
+    cloudInitScripts: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScript[];
+    /**
+     * Type of datasource. Default: CONFIG_DRIVE_V2
+     */
+    datasourceType: string;
+    /**
+     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     */
+    metadata: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScript {
+    customKeyValues: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue[];
+    /**
+     * user data object
+     */
+    userDatas: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptUserData[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue {
+    keyValuePairs: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair {
+    /**
+     * Name of the GPU resource.
+     */
+    name: string;
+    values: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptUserData {
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprep {
+    /**
+     * Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Default is 'PREPARED'.
+     */
+    installType: string;
+    /**
+     * Object either UnattendXml or CustomKeyValues
+     */
+    sysprepScripts: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScript[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScript {
+    /**
+     * The list of the individual KeyValuePair elements.
+     */
+    customKeyValues: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue[];
+    /**
+     * xml object
+     */
+    unattendXmls: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptUnattendXml[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
+    keyValuePairs: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    /**
+     * Name of the GPU resource.
+     */
+    name: string;
+    values: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptUnattendXml {
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic {
+    /**
+     * (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
+     *
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+     */
+    backingInfos: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo[];
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+    /**
+     * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicLink[];
+    /**
+     * (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
+     *
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+     */
+    networkInfos: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo[];
+    /**
+     * New NIC backing info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`">`virtualEthernetNic`</span>, <span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`">`sriovNic`</span>, <span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`">`dpOffloadNic`</span>.
+     */
+    nicBackingInfo: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfo;
+    /**
+     * New NIC network info (v2.4.1+). One of <span pulumi-lang-nodejs="`virtualEthernetNicNetworkInfo`" pulumi-lang-dotnet="`VirtualEthernetNicNetworkInfo`" pulumi-lang-go="`virtualEthernetNicNetworkInfo`" pulumi-lang-python="`virtual_ethernet_nic_network_info`" pulumi-lang-yaml="`virtualEthernetNicNetworkInfo`" pulumi-lang-java="`virtualEthernetNicNetworkInfo`" pulumi-lang-hcl="`virtual_ethernet_nic_network_info`">`virtualEthernetNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`sriovNicNetworkInfo`" pulumi-lang-dotnet="`SriovNicNetworkInfo`" pulumi-lang-go="`sriovNicNetworkInfo`" pulumi-lang-python="`sriov_nic_network_info`" pulumi-lang-yaml="`sriovNicNetworkInfo`" pulumi-lang-java="`sriovNicNetworkInfo`" pulumi-lang-hcl="`sriov_nic_network_info`">`sriovNicNetworkInfo`</span>, <span pulumi-lang-nodejs="`dpOffloadNicNetworkInfo`" pulumi-lang-dotnet="`DpOffloadNicNetworkInfo`" pulumi-lang-go="`dpOffloadNicNetworkInfo`" pulumi-lang-python="`dp_offload_nic_network_info`" pulumi-lang-yaml="`dpOffloadNicNetworkInfo`" pulumi-lang-java="`dpOffloadNicNetworkInfo`" pulumi-lang-hcl="`dp_offload_nic_network_info`">`dpOffloadNicNetworkInfo`</span>.
+     */
+    nicNetworkInfo: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfo;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+     */
+    tenantId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo {
+    /**
+     * Indicates whether the serial port is connected or not.
+     */
+    isConnected: boolean;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress: string;
+    /**
+     * Options for the NIC emulation.
+     */
+    model: string;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC
+     */
+    numQueues?: number;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Config[];
+    ipv4Infos: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Info[];
+    /**
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
+     */
+    networkFunctionChains: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChain[];
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
+    networkFunctionNicType: string;
+    /**
+     * NIC type. Defaults to NORMAL_NIC.
+     */
+    nicType: string;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs: boolean;
+    /**
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     */
+    subnets: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnet[];
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans: number[];
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Config {
+    ipAddresses: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigIpAddress[];
+    secondaryIpAddressLists: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
+    shouldAssignIp: boolean;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Info {
+    learnedIpAddresses: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4InfoLearnedIpAddress[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChain {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnet {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfo {
+    dpOffloadNic: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNic;
+    sriovNic: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNic;
+    virtualEthernetNic: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoVirtualEthernetNic;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNic {
+    dpOffloadProfileReference: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNicDpOffloadProfileReference;
+    hostPcieDeviceReference: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNicHostPcieDeviceReference;
+    /**
+     * Indicates whether the serial port is connected or not.
+     */
+    isConnected: boolean;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNicDpOffloadProfileReference {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNicHostPcieDeviceReference {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNic {
+    hostPcieDeviceReference: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference;
+    /**
+     * Indicates whether the serial port is connected or not.
+     */
+    isConnected: boolean;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress: string;
+    sriovProfileReference: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNicSriovProfileReference;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNicSriovProfileReference {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoVirtualEthernetNic {
+    /**
+     * Indicates whether the serial port is connected or not.
+     */
+    isConnected: boolean;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress: string;
+    /**
+     * Options for the NIC emulation.
+     */
+    model: string;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC
+     */
+    numQueues?: number;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfo {
+    dpOffloadNicNetworkInfo: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo;
+    sriovNicNetworkInfo: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoSriovNicNetworkInfo;
+    virtualEthernetNicNetworkInfo: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config[];
+    ipv4Infos: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info[];
+    ipv6Infos: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info[];
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs: boolean;
+    /**
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     */
+    subnets: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet[];
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans: number[];
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config {
+    ipAddresses: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress[];
+    secondaryIpAddressLists: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
+    shouldAssignIp: boolean;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info {
+    learnedIpAddresses: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoSriovNicNetworkInfo {
+    vlanId: number;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config[];
+    ipv4Infos: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info[];
+    ipv6Infos: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info[];
+    /**
+     * The network function chain associates with the NIC. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC.
+     */
+    networkFunctionChains: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain[];
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
+    networkFunctionNicType: string;
+    /**
+     * NIC type. Defaults to NORMAL_NIC.
+     */
+    nicType: string;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs: boolean;
+    /**
+     * Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
+     */
+    subnets: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet[];
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans: number[];
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config {
+    ipAddresses: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress[];
+    secondaryIpAddressLists: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
+    shouldAssignIp: boolean;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info {
+    learnedIpAddresses: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReference {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+    guestCustomizationProfiles: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfile[];
+    /**
+     * Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+     */
+    guestCustomizations: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomization[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomization {
+    /**
+     * The Nutanix Guest Tools customization settings.
+     */
+    configs: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfig[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfig {
+    /**
+     * CloudInit Config
+     */
+    cloudInits: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInit[];
+    /**
+     * Sysprep config
+     */
+    syspreps: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprep[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInit {
+    /**
+     * The script to use for cloud-init.
+     */
+    cloudInitScripts: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScript[];
+    /**
+     * Type of datasource. Default: CONFIG_DRIVE_V2
+     */
+    datasourceType: string;
+    /**
+     * The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     */
+    metadata: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScript {
+    customKeyValues: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue[];
+    /**
+     * user data object
+     */
+    userDatas: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptUserData[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue {
+    keyValuePairs: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair {
+    /**
+     * Name of the GPU resource.
+     */
+    name: string;
+    values: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptUserData {
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprep {
+    /**
+     * Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Default is 'PREPARED'.
+     */
+    installType: string;
+    /**
+     * Object either UnattendXml or CustomKeyValues
+     */
+    sysprepScripts: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScript[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScript {
+    /**
+     * The list of the individual KeyValuePair elements.
+     */
+    customKeyValues: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue[];
+    /**
+     * xml object
+     */
+    unattendXmls: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptUnattendXml[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
+    keyValuePairs: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    /**
+     * Name of the GPU resource.
+     */
+    name: string;
+    values: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptUnattendXml {
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfile {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
 }
 
 export interface GetTemplateV2TemplateVersionSpecVmSpec {
@@ -35514,6 +38424,7 @@ export interface GetTemplatesV2Template {
     extId: string;
     guestUpdateStatuses: outputs.GetTemplatesV2TemplateGuestUpdateStatus[];
     links: outputs.GetTemplatesV2TemplateLink[];
+    projectExtId: string;
     templateDescription: string;
     templateName: string;
     templateVersionSpecs: outputs.GetTemplatesV2TemplateTemplateVersionSpec[];
@@ -35574,12 +38485,14 @@ export interface GetTemplatesV2TemplateTemplateVersionSpec {
     createTime: string;
     createdBies: outputs.GetTemplatesV2TemplateTemplateVersionSpecCreatedBy[];
     extId: string;
+    guestCustomizationProfiles: outputs.GetTemplatesV2TemplateTemplateVersionSpecGuestCustomizationProfile[];
     isActiveVersion: boolean;
     isGcOverrideEnabled: boolean;
     links: outputs.GetTemplatesV2TemplateTemplateVersionSpecLink[];
     tenantId: string;
     versionDescription: string;
     versionName: string;
+    versionSources: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSource[];
     vmSpecs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpec[];
 }
 
@@ -35622,9 +38535,440 @@ export interface GetTemplatesV2TemplateTemplateVersionSpecCreatedByAdditionalAtt
     map: {[key: string]: string};
 }
 
+export interface GetTemplatesV2TemplateTemplateVersionSpecGuestCustomizationProfile {
+    extId: string;
+}
+
 export interface GetTemplatesV2TemplateTemplateVersionSpecLink {
     href: string;
     rel: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSource {
+    templateVersionReferences: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReference[];
+    templateVmReferences: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReference[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReference {
+    overrideVmConfigs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig[];
+    versionId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig {
+    guestCustomizations: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomization[];
+    memorySizeBytes: number;
+    name: string;
+    nics: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic[];
+    numCoresPerSocket: number;
+    numSockets: number;
+    numThreadsPerCore: number;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomization {
+    configs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfig[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfig {
+    cloudInits: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInit[];
+    syspreps: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprep[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInit {
+    cloudInitScripts: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScript[];
+    datasourceType: string;
+    metadata: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScript {
+    customKeyValues: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue[];
+    userDatas: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptUserData[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue {
+    keyValuePairs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair {
+    name: string;
+    values: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptUserData {
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprep {
+    installType: string;
+    sysprepScripts: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScript[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScript {
+    customKeyValues: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue[];
+    unattendXmls: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptUnattendXml[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
+    keyValuePairs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    name: string;
+    values: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptUnattendXml {
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic {
+    /**
+     * @deprecated The <span pulumi-lang-nodejs="`backingInfo`" pulumi-lang-dotnet="`BackingInfo`" pulumi-lang-go="`backingInfo`" pulumi-lang-python="`backing_info`" pulumi-lang-yaml="`backingInfo`" pulumi-lang-java="`backingInfo`" pulumi-lang-hcl="`backing_info`">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicBackingInfo`" pulumi-lang-dotnet="`NicBackingInfo`" pulumi-lang-go="`nicBackingInfo`" pulumi-lang-python="`nic_backing_info`" pulumi-lang-yaml="`nicBackingInfo`" pulumi-lang-java="`nicBackingInfo`" pulumi-lang-hcl="`nic_backing_info`">`nicBackingInfo`</span> instead. This field will be removed in a future release.
+     */
+    backingInfos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo[];
+    extId: string;
+    links: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicLink[];
+    /**
+     * @deprecated The <span pulumi-lang-nodejs="`networkInfo`" pulumi-lang-dotnet="`NetworkInfo`" pulumi-lang-go="`networkInfo`" pulumi-lang-python="`network_info`" pulumi-lang-yaml="`networkInfo`" pulumi-lang-java="`networkInfo`" pulumi-lang-hcl="`network_info`">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs="`nicNetworkInfo`" pulumi-lang-dotnet="`NicNetworkInfo`" pulumi-lang-go="`nicNetworkInfo`" pulumi-lang-python="`nic_network_info`" pulumi-lang-yaml="`nicNetworkInfo`" pulumi-lang-java="`nicNetworkInfo`" pulumi-lang-hcl="`nic_network_info`">`nicNetworkInfo`</span> instead. This field will be removed in a future release.
+     */
+    networkInfos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo[];
+    nicBackingInfo: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfo;
+    nicNetworkInfo: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfo;
+    tenantId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo {
+    isConnected: boolean;
+    macAddress: string;
+    model: string;
+    numQueues?: number;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo {
+    ipv4Configs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Config[];
+    ipv4Infos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Info[];
+    networkFunctionChains: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChain[];
+    networkFunctionNicType: string;
+    nicType: string;
+    shouldAllowUnknownMacs: boolean;
+    subnets: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnet[];
+    trunkedVlans: number[];
+    vlanMode: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Config {
+    ipAddresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigIpAddress[];
+    secondaryIpAddressLists: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
+    shouldAssignIp: boolean;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Info {
+    learnedIpAddresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4InfoLearnedIpAddress[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChain {
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnet {
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfo {
+    dpOffloadNic: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNic;
+    sriovNic: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNic;
+    virtualEthernetNic: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoVirtualEthernetNic;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNic {
+    dpOffloadProfileReference: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNicDpOffloadProfileReference;
+    hostPcieDeviceReference: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNicHostPcieDeviceReference;
+    isConnected: boolean;
+    macAddress: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNicDpOffloadProfileReference {
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoDpOffloadNicHostPcieDeviceReference {
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNic {
+    hostPcieDeviceReference: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference;
+    isConnected: boolean;
+    macAddress: string;
+    sriovProfileReference: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNicSriovProfileReference;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference {
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoSriovNicSriovProfileReference {
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoVirtualEthernetNic {
+    isConnected: boolean;
+    macAddress: string;
+    model: string;
+    numQueues?: number;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfo {
+    dpOffloadNicNetworkInfo: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo;
+    sriovNicNetworkInfo: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoSriovNicNetworkInfo;
+    virtualEthernetNicNetworkInfo: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo {
+    ipv4Configs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config[];
+    ipv4Infos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info[];
+    ipv6Infos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info[];
+    shouldAllowUnknownMacs: boolean;
+    subnets: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet[];
+    trunkedVlans: number[];
+    vlanMode: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config {
+    ipAddresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress[];
+    secondaryIpAddressLists: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
+    shouldAssignIp: boolean;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info {
+    learnedIpAddresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet {
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoSriovNicNetworkInfo {
+    vlanId: number;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo {
+    ipv4Configs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config[];
+    ipv4Infos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info[];
+    ipv6Infos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info[];
+    networkFunctionChains: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain[];
+    networkFunctionNicType: string;
+    nicType: string;
+    shouldAllowUnknownMacs: boolean;
+    subnets: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet[];
+    trunkedVlans: number[];
+    vlanMode: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Config {
+    ipAddresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress[];
+    secondaryIpAddressLists: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
+    shouldAssignIp: boolean;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4Info {
+    learnedIpAddresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6Info {
+    learnedIpv6Addresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoIpv6InfoLearnedIpv6Address {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChain {
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnet {
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReference {
+    extId: string;
+    guestCustomizationProfiles: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfile[];
+    guestCustomizations: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomization[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomization {
+    configs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfig[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfig {
+    cloudInits: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInit[];
+    syspreps: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprep[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInit {
+    cloudInitScripts: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScript[];
+    datasourceType: string;
+    metadata: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScript {
+    customKeyValues: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue[];
+    userDatas: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptUserData[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue {
+    keyValuePairs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair {
+    name: string;
+    values: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptUserData {
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprep {
+    installType: string;
+    sysprepScripts: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScript[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScript {
+    customKeyValues: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue[];
+    unattendXmls: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptUnattendXml[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
+    keyValuePairs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    name: string;
+    values: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptUnattendXml {
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfile {
+    extId: string;
 }
 
 export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpec {
@@ -39455,6 +42799,274 @@ export interface GetVirtualMachinesV2VmVtpmConfig {
     version: string;
 }
 
+export interface GetVirtualSwitchV2Cluster {
+    /**
+     * The globally unique identifier (UUID) of the Virtual Switch you want to retrieve.
+     */
+    extId: string;
+    /**
+     * A block containing the <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> and <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> of the Gateway IP address configured for this cluster's virtual switch.
+     */
+    gatewayIpAddresses: outputs.GetVirtualSwitchV2ClusterGatewayIpAddress[];
+    /**
+     * A list of host-specific configurations within the cluster. See the <span pulumi-lang-nodejs="`hosts`" pulumi-lang-dotnet="`Hosts`" pulumi-lang-go="`hosts`" pulumi-lang-python="`hosts`" pulumi-lang-yaml="`hosts`" pulumi-lang-java="`hosts`" pulumi-lang-hcl="`hosts`">`hosts`</span> block below.
+     */
+    hosts: outputs.GetVirtualSwitchV2ClusterHost[];
+    /**
+     * The specific VLAN ID assigned to this virtual switch within the cluster context.
+     */
+    vlanIdentifier: number;
+}
+
+export interface GetVirtualSwitchV2ClusterGatewayIpAddress {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetVirtualSwitchV2ClusterHost {
+    /**
+     * The designated active uplink interface when using an `ACTIVE_BACKUP` bond mode.
+     */
+    activeUplink: string;
+    /**
+     * The globally unique identifier (UUID) of the Virtual Switch you want to retrieve.
+     */
+    extId: string;
+    /**
+     * A list of physical Network Interface Cards (NICs) on the host that are bound to this virtual switch as uplinks.
+     */
+    hostNics: string[];
+    /**
+     * The system-level logical bridge name created on the host (e.g., <span pulumi-lang-nodejs="`br0`" pulumi-lang-dotnet="`Br0`" pulumi-lang-go="`br0`" pulumi-lang-python="`br0`" pulumi-lang-yaml="`br0`" pulumi-lang-java="`br0`" pulumi-lang-hcl="`br0`">`br0`</span>, <span pulumi-lang-nodejs="`br1`" pulumi-lang-dotnet="`Br1`" pulumi-lang-go="`br1`" pulumi-lang-python="`br1`" pulumi-lang-yaml="`br1`" pulumi-lang-java="`br1`" pulumi-lang-hcl="`br1`">`br1`</span>).
+     */
+    internalBridgeName: string;
+    /**
+     * A block containing the <span pulumi-lang-nodejs="`ip`" pulumi-lang-dotnet="`Ip`" pulumi-lang-go="`ip`" pulumi-lang-python="`ip`" pulumi-lang-yaml="`ip`" pulumi-lang-java="`ip`" pulumi-lang-hcl="`ip`">`ip`</span> (<span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> and <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span>) and overarching <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> defining the IPv4 subnet address configured for the bridge interface on this host.
+     */
+    ipAddresses: outputs.GetVirtualSwitchV2ClusterHostIpAddress[];
+    /**
+     * The internal routing table ID number utilized by this host for traffic forwarding.
+     */
+    routeTable: number;
+}
+
+export interface GetVirtualSwitchV2ClusterHostIpAddress {
+    ips: outputs.GetVirtualSwitchV2ClusterHostIpAddressIp[];
+    prefixLength: number;
+}
+
+export interface GetVirtualSwitchV2ClusterHostIpAddressIp {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetVirtualSwitchV2IgmpSpec {
+    /**
+     * A boolean indicating if IGMP snooping is enabled on the Virtual Switch to optimize multicast traffic delivery.
+     */
+    isSnoopingEnabled: boolean;
+    /**
+     * A block defining the IGMP querier settings. See the <span pulumi-lang-nodejs="`querierSpec`" pulumi-lang-dotnet="`QuerierSpec`" pulumi-lang-go="`querierSpec`" pulumi-lang-python="`querier_spec`" pulumi-lang-yaml="`querierSpec`" pulumi-lang-java="`querierSpec`" pulumi-lang-hcl="`querier_spec`">`querierSpec`</span> block below.
+     */
+    querierSpecs: outputs.GetVirtualSwitchV2IgmpSpecQuerierSpec[];
+    /**
+     * The timeout value in seconds before an inactive multicast group membership expires.
+     */
+    snoopingTimeout: number;
+}
+
+export interface GetVirtualSwitchV2IgmpSpecQuerierSpec {
+    /**
+     * A boolean indicating if the Virtual Switch acts as an IGMP querier.
+     */
+    isQuerierEnabled: boolean;
+    /**
+     * A list of VLAN IDs on which the Virtual Switch actively sends IGMP queries.
+     */
+    vlanIdLists: number[];
+}
+
+export interface GetVirtualSwitchV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetVirtualSwitchV2Metadata {
+    categoryIds: string[];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetVirtualSwitchesV2VirtualSwitch {
+    /**
+     * The uplink bonding policy applied to this Virtual Switch. Common values include `ACTIVE_BACKUP`, `BALANCE_SLB` (Source Load Balancing), `BALANCE_TCP`, or `NONE`.
+     */
+    bondMode: string;
+    /**
+     * Cluster configuration list
+     */
+    clusters: outputs.GetVirtualSwitchesV2VirtualSwitchCluster[];
+    /**
+     * A descriptive text providing context or details about the Virtual Switch's purpose.
+     */
+    description: string;
+    /**
+     * The UUID of the physical host.
+     */
+    extId: string;
+    /**
+     * A boolean indicating if the virtual switch is currently in the process of being deleted.
+     */
+    hasDeleteInProgress: boolean;
+    /**
+     * A boolean flag that is <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span> if the virtual switch configuration failed to deploy consistently across every node in the cluster.
+     */
+    hasDeploymentError: boolean;
+    /**
+     * A boolean indicating if the virtual switch is currently undergoing an update operation.
+     */
+    hasUpdateInProgress: boolean;
+    igmpSpecs: outputs.GetVirtualSwitchesV2VirtualSwitchIgmpSpec[];
+    /**
+     * A boolean indicating whether this is a default system Virtual Switch (which typically cannot be deleted or heavily modified).
+     */
+    isDefault: boolean;
+    /**
+     * A boolean flag indicating if quick mode is enabled. When <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>, host nodes are not put into maintenance mode during Virtual Switch updates, which speeds up operations but may cause brief network interruptions.
+     */
+    isQuickMode: boolean;
+    /**
+     * A list of HATEOAS-style links related to the response, providing URLs for API navigation.
+     */
+    links: outputs.GetVirtualSwitchesV2VirtualSwitchLink[];
+    /**
+     * A block containing administrative and organizational metadata for the entity, such as assigned categories (tags).
+     */
+    metadatas: outputs.GetVirtualSwitchesV2VirtualSwitchMetadata[];
+    /**
+     * The Maximum Transmission Unit (MTU) configured for the virtual switch, in bytes (e.g., <span pulumi-lang-nodejs="`1500`" pulumi-lang-dotnet="`1500`" pulumi-lang-go="`1500`" pulumi-lang-python="`1500`" pulumi-lang-yaml="`1500`" pulumi-lang-java="`1500`" pulumi-lang-hcl="`1500`">`1500`</span> or <span pulumi-lang-nodejs="`9000`" pulumi-lang-dotnet="`9000`" pulumi-lang-go="`9000`" pulumi-lang-python="`9000`" pulumi-lang-yaml="`9000`" pulumi-lang-java="`9000`" pulumi-lang-hcl="`9000`">`9000`</span> for Jumbo Frames).
+     */
+    mtu: number;
+    /**
+     * The human-readable name of the Virtual Switch.
+     */
+    name: string;
+    /**
+     * Identifies the type of entity that created or owns the Virtual Switch.
+     */
+    ownerType: string;
+    /**
+     * The UUID of the Nutanix Project that owns this entity, used for RBAC and multi-tenancy.
+     */
+    projectExtId: string;
+    /**
+     * A globally unique identifier representing the tenant that owns this entity.
+     */
+    tenantId: string;
+}
+
+export interface GetVirtualSwitchesV2VirtualSwitchCluster {
+    /**
+     * The UUID of the physical host.
+     */
+    extId: string;
+    /**
+     * A block containing the <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> and <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> of the Gateway IP address configured for this cluster's virtual switch.
+     */
+    gatewayIpAddresses: outputs.GetVirtualSwitchesV2VirtualSwitchClusterGatewayIpAddress[];
+    /**
+     * A list of host-specific configurations within the cluster. See the <span pulumi-lang-nodejs="`hosts`" pulumi-lang-dotnet="`Hosts`" pulumi-lang-go="`hosts`" pulumi-lang-python="`hosts`" pulumi-lang-yaml="`hosts`" pulumi-lang-java="`hosts`" pulumi-lang-hcl="`hosts`">`hosts`</span> block below.
+     */
+    hosts: outputs.GetVirtualSwitchesV2VirtualSwitchClusterHost[];
+    /**
+     * The specific VLAN ID assigned to this virtual switch within the cluster context.
+     */
+    vlanIdentifier: number;
+}
+
+export interface GetVirtualSwitchesV2VirtualSwitchClusterGatewayIpAddress {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetVirtualSwitchesV2VirtualSwitchClusterHost {
+    /**
+     * The designated active uplink interface when using an `ACTIVE_BACKUP` bond mode.
+     */
+    activeUplink: string;
+    /**
+     * The UUID of the physical host.
+     */
+    extId: string;
+    /**
+     * A list of physical Network Interface Cards (NICs) on the host that are bound to this virtual switch as uplinks.
+     */
+    hostNics: string[];
+    /**
+     * The system-level logical bridge name created on the host (e.g., <span pulumi-lang-nodejs="`br0`" pulumi-lang-dotnet="`Br0`" pulumi-lang-go="`br0`" pulumi-lang-python="`br0`" pulumi-lang-yaml="`br0`" pulumi-lang-java="`br0`" pulumi-lang-hcl="`br0`">`br0`</span>, <span pulumi-lang-nodejs="`br1`" pulumi-lang-dotnet="`Br1`" pulumi-lang-go="`br1`" pulumi-lang-python="`br1`" pulumi-lang-yaml="`br1`" pulumi-lang-java="`br1`" pulumi-lang-hcl="`br1`">`br1`</span>).
+     */
+    internalBridgeName: string;
+    /**
+     * A block containing the <span pulumi-lang-nodejs="`ip`" pulumi-lang-dotnet="`Ip`" pulumi-lang-go="`ip`" pulumi-lang-python="`ip`" pulumi-lang-yaml="`ip`" pulumi-lang-java="`ip`" pulumi-lang-hcl="`ip`">`ip`</span> (<span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> and <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span>) and overarching <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> defining the IPv4 subnet address configured for the bridge interface on this host.
+     */
+    ipAddresses: outputs.GetVirtualSwitchesV2VirtualSwitchClusterHostIpAddress[];
+    /**
+     * The internal routing table ID number utilized by this host for traffic forwarding.
+     */
+    routeTable: number;
+}
+
+export interface GetVirtualSwitchesV2VirtualSwitchClusterHostIpAddress {
+    ips: outputs.GetVirtualSwitchesV2VirtualSwitchClusterHostIpAddressIp[];
+    prefixLength: number;
+}
+
+export interface GetVirtualSwitchesV2VirtualSwitchClusterHostIpAddressIp {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetVirtualSwitchesV2VirtualSwitchIgmpSpec {
+    /**
+     * A boolean indicating if IGMP snooping is enabled on the Virtual Switch to optimize multicast traffic delivery.
+     */
+    isSnoopingEnabled: boolean;
+    /**
+     * A block defining the IGMP querier settings. See the <span pulumi-lang-nodejs="`querierSpec`" pulumi-lang-dotnet="`QuerierSpec`" pulumi-lang-go="`querierSpec`" pulumi-lang-python="`querier_spec`" pulumi-lang-yaml="`querierSpec`" pulumi-lang-java="`querierSpec`" pulumi-lang-hcl="`querier_spec`">`querierSpec`</span> block below.
+     */
+    querierSpecs: outputs.GetVirtualSwitchesV2VirtualSwitchIgmpSpecQuerierSpec[];
+    /**
+     * The timeout value in seconds before an inactive multicast group membership expires.
+     */
+    snoopingTimeout: number;
+}
+
+export interface GetVirtualSwitchesV2VirtualSwitchIgmpSpecQuerierSpec {
+    /**
+     * A boolean indicating if the Virtual Switch acts as an IGMP querier.
+     */
+    isQuerierEnabled: boolean;
+    /**
+     * A list of VLAN IDs on which the Virtual Switch actively sends IGMP queries.
+     */
+    vlanIdLists: number[];
+}
+
+export interface GetVirtualSwitchesV2VirtualSwitchLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetVirtualSwitchesV2VirtualSwitchMetadata {
+    categoryIds: string[];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
 export interface GetVmAntiAffinityPoliciesV2Policy {
     /**
      * List of VM category external IDs that this policy applies to.
@@ -39493,6 +43105,10 @@ export interface GetVmAntiAffinityPoliciesV2Policy {
      */
     numPendingVms: number;
     /**
+     * The external identifier of the project that this policy is associated with.
+     */
+    projectExtId: string;
+    /**
      * The timestamp when the policy was last updated.
      */
     updateTime: string;
@@ -39500,6 +43116,316 @@ export interface GetVmAntiAffinityPoliciesV2Policy {
      * Information about the entity that last updated the policy.
      */
     updatedBy: {[key: string]: string};
+}
+
+export interface GetVmGuestCustomizationProfileV2Config {
+    /**
+     * Configuration for customization of a Windows guest operating system.
+     */
+    sysprepConfigs: outputs.GetVmGuestCustomizationProfileV2ConfigSysprepConfig[];
+}
+
+export interface GetVmGuestCustomizationProfileV2ConfigSysprepConfig {
+    /**
+     * Either specify the values for the parameters or an unattend XML file.
+     */
+    customizations: outputs.GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomization[];
+}
+
+export interface GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomization {
+    /**
+     * The answer file (unattend.xml) for sysprep.
+     */
+    answerFiles: outputs.GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationAnswerFile[];
+    /**
+     * A set of various unattended settings supported by Windows.
+     */
+    sysprepParams: outputs.GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParam[];
+}
+
+export interface GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationAnswerFile {
+    /**
+     * The unattend XML file as a string value.
+     */
+    unattendXml: string;
+}
+
+export interface GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParam {
+    /**
+     * List of commands to be executed automatically when a user logs in for the first time after Windows setup.
+     */
+    firstLogonCommands: string[];
+    /**
+     * A set of general unattended settings supported by Windows.
+     */
+    generalSettings: outputs.GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamGeneralSetting[];
+    /**
+     * Language and locale settings for the system and the user.
+     */
+    localeSettings: outputs.GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamLocaleSetting[];
+    /**
+     * Network settings to apply to the NICs attached to the VM.
+     */
+    networkSettings: outputs.GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamNetworkSetting[];
+    /**
+     * JoinWorkgroup or JoinDomain settings of the computer.
+     */
+    workgroupOrDomainInfos: outputs.GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamWorkgroupOrDomainInfo[];
+}
+
+export interface GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamGeneralSetting {
+    /**
+     * Password to be configured for built-in Administrator account.
+     */
+    administratorPassword: string;
+    /**
+     * Autologon settings.
+     */
+    autoLogonSettings: outputs.GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamGeneralSettingAutoLogonSetting[];
+    /**
+     * Mechanism to use to generate the computer name of the VM.
+     */
+    computerNames: outputs.GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamGeneralSettingComputerName[];
+    /**
+     * Name of the organization of the end user.
+     */
+    registeredOrganization: string;
+    /**
+     * Full name of the end user.
+     */
+    registeredOwner: string;
+    /**
+     * The computer's time zone in string format.
+     */
+    timezone: string;
+    /**
+     * The product key to use to install and activate Windows.
+     */
+    windowsProductKey: string;
+}
+
+export interface GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamGeneralSettingAutoLogonSetting {
+    /**
+     * The number of automatic logons allowed for the computer.
+     */
+    logonCount: number;
+}
+
+export interface GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamGeneralSettingComputerName {
+    /**
+     * Whether IPv4 configuration must be provided during deployment.
+     */
+    mustProvideDuringDeployment: boolean;
+    /**
+     * Whether to use the VM name as the computer name.
+     */
+    useVmName: boolean;
+}
+
+export interface GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamLocaleSetting {
+    /**
+     * Default language to use for non-Unicode programs.
+     */
+    systemLocale: string;
+    /**
+     * Default system language to use to display UI items.
+     */
+    uiLanguage: string;
+    /**
+     * Per-user settings for formatting dates, times, currency, and numbers.
+     */
+    userLocale: string;
+}
+
+export interface GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamNetworkSetting {
+    /**
+     * List of NIC configurations to be applied to the NICs attached to the VM.
+     */
+    nicConfigLists: outputs.GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamNetworkSettingNicConfigList[];
+}
+
+export interface GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamNetworkSettingNicConfigList {
+    /**
+     * DNS configuration to be applied to the NIC.
+     */
+    dnsConfigs: outputs.GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamNetworkSettingNicConfigListDnsConfig[];
+    /**
+     * Mechanism to configure IPv4 settings of the NIC.
+     */
+    ipv4Configs: outputs.GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamNetworkSettingNicConfigListIpv4Config[];
+}
+
+export interface GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamNetworkSettingNicConfigListDnsConfig {
+    /**
+     * List of IPv4 addresses to look for after preferred DNS server.
+     */
+    alternateDnsServerAddresses: string[];
+    /**
+     * An IPv4 address preferred to search first for the DNS server.
+     */
+    preferredDnsServerAddress: string;
+}
+
+export interface GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamNetworkSettingNicConfigListIpv4Config {
+    /**
+     * Whether IPv4 configuration must be provided during deployment.
+     */
+    mustProvideDuringDeployment: boolean;
+    /**
+     * Whether to use DHCP for IPv4 configuration.
+     */
+    useDhcp: boolean;
+}
+
+export interface GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamWorkgroupOrDomainInfo {
+    /**
+     * Domain settings.
+     */
+    domainSettings: outputs.GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamWorkgroupOrDomainInfoDomainSetting[];
+    /**
+     * Workgroup settings.
+     */
+    workgroups: outputs.GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamWorkgroupOrDomainInfoWorkgroup[];
+}
+
+export interface GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamWorkgroupOrDomainInfoDomainSetting {
+    /**
+     * Credentials for the domain account.
+     */
+    credentials: outputs.GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamWorkgroupOrDomainInfoDomainSettingCredential[];
+}
+
+export interface GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamWorkgroupOrDomainInfoDomainSettingCredential {
+    /**
+     * The name of the domain.
+     */
+    domainName: string;
+    /**
+     * The password of the domain user account.
+     */
+    password: string;
+    /**
+     * Name of the domain user account.
+     */
+    username: string;
+}
+
+export interface GetVmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamWorkgroupOrDomainInfoWorkgroup {
+    /**
+     * Name of workgroup to be applied to the computer.
+     */
+    name: string;
+}
+
+export interface GetVmGuestCustomizationProfileV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetVmGuestCustomizationProfilesV2Profile {
+    configs: outputs.GetVmGuestCustomizationProfilesV2ProfileConfig[];
+    createTime: string;
+    createdBy: {[key: string]: string};
+    description: string;
+    extId: string;
+    links: outputs.GetVmGuestCustomizationProfilesV2ProfileLink[];
+    name: string;
+    tenantId: string;
+    updateTime: string;
+    updatedBy: {[key: string]: string};
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileConfig {
+    sysprepConfigs: outputs.GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfig[];
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfig {
+    customizations: outputs.GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomization[];
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomization {
+    answerFiles: outputs.GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationAnswerFile[];
+    sysprepParams: outputs.GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParam[];
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationAnswerFile {
+    unattendXml: string;
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParam {
+    firstLogonCommands: string[];
+    generalSettings: outputs.GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamGeneralSetting[];
+    localeSettings: outputs.GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamLocaleSetting[];
+    networkSettings: outputs.GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamNetworkSetting[];
+    workgroupOrDomainInfos: outputs.GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamWorkgroupOrDomainInfo[];
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamGeneralSetting {
+    administratorPassword: string;
+    autoLogonSettings: outputs.GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamGeneralSettingAutoLogonSetting[];
+    computerNames: outputs.GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamGeneralSettingComputerName[];
+    registeredOrganization: string;
+    registeredOwner: string;
+    timezone: string;
+    windowsProductKey: string;
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamGeneralSettingAutoLogonSetting {
+    logonCount: number;
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamGeneralSettingComputerName {
+    mustProvideDuringDeployment: boolean;
+    useVmName: boolean;
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamLocaleSetting {
+    systemLocale: string;
+    uiLanguage: string;
+    userLocale: string;
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamNetworkSetting {
+    nicConfigLists: outputs.GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamNetworkSettingNicConfigList[];
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamNetworkSettingNicConfigList {
+    dnsConfigs: outputs.GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamNetworkSettingNicConfigListDnsConfig[];
+    ipv4Configs: outputs.GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamNetworkSettingNicConfigListIpv4Config[];
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamNetworkSettingNicConfigListDnsConfig {
+    alternateDnsServerAddresses: string[];
+    preferredDnsServerAddress: string;
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamNetworkSettingNicConfigListIpv4Config {
+    mustProvideDuringDeployment: boolean;
+    useDhcp: boolean;
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamWorkgroupOrDomainInfo {
+    domainSettings: outputs.GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamWorkgroupOrDomainInfoDomainSetting[];
+    workgroups: outputs.GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamWorkgroupOrDomainInfoWorkgroup[];
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamWorkgroupOrDomainInfoDomainSetting {
+    credentials: outputs.GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamWorkgroupOrDomainInfoDomainSettingCredential[];
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamWorkgroupOrDomainInfoDomainSettingCredential {
+    domainName: string;
+    password: string;
+    username: string;
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileConfigSysprepConfigCustomizationSysprepParamWorkgroupOrDomainInfoWorkgroup {
+    name: string;
+}
+
+export interface GetVmGuestCustomizationProfilesV2ProfileLink {
+    href: string;
+    rel: string;
 }
 
 export interface GetVmHostAffinityPoliciesV2Policy {
@@ -39605,6 +43531,586 @@ export interface GetVmRecoveryPointInfoV2Link {
     rel: string;
 }
 
+export interface GetVmStartupPoliciesV2Policy {
+    createTime: string;
+    createdBies: outputs.GetVmStartupPoliciesV2PolicyCreatedBy[];
+    description: string;
+    extId: string;
+    groups: outputs.GetVmStartupPoliciesV2PolicyGroup[];
+    links: outputs.GetVmStartupPoliciesV2PolicyLink[];
+    name: string;
+    numCompliantVms: number;
+    numDependencyConflicts: number;
+    numNonCompliantVms: number;
+    numPendingVms: number;
+    numStartConditionConflicts: number;
+    projectExtId: string;
+    startConditions: outputs.GetVmStartupPoliciesV2PolicyStartCondition[];
+    tenantId: string;
+    updateTime: string;
+    updatedBies: outputs.GetVmStartupPoliciesV2PolicyUpdatedBy[];
+}
+
+export interface GetVmStartupPoliciesV2PolicyCreatedBy {
+    extId: string;
+}
+
+export interface GetVmStartupPoliciesV2PolicyGroup {
+    categories: outputs.GetVmStartupPoliciesV2PolicyGroupCategory[];
+}
+
+export interface GetVmStartupPoliciesV2PolicyGroupCategory {
+    extId: string;
+}
+
+export interface GetVmStartupPoliciesV2PolicyLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetVmStartupPoliciesV2PolicyStartCondition {
+    delayDurationSecs: number;
+    powerStateCriterias: outputs.GetVmStartupPoliciesV2PolicyStartConditionPowerStateCriteria[];
+}
+
+export interface GetVmStartupPoliciesV2PolicyStartConditionPowerStateCriteria {
+    guestBootups: outputs.GetVmStartupPoliciesV2PolicyStartConditionPowerStateCriteriaGuestBootup[];
+    powerOns: outputs.GetVmStartupPoliciesV2PolicyStartConditionPowerStateCriteriaPowerOn[];
+}
+
+export interface GetVmStartupPoliciesV2PolicyStartConditionPowerStateCriteriaGuestBootup {
+    timeoutDurationSecs: number;
+}
+
+export interface GetVmStartupPoliciesV2PolicyStartConditionPowerStateCriteriaPowerOn {
+}
+
+export interface GetVmStartupPoliciesV2PolicyUpdatedBy {
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictDependeeVmsV2Vm {
+    /**
+     * The external ID (UUID) of the VM.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictDependentVmsV2Vm {
+    /**
+     * The external ID (UUID) of the VM.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictV2CategoryDependencyChain {
+    /**
+     * The dependee category.
+     */
+    dependeeCategories: outputs.GetVmStartupPolicyDependencyConflictV2CategoryDependencyChainDependeeCategory[];
+    /**
+     * The dependent category.
+     */
+    dependentCategories: outputs.GetVmStartupPolicyDependencyConflictV2CategoryDependencyChainDependentCategory[];
+    /**
+     * The VM startup policy reference.
+     */
+    policies: outputs.GetVmStartupPolicyDependencyConflictV2CategoryDependencyChainPolicy[];
+}
+
+export interface GetVmStartupPolicyDependencyConflictV2CategoryDependencyChainDependeeCategory {
+    /**
+     * The external ID of the Dependency conflict of a VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictV2CategoryDependencyChainDependentCategory {
+    /**
+     * The external ID of the Dependency conflict of a VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictV2CategoryDependencyChainPolicy {
+    /**
+     * The external ID of the Dependency conflict of a VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictV2DependeeCategory {
+    /**
+     * The external ID of the Dependency conflict of a VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictV2DependeeVm {
+    /**
+     * The external ID of the Dependency conflict of a VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictV2DependeeVmsAssociatedCategory {
+    /**
+     * The external ID of the Dependency conflict of a VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictV2DependentCategory {
+    /**
+     * The external ID of the Dependency conflict of a VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictV2DependentVm {
+    /**
+     * The external ID of the Dependency conflict of a VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictV2DependentVmsAssociatedCategory {
+    /**
+     * The external ID of the Dependency conflict of a VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictV2Link {
+    /**
+     * The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * A name that identifies the relationship of the link to the object that is returned by the URL.
+     */
+    rel: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictsV2DependencyConflict {
+    categoryDependencyChains: outputs.GetVmStartupPolicyDependencyConflictsV2DependencyConflictCategoryDependencyChain[];
+    dependeeCategories: outputs.GetVmStartupPolicyDependencyConflictsV2DependencyConflictDependeeCategory[];
+    /**
+     * List of dependee VMs involved in this conflict.
+     */
+    dependeeVms: outputs.GetVmStartupPolicyDependencyConflictsV2DependencyConflictDependeeVm[];
+    dependeeVmsAssociatedCategories: outputs.GetVmStartupPolicyDependencyConflictsV2DependencyConflictDependeeVmsAssociatedCategory[];
+    dependentCategories: outputs.GetVmStartupPolicyDependencyConflictsV2DependencyConflictDependentCategory[];
+    /**
+     * List of dependent VMs involved in this conflict.
+     */
+    dependentVms: outputs.GetVmStartupPolicyDependencyConflictsV2DependencyConflictDependentVm[];
+    dependentVmsAssociatedCategories: outputs.GetVmStartupPolicyDependencyConflictsV2DependencyConflictDependentVmsAssociatedCategory[];
+    extId: string;
+    links: outputs.GetVmStartupPolicyDependencyConflictsV2DependencyConflictLink[];
+    tenantId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictsV2DependencyConflictCategoryDependencyChain {
+    dependeeCategories: outputs.GetVmStartupPolicyDependencyConflictsV2DependencyConflictCategoryDependencyChainDependeeCategory[];
+    dependentCategories: outputs.GetVmStartupPolicyDependencyConflictsV2DependencyConflictCategoryDependencyChainDependentCategory[];
+    policies: outputs.GetVmStartupPolicyDependencyConflictsV2DependencyConflictCategoryDependencyChainPolicy[];
+}
+
+export interface GetVmStartupPolicyDependencyConflictsV2DependencyConflictCategoryDependencyChainDependeeCategory {
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictsV2DependencyConflictCategoryDependencyChainDependentCategory {
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictsV2DependencyConflictCategoryDependencyChainPolicy {
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictsV2DependencyConflictDependeeCategory {
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictsV2DependencyConflictDependeeVm {
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictsV2DependencyConflictDependeeVmsAssociatedCategory {
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictsV2DependencyConflictDependentCategory {
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictsV2DependencyConflictDependentVm {
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictsV2DependencyConflictDependentVmsAssociatedCategory {
+    extId: string;
+}
+
+export interface GetVmStartupPolicyDependencyConflictsV2DependencyConflictLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictDependeeVmsV2Vm {
+    /**
+     * The external ID (UUID) of the VM.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictDependentVmsV2Vm {
+    /**
+     * The external ID (UUID) of the VM.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictV2ConflictingPolicy {
+    /**
+     * The external ID of the start condition conflict of a VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictV2ConflictingStartCondition {
+    /**
+     * The delay in seconds.
+     */
+    delayDurationSecs: number;
+    /**
+     * The power state criteria.
+     */
+    powerStateCriterias: outputs.GetVmStartupPolicyStartConditionConflictV2ConflictingStartConditionPowerStateCriteria[];
+}
+
+export interface GetVmStartupPolicyStartConditionConflictV2ConflictingStartConditionPowerStateCriteria {
+    /**
+     * Guest bootup criteria.
+     */
+    guestBootups: outputs.GetVmStartupPolicyStartConditionConflictV2ConflictingStartConditionPowerStateCriteriaGuestBootup[];
+    /**
+     * Power on criteria.
+     */
+    powerOns: outputs.GetVmStartupPolicyStartConditionConflictV2ConflictingStartConditionPowerStateCriteriaPowerOn[];
+}
+
+export interface GetVmStartupPolicyStartConditionConflictV2ConflictingStartConditionPowerStateCriteriaGuestBootup {
+    /**
+     * The timeout in seconds.
+     */
+    timeoutDurationSecs: number;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictV2ConflictingStartConditionPowerStateCriteriaPowerOn {
+}
+
+export interface GetVmStartupPolicyStartConditionConflictV2DependeeCategory {
+    /**
+     * The external ID of the start condition conflict of a VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictV2DependeeVm {
+    /**
+     * The external ID of the start condition conflict of a VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictV2DependeeVmsAssociatedCategory {
+    /**
+     * The external ID of the start condition conflict of a VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictV2DependentCategory {
+    /**
+     * The external ID of the start condition conflict of a VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictV2DependentVm {
+    /**
+     * The external ID of the start condition conflict of a VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictV2DependentVmsAssociatedCategory {
+    /**
+     * The external ID of the start condition conflict of a VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictV2Link {
+    /**
+     * The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * A name that identifies the relationship of the link to the object that is returned by the URL.
+     */
+    rel: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictV2StartCondition {
+    /**
+     * The delay in seconds.
+     */
+    delayDurationSecs: number;
+    /**
+     * The power state criteria.
+     */
+    powerStateCriterias: outputs.GetVmStartupPolicyStartConditionConflictV2StartConditionPowerStateCriteria[];
+}
+
+export interface GetVmStartupPolicyStartConditionConflictV2StartConditionPowerStateCriteria {
+    /**
+     * Guest bootup criteria.
+     */
+    guestBootups: outputs.GetVmStartupPolicyStartConditionConflictV2StartConditionPowerStateCriteriaGuestBootup[];
+    /**
+     * Power on criteria.
+     */
+    powerOns: outputs.GetVmStartupPolicyStartConditionConflictV2StartConditionPowerStateCriteriaPowerOn[];
+}
+
+export interface GetVmStartupPolicyStartConditionConflictV2StartConditionPowerStateCriteriaGuestBootup {
+    /**
+     * The timeout in seconds.
+     */
+    timeoutDurationSecs: number;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictV2StartConditionPowerStateCriteriaPowerOn {
+}
+
+export interface GetVmStartupPolicyStartConditionConflictsV2StartConditionConflict {
+    conflictingPolicies: outputs.GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictConflictingPolicy[];
+    conflictingStartConditions: outputs.GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictConflictingStartCondition[];
+    dependeeCategories: outputs.GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictDependeeCategory[];
+    /**
+     * List of dependee VMs involved in this conflict.
+     */
+    dependeeVms: outputs.GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictDependeeVm[];
+    dependeeVmsAssociatedCategories: outputs.GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictDependeeVmsAssociatedCategory[];
+    dependentCategories: outputs.GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictDependentCategory[];
+    /**
+     * List of dependent VMs involved in this conflict.
+     */
+    dependentVms: outputs.GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictDependentVm[];
+    dependentVmsAssociatedCategories: outputs.GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictDependentVmsAssociatedCategory[];
+    extId: string;
+    links: outputs.GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictLink[];
+    startConditions: outputs.GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictStartCondition[];
+    tenantId: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictConflictingPolicy {
+    extId: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictConflictingStartCondition {
+    delayDurationSecs: number;
+    powerStateCriterias: outputs.GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictConflictingStartConditionPowerStateCriteria[];
+}
+
+export interface GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictConflictingStartConditionPowerStateCriteria {
+    guestBootups: outputs.GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictConflictingStartConditionPowerStateCriteriaGuestBootup[];
+    powerOns: outputs.GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictConflictingStartConditionPowerStateCriteriaPowerOn[];
+}
+
+export interface GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictConflictingStartConditionPowerStateCriteriaGuestBootup {
+    timeoutDurationSecs: number;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictConflictingStartConditionPowerStateCriteriaPowerOn {
+}
+
+export interface GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictDependeeCategory {
+    extId: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictDependeeVm {
+    extId: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictDependeeVmsAssociatedCategory {
+    extId: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictDependentCategory {
+    extId: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictDependentVm {
+    extId: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictDependentVmsAssociatedCategory {
+    extId: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictStartCondition {
+    delayDurationSecs: number;
+    powerStateCriterias: outputs.GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictStartConditionPowerStateCriteria[];
+}
+
+export interface GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictStartConditionPowerStateCriteria {
+    guestBootups: outputs.GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictStartConditionPowerStateCriteriaGuestBootup[];
+    powerOns: outputs.GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictStartConditionPowerStateCriteriaPowerOn[];
+}
+
+export interface GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictStartConditionPowerStateCriteriaGuestBootup {
+    timeoutDurationSecs: number;
+}
+
+export interface GetVmStartupPolicyStartConditionConflictsV2StartConditionConflictStartConditionPowerStateCriteriaPowerOn {
+}
+
+export interface GetVmStartupPolicyV2CreatedBy {
+    /**
+     * The external ID of the VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyV2Group {
+    /**
+     * Categories configured for the group.
+     */
+    categories: outputs.GetVmStartupPolicyV2GroupCategory[];
+}
+
+export interface GetVmStartupPolicyV2GroupCategory {
+    /**
+     * The external ID of the VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyV2Link {
+    /**
+     * The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * A name that identifies the relationship of the link to the object that is returned by the URL.
+     */
+    rel: string;
+}
+
+export interface GetVmStartupPolicyV2StartCondition {
+    /**
+     * The delay in seconds after the power state criteria is met before the dependent VMs are started.
+     */
+    delayDurationSecs: number;
+    /**
+     * The power state criteria that the VM must attain before the dependent VMs are started.
+     */
+    powerStateCriterias: outputs.GetVmStartupPolicyV2StartConditionPowerStateCriteria[];
+}
+
+export interface GetVmStartupPolicyV2StartConditionPowerStateCriteria {
+    /**
+     * Guest bootup criteria.
+     */
+    guestBootups: outputs.GetVmStartupPolicyV2StartConditionPowerStateCriteriaGuestBootup[];
+    /**
+     * Power on criteria.
+     */
+    powerOns: outputs.GetVmStartupPolicyV2StartConditionPowerStateCriteriaPowerOn[];
+}
+
+export interface GetVmStartupPolicyV2StartConditionPowerStateCriteriaGuestBootup {
+    /**
+     * The timeout in seconds in which the VM's Guest OS boot up should be detected successfully.
+     */
+    timeoutDurationSecs: number;
+}
+
+export interface GetVmStartupPolicyV2StartConditionPowerStateCriteriaPowerOn {
+}
+
+export interface GetVmStartupPolicyV2UpdatedBy {
+    /**
+     * The external ID of the VM startup policy.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyVmComplianceStatesV2VmComplianceState {
+    /**
+     * The categories through which the VM is associated with the policy.
+     */
+    associatedCategories: outputs.GetVmStartupPolicyVmComplianceStatesV2VmComplianceStateAssociatedCategory[];
+    /**
+     * The cluster reference.
+     */
+    clusters: outputs.GetVmStartupPolicyVmComplianceStatesV2VmComplianceStateCluster[];
+    /**
+     * The compliance status of the VM. Possible values: `COMPLIANT`, `NON_COMPLIANT`, `PENDING`.
+     */
+    complianceStatus: string;
+    /**
+     * The globally unique identifier of an instance of type UUID.
+     */
+    extId: string;
+    /**
+     * A HATEOAS style link for the response.
+     */
+    links: outputs.GetVmStartupPolicyVmComplianceStatesV2VmComplianceStateLink[];
+    /**
+     * The reason why the VM is non-compliant. Only populated when <span pulumi-lang-nodejs="`complianceStatus`" pulumi-lang-dotnet="`ComplianceStatus`" pulumi-lang-go="`complianceStatus`" pulumi-lang-python="`compliance_status`" pulumi-lang-yaml="`complianceStatus`" pulumi-lang-java="`complianceStatus`" pulumi-lang-hcl="`compliance_status`">`complianceStatus`</span> is `NON_COMPLIANT`. Possible values: `NGT_NOT_ENABLED`, `HA_NOT_SUPPORTED`, `CLUSTER_NOT_SUPPORTED`.
+     */
+    nonComplianceReason: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+}
+
+export interface GetVmStartupPolicyVmComplianceStatesV2VmComplianceStateAssociatedCategory {
+    /**
+     * The globally unique identifier of an instance of type UUID.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyVmComplianceStatesV2VmComplianceStateCluster {
+    /**
+     * The globally unique identifier of an instance of type UUID.
+     */
+    extId: string;
+}
+
+export interface GetVmStartupPolicyVmComplianceStatesV2VmComplianceStateLink {
+    /**
+     * The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * A name that identifies the relationship of the link to the object that is returned by the URL.
+     */
+    rel: string;
+}
+
 export interface GetVolumeGroupDiskV2DiskDataSourceReference {
     /**
      * - The Entity Type of the Data Source Reference.
@@ -39686,6 +44192,10 @@ export interface GetVolumeGroupDisksV2Disk {
      * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
      */
     tenantId: string;
+    /**
+     * The external identifier of the Volume Group.
+     */
+    volumeGroupExtId: string;
 }
 
 export interface GetVolumeGroupDisksV2DiskDiskDataSourceReference {
@@ -39801,6 +44311,7 @@ export interface GetVolumeGroupsV2Volume {
      * Volume Group name. This is an optional field.
      */
     name: string;
+    projectExtId: string;
     /**
      * Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field
      */
@@ -40352,6 +44863,127 @@ export interface GetVpcV2ExternallyRoutablePrefixIpv6Ip {
     value: string;
 }
 
+export interface GetVpcV2KubernetesCluster {
+    /**
+     * vpc UUID
+     */
+    extId: string;
+    /**
+     * Selector used to identify gateway node candidates within the Kubernetes cluster.
+     */
+    gatewayNodesSelectors: outputs.GetVpcV2KubernetesClusterGatewayNodesSelector[];
+    /**
+     * Selector used to identify namespaces within the Kubernetes cluster.
+     */
+    namespaceSelectors: outputs.GetVpcV2KubernetesClusterNamespaceSelector[];
+    /**
+     * Pod network of the Kubernetes cluster.
+     */
+    podNetworks: outputs.GetVpcV2KubernetesClusterPodNetwork[];
+}
+
+export interface GetVpcV2KubernetesClusterGatewayNodesSelector {
+    /**
+     * Labels (key-value pairs) used to select entities.
+     */
+    matchLabels: outputs.GetVpcV2KubernetesClusterGatewayNodesSelectorMatchLabel[];
+}
+
+export interface GetVpcV2KubernetesClusterGatewayNodesSelectorMatchLabel {
+    /**
+     * The key of the label.
+     */
+    name: string;
+    /**
+     * The value of the label.
+     */
+    value: string;
+}
+
+export interface GetVpcV2KubernetesClusterNamespaceSelector {
+    /**
+     * Labels (key-value pairs) used to select entities.
+     */
+    matchLabels: outputs.GetVpcV2KubernetesClusterNamespaceSelectorMatchLabel[];
+}
+
+export interface GetVpcV2KubernetesClusterNamespaceSelectorMatchLabel {
+    /**
+     * The key of the label.
+     */
+    name: string;
+    /**
+     * The value of the label.
+     */
+    value: string;
+}
+
+export interface GetVpcV2KubernetesClusterPodNetwork {
+    /**
+     * CIDR of the pod network (IPSubnet).
+     */
+    cidrs: outputs.GetVpcV2KubernetesClusterPodNetworkCidr[];
+    /**
+     * Host slice of the pod network. Default value is 24.
+     */
+    hostSlice: number;
+}
+
+export interface GetVpcV2KubernetesClusterPodNetworkCidr {
+    /**
+     * IPv4 Subnet Configuration.
+     */
+    ipv4: outputs.GetVpcV2KubernetesClusterPodNetworkCidrIpv4;
+    /**
+     * IPv6 Subnet Configuration.
+     */
+    ipv6: outputs.GetVpcV2KubernetesClusterPodNetworkCidrIpv6;
+}
+
+export interface GetVpcV2KubernetesClusterPodNetworkCidrIpv4 {
+    /**
+     * Reference to address configuration
+     */
+    ip: outputs.GetVpcV2KubernetesClusterPodNetworkCidrIpv4Ip;
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+}
+
+export interface GetVpcV2KubernetesClusterPodNetworkCidrIpv4Ip {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcV2KubernetesClusterPodNetworkCidrIpv6 {
+    /**
+     * Reference to address configuration
+     */
+    ip: outputs.GetVpcV2KubernetesClusterPodNetworkCidrIpv6Ip;
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+}
+
+export interface GetVpcV2KubernetesClusterPodNetworkCidrIpv6Ip {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
 export interface GetVpcV2Link {
     href: string;
     rel: string;
@@ -40396,6 +45028,75 @@ export interface GetVpcV2SnatIpIpv6 {
      * value of address
      */
     value: string;
+}
+
+export interface GetVpcVirtualSwitchMappingsV2VpcVirtualSwitchMapping {
+    /**
+     * A list of cluster UUIDs where this Virtual Switch mapping is effective.
+     */
+    clusterUuids: string[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * A boolean flag indicating the traffic permission policy. When <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>, all network traffic is permitted through the virtual switch. When <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>, the switch only permits basic ICMP and essential statistics collection requests.
+     */
+    isAllTrafficPermitted: boolean;
+    /**
+     * A list of HATEOAS style links for the response. See the <span pulumi-lang-nodejs="`links`" pulumi-lang-dotnet="`Links`" pulumi-lang-go="`links`" pulumi-lang-python="`links`" pulumi-lang-yaml="`links`" pulumi-lang-java="`links`" pulumi-lang-hcl="`links`">`links`</span> block below for details.
+     */
+    links: outputs.GetVpcVirtualSwitchMappingsV2VpcVirtualSwitchMappingLink[];
+    /**
+     * Administrative and organizational metadata associated with the mapping. See the <span pulumi-lang-nodejs="`metadata`" pulumi-lang-dotnet="`Metadata`" pulumi-lang-go="`metadata`" pulumi-lang-python="`metadata`" pulumi-lang-yaml="`metadata`" pulumi-lang-java="`metadata`" pulumi-lang-hcl="`metadata`">`metadata`</span> block below for details.
+     */
+    metadatas: outputs.GetVpcVirtualSwitchMappingsV2VpcVirtualSwitchMappingMetadata[];
+    /**
+     * The UUID of the project that owns this entity.
+     */
+    projectExtId: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+    /**
+     * The Universally Unique Identifier (UUID) of the Virtual Switch the traffic policies are applied to.
+     */
+    virtualSwitchUuid: string;
+}
+
+export interface GetVpcVirtualSwitchMappingsV2VpcVirtualSwitchMappingLink {
+    /**
+     * The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * A name that identifies the relationship of the link to the object that is returned by the URL.
+     */
+    rel: string;
+}
+
+export interface GetVpcVirtualSwitchMappingsV2VpcVirtualSwitchMappingMetadata {
+    /**
+     * A list of globally unique identifiers (UUIDs) representing the categories (tags) associated with the mapping.
+     */
+    categoryIds: string[];
+    /**
+     * A globally unique identifier (UUID) that represents the user, group, or service account that owns this mapping resource.
+     */
+    ownerReferenceId: string;
+    /**
+     * The human-readable username of the resource owner.
+     */
+    ownerUserName: string;
+    /**
+     * The human-readable name of the Nutanix Project this resource is assigned to.
+     */
+    projectName: string;
+    /**
+     * A globally unique identifier (UUID) of the Nutanix Project this resource belongs to.
+     */
+    projectReferenceId: string;
 }
 
 export interface GetVpcsEntity {
@@ -40571,10 +45272,16 @@ export interface GetVpcsV2Vpc {
     externalRoutingDomainReference: string;
     externalSubnets: outputs.GetVpcsV2VpcExternalSubnet[];
     externallyRoutablePrefixes: outputs.GetVpcsV2VpcExternallyRoutablePrefix[];
+    kubernetesClusters: outputs.GetVpcsV2VpcKubernetesCluster[];
     links: outputs.GetVpcsV2VpcLink[];
     metadatas: outputs.GetVpcsV2VpcMetadata[];
     name: string;
+    projectExtId: string;
+    scope: string;
+    sharedWithProjects: string[];
+    shouldAdvertiseConnectedSubnets: boolean;
     snatIps: outputs.GetVpcsV2VpcSnatIp[];
+    supportedMultipleExternalSubnetType: string;
     tenantId: string;
     vpcType: string;
 }
@@ -40662,6 +45369,61 @@ export interface GetVpcsV2VpcExternallyRoutablePrefixIpv6 {
 }
 
 export interface GetVpcsV2VpcExternallyRoutablePrefixIpv6Ip {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetVpcsV2VpcKubernetesCluster {
+    extId: string;
+    gatewayNodesSelectors: outputs.GetVpcsV2VpcKubernetesClusterGatewayNodesSelector[];
+    namespaceSelectors: outputs.GetVpcsV2VpcKubernetesClusterNamespaceSelector[];
+    podNetworks: outputs.GetVpcsV2VpcKubernetesClusterPodNetwork[];
+}
+
+export interface GetVpcsV2VpcKubernetesClusterGatewayNodesSelector {
+    matchLabels: outputs.GetVpcsV2VpcKubernetesClusterGatewayNodesSelectorMatchLabel[];
+}
+
+export interface GetVpcsV2VpcKubernetesClusterGatewayNodesSelectorMatchLabel {
+    name: string;
+    value: string;
+}
+
+export interface GetVpcsV2VpcKubernetesClusterNamespaceSelector {
+    matchLabels: outputs.GetVpcsV2VpcKubernetesClusterNamespaceSelectorMatchLabel[];
+}
+
+export interface GetVpcsV2VpcKubernetesClusterNamespaceSelectorMatchLabel {
+    name: string;
+    value: string;
+}
+
+export interface GetVpcsV2VpcKubernetesClusterPodNetwork {
+    cidrs: outputs.GetVpcsV2VpcKubernetesClusterPodNetworkCidr[];
+    hostSlice: number;
+}
+
+export interface GetVpcsV2VpcKubernetesClusterPodNetworkCidr {
+    ipv4: outputs.GetVpcsV2VpcKubernetesClusterPodNetworkCidrIpv4;
+    ipv6: outputs.GetVpcsV2VpcKubernetesClusterPodNetworkCidrIpv6;
+}
+
+export interface GetVpcsV2VpcKubernetesClusterPodNetworkCidrIpv4 {
+    ip: outputs.GetVpcsV2VpcKubernetesClusterPodNetworkCidrIpv4Ip;
+    prefixLength: number;
+}
+
+export interface GetVpcsV2VpcKubernetesClusterPodNetworkCidrIpv4Ip {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetVpcsV2VpcKubernetesClusterPodNetworkCidrIpv6 {
+    ip: outputs.GetVpcsV2VpcKubernetesClusterPodNetworkCidrIpv6Ip;
+    prefixLength: number;
+}
+
+export interface GetVpcsV2VpcKubernetesClusterPodNetworkCidrIpv6Ip {
     prefixLength: number;
     value: string;
 }
@@ -40765,6 +45527,17 @@ export interface ImagePlacementPolicyV2ImageEntityFilter {
     type: string;
 }
 
+export interface ImageRateLimitPolicyV2ClusterEntityFilter {
+    /**
+     * Filter matches entities that have these categories attached.
+     */
+    categoryExtIds: string[];
+    /**
+     * Filter matching type. Valid values: "CATEGORIES_MATCH_ALL", "CATEGORIES_MATCH_ANY".
+     */
+    type: string;
+}
+
 export interface ImagesV2Checksum {
     /**
      * The SHA1/SHA256 digest of an image file in hexadecimal format.
@@ -40855,8 +45628,13 @@ export interface ImagesV2SourceUrlSourceBasicAuth {
 export interface ImagesV2SourceVmDiskSource {
     /**
      * The external identifier of VM Disk.
+     * > **Deprecation Notice:** Providing <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span> without <span pulumi-lang-nodejs="`vmExtId`" pulumi-lang-dotnet="`VmExtId`" pulumi-lang-go="`vmExtId`" pulumi-lang-python="`vm_ext_id`" pulumi-lang-yaml="`vmExtId`" pulumi-lang-java="`vmExtId`" pulumi-lang-hcl="`vm_ext_id`">`vmExtId`</span> is deprecated and will not be supported in a future release.
      */
     extId: string;
+    /**
+     * The external identifier of the source VM for the specified disk.
+     */
+    vmExtId: string;
 }
 
 export interface KarbonClusterActivePassiveConfig {
@@ -41227,7 +46005,7 @@ export interface LcmPrechecksV2EntityUpdateSpec {
     /**
      * Version to upgrade to.
      *
-     * See detailed information in [Nutanix LCM Prechecks v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Prechecks/operation/performPrechecks)
+     * See detailed information in [Nutanix LCM Prechecks v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Prechecks/operation/performPrechecks)
      */
     toVersion: string;
 }
@@ -41262,7 +46040,7 @@ export interface LcmUpgradeV2EntityUpdateSpec {
     /**
      * Version to upgrade to.
      *
-     * See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Upgrades/operation/performUpgrade).
+     * See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Upgrades/operation/performUpgrade).
      */
     toVersion: string;
 }
@@ -45851,15 +50629,23 @@ export interface NetworkSecurityPolicyV2Rule {
      */
     extId: string;
     /**
+     * Specifies whether hit log is enabled for the rule.
+     */
+    isLoggingEnabled: boolean;
+    /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
     links: outputs.NetworkSecurityPolicyV2RuleLink[];
+    /**
+     * A user-defined name for the rule. Primarily used for Flex policy rules.
+     */
+    name: string;
     /**
      * Spec for rules.
      */
     specs: outputs.NetworkSecurityPolicyV2RuleSpec[];
     /**
-     * The type for a rule—the value chosen here restricts which specification can be chosen. Acceptable values are "QUARANTINE", "TWO_ENV_ISOLATION", "APPLICATION", "INTRA_GROUP", "MULTI_ENV_ISOLATION", "SHARED_SERVICE".
+     * The type for a rule—the value chosen here restricts which specification can be chosen. Acceptable values are "QUARANTINE", "TWO_ENV_ISOLATION", "APPLICATION", "INTRA_GROUP", "MULTI_ENV_ISOLATION", "SHARED_SERVICE", "FLEX".
      */
     type: string;
 }
@@ -45874,6 +50660,10 @@ export interface NetworkSecurityPolicyV2RuleSpec {
      * Application Rule Spec.
      */
     applicationRuleSpecs?: outputs.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpec[];
+    /**
+     * Flex Rule Spec.
+     */
+    flexRuleSpecs?: outputs.NetworkSecurityPolicyV2RuleSpecFlexRuleSpec[];
     /**
      * Intra entity group Rule Spec
      */
@@ -45934,11 +50724,11 @@ export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpec {
      */
     securedGroupCategoryAssociatedEntityType?: string;
     /**
-     * A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories.
+     * A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
      */
     securedGroupCategoryReferences: string[];
     /**
-     * Reference to the secured group entity group.
+     * Reference to the secured group entity group. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
      */
     securedGroupEntityGroupReference: string;
     /**
@@ -46026,6 +50816,147 @@ export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecUdpService {
     startPort: number;
 }
 
+export interface NetworkSecurityPolicyV2RuleSpecFlexRuleSpec {
+    /**
+     * Action for the flex rule. Acceptable values are "ALLOW", "DENY", "REJECT".
+     */
+    action: string;
+    /**
+     * Entity group references to which the flex rule is applied.
+     */
+    appliedToEntityGroupReferences: string[];
+    /**
+     * Destination entity group references.
+     */
+    destEntityGroupReferences: string[];
+    /**
+     * Destination subnet (value, prefix_length).
+     */
+    destSubnet: outputs.NetworkSecurityPolicyV2RuleSpecFlexRuleSpecDestSubnet;
+    /**
+     * Direction of traffic. Acceptable values are "IN", "OUT", "IN_OUT".
+     */
+    direction: string;
+    /**
+     * ICMP type/code specs.
+     */
+    icmpServices?: outputs.NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpService[];
+    /**
+     * ICMPv6 type/code specs.
+     */
+    icmpv6Services?: outputs.NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpv6Service[];
+    /**
+     * IP version scope. Acceptable values are "IPV4", "IPV6", "IPV4_IPV6".
+     */
+    ipVersion: string;
+    /**
+     * Whether traffic is allowed for all protocols.
+     */
+    isAllProtocolAllowed: boolean;
+    /**
+     * Whether the flex rule is system-defined.
+     */
+    isSystemRule: boolean;
+    /**
+     * A reference to the network function.
+     */
+    networkFunctionReference: string;
+    /**
+     * Priority for the flex rule. Lower numbers indicate higher priority.
+     */
+    priority: number;
+    /**
+     * A list of service group references.
+     */
+    serviceGroupReferences: string[];
+    /**
+     * Whether the rule should allow all destinations.
+     */
+    shouldAllowAnyDst: boolean;
+    /**
+     * Whether the rule should allow all sources.
+     */
+    shouldAllowAnySrc: boolean;
+    /**
+     * Source entity group references.
+     */
+    srcEntityGroupReferences: string[];
+    /**
+     * Source subnet (value, prefix_length).
+     */
+    srcSubnet: outputs.NetworkSecurityPolicyV2RuleSpecFlexRuleSpecSrcSubnet;
+    /**
+     * TCP port ranges (start_port, end_port).
+     */
+    tcpServices?: outputs.NetworkSecurityPolicyV2RuleSpecFlexRuleSpecTcpService[];
+    /**
+     * UDP port ranges (start_port, end_port).
+     */
+    udpServices?: outputs.NetworkSecurityPolicyV2RuleSpecFlexRuleSpecUdpService[];
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecFlexRuleSpecDestSubnet {
+    prefixLength: number;
+    value: string;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpService {
+    /**
+     * Icmp service Code. Ignore this field if Code has to be ANY.
+     */
+    code: number;
+    /**
+     * Set this field to true if both Type and Code is ANY.
+     */
+    isAllAllowed: boolean;
+    /**
+     * Icmp service Type. Ignore this field if Type has to be ANY.
+     */
+    type: number;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpv6Service {
+    /**
+     * Icmp service Code. Ignore this field if Code has to be ANY.
+     */
+    code: number;
+    /**
+     * Set this field to true if both Type and Code is ANY.
+     */
+    isAllAllowed: boolean;
+    /**
+     * Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
+     */
+    type: number;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecFlexRuleSpecSrcSubnet {
+    prefixLength: number;
+    value: string;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecFlexRuleSpecTcpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
+    startPort: number;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecFlexRuleSpecUdpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
+    startPort: number;
+}
+
 export interface NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpec {
     /**
      * ICMP type/code for the rule.
@@ -46040,11 +50971,11 @@ export interface NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpec {
      */
     securedGroupCategoryAssociatedEntityType?: string;
     /**
-     * List of category references for the secured group.
+     * List of category references for the secured group. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
      */
     securedGroupCategoryReferences: string[];
     /**
-     * Reference to the secured group entity group.
+     * Reference to the secured group entity group. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
      */
     securedGroupEntityGroupReference: string;
     /**
@@ -47102,7 +52033,7 @@ export interface OvaV2VmConfigBootConfigLegacyBoot {
      * - `boot_device.boot_device_nic`: (Optional) Disk Nic address.
      * - `boot_device.boot_device_nic.mac_address`: (Required) mac address
      */
-    bootDevices: outputs.OvaV2VmConfigBootConfigLegacyBootBootDevice[];
+    bootDevices?: outputs.OvaV2VmConfigBootConfigLegacyBootBootDevice[];
     /**
      * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
      */
@@ -47110,27 +52041,27 @@ export interface OvaV2VmConfigBootConfigLegacyBoot {
 }
 
 export interface OvaV2VmConfigBootConfigLegacyBootBootDevice {
-    bootDeviceDisks: outputs.OvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk[];
-    bootDeviceNics: outputs.OvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic[];
+    bootDeviceDisks?: outputs.OvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk[];
+    bootDeviceNics?: outputs.OvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic[];
 }
 
 export interface OvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk {
-    diskAddresses: outputs.OvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress[];
+    diskAddresses?: outputs.OvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress[];
 }
 
 export interface OvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
-    busType: string;
+    busType?: string;
     /**
      * -(Optional) Index of the serial port.
      */
-    index: number;
+    index?: number;
 }
 
 export interface OvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic {
     /**
      * MAC address of the emulated NIC.
      */
-    macAddress: string;
+    macAddress?: string;
 }
 
 export interface OvaV2VmConfigBootConfigUefiBoot {
@@ -47143,7 +52074,7 @@ export interface OvaV2VmConfigBootConfigUefiBoot {
      * - `boot_device.boot_device_nic`: (Optional) Disk Nic address.
      * - `boot_device.boot_device_nic.mac_address`: (Required) mac address
      */
-    bootDevices: outputs.OvaV2VmConfigBootConfigUefiBootBootDevice[];
+    bootDevices?: outputs.OvaV2VmConfigBootConfigUefiBootBootDevice[];
     /**
      * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
      */
@@ -47160,27 +52091,27 @@ export interface OvaV2VmConfigBootConfigUefiBoot {
 }
 
 export interface OvaV2VmConfigBootConfigUefiBootBootDevice {
-    bootDeviceDisks: outputs.OvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk[];
-    bootDeviceNics: outputs.OvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNic[];
+    bootDeviceDisks?: outputs.OvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk[];
+    bootDeviceNics?: outputs.OvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNic[];
 }
 
 export interface OvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk {
-    diskAddresses: outputs.OvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress[];
+    diskAddresses?: outputs.OvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress[];
 }
 
 export interface OvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
-    busType: string;
+    busType?: string;
     /**
      * -(Optional) Index of the serial port.
      */
-    index: number;
+    index?: number;
 }
 
 export interface OvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNic {
     /**
      * MAC address of the emulated NIC.
      */
-    macAddress: string;
+    macAddress?: string;
 }
 
 export interface OvaV2VmConfigBootConfigUefiBootNvramDevice {
@@ -48160,7 +53091,7 @@ export interface OvaVmDeployV2OverrideVmConfigCategory {
     /**
      * A globally unique identifier of a VM category of type UUID.
      *
-     * See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Ovas/operation/deployOva).
+     * See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Ovas/operation/deployOva).
      */
     extId?: string;
 }
@@ -49099,7 +54030,7 @@ export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefix {
 
 export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4 {
     /**
-     * IP of address
+     * The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
      */
     ips: outputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip[];
     /**
@@ -49118,7 +54049,7 @@ export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip {
 
 export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6 {
     /**
-     * IP of address
+     * The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
      */
     ips: outputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Ip[];
     prefixLength: number;
@@ -49222,7 +54153,7 @@ export interface PbrV2PolicyPolicyMatchSourceSubnetPrefix {
 
 export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4 {
     /**
-     * IP of address
+     * The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
      */
     ips: outputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip[];
     /**
@@ -49241,7 +54172,7 @@ export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip {
 
 export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6 {
     /**
-     * IP of address
+     * The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
      */
     ips: outputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Ip[];
     prefixLength: number;
@@ -49584,7 +54515,7 @@ export interface PcDeployV2NetworkExternalNetworkDefaultGatewayFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
      */
     value: string;
 }
@@ -49707,7 +54638,7 @@ export interface PcDeployV2NetworkExternalNetworkSubnetMaskFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
      */
     value: string;
 }
@@ -49768,7 +54699,7 @@ export interface PcDeployV2NetworkInternalNetworksDefaultGatewayFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
      */
     value: string;
 }
@@ -49891,7 +54822,7 @@ export interface PcDeployV2NetworkInternalNetworksSubnetMaskFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
      */
     value: string;
 }
@@ -49937,7 +54868,7 @@ export interface PcDeployV2NetworkNameServerFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
      */
     value: string;
 }
@@ -49983,7 +54914,7 @@ export interface PcDeployV2NetworkNtpServerFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
      */
     value: string;
 }
@@ -50080,7 +55011,7 @@ export interface PcRegistrationV2ConfigCredential {
     /**
      * -(Required)  Password required for the basic auth scheme.
      *
-     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
+     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
      */
     password: string;
     /**
@@ -50617,7 +55548,7 @@ export interface PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterC
     /**
      * -(Required)  Password required for the basic auth scheme.
      *
-     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
+     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
      */
     password: string;
     /**
@@ -50709,7 +55640,7 @@ export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemo
     /**
      * -(Required)  Password required for the basic auth scheme.
      *
-     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
+     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
      */
     password: string;
     /**
@@ -51058,7 +55989,7 @@ export interface PcRestoreV2DomainManagerNetworkExternalNetworkDefaultGatewayFqd
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
      */
     value: string;
 }
@@ -51181,7 +56112,7 @@ export interface PcRestoreV2DomainManagerNetworkExternalNetworkSubnetMaskFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
      */
     value: string;
 }
@@ -51242,7 +56173,7 @@ export interface PcRestoreV2DomainManagerNetworkInternalNetworksDefaultGatewayFq
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
      */
     value: string;
 }
@@ -51365,7 +56296,7 @@ export interface PcRestoreV2DomainManagerNetworkInternalNetworksSubnetMaskFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
      */
     value: string;
 }
@@ -51411,7 +56342,7 @@ export interface PcRestoreV2DomainManagerNetworkNameServerFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
      */
     value: string;
 }
@@ -51457,7 +56388,7 @@ export interface PcRestoreV2DomainManagerNetworkNtpServerFqdn {
     /**
      * -(Optional) The fully qualified domain name of the host.
      *
-     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
      */
     value: string;
 }
@@ -51721,6 +56652,17 @@ export interface ProjectDefaultSubnetReference {
     uuid: string;
 }
 
+export interface ProjectDirectoryReferenceList {
+    /**
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+     */
+    kind?: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
 export interface ProjectEnvironmentReferenceList {
     /**
      * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
@@ -51756,6 +56698,17 @@ export interface ProjectExternalUserGroupReferenceList {
      * The name for the project.
      */
     name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
+export interface ProjectIdentityProvidersReferenceList {
+    /**
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+     */
+    kind?: string;
     /**
      * (Required) the UUID.
      */
@@ -51891,6 +56844,17 @@ export interface ProjectUserReferenceList {
     uuid: string;
 }
 
+export interface ProjectV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object.
+     */
+    rel: string;
+}
+
 export interface ProjectVpcReferenceList {
     /**
      * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
@@ -51928,6 +56892,14 @@ export interface ProtectionPolicyV2ReplicationConfiguration {
 
 export interface ProtectionPolicyV2ReplicationConfigurationSchedule {
     /**
+     * -(Optional) Indicates whether replication is paused for all VMs and volume groups associated with the remote replication location. Ignored in create requests, only used in update requests. Only 0 RPO schedules support this field. Pause replication is not supported for asynchronous or near synchronous replications.
+     */
+    isReplicationPaused: boolean;
+    /**
+     * -(Optional) Duration (in seconds) that the latest recovery point is retained past its expiry time if the entity is unprotected, deleted, or migrated. If not specified, the latest recovery point will be retained for a minimum of 30 days. Set to 0 to not retain past expiry. This attribute is only applicable to asynchronous replication (<span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds`" pulumi-lang-go="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-python="`recovery_point_objective_time_seconds`" pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-java="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-hcl="`recovery_point_objective_time_seconds`">`recoveryPointObjectiveTimeSeconds`</span> > 0); it must not be specified for synchronous replication (<span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds`" pulumi-lang-go="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-python="`recovery_point_objective_time_seconds`" pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-java="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-hcl="`recovery_point_objective_time_seconds`">`recoveryPointObjectiveTimeSeconds`</span> = 0).
+     */
+    latestRecoveryPointRetentionSeconds?: number;
+    /**
      * -(Required) The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
      * - Minute(s): 1, 2, 3, 4, 5, 6, 10, 12, 15
      * - Hour(s): 1, 2, 3, 4, 6, 8, 12
@@ -51945,6 +56917,10 @@ export interface ProtectionPolicyV2ReplicationConfigurationSchedule {
      * -(Optional) Specifies the retention policy for the recovery point schedule.
      */
     retention?: outputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetention;
+    /**
+     * -(Optional) System-generated schedule ID for the replication configuration. Must not be provided in create requests. In update requests, it can be included to identify and retain the same schedule.
+     */
+    scheduleExtId: string;
     /**
      * -(Optional) Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.
      */
@@ -52166,8 +57142,30 @@ export interface RecoveryPlanOwnerReference {
 }
 
 export interface RecoveryPlanParameters {
+    availabilityZoneLists: outputs.RecoveryPlanParametersAvailabilityZoneList[];
     floatingIpAssignmentLists: outputs.RecoveryPlanParametersFloatingIpAssignmentList[];
     networkMappingLists: outputs.RecoveryPlanParametersNetworkMappingList[];
+    primaryLocationIndex: number;
+}
+
+export interface RecoveryPlanParametersAvailabilityZoneList {
+    availabilityZoneUrl: string;
+    clusterReferenceLists: outputs.RecoveryPlanParametersAvailabilityZoneListClusterReferenceList[];
+}
+
+export interface RecoveryPlanParametersAvailabilityZoneListClusterReferenceList {
+    /**
+     * (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+     */
+    kind: string;
+    /**
+     * The name for the Recovery Plan.
+     */
+    name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
 }
 
 export interface RecoveryPlanParametersFloatingIpAssignmentList {
@@ -52274,6 +57272,7 @@ export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetwork
      */
     name: string;
     subnetLists: outputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetList[];
+    subnetUuid: string;
     useVpcReference: boolean;
     virtualNetworkReference: outputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReference;
     vpcReference: outputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReference;
@@ -52345,6 +57344,7 @@ export interface RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetwork
      */
     name: string;
     subnetLists: outputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkSubnetList[];
+    subnetUuid: string;
     useVpcReference: boolean;
     virtualNetworkReference: outputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReference;
     vpcReference: outputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReference;
@@ -52648,6 +57648,23 @@ export interface RecoveryPointsV2VolumeGroupRecoveryPointLink {
     rel: string;
 }
 
+export interface ResourceGroupV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface ResourceGroupV2PlacementTarget {
+    clusterExtId: string;
+    storageContainers?: outputs.ResourceGroupV2PlacementTargetStorageContainer[];
+}
+
+export interface ResourceGroupV2PlacementTargetStorageContainer {
+    /**
+     * - A globally unique identifier of the resource group.
+     */
+    extId: string;
+}
+
 export interface RoleCategory {
     /**
      * - (Optional) Name of the role.
@@ -52655,6 +57672,22 @@ export interface RoleCategory {
     name: string;
     /**
      * - value of the key.
+     */
+    value: string;
+}
+
+export interface RoleMembershipV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface RoleMembershipV2ScopeTemplateNameValue {
+    /**
+     * The name of the variable.
+     */
+    name?: string;
+    /**
+     * The value to substitute.
      */
     value: string;
 }
@@ -52807,19 +57840,39 @@ export interface RoutesV2Metadata {
 }
 
 export interface RoutesV2NextHop {
+    /**
+     * IP address of the nexthop. See <span pulumi-lang-nodejs="`nextHopIpAddress`" pulumi-lang-dotnet="`NextHopIpAddress`" pulumi-lang-go="`nextHopIpAddress`" pulumi-lang-python="`next_hop_ip_address`" pulumi-lang-yaml="`nextHopIpAddress`" pulumi-lang-java="`nextHopIpAddress`" pulumi-lang-hcl="`next_hop_ip_address`">`nextHopIpAddress`</span> below.
+     */
     nextHopIpAddresses: outputs.RoutesV2NextHopNextHopIpAddress[];
+    /**
+     * Name of the nexthop.
+     */
     nextHopName: string;
+    /**
+     * The reference to a link, such as a VPN connection or a subnet.
+     */
     nextHopReference: string;
+    /**
+     * Nexthop type. Supported values: `LOCAL_SUBNET`, `DIRECT_CONNECT_VIF`, `VPN_CONNECTION`, `IP_ADDRESS`, `EXTERNAL_SUBNET`.
+     */
     nextHopType: string;
 }
 
 export interface RoutesV2NextHopNextHopIpAddress {
     /**
-     * IPv4 Address
+     * IPv4 Subnet Object
+     * - `ipv4.ip`: (Required) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     * - `ipv4.ip.value`: (Required) The IPv4 address of the host.
+     * - `ipv4.ip.prefix_length`: (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     * - `ipv4.prefix_length`: (Required) The prefix length of the network to which this host IPv4 address belongs.
      */
     ipv4: outputs.RoutesV2NextHopNextHopIpAddressIpv4;
     /**
-     * IPv6 Address
+     * IPv6 Subnet Object
+     * - `ipv6.ip`: (Required) IP address format
+     * - `ipv6.ip.value`: (Required) The IPv6 address of the host.
+     * - `ipv6.ip.prefix_length`: (Optional) The prefix length of the network to which this host IPv6 address belongs.
+     * - `ipv6.prefix_length`: (Required) The prefix length of the network to which this host IPv6 address belongs.
      */
     ipv6: outputs.RoutesV2NextHopNextHopIpAddressIpv6;
 }
@@ -53475,6 +58528,78 @@ export interface ServiceGroupsV2UdpService {
     startPort: number;
 }
 
+export interface SnmpConfigV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object
+     *   that is returned by the URL. The unique value of <span pulumi-lang-nodejs="`self`" pulumi-lang-dotnet="`Self`" pulumi-lang-go="`self`" pulumi-lang-python="`self`" pulumi-lang-yaml="`self`" pulumi-lang-java="`self`" pulumi-lang-hcl="`self`">`self`</span> identifies the URL
+     *   for the object.
+     */
+    rel: string;
+}
+
+export interface SnmpTrapV2Address {
+    /**
+     * - (Optional) IPv4 address block. Contains:
+     */
+    ipv4?: outputs.SnmpTrapV2AddressIpv4;
+    /**
+     * - (Optional) IPv6 address block. Contains:
+     */
+    ipv6?: outputs.SnmpTrapV2AddressIpv6;
+}
+
+export interface SnmpTrapV2AddressIpv4 {
+    /**
+     * - (Optional, Computed) The prefix length of the network
+     *   to which this host IPv4 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * - (Required) The IPv4 address of the host.
+     */
+    value: string;
+}
+
+export interface SnmpTrapV2AddressIpv6 {
+    /**
+     * - (Optional, Computed) The prefix length of the network
+     *   to which this host IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * - (Required) The IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface SnmpTrapV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object
+     *   that is returned by the URL. The unique value of <span pulumi-lang-nodejs="`self`" pulumi-lang-dotnet="`Self`" pulumi-lang-go="`self`" pulumi-lang-python="`self`" pulumi-lang-yaml="`self`" pulumi-lang-java="`self`" pulumi-lang-hcl="`self`">`self`</span> identifies the URL
+     *   for the object.
+     */
+    rel: string;
+}
+
+export interface SnmpUserV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
 export interface StaticRoutesDefaultRouteNexthop {
     /**
      * Reference to a subnet.
@@ -53928,10 +59053,25 @@ export interface SubnetV2Link {
 }
 
 export interface SubnetV2Metadata {
+    /**
+     * Set of category external identifiers associated with the subnet.
+     */
     categoryIds: string[];
+    /**
+     * External identifier of the owner associated with the subnet.
+     */
     ownerReferenceId: string;
+    /**
+     * User name of the subnet owner.
+     */
     ownerUserName: string;
+    /**
+     * Name of the project associated with the subnet.
+     */
     projectName: string;
+    /**
+     * External identifier of the project associated with the subnet.
+     */
     projectReferenceId: string;
 }
 
@@ -53966,6 +59106,9 @@ export interface SubnetV2VirtualSwitch {
      */
     isDefault: boolean;
     links: outputs.SubnetV2VirtualSwitchLink[];
+    /**
+     * Metadata associated with the subnet.
+     */
     metadatas: outputs.SubnetV2VirtualSwitchMetadata[];
     /**
      * MTU
@@ -54042,10 +59185,25 @@ export interface SubnetV2VirtualSwitchLink {
 }
 
 export interface SubnetV2VirtualSwitchMetadata {
+    /**
+     * Set of category external identifiers associated with the subnet.
+     */
     categoryIds: string[];
+    /**
+     * External identifier of the owner associated with the subnet.
+     */
     ownerReferenceId: string;
+    /**
+     * User name of the subnet owner.
+     */
     ownerUserName: string;
+    /**
+     * Name of the project associated with the subnet.
+     */
     projectName: string;
+    /**
+     * External identifier of the project associated with the subnet.
+     */
     projectReferenceId: string;
 }
 
@@ -54075,6 +59233,9 @@ export interface SubnetV2Vpc {
      */
     externallyRoutablePrefixes: outputs.SubnetV2VpcExternallyRoutablePrefix[];
     links: outputs.SubnetV2VpcLink[];
+    /**
+     * Metadata associated with the subnet.
+     */
     metadatas: outputs.SubnetV2VpcMetadata[];
     /**
      * Name of the VPC.
@@ -54270,10 +59431,25 @@ export interface SubnetV2VpcLink {
 }
 
 export interface SubnetV2VpcMetadata {
+    /**
+     * Set of category external identifiers associated with the subnet.
+     */
     categoryIds: string[];
+    /**
+     * External identifier of the owner associated with the subnet.
+     */
     ownerReferenceId: string;
+    /**
+     * User name of the subnet owner.
+     */
     ownerUserName: string;
+    /**
+     * Name of the project associated with the subnet.
+     */
     projectName: string;
+    /**
+     * External identifier of the project associated with the subnet.
+     */
     projectReferenceId: string;
 }
 
@@ -54299,6 +59475,28 @@ export interface SubnetV2VpcSnatIpIpv6 {
      * value of address
      */
     value: string;
+}
+
+export interface TemplatePlacementPolicyV2ClusterFilter {
+    /**
+     * Filter to match entities based on the provided categories.
+     */
+    categoryExtIds: string[];
+    /**
+     * The match type for categories. Valid values: `CATEGORIES_MATCH_ALL`, `CATEGORIES_MATCH_ANY`.
+     */
+    type: string;
+}
+
+export interface TemplatePlacementPolicyV2ContentFilter {
+    /**
+     * Filter to match entities based on the provided categories.
+     */
+    categoryExtIds: string[];
+    /**
+     * The match type for categories. Valid values: `CATEGORIES_MATCH_ALL`, `CATEGORIES_MATCH_ANY`.
+     */
+    type: string;
 }
 
 export interface TemplateV2CreatedBy {
@@ -54356,14 +59554,15 @@ export interface TemplateV2TemplateVersionSpec {
     createTime: string;
     createdBies: outputs.TemplateV2TemplateVersionSpecCreatedBy[];
     extId: string;
+    guestCustomizationProfile: outputs.TemplateV2TemplateVersionSpecGuestCustomizationProfile;
     /**
      * Default: <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
      */
     isActiveVersion?: boolean;
     /**
      * Allow or disallow overriding guest customization during template deployment.
-     * * `version_source.template_vm_reference`: (Optional) Template VM Reference
-     * * `version_source.template_version_reference`: (Optional) Template Version Reference
+     * * `version_source.template_vm_reference`: (Optional) Template VM Reference. Used to source a version from a VM. This is the **only** valid source when creating a new template. Mutually exclusive with <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span>.
+     * * `version_source.template_version_reference`: (Optional) Template Version Reference. Used to source a new version from an existing version of the template (update only). Mutually exclusive with <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span>.
      */
     isGcOverrideEnabled: boolean;
     links: outputs.TemplateV2TemplateVersionSpecLink[];
@@ -54377,7 +59576,7 @@ export interface TemplateV2TemplateVersionSpec {
      */
     versionName: string;
     /**
-     * Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span> or <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span> .
+     * Source of the created Template Version. When creating a **new template**, the source must be a VM (<span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span>). When creating a **new version** of an existing template (an update), the source can be either a VM (<span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span>) or an existing version within the template (<span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span>). Specify exactly **one** of <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span> or <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span> - they are mutually exclusive.
      */
     versionSource: outputs.TemplateV2TemplateVersionSpecVersionSource;
     /**
@@ -54430,6 +59629,10 @@ export interface TemplateV2TemplateVersionSpecCreatedByAdditionalAttributeValue 
 
 export interface TemplateV2TemplateVersionSpecCreatedByAdditionalAttributeValueMapOfString {
     map: {[key: string]: string};
+}
+
+export interface TemplateV2TemplateVersionSpecGuestCustomizationProfile {
+    extId: string;
 }
 
 export interface TemplateV2TemplateVersionSpecLink {
@@ -54921,6 +60124,7 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionRefere
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReference {
     extId: string;
+    guestCustomizationProfile: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfile;
     guestCustomizations: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomization[];
 }
 
@@ -55031,6 +60235,10 @@ export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGu
 
 export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptUnattendXml {
     value: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfile {
+    extId: string;
 }
 
 export interface TemplateV2TemplateVersionSpecVmSpec {
@@ -56787,7 +61995,7 @@ export interface VirtualMachineV2BootConfigLegacyBoot {
      * * `boot_device.boot_device_nic`: (Optional) Disk Nic address.
      * * `boot_device.boot_device_nic.mac_address`: (Required) mac address
      */
-    bootDevices: outputs.VirtualMachineV2BootConfigLegacyBootBootDevice[];
+    bootDevices?: outputs.VirtualMachineV2BootConfigLegacyBootBootDevice[];
     /**
      * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
      */
@@ -56795,27 +62003,27 @@ export interface VirtualMachineV2BootConfigLegacyBoot {
 }
 
 export interface VirtualMachineV2BootConfigLegacyBootBootDevice {
-    bootDeviceDisks: outputs.VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceDisk[];
-    bootDeviceNics: outputs.VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceNic[];
+    bootDeviceDisks?: outputs.VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceDisk[];
+    bootDeviceNics?: outputs.VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceNic[];
 }
 
 export interface VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceDisk {
-    diskAddresses: outputs.VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress[];
+    diskAddresses?: outputs.VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress[];
 }
 
 export interface VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
-    busType: string;
+    busType?: string;
     /**
      * ) Index of the serial port.
      */
-    index: number;
+    index?: number;
 }
 
 export interface VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceNic {
     /**
      * MAC address of the emulated NIC.
      */
-    macAddress: string;
+    macAddress?: string;
 }
 
 export interface VirtualMachineV2BootConfigUefiBoot {
@@ -56828,7 +62036,7 @@ export interface VirtualMachineV2BootConfigUefiBoot {
      * * `boot_device.boot_device_nic`: (Optional) Disk Nic address.
      * * `boot_device.boot_device_nic.mac_address`: (Required) mac address
      */
-    bootDevices: outputs.VirtualMachineV2BootConfigUefiBootBootDevice[];
+    bootDevices?: outputs.VirtualMachineV2BootConfigUefiBootBootDevice[];
     /**
      * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
      */
@@ -56845,27 +62053,27 @@ export interface VirtualMachineV2BootConfigUefiBoot {
 }
 
 export interface VirtualMachineV2BootConfigUefiBootBootDevice {
-    bootDeviceDisks: outputs.VirtualMachineV2BootConfigUefiBootBootDeviceBootDeviceDisk[];
-    bootDeviceNics: outputs.VirtualMachineV2BootConfigUefiBootBootDeviceBootDeviceNic[];
+    bootDeviceDisks?: outputs.VirtualMachineV2BootConfigUefiBootBootDeviceBootDeviceDisk[];
+    bootDeviceNics?: outputs.VirtualMachineV2BootConfigUefiBootBootDeviceBootDeviceNic[];
 }
 
 export interface VirtualMachineV2BootConfigUefiBootBootDeviceBootDeviceDisk {
-    diskAddresses: outputs.VirtualMachineV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress[];
+    diskAddresses?: outputs.VirtualMachineV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress[];
 }
 
 export interface VirtualMachineV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
-    busType: string;
+    busType?: string;
     /**
      * ) Index of the serial port.
      */
-    index: number;
+    index?: number;
 }
 
 export interface VirtualMachineV2BootConfigUefiBootBootDeviceBootDeviceNic {
     /**
      * MAC address of the emulated NIC.
      */
-    macAddress: string;
+    macAddress?: string;
 }
 
 export interface VirtualMachineV2BootConfigUefiBootNvramDevice {
@@ -57075,6 +62283,8 @@ export interface VirtualMachineV2Disk {
      * * `backing_info.vm_disk`:(Optional) backing Info for vmDisk
      * * `backing_info.adfs_volume_group_reference`: (Required) Volume Group Reference
      * * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: (Required) The globally unique identifier of an ADSF volume group. It should be of type UUID.
+     *
+     * > **Note (Volume Group disk workflow):** Until now, Volume Group disk attachment could be managed as part of the <span pulumi-lang-nodejs="`nutanix.VirtualMachineV2`" pulumi-lang-dotnet="`nutanix.VirtualMachineV2`" pulumi-lang-go="`VirtualMachineV2`" pulumi-lang-python="`VirtualMachineV2`" pulumi-lang-yaml="`nutanix.VirtualMachineV2`" pulumi-lang-java="`nutanix.VirtualMachineV2`" pulumi-lang-hcl="`nutanix_virtual_machine_v2`">`nutanix.VirtualMachineV2`</span> <span pulumi-lang-nodejs="`disks`" pulumi-lang-dotnet="`Disks`" pulumi-lang-go="`disks`" pulumi-lang-python="`disks`" pulumi-lang-yaml="`disks`" pulumi-lang-java="`disks`" pulumi-lang-hcl="`disks`">`disks`</span> workflow. Starting with the next release, managing Volume Group disk attach/detach through the VM resource is deprecated. Use <span pulumi-lang-nodejs="`nutanix.VolumeGroupDiskV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupDiskV2`" pulumi-lang-go="`VolumeGroupDiskV2`" pulumi-lang-python="`VolumeGroupDiskV2`" pulumi-lang-yaml="`nutanix.VolumeGroupDiskV2`" pulumi-lang-java="`nutanix.VolumeGroupDiskV2`" pulumi-lang-hcl="`nutanix_volume_group_disk_v2`">`nutanix.VolumeGroupDiskV2`</span> to manage Volume Group disks and <span pulumi-lang-nodejs="`nutanix.VolumeGroupVmV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupVmV2`" pulumi-lang-go="`VolumeGroupVmV2`" pulumi-lang-python="`VolumeGroupVmV2`" pulumi-lang-yaml="`nutanix.VolumeGroupVmV2`" pulumi-lang-java="`nutanix.VolumeGroupVmV2`" pulumi-lang-hcl="`nutanix_volume_group_vm_v2`">`nutanix.VolumeGroupVmV2`</span> to attach or detach VMs from a Volume Group. When a Volume Group disk is attached out-of-band, <span pulumi-lang-nodejs="`nutanix.VirtualMachineV2`" pulumi-lang-dotnet="`nutanix.VirtualMachineV2`" pulumi-lang-go="`VirtualMachineV2`" pulumi-lang-python="`VirtualMachineV2`" pulumi-lang-yaml="`nutanix.VirtualMachineV2`" pulumi-lang-java="`nutanix.VirtualMachineV2`" pulumi-lang-hcl="`nutanix_virtual_machine_v2`">`nutanix.VirtualMachineV2`</span> may not include that externally attached disk in its <span pulumi-lang-nodejs="`disks`" pulumi-lang-dotnet="`Disks`" pulumi-lang-go="`disks`" pulumi-lang-python="`disks`" pulumi-lang-yaml="`disks`" pulumi-lang-java="`disks`" pulumi-lang-hcl="`disks`">`disks`</span> state unless the corresponding disk backing is explicitly configured, which reduces drift noise.
      */
     backingInfos: outputs.VirtualMachineV2DiskBackingInfo[];
     /**
@@ -57892,6 +63102,119 @@ export interface VirtualMachineV2VtpmConfig {
     version: string;
 }
 
+export interface VirtualSwitchV2Cluster {
+    /**
+     * The name of an existing OVS bridge on the host (e.g., <span pulumi-lang-nodejs="`br1`" pulumi-lang-dotnet="`Br1`" pulumi-lang-go="`br1`" pulumi-lang-python="`br1`" pulumi-lang-yaml="`br1`" pulumi-lang-java="`br1`" pulumi-lang-hcl="`br1`">`br1`</span>) to convert into this Virtual Switch. Setting this triggers the migration path.
+     */
+    existingBridgeName: string;
+    /**
+     * The UUID of the cluster where this Virtual Switch configuration is applied. When using the migrate path, this acts as the `clusterReference`.
+     */
+    extId: string;
+    /**
+     * The Gateway IP address for the virtual switch on this cluster. *(Only applicable during Standard Create; ignored during Migration).*
+     */
+    gatewayIpAddress: outputs.VirtualSwitchV2ClusterGatewayIpAddress;
+    /**
+     * A list of host-specific configurations within the cluster. See <span pulumi-lang-nodejs="`hosts`" pulumi-lang-dotnet="`Hosts`" pulumi-lang-go="`hosts`" pulumi-lang-python="`hosts`" pulumi-lang-yaml="`hosts`" pulumi-lang-java="`hosts`" pulumi-lang-hcl="`hosts`">`hosts`</span> below.
+     */
+    hosts: outputs.VirtualSwitchV2ClusterHost[];
+    /**
+     * The VLAN Identifier for this virtual switch within the cluster. Set to <span pulumi-lang-nodejs="`0`" pulumi-lang-dotnet="`0`" pulumi-lang-go="`0`" pulumi-lang-python="`0`" pulumi-lang-yaml="`0`" pulumi-lang-java="`0`" pulumi-lang-hcl="`0`">`0`</span> to explicitly remove VLAN tagging.
+     */
+    vlanIdentifier: number;
+}
+
+export interface VirtualSwitchV2ClusterGatewayIpAddress {
+    /**
+     * The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * The IPv4 address of the host.
+     */
+    value: string;
+}
+
+export interface VirtualSwitchV2ClusterHost {
+    /**
+     * Specifies the active uplink interface when using the `ACTIVE_BACKUP` bond mode. *(Standard create only).*
+     */
+    activeUplink: string;
+    /**
+     * The UUID of the physical host.
+     */
+    extId: string;
+    /**
+     * A list of physical Network Interface Cards (e.g., `["eth0", "eth1"]`) to bind to this virtual switch as uplinks. *(Only applicable during Standard Create; ignored during Migration).*
+     */
+    hostNics: string[];
+    /**
+     * The internal logical bridge name (e.g., <span pulumi-lang-nodejs="`br0`" pulumi-lang-dotnet="`Br0`" pulumi-lang-go="`br0`" pulumi-lang-python="`br0`" pulumi-lang-yaml="`br0`" pulumi-lang-java="`br0`" pulumi-lang-hcl="`br0`">`br0`</span>). In practice, this is **read-only**. The standard create endpoint auto-allocates this and ignores user input. To target a specific bridge, use `clusters[].existing_bridge_name` instead.
+     */
+    internalBridgeName: string;
+    /**
+     * The IPv4 subnet address for the bridge interface on this host. *(Only applicable during Standard Create; ignored during Migration).*
+     */
+    ipAddress: outputs.VirtualSwitchV2ClusterHostIpAddress;
+    /**
+     * The internal route table number utilized by this host.
+     */
+    routeTable: number;
+}
+
+export interface VirtualSwitchV2ClusterHostIpAddress {
+    ip: outputs.VirtualSwitchV2ClusterHostIpAddressIp;
+    /**
+     * Prefix length of the IPv4 subnet.
+     */
+    prefixLength: number;
+}
+
+export interface VirtualSwitchV2ClusterHostIpAddressIp {
+    prefixLength: number;
+    value: string;
+}
+
+export interface VirtualSwitchV2IgmpSpec {
+    /**
+     * Enables IGMP snooping to optimize multicast traffic delivery.
+     */
+    isSnoopingEnabled: boolean;
+    /**
+     * A block defining IGMP querier settings. See <span pulumi-lang-nodejs="`querierSpec`" pulumi-lang-dotnet="`QuerierSpec`" pulumi-lang-go="`querierSpec`" pulumi-lang-python="`querier_spec`" pulumi-lang-yaml="`querierSpec`" pulumi-lang-java="`querierSpec`" pulumi-lang-hcl="`querier_spec`">`querierSpec`</span> below.
+     */
+    querierSpec: outputs.VirtualSwitchV2IgmpSpecQuerierSpec;
+    /**
+     * The timeout value in seconds before an inactive multicast group membership expires.
+     */
+    snoopingTimeout: number;
+}
+
+export interface VirtualSwitchV2IgmpSpecQuerierSpec {
+    /**
+     * Enables the Virtual Switch to act as an IGMP querier.
+     */
+    isQuerierEnabled: boolean;
+    /**
+     * A list of VLAN IDs on which the Virtual Switch will actively send IGMP queries.
+     */
+    vlanIdLists: number[];
+}
+
+export interface VirtualSwitchV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface VirtualSwitchV2Metadata {
+    categoryIds: string[];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
 export interface VmCdromInsertEjectV2BackingInfo {
     /**
      * A reference to a disk or image that contains the contents of a disk.
@@ -57907,7 +63230,7 @@ export interface VmCdromInsertEjectV2BackingInfo {
      * Storage configuration for VM disks
      * * `storage_config.is_flash_mode_enabled`: (Required) Indicates whether the virtual disk is pinned to the hot tier or not.
      */
-    storageConfigs?: outputs.VmCdromInsertEjectV2BackingInfoStorageConfig[];
+    storageConfigs: outputs.VmCdromInsertEjectV2BackingInfoStorageConfig[];
     /**
      * This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
      */
@@ -58570,7 +63893,7 @@ export interface VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustom
     /**
      * - (Optional) The value associated with the key for this key-value pair.
      *
-     * See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/cloneVm).
+     * See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/cloneVm).
      */
     value: string;
 }
@@ -58619,13 +63942,173 @@ export interface VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyV
     /**
      * - (Optional) The value associated with the key for this key-value pair.
      *
-     * See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/cloneVm).
+     * See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/cloneVm).
      */
     value: string;
 }
 
 export interface VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml {
     value: string;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfig {
+    configOverrideSpec?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpec;
+    profile: outputs.VmCloneV2GuestCustomizationProfileConfigProfile;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpec {
+    sysprepConfig?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfig;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfig {
+    customization?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomization;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomization {
+    answerFile?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFile;
+    sysprepParams?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParams;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFile {
+    /**
+     * - (Optional) Generic key value pair used for custom attributes.
+     */
+    unattendXml: string;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParams {
+    firstLogonCommands?: string[];
+    generalSettings?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettings;
+    localeSettings?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettings;
+    networkSettings?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettings;
+    workgroupOrDomainInfo?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfo;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettings {
+    administratorPassword?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPassword;
+    autoLogonSettings?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettings;
+    computerName?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerName;
+    registeredOrganization?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganization;
+    registeredOwner?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwner;
+    timezone?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezone;
+    windowsProductKey?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKey;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPassword {
+    discard?: boolean;
+    value?: string;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettings {
+    logonCount?: number;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerName {
+    discard?: boolean;
+    useVmName?: boolean;
+    value?: string;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganization {
+    discard?: boolean;
+    value?: string;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwner {
+    discard?: boolean;
+    value?: string;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezone {
+    discard?: boolean;
+    value?: string;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKey {
+    discard?: boolean;
+    value?: string;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettings {
+    systemLocale?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocale;
+    uiLanguage?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguage;
+    userLocale?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocale;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocale {
+    discard?: boolean;
+    value?: string;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguage {
+    discard?: boolean;
+    value?: string;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocale {
+    discard?: boolean;
+    value?: string;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettings {
+    nicConfigLists?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigList[];
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigList {
+    dnsConfig?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfig;
+    /**
+     * - (Optional) The IP address configurations.
+     */
+    ipv4Config?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4Config;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfig {
+    alternateDnsServerAddresses?: string[];
+    preferredDnsServerAddress?: string;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4Config {
+    defaultGateways?: string[];
+    ipAddress?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddress;
+    useDhcp?: boolean;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddress {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - Ip address.
+     */
+    value?: string;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfo {
+    discard?: boolean;
+    domainSettings?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettings;
+    workgroup?: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroup;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettings {
+    credentials: outputs.VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentials;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentials {
+    domainName?: string;
+    password?: string;
+    username?: string;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroup {
+    /**
+     * - (Optional) The name for the vm.
+     */
+    name: string;
+}
+
+export interface VmCloneV2GuestCustomizationProfileConfigProfile {
+    extId: string;
 }
 
 export interface VmCloneV2GuestTool {
@@ -59180,7 +64663,7 @@ export interface VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePair
     /**
      * - (Optional) The value associated with the key for this key-value pair.
      *
-     * See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/customizeGuestVm).
+     * See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/customizeGuestVm).
      */
     value: string;
 }
@@ -59229,13 +64712,217 @@ export interface VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePai
     /**
      * - (Optional) The value associated with the key for this key-value pair.
      *
-     * See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/customizeGuestVm).
+     * See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/customizeGuestVm).
      */
     value: string;
 }
 
 export interface VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXml {
     value: string;
+}
+
+export interface VmGuestCustomizationProfileV2Config {
+    /**
+     * Configuration for customization of a Windows guest operating system.
+     */
+    sysprepConfig: outputs.VmGuestCustomizationProfileV2ConfigSysprepConfig;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfig {
+    /**
+     * Either specify the values for the parameters or an unattend XML file.
+     */
+    customization: outputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomization;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomization {
+    /**
+     * The answer file (unattend.xml) for sysprep.
+     */
+    answerFile: outputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationAnswerFile;
+    /**
+     * A set of various unattended settings supported by Windows.
+     */
+    sysprepParams: outputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParams;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationAnswerFile {
+    /**
+     * The unattend XML file as a string value. Note that double quotes in the XML file need to be escaped.
+     */
+    unattendXml: string;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParams {
+    /**
+     * List of commands to be executed automatically when a user logs in for the first time after Windows setup.
+     */
+    firstLogonCommands: string[];
+    /**
+     * A set of general unattended settings supported by Windows.
+     */
+    generalSettings: outputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettings;
+    /**
+     * Language and locale settings for the system and the user.
+     */
+    localeSettings: outputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsLocaleSettings;
+    /**
+     * Network settings to apply to the NICs attached to the VM.
+     */
+    networkSettings: outputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettings;
+    /**
+     * JoinWorkgroup or JoinDomain settings of the computer.
+     */
+    workgroupOrDomainInfo: outputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfo;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettings {
+    /**
+     * Password to be configured for built-in Administrator account.
+     */
+    administratorPassword?: string;
+    /**
+     * Autologon settings.
+     */
+    autoLogonSettings: outputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettings;
+    /**
+     * Mechanism to use to generate the computer name of the VM. Either <span pulumi-lang-nodejs="`useVmName`" pulumi-lang-dotnet="`UseVmName`" pulumi-lang-go="`useVmName`" pulumi-lang-python="`use_vm_name`" pulumi-lang-yaml="`useVmName`" pulumi-lang-java="`useVmName`" pulumi-lang-hcl="`use_vm_name`">`useVmName`</span> or <span pulumi-lang-nodejs="`mustProvideDuringDeployment`" pulumi-lang-dotnet="`MustProvideDuringDeployment`" pulumi-lang-go="`mustProvideDuringDeployment`" pulumi-lang-python="`must_provide_during_deployment`" pulumi-lang-yaml="`mustProvideDuringDeployment`" pulumi-lang-java="`mustProvideDuringDeployment`" pulumi-lang-hcl="`must_provide_during_deployment`">`mustProvideDuringDeployment`</span> should be set to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>.
+     */
+    computerName: outputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerName;
+    /**
+     * Name of the organization of the end user.
+     */
+    registeredOrganization?: string;
+    /**
+     * Full name of the end user.
+     */
+    registeredOwner?: string;
+    /**
+     * The computer's time zone in string format.
+     */
+    timezone?: string;
+    /**
+     * The product key to use to install and activate Windows.
+     */
+    windowsProductKey?: string;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettings {
+    /**
+     * The number of automatic logons allowed for the computer.
+     */
+    logonCount: number;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerName {
+    /**
+     * Whether the computer name must be provided during deployment.
+     */
+    mustProvideDuringDeployment?: boolean;
+    /**
+     * Whether to use the VM name as the computer name.
+     */
+    useVmName?: boolean;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsLocaleSettings {
+    /**
+     * Default language to use for non-Unicode programs.
+     */
+    systemLocale?: string;
+    /**
+     * Default system language to use to display UI items.
+     */
+    uiLanguage?: string;
+    /**
+     * Per-user settings for formatting dates, times, currency, and numbers.
+     */
+    userLocale?: string;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettings {
+    /**
+     * List of NIC configurations to be applied to the NICs attached to the VM in serial order.
+     */
+    nicConfigLists: outputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigList[];
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigList {
+    /**
+     * DNS configuration to be applied to the NIC.
+     */
+    dnsConfig?: outputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfig;
+    /**
+     * Mechanism to configure IPv4 settings of the NIC.
+     */
+    ipv4Config: outputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4Config;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfig {
+    /**
+     * List of IPv4 addresses to look for after preferred DNS server.
+     */
+    alternateDnsServerAddresses?: string[];
+    /**
+     * An IPv4 address preferred to search first for the DNS server.
+     */
+    preferredDnsServerAddress: string;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4Config {
+    /**
+     * Whether IPv4 configuration must be provided during deployment.
+     */
+    mustProvideDuringDeployment?: boolean;
+    /**
+     * Whether to use DHCP for IPv4 configuration.
+     */
+    useDhcp?: boolean;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfo {
+    /**
+     * Domain settings.
+     */
+    domainSettings?: outputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettings;
+    /**
+     * Workgroup settings.
+     */
+    workgroup?: outputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroup;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettings {
+    /**
+     * Credentials for the domain account.
+     */
+    credentials: outputs.VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentials;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentials {
+    /**
+     * The name of the domain.
+     */
+    domainName: string;
+    /**
+     * The password of the domain user account.
+     */
+    password: string;
+    /**
+     * Name of the domain user account with permission to add the computer to a domain.
+     */
+    username: string;
+}
+
+export interface VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroup {
+    /**
+     * Name of workgroup to be applied to the computer. It must be a valid NetBIOS name.
+     */
+    name: string;
+}
+
+export interface VmGuestCustomizationProfileV2Link {
+    href: string;
+    rel: string;
 }
 
 export interface VmNetworkDeviceAssignIpV2IpAddress {
@@ -59246,7 +64933,7 @@ export interface VmNetworkDeviceAssignIpV2IpAddress {
     /**
      * - Ip address.
      *
-     * See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/assignIpById).
+     * See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/assignIpById).
      */
     value: string;
 }
@@ -59259,7 +64946,7 @@ export interface VmNetworkDeviceMigrateV2IpAddress {
     /**
      * - Ip address.
      *
-     * See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/migrateNicById).
+     * See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/migrateNicById).
      */
     value: string;
 }
@@ -59279,12 +64966,83 @@ export interface VmShutdownActionV2GuestPowerStateTransitionConfig {
     /**
      * Indicates whether to abort VM shutdown/restart if the script fails.
      *
-     * See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownVm).
-     * See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownGuestVm).
-     * See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/rebootVm).
-     * See detailed information in [Nutanix VMs Power Action Reboot Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/rebootGuestVm).
+     * See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/shutdownVm).
+     * See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/shutdownGuestVm).
+     * See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/rebootVm).
+     * See detailed information in [Nutanix VMs Power Action Reboot Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/rebootGuestVm).
      */
     shouldFailOnScriptFailure?: boolean;
+}
+
+export interface VmStartupPolicyV2CreatedBy {
+    /**
+     * The external ID (UUID) of the user.
+     */
+    extId: string;
+}
+
+export interface VmStartupPolicyV2Group {
+    /**
+     * Categories configured for the group. Minimum 1, maximum 5 categories per group.
+     */
+    categories: outputs.VmStartupPolicyV2GroupCategory[];
+}
+
+export interface VmStartupPolicyV2GroupCategory {
+    /**
+     * The external ID (UUID) of the category.
+     */
+    extId: string;
+}
+
+export interface VmStartupPolicyV2Link {
+    /**
+     * The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * A name that identifies the relationship of the link to the object that is returned by the URL.
+     */
+    rel: string;
+}
+
+export interface VmStartupPolicyV2StartCondition {
+    /**
+     * The delay in seconds after the power state criteria is met before the dependent VMs are started. Valid range: 0–600. Default: 0.
+     */
+    delayDurationSecs: number;
+    /**
+     * The power state criteria that the VM must attain before the dependent VMs are started. Exactly one of <span pulumi-lang-nodejs="`powerOn`" pulumi-lang-dotnet="`PowerOn`" pulumi-lang-go="`powerOn`" pulumi-lang-python="`power_on`" pulumi-lang-yaml="`powerOn`" pulumi-lang-java="`powerOn`" pulumi-lang-hcl="`power_on`">`powerOn`</span> or <span pulumi-lang-nodejs="`guestBootup`" pulumi-lang-dotnet="`GuestBootup`" pulumi-lang-go="`guestBootup`" pulumi-lang-python="`guest_bootup`" pulumi-lang-yaml="`guestBootup`" pulumi-lang-java="`guestBootup`" pulumi-lang-hcl="`guest_bootup`">`guestBootup`</span> must be specified.
+     */
+    powerStateCriteria: outputs.VmStartupPolicyV2StartConditionPowerStateCriteria;
+}
+
+export interface VmStartupPolicyV2StartConditionPowerStateCriteria {
+    /**
+     * Guest bootup criteria.
+     */
+    guestBootup?: outputs.VmStartupPolicyV2StartConditionPowerStateCriteriaGuestBootup;
+    /**
+     * Power on criteria. Empty block.
+     */
+    powerOn?: outputs.VmStartupPolicyV2StartConditionPowerStateCriteriaPowerOn;
+}
+
+export interface VmStartupPolicyV2StartConditionPowerStateCriteriaGuestBootup {
+    /**
+     * The timeout in seconds in which the VM's Guest OS boot up should be detected successfully.
+     */
+    timeoutDurationSecs: number;
+}
+
+export interface VmStartupPolicyV2StartConditionPowerStateCriteriaPowerOn {
+}
+
+export interface VmStartupPolicyV2UpdatedBy {
+    /**
+     * The external ID (UUID) of the user.
+     */
+    extId: string;
 }
 
 export interface VolumeGroupDiskV2DiskDataSourceReference {
@@ -59343,7 +65101,7 @@ export interface VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdFqdn {
     /**
      * - The fully qualified domain name.
      *
-     * See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachIscsiClient).
+     * See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/attachIscsiClient).
      */
     value: string;
 }
@@ -59372,63 +65130,39 @@ export interface VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdIpv6 {
 
 export interface VolumeGroupV2Disk {
     /**
-     * - Volume Disk description.
+     * -(Optional) Volume Group description. This is an optional field.
      */
     description: string;
-    /**
-     * -(Required) Disk Data Source Reference.
-     */
     diskDataSourceReferences: outputs.VolumeGroupV2DiskDiskDataSourceReference[];
-    /**
-     * - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
-     */
     diskSizeBytes: number;
-    /**
-     * - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
-     */
     diskStorageFeatures: outputs.VolumeGroupV2DiskDiskStorageFeature[];
-    /**
-     * - Index of the disk in a Volume Group. This field is optional and immutable.
-     */
     index: number;
 }
 
 export interface VolumeGroupV2DiskDiskDataSourceReference {
-    /**
-     * - The Entity Type of the Data Source Reference.
-     */
     entityType: string;
     /**
-     * - The external identifier of the Data Source Reference.
+     * -(Optional) A globally unique identifier of an instance that is suitable for external consumption.
      */
     extId: string;
     /**
-     * - The name of the Data Source Reference. for the Volume Group.
+     * -(Required) Volume Group name. This is an optional field.
      */
     name: string;
-    /**
-     * - The uri list of the Data Source Reference.
-     */
     uris: string[];
 }
 
 export interface VolumeGroupV2DiskDiskStorageFeature {
-    /**
-     * - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
-     */
     flashModes: outputs.VolumeGroupV2DiskDiskStorageFeatureFlashMode[];
 }
 
 export interface VolumeGroupV2DiskDiskStorageFeatureFlashMode {
-    /**
-     * - Indicates whether the flash mode is enabled for the Volume Group Disk.
-     */
     isEnabled: boolean;
 }
 
 export interface VolumeGroupV2IscsiFeature {
     /**
-     * - The authentication type enabled for the Volume Group.
+     * -(Optional) The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
      */
     enabledAuthentications: string;
     /**
@@ -59439,14 +65173,14 @@ export interface VolumeGroupV2IscsiFeature {
 
 export interface VolumeGroupV2StorageFeature {
     /**
-     * - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+     * Once configured, this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
      */
     flashModes: outputs.VolumeGroupV2StorageFeatureFlashMode[];
 }
 
 export interface VolumeGroupV2StorageFeatureFlashMode {
     /**
-     * - Indicates whether the flash mode is enabled for the Volume Group Disk.
+     * Indicates whether the flash mode is enabled for the Volume Group.
      */
     isEnabled: boolean;
 }
@@ -59600,6 +65334,97 @@ export interface VpcV2ExternallyRoutablePrefixIpv6Ip {
     value: string;
 }
 
+export interface VpcV2KubernetesCluster {
+    /**
+     * ExtID of the Kubernetes cluster.
+     */
+    extId: string;
+    /**
+     * Selector used to identify gateway node candidates within the Kubernetes cluster.
+     */
+    gatewayNodesSelector: outputs.VpcV2KubernetesClusterGatewayNodesSelector;
+    /**
+     * Selector used to identify namespaces within the Kubernetes cluster.
+     */
+    namespaceSelector: outputs.VpcV2KubernetesClusterNamespaceSelector;
+    /**
+     * Pod network of the Kubernetes cluster.
+     */
+    podNetwork: outputs.VpcV2KubernetesClusterPodNetwork;
+}
+
+export interface VpcV2KubernetesClusterGatewayNodesSelector {
+    /**
+     * Labels (key-value pairs) used to select entities.
+     * - `match_labels.name`: (Optional) The key of the label.
+     * - `match_labels.value`: (Optional) The value of the label.
+     */
+    matchLabels: outputs.VpcV2KubernetesClusterGatewayNodesSelectorMatchLabel[];
+}
+
+export interface VpcV2KubernetesClusterGatewayNodesSelectorMatchLabel {
+    /**
+     * Name of the VPC.
+     */
+    name: string;
+    value: string;
+}
+
+export interface VpcV2KubernetesClusterNamespaceSelector {
+    /**
+     * Labels (key-value pairs) used to select entities.
+     * - `match_labels.name`: (Optional) The key of the label.
+     * - `match_labels.value`: (Optional) The value of the label.
+     */
+    matchLabels: outputs.VpcV2KubernetesClusterNamespaceSelectorMatchLabel[];
+}
+
+export interface VpcV2KubernetesClusterNamespaceSelectorMatchLabel {
+    /**
+     * Name of the VPC.
+     */
+    name: string;
+    value: string;
+}
+
+export interface VpcV2KubernetesClusterPodNetwork {
+    /**
+     * CIDR of the pod network (IPSubnet).
+     * - `cidr.ipv4`: (Optional) IPv4 Subnet Configuration.
+     * - `cidr.ipv6`: (Optional) IPv6 Subnet Configuration.
+     */
+    cidrs: outputs.VpcV2KubernetesClusterPodNetworkCidr[];
+    /**
+     * Host slice of the pod network. Default value is 24.
+     */
+    hostSlice?: number;
+}
+
+export interface VpcV2KubernetesClusterPodNetworkCidr {
+    ipv4: outputs.VpcV2KubernetesClusterPodNetworkCidrIpv4;
+    ipv6: outputs.VpcV2KubernetesClusterPodNetworkCidrIpv6;
+}
+
+export interface VpcV2KubernetesClusterPodNetworkCidrIpv4 {
+    ip: outputs.VpcV2KubernetesClusterPodNetworkCidrIpv4Ip;
+    prefixLength: number;
+}
+
+export interface VpcV2KubernetesClusterPodNetworkCidrIpv4Ip {
+    prefixLength: number;
+    value: string;
+}
+
+export interface VpcV2KubernetesClusterPodNetworkCidrIpv6 {
+    ip: outputs.VpcV2KubernetesClusterPodNetworkCidrIpv6Ip;
+    prefixLength: number;
+}
+
+export interface VpcV2KubernetesClusterPodNetworkCidrIpv6Ip {
+    prefixLength: number;
+    value: string;
+}
+
 export interface VpcV2Link {
     href: string;
     rel: string;
@@ -59626,5 +65451,49 @@ export interface VpcV2SnatIpIpv4 {
 export interface VpcV2SnatIpIpv6 {
     prefixLength: number;
     value: string;
+}
+
+export interface VpcVirtualSwitchMappingV2Mapping {
+    /**
+     * A list of cluster UUIDs where this Virtual Switch mapping is effective. This defines the physical cluster boundaries for the networking configuration.
+     */
+    clusterUuids?: string[];
+    /**
+     * A boolean flag indicating the traffic permission policy. When set to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>, all network traffic is permitted to flow through the virtual switch. When set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>, the switch drops standard traffic and only permits basic ICMP and essential statistics collection requests.
+     */
+    isAllTrafficPermitted?: boolean;
+    /**
+     * A block containing administrative and organizational metadata for the mapping. See the <span pulumi-lang-nodejs="`metadata`" pulumi-lang-dotnet="`Metadata`" pulumi-lang-go="`metadata`" pulumi-lang-python="`metadata`" pulumi-lang-yaml="`metadata`" pulumi-lang-java="`metadata`" pulumi-lang-hcl="`metadata`">`metadata`</span> block below for details.
+     */
+    metadatas: outputs.VpcVirtualSwitchMappingV2MappingMetadata[];
+    /**
+     * The Universally Unique Identifier (UUID) of the target Virtual Switch. This is the switch where the VPC traffic policies will be applied.
+     */
+    virtualSwitchUuid: string;
+}
+
+export interface VpcVirtualSwitchMappingV2MappingMetadata {
+    /**
+     * A list of globally unique identifiers (UUIDs) representing the categories (tags) associated with the mapping. Categories are useful for policy enforcement, granular filtering, or billing attribution.
+     *
+     * See detailed information in [Nutanix VPC Virtual Switch Mapping V4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/VpcVirtualSwitchMappings/operation/createVpcVirtualSwitchMapping).
+     */
+    categoryIds: string[];
+    /**
+     * A globally unique identifier (UUID) that represents the user, group, or service account that owns this mapping resource.
+     */
+    ownerReferenceId: string;
+    /**
+     * The human-readable username of the resource owner.
+     */
+    ownerUserName: string;
+    /**
+     * The human-readable name of the Nutanix Project this resource is assigned to.
+     */
+    projectName: string;
+    /**
+     * A globally unique identifier (UUID) of the Nutanix Project this resource belongs to. This is heavily used for multi-tenancy and resource isolation.
+     */
+    projectReferenceId: string;
 }
 

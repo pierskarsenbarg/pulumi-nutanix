@@ -96,6 +96,12 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> OwnerExtId { get; private set; } = null!;
 
         /// <summary>
+        /// -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
+
+        /// <summary>
         /// -(Optional) Type of the Recovery point.
         /// * supported values:
         /// * `CRASH_CONSISTENT`: -  capture all the VM and application level details.
@@ -188,6 +194,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
 
         /// <summary>
         /// -(Optional) Type of the Recovery point.
@@ -297,6 +309,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("ownerExtId")]
         public Input<string>? OwnerExtId { get; set; }
+
+        /// <summary>
+        /// -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
 
         /// <summary>
         /// -(Optional) Type of the Recovery point.

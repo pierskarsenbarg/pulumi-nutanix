@@ -39,6 +39,8 @@ import * as utilities from "./utilities";
  * });
  * ```
  * <!--End PulumiCodeChooser -->
+ *
+ * > **Volume Group disk workflow:** Create the disk with <span pulumi-lang-nodejs="`nutanix.VolumeGroupDiskV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupDiskV2`" pulumi-lang-go="`VolumeGroupDiskV2`" pulumi-lang-python="`VolumeGroupDiskV2`" pulumi-lang-yaml="`nutanix.VolumeGroupDiskV2`" pulumi-lang-java="`nutanix.VolumeGroupDiskV2`" pulumi-lang-hcl="`nutanix_volume_group_disk_v2`">`nutanix.VolumeGroupDiskV2`</span> and attach it to a VM with <span pulumi-lang-nodejs="`nutanix.VolumeGroupVmV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupVmV2`" pulumi-lang-go="`VolumeGroupVmV2`" pulumi-lang-python="`VolumeGroupVmV2`" pulumi-lang-yaml="`nutanix.VolumeGroupVmV2`" pulumi-lang-java="`nutanix.VolumeGroupVmV2`" pulumi-lang-hcl="`nutanix_volume_group_vm_v2`">`nutanix.VolumeGroupVmV2`</span>.
  */
 export class VolumeGroupDiskV2 extends pulumi.CustomResource {
     /**
@@ -104,7 +106,11 @@ export class VolumeGroupDiskV2 extends pulumi.CustomResource {
      */
     declare public readonly index: pulumi.Output<number>;
     /**
-     * The external identifier of the volume group.
+     * The ID of the storage container.
+     */
+    declare public /*out*/ readonly storageContainerId: pulumi.Output<string>;
+    /**
+     * -(Required) The external identifier of the Volume Group.
      */
     declare public readonly volumeGroupExtId: pulumi.Output<string>;
 
@@ -127,6 +133,7 @@ export class VolumeGroupDiskV2 extends pulumi.CustomResource {
             resourceInputs["diskStorageFeatures"] = state?.diskStorageFeatures;
             resourceInputs["extId"] = state?.extId;
             resourceInputs["index"] = state?.index;
+            resourceInputs["storageContainerId"] = state?.storageContainerId;
             resourceInputs["volumeGroupExtId"] = state?.volumeGroupExtId;
         } else {
             const args = argsOrState as VolumeGroupDiskV2Args | undefined;
@@ -146,6 +153,7 @@ export class VolumeGroupDiskV2 extends pulumi.CustomResource {
             resourceInputs["index"] = args?.index;
             resourceInputs["volumeGroupExtId"] = args?.volumeGroupExtId;
             resourceInputs["extId"] = undefined /*out*/;
+            resourceInputs["storageContainerId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(VolumeGroupDiskV2.__pulumiType, name, resourceInputs, opts);
@@ -181,7 +189,11 @@ export interface VolumeGroupDiskV2State {
      */
     index?: pulumi.Input<number | undefined>;
     /**
-     * The external identifier of the volume group.
+     * The ID of the storage container.
+     */
+    storageContainerId?: pulumi.Input<string | undefined>;
+    /**
+     * -(Required) The external identifier of the Volume Group.
      */
     volumeGroupExtId?: pulumi.Input<string | undefined>;
 }
@@ -211,7 +223,7 @@ export interface VolumeGroupDiskV2Args {
      */
     index?: pulumi.Input<number | undefined>;
     /**
-     * The external identifier of the volume group.
+     * -(Required) The external identifier of the Volume Group.
      */
     volumeGroupExtId: pulumi.Input<string>;
 }

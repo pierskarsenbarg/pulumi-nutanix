@@ -50,6 +50,7 @@ import (
 type LcmPrechecksV2 struct {
 	pulumi.CustomResourceState
 
+	DryRun pulumi.BoolPtrOutput `pulumi:"dryRun"`
 	// List of entity update objects for getting recommendations.
 	EntityUpdateSpecs LcmPrechecksV2EntityUpdateSpecArrayOutput `pulumi:"entityUpdateSpecs"`
 	ExtId             pulumi.StringOutput                       `pulumi:"extId"`
@@ -94,6 +95,7 @@ func GetLcmPrechecksV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering LcmPrechecksV2 resources.
 type lcmPrechecksV2State struct {
+	DryRun *bool `pulumi:"dryRun"`
 	// List of entity update objects for getting recommendations.
 	EntityUpdateSpecs []LcmPrechecksV2EntityUpdateSpec `pulumi:"entityUpdateSpecs"`
 	ExtId             *string                          `pulumi:"extId"`
@@ -106,6 +108,7 @@ type lcmPrechecksV2State struct {
 }
 
 type LcmPrechecksV2State struct {
+	DryRun pulumi.BoolPtrInput
 	// List of entity update objects for getting recommendations.
 	EntityUpdateSpecs LcmPrechecksV2EntityUpdateSpecArrayInput
 	ExtId             pulumi.StringPtrInput
@@ -128,6 +131,7 @@ func LcmPrechecksV2Exists(ctx *pulumi.Context,
 }
 
 type lcmPrechecksV2Args struct {
+	DryRun *bool `pulumi:"dryRun"`
 	// List of entity update objects for getting recommendations.
 	EntityUpdateSpecs []LcmPrechecksV2EntityUpdateSpec `pulumi:"entityUpdateSpecs"`
 	// Cluster management server configuration used while updating clusters with ESX or Hyper-V.
@@ -140,6 +144,7 @@ type lcmPrechecksV2Args struct {
 
 // The set of arguments for constructing a LcmPrechecksV2 resource.
 type LcmPrechecksV2Args struct {
+	DryRun pulumi.BoolPtrInput
 	// List of entity update objects for getting recommendations.
 	EntityUpdateSpecs LcmPrechecksV2EntityUpdateSpecArrayInput
 	// Cluster management server configuration used while updating clusters with ESX or Hyper-V.
@@ -235,6 +240,10 @@ func (o LcmPrechecksV2Output) ToLcmPrechecksV2Output() LcmPrechecksV2Output {
 
 func (o LcmPrechecksV2Output) ToLcmPrechecksV2OutputWithContext(ctx context.Context) LcmPrechecksV2Output {
 	return o
+}
+
+func (o LcmPrechecksV2Output) DryRun() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *LcmPrechecksV2) pulumi.BoolPtrOutput { return v.DryRun }).(pulumi.BoolPtrOutput)
 }
 
 // List of entity update objects for getting recommendations.

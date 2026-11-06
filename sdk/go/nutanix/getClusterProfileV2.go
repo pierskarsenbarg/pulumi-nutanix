@@ -74,6 +74,10 @@ type LookupClusterProfileV2Result struct {
 	DriftedClusterCount int `pulumi:"driftedClusterCount"`
 	// - A globally unique identifier of an instance that is suitable for external consumption.
 	ExtId string `pulumi:"extId"`
+	// - Fault tolerant state of cluster.
+	FaultToleranceConfigs []GetClusterProfileV2FaultToleranceConfig `pulumi:"faultToleranceConfigs"`
+	// - HTTP proxy configuration for the cluster.
+	HttpProxyConfigs []GetClusterProfileV2HttpProxyConfig `pulumi:"httpProxyConfigs"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// - The last updated time of a cluster profile.
@@ -82,16 +86,22 @@ type LookupClusterProfileV2Result struct {
 	LastUpdatedBy string `pulumi:"lastUpdatedBy"`
 	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 	Links []GetClusterProfileV2Link `pulumi:"links"`
-	// - Name of the cluster profile.
+	// HTTP proxy server name.
 	Name string `pulumi:"name"`
 	// - List of name servers on a cluster. This is a part of payload for both clusters create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
 	NameServerIpLists []GetClusterProfileV2NameServerIpList `pulumi:"nameServerIpLists"`
 	// - NFS subnet allowlist addresses. This is part of the payload for cluster update operation only.
 	NfsSubnetWhiteLists []string `pulumi:"nfsSubnetWhiteLists"`
+	// - List of NTP server configurations with encryption authentication.
+	NtpServerConfigLists []GetClusterProfileV2NtpServerConfigList `pulumi:"ntpServerConfigLists"`
 	// - List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
 	NtpServerIpLists []GetClusterProfileV2NtpServerIpList `pulumi:"ntpServerIpLists"`
 	// - Pulse status for a cluster.
 	PulseStatuses []GetClusterProfileV2PulseStatus `pulumi:"pulseStatuses"`
+	// - Rebuild capacity reservation configuration.
+	RebuildReservationConfigs []GetClusterProfileV2RebuildReservationConfig `pulumi:"rebuildReservationConfigs"`
+	// - Resilient capacity warning threshold configuration.
+	ResilientCapacityWarningThresholdConfigs []GetClusterProfileV2ResilientCapacityWarningThresholdConfig `pulumi:"resilientCapacityWarningThresholdConfigs"`
 	// - RSYSLOG Server.
 	RsyslogServerLists []GetClusterProfileV2RsyslogServerList `pulumi:"rsyslogServerLists"`
 	// - SMTP servers on a cluster. This is part of payload for cluster update operation only.
@@ -172,6 +182,18 @@ func (o LookupClusterProfileV2ResultOutput) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterProfileV2Result) string { return v.ExtId }).(pulumi.StringOutput)
 }
 
+// - Fault tolerant state of cluster.
+func (o LookupClusterProfileV2ResultOutput) FaultToleranceConfigs() GetClusterProfileV2FaultToleranceConfigArrayOutput {
+	return o.ApplyT(func(v LookupClusterProfileV2Result) []GetClusterProfileV2FaultToleranceConfig {
+		return v.FaultToleranceConfigs
+	}).(GetClusterProfileV2FaultToleranceConfigArrayOutput)
+}
+
+// - HTTP proxy configuration for the cluster.
+func (o LookupClusterProfileV2ResultOutput) HttpProxyConfigs() GetClusterProfileV2HttpProxyConfigArrayOutput {
+	return o.ApplyT(func(v LookupClusterProfileV2Result) []GetClusterProfileV2HttpProxyConfig { return v.HttpProxyConfigs }).(GetClusterProfileV2HttpProxyConfigArrayOutput)
+}
+
 // The provider-assigned unique ID for this managed resource.
 func (o LookupClusterProfileV2ResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterProfileV2Result) string { return v.Id }).(pulumi.StringOutput)
@@ -192,7 +214,7 @@ func (o LookupClusterProfileV2ResultOutput) Links() GetClusterProfileV2LinkArray
 	return o.ApplyT(func(v LookupClusterProfileV2Result) []GetClusterProfileV2Link { return v.Links }).(GetClusterProfileV2LinkArrayOutput)
 }
 
-// - Name of the cluster profile.
+// HTTP proxy server name.
 func (o LookupClusterProfileV2ResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterProfileV2Result) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -207,6 +229,13 @@ func (o LookupClusterProfileV2ResultOutput) NfsSubnetWhiteLists() pulumi.StringA
 	return o.ApplyT(func(v LookupClusterProfileV2Result) []string { return v.NfsSubnetWhiteLists }).(pulumi.StringArrayOutput)
 }
 
+// - List of NTP server configurations with encryption authentication.
+func (o LookupClusterProfileV2ResultOutput) NtpServerConfigLists() GetClusterProfileV2NtpServerConfigListArrayOutput {
+	return o.ApplyT(func(v LookupClusterProfileV2Result) []GetClusterProfileV2NtpServerConfigList {
+		return v.NtpServerConfigLists
+	}).(GetClusterProfileV2NtpServerConfigListArrayOutput)
+}
+
 // - List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
 func (o LookupClusterProfileV2ResultOutput) NtpServerIpLists() GetClusterProfileV2NtpServerIpListArrayOutput {
 	return o.ApplyT(func(v LookupClusterProfileV2Result) []GetClusterProfileV2NtpServerIpList { return v.NtpServerIpLists }).(GetClusterProfileV2NtpServerIpListArrayOutput)
@@ -215,6 +244,20 @@ func (o LookupClusterProfileV2ResultOutput) NtpServerIpLists() GetClusterProfile
 // - Pulse status for a cluster.
 func (o LookupClusterProfileV2ResultOutput) PulseStatuses() GetClusterProfileV2PulseStatusArrayOutput {
 	return o.ApplyT(func(v LookupClusterProfileV2Result) []GetClusterProfileV2PulseStatus { return v.PulseStatuses }).(GetClusterProfileV2PulseStatusArrayOutput)
+}
+
+// - Rebuild capacity reservation configuration.
+func (o LookupClusterProfileV2ResultOutput) RebuildReservationConfigs() GetClusterProfileV2RebuildReservationConfigArrayOutput {
+	return o.ApplyT(func(v LookupClusterProfileV2Result) []GetClusterProfileV2RebuildReservationConfig {
+		return v.RebuildReservationConfigs
+	}).(GetClusterProfileV2RebuildReservationConfigArrayOutput)
+}
+
+// - Resilient capacity warning threshold configuration.
+func (o LookupClusterProfileV2ResultOutput) ResilientCapacityWarningThresholdConfigs() GetClusterProfileV2ResilientCapacityWarningThresholdConfigArrayOutput {
+	return o.ApplyT(func(v LookupClusterProfileV2Result) []GetClusterProfileV2ResilientCapacityWarningThresholdConfig {
+		return v.ResilientCapacityWarningThresholdConfigs
+	}).(GetClusterProfileV2ResilientCapacityWarningThresholdConfigArrayOutput)
 }
 
 // - RSYSLOG Server.

@@ -71,6 +71,8 @@ type LookupTemplateV2Result struct {
 	Id string `pulumi:"id"`
 	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 	Links []GetTemplateV2Link `pulumi:"links"`
+	// The external identifier of the project with which the template is associated.
+	ProjectExtId string `pulumi:"projectExtId"`
 	// The user defined description of a Template.
 	TemplateDescription string `pulumi:"templateDescription"`
 	// The user defined name of a Template.
@@ -147,6 +149,11 @@ func (o LookupTemplateV2ResultOutput) Id() pulumi.StringOutput {
 // - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 func (o LookupTemplateV2ResultOutput) Links() GetTemplateV2LinkArrayOutput {
 	return o.ApplyT(func(v LookupTemplateV2Result) []GetTemplateV2Link { return v.Links }).(GetTemplateV2LinkArrayOutput)
+}
+
+// The external identifier of the project with which the template is associated.
+func (o LookupTemplateV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTemplateV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // The user defined description of a Template.

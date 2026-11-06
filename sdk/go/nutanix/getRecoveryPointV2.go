@@ -76,6 +76,8 @@ type GetRecoveryPointV2Result struct {
 	Name string `pulumi:"name"`
 	// A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
 	OwnerExtId string `pulumi:"ownerExtId"`
+	// Project external ID associated with the recovery point.
+	ProjectExtId string `pulumi:"projectExtId"`
 	// Type of the Recovery point.
 	RecoveryPointType string `pulumi:"recoveryPointType"`
 	// The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
@@ -163,6 +165,11 @@ func (o GetRecoveryPointV2ResultOutput) Name() pulumi.StringOutput {
 // A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
 func (o GetRecoveryPointV2ResultOutput) OwnerExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecoveryPointV2Result) string { return v.OwnerExtId }).(pulumi.StringOutput)
+}
+
+// Project external ID associated with the recovery point.
+func (o GetRecoveryPointV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecoveryPointV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // Type of the Recovery point.

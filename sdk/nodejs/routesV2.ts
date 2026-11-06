@@ -30,10 +30,10 @@ import * as utilities from "./utilities";
  *             prefixLength: 32,
  *         },
  *     },
- *     nextHop: {
+ *     nextHops: [{
  *         nextHopType: "EXTERNAL_SUBNET",
  *         nextHopReference: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
- *     },
+ *     }],
  *     metadata: {
  *         ownerReferenceId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
  *         projectReferenceId: "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
@@ -115,13 +115,17 @@ export class RoutesV2 extends pulumi.CustomResource {
      */
     declare public readonly name: pulumi.Output<string>;
     /**
-     * Route nexthop.
+     * Route nexthop. Supports multiple entries.
      */
-    declare public readonly nextHop: pulumi.Output<outputs.RoutesV2NextHop>;
+    declare public readonly nextHops: pulumi.Output<outputs.RoutesV2NextHop[]>;
     /**
      * Route priority. A higher value implies greater preference is assigned to the route.
      */
     declare public /*out*/ readonly priority: pulumi.Output<number>;
+    /**
+     * External identifier of the project associated with the Route.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
     /**
      * Route table UUID
      */
@@ -164,8 +168,9 @@ export class RoutesV2 extends pulumi.CustomResource {
             resourceInputs["links"] = state?.links;
             resourceInputs["metadata"] = state?.metadata;
             resourceInputs["name"] = state?.name;
-            resourceInputs["nextHop"] = state?.nextHop;
+            resourceInputs["nextHops"] = state?.nextHops;
             resourceInputs["priority"] = state?.priority;
+            resourceInputs["projectExtId"] = state?.projectExtId;
             resourceInputs["routeTableExtId"] = state?.routeTableExtId;
             resourceInputs["routeTableReference"] = state?.routeTableReference;
             resourceInputs["routeType"] = state?.routeType;
@@ -184,7 +189,8 @@ export class RoutesV2 extends pulumi.CustomResource {
             resourceInputs["externalRoutingDomainReference"] = args?.externalRoutingDomainReference;
             resourceInputs["metadata"] = args?.metadata;
             resourceInputs["name"] = args?.name;
-            resourceInputs["nextHop"] = args?.nextHop;
+            resourceInputs["nextHops"] = args?.nextHops;
+            resourceInputs["projectExtId"] = args?.projectExtId;
             resourceInputs["routeTableExtId"] = args?.routeTableExtId;
             resourceInputs["routeTableReference"] = args?.routeTableReference;
             resourceInputs["routeType"] = args?.routeType;
@@ -237,13 +243,17 @@ export interface RoutesV2State {
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * Route nexthop.
+     * Route nexthop. Supports multiple entries.
      */
-    nextHop?: pulumi.Input<inputs.RoutesV2NextHop | undefined>;
+    nextHops?: pulumi.Input<pulumi.Input<inputs.RoutesV2NextHop>[] | undefined>;
     /**
      * Route priority. A higher value implies greater preference is assigned to the route.
      */
     priority?: pulumi.Input<number | undefined>;
+    /**
+     * External identifier of the project associated with the Route.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
     /**
      * Route table UUID
      */
@@ -291,9 +301,13 @@ export interface RoutesV2Args {
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * Route nexthop.
+     * Route nexthop. Supports multiple entries.
      */
-    nextHop?: pulumi.Input<inputs.RoutesV2NextHop | undefined>;
+    nextHops?: pulumi.Input<pulumi.Input<inputs.RoutesV2NextHop>[] | undefined>;
+    /**
+     * External identifier of the project associated with the Route.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
     /**
      * Route table UUID
      */

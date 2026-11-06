@@ -25,7 +25,7 @@ class PromoteProtectedResourceV2Args:
 
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
                
-               See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
+               See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.4#tag/ProtectedResources/operation/promoteProtectedResource).
         """
         pulumi.set(__self__, "ext_id", ext_id)
 
@@ -35,7 +35,7 @@ class PromoteProtectedResourceV2Args:
         """
         -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
 
-        See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
+        See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.4#tag/ProtectedResources/operation/promoteProtectedResource).
         """
         return pulumi.get(self, "ext_id")
 
@@ -53,7 +53,7 @@ class _PromoteProtectedResourceV2State:
 
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
                
-               See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
+               See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.4#tag/ProtectedResources/operation/promoteProtectedResource).
         """
         if ext_id is not None:
             pulumi.set(__self__, "ext_id", ext_id)
@@ -64,7 +64,7 @@ class _PromoteProtectedResourceV2State:
         """
         -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
 
-        See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
+        See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.4#tag/ProtectedResources/operation/promoteProtectedResource).
         """
         return pulumi.get(self, "ext_id")
 
@@ -102,7 +102,7 @@ class PromoteProtectedResourceV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
                
-               See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
+               See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.4#tag/ProtectedResources/operation/promoteProtectedResource).
         """
         ...
     @overload
@@ -175,7 +175,7 @@ class PromoteProtectedResourceV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
                
-               See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
+               See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.4#tag/ProtectedResources/operation/promoteProtectedResource).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -198,7 +198,7 @@ class PromoteProtectedResourceV2(pulumi.CustomResource):
         """
         -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
 
-        See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/promoteProtectedResource).
+        See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.4#tag/ProtectedResources/operation/promoteProtectedResource).
         """
         return pulumi.get(self, "ext_id")
 

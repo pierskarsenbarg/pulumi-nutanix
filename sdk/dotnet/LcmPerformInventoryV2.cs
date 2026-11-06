@@ -30,6 +30,25 @@ namespace PiersKarsenbarg.Nutanix
     ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
     ///     });
     /// 
+    ///     // perform software-only inventory
+    ///     var softwareInventory = new Nutanix.LcmPerformInventoryV2("software_inventory", new()
+    ///     {
+    ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
+    ///         InventoryType = "SOFTWARE",
+    ///     });
+    /// 
+    ///     // perform node-specific inventory
+    ///     var nodeInventory = new Nutanix.LcmPerformInventoryV2("node_inventory", new()
+    ///     {
+    ///         XClusterId = "0005a104-0b0b-4b0b-8005-0b0b0b0b0b0b",
+    ///         InventoryType = "NODE",
+    ///         NodeLists = new[]
+    ///         {
+    ///             "node-uuid-1",
+    ///             "node-uuid-2",
+    ///         },
+    ///     });
+    /// 
     /// });
     /// ```
     /// &lt;!--End PulumiCodeChooser --&gt;
@@ -38,9 +57,28 @@ namespace PiersKarsenbarg.Nutanix
     public partial class LcmPerformInventoryV2 : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Cluster uuid on which the resource is present or operation is being performed.
+        /// The scope of the inventory scan to perform. When omitted, a full inventory is performed.
         /// 
-        /// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.2#tag/Inventory/operation/performInventory)
+        /// | Enum     | Description                                                                                                                                            |
+        /// |----------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+        /// | FULL     | Full inventory. Scans all nodes in the cluster for both software and firmware entities and checks the LCM repository for available updates.             |
+        /// | SOFTWARE | Software-only inventory. Scans only software entities (e.g. AOS, NCC, LCM framework) without scanning firmware components.                             |
+        /// | NODE     | Node-scoped inventory. Scans only the specific nodes listed in &lt;span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`"&gt;`nodeList`&lt;/span&gt;. Requires &lt;span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`"&gt;`nodeList`&lt;/span&gt; to be provided.                                       |
+        /// | RESCAN   | Rescan inventory. Re-checks the LCM repository for available updates without performing a full hardware scan of cluster nodes. Faster than FULL.        |
+        /// </summary>
+        [Output("inventoryType")]
+        public Output<string?> InventoryType { get; private set; } = null!;
+
+        /// <summary>
+        /// List of node UUIDs to inventory. Required when &lt;span pulumi-lang-nodejs="`inventoryType`" pulumi-lang-dotnet="`InventoryType`" pulumi-lang-go="`inventoryType`" pulumi-lang-python="`inventory_type`" pulumi-lang-yaml="`inventoryType`" pulumi-lang-java="`inventoryType`" pulumi-lang-hcl="`inventory_type`"&gt;`inventoryType`&lt;/span&gt; is set to `NODE`; ignored for other inventory types.
+        /// 
+        /// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.3#tag/Inventory/operation/performInventory)
+        /// </summary>
+        [Output("nodeLists")]
+        public Output<ImmutableArray<string>> NodeLists { get; private set; } = null!;
+
+        /// <summary>
+        /// Cluster uuid on which the resource is present or operation is being performed.
         /// </summary>
         [Output("xClusterId")]
         public Output<string?> XClusterId { get; private set; } = null!;
@@ -93,9 +131,34 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class LcmPerformInventoryV2Args : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Cluster uuid on which the resource is present or operation is being performed.
+        /// The scope of the inventory scan to perform. When omitted, a full inventory is performed.
         /// 
-        /// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.2#tag/Inventory/operation/performInventory)
+        /// | Enum     | Description                                                                                                                                            |
+        /// |----------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+        /// | FULL     | Full inventory. Scans all nodes in the cluster for both software and firmware entities and checks the LCM repository for available updates.             |
+        /// | SOFTWARE | Software-only inventory. Scans only software entities (e.g. AOS, NCC, LCM framework) without scanning firmware components.                             |
+        /// | NODE     | Node-scoped inventory. Scans only the specific nodes listed in &lt;span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`"&gt;`nodeList`&lt;/span&gt;. Requires &lt;span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`"&gt;`nodeList`&lt;/span&gt; to be provided.                                       |
+        /// | RESCAN   | Rescan inventory. Re-checks the LCM repository for available updates without performing a full hardware scan of cluster nodes. Faster than FULL.        |
+        /// </summary>
+        [Input("inventoryType")]
+        public Input<string>? InventoryType { get; set; }
+
+        [Input("nodeLists")]
+        private InputList<string>? _nodeLists;
+
+        /// <summary>
+        /// List of node UUIDs to inventory. Required when &lt;span pulumi-lang-nodejs="`inventoryType`" pulumi-lang-dotnet="`InventoryType`" pulumi-lang-go="`inventoryType`" pulumi-lang-python="`inventory_type`" pulumi-lang-yaml="`inventoryType`" pulumi-lang-java="`inventoryType`" pulumi-lang-hcl="`inventory_type`"&gt;`inventoryType`&lt;/span&gt; is set to `NODE`; ignored for other inventory types.
+        /// 
+        /// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.3#tag/Inventory/operation/performInventory)
+        /// </summary>
+        public InputList<string> NodeLists
+        {
+            get => _nodeLists ?? (_nodeLists = new InputList<string>());
+            set => _nodeLists = value;
+        }
+
+        /// <summary>
+        /// Cluster uuid on which the resource is present or operation is being performed.
         /// </summary>
         [Input("xClusterId")]
         public Input<string>? XClusterId { get; set; }
@@ -109,9 +172,34 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class LcmPerformInventoryV2State : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Cluster uuid on which the resource is present or operation is being performed.
+        /// The scope of the inventory scan to perform. When omitted, a full inventory is performed.
         /// 
-        /// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.2#tag/Inventory/operation/performInventory)
+        /// | Enum     | Description                                                                                                                                            |
+        /// |----------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+        /// | FULL     | Full inventory. Scans all nodes in the cluster for both software and firmware entities and checks the LCM repository for available updates.             |
+        /// | SOFTWARE | Software-only inventory. Scans only software entities (e.g. AOS, NCC, LCM framework) without scanning firmware components.                             |
+        /// | NODE     | Node-scoped inventory. Scans only the specific nodes listed in &lt;span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`"&gt;`nodeList`&lt;/span&gt;. Requires &lt;span pulumi-lang-nodejs="`nodeList`" pulumi-lang-dotnet="`NodeList`" pulumi-lang-go="`nodeList`" pulumi-lang-python="`node_list`" pulumi-lang-yaml="`nodeList`" pulumi-lang-java="`nodeList`" pulumi-lang-hcl="`node_list`"&gt;`nodeList`&lt;/span&gt; to be provided.                                       |
+        /// | RESCAN   | Rescan inventory. Re-checks the LCM repository for available updates without performing a full hardware scan of cluster nodes. Faster than FULL.        |
+        /// </summary>
+        [Input("inventoryType")]
+        public Input<string>? InventoryType { get; set; }
+
+        [Input("nodeLists")]
+        private InputList<string>? _nodeLists;
+
+        /// <summary>
+        /// List of node UUIDs to inventory. Required when &lt;span pulumi-lang-nodejs="`inventoryType`" pulumi-lang-dotnet="`InventoryType`" pulumi-lang-go="`inventoryType`" pulumi-lang-python="`inventory_type`" pulumi-lang-yaml="`inventoryType`" pulumi-lang-java="`inventoryType`" pulumi-lang-hcl="`inventory_type`"&gt;`inventoryType`&lt;/span&gt; is set to `NODE`; ignored for other inventory types.
+        /// 
+        /// See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&amp;version=v4.3#tag/Inventory/operation/performInventory)
+        /// </summary>
+        public InputList<string> NodeLists
+        {
+            get => _nodeLists ?? (_nodeLists = new InputList<string>());
+            set => _nodeLists = value;
+        }
+
+        /// <summary>
+        /// Cluster uuid on which the resource is present or operation is being performed.
         /// </summary>
         [Input("xClusterId")]
         public Input<string>? XClusterId { get; set; }

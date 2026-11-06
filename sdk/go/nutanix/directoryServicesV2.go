@@ -12,48 +12,9 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// > **Note:** This resource is in Beta because the underlying Nutanix SDK API is currently in Beta. The resource and its behavior may change in future releases as the SDK API evolves.
+//
 // Provides a resource to Create a Directory Service.
-//
-// ## Example Usage
-//
-// <!--Start PulumiCodeChooser -->
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			// Add Directory Service .
-//			_, err := nutanix.NewDirectoryServicesV2(ctx, "active-directory", &nutanix.DirectoryServicesV2Args{
-//				Name:          pulumi.String("example_active_directory"),
-//				Url:           pulumi.String("ldap://10.xx.xx.xx:xxxx"),
-//				DirectoryType: pulumi.String("ACTIVE_DIRECTORY"),
-//				DomainName:    pulumi.String("nutanix.com"),
-//				ServiceAccounts: nutanix.DirectoryServicesV2ServiceAccountArray{
-//					&nutanix.DirectoryServicesV2ServiceAccountArgs{
-//						Username: pulumi.String("username"),
-//						Password: pulumi.String("password"),
-//					},
-//				},
-//				WhiteListedGroups: pulumi.StringArray{
-//					pulumi.String("example"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// <!--End PulumiCodeChooser -->
 type DirectoryServicesV2 struct {
 	pulumi.CustomResourceState
 
@@ -75,10 +36,16 @@ type DirectoryServicesV2 struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// -(Optional) Configuration for OpenLDAP Directory Service.
 	OpenLdapConfigurations DirectoryServicesV2OpenLdapConfigurationArrayOutput `pulumi:"openLdapConfigurations"`
+	// -(Optional) Project reference for the Directory Service.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
 	// -(Optional) Secondary URL for the Directory Service.
 	SecondaryUrls pulumi.StringArrayOutput `pulumi:"secondaryUrls"`
 	// -(Required) Information of Service account to connect to the Directory Service.
 	ServiceAccounts DirectoryServicesV2ServiceAccountArrayOutput `pulumi:"serviceAccounts"`
+	// -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+	ShareWithAllProjects pulumi.BoolOutput `pulumi:"shareWithAllProjects"`
+	// -(Optional) List of projects with which the directory service is shared.
+	SharedWithProjects pulumi.StringArrayOutput `pulumi:"sharedWithProjects"`
 	// -(Required) URL for the Directory Service.
 	Url pulumi.StringOutput `pulumi:"url"`
 	// -(Optional) List of allowed User Groups for the Directory Service.
@@ -145,10 +112,16 @@ type directoryServicesV2State struct {
 	Name *string `pulumi:"name"`
 	// -(Optional) Configuration for OpenLDAP Directory Service.
 	OpenLdapConfigurations []DirectoryServicesV2OpenLdapConfiguration `pulumi:"openLdapConfigurations"`
+	// -(Optional) Project reference for the Directory Service.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// -(Optional) Secondary URL for the Directory Service.
 	SecondaryUrls []string `pulumi:"secondaryUrls"`
 	// -(Required) Information of Service account to connect to the Directory Service.
 	ServiceAccounts []DirectoryServicesV2ServiceAccount `pulumi:"serviceAccounts"`
+	// -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+	ShareWithAllProjects *bool `pulumi:"shareWithAllProjects"`
+	// -(Optional) List of projects with which the directory service is shared.
+	SharedWithProjects []string `pulumi:"sharedWithProjects"`
 	// -(Required) URL for the Directory Service.
 	Url *string `pulumi:"url"`
 	// -(Optional) List of allowed User Groups for the Directory Service.
@@ -174,10 +147,16 @@ type DirectoryServicesV2State struct {
 	Name pulumi.StringPtrInput
 	// -(Optional) Configuration for OpenLDAP Directory Service.
 	OpenLdapConfigurations DirectoryServicesV2OpenLdapConfigurationArrayInput
+	// -(Optional) Project reference for the Directory Service.
+	ProjectExtId pulumi.StringPtrInput
 	// -(Optional) Secondary URL for the Directory Service.
 	SecondaryUrls pulumi.StringArrayInput
 	// -(Required) Information of Service account to connect to the Directory Service.
 	ServiceAccounts DirectoryServicesV2ServiceAccountArrayInput
+	// -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+	ShareWithAllProjects pulumi.BoolPtrInput
+	// -(Optional) List of projects with which the directory service is shared.
+	SharedWithProjects pulumi.StringArrayInput
 	// -(Required) URL for the Directory Service.
 	Url pulumi.StringPtrInput
 	// -(Optional) List of allowed User Groups for the Directory Service.
@@ -207,10 +186,16 @@ type directoryServicesV2Args struct {
 	Name *string `pulumi:"name"`
 	// -(Optional) Configuration for OpenLDAP Directory Service.
 	OpenLdapConfigurations []DirectoryServicesV2OpenLdapConfiguration `pulumi:"openLdapConfigurations"`
+	// -(Optional) Project reference for the Directory Service.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// -(Optional) Secondary URL for the Directory Service.
 	SecondaryUrls []string `pulumi:"secondaryUrls"`
 	// -(Required) Information of Service account to connect to the Directory Service.
 	ServiceAccounts []DirectoryServicesV2ServiceAccount `pulumi:"serviceAccounts"`
+	// -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+	ShareWithAllProjects *bool `pulumi:"shareWithAllProjects"`
+	// -(Optional) List of projects with which the directory service is shared.
+	SharedWithProjects []string `pulumi:"sharedWithProjects"`
 	// -(Required) URL for the Directory Service.
 	Url string `pulumi:"url"`
 	// -(Optional) List of allowed User Groups for the Directory Service.
@@ -231,10 +216,16 @@ type DirectoryServicesV2Args struct {
 	Name pulumi.StringPtrInput
 	// -(Optional) Configuration for OpenLDAP Directory Service.
 	OpenLdapConfigurations DirectoryServicesV2OpenLdapConfigurationArrayInput
+	// -(Optional) Project reference for the Directory Service.
+	ProjectExtId pulumi.StringPtrInput
 	// -(Optional) Secondary URL for the Directory Service.
 	SecondaryUrls pulumi.StringArrayInput
 	// -(Required) Information of Service account to connect to the Directory Service.
 	ServiceAccounts DirectoryServicesV2ServiceAccountArrayInput
+	// -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+	ShareWithAllProjects pulumi.BoolPtrInput
+	// -(Optional) List of projects with which the directory service is shared.
+	SharedWithProjects pulumi.StringArrayInput
 	// -(Required) URL for the Directory Service.
 	Url pulumi.StringInput
 	// -(Optional) List of allowed User Groups for the Directory Service.
@@ -375,6 +366,11 @@ func (o DirectoryServicesV2Output) OpenLdapConfigurations() DirectoryServicesV2O
 	}).(DirectoryServicesV2OpenLdapConfigurationArrayOutput)
 }
 
+// -(Optional) Project reference for the Directory Service.
+func (o DirectoryServicesV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DirectoryServicesV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
+}
+
 // -(Optional) Secondary URL for the Directory Service.
 func (o DirectoryServicesV2Output) SecondaryUrls() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DirectoryServicesV2) pulumi.StringArrayOutput { return v.SecondaryUrls }).(pulumi.StringArrayOutput)
@@ -383,6 +379,16 @@ func (o DirectoryServicesV2Output) SecondaryUrls() pulumi.StringArrayOutput {
 // -(Required) Information of Service account to connect to the Directory Service.
 func (o DirectoryServicesV2Output) ServiceAccounts() DirectoryServicesV2ServiceAccountArrayOutput {
 	return o.ApplyT(func(v *DirectoryServicesV2) DirectoryServicesV2ServiceAccountArrayOutput { return v.ServiceAccounts }).(DirectoryServicesV2ServiceAccountArrayOutput)
+}
+
+// -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+func (o DirectoryServicesV2Output) ShareWithAllProjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DirectoryServicesV2) pulumi.BoolOutput { return v.ShareWithAllProjects }).(pulumi.BoolOutput)
+}
+
+// -(Optional) List of projects with which the directory service is shared.
+func (o DirectoryServicesV2Output) SharedWithProjects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DirectoryServicesV2) pulumi.StringArrayOutput { return v.SharedWithProjects }).(pulumi.StringArrayOutput)
 }
 
 // -(Required) URL for the Directory Service.

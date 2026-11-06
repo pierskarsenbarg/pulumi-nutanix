@@ -14,7 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class VolumeGroupV2IscsiFeatureArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - The authentication type enabled for the Volume Group.
+        /// -(Optional) The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
         /// </summary>
         [Input("enabledAuthentications")]
         public Input<string>? EnabledAuthentications { get; set; }

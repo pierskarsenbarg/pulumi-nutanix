@@ -423,6 +423,10 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string PrivateIp;
         /// <summary>
+        /// External identifier of the project associated with the Floating IP.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity.
         /// </summary>
         public readonly string TenantId;
@@ -471,6 +475,8 @@ namespace PiersKarsenbarg.Nutanix
 
             string privateIp,
 
+            string projectExtId,
+
             string tenantId,
 
             string vmNicReference,
@@ -494,6 +500,7 @@ namespace PiersKarsenbarg.Nutanix
             Metadatas = metadatas;
             Name = name;
             PrivateIp = privateIp;
+            ProjectExtId = projectExtId;
             TenantId = tenantId;
             VmNicReference = vmNicReference;
             VmNics = vmNics;

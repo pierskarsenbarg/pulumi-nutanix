@@ -53,7 +53,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// -(Required) New password for a user account.
         /// 
-        /// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
+        /// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         /// </summary>
         [Output("newPassword")]
         public Output<string> NewPassword { get; private set; } = null!;
@@ -120,7 +120,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// -(Required) New password for a user account.
         /// 
-        /// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
+        /// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         /// </summary>
         [Input("newPassword", required: true)]
         public Input<string> NewPassword { get; set; } = null!;
@@ -148,7 +148,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// -(Required) New password for a user account.
         /// 
-        /// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
+        /// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         /// </summary>
         [Input("newPassword")]
         public Input<string>? NewPassword { get; set; }

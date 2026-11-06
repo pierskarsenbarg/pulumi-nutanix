@@ -59,11 +59,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string? SecuredGroupCategoryAssociatedEntityType;
         /// <summary>
-        /// A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories.
+        /// A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories. Exactly one of &lt;span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`"&gt;`securedGroupCategoryReferences`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`"&gt;`securedGroupEntityGroupReference`&lt;/span&gt; must be set.
         /// </summary>
         public readonly ImmutableArray<string> SecuredGroupCategoryReferences;
         /// <summary>
-        /// Reference to the secured group entity group.
+        /// Reference to the secured group entity group. Exactly one of &lt;span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`"&gt;`securedGroupCategoryReferences`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`"&gt;`securedGroupEntityGroupReference`&lt;/span&gt; must be set.
         /// </summary>
         public readonly string? SecuredGroupEntityGroupReference;
         /// <summary>

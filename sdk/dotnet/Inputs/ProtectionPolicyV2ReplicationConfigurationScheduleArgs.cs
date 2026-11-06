@@ -14,6 +14,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class ProtectionPolicyV2ReplicationConfigurationScheduleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// -(Optional) Indicates whether replication is paused for all VMs and volume groups associated with the remote replication location. Ignored in create requests, only used in update requests. Only 0 RPO schedules support this field. Pause replication is not supported for asynchronous or near synchronous replications.
+        /// </summary>
+        [Input("isReplicationPaused")]
+        public Input<bool>? IsReplicationPaused { get; set; }
+
+        /// <summary>
+        /// -(Optional) Duration (in seconds) that the latest recovery point is retained past its expiry time if the entity is unprotected, deleted, or migrated. If not specified, the latest recovery point will be retained for a minimum of 30 days. Set to 0 to not retain past expiry. This attribute is only applicable to asynchronous replication (&lt;span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds`" pulumi-lang-go="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-python="`recovery_point_objective_time_seconds`" pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-java="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-hcl="`recovery_point_objective_time_seconds`"&gt;`recoveryPointObjectiveTimeSeconds`&lt;/span&gt; &gt; 0); it must not be specified for synchronous replication (&lt;span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds`" pulumi-lang-go="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-python="`recovery_point_objective_time_seconds`" pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-java="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-hcl="`recovery_point_objective_time_seconds`"&gt;`recoveryPointObjectiveTimeSeconds`&lt;/span&gt; = 0).
+        /// </summary>
+        [Input("latestRecoveryPointRetentionSeconds")]
+        public Input<int>? LatestRecoveryPointRetentionSeconds { get; set; }
+
+        /// <summary>
         /// -(Required) The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
         /// - Minute(s): 1, 2, 3, 4, 5, 6, 10, 12, 15
         /// - Hour(s): 1, 2, 3, 4, 6, 8, 12
@@ -36,6 +48,12 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// </summary>
         [Input("retention")]
         public Input<Inputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionArgs>? Retention { get; set; }
+
+        /// <summary>
+        /// -(Optional) System-generated schedule ID for the replication configuration. Must not be provided in create requests. In update requests, it can be included to identify and retain the same schedule.
+        /// </summary>
+        [Input("scheduleExtId")]
+        public Input<string>? ScheduleExtId { get; set; }
 
         /// <summary>
         /// -(Optional) Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.

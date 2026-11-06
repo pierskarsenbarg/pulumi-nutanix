@@ -73,6 +73,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string HardwareVendor;
         /// <summary>
+        /// (default &lt;span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`"&gt;`false`&lt;/span&gt;) Indicates whether the most recent inventory operation failed for this entity. When true, the entity's version or available-version data may be stale.
+        /// </summary>
+        public readonly bool HasPreviousInventoryFailed;
+        /// <summary>
         /// UTC date and time in RFC-3339 format when the task was last updated.
         /// </summary>
         public readonly string LastUpdatedTime;
@@ -127,6 +131,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string hardwareVendor,
 
+            bool hasPreviousInventoryFailed,
+
             string lastUpdatedTime,
 
             ImmutableArray<Outputs.GetLcmEntitiesV2EntityLinkResult> links,
@@ -153,6 +159,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             GroupUuid = groupUuid;
             HardwareFamily = hardwareFamily;
             HardwareVendor = hardwareVendor;
+            HasPreviousInventoryFailed = hasPreviousInventoryFailed;
             LastUpdatedTime = lastUpdatedTime;
             Links = links;
             LocationInfos = locationInfos;

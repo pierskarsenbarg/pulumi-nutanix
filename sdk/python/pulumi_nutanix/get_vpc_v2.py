@@ -27,7 +27,7 @@ class GetVpcV2Result:
     """
     A collection of values returned by getVpcV2.
     """
-    def __init__(__self__, common_dhcp_options=None, description=None, ext_id=None, external_routing_domain_reference=None, external_subnets=None, externally_routable_prefixes=None, id=None, links=None, metadatas=None, name=None, snat_ips=None, tenant_id=None, vpc_type=None):
+    def __init__(__self__, common_dhcp_options=None, description=None, ext_id=None, external_routing_domain_reference=None, external_subnets=None, externally_routable_prefixes=None, id=None, kubernetes_clusters=None, links=None, metadatas=None, name=None, project_ext_id=None, scope=None, shared_with_projects=None, should_advertise_connected_subnets=None, snat_ips=None, supported_multiple_external_subnet_type=None, tenant_id=None, vpc_type=None):
         if common_dhcp_options and not isinstance(common_dhcp_options, list):
             raise TypeError("Expected argument 'common_dhcp_options' to be a list")
         pulumi.set(__self__, "common_dhcp_options", common_dhcp_options)
@@ -49,6 +49,9 @@ class GetVpcV2Result:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if kubernetes_clusters and not isinstance(kubernetes_clusters, list):
+            raise TypeError("Expected argument 'kubernetes_clusters' to be a list")
+        pulumi.set(__self__, "kubernetes_clusters", kubernetes_clusters)
         if links and not isinstance(links, list):
             raise TypeError("Expected argument 'links' to be a list")
         pulumi.set(__self__, "links", links)
@@ -58,9 +61,24 @@ class GetVpcV2Result:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
+        if scope and not isinstance(scope, str):
+            raise TypeError("Expected argument 'scope' to be a str")
+        pulumi.set(__self__, "scope", scope)
+        if shared_with_projects and not isinstance(shared_with_projects, list):
+            raise TypeError("Expected argument 'shared_with_projects' to be a list")
+        pulumi.set(__self__, "shared_with_projects", shared_with_projects)
+        if should_advertise_connected_subnets and not isinstance(should_advertise_connected_subnets, bool):
+            raise TypeError("Expected argument 'should_advertise_connected_subnets' to be a bool")
+        pulumi.set(__self__, "should_advertise_connected_subnets", should_advertise_connected_subnets)
         if snat_ips and not isinstance(snat_ips, list):
             raise TypeError("Expected argument 'snat_ips' to be a list")
         pulumi.set(__self__, "snat_ips", snat_ips)
+        if supported_multiple_external_subnet_type and not isinstance(supported_multiple_external_subnet_type, str):
+            raise TypeError("Expected argument 'supported_multiple_external_subnet_type' to be a str")
+        pulumi.set(__self__, "supported_multiple_external_subnet_type", supported_multiple_external_subnet_type)
         if tenant_id and not isinstance(tenant_id, str):
             raise TypeError("Expected argument 'tenant_id' to be a str")
         pulumi.set(__self__, "tenant_id", tenant_id)
@@ -87,6 +105,9 @@ class GetVpcV2Result:
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> _builtins.str:
+        """
+        ExtID of the Kubernetes cluster.
+        """
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
@@ -122,6 +143,14 @@ class GetVpcV2Result:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="kubernetesClusters")
+    def kubernetes_clusters(self) -> Sequence['outputs.GetVpcV2KubernetesClusterResult']:
+        """
+        List of Kubernetes clusters associated with the VPC.
+        """
+        return pulumi.get(self, "kubernetes_clusters")
+
+    @_builtins.property
     @pulumi.getter
     def links(self) -> Sequence['outputs.GetVpcV2LinkResult']:
         """
@@ -146,12 +175,52 @@ class GetVpcV2Result:
         return pulumi.get(self, "name")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        External identifier of the project associated with the VPC.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def scope(self) -> _builtins.str:
+        """
+        VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+        """
+        return pulumi.get(self, "scope")
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithProjects")
+    def shared_with_projects(self) -> Sequence[_builtins.str]:
+        """
+        List of project external identifiers with which the VPC is shared.
+        """
+        return pulumi.get(self, "shared_with_projects")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldAdvertiseConnectedSubnets")
+    def should_advertise_connected_subnets(self) -> _builtins.bool:
+        """
+        When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes.
+        """
+        return pulumi.get(self, "should_advertise_connected_subnets")
+
+    @_builtins.property
     @pulumi.getter(name="snatIps")
     def snat_ips(self) -> Sequence['outputs.GetVpcV2SnatIpResult']:
         """
         List of IP Addresses used for SNAT.
         """
         return pulumi.get(self, "snat_ips")
+
+    @_builtins.property
+    @pulumi.getter(name="supportedMultipleExternalSubnetType")
+    def supported_multiple_external_subnet_type(self) -> _builtins.str:
+        """
+        Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+        """
+        return pulumi.get(self, "supported_multiple_external_subnet_type")
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
@@ -183,10 +252,16 @@ class AwaitableGetVpcV2Result(GetVpcV2Result):
             external_subnets=self.external_subnets,
             externally_routable_prefixes=self.externally_routable_prefixes,
             id=self.id,
+            kubernetes_clusters=self.kubernetes_clusters,
             links=self.links,
             metadatas=self.metadatas,
             name=self.name,
+            project_ext_id=self.project_ext_id,
+            scope=self.scope,
+            shared_with_projects=self.shared_with_projects,
+            should_advertise_connected_subnets=self.should_advertise_connected_subnets,
             snat_ips=self.snat_ips,
+            supported_multiple_external_subnet_type=self.supported_multiple_external_subnet_type,
             tenant_id=self.tenant_id,
             vpc_type=self.vpc_type)
 
@@ -223,10 +298,16 @@ def get_vpc_v2(ext_id: Optional[_builtins.str] = None,
         external_subnets=pulumi.get(__ret__, 'external_subnets'),
         externally_routable_prefixes=pulumi.get(__ret__, 'externally_routable_prefixes'),
         id=pulumi.get(__ret__, 'id'),
+        kubernetes_clusters=pulumi.get(__ret__, 'kubernetes_clusters'),
         links=pulumi.get(__ret__, 'links'),
         metadatas=pulumi.get(__ret__, 'metadatas'),
         name=pulumi.get(__ret__, 'name'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
+        scope=pulumi.get(__ret__, 'scope'),
+        shared_with_projects=pulumi.get(__ret__, 'shared_with_projects'),
+        should_advertise_connected_subnets=pulumi.get(__ret__, 'should_advertise_connected_subnets'),
         snat_ips=pulumi.get(__ret__, 'snat_ips'),
+        supported_multiple_external_subnet_type=pulumi.get(__ret__, 'supported_multiple_external_subnet_type'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         vpc_type=pulumi.get(__ret__, 'vpc_type'))
 def get_vpc_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -260,9 +341,15 @@ def get_vpc_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
         external_subnets=pulumi.get(__response__, 'external_subnets'),
         externally_routable_prefixes=pulumi.get(__response__, 'externally_routable_prefixes'),
         id=pulumi.get(__response__, 'id'),
+        kubernetes_clusters=pulumi.get(__response__, 'kubernetes_clusters'),
         links=pulumi.get(__response__, 'links'),
         metadatas=pulumi.get(__response__, 'metadatas'),
         name=pulumi.get(__response__, 'name'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
+        scope=pulumi.get(__response__, 'scope'),
+        shared_with_projects=pulumi.get(__response__, 'shared_with_projects'),
+        should_advertise_connected_subnets=pulumi.get(__response__, 'should_advertise_connected_subnets'),
         snat_ips=pulumi.get(__response__, 'snat_ips'),
+        supported_multiple_external_subnet_type=pulumi.get(__response__, 'supported_multiple_external_subnet_type'),
         tenant_id=pulumi.get(__response__, 'tenant_id'),
         vpc_type=pulumi.get(__response__, 'vpc_type')))

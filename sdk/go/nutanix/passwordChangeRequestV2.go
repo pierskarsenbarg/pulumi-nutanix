@@ -52,7 +52,7 @@ type PasswordChangeRequestV2 struct {
 	ExtId pulumi.StringOutput `pulumi:"extId"`
 	// -(Required) New password for a user account.
 	//
-	// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
+	// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
 	NewPassword pulumi.StringOutput `pulumi:"newPassword"`
 }
 
@@ -98,7 +98,7 @@ type passwordChangeRequestV2State struct {
 	ExtId *string `pulumi:"extId"`
 	// -(Required) New password for a user account.
 	//
-	// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
+	// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
 	NewPassword *string `pulumi:"newPassword"`
 }
 
@@ -109,7 +109,7 @@ type PasswordChangeRequestV2State struct {
 	ExtId pulumi.StringPtrInput
 	// -(Required) New password for a user account.
 	//
-	// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
+	// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
 	NewPassword pulumi.StringPtrInput
 }
 
@@ -130,7 +130,7 @@ type passwordChangeRequestV2Args struct {
 	ExtId string `pulumi:"extId"`
 	// -(Required) New password for a user account.
 	//
-	// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
+	// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
 	NewPassword string `pulumi:"newPassword"`
 }
 
@@ -142,7 +142,7 @@ type PasswordChangeRequestV2Args struct {
 	ExtId pulumi.StringInput
 	// -(Required) New password for a user account.
 	//
-	// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
+	// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
 	NewPassword pulumi.StringInput
 }
 
@@ -245,7 +245,7 @@ func (o PasswordChangeRequestV2Output) ExtId() pulumi.StringOutput {
 
 // -(Required) New password for a user account.
 //
-// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/PasswordManager/operation/changeSystemUserPasswordById).
+// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
 func (o PasswordChangeRequestV2Output) NewPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *PasswordChangeRequestV2) pulumi.StringOutput { return v.NewPassword }).(pulumi.StringOutput)
 }

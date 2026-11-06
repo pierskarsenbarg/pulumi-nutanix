@@ -78,7 +78,7 @@ namespace PiersKarsenbarg.Nutanix
     /// ```
     /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
-    /// See detailed information in [Nutanix VM-Host Affinity Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/VmHostAffinityPolicies)
+    /// See detailed information in [Nutanix VM-Host Affinity Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.3#tag/VmHostAffinityPolicies/operation/createVmHostAffinityPolicy)
     /// </summary>
     [NutanixResourceType("nutanix:index/vmHostAffinityPolicyV2:VmHostAffinityPolicyV2")]
     public partial class VmHostAffinityPolicyV2 : global::Pulumi.CustomResource

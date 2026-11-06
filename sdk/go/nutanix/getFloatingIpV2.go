@@ -83,6 +83,8 @@ type LookupFloatingIpV2Result struct {
 	Name string `pulumi:"name"`
 	// Private IP value in string
 	PrivateIp string `pulumi:"privateIp"`
+	// External identifier of the project associated with the Floating IP.
+	ProjectExtId string `pulumi:"projectExtId"`
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId string `pulumi:"tenantId"`
 	// VM NIC reference.
@@ -187,6 +189,11 @@ func (o LookupFloatingIpV2ResultOutput) Name() pulumi.StringOutput {
 // Private IP value in string
 func (o LookupFloatingIpV2ResultOutput) PrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFloatingIpV2Result) string { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
+// External identifier of the project associated with the Floating IP.
+func (o LookupFloatingIpV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupFloatingIpV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // A globally unique identifier that represents the tenant that owns this entity.

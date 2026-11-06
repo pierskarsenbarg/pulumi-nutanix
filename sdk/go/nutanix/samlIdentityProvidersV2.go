@@ -11,93 +11,9 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// > **Note:** This resource is in Beta because the underlying Nutanix SDK API is currently in Beta. The resource and its behavior may change in future releases as the SDK API evolves.
+//
 // Provides a resource to Create a SAML Identity Provider.
-//
-// ## Example Usage
-//
-// <!--Start PulumiCodeChooser -->
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewSamlIdentityProvidersV2(ctx, "idp", &nutanix.SamlIdentityProvidersV2Args{
-//				Name: pulumi.String("example_idp_name"),
-//				IdpMetadatas: nutanix.SamlIdentityProvidersV2IdpMetadataArray{
-//					&nutanix.SamlIdentityProvidersV2IdpMetadataArgs{
-//						EntityId:    pulumi.String("entity_id"),
-//						LoginUrl:    pulumi.String("login_url"),
-//						LogoutUrl:   pulumi.String("logout_url"),
-//						ErrorUrl:    pulumi.String("error_url"),
-//						Certificate: pulumi.String("certificate"),
-//					},
-//				},
-//				UsernameAttribute:       pulumi.String("username"),
-//				EmailAttribute:          pulumi.String("email"),
-//				GroupsAttribute:         pulumi.String("groups"),
-//				GroupsDelim:             pulumi.String(","),
-//				IdpMetadataXml:          pulumi.String("<IDENTITY_PROVIDER_METADATA_XML content>"),
-//				EntityIssuer:            pulumi.String("entity_issuer_issuer"),
-//				IsSignedAuthnReqEnabled: pulumi.Bool(true),
-//				CustomAttributes: pulumi.StringArray{
-//					pulumi.String("custom1"),
-//					pulumi.String("custom2"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// <!--End PulumiCodeChooser -->
-//
-// ## Argument Reference
-//
-// The following arguments are supported:
-//
-// * <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span>: -(Optional) External identifier of the SAML Identity Provider.
-// * <span pulumi-lang-nodejs="`idpMetadataUrl`" pulumi-lang-dotnet="`IdpMetadataUrl`" pulumi-lang-go="`idpMetadataUrl`" pulumi-lang-python="`idp_metadata_url`" pulumi-lang-yaml="`idpMetadataUrl`" pulumi-lang-java="`idpMetadataUrl`" pulumi-lang-hcl="`idp_metadata_url`">`idpMetadataUrl`</span>: -(Optional) Metadata url that provides IDP details.
-// * <span pulumi-lang-nodejs="`idpMetadataXml`" pulumi-lang-dotnet="`IdpMetadataXml`" pulumi-lang-go="`idpMetadataXml`" pulumi-lang-python="`idp_metadata_xml`" pulumi-lang-yaml="`idpMetadataXml`" pulumi-lang-java="`idpMetadataXml`" pulumi-lang-hcl="`idp_metadata_xml`">`idpMetadataXml`</span>: -(Optional) Base64 encoded metadata in XML format with IDP details.
-// * <span pulumi-lang-nodejs="`idpMetadata`" pulumi-lang-dotnet="`IdpMetadata`" pulumi-lang-go="`idpMetadata`" pulumi-lang-python="`idp_metadata`" pulumi-lang-yaml="`idpMetadata`" pulumi-lang-java="`idpMetadata`" pulumi-lang-hcl="`idp_metadata`">`idpMetadata`</span>: -(Optional) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
-// * <span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`">`name`</span>: -(Required) Unique name of the IDP.
-// * <span pulumi-lang-nodejs="`usernameAttr`" pulumi-lang-dotnet="`UsernameAttr`" pulumi-lang-go="`usernameAttr`" pulumi-lang-python="`username_attr`" pulumi-lang-yaml="`usernameAttr`" pulumi-lang-java="`usernameAttr`" pulumi-lang-hcl="`username_attr`">`usernameAttr`</span>: -(Optional) SAML assertion Username attribute element.
-// * <span pulumi-lang-nodejs="`emailAttr`" pulumi-lang-dotnet="`EmailAttr`" pulumi-lang-go="`emailAttr`" pulumi-lang-python="`email_attr`" pulumi-lang-yaml="`emailAttr`" pulumi-lang-java="`emailAttr`" pulumi-lang-hcl="`email_attr`">`emailAttr`</span>: -(Optional) SAML assertion email attribute element.
-// * <span pulumi-lang-nodejs="`groupsAttr`" pulumi-lang-dotnet="`GroupsAttr`" pulumi-lang-go="`groupsAttr`" pulumi-lang-python="`groups_attr`" pulumi-lang-yaml="`groupsAttr`" pulumi-lang-java="`groupsAttr`" pulumi-lang-hcl="`groups_attr`">`groupsAttr`</span>: -(Optional) SAML assertion groups attribute element.
-// * <span pulumi-lang-nodejs="`groupsDelim`" pulumi-lang-dotnet="`GroupsDelim`" pulumi-lang-go="`groupsDelim`" pulumi-lang-python="`groups_delim`" pulumi-lang-yaml="`groupsDelim`" pulumi-lang-java="`groupsDelim`" pulumi-lang-hcl="`groups_delim`">`groupsDelim`</span>: -(Optional) Delimiter is used to split the value of attribute into multiple groups.
-// * <span pulumi-lang-nodejs="`customAttr`" pulumi-lang-dotnet="`CustomAttr`" pulumi-lang-go="`customAttr`" pulumi-lang-python="`custom_attr`" pulumi-lang-yaml="`customAttr`" pulumi-lang-java="`customAttr`" pulumi-lang-hcl="`custom_attr`">`customAttr`</span>: -(Optional) SAML assertions for list of custom attribute elements.
-// * <span pulumi-lang-nodejs="`entityIssuer`" pulumi-lang-dotnet="`EntityIssuer`" pulumi-lang-go="`entityIssuer`" pulumi-lang-python="`entity_issuer`" pulumi-lang-yaml="`entityIssuer`" pulumi-lang-java="`entityIssuer`" pulumi-lang-hcl="`entity_issuer`">`entityIssuer`</span>: -(Optional) It will be used as Issuer in SAML authnRequest.
-// * <span pulumi-lang-nodejs="`isSignedAuthnReqEnabled`" pulumi-lang-dotnet="`IsSignedAuthnReqEnabled`" pulumi-lang-go="`isSignedAuthnReqEnabled`" pulumi-lang-python="`is_signed_authn_req_enabled`" pulumi-lang-yaml="`isSignedAuthnReqEnabled`" pulumi-lang-java="`isSignedAuthnReqEnabled`" pulumi-lang-hcl="`is_signed_authn_req_enabled`">`isSignedAuthnReqEnabled`</span>: -(Optional) Flag indicating signing of SAML authnRequests.
-//
-// ### Idp Metadata
-//
-// The<span pulumi-lang-nodejs=" idpMetadata " pulumi-lang-dotnet=" IdpMetadata " pulumi-lang-go=" idpMetadata " pulumi-lang-python=" idp_metadata " pulumi-lang-yaml=" idpMetadata " pulumi-lang-java=" idpMetadata " pulumi-lang-hcl=" idp_metadata "> idpMetadata </span>attribute supports the following:
-//
-// * <span pulumi-lang-nodejs="`entityId`" pulumi-lang-dotnet="`EntityId`" pulumi-lang-go="`entityId`" pulumi-lang-python="`entity_id`" pulumi-lang-yaml="`entityId`" pulumi-lang-java="`entityId`" pulumi-lang-hcl="`entity_id`">`entityId`</span>: -(Required) Entity Identifier of Identity provider.
-// * <span pulumi-lang-nodejs="`loginUrl`" pulumi-lang-dotnet="`LoginUrl`" pulumi-lang-go="`loginUrl`" pulumi-lang-python="`login_url`" pulumi-lang-yaml="`loginUrl`" pulumi-lang-java="`loginUrl`" pulumi-lang-hcl="`login_url`">`loginUrl`</span>: -(Required) Login URL of the Identity provider.
-// * <span pulumi-lang-nodejs="`logoutUrl`" pulumi-lang-dotnet="`LogoutUrl`" pulumi-lang-go="`logoutUrl`" pulumi-lang-python="`logout_url`" pulumi-lang-yaml="`logoutUrl`" pulumi-lang-java="`logoutUrl`" pulumi-lang-hcl="`logout_url`">`logoutUrl`</span>: -(Optional) Logout URL of the Identity provider.
-// * <span pulumi-lang-nodejs="`errorUrl`" pulumi-lang-dotnet="`ErrorUrl`" pulumi-lang-go="`errorUrl`" pulumi-lang-python="`error_url`" pulumi-lang-yaml="`errorUrl`" pulumi-lang-java="`errorUrl`" pulumi-lang-hcl="`error_url`">`errorUrl`</span>: - (Optional) Error URL of the Identity provider.
-// * <span pulumi-lang-nodejs="`certificate`" pulumi-lang-dotnet="`Certificate`" pulumi-lang-go="`certificate`" pulumi-lang-python="`certificate`" pulumi-lang-yaml="`certificate`" pulumi-lang-java="`certificate`" pulumi-lang-hcl="`certificate`">`certificate`</span>: -(Required) Certificate for verification.
-// * <span pulumi-lang-nodejs="`nameIdPolicyFormat`" pulumi-lang-dotnet="`NameIdPolicyFormat`" pulumi-lang-go="`nameIdPolicyFormat`" pulumi-lang-python="`name_id_policy_format`" pulumi-lang-yaml="`nameIdPolicyFormat`" pulumi-lang-java="`nameIdPolicyFormat`" pulumi-lang-hcl="`name_id_policy_format`">`nameIdPolicyFormat`</span>: -(Optional) Name ID Policy format.
-//   - supported values:
-//   - `emailAddress`: -  Uses email address as NameID format
-//   - <span pulumi-lang-nodejs="`encrypted`" pulumi-lang-dotnet="`Encrypted`" pulumi-lang-go="`encrypted`" pulumi-lang-python="`encrypted`" pulumi-lang-yaml="`encrypted`" pulumi-lang-java="`encrypted`" pulumi-lang-hcl="`encrypted`">`encrypted`</span>: -  Uses encrypted as NameID format.
-//   - <span pulumi-lang-nodejs="`unspecified`" pulumi-lang-dotnet="`Unspecified`" pulumi-lang-go="`unspecified`" pulumi-lang-python="`unspecified`" pulumi-lang-yaml="`unspecified`" pulumi-lang-java="`unspecified`" pulumi-lang-hcl="`unspecified`">`unspecified`</span>: -  NameID format is left to individual implementations.
-//   - <span pulumi-lang-nodejs="`transient`" pulumi-lang-dotnet="`Transient`" pulumi-lang-go="`transient`" pulumi-lang-python="`transient`" pulumi-lang-yaml="`transient`" pulumi-lang-java="`transient`" pulumi-lang-hcl="`transient`">`transient`</span>: -  	Uses identifier with transient semantics as NameID format.
-//   - `WindowsDomainQualifiedName`: -  Uses Windows domain qualified name as NameID format.
-//   - `X509SubjectName`: -  	Uses X509SubjectName as NameID format.
-//   - <span pulumi-lang-nodejs="`kerberos`" pulumi-lang-dotnet="`Kerberos`" pulumi-lang-go="`kerberos`" pulumi-lang-python="`kerberos`" pulumi-lang-yaml="`kerberos`" pulumi-lang-java="`kerberos`" pulumi-lang-hcl="`kerberos`">`kerberos`</span>: -  	Uses kerberos principal name as NameID format.
-//   - <span pulumi-lang-nodejs="`persistent`" pulumi-lang-dotnet="`Persistent`" pulumi-lang-go="`persistent`" pulumi-lang-python="`persistent`" pulumi-lang-yaml="`persistent`" pulumi-lang-java="`persistent`" pulumi-lang-hcl="`persistent`">`persistent`</span>: -  Uses persistent name identifier as NameID format.
-//   - <span pulumi-lang-nodejs="`entity`" pulumi-lang-dotnet="`Entity`" pulumi-lang-go="`entity`" pulumi-lang-python="`entity`" pulumi-lang-yaml="`entity`" pulumi-lang-java="`entity`" pulumi-lang-hcl="`entity`">`entity`</span>: -  Uses identifier of an entity as NameID format.
 type SamlIdentityProvidersV2 struct {
 	pulumi.CustomResourceState
 
@@ -109,7 +25,7 @@ type SamlIdentityProvidersV2 struct {
 	EmailAttribute   pulumi.StringOutput      `pulumi:"emailAttribute"`
 	// - It will be used as Issuer in SAML authnRequest.
 	EntityIssuer pulumi.StringOutput `pulumi:"entityIssuer"`
-	// The External Identifier of the User Group.
+	// The External Identifier of the SAML Identity Provider.
 	ExtId           pulumi.StringOutput `pulumi:"extId"`
 	GroupsAttribute pulumi.StringOutput `pulumi:"groupsAttribute"`
 	// - Delimiter is used to split the value of attribute into multiple groups.
@@ -123,8 +39,14 @@ type SamlIdentityProvidersV2 struct {
 	// - Last updated time of the SAML Identity Provider.
 	LastUpdatedTime pulumi.StringOutput `pulumi:"lastUpdatedTime"`
 	// - Unique name of the IDP.
-	Name              pulumi.StringOutput `pulumi:"name"`
-	UsernameAttribute pulumi.StringOutput `pulumi:"usernameAttribute"`
+	Name pulumi.StringOutput `pulumi:"name"`
+	// - Project reference for the SAML Identity Provider.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
+	// - Flag indicating whether the SAML Identity Provider is shared with all projects or not.
+	ShareWithAllProjects pulumi.BoolOutput `pulumi:"shareWithAllProjects"`
+	// - List of projects with which the SAML Identity Provider is shared.
+	SharedWithProjects pulumi.StringArrayOutput `pulumi:"sharedWithProjects"`
+	UsernameAttribute  pulumi.StringOutput      `pulumi:"usernameAttribute"`
 }
 
 // NewSamlIdentityProvidersV2 registers a new resource with the given unique name, arguments, and options.
@@ -165,7 +87,7 @@ type samlIdentityProvidersV2State struct {
 	EmailAttribute   *string  `pulumi:"emailAttribute"`
 	// - It will be used as Issuer in SAML authnRequest.
 	EntityIssuer *string `pulumi:"entityIssuer"`
-	// The External Identifier of the User Group.
+	// The External Identifier of the SAML Identity Provider.
 	ExtId           *string `pulumi:"extId"`
 	GroupsAttribute *string `pulumi:"groupsAttribute"`
 	// - Delimiter is used to split the value of attribute into multiple groups.
@@ -179,8 +101,14 @@ type samlIdentityProvidersV2State struct {
 	// - Last updated time of the SAML Identity Provider.
 	LastUpdatedTime *string `pulumi:"lastUpdatedTime"`
 	// - Unique name of the IDP.
-	Name              *string `pulumi:"name"`
-	UsernameAttribute *string `pulumi:"usernameAttribute"`
+	Name *string `pulumi:"name"`
+	// - Project reference for the SAML Identity Provider.
+	ProjectExtId *string `pulumi:"projectExtId"`
+	// - Flag indicating whether the SAML Identity Provider is shared with all projects or not.
+	ShareWithAllProjects *bool `pulumi:"shareWithAllProjects"`
+	// - List of projects with which the SAML Identity Provider is shared.
+	SharedWithProjects []string `pulumi:"sharedWithProjects"`
+	UsernameAttribute  *string  `pulumi:"usernameAttribute"`
 }
 
 type SamlIdentityProvidersV2State struct {
@@ -192,7 +120,7 @@ type SamlIdentityProvidersV2State struct {
 	EmailAttribute   pulumi.StringPtrInput
 	// - It will be used as Issuer in SAML authnRequest.
 	EntityIssuer pulumi.StringPtrInput
-	// The External Identifier of the User Group.
+	// The External Identifier of the SAML Identity Provider.
 	ExtId           pulumi.StringPtrInput
 	GroupsAttribute pulumi.StringPtrInput
 	// - Delimiter is used to split the value of attribute into multiple groups.
@@ -206,8 +134,14 @@ type SamlIdentityProvidersV2State struct {
 	// - Last updated time of the SAML Identity Provider.
 	LastUpdatedTime pulumi.StringPtrInput
 	// - Unique name of the IDP.
-	Name              pulumi.StringPtrInput
-	UsernameAttribute pulumi.StringPtrInput
+	Name pulumi.StringPtrInput
+	// - Project reference for the SAML Identity Provider.
+	ProjectExtId pulumi.StringPtrInput
+	// - Flag indicating whether the SAML Identity Provider is shared with all projects or not.
+	ShareWithAllProjects pulumi.BoolPtrInput
+	// - List of projects with which the SAML Identity Provider is shared.
+	SharedWithProjects pulumi.StringArrayInput
+	UsernameAttribute  pulumi.StringPtrInput
 }
 
 func (SamlIdentityProvidersV2State) ElementType() reflect.Type {
@@ -225,7 +159,7 @@ type samlIdentityProvidersV2Args struct {
 	EmailAttribute   *string  `pulumi:"emailAttribute"`
 	// - It will be used as Issuer in SAML authnRequest.
 	EntityIssuer *string `pulumi:"entityIssuer"`
-	// The External Identifier of the User Group.
+	// The External Identifier of the SAML Identity Provider.
 	ExtId           *string `pulumi:"extId"`
 	GroupsAttribute *string `pulumi:"groupsAttribute"`
 	// - Delimiter is used to split the value of attribute into multiple groups.
@@ -237,8 +171,14 @@ type samlIdentityProvidersV2Args struct {
 	// - Flag indicating signing of SAML authnRequests.
 	IsSignedAuthnReqEnabled *bool `pulumi:"isSignedAuthnReqEnabled"`
 	// - Unique name of the IDP.
-	Name              *string `pulumi:"name"`
-	UsernameAttribute *string `pulumi:"usernameAttribute"`
+	Name *string `pulumi:"name"`
+	// - Project reference for the SAML Identity Provider.
+	ProjectExtId *string `pulumi:"projectExtId"`
+	// - Flag indicating whether the SAML Identity Provider is shared with all projects or not.
+	ShareWithAllProjects *bool `pulumi:"shareWithAllProjects"`
+	// - List of projects with which the SAML Identity Provider is shared.
+	SharedWithProjects []string `pulumi:"sharedWithProjects"`
+	UsernameAttribute  *string  `pulumi:"usernameAttribute"`
 }
 
 // The set of arguments for constructing a SamlIdentityProvidersV2 resource.
@@ -247,7 +187,7 @@ type SamlIdentityProvidersV2Args struct {
 	EmailAttribute   pulumi.StringPtrInput
 	// - It will be used as Issuer in SAML authnRequest.
 	EntityIssuer pulumi.StringPtrInput
-	// The External Identifier of the User Group.
+	// The External Identifier of the SAML Identity Provider.
 	ExtId           pulumi.StringPtrInput
 	GroupsAttribute pulumi.StringPtrInput
 	// - Delimiter is used to split the value of attribute into multiple groups.
@@ -259,8 +199,14 @@ type SamlIdentityProvidersV2Args struct {
 	// - Flag indicating signing of SAML authnRequests.
 	IsSignedAuthnReqEnabled pulumi.BoolPtrInput
 	// - Unique name of the IDP.
-	Name              pulumi.StringPtrInput
-	UsernameAttribute pulumi.StringPtrInput
+	Name pulumi.StringPtrInput
+	// - Project reference for the SAML Identity Provider.
+	ProjectExtId pulumi.StringPtrInput
+	// - Flag indicating whether the SAML Identity Provider is shared with all projects or not.
+	ShareWithAllProjects pulumi.BoolPtrInput
+	// - List of projects with which the SAML Identity Provider is shared.
+	SharedWithProjects pulumi.StringArrayInput
+	UsernameAttribute  pulumi.StringPtrInput
 }
 
 func (SamlIdentityProvidersV2Args) ElementType() reflect.Type {
@@ -373,7 +319,7 @@ func (o SamlIdentityProvidersV2Output) EntityIssuer() pulumi.StringOutput {
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringOutput { return v.EntityIssuer }).(pulumi.StringOutput)
 }
 
-// The External Identifier of the User Group.
+// The External Identifier of the SAML Identity Provider.
 func (o SamlIdentityProvidersV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }
@@ -413,6 +359,21 @@ func (o SamlIdentityProvidersV2Output) LastUpdatedTime() pulumi.StringOutput {
 // - Unique name of the IDP.
 func (o SamlIdentityProvidersV2Output) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// - Project reference for the SAML Identity Provider.
+func (o SamlIdentityProvidersV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
+}
+
+// - Flag indicating whether the SAML Identity Provider is shared with all projects or not.
+func (o SamlIdentityProvidersV2Output) ShareWithAllProjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.BoolOutput { return v.ShareWithAllProjects }).(pulumi.BoolOutput)
+}
+
+// - List of projects with which the SAML Identity Provider is shared.
+func (o SamlIdentityProvidersV2Output) SharedWithProjects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *SamlIdentityProvidersV2) pulumi.StringArrayOutput { return v.SharedWithProjects }).(pulumi.StringArrayOutput)
 }
 
 func (o SamlIdentityProvidersV2Output) UsernameAttribute() pulumi.StringOutput {

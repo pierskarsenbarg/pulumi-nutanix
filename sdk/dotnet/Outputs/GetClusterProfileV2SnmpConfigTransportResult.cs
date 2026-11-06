@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetClusterProfileV2SnmpConfigTransportResult
     {
         /// <summary>
-        /// (Integer) SNMP port.
+        /// HTTP proxy server port.
         /// </summary>
         public readonly int Port;
         /// <summary>

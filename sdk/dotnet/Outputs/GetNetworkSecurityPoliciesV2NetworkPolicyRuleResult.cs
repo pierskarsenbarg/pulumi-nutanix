@@ -23,9 +23,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string ExtId;
         /// <summary>
+        /// Whether hit log is enabled for the rule.
+        /// </summary>
+        public readonly bool IsLoggingEnabled;
+        /// <summary>
         /// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleLinkResult> Links;
+        /// <summary>
+        /// A user-defined name for the rule.
+        /// </summary>
+        public readonly string Name;
         /// <summary>
         /// Spec for rules.
         /// </summary>
@@ -41,7 +49,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string extId,
 
+            bool isLoggingEnabled,
+
             ImmutableArray<Outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleLinkResult> links,
+
+            string name,
 
             ImmutableArray<Outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecResult> specs,
 
@@ -49,7 +61,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         {
             Description = description;
             ExtId = extId;
+            IsLoggingEnabled = isLoggingEnabled;
             Links = links;
+            Name = name;
             Specs = specs;
             Type = type;
         }

@@ -27,7 +27,7 @@ class GetEntityGroupV2Result:
     """
     A collection of values returned by getEntityGroupV2.
     """
-    def __init__(__self__, allowed_configs=None, creation_time=None, description=None, except_configs=None, ext_id=None, id=None, last_update_time=None, links=None, name=None, owner_ext_id=None, policy_ext_ids=None, tenant_id=None):
+    def __init__(__self__, allowed_configs=None, creation_time=None, description=None, except_configs=None, ext_id=None, id=None, is_shared_with_all_projects=None, is_system_defined=None, last_update_time=None, links=None, name=None, owner_ext_id=None, policy_ext_ids=None, project_ext_id=None, tenant_id=None):
         if allowed_configs and not isinstance(allowed_configs, list):
             raise TypeError("Expected argument 'allowed_configs' to be a list")
         pulumi.set(__self__, "allowed_configs", allowed_configs)
@@ -46,6 +46,12 @@ class GetEntityGroupV2Result:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_shared_with_all_projects and not isinstance(is_shared_with_all_projects, bool):
+            raise TypeError("Expected argument 'is_shared_with_all_projects' to be a bool")
+        pulumi.set(__self__, "is_shared_with_all_projects", is_shared_with_all_projects)
+        if is_system_defined and not isinstance(is_system_defined, bool):
+            raise TypeError("Expected argument 'is_system_defined' to be a bool")
+        pulumi.set(__self__, "is_system_defined", is_system_defined)
         if last_update_time and not isinstance(last_update_time, str):
             raise TypeError("Expected argument 'last_update_time' to be a str")
         pulumi.set(__self__, "last_update_time", last_update_time)
@@ -61,6 +67,9 @@ class GetEntityGroupV2Result:
         if policy_ext_ids and not isinstance(policy_ext_ids, list):
             raise TypeError("Expected argument 'policy_ext_ids' to be a list")
         pulumi.set(__self__, "policy_ext_ids", policy_ext_ids)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
         if tenant_id and not isinstance(tenant_id, str):
             raise TypeError("Expected argument 'tenant_id' to be a str")
         pulumi.set(__self__, "tenant_id", tenant_id)
@@ -114,6 +123,22 @@ class GetEntityGroupV2Result:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isSharedWithAllProjects")
+    def is_shared_with_all_projects(self) -> _builtins.bool:
+        """
+        Indicates whether the Entity Group is shared with all projects.
+        """
+        return pulumi.get(self, "is_shared_with_all_projects")
+
+    @_builtins.property
+    @pulumi.getter(name="isSystemDefined")
+    def is_system_defined(self) -> _builtins.bool:
+        """
+        A flag indicating whether the entity group is system-defined.
+        """
+        return pulumi.get(self, "is_system_defined")
+
+    @_builtins.property
     @pulumi.getter(name="lastUpdateTime")
     def last_update_time(self) -> _builtins.str:
         """
@@ -154,6 +179,14 @@ class GetEntityGroupV2Result:
         return pulumi.get(self, "policy_ext_ids")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        Project external ID associated with the entity group.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> _builtins.str:
         """
@@ -174,11 +207,14 @@ class AwaitableGetEntityGroupV2Result(GetEntityGroupV2Result):
             except_configs=self.except_configs,
             ext_id=self.ext_id,
             id=self.id,
+            is_shared_with_all_projects=self.is_shared_with_all_projects,
+            is_system_defined=self.is_system_defined,
             last_update_time=self.last_update_time,
             links=self.links,
             name=self.name,
             owner_ext_id=self.owner_ext_id,
             policy_ext_ids=self.policy_ext_ids,
+            project_ext_id=self.project_ext_id,
             tenant_id=self.tenant_id)
 
 
@@ -216,11 +252,14 @@ def get_entity_group_v2(ext_id: Optional[_builtins.str] = None,
         except_configs=pulumi.get(__ret__, 'except_configs'),
         ext_id=pulumi.get(__ret__, 'ext_id'),
         id=pulumi.get(__ret__, 'id'),
+        is_shared_with_all_projects=pulumi.get(__ret__, 'is_shared_with_all_projects'),
+        is_system_defined=pulumi.get(__ret__, 'is_system_defined'),
         last_update_time=pulumi.get(__ret__, 'last_update_time'),
         links=pulumi.get(__ret__, 'links'),
         name=pulumi.get(__ret__, 'name'),
         owner_ext_id=pulumi.get(__ret__, 'owner_ext_id'),
         policy_ext_ids=pulumi.get(__ret__, 'policy_ext_ids'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
 def get_entity_group_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEntityGroupV2Result]:
@@ -255,9 +294,12 @@ def get_entity_group_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = N
         except_configs=pulumi.get(__response__, 'except_configs'),
         ext_id=pulumi.get(__response__, 'ext_id'),
         id=pulumi.get(__response__, 'id'),
+        is_shared_with_all_projects=pulumi.get(__response__, 'is_shared_with_all_projects'),
+        is_system_defined=pulumi.get(__response__, 'is_system_defined'),
         last_update_time=pulumi.get(__response__, 'last_update_time'),
         links=pulumi.get(__response__, 'links'),
         name=pulumi.get(__response__, 'name'),
         owner_ext_id=pulumi.get(__response__, 'owner_ext_id'),
         policy_ext_ids=pulumi.get(__response__, 'policy_ext_ids'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
         tenant_id=pulumi.get(__response__, 'tenant_id')))

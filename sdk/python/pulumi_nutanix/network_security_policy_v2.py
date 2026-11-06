@@ -26,6 +26,8 @@ class NetworkSecurityPolicyV2Args:
                  is_hitlog_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_ipv6_traffic_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  rules: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -33,13 +35,15 @@ class NetworkSecurityPolicyV2Args:
         """
         The set of arguments for constructing a NetworkSecurityPolicyV2 resource.
 
-        :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+        :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
         :param pulumi.Input[_builtins.str] description: A user defined annotation for a policy.
         :param pulumi.Input[_builtins.bool] is_hitlog_enabled: If Hitlog is enabled.
         :param pulumi.Input[_builtins.bool] is_ipv6_traffic_allowed: If Ipv6 Traffic is allowed.
         :param pulumi.Input[_builtins.str] name: Name of the Flow Network Security Policy.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]] rules: A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
-        :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+        :param pulumi.Input[_builtins.int] priority: Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+        :param pulumi.Input[_builtins.str] project_ext_id: Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+        :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]] rules: A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
+        :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
         :param pulumi.Input[_builtins.str] state: Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vpc_references: A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
         """
@@ -52,6 +56,10 @@ class NetworkSecurityPolicyV2Args:
             pulumi.set(__self__, "is_ipv6_traffic_allowed", is_ipv6_traffic_allowed)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if priority is not None:
+            pulumi.set(__self__, "priority", priority)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
         if scope is not None:
@@ -65,7 +73,7 @@ class NetworkSecurityPolicyV2Args:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+        Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
         """
         return pulumi.get(self, "type")
 
@@ -123,9 +131,33 @@ class NetworkSecurityPolicyV2Args:
 
     @_builtins.property
     @pulumi.getter
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+        """
+        return pulumi.get(self, "priority")
+
+    @priority.setter
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "priority", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter
     def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]]]:
         """
-        A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+        A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
         """
         return pulumi.get(self, "rules")
 
@@ -137,7 +169,7 @@ class NetworkSecurityPolicyV2Args:
     @pulumi.getter
     def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+        Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
         """
         return pulumi.get(self, "scope")
 
@@ -179,10 +211,13 @@ class _NetworkSecurityPolicyV2State:
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  is_hitlog_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_ipv6_traffic_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_shared_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
                  last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
                  links: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2LinkArgs']]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  rules: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  secured_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -199,16 +234,19 @@ class _NetworkSecurityPolicyV2State:
         :param pulumi.Input[_builtins.str] ext_id: A globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[_builtins.bool] is_hitlog_enabled: If Hitlog is enabled.
         :param pulumi.Input[_builtins.bool] is_ipv6_traffic_allowed: If Ipv6 Traffic is allowed.
+        :param pulumi.Input[_builtins.bool] is_shared_with_all_projects: Indicates whether the network security policy is shared with all projects.
         :param pulumi.Input[_builtins.bool] is_system_defined: Is system defined NSP
         :param pulumi.Input[_builtins.str] last_update_time: last updated time
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2LinkArgs']]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[_builtins.str] name: Name of the Flow Network Security Policy.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]] rules: A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
-        :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+        :param pulumi.Input[_builtins.int] priority: Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+        :param pulumi.Input[_builtins.str] project_ext_id: Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+        :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]] rules: A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
+        :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secured_groups: Uuids of the secured groups in the NSP.
         :param pulumi.Input[_builtins.str] state: Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity
-        :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+        :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vpc_references: A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
         """
         if created_by is not None:
@@ -223,6 +261,8 @@ class _NetworkSecurityPolicyV2State:
             pulumi.set(__self__, "is_hitlog_enabled", is_hitlog_enabled)
         if is_ipv6_traffic_allowed is not None:
             pulumi.set(__self__, "is_ipv6_traffic_allowed", is_ipv6_traffic_allowed)
+        if is_shared_with_all_projects is not None:
+            pulumi.set(__self__, "is_shared_with_all_projects", is_shared_with_all_projects)
         if is_system_defined is not None:
             pulumi.set(__self__, "is_system_defined", is_system_defined)
         if last_update_time is not None:
@@ -231,6 +271,10 @@ class _NetworkSecurityPolicyV2State:
             pulumi.set(__self__, "links", links)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if priority is not None:
+            pulumi.set(__self__, "priority", priority)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if rules is not None:
             pulumi.set(__self__, "rules", rules)
         if scope is not None:
@@ -319,6 +363,18 @@ class _NetworkSecurityPolicyV2State:
         pulumi.set(self, "is_ipv6_traffic_allowed", value)
 
     @_builtins.property
+    @pulumi.getter(name="isSharedWithAllProjects")
+    def is_shared_with_all_projects(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the network security policy is shared with all projects.
+        """
+        return pulumi.get(self, "is_shared_with_all_projects")
+
+    @is_shared_with_all_projects.setter
+    def is_shared_with_all_projects(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_shared_with_all_projects", value)
+
+    @_builtins.property
     @pulumi.getter(name="isSystemDefined")
     def is_system_defined(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -368,9 +424,33 @@ class _NetworkSecurityPolicyV2State:
 
     @_builtins.property
     @pulumi.getter
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+        """
+        return pulumi.get(self, "priority")
+
+    @priority.setter
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "priority", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter
     def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleArgs']]]]:
         """
-        A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+        A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
         """
         return pulumi.get(self, "rules")
 
@@ -382,7 +462,7 @@ class _NetworkSecurityPolicyV2State:
     @pulumi.getter
     def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+        Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
         """
         return pulumi.get(self, "scope")
 
@@ -430,7 +510,7 @@ class _NetworkSecurityPolicyV2State:
     @pulumi.getter
     def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+        Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
         """
         return pulumi.get(self, "type")
 
@@ -461,6 +541,8 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
                  is_hitlog_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_ipv6_traffic_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict', 'outputs.NetworkSecurityPolicyV2Rule']]]]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -510,6 +592,34 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
                     }],
                 }],
             }])
+        secured_group = nutanix.EntityGroupV2("secured_group",
+            name="secured-group",
+            description="Secured group for an application policy",
+            allowed_config={
+                "entities": [{
+                    "type": "VM",
+                    "selected_by": "CATEGORY_EXT_ID",
+                    "reference_ext_ids": [example["id"]],
+                }],
+            })
+        # Application rules can use an entity group as the secured group instead of categories.
+        # Use either secured_group_category_references or secured_group_entity_group_reference, not both.
+        entity_group_nsp = nutanix.NetworkSecurityPolicyV2("entity-group-nsp",
+            name="my-entity-group-policy",
+            description="Application policy with secured group entity group reference",
+            state="SAVE",
+            type="APPLICATION",
+            scope="GLOBAL",
+            rules=[{
+                "type": "APPLICATION",
+                "specs": [{
+                    "application_rule_specs": [{
+                        "secured_group_entity_group_reference": secured_group.id,
+                        "src_allow_spec": "ALL",
+                        "is_all_protocol_allowed": True,
+                    }],
+                }],
+            }])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -520,10 +630,12 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_hitlog_enabled: If Hitlog is enabled.
         :param pulumi.Input[_builtins.bool] is_ipv6_traffic_allowed: If Ipv6 Traffic is allowed.
         :param pulumi.Input[_builtins.str] name: Name of the Flow Network Security Policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict', 'outputs.NetworkSecurityPolicyV2Rule']]]] rules: A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
-        :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+        :param pulumi.Input[_builtins.int] priority: Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+        :param pulumi.Input[_builtins.str] project_ext_id: Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict', 'outputs.NetworkSecurityPolicyV2Rule']]]] rules: A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
+        :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
         :param pulumi.Input[_builtins.str] state: Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
-        :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+        :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vpc_references: A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
         """
         ...
@@ -575,6 +687,34 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
                     }],
                 }],
             }])
+        secured_group = nutanix.EntityGroupV2("secured_group",
+            name="secured-group",
+            description="Secured group for an application policy",
+            allowed_config={
+                "entities": [{
+                    "type": "VM",
+                    "selected_by": "CATEGORY_EXT_ID",
+                    "reference_ext_ids": [example["id"]],
+                }],
+            })
+        # Application rules can use an entity group as the secured group instead of categories.
+        # Use either secured_group_category_references or secured_group_entity_group_reference, not both.
+        entity_group_nsp = nutanix.NetworkSecurityPolicyV2("entity-group-nsp",
+            name="my-entity-group-policy",
+            description="Application policy with secured group entity group reference",
+            state="SAVE",
+            type="APPLICATION",
+            scope="GLOBAL",
+            rules=[{
+                "type": "APPLICATION",
+                "specs": [{
+                    "application_rule_specs": [{
+                        "secured_group_entity_group_reference": secured_group.id,
+                        "src_allow_spec": "ALL",
+                        "is_all_protocol_allowed": True,
+                    }],
+                }],
+            }])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -598,6 +738,8 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
                  is_hitlog_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_ipv6_traffic_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict', 'outputs.NetworkSecurityPolicyV2Rule']]]]] = None,
                  scope: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -616,6 +758,8 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
             __props__.__dict__["is_hitlog_enabled"] = is_hitlog_enabled
             __props__.__dict__["is_ipv6_traffic_allowed"] = is_ipv6_traffic_allowed
             __props__.__dict__["name"] = name
+            __props__.__dict__["priority"] = priority
+            __props__.__dict__["project_ext_id"] = project_ext_id
             __props__.__dict__["rules"] = rules
             __props__.__dict__["scope"] = scope
             __props__.__dict__["state"] = state
@@ -626,6 +770,7 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
             __props__.__dict__["created_by"] = None
             __props__.__dict__["creation_time"] = None
             __props__.__dict__["ext_id"] = None
+            __props__.__dict__["is_shared_with_all_projects"] = None
             __props__.__dict__["is_system_defined"] = None
             __props__.__dict__["last_update_time"] = None
             __props__.__dict__["links"] = None
@@ -647,10 +792,13 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             is_hitlog_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_ipv6_traffic_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_shared_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
             is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
             last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2LinkArgs', 'NetworkSecurityPolicyV2LinkArgsDict', 'outputs.NetworkSecurityPolicyV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict', 'outputs.NetworkSecurityPolicyV2Rule']]]]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None,
             secured_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -671,16 +819,19 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ext_id: A globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[_builtins.bool] is_hitlog_enabled: If Hitlog is enabled.
         :param pulumi.Input[_builtins.bool] is_ipv6_traffic_allowed: If Ipv6 Traffic is allowed.
+        :param pulumi.Input[_builtins.bool] is_shared_with_all_projects: Indicates whether the network security policy is shared with all projects.
         :param pulumi.Input[_builtins.bool] is_system_defined: Is system defined NSP
         :param pulumi.Input[_builtins.str] last_update_time: last updated time
         :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2LinkArgs', 'NetworkSecurityPolicyV2LinkArgsDict', 'outputs.NetworkSecurityPolicyV2Link']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[_builtins.str] name: Name of the Flow Network Security Policy.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict', 'outputs.NetworkSecurityPolicyV2Rule']]]] rules: A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
-        :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+        :param pulumi.Input[_builtins.int] priority: Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+        :param pulumi.Input[_builtins.str] project_ext_id: Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict', 'outputs.NetworkSecurityPolicyV2Rule']]]] rules: A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
+        :param pulumi.Input[_builtins.str] scope: Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secured_groups: Uuids of the secured groups in the NSP.
         :param pulumi.Input[_builtins.str] state: Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity
-        :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+        :param pulumi.Input[_builtins.str] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vpc_references: A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -693,10 +844,13 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
         __props__.__dict__["ext_id"] = ext_id
         __props__.__dict__["is_hitlog_enabled"] = is_hitlog_enabled
         __props__.__dict__["is_ipv6_traffic_allowed"] = is_ipv6_traffic_allowed
+        __props__.__dict__["is_shared_with_all_projects"] = is_shared_with_all_projects
         __props__.__dict__["is_system_defined"] = is_system_defined
         __props__.__dict__["last_update_time"] = last_update_time
         __props__.__dict__["links"] = links
         __props__.__dict__["name"] = name
+        __props__.__dict__["priority"] = priority
+        __props__.__dict__["project_ext_id"] = project_ext_id
         __props__.__dict__["rules"] = rules
         __props__.__dict__["scope"] = scope
         __props__.__dict__["secured_groups"] = secured_groups
@@ -715,10 +869,13 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             is_hitlog_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_ipv6_traffic_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_shared_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
             is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
             last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2LinkArgs', 'NetworkSecurityPolicyV2LinkArgsDict', 'outputs.NetworkSecurityPolicyV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSecurityPolicyV2RuleArgs', 'NetworkSecurityPolicyV2RuleArgsDict', 'outputs.NetworkSecurityPolicyV2Rule']]]]] = None,
             scope: pulumi.Input[Optional[_builtins.str]] = None,
             secured_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -733,10 +890,13 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
         __props__["extId"] = ext_id
         __props__["isHitlogEnabled"] = is_hitlog_enabled
         __props__["isIpv6TrafficAllowed"] = is_ipv6_traffic_allowed
+        __props__["isSharedWithAllProjects"] = is_shared_with_all_projects
         __props__["isSystemDefined"] = is_system_defined
         __props__["lastUpdateTime"] = last_update_time
         __props__["links"] = links
         __props__["name"] = name
+        __props__["priority"] = priority
+        __props__["projectExtId"] = project_ext_id
         __props__["rules"] = rules
         __props__["scope"] = scope
         __props__["securedGroups"] = secured_groups
@@ -795,6 +955,14 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
         return pulumi.get(self, "is_ipv6_traffic_allowed")
 
     @_builtins.property
+    @pulumi.getter(name="isSharedWithAllProjects")
+    def is_shared_with_all_projects(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Indicates whether the network security policy is shared with all projects.
+        """
+        return pulumi.get(self, "is_shared_with_all_projects")
+
+    @_builtins.property
     @pulumi.getter(name="isSystemDefined")
     def is_system_defined(self) -> pulumi.Output[_builtins.bool]:
         """
@@ -828,9 +996,25 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter
+    def priority(self) -> pulumi.Output[_builtins.int]:
+        """
+        Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+        """
+        return pulumi.get(self, "priority")
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
+    @pulumi.getter
     def rules(self) -> pulumi.Output[Optional[Sequence['outputs.NetworkSecurityPolicyV2Rule']]]:
         """
-        A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+        A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
         """
         return pulumi.get(self, "rules")
 
@@ -838,7 +1022,7 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
     @pulumi.getter
     def scope(self) -> pulumi.Output[_builtins.str]:
         """
-        Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+        Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
         """
         return pulumi.get(self, "scope")
 
@@ -870,7 +1054,7 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[_builtins.str]:
         """
-        Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+        Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
         """
         return pulumi.get(self, "type")
 

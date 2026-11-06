@@ -27,7 +27,7 @@ class GetFloatingIpV2Result:
     """
     A collection of values returned by getFloatingIpV2.
     """
-    def __init__(__self__, association_status=None, associations=None, description=None, ext_id=None, external_subnet_reference=None, external_subnets=None, floating_ip_value=None, floating_ips=None, id=None, links=None, metadatas=None, name=None, private_ip=None, tenant_id=None, vm_nic_reference=None, vm_nics=None, vpc_reference=None, vpcs=None):
+    def __init__(__self__, association_status=None, associations=None, description=None, ext_id=None, external_subnet_reference=None, external_subnets=None, floating_ip_value=None, floating_ips=None, id=None, links=None, metadatas=None, name=None, private_ip=None, project_ext_id=None, tenant_id=None, vm_nic_reference=None, vm_nics=None, vpc_reference=None, vpcs=None):
         if association_status and not isinstance(association_status, str):
             raise TypeError("Expected argument 'association_status' to be a str")
         pulumi.set(__self__, "association_status", association_status)
@@ -67,6 +67,9 @@ class GetFloatingIpV2Result:
         if private_ip and not isinstance(private_ip, str):
             raise TypeError("Expected argument 'private_ip' to be a str")
         pulumi.set(__self__, "private_ip", private_ip)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
         if tenant_id and not isinstance(tenant_id, str):
             raise TypeError("Expected argument 'tenant_id' to be a str")
         pulumi.set(__self__, "tenant_id", tenant_id)
@@ -185,6 +188,14 @@ class GetFloatingIpV2Result:
         return pulumi.get(self, "private_ip")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        External identifier of the project associated with the Floating IP.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> _builtins.str:
         """
@@ -244,6 +255,7 @@ class AwaitableGetFloatingIpV2Result(GetFloatingIpV2Result):
             metadatas=self.metadatas,
             name=self.name,
             private_ip=self.private_ip,
+            project_ext_id=self.project_ext_id,
             tenant_id=self.tenant_id,
             vm_nic_reference=self.vm_nic_reference,
             vm_nics=self.vm_nics,
@@ -289,6 +301,7 @@ def get_floating_ip_v2(ext_id: Optional[_builtins.str] = None,
         metadatas=pulumi.get(__ret__, 'metadatas'),
         name=pulumi.get(__ret__, 'name'),
         private_ip=pulumi.get(__ret__, 'private_ip'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         vm_nic_reference=pulumi.get(__ret__, 'vm_nic_reference'),
         vm_nics=pulumi.get(__ret__, 'vm_nics'),
@@ -331,6 +344,7 @@ def get_floating_ip_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = No
         metadatas=pulumi.get(__response__, 'metadatas'),
         name=pulumi.get(__response__, 'name'),
         private_ip=pulumi.get(__response__, 'private_ip'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
         tenant_id=pulumi.get(__response__, 'tenant_id'),
         vm_nic_reference=pulumi.get(__response__, 'vm_nic_reference'),
         vm_nics=pulumi.get(__response__, 'vm_nics'),

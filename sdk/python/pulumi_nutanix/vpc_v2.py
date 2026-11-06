@@ -26,8 +26,14 @@ class VpcV2Args:
                  external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]]] = None,
                  externally_routable_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]]] = None,
+                 kubernetes_clusters: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2KubernetesClusterArgs']]]] = None,
                  metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2MetadataArgs']]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 should_advertise_connected_subnets: pulumi.Input[Optional[_builtins.bool]] = None,
+                 supported_multiple_external_subnet_type: pulumi.Input[Optional[_builtins.str]] = None,
                  vpc_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a VpcV2 resource.
@@ -37,8 +43,14 @@ class VpcV2Args:
         :param pulumi.Input[_builtins.str] external_routing_domain_reference: External routing domain associated with this route table
         :param pulumi.Input[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]] external_subnets: List of external subnets that the VPC is attached to.
         :param pulumi.Input[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]] externally_routable_prefixes: CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
+        :param pulumi.Input[Sequence[pulumi.Input['VpcV2KubernetesClusterArgs']]] kubernetes_clusters: List of Kubernetes clusters associated with the VPC.
         :param pulumi.Input[Sequence[pulumi.Input['VpcV2MetadataArgs']]] metadatas: The vpc kind metadata.
         :param pulumi.Input[_builtins.str] name: Name of the VPC.
+        :param pulumi.Input[_builtins.str] project_ext_id: External identifier of the project associated with the VPC.
+        :param pulumi.Input[_builtins.str] scope: VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] shared_with_projects: List of project external identifiers with which the VPC is shared.
+        :param pulumi.Input[_builtins.bool] should_advertise_connected_subnets: When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+        :param pulumi.Input[_builtins.str] supported_multiple_external_subnet_type: Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
         :param pulumi.Input[_builtins.str] vpc_type: Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
         """
         if common_dhcp_options is not None:
@@ -51,10 +63,22 @@ class VpcV2Args:
             pulumi.set(__self__, "external_subnets", external_subnets)
         if externally_routable_prefixes is not None:
             pulumi.set(__self__, "externally_routable_prefixes", externally_routable_prefixes)
+        if kubernetes_clusters is not None:
+            pulumi.set(__self__, "kubernetes_clusters", kubernetes_clusters)
         if metadatas is not None:
             pulumi.set(__self__, "metadatas", metadatas)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
+        if shared_with_projects is not None:
+            pulumi.set(__self__, "shared_with_projects", shared_with_projects)
+        if should_advertise_connected_subnets is not None:
+            pulumi.set(__self__, "should_advertise_connected_subnets", should_advertise_connected_subnets)
+        if supported_multiple_external_subnet_type is not None:
+            pulumi.set(__self__, "supported_multiple_external_subnet_type", supported_multiple_external_subnet_type)
         if vpc_type is not None:
             pulumi.set(__self__, "vpc_type", vpc_type)
 
@@ -119,6 +143,18 @@ class VpcV2Args:
         pulumi.set(self, "externally_routable_prefixes", value)
 
     @_builtins.property
+    @pulumi.getter(name="kubernetesClusters")
+    def kubernetes_clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2KubernetesClusterArgs']]]]:
+        """
+        List of Kubernetes clusters associated with the VPC.
+        """
+        return pulumi.get(self, "kubernetes_clusters")
+
+    @kubernetes_clusters.setter
+    def kubernetes_clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2KubernetesClusterArgs']]]]):
+        pulumi.set(self, "kubernetes_clusters", value)
+
+    @_builtins.property
     @pulumi.getter
     def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2MetadataArgs']]]]:
         """
@@ -143,6 +179,66 @@ class VpcV2Args:
         pulumi.set(self, "name", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        External identifier of the project associated with the VPC.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+        """
+        return pulumi.get(self, "scope")
+
+    @scope.setter
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "scope", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithProjects")
+    def shared_with_projects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of project external identifiers with which the VPC is shared.
+        """
+        return pulumi.get(self, "shared_with_projects")
+
+    @shared_with_projects.setter
+    def shared_with_projects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "shared_with_projects", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shouldAdvertiseConnectedSubnets")
+    def should_advertise_connected_subnets(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+        """
+        return pulumi.get(self, "should_advertise_connected_subnets")
+
+    @should_advertise_connected_subnets.setter
+    def should_advertise_connected_subnets(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "should_advertise_connected_subnets", value)
+
+    @_builtins.property
+    @pulumi.getter(name="supportedMultipleExternalSubnetType")
+    def supported_multiple_external_subnet_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+        """
+        return pulumi.get(self, "supported_multiple_external_subnet_type")
+
+    @supported_multiple_external_subnet_type.setter
+    def supported_multiple_external_subnet_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "supported_multiple_external_subnet_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="vpcType")
     def vpc_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -164,10 +260,16 @@ class _VpcV2State:
                  external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]]] = None,
                  externally_routable_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]]] = None,
+                 kubernetes_clusters: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2KubernetesClusterArgs']]]] = None,
                  links: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2LinkArgs']]]] = None,
                  metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2MetadataArgs']]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 should_advertise_connected_subnets: pulumi.Input[Optional[_builtins.bool]] = None,
                  snat_ips: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2SnatIpArgs']]]] = None,
+                 supported_multiple_external_subnet_type: pulumi.Input[Optional[_builtins.str]] = None,
                  tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vpc_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
@@ -179,9 +281,15 @@ class _VpcV2State:
         :param pulumi.Input[_builtins.str] external_routing_domain_reference: External routing domain associated with this route table
         :param pulumi.Input[Sequence[pulumi.Input['VpcV2ExternalSubnetArgs']]] external_subnets: List of external subnets that the VPC is attached to.
         :param pulumi.Input[Sequence[pulumi.Input['VpcV2ExternallyRoutablePrefixArgs']]] externally_routable_prefixes: CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
+        :param pulumi.Input[Sequence[pulumi.Input['VpcV2KubernetesClusterArgs']]] kubernetes_clusters: List of Kubernetes clusters associated with the VPC.
         :param pulumi.Input[Sequence[pulumi.Input['VpcV2LinkArgs']]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[Sequence[pulumi.Input['VpcV2MetadataArgs']]] metadatas: The vpc kind metadata.
         :param pulumi.Input[_builtins.str] name: Name of the VPC.
+        :param pulumi.Input[_builtins.str] project_ext_id: External identifier of the project associated with the VPC.
+        :param pulumi.Input[_builtins.str] scope: VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] shared_with_projects: List of project external identifiers with which the VPC is shared.
+        :param pulumi.Input[_builtins.bool] should_advertise_connected_subnets: When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+        :param pulumi.Input[_builtins.str] supported_multiple_external_subnet_type: Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.
         :param pulumi.Input[_builtins.str] vpc_type: Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
         """
@@ -197,14 +305,26 @@ class _VpcV2State:
             pulumi.set(__self__, "external_subnets", external_subnets)
         if externally_routable_prefixes is not None:
             pulumi.set(__self__, "externally_routable_prefixes", externally_routable_prefixes)
+        if kubernetes_clusters is not None:
+            pulumi.set(__self__, "kubernetes_clusters", kubernetes_clusters)
         if links is not None:
             pulumi.set(__self__, "links", links)
         if metadatas is not None:
             pulumi.set(__self__, "metadatas", metadatas)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
+        if shared_with_projects is not None:
+            pulumi.set(__self__, "shared_with_projects", shared_with_projects)
+        if should_advertise_connected_subnets is not None:
+            pulumi.set(__self__, "should_advertise_connected_subnets", should_advertise_connected_subnets)
         if snat_ips is not None:
             pulumi.set(__self__, "snat_ips", snat_ips)
+        if supported_multiple_external_subnet_type is not None:
+            pulumi.set(__self__, "supported_multiple_external_subnet_type", supported_multiple_external_subnet_type)
         if tenant_id is not None:
             pulumi.set(__self__, "tenant_id", tenant_id)
         if vpc_type is not None:
@@ -283,6 +403,18 @@ class _VpcV2State:
         pulumi.set(self, "externally_routable_prefixes", value)
 
     @_builtins.property
+    @pulumi.getter(name="kubernetesClusters")
+    def kubernetes_clusters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2KubernetesClusterArgs']]]]:
+        """
+        List of Kubernetes clusters associated with the VPC.
+        """
+        return pulumi.get(self, "kubernetes_clusters")
+
+    @kubernetes_clusters.setter
+    def kubernetes_clusters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2KubernetesClusterArgs']]]]):
+        pulumi.set(self, "kubernetes_clusters", value)
+
+    @_builtins.property
     @pulumi.getter
     def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2LinkArgs']]]]:
         """
@@ -319,6 +451,54 @@ class _VpcV2State:
         pulumi.set(self, "name", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        External identifier of the project associated with the VPC.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+        """
+        return pulumi.get(self, "scope")
+
+    @scope.setter
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "scope", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithProjects")
+    def shared_with_projects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of project external identifiers with which the VPC is shared.
+        """
+        return pulumi.get(self, "shared_with_projects")
+
+    @shared_with_projects.setter
+    def shared_with_projects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "shared_with_projects", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shouldAdvertiseConnectedSubnets")
+    def should_advertise_connected_subnets(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+        """
+        return pulumi.get(self, "should_advertise_connected_subnets")
+
+    @should_advertise_connected_subnets.setter
+    def should_advertise_connected_subnets(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "should_advertise_connected_subnets", value)
+
+    @_builtins.property
     @pulumi.getter(name="snatIps")
     def snat_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2SnatIpArgs']]]]:
         return pulumi.get(self, "snat_ips")
@@ -326,6 +506,18 @@ class _VpcV2State:
     @snat_ips.setter
     def snat_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2SnatIpArgs']]]]):
         pulumi.set(self, "snat_ips", value)
+
+    @_builtins.property
+    @pulumi.getter(name="supportedMultipleExternalSubnetType")
+    def supported_multiple_external_subnet_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+        """
+        return pulumi.get(self, "supported_multiple_external_subnet_type")
+
+    @supported_multiple_external_subnet_type.setter
+    def supported_multiple_external_subnet_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "supported_multiple_external_subnet_type", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
@@ -363,8 +555,14 @@ class VpcV2(pulumi.CustomResource):
                  external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternalSubnetArgs', 'VpcV2ExternalSubnetArgsDict', 'outputs.VpcV2ExternalSubnet']]]]] = None,
                  externally_routable_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternallyRoutablePrefixArgs', 'VpcV2ExternallyRoutablePrefixArgsDict', 'outputs.VpcV2ExternallyRoutablePrefix']]]]] = None,
+                 kubernetes_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2KubernetesClusterArgs', 'VpcV2KubernetesClusterArgsDict', 'outputs.VpcV2KubernetesCluster']]]]] = None,
                  metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2MetadataArgs', 'VpcV2MetadataArgsDict', 'outputs.VpcV2Metadata']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 should_advertise_connected_subnets: pulumi.Input[Optional[_builtins.bool]] = None,
+                 supported_multiple_external_subnet_type: pulumi.Input[Optional[_builtins.str]] = None,
                  vpc_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -432,8 +630,14 @@ class VpcV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] external_routing_domain_reference: External routing domain associated with this route table
         :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV2ExternalSubnetArgs', 'VpcV2ExternalSubnetArgsDict', 'outputs.VpcV2ExternalSubnet']]]] external_subnets: List of external subnets that the VPC is attached to.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV2ExternallyRoutablePrefixArgs', 'VpcV2ExternallyRoutablePrefixArgsDict', 'outputs.VpcV2ExternallyRoutablePrefix']]]] externally_routable_prefixes: CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV2KubernetesClusterArgs', 'VpcV2KubernetesClusterArgsDict', 'outputs.VpcV2KubernetesCluster']]]] kubernetes_clusters: List of Kubernetes clusters associated with the VPC.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV2MetadataArgs', 'VpcV2MetadataArgsDict', 'outputs.VpcV2Metadata']]]] metadatas: The vpc kind metadata.
         :param pulumi.Input[_builtins.str] name: Name of the VPC.
+        :param pulumi.Input[_builtins.str] project_ext_id: External identifier of the project associated with the VPC.
+        :param pulumi.Input[_builtins.str] scope: VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] shared_with_projects: List of project external identifiers with which the VPC is shared.
+        :param pulumi.Input[_builtins.bool] should_advertise_connected_subnets: When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+        :param pulumi.Input[_builtins.str] supported_multiple_external_subnet_type: Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
         :param pulumi.Input[_builtins.str] vpc_type: Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
         """
         ...
@@ -520,8 +724,14 @@ class VpcV2(pulumi.CustomResource):
                  external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternalSubnetArgs', 'VpcV2ExternalSubnetArgsDict', 'outputs.VpcV2ExternalSubnet']]]]] = None,
                  externally_routable_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternallyRoutablePrefixArgs', 'VpcV2ExternallyRoutablePrefixArgsDict', 'outputs.VpcV2ExternallyRoutablePrefix']]]]] = None,
+                 kubernetes_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2KubernetesClusterArgs', 'VpcV2KubernetesClusterArgsDict', 'outputs.VpcV2KubernetesCluster']]]]] = None,
                  metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2MetadataArgs', 'VpcV2MetadataArgsDict', 'outputs.VpcV2Metadata']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 should_advertise_connected_subnets: pulumi.Input[Optional[_builtins.bool]] = None,
+                 supported_multiple_external_subnet_type: pulumi.Input[Optional[_builtins.str]] = None,
                  vpc_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -537,8 +747,14 @@ class VpcV2(pulumi.CustomResource):
             __props__.__dict__["external_routing_domain_reference"] = external_routing_domain_reference
             __props__.__dict__["external_subnets"] = external_subnets
             __props__.__dict__["externally_routable_prefixes"] = externally_routable_prefixes
+            __props__.__dict__["kubernetes_clusters"] = kubernetes_clusters
             __props__.__dict__["metadatas"] = metadatas
             __props__.__dict__["name"] = name
+            __props__.__dict__["project_ext_id"] = project_ext_id
+            __props__.__dict__["scope"] = scope
+            __props__.__dict__["shared_with_projects"] = shared_with_projects
+            __props__.__dict__["should_advertise_connected_subnets"] = should_advertise_connected_subnets
+            __props__.__dict__["supported_multiple_external_subnet_type"] = supported_multiple_external_subnet_type
             __props__.__dict__["vpc_type"] = vpc_type
             __props__.__dict__["ext_id"] = None
             __props__.__dict__["links"] = None
@@ -560,10 +776,16 @@ class VpcV2(pulumi.CustomResource):
             external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
             external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternalSubnetArgs', 'VpcV2ExternalSubnetArgsDict', 'outputs.VpcV2ExternalSubnet']]]]] = None,
             externally_routable_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternallyRoutablePrefixArgs', 'VpcV2ExternallyRoutablePrefixArgsDict', 'outputs.VpcV2ExternallyRoutablePrefix']]]]] = None,
+            kubernetes_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2KubernetesClusterArgs', 'VpcV2KubernetesClusterArgsDict', 'outputs.VpcV2KubernetesCluster']]]]] = None,
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2LinkArgs', 'VpcV2LinkArgsDict', 'outputs.VpcV2Link']]]]] = None,
             metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2MetadataArgs', 'VpcV2MetadataArgsDict', 'outputs.VpcV2Metadata']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            should_advertise_connected_subnets: pulumi.Input[Optional[_builtins.bool]] = None,
             snat_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2SnatIpArgs', 'VpcV2SnatIpArgsDict', 'outputs.VpcV2SnatIp']]]]] = None,
+            supported_multiple_external_subnet_type: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             vpc_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'VpcV2':
         """
@@ -579,9 +801,15 @@ class VpcV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] external_routing_domain_reference: External routing domain associated with this route table
         :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV2ExternalSubnetArgs', 'VpcV2ExternalSubnetArgsDict', 'outputs.VpcV2ExternalSubnet']]]] external_subnets: List of external subnets that the VPC is attached to.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV2ExternallyRoutablePrefixArgs', 'VpcV2ExternallyRoutablePrefixArgsDict', 'outputs.VpcV2ExternallyRoutablePrefix']]]] externally_routable_prefixes: CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV2KubernetesClusterArgs', 'VpcV2KubernetesClusterArgsDict', 'outputs.VpcV2KubernetesCluster']]]] kubernetes_clusters: List of Kubernetes clusters associated with the VPC.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV2LinkArgs', 'VpcV2LinkArgsDict', 'outputs.VpcV2Link']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VpcV2MetadataArgs', 'VpcV2MetadataArgsDict', 'outputs.VpcV2Metadata']]]] metadatas: The vpc kind metadata.
         :param pulumi.Input[_builtins.str] name: Name of the VPC.
+        :param pulumi.Input[_builtins.str] project_ext_id: External identifier of the project associated with the VPC.
+        :param pulumi.Input[_builtins.str] scope: VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] shared_with_projects: List of project external identifiers with which the VPC is shared.
+        :param pulumi.Input[_builtins.bool] should_advertise_connected_subnets: When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+        :param pulumi.Input[_builtins.str] supported_multiple_external_subnet_type: Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
         :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.
         :param pulumi.Input[_builtins.str] vpc_type: Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
         """
@@ -595,10 +823,16 @@ class VpcV2(pulumi.CustomResource):
         __props__.__dict__["external_routing_domain_reference"] = external_routing_domain_reference
         __props__.__dict__["external_subnets"] = external_subnets
         __props__.__dict__["externally_routable_prefixes"] = externally_routable_prefixes
+        __props__.__dict__["kubernetes_clusters"] = kubernetes_clusters
         __props__.__dict__["links"] = links
         __props__.__dict__["metadatas"] = metadatas
         __props__.__dict__["name"] = name
+        __props__.__dict__["project_ext_id"] = project_ext_id
+        __props__.__dict__["scope"] = scope
+        __props__.__dict__["shared_with_projects"] = shared_with_projects
+        __props__.__dict__["should_advertise_connected_subnets"] = should_advertise_connected_subnets
         __props__.__dict__["snat_ips"] = snat_ips
+        __props__.__dict__["supported_multiple_external_subnet_type"] = supported_multiple_external_subnet_type
         __props__.__dict__["tenant_id"] = tenant_id
         __props__.__dict__["vpc_type"] = vpc_type
         return VpcV2(resource_name, opts=opts, __props__=__props__)
@@ -612,10 +846,16 @@ class VpcV2(pulumi.CustomResource):
             external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
             external_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternalSubnetArgs', 'VpcV2ExternalSubnetArgsDict', 'outputs.VpcV2ExternalSubnet']]]]] = None,
             externally_routable_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2ExternallyRoutablePrefixArgs', 'VpcV2ExternallyRoutablePrefixArgsDict', 'outputs.VpcV2ExternallyRoutablePrefix']]]]] = None,
+            kubernetes_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2KubernetesClusterArgs', 'VpcV2KubernetesClusterArgsDict', 'outputs.VpcV2KubernetesCluster']]]]] = None,
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2LinkArgs', 'VpcV2LinkArgsDict', 'outputs.VpcV2Link']]]]] = None,
             metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2MetadataArgs', 'VpcV2MetadataArgsDict', 'outputs.VpcV2Metadata']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            should_advertise_connected_subnets: pulumi.Input[Optional[_builtins.bool]] = None,
             snat_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VpcV2SnatIpArgs', 'VpcV2SnatIpArgsDict', 'outputs.VpcV2SnatIp']]]]] = None,
+            supported_multiple_external_subnet_type: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             vpc_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
         __props__: dict = {}
@@ -625,10 +865,16 @@ class VpcV2(pulumi.CustomResource):
         __props__["externalRoutingDomainReference"] = external_routing_domain_reference
         __props__["externalSubnets"] = external_subnets
         __props__["externallyRoutablePrefixes"] = externally_routable_prefixes
+        __props__["kubernetesClusters"] = kubernetes_clusters
         __props__["links"] = links
         __props__["metadatas"] = metadatas
         __props__["name"] = name
+        __props__["projectExtId"] = project_ext_id
+        __props__["scope"] = scope
+        __props__["sharedWithProjects"] = shared_with_projects
+        __props__["shouldAdvertiseConnectedSubnets"] = should_advertise_connected_subnets
         __props__["snatIps"] = snat_ips
+        __props__["supportedMultipleExternalSubnetType"] = supported_multiple_external_subnet_type
         __props__["tenantId"] = tenant_id
         __props__["vpcType"] = vpc_type
         return pulumi.runtime.exists_resource(None, 'nutanix:index/vpcV2:VpcV2', id, __props__, opts or pulumi.ResourceOptions())
@@ -682,6 +928,14 @@ class VpcV2(pulumi.CustomResource):
         return pulumi.get(self, "externally_routable_prefixes")
 
     @_builtins.property
+    @pulumi.getter(name="kubernetesClusters")
+    def kubernetes_clusters(self) -> pulumi.Output[Sequence['outputs.VpcV2KubernetesCluster']]:
+        """
+        List of Kubernetes clusters associated with the VPC.
+        """
+        return pulumi.get(self, "kubernetes_clusters")
+
+    @_builtins.property
     @pulumi.getter
     def links(self) -> pulumi.Output[Sequence['outputs.VpcV2Link']]:
         """
@@ -706,9 +960,49 @@ class VpcV2(pulumi.CustomResource):
         return pulumi.get(self, "name")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        External identifier of the project associated with the VPC.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def scope(self) -> pulumi.Output[_builtins.str]:
+        """
+        VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+        """
+        return pulumi.get(self, "scope")
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithProjects")
+    def shared_with_projects(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        List of project external identifiers with which the VPC is shared.
+        """
+        return pulumi.get(self, "shared_with_projects")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldAdvertiseConnectedSubnets")
+    def should_advertise_connected_subnets(self) -> pulumi.Output[_builtins.bool]:
+        """
+        When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+        """
+        return pulumi.get(self, "should_advertise_connected_subnets")
+
+    @_builtins.property
     @pulumi.getter(name="snatIps")
     def snat_ips(self) -> pulumi.Output[Sequence['outputs.VpcV2SnatIp']]:
         return pulumi.get(self, "snat_ips")
+
+    @_builtins.property
+    @pulumi.getter(name="supportedMultipleExternalSubnetType")
+    def supported_multiple_external_subnet_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+        """
+        return pulumi.get(self, "supported_multiple_external_subnet_type")
 
     @_builtins.property
     @pulumi.getter(name="tenantId")

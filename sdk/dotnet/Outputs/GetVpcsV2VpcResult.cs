@@ -24,10 +24,16 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string ExternalRoutingDomainReference;
         public readonly ImmutableArray<Outputs.GetVpcsV2VpcExternalSubnetResult> ExternalSubnets;
         public readonly ImmutableArray<Outputs.GetVpcsV2VpcExternallyRoutablePrefixResult> ExternallyRoutablePrefixes;
+        public readonly ImmutableArray<Outputs.GetVpcsV2VpcKubernetesClusterResult> KubernetesClusters;
         public readonly ImmutableArray<Outputs.GetVpcsV2VpcLinkResult> Links;
         public readonly ImmutableArray<Outputs.GetVpcsV2VpcMetadataResult> Metadatas;
         public readonly string Name;
+        public readonly string ProjectExtId;
+        public readonly string Scope;
+        public readonly ImmutableArray<string> SharedWithProjects;
+        public readonly bool ShouldAdvertiseConnectedSubnets;
         public readonly ImmutableArray<Outputs.GetVpcsV2VpcSnatIpResult> SnatIps;
+        public readonly string SupportedMultipleExternalSubnetType;
         public readonly string TenantId;
         public readonly string VpcType;
 
@@ -45,13 +51,25 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<Outputs.GetVpcsV2VpcExternallyRoutablePrefixResult> externallyRoutablePrefixes,
 
+            ImmutableArray<Outputs.GetVpcsV2VpcKubernetesClusterResult> kubernetesClusters,
+
             ImmutableArray<Outputs.GetVpcsV2VpcLinkResult> links,
 
             ImmutableArray<Outputs.GetVpcsV2VpcMetadataResult> metadatas,
 
             string name,
 
+            string projectExtId,
+
+            string scope,
+
+            ImmutableArray<string> sharedWithProjects,
+
+            bool shouldAdvertiseConnectedSubnets,
+
             ImmutableArray<Outputs.GetVpcsV2VpcSnatIpResult> snatIps,
+
+            string supportedMultipleExternalSubnetType,
 
             string tenantId,
 
@@ -63,10 +81,16 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             ExternalRoutingDomainReference = externalRoutingDomainReference;
             ExternalSubnets = externalSubnets;
             ExternallyRoutablePrefixes = externallyRoutablePrefixes;
+            KubernetesClusters = kubernetesClusters;
             Links = links;
             Metadatas = metadatas;
             Name = name;
+            ProjectExtId = projectExtId;
+            Scope = scope;
+            SharedWithProjects = sharedWithProjects;
+            ShouldAdvertiseConnectedSubnets = shouldAdvertiseConnectedSubnets;
             SnatIps = snatIps;
+            SupportedMultipleExternalSubnetType = supportedMultipleExternalSubnetType;
             TenantId = tenantId;
             VpcType = vpcType;
         }

@@ -8,33 +8,6 @@ import * as utilities from "./utilities";
 
 /**
  * Provides Nutanix resource to create authorization policy.
- *
- * ## Example
- *
- * <!--Start PulumiCodeChooser -->
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * const ap_example = new nutanix.AuthorizationPolicyV2("ap-example", {
- *     role: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
- *     displayName: "auth_policy_example",
- *     description: "authorization policy example",
- *     authorizationPolicyType: "USER_DEFINED",
- *     identities: [{
- *         reserved: "{\"user\":{\"uuid\":{\"anyof\":[\"00000000-0000-0000-0000-000000000000\"]}}}",
- *     }],
- *     entities: [
- *         {
- *             reserved: "{\"images\":{\"*\":{\"eq\":\"*\"}}}",
- *         },
- *         {
- *             reserved: "{\"marketplace_item\":{\"owner_uuid\":{\"eq\":\"SELF_OWNED\"}}}",
- *         },
- *     ],
- * });
- * ```
- * <!--End PulumiCodeChooser -->
  */
 export class AuthorizationPolicyV2 extends pulumi.CustomResource {
     /**
@@ -116,6 +89,7 @@ export class AuthorizationPolicyV2 extends pulumi.CustomResource {
      * The identities for which the Authorization Policy is created.
      */
     declare public readonly identities: pulumi.Output<outputs.AuthorizationPolicyV2Identity[]>;
+    declare public readonly isGlobal: pulumi.Output<boolean>;
     /**
      * Flag identifying if the Authorization Policy is system defined or not.
      */
@@ -125,9 +99,17 @@ export class AuthorizationPolicyV2 extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly lastUpdatedTime: pulumi.Output<string>;
     /**
+     * -(Optional) Project reference for the Authorization Policy.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
+    /**
      * The Role associated with the Authorization Policy.
      */
     declare public readonly role: pulumi.Output<string>;
+    /**
+     * - Flag indicating whether the Authorization Policy is shared with all projects or not.
+     */
+    declare public /*out*/ readonly shareWithAllProjects: pulumi.Output<boolean>;
 
     /**
      * Create a AuthorizationPolicyV2 resource with the given unique name, arguments, and options.
@@ -151,9 +133,12 @@ export class AuthorizationPolicyV2 extends pulumi.CustomResource {
             resourceInputs["entities"] = state?.entities;
             resourceInputs["extId"] = state?.extId;
             resourceInputs["identities"] = state?.identities;
+            resourceInputs["isGlobal"] = state?.isGlobal;
             resourceInputs["isSystemDefined"] = state?.isSystemDefined;
             resourceInputs["lastUpdatedTime"] = state?.lastUpdatedTime;
+            resourceInputs["projectExtId"] = state?.projectExtId;
             resourceInputs["role"] = state?.role;
+            resourceInputs["shareWithAllProjects"] = state?.shareWithAllProjects;
         } else {
             const args = argsOrState as AuthorizationPolicyV2Args | undefined;
             if (args?.displayName === undefined && !opts.urn) {
@@ -174,12 +159,15 @@ export class AuthorizationPolicyV2 extends pulumi.CustomResource {
             resourceInputs["entities"] = args?.entities;
             resourceInputs["extId"] = args?.extId;
             resourceInputs["identities"] = args?.identities;
+            resourceInputs["isGlobal"] = args?.isGlobal;
+            resourceInputs["projectExtId"] = args?.projectExtId;
             resourceInputs["role"] = args?.role;
             resourceInputs["clientName"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["createdTime"] = undefined /*out*/;
             resourceInputs["isSystemDefined"] = undefined /*out*/;
             resourceInputs["lastUpdatedTime"] = undefined /*out*/;
+            resourceInputs["shareWithAllProjects"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AuthorizationPolicyV2.__pulumiType, name, resourceInputs, opts);
@@ -231,6 +219,7 @@ export interface AuthorizationPolicyV2State {
      * The identities for which the Authorization Policy is created.
      */
     identities?: pulumi.Input<pulumi.Input<inputs.AuthorizationPolicyV2Identity>[] | undefined>;
+    isGlobal?: pulumi.Input<boolean | undefined>;
     /**
      * Flag identifying if the Authorization Policy is system defined or not.
      */
@@ -240,9 +229,17 @@ export interface AuthorizationPolicyV2State {
      */
     lastUpdatedTime?: pulumi.Input<string | undefined>;
     /**
+     * -(Optional) Project reference for the Authorization Policy.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
      * The Role associated with the Authorization Policy.
      */
     role?: pulumi.Input<string | undefined>;
+    /**
+     * - Flag indicating whether the Authorization Policy is shared with all projects or not.
+     */
+    shareWithAllProjects?: pulumi.Input<boolean | undefined>;
 }
 
 /**
@@ -278,6 +275,11 @@ export interface AuthorizationPolicyV2Args {
      * The identities for which the Authorization Policy is created.
      */
     identities: pulumi.Input<pulumi.Input<inputs.AuthorizationPolicyV2Identity>[]>;
+    isGlobal?: pulumi.Input<boolean | undefined>;
+    /**
+     * -(Optional) Project reference for the Authorization Policy.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
     /**
      * The Role associated with the Authorization Policy.
      */

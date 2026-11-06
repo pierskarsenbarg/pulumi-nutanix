@@ -62,7 +62,7 @@ import (
 //
 // * <span pulumi-lang-nodejs="`policyType`" pulumi-lang-dotnet="`PolicyType`" pulumi-lang-go="`policyType`" pulumi-lang-python="`policy_type`" pulumi-lang-yaml="`policyType`" pulumi-lang-java="`policyType`" pulumi-lang-hcl="`policy_type`">`policyType`</span>:- Indicates whether the policy is user-created or system-created. Valid values: `"USER"`, `"SYSTEM"`.
 //
-// See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.2#tag/StoragePolicies/operation/listStoragePolicies).
+// See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.3#tag/StoragePolicies/operation/listStoragePolicies).
 func GetStoragePoliciesV2(ctx *pulumi.Context, args *GetStoragePoliciesV2Args, opts ...pulumi.InvokeOption) (*GetStoragePoliciesV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetStoragePoliciesV2Result

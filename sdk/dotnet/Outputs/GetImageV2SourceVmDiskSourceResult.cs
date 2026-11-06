@@ -18,11 +18,19 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// The external identifier of an image.
         /// </summary>
         public readonly string ExtId;
+        /// <summary>
+        /// The external identifier of the source VM for the specified disk.
+        /// </summary>
+        public readonly string VmExtId;
 
         [OutputConstructor]
-        private GetImageV2SourceVmDiskSourceResult(string extId)
+        private GetImageV2SourceVmDiskSourceResult(
+            string extId,
+
+            string vmExtId)
         {
             ExtId = extId;
+            VmExtId = vmExtId;
         }
     }
 }

@@ -26,6 +26,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// |-----------|------------------------------|
         /// | SHA       | SHA SNMP authentication      |
         /// | MD5       | MD5 SNMP authentication      |
+        /// | SHA224    | SHA-224 SNMP authentication  |
+        /// | SHA256    | SHA-256 SNMP authentication  |
+        /// | SHA384    | SHA-384 SNMP authentication  |
+        /// | SHA512    | SHA-512 SNMP authentication  |
         /// </summary>
         [Input("authType", required: true)]
         public Input<string> AuthType { get; set; } = null!;
@@ -54,6 +58,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// |-----------|--------------------|
         /// | DES       | DES SNMP key       |
         /// | AES       | AES SNMP key       |
+        /// | AES192    | AES-192 SNMP key   |
+        /// | AES256    | AES-256 SNMP key   |
         /// </summary>
         [Input("privType")]
         public Input<string>? PrivType { get; set; }
